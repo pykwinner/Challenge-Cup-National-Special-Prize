@@ -1,0 +1,243 @@
+{
+  "passed": true,
+  "check_count": 160,
+  "failed_checks": [],
+  "cases": [
+    {
+      "case": "urumqi/baseline_delta0",
+      "maximum_temperature_residual_c": 7.105427357601002e-15,
+      "checks": {
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "urumqi/cost_endpoint",
+      "maximum_temperature_residual_c": 1.7763568394002505e-14,
+      "checks": {
+        "source_heat_rows": true,
+        "source_heat_time": true,
+        "source_heat_unit": true,
+        "source_heat_single_asset": true,
+        "source_heat_zone_balance": true,
+        "cooling_output_rows": true,
+        "cooling_output_time": true,
+        "cooling_output_unit": true,
+        "cooling_output_single_asset": true,
+        "cooling_output_zone_balance": true,
+        "source_tamper_rejected": true,
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "urumqi/carbon_endpoint",
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "checks": {
+        "source_heat_rows": true,
+        "source_heat_time": true,
+        "source_heat_unit": true,
+        "source_heat_single_asset": true,
+        "source_heat_zone_balance": true,
+        "cooling_output_rows": true,
+        "cooling_output_time": true,
+        "cooling_output_unit": true,
+        "cooling_output_single_asset": true,
+        "cooling_output_zone_balance": true,
+        "source_tamper_rejected": true,
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "urumqi/midpoint_cap",
+      "maximum_temperature_residual_c": 1.7763568394002505e-14,
+      "checks": {
+        "source_heat_rows": true,
+        "source_heat_time": true,
+        "source_heat_unit": true,
+        "source_heat_single_asset": true,
+        "source_heat_zone_balance": true,
+        "cooling_output_rows": true,
+        "cooling_output_time": true,
+        "cooling_output_unit": true,
+        "cooling_output_single_asset": true,
+        "cooling_output_zone_balance": true,
+        "source_tamper_rejected": true,
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "guyuan/baseline_delta0",
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "checks": {
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "guyuan/cost_endpoint",
+      "maximum_temperature_residual_c": 1.7763568394002505e-14,
+      "checks": {
+        "source_heat_rows": true,
+        "source_heat_time": true,
+        "source_heat_unit": true,
+        "source_heat_single_asset": true,
+        "source_heat_zone_balance": true,
+        "cooling_output_rows": true,
+        "cooling_output_time": true,
+        "cooling_output_unit": true,
+        "cooling_output_single_asset": true,
+        "cooling_output_zone_balance": true,
+        "source_tamper_rejected": true,
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "guyuan/carbon_endpoint",
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "checks": {
+        "source_heat_rows": true,
+        "source_heat_time": true,
+        "source_heat_unit": true,
+        "source_heat_single_asset": true,
+        "source_heat_zone_balance": true,
+        "cooling_output_rows": true,
+        "cooling_output_time": true,
+        "cooling_output_unit": true,
+        "cooling_output_single_asset": true,
+        "cooling_output_zone_balance": true,
+        "source_tamper_rejected": true,
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "guyuan/midpoint_cap",
+      "maximum_temperature_residual_c": 1.7763568394002505e-14,
+      "checks": {
+        "source_heat_rows": true,
+        "source_heat_time": true,
+        "source_heat_unit": true,
+        "source_heat_single_asset": true,
+        "source_heat_zone_balance": true,
+        "cooling_output_rows": true,
+        "cooling_output_time": true,
+        "cooling_output_unit": true,
+        "cooling_output_single_asset": true,
+        "cooling_output_zone_balance": true,
+        "source_tamper_rejected": true,
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "wuhan/baseline_delta0",
+      "maximum_temperature_residual_c": 1.4210854715202004e-14,
+      "checks": {
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "wuhan/cost_endpoint",
+      "maximum_temperature_residual_c": 2.1316282072803006e-14,
+      "checks": {
+        "source_heat_rows": true,
+        "source_heat_time": true,
+        "source_heat_unit": true,
+        "source_heat_single_asset": true,
+        "source_heat_zone_balance": true,
+        "cooling_output_rows": true,
+        "cooling_output_time": true,
+        "cooling_output_unit": true,
+        "cooling_output_single_asset": true,
+        "cooling_output_zone_balance": true,
+        "source_tamper_rejected": true,
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "wuhan/carbon_endpoint",
+      "maximum_temperature_residual_c": 2.1316282072803006e-14,
+      "checks": {
+        "source_heat_rows": true,
+        "source_heat_time": true,
+        "source_heat_unit": true,
+        "source_heat_single_asset": true,
+        "source_heat_zone_balance": true,
+        "cooling_output_rows": true,
+        "cooling_output_time": true,
+        "cooling_output_unit": true,
+        "cooling_output_single_asset": true,
+        "cooling_output_zone_balance": true,
+        "source_tamper_rejected": true,
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    },
+    {
+      "case": "wuhan/midpoint_cap",
+      "maximum_temperature_residual_c": 2.1316282072803006e-14,
+      "checks": {
+        "source_heat_rows": true,
+        "source_heat_time": true,
+        "source_heat_unit": true,
+        "source_heat_single_asset": true,
+        "source_heat_zone_balance": true,
+        "cooling_output_rows": true,
+        "cooling_output_time": true,
+        "cooling_output_unit": true,
+        "cooling_output_single_asset": true,
+        "cooling_output_zone_balance": true,
+        "source_tamper_rejected": true,
+        "table_bill_yuan": true,
+        "table_energy_kwh": true,
+        "table_carbon_kg": true,
+        "table_peak_import_kw": true,
+        "reconstructed_state_and_ledger": true
+      }
+    }
+  ],
+  "original_inputs_and_outputs_modified": false,
+  "source_tamper_examples": 9,
+  "manifest_sha256": "01f2c7c4401088797f7972b444da2228ff8ef8a80799dbb4481398f93ac16bba",
+  "script_sha256": "489710c676e7fa544adf9ae39ef82795a10f30ea9373c20f407a2a9ce28847e9",
+  "scope": "12 result rows plus 9 exported source-to-zone balances; fixed ideal single-source case only; no general network, investment, observed validation or new source-content audit"
+}

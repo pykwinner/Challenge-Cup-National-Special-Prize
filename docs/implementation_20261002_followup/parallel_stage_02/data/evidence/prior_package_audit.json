@@ -1,0 +1,1118 @@
+{
+  "audit_time_utc": "2026-10-02T02:48:23.817994+00:00",
+  "package": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002",
+  "code_root": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge",
+  "scope": "independent_file_integrity_weather_values_input_reader_and_load_statistics_only",
+  "files": 227,
+  "bytes": 52922163,
+  "extension_counts": {
+    ".csv": 101,
+    ".json": 59,
+    ".md": 1,
+    ".txt": 29,
+    ".html": 9,
+    ".pdf": 2,
+    ".png": 5,
+    ".yaml": 16,
+    ".py": 4,
+    ".jpg": 1
+  },
+  "hash_manifest_entries": 226,
+  "hash_mismatches": [],
+  "parse_failures": [],
+  "weather_checks": [
+    {
+      "file": "verified_public/weather_hourly/scenario1_urumqi_weather_2020.csv",
+      "raw_json": "scenario1_urumqi_2020_UTC.json",
+      "rows": 8784,
+      "start": "2020-01-01 00:00:00",
+      "end": "2020-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario1_urumqi_weather_2021.csv",
+      "raw_json": "scenario1_urumqi_2021_UTC.json",
+      "rows": 8760,
+      "start": "2021-01-01 00:00:00",
+      "end": "2021-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario1_urumqi_weather_2022.csv",
+      "raw_json": "scenario1_urumqi_2022_UTC.json",
+      "rows": 8760,
+      "start": "2022-01-01 00:00:00",
+      "end": "2022-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario1_urumqi_weather_2023.csv",
+      "raw_json": "scenario1_urumqi_2023_UTC.json",
+      "rows": 8760,
+      "start": "2023-01-01 00:00:00",
+      "end": "2023-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario1_urumqi_weather_2024.csv",
+      "raw_json": "scenario1_urumqi_2024_UTC.json",
+      "rows": 8784,
+      "start": "2024-01-01 00:00:00",
+      "end": "2024-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario2_guyuan_weather_2020.csv",
+      "raw_json": "scenario2_guyuan_2020_UTC.json",
+      "rows": 8784,
+      "start": "2020-01-01 00:00:00",
+      "end": "2020-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario2_guyuan_weather_2021.csv",
+      "raw_json": "scenario2_guyuan_2021_UTC.json",
+      "rows": 8760,
+      "start": "2021-01-01 00:00:00",
+      "end": "2021-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario2_guyuan_weather_2022.csv",
+      "raw_json": "scenario2_guyuan_2022_UTC.json",
+      "rows": 8760,
+      "start": "2022-01-01 00:00:00",
+      "end": "2022-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario2_guyuan_weather_2023.csv",
+      "raw_json": "scenario2_guyuan_2023_UTC.json",
+      "rows": 8760,
+      "start": "2023-01-01 00:00:00",
+      "end": "2023-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario2_guyuan_weather_2024.csv",
+      "raw_json": "scenario2_guyuan_2024_UTC.json",
+      "rows": 8784,
+      "start": "2024-01-01 00:00:00",
+      "end": "2024-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario3_wuhan_weather_2020.csv",
+      "raw_json": "scenario3_wuhan_2020_UTC.json",
+      "rows": 8784,
+      "start": "2020-01-01 00:00:00",
+      "end": "2020-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario3_wuhan_weather_2021.csv",
+      "raw_json": "scenario3_wuhan_2021_UTC.json",
+      "rows": 8760,
+      "start": "2021-01-01 00:00:00",
+      "end": "2021-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario3_wuhan_weather_2022.csv",
+      "raw_json": "scenario3_wuhan_2022_UTC.json",
+      "rows": 8760,
+      "start": "2022-01-01 00:00:00",
+      "end": "2022-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario3_wuhan_weather_2023.csv",
+      "raw_json": "scenario3_wuhan_2023_UTC.json",
+      "rows": 8760,
+      "start": "2023-01-01 00:00:00",
+      "end": "2023-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_hourly/scenario3_wuhan_weather_2024.csv",
+      "raw_json": "scenario3_wuhan_2024_UTC.json",
+      "rows": 8784,
+      "start": "2024-01-01 00:00:00",
+      "end": "2024-12-31 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_season/scenario1_urumqi_weather_2024_2025.csv",
+      "raw_json": "scenario1_urumqi_UTC.json",
+      "rows": 4392,
+      "start": "2024-10-10 00:00:00",
+      "end": "2025-04-10 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_season/scenario2_guyuan_weather_2024_2025.csv",
+      "raw_json": "scenario2_guyuan_UTC.json",
+      "rows": 4392,
+      "start": "2024-10-15 00:00:00",
+      "end": "2025-04-15 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    },
+    {
+      "file": "verified_public/weather_season/scenario3_wuhan_weather_2024_2025.csv",
+      "raw_json": "scenario3_wuhan_UTC.json",
+      "rows": 2880,
+      "start": "2024-11-16 00:00:00",
+      "end": "2025-03-15 23:00:00",
+      "max_abs_difference_by_parameter": {
+        "T2M": 0.0,
+        "RH2M": 0.0,
+        "WS10M": 0.0,
+        "ALLSKY_SFC_SW_DWN": 0.0
+      },
+      "finite": true,
+      "missing_sentinel_count": 0,
+      "utc_identity_consistent": true,
+      "continuous_hourly": true,
+      "status": "pass"
+    }
+  ],
+  "annual_weather_rows": 131544,
+  "season_weather_rows": 11664,
+  "raw_weather_numeric_cells": 572832,
+  "input_checks": [
+    {
+      "file": "code_inputs/paper_baseline/season/scenario1_urumqi_heating_season.csv",
+      "profile": "scenario1_urumqi",
+      "kind": "paper_baseline_season",
+      "status": "pass",
+      "rows": 4392,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/paper_baseline/season/scenario2_guyuan_heating_season.csv",
+      "profile": "scenario2_guyuan",
+      "kind": "paper_baseline_season",
+      "status": "pass",
+      "rows": 4392,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/paper_baseline/season/scenario3_wuhan_heating_season.csv",
+      "profile": "scenario3_wuhan",
+      "kind": "paper_baseline_season",
+      "status": "pass",
+      "rows": 2880,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/season/scenario1_urumqi_heating_season.csv",
+      "profile": "scenario1_urumqi",
+      "kind": "updated_utc_season",
+      "status": "pass",
+      "rows": 4392,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/season/scenario2_guyuan_heating_season.csv",
+      "profile": "scenario2_guyuan",
+      "kind": "updated_utc_season",
+      "status": "pass",
+      "rows": 4392,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/season/scenario3_wuhan_heating_season.csv",
+      "profile": "scenario3_wuhan",
+      "kind": "updated_utc_season",
+      "status": "pass",
+      "rows": 2880,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario1_urumqi/scenario1_urumqi_full_year_2020.csv",
+      "profile": "scenario1_urumqi",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8784,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario1_urumqi/scenario1_urumqi_full_year_2021.csv",
+      "profile": "scenario1_urumqi",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8760,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario1_urumqi/scenario1_urumqi_full_year_2022.csv",
+      "profile": "scenario1_urumqi",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8760,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario1_urumqi/scenario1_urumqi_full_year_2023.csv",
+      "profile": "scenario1_urumqi",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8760,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario1_urumqi/scenario1_urumqi_full_year_2024.csv",
+      "profile": "scenario1_urumqi",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8784,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/representatives/scenario1_urumqi_representative_2023.csv",
+      "profile": "scenario1_urumqi",
+      "kind": "representative",
+      "status": "pass",
+      "rows": 240,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario2_guyuan/scenario2_guyuan_full_year_2020.csv",
+      "profile": "scenario2_guyuan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8784,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario2_guyuan/scenario2_guyuan_full_year_2021.csv",
+      "profile": "scenario2_guyuan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8760,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario2_guyuan/scenario2_guyuan_full_year_2022.csv",
+      "profile": "scenario2_guyuan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8760,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario2_guyuan/scenario2_guyuan_full_year_2023.csv",
+      "profile": "scenario2_guyuan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8760,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario2_guyuan/scenario2_guyuan_full_year_2024.csv",
+      "profile": "scenario2_guyuan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8784,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/representatives/scenario2_guyuan_representative_2023.csv",
+      "profile": "scenario2_guyuan",
+      "kind": "representative",
+      "status": "pass",
+      "rows": 216,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario3_wuhan/scenario3_wuhan_full_year_2020.csv",
+      "profile": "scenario3_wuhan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8784,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario3_wuhan/scenario3_wuhan_full_year_2021.csv",
+      "profile": "scenario3_wuhan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8760,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario3_wuhan/scenario3_wuhan_full_year_2022.csv",
+      "profile": "scenario3_wuhan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8760,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario3_wuhan/scenario3_wuhan_full_year_2023.csv",
+      "profile": "scenario3_wuhan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8760,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/scenario3_wuhan/scenario3_wuhan_full_year_2024.csv",
+      "profile": "scenario3_wuhan",
+      "kind": "annual",
+      "status": "pass",
+      "rows": 8784,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    },
+    {
+      "file": "code_inputs/updated_utc/annual/representatives/scenario3_wuhan_representative_2023.csv",
+      "profile": "scenario3_wuhan",
+      "kind": "representative",
+      "status": "pass",
+      "rows": 288,
+      "grid_factors": [
+        0.5306
+      ],
+      "building_thermal_enabled": false
+    }
+  ],
+  "load_statistics": [
+    {
+      "file": "scenario1_urumqi_heating_season.csv",
+      "rows": 4392,
+      "peak_kw": 1316.903409090909,
+      "p95_kw": 995.7298863636364,
+      "mean_kw": 588.2343229942871,
+      "heat_energy_kwh": 2583525.146590909,
+      "eflh_h": 1961.8182539100421,
+      "identity": "derived_load_proxy_not_measured"
+    },
+    {
+      "file": "scenario2_guyuan_heating_season.csv",
+      "rows": 4392,
+      "peak_kw": 1245.8431818181818,
+      "p95_kw": 899.8097159090909,
+      "mean_kw": 544.2558683660375,
+      "heat_energy_kwh": 2390371.7738636364,
+      "eflh_h": 1918.6778952188276,
+      "identity": "derived_load_proxy_not_measured"
+    },
+    {
+      "file": "scenario3_wuhan_heating_season.csv",
+      "rows": 2880,
+      "peak_kw": 597.54,
+      "p95_kw": 440.49670000000003,
+      "mean_kw": 236.54345902777777,
+      "heat_energy_kwh": 681245.162,
+      "eflh_h": 1140.0829434012787,
+      "identity": "derived_load_proxy_not_measured"
+    }
+  ],
+  "to_fill": [
+    {
+      "file": "building_2R2C_parameters_to_fill.csv",
+      "rows": 10,
+      "field_count": 28,
+      "data_fields": [
+        "building_id",
+        "floor_area_m2",
+        "building_volume_m3",
+        "building_use",
+        "terminal_type",
+        "Ca_kWh_per_K",
+        "Cm_kWh_per_K",
+        "R_air_mass_K_per_kW",
+        "UA_envelope_kW_per_K",
+        "ventilation_m3_per_h",
+        "infiltration_ACH",
+        "initial_air_temp_C",
+        "initial_mass_temp_C",
+        "internal_gain_kW_file",
+        "solar_gain_kW_file",
+        "measured_indoor_temp_C_file",
+        "calibration_period",
+        "heldout_validation_period",
+        "RC_topology_definition_file",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "nonempty_cells_by_field": {
+        "building_id": 0,
+        "floor_area_m2": 0,
+        "building_volume_m3": 0,
+        "building_use": 0,
+        "terminal_type": 0,
+        "Ca_kWh_per_K": 0,
+        "Cm_kWh_per_K": 0,
+        "R_air_mass_K_per_kW": 0,
+        "UA_envelope_kW_per_K": 0,
+        "ventilation_m3_per_h": 0,
+        "infiltration_ACH": 0,
+        "initial_air_temp_C": 0,
+        "initial_mass_temp_C": 0,
+        "internal_gain_kW_file": 0,
+        "solar_gain_kW_file": 0,
+        "measured_indoor_temp_C_file": 0,
+        "calibration_period": 0,
+        "heldout_validation_period": 0,
+        "RC_topology_definition_file": 0,
+        "source_url_or_file": 0,
+        "evidence_date": 0,
+        "uncertainty_lower": 0,
+        "uncertainty_upper": 0
+      }
+    },
+    {
+      "file": "building_parameters_to_fill.csv",
+      "rows": 10,
+      "field_count": 14,
+      "data_fields": [
+        "building_id",
+        "floor_area_m2",
+        "building_use",
+        "H_W_per_K",
+        "C_J_per_K",
+        "indoor_initial_temperature_C",
+        "occupancy_measured_file",
+        "internal_gains_W_file",
+        "source_url_or_file"
+      ],
+      "nonempty_cells_by_field": {
+        "building_id": 0,
+        "floor_area_m2": 0,
+        "building_use": 0,
+        "H_W_per_K": 0,
+        "C_J_per_K": 0,
+        "indoor_initial_temperature_C": 0,
+        "occupancy_measured_file": 0,
+        "internal_gains_W_file": 0,
+        "source_url_or_file": 0
+      }
+    },
+    {
+      "file": "building_services_hourly_to_fill.csv",
+      "rows": 0,
+      "field_count": 20,
+      "data_fields": [
+        "timestamp_Asia_Shanghai",
+        "building_id",
+        "heat_kW",
+        "cooling_kW",
+        "DHW_kW",
+        "occupancy_fraction",
+        "internal_gain_kW",
+        "solar_gain_kW",
+        "indoor_temp_C",
+        "indoor_RH_pct",
+        "ventilation_m3_per_h",
+        "terminal_supply_temp_C",
+        "terminal_return_temp_C",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "nonempty_cells_by_field": {
+        "timestamp_Asia_Shanghai": 0,
+        "building_id": 0,
+        "heat_kW": 0,
+        "cooling_kW": 0,
+        "DHW_kW": 0,
+        "occupancy_fraction": 0,
+        "internal_gain_kW": 0,
+        "solar_gain_kW": 0,
+        "indoor_temp_C": 0,
+        "indoor_RH_pct": 0,
+        "ventilation_m3_per_h": 0,
+        "terminal_supply_temp_C": 0,
+        "terminal_return_temp_C": 0,
+        "source_url_or_file": 0,
+        "evidence_date": 0,
+        "uncertainty_lower": 0,
+        "uncertainty_upper": 0
+      }
+    },
+    {
+      "file": "cost_lifetime_to_fill.csv",
+      "rows": 32,
+      "field_count": 21,
+      "data_fields": [
+        "capex_CNY",
+        "capex_unit_basis",
+        "fixed_opex_CNY_per_year",
+        "variable_opex_CNY_per_kWh",
+        "lifetime_years",
+        "residual_value_CNY",
+        "retirement_cost_CNY",
+        "logistics_CNY_per_t",
+        "warehouse_CNY_per_year",
+        "staff_CNY_per_year",
+        "noise_control_CNY",
+        "quote_valid_until",
+        "tax_included",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "nonempty_cells_by_field": {
+        "capex_CNY": 0,
+        "capex_unit_basis": 0,
+        "fixed_opex_CNY_per_year": 0,
+        "variable_opex_CNY_per_kWh": 0,
+        "lifetime_years": 0,
+        "residual_value_CNY": 0,
+        "retirement_cost_CNY": 0,
+        "logistics_CNY_per_t": 0,
+        "warehouse_CNY_per_year": 0,
+        "staff_CNY_per_year": 0,
+        "noise_control_CNY": 0,
+        "quote_valid_until": 0,
+        "tax_included": 0,
+        "source_url_or_file": 0,
+        "evidence_date": 0,
+        "uncertainty_lower": 0,
+        "uncertainty_upper": 0
+      }
+    },
+    {
+      "file": "GIS_assets_to_fill.csv",
+      "rows": 41,
+      "field_count": 22,
+      "data_fields": [
+        "longitude",
+        "latitude",
+        "CRS",
+        "geometry_WKT",
+        "road_id",
+        "parcel_id",
+        "length_m",
+        "diameter_mm",
+        "commission_year",
+        "current_status",
+        "retirement_year",
+        "underground_constraint_file",
+        "noise_sensitive_site_file",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "nonempty_cells_by_field": {
+        "longitude": 0,
+        "latitude": 0,
+        "CRS": 0,
+        "geometry_WKT": 0,
+        "road_id": 0,
+        "parcel_id": 0,
+        "length_m": 0,
+        "diameter_mm": 0,
+        "commission_year": 0,
+        "current_status": 0,
+        "retirement_year": 0,
+        "underground_constraint_file": 0,
+        "noise_sensitive_site_file": 0,
+        "source_url_or_file": 0,
+        "evidence_date": 0,
+        "uncertainty_lower": 0,
+        "uncertainty_upper": 0
+      }
+    },
+    {
+      "file": "grid_carbon_reliability_hourly_to_fill.csv",
+      "rows": 0,
+      "field_count": 16,
+      "data_fields": [
+        "timestamp_Asia_Shanghai",
+        "electricity_price_CNY_per_kWh",
+        "marginal_carbon_kgCO2_per_kWh",
+        "marginal_factor_method",
+        "transformer_capacity_kVA",
+        "power_factor",
+        "available_grid_kW",
+        "grid_outage_flag",
+        "capacity_expansion_quote_file",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "nonempty_cells_by_field": {
+        "timestamp_Asia_Shanghai": 0,
+        "electricity_price_CNY_per_kWh": 0,
+        "marginal_carbon_kgCO2_per_kWh": 0,
+        "marginal_factor_method": 0,
+        "transformer_capacity_kVA": 0,
+        "power_factor": 0,
+        "available_grid_kW": 0,
+        "grid_outage_flag": 0,
+        "capacity_expansion_quote_file": 0,
+        "source_url_or_file": 0,
+        "evidence_date": 0,
+        "uncertainty_lower": 0,
+        "uncertainty_upper": 0
+      }
+    },
+    {
+      "file": "measured_hourly_data_template.csv",
+      "rows": 0,
+      "field_count": 10,
+      "data_fields": [
+        "timestamp_Asia_Shanghai",
+        "building_id",
+        "indoor_temp_C",
+        "measured_heat_kW",
+        "measured_cooling_kW",
+        "occupancy_fraction",
+        "internal_gains_W",
+        "source_file"
+      ],
+      "nonempty_cells_by_field": {
+        "timestamp_Asia_Shanghai": 0,
+        "building_id": 0,
+        "indoor_temp_C": 0,
+        "measured_heat_kW": 0,
+        "measured_cooling_kW": 0,
+        "occupancy_fraction": 0,
+        "internal_gains_W": 0,
+        "source_file": 0
+      }
+    },
+    {
+      "file": "operation_5_to_60min_to_fill.csv",
+      "rows": 0,
+      "field_count": 26,
+      "data_fields": [
+        "timestamp_Asia_Shanghai",
+        "interval_minutes",
+        "heat_power_kW",
+        "electric_power_kW",
+        "heat_energy_kWh_interval",
+        "volume_flow_m3_per_h",
+        "mass_flow_kg_per_s",
+        "pressure_supply_kPa",
+        "pressure_return_kPa",
+        "supply_temp_C",
+        "return_temp_C",
+        "indoor_temp_C",
+        "indoor_RH_pct",
+        "on_off",
+        "CHP_heat_kW",
+        "CHP_electric_kW",
+        "sensor_id",
+        "quality_flag",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "nonempty_cells_by_field": {
+        "timestamp_Asia_Shanghai": 0,
+        "interval_minutes": 0,
+        "heat_power_kW": 0,
+        "electric_power_kW": 0,
+        "heat_energy_kWh_interval": 0,
+        "volume_flow_m3_per_h": 0,
+        "mass_flow_kg_per_s": 0,
+        "pressure_supply_kPa": 0,
+        "pressure_return_kPa": 0,
+        "supply_temp_C": 0,
+        "return_temp_C": 0,
+        "indoor_temp_C": 0,
+        "indoor_RH_pct": 0,
+        "on_off": 0,
+        "CHP_heat_kW": 0,
+        "CHP_electric_kW": 0,
+        "sensor_id": 0,
+        "quality_flag": 0,
+        "source_url_or_file": 0,
+        "evidence_date": 0,
+        "uncertainty_lower": 0,
+        "uncertainty_upper": 0
+      }
+    },
+    {
+      "file": "pipe_parameters_to_fill.csv",
+      "rows": 6,
+      "field_count": 12,
+      "data_fields": [
+        "length_verified_m",
+        "diameter_verified_mm",
+        "GIS_WKT",
+        "capacity_verified_kw",
+        "capex_quote_CNY_per_m",
+        "pump_curve_file",
+        "source_url_or_file"
+      ],
+      "nonempty_cells_by_field": {
+        "length_verified_m": 0,
+        "diameter_verified_mm": 0,
+        "GIS_WKT": 0,
+        "capacity_verified_kw": 0,
+        "capex_quote_CNY_per_m": 0,
+        "pump_curve_file": 0,
+        "source_url_or_file": 0
+      }
+    },
+    {
+      "file": "source_parameters_to_fill.csv",
+      "rows": 20,
+      "field_count": 11,
+      "data_fields": [
+        "capacity_verified_kw",
+        "available_heat_temperature_C_file",
+        "available_heat_kw_file",
+        "COP_curve_file",
+        "capex_quote_CNY_per_kW",
+        "opex_CNY_per_kWh",
+        "source_url_or_file"
+      ],
+      "nonempty_cells_by_field": {
+        "capacity_verified_kw": 0,
+        "available_heat_temperature_C_file": 0,
+        "available_heat_kw_file": 0,
+        "COP_curve_file": 0,
+        "capex_quote_CNY_per_kW": 0,
+        "opex_CNY_per_kWh": 0,
+        "source_url_or_file": 0
+      }
+    },
+    {
+      "file": "source_resource_hourly_to_fill.csv",
+      "rows": 0,
+      "field_count": 20,
+      "data_fields": [
+        "timestamp_Asia_Shanghai",
+        "interval_minutes",
+        "available_heat_kW",
+        "source_temp_C",
+        "availability_fraction",
+        "outage_flag",
+        "maintenance_flag",
+        "biomass_stock_kg",
+        "biomass_delivery_kg",
+        "biomass_LHV_kWh_per_kg",
+        "biomass_origin",
+        "water_ground_permit_file",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "nonempty_cells_by_field": {
+        "timestamp_Asia_Shanghai": 0,
+        "interval_minutes": 0,
+        "available_heat_kW": 0,
+        "source_temp_C": 0,
+        "availability_fraction": 0,
+        "outage_flag": 0,
+        "maintenance_flag": 0,
+        "biomass_stock_kg": 0,
+        "biomass_delivery_kg": 0,
+        "biomass_LHV_kWh_per_kg": 0,
+        "biomass_origin": 0,
+        "water_ground_permit_file": 0,
+        "source_url_or_file": 0,
+        "evidence_date": 0,
+        "uncertainty_lower": 0,
+        "uncertainty_upper": 0
+      }
+    },
+    {
+      "file": "storage_parameters_to_fill.csv",
+      "rows": 6,
+      "field_count": 12,
+      "data_fields": [
+        "verified_capacity_kWh",
+        "charge_power_kW",
+        "discharge_power_kW",
+        "efficiency_measured",
+        "soil_test_file",
+        "capex_quote_CNY_per_kWh",
+        "source_url_or_file"
+      ],
+      "nonempty_cells_by_field": {
+        "verified_capacity_kWh": 0,
+        "charge_power_kW": 0,
+        "discharge_power_kW": 0,
+        "efficiency_measured": 0,
+        "soil_test_file": 0,
+        "capex_quote_CNY_per_kWh": 0,
+        "source_url_or_file": 0
+      }
+    },
+    {
+      "file": "tariff_months_to_fill.csv",
+      "rows": 21,
+      "field_count": 15,
+      "data_fields": [
+        "voltage_class",
+        "sharp_CNY_per_kWh",
+        "peak_CNY_per_kWh",
+        "flat_CNY_per_kWh",
+        "valley_CNY_per_kWh",
+        "capacity_fee_CNY_per_kVA_month",
+        "demand_fee_CNY_per_kW_month",
+        "valid_from",
+        "valid_until",
+        "source_url"
+      ],
+      "nonempty_cells_by_field": {
+        "voltage_class": 0,
+        "sharp_CNY_per_kWh": 0,
+        "peak_CNY_per_kWh": 0,
+        "flat_CNY_per_kWh": 0,
+        "valley_CNY_per_kWh": 0,
+        "capacity_fee_CNY_per_kVA_month": 0,
+        "demand_fee_CNY_per_kW_month": 0,
+        "valid_from": 0,
+        "valid_until": 0,
+        "source_url": 0
+      }
+    }
+  ],
+  "optimization_run": false,
+  "source_authenticity_for_all_assets_certified": false,
+  "original_package_modified": false
+}

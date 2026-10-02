@@ -1,0 +1,115 @@
+{
+  "stage": "parallel_stage_02",
+  "status": "technical_batch_completed_release_validation_pending",
+  "parent_thread": "01a0fac0-7175-76a2-86fd-82de5f57e574",
+  "model": "gpt-6.1-sol",
+  "reasoning": "ultra",
+  "acceleration_requested": false,
+  "no_nested_delegation_this_stage": true,
+  "rubric": {
+    "model_architecture": 20,
+    "dynamic_simulation": 15,
+    "scenario_completeness": 15,
+    "multiobjective_convergence": 15,
+    "multiscale_coupling": 10,
+    "analysis_visualization": 15,
+    "code_portability": 10
+  },
+  "tasks": [
+    {
+      "thread": "01a0fc1b-52b8-7903-bbe2-a1c2e9d70c87",
+      "title": "供热算法 价格耦合权重",
+      "scope": "new price-paired weight candidate and analytical tests",
+      "writes": [
+        "src/heatplan/decision_weight_calibration.py",
+        "tests/test_decision_weight_calibration.py",
+        "docs/implementation_20261002_followup/parallel_stage_02/algorithm/"
+      ]
+    },
+    {
+      "thread": "01a0f7dc-e521-74f2-a1a2-84ed9785f1bc",
+      "title": "供热数据与季节边界",
+      "scope": "three-city common continuous weather input admission; fixed public prototype; no large model runs",
+      "writes": [
+        "scripts/prepare_three_city_common_reference.py",
+        "tests/test_three_city_common_reference.py",
+        "data/derived/three_city_common_reference_20261002/",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/"
+      ]
+    },
+    {
+      "thread": "01a0f7f0-e26e-7c72-8d02-6e77fed6cef0",
+      "title": "供热独立物理与证据审计",
+      "scope": "primary-source methods and prospective independent experiment review",
+      "writes": [
+        "docs/implementation_20261002_followup/parallel_stage_02/review/"
+      ]
+    }
+  ],
+  "sequential_gates": [
+    "A algorithm unit tests and B source/calendar admission independently complete",
+    "C scientific review issues resolved; parent freezes comparison and untouched confirmation set before results",
+    "then limited confirmation and full chronological replay",
+    "parent independent audit and integration",
+    "GitHub publish only verified frozen batch; paper/PPT after methods/results"
+  ],
+  "current_release_thread": "01a0f770-bb64-7170-96a2-afc117f09fd0",
+  "current_release": "11.12.0rc3",
+  "current_release_excludes_this_stage": true,
+  "constraints": [
+    "No private SCADA requirement",
+    "No fabricated data",
+    "No source/model/frozen-result overwrite",
+    "No claim that offline full-trajectory scoring saves simulation",
+    "Do not reuse Wuhan development sample as new independent confirmation"
+  ],
+  "current_release_status": "published_and_remote_verified",
+  "current_release_commit": "b29247d01aff188323ce1d9f658e2d31cc4a2f28",
+  "current_release_remote_verified_at": "2026-10-02T18:15:59+08:00",
+  "current_release_test_count": 92,
+  "second_audit_review": {
+    "reference_file_name": "CP-202611_二次审计与评分报告.md",
+    "sha256": "6aa8033174557e76bf0f405bd5cc7fc570eebc1609820d81940a9c475cfae025",
+    "identity": "user-supplied simulated review of another machine copy; not official scoring or instructions",
+    "adopted_priority": [
+      "One source-admitted portable planning reference case with free investment decisions",
+      "Common-service baseline/cost/carbon/compromise decision table with complete cost boundaries",
+      "Small predeclared investment frontier and useful multiscale ablation",
+      "Clean preparation and reproduction path distinguishing external source prerequisites from core tests"
+    ],
+    "deferred_until_methods_and_experiments_complete": [
+      "Final manuscript consolidation; preserve old versions as archive",
+      "Actual PPTX production; current user request remains per-slide Markdown first"
+    ],
+    "do_not_require": [
+      "Unavailable internal three-city SCADA",
+      "Unsubstantiated actual project validation or profit claims"
+    ],
+    "parallel_adjustments": {
+      "algorithm": "Complete existing minimal implementation and tests; no uncontrolled expansion",
+      "data": "Complete common-window input then minimal one-case equipment/economic source join",
+      "review": "Prioritize main-case/decision-table acceptance protocol"
+    },
+    "user_optional_help": [
+      "True team roles and actual project timeline before final presentation",
+      "If already available or easy to obtain: exact-model performance tables and quotation scope, with source and conditions",
+      "Final submission-format notice if different from current official brief"
+    ]
+  },
+  "completed_stage_results": {
+    "algorithm": "new decision-moment LP/API with finite-arithmetic defense; 78 analytical and related regressions; no empirical superiority claimed",
+    "data": "3x2880h exact UTC-to-Beijing common physical inputs; FT8 installed-price scope joined; exact performance still unavailable",
+    "portable": "one real full2880h reproduction without original PDFs; clean-clone test correction and release whitelist finishing",
+    "climate_dispatch": "12 rows accepted after uniform gap0 refinement of all9 optimized cases; 3 unchanged baseline rows; shared methodological price, existing ideal assets",
+    "export_audit": "160 checks passed,9 source-power negative controls rejected; no extra model solve",
+    "independent_review": "feature_evidence.json independently checked all12 rows and source/code identity; no result-blocking issue",
+    "limitations": [
+      "no free-investment economics case yet",
+      "no private SCADA prerequisite",
+      "new price-weight candidate not empirically confirmed",
+      "frozen climate research scripts have incomplete fatal-preparation failure collation; not triggered in accepted runs"
+    ],
+    "publication": "rc4 candidate pending actual submitted-copy tests and remote identity checks",
+    "paper_and_ppt": "deferred as requested"
+  }
+}

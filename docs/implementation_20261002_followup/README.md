@@ -58,6 +58,21 @@ python -m pytest -q -k 'not test_approval_and_first_round_entire_tree_unchanged 
 
 新求解属性、3组完整季示例、192条历史旁表、读取失败清单及中文决策表见[结果属性交付](solution_quality/README.md)。原源码冻结身份见[release_source_freeze.json](release_source_freeze.json)；远端SHA、tag及发布副本测试以GitHub发布登记为准。
 
+## 三城模型特色与便携复现新增结果
+
+本轮已完成三城各2880小时、同原型同方法学价格的连续运行对照，保留每城反馈基准、费用端点、碳端点和中点碳帽解。把两端之间额外碳排空间减半，仍保留80.9%–89.4%的最大电量费节省，能够具体展示建筑热惯性与费用—碳约束的联动作用。峰值功率随费用优化升高亦同步报告；不将共同湖北参考价称为三城当地账单。
+
+- [官方七项评分对应特色、数值结果与尚待补强项](../source_intake_20261002/planning_user_update/THREE_CITY_DECISIONS.md)。
+- [12行决策表](parallel_stage_02/climate_dispatch_analysis_02/decision_table.csv)、[三城费用碳图](parallel_stage_02/climate_dispatch_analysis_02/cost_carbon_tradeoff.png)、[160项导出复核及9份源出力篡改反例](parallel_stage_02/climate_dispatch_export_audit_02.json)。
+- [独立审查的四项特色证据](parallel_stage_02/review/feature_evidence.json)，将机制试验、公开原型调度与真实工程证据分别标识。
+- [价格配对权重候选](parallel_stage_02/algorithm/handoff.json)及[三城连续输入](parallel_stage_02/data/manifest.json)已经实现；新权重尚未做城市效果确认，未据此声称策略优于旧法。
+- [便携数值复现入口](../../scripts/reproduce_admitted_reference.py)默认只接受原审核锁定的处理后输入；原件重查为单独strict模式。已在没有原件PDF的隔离输入根完成一次真实2880h求解和导出复核，不以缺少原电脑附件阻断数值复算。
+- [设备采购与性能字段连接表](parallel_stage_02/data/main_case_source_join.json)：成套含税报价与安装范围已找到原盖章合同；同型号低温性能、末端/备源和未定费用仍逐项记录。该输入缺口不阻止上述公开原型运行成果交付，但还不能产出完整经济依据的自由投资主案例。
+
+收敛复核保留首轮1e-4 gap结果，九个优化案例另版统一请求gap0，每阶段60秒；三城共12行均通过，15个求解阶段正常收敛。该调整发生在发现原乌鲁木齐主目标容差问题之后，明确是数值改进，非新的盲测。原冻结研究脚本若城市准备/反馈基准失败会中断且不生成统一最终失败清单，此局限未触发本轮已通过样本；后续通用入口应改善失败归档，当前原脚本与实验身份保持不变。
+
+新增内容在原工程已完成，上传状态以相应GitHub候选版本交接记录为准。仍按用户要求暂不制作最终论文/PPT。
+
 ## 发布后的代表日运行诊断
 
 在原工程完成了武汉公开原型的有限温控策略确认：8条策略分别连续回放2880小时，以固定8个真实代表日比较3种权重和4档预算，保留96条候选及12组选择。本轮新增脚本和证据归属11.12.0rc3研究候选增量；发布状态与实际副本验收以[rc3交接记录](../github_release_11.12.0rc3/README.md)为准，未重跑上述整套历史回归。

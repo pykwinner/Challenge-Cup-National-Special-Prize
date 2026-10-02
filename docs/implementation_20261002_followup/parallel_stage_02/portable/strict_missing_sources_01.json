@@ -1,0 +1,588 @@
+{
+  "passed": false,
+  "input_root": "\\\\?\\D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\implementation_20261002_followup\\parallel_stage_02\\portable\\pytest_small_02\\portable_bundle0\\inputs",
+  "mode": "original_hash_verification",
+  "original_source_hashes_verified_this_run": false,
+  "original_content_review_repeated": false,
+  "source_review_inherited": true,
+  "source_statement": "原始来源沿用既有审核，本次没有重新核验全部原件",
+  "network_download_performed": false,
+  "checks": [
+    {
+      "path": "configs/evidence_case_20261002/wuhan_bestest600_steady.yaml",
+      "expected_sha256": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "configs/evidence_case_20261002/wuhan_bestest600_rc.yaml",
+      "expected_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly.csv",
+      "expected_sha256": "dcf861aed4914bc873086b27c9d0fe6b59e0bd77c49bd5350f0b1ed079e3b5b2",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/field_provenance.csv",
+      "expected_sha256": "d8bd5e88d3cc356dfe7d47ff1a4d667d1a7de0123d74ec00a0ae70b280aea7b7",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/derivation.json",
+      "expected_sha256": "7cc4dc53504f4a8cf2411c3527b4864f808acccd130c4d00707cf21270b46194",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "scripts/prepare_evidence_case_20261002.py",
+      "expected_sha256": "66d5f805228d89b0948b4baa57458a05ceed5960bd16490a7a51916570ccd3b9",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/bestest_6231.pdf",
+      "expected_sha256": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "BESTEST",
+      "source_identity": "1995 NREL/TP-472-6231, prescribed reference prototype",
+      "acquisition_url": "https://www.iea-ebc.org/Data/publications/EBC_Annex_21_BESTEST.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf",
+      "expected_sha256": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "PRICE",
+      "source_identity": "2021 historical schedule, appendix 2 PDF p6; residential combined-meter <1kV class",
+      "acquisition_url": "https://fgw.hubei.gov.cn/fbjd/zc/gfwj/gf/202110/P020211025720835003479.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json",
+      "expected_sha256": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "NASA",
+      "source_identity": "NASA POWER gridded MERRA2/SYN1DEG product, UTC hourly; not station measurement",
+      "acquisition_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&latitude=30.5928&longitude=114.3055&start=20241009&end=20250416&format=JSON&time-standard=UTC",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_weather_receipt.json",
+      "expected_sha256": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf",
+      "expected_sha256": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "GRID",
+      "source_identity": "2023 Hubei province annual-average electricity CO2 factor, table 3; reference applied to 2024/25",
+      "acquisition_url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/W020251231726284332528.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html",
+      "expected_sha256": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "WINDOW",
+      "source_identity": "Wuhan government news, 2024-11-17: Wuchang and surrounding district 11/16 to 3/15; borrowed experiment window, not citywide statutory season",
+      "acquisition_url": "https://www.wuhan.gov.cn/sy/whyw/202411/t20241117_2485509.shtml",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/admission.json",
+      "expected_sha256": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "actual_sha256": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+      "status": "sha256_match"
+    },
+    {
+      "path": "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+      "expected_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "actual_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "status": "sha256_match"
+    },
+    {
+      "path": "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+      "expected_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "actual_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "status": "sha256_match"
+    },
+    {
+      "path": "docs/implementation_20261002/data/field_provenance_tou.csv",
+      "expected_sha256": "16f8f749f3c1c6354d22a9f2fbeece3da170a9c1d90ecfa9508ac38a4e108474",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "actual_sha256": "16f8f749f3c1c6354d22a9f2fbeece3da170a9c1d90ecfa9508ac38a4e108474",
+      "status": "sha256_match"
+    },
+    {
+      "path": "docs/implementation_20261002/data/monthly_tariff_verified.csv",
+      "expected_sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "actual_sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "status": "sha256_match"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_account_and_hours.json",
+      "expected_sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "actual_sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "status": "sha256_match"
+    },
+    {
+      "path": "docs/implementation_20261002/data/prepare_tou.py",
+      "expected_sha256": "bebafd08b4057a79c17e62ad07085acd6a091671cad622f9b960c43d8aee68c8",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_11.pdf",
+      "expected_sha256": "9fa81bc3be47c1917fbd0e0f6cac1bf1dfb5edc47559f155b9b82e97611f8b33",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "TOU_NOV",
+      "source_identity": "2024-11, PDF p1, single-part industrial/commercial <1kV row and footnotes 1-3; government repost of State Grid notice",
+      "acquisition_url": "http://www.yingcheng.gov.cn/u/cms/yingcheng/202410/29154032ntk8.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_12.pdf",
+      "expected_sha256": "74161836e189120f1f86c33f38010fc01a4e6e7e3706dfc55b07a6bf5a48163a",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "TOU_DEC",
+      "source_identity": "2024-12, PDF p1, same row and footnotes; government repost of State Grid notice",
+      "acquisition_url": "http://www.yingcheng.gov.cn/u/cms/yingcheng/202412/04105911f9b9.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2025_months.pdf",
+      "expected_sha256": "efccc95604a44d0871a82d2315e3b30ff3c9f2aa4b7c2d5d29efd187294b632d",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "TOU_2025",
+      "source_identity": "State Grid Hubei official 2025 combined notice: Jan p12, Feb p11, Mar p10; same row and footnotes; document order is reversed",
+      "acquisition_url": "http://www.hb.sgcc.com.cn/html/files/2026-03/06/20260306144020453109213.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_tou_policy_77_2024.pdf",
+      "expected_sha256": "086aea2d5388ed5fb18cbfb8a7c2ef362c66896c43027681d8a6a8347856edc4",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "POLICY77",
+      "source_identity": "Stamped original E-fagai-jiaguan [2024]77 government repost: PDF p2 scope/hours/coefficients, p3 effective 2024-05-01",
+      "acquisition_url": "https://www.liangzh.gov.cn/lzhxxgk/xxgkml/ggqsydwxxgk/sdq/202508/P020250825377454860287.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_single_two_part_policy_163_2023.pdf",
+      "expected_sha256": "40cf12a479b73eec03940773caf2fb7d8834481214075af1ada0a6f304f16182",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "POLICY163",
+      "source_identity": "Stamped original E-fagai-jiaguan [2023]163 government repost: PDF p2 clause4 single/two-part account scope and minimum 12-month selection period",
+      "acquisition_url": "https://www.liangzh.gov.cn/lzhxxgk/xxgkml/ggqsydwxxgk/sdq/202508/P020250825378015593092.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    }
+  ],
+  "failed_files": [
+    {
+      "path": "configs/evidence_case_20261002/wuhan_bestest600_steady.yaml",
+      "expected_sha256": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "configs/evidence_case_20261002/wuhan_bestest600_rc.yaml",
+      "expected_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly.csv",
+      "expected_sha256": "dcf861aed4914bc873086b27c9d0fe6b59e0bd77c49bd5350f0b1ed079e3b5b2",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/field_provenance.csv",
+      "expected_sha256": "d8bd5e88d3cc356dfe7d47ff1a4d667d1a7de0123d74ec00a0ae70b280aea7b7",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/derivation.json",
+      "expected_sha256": "7cc4dc53504f4a8cf2411c3527b4864f808acccd130c4d00707cf21270b46194",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "scripts/prepare_evidence_case_20261002.py",
+      "expected_sha256": "66d5f805228d89b0948b4baa57458a05ceed5960bd16490a7a51916570ccd3b9",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/bestest_6231.pdf",
+      "expected_sha256": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "BESTEST",
+      "source_identity": "1995 NREL/TP-472-6231, prescribed reference prototype",
+      "acquisition_url": "https://www.iea-ebc.org/Data/publications/EBC_Annex_21_BESTEST.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf",
+      "expected_sha256": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "PRICE",
+      "source_identity": "2021 historical schedule, appendix 2 PDF p6; residential combined-meter <1kV class",
+      "acquisition_url": "https://fgw.hubei.gov.cn/fbjd/zc/gfwj/gf/202110/P020211025720835003479.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json",
+      "expected_sha256": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "NASA",
+      "source_identity": "NASA POWER gridded MERRA2/SYN1DEG product, UTC hourly; not station measurement",
+      "acquisition_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&latitude=30.5928&longitude=114.3055&start=20241009&end=20250416&format=JSON&time-standard=UTC",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_weather_receipt.json",
+      "expected_sha256": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf",
+      "expected_sha256": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "GRID",
+      "source_identity": "2023 Hubei province annual-average electricity CO2 factor, table 3; reference applied to 2024/25",
+      "acquisition_url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/W020251231726284332528.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html",
+      "expected_sha256": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "WINDOW",
+      "source_identity": "Wuhan government news, 2024-11-17: Wuchang and surrounding district 11/16 to 3/15; borrowed experiment window, not citywide statutory season",
+      "acquisition_url": "https://www.wuhan.gov.cn/sy/whyw/202411/t20241117_2485509.shtml",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/prepare_tou.py",
+      "expected_sha256": "bebafd08b4057a79c17e62ad07085acd6a091671cad622f9b960c43d8aee68c8",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": null,
+      "source_identity": null,
+      "acquisition_url": null,
+      "acquisition_hint": "从相同版本工程取得该登记文件；本入口不以新文件替代既有准入",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_11.pdf",
+      "expected_sha256": "9fa81bc3be47c1917fbd0e0f6cac1bf1dfb5edc47559f155b9b82e97611f8b33",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "TOU_NOV",
+      "source_identity": "2024-11, PDF p1, single-part industrial/commercial <1kV row and footnotes 1-3; government repost of State Grid notice",
+      "acquisition_url": "http://www.yingcheng.gov.cn/u/cms/yingcheng/202410/29154032ntk8.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_12.pdf",
+      "expected_sha256": "74161836e189120f1f86c33f38010fc01a4e6e7e3706dfc55b07a6bf5a48163a",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "TOU_DEC",
+      "source_identity": "2024-12, PDF p1, same row and footnotes; government repost of State Grid notice",
+      "acquisition_url": "http://www.yingcheng.gov.cn/u/cms/yingcheng/202412/04105911f9b9.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2025_months.pdf",
+      "expected_sha256": "efccc95604a44d0871a82d2315e3b30ff3c9f2aa4b7c2d5d29efd187294b632d",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "TOU_2025",
+      "source_identity": "State Grid Hubei official 2025 combined notice: Jan p12, Feb p11, Mar p10; same row and footnotes; document order is reversed",
+      "acquisition_url": "http://www.hb.sgcc.com.cn/html/files/2026-03/06/20260306144020453109213.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_tou_policy_77_2024.pdf",
+      "expected_sha256": "086aea2d5388ed5fb18cbfb8a7c2ef362c66896c43027681d8a6a8347856edc4",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "POLICY77",
+      "source_identity": "Stamped original E-fagai-jiaguan [2024]77 government repost: PDF p2 scope/hours/coefficients, p3 effective 2024-05-01",
+      "acquisition_url": "https://www.liangzh.gov.cn/lzhxxgk/xxgkml/ggqsydwxxgk/sdq/202508/P020250825377454860287.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_single_two_part_policy_163_2023.pdf",
+      "expected_sha256": "40cf12a479b73eec03940773caf2fb7d8834481214075af1ada0a6f304f16182",
+      "required_this_run": true,
+      "checked_this_run": true,
+      "source_id": "POLICY163",
+      "source_identity": "Stamped original E-fagai-jiaguan [2023]163 government repost: PDF p2 clause4 single/two-part account scope and minimum 12-month selection period",
+      "acquisition_url": "https://www.liangzh.gov.cn/lzhxxgk/xxgkml/ggqsydwxxgk/sdq/202508/P020250825378015593092.pdf",
+      "acquisition_hint": "沿用登记来源获取相同版本并核对SHA；本入口不下载或重新生成原件",
+      "status": "missing"
+    }
+  ],
+  "admission_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+  "case_id": "BESTEST600_derived_Wuhan_weather_2024_2025_conditional_industrial_TOU_reference",
+  "admission_scope": "These exact hashes only: unchanged public thermal prototype under a conditional policy-eligible industrial account's published monthly TOU energy charges. Not a real account/building/device, grid design, BESTEST certification or life-cycle economic result.",
+  "economic_scope": "2880-hour reference operating electricity energy charges and fixed-factor emissions only; no observed account settlement, capacity/demand fee, power-factor adjustment, CAPEX/OM/life/discounted cash-flow/frontier claim",
+  "excluded_economic_fields": [
+    "CAPEX",
+    "installation",
+    "fixed_OM",
+    "variable_OM",
+    "equipment_lifetime",
+    "discounted cash flow",
+    "heat revenue",
+    "subsidy",
+    "payback",
+    "actual tariff eligibility",
+    "actual account settlement",
+    "power factor and reactive adjustment",
+    "connection design and contracted capacity"
+  ],
+  "full_economics_admitted": false,
+  "account_eligibility_verified": false,
+  "grid_connection_feasibility_verified": false,
+  "external_building_validation_passed": false,
+  "registered_original_review_claims": {
+    "base_admission_preserved": true,
+    "exact_original_hashes": true,
+    "all_five_months_original_page_reviewed": true,
+    "physical_config_byte_identical_to_base": true,
+    "all_non_price_base_columns_preserved": true,
+    "exact_local_hour_rate_mapping": true,
+    "no_missing_month_fallback": true,
+    "fees_not_added_twice": true,
+    "core_input_validation": true,
+    "full_solver_run": "owned by integration runner; record code/input freeze independently"
+  },
+  "registered_claims_are_inherited_not_current_verification": true,
+  "source_registry": {
+    "BESTEST": {
+      "path": "docs/implementation_20261002/data/evidence/bestest_6231.pdf",
+      "url": "https://www.iea-ebc.org/Data/publications/EBC_Annex_21_BESTEST.pdf",
+      "identity": "1995 NREL/TP-472-6231, prescribed reference prototype",
+      "locators": "PDF p34/36/39/41/48/49/50/53; printed 1-3/1-5/1-8/1-10/1-17/1-18/1-19/1-22"
+    },
+    "NASA": {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json",
+      "url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&latitude=30.5928&longitude=114.3055&start=20241009&end=20250416&format=JSON&time-standard=UTC",
+      "identity": "NASA POWER gridded MERRA2/SYN1DEG product, UTC hourly; not station measurement"
+    },
+    "PRICE": {
+      "path": "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf",
+      "url": "https://fgw.hubei.gov.cn/fbjd/zc/gfwj/gf/202110/P020211025720835003479.pdf",
+      "identity": "2021 historical schedule, appendix 2 PDF p6; residential combined-meter <1kV class"
+    },
+    "GRID": {
+      "path": "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf",
+      "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/W020251231726284332528.pdf",
+      "identity": "2023 Hubei province annual-average electricity CO2 factor, table 3; reference applied to 2024/25"
+    },
+    "WINDOW": {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html",
+      "url": "https://www.wuhan.gov.cn/sy/whyw/202411/t20241117_2485509.shtml",
+      "identity": "Wuhan government news, 2024-11-17: Wuchang and surrounding district 11/16 to 3/15; borrowed experiment window, not citywide statutory season"
+    },
+    "PROTOCOL": {
+      "identity": "Explicit model boundary/derived convention; not measured data",
+      "url": ""
+    },
+    "TOU_NOV": {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_11.pdf",
+      "url": "http://www.yingcheng.gov.cn/u/cms/yingcheng/202410/29154032ntk8.pdf",
+      "sha256": "9fa81bc3be47c1917fbd0e0f6cac1bf1dfb5edc47559f155b9b82e97611f8b33",
+      "identity": "2024-11, PDF p1, single-part industrial/commercial <1kV row and footnotes 1-3; government repost of State Grid notice"
+    },
+    "TOU_DEC": {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_12.pdf",
+      "url": "http://www.yingcheng.gov.cn/u/cms/yingcheng/202412/04105911f9b9.pdf",
+      "sha256": "74161836e189120f1f86c33f38010fc01a4e6e7e3706dfc55b07a6bf5a48163a",
+      "identity": "2024-12, PDF p1, same row and footnotes; government repost of State Grid notice"
+    },
+    "TOU_2025": {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2025_months.pdf",
+      "url": "http://www.hb.sgcc.com.cn/html/files/2026-03/06/20260306144020453109213.pdf",
+      "sha256": "efccc95604a44d0871a82d2315e3b30ff3c9f2aa4b7c2d5d29efd187294b632d",
+      "identity": "State Grid Hubei official 2025 combined notice: Jan p12, Feb p11, Mar p10; same row and footnotes; document order is reversed"
+    },
+    "POLICY77": {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_tou_policy_77_2024.pdf",
+      "url": "https://www.liangzh.gov.cn/lzhxxgk/xxgkml/ggqsydwxxgk/sdq/202508/P020250825377454860287.pdf",
+      "sha256": "086aea2d5388ed5fb18cbfb8a7c2ef362c66896c43027681d8a6a8347856edc4",
+      "identity": "Stamped original E-fagai-jiaguan [2024]77 government repost: PDF p2 scope/hours/coefficients, p3 effective 2024-05-01"
+    },
+    "POLICY163": {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_single_two_part_policy_163_2023.pdf",
+      "url": "https://www.liangzh.gov.cn/lzhxxgk/xxgkml/ggqsydwxxgk/sdq/202508/P020250825378015593092.pdf",
+      "sha256": "40cf12a479b73eec03940773caf2fb7d8834481214075af1ada0a6f304f16182",
+      "identity": "Stamped original E-fagai-jiaguan [2023]163 government repost: PDF p2 clause4 single/two-part account scope and minimum 12-month selection period"
+    }
+  },
+  "processed_input_paths": {
+    "rc_config": "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+    "timeseries": "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+    "field_provenance": "docs/implementation_20261002/data/field_provenance_tou.csv",
+    "monthly_tariff": "docs/implementation_20261002/data/monthly_tariff_verified.csv",
+    "tariff_rules": "docs/implementation_20261002/data/tou_account_and_hours.json",
+    "base_admission": "docs/implementation_20261002/data/admission.json"
+  }
+}

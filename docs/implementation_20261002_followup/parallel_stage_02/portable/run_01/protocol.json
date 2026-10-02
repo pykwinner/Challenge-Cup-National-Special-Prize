@@ -1,0 +1,45 @@
+{
+  "frozen_utc": "2026-10-02T10:38:41.620045+00:00",
+  "name": "公开原型数值复现",
+  "case_id": "BESTEST600_derived_Wuhan_weather_2024_2025_conditional_industrial_TOU_reference",
+  "source_statement": "原始来源沿用既有审核，本次没有重新核验全部原件",
+  "admission_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+  "chronology": {
+    "passed": true,
+    "start_inclusive": "2024-11-16T00:00:00+08:00",
+    "end_exclusive": "2025-03-16T00:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "hours": 2880,
+    "identity": "borrowed Wuchang/surrounding-area 2024 government-news service window; not citywide law",
+    "interval_convention": "[timestamp,timestamp+1h)",
+    "unique_ordered_hour_sequence_checked": true,
+    "unit_weights_checked": true
+  },
+  "code_sha256": {
+    "src\\heatplan\\model.py": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+    "src\\heatplan\\physical_extensions.py": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+    "src\\heatplan\\solution_quality.py": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+    "src\\heatplan\\linear.py": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+    "src\\heatplan\\io.py": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+    "src\\heatplan\\policy_alignment.py": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+    "src\\heatplan\\building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src\\heatplan\\building_audit.py": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+    "src\\heatplan\\chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+    "src\\heatplan\\experiments.py": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+    "src\\heatplan\\accounting.py": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+    "scripts\\run_evidence_case_experiments.py": "ccb81b5a8d0eb348bcd5aa1216d745614988fa3bedc926e1e2ba0cd93532a26c",
+    "scripts/reproduce_admitted_reference.py": "6de45833472b05afb3b5f1501443f4c87cbc8cfdcf4affd69b35fc524786da97"
+  },
+  "check_only": false,
+  "experiments": [
+    "baseline_complete_2880h_existing_assets"
+  ],
+  "solver_time_limit_seconds": 120.0,
+  "solver_gap_target": 0.0001,
+  "free_investment_case": false,
+  "full_economics_admitted": false,
+  "algorithm_advantage_claimed": false,
+  "empirical_or_engineering_case_claimed": false,
+  "storage_SOC_applicable": false,
+  "source_download_required_for_default": false
+}

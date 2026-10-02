@@ -1,0 +1,140 @@
+{
+  "name": "公开原型数值复现",
+  "case_id": "BESTEST600_derived_Wuhan_weather_2024_2025_conditional_industrial_TOU_reference",
+  "hours": 2880,
+  "source_statement": "原始来源沿用既有审核，本次没有重新核验全部原件",
+  "metrics_for_this_2880h_window": {
+    "electricity_kwh": 3176.9210947874917,
+    "electricity_energy_charge_yuan": 2265.428715014252,
+    "fixed_factor_reference_carbon_kg": 1284.7468907320613,
+    "heat_delivered_kwh": 3176.9210947874917,
+    "cooling_delivered_kwh": 0.0,
+    "min_temperature_c": 20.0,
+    "max_temperature_c": 27.000000000000004
+  },
+  "numerical_audit_passed": true,
+  "solver_status": 0,
+  "solver_gap": 0.0,
+  "solution_quality": {
+    "schema_version": "heatplan.solution_quality.v1",
+    "quality": "solver_proven_optimal_within_registered_tolerance",
+    "scope": {
+      "investment_scope": "existing_assets_dispatch",
+      "free_investment_variables": 0,
+      "investment_variables_including_fixed": 0,
+      "fixed_plan_marker_present": false,
+      "scope_evidence": "actual_built_investment_variable_bounds",
+      "joint_investment_decisions_present": false
+    },
+    "feasible_incumbent_audited": true,
+    "fixed_or_existing_assets_feasible_operation": true,
+    "optimality_scope": "existing_assets_dispatch",
+    "model_scope": "supplied finite LP/MILP and registered solver tolerances only",
+    "solver_stages": [
+      {
+        "solver_status": 0.0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_mode": "total_cost",
+        "objective_value": 2265.428715014251,
+        "mip_dual_bound": 2265.428715014251,
+        "mip_gap": 0.0,
+        "mip_node_count": 1.0,
+        "solver_elapsed_seconds": 1.1734350000042468,
+        "solver_requested_mip_gap": 0.0001,
+        "solver_time_limit_seconds": 120.0,
+        "solver_integer_variables": 2880.0,
+        "solver_objective_constant": 0.0,
+        "numerical_audit_passed": true,
+        "numerical_objective_checked": true,
+        "numerical_solution_finite": true,
+        "stage_id": "single",
+        "quality": "solver_proven_optimal_within_registered_tolerance",
+        "feasible_incumbent_audited": true,
+        "optimality_proven_within_solver_tolerance": true,
+        "objective_unit": "yuan_model_objective",
+        "objective_sense": "minimize",
+        "reasons": [
+          "solver optimal termination and reported relative gap within recorded target or closed reported gap"
+        ],
+        "objective_interval": {
+          "lower": 2265.428715014251,
+          "upper": 2265.428715014251,
+          "unit": "yuan_model_objective",
+          "objective_mode": "total_cost",
+          "expression": "this stage's solver linear objective, excluding separately reported constant",
+          "status": "solver_bound_and_feasible_incumbent",
+          "solver_tolerance_limited": true,
+          "not_a_KPI_perturbation_interval": true
+        }
+      }
+    ],
+    "lexicographic_claim": "not_applicable",
+    "strict_global_lexicographic_optimum_claimed": false,
+    "primary_incumbent_anchor": null,
+    "primary_objective_allowance": null,
+    "cash_cost_KPI_interval": {
+      "status": "not_separately_solved",
+      "lower": null,
+      "upper": null
+    },
+    "carbon_KPI_interval": {
+      "status": "not_separately_solved",
+      "lower": null,
+      "upper": null
+    },
+    "KPI_gap_scaling_performed": false,
+    "engineering_or_empirical_validation_claimed": false,
+    "limitations": [
+      "A solver certificate covers this stage objective and feasible region only.",
+      "Fixed-investment dispatch optimality does not prove the joint investment plan optimal.",
+      "Relative MIP gap cannot be multiplied by cash cost, carbon, CAPEX or another KPI to invent an interval.",
+      "Two-stage incumbent allowances and solver tolerances are not a strict exact global lexicographic proof."
+    ]
+  },
+  "actual_solver_scope": {
+    "investment_scope": "existing_assets_dispatch",
+    "free_investment_variables": 0,
+    "investment_variables_including_fixed": 0,
+    "fixed_plan_marker_present": false,
+    "scope_evidence": "actual_built_investment_variable_bounds",
+    "joint_investment_decisions_present": false
+  },
+  "economic_scope": "2880-hour reference operating electricity energy charges and fixed-factor emissions only; no observed account settlement, capacity/demand fee, power-factor adjustment, CAPEX/OM/life/discounted cash-flow/frontier claim",
+  "excluded_financial_quantities": {
+    "CAPEX": {
+      "value": null,
+      "status": "not_admitted_not_evaluated"
+    },
+    "installation": {
+      "value": null,
+      "status": "not_admitted_not_evaluated"
+    },
+    "fixed_OM": {
+      "value": null,
+      "status": "not_admitted_not_evaluated"
+    },
+    "variable_OM": {
+      "value": null,
+      "status": "not_admitted_not_evaluated"
+    },
+    "lifetime_cash_flow": {
+      "value": null,
+      "status": "not_admitted_not_evaluated"
+    },
+    "net_benefit": {
+      "value": null,
+      "status": "not_admitted_not_evaluated"
+    },
+    "payback": {
+      "value": null,
+      "status": "not_admitted_not_evaluated"
+    }
+  },
+  "raw_model_summary_notice": "model_summary_raw.json保留求解器账本；禁用投资/OM等构造系数中的0不代表真实费用缺失项为0或收益证明",
+  "storage_SOC": null,
+  "storage_SOC_reason": "locked reference has no storage",
+  "investment_improvement_claimed": false,
+  "algorithm_advantage_claimed": false,
+  "external_building_validation_passed": false,
+  "full_economics_admitted": false
+}

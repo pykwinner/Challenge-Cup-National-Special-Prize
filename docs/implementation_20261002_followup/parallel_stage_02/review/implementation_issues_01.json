@@ -1,0 +1,108 @@
+{
+  "date_local": "2026-10-02",
+  "review_type": "read_only_static_source_and_protocol_review",
+  "reviewed_candidate": {
+    "path": "src/heatplan/decision_weight_calibration.py",
+    "sha256": "bed0d90e65061dd29ed3d706fdd46d96aeeebdd5b0bac2ccb55411b6721677df",
+    "line_count": 274,
+    "candidate_code_executed_by_reviewer": false,
+    "confirmation_executed_by_reviewer": false,
+    "scope": "source snapshot inspected; later source revisions require separate disposition"
+  },
+  "correctly_implemented_in_snapshot": [
+    "Fixed actual source row indices preserve paired reference and tariff arrays",
+    "Thermal-reference price product is labelled proxy units, not actual policy bill",
+    "Hard day mass and reference energy plus explicit native-unit moment bands",
+    "L1 weight displacement objective and visible nonuniqueness",
+    "Original-unit raw-product residual checks separate from LP epigraph rows",
+    "Infeasibility returns no weights and row envelopes are explicitly only necessary",
+    "Explicit calendar/provenance admission responsibility of caller",
+    "No dispatch, dynamic-feasibility or out-of-sample claim"
+  ],
+  "issues": [
+    {
+      "id": "PS02-NUM-01",
+      "priority": 2,
+      "status": "open_static_counterexample_not_executed",
+      "type": "implementation_validation",
+      "rubric": ["S1", "S7"],
+      "file": "src/heatplan/decision_weight_calibration.py",
+      "locations": [
+        {"start": 107, "end": 108, "function": "_scale"},
+        {"start": 119, "end": 144, "function": "_diagnostics.record"},
+        {"start": 222, "end": 227, "function": "calibrate_price_operation_weights envelopes"},
+        {"start": 237, "end": 246, "function": "scaled LP rows"}
+      ],
+      "problem": "Finite raw daily totals do not imply finite D*max(selected daily coefficient), attainable endpoints or weighted estimates. An infinite numerical scale can erase the energy equality and make an infinite residual pass via inf <= inf.",
+      "analytical_fixture": {
+        "shape": [2, 24],
+        "reference_power": "all zero except power[0,0]=1e308",
+        "prices": "all zero",
+        "dt_hours": 1,
+        "day_ids": ["synthetic-A", "synthetic-B"],
+        "selected_day_indices": [0],
+        "original_weights": [2],
+        "lower_bounds": [0],
+        "moment_absolute_tolerances": {"price_product": 0},
+        "numerical_tolerance": 1e-8,
+        "supplied_diagnostic_weights": [2],
+        "static_arithmetic": [
+          "All raw power entries, daily energies [1e308,0] and full target 1e308 pass the existing raw finite-total checks.",
+          "D*max(selected energy)=2*1e308 overflows; _scale is +Infinity.",
+          "The normalized energy row and target both become 0; only day conservation forces w=2.",
+          "Raw weighted energy estimate is +Infinity; residual and numerical allowance are both +Infinity.",
+          "The existing comparison violation <= allowance evaluates True for Infinity <= Infinity.",
+          "diagnose_decision_weights can therefore mark this supplied invalid-weight certificate passes=True; no LP invocation is needed to expose the validation path."
+        ]
+      },
+      "risk_limit": "Extreme synthetic magnitudes, not observed heating-case values. This is a finite-input validation hole, not evidence that current engineering results are wrong.",
+      "minimal_fix": [
+        "Reject nonfinite or nonpositive numerical scales before constructing constraints.",
+        "Reject nonfinite attainable endpoints, native estimates/residuals/allowances/violations and diagnostic objective before any acceptance comparison.",
+        "Independent diagnostic must fail or raise on nonfinite arithmetic, even when inputs and supplied weights are finite.",
+        "Return standard finite JSON diagnostics; do not serialize Infinity as a passing certificate."
+      ],
+      "acceptance": "Analytical direct-diagnostic fixture above rejects/fails; solver entry rejects before linprog; existing realistic and product-overflow fixtures still pass with documented statuses.",
+      "requested_gate": "Resolve or constrain/document supported magnitude domain before method freeze; parent owns feedback and integration."
+    },
+    {
+      "id": "PS02-DESIGN-01",
+      "priority": 2,
+      "status": "prospective_experiment_design",
+      "type": "causal_attribution",
+      "rubric": ["S4", "S6"],
+      "locations": [
+        {"file": "src/heatplan/decision_weight_calibration.py", "start": 198, "end": 213},
+        {"file": "src/heatplan/decision_weight_calibration.py", "start": 247, "end": 251},
+        {"file": "src/heatplan/hard_weight_calibration.py", "start": 1, "end": 16}
+      ],
+      "problem": "Existing hard method minimizes W1; new method minimizes L1 displacement while adding price/window constraints. A whole-candidate comparison cannot isolate price pairing from changed objective and other windows.",
+      "minimal_fix": "If claiming a price-pairing mechanism, predeclare an energy-only L1 control and price-only/window-only ablations on identical dates/bounds and budget. Otherwise limit claim to combined-candidate performance and do not attribute improvement to price moments alone.",
+      "scope_note": "No new solver implementation requested from reviewer; this is a parent protocol choice before confirmation."
+    },
+    {
+      "id": "PS02-PROTOCOL-01",
+      "priority": 1,
+      "status": "pending_parent_confirmation_freeze",
+      "type": "experimental_admission",
+      "rubric": ["S2", "S4", "S6", "S7"],
+      "locations": [
+        {"file": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/design.json", "field": "method_api_freeze_utc"},
+        {"file": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/design.json", "field": "development_and_validation.tolerance_selection"},
+        {"file": "src/heatplan/decision_weight_calibration.py", "start": 163, "end": 167},
+        {"file": "docs/implementation_20261002_followup/parallel_stage_02/review/FAIR_COMPARISON_PROTOCOL.json", "field": "parent_freeze_required_before_confirmation"}
+      ],
+      "problem": "Module calendar IDs and native moment bands are deliberately supplied by caller. Exact untouched window identities, time pairing, thresholds, policy/ties and end-to-end budget are not certified by the module or this review record.",
+      "minimal_fix": "Parent locks A final hashes and B admission manifests, exact masks/units/bands, unchanged policy library/service/state/budgets, deterministic weight outcome convention and all failure metrics before opening confirmation outcomes. Raw whole-window exogenous planning inputs may be used under explicit offline scope; full policy outcome targets may not be used to fit deployable weights.",
+      "acceptance": "Prospective signed/hashed parent protocol with no pending decision-sensitive fields, all exposed development and confirmation overlap declared; no silent repair of unsuccessful cases.",
+      "reason_for_priority": "Required experimental gate, not an accusation of existing leakage or a request for unavailable SCADA."
+    }
+  ],
+  "not_confirmed_as_bugs": [
+    "Zero reference is correctly valid for this L1 method because it does not normalize by mean; existing W1 comparator may separately be undefined.",
+    "Signed prices and empty/overlapping masks are explicitly supported by design; their targets/units must be retained.",
+    "L1 multiple optima are disclosed; an a priori fixed solver/row order and preserved weights can be sufficient, while post-result choosing a preferred optimum is prohibited.",
+    "Timestamp checking belongs to admitted caller; absent parsing in this numeric module is not by itself a bug.",
+    "No W1 objective/output in the new module is not a missing feature; common evaluator can measure W1 independently."
+  ]
+}

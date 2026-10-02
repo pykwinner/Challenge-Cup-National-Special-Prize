@@ -1,0 +1,92 @@
+{
+  "schema_version": "portable_reference.v1",
+  "date_local": "2026-10-02",
+  "name": "公开原型数值复现",
+  "status": "completed_with_one_full_baseline_and_real_missing_PDF_isolation_validation",
+  "admission_path": "docs/implementation_20261002/data/admission_tou.json",
+  "pinned_admission_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+  "default_mode": {
+    "statement": "原始来源沿用既有审核，本次没有重新核验全部原件",
+    "required_roles": [
+      "rc_config",
+      "timeseries",
+      "field_provenance",
+      "monthly_tariff",
+      "tariff_rules",
+      "base_admission"
+    ],
+    "acceptance": "固定准入JSON自身SHA；6个必需处理后文件逐字节匹配其已锁定SHA，检查准入scope、完整2880h有时区连续时轴、单位权重/概率/服务、全部89项配置叶子及CSV字段溯源。无原PDF时可执行同一已审核处理后输入的数值复算，不接受新参数、重新生成输入或篡改后的准入表。",
+    "original_hashes_reverified": false,
+    "network_or_PDF_download_required": false,
+    "no_project_source_fallback": "所有数据及原件路径只相对--input-root查找；项目目录只提供固定run_one和模型代码，不从项目另一目录补找隔离输入缺失的来源。"
+  },
+  "strict_mode": {
+    "flag": "--verify-original-sources",
+    "acceptance": "沿用完整input_sha256表逐项检查原件及处理/派生文件SHA。缺失或不符返回2并保存具体文件、预期SHA、来源获取URL/同版本工程入口及失败证据；不默默下载或用新版本替代。原件SHA检查不等于本次重新逐页内容审核。",
+    "missing_PDF_claimed_verified": false
+  },
+  "implementation": {
+    "new_entry": "scripts/reproduce_admitted_reference.py",
+    "reused": [
+      "heatplan.io.load_inputs",
+      "scripts/run_evidence_case_experiments.py:run_one",
+      "heatplan.building_audit.audit_building_trajectory"
+    ],
+    "pinned_run_one_source_sha256": "ccb81b5a8d0eb348bcd5aa1216d745614988fa3bedc926e1e2ba0cd93532a26c",
+    "baseline": "一次既有理想资产完整2880h调度；没有新增投资决策变量。保留源代码哈希、求解预算、实际solver范围、状态/gap和独立楼宇物理检查。",
+    "budget": "默认120秒，一次基线，固定gap目标0.0001；--time-limit只改求解预算，不改物理或经济参数。",
+    "outputs": [
+      "input_bundle中逐字节配置/CSV/准入/字段溯源/价格月表/时段规则",
+      "source_identity.json",
+      "environment.json",
+      "protocol.json",
+      "baseline/effective_config.yaml",
+      "baseline/input_identity.json",
+      "baseline/investments.csv",
+      "baseline/dispatch.csv",
+      "baseline/building_trajectory.csv",
+      "baseline/summary.json",
+      "baseline/model_summary_raw.json",
+      "baseline/audit.json",
+      "baseline/independent_building_audit.json",
+      "baseline/independent_saved_output_audit.json",
+      "manifest.json"
+    ],
+    "saved_output_audit": "从保存的完整逐时轨迹/dispatch和处理后原输入独立再检查楼宇状态、热/冷交付和完整序列；限于本例理想单位效率，另按热+冷功率独立复算2880h电量、电量费及固定因子参考碳排，与模型账本对照。",
+    "financial_scope": "摘要仅展示此2880h电量、电量费、参考碳排和服务。CAPEX、安装、运维、现金流、净收益及回收期为null/未准入，模型raw账本禁用分支的0明确是构造系数，不能当实际缺失费用为0收益。",
+    "storage_scope": "准入配置无储能，不造SOC；摘要SOC为null并注明不适用。"
+  },
+  "commands_from_project_root": {
+    "baseline": "python scripts/reproduce_admitted_reference.py --out <新的输出目录>",
+    "relocated_inputs_baseline": "python scripts/reproduce_admitted_reference.py --input-root <相同相对结构的处理后输入根目录> --out <新的输出目录>",
+    "checks_only": "python scripts/reproduce_admitted_reference.py --input-root <输入根目录> --out <新的输出目录> --check-only",
+    "strict": "python scripts/reproduce_admitted_reference.py --input-root <含原件及处理文件的根目录> --out <新的输出目录> --verify-original-sources",
+    "dependencies": "沿用工程requirements-validated.txt；不需要PDF渲染工具、网络下载、内部SCADA或商业求解器。"
+  },
+  "validation_plan": {
+    "actual_baseline_run_limit": 1,
+    "isolated_distribution": "测试目录仅复制7个固定元数据/处理后文件，原始PDF数为0，运行真实CLI/load_inputs/run_one/solver/独立审计；严格CLI在同一缺原件目录正确拒绝。",
+    "tampering": "真实SHA检查逐一覆盖CSV所有列及每个必需处理文件；新增配置参数即使同步改写准入SHA，也因准入JSON自身固定SHA而拒绝。",
+    "numerical_negative_control": "只在保存输出的独立副本增加0.1kW交付功率，独立物理和电量/费/碳账本须拒绝；不第二次求解、不改原运行。",
+    "analytical": "时间缺口、重复、乱序、无时区、非单位权重/概率/服务、状态边界改变和字段溯源漏项明确拒绝。",
+    "mock_all_checks": false,
+    "full_historical_test_suite": "不运行，未修改主模型和冻结方法；只做入口专项与一次真实数值复算。"
+  },
+  "claim_boundaries": [
+    "名称为公开原型数值复现，不称真实工程投资主案例完成，不称当地楼宇实测、BESTEST认证、实际电价账户准入或全寿命收益。",
+    "既有理想资产调度最优性只覆盖实际构建MILP及其容差；没有自由投资，不证明工程投资方案/辅助权重算法优越。",
+    "不运行固定资产第二次回放，不将同资产重复求解包装成算法改善。",
+    "先前价格矩算法冻结记录保持不变；真实设备投资资料由其他对话准入，本入口不接纳。"
+  ],
+  "allowed_new_files": [
+    "scripts/reproduce_admitted_reference.py",
+    "tests/test_portable_reference_reproduction.py",
+    "docs/implementation_20261002_followup/parallel_stage_02/portable/*"
+  ],
+  "git_operations": false,
+  "paper_or_PPT": false,
+  "completed_utc": "2026-10-02T10:41:21Z",
+  "windows_long_path_support": "Nested evidence/input bundles use the native extended path prefix internally; first failed check-only run is preserved, then all small checks passed before the one baseline solve.",
+  "test_portability": "主源码树也无PDF时21项非求解测试通过；根原件存在仅作可选无fallback检验，不要求原件存在，不制造假原件。实际Git提交副本另由父对话验证。",
+  "delivery_policy": "交付最终run_01完整数值包、必要原始失败回执、XML及说明；临时pytest/源码副本和缓存不进入白名单。"
+}

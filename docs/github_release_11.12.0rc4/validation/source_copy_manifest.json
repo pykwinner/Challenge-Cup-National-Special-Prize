@@ -1,0 +1,1689 @@
+{
+  "source_root": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge",
+  "paths": [
+    {
+      "path": "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv",
+      "bytes": 643130,
+      "sha256": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf"
+    },
+    {
+      "path": "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv",
+      "bytes": 642999,
+      "sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f"
+    },
+    {
+      "path": "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv",
+      "bytes": 635999,
+      "sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/README.md",
+      "bytes": 11400,
+      "sha256": "59a8129b8a846873f2f0f0db43f5912ce855eedaab1fe9897e532fe4752f5177"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/analytical_tests_01.xml",
+      "bytes": 11147,
+      "sha256": "6aa612ad473a377618748a0837f6199e377258afe31966f34a5fb10498088236"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/analytical_tests_02.xml",
+      "bytes": 11783,
+      "sha256": "61ef123a20f417303a9453b9d357a1e6a280148dc84568f19d96e203be1b7380"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/design.json",
+      "bytes": 17991,
+      "sha256": "c54e35561ae4799af9b155b570507dd2c2d2bd00dbd72cd01ffd7077ec0a9fc5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/handoff.json",
+      "bytes": 4033,
+      "sha256": "d7725c8007db748411136ddff7fb93de02061a4abd9b7a84e69e5b216477e35f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/method_freeze.json",
+      "bytes": 1326,
+      "sha256": "2fdef580ed8589c05adaf510537da75c6a8b369d6840576ee0f8b538eb38ede4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/preservation_after.json",
+      "bytes": 16985,
+      "sha256": "f95002b9b85aa133595833e09d7e95f2f5bdbe14309679439611dc3dbe7ce792"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/preservation_before.json",
+      "bytes": 11504,
+      "sha256": "a9a83631746abc0545702bb33a0719daf034b8cae3061a614f620b86afa5c56a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/test_results.json",
+      "bytes": 2953,
+      "sha256": "9a10f9df9bfbbcf09d329872a1f1e5f6e9f07a47941a5644f9e361899ee00f70"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/cost_carbon_tradeoff.png",
+      "bytes": 83916,
+      "sha256": "0f32483fe013a081d75846decef48dc97f503473fabc6655567eab8705121643"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/cost_carbon_tradeoff.svg",
+      "bytes": 87032,
+      "sha256": "a5c30ceef64b9f18dc4398e9b52b8622d847b4ca4bd1547575fcf09f1a5771e3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/decision_table.csv",
+      "bytes": 2966,
+      "sha256": "0384adbe64633b64d85090528c59846207ee941dfc32935a6feb9855b7c7c64c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/mechanisms.json",
+      "bytes": 741,
+      "sha256": "f2be477e1f7ea0b955414d298b66d804ea29b1c362e4777ad45c77fc872ee53a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/report_manifest.json",
+      "bytes": 901,
+      "sha256": "0f42400b3a3389dfea8eaa645af206b567144f33afe62f0cd1c3e08536339806"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_export_audit_02.json",
+      "bytes": 8528,
+      "sha256": "1c971b8e2a8f5d4f0d5c045a9ebce26e98ad2c577f199143736015c95cd0b274"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/comparison.csv",
+      "bytes": 31688,
+      "sha256": "518e2880f07618e3276b0aa90a8001e602c505af73cdaf55d3cd6288fc88f75c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/comparison.json",
+      "bytes": 53984,
+      "sha256": "8d6a144a410110f9548ff124a31a0a5a011146a85987a65052c22f850fa65043"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/failures.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/manifest.json",
+      "bytes": 11174,
+      "sha256": "01f2c7c4401088797f7972b444da2228ff8ef8a80799dbb4481398f93ac16bba"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/protocol.json",
+      "bytes": 8412,
+      "sha256": "16b98535cc35d8c087a1fb831db5980740f23cf84c19ade3ba6566ea95839d66"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/protocol_lock.json",
+      "bytes": 93,
+      "sha256": "a167c3d26e22ebf463876c0533490d46192a03c70a0e486be27e02b764cefcf1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/carbon_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "65fbe96461b58a9844465fc08bcab020bd53082a0b7421971d1245c7354c98ae"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/carbon_endpoint/building_trajectory.csv",
+      "bytes": 1076609,
+      "sha256": "50e1b5483c5eb6305784b90591683f507d432a5829f2909866eccf8536a5ca53"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/carbon_endpoint/dispatch.csv",
+      "bytes": 2795778,
+      "sha256": "fdfed0cc9502e6f29dfa387108ebdb332e4d6f4a294536be40eb6b4f1e09b87e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/carbon_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/carbon_endpoint/independent_building_audit.json",
+      "bytes": 6689,
+      "sha256": "153a04dbda37087918eafe92c159d09b3899cd22ac62f1e70d51ca434144d4b3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/carbon_endpoint/independent_ledger_audit.json",
+      "bytes": 797,
+      "sha256": "35b3c97aa6a76257a6245416e5dcb60a84e9abff4408b4f4e80033f2e6d66adf"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/carbon_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "4858f1478b17f0cceec9f37929f32418dce24793edcf5978f34db0baef1d0116"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/carbon_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/carbon_endpoint/summary.json",
+      "bytes": 16759,
+      "sha256": "2e36089d491f4c31bde955e0647926e4527aaf5c92a3c5d379bc586b978cac3c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/cost_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "6712abc0034a106e0d9e554234303af912a17dc6c1a998085f05dd8e95eb1781"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/cost_endpoint/building_trajectory.csv",
+      "bytes": 1084095,
+      "sha256": "fdc953cdf4154bf1b49a5f9375e404f943ab4171fd35cb3d4b3a524e68da4abc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/cost_endpoint/dispatch.csv",
+      "bytes": 2793490,
+      "sha256": "51bdd5f4ec66b4e5cc0b04c99603dadd05618fe9e83d557961fdea1a1e99f919"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/cost_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/cost_endpoint/independent_building_audit.json",
+      "bytes": 6779,
+      "sha256": "66f9c8693966b84e93ebebf4618970e85b16176fd53faf79c2980593b4fa3245"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/cost_endpoint/independent_ledger_audit.json",
+      "bytes": 816,
+      "sha256": "0006658e5f6de5726cce3f198829f580e598f2c7c0776bdc18bee0fce5ffdac7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/cost_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "4858f1478b17f0cceec9f37929f32418dce24793edcf5978f34db0baef1d0116"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/cost_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/cost_endpoint/summary.json",
+      "bytes": 16818,
+      "sha256": "9c54f94c553ed5e043b8ad31053f449b8370020365c8e0ed0ce02a9e57c16dc5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap/audit.json",
+      "bytes": 196,
+      "sha256": "c433fdc9a9fe188140e1bc8f36e6e1ae3ce98b8b47b719d8bfcfd81a183e8c6f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap/building_trajectory.csv",
+      "bytes": 1079535,
+      "sha256": "88fcccfaede6228ac43fd9adc5e1aa9f37c43cae4624120519bac1e1aca1ff01"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap/dispatch.csv",
+      "bytes": 2793703,
+      "sha256": "5a4be6985c298e85d72c0ccfa74a7f3a15160215550926747d94311799e00ec6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap/effective_config.yaml",
+      "bytes": 2413,
+      "sha256": "fa97efc4ccf9671e9b058a341da95990ab727ed19b7264fb0ada1a6b4bc5ba08"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap/independent_building_audit.json",
+      "bytes": 6707,
+      "sha256": "62fc79cdb7a87c763566d4c270fd28b4522c6b5fced8624f95d07800e6c21171"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap/independent_ledger_audit.json",
+      "bytes": 701,
+      "sha256": "34449e88b99ed9c5d876ef185d83261ba51fedc7bff5f90c6ee9a38ee56d422e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap/input_identity.json",
+      "bytes": 180,
+      "sha256": "9e8fef0dec8729661daec4c0bec34b55016f1925c2b08aa6f4a06ed973e931ae"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap/summary.json",
+      "bytes": 12803,
+      "sha256": "e1a36df4cc0e3d692d91249349b3a30da978c61e7b5e20167001395843d421a3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/guyuan/midpoint_cap_rule.json",
+      "bytes": 88,
+      "sha256": "ac63263ec307352ef42c1951318df71ecffbd869dbf67b62fec7cb7545b1289d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/carbon_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "b9444dfe12b10f7c5ef6d606a83968001c61c3501c52b3044e20496cff7d16a7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/carbon_endpoint/building_trajectory.csv",
+      "bytes": 1078585,
+      "sha256": "7dc86487ff68cefa04af8219b3aaafc3581288b12fdca0708ea82b0e9a793f00"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/carbon_endpoint/dispatch.csv",
+      "bytes": 2797346,
+      "sha256": "79bc37814255923f99c1f9aa8c63e538eb15ae95121f2f0a0716d700ac47b72f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/carbon_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/carbon_endpoint/independent_building_audit.json",
+      "bytes": 6689,
+      "sha256": "b1b98ced18b21f931b5d60687ca3d6bbaad6fb8547239b440beb3d57ccfa9da0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/carbon_endpoint/independent_ledger_audit.json",
+      "bytes": 796,
+      "sha256": "298f07a769501962a2aa93fc1072e71e9ecc5b8f7214d2c1ae44888aae916bf6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/carbon_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "559d5ff296ecac552bba63f9771f0a58d5364a3b57e5884d426ea0beb00b838d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/carbon_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/carbon_endpoint/summary.json",
+      "bytes": 16758,
+      "sha256": "dcfdfcbc9495b4602dcc94fcc52a8579532c7fce742f6a2008b0b8b944b869e5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/cost_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "05cec71a479bb2de1b83243262e9cf3ced91dc0474de9651886140c3968ea43f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/cost_endpoint/building_trajectory.csv",
+      "bytes": 1084946,
+      "sha256": "8f850323a2c4bbfb7d29a8cd20bd464cc4ea3c6769cec8a73a2b8ad62e00c423"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/cost_endpoint/dispatch.csv",
+      "bytes": 2793946,
+      "sha256": "8b0dcf5ffebfdf46621ada92bfcd929c4e7786ea318dd7576444f31b5e12046d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/cost_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/cost_endpoint/independent_building_audit.json",
+      "bytes": 6780,
+      "sha256": "d387410f3158aee04cba94a4c24b78e60ce2a3befb6009f5ea7e0f4cca858860"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/cost_endpoint/independent_ledger_audit.json",
+      "bytes": 815,
+      "sha256": "3660be66ce8a94327a3de311dfee858a8a10cf481556c14081d9e2d64dd89273"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/cost_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "559d5ff296ecac552bba63f9771f0a58d5364a3b57e5884d426ea0beb00b838d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/cost_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/cost_endpoint/summary.json",
+      "bytes": 16768,
+      "sha256": "ae38ed75c34df1ac0ff431864870ec2ecab7cc058b5ccd0aa0ff13238f959f7f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap/audit.json",
+      "bytes": 196,
+      "sha256": "17c9855bf996770200231d32a31eb76f7bfa9fbb81bcd134dfea00fdeb8989bb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap/building_trajectory.csv",
+      "bytes": 1080835,
+      "sha256": "693ed371abe91ed67f016cee0e6f6c1373fbad020d8aa79641c19036484528d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap/dispatch.csv",
+      "bytes": 2794416,
+      "sha256": "626bd6526531a1b99e14a08be81aadbba57a617df87260fb56aceafe4876d2e1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap/effective_config.yaml",
+      "bytes": 2413,
+      "sha256": "55d889cf7e7e46edcc55acb7f0a63a29786e769f5f81c3a519f04f8a554a680b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap/independent_building_audit.json",
+      "bytes": 6707,
+      "sha256": "14ddff97f8879afd15e8e7a21e186b125ce2368bd2c47381e012b9dacb3582a3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap/independent_ledger_audit.json",
+      "bytes": 698,
+      "sha256": "e5296fe1b64cbe79db3927f7f4dd7a5d217f4a0155a3561e3fc2ee1e889a5bec"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap/input_identity.json",
+      "bytes": 180,
+      "sha256": "5ff06c805ab800e0a11ee477d0c791889f333a24e25e898a0e60697c501c8731"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap/summary.json",
+      "bytes": 12782,
+      "sha256": "ff6c064628a5fe9fbee9ac6badec0548c52301b312a360e7717da9f72dc44a69"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/urumqi/midpoint_cap_rule.json",
+      "bytes": 89,
+      "sha256": "e18c70dd9e049e3ddfdb215b9d012e9c2bf653151b9ba7138c1fa8e04d25b2dd"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/carbon_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "7f67c6733c2db5c8d1239619de736d66ce3ea73bef52df6f678ca4ff4e1227d1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/carbon_endpoint/building_trajectory.csv",
+      "bytes": 1076732,
+      "sha256": "293a5ac20b28291bccb1f865a959f8149590c83f901bf897a4487c5970a7d5cc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/carbon_endpoint/dispatch.csv",
+      "bytes": 2795244,
+      "sha256": "e3466ad9980f25417265eaeb1871a9431e0c42ae3fecc77e7e51782f0566697d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/carbon_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/carbon_endpoint/independent_building_audit.json",
+      "bytes": 6706,
+      "sha256": "52c6a94e61829f73aa82c74e906c1eff9d9ee0c21aa35b659bb8b4da9e0e67d8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/carbon_endpoint/independent_ledger_audit.json",
+      "bytes": 803,
+      "sha256": "c660d5240da67e4af72fd60e8580c6ef10b906bc58eacd02514c5fcdb297bc1a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/carbon_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "09d315cddafe900f9e84a133034b89114025ba2421069894fadcc425e7cb50e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/carbon_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/carbon_endpoint/summary.json",
+      "bytes": 16715,
+      "sha256": "66d85465640afac62cf6eda6a3713b54fa84a7369f56230938b24a7a34faed1e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/cost_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "326e3bdcc58de27d57523d46110bb02d8213f87682427a5abda8f1474788be78"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/cost_endpoint/building_trajectory.csv",
+      "bytes": 1081161,
+      "sha256": "1cd9525a97795c58865fd7f7a12c8d526f3ebafab400514106a97a39204c5201"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/cost_endpoint/dispatch.csv",
+      "bytes": 2787511,
+      "sha256": "f085b957454803f4cc2182a6ad5b9803f2afde9cc5caafaea95e7323cf8ede85"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/cost_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/cost_endpoint/independent_building_audit.json",
+      "bytes": 6742,
+      "sha256": "016a9cbe87e1c03f96e6209fc640dd62c2081a709ff06c2b7c645523762637e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/cost_endpoint/independent_ledger_audit.json",
+      "bytes": 806,
+      "sha256": "3a63d174212d9cead007509004a866d4d0b1a64b19f09a3fd70c4c7ad4371628"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/cost_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "09d315cddafe900f9e84a133034b89114025ba2421069894fadcc425e7cb50e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/cost_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/cost_endpoint/summary.json",
+      "bytes": 16751,
+      "sha256": "7aa9fdbccd99dfba225ad13649f4e807de80011ca5cd65075bc6835d3392b83f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap/audit.json",
+      "bytes": 196,
+      "sha256": "676de0894b94ce4826799569f5ddac01ebe66617be91d479a8a462b711d6fb5c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap/building_trajectory.csv",
+      "bytes": 1080080,
+      "sha256": "2504891bfa9cfe013bf219612bfc55353de52ee89d5833e835e98a617d7bbbeb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap/dispatch.csv",
+      "bytes": 2789536,
+      "sha256": "5d78cb27cc9c49451e55981942dcd4be0628d0b523b805c57570806d55b739d4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap/effective_config.yaml",
+      "bytes": 2412,
+      "sha256": "dc6a977e5832f1fe73f3ba3d7cf997c9b2e5f865a6acd8ff664a8ac150610138"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap/independent_building_audit.json",
+      "bytes": 6752,
+      "sha256": "45ffa72fe63de16ee80e0e34cfc8c56e59f112a3c1bb000de440917c41cc5d18"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap/independent_ledger_audit.json",
+      "bytes": 727,
+      "sha256": "fd68d5a4fce7aefaaf7130f55a49a9b3969f68aff1c01e1559d95b735c281a42"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap/input_identity.json",
+      "bytes": 180,
+      "sha256": "c75c9b5b4df4855617934c13f1eb9fa08eb42afa45ffde1f28694bba7a89ab61"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap/summary.json",
+      "bytes": 12797,
+      "sha256": "5ade745dd4c3527a8065d3f9e36874696e7c66224b8bcded1c7907f58199c207"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/results/wuhan/midpoint_cap_rule.json",
+      "bytes": 88,
+      "sha256": "5243c0d149fbbe9897610d0e8622f414d02be6d6f10623fc6d9401630c2525a7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/comparison.csv",
+      "bytes": 31500,
+      "sha256": "7a7d2026535e82d77da82eba02570f57aa0620f9648afe3532f40df26a20716b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/comparison.json",
+      "bytes": 53357,
+      "sha256": "ee8150d7fe1ad9f8a703d3d808118bd857bf550ec89f23bff1180c33457240fd"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/failures.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/manifest.json",
+      "bytes": 12452,
+      "sha256": "211df48fa8d356fa80575c88ba449aaa4b8371f0139a42ad405168077055e96b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/protocol.json",
+      "bytes": 5052,
+      "sha256": "5fb7cce5c54aba84cfc77e2c09bc6b729d3fe91dcc97f1588e09d2e7995d7c9a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/protocol_lock.json",
+      "bytes": 93,
+      "sha256": "e1a055958d36d13e48faecd3ba9544793b79e7beccb77ac60948188fef6464ea"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/baseline_audit.json",
+      "bytes": 626,
+      "sha256": "8f25aa6152e2f88a8e9c5b3e28e54cacf090cee57a3dc6c8e1b91806a54764f3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/baseline_delta0.csv",
+      "bytes": 495381,
+      "sha256": "ff8280fa611141b63095354713e9aa0ad7d5b50873d6120d4cc8ebfe3e44ed11"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/carbon_endpoint/audit.json",
+      "bytes": 275,
+      "sha256": "5ffa22ee12881c0dc7d489264e1ff160bbe475b8c1669aabbda16771aa3644ae"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/carbon_endpoint/building_trajectory.csv",
+      "bytes": 1076609,
+      "sha256": "50e1b5483c5eb6305784b90591683f507d432a5829f2909866eccf8536a5ca53"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/carbon_endpoint/dispatch.csv",
+      "bytes": 2795778,
+      "sha256": "fdfed0cc9502e6f29dfa387108ebdb332e4d6f4a294536be40eb6b4f1e09b87e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/carbon_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/carbon_endpoint/independent_building_audit.json",
+      "bytes": 6689,
+      "sha256": "153a04dbda37087918eafe92c159d09b3899cd22ac62f1e70d51ca434144d4b3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/carbon_endpoint/independent_ledger_audit.json",
+      "bytes": 710,
+      "sha256": "50ba8027954e7081afa4416f701d9920bfa7d2bc58404bcf5401074274176baf"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/carbon_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "4858f1478b17f0cceec9f37929f32418dce24793edcf5978f34db0baef1d0116"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/carbon_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/carbon_endpoint/summary.json",
+      "bytes": 16774,
+      "sha256": "f71d6d0c907d41b7e77b2490f219eef0af42e3a14cccdff1b37b79673666090b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/chronology.csv",
+      "bytes": 759267,
+      "sha256": "8e162d33db5dac886a35f5a0e73a4ff7be937984c5b9940220df48664aebfdb0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/common_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/cost_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "09735769eca8c58910c2638555993285a048a05826d7d281efdddaa29e1bdb97"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/cost_endpoint/building_trajectory.csv",
+      "bytes": 1084095,
+      "sha256": "fdc953cdf4154bf1b49a5f9375e404f943ab4171fd35cb3d4b3a524e68da4abc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/cost_endpoint/dispatch.csv",
+      "bytes": 2793490,
+      "sha256": "51bdd5f4ec66b4e5cc0b04c99603dadd05618fe9e83d557961fdea1a1e99f919"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/cost_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/cost_endpoint/independent_building_audit.json",
+      "bytes": 6779,
+      "sha256": "66f9c8693966b84e93ebebf4618970e85b16176fd53faf79c2980593b4fa3245"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/cost_endpoint/independent_ledger_audit.json",
+      "bytes": 729,
+      "sha256": "3d446a9140df5398347abba69ec61f966cb358adce689c1d5327ef7e3fc2eee8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/cost_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "4858f1478b17f0cceec9f37929f32418dce24793edcf5978f34db0baef1d0116"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/cost_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/cost_endpoint/summary.json",
+      "bytes": 16838,
+      "sha256": "073cd7bc9a73deb55697e43424792b5dcae9bcc5ca2c6cbe4c7c74561a318dff"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap/audit.json",
+      "bytes": 196,
+      "sha256": "a78374cc4a07408639e4dc4110c51621b21aab13b446510e3583d7d009a14e78"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap/building_trajectory.csv",
+      "bytes": 1079589,
+      "sha256": "4e9841320f9d3e76e81be67eef29719d3b31ea33386c14ef68a50896a45914b8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap/dispatch.csv",
+      "bytes": 2793688,
+      "sha256": "33f98da248c2e5981ff8898c11cde83690792e47311c957d3b6771748e357226"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap/effective_config.yaml",
+      "bytes": 2413,
+      "sha256": "fa97efc4ccf9671e9b058a341da95990ab727ed19b7264fb0ada1a6b4bc5ba08"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap/independent_building_audit.json",
+      "bytes": 6707,
+      "sha256": "601b219aba7c4bfee8ad6615998c2d39c0c433c4352fb3b2969d6ea949065f3e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap/independent_ledger_audit.json",
+      "bytes": 701,
+      "sha256": "cbe6ada93caf0ee7319e14c52629d4cbe8f87e38c250e90c727f28738c86cde1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap/input_identity.json",
+      "bytes": 180,
+      "sha256": "9e8fef0dec8729661daec4c0bec34b55016f1925c2b08aa6f4a06ed973e931ae"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap/summary.json",
+      "bytes": 12812,
+      "sha256": "8f113c7f1767c968f8915a86e56e67243f89f745166e2ba93fc98a2f6b901b39"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/guyuan/midpoint_cap_rule.json",
+      "bytes": 88,
+      "sha256": "ac63263ec307352ef42c1951318df71ecffbd869dbf67b62fec7cb7545b1289d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/baseline_audit.json",
+      "bytes": 623,
+      "sha256": "b156fcd3c6254cf5abea67f627a22b162990f5bdf85219832ae2d795513ac0bd"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/baseline_delta0.csv",
+      "bytes": 494743,
+      "sha256": "c6c441b55afafb3d19ee9d83b6e8948322c310c67c21b72bf7e1c1fbf543deb9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/carbon_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "e3318f2a873a1e9b749ae99cf7cbb5bdbc2c54c82bb3fc97f81636d428645341"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/carbon_endpoint/building_trajectory.csv",
+      "bytes": 1078633,
+      "sha256": "014ae62477cb435223df4ac0d4c5b9003855b6663de0cd260812c18b9d1c0219"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/carbon_endpoint/dispatch.csv",
+      "bytes": 2797314,
+      "sha256": "37c312ac844112ec9446baa42f681625efa5b88d27d5ef44b99b8707816ae956"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/carbon_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/carbon_endpoint/independent_building_audit.json",
+      "bytes": 6689,
+      "sha256": "bd337e7dfdf08d9580d024d62cdefaac15308fcc39e7b0d3c122bbe9f0fcabca"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/carbon_endpoint/independent_ledger_audit.json",
+      "bytes": 705,
+      "sha256": "b84f732e527f4e97dce1dc30f3d5bc4816ff3250a6a874a2bb776f791a59db95"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/carbon_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "559d5ff296ecac552bba63f9771f0a58d5364a3b57e5884d426ea0beb00b838d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/carbon_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/carbon_endpoint/summary.json",
+      "bytes": 16751,
+      "sha256": "dedf8346d74b7da6ff0399d5bd51c2414536865919ee7425f5a5526f7ba96a70"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/chronology.csv",
+      "bytes": 758986,
+      "sha256": "41f27368c8e0a6788683f6b7f752dfc1a13c83b38477096e6972e30e3bc7a883"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/common_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/cost_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "633ba21a6038c44d201f616f673f614ae0a69ef5b5181747bd9e2891212d8990"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/cost_endpoint/building_trajectory.csv",
+      "bytes": 1084946,
+      "sha256": "8f850323a2c4bbfb7d29a8cd20bd464cc4ea3c6769cec8a73a2b8ad62e00c423"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/cost_endpoint/dispatch.csv",
+      "bytes": 2793946,
+      "sha256": "8b0dcf5ffebfdf46621ada92bfcd929c4e7786ea318dd7576444f31b5e12046d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/cost_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/cost_endpoint/independent_building_audit.json",
+      "bytes": 6780,
+      "sha256": "d387410f3158aee04cba94a4c24b78e60ce2a3befb6009f5ea7e0f4cca858860"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/cost_endpoint/independent_ledger_audit.json",
+      "bytes": 728,
+      "sha256": "d480941c99cc98d2f74d7ef2e23bb0bd34df98f8c9b00a1056003850cef2ac48"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/cost_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "559d5ff296ecac552bba63f9771f0a58d5364a3b57e5884d426ea0beb00b838d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/cost_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/cost_endpoint/summary.json",
+      "bytes": 16784,
+      "sha256": "aaf03ba48d85bcff0d2d92746811a60eb6b0116b42a6635ed3360ff8b89e41b9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap/audit.json",
+      "bytes": 196,
+      "sha256": "c04b180567bab2160fb08e171935583e07872f099256721446506d66d4e83c2a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap/building_trajectory.csv",
+      "bytes": 1080851,
+      "sha256": "096bbcdd3bdb08dd78fd1bc7991ab4c1f125634469caa6f984bc3e0470714be0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap/dispatch.csv",
+      "bytes": 2794402,
+      "sha256": "dd37996ce9b4fb04968b895d004ba450ab126fbca383fce24c077626748631f8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap/effective_config.yaml",
+      "bytes": 2412,
+      "sha256": "e4cb744feb46a8f77470920084510a583783a6b6d55950b05e015128bd6697cf"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap/independent_building_audit.json",
+      "bytes": 6698,
+      "sha256": "1a54380493a9a0f1caa55feb4c0a395b61a5bfd54d16c90ae7b4889d5281705f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap/independent_ledger_audit.json",
+      "bytes": 699,
+      "sha256": "6e493d65f7ca331a4e9d35c141ac1b1cacb90f2efd5eab689b9dcfe25ae4b86e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap/input_identity.json",
+      "bytes": 180,
+      "sha256": "6bad202fd1134852e683c12cb7ec2c1c659df8a6c7a79082f966372989840aeb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap/summary.json",
+      "bytes": 12724,
+      "sha256": "4734e930814753d68f0bed8385df87b5a2869400db2d7fd1db2c020db34d8eca"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/urumqi/midpoint_cap_rule.json",
+      "bytes": 88,
+      "sha256": "411f90e709e11965539a5a11df4bacabf1cb0028d3c7c80e727d1ebd458200b5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/baseline_audit.json",
+      "bytes": 656,
+      "sha256": "4fa3dc8515bc1742e415120c8b493a9eb5c2d546cfce87c788128fdf5240c38d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/baseline_delta0.csv",
+      "bytes": 497454,
+      "sha256": "7857b527ef54b679d31c8a362f3491f53b1dc670db377126d5b2a54484391674"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/carbon_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "49f3a3d9f3bb44484447737aa3bafa4ffd1a80b8e2c7e8e01fa99b355d5dd3a2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/carbon_endpoint/building_trajectory.csv",
+      "bytes": 1076732,
+      "sha256": "293a5ac20b28291bccb1f865a959f8149590c83f901bf897a4487c5970a7d5cc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/carbon_endpoint/dispatch.csv",
+      "bytes": 2795244,
+      "sha256": "e3466ad9980f25417265eaeb1871a9431e0c42ae3fecc77e7e51782f0566697d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/carbon_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/carbon_endpoint/independent_building_audit.json",
+      "bytes": 6706,
+      "sha256": "52c6a94e61829f73aa82c74e906c1eff9d9ee0c21aa35b659bb8b4da9e0e67d8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/carbon_endpoint/independent_ledger_audit.json",
+      "bytes": 716,
+      "sha256": "1351b6bf5644807130d7ecf371795f793eb150f224b488650371ead2eca8eb27"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/carbon_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "09d315cddafe900f9e84a133034b89114025ba2421069894fadcc425e7cb50e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/carbon_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/carbon_endpoint/summary.json",
+      "bytes": 16730,
+      "sha256": "251a2c0670a0ba1fbda816f3dc832a33d45e721fc2eaed0169c2a138ce0ef998"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/chronology.csv",
+      "bytes": 763476,
+      "sha256": "551e9d9d3746d4dd7606ee624843d168097b7f066624df79e47051484f7e48cb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/common_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/cost_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "1c2f51f7761f0b4899fbd4b0536634653e2a8ab560426897117ec1bda96d8cb1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/cost_endpoint/building_trajectory.csv",
+      "bytes": 1081161,
+      "sha256": "1cd9525a97795c58865fd7f7a12c8d526f3ebafab400514106a97a39204c5201"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/cost_endpoint/dispatch.csv",
+      "bytes": 2787511,
+      "sha256": "f085b957454803f4cc2182a6ad5b9803f2afde9cc5caafaea95e7323cf8ede85"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/cost_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/cost_endpoint/independent_building_audit.json",
+      "bytes": 6742,
+      "sha256": "016a9cbe87e1c03f96e6209fc640dd62c2081a709ff06c2b7c645523762637e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/cost_endpoint/independent_ledger_audit.json",
+      "bytes": 719,
+      "sha256": "b96455fe6914443b608af46e3d7a7b6df3381996318b09268e4c9b2e172e683e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/cost_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "09d315cddafe900f9e84a133034b89114025ba2421069894fadcc425e7cb50e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/cost_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/cost_endpoint/summary.json",
+      "bytes": 16766,
+      "sha256": "5b36fd52564d41871762a156efba4980ff13ff17d23fb3bbb75b5890be5cb28d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap/audit.json",
+      "bytes": 196,
+      "sha256": "f9e27d9f796ac57f5d47da489178dfb04892ff99826fd57b675bda22c888b31c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap/building_trajectory.csv",
+      "bytes": 1080202,
+      "sha256": "376e565d3e2f490a60bf712819d41073d18d92427357d31883813cb6dc2fd6bf"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap/dispatch.csv",
+      "bytes": 2789476,
+      "sha256": "c95fd823d04297adcfcead56860f8a34bb2ada3b792c1f954b9e9626905f6547"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap/effective_config.yaml",
+      "bytes": 2412,
+      "sha256": "dc6a977e5832f1fe73f3ba3d7cf997c9b2e5f865a6acd8ff664a8ac150610138"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap/independent_building_audit.json",
+      "bytes": 6754,
+      "sha256": "fbde74927ac4089d88849a71bbd010e199073762297d870e6049498c3a1cba4b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap/independent_ledger_audit.json",
+      "bytes": 729,
+      "sha256": "45e41b2829a60a09cd4d3052e3c0d5be7d05d3f71987b230b0aff0eca9ce2e72"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap/input_identity.json",
+      "bytes": 180,
+      "sha256": "c75c9b5b4df4855617934c13f1eb9fa08eb42afa45ffde1f28694bba7a89ab61"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap/summary.json",
+      "bytes": 12889,
+      "sha256": "45d9fb6db58a62ff57622ce4f329b015442a36a61a5e45148400569710907a3c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01/results/wuhan/midpoint_cap_rule.json",
+      "bytes": 88,
+      "sha256": "5243c0d149fbbe9897610d0e8622f414d02be6d6f10623fc6d9401630c2525a7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_tests_01.xml",
+      "bytes": 617,
+      "sha256": "98d473d1d4f3afddb92a8cb1695286e565d3ba3ae8187c8bca98539ec01b8358"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/coordination.json",
+      "bytes": 5997,
+      "sha256": "5687e1e5f1e20a021bea558e38d662a36ae5c70d5a47e24af7538bfbb2816486"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/README.md",
+      "bytes": 7268,
+      "sha256": "d18138493a18310e3da030761be17adb7016d7ff14f78091f79d61504c071293"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/common_physical_reference.json",
+      "bytes": 2874,
+      "sha256": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/confirmation_candidates.csv",
+      "bytes": 1321,
+      "sha256": "cd0b1f5ed1f71e098fc7724194c82930fb0460b32158636c63fa4b004c915f7e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_lst_identity.md",
+      "bytes": 2380,
+      "sha256": "783ecdf3a39fbd065873f0f30cee644663ec0de95b5bc2e5cf5718798d87c54f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_package_audit.json",
+      "bytes": 32929,
+      "sha256": "80549be1f26658d2b42797209626d8139db97a5e8da5d254411c2ef4c5b37731"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_wuhan_method_protocol.json",
+      "bytes": 6729,
+      "sha256": "403d0a9ba225b223276440dc2b2aaa138d31bf2bed0e36d56e184c718bc1c9d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario1_urumqi_UTC.json",
+      "bytes": 336064,
+      "sha256": "73eaee32e09fde57d63351b9446978cb24240425ce8fe66aa9c6d95105586b5d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario1_urumqi_download.json",
+      "bytes": 1107,
+      "sha256": "e97c5321f2e642575190c9e7bde6bf2587d87a2c2108554807f707e99a3302a7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario2_guyuan_UTC.json",
+      "bytes": 336383,
+      "sha256": "9751ff2bdf51261526a68f901660cb651b5e153b8ff6ce9dfb74d0114ee72600"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario2_guyuan_download.json",
+      "bytes": 1108,
+      "sha256": "b66358215130401c8a061b61e8993a84230868c38db53c37f8fa5939ada67bef"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario3_wuhan_UTC.json",
+      "bytes": 335605,
+      "sha256": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario3_wuhan_download.json",
+      "bytes": 1106,
+      "sha256": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/three_city_decisions.md",
+      "bytes": 17278,
+      "sha256": "6e2e569804eac570a684dfb61c21b7a8fece64858b4296454ce4aa5b05beefa1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/field_provenance.csv",
+      "bytes": 24643,
+      "sha256": "813abbf6a7504bd3aadb6cd8cf08983ffbb7068f0f6a334fce450810a38ba223"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/DATA_SOURCE_INDEX.csv",
+      "bytes": 8338,
+      "sha256": "e33bcd4e712d14649b5bea3c43cd5023db96275d930526167b3f5b27b555ed76"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/economic_185_applicability_review.json",
+      "bytes": 115687,
+      "sha256": "1efbebb3a49d55d50e258765a89eb53e4132c2ef96183fc6030bfcf919385685"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/economic_boundary_extracted.csv",
+      "bytes": 49855,
+      "sha256": "f45a6eba568b8af71175d7d5a38f64e81a276c95ba12a0f2a8852dbbe1f1997b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/equipment_extension_audit.json",
+      "bytes": 4705,
+      "sha256": "5ce995efa9267f046284327e85d5bba8650900cf1d46eced9ac8cf35940e9624"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/equipment_performance_extracted.csv",
+      "bytes": 23871,
+      "sha256": "6e17cc6e84c42159d245b872b1488e638547dd2952eec93e2ba20adc0023d544"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/equipment_price_extracted.csv",
+      "bytes": 34815,
+      "sha256": "24888b9b520440d532be5d2251dbd258f81af6b459d9b626b748c54ecaf07ca5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/lingwu_award_2024.html",
+      "bytes": 54883,
+      "sha256": "f44eb172bd7c7ed84d40ed133e240433c6d4cf1ed2ed19550f0cac87eb937969"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/om_cost_extracted.csv",
+      "bytes": 7434,
+      "sha256": "7ae05c9412eacde07f4d21e9ba3de894d4bd54e15ab71b1ad52ccd223bfed117"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_contract_receipt.json",
+      "bytes": 645,
+      "sha256": "08e8da9b1edbf62211b23261d2fd0f963aa64ae2c0044aaf4cc0c1791d444b7d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_original_contract_receipt.json",
+      "bytes": 601,
+      "sha256": "b59d73eb06e858c50544b33cec7754dc7bcb78f07e479fdb14ae2fc1b50e937b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_source_join.json",
+      "bytes": 47516,
+      "sha256": "423b89e8599dd7b4b42de66921d8009a48ec7866d297ec4f5e2eb242e0ada33c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_source_join_validation.json",
+      "bytes": 7614,
+      "sha256": "a8c0b6a4f613b9e9f46611a9283ad0e1be9e18aafb1a9f3902963c1324f685f6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/manifest.json",
+      "bytes": 5564,
+      "sha256": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/protocol.json",
+      "bytes": 6120,
+      "sha256": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/source_inventory.json",
+      "bytes": 8581,
+      "sha256": "4cd73246052d6b12b40aee5b440abd94ab5ba15c6bd01f02b7914fe03c4ceea7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/tests.xml",
+      "bytes": 3909,
+      "sha256": "3c18f2abb3cb6e30e5fa608d34c136b849ed37c4b74bbf77a4497550bf6a7aa2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/tests_snapshot.xml",
+      "bytes": 3909,
+      "sha256": "aab5e67884d225cbe416ed72001238c405ce5d13e2b94f9ee5bedbdd7413014b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/validation.json",
+      "bytes": 2246,
+      "sha256": "7c5ef590ebe51ac5379d34e480bfaa01efed20454a18a3e922ba67d2b6740c79"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/parent_document_links.json",
+      "bytes": 10110,
+      "sha256": "4e7912c33c04473024df08d059a2f6aa639480c1effccebec9b54f9b0480a7f6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/clean_clone_small_tests_01.xml",
+      "bytes": 3565,
+      "sha256": "cfe7fd19772ee8f397efe99c810caff78afb3b689938221022a6558713f5308b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/clone_portability_fix_01.json",
+      "bytes": 2275,
+      "sha256": "71a8db7a44a0e847aec12069df387bd2f9b19c0835457faec7ab24887d468f07"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/delivery_whitelist.json",
+      "bytes": 11961,
+      "sha256": "f32023ffbe1ccfb39bc04dda3bba2c257c87038b5c88b3f65c35536000a9bf3f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/design.json",
+      "bytes": 6964,
+      "sha256": "ebd5f444484c1e85794d87843b639fd93d2f6875e467f5679b7c316039495ea0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/full_baseline_test_01.xml",
+      "bytes": 389,
+      "sha256": "45a7e3b26162df1f2c4e5143ddf81fa416aa2d9123d6e6951d5d5a58c863bb73"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/handoff.json",
+      "bytes": 3158,
+      "sha256": "85cde0251fc58eb2f3f66024c35048a328b684dcaf6332f67df4d3121189ef77"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/isolation_validation.json",
+      "bytes": 1115,
+      "sha256": "a3a3150277648e983c79832591d9064cbda496b9953eceb37b2cc8fc3d22eb5c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/optional_repository_pdf_test_01.xml",
+      "bytes": 384,
+      "sha256": "8c891c17401cf410f73cf223a4326480d833b6549bce508fe28716553ff1b1a5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/preservation_after.json",
+      "bytes": 23882,
+      "sha256": "2214fe83a9aee90183d949e623f7d9cc8c9b7158b691199f26269cde18399efb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/preservation_before.json",
+      "bytes": 15101,
+      "sha256": "0056800b973ed119974bc15f690d60da8e08f4feaef7ae36dd2a0878887e5007"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/audit.json",
+      "bytes": 196,
+      "sha256": "5181a5fed33fb1015bb835976bfb5c25db4681c95df830f3d806da9b4b59dde1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/building_trajectory.csv",
+      "bytes": 1040651,
+      "sha256": "4b3a487d0d6e1783ddb12a4e57b29545f9098f8a417cbf1d4461f0e05776a8e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/dispatch.csv",
+      "bytes": 2585894,
+      "sha256": "59d0b98e77ffe3915de685c09bdf73f8ed151fea5423b49ccdcd953621cccebb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/independent_building_audit.json",
+      "bytes": 6731,
+      "sha256": "2eb3f60ff10d795bd6ffbf7691173feb1ab7bb785c6378e7ca269bc9df2da077"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/independent_saved_output_audit.json",
+      "bytes": 8709,
+      "sha256": "6987a0982f0ec28dd007df2a634c91f7dddde4860ab846ef0ad17a35bcbdd7e3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/input_identity.json",
+      "bytes": 180,
+      "sha256": "8bd4ec591a445a3c46519268fb2080b077002899a720f7b4fa04a60f45b81bb6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/model_summary_raw.json",
+      "bytes": 12802,
+      "sha256": "51364fb72661350e32d4554ad07513df14ed9a352eb7e91eb265346713dffd46"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/baseline/summary.json",
+      "bytes": 5757,
+      "sha256": "5551378a3fdcd0b0e29d02fcf810357a8bcc42a823903a44ca35567c7145ac18"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/environment.json",
+      "bytes": 218,
+      "sha256": "ee7222e6bd912d017fc96867774d79b4a9221d82e9979f6676f8cd1bb8673744"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/input_bundle/configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/input_bundle/data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+      "bytes": 503515,
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/input_bundle/docs/implementation_20261002/data/admission.json",
+      "bytes": 7764,
+      "sha256": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/input_bundle/docs/implementation_20261002/data/admission_tou.json",
+      "bytes": 15146,
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/input_bundle/docs/implementation_20261002/data/field_provenance_tou.csv",
+      "bytes": 23677,
+      "sha256": "16f8f749f3c1c6354d22a9f2fbeece3da170a9c1d90ecfa9508ac38a4e108474"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/input_bundle/docs/implementation_20261002/data/monthly_tariff_verified.csv",
+      "bytes": 1723,
+      "sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/input_bundle/docs/implementation_20261002/data/tou_account_and_hours.json",
+      "bytes": 3143,
+      "sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/manifest.json",
+      "bytes": 3179,
+      "sha256": "e15b13f494894da84fb4ea2bb4558b2f4be4d833821f77343f444336335cc7fd"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/protocol.json",
+      "bytes": 2680,
+      "sha256": "f453d4aa3827c4dc94f669271ab1f5880253eeb0ba01622025232b12cd608ea0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01/source_identity.json",
+      "bytes": 22924,
+      "sha256": "449bdc325952c32ea8da514f88e7320b7e40fbfe4fa169e4a014aa94d76ffc6e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/saved_output_negative_control.json",
+      "bytes": 9313,
+      "sha256": "d066041a52cfc660ddbdc4a2d68256e2fd78ed384cb6d881982912feb886fb79"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/small_tests_01.xml",
+      "bytes": 6456,
+      "sha256": "3702f81c436eb9ecf697e8059a7bb320d321ac40b4b0b928f53ceb4e0b895650"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/small_tests_02.xml",
+      "bytes": 3565,
+      "sha256": "3f26ef185078f5fe6000ed50238e24ed0cfe8579a2cdc108785e8704ad4ecdf3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/strict_missing_sources_01.json",
+      "bytes": 32294,
+      "sha256": "30001892a926793b9341b41f1c7dee758aa3e499559f1a7c8ae815e4d421a352"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/portable/validation.json",
+      "bytes": 5778,
+      "sha256": "7583459ffd54404fa1f3332fd4c6219cc38009847c4b3dec7e3aa1e8b7ed7bfe"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/review/ACCEPTANCE_INTERFACE.md",
+      "bytes": 5188,
+      "sha256": "8c64c55b2711f797d74cab8a3e2c9009ef57e2de9491ea531d4decb9ad0deb3c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/review/FAIR_COMPARISON_PROTOCOL.json",
+      "bytes": 8832,
+      "sha256": "35971053f06ccd13c46221f6eba1413e7ce7275123a0ed6ba0c588112c13bb49"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/review/MAIN_CASE_ACCEPTANCE.md",
+      "bytes": 14199,
+      "sha256": "67d487796e96efeb83c006206e47ef3e66ff5e2eec63ee615fb2e4578cd369eb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/review/PRIMARY_METHOD_REVIEW.md",
+      "bytes": 11584,
+      "sha256": "805bceea7ea096ff2243e053baed25a1c1d9ce24d68802efbedd62a4f8a144fa"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/review/README.md",
+      "bytes": 2971,
+      "sha256": "d4616968bb03313dea9fcff5d2b4bedf90d0a8483383b60280bfa6ba0d4f24c5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/review/feature_evidence.json",
+      "bytes": 71854,
+      "sha256": "943723d12cb2051fb2c867fc2d85e5b065ef29474fce2db2e4baa580f3744732"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/review/implementation_disposition_02.json",
+      "bytes": 5433,
+      "sha256": "7efa24ab02e8626d008fc8a39e336393004646786af09eeab2ef73d56dbefba5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/review/implementation_issues_01.json",
+      "bytes": 7858,
+      "sha256": "acb8782edf8093b963f20097862df34375fb313e5a9f857b8a98da472cbb9dcb"
+    },
+    {
+      "path": "docs/source_intake_20261002/planning_user_update/THREE_CITY_DECISIONS.md",
+      "bytes": 24944,
+      "sha256": "e96e3811e97319e45dcd49d388801d73e272019b1077ac6df5a81d64db82783b"
+    },
+    {
+      "path": "scripts/prepare_three_city_common_reference.py",
+      "bytes": 27498,
+      "sha256": "ee6910122077f2e875e9eb1f1d0e250febea0be8c2589c15c5526841a5e8b288"
+    },
+    {
+      "path": "scripts/refine_three_city_climate_dispatch.py",
+      "bytes": 6966,
+      "sha256": "bdcc0140db9d31cf0dd9f7bb489c0bf2020c1603c01728795ad189360b984d3f"
+    },
+    {
+      "path": "scripts/report_three_city_climate_dispatch.py",
+      "bytes": 5010,
+      "sha256": "b016c6ad7abd65415f98319ab451decbd3c5a961b9727d172b4804298a54b9ee"
+    },
+    {
+      "path": "scripts/reproduce_admitted_reference.py",
+      "bytes": 23052,
+      "sha256": "6de45833472b05afb3b5f1501443f4c87cbc8cfdcf4affd69b35fc524786da97"
+    },
+    {
+      "path": "scripts/run_three_city_climate_dispatch.py",
+      "bytes": 14266,
+      "sha256": "433fc8f42ebc591b747eca36cfa60bcc47de102319d19c55fd3b12f5e1efc27a"
+    },
+    {
+      "path": "scripts/verify_three_city_climate_dispatch.py",
+      "bytes": 4565,
+      "sha256": "489710c676e7fa544adf9ae39ef82795a10f30ea9373c20f407a2a9ce28847e9"
+    },
+    {
+      "path": "src/heatplan/decision_weight_calibration.py",
+      "bytes": 18451,
+      "sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92"
+    },
+    {
+      "path": "tests/test_decision_weight_calibration.py",
+      "bytes": 17834,
+      "sha256": "be8c7798e00961b758cb998f65f451dffe94ef03cd7c4be0c44cc66067bec7f8"
+    },
+    {
+      "path": "tests/test_portable_reference_reproduction.py",
+      "bytes": 13640,
+      "sha256": "86432bec30a2903041f81d5fa917acf6e264f3c2f3ef2ef15eedcc8991ee30c7"
+    },
+    {
+      "path": "tests/test_three_city_climate_dispatch.py",
+      "bytes": 2107,
+      "sha256": "58c9497c964f3f10663f0aad383bfb202bb4239f64a60edab6da23107fbaba76"
+    },
+    {
+      "path": "tests/test_three_city_common_reference.py",
+      "bytes": 7168,
+      "sha256": "9cb30ebb08cdd568aa8cb776412566bc05c4e563cc595d486cc7997ffaba253a"
+    }
+  ],
+  "excluded_source_originals": [
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/contract_page_12.png",
+      "bytes": 50178,
+      "sha256": "36aebaf80dfcb8ea9fb30ceb913d532b7352ca989d61671995a842bc41d6d6d9",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/contract_page_13.png",
+      "bytes": 26451,
+      "sha256": "25b4bf5ca56475ca5f702680c2867089265df03cfc97df2ea3d87001a7cf0a7e",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/contract_page_3.png",
+      "bytes": 229623,
+      "sha256": "66245d58cc926332ddff0300adb0cebe15094ccdd4225468c4264a672e10147b",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/contract_page_4.png",
+      "bytes": 151804,
+      "sha256": "b022ffd39697cfc3e5962899d0e80319b41b8344e4a1eab55872615e6048a95c",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/contract_page_5.png",
+      "bytes": 158961,
+      "sha256": "a3d710c95a78cb8483c8041f367dcdc1ab5c8950a1aa487c90d99851d2b1e007",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/cqc_nulite_2024.pdf",
+      "bytes": 322927,
+      "sha256": "4a004cac98146d70609eaa643b27791c7f996591e620ce614425a7d25b9b29b2",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/cqc_vanward_2023.pdf",
+      "bytes": 409364,
+      "sha256": "8200906c55f2d7b6406419da6f5548c5f0ace4987dd8b2ed186b8688bfb1fc97",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/original_contract_page_1.png",
+      "bytes": 322714,
+      "sha256": "76052bada5831d2fb871c2cea4496589190f078eb4681546a56be8de322200d8",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/original_contract_page_2.png",
+      "bytes": 282585,
+      "sha256": "5671c3ed47f4e4bf8841b7a1a9b74d501ebb7a855b150c26034a76f713820e6a",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/original_contract_page_3.png",
+      "bytes": 328731,
+      "sha256": "62d184b68652e81ab58f55a038a225e4639b958b8c4d974e31800a96bd2d117b",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/original_contract_page_4.png",
+      "bytes": 214452,
+      "sha256": "bb68ef61053f1adad7bcf8603252e6fedd15aaaeabae8245a26a0b83e6527416",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/original_contract_page_5.png",
+      "bytes": 277123,
+      "sha256": "b21b90c4b4ee991856fb104613ae2500fa6d4862d784956af953de9177a08c38",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/original_contract_page_6.png",
+      "bytes": 265505,
+      "sha256": "73d1042b7b2374834fe051763fdc4e9969857962fbf296f74005b0faecf679b8",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/original_contract_page_7.png",
+      "bytes": 324672,
+      "sha256": "4c2b5ce30f9ef4e32468e8490f29f8889a1fbd23e72b07d895dc6b6b4d685292",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/original_contract_page_8.png",
+      "bytes": 317697,
+      "sha256": "c67b3c86d1b235c2e7587dc42b1aafcc172e676e181b3b62459de8b8618d337c",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/original_contract_page_9.png",
+      "bytes": 148420,
+      "sha256": "954693eb228ea58866b6c6b1c961c431f73a1cfe4e4713202149d259f0f5c186",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_award_2024.pdf",
+      "bytes": 39316,
+      "sha256": "64efab2faf550fded7e3712af2d48cdd95523e9d229e816ab524d911f5f3a7e5",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_contract_20251223.pdf",
+      "bytes": 286889,
+      "sha256": "154af6c9b088f6e0dae71b79f7b25a357b36e2e254f43f5c9c2d0238815816cb",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_original_contract.pdf",
+      "bytes": 607866,
+      "sha256": "aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d",
+      "reason": "Original source PDF/government page image excluded; retain URL/SHA and source-applicability inventory"
+    }
+  ],
+  "reused_ignored_reference_sources": [
+    {
+      "path": "docs/implementation_20261002/data/evidence/bestest_6231.pdf",
+      "sha256": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+      "bytes": 14125344,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf",
+      "sha256": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+      "bytes": 121854,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf",
+      "sha256": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+      "bytes": 839889,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html",
+      "sha256": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d",
+      "bytes": 107762,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json",
+      "sha256": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+      "bytes": 335605,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_11.pdf",
+      "sha256": "9fa81bc3be47c1917fbd0e0f6cac1bf1dfb5edc47559f155b9b82e97611f8b33",
+      "bytes": 684135,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_12.pdf",
+      "sha256": "74161836e189120f1f86c33f38010fc01a4e6e7e3706dfc55b07a6bf5a48163a",
+      "bytes": 232689,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2025_months.pdf",
+      "sha256": "efccc95604a44d0871a82d2315e3b30ff3c9f2aa4b7c2d5d29efd187294b632d",
+      "bytes": 23874599,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_single_two_part_policy_163_2023.pdf",
+      "sha256": "40cf12a479b73eec03940773caf2fb7d8834481214075af1ada0a6f304f16182",
+      "bytes": 810147,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_tou_policy_77_2024.pdf",
+      "sha256": "086aea2d5388ed5fb18cbfb8a7c2ef362c66896c43027681d8a6a8347856edc4",
+      "bytes": 588336,
+      "status": "Existing exact archived rc3 source bytes for strict checks; ignored, not distributed"
+    }
+  ],
+  "portable_whitelist": "docs/implementation_20261002_followup/parallel_stage_02/portable/delivery_whitelist.json"
+}

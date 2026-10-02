@@ -1,0 +1,175 @@
+{
+  "review_date": "2026-10-02",
+  "passed": true,
+  "scope": "Source-join structural integrity and primary price arithmetic, not model/finance feasibility or test of performance",
+  "join_path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_source_join.json",
+  "join_sha256": "423b89e8599dd7b4b42de66921d8009a48ec7866d297ec4f5e2eb242e0ada33c",
+  "field_count": 28,
+  "source_and_reference_hash_count": 21,
+  "hashes": [
+    {
+      "group": "sources",
+      "id": "equipment_price_table",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/equipment_price_extracted.csv",
+      "sha256": "24888b9b520440d532be5d2251dbd258f81af6b459d9b626b748c54ecaf07ca5",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "performance_table",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/equipment_performance_extracted.csv",
+      "sha256": "6e17cc6e84c42159d245b872b1488e638547dd2952eec93e2ba20adc0023d544",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "om_table",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/om_cost_extracted.csv",
+      "sha256": "7ae05c9412eacde07f4d21e9ba3de894d4bd54e15ab71b1ad52ccd223bfed117",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "economic_table",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/economic_boundary_extracted.csv",
+      "sha256": "f45a6eba568b8af71175d7d5a38f64e81a276c95ba12a0f2a8852dbbe1f1997b",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "prior_equipment_audit",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/equipment_extension_audit.json",
+      "sha256": "5ce995efa9267f046284327e85d5bba8650900cf1d46eced9ac8cf35940e9624",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "prior_source_index",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/DATA_SOURCE_INDEX.csv",
+      "sha256": "e33bcd4e712d14649b5bea3c43cd5023db96275d930526167b3f5b27b555ed76",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "qipanjing_award_2024.pdf",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_award_2024.pdf",
+      "sha256": "64efab2faf550fded7e3712af2d48cdd95523e9d229e816ab524d911f5f3a7e5",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "lingwu_award_2024.html",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/lingwu_award_2024.html",
+      "sha256": "f44eb172bd7c7ed84d40ed133e240433c6d4cf1ed2ed19550f0cac87eb937969",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "cqc_nulite_2024.pdf",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/cqc_nulite_2024.pdf",
+      "sha256": "4a004cac98146d70609eaa643b27791c7f996591e620ce614425a7d25b9b29b2",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "cqc_vanward_2023.pdf",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/cqc_vanward_2023.pdf",
+      "sha256": "8200906c55f2d7b6406419da6f5548c5f0ace4987dd8b2ed186b8688bfb1fc97",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "original_contract",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_original_contract.pdf",
+      "sha256": "aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "later_electronic_contract",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_contract_20251223.pdf",
+      "sha256": "154af6c9b088f6e0dae71b79f7b25a357b36e2e254f43f5c9c2d0238815816cb",
+      "passed": true
+    },
+    {
+      "group": "sources",
+      "id": "economic_185_screen",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/economic_185_applicability_review.json",
+      "sha256": "1efbebb3a49d55d50e258765a89eb53e4132c2ef96183fc6030bfcf919385685",
+      "passed": true
+    },
+    {
+      "group": "prior_frozen_references",
+      "id": "common_window_manifest",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/manifest.json",
+      "sha256": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279",
+      "passed": true
+    },
+    {
+      "group": "prior_frozen_references",
+      "id": "common_physics",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/common_physical_reference.json",
+      "sha256": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+      "passed": true
+    },
+    {
+      "group": "prior_frozen_references",
+      "id": "common_protocol",
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/protocol.json",
+      "sha256": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7",
+      "passed": true
+    },
+    {
+      "group": "prior_frozen_references",
+      "id": "wuhan_common_window",
+      "path": "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv",
+      "sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+      "passed": true
+    },
+    {
+      "group": "prior_frozen_references",
+      "id": "e0_admission",
+      "path": "docs/implementation_20261002/data/admission.json",
+      "sha256": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+      "passed": true
+    },
+    {
+      "group": "prior_frozen_references",
+      "id": "wuhan_tou_admission",
+      "path": "docs/implementation_20261002/data/admission_tou.json",
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "passed": true
+    },
+    {
+      "group": "prior_frozen_references",
+      "id": "wuhan_monthly_tariff",
+      "path": "docs/implementation_20261002/data/monthly_tariff_verified.csv",
+      "sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "passed": true
+    },
+    {
+      "group": "prior_frozen_references",
+      "id": "wuhan_tou_rules",
+      "path": "docs/implementation_20261002/data/tou_account_and_hours.json",
+      "sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "passed": true
+    }
+  ],
+  "download_receipts": [
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_contract_receipt.json",
+      "sha256": "08e8da9b1edbf62211b23261d2fd0f963aa64ae2c0044aaf4cc0c1791d444b7d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_original_contract_receipt.json",
+      "sha256": "b59d73eb06e858c50544b33cec7754dc7bcb78f07e479fdb14ae2fc1b50e937b"
+    }
+  ],
+  "contract_table_total_verified": 49002690,
+  "all_field_source_ids_resolve": true,
+  "common_input_readonly_verify_passed": true,
+  "old_common_manifest_sha256": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279",
+  "no_investment_solver_run": true,
+  "no_profit_calculation": true,
+  "no_main_config_write": true
+}

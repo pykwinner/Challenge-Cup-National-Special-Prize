@@ -1,0 +1,1872 @@
+{
+  "schema_version": "feature_evidence.independent_review.v1",
+  "completed_utc": "2026-10-02 10:45:44 UTC",
+  "workspace": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge",
+  "scope": {
+    "feature_count": 4,
+    "source_and_existing_output_read_only": true,
+    "new_solver_runs": 0,
+    "model_or_data_modified": false,
+    "prior_review_files_modified": false,
+    "only_new_written_artifact": "docs/implementation_20261002_followup/parallel_stage_02/review/feature_evidence.json",
+    "git_upload_or_tag": false
+  },
+  "overall_decision": "四项特色有可追溯实现和定量证据。建筑舒适/分时调度及费用—碳取舍有受控完整时序结果；共用余热与事件状态边界有解析机制对照。不能将这些证据升级为真实工程节约、全经济自由投资主案例、现场验证或新理论。",
+  "evidence_dependency": "建筑分时调度、完整时序及多目标结果共享同一公开原型。三城比较使用同一武汉方法学价，并非三个独立当地工程案例。",
+  "features": [
+    {
+      "id": "shared_upstream_heat",
+      "title": "共享上游余热在逐时出力及静态保障组合中避免重复占用",
+      "score_categories": [
+        "S1 模型架构",
+        "S3 场景功能接口",
+        "S7 可复现机制验证"
+      ],
+      "strength": "完成机制对照，真实工程效果尚未验证",
+      "core_code": [
+        {
+          "path": "src/heatplan/physical_extensions.py",
+          "line": 25,
+          "symbol": "add_shared_heat_resources"
+        },
+        {
+          "path": "src/heatplan/physical_extensions.py",
+          "line": 82,
+          "symbol": "add_firm_resource_limits"
+        },
+        {
+          "path": "src/heatplan/physical_extensions.py",
+          "line": 112,
+          "symbol": "add_resource_firm_portfolios"
+        },
+        {
+          "path": "src/heatplan/model.py",
+          "line": 1160,
+          "symbol": "shared_heat_constraint_registration"
+        },
+        {
+          "path": "src/heatplan/model.py",
+          "line": 3387,
+          "symbol": "shared_resource_dispatch_export"
+        }
+      ],
+      "equation": "Q_direct/eta + Q_HP*(1-1/COP)/eta <= available_upstream_heat；压缩机电量不占用上游余热。firm资源用声明时段最小可用量和最大取热比例作保守检查。",
+      "controlled_evidence": [
+        {
+          "test_path": "tests/test_physical_extensions.py",
+          "line": 37,
+          "test": "test_same_resource_is_not_allocated_twice_and_compressor_heat_is_excluded",
+          "conditions": "单小时60kW低温直供+60kW高温热泵、COP3、transfer_efficiency0.8",
+          "quantitative": {
+            "upstream_required_kw": 125,
+            "compressor_electricity_kwh": 20,
+            "feasible_available_kw": 125,
+            "infeasible_available_kw": 124
+          },
+          "result": "125kW资源可行；124kW不可行；删除共用约束会错误接受短缺。"
+        },
+        {
+          "test_path": "tests/test_physical_extensions.py",
+          "line": 73,
+          "test": "test_shared_pool_can_require_new_independent_firm_backup",
+          "conditions": "两直供各60kW共享75kW资源；负荷50kW，reserve_margin1，保障需求100kW；独立备源允许新增",
+          "quantitative": {
+            "nameplate_sum_kw": 120,
+            "upstream_resource_kw": 75,
+            "firm_requirement_kw": 100,
+            "new_independent_backup_kw": 25
+          },
+          "result": "需要25kW独立备源；该备源N-1失效时不可行。"
+        },
+        {
+          "test_path": "tests/test_physical_extensions_independent_review.py",
+          "line": 110,
+          "test": "test_shared_upstream_cap_cannot_be_counted_twice_as_firm_reserve",
+          "before": "docs/implementation_20261002/algorithm/core_review_reserve_initial.xml",
+          "after": "docs/implementation_20261002/algorithm/core_review_final_kpi_tests.xml",
+          "result": "原版本错误通过100kW保障；修复后拒绝，旧失败证据保留。"
+        }
+      ],
+      "completed_run_evidence": [
+        "docs/implementation_20261002/resource_reserve_tests_final.xml",
+        "docs/implementation_20261002/final_physical_tests.xml",
+        "docs/implementation_20261002_followup/final_tests_02.xml"
+      ],
+      "allowed_claim": "共用资源约束能拒绝单设备容量之和造成的虚假可行调度或保障容量。",
+      "limits": [
+        "删除资源约束属于物理无效负例，不能把它的低费用作为同物理可行域经济基线。",
+        "测试数字不是八钢实际资源量或新增备源容量。",
+        "保守静态firm及指定N-1检查不是资源共因停运或连续事故恢复证明。",
+        "仅支持direct_heat与heat_pump取热；同池制冷/排热被显式拒绝。"
+      ],
+      "minimal_executable_comparison": {
+        "command": "D:/app/anaconda3/python.exe -B -m pytest tests/test_physical_extensions.py::test_same_resource_is_not_allocated_twice_and_compressor_heat_is_excluded tests/test_physical_extensions.py::test_shared_pool_can_require_new_independent_firm_backup tests/test_physical_extensions_independent_review.py::test_shared_upstream_cap_cannot_be_counted_twice_as_firm_reserve -q",
+        "environment": "PYTHONPATH=src；本轮未执行，现有XML已验证这些测试通过。",
+        "missing_engineering_evidence": "若需工程效果，用公开可核验资源边界和设备参数冻结同一24h服务/价格/容量；分别输出资源取热残差、设备出力、备源容量和费用。漏约束结果须由同一上游资源外审标为无效。无需等待私人SCADA，但无真实数据时只能称机制算例。"
+      }
+    },
+    {
+      "id": "building_comfort_TOU",
+      "title": "连续室温硬约束下利用分时价格调整供热",
+      "score_categories": [
+        "S2 动态仿真",
+        "S3 场景运行对照",
+        "S6 定量分析"
+      ],
+      "strength": "完成同输入同服务2880h对照，并独立复算三城复核版12行",
+      "core_code": [
+        {
+          "path": "src/heatplan/building_thermal.py",
+          "line": 31,
+          "symbol": "exact_rc_coefficients"
+        },
+        {
+          "path": "src/heatplan/building_thermal.py",
+          "line": 463,
+          "symbol": "add_building_thermal_constraints"
+        },
+        {
+          "path": "src/heatplan/model.py",
+          "line": 594,
+          "symbol": "building_constraint_registration"
+        },
+        {
+          "path": "src/heatplan/model.py",
+          "line": 1046,
+          "symbol": "actual_RC_cooling_balance"
+        },
+        {
+          "path": "src/heatplan/model.py",
+          "line": 1650,
+          "symbol": "actual_RC_heat_balance"
+        },
+        {
+          "path": "scripts/run_representative_season_confirmation.py",
+          "line": 66,
+          "symbol": "rollout"
+        }
+      ],
+      "historical_wuhan_comparison": {
+        "optimizer_directory": "docs/implementation_20261002/reference_experiments_tou/rc/cost_endpoint",
+        "baseline_trajectory": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_0/trajectory.csv",
+        "protocols": [
+          "docs/implementation_20261002/reference_experiments_tou/rc/protocol.json",
+          "docs/implementation_20261002_followup/representative_season_confirmation/run_01/protocol.json"
+        ],
+        "same_input_sha256": true,
+        "same_physical_service": true,
+        "baseline_definition": "全时段最低20℃，允许自然漂移至27℃；最后1h恢复20℃并计入冷热和账。自由优化器与预先δ=0可行策略服务约束相同，控制策略类别不同。",
+        "excluded_baseline": "docs/implementation_20261002/reference_experiments_tou/rc/fixed_lower_temperature是始终20℃的更窄舒适带，不能替代δ=0。"
+      },
+      "shared_conditions": {
+        "start_inclusive": "2024-11-16T00:00:00+08:00",
+        "end_exclusive": "2025-03-16T00:00:00+08:00",
+        "hours": 2880,
+        "dt_hours": 1,
+        "period_weight": 1,
+        "scenario_probability": 1,
+        "area_m2": 48,
+        "H_kw_per_c": 0.1043,
+        "C_kwh_per_c": 0.535576,
+        "comfort_c": [
+          20,
+          27
+        ],
+        "initial_and_terminal_c": 20,
+        "internal_gain_kw": 0.2,
+        "solar_gain_kw": 0,
+        "ideal_capacity_kw": 1000,
+        "heating_efficiency": 1,
+        "cooling_EER": 1,
+        "free_investment_decisions": 0,
+        "storages": 0
+      },
+      "quantitative_wuhan": {
+        "delta0": {
+          "heat_kwh": 3043.010076702301,
+          "cooling_kwh": 0,
+          "electricity_kwh": 3043.010076702301,
+          "bill_yuan": 2305.8219675989194,
+          "carbon_kg": 1230.5932750184104,
+          "peak_import_kw": 2.391855000000001,
+          "valley_energy_kwh": 1135.0015631660117,
+          "valley_energy_fraction": 0.3729864622715968,
+          "energy_by_tariff_bucket_kwh": {
+            "flat": 942.5140720000004,
+            "peak": 734.2248521917271,
+            "sharp": 231.26958934456172,
+            "valley": 1135.0015631660117
+          }
+        },
+        "cost_endpoint": {
+          "heat_kwh": 3176.9200610837297,
+          "cooling_kwh": 0,
+          "electricity_kwh": 3176.9200610837297,
+          "bill_yuan": 2265.4287377685373,
+          "carbon_kg": 1284.7464727022602,
+          "peak_import_kw": 6.348812042875044,
+          "valley_energy_kwh": 1588.5116526208749,
+          "valley_energy_fraction": 0.5000162490959853,
+          "energy_by_tariff_bucket_kwh": {
+            "flat": 684.2434420282016,
+            "peak": 738.3068370900919,
+            "sharp": 165.85812934456155,
+            "valley": 1588.5116526208749
+          }
+        },
+        "change_percent": {
+          "bill_yuan": -1.7517930871499183,
+          "electricity_kwh": 4.400576436031607,
+          "carbon_kg": 4.400576436031611,
+          "peak_import_kw": 165.4346539767269,
+          "valley_energy_fraction_percentage_points": 12.702978682438848
+        }
+      },
+      "primary_completed_extension": {
+        "directory": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02",
+        "protocol_sha256": "16b98535cc35d8c087a1fb831db5980740f23cf84c19ade3ba6566ea95839d66",
+        "reference_prior": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01",
+        "baseline_rows_reused": 3,
+        "new_optimization_rows": 9,
+        "per_stage_seconds": 60,
+        "requested_mip_gap": 0,
+        "all_12_rows_independently_passed": true,
+        "source_and_code_identity_file_count": 39,
+        "all_identity_passed": true,
+        "output_manifest_hashes_passed": true,
+        "cost_endpoint_vs_delta0": [
+          {
+            "city": "urumqi",
+            "bill_yuan_change_percent": -1.7011579335632787,
+            "energy_kwh_change_percent": 3.5431990042933257,
+            "carbon_kg_change_percent": 3.5431990042933617,
+            "peak_import_kw_change_percent": 114.12282019902018
+          },
+          {
+            "city": "guyuan",
+            "bill_yuan_change_percent": -1.7168201003415238,
+            "energy_kwh_change_percent": 3.493766528437488,
+            "carbon_kg_change_percent": 3.493766528437499,
+            "peak_import_kw_change_percent": 103.87269533743068
+          },
+          {
+            "city": "wuhan",
+            "bill_yuan_change_percent": -1.7517930871498986,
+            "energy_kwh_change_percent": 4.400576436031607,
+            "carbon_kg_change_percent": 4.400576436031591,
+            "peak_import_kw_change_percent": 165.4346539767269
+          }
+        ]
+      },
+      "allowed_claim": "在同一公开原型、气候和舒适约束下，自由逐时费用解降低该窗口参考电量费，同时增加电量和固定平均因子CO2；武汉为-1.751793%/+4.400576%。",
+      "limits": [
+        "48m² BESTEST600派生原型和NASA网格气候不是现场实测或校准建筑；太阳得热被排除。",
+        "三城共同武汉账户价和0.4044kg/kWh年平均EF用于方法学控制，不是乌市/固原当地账户价或小时边际碳因子。",
+        "只计120天电量费；无基本费、未知O&M、自由投资、收入、ROI或生命周期经济结论。",
+        "武汉谷段电量占比增加12.70298个百分点，但峰值从2.391855升至6.348812kW；不能宣称节能、降碳或削峰。",
+        "舒适认证为时段端点；乌市/固原窗口不声称各自当地完整采暖季。"
+      ],
+      "minimal_missing_comparison": {
+        "needed_for_current_operational_claim": false,
+        "reason": "现有同输入、同服务、明确基准的完整时序结果已复算。",
+        "needed_for_engineering_savings": "另立公开已准入的现场结构及可变设备投资主案例；未知费用不能填0。"
+      }
+    },
+    {
+      "id": "chronology_event_boundaries",
+      "title": "连续时序及燃料/电池显式初始与终端状态",
+      "score_categories": [
+        "S2 动态状态",
+        "S1 可靠性接口",
+        "S7 边界验证"
+      ],
+      "strength": "完整时序及解析事件对照已完成，真实工程事故可靠性未验证",
+      "core_code": [
+        {
+          "path": "src/heatplan/physical_extensions.py",
+          "line": 135,
+          "symbol": "EventStateBoundary"
+        },
+        {
+          "path": "src/heatplan/physical_extensions.py",
+          "line": 181,
+          "symbol": "elapsed_time_validation"
+        },
+        {
+          "path": "src/heatplan/physical_extensions.py",
+          "line": 194,
+          "symbol": "retained_initial_state"
+        },
+        {
+          "path": "src/heatplan/physical_extensions.py",
+          "line": 202,
+          "symbol": "terminal_constraints"
+        },
+        {
+          "path": "src/heatplan/model.py",
+          "line": 1229,
+          "symbol": "fuel_boundary"
+        },
+        {
+          "path": "src/heatplan/model.py",
+          "line": 2013,
+          "symbol": "battery_boundary"
+        },
+        {
+          "path": "src/heatplan/experiments.py",
+          "line": 13,
+          "symbol": "freeze_investment_plan_relax_reliability_false"
+        },
+        {
+          "path": "scripts/run_evidence_case_experiments.py",
+          "line": 69,
+          "symbol": "chronology_check"
+        }
+      ],
+      "full_chronology_evidence": {
+        "baseline": "docs/implementation_20261002/reference_experiments_tou/rc/baseline",
+        "strict_replay": "docs/implementation_20261002/reference_experiments_tou/rc/fixed_replay",
+        "quantitative": {
+          "rows": 2880,
+          "same_timestamps": true,
+          "max_numeric_difference": 0,
+          "baseline_bill_yuan": 2265.428715014252,
+          "replay_bill_yuan": 2265.428715014252
+        },
+        "note": "该原型无新投资和储能；严格复算相同不能替代复杂系统储能SOC或停运证明。"
+      },
+      "controlled_evidence": [
+        {
+          "test_path": "tests/test_physical_extensions.py",
+          "line": 125,
+          "test": "test_cold_event_consumes_only_explicit_initial_fuel_and_available_deliveries",
+          "conditions": "连续2h各1kWh热服务、LHV/转换效率1、初始1kg、交付允许量[0,1]kg、终端0",
+          "quantitative": {
+            "delivery_kg": 1,
+            "terminal_inventory_kg": 0
+          },
+          "result": "初始1可行；初始0或要求终端恢复1kg不可行。"
+        },
+        {
+          "test_path": "tests/test_physical_extensions.py",
+          "line": 139,
+          "test": "test_fixed_fuel_single_step_retention_and_terminal_are_independent",
+          "quantitative": {
+            "initial_kg": 1,
+            "retention": 0.9,
+            "consumption_kg": 0.5,
+            "terminal_kg": 0.4
+          },
+          "result": "单步衰减与终端约束独立，避免同索引覆盖。"
+        },
+        {
+          "test_path": "tests/test_physical_extensions.py",
+          "line": 164,
+          "test": "test_outage_uses_explicit_battery_soc_and_enforces_terminal_recovery",
+          "conditions": "1h断网、1kWh电热服务、1kWh/1kW电池、效率1、初始SOC1",
+          "quantitative": {
+            "grid_energy_kwh": 0,
+            "battery_discharge_kwh": 1,
+            "terminal_soc_kwh": 0
+          },
+          "result": "终端0可行；无电源却要求恢复终端1不可行。"
+        },
+        {
+          "test_path": "tests/test_physical_extensions_independent_review.py",
+          "line": 30,
+          "before": "docs/implementation_20261002/algorithm/core_review_initial_counterexamples.xml",
+          "after": "docs/implementation_20261002/algorithm/core_review_final_kpi_tests.xml",
+          "result": "燃料缺口/倒序/重复与电池缺口4个负例，由原4个失败转为修复后通过。"
+        }
+      ],
+      "completed_run_evidence": [
+        "docs/implementation_20261002/final_physical_tests.xml",
+        "docs/implementation_20261002_followup/final_tests_02.xml"
+      ],
+      "allowed_claim": "固定事件使用显式存量及实际连续时间，可拒绝缺失经过小时、未声明库存和不可能的终端恢复。",
+      "limits": [
+        "武汉及三城原型未配置库存或储能，SOC不适用。",
+        "1–2h解析事件不是现场冷潮、供应链或停电恢复证据。",
+        "fixed模式拒绝非1代表权重；cyclic模式不证明初始资源已存在。",
+        "冻结资产默认保留原可靠性；显式relax_reliability=True仅供压力诊断。"
+      ],
+      "minimal_executable_comparison": {
+        "command": "D:/app/anaconda3/python.exe -B -m pytest tests/test_physical_extensions.py::test_cold_event_consumes_only_explicit_initial_fuel_and_available_deliveries tests/test_physical_extensions.py::test_fixed_fuel_single_step_retention_and_terminal_are_independent tests/test_physical_extensions.py::test_outage_uses_explicit_battery_soc_and_enforces_terminal_recovery tests/test_physical_extensions_independent_review.py::test_fixed_fuel_event_rejects_gap_reverse_and_duplicate_timestamps tests/test_physical_extensions_independent_review.py::test_fixed_battery_event_rejects_missing_elapsed_hours -q",
+        "environment": "PYTHONPATH=src；本轮未执行，指定测试已有通过XML。",
+        "engineering_extension": "冻结24h已有资产、故障、到货和服务；记录显式初始及终端恢复。日重置/缺边界只能作外部状态方程否定的负例。未知SOC不能设为满储。"
+      }
+    },
+    {
+      "id": "multiobjective_cost_carbon",
+      "title": "区分电量费与研究碳权重，展示费用—碳取舍及碳帽采样",
+      "score_categories": [
+        "S4 多目标",
+        "S6 前沿采样分析",
+        "S7 账目复算"
+      ],
+      "strength": "完整时序两端点、五点方法比较和三城中点帽完成；非完整Pareto前沿或设备投资比较",
+      "core_code": [
+        {
+          "path": "src/heatplan/model.py",
+          "line": 2265,
+          "symbol": "emissions_cap"
+        },
+        {
+          "path": "src/heatplan/model.py",
+          "line": 2829,
+          "symbol": "two_stage_lexicographic"
+        },
+        {
+          "path": "src/heatplan/experiments.py",
+          "line": 351,
+          "symbol": "epsilon_constraint_pareto"
+        },
+        {
+          "path": "scripts/compare_reference_frontier.py",
+          "line": 1,
+          "symbol": "normalized_weighted_comparison"
+        },
+        {
+          "path": "scripts/refine_three_city_climate_dispatch.py",
+          "line": 74,
+          "symbol": "gap0_and_known_feasible_endpoint_gate"
+        }
+      ],
+      "controlled_evidence": [
+        "docs/implementation_20261002/frontier_comparison/protocol.json",
+        "docs/implementation_20261002/frontier_comparison/point_ledgers.csv",
+        "docs/implementation_20261002/frontier_comparison/comparison.json",
+        "docs/implementation_20261002/frontier_comparison/independent_verification.json",
+        "docs/implementation_20261002/frontier_comparison/failures.json",
+        "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/protocol.json",
+        "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/comparison.json"
+      ],
+      "frozen_method_conditions": {
+        "case": "同一武汉2880h原型及特色building_comfort_TOU服务",
+        "weighted_lambdas": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1
+        ],
+        "epsilon_positions": 5,
+        "normalization": "共用成本/排放两端点跨度",
+        "distinct_normalized_tolerance": 0.00001,
+        "time_limit_per_stage_seconds": 120,
+        "mip_gap_target": 0.0001,
+        "new_technology_investment_rows": 0
+      },
+      "quantitative": {
+        "cost_endpoint": {
+          "heat_kwh": 3176.9200610837297,
+          "cooling_kwh": 0,
+          "electricity_kwh": 3176.9200610837297,
+          "bill_yuan": 2265.4287377685373,
+          "carbon_kg": 1284.7464727022602,
+          "peak_import_kw": 6.348812042875044,
+          "valley_energy_kwh": 1588.5116526208749,
+          "valley_energy_fraction": 0.5000162490959853,
+          "energy_by_tariff_bucket_kwh": {
+            "flat": 684.2434420282016,
+            "peak": 738.3068370900919,
+            "sharp": 165.85812934456155,
+            "valley": 1588.5116526208749
+          }
+        },
+        "emission_endpoint": {
+          "heat_kwh": 3043.010107379664,
+          "cooling_kwh": 0,
+          "electricity_kwh": 3043.010107379664,
+          "bill_yuan": 2305.8219444153565,
+          "carbon_kg": 1230.5932874243363,
+          "peak_import_kw": 2.391855,
+          "valley_energy_kwh": 1135.0017365291808,
+          "valley_energy_fraction": 0.3729865154823724,
+          "energy_by_tariff_bucket_kwh": {
+            "flat": 942.5139293141954,
+            "peak": 734.2248521917264,
+            "sharp": 231.26958934456152,
+            "valley": 1135.0017365291808
+          }
+        },
+        "cost_span_yuan": 40.39320664681918,
+        "emission_span_kg": 54.15318527792397,
+        "weighted_five_positions_recomputed": {
+          "displayed_points": 5,
+          "distinct_emission_positions": 4,
+          "maximum_adjacent_normalized_emissions_gap": 0.43934046569238183
+        },
+        "epsilon_five_positions_recomputed": {
+          "displayed_points": 5,
+          "distinct_emission_positions": 5,
+          "maximum_adjacent_normalized_emissions_gap": 0.2500004606791074
+        },
+        "existing_point_count": 10,
+        "all_points_independently_passed": true,
+        "point_values": [
+          {
+            "name": "cost_endpoint",
+            "method": "shared_endpoint",
+            "lambda": 0,
+            "energy_kwh": 3176.9200610837297,
+            "bill_yuan": 2265.428737768538,
+            "carbon_kg": 1284.7464727022602,
+            "solver_status": 0,
+            "mip_gap": 0,
+            "primary_mip_gap": 0,
+            "all_stages_solver_seconds": 4.592590200001723,
+            "new_technology_investment_rows": 0
+          },
+          {
+            "name": "emission_endpoint",
+            "method": "shared_endpoint",
+            "lambda": 1,
+            "energy_kwh": 3043.010107379664,
+            "bill_yuan": 2305.8219444153565,
+            "carbon_kg": 1230.5932874243363,
+            "solver_status": 0,
+            "mip_gap": 0,
+            "primary_mip_gap": 0,
+            "all_stages_solver_seconds": 1.769040800005314,
+            "new_technology_investment_rows": 0
+          },
+          {
+            "name": "epsilon_0",
+            "method": "epsilon",
+            "lambda": null,
+            "energy_kwh": 3043.0100767022977,
+            "bill_yuan": 2305.8219675989167,
+            "carbon_kg": 1230.5932750184093,
+            "solver_status": 0,
+            "mip_gap": 0,
+            "primary_mip_gap": null,
+            "all_stages_solver_seconds": 0.8551202999951784,
+            "new_technology_investment_rows": 0
+          },
+          {
+            "name": "epsilon_1",
+            "method": "epsilon",
+            "lambda": null,
+            "energy_kwh": 3076.487626817833,
+            "bill_yuan": 2282.8108403363494,
+            "carbon_kg": 1244.1315962851313,
+            "solver_status": 0,
+            "mip_gap": 0,
+            "primary_mip_gap": null,
+            "all_stages_solver_seconds": 5.875927200002479,
+            "new_technology_investment_rows": 0
+          },
+          {
+            "name": "epsilon_2",
+            "method": "epsilon",
+            "lambda": null,
+            "energy_kwh": 3109.9651155786223,
+            "bill_yuan": 2269.6940886146263,
+            "carbon_kg": 1257.6698927399946,
+            "solver_status": 0,
+            "mip_gap": 3.584352600812885e-7,
+            "primary_mip_gap": null,
+            "all_stages_solver_seconds": 9.56569310001214,
+            "new_technology_investment_rows": 0
+          },
+          {
+            "name": "epsilon_3",
+            "method": "epsilon",
+            "lambda": null,
+            "energy_kwh": 3143.442604339406,
+            "bill_yuan": 2266.9356002476625,
+            "carbon_kg": 1271.2081891948555,
+            "solver_status": 0,
+            "mip_gap": 0,
+            "primary_mip_gap": null,
+            "all_stages_solver_seconds": 9.665457000010065,
+            "new_technology_investment_rows": 0
+          },
+          {
+            "name": "epsilon_4",
+            "method": "epsilon",
+            "lambda": null,
+            "energy_kwh": 3176.9200931002038,
+            "bill_yuan": 2265.4287370637794,
+            "carbon_kg": 1284.7464856497222,
+            "solver_status": 0,
+            "mip_gap": 0,
+            "primary_mip_gap": null,
+            "all_stages_solver_seconds": 12.136337500007356,
+            "new_technology_investment_rows": 0
+          },
+          {
+            "name": "lambda_0_25",
+            "method": "normalized_weighted",
+            "lambda": 0.25,
+            "energy_kwh": 3118.0879996625413,
+            "bill_yuan": 2268.484119990926,
+            "carbon_kg": 1260.9547870635313,
+            "solver_status": 0,
+            "mip_gap": 0,
+            "primary_mip_gap": null,
+            "all_stages_solver_seconds": 0.9240348000021186,
+            "new_technology_investment_rows": 0
+          },
+          {
+            "name": "lambda_0_5",
+            "method": "normalized_weighted",
+            "lambda": 0.5,
+            "energy_kwh": 3100.9741809086754,
+            "bill_yuan": 2271.773600492914,
+            "carbon_kg": 1254.033958759468,
+            "solver_status": 0,
+            "mip_gap": 0,
+            "primary_mip_gap": null,
+            "all_stages_solver_seconds": 0.8651664999924833,
+            "new_technology_investment_rows": 0
+          },
+          {
+            "name": "lambda_0_75",
+            "method": "normalized_weighted",
+            "lambda": 0.75,
+            "energy_kwh": 3043.010076702298,
+            "bill_yuan": 2305.8219675989167,
+            "carbon_kg": 1230.5932750184097,
+            "solver_status": 0,
+            "mip_gap": 0,
+            "primary_mip_gap": null,
+            "all_stages_solver_seconds": 0.7778462999995099,
+            "new_technology_investment_rows": 0
+          }
+        ]
+      },
+      "compute_scope": {
+        "shared_endpoint_stages": 4,
+        "weighted_additional_stages": 3,
+        "epsilon_additional_stages": 5,
+        "shared_endpoint_solver_seconds": 6.361631000007037,
+        "weighted_additional_solver_seconds": 2.567047599994112,
+        "epsilon_additional_solver_seconds": 38.09853510002722,
+        "equal_compute_budget": false,
+        "acceleration_claim": false
+      },
+      "allowed_claim": "当前冻结五点位置下epsilon显示5个不同排放位置及最大归一间隙0.25000046，加权法为4个及0.43934047；三城另版中点帽均经独立物理和账目复算。",
+      "limits": [
+        "研究碳权重及其目标罚款不是市场碳价或实际电费。",
+        "仅是当前五点采样覆盖，不证明完整前沿。",
+        "额外求解次数和历史计时不同，不支持同预算速度优越。",
+        "固定平均EF下碳与电量成正比；不是独立小时碳机制。",
+        "无自由投资变量，不支持不同工程结构或全生命周期最优。",
+        "两阶段存在原声明主目标allowance；端点与已知可行基准比较须看两阶段状态、bounds和gaps。"
+      ],
+      "minimal_missing_comparison": {
+        "needed_for_current_coverage_claim": false,
+        "needed_for_speed_claim": "新协议使用相同总预算、硬件、求解器参数、初始化和失败处理；不得用现有不等求解数宣称加速。",
+        "needed_for_engineering_claim": "一个公开已准入CAPEX/O&M、可变容量及相同硬服务的完整主案例，至少保留固定资产/自由投资、费用/碳两端点。未知费用不能补0。"
+      }
+    }
+  ],
+  "historical_code_identity_note": {
+    "reference_experiments_model_sha256": "31939e4ea2c577558f1b616d31b3206c0b354cc6ac56ed175ec0198860bce950",
+    "later_model_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+    "same_binary_source_claimed": false,
+    "building_thermal_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "note": "历史两组model.py不同，不能称代码全同。原输入散列相同，RC模块相同，输出物理及实际账在本轮按独立公式核验；新版三城运行的39个源/代码身份也已通过。"
+  },
+  "wuhan_independent_audit": {
+    "reviewed_utc": "2026-10-02T10:37:07.151196+00:00",
+    "input_hash_identity": {
+      "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml": {
+        "reference": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+        "delta0": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+        "current": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+        "all_equal": true
+      },
+      "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": {
+        "reference": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+        "delta0": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+        "current": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+        "all_equal": true
+      }
+    },
+    "current_and_evidence_hashes": {
+      "docs/implementation_20261002/reference_experiments_tou/rc/cost_endpoint/building_trajectory.csv": "34ac08dc05f8de23952683c58f90456cc8a0eaf4b20d9a42530b7d8c24950b67",
+      "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_0/trajectory.csv": "7857b527ef54b679d31c8a362f3491f53b1dc670db377126d5b2a54484391674",
+      "docs/implementation_20261002/reference_experiments_tou/rc/emission_endpoint/building_trajectory.csv": "910f6e1dc07b624bb5a0dc5c512d5422ee3c8632e7b9393fb3f16257a94e369d",
+      "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "src/heatplan/model.py": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "src/heatplan/physical_extensions.py": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "src/heatplan/building_audit.py": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "src/heatplan/chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "src/heatplan/experiments.py": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "scripts/run_representative_season_confirmation.py": "a7f69e704ca6decb708fefd693c6a76d7066475caa62e5c343680b49ff226828",
+      "tests/test_physical_extensions.py": "4db31219617df8d4401a36b73e089b4765eb2975c1d125accccece1e02cd19c8",
+      "tests/test_physical_extensions_independent_review.py": "9bac656bde67e511c8e1f75344d495f2af5431fbbcba5146af22b42f05dd81fb"
+    },
+    "input_columns": [
+      "time",
+      "outdoor_temp",
+      "relative_humidity_pct",
+      "wind_speed_10m_m_s",
+      "solar_irradiation_wh_m2",
+      "scenario",
+      "boundary_group",
+      "scenario_probability",
+      "period_weight",
+      "electricity_price",
+      "grid_emission_factor",
+      "internal_gain_kw",
+      "solar_gain_kw",
+      "heating_service",
+      "heat_reference_no_gain_kw",
+      "steady_heat_demand_kw",
+      "steady_cooling_demand_kw",
+      "steady_temperature_c",
+      "tariff_month",
+      "tariff_bucket",
+      "tariff_source_id",
+      "tariff_pdf_page"
+    ],
+    "input_hour_count": 2880,
+    "input_start": "2024-11-16T00:00:00+08:00",
+    "input_last_start": "2025-03-15T23:00:00+08:00",
+    "input_contiguous_1h": true,
+    "input_scalar_drivers": {
+      "internal_gain_kw": [
+        0.2
+      ],
+      "solar_gain_kw": [
+        0
+      ],
+      "heating_service": [
+        1
+      ],
+      "period_weight": [
+        1
+      ],
+      "grid_emission_factor": [
+        0.4044
+      ]
+    },
+    "tariff_bucket_counts": {
+      "valley": 960,
+      "flat": 960,
+      "peak": 720,
+      "sharp": 240
+    },
+    "exact_rc_coefficients": {
+      "a": 0.8230456573200531,
+      "b": 1.696590054457784
+    },
+    "checks": {
+      "cost_endpoint": {
+        "rows": 2880,
+        "timestamps_equal": true,
+        "time_index_equal": true,
+        "finite_all_physical": true,
+        "state_continuity_max_c": 0,
+        "initial_c": 20,
+        "terminal_c": 20,
+        "max_rc_residual_c": 1.4210854715202004e-14,
+        "min_temperature_c": 20,
+        "max_temperature_c": 27,
+        "outside_comfort_degree_hours": 0,
+        "max_simultaneous_heat_cool_kw": 0,
+        "max_source_capacity_excess_kw": 0,
+        "driver_metadata_max_abs_difference": {
+          "outdoor_temp": 0,
+          "internal_gain_kw": 0,
+          "solar_gain_kw": 0,
+          "heating_service": 0
+        },
+        "model_metadata": {
+          "period_weight": [
+            1
+          ],
+          "scenario_probability": [
+            1
+          ],
+          "dt_hours": [
+            1
+          ],
+          "area_m2": [
+            48
+          ],
+          "heat_loss_kw_per_c": [
+            0.1043
+          ],
+          "thermal_capacity_kwh_per_c": [
+            0.535576
+          ],
+          "initial_temperature_reference_c": [
+            20
+          ],
+          "final_min_temperature_c": [
+            20
+          ],
+          "final_max_temperature_c": [
+            20
+          ],
+          "min_temperature_c": [
+            20
+          ],
+          "max_temperature_c": [
+            27
+          ],
+          "boundary_mode": [
+            "fixed"
+          ],
+          "boundary_group": [
+            "full_heating_season"
+          ],
+          "scenario": [
+            "wuhan_weather_reference_2024_2025"
+          ]
+        },
+        "dispatch_categories": [
+          "building_cooling",
+          "building_heat",
+          "building_temperature",
+          "cooling_output",
+          "source_heat"
+        ],
+        "source_heat_vs_building_max_abs_kw": 0,
+        "reported_solver": {
+          "solver_status": 0,
+          "mip_gap": 0,
+          "solver_elapsed_seconds": 3.4243025000032503,
+          "numerical_audit_passed": true,
+          "primary_solver_status": 0,
+          "primary_mip_gap": 0,
+          "primary_numerical_audit_passed": true,
+          "primary_solver_elapsed_seconds": 1.1682876999984728
+        },
+        "reported_independent_audit_passed": true,
+        "cooling_output_dispatch_max_abs_kw": 0
+      },
+      "delta_0": {
+        "rows": 2880,
+        "timestamps_equal": true,
+        "time_index_equal": true,
+        "finite_all_physical": true,
+        "state_continuity_max_c": 0,
+        "initial_c": 20,
+        "terminal_c": 20,
+        "max_rc_residual_c": 7.105427357601002e-15,
+        "min_temperature_c": 20,
+        "max_temperature_c": 26.02518687793716,
+        "outside_comfort_degree_hours": 0,
+        "max_simultaneous_heat_cool_kw": 0,
+        "max_source_capacity_excess_kw": 0,
+        "independent_delta0_rollout_max_abs_difference": 3.552713678800501e-15,
+        "price_and_factor_identity": {
+          "electricity_price": true,
+          "grid_emission_factor": true,
+          "tariff_bucket": true
+        },
+        "stored_accounting_max_abs_difference": {
+          "energy_kwh": 0,
+          "bill_yuan": 8.881784197001252e-16,
+          "carbon_kg": 2.220446049250313e-16
+        }
+      },
+      "emission_endpoint": {
+        "rows": 2880,
+        "timestamps_equal": true,
+        "time_index_equal": true,
+        "finite_all_physical": true,
+        "state_continuity_max_c": 0,
+        "initial_c": 20,
+        "terminal_c": 20,
+        "max_rc_residual_c": 7.105427357601002e-15,
+        "min_temperature_c": 20,
+        "max_temperature_c": 26.02518687793716,
+        "outside_comfort_degree_hours": 0,
+        "max_simultaneous_heat_cool_kw": 0,
+        "max_source_capacity_excess_kw": 0,
+        "driver_metadata_max_abs_difference": {
+          "outdoor_temp": 0,
+          "internal_gain_kw": 0,
+          "solar_gain_kw": 0,
+          "heating_service": 0
+        },
+        "model_metadata": {
+          "period_weight": [
+            1
+          ],
+          "scenario_probability": [
+            1
+          ],
+          "dt_hours": [
+            1
+          ],
+          "area_m2": [
+            48
+          ],
+          "heat_loss_kw_per_c": [
+            0.1043
+          ],
+          "thermal_capacity_kwh_per_c": [
+            0.535576
+          ],
+          "initial_temperature_reference_c": [
+            20
+          ],
+          "final_min_temperature_c": [
+            20
+          ],
+          "final_max_temperature_c": [
+            20
+          ],
+          "min_temperature_c": [
+            20
+          ],
+          "max_temperature_c": [
+            27
+          ],
+          "boundary_mode": [
+            "fixed"
+          ],
+          "boundary_group": [
+            "full_heating_season"
+          ],
+          "scenario": [
+            "wuhan_weather_reference_2024_2025"
+          ]
+        },
+        "dispatch_categories": [
+          "building_cooling",
+          "building_heat",
+          "building_temperature",
+          "cooling_output",
+          "source_heat"
+        ],
+        "source_heat_vs_building_max_abs_kw": 0,
+        "reported_solver": {
+          "solver_status": 0,
+          "mip_gap": 0,
+          "solver_elapsed_seconds": 0.9413724000041839,
+          "numerical_audit_passed": true,
+          "primary_solver_status": 0,
+          "primary_mip_gap": 0,
+          "primary_numerical_audit_passed": true,
+          "primary_solver_elapsed_seconds": 0.8276684000011301
+        },
+        "reported_independent_audit_passed": true,
+        "cooling_output_dispatch_max_abs_kw": 0
+      }
+    },
+    "metrics": {
+      "cost_endpoint": {
+        "heat_kwh": 3176.9200610837297,
+        "cooling_kwh": 0,
+        "electricity_kwh": 3176.9200610837297,
+        "bill_yuan": 2265.4287377685373,
+        "carbon_kg": 1284.7464727022602,
+        "peak_import_kw": 6.348812042875044,
+        "valley_energy_kwh": 1588.5116526208749,
+        "valley_energy_fraction": 0.5000162490959853,
+        "energy_by_tariff_bucket_kwh": {
+          "flat": 684.2434420282016,
+          "peak": 738.3068370900919,
+          "sharp": 165.85812934456155,
+          "valley": 1588.5116526208749
+        }
+      },
+      "delta_0": {
+        "heat_kwh": 3043.010076702301,
+        "cooling_kwh": 0,
+        "electricity_kwh": 3043.010076702301,
+        "bill_yuan": 2305.8219675989194,
+        "carbon_kg": 1230.5932750184104,
+        "peak_import_kw": 2.391855000000001,
+        "valley_energy_kwh": 1135.0015631660117,
+        "valley_energy_fraction": 0.3729864622715968,
+        "energy_by_tariff_bucket_kwh": {
+          "flat": 942.5140720000004,
+          "peak": 734.2248521917271,
+          "sharp": 231.26958934456172,
+          "valley": 1135.0015631660117
+        }
+      },
+      "emission_endpoint": {
+        "heat_kwh": 3043.010107379664,
+        "cooling_kwh": 0,
+        "electricity_kwh": 3043.010107379664,
+        "bill_yuan": 2305.8219444153565,
+        "carbon_kg": 1230.5932874243363,
+        "peak_import_kw": 2.391855,
+        "valley_energy_kwh": 1135.0017365291808,
+        "valley_energy_fraction": 0.3729865154823724,
+        "energy_by_tariff_bucket_kwh": {
+          "flat": 942.5139293141954,
+          "peak": 734.2248521917264,
+          "sharp": 231.26958934456152,
+          "valley": 1135.0017365291808
+        }
+      }
+    },
+    "cost_endpoint_vs_delta0_change_percent": {
+      "bill_yuan": -1.7517930871499183,
+      "electricity_kwh": 4.400576436031607,
+      "carbon_kg": 4.400576436031611,
+      "peak_import_kw": 165.4346539767269,
+      "valley_energy_fraction_percentage_points": 12.702978682438848
+    }
+  },
+  "frontier_independent_audit": {
+    "point_checks": [
+      {
+        "name": "cost_endpoint",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 1.0658141036401503e-14,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 0,
+        "co2_vs_record_abs_kg": 0,
+        "source_dispatch_max_abs_kw": 0,
+        "driver_identity": true,
+        "comfort_excess_c": 0,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      },
+      {
+        "name": "emission_endpoint",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 7.105427357601002e-15,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 0,
+        "co2_vs_record_abs_kg": 2.2737367544323206e-13,
+        "source_dispatch_max_abs_kw": 0,
+        "driver_identity": true,
+        "comfort_excess_c": 0,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      },
+      {
+        "name": "epsilon_0",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 4.618527782440651e-14,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 0,
+        "co2_vs_record_abs_kg": 0,
+        "source_dispatch_max_abs_kw": 0,
+        "driver_identity": true,
+        "comfort_excess_c": 0,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      },
+      {
+        "name": "epsilon_1",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 1.0658141036401503e-14,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 4.547473508864641e-13,
+        "co2_vs_record_abs_kg": 0,
+        "source_dispatch_max_abs_kw": 0,
+        "driver_identity": true,
+        "comfort_excess_c": 3.552713678800501e-14,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      },
+      {
+        "name": "epsilon_2",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 1.7763568394002505e-14,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 0,
+        "co2_vs_record_abs_kg": 0,
+        "source_dispatch_max_abs_kw": 0,
+        "driver_identity": true,
+        "comfort_excess_c": 0,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      },
+      {
+        "name": "epsilon_3",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 1.0658141036401503e-14,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 0,
+        "co2_vs_record_abs_kg": 0,
+        "source_dispatch_max_abs_kw": 0,
+        "driver_identity": true,
+        "comfort_excess_c": 0,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      },
+      {
+        "name": "epsilon_4",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 1.0658141036401503e-14,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 0,
+        "co2_vs_record_abs_kg": 0,
+        "source_dispatch_max_abs_kw": 1.0470159451500253e-15,
+        "driver_identity": true,
+        "comfort_excess_c": 3.552713678800501e-15,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      },
+      {
+        "name": "lambda_0_25",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 1.0658141036401503e-14,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 0,
+        "co2_vs_record_abs_kg": 0,
+        "source_dispatch_max_abs_kw": 0,
+        "driver_identity": true,
+        "comfort_excess_c": 0,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      },
+      {
+        "name": "lambda_0_5",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 1.0658141036401503e-14,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 0,
+        "co2_vs_record_abs_kg": 0,
+        "source_dispatch_max_abs_kw": 0,
+        "driver_identity": true,
+        "comfort_excess_c": 0,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      },
+      {
+        "name": "lambda_0_75",
+        "time_identity": true,
+        "rows": 2880,
+        "rc_max_c": 7.105427357601002e-15,
+        "initial_c": 20,
+        "final_c": 20,
+        "bill_vs_record_abs_yuan": 0,
+        "co2_vs_record_abs_kg": 0,
+        "source_dispatch_max_abs_kw": 0,
+        "driver_identity": true,
+        "comfort_excess_c": 0,
+        "capacity_excess_kw": 0,
+        "simultaneous_kw": 0,
+        "reported_audits_passed": true,
+        "ledger_hashes_passed": true,
+        "passed": true
+      }
+    ],
+    "historical_xml_evidence": [
+      {
+        "path": "docs/implementation_20261002/resource_reserve_tests_final.xml",
+        "suite_statistics": [
+          {
+            "errors": "0",
+            "failures": "0",
+            "skipped": "0",
+            "tests": "39",
+            "timestamp": "2026-10-02T14:09:43.221147"
+          }
+        ],
+        "selected_cases": [
+          {
+            "name": "test_same_resource_is_not_allocated_twice_and_compressor_heat_is_excluded",
+            "passed": true
+          },
+          {
+            "name": "test_shared_pool_can_require_new_independent_firm_backup",
+            "passed": true
+          },
+          {
+            "name": "test_cold_event_consumes_only_explicit_initial_fuel_and_available_deliveries",
+            "passed": true
+          },
+          {
+            "name": "test_fixed_fuel_single_step_retention_and_terminal_are_independent",
+            "passed": true
+          },
+          {
+            "name": "test_outage_uses_explicit_battery_soc_and_enforces_terminal_recovery",
+            "passed": true
+          },
+          {
+            "name": "test_shared_upstream_cap_cannot_be_counted_twice_as_firm_reserve",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "path": "docs/implementation_20261002/final_physical_tests.xml",
+        "suite_statistics": [
+          {
+            "errors": "0",
+            "failures": "0",
+            "skipped": "0",
+            "tests": "37",
+            "timestamp": "2026-10-02T14:22:27.351101"
+          }
+        ],
+        "selected_cases": [
+          {
+            "name": "test_same_resource_is_not_allocated_twice_and_compressor_heat_is_excluded",
+            "passed": true
+          },
+          {
+            "name": "test_shared_pool_can_require_new_independent_firm_backup",
+            "passed": true
+          },
+          {
+            "name": "test_cold_event_consumes_only_explicit_initial_fuel_and_available_deliveries",
+            "passed": true
+          },
+          {
+            "name": "test_fixed_fuel_single_step_retention_and_terminal_are_independent",
+            "passed": true
+          },
+          {
+            "name": "test_outage_uses_explicit_battery_soc_and_enforces_terminal_recovery",
+            "passed": true
+          },
+          {
+            "name": "test_shared_upstream_cap_cannot_be_counted_twice_as_firm_reserve",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "path": "docs/implementation_20261002/final_regression_verified.xml",
+        "suite_statistics": [
+          {
+            "errors": "0",
+            "failures": "0",
+            "skipped": "1",
+            "tests": "796",
+            "timestamp": "2026-10-02T14:26:46.656458"
+          }
+        ],
+        "selected_cases": [
+          {
+            "name": "test_same_resource_is_not_allocated_twice_and_compressor_heat_is_excluded",
+            "passed": true
+          },
+          {
+            "name": "test_shared_pool_can_require_new_independent_firm_backup",
+            "passed": true
+          },
+          {
+            "name": "test_cold_event_consumes_only_explicit_initial_fuel_and_available_deliveries",
+            "passed": true
+          },
+          {
+            "name": "test_fixed_fuel_single_step_retention_and_terminal_are_independent",
+            "passed": true
+          },
+          {
+            "name": "test_outage_uses_explicit_battery_soc_and_enforces_terminal_recovery",
+            "passed": true
+          },
+          {
+            "name": "test_shared_upstream_cap_cannot_be_counted_twice_as_firm_reserve",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "path": "docs/implementation_20261002_followup/final_tests_02.xml",
+        "suite_statistics": [
+          {
+            "errors": "0",
+            "failures": "0",
+            "skipped": "0",
+            "tests": "908",
+            "timestamp": "2026-10-02T17:11:59.839614+08:00"
+          }
+        ],
+        "selected_cases": [
+          {
+            "name": "test_same_resource_is_not_allocated_twice_and_compressor_heat_is_excluded",
+            "passed": true
+          },
+          {
+            "name": "test_shared_pool_can_require_new_independent_firm_backup",
+            "passed": true
+          },
+          {
+            "name": "test_cold_event_consumes_only_explicit_initial_fuel_and_available_deliveries",
+            "passed": true
+          },
+          {
+            "name": "test_fixed_fuel_single_step_retention_and_terminal_are_independent",
+            "passed": true
+          },
+          {
+            "name": "test_outage_uses_explicit_battery_soc_and_enforces_terminal_recovery",
+            "passed": true
+          },
+          {
+            "name": "test_shared_upstream_cap_cannot_be_counted_twice_as_firm_reserve",
+            "passed": true
+          }
+        ]
+      },
+      {
+        "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_tests_01.xml",
+        "suite_statistics": [
+          {
+            "errors": "0",
+            "failures": "0",
+            "skipped": "0",
+            "tests": "3",
+            "timestamp": "2026-10-02T18:37:27.936716"
+          }
+        ],
+        "selected_cases": []
+      }
+    ]
+  },
+  "three_city_refinement_independent_audit": {
+    "all_identity_passed": true,
+    "identity_file_count": 39,
+    "output_manifest_hashes_passed": true,
+    "all_12_rows_independently_passed": true,
+    "per_row_checks": [
+      {
+        "city": "urumqi",
+        "case": "baseline_delta0",
+        "trajectory_sha256": "c6c441b55afafb3d19ee9d83b6e8948322c310c67c21b72bf7e1c1fbf543deb9",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 7.105427357601002e-15,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 0,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 0
+        },
+        "delta0_rollout_max_abs_difference": 4.440892098500626e-16,
+        "passed": true
+      },
+      {
+        "city": "urumqi",
+        "case": "cost_endpoint",
+        "trajectory_sha256": "8f850323a2c4bbfb7d29a8cd20bd464cc4ea3c6769cec8a73a2b8ad62e00c423",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 1.7763568394002505e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 3.552713678800501e-15,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 9.094947017729282e-13,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 0
+        },
+        "source_dispatch_max_abs_kw": 0,
+        "no_new_investment_rows": true,
+        "saved_audits_passed": true,
+        "solver": {
+          "solver_status": 0,
+          "mip_gap": 0,
+          "mip_dual_bound": 2710.1796178333675,
+          "primary_solver_status": 0,
+          "primary_mip_gap": 0,
+          "primary_mip_dual_bound": 4899.935446579706,
+          "primary_incumbent_value": 4899.935446579696,
+          "primary_objective_allowance": 0.000049099354465796964
+        },
+        "known_feasible_primary_passed": true,
+        "known_feasible_returned_passed": true,
+        "passed": true
+      },
+      {
+        "city": "urumqi",
+        "case": "carbon_endpoint",
+        "trajectory_sha256": "7dc86487ff68cefa04af8219b3aaafc3581288b12fdca0708ea82b0e9a793f00",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 1.0658141036401503e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 9.094947017729282e-13,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 9.094947017729282e-13
+        },
+        "source_dispatch_max_abs_kw": 0,
+        "no_new_investment_rows": true,
+        "saved_audits_passed": true,
+        "solver": {
+          "solver_status": 0,
+          "mip_gap": 0,
+          "mip_dual_bound": 4984.733639184068,
+          "primary_solver_status": 0,
+          "primary_mip_gap": 1.7373754543676673e-16,
+          "primary_mip_dual_bound": 2617.438560808799,
+          "primary_incumbent_value": 2617.4385608087964,
+          "primary_objective_allowance": 0.000026274385608087964
+        },
+        "known_feasible_primary_passed": true,
+        "known_feasible_returned_passed": true,
+        "passed": true
+      },
+      {
+        "city": "urumqi",
+        "case": "midpoint_cap",
+        "trajectory_sha256": "693ed371abe91ed67f016cee0e6f6c1373fbad020d8aa79641c19036484528d7",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 1.7763568394002505e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 1.8189894035458565e-12,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 9.094947017729282e-13
+        },
+        "source_dispatch_max_abs_kw": 0,
+        "no_new_investment_rows": true,
+        "saved_audits_passed": true,
+        "solver": {
+          "solver_status": 0,
+          "mip_gap": 0,
+          "mip_dual_bound": 4915.366594404991,
+          "primary_solver_status": null,
+          "primary_mip_gap": null,
+          "primary_mip_dual_bound": null,
+          "primary_incumbent_value": null,
+          "primary_objective_allowance": null
+        },
+        "cap": {
+          "requested_cap_kg": 2663.8091024582777,
+          "applied_cap_kg": 2663.8091291963688,
+          "midpoint_formula_abs_error": 0,
+          "actual_carbon_kg": 2663.809129196367,
+          "applied_cap_passed": true
+        },
+        "passed": true
+      },
+      {
+        "city": "guyuan",
+        "case": "baseline_delta0",
+        "trajectory_sha256": "ff8280fa611141b63095354713e9aa0ad7d5b50873d6120d4cc8ebfe3e44ed11",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 1.0658141036401503e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 0,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 0
+        },
+        "delta0_rollout_max_abs_difference": 4.440892098500626e-16,
+        "passed": true
+      },
+      {
+        "city": "guyuan",
+        "case": "cost_endpoint",
+        "trajectory_sha256": "fdc953cdf4154bf1b49a5f9375e404f943ab4171fd35cb3d4b3a524e68da4abc",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 1.7763568394002505e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 7.105427357601002e-15,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 0,
+          "carbon_vs_row_kg": 4.547473508864641e-13,
+          "energy_vs_row_kwh": 0
+        },
+        "source_dispatch_max_abs_kw": 0,
+        "no_new_investment_rows": true,
+        "saved_audits_passed": true,
+        "solver": {
+          "solver_status": 0,
+          "mip_gap": 2.6278621753184612e-15,
+          "mip_dual_bound": 2768.774436696498,
+          "primary_solver_status": 0,
+          "primary_mip_gap": 0,
+          "primary_mip_dual_bound": 4988.712060513175,
+          "primary_incumbent_value": 4988.712060513175,
+          "primary_objective_allowance": 0.00004998712060513175
+        },
+        "known_feasible_primary_passed": true,
+        "known_feasible_returned_passed": true,
+        "passed": true
+      },
+      {
+        "city": "guyuan",
+        "case": "carbon_endpoint",
+        "trajectory_sha256": "50e1b5483c5eb6305784b90591683f507d432a5829f2909866eccf8536a5ca53",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 1.0658141036401503e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 9.094947017729282e-13,
+          "carbon_vs_row_kg": 4.547473508864641e-13,
+          "energy_vs_row_kwh": 9.094947017729282e-13
+        },
+        "source_dispatch_max_abs_kw": 0,
+        "no_new_investment_rows": true,
+        "saved_audits_passed": true,
+        "solver": {
+          "solver_status": 0,
+          "mip_gap": 1.0750834719972381e-15,
+          "mip_dual_bound": 5075.855366374363,
+          "primary_solver_status": 0,
+          "primary_mip_gap": 0,
+          "primary_mip_dual_bound": 2675.3055083135996,
+          "primary_incumbent_value": 2675.3055083136005,
+          "primary_objective_allowance": 0.000026853055083136005
+        },
+        "known_feasible_primary_passed": true,
+        "known_feasible_returned_passed": true,
+        "passed": true
+      },
+      {
+        "city": "guyuan",
+        "case": "midpoint_cap",
+        "trajectory_sha256": "88fcccfaede6228ac43fd9adc5e1aa9f37c43cae4624120519bac1e1aca1ff01",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 1.7763568394002505e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 9.094947017729282e-13,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 0
+        },
+        "source_dispatch_max_abs_kw": 0,
+        "no_new_investment_rows": true,
+        "saved_audits_passed": true,
+        "solver": {
+          "solver_status": 0,
+          "mip_gap": 1.8170484021057692e-16,
+          "mip_dual_bound": 5005.341083478672,
+          "primary_solver_status": null,
+          "primary_mip_gap": null,
+          "primary_mip_dual_bound": null,
+          "primary_incumbent_value": null,
+          "primary_objective_allowance": null
+        },
+        "cap": {
+          "requested_cap_kg": 2722.039985931583,
+          "applied_cap_kg": 2722.0400132519826,
+          "midpoint_formula_abs_error": 0,
+          "actual_carbon_kg": 2722.040013251987,
+          "applied_cap_passed": true
+        },
+        "passed": true
+      },
+      {
+        "city": "wuhan",
+        "case": "baseline_delta0",
+        "trajectory_sha256": "7857b527ef54b679d31c8a362f3491f53b1dc670db377126d5b2a54484391674",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 1.4210854715202004e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 0,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 0
+        },
+        "delta0_rollout_max_abs_difference": 3.552713678800501e-15,
+        "passed": true
+      },
+      {
+        "city": "wuhan",
+        "case": "cost_endpoint",
+        "trajectory_sha256": "1cd9525a97795c58865fd7f7a12c8d526f3ebafab400514106a97a39204c5201",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 2.1316282072803006e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 4.547473508864641e-13,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 0
+        },
+        "source_dispatch_max_abs_kw": 0,
+        "no_new_investment_rows": true,
+        "saved_audits_passed": true,
+        "solver": {
+          "solver_status": 0,
+          "mip_gap": 0,
+          "mip_dual_bound": 1284.7464727022602,
+          "primary_solver_status": 0,
+          "primary_mip_gap": 0,
+          "primary_mip_dual_bound": 2265.428715014251,
+          "primary_incumbent_value": 2265.428715014252,
+          "primary_objective_allowance": 0.000022754287150142517
+        },
+        "known_feasible_primary_passed": true,
+        "known_feasible_returned_passed": true,
+        "passed": true
+      },
+      {
+        "city": "wuhan",
+        "case": "carbon_endpoint",
+        "trajectory_sha256": "293a5ac20b28291bccb1f865a959f8149590c83f901bf897a4487c5970a7d5cc",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 2.1316282072803006e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 0,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 0
+        },
+        "source_dispatch_max_abs_kw": 0,
+        "no_new_investment_rows": true,
+        "saved_audits_passed": true,
+        "solver": {
+          "solver_status": 0,
+          "mip_gap": 0,
+          "mip_dual_bound": 2305.8219444153565,
+          "primary_solver_status": 0,
+          "primary_mip_gap": 0,
+          "primary_mip_dual_bound": 1230.5932750184095,
+          "primary_incumbent_value": 1230.5932750184045,
+          "primary_objective_allowance": 0.000012405932750184046
+        },
+        "known_feasible_primary_passed": true,
+        "known_feasible_returned_passed": true,
+        "passed": true
+      },
+      {
+        "city": "wuhan",
+        "case": "midpoint_cap",
+        "trajectory_sha256": "2504891bfa9cfe013bf219612bfc55353de52ee89d5833e835e98a617d7bbbeb",
+        "same_common_config": true,
+        "same_calendar": true,
+        "physical_driver_max_abs_difference": 0,
+        "common_price_identity": true,
+        "rows": 2880,
+        "independent_errors": {
+          "conv_RC_c": 2.1316282072803006e-14,
+          "continuity_c": 0,
+          "terminal_c": 0,
+          "comfort_c": 0,
+          "capacity_kw": 0,
+          "simultaneous_kw": 0,
+          "bill_vs_row_yuan": 4.547473508864641e-13,
+          "carbon_vs_row_kg": 0,
+          "energy_vs_row_kwh": 0
+        },
+        "source_dispatch_max_abs_kw": 0,
+        "no_new_investment_rows": true,
+        "saved_audits_passed": true,
+        "solver": {
+          "solver_status": 0,
+          "mip_gap": 0,
+          "mip_dual_bound": 2269.693275076232,
+          "primary_solver_status": null,
+          "primary_mip_gap": null,
+          "primary_mip_dual_bound": null,
+          "primary_incumbent_value": null,
+          "primary_objective_allowance": null
+        },
+        "cap": {
+          "requested_cap_kg": 1257.6698800632983,
+          "applied_cap_kg": 1257.669892739997,
+          "midpoint_formula_abs_error": 0,
+          "actual_carbon_kg": 1257.669892739998,
+          "applied_cap_passed": true
+        },
+        "passed": true
+      }
+    ],
+    "cost_endpoint_vs_delta0": [
+      {
+        "city": "urumqi",
+        "bill_yuan_change_percent": -1.7011579335632787,
+        "energy_kwh_change_percent": 3.5431990042933257,
+        "carbon_kg_change_percent": 3.5431990042933617,
+        "peak_import_kw_change_percent": 114.12282019902018
+      },
+      {
+        "city": "guyuan",
+        "bill_yuan_change_percent": -1.7168201003415238,
+        "energy_kwh_change_percent": 3.493766528437488,
+        "carbon_kg_change_percent": 3.493766528437499,
+        "peak_import_kw_change_percent": 103.87269533743068
+      },
+      {
+        "city": "wuhan",
+        "bill_yuan_change_percent": -1.7517930871498986,
+        "energy_kwh_change_percent": 4.400576436031607,
+        "carbon_kg_change_percent": 4.400576436031591,
+        "peak_import_kw_change_percent": 165.4346539767269
+      }
+    ]
+  },
+  "three_city_review_disposition": {
+    "run01_protocol_sha256": "5fb7cce5c54aba84cfc77e2c09bc6b729d3fe91dcc97f1588e09d2e7995d7c9a",
+    "run01_script_sha256": "433fc8f42ebc591b747eca36cfa60bcc47de102319d19c55fd3b12f5e1efc27a",
+    "refinement_protocol_sha256": "16b98535cc35d8c087a1fb831db5980740f23cf84c19ade3ba6566ea95839d66",
+    "numerical_issue": {
+      "status": "由独立新脚本和另版结果解决；原run01保留",
+      "original_urumqi_baseline_kg": 2617.4385608088,
+      "original_urumqi_carbon_endpoint_kg": 2617.6990570844832,
+      "original_primary_gap": 0.00009950341717097559,
+      "original_primary_dual_bound": 2617.438560808799,
+      "original_endpoint_minus_feasible_baseline_kg": 0.260496275683,
+      "refined_urumqi_carbon_endpoint_kg": 2617.4385870831875,
+      "refined_primary_allowance_kg": 0.000026274385608088,
+      "explanation": "首版1e-4收敛容差允许主阶段劣于已知可行δ0。复核版统一请求gap0，每阶段60s，检查主incumbent不劣于基准且返回值只允许原primary allowance。不能通过扩容差覆盖原0.2605kg差异。",
+      "independent_confirmation": false
+    },
+    "static_failure_collection_issue": {
+      "status": "本次12行没有触发；后续脚本可靠性待完善，非当前数值结论阻塞",
+      "path": "scripts/run_three_city_climate_dispatch.py",
+      "line": 184,
+      "priority": 2,
+      "finding": "城市准备、baseline rollout及audit在逐案例try外；如果失败，批次中断且统一comparison/failures不会最终保存。refinement脚本城市读取也在try外。",
+      "minimal_fix": "新版本为城市准备和基准也保存failed/skipped记录并继续其他城市；逐步持久化清单及最终身份检查。"
+    },
+    "source_preservation": {
+      "status": "当前修正使用独立refine脚本，原脚本与原run01保持完整，当前39个代码/输入身份通过",
+      "future_note": "协议仅存源散列；后续改动被依赖文件前保存匹配旧SHA的不可变代码快照，或保留独立版本路径。旧输出完整性与当前源码匹配分别报告。"
+    },
+    "interpretation": "三城共同原型是气候机制补充及数值收敛修正；不评估新权重、不属留出预测确认，不是三个当地工程系统。"
+  },
+  "verification_performed": [
+    "原武汉两个协议及当前config/CSV散列一致；2880hδ=0独立重建最大差3.55e-15。",
+    "历史费用/碳端点的时间、驱动、连续状态、冷热源出力及实际账独立复算。",
+    "现有10个前沿点的输入、输出和summary/dispatch散列、物理/账目复算通过。",
+    "严格fixed_replay和baseline逐时数值一致。",
+    "读取相关历史XML，核实指定机制用例存在且通过；未重新运行测试。",
+    "三城复核版39个代码/输入身份、输出manifest及12行各2880h轨迹独立复算通过；卷积RC最大差2.13e-14℃。",
+    "三城费用/碳端点已知可行基准界和中点requested/applied碳帽逐项核验。"
+  ],
+  "not_performed": [
+    {
+      "item": "额外求解或大矩阵",
+      "reason": "只读审查，复用已完成结果与独立算术。"
+    },
+    {
+      "item": "私有SCADA/现场标定",
+      "reason": "机制及公开原型可继续，无该数据则不作实证声明。"
+    },
+    {
+      "item": "自由投资全经济工程验收",
+      "reason": "当前理想既有设备运行例不提供此证据；未知费用不填0。"
+    },
+    {
+      "item": "论文/PPT/Git上传",
+      "reason": "当前范围为方法和证据审查。"
+    }
+  ]
+}

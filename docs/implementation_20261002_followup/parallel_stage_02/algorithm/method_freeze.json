@@ -1,0 +1,18 @@
+{
+  "candidate_version": "decision-moments-0.1.0-experimental",
+  "freeze_utc": "2026-10-02T10:24:15Z",
+  "freeze_scope": "mathematical candidate/API/code/analytical tests only; not parent confirmation protocol",
+  "substantive_moment_tolerances_frozen": false,
+  "operation_window_definitions_frozen": false,
+  "parent_protocol_required_before_confirmation": true,
+  "files_sha256": {
+    "src/heatplan/decision_weight_calibration.py": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+    "tests/test_decision_weight_calibration.py": "be8c7798e00961b758cb998f65f451dffe94ef03cd7c4be0c44cc66067bec7f8",
+    "docs/implementation_20261002_followup/parallel_stage_02/algorithm/design.json": "c54e35561ae4799af9b155b570507dd2c2d2bd00dbd72cd01ffd7077ec0a9fc5"
+  },
+  "test_evidence_sha256": "61ef123a20f417303a9453b9d357a1e6a280148dc84568f19d96e203be1b7380",
+  "test_results_sha256": "9a10f9df9bfbbcf09d329872a1f1e5f6e9f07a47941a5644f9e361899ee00f70",
+  "unseen_city_window_outcomes_accessed_for_development": [],
+  "historical_weather_never_seen_by_project_claimed": false,
+  "future_change_rule": "Preserve this freeze record and evidence. A method/code/constraint change needs a new candidate version and freeze before held-out outcomes; already opened data then become development data."
+}

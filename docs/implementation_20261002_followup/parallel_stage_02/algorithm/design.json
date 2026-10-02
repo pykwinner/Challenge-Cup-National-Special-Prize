@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0",
+  "candidate_version": "decision-moments-0.1.0-experimental",
+  "date_local": "2026-10-02",
+  "timezone": "Asia/Shanghai",
+  "status": "design_and_analytical_implementation_only_not_released",
+  "isolation_acknowledged_utc": "2026-10-02T10:16:29Z",
+  "method_api_freeze_utc": "2026-10-02T10:24:15Z",
+  "freeze_record": "Final source/test/design hashes and actual freeze time will be recorded separately in method_freeze.json after analytical checks, before any held-out confirmation values are accessed.",
+  "method": "standard_LP_bounded_price_operation_moments_minimum_weight_L1",
+  "decision": "Add one bounded linear-moment candidate; keep all three existing baseline methods unchanged.",
+  "score_rubric": {
+    "model_architecture": 20,
+    "dynamic_simulation": 15,
+    "scenario_validation": 15,
+    "multiobjective_coordination_and_convergence": 15,
+    "multiscale_coupling": 10,
+    "visualization_and_analysis": 15,
+    "code_quality_and_portability": 10
+  },
+  "score_mapping": [
+    {
+      "item": "dynamic_simulation",
+      "to_test": "Whether reference timing moments help later full-chronology policy replay; no dynamic-service advantage established in this stage."
+    },
+    {
+      "item": "multiobjective_coordination_and_convergence",
+      "to_test": "Keep energy and price-pairing checks distinct; retain joint infeasibility and opposing KPI optima."
+    },
+    {
+      "item": "visualization_and_analysis",
+      "to_test": "Report native-unit residuals, floors, error bounds, baseline comparisons and failures."
+    },
+    {
+      "item": "code_quality_and_portability",
+      "to_test": "Standalone SciPy LP, independent callable diagnostic, analytical counterexamples and preserved frozen artifacts."
+    }
+  ],
+  "baseline_review": {
+    "frequency": "Keep fixed selected actual days and their existing day counts.",
+    "soft_energy": "src/heatplan/scenarios.py:calibrate_representative_day_weights uses SLSQP: mean squared scaled energy residual plus regularized weight displacement, with conserved days and extreme floors. Energy is soft, not guaranteed exact.",
+    "hard_energy_minimum_W1": "src/heatplan/hard_weight_calibration.py:minimum_w1_energy_weights uses a sparse LP with exact reference energy and days, lower floors, and absolute-CDF epigraphs on union support. Target is normalized one-dimensional W1; matching thermal reference does not mean matching policy electricity or bills.",
+    "original_adapter": "scripts/run_representative_season_confirmation.py slices selected actual profiles and full-season inherited policy states; candidate generation uses heat_reference_no_gain_kw. No adapter or frozen protocol is changed.",
+    "API": "SciPy 1.15.3 scipy.optimize.linprog(method='highs'), continuous nonnegative epigraph variables; status 2 is infeasible; every reported optimum is checked again from raw products. Native HiGHS time and feasibility settings are explicit. No commercial solver or installation needed."
+  },
+  "mathematics": {
+    "symbols": {
+      "D": "number of complete source calendar days",
+      "H": "equally sampled intervals per day, H*dt = 24 hours",
+      "q_dh": "nonnegative admitted exogenous reference power, explicitly thermal kW_th or electric kW_e; not a policy outcome",
+      "p_dh": "same-source-hour electricity tariff in currency/kWh_e; signed finite prices supported",
+      "S_j": "distinct fixed actual-day source row index; no profile changes or date replacements",
+      "w0_j": "original day weights, sum w0 = D",
+      "l_j": "explicit fixed ordinary/extreme lower weight floors supplied by the caller",
+      "a_rdh": "predeclared binary operation-window mask, matched to each original hour; empty/overlapping windows are explicit and allowed",
+      "eps_k": "nonnegative predeclared absolute error bound, mandatory for each declared moment in native units"
+    },
+    "daily_reference_energy": "E_d = dt * sum_h q_dh",
+    "daily_price_pairing": "B_d = dt * sum_h q_dh * p_dh, using paired hours, never sorted marginals or mean(q)*mean(p)",
+    "daily_window_energy": "U_rd = dt * sum_h q_dh * a_rdh; masks can express a preheat window and its duration, but do not reconstruct RC state or interday links",
+    "targets": "E* = sum_d E_d; B* = sum_d B_d; U_r* = sum_d U_rd from the admitted source window",
+    "constraints": [
+      "sum_j w_j = D",
+      "sum_j E_Sj * w_j = E*",
+      "w_j >= l_j",
+      "-eps_price <= sum_j B_Sj*w_j - B* <= eps_price",
+      "-eps_r <= sum_j U_rSj*w_j - U_r* <= eps_r for every declared operation window"
+    ],
+    "objective": "min (1/D) * sum_j u_j, with u_j >= w_j-w0_j, u_j >= -(w_j-w0_j), u_j >= 0",
+    "objective_unit": "dimensionless: absolute day-weight displacement divided by calendar days",
+    "purpose_of_objective": "Smallest necessary reweighting to meet frozen moments, not minimum electricity, money, W1, dispatch regret or a combined-unit objective. If w0 is feasible, objective zero preserves it.",
+    "price_units": {
+      "electric_reference": "currency, a static reference electricity energy charge only",
+      "thermal_reference": "currency*kWh_th/kWh_e, a load-price pairing proxy; never report it as a policy bill in yuan",
+      "reference_and_window_energy": "kWh_th or kWh_e according to reference_kind"
+    },
+    "numerical_scaling": "Each energy/moment row is divided by max(abs(calendar target), D*max(abs(selected daily coefficients)), 1 native unit); the days row is divided by D. Scaling changes no substantive constraint.",
+    "numerical_acceptance": "Default numeric tolerance 1e-8; energy/band numeric allowance is tolerance times the declared row scale, days allowance tolerance*D, floor allowance tolerance days. Substantive eps remains separately visible; eps=0 means a hard moment up to this explicit numerical check.",
+    "nonuniqueness": "L1 can have multiple optimal weights. No claim of unique weights or cross-solver reproducibility of a degenerate optimum; persist weights and solver/environment metadata for later audit.",
+    "necessary_infeasibility_diagnostic": "For each daily coefficient vector c, with R=D-sum(l), attainable interval is [c_selected dot l + R*min(c_selected), c_selected dot l + R*max(c_selected)]. Disjoint target bands prove that individual row impossible. Passing all intervals does not prove joint feasibility.",
+    "zero_reference": "No division by reference mean; zero-energy problems remain evaluable. Relative residual is null when the target is zero."
+  },
+  "interfaces": {
+    "module": "src/heatplan/decision_weight_calibration.py",
+    "solve": "calibrate_price_operation_weights(reference_power_kw, electricity_price_per_kwh, selected_day_indices, original_weights, lower_bounds, *, day_ids, reference_kind, moment_absolute_tolerances, operation_windows=None, time_step_hours=1.0, numerical_tolerance=1e-8, solver_time_limit_seconds=30.0)",
+    "audit": "diagnose_decision_weights(same inputs, weights before keyword-only inputs); does not invoke a solver and recomputes estimates directly from source-hour products, not LP coefficients or epigraphs",
+    "required_shapes": "power/prices: D by H, prices not implicitly broadcast; day_ids: D unique nonempty strings; selected indices: m distinct integer source rows; original/floor weights: m; binary operation masks: D by H",
+    "moment_names": "price_product plus window_energy:<window_name> for every provided operation mask",
+    "error_bound_rule": "Exact tolerance-key match is required; no omitted bound, inferred window, outcome-selected tolerance, or auto-relaxation.",
+    "success_output": "status=ok, weights in unchanged selected-day order, input identities/hashes, baseline and candidate native-unit residuals, explicit numeric allowances, row envelopes, solver status/time limit and LP dimensions",
+    "failure_output": "status=infeasible or solver_failure, weights=null, retained baseline/identity/envelopes and explicit reason; invalid input raises ValueError before solver",
+    "calendar_admission_boundary": "The caller must verify actual timestamps, timezone, complete-hour identities, provenance and observation/simulation labels before reshaping. Day identifiers are passed through, not treated as proof of real data.",
+    "no_integration_yet": "No __init__ export, model changes, CLI changes, production fallback or experiment runner changes in this stage. The parent freezes its adapter/evaluation protocol before calling this new interface."
+  },
+  "development_and_validation": {
+    "development_identity": "Synthetic analytical fixtures only in the new test file. Existing Wuhan diagnostic is known development evidence, not a new confirmation set for this candidate.",
+    "known_wuhan_context": "Read the THREE_CITY_DECISIONS summary: hard W1 fee MAPE 0.763980% to 0.117145%; electricity soft 0.114721% versus hard 0.237849%; all methods selected delta 0. This motivates a pairing constraint, not fitted epsilon values or demonstrated policy advantage.",
+    "development_files_read": [
+      {
+        "path": "D:/competion/xiaotiao/AGENTS.md",
+        "purpose": "scope/upload rules only",
+        "sha256": "431493a9c8b5008afa11262f484a8098d9b63064c79e25ca081ffef2ea8e16a3"
+      },
+      {
+        "path": "docs/source_intake_20261002/planning_user_update/THREE_CITY_DECISIONS.md",
+        "purpose": "instructions, official scoring, known Wuhan result summary and verification boundaries",
+        "sha256": "e46f02b87ea916d726afb4ac480cc0e955f144b052ae17529d386620a2047027"
+      },
+      {
+        "path": "src/heatplan/hard_weight_calibration.py",
+        "purpose": "existing LP/API review",
+        "sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3"
+      },
+      {
+        "path": "src/heatplan/scenarios.py",
+        "purpose": "soft calibration and selection/API excerpts",
+        "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131"
+      },
+      {
+        "path": "src/heatplan/representative.py",
+        "purpose": "weight/chronology API excerpts",
+        "sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c"
+      },
+      {
+        "path": "tests/test_hard_weight_calibration.py",
+        "purpose": "existing independent CDF-W1 tests",
+        "sha256": "82659e9a25f1473b9124c66ef1a3559fb1581961f05d42f6891b645a29ca5203"
+      },
+      {
+        "path": "tests/test_weight_adoption_method_identity.py",
+        "purpose": "existing candidate/baseline identity tests",
+        "sha256": "3e87649e33a28db511b8be20b78bf0c3de83d41b58d4bb9b69ca5ec64d292174"
+      },
+      {
+        "path": "scripts/run_representative_season_confirmation.py",
+        "purpose": "existing Wuhan freeze/scoring adapter excerpts only",
+        "sha256": "a7f69e704ca6decb708fefd693c6a76d7066475caa62e5c343680b49ff226828"
+      },
+      {
+        "path": "docs/execution_20261002/algorithm/README.md",
+        "purpose": "existing method descriptions/references",
+        "sha256": "9c6376161cd58c375e43238797cc74c8c3d36854a6303a3a17ebb0ca5f173930"
+      },
+      {
+        "path": "docs/implementation_20261002/algorithm/README.md",
+        "purpose": "historical development-versus-confirmation boundaries",
+        "sha256": "cb67ddbbb3750160f77c98cb34d8786d30e86511742707042e7b3551190b7911"
+      },
+      {
+        "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/protocol.json",
+        "purpose": "known Wuhan protocol/input identity, not new experiments",
+        "sha256": "403d0a9ba225b223276440dc2b2aaa138d31bf2bed0e36d56e184c718bc1c9d7"
+      },
+      {
+        "path": "pytest.ini; requirements.txt; requirements-validated.txt",
+        "purpose": "test/environment discovery only"
+      }
+    ],
+    "frozen_artifacts_access": "Existing representative_season_confirmation files were SHA256-fingerprinted for preservation without interpreting their full trajectory/daily result content. Broad file-name inventory also listed historical city output paths; their values were not opened.",
+    "unseen_confirmation_candidate": {
+      "cities": [
+        "Urumqi",
+        "Guyuan"
+      ],
+      "window_local": "2024-11-16 through 2025-03-16 inclusive, 120 days",
+      "weather_identity": "Source-UTC candidates are under separate data/calendar admission, not loaded here.",
+      "prohibited_before_parent_freeze": "Do not read/run load, policy or error values for these cities/windows to develop, tune or select this candidate. Parent opens values only after both method and evaluation protocol are frozen.",
+      "this_chat_specific_values_or_results_accessed": [],
+      "prior_project_weather_use": "Not determined in this algorithm subtask; disclose separately. This is current-development isolation, not a claim that the whole project never saw these weather files or that modeled output is independent measured observation.",
+      "validation_ready": false
+    },
+    "substantive_tolerances_frozen_here": false,
+    "tolerance_selection": "No substantive epsilon defaults or Wuhan-result search. Parent must predeclare exact values or a target-to-absolute conversion rule and masks using admission/decision requirements, and freeze them before held-out outcomes. Infeasible cases remain failures under that frozen declaration.",
+    "small_development_demo_count": 0,
+    "confirmation_samples_run": 0,
+    "experiment_matrix_expanded": false,
+    "allowed_tests": "Analytical pair-reversal example, native-unit band, extreme/reference/joint infeasibility, zero/signed moments, masks/duration, immutable identity, electricity-versus-bill opposing optima, solver failure injection and targeted old-baseline regressions.",
+    "later_evaluation": "Keep frequency/soft-energy/hard-energy-W1 baselines, sample/day library, strategy budget and solver budget common and frozen; measure electricity and bill residuals separately, actual service/budget feasibility, policy-library regret and all failed/unchanged choices on full chronology. No investment-improvement claim without admitted variable investment options."
+  },
+  "complexity": {
+    "notation": "m selected actual days, K=1+number of declared operation masks, D source days, H samples/day",
+    "precomputation": "O(D*H*K) arithmetic; no policy simulation or clustering",
+    "LP": "2m continuous variables, 2 equality rows, 2K+2m inequality rows; sparse structure O(K*m+m) coefficient nonzeros",
+    "memory": "O(D*H*K) input/mask storage and O(D*K+K*m+m) additional numeric structure",
+    "diagnostic": "O(D*H*K+m*H*K), no optimizer invocation",
+    "runtime": "HiGHS runtime is data/conditioning dependent; no claimed wall-clock polynomial bound or empirical speedup. Default 30 second solve limit; unsuccessful solve never provides accepted weights."
+  },
+  "failure_rules": [
+    "Reject incomplete/mismatched dimensions, nonfinite power/prices, negative reference power, invalid indices/IDs, duplicate actual-day selection, wrong total weights, invalid floors, nonbinary/full-calendar-missing masks, missing/extra/negative moment bounds and arithmetic overflow.",
+    "Return infeasible with null weights if floors exceed days, a necessary moment envelope excludes the frozen target band, or HiGHS reports joint infeasibility.",
+    "Return solver_failure with null weights on solver exception, time/iteration/numeric failure, nonfinite output or independently failed residual/objective checks.",
+    "Never relax epsilon, drop moment rows, swap representative dates, run another method under the candidate name, or overwrite existing frozen results.",
+    "Report null relative residual for zero targets; price pairing is not actual policy electricity/billing unless separately demonstrated for that static reference.",
+    "Unchanged policy selection or worse energy/bill performance is retained. No W1-to-all-KPIs, dispatch-optimality, service-feasibility, external-forecast, observational or investment guarantee."
+  ],
+  "references": [
+    {
+      "title": "SciPy 1.15.3 linprog(method='highs') official API",
+      "url": "https://docs.scipy.org/doc/scipy-1.15.3/reference/optimize.linprog-highs.html",
+      "verified_on": "2026-10-02",
+      "used_for": "LP bounds/equality/inequality interface, status handling and explicit time/feasibility options."
+    },
+    {
+      "title": "Hoffmann et al. (2021), Typical periods or typical time steps? A multi-model analysis to determine the optimal temporal aggregation for energy system models, arXiv:2103.16657v2",
+      "url": "https://arxiv.org/abs/2103.16657v2",
+      "full_text_url": "https://arxiv.org/pdf/2103.16657",
+      "verified_on": "2026-10-02",
+      "locator": "Section 3.1/3.2 (PDF pp.6-8), abstract and discussion",
+      "method_checked": "The authors use Ward hierarchical clustering, centroid representatives and min-max normalization, comparing two FINE models with common resolution/budgets to full models; storage-dependent optimization accuracy differs from clustering quality.",
+      "used_for": "Motivation for model-dependent full-resolution validation only. This candidate is a fixed-actual-day bounded-moment LP, not reproduction of the paper, a price-calibration theorem, or the authors' clustering method."
+    }
+  ],
+  "scope": {
+    "files_permitted": [
+      "src/heatplan/decision_weight_calibration.py",
+      "tests/test_decision_weight_calibration.py",
+      "docs/implementation_20261002_followup/parallel_stage_02/algorithm/*"
+    ],
+    "model_or_old_calibration_modified": false,
+    "git_operations": false,
+    "paper_or_presentation_written": false,
+    "requires_internal_SCADA": false
+  },
+  "method_freeze_status": "candidate_specification_and_api_frozen_pending_parent_evaluation_protocol_and_independent_review"
+}

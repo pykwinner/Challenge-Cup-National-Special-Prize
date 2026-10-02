@@ -1,0 +1,72 @@
+{
+  "candidate_version": "decision-moments-0.1.0-experimental",
+  "finished_utc": "2026-10-02T10:24:15Z",
+  "environment": {
+    "python_executable": "D:\\app\\anaconda3\\python.exe",
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "pytest": "7.4.4"
+  },
+  "runs": [
+    {
+      "evidence_file": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/analytical_tests_01.xml",
+      "tests": 74,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "xml_suite_seconds": 1.385,
+      "by_test_module": {
+        "tests.test_decision_weight_calibration": 55,
+        "tests.test_hard_weight_calibration": 12,
+        "tests.test_weight_adoption_method_identity": 7
+      }
+    },
+    {
+      "evidence_file": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/analytical_tests_02.xml",
+      "tests": 78,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "xml_suite_seconds": 1.387,
+      "by_test_module": {
+        "tests.test_decision_weight_calibration": 59,
+        "tests.test_hard_weight_calibration": 12,
+        "tests.test_weight_adoption_method_identity": 7
+      }
+    }
+  ],
+  "latest_total_passed": 78,
+  "latest_new_candidate_tests_passed": 59,
+  "latest_old_baseline_regressions_passed": 19,
+  "command": "python -m pytest tests/test_decision_weight_calibration.py tests/test_hard_weight_calibration.py tests/test_weight_adoption_method_identity.py -q -p no:cacheprovider --junitxml=docs/implementation_20261002_followup/parallel_stage_02/algorithm/analytical_tests_02.xml",
+  "bytecode_writes_disabled": true,
+  "analytical_inputs_only": true,
+  "exploratory_real_sample_demo_count": 0,
+  "confirmation_runs": 0,
+  "untested_or_excluded": [
+    {
+      "item": "Full historical 882-test suite",
+      "reason": "No main model/old method integration changes; scoped meaningful analytical tests and the two directly relevant baseline modules run. No full-suite claim."
+    },
+    {
+      "item": "Wuhan real-sample development demonstration",
+      "reason": "Not needed to establish analytical correctness; avoid expanding experiments or fitting tolerances to known outcomes."
+    },
+    {
+      "item": "Urumqi/Guyuan 2024-11-16 through 2025-03-16 confirmation values/results",
+      "reason": "Isolated; parent must freeze method acceptance and evaluation protocol before opening held-out outcomes."
+    },
+    {
+      "item": "Full-chronology service, policy choice, investment or prediction improvement",
+      "reason": "Outside this first-stage implementation; candidate does not establish these properties."
+    }
+  ],
+  "preserved_old_files": {
+    "checked": 41,
+    "all_unchanged": true
+  },
+  "git_operations_performed": false,
+  "source_data_identity": "All new numerical test fixtures are synthetic; no observation claim."
+}

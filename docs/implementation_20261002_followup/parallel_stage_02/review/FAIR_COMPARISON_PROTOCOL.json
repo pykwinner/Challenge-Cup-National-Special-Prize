@@ -1,0 +1,126 @@
+{
+  "record_type": "prospective_independent_review_recommendations",
+  "date_local": "2026-10-02",
+  "timezone": "Asia/Shanghai",
+  "status": "review_rules_recorded_confirmation_not_authorized_by_this_record",
+  "scope": "offline_fixed_actual_day_weight_and_finite_policy_library_diagnostic",
+  "private_scada_required": false,
+  "confirmation_executed_by_reviewer": false,
+  "model_or_old_evidence_modified": false,
+  "official_rubric": {
+    "source": "docs/score_strategy_20261002/rubric_reference.json",
+    "source_pdf_sha256": "fed214ef578cbed4cc808275498acd00e848b5d3c66b93000b8e7b643de746e2",
+    "mapped_items": ["S1", "S2", "S4", "S6", "S7"],
+    "custom_point_subdivisions": false
+  },
+  "known_development_evidence": {
+    "source": "docs/source_intake_20261002/planning_user_update/THREE_CITY_DECISIONS.md",
+    "run": "docs/implementation_20261002_followup/representative_season_confirmation/run_01",
+    "hours_per_policy": 2880,
+    "policy_library_size": 8,
+    "policy_delta_c": [0, 1, 2, 3, 4, 5, 6, 7],
+    "bill_mape_percent": {"frequency": 0.7639803214227414, "soft_energy": 0.3464318141730288, "hard_energy_minimum_W1": 0.11714480609506112},
+    "energy_mape_percent": {"frequency": 0.3296197551824101, "soft_energy": 0.11472083999682636, "hard_energy_minimum_W1": 0.23784941241664914},
+    "all_methods_selected_delta_c": 0,
+    "decision_improvement_demonstrated": false,
+    "new_candidate_independent_confirmation": false,
+    "use": "development_and_regression_only_after_new_candidate_design"
+  },
+  "parent_freeze_required_before_confirmation": [
+    "A candidate source hash, exact public API, feature formulas, normalization and tie rule",
+    "B exact window start inclusive/end exclusive, timezone, contiguous hourly identities and source hashes",
+    "development versus untouched confirmation allocation, with any overlap and knowledge exposure declared",
+    "prototype geometry/H/C/service/source conversion and initial/final state contract",
+    "tariff account, clock bands, monthly price validity and climate-only versus local-economics grouping",
+    "shared representative date selection, actual M, original frequencies and lower bounds",
+    "unchanged finite policy library or separately predeclared new library, common budgets and tolerances",
+    "runtime and memory caps, solver settings and all acceptance thresholds",
+    "candidate/comparator hashes, input manifests and prior gate issue dispositions"
+  ],
+  "data_separation": {
+    "recommended_mode": "algorithm_frozen_then_new_window_offline_transductive_planning_diagnostic",
+    "confirmation_exogenous_inputs_available": true,
+    "prediction_claim_allowed": false,
+    "use_confirmation_outcomes_to_tune_features_or_thresholds": false,
+    "same_wuhan_development_window_as_new_independent_confirmation": false,
+    "same_prototype_three_cities_is_three_independent_measured_sites": false,
+    "climate_only_group": "same prototype/service/equipment/economics; replace traceable climate only",
+    "regional_design_or_economics_group": "separate named group; each changed parameter has admitted source"
+  },
+  "calibration_input_contract": {
+    "allowed": ["exogenous_reference_load", "paired_admitted_prices", "declared_clock_or_price_segments", "selected_real_days", "common_day_bounds"],
+    "forbidden_for_deployable_candidate": ["full_policy_library_actual_bill_targets", "full_policy_library_actual_energy_targets", "oracle_strategy_labels", "confirmation_errors_or_success_labels"],
+    "oracle_moment_diagnostic_if_run": "separate name and scope, never merged into candidate success",
+    "day_features": "phi_j(d)=sum_h f_j(q_dh,p_dh,segment_dh)*dt_hours",
+    "target": "b_j=sum_original_days phi_j(d)",
+    "weight_constraints": ["sum_k w_k=D", "w_k>=common_lower_k", "declared_hard_moment_residuals_pass_original_units"],
+    "reference_load_is_policy_electricity": false,
+    "price_reference_product_is_actual_policy_bill": false,
+    "one_dimensional_W1_is_joint_dynamic_error": false,
+    "time_pairing_may_be_sorted_or_permuted_independently": false,
+    "hard_infeasibility_may_silently_fallback": false
+  },
+  "fair_comparators": {
+    "methods": ["frequency", "soft_energy", "hard_energy_minimum_W1", "price_paired_candidate"],
+    "same_actual_selected_dates": true,
+    "same_original_frequency_weights": true,
+    "same_ordinary_and_extreme_lower_bounds": true,
+    "same_actual_M_not_only_same_initial_K": true,
+    "same_exogenous_reference_and_sources": true,
+    "same_policy_library_and_ties": true,
+    "same_service_and_physical_truth_evaluator": true,
+    "different_hard_constraint_families": "record explicitly as method design; infeasibility counted, not removed",
+    "same_end_to_end_budget": true,
+    "no_post_result_threshold_or_policy_grid_adjustment": true
+  },
+  "state_and_evaluation": {
+    "state_carried_between_actual_days": true,
+    "no_daily_temperature_or_SOC_reset": true,
+    "initial_final_and_terminal_energy_accounted": true,
+    "same_full_trajectory_daily_slices_for_all_weight_methods": true,
+    "selected_policy_continuous_replay_must_preserve_selected_policy": true,
+    "full_season_reoptimization_may_replace_selection": false,
+    "full_model_reference_if_available": "separately named and timed; not substituted for selected policy",
+    "comfort_capacity_boundary_and_resource_checks": "per policy, before declaring actual feasibility"
+  },
+  "selection_and_constraints": {
+    "cost": "admitted variable electricity bill for finite policy library; broader system cost only if separately admitted",
+    "budgets": "predeclared common actual baseline times unchanged multipliers, not method-specific estimates",
+    "recommended_existing_budget_multipliers": [1.0, 1.02, 1.05, 1.10],
+    "budget_baseline_exposure": "if full-season baseline energy is used, disclose offline information and include simulation cost",
+    "actual_cap_atol": 1e-7,
+    "actual_cap_rtol": 1e-9,
+    "recommended_cost_tie_atol_yuan": 1e-8,
+    "tie_rule": "predeclared deterministic policy identifier order",
+    "actual_caps_and_service_gate_before_valid_cost_improvement": true,
+    "fixed_factor_energy_and_carbon_are_independent_tests": false,
+    "no_estimated_feasible_or_no_actual_library_feasible": "explicit failure/no-choice state; never dereference missing oracle",
+    "oracle": "same frozen finite library, same physical actual service and budgets",
+    "oracle_is_global_main_model_optimum": false,
+    "negative_or_nonfinite_regret": "audit comparator and feasibility rather than promote result"
+  },
+  "required_metrics": {
+    "per_method_all_policies": ["signed_bill_error", "bill_MAPE_and_max_APE", "signed_energy_error", "energy_MAPE_and_max_APE", "carbon_error_with_factor_semantics", "reference_energy_residual", "scalar_W1", "each_price_or_segment_moment_residual"],
+    "per_method_each_budget": ["selection_status", "selected_policy_id", "estimated_feasible", "actual_service_feasible", "actual_energy_cap_excess", "actual_carbon_cap_excess", "selected_actual_bill", "actual_feasible_library_oracle_id_and_bill", "library_regret_if_actual_feasible", "false_feasible_and_false_infeasible_flags"],
+    "per_method_runtime": ["feature_build", "calibration", "policy_simulation", "scoring_selection", "continuous_replay", "audit_export", "all_failed_attempts", "memory_peak_if_measured"],
+    "population": "all frozen cases, policies, budgets, failures and unfavorable results; zero denominators explicitly handled"
+  },
+  "acceptance_logic": {
+    "numerical_acceptance": "valid weights, common bounds/mass and all declared hard moment residuals independently pass",
+    "estimation_advantage": "paired all-policy errors assessed separately for bill and energy; no selective-policy averaging",
+    "decision_advantage": "actual-feasible choices with lower finite-library regret or improved actual-feasible selection coverage under frozen common budgets",
+    "identical_choices_or_zero_regret_for_all_methods": "no observed decision advantage",
+    "bill_better_energy_worse": "reported tradeoff, not unconditional superiority",
+    "selected_actual_over_cap": "not valid cost improvement; retain estimates and failure",
+    "claims": "scope to frozen windows, prototype, price account and finite policy library"
+  },
+  "compute_accounting": {
+    "full_library_simulation_is_included": true,
+    "shared_simulation_cost_reported_separately": true,
+    "simulation_speedup_claim_allowed_in_current_offline_design": false,
+    "calibration_only_timing_label": "allowed if explicitly separate from total pipeline and includes failed calibration",
+    "runtime_limit_seconds": null,
+    "memory_limit": null,
+    "reason_limits_pending": "parent must freeze concrete common limits before confirmation; reviewer does not invent already adopted budgets"
+  }
+}

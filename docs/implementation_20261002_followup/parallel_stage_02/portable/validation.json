@@ -1,0 +1,125 @@
+{
+  "schema_version": "portable_reference.validation.v1",
+  "completed_utc": "2026-10-02T10:41:21Z",
+  "name": "公开原型数值复现",
+  "passed": true,
+  "actual_test_evidence": [
+    {
+      "evidence": "small_tests_01.xml",
+      "tests": 21,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "suite_seconds": 5.461
+    },
+    {
+      "evidence": "small_tests_02.xml",
+      "tests": 21,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suite_seconds": 5.79
+    },
+    {
+      "evidence": "full_baseline_test_01.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suite_seconds": 9.737
+    },
+    {
+      "evidence": "clean_clone_small_tests_01.xml",
+      "tests": 21,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suite_seconds": 5.557
+    },
+    {
+      "evidence": "optional_repository_pdf_test_01.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suite_seconds": 1.168
+    }
+  ],
+  "latest_unique_tests_passed": 22,
+  "test_split": "After the test-precondition repair: 21 non-solving checks passed with no original PDFs anywhere in a temporary source copy, plus the optional original-present branch passed in the current checkout. The unchanged full-baseline function/entry retains its previous one successful 2880h run; no second solve.",
+  "first_failure_preserved": "small_tests_01.xml: Windows legacy long-path file creation failure in check-only packaging; no baseline solve had occurred. Fixed with native long-path handling.",
+  "full_2880h_solver_runs": 1,
+  "source_PDF_count_in_isolated_selected_inputs": 0,
+  "default_missing_PDF_mode_started_and_numerically_verified": true,
+  "strict_missing_PDF_mode_rejected": true,
+  "strict_failure_evidence": "docs/implementation_20261002_followup/parallel_stage_02/portable/strict_missing_sources_01.json",
+  "strict_failed_file_count": 18,
+  "strict_missing_PDF_count": 8,
+  "strict_missing_PDFs_have_acquisition_URLs": true,
+  "all_22_CSV_columns_tamper_rejected": true,
+  "all_required_processed_artifacts_tamper_rejected": true,
+  "new_parameter_plus_rehashed_admission_rejected": true,
+  "saved_output_negative_control_rejected": true,
+  "numerical_audit_passed": true,
+  "solver_status": 0,
+  "solver_gap": 0.0,
+  "actual_solver_scope": {
+    "investment_scope": "existing_assets_dispatch",
+    "free_investment_variables": 0,
+    "investment_variables_including_fixed": 0,
+    "fixed_plan_marker_present": false,
+    "scope_evidence": "actual_built_investment_variable_bounds",
+    "joint_investment_decisions_present": false
+  },
+  "window_metrics": {
+    "electricity_kwh": 3176.9210947874917,
+    "electricity_energy_charge_yuan": 2265.428715014252,
+    "fixed_factor_reference_carbon_kg": 1284.7468907320613,
+    "heat_delivered_kwh": 3176.9210947874917,
+    "cooling_delivered_kwh": 0.0,
+    "min_temperature_c": 20.0,
+    "max_temperature_c": 27.000000000000004
+  },
+  "canonical_delivery_run": "docs/implementation_20261002_followup/parallel_stage_02/portable/run_01",
+  "canonical_copy_rule": "Byte-identical copy of the successful isolated baseline output, not a second solve; original test output remains saved.",
+  "canonical_manifest_files_checked": 20,
+  "canonical_all_manifest_hashes_match": true,
+  "source_statement": "原始来源沿用既有审核，本次没有重新核验全部原件",
+  "original_sources_reverified_by_default_entry": false,
+  "full_economics_admitted": false,
+  "investment_case_complete": false,
+  "algorithm_advantage_claimed": false,
+  "previous_core_inputs_and_algorithm_freeze_preserved": true,
+  "preserved_files_checked": 66,
+  "not_run_or_excluded": [
+    {
+      "item": "Second full baseline / fixed-asset replay",
+      "reason": "User capped this task at one 2880h baseline; identical-asset repeats do not establish algorithm advantage."
+    },
+    {
+      "item": "Full historical regression suite",
+      "reason": "Only new entry/tests/docs changed; scoped real file/CLI checks plus one full solver and independent audits completed."
+    },
+    {
+      "item": "Original-source complete verification pass / PDF rereview / download",
+      "reason": "This task tests default portable numerical evidence and strict missing-source rejection; no new source/content validation claim."
+    },
+    {
+      "item": "Free-investment engineering decision or lifecycle revenue/payback",
+      "reason": "No admitted free-investment equipment/economics in this locked ideal case; separate equipment-intake conversation owns that work."
+    }
+  ],
+  "git_operations": false,
+  "paper_or_PPT": false,
+  "changed_files": [
+    "scripts/reproduce_admitted_reference.py",
+    "tests/test_portable_reference_reproduction.py",
+    "docs/implementation_20261002_followup/parallel_stage_02/portable/*"
+  ],
+  "strict_failure_original_local_path": "\\\\?\\D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\implementation_20261002_followup\\parallel_stage_02\\portable\\pytest_small_02\\test_real_cli_strict_rejects_m0\\strict_rejected\\source_identity.json",
+  "strict_failure_retained_receipt_sha256": "30001892a926793b9341b41f1c7dee758aa3e499559f1a7c8ae815e4d421a352",
+  "strict_failure_retained_receipt_byte_identical": true,
+  "root_repository_PDF_is_a_test_prerequisite": false,
+  "clone_portability_fix": "docs/implementation_20261002_followup/parallel_stage_02/portable/clone_portability_fix_01.json",
+  "delivery_policy": "Only exact files in delivery_whitelist.json; exclude all pytest/source-copy/cache roots. Local original evidence remains preserved."
+}

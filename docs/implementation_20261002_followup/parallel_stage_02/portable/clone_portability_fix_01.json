@@ -1,0 +1,50 @@
+{
+  "completed_utc": "2026-10-02T10:47:41Z",
+  "change": "Remove mandatory ROOT/BESTEST original-PDF existence assertion; optionally check no bytes from that file are reported verified when it happens to exist.",
+  "script_and_fixed_admission_SHA_unchanged": true,
+  "before_test_sha256": "efc61515dbb657d96c904efdb6f47cb31c848fedb867b21c74f441137fb497df",
+  "after_test_sha256": "86432bec30a2903041f81d5fa917acf6e264f3c2f3ef2ef15eedcc8991ee30c7",
+  "script_sha256": "6de45833472b05afb3b5f1501443f4c87cbc8cfdcf4affd69b35fc524786da97",
+  "no_originals_source_copy": {
+    "identity": "temporary source/file copy, not a Git clone; no original PDFs copied or manufactured",
+    "source_root_at_validation": "\\\\?\\D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\implementation_20261002_followup\\parallel_stage_02\\portable\\clean_source_tree_01",
+    "original_PDF_count": 0,
+    "non_solving_tests_passed": 21,
+    "full_solver_runs": 0
+  },
+  "optional_repository_original_branch": {
+    "repository_original_present": true,
+    "test_passed": true,
+    "root_PDF_required_for_tests": false,
+    "fake_originals_created": false
+  },
+  "actual_tests": [
+    {
+      "evidence": "clean_clone_small_tests_01.xml",
+      "tests": 21,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suite_seconds": 5.557
+    },
+    {
+      "evidence": "optional_repository_pdf_test_01.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suite_seconds": 1.168
+    }
+  ],
+  "previous_full_baseline_reused_as_evidence": true,
+  "full_solver_runs_added_after_test_fix": 0,
+  "historical_full_test_function_changed": false,
+  "strict_original_receipt": "docs/implementation_20261002_followup/parallel_stage_02/portable/strict_missing_sources_01.json",
+  "strict_receipt_byte_identical_to_original": true,
+  "strict_receipt_sha256": "30001892a926793b9341b41f1c7dee758aa3e499559f1a7c8ae815e4d421a352",
+  "strict_missing_files": 18,
+  "strict_missing_PDFs": 8,
+  "temporary_source_copy_is_not_a_Git_clone": true,
+  "actual_submission_clone_verification_owned_by_parent": true,
+  "local_intermediate_test_roots_retained_but_not_delivered": true
+}

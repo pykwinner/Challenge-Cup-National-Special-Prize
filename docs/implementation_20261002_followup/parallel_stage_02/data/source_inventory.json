@@ -1,0 +1,205 @@
+{
+  "cities": {
+    "urumqi": {
+      "city_label": "乌鲁木齐",
+      "raw_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario1_urumqi_UTC.json",
+      "raw_sha256": "73eaee32e09fde57d63351b9446978cb24240425ce8fe66aa9c6d95105586b5d",
+      "receipt_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario1_urumqi_download.json",
+      "receipt_sha256": "e97c5321f2e642575190c9e7bde6bf2587d87a2c2108554807f707e99a3302a7",
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&latitude=43.8256&longitude=87.6168&start=20241009&end=20250416&format=JSON&time-standard=UTC",
+      "requested_lat_lon": [
+        43.8256,
+        87.6168
+      ],
+      "returned_lon_lat_elevation_m": [
+        87.617,
+        43.826,
+        737.35
+      ],
+      "identity": "NASA POWER point output from MERRA2/SYN1DEG/POWER gridded products; no WMO station ID or site-meter identity",
+      "original_header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "UTC",
+        "start": "20241009",
+        "end": "20250416"
+      },
+      "native_units": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "original_hours": 4560,
+      "original_coverage_utc": [
+        "2024-10-09T00:00:00+00:00",
+        "2025-04-17T00:00:00+00:00"
+      ],
+      "original_download_time": null,
+      "download_time_note": "Archived receipt has no original fetch timestamp; not invented during this copy"
+    },
+    "guyuan": {
+      "city_label": "固原",
+      "raw_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario2_guyuan_UTC.json",
+      "raw_sha256": "9751ff2bdf51261526a68f901660cb651b5e153b8ff6ce9dfb74d0114ee72600",
+      "receipt_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario2_guyuan_download.json",
+      "receipt_sha256": "b66358215130401c8a061b61e8993a84230868c38db53c37f8fa5939ada67bef",
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&latitude=36.0159&longitude=106.2426&start=20241009&end=20250416&format=JSON&time-standard=UTC",
+      "requested_lat_lon": [
+        36.0159,
+        106.2426
+      ],
+      "returned_lon_lat_elevation_m": [
+        106.243,
+        36.016,
+        1847.81
+      ],
+      "identity": "NASA POWER point output from MERRA2/SYN1DEG/POWER gridded products; no WMO station ID or site-meter identity",
+      "original_header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "UTC",
+        "start": "20241009",
+        "end": "20250416"
+      },
+      "native_units": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "original_hours": 4560,
+      "original_coverage_utc": [
+        "2024-10-09T00:00:00+00:00",
+        "2025-04-17T00:00:00+00:00"
+      ],
+      "original_download_time": null,
+      "download_time_note": "Archived receipt has no original fetch timestamp; not invented during this copy"
+    },
+    "wuhan": {
+      "city_label": "武汉",
+      "raw_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario3_wuhan_UTC.json",
+      "raw_sha256": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+      "receipt_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario3_wuhan_download.json",
+      "receipt_sha256": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&latitude=30.5928&longitude=114.3055&start=20241009&end=20250416&format=JSON&time-standard=UTC",
+      "requested_lat_lon": [
+        30.5928,
+        114.3055
+      ],
+      "returned_lon_lat_elevation_m": [
+        114.305,
+        30.593,
+        29.3
+      ],
+      "identity": "NASA POWER point output from MERRA2/SYN1DEG/POWER gridded products; no WMO station ID or site-meter identity",
+      "original_header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "UTC",
+        "start": "20241009",
+        "end": "20250416"
+      },
+      "native_units": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "original_hours": 4560,
+      "original_coverage_utc": [
+        "2024-10-09T00:00:00+00:00",
+        "2025-04-17T00:00:00+00:00"
+      ],
+      "original_download_time": null,
+      "download_time_note": "Archived receipt has no original fetch timestamp; not invented during this copy"
+    }
+  },
+  "context_snapshots": {
+    "prior_package_audit.json": {
+      "original_path": "docs/source_intake_20261002/city_batch_02/common/package_independent_audit.json",
+      "snapshot_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_package_audit.json",
+      "sha256": "80549be1f26658d2b42797209626d8139db97a5e8da5d254411c2ef4c5b37731"
+    },
+    "prior_lst_identity.md": {
+      "original_path": "data/verified_weather_20261002/README.md",
+      "snapshot_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_lst_identity.md",
+      "sha256": "783ecdf3a39fbd065873f0f30cee644663ec0de95b5bc2e5cf5718798d87c54f"
+    },
+    "three_city_decisions.md": {
+      "original_path": "docs/source_intake_20261002/planning_user_update/THREE_CITY_DECISIONS.md",
+      "snapshot_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/three_city_decisions.md",
+      "sha256": "6e2e569804eac570a684dfb61c21b7a8fece64858b4296454ce4aa5b05beefa1"
+    },
+    "prior_wuhan_method_protocol.json": {
+      "original_path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/protocol.json",
+      "snapshot_path": "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_wuhan_method_protocol.json",
+      "sha256": "403d0a9ba225b223276440dc2b2aaa138d31bf2bed0e36d56e184c718bc1c9d7"
+    }
+  },
+  "excluded_weather_sources": "VerifiedWeather clean LST labels retained in prior archive, not relabelled UTC+8. CSWD TMY is separate and not used. No unlocked Open-Meteo/Meteostat bias adjustment.",
+  "source_authenticity_scope": "Exact previously archived NASA responses/receipts; hashing is file identity, not proof that local microclimate error is zero"
+}

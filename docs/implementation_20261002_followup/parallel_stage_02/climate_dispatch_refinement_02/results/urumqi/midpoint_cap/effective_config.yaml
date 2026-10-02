@@ -1,0 +1,82 @@
+planning:
+  region_profile: BESTEST600_derived_Wuhan_weather_reference
+  time_step_hours: 1
+  representative_day_weight: 1
+  discount_rate: 1.0
+  asset_lifetime_years: 1
+  carbon_price_yuan_per_kg: 0.0
+  exergy_penalty_yuan_per_kwh: 0.0
+  ambient_reference_c: 0.0
+  max_unserved_rate: 0.0
+  max_scenario_unserved_rate: 0.0
+  unserved_heat_penalty_yuan_per_kwh: 0.0
+  firm_capacity_reserve_margin: 0.0
+  enforce_n_minus_one: false
+  design_outdoor_temperature_c: -4.85
+  emissions_cap_kg_per_year: 2663.8091291963688
+grades:
+- name: ideal_zone_service
+  temperature_c: 27.0
+nodes:
+- name: reference_building
+  demand_columns:
+    ideal_zone_service: heat_reference_no_gain_kw
+sources:
+- name: bestest_ideal_air_system
+  type: electric_boiler
+  node: reference_building
+  resource_kind: electric
+  allowed_grades:
+  - ideal_zone_service
+  supply_temp_c: 27.0
+  existing_capacity_kw: 1000.0
+  max_new_capacity_kw: 0.0
+  max_retire_capacity_kw: 0.0
+  efficiency: 1.0
+  variable_om_yuan_per_kwh_heat: 0.0
+  firm_capacity_credit: 1.0
+  firm_capacity_availability: 1.0
+pipes: []
+storages: []
+demand_response:
+  max_shift_fraction: 0.0
+multi_energy_services:
+  cooling:
+    enabled: true
+    demand_columns:
+      reference_building: steady_cooling_demand_kw
+    max_unserved_rate: 0.0
+    max_scenario_unserved_rate: 0.0
+    unserved_penalty_yuan_per_kwh: 0.0
+    sources:
+      bestest_ideal_air_system:
+        eer: 1.0
+        eer_min: 1.0
+        eer_max: 1.0
+        eer_loss_per_c_above_reference: 0.0
+        capacity_equivalence: 1.0
+        variable_om_yuan_per_kwh_cooling: 0.0
+        direct_emission_kg_per_kwh_cooling: 0.0
+building_thermal:
+  enabled: true
+  outdoor_temperature_column: outdoor_temp
+  simultaneous_mode: exclusive
+  boundary_mode: fixed
+  buildings:
+  - name: bestest600_inner_mass_approximation
+    node: reference_building
+    heat_grade: ideal_zone_service
+    area_m2: 48.0
+    heat_loss_kw_per_c: 0.10430000000000002
+    thermal_capacity_kwh_per_c: 0.535576
+    min_temperature_c: 20.0
+    max_temperature_c: 27.0
+    initial_temperature_c: 20.0
+    final_temperature_c: 20.0
+    internal_gain_column: internal_gain_kw
+    solar_gain_column: solar_gain_kw
+    heating_service_column: heating_service
+    heating_enabled: true
+    cooling_enabled: true
+    max_heat_kw: 1000.0
+    max_cooling_kw: 1000.0

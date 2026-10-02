@@ -1,0 +1,115 @@
+{
+  "date_local": "2026-10-02",
+  "review_status": "completed_read_only_handoff",
+  "confirmation_admission": "pending_parent_protocol_not_granted_by_reviewer",
+  "candidate_current_sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+  "author_freeze": {
+    "freeze_file_hash": "2fdef580ed8589c05adaf510537da75c6a8b369d6840576ee0f8b538eb38ede4",
+    "freeze_scope": "mathematical candidate/API/code/analytical tests only; not parent confirmation protocol",
+    "freeze_checks": [
+      {
+        "path": "src/heatplan/decision_weight_calibration.py",
+        "expected": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+        "actual": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+        "matches": true
+      },
+      {
+        "path": "tests/test_decision_weight_calibration.py",
+        "expected": "be8c7798e00961b758cb998f65f451dffe94ef03cd7c4be0c44cc66067bec7f8",
+        "actual": "be8c7798e00961b758cb998f65f451dffe94ef03cd7c4be0c44cc66067bec7f8",
+        "matches": true
+      },
+      {
+        "path": "docs/implementation_20261002_followup/parallel_stage_02/algorithm/design.json",
+        "expected": "c54e35561ae4799af9b155b570507dd2c2d2bd00dbd72cd01ffd7077ec0a9fc5",
+        "actual": "c54e35561ae4799af9b155b570507dd2c2d2bd00dbd72cd01ffd7077ec0a9fc5",
+        "matches": true
+      }
+    ],
+    "xml_hash": "61ef123a20f417303a9453b9d357a1e6a280148dc84568f19d96e203be1b7380",
+    "expected_xml_hash": "61ef123a20f417303a9453b9d357a1e6a280148dc84568f19d96e203be1b7380",
+    "xml_counts": {
+      "tests": 78,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    }
+  },
+  "secondary_audit": {
+    "secondary_audit_path": "D:\\xwechat_files\\wxid_um1b6x6t5d5322_6b35\\msg\\file\\2026-10\\CP-202611_二次审计与评分报告.md",
+    "sha256": "6aa8033174557e76bf0f405bd5cc7fc570eebc1609820d81940a9c475cfae025"
+  },
+  "reviewer_actions": {
+    "candidate_source_executed": false,
+    "confirmation_run": false,
+    "old_regression_rerun": false,
+    "model_or_candidate_edited": false,
+    "old_evidence_edited": false,
+    "git_operations": false,
+    "primary_papers_read": 4,
+    "output_directory": "docs/implementation_20261002_followup/parallel_stage_02/review/"
+  },
+  "dispositions": [
+    {
+      "id": "PS02-NUM-01",
+      "previous_snapshot_sha256": "bed0d90e65061dd29ed3d706fdd46d96aeeebdd5b0bac2ccb55411b6721677df",
+      "status": "specific_static_counterexample_addressed_in_current_snapshot",
+      "locations": [
+        {
+          "file": "src/heatplan/decision_weight_calibration.py",
+          "start": 107,
+          "end": 111
+        },
+        {
+          "file": "src/heatplan/decision_weight_calibration.py",
+          "start": 129,
+          "end": 131
+        }
+      ],
+      "evidence": "Nonfinite scale raises before LP construction; nonfinite native estimate/residual/allowance raises before acceptance. The original two-day fixture now encounters the scale guard on both diagnostic and solver entry.",
+      "limits": "Static path review and XML identity/count checks only; reviewer did not independently execute new candidate fixtures. Not a blanket certificate for every floating-point magnitude or arithmetic path.",
+      "author_test_evidence": "analytical_tests_02.xml: actual XML 78 tests, 0 failures/errors/skips; hash matches mathematical method freeze."
+    },
+    {
+      "id": "PS02-DESIGN-01",
+      "status": "prospective_parent_decision",
+      "options": [
+        "Add energy-only L1 and predeclared separate price/window controls if attributing a price mechanism.",
+        "Keep four-method comparison but describe combined candidate effect; no isolated price attribution."
+      ],
+      "changes_after_method_freeze": "Any new code, objective or constraint needs a new version/freeze before confirmation outcomes."
+    },
+    {
+      "id": "PS02-PROTOCOL-01",
+      "status": "still_required_before_confirmation",
+      "required": [
+        "exact untouched window/timezone/source manifest",
+        "exact price/operation masks and native substantive moment bands",
+        "full service/state/finite policy library and objective/ties",
+        "same actual dates/M/floors and complete runtime budget",
+        "all failures, actual cap/service checks and finite-library oracle semantics"
+      ],
+      "note": "Author freeze correctly covers mathematical API/code/analytical tests only; it does not freeze parent experiment."
+    }
+  ],
+  "updated_priority_order": [
+    "portable_complete_main_case",
+    "same_service_free_investment_baseline_low_cost_low_carbon_compromise_and_small_frontier",
+    "actual_multiscale_intervention",
+    "weight_improvement_as_auxiliary"
+  ],
+  "priority_interface": "MAIN_CASE_ACCEPTANCE.md",
+  "primary_method_interface": "PRIMARY_METHOD_REVIEW.md",
+  "fairness_rules": "FAIR_COMPARISON_PROTOCOL.json",
+  "implementation_interface": "ACCEPTANCE_INTERFACE.md",
+  "claims_not_authorized": [
+    "official_72_score",
+    "new_independent_confirmation_on_known_Wuhan_development_window",
+    "policy_selection_advantage_from_all_delta0_result",
+    "scalar_W1_implies_joint_dynamic_accuracy",
+    "bounded_thermal_price_proxy_guarantees_policy_bill_or_energy",
+    "fixed_assets_reference_frontier_proves_joint_investment",
+    "new_free_investment_main_case_completed",
+    "full_regression_or_real_project_effects_verified_by_this_review"
+  ]
+}

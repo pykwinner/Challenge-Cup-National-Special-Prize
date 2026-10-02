@@ -1,0 +1,50 @@
+{
+  "candidate_version": "decision-moments-0.1.0-experimental",
+  "status": "first_stage_complete_pending_parent_case_protocol",
+  "priority_alignment": "辅助权重候选已完成后收束；主线转向便携主案例和有自由投资的同服务决策。该候选没有证明工程规划优势。二次审计报告由统筹消息概括供参考，本子任务未读取或执行其中论文/PPT建议。",
+  "deliverables": [
+    "src/heatplan/decision_weight_calibration.py",
+    "tests/test_decision_weight_calibration.py",
+    "docs/implementation_20261002_followup/parallel_stage_02/algorithm/design.json",
+    "docs/implementation_20261002_followup/parallel_stage_02/algorithm/analytical_tests_01.xml",
+    "docs/implementation_20261002_followup/parallel_stage_02/algorithm/analytical_tests_02.xml",
+    "docs/implementation_20261002_followup/parallel_stage_02/algorithm/test_results.json",
+    "docs/implementation_20261002_followup/parallel_stage_02/algorithm/preservation_before.json",
+    "docs/implementation_20261002_followup/parallel_stage_02/algorithm/preservation_after.json",
+    "docs/implementation_20261002_followup/parallel_stage_02/algorithm/method_freeze.json",
+    "docs/implementation_20261002_followup/parallel_stage_02/algorithm/handoff.json"
+  ],
+  "actual_tests": {
+    "latest_passed": 78,
+    "new_candidate_analytical": 59,
+    "existing_hard_weight_regression": 12,
+    "existing_method_identity_regression": 7,
+    "failed": 0,
+    "skipped": 0,
+    "full_historical_suite_run": false,
+    "evidence": "analytical_tests_02.xml",
+    "first_run_evidence_preserved": "analytical_tests_01.xml: 74 passed before numeric-overflow defensive checks added"
+  },
+  "preservation": {"checked_files": 41, "all_unchanged": true, "git_operations": false},
+  "integration_interface": {
+    "candidate": "heatplan.decision_weight_calibration.calibrate_price_operation_weights",
+    "independent_callable_diagnostic": "heatplan.decision_weight_calibration.diagnose_decision_weights",
+    "required_parent_inputs": [
+      "按真实时标及来源准入的D×H参考功率和配对电价，明确reference_kind=thermal或electric以及dt，H*dt=24。不得将仿真参考功率标为观测。",
+      "D个真实日身份、已冻结的m个实际日行号及对应原频数权重/普通和极端下界，所有方法使用相同实际日。",
+      "每个声明矩的绝对误差界：price_product以及window_energy:<name>；没有默认业务误差界。热参考价格乘积单位currency*kWh_th/kWh_e，不能当实际电费。",
+      "若启用运行时窗，提交按原日/小时对齐的D×H二元掩码及冻结来源、开始时刻和持续时间。时窗矩不建立RC或跨日约束。",
+      "在打开确认结果前冻结评估协议、基线、策略/投资候选、服务要求、预算、失败处理、数值容差与求解预算；交给已有独立审查流程。"
+    ],
+    "candidate_failure_rule": "status!=ok时weights=null，保留不可行/求解失败。不得静默松弛、换日或将基线冠以候选名称。",
+    "comparison_baselines": ["frequency", "soft_energy", "hard_energy_minimum_W1"],
+    "confirmation_gate": "乌鲁木齐/固原2024-11-16至2025-03-16时间窗结果在父端方法与评估协议冻结后才打开；本子任务没有接触其负荷/策略/误差数值。全项目此前是否使用天气须另披露。"
+  },
+  "limits": [
+    "零真实样本开发演示，零确认运行，未扩大实验矩阵、方法数或超参数搜索。",
+    "解析反例证实一维W1/总参考能量不能表示所有计费配对，且费用和耗电误差的最优权重可以冲突；未得到城市运行或投资改善结论。",
+    "旧武汉诊断是已知开发背景，不再称本新方法的独立确认集。",
+    "参考能量硬等式和价格/时窗矩可能联合不可行，即使各自的可达区间均包含目标。",
+    "本阶段没有改动主模型、旧硬权重或冻结实验，也未自动接入现有生产/实验入口。"
+  ]
+}

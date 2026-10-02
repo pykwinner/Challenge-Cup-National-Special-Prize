@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "status": "baseline_numerical_reproduction_passed",
+  "name": "公开原型数值复现",
+  "source_statement": "原始来源沿用既有审核，本次没有重新核验全部原件",
+  "original_source_hashes_verified_this_run": false,
+  "full_2880h_solver_runs": 1,
+  "actual_solver_scope": {
+    "investment_scope": "existing_assets_dispatch",
+    "free_investment_variables": 0,
+    "investment_variables_including_fixed": 0,
+    "fixed_plan_marker_present": false,
+    "scope_evidence": "actual_built_investment_variable_bounds",
+    "joint_investment_decisions_present": false
+  },
+  "full_economics_admitted": false,
+  "algorithm_advantage_claimed": false,
+  "code_stable_during_run": true,
+  "wall_seconds": 5.129220900009386,
+  "files_sha256": {
+    "baseline/audit.json": "69751694c30281c0fa52841c190c795cada00599ad234fce3672f7ca57e20380",
+    "baseline/building_trajectory.csv": "4b3a487d0d6e1783ddb12a4e57b29545f9098f8a417cbf1d4461f0e05776a8e2",
+    "baseline/dispatch.csv": "59d0b98e77ffe3915de685c09bdf73f8ed151fea5423b49ccdcd953621cccebb",
+    "baseline/effective_config.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "baseline/independent_building_audit.json": "2eb3f60ff10d795bd6ffbf7691173feb1ab7bb785c6378e7ca269bc9df2da077",
+    "baseline/independent_saved_output_audit.json": "6987a0982f0ec28dd007df2a634c91f7dddde4860ab846ef0ad17a35bcbdd7e3",
+    "baseline/input_identity.json": "8bd4ec591a445a3c46519268fb2080b077002899a720f7b4fa04a60f45b81bb6",
+    "baseline/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "baseline/model_summary_raw.json": "79b3b6918a2dd45cc873201842f6e57d7999472d669d0a18b446c3634e08e1e1",
+    "baseline/summary.json": "3c0c2c653ef3cb0856954ac1056de63e14943621b77e15daf022dcbed09da77b",
+    "environment.json": "0e65403754da650b5739f951fb8a463f65241484ad4da00507c38651fd89c881",
+    "input_bundle/configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "input_bundle/data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+    "input_bundle/docs/implementation_20261002/data/admission.json": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+    "input_bundle/docs/implementation_20261002/data/admission_tou.json": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+    "input_bundle/docs/implementation_20261002/data/field_provenance_tou.csv": "16f8f749f3c1c6354d22a9f2fbeece3da170a9c1d90ecfa9508ac38a4e108474",
+    "input_bundle/docs/implementation_20261002/data/monthly_tariff_verified.csv": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+    "input_bundle/docs/implementation_20261002/data/tou_account_and_hours.json": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+    "protocol.json": "00506940dafda0e9b217350f9dd21bbaf5ce657437fcc43f5729a65218125801",
+    "source_identity.json": "145af0be194d911612341954a6bc70d61a55ccf0d4e13c0b705cba14184044d7"
+  }
+}
