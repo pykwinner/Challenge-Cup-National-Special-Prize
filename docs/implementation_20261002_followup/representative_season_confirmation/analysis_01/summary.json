@@ -1,0 +1,42 @@
+{
+  "scope": "same-season finite-library offline diagnostic; not investment improvement, out-of-sample validation or simulation speedup",
+  "all_eight_policies_accounted": true,
+  "method_metrics": [
+    {
+      "method": "frequency",
+      "policy_count": 8,
+      "energy_kwh_mean_absolute_percentage_error": 0.3296197551824101,
+      "energy_kwh_maximum_absolute_percentage_error": 0.6477662907361181,
+      "bill_yuan_mean_absolute_percentage_error": 0.7639803214227414,
+      "bill_yuan_maximum_absolute_percentage_error": 0.8223764235496978,
+      "carbon_kg_mean_absolute_percentage_error": 0.32961975518240594,
+      "carbon_kg_maximum_absolute_percentage_error": 0.6477662907361292
+    },
+    {
+      "method": "soft_energy",
+      "policy_count": 8,
+      "energy_kwh_mean_absolute_percentage_error": 0.11472083999682636,
+      "energy_kwh_maximum_absolute_percentage_error": 0.21174100188530165,
+      "bill_yuan_mean_absolute_percentage_error": 0.3464318141730288,
+      "bill_yuan_maximum_absolute_percentage_error": 0.3960918789870038,
+      "carbon_kg_mean_absolute_percentage_error": 0.11472083999683053,
+      "carbon_kg_maximum_absolute_percentage_error": 0.21174100188530165
+    },
+    {
+      "method": "hard_energy_minimum_W1",
+      "policy_count": 8,
+      "energy_kwh_mean_absolute_percentage_error": 0.23784941241664914,
+      "energy_kwh_maximum_absolute_percentage_error": 0.3443522852613512,
+      "bill_yuan_mean_absolute_percentage_error": 0.11714480609506112,
+      "bill_yuan_maximum_absolute_percentage_error": 0.3419090576456063,
+      "carbon_kg_mean_absolute_percentage_error": 0.23784941241664775,
+      "carbon_kg_maximum_absolute_percentage_error": 0.344352285261329
+    }
+  ],
+  "distinct_selected_policies": [
+    0
+  ],
+  "decision_improvement_demonstrated": false,
+  "candidate_file_sha256": "f7862124225da75ff8cc177b5b05cfc9a22e5272bbcfe8f263b5fdae1d4d40cc",
+  "report_script_sha256": "4f78d187a1169af424fb954a711a04dd3a756e425359a0cb7d4113131b8b30e0"
+}

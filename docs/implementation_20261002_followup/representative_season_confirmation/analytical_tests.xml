@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="1.844" timestamp="2026-10-02T17:55:40.201028" hostname="LAPTOP-9T38KD8F"><testcase classname="" name="tests.test_representative_season_confirmation" time="0.000"><error message="collection failure">ImportError while importing test module 'D:\competion\xiaotiao\北方供热三类场景公用总框架V10\north_heat_challenge\tests\test_representative_season_confirmation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+D:\app\anaconda3\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests\test_representative_season_confirmation.py:12: in &lt;module&gt;
+    SPEC.loader.exec_module(core)
+scripts\run_representative_season_confirmation.py:25: in &lt;module&gt;
+    from run_evidence_case_experiments import (load_inputs, chronology_check, verify_admission,
+E   ModuleNotFoundError: No module named 'run_evidence_case_experiments'</error></testcase></testsuite></testsuites>

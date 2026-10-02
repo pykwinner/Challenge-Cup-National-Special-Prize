@@ -1,0 +1,348 @@
+{
+  "delivery_version": "11.12.0rc3",
+  "core_version": "11.12.0rc2",
+  "status": "research_release_candidate",
+  "repository": "https://github.com/pykwinner/xiaotiao",
+  "branch": "main",
+  "baseline": "66dff73128c16cefd3a62b97732fb1bebbc4865d",
+  "build_time": "2026-10-02T18:14:37.225764+08:00",
+  "timezone": "Asia/Shanghai",
+  "planned_tag": "v11.12.0rc3",
+  "final_commit_and_remote_check": "External post-commit handoff; not a self-referential commit field",
+  "scope": "Representative-season diagnostic increment only; core/data/config unchanged",
+  "source_copy_manifest": "validation/source_copy_manifest.json",
+  "validation": {
+    "special": {
+      "passed": 24,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "warnings": 0,
+      "seconds": 1.53,
+      "command": "python -B -m pytest tests/test_representative_season_confirmation.py -q -p no:cacheprovider --basetemp <new> --junitxml <new>"
+    },
+    "related": {
+      "passed": 68,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "warnings": 0,
+      "seconds": 1.57,
+      "command": "python -B -m pytest tests/test_representative_days.py tests/test_representative_boundaries.py tests/test_representative_adoption.py tests/test_hard_weight_calibration.py tests/test_weight_adoption_method_identity.py -q -p no:cacheprovider --basetemp <new> --junitxml <new>"
+    },
+    "total_this_release": 92,
+    "independent_numeric_checks": 567,
+    "independent_command": "python -B scripts/verify_representative_season_confirmation.py --run docs/implementation_20261002_followup/representative_season_confirmation/run_01 --out <new JSON>",
+    "source_identity_checks": 25,
+    "code_identity_checks": 15,
+    "relative_links_checked": 55,
+    "core_data_config_unchanged": true,
+    "first_original_collection_error_retained": true
+  },
+  "environment": "Reuse rc2 clean CPython 3.12.7 venv and exact recorded dependencies; no original vendored runtime",
+  "distribution": {
+    "reference_originals": 10,
+    "retrieval_this_release": "Reused rc2 archived same-SHA bytes, not freshly downloaded; excluded from Git",
+    "external_manifest": "docs/github_release_11.12.0rc2/external_sources.json",
+    "planning_local_audits_and_user_pdf": "Not distributed; not inputs of this experiment",
+    "excluded": [
+      "matplotlib_cache",
+      "runtime caches",
+      "third-party PDFs"
+    ]
+  },
+  "not_run": [
+    {
+      "item": "Whole 882 historical regression",
+      "reason": "Core/data/config unchanged; executed 24 specific and 68 related tests instead; no accumulation of old counts"
+    },
+    {
+      "item": "Rerun full 8 policy trajectories and figures",
+      "reason": "Frozen result identity and independent numeric audit checked; do not overwrite prior outputs"
+    },
+    {
+      "item": "Repeat power fault injection",
+      "reason": "Original independent negative control record retained; not claimed as a new run"
+    },
+    {
+      "item": "Download changing reference PDFs",
+      "reason": "Reused exact archived verified originals"
+    }
+  ],
+  "result_scope": {
+    "eight_policies": 8,
+    "hours_per_policy": 2880,
+    "fixed_actual_days": 8,
+    "methods": 3,
+    "budgets": 4,
+    "candidates": 96,
+    "selections": 12,
+    "all_selected_delta_c": 0,
+    "decision_improvement_demonstrated": false,
+    "empirical_validation": false,
+    "out_of_sample": false,
+    "investment_improvement": false,
+    "simulation_speedup": false
+  },
+  "manifest_self_excluded": true,
+  "delta_files_excluding_self": 51,
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 6003,
+      "sha256": "95ffa576087dfcf3f7ecbef737170d2769884893f23b36cbff24fcb0ef3fd1e6"
+    },
+    {
+      "path": "GITHUB_UPLOAD.md",
+      "bytes": 367,
+      "sha256": "314d349599793b8990f24314a64adba60f0fa3607469333fdbbcf9f6a017edd9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2548,
+      "sha256": "b9371574998dee14a5044f84c284f4deb4844c56836c4e449b260b6d858188ce"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc3/README.md",
+      "bytes": 5500,
+      "sha256": "0006494d87b3f10a2fb462e8b7d876603927e4508752a508a88a812140ff8217"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc3/validation/independent_audit_candidate.json",
+      "bytes": 608,
+      "sha256": "df767a75c9617370d5b36398bce6455a080769aef70e86dd6c2265cdd0d50fb6"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc3/validation/independent_audit_candidate.log",
+      "bytes": 572,
+      "sha256": "4e8c37b603c9418b072bf00e128f04e3040a58cf53b4a38f56f0c1411d6b47fe"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc3/validation/precommit_checks.json",
+      "bytes": 696,
+      "sha256": "da0878aed7c785142a2fc33f0bc7bdebcf75296ff9536f9ae60f7a6927ee49a5"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc3/validation/related_tests.log",
+      "bytes": 101,
+      "sha256": "0c11d17f4a9b55a7d036ff53951ea451e84d0e97bc59fc0e155d8c2cd8bd12d7"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc3/validation/related_tests.xml",
+      "bytes": 10439,
+      "sha256": "76e4a04bd642306d3f0345ff4b25768d944ced97b840ff2874950936711ed85a"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc3/validation/source_copy_manifest.json",
+      "bytes": 12299,
+      "sha256": "e1692101791b765f38c88040d87194b6eb3e250383f659e419e67d73c7dc04a0"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc3/validation/special_tests.log",
+      "bytes": 101,
+      "sha256": "fc0a9d95cd5f8a67ceef37f017dd7278e0a2c552ddf1c27008c090bfffe319c6"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc3/validation/special_tests.xml",
+      "bytes": 4091,
+      "sha256": "291c32336d2089699edfda7778501b9d76907adaba726d4f98ca1d5b9c709c7f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/README.md",
+      "bytes": 8802,
+      "sha256": "f03a28cc5556758bfde2596e2a7aec4bba9cb3a39499e63681d69c7bf6bfb8f3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/analysis_01/policy_estimation_errors.csv",
+      "bytes": 6538,
+      "sha256": "3d45977f041836e00e2741535bce7d9011f5168dab44d3a96b8cbd4544090d5a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/analysis_01/policy_estimation_errors.png",
+      "bytes": 135894,
+      "sha256": "f11ba7447c207963ad00b2405eeea3d20f71f4bc90a9f7ce4c020e1b4da72789"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/analysis_01/policy_estimation_errors.svg",
+      "bytes": 67334,
+      "sha256": "e3adda39485322084494eabb6b3fa92e7a0364835fa5e675959d787c26d5bd8f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/analysis_01/summary.json",
+      "bytes": 2040,
+      "sha256": "1d040da557df372dc5d41d80a5d40ab8bb87895af05ddba2c01b0dafa950db95"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/analytical_tests.xml",
+      "bytes": 1108,
+      "sha256": "04303a6b2c7b988e80479efd38aac99ef36e7ddf752f358fbe8a2966dcc843d5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/analytical_tests_02.xml",
+      "bytes": 4065,
+      "sha256": "3cd15cb17838ec755ac720edafd03bbb82b59bf9487c7329f44032383b2ab968"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/analytical_tests_final.xml",
+      "bytes": 4065,
+      "sha256": "1917cffcfd28100a03a36cf7143d570a3edfd082f27aff2709b7815446261bfa"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/independent_audit_01.json",
+      "bytes": 608,
+      "sha256": "df767a75c9617370d5b36398bce6455a080769aef70e86dd6c2265cdd0d50fb6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/negative_control_01.json",
+      "bytes": 1219,
+      "sha256": "e426a3914e1bb5ec28cf29c1b89a06947238982199e79cd26eb5acf123baeee1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/protocol_semantics_erratum.json",
+      "bytes": 571,
+      "sha256": "fe290ee37d1dc7b5dcf772236f3e0351a49deefd8a0c8f859643639499cee28a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/daily_totals.csv",
+      "bytes": 59272,
+      "sha256": "b3a5a262151ff26d438a697fb825a750a095abac1440092ac0a1df83eb35834c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/failures.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/manifest.json",
+      "bytes": 2430,
+      "sha256": "b0835aaba037d84d5871461c498d199f755e8f7757d0fb6b3d6662ae955d68f8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_0/trajectory.csv",
+      "bytes": 497454,
+      "sha256": "7857b527ef54b679d31c8a362f3491f53b1dc670db377126d5b2a54484391674"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_1/trajectory.csv",
+      "bytes": 499061,
+      "sha256": "f9a5e10ee13a30d71b9c97d45f9d2537517ac4dc4cfe7a09e536e870aa1ba861"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_2/trajectory.csv",
+      "bytes": 493897,
+      "sha256": "b6db114f6fa0d5cb70eba7d42d6bb28d75aeef2b76c9a040f5ad3ba1c086c1b4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_3/trajectory.csv",
+      "bytes": 490233,
+      "sha256": "7a5f41b16c8024d768b1166e7608eb4fe93fc1b59ceae086099f835a858b51b5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_4/trajectory.csv",
+      "bytes": 486817,
+      "sha256": "e338c85075fe42696f9793028b3a5aa850f1147423769901feb7d4c471560eb5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_5/trajectory.csv",
+      "bytes": 486819,
+      "sha256": "89ef57f14ca09419524a2f6927ae04ea81a9b6a3695738dea619b500246e97a8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_6/trajectory.csv",
+      "bytes": 482019,
+      "sha256": "137e574356ffe9ade7635741cc376f654212449a695aef85df24d8c6c6b6715e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policies/delta_7/trajectory.csv",
+      "bytes": 479774,
+      "sha256": "8500c506883ee454f435cc8a5cd1f5a57a3e7a3badf78a7bf0b1e3bebb4a0cf0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policy_candidates.csv",
+      "bytes": 19478,
+      "sha256": "f7862124225da75ff8cc177b5b05cfc9a22e5272bbcfe8f263b5fdae1d4d40cc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/policy_season_totals.csv",
+      "bytes": 672,
+      "sha256": "fd6a8d92ce0b0c14af8e8d6e20f59b2780ff7636903380ad2d1ce701cdbdbfd7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/protocol.json",
+      "bytes": 6729,
+      "sha256": "403d0a9ba225b223276440dc2b2aaa138d31bf2bed0e36d56e184c718bc1c9d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/protocol_lock.json",
+      "bytes": 285,
+      "sha256": "75f3b7794a6f232fce3c3ff9617b011ff66832c6d2c877b876e30a58aae71440"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/selected_actual_hours.csv",
+      "bytes": 47977,
+      "sha256": "de18bb8531d5dc0884eb29e91d902f21369285e123c88430ac5755784a067477"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/selected_day_weights.csv",
+      "bytes": 802,
+      "sha256": "34041b28a0cb7993164fc513c6db911548d6fcbc894ae8abe7855760922eea71"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/selected_days.csv",
+      "bytes": 717,
+      "sha256": "6746a787b6d39c5c546c65f7053037e49aa564432685eea639f2859734f1d659"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/selections.csv",
+      "bytes": 1010,
+      "sha256": "72eb0293454fbebf455da5aaa79e2ef7ca31979f9f412ffaa70e7f3eb120dfde"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/selections.json",
+      "bytes": 4703,
+      "sha256": "ee272a6042caa2c7145d17bfec71145d04adbbf37c8426d45a802720c10f10e4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/weight_reports.json",
+      "bytes": 3354,
+      "sha256": "c192c8bd784ff0e2743bae6dc4991e3e19b2b800ff61662f439154d64408817d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/run_01/weight_reports_initial.json",
+      "bytes": 3020,
+      "sha256": "2389d55eec6522696320ca6e4a3e9f3d56f3d92412cff355352179c70c0d0d87"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/representative_season_confirmation/verification_01.json",
+      "bytes": 506,
+      "sha256": "866b19c579eebb72dadeb883b0f7888413827fdd2c640b3fadc1f6837f8cf465"
+    },
+    {
+      "path": "docs/source_intake_20261002/planning_user_update/THREE_CITY_DECISIONS.md",
+      "bytes": 17278,
+      "sha256": "6e2e569804eac570a684dfb61c21b7a8fece64858b4296454ce4aa5b05beefa1"
+    },
+    {
+      "path": "scripts/report_representative_season_confirmation.py",
+      "bytes": 3829,
+      "sha256": "4f78d187a1169af424fb954a711a04dd3a756e425359a0cb7d4113131b8b30e0"
+    },
+    {
+      "path": "scripts/run_representative_season_confirmation.py",
+      "bytes": 17860,
+      "sha256": "a7f69e704ca6decb708fefd693c6a76d7066475caa62e5c343680b49ff226828"
+    },
+    {
+      "path": "scripts/verify_representative_season_confirmation.py",
+      "bytes": 11933,
+      "sha256": "2df0e44c51da68f7b475c6a1e42ed73d0c35d972a38a31617c458970f0f0701c"
+    },
+    {
+      "path": "tests/test_representative_season_confirmation.py",
+      "bytes": 7155,
+      "sha256": "7abe1f3142e7356e1006db32e8e82f64112c5a77f76b46517d48acfafbf5b863"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "intentional_test_only": true,
+  "mutation": "add 0.1 kW heating at hour index 100 for delta0; update only copied manifest file digest, to bypass byte-hash alarm and exercise numerical audit",
+  "original_results_unchanged": true,
+  "rejected": true,
+  "failed_checks": [
+    "policy_0:convolution_temperature",
+    "policy_0:inherited_state",
+    "policy_0:frozen_controller",
+    "policy_0:energy_kwh",
+    "policy_0:bill_yuan",
+    "policy_0:carbon_kg",
+    "policy_0:daily_accounting",
+    "policy_0:season_accounting",
+    "candidate:frequency:1.0:0:actual",
+    "candidate:frequency:1.02:0:actual",
+    "candidate:frequency:1.05:0:actual",
+    "candidate:frequency:1.1:0:actual",
+    "candidate:soft_energy:1.0:0:actual",
+    "candidate:soft_energy:1.02:0:actual",
+    "candidate:soft_energy:1.05:0:actual",
+    "candidate:soft_energy:1.1:0:actual",
+    "candidate:hard_energy_minimum_W1:1.0:0:actual",
+    "candidate:hard_energy_minimum_W1:1.02:0:actual",
+    "candidate:hard_energy_minimum_W1:1.05:0:actual",
+    "candidate:hard_energy_minimum_W1:1.1:0:actual"
+  ],
+  "check_count": 567,
+  "auditor_sha256": "2df0e44c51da68f7b475c6a1e42ed73d0c35d972a38a31617c458970f0f0701c"
+}
