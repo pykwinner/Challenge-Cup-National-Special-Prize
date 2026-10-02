@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>山西省公共资源交易平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="山西省公共资源交易网"/>
+    <meta name="description" content="山西省公共资源交易网,山西省公共资源交易平台,山西省公共资源,山西省交易平台" />
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/layui/css/layui.css">
+    <script src="/r/cms/com.ggzy.www/com.ggzy.www/layui/layui.js"></script>
+    <script src="/r/cms/com.ggzy.www/com.ggzy.www/js/echarts.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script> -->
+    <!-- <script src="http://echarts.baidu.com/build/dist/echarts.js"></script> -->
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/css/reset.css?v=1">
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/css/allCss.css?v=2">
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/css/common.css?v=4" />
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/css/twoC.css?v=1">
+    <script type="text/javascript" src="/r/cms/com.ggzy.www/com.ggzy.www/js/jquery-2.2.4.min.js"></script>
+    <script src="/r/cms/front.js" type="text/javascript"></script>
+    <script src="/r/cms/com.ggzy.www/com.ggzy.www/js/grayscale.js"></script>
+    <script>
+	  $(function(){
+		var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+	    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+	    //var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+	    var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+	    if(isIE || isIE11){
+	    	grayscale($('body'));
+	    }
+	  })
+	</script>
+	<style>
+		/* html {
+			-webkit-filter: grayscale(100%);
+		  	-moz-filter: grayscale(100%);
+		  	-ms-filter: grayscale(100%);
+		  	-o-filter: grayscale(100%);
+		  	filter: grayscale(100%);
+		  	filter: gray;
+		} */
+	</style>
+	<style>
+/* 子菜单容器 */
+.ca-submenu-item {
+  position: relative;
+}
+
+/* 子菜单样式 */
+.ca-submenu {
+  display: none;
+  position: absolute;
+  top: 0;               /* 保持与父项顶部对齐 */
+  left: 100%;
+  background: #1d528b;   /* 深蓝背景 */
+  border: 0px solid #0f3a66;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 5px 0;
+  min-width: 140px;
+  z-index: 2000;
+  margin-left: 5px;     /* 与父项保持距离 */
+}
+
+/* 左侧小箭头 */
+.ca-submenu::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 16px;             /* 调整此值可控制箭头上下位置（当前约在第一行菜单文字高度） */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 6px 6px 0;
+  border-color: transparent #1d528b transparent transparent; /* 箭头颜色与背景一致 */
+  filter: none;          /* 去掉阴影，保持干净 */
+}
+
+/* 子菜单列表容器 */
+.ca-submenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 子菜单项 */
+.ca-submenu li {
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* 子菜单链接文字 */
+.ca-submenu a {
+  display: block;
+  padding: 8px 15px;
+  color: #fff;            /* 白色文字，在深蓝背景上清晰 */
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* 子菜单链接悬停效果 */
+.ca-submenu a:hover {
+  background-color: #fff; /* 稍亮的蓝色 */
+  color: #1d528b;
+}
+
+/* 悬停显示子菜单 */
+.ca-submenu-item:hover .ca-submenu {
+  display: block;
+}
+	</style>
+	
+  </head>
+  <body>
+    <div class="header_top">
+      <div class="cs_middle cs_divInline_block cs_box_1">
+        <a href="javascript:voild(0)" class="cs_logo">
+          <p>全国公共资源交易平台（山西省）</p>
+          <p>NATIONAL PUBLIC RESOURCE TRADING PLATFORM (SHANXI)</p>
+        </a>
+        <div class="header_top_remark">
+          <span>公开</span>
+          <span>公正</span>
+          <span>规范</span>
+          <span>透明</span>
+        </div>
+
+        <div class="cs_search cs_kuang">
+          <input type="text" placeholder="请输入关键字" class="search-input"/>
+          <div class="cs_search_box">
+            <img src="/r/cms/com.ggzy.www/com.ggzy.www/img/u495.png" class="cs_search_img" onclick="searchFun()"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav_bj">
+      <div class="nav">
+        <ul class="nav_ul">
+          <li class="nav_stair nav_first">
+            <a href="/">首页</a>
+          </li>
+          <li class="nav_stair">
+            <a href="/xwzx/index.jhtml">综合动态</a>
+          </li>
+          <li class="nav_stair">
+            <a href="/jyxx/index.jhtml">交易信息</a>
+            <ul class="nav_second nav_special">
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxgc/index.jhtml">工程建设</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxzc/index.jhtml">政府采购</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxtd/index.jhtml">土地矿权</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxcq/index.jhtml">国有产权</a>
+              </li>
+              <li style="float:left;" id="nav_ling_height">
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxsf/index.jhtml">行政执法部门开展的罚没资产处置</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxnc/index.jhtml">农村产权</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxpw/index.jhtml">排污权</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxyx/index.jhtml">药械采购</a>
+              </li>
+              <li style="float:left;" id="nav_ling_height">
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxym/index.jhtml">非免疫规划疫苗采购</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxwx/index.jhtml">无形资产</a>
+              </li>
+              <li style="float:left;" id="nav_ling_height">
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxpf/index.jhtml">耕地占补平衡指标</a>
+              </li>
+              <div style="clear:both;"></div>
+            </ul>
+          </li>
+          <li class="nav_stair">
+            <a href="/zwgk/index.jhtml">政务公开</a>
+          </li>
+          <li class="nav_stair">
+            <a href="/qdml/index.jhtml">清单目录</a>
+          </li>
+          <li class="nav_stair">
+            <a href="/jczm/index.jhtml">进场交易证明</a>
+          </li>
+          <li class="nav_stair">
+            <a href="http://jyzt.sxzwfw.gov.cn/" target="_blank">交易市场主体库</a>
+            <!--
+	    <ul class="nav_second nav_special nav_secondwidth singleLine">
+              <li>
+                <a href="http://jyzt.sxzwfw.gov.cn/ztxxzc/index.jhtml" target="_blank">注册指南</a>
+              </li>
+              <li>
+                <a href="https://www.sxzwfw.gov.cn/v6/auth/userLogin?redirect=istrue&goto=http://jyzt.sxzwfw.gov.cn/gfm_sx/&utype=1&itype=0&client_id=rSxCNoNFqOiDlfIa" target="_blank">登录入口</a>
+              </li>
+              <li>
+                <a href="https://www.sxzwfw.gov.cn/v6/auth/userRegister" target="_blank">注册入口</a>
+              </li>
+              <li>
+                <a href="http://jyzt.sxzwfw.gov.cn/ztxxcx.jhtml" target="_blank">查询入口</a>
+              </li>
+              <li>
+                <a href="http://jyzt.sxzwfw.gov.cn/ztxxcjwtfz/index.jhtml" target="_blank">常见问题</a>
+              </li>
+            </ul>
+	    -->
+          </li>
+          <li class="nav_stair">
+            <a>第三方服务</a>
+            <ul class="nav_second nav_special nav_secondwidth singleLine">
+              <li class="ca-submenu-item">
+			    <a href="http://cashare.cebpubservice.com/#/allActivated?tradingSystemCode=E1400000911" target="_blank">全国移动CA互认</a>
+			    <div class="ca-submenu">
+				      <ul>
+				        <li><a href="http://cashare.cebpubservice.com/#/allActivated?tradingSystemCode=E1400000911" target="_blank">互认APP清单</a></li>
+				        <li><a href="/qgcahr/index.jhtml?type=fee" target="_blank">互认APP费用限额</a></li>
+				      </ul>
+				 </div>
+			  </li>
+              <li>
+                <a href="http://prec.sxzwfw.gov.cn/cajchrpt/" target="_blank">全省介质CA互认</a>
+              </li>
+              <li>
+                <a href="/jrjg/index.jhtml" target="_blank">电子保函服务</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav_stair">
+            <a href="/xzzxgl/index.jhtml">服务指南</a>
+            <ul class="nav_second nav_special nav_secondwidth singleLine">
+              <li >
+                <a href="http://prec.sxzwfw.gov.cn:80/xzzxgl/index.jhtml">办事指南</a>
+              </li>
+              <li >
+                <a href="http://prec.sxzwfw.gov.cn:80/xzzxcz/index.jhtml">操作手册</a>
+              </li>
+              <li >
+                <a href="http://prec.sxzwfw.gov.cn:80/xzzxzl/index.jhtml">资料模板</a>
+              </li>
+              <li >
+                <a href="http://prec.sxzwfw.gov.cn:80/xzzxcx/index.jhtml">应用程序</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav_stair nav_stairwidth">
+            <a>
+             	 市级平台
+            </a>
+            <ul class="nav_second nav_special nav_specialmargin">
+              <li style="float:left;">
+                <a href="https://gcjs.ggzy.xzspglj.taiyuan.gov.cn/" target="_blank">太原市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzyjy.dt.gov.cn/" target="_blank">大同市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzy.yq.gov.cn/" target="_blank">阳泉市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzy.changzhi.gov.cn/" target="_blank">长治市</a>
+              </li>
+              <li style="float:left;">
+                <a href="https://ggzy.jcgov.gov.cn/" target="_blank">晋城市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://szggzy.shuozhou.gov.cn/cmsController.do?goPage&page=index" target="_blank">朔州市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzy.sxjz.gov.cn/" target="_blank">晋中市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzyjyzx.yuncheng.gov.cn/" target="_blank">运城市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzyjy.sxxz.gov.cn:7620/" target="_blank">忻州市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://lfggzyjy.linfen.gov.cn/" target="_blank">临汾市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzyjyzx.lvliang.gov.cn/" target="_blank">吕梁市</a>
+              </li>
+              <li style="float:left;">
+                <a href="https://zonggai.jcebid.com/" target="_blank">综改区</a>
+              </li>
+              <div style="clear:both;"></div>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+    function searchFun() {
+		var q = $(".search-input").val();
+		if(q) {
+			window.location.href="/search.jspx?q="+encodeURI(encodeURI(q));
+		}
+	}
+    $(".search-input").on("keyup",function(e){
+    	var ev = document.all ? window.event : e;
+	    if(ev.keyCode==13) {
+	    	searchFun();
+	     }
+    })
+    </script>
+<div class="cs_twoC_box">
+  <div class="cs_two_box_fk">
+    <!-- <div class="cs_turn_back">
+      <a href="javascript:voild(0)" class="cs_turn_back_a">返回上一级</a>
+    </div>
+    <div class="cs_two_line"></div> -->
+    <div>
+      <p class="cs_title_P1">灵石一中学生宿舍楼生活热水空气能设备采购项目结果公告</p>
+      <p class="cs_title_P3">发布日期：2024-08-23 10:45 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp信息来源： </p>
+      <div class="cs_xq_content">
+        <div class="div-title2">	<span style="padding-right:50px">首次公告时间：2024-08-11 18:13:05</span></div><div class="div-article2"><table class="gycq-table"><tr><td ><style id="fixTableStyle" type="text/css">th,td {border:1px solid #DDD;padding: 5px 10px;}</style> <div id="fixTableStyle" type="text/css" cdata_tag="style" cdata_data="th,td {border:1px solid #DDD;padding: 5px 10px;}" _ue_custom_node_="true"></div><p style="line-height: normal; text-align: justify;"><strong style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; text-align: justify;">一、项目编号：</strong><samp style="font-family: inherit" class="bookmark-item uuid-1653371865344 code-00004 addWord single-line-text-input-box-cls">1407292024ACS00111</samp></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 18px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; text-align: justify; white-space: normal;">二、项目名称：</strong><samp style="font-family: inherit" class="bookmark-item uuid-1653371882749 code-00003 addWord single-line-text-input-box-cls">灵石一中学生宿舍楼生活热水空气能设备采购项目</samp></span></p><p style="margin-bottom: 15px; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>三、中标（成交）信息</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;">1.中标结果：</p><div class="class-condition-filter-block"><table class="template-bookmark uuid-1714044794658 code-AM014zbcj003 text-中标/成交结果信息-综合评分法" style="width: 100%; border-collapse:collapse;"><thead><tr style="text-align: center;" class="firstRow"><td style="background-color: #fff;"><strong>序号</strong></td><td style="background-color: #fff;"><strong>供应商名称</strong></td><td style="background-color: #fff;"><strong>供应商地址 </strong></td><td style="background-color: #fff;"><strong>中标（成交）金额</strong></td><td style="background-color: #fff;"><strong>评审总得分</strong></td></tr></thead><tbody replace="true"><tr replace="true"><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-sectionNo" align="center" valign="middle">1</td><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-winningSupplierName" align="center" valign="middle">灵石县博然商贸有限公司</td><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-winningSupplierAddr" align="center" valign="middle">翠峰镇凤凰新城G栋商铺</td><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-summaryPrice" align="center" valign="middle">报价：2829810（元）</td><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-reviewTotalScore" align="center" valign="middle">85.97</td></tr></tbody></table></div><p style="font-size: 16px; font-family: 微软雅黑; line-height: 20px; text-indent: 2em;"><br/></p><p style="line-height: normal; font-family: 微软雅黑; font-size: 16px; white-space: normal; text-indent: 2em;">2.废标结果:&nbsp;&nbsp;<br/></p><p style="line-height: normal; font-family: 微软雅黑; font-size: 16px; white-space: normal; text-indent: 2em;" class="sub"><samp style="font-family: inherit" class="bookmark-item uuid-1653975566033 code-41007 addWord"> &nbsp; </samp></p><table class="form-panel-input-cls" width="100%"><tbody><tr width="100%" style="text-align: center;" class="firstRow"><td width="25.0%" style="word-break:break-all;">序号</td><td width="25.0%" style="word-break:break-all;">标项名称</td><td width="25.0%" style="word-break:break-all;">废标理由</td><td width="25.0%" style="word-break:break-all;" colspan="1">其他事项</td></tr><tr width="100%" style="text-align: center;"><td width="25.0%" style="word-break:break-all;">/</td><td width="25.0%" style="word-break:break-all;">/</td><td width="25.0%" style="word-break:break-all;">/</td><td width="25.0%" style="word-break:break-all;" colspan="1">/</td></tr></tbody></table><p></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>四、主要标的信息</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;</p><div style=" font-size:16px; font-family:微软雅黑; line-height:20px;"><div class="class-condition-filter-block"><p style="line-height: normal;"><span style="font-size: 16px;">&nbsp; &nbsp;货物类主要标的信息：</span> &nbsp; &nbsp;</p><p style="line-height: normal;" class="sub">&nbsp; &nbsp;&nbsp;<samp style="font-family: inherit" class="bookmark-item uuid-1653371945051 code-AM014GoodsInfoTab addWord"> &nbsp; &nbsp; </samp></p><table class="form-panel-input-cls" width="100%"><tbody><tr width="100%" style="text-align: center;" class="firstRow"><td width="14.29%" style="word-break:break-all;">序号</td><td width="14.29%" style="word-break:break-all;">标项名称</td><td width="14.29%" style="word-break:break-all;">标的名称</td><td width="14.29%" style="word-break:break-all;">品牌</td><td width="14.29%" style="word-break:break-all;">数量</td><td width="14.29%" style="word-break:break-all;">单价</td><td width="14.29%" style="word-break:break-all;" colspan="1">规格型号</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">1</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">空气能机组</td><td width="14.29%" style="word-break:break-all;">格力</td><td width="14.29%" style="word-break:break-all;">10</td><td width="14.29%" style="word-break:break-all;">110000</td><td width="14.29%" style="word-break:break-all;" colspan="1">GN-53MDG/NaK 名义制热量≥98KW,名义制热功率≦23KW，COP ≥4.5，出水温度30-60℃，冷媒：R410A，电源：380V，使用环境范围-30℃～40℃</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">2</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">水箱</td><td width="14.29%" style="word-break:break-all;">海泉</td><td width="14.29%" style="word-break:break-all;">20</td><td width="14.29%" style="word-break:break-all;">24900</td><td width="14.29%" style="word-break:break-all;" colspan="1">12.5吨，不锈钢，聚氨酯发泡，保温厚度5cm</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">3</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">空气能循环泵</td><td width="14.29%" style="word-break:break-all;">新界</td><td width="14.29%" style="word-break:break-all;">10</td><td width="14.29%" style="word-break:break-all;">7000</td><td width="14.29%" style="word-break:break-all;" colspan="1">SGL65-125G 流量25m3/h，扬程20m，功率≦3KW</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">4</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">热水出水泵</td><td width="14.29%" style="word-break:break-all;">新界</td><td width="14.29%" style="word-break:break-all;">10</td><td width="14.29%" style="word-break:break-all;">6000</td><td width="14.29%" style="word-break:break-all;" colspan="1">SGL65-160G 流量25m3/h，扬程32m，≦4KW变频控制</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">5</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">软水系统</td><td width="14.29%" style="word-break:break-all;">国产</td><td width="14.29%" style="word-break:break-all;">10</td><td width="14.29%" style="word-break:break-all;">7000</td><td width="14.29%" style="word-break:break-all;" colspan="1">10m3/h全自动软水器</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">6</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">空气能控制器</td><td width="14.29%" style="word-break:break-all;">格力</td><td width="14.29%" style="word-break:break-all;">10</td><td width="14.29%" style="word-break:break-all;">4800</td><td width="14.29%" style="word-break:break-all;" colspan="1">Z26301Q 1）自动控制空气能机组；2）自动检测且显示各机组运行状况以及故障；3）有自动防冻功能；4）液晶显示</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">7</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">主机管道</td><td width="14.29%" style="word-break:break-all;">友发</td><td width="14.29%" style="word-break:break-all;">1500</td><td width="14.29%" style="word-break:break-all;">93</td><td width="14.29%" style="word-break:break-all;" colspan="1">镀锌钢管 DN65-1.0MPa</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">8</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">楼层主管道</td><td width="14.29%" style="word-break:break-all;">京华</td><td width="14.29%" style="word-break:break-all;">500</td><td width="14.29%" style="word-break:break-all;">65</td><td width="14.29%" style="word-break:break-all;" colspan="1">PPR de40 / 2.0MPa</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">9</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">楼层支管道</td><td width="14.29%" style="word-break:break-all;">京华</td><td width="14.29%" style="word-break:break-all;">1300</td><td width="14.29%" style="word-break:break-all;">44</td><td width="14.29%" style="word-break:break-all;" colspan="1">PPR de20 / 2.0MPa</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">10</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">淋浴系统</td><td width="14.29%" style="word-break:break-all;">恒营</td><td width="14.29%" style="word-break:break-all;">120</td><td width="14.29%" style="word-break:break-all;">1200</td><td width="14.29%" style="word-break:break-all;" colspan="1">花洒系统，4分螺纹接口，三种以上出水模式</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">11</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">电控箱</td><td width="14.29%" style="word-break:break-all;">富垦</td><td width="14.29%" style="word-break:break-all;">10</td><td width="14.29%" style="word-break:break-all;">5500</td><td width="14.29%" style="word-break:break-all;" colspan="1">1）屋面安装；2）设置电压表、电流表、电源指示灯；3）配置供电保护总开关1只；4）每台机组设置1个空气开关回路供电；5）每台水泵控制回路包括空气开关、接触器、热保护装置、启停按钮、手动自动切换；6）所有供电及控制引至端子排进行接线；7）热水出水泵变频控制</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">12</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">电缆</td><td width="14.29%" style="word-break:break-all;">津成</td><td width="14.29%" style="word-break:break-all;">500</td><td width="14.29%" style="word-break:break-all;">93</td><td width="14.29%" style="word-break:break-all;" colspan="1">WFZRYJV-0.6/1KV 3*25mm2+2*16mm2</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">13</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">电缆</td><td width="14.29%" style="word-break:break-all;">津成</td><td width="14.29%" style="word-break:break-all;">200</td><td width="14.29%" style="word-break:break-all;">39</td><td width="14.29%" style="word-break:break-all;" colspan="1">YZF-300/500V 4*6mm2</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">14</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">电源线</td><td width="14.29%" style="word-break:break-all;">津成</td><td width="14.29%" style="word-break:break-all;">300</td><td width="14.29%" style="word-break:break-all;">10</td><td width="14.29%" style="word-break:break-all;" colspan="1">ZR-BV 450/750V 1*φ2.5mm2</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">15</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">屏蔽线2芯</td><td width="14.29%" style="word-break:break-all;">津成</td><td width="14.29%" style="word-break:break-all;">3000</td><td width="14.29%" style="word-break:break-all;">14</td><td width="14.29%" style="word-break:break-all;" colspan="1">RVV-450/750V 2*0.75mm2</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">16</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">水流计费控制系统</td><td width="14.29%" style="word-break:break-all;">德通</td><td width="14.29%" style="word-break:break-all;">540</td><td width="14.29%" style="word-break:break-all;">534</td><td width="14.29%" style="word-break:break-all;" colspan="1">DT168-30L 刷卡式、WIFI、多种模式、全铜防磁、耐高温</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">17</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">空气能主机辅材</td><td width="14.29%" style="word-break:break-all;">/</td><td width="14.29%" style="word-break:break-all;">1</td><td width="14.29%" style="word-break:break-all;">91000</td><td width="14.29%" style="word-break:break-all;" colspan="1">/</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">18</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">管道辅材</td><td width="14.29%" style="word-break:break-all;">/</td><td width="14.29%" style="word-break:break-all;">1</td><td width="14.29%" style="word-break:break-all;">39000</td><td width="14.29%" style="word-break:break-all;" colspan="1">/</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all;">19</td><td width="14.29%" style="word-break:break-all;">灵石一中学生宿舍楼生活热水空气能设备采购项目</td><td width="14.29%" style="word-break:break-all;">供电系统辅材</td><td width="14.29%" style="word-break:break-all;">/</td><td width="14.29%" style="word-break:break-all;">1</td><td width="14.29%" style="word-break:break-all;">37950</td><td width="14.29%" style="word-break:break-all;" colspan="1">/</td></tr></tbody></table>&nbsp;<p></p></div></div><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>五、评审专家（单一来源采购人员）名单：</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><samp style="font-family: inherit" class="bookmark-item uuid-1653371979715 code-85005 addWord multi-line-text-input-box-cls">闫晓国（第1包采购人代表），杨德明，李倩</samp>&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>六、代理服务收费标准及金额：</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">1.代理服务收费标准：<samp style="font-family: inherit" class="bookmark-item uuid-1653372008127 code-AM01400039 addWord multi-line-text-input-box-cls">参照计价格[2002]1980号和发改办价格[2003]857号文计算后作为最终中标服务费</samp></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">2.代理服务收费金额（元）：<samp style="font-family: inherit" class="bookmark-item uuid-1653372017940 code-AM01400040 editDisable multi-line-text-input-box-cls">35100.00</samp></span></span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><samp style="font-family: inherit" class="bookmark-item uuid-1653975607355 code-AM014techBusCreditLink editDisable single-line-text-input-box-cls readonly"></samp></span><br/></span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><samp style="font-family: inherit" class="bookmark-item uuid-1653975614646 code-AM014techBusCreditHtml editDisable single-line-text-input-box-cls readonly"></samp></span></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>七、公告期限</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">自本公告发布之日起1个工作日。</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>八、其他补充事宜</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><samp style="font-family: inherit" class="bookmark-item uuid-1653372031416 code-81205 addWord multi-line-text-input-box-cls">无</samp>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>九、对本次公告内容提出询问，请按以下方式联系</strong>　　　&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"></span></p><div style="white-space: normal; font-family: 微软雅黑; line-height: 30px;"><div style="line-height: 30px;"><p style="line-height: 1.5em; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1.采购人信息</span> &nbsp; &nbsp; &nbsp; &nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">名 称：<samp style="font-family: inherit" class="bookmark-item uuid-1653372055487 code-00014 editDisable interval-text-box-cls readonly">灵石县第一中学校</samp></span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">地 址：<samp style="font-family: inherit" class="bookmark-item uuid-1653372061722 code-00018 addWord single-line-text-input-box-cls">山西省灵石县静升镇</samp></span>&nbsp; &nbsp; &nbsp; &nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">联系方式：<samp style="font-family: inherit" class="bookmark-item uuid-1653372067358 code-00016 editDisable single-line-text-input-box-cls readonly">13994558590 </samp></span>&nbsp; &nbsp; &nbsp;</p><p style="line-height: 1.5em; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2.采购代理机构信息</span> &nbsp; &nbsp; &nbsp; &nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">名 称：<samp style="font-family: inherit" class="bookmark-item uuid-1653372092821 code-00009 addWord interval-text-box-cls">山西昊诚工程项目管理咨询有限公司</samp></span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">地 址：<samp style="font-family: inherit" class="bookmark-item uuid-1653372099014 code-00013 editDisable single-line-text-input-box-cls readonly">介休市北大街125号</samp></span>&nbsp; &nbsp; &nbsp;&nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">联系方式：<samp style="font-family: inherit" class="bookmark-item uuid-1653372111904 code-00011 addWord single-line-text-input-box-cls">15935682664</samp></span>&nbsp; &nbsp; &nbsp; &nbsp;</p></div></div><p style="line-height: 1.5em; white-space: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3.项目联系方式</span></p><p style="line-height: 1.5em; white-space: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">项目联系人：<samp style="font-family: inherit" class="bookmark-item uuid-1653372131779 code-00010 editDisable single-line-text-input-box-cls readonly">郭海萍</samp></span></p><p style="line-height: 1.5em; white-space: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">电 话：<samp style="font-family: inherit" class="bookmark-item uuid-1653372124900 code-00011 addWord single-line-text-input-box-cls">15935682664</samp></span></p><p style="line-height: normal;">&nbsp;</p><blockquote style="display: none;"><samp style="font-family: inherit; background-color: rgb(247, 247, 247); color: rgb(27, 120, 255);" class="bookmark-item uuid-1714044821932 code-biddingTableEl editDisable single-line-text-input-box-cls readonly">1</samp> </blockquote><p>&nbsp;</p><p><br/></p><p><br/></p><p><br/></p><p style='font-size' class='fjxx'>附件信息：</p><ul class="fjxx" style="font-size: 16px;margin-left: 38px;color: #0065ef;list-style-type: none;"><li><p style="display:inline-block"><a href="https://sx2gov2open2doc.uos.sxzfcg.zcygov.cn/1023FP/undefined/149900/2126000000043672/20248/7d40def2-f679-4732-853c-784d87c88131.doc">磋商文件.doc</a></p><p style="display:inline-block;margin-left:20px">428.2K</p></li></ul></td></tr></table></div>
+          <br/>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+	// 隐藏content.txt中的发布时间
+	$(".cs_xq_content .div-title2").children(":first").hide();
+</script>
+<div class="cs_bottomBack cs_white_back">
+    <!-- 底部 -->
+    <div class="cs_bottom_box">
+      <div class="cs_bottom cs_middle">
+        <a href="http://121.43.68.40/exposure/jiucuo.html?site_code=1400000094&url=http%3A%2F%2Flocalhost%3A8080%2Fshengfwpt2.0%2FmoreInfoController.do%3FgetProject" target="_blank" class="zfzc"></a>
+        <a href="http://bszs.conac.cn/sitename?method=show&id=5F7AA86716B98ADCE053022E1AACF4ED" target="_blank" class="dzjg"></a>
+        <div>
+          <p>山西省行政审批服务管理局
+          <p>
+            <span>备案号：晋ICP备 2021014607 号</span>
+            <span>网站标识码 1400000094</span>
+          </p>
+          <p style="cursor: pointer;" onclick="window.open('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=14010502050588')">晋公网安备：14010502050588 号</p>
+        </div>
+      </div>
+    </div>
+</div>
+    <!-- 浮动按钮 -->
+    <div class="cs_FD_button">
+      <div class="go_top" onclick="goTop(this)"></div>
+      <br/>
+      <!-- <div class="go_VX"></div> -->
+      <div class="go_mobile">
+        <a href="/ts/index.jhtml" target="_blank">投诉举报热线</a>
+      </div>
+    </div>
+
+
+  </body>
+</html>
+<script>
+  function slideFn(the,key){
+    // tab样式
+    the.parentNode.querySelector('.active').classList.remove('active');
+    the.classList.add('active');
+    //内容
+    the.parentNode.parentNode.querySelector('.cs_tab_box>.cs_show').classList.remove('cs_show');
+    the.parentNode.parentNode.querySelectorAll('.cs_tab_box>.cs_tab_box_cont')[key].classList.add('cs_show');
+    
+    var moreUrl = $(the).attr("data-url");
+    if(moreUrl){
+	    $(the).parent().children(".cs_more").attr("href",moreUrl)
+    }
+  }
+
+  function selectFn(the){
+    if (the.parentNode.classList.value.indexOf('active')>-1) {
+      the.parentNode.classList.remove('active')
+    }else{
+      the.parentNode.classList.add('active')
+    }
+  }
+
+  $(".cs_select a").on("click",function(){
+	  selectFn(this.parentNode.previousSibling);
+  })
+  
+  $(document).click(function(event){
+      //footer
+      var fooSelect = $(".cs_select span");
+      if(!fooSelect.is(event.target) && fooSelect.has(event.target).length === 0){
+    	  $(".cs_select").removeClass("active");
+      }else{
+    	  var parent = $(event.target).parent();
+    	  if(parent.hasClass("active")){
+    		  //close
+    		  parent.removeClass("active");
+    	  }else{
+    		  //open and close other
+	    	  $(".cs_select").removeClass("active");
+	    	  parent.addClass("active");
+    	  }
+      }
+ });
+  function goTop(the){
+    var setInter=setInterval(goFn,1);
+    function goFn(){
+      if ( document.querySelector('html').scrollTop<=0) {
+        clearInterval(setInter)
+      }else{
+        document.querySelector('html').scrollTop-=50;
+      }
+    }
+  }
+</script>
+<script type="text/javascript"> 
+  // 获取天气
+  var tqSTR="";
+  function changeCity(city) {
+     cityCode = encodeURI(city);
+//     $.ajax("http://wthrcdn.etouch.cn/weather_mini?city=" + cityCode, {
+//         dataType : 'jsonp',
+//         crossDomain : true,
+//         success : function(obj) {
+//              console.log(obj)
+//              var today = obj.data.forecast[0];
+//              var lowTemp = today.low.substring(3);
+//              var hightTemp = today.high.substring(3);
+              // $("#wed").html("北京" + "&nbsp;&nbsp;" + today.type + "&nbsp;&nbsp;" + lowTemp + "~" + hightTemp);
+
+//              tqSTR=city + "&nbsp;&nbsp;" + today.type + "&nbsp;&nbsp;" + lowTemp + "~" + hightTemp;
+//              console.log(city + "&nbsp;&nbsp;" + today.type + "&nbsp;&nbsp;" + lowTemp + "~" + hightTemp);
+//         }
+//     });
+  }
+  changeCity('太原')
+  // 获取标准时间
+  function getDate(item){
+      var week=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+      var myDate = new Date();
+      //获取当前年
+      var year = myDate.getFullYear();
+      //获取当前月
+      var month = myDate.getMonth() + 1;
+      //获取当前日
+      var date=myDate.getDate()
+      //获取星期
+      var weedToday =week[myDate.getDay()];
+
+      var week=myDate.getDay()
+      var h = myDate.getHours(); //获取当前小时数(0-23)
+      var m = myDate.getMinutes(); //获取当前分钟数(0-59)
+      var s = myDate.getSeconds();
+
+     //获取当前时间
+
+     // var now = year + '年' + conver(month) + "月" + conver(date) + "日 " + conver(h) + ':' + conver(m) + ":" + conver(s);
+     var now = year + '年' + conver(month) + "月" + conver(date) + "日 " + weedToday+'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;' +item;
+     return now;
+  }
+  //日期时间处理
+  function conver(s) {
+    return s < 10 ? '0' + s : s;
+  }
+  function time(){
+    document.querySelector('.week_TQ').innerHTML=getDate(tqSTR) 
+  }
+  //显示时间
+  //var time=setInterval(time,100)
+  
+  $(function(){
+	Cms.siteFlow("", location.href, document.referrer, "true"); 
+		$(".div-title2 a").hide();
+		Cms.viewCount("", "840060");
+  })
+</script>

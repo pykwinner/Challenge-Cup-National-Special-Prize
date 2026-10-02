@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+ 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Author" content="万户网络设计制作" />
+<title>麦克维尔中央空调官网</title>
+<meta name="keywords" content="麦克维尔  中央空调   商用空调   家用中央空调    户式水机   磁悬浮    离心机    螺杆机  " />
+<meta name="Description" content="欢迎光临麦克维尔官方网站！有任何问题，请和麦克维尔分支机构联系。" />
+
+<!--
+                       (0 0)
+   +=============oOO====(_)================+
+   |   Powered By wanhu - www.wanhu.com.cn |
+   |   Tel:400-888-0035  020-85575672      |
+   |   Creation:2018.01.25                 |
+   +==========================oOO==========+
+                      |__|__|
+                       || ||
+                      ooO Ooo
+    -->
+
+<!--glyphicon字体图标-->
+<link rel="stylesheet" href="/cn/css/glyphicon.css" />
+<!-- 项目初始化样式 -->
+<link rel="stylesheet" type="text/css" href="/cn/css/iconfont.css"/>
+<link rel="stylesheet" type="text/css" href="/cn/css/whir_css.css"/>
+<script type="text/javascript" src="/cn/scripts/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/cn/scripts/Search.js"></script>
+<!-- HTML5 shim 和 Respond.js用于IE8支持HTML5标签和媒介查询  -->
+ <!--[if lt IE 9]>
+  <script src="/cn/scripts/html5shiv3.7.3.min.js"></script>
+  <script src="/cn/scripts/respondv1.4.2.min.js"></script>
+<![endif]-->
+<script>
+	//判断访问设备，方便后面针对不同设备调用代码
+	var dev = "";
+	if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+		//设备为移动端
+		dev = "mobile";
+		$("html").addClass("mobile");
+	}
+	else {
+		//设备为pc
+		dev = "pc";
+		$("html").addClass("pc");
+	}
+	
+	//定义设备宽度和高度
+	var dw = $(window).width(),
+	    dh = $(window).height();
+	    
+	//console.log("当前使用设备为：" + dev + "||设备宽度为：" + dw + "||设备高度为：" + dh);
+</script>
+
+</head>
+    <script>
+    	//定义栏目ID
+    	var navID = 0,
+    	    menuID = 0;
+    </script>
+<body>
+<!--头部-->
+ 
+ 
+	<header class="header">
+	<div class="w1180">
+    	<div class="left">
+        	<a class="logo" href='/index.aspx'>
+                
+                    <img class="pc" src="/uploadfiles/2023/01/202301031644524452.png" /> <!--pc-->
+                    <img class="wap" src="/uploadfiles/2023/01/202301031644524452.png" /><!--手机-->
+                
+            	
+            </a>
+            <div class="Phone_button"><span></span></div>
+            <div class="nav_lisn">
+            	<div class="nav_top">
+                	
+                    <div class="search">
+                        <input class="text" type="text" id="topKey" value='' onblur="if(this.value=='')this.value='请输入搜索关键字';$(this).css('color','#9d9d9d');" onfocus="if(this.value=='请输入搜索关键字')this.value='';$(this).css('color','rgb(157, 157, 157)');" style="color: rgb(157, 157, 157);">
+                        <input class="btn" type="button" id="TopBtn" value="">
+                    </div>
+					<script type="text/javascript">
+						$("#TopBtn").jqSearch({
+							TxtVal: "请输入搜索关键字",
+							KeyTxt1: "请输入搜索关键字！",
+							KeyTxt2: "输入的关键字不要过多！",
+							KeyTxt3: "您输入的关键字存在特殊字符！",
+							KeyId: "topKey", //输入框id
+							KeyUrl: "/Search.aspx", //跳转链接
+							KeyHref: "newkey", //链接传值
+							Static: false//是否静态站
+						});
+                     </script>
+                    <!--<div class="nav_yuyan">
+                    	选择语言:<a href='/index.aspx'>中文</a> - <a href="javascript:;" onclick="alert('开发中...')">English</a>
+                    </div>-->
+                </div>
+                <div class="nav_botton">
+                	<ul class="ul">
+                		 <li>
+                            <a class="link" id="nav3" href='/zjwm/index_2.aspx'>走进我们</a>
+                            <dl>
+                                
+                                    <dd><a href="/inqq/index_48.aspx">in全球</a></dd>
+                                
+                                    <dd><a href="/inqg/index_49.aspx">in中国</a></dd>
+                                
+                                    <dd><a href="/bnjs/index_50.aspx">百年技术</a></dd>
+                                
+                                    <dd><a href="/pzzs/index_89.aspx">品质至上</a></dd>
+                                
+                                    <dd><a href="/shzr/index_95.aspx">社会责任</a></dd>
+                                
+                            </dl>
+                        </li>
+                        <li>
+                            <a class="link" id="nav4" href='/dtzx/index_5.aspx'>动态资讯</a>
+                            <dl>
+                                
+                                    <dd><a href="/list_76.aspx?lcid=14">企业动态</a></dd>
+                                
+                                    <dd><a href="/list_76.aspx?lcid=13">产品动态</a></dd>
+                                
+                                    <dd><a href="/list_76.aspx?lcid=12">行业动态</a></dd>
+                                
+                                    <dd><a href="/list_76.aspx?lcid=11">聚焦媒体</a></dd>
+                                
+                            </dl>
+                        </li>
+                    	<li>
+                            <a class="link" id="nav1" href='/jjfa/index_4.aspx'>解决方案</a>
+                            <dl>
+                                
+                                    
+                                            <dd><a href='/jjfa/index_4.aspx'>系统介绍</a></dd>
+                                        
+                                
+                                    
+                                            <dd><a href='/jjfa/index_4.aspx'>技术专题</a></dd>
+                                        
+                                
+                                    
+                                            <dd><a href='/xinj/list_156.aspx'>案例研究</a></dd>
+                                        
+                                
+                            </dl>
+                        </li>
+                        <li><a id="nav2" href='/fwzx/index_6.aspx'>服务中心</a>
+						  <dl><dd><a href='/Charging/index_163.aspx'>收费标准</a></dd></dl>
+						</li>
+                       
+                        <li>
+				<a id="nav5" href='/jrwm/index_7.aspx'>加入我们</a>
+                            <dl>
+				<dd><a href="/jrwm/index_7.aspx#Talent">人才政策</a></dd>
+				<dd><a href='/index_105.aspx'>职位空缺</a></dd>
+                            </dl>
+			</li>
+                        <li><a id="nav6" href='/lxwm/index_8.aspx'>联系我们</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+        	<a id="nav7"  href="/jycp/list_19.aspx?typeid=33">产品中心</a>
+            <div class="por_ico2">
+                <ul class="ul clearfix">
+                    <li id="menu0">
+                        <a href="/jycp/list_19.aspx?typeid=33">
+                            
+                            <img src="/uploadfiles/ico/por_ico.png" class="pc">
+                            <img src="/uploadfiles/ico/por_ico_1.png" class="mobile">
+                            
+                            <p>家用产品</p>
+                        </a>
+                    </li>
+                    
+                        <li id="menu5">
+                            <a href="/sycp/list_20.aspx?lcid=5&typeid=5">
+                                <img src="/uploadfiles/ico/por_ico1.png" class="pc">
+                                <img src="/uploadfiles/ico/por_ico1_1.png" class="mobile">
+                                <p>轻商用机</p>
+                            </a>
+                        </li>
+                    
+                        <li id="menu4">
+                            <a href="/sycp/list_20.aspx?lcid=4&typeid=4">
+                                <img src="/uploadfiles/ico/por_ico2.png" class="pc">
+                                <img src="/uploadfiles/ico/por_ico2_1.png" class="mobile">
+                                <p>中央空调</p>
+                            </a>
+                        </li>
+                    
+                        <li id="menu3">
+                            <a href="/sycp/list_20.aspx?lcid=3&typeid=3">
+                                <img src="/uploadfiles/ico/por_ico3.png" class="pc">
+                                <img src="/uploadfiles/ico/por_ico3_1.png" class="mobile">
+                                <p>特种空调</p>
+                            </a>
+                        </li>
+                    
+                        <li id="menu2">
+                            <a href="/sycp/list_20.aspx?lcid=2&typeid=2">
+                                <img src="/uploadfiles/ico/por_ico4.png" class="pc">
+                                <img src="/uploadfiles/ico/por_ico4_1.png" class="mobile">
+                                <p>控制系统</p>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+//导航选中
+$("#nav" + navID).addClass("onnav");
+$('.header .right').hover(
+    function(){
+     $(this).addClass('hover')
+     $(this).stop(false, true).find(".por_ico2").show();
+    },
+    function(){
+     $(this).removeClass('hover')
+      $(this).stop(false, true).find(".por_ico2").hide()
+    }
+)
+
+
+
+var whr= $(window).width();
+if ( whr > 768) {
+    $('.nav_botton li').hover(function(){
+        $(this).find("dl").stop(false, true).slideDown();
+    },function(){
+        $(this).find("dl").stop(false, true).slideUp();
+    });
+} else {
+    $(".nav_botton li").each(function() {
+        var num=$(this).find("dd").length;
+        var href=$(this).find(".menuLink").attr("href")
+        if(num>=1){
+            $(this).find(".link").attr("href","javascript:void(0);")
+        }
+    });
+
+    $('.nav_botton li>a').click(function(){
+	var obj = $(this).parent();
+        obj.find("dl").stop(false, true).slideDown();
+        obj.siblings().find("dl").stop(false, true).slideUp();
+	if(obj.find('dd').size()>0){
+		return false;
+	}
+    });
+}
+
+//导航选中
+$("#menu").addClass("onnav");
+    $(document).ready(function(){ 
+        $(".Phone_button").click(function(){
+        $(".header ").toggleClass("slow");
+        $(".Phone_button").toggleClass("on");
+    });
+});
+</script>
+
+
+
+<!--头部-->
+
+<div class="body indexban">
+    <div class="v-bg">
+		
+        <video loop muted>
+            <source src="/uploadfiles/2018/07/20180711092409249.mp4" type="video/mp4">
+        </video>
+	   
+    </div>
+    <div class="hero-text absolute dis_pc" style="background: url(/uploadfiles/2024/06/202406171852565256.png) center;"></div>
+	<div class="hero-text dis_mb banner_wap"><img src='/uploadfiles/2024/06/20240617185303533.png'/></div>
+</div>
+<script>
+	////PC视频播放，手机不播放
+	$('.v-bg video')[0].play()
+	if(dev == 'pc'){
+		//$('.v-bg video')[0].play();
+	}else{
+		//$('.hero-text').hide();
+	}
+</script>
+
+<!--网页主体部分-->
+<div class="home_porlist">
+	<div class="w1200">
+    	<ul class="ul clearfix">
+			
+        	<li>
+            	<a href='/jycp/list_19.aspx'>
+                    <div class="img"><img src="/uploadfiles/ico/home_1.png" class="pc"><img src="/uploadfiles/ico/home_1_1.png" class="mobile"></div>
+                    <p>家用产品</p>
+                </a>
+            </li>
+			
+			
+            <li>
+            	<a href="/sycp/list_20.aspx?lcid=5">
+                    <div class="img"><img src="/uploadfiles/ico/home_2.png"  class="pc"> <img src="/uploadfiles/ico/home_2_1.png" class="mobile"></div>
+                    <p>轻商用机</p>
+                </a>
+            </li>
+            
+            <li>
+            	<a href="/sycp/list_20.aspx?lcid=4">
+                    <div class="img"><img src="/uploadfiles/ico/home_3.png"  class="pc"> <img src="/uploadfiles/ico/home_3_1.png" class="mobile"></div>
+                    <p>中央空调</p>
+                </a>
+            </li>
+            
+            <li>
+            	<a href="/sycp/list_20.aspx?lcid=3">
+                    <div class="img"><img src="/uploadfiles/ico/home_4.png"  class="pc"> <img src="/uploadfiles/ico/home_4_1.png" class="mobile"></div>
+                    <p>特种空调</p>
+                </a>
+            </li>
+            
+            <li>
+            	<a href="/sycp/list_20.aspx?lcid=2">
+                    <div class="img"><img src="/uploadfiles/ico/home_5.png"  class="pc"> <img src="/uploadfiles/ico/home_5_1.png" class="mobile"></div>
+                    <p>控制系统</p>
+                </a>
+            </li>
+            
+            <li>
+            	<a href="/sycp/list_20.aspx?lcid=1">
+                    <div class="img"><img src="/uploadfiles/ico/home_6.png"  class="pc"> <img src="/uploadfiles/ico/home_6_1.png" class="mobile"></div>
+                    <p>其他</p>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--首页栏目解释-->
+<div class="home_lmlist">
+    <div class="w1200">
+        <div class="solution">
+            <div class="container">
+                <div class="items">
+					
+                    <div class="item">
+                    	<a href='http://www.mcquay.com.cn/jjfa/index_4.aspx'>
+                        <div class="bg"></div>
+                        <div class="title"><span>系统介绍</span></div>
+                        <img src="/uploadfiles/image/item1.jpg"/>
+                        </a>
+                    </div>
+                    
+                    <div class="item">
+                    	<a href='http://www.mcquay.com.cn/jjfa/index_4.aspx'>
+                        <div class="bg"></div>
+                        <div class="title"><span>技术专题</span></div>
+                        <img src="/uploadfiles/image/item2.jpg"/>
+                        </a>
+                    </div>
+                    
+                    <div class="item">
+                    	<a href='http://www.mcquay.com.cn/alyj/list_14.aspx'>
+                        <div class="bg"></div>
+                        <div class="title"><span>案例研究</span></div>
+                        <img src="/uploadfiles/image/item3.jpg"/>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="w1200">
+	
+	<div class="service_new clearfix">
+    	<div class=" left">
+        	<h3>新闻与媒体</h3>
+            <ul class="ul clearfix" >
+				<!--
+            	<li>
+                	<div class="box">
+                        <a href='http://www.mcquay.com.cn/info_76.aspx?itemid=1130'><div class="img"><img src="/uploadfiles/2020/03/20200303120411411.jpg"></div><span></span></a>
+                        <div class="txt">
+                            <time><span>03</span>03,2020</time>
+                            <div class="com">
+                                <a class="cn">攻坚克难！麦克维尔战“疫”记录</a>
+                                <div class="cns"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+            	<li>
+                	<div class="box">
+                        <a href=''><div class="img"><img src="/uploadfiles/2020/02/202002181523432343.png"></div><span></span></a>
+                        <div class="txt">
+                            <time><span>18</span>02,2020</time>
+                            <div class="com">
+                                <a class="cn">2019年终战报｜麦克维尔连续2年稳夺欧美品牌市场占有率...</a>
+                                <div class="cns"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                -->
+                
+                    <li>
+                        <div class="box">
+                            <a href='/info_76.aspx?itemid=1971'><div class="img"><img src="/uploadfiles/2026/09/20260930160723723.png"></div><span></span></a>
+                            <div class="txt">
+                                <time><span>30</span>09,2026</time>
+                                <div class="com">
+                                    <a class="cn">WTCV3000超高效直驱变频离心式冷水机组在武汉正式下线...</a>
+                                    <div class="cns"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li>
+                        <div class="box">
+                            <a href='/info_76.aspx?itemid=1970'><div class="img"><img src="/uploadfiles/2026/09/202609301540524052.png"></div><span></span></a>
+                            <div class="txt">
+                                <time><span>30</span>09,2026</time>
+                                <div class="com">
+                                    <a class="cn">WTCV3000离心压缩机新产品下线仪式在苏州隆重举行</a>
+                                    <div class="cns"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+        <div class="right">
+        	<div class="mosr">
+        	
+            <!--
+            <a href='http://build.baiwanx.com.cn/mkwezy201710119182/list_76.aspx?lcid=51' class="more">《麦记》查看下载</a>
+            -->
+            <a href='/dtzx/index_5.aspx' class="more">更多</a>
+            </div>
+            <ul class="ul clearfix">
+				
+            	<li>
+                	<a href='/info_76.aspx?itemid=1972'>
+                    	<time>2026年09月30日</time>
+                        <div class="title">行业首台！麦克维尔WTCV3000超高效直驱变频离心式冷水机组在武汉经开区下线</div>
+                        <div class="con">
+	行业首台！麦克维尔WTCV3000超高效直驱变频离心式冷水机组在武汉经开区下线
+
+
+	9月21日，麦克...</div>
+                    </a>
+                </li>
+               
+            	<li>
+                	<a href='/info_76.aspx?itemid=1971'>
+                    	<time>2026年09月30日</time>
+                        <div class="title">WTCV3000超高效直驱变频离心式冷水机组在武汉正式下线</div>
+                        <div class="con">
+	WTCV3000超高效直驱变频离心式冷水机组在武汉正式下线
+
+
+	2026年9月21日，麦克维尔WTCV3000...</div>
+                    </a>
+                </li>
+               
+            	<li>
+                	<a href='/info_76.aspx?itemid=1970'>
+                    	<time>2026年09月30日</time>
+                        <div class="title">WTCV3000离心压缩机新产品下线仪式在苏州隆重举行</div>
+                        <div class="con">
+	WTCV3000离心压缩机新产品下线仪式在苏州隆重举行
+
+
+	
+2026年9月7日上午，麦克维尔空调制冷...</div>
+                    </a>
+                </li>
+               
+            </ul>        
+        </div>
+    </div>
+    <div class="service-jobs ">
+		
+        <div class="box">
+            <div class="contnet">
+                <div class="title-box">
+                    <div class="title">
+                        <span>卓越的优质服务</span>力争为客户寻求最佳的服务
+                    </div>
+                    <div class="disc">服务是麦克维尔集团极为重视的一环，麦克维尔出产的任何产品， <br />
+都是我们不可分离的业务要素。</div>
+                    <a href='http://www.mcquay.com.cn/fwzx/index_6.aspx'>寻找服务</a>
+                </div>
+                <img src="/uploadfiles/2018/06/201806281514511451.jpg" alt="">
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="contnet">
+                <div class="title-box">
+                    <div class="title">
+                        <span>加入麦克维尔</span>和我们一起迎接未来的挑战
+                    </div>
+                    <div class="disc"><span style="line-height:1.5;"></span><span style="line-height:1.5;">麦克维尔在全球拥有13家工厂，占地面积约为200多万平方米， </span><br />
+拥有10000余名尽忠职守的员工。</div>
+                    <a href='http://www.mcquay.com.cn/jrwm/index_7.aspx'>加入世界制冷集团</a>
+                </div>
+                <img src="/uploadfiles/2024/03/202403011814191419.png" alt="">
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--了解麦克维尔--->
+    <div class="service_about">
+    	<div class="left">
+        	<h3>了解麦克维尔</h3>
+        	<ul class="ul clearfix">
+				
+            	<li><a href='http://www.mcquay.com.cn/inqq/index_48.aspx'><span>></span>麦克维尔in全球</a></li>
+                
+            	<li><a href='http://www.mcquay.com.cn/pzzs/index_89.aspx'><span>></span>品质至上</a></li>
+                
+            	<li><a href='http://www.mcquay.com.cn/inqg/index_49.aspx'><span>></span>麦克维尔in中国</a></li>
+                
+            	<li><a href='http://www.mcquay.com.cn/shzr/index_95.aspx'><span>></span>社会责任</a></li>
+                
+            	<li><a href='http://www.mcquay.com.cn/bnjs/index_50.aspx'><span>></span>百年技术</a></li>
+                
+            </ul>
+			
+            <div class="txt">
+				
+            	<img src="/uploadfiles/ico/ico2.jpg" class="img">
+				
+                <div class="con">
+                	<p>联系我们</p>
+                    <span>全国服务热线</span>
+					
+                	<strong>95105363</strong>
+				    
+                    <a href='/lxwm/index_8.aspx'><img src="/cn/images/ico3.jpg"></a>
+                </div>
+            </div>
+        </div>
+    	<div class="right">
+			
+            <video poster="/uploadfiles/2020/03/20200320160444444.png" controls>
+               <source src="/uploadfiles/2020/03/20200320160135135.mp4"  type="video/mp4">
+            </video>
+			
+        </div>
+    </div>
+</div>
+<!--网页主体部分-->
+
+
+<!--底部-->
+ 
+ 
+<footer class="footer">
+	<div class="w1180">
+    	<div class="left">
+        	<ul class="ul clearfix">
+            	<li>
+                	<dl>
+                    	<dt>走进我们</dt>
+						
+                        <dd><a href="/inqq/index_48.aspx">in全球</a></dd>
+                        
+                        <dd><a href="/inqg/index_49.aspx">in中国</a></dd>
+                        
+                        <dd><a href="/bnjs/index_50.aspx">百年技术</a></dd>
+                        
+                        <dd><a href="/pzzs/index_89.aspx">品质至上</a></dd>
+                        
+                        <dd><a href="/shzr/index_95.aspx">社会责任</a></dd>
+                        
+                    </dl>
+                </li>
+                <li>
+                	<dl>
+                    	<dt>产品中心</dt>
+                        <dd><a href='/jycp/list_19.aspx'>家用产品</a></dd>
+						
+                        <dd><a href="/sycp/list_20.aspx?lcid=5">轻商用机</a></dd>
+                       
+                        <dd><a href="/sycp/list_20.aspx?lcid=4">中央空调</a></dd>
+                       
+                        <dd><a href="/sycp/list_20.aspx?lcid=3">特种空调</a></dd>
+                       
+                        <dd><a href="/sycp/list_20.aspx?lcid=2">控制系统</a></dd>
+                       
+                    </dl>
+                </li>
+                <li>
+                	<dl>
+                    	<dt>解决方案</dt>
+			
+                            
+                                    <dd><a href='/jjfa/index_4.aspx'>系统介绍</a></dd>
+                                
+                        <!--<dd><a href="/xtjs/list_12.aspx">系统介绍</a></dd>-->
+                        
+                            
+                                    <dd><a href='/jjfa/index_4.aspx'>技术专题</a></dd>
+                                
+                        <!--<dd><a href="/jszt/list_13.aspx">技术专题</a></dd>-->
+                        
+                            
+                                    <dd><a href='/alyj/list_14.aspx'>案例研究</a></dd>
+                                
+                        <!--<dd><a href="/alyj/list_14.aspx">案例研究</a></dd>-->
+                        
+
+                    </dl>
+                </li>
+                <li>
+                	<dl>
+                    	<dt>动态资讯</dt>
+                        
+						<dd><a href="/list_76.aspx?lcid=14">企业动态</a></dd>
+                        
+						<dd><a href="/list_76.aspx?lcid=13">产品动态</a></dd>
+                        
+						<dd><a href="/list_76.aspx?lcid=12">行业动态</a></dd>
+                        
+						<dd><a href="/list_76.aspx?lcid=11">聚焦媒体</a></dd>
+                        
+                    </dl>
+                </li>
+                <li>
+                	<dl>
+                    	<dt>服务中心</dt>
+                        <dd><a href='/fwzx/index_6.aspx'>服务中心</a></dd>
+                    </dl>
+                </li>
+				<li>
+                	<dl>                   
+                        <dd><a href='/Charging/index_163.aspx'>收费标准</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+        	<div class="txt">
+				
+            	<img src="/uploadfiles/image/or.jpg" class="img"/>
+            	<div class="con">
+                	<p>关注麦克维尔<br />获得更多资讯</p>
+                    <span>ID:麦克维尔</span>
+                </div>
+            	
+            </div>
+	  <script src="c="https://s19.cnzz.com/z_stat.php?id=1274464374&web_id=1274464374" la" language="JavaScript"></script>
+      
+   <a href="https://beian.miit.gov.cn" target="_blank">深圳麦克维尔空调有限公司<br>备案号：粤ICP备06000080号-1</a> <br>
+   <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030702005583"><img src="/uploadfiles/image/20230725090149149.png" alt="">粤公网安备 44030702005583号</a>   
+ 
+        </div>	
+    </div>
+</footer>
+<div class="gongyong">
+
+	<a class="text_a" href='http://authentic.mcquay.com.cn/mcquay/zixun.php' target="_blank">空调<br/>方案<br/>咨询</a>
+	
+    <a class="turnPrev" href="javascript:history.go(-1);"></a>
+    <a class="turnTop" href="javascript:void(0);"></a>
+</div>
+<script>
+$(function() {
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= 300) {
+            $('.gongyong .turnTop').fadeIn(600);
+        } else {
+            $('.gongyong .turnTop').fadeOut(600);
+        }
+    });
+    $('.gongyong a').hover(function() {
+        $(this).addClass('hover');
+    }, function() {
+        $(this).removeClass('hover');
+    });
+	
+	
+	
+		
+		
+			$('.gongyong a').click(function() {
+			$("html,body").animate({
+				scrollTop: 0
+			}, 500);
+		});
+		
+
+		
+		
+		 
+	
+
+
+
+	///视频点击
+
+	$('video').click(function(){
+		if(!$(this).hasClass('played')){
+			$(this)[0].play();
+			$(this).addClass('played');
+		}
+	});
+});
+</script> 
+
+<!--底部-->
+</body>
+</html>

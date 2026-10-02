@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>山西省公共资源交易平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="山西省公共资源交易网"/>
+    <meta name="description" content="山西省公共资源交易网,山西省公共资源交易平台,山西省公共资源,山西省交易平台" />
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/layui/css/layui.css">
+    <script src="/r/cms/com.ggzy.www/com.ggzy.www/layui/layui.js"></script>
+    <script src="/r/cms/com.ggzy.www/com.ggzy.www/js/echarts.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script> -->
+    <!-- <script src="http://echarts.baidu.com/build/dist/echarts.js"></script> -->
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/css/reset.css?v=1">
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/css/allCss.css?v=2">
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/css/common.css?v=4" />
+    <link rel="stylesheet" href="/r/cms/com.ggzy.www/com.ggzy.www/css/twoC.css?v=1">
+    <script type="text/javascript" src="/r/cms/com.ggzy.www/com.ggzy.www/js/jquery-2.2.4.min.js"></script>
+    <script src="/r/cms/front.js" type="text/javascript"></script>
+    <script src="/r/cms/com.ggzy.www/com.ggzy.www/js/grayscale.js"></script>
+    <script>
+	  $(function(){
+		var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+	    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+	    //var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+	    var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+	    if(isIE || isIE11){
+	    	grayscale($('body'));
+	    }
+	  })
+	</script>
+	<style>
+		/* html {
+			-webkit-filter: grayscale(100%);
+		  	-moz-filter: grayscale(100%);
+		  	-ms-filter: grayscale(100%);
+		  	-o-filter: grayscale(100%);
+		  	filter: grayscale(100%);
+		  	filter: gray;
+		} */
+	</style>
+	<style>
+/* 子菜单容器 */
+.ca-submenu-item {
+  position: relative;
+}
+
+/* 子菜单样式 */
+.ca-submenu {
+  display: none;
+  position: absolute;
+  top: 0;               /* 保持与父项顶部对齐 */
+  left: 100%;
+  background: #1d528b;   /* 深蓝背景 */
+  border: 0px solid #0f3a66;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 5px 0;
+  min-width: 140px;
+  z-index: 2000;
+  margin-left: 5px;     /* 与父项保持距离 */
+}
+
+/* 左侧小箭头 */
+.ca-submenu::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 16px;             /* 调整此值可控制箭头上下位置（当前约在第一行菜单文字高度） */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 6px 6px 0;
+  border-color: transparent #1d528b transparent transparent; /* 箭头颜色与背景一致 */
+  filter: none;          /* 去掉阴影，保持干净 */
+}
+
+/* 子菜单列表容器 */
+.ca-submenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 子菜单项 */
+.ca-submenu li {
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* 子菜单链接文字 */
+.ca-submenu a {
+  display: block;
+  padding: 8px 15px;
+  color: #fff;            /* 白色文字，在深蓝背景上清晰 */
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* 子菜单链接悬停效果 */
+.ca-submenu a:hover {
+  background-color: #fff; /* 稍亮的蓝色 */
+  color: #1d528b;
+}
+
+/* 悬停显示子菜单 */
+.ca-submenu-item:hover .ca-submenu {
+  display: block;
+}
+	</style>
+	
+  </head>
+  <body>
+    <div class="header_top">
+      <div class="cs_middle cs_divInline_block cs_box_1">
+        <a href="javascript:voild(0)" class="cs_logo">
+          <p>全国公共资源交易平台（山西省）</p>
+          <p>NATIONAL PUBLIC RESOURCE TRADING PLATFORM (SHANXI)</p>
+        </a>
+        <div class="header_top_remark">
+          <span>公开</span>
+          <span>公正</span>
+          <span>规范</span>
+          <span>透明</span>
+        </div>
+
+        <div class="cs_search cs_kuang">
+          <input type="text" placeholder="请输入关键字" class="search-input"/>
+          <div class="cs_search_box">
+            <img src="/r/cms/com.ggzy.www/com.ggzy.www/img/u495.png" class="cs_search_img" onclick="searchFun()"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav_bj">
+      <div class="nav">
+        <ul class="nav_ul">
+          <li class="nav_stair nav_first">
+            <a href="/">首页</a>
+          </li>
+          <li class="nav_stair">
+            <a href="/xwzx/index.jhtml">综合动态</a>
+          </li>
+          <li class="nav_stair">
+            <a href="/jyxx/index.jhtml">交易信息</a>
+            <ul class="nav_second nav_special">
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxgc/index.jhtml">工程建设</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxzc/index.jhtml">政府采购</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxtd/index.jhtml">土地矿权</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxcq/index.jhtml">国有产权</a>
+              </li>
+              <li style="float:left;" id="nav_ling_height">
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxsf/index.jhtml">行政执法部门开展的罚没资产处置</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxnc/index.jhtml">农村产权</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxpw/index.jhtml">排污权</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxyx/index.jhtml">药械采购</a>
+              </li>
+              <li style="float:left;" id="nav_ling_height">
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxym/index.jhtml">非免疫规划疫苗采购</a>
+              </li>
+              <li style="float:left;" >
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxwx/index.jhtml">无形资产</a>
+              </li>
+              <li style="float:left;" id="nav_ling_height">
+                <a href="http://prec.sxzwfw.gov.cn:80/jyxxpf/index.jhtml">耕地占补平衡指标</a>
+              </li>
+              <div style="clear:both;"></div>
+            </ul>
+          </li>
+          <li class="nav_stair">
+            <a href="/zwgk/index.jhtml">政务公开</a>
+          </li>
+          <li class="nav_stair">
+            <a href="/qdml/index.jhtml">清单目录</a>
+          </li>
+          <li class="nav_stair">
+            <a href="/jczm/index.jhtml">进场交易证明</a>
+          </li>
+          <li class="nav_stair">
+            <a href="http://jyzt.sxzwfw.gov.cn/" target="_blank">交易市场主体库</a>
+            <!--
+	    <ul class="nav_second nav_special nav_secondwidth singleLine">
+              <li>
+                <a href="http://jyzt.sxzwfw.gov.cn/ztxxzc/index.jhtml" target="_blank">注册指南</a>
+              </li>
+              <li>
+                <a href="https://www.sxzwfw.gov.cn/v6/auth/userLogin?redirect=istrue&goto=http://jyzt.sxzwfw.gov.cn/gfm_sx/&utype=1&itype=0&client_id=rSxCNoNFqOiDlfIa" target="_blank">登录入口</a>
+              </li>
+              <li>
+                <a href="https://www.sxzwfw.gov.cn/v6/auth/userRegister" target="_blank">注册入口</a>
+              </li>
+              <li>
+                <a href="http://jyzt.sxzwfw.gov.cn/ztxxcx.jhtml" target="_blank">查询入口</a>
+              </li>
+              <li>
+                <a href="http://jyzt.sxzwfw.gov.cn/ztxxcjwtfz/index.jhtml" target="_blank">常见问题</a>
+              </li>
+            </ul>
+	    -->
+          </li>
+          <li class="nav_stair">
+            <a>第三方服务</a>
+            <ul class="nav_second nav_special nav_secondwidth singleLine">
+              <li class="ca-submenu-item">
+			    <a href="http://cashare.cebpubservice.com/#/allActivated?tradingSystemCode=E1400000911" target="_blank">全国移动CA互认</a>
+			    <div class="ca-submenu">
+				      <ul>
+				        <li><a href="http://cashare.cebpubservice.com/#/allActivated?tradingSystemCode=E1400000911" target="_blank">互认APP清单</a></li>
+				        <li><a href="/qgcahr/index.jhtml?type=fee" target="_blank">互认APP费用限额</a></li>
+				      </ul>
+				 </div>
+			  </li>
+              <li>
+                <a href="http://prec.sxzwfw.gov.cn/cajchrpt/" target="_blank">全省介质CA互认</a>
+              </li>
+              <li>
+                <a href="/jrjg/index.jhtml" target="_blank">电子保函服务</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav_stair">
+            <a href="/xzzxgl/index.jhtml">服务指南</a>
+            <ul class="nav_second nav_special nav_secondwidth singleLine">
+              <li >
+                <a href="http://prec.sxzwfw.gov.cn:80/xzzxgl/index.jhtml">办事指南</a>
+              </li>
+              <li >
+                <a href="http://prec.sxzwfw.gov.cn:80/xzzxcz/index.jhtml">操作手册</a>
+              </li>
+              <li >
+                <a href="http://prec.sxzwfw.gov.cn:80/xzzxzl/index.jhtml">资料模板</a>
+              </li>
+              <li >
+                <a href="http://prec.sxzwfw.gov.cn:80/xzzxcx/index.jhtml">应用程序</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav_stair nav_stairwidth">
+            <a>
+             	 市级平台
+            </a>
+            <ul class="nav_second nav_special nav_specialmargin">
+              <li style="float:left;">
+                <a href="https://gcjs.ggzy.xzspglj.taiyuan.gov.cn/" target="_blank">太原市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzyjy.dt.gov.cn/" target="_blank">大同市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzy.yq.gov.cn/" target="_blank">阳泉市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzy.changzhi.gov.cn/" target="_blank">长治市</a>
+              </li>
+              <li style="float:left;">
+                <a href="https://ggzy.jcgov.gov.cn/" target="_blank">晋城市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://szggzy.shuozhou.gov.cn/cmsController.do?goPage&page=index" target="_blank">朔州市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzy.sxjz.gov.cn/" target="_blank">晋中市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzyjyzx.yuncheng.gov.cn/" target="_blank">运城市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzyjy.sxxz.gov.cn:7620/" target="_blank">忻州市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://lfggzyjy.linfen.gov.cn/" target="_blank">临汾市</a>
+              </li>
+              <li style="float:left;">
+                <a href="http://ggzyjyzx.lvliang.gov.cn/" target="_blank">吕梁市</a>
+              </li>
+              <li style="float:left;">
+                <a href="https://zonggai.jcebid.com/" target="_blank">综改区</a>
+              </li>
+              <div style="clear:both;"></div>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+    function searchFun() {
+		var q = $(".search-input").val();
+		if(q) {
+			window.location.href="/search.jspx?q="+encodeURI(encodeURI(q));
+		}
+	}
+    $(".search-input").on("keyup",function(e){
+    	var ev = document.all ? window.event : e;
+	    if(ev.keyCode==13) {
+	    	searchFun();
+	     }
+    })
+    </script>
+<div class="cs_twoC_box">
+  <div class="cs_two_box_fk">
+    <!-- <div class="cs_turn_back">
+      <a href="javascript:voild(0)" class="cs_turn_back_a">返回上一级</a>
+    </div>
+    <div class="cs_two_line"></div> -->
+    <div>
+      <p class="cs_title_P1">古交市教育体育局公开招标古交市职教中心新校区购置空气能热泵设施设备采购项目结果公告</p>
+      <p class="cs_title_P3">发布日期：2025-10-21 17:35 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp信息来源：山西省政府采购网 </p>
+      <div class="cs_xq_content">
+        <div class="div-title2">	<span style="padding-right:50px">首次公告时间：2025-10-21 17:30:54</span></div><div class="div-article2"><table class="gycq-table"><tr><td ><style id="fixTableStyle" type="text/css">th,td {border:1px solid #DDD;padding: 5px 10px;}</style> <div id="fixTableStyle" type="text/css" cdata_tag="style" cdata_data="th,td {border:1px solid #DDD;padding: 5px 10px;}" _ue_custom_node_="true"></div><p style="line-height: normal; text-align: justify;"><strong style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; text-align: justify;">一、项目编号：</strong><samp style="font-family: inherit" class="bookmark-item uuid-1653371865344 code-00004 addWord single-line-text-input-box-cls">1401812025AGK00069</samp></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 18px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; text-align: justify; white-space: normal;">二、项目名称：</strong><samp style="font-family: inherit" class="bookmark-item uuid-1653371882749 code-00003 addWord single-line-text-input-box-cls">古交市职教中心新校区购置空气能热泵设施设备采购项目</samp></span></p><p style="margin-bottom: 15px; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>三、中标（成交）信息</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;">1.中标结果：</p><div class="class-condition-filter-block"><table class="template-bookmark uuid-1714044794658 code-AM014zbcj003 text-中标/成交结果信息-综合评分法" style="width: 100%; border-collapse:collapse;"><thead><tr style="text-align: center;" class="firstRow"><td style="background-color: #fff;"><strong>序号</strong></td><td style="background-color: #fff;"><strong>供应商名称</strong></td><td style="background-color: #fff;"><strong>供应商地址 </strong></td><td style="background-color: #fff;"><strong>中标（成交）金额</strong></td><td style="background-color: #fff;"><strong>评审总得分</strong></td></tr></thead><tbody replace="true"><tr replace="true"><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-sectionNo" align="center" valign="middle">1</td><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-winningSupplierName" align="center" valign="middle">山西宏源森科贸有限公司</td><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-winningSupplierAddr" align="center" valign="middle">山西省太原市万柏林区迎泽西大街332号居然之家太原河西店1号馆5层1028-1-5-002号</td><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-summaryPrice" align="center" valign="middle">报价：1956115.5（元）</td><td style="font-size: 14px;font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;" class="code-reviewTotalScore" align="center" valign="middle">89.12</td></tr></tbody></table></div><p style="font-size: 16px; font-family: 微软雅黑; line-height: 20px; text-indent: 2em;"><br/></p><p style="line-height: normal; font-family: 微软雅黑; font-size: 16px; white-space: normal; text-indent: 2em;">2.废标结果:&nbsp;&nbsp;<br/></p><p style="line-height: normal; font-family: 微软雅黑; font-size: 16px; white-space: normal; text-indent: 2em;" class="sub"><samp style="font-family: inherit" class="bookmark-item uuid-1653975566033 code-41007 addWord"> &nbsp; </samp></p><table class="form-panel-input-cls" width="100%"><tbody><tr width="100%" style="text-align: center;" class="firstRow"><td width="25.0%" style="word-break:break-all; ">序号</td><td width="25.0%" style="word-break:break-all; ">标项名称</td><td width="25.0%" style="word-break:break-all; ">废标理由</td><td width="25.0%" style="word-break:break-all; " colspan="1">其他事项</td></tr></tbody></table><p></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>四、主要标的信息</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp;</p><div style=" font-size:16px; font-family:微软雅黑; line-height:20px;"><div class="class-condition-filter-block"><p style="line-height: normal;"><span style="font-size: 16px;">&nbsp; &nbsp;货物类主要标的信息：</span> &nbsp; &nbsp;</p><p style="line-height: normal;" class="sub">&nbsp; &nbsp;&nbsp;<samp style="font-family: inherit" class="bookmark-item uuid-1653371945051 code-AM014GoodsInfoTab addWord"> &nbsp; &nbsp; </samp></p><table class="form-panel-input-cls" width="100%"><tbody><tr width="100%" style="text-align: center;" class="firstRow"><td width="14.29%" style="word-break:break-all; ">序号</td><td width="14.29%" style="word-break:break-all; ">标项名称</td><td width="14.29%" style="word-break:break-all; ">标的名称</td><td width="14.29%" style="word-break:break-all; ">品牌</td><td width="14.29%" style="word-break:break-all; ">规格型号</td><td width="14.29%" style="word-break:break-all; ">数量</td><td width="14.29%" style="word-break:break-all; " colspan="1">单价</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">1</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">※空气源热泵主机</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">★1、60p超低温变频<br/>★2、名义制热量（-12℃）≥102kw；<br/>★3、名义制热功率≤42.1kw；<br/>★4、一级能效，<br/>★5、循环水流量≥17.5m³/h，<br/>★6、冷水补水压力范围0.2Mpa-0.5Mpa，<br/>★7、环境运行范围-35℃-45℃，<br/>★8、运行噪音≤77dB(A)，<br/>★9.远程控制<br/>★10.智能温控<br/>KD160-NcPB5-U1</td><td width="14.29%" style="word-break:break-all; ">13台</td><td width="14.29%" style="word-break:break-all; " colspan="1">119970</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">2</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">管道循环泵</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">功率：37Kw、流量：300m³/h、扬程：31m；一用一备；<br/>电机防护等级：IP55，电压：50Hz，380V；<br/>工作压力：12bar。<br/>TD200-31/4</td><td width="14.29%" style="word-break:break-all; ">2台</td><td width="14.29%" style="word-break:break-all; " colspan="1">32300</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">3</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">全自动离子交换软水器</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">盐箱+树脂罐，Q=2m³/h，电压：220V，功率：10W左右；清洗方式：全自动清洗</td><td width="14.29%" style="word-break:break-all; ">1套</td><td width="14.29%" style="word-break:break-all; " colspan="1">14300</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">4</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">软化水箱</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">304不锈钢圆形；容积：2m³；</td><td width="14.29%" style="word-break:break-all; ">1套</td><td width="14.29%" style="word-break:break-all; " colspan="1">7750</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">5</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">定压补水装置</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">功率：0.75KW，流量：3m³/h，扬程：41m，一用一备，<br/>带膨胀罐，100L，PN1.0。</td><td width="14.29%" style="word-break:break-all; ">1套</td><td width="14.29%" style="word-break:break-all; " colspan="1">25360</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">6</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">无缝钢管</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">DN200，PN1.0，焊接</td><td width="14.29%" style="word-break:break-all; ">140米</td><td width="14.29%" style="word-break:break-all; " colspan="1">235</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">7</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">无缝钢管</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">DN65，PN1.0，焊接</td><td width="14.29%" style="word-break:break-all; ">48米</td><td width="14.29%" style="word-break:break-all; " colspan="1">60</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">8</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">镀锌钢管</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">1.2寸，DN32，PN1.0，丝接</td><td width="14.29%" style="word-break:break-all; ">20米</td><td width="14.29%" style="word-break:break-all; " colspan="1">27</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">9</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">橡塑保温</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">B1级橡塑保温，厚度不低于30mm</td><td width="14.29%" style="word-break:break-all; ">5.25m³</td><td width="14.29%" style="word-break:break-all; " colspan="1">1910</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">10</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">铝皮</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">温外保护采用铝皮，厚度不低于0.3mm</td><td width="14.29%" style="word-break:break-all; ">225㎡</td><td width="14.29%" style="word-break:break-all; " colspan="1">249</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">11</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">涡轮蝶阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铸铁，DN200，压力等级PN1.0。法兰连接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">4个</td><td width="14.29%" style="word-break:break-all; " colspan="1">948</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">12</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">涡轮蝶阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铸铁，DN65压力等级PN1.0，法兰连接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">27个</td><td width="14.29%" style="word-break:break-all; " colspan="1">280</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">13</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">涡轮蝶阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铸铁，DN100，PN1.0，法兰连接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">2个</td><td width="14.29%" style="word-break:break-all; " colspan="1">249</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">14</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">压差旁通阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铸铁，DN100，PN1.0，法兰连接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">1个</td><td width="14.29%" style="word-break:break-all; " colspan="1">1400</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">15</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">过滤阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铸铁，DN200压力等级PN1.0。法兰连接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">2个</td><td width="14.29%" style="word-break:break-all; " colspan="1">885</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">16</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">过滤阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铜，丝接，DN32压力等级PN1.0。符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">2个</td><td width="14.29%" style="word-break:break-all; " colspan="1">63</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">17</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">止回阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铸铁，DN200，PN1.0，法兰连接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">2个</td><td width="14.29%" style="word-break:break-all; " colspan="1">556</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">18</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">止回阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铜，丝接，DN32压力等级PN1.0。符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">2个</td><td width="14.29%" style="word-break:break-all; " colspan="1">82</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">19</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">闸阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铜，丝接，DN32压力等级PN1.0。符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">10个</td><td width="14.29%" style="word-break:break-all; " colspan="1">66</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">20</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">闸阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铸铁，DN200，PN1.0，法兰连接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">2个</td><td width="14.29%" style="word-break:break-all; " colspan="1">932</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">21</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">浮球阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铜，丝接，DN32，PN1.0</td><td width="14.29%" style="word-break:break-all; ">1个</td><td width="14.29%" style="word-break:break-all; " colspan="1">62</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">22</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">排气阀</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">铜，丝接，DN25，PN1.0</td><td width="14.29%" style="word-break:break-all; ">1个</td><td width="14.29%" style="word-break:break-all; " colspan="1">80</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">23</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">温度计</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">不锈钢材质</td><td width="14.29%" style="word-break:break-all; ">2个</td><td width="14.29%" style="word-break:break-all; " colspan="1">68</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">24</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">压力表</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">不锈钢，0-1.6MPa</td><td width="14.29%" style="word-break:break-all; ">2个</td><td width="14.29%" style="word-break:break-all; " colspan="1">80</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">25</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">橡胶软接</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">法兰，DN200，法兰连接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">4个</td><td width="14.29%" style="word-break:break-all; " colspan="1">276</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">26</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">橡胶软接</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">法兰，DN65，法兰连接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">26个</td><td width="14.29%" style="word-break:break-all; " colspan="1">70</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">27</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">配电系统</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">按要求配置空气能热泵、水泵、软水装置等设备电源，空气能控制器，仪器仪表、电气原件等，总功率约630kw，配电柜规格满足配置系统需求。</td><td width="14.29%" style="word-break:break-all; ">1套</td><td width="14.29%" style="word-break:break-all; " colspan="1">73890</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">28</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">电缆</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">YJV3*35+1*16，桥架敷设</td><td width="14.29%" style="word-break:break-all; ">520米</td><td width="14.29%" style="word-break:break-all; " colspan="1">126</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">29</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">电缆</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">YJV3*25，桥架敷设</td><td width="14.29%" style="word-break:break-all; ">30米</td><td width="14.29%" style="word-break:break-all; " colspan="1">83</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">30</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">电缆</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">RVV2*1.0，穿线管敷设</td><td width="14.29%" style="word-break:break-all; ">50米</td><td width="14.29%" style="word-break:break-all; " colspan="1">5</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">31</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">镀锌槽钢</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">管道支架；采用国标12#镀锌槽钢；连接方式为焊接，符合行业标准。</td><td width="14.29%" style="word-break:break-all; ">2.5吨</td><td width="14.29%" style="word-break:break-all; " colspan="1">3910</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">32</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">焊条</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">直径3.2mm</td><td width="14.29%" style="word-break:break-all; ">60包</td><td width="14.29%" style="word-break:break-all; " colspan="1">47</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">33</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">手套</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">耐磨劳保手套</td><td width="14.29%" style="word-break:break-all; ">200副</td><td width="14.29%" style="word-break:break-all; " colspan="1">8</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">34</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">铅油</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">密封专用漆</td><td width="14.29%" style="word-break:break-all; ">10公斤</td><td width="14.29%" style="word-break:break-all; " colspan="1">17</td></tr><tr width="100%" style="text-align: center;"><td width="14.29%" style="word-break:break-all; ">35</td><td width="14.29%" style="word-break:break-all; ">采购包1</td><td width="14.29%" style="word-break:break-all; ">防锈漆</td><td width="14.29%" style="word-break:break-all; ">Haier</td><td width="14.29%" style="word-break:break-all; ">银色，耐磨耐腐蚀</td><td width="14.29%" style="word-break:break-all; ">100公斤</td><td width="14.29%" style="word-break:break-all; " colspan="1">33</td></tr></tbody></table>&nbsp;<p></p></div></div><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>五、评审专家（单一来源采购人员）名单：</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><samp style="font-family: inherit" class="bookmark-item uuid-1653371979715 code-85005 addWord multi-line-text-input-box-cls">白玉彪，张瑞芹，李红梅，冯玉琴，郑玉厚（第1包采购人代表）</samp>&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>六、代理服务收费标准及金额：</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">1.代理服务收费标准：<samp style="font-family: inherit" class="bookmark-item uuid-1653372008127 code-AM01400039 addWord multi-line-text-input-box-cls">无</samp></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">2.代理服务收费金额（元）：<samp style="font-family: inherit" class="bookmark-item uuid-1653372017940 code-AM01400040 editDisable multi-line-text-input-box-cls">0</samp></span></span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><samp style="font-family: inherit" class="bookmark-item uuid-1653975607355 code-AM014techBusCreditLink editDisable single-line-text-input-box-cls readonly"></samp></span><br/></span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><samp style="font-family: inherit" class="bookmark-item uuid-1653975614646 code-AM014techBusCreditHtml editDisable single-line-text-input-box-cls readonly"></samp></span></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>七、公告期限</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><span style="line-height: 20px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">自本公告发布之日起1个工作日。</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>八、其他补充事宜</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><samp style="font-family: inherit" class="bookmark-item uuid-1653372031416 code-81205 addWord multi-line-text-input-box-cls">无</samp>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="margin: 17px 0px; text-align: justify; break-after: avoid; font-size: 16px; font-family: SimHei, sans-serif; white-space: normal; line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><strong>九、对本次公告内容提出询问，请按以下方式联系</strong>　　　&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p><p style="line-height: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"></span></p><div style="white-space: normal; font-family: 微软雅黑; line-height: 30px;"><div style="line-height: 30px;"><p style="line-height: 1.5em; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1.采购人信息</span> &nbsp; &nbsp; &nbsp; &nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">名 称：<samp style="font-family: inherit" class="bookmark-item uuid-1653372055487 code-00014 editDisable interval-text-box-cls readonly">古交市教育体育局</samp></span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">地 址：<samp style="font-family: inherit" class="bookmark-item uuid-1653372061722 code-00018 addWord single-line-text-input-box-cls">古交市大川西路59号</samp></span>&nbsp; &nbsp; &nbsp; &nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">联系方式：<samp style="font-family: inherit" class="bookmark-item uuid-1653372067358 code-00016 editDisable single-line-text-input-box-cls readonly">0351-2987936</samp></span>&nbsp; &nbsp; &nbsp;</p><p style="line-height: 1.5em; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2.采购代理机构信息</span> &nbsp; &nbsp; &nbsp; &nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">名 称：<samp style="font-family: inherit" class="bookmark-item uuid-1653372092821 code-00009 addWord interval-text-box-cls">古交市政府采购中心</samp></span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">地 址：<samp style="font-family: inherit" class="bookmark-item uuid-1653372099014 code-00013 editDisable single-line-text-input-box-cls readonly">古交市青年路一号政府大院</samp></span>&nbsp; &nbsp; &nbsp;&nbsp;</p><p style="line-height: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">联系方式：<samp style="font-family: inherit" class="bookmark-item uuid-1653372111904 code-00011 addWord single-line-text-input-box-cls">13509719055</samp></span>&nbsp; &nbsp; &nbsp; &nbsp;</p></div></div><p style="line-height: 1.5em; white-space: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3.项目联系方式</span></p><p style="line-height: 1.5em; white-space: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">项目联系人：<samp style="font-family: inherit" class="bookmark-item uuid-1653372131779 code-00010 editDisable single-line-text-input-box-cls readonly">王银莲</samp></span></p><p style="line-height: 1.5em; white-space: normal; text-indent: 2em;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">电 话：<samp style="font-family: inherit" class="bookmark-item uuid-1653372124900 code-00011 addWord single-line-text-input-box-cls">13509719055</samp></span></p><p style="line-height: normal;">&nbsp;</p><blockquote style="display: none;"><samp style="font-family: inherit; background-color: rgb(247, 247, 247); color: rgb(27, 120, 255);" class="bookmark-item uuid-1714044821932 code-biddingTableEl editDisable single-line-text-input-box-cls readonly">1</samp> </blockquote><p>&nbsp;</p><p><br/></p><p><br/></p><p><br/></p><p style='font-size' class='fjxx'>附件信息：</p><ul class="fjxx" style="font-size: 16px;margin-left: 38px;color: #0065ef;list-style-type: none;"><li><p style="display:inline-block"><a href="https://sx2gov2open2doc.uos.sxzfcg.zcygov.cn/1024FPA/140181/2126000000071321/202510/23b5601c-b865-4164-8831-02435fddde39.zip">古交市职教中心新校区购置空气能热泵设施设备采购项目_包1.zip</a></p><p style="display:inline-block;margin-left:20px">195.1K</p></li></ul><ul class="fjxx" style="font-size: 16px;margin-left: 38px;color: #0065ef;list-style-type: none;"><li><p style="display:inline-block"><a href="https://sx2gov2open2doc.uos.sxzfcg.zcygov.cn/1023FP/140181/2126000000071321/20259/d6761c6c-866b-4c43-98d4-d3951b51b060.docx">古交市公开招 标 文 件 -.docx</a></p><p style="display:inline-block;margin-left:20px">180.9K</p></li></ul></td></tr></table></div>
+          <br/>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+	// 隐藏content.txt中的发布时间
+	$(".cs_xq_content .div-title2").children(":first").hide();
+</script>
+<div class="cs_bottomBack cs_white_back">
+    <!-- 底部 -->
+    <div class="cs_bottom_box">
+      <div class="cs_bottom cs_middle">
+        <a href="http://121.43.68.40/exposure/jiucuo.html?site_code=1400000094&url=http%3A%2F%2Flocalhost%3A8080%2Fshengfwpt2.0%2FmoreInfoController.do%3FgetProject" target="_blank" class="zfzc"></a>
+        <a href="http://bszs.conac.cn/sitename?method=show&id=5F7AA86716B98ADCE053022E1AACF4ED" target="_blank" class="dzjg"></a>
+        <div>
+          <p>山西省行政审批服务管理局
+          <p>
+            <span>备案号：晋ICP备 2021014607 号</span>
+            <span>网站标识码 1400000094</span>
+          </p>
+          <p style="cursor: pointer;" onclick="window.open('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=14010502050588')">晋公网安备：14010502050588 号</p>
+        </div>
+      </div>
+    </div>
+</div>
+    <!-- 浮动按钮 -->
+    <div class="cs_FD_button">
+      <div class="go_top" onclick="goTop(this)"></div>
+      <br/>
+      <!-- <div class="go_VX"></div> -->
+      <div class="go_mobile">
+        <a href="/ts/index.jhtml" target="_blank">投诉举报热线</a>
+      </div>
+    </div>
+
+
+  </body>
+</html>
+<script>
+  function slideFn(the,key){
+    // tab样式
+    the.parentNode.querySelector('.active').classList.remove('active');
+    the.classList.add('active');
+    //内容
+    the.parentNode.parentNode.querySelector('.cs_tab_box>.cs_show').classList.remove('cs_show');
+    the.parentNode.parentNode.querySelectorAll('.cs_tab_box>.cs_tab_box_cont')[key].classList.add('cs_show');
+    
+    var moreUrl = $(the).attr("data-url");
+    if(moreUrl){
+	    $(the).parent().children(".cs_more").attr("href",moreUrl)
+    }
+  }
+
+  function selectFn(the){
+    if (the.parentNode.classList.value.indexOf('active')>-1) {
+      the.parentNode.classList.remove('active')
+    }else{
+      the.parentNode.classList.add('active')
+    }
+  }
+
+  $(".cs_select a").on("click",function(){
+	  selectFn(this.parentNode.previousSibling);
+  })
+  
+  $(document).click(function(event){
+      //footer
+      var fooSelect = $(".cs_select span");
+      if(!fooSelect.is(event.target) && fooSelect.has(event.target).length === 0){
+    	  $(".cs_select").removeClass("active");
+      }else{
+    	  var parent = $(event.target).parent();
+    	  if(parent.hasClass("active")){
+    		  //close
+    		  parent.removeClass("active");
+    	  }else{
+    		  //open and close other
+	    	  $(".cs_select").removeClass("active");
+	    	  parent.addClass("active");
+    	  }
+      }
+ });
+  function goTop(the){
+    var setInter=setInterval(goFn,1);
+    function goFn(){
+      if ( document.querySelector('html').scrollTop<=0) {
+        clearInterval(setInter)
+      }else{
+        document.querySelector('html').scrollTop-=50;
+      }
+    }
+  }
+</script>
+<script type="text/javascript"> 
+  // 获取天气
+  var tqSTR="";
+  function changeCity(city) {
+     cityCode = encodeURI(city);
+//     $.ajax("http://wthrcdn.etouch.cn/weather_mini?city=" + cityCode, {
+//         dataType : 'jsonp',
+//         crossDomain : true,
+//         success : function(obj) {
+//              console.log(obj)
+//              var today = obj.data.forecast[0];
+//              var lowTemp = today.low.substring(3);
+//              var hightTemp = today.high.substring(3);
+              // $("#wed").html("北京" + "&nbsp;&nbsp;" + today.type + "&nbsp;&nbsp;" + lowTemp + "~" + hightTemp);
+
+//              tqSTR=city + "&nbsp;&nbsp;" + today.type + "&nbsp;&nbsp;" + lowTemp + "~" + hightTemp;
+//              console.log(city + "&nbsp;&nbsp;" + today.type + "&nbsp;&nbsp;" + lowTemp + "~" + hightTemp);
+//         }
+//     });
+  }
+  changeCity('太原')
+  // 获取标准时间
+  function getDate(item){
+      var week=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+      var myDate = new Date();
+      //获取当前年
+      var year = myDate.getFullYear();
+      //获取当前月
+      var month = myDate.getMonth() + 1;
+      //获取当前日
+      var date=myDate.getDate()
+      //获取星期
+      var weedToday =week[myDate.getDay()];
+
+      var week=myDate.getDay()
+      var h = myDate.getHours(); //获取当前小时数(0-23)
+      var m = myDate.getMinutes(); //获取当前分钟数(0-59)
+      var s = myDate.getSeconds();
+
+     //获取当前时间
+
+     // var now = year + '年' + conver(month) + "月" + conver(date) + "日 " + conver(h) + ':' + conver(m) + ":" + conver(s);
+     var now = year + '年' + conver(month) + "月" + conver(date) + "日 " + weedToday+'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;' +item;
+     return now;
+  }
+  //日期时间处理
+  function conver(s) {
+    return s < 10 ? '0' + s : s;
+  }
+  function time(){
+    document.querySelector('.week_TQ').innerHTML=getDate(tqSTR) 
+  }
+  //显示时间
+  //var time=setInterval(time,100)
+  
+  $(function(){
+	Cms.siteFlow("", location.href, document.referrer, "true"); 
+		$(".div-title2 a").hide();
+		Cms.viewCount("", "1006259");
+  })
+</script>

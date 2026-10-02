@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="深圳市沙漠风网络科技有限公司 https://www.szweb.cn" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <link rel="stylesheet" href="/dist/fonts/iconfont.css"> 
+  <link rel="stylesheet" href="/dist/layui/css/layui.css">
+  <link rel="stylesheet" href="/dist/plugins/css/animate.min.css">
+  <!-- 自定义css -->
+  <link rel="stylesheet" href="/dist/css/layout.min.css?v=1.0.4">
+  <!-- jQuery -->
+  <script src="/dist/plugins/js/jquery-1.8.3.min.js"></script>
+  <title>海悟PVT耦合热泵&ldquo;冷-暖-电-热水&rdquo;四联供综合能源系统方案 - 机房温控解决方案_机房精密空调_海悟官网_广东海悟科技有限公司</title>
+  <meta name="keywords" content="四联供综合能源系统方案 - 机房空调,精密空调,基站空调,液冷数据中心,机房解决方案,IDC机房,机房精密空调" />
+  <meta name="description" content="海悟集团专注于热泵技术的创新和民用清洁能源应用的扩展，旨在成为数字能源和清洁能源领域的佼佼者。在民用供暖市场，随着降碳意识深入人心，许多客户开始寻求超越传统供暖设备的高效解决方案，从而对供应商提出更高的创新要求。本文我们将以北京某高端别墅住户的项目改造为例，分享一则&ldquo;PVT耦合热泵&rdquo;实现&ldquo;冷-暖-电-热水&rdquo;四联供综合能源系统的案例。 - 海悟为数字基础设施提供四大业务板块解决方案，以数据中心、通信基站、储能温控、清洁供暖，助力客户构建高数字化底座。海悟集团目前总部位于北京，研发及制造基地位于广东省东莞市，拥有建筑工程设计甲级资质的咨询设计研究院，深耕咨询、设计、联合开发、EPC、机电总包、测试认证、综合代维、优化升级全价值链垂直整合。" />
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?93cbe2d52c638ea3a2983664ff152d61";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?92608319930e8ecc8234b58f0454aea3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script>
+</head>
+
+<body>
+    <!-- 头部 start -->
+<header class="header">
+  <div class="content1632 flex items-center content-between">
+    <div class="headerLogo flex items-center">
+      <a href="/">
+        <img src="/dist/images/logo1.png" alt class="default">
+        <img src="/dist/images/logo2.png" alt class="active">
+      </a>
+    </div>
+    <div class="headerMain flex items-center">
+      <div class="headerNav flex">
+        <ul class="flex">
+                    <!--  class="active" -->
+          <li>
+            <a href="/">首页</a>
+          </li>
+          
+
+                    <li>
+            <a href="/app/data/center/">应用场景</a>
+            <div class="dropDownMenu">
+
+              <div class="dropDownMenuList">
+                                <a href="/app/data/center/" class="active">数据中心</a>
+                                <a href="/app/cbsaer/bs/" class="">通信基站与机房</a>
+                                <a href="/product/escc/" class="">储能热管理</a>
+                                <a href="/product/ce/" class="">供暖</a>
+                
+              </div>
+
+              <div class="dropDownMenuMain">
+                                <div class="wrapper active">
+
+                                  <a href="/app/data/center/" >智算/超算中心</a>
+                                    <a href="/app/data/big/" >大型数据中心</a>
+                                    <a href="/app/data/mid/" >中型数据中心</a>
+                                    <a href="/app/data/min/" >小型/边缘数据中心</a>
+                                        
+                </div>
+                                <div class="wrapper ">
+
+                                  <a href="/app/cbsaer/bs/" >通信基站</a>
+                                    <a href="/app/cbsaer/sr/" >通信机房</a>
+                                        
+                </div>
+                                <div class="wrapper ">
+
+                                      
+                </div>
+                                <div class="wrapper ">
+
+                                      
+                </div>
+                              </div>
+            </div>
+          </li>
+          
+
+                    <li>
+            <a href="/product/caselist/">产品与服务</a>
+            <div class="dropDownMenu">
+
+              <div class="dropDownMenuList">
+                                <a href="/product/caselist/" class="active">解决方案及服务</a>
+                                <a href="/product/solutions/" class="">解决方案产品及服务</a>
+                                <a href="/product/sbfw/" class="">设备产品及服务</a>
+                                <a href="/product/lylb/" class="">部件产品</a>
+                
+              </div>
+
+              <div class="dropDownMenuMain">
+                                <div class="wrapper active">
+
+                                  <a href="/solu/consultation/" >咨询</a>
+                                    <a href="/solu/design/" >设计</a>
+                                    <a href="/solu/united/" >联合开发</a>
+                                    <a href="/solu/total/" >机电总包</a>
+                                    <a href="/solu/test/" >测试认证</a>
+                                    <a href="/solu/comprehensive/" >综合代维</a>
+                                    <a href="/solu/uplevel/sl/" >优化升级</a>
+                                        
+                </div>
+                                <div class="wrapper ">
+
+                                  <a href="/products/solutions/sjzx/" >数据中心风冷解决方案产品</a>
+                                    <a href="/products/solutions/sjzxyl/" >数据中心液冷解决方案产品</a>
+                                    <a href="/products/solutions/jzjjfa/" >基站解决方案产品</a>
+                                    <a href="/products/solutions/cnyl/" >储能液冷解决方案产品</a>
+                                    <a href="/products/solutions/cp/" >解决方案产品服务</a>
+                                        
+                </div>
+                                <div class="wrapper ">
+
+                                  <a href="/product/crac/rack/" >机房空调</a>
+                                    <a href="/product/dclc/" >数据中心液冷</a>
+                                    <a href="/product/bsac/" >基站空调</a>
+                                    <a href="/product/se/" >智能电气</a>
+                                    <a href="/product/escc/" >储能及机柜空调</a>
+                                    <a href="/product/ce/" >清洁能源</a>
+                                    <a href="/product/ess/" >设备服务</a>
+                                        
+                </div>
+                                <div class="wrapper ">
+
+                                  <a href="/product/lylb/" >数据中心液冷部件产品</a>
+                                        
+                </div>
+                              </div>
+            </div>
+          </li>
+          
+
+                    <li>
+            <a href="/partners/dealers/">合作伙伴</a>
+            <div class="dropDownMenu">
+              <div class="dropDownMenuList">
+                                <a href="/partners/dealers/">经销商</a>
+                                <a href="/partners/service/">服务商</a>
+                              </div>
+            </div>
+          </li>
+          
+
+                    <li>
+            <a href="/news/dynamic/">新闻动态</a>
+            <div class="dropDownMenu">
+              <div class="dropDownMenuList">
+                                <a href="/news/dynamic/">动态</a>
+                                <a href="/news/activity/">活动</a>
+                                <a href="/news/greendl/">绿色发展</a>
+                              </div>
+            </div>
+          </li>
+          
+
+                    <li>
+            <a href="/about/index/">关于海悟</a>
+            <div class="dropDownMenu">
+              <div class="dropDownMenuList">
+                                <a href="/about/index/">关于海悟</a>
+                                <a href="/about/join/">加入我们</a>
+                                <a href="/about/case/communication/">成功案例</a>
+                                <a href="/about/philosophy/">技术服务</a>
+                                <a href="/about/us/">联系我们</a>
+                              </div>
+            </div>
+          </li>
+          
+
+          
+
+
+
+        </ul>
+      </div>
+      <div class="headerOther flex items-center">
+        <div class="searchBtn"><i class="icon-a-sousuo2"></i></div>
+        <div class="line"></div>
+        <div class="langBtn">
+          <div class="title">EN</div>
+          <div class="popup">
+            <a href="https://www.haiwu.com/?think_lang=zh-cn">简中</a>
+            <a href="https://www.haiwu.com/?think_lang=zh-tc">繁中</a>
+            
+            <a href="https://en.haiwu.com/">EN</a>
+          </div>
+        </div>
+        <!-- <a href="移动端.html" class="mobileBtn"><img src="/dist/images/icon-phone.png" alt=""></a> -->
+        <div class="menusBtn">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="headerSearchformMain">
+    <div class="headerSearchform">
+      <div class="content1600">
+        <form name="formBySearch" action="/search">
+          <button class="icon-sousuo"></button>
+          <input type="text" class="search_Textbox" placeholder="搜索" name="topKey">
+        </form>
+      </div>
+    </div>
+    <div class="headerSearchMask"></div>
+  </div>
+</header>
+<!-- 头部 end -->
+
+<div class="headerSearchformMain">
+  <div class="headerSearchform">
+    <div class="content1600">
+      <form name="formBySearch" action="/search">
+        <button class="icon-sousuo"></button>
+        <input type="text" class="search_Textbox" placeholder="搜索" name="topKey">
+      </form>
+    </div>
+  </div>
+  <div class="headerSearchMask"></div>
+</div>
+
+<!-- 移动端栏目 start -->
+<section class="mobileHeader">
+  <div class="column">
+    <div class="wrapper">
+          <!-- 应用场景 -->
+      <div class="oneLevel">
+        <div class="oneLevelTitle">
+          <div class="title"><a href="">首页</a></div>
+                  </div>
+        <div class="oneLevelMain">
+                  </div>
+      </div>
+      <!-- 应用场景 -->
+      <div class="oneLevel">
+        <div class="oneLevelTitle">
+          <div class="title"><a href="/app/data/center/">应用场景</a></div>
+                    <div class="icon"><i class="icon-arrow-down"></i></div>
+                  </div>
+        <div class="oneLevelMain">
+                    <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/app/data/center/">数据中心</a></div>
+                             <div class="icon"><i class="icon-arrow-down"></i></div> 
+                            </div>
+                         <div class="secondLevelMain">
+                               <a href="/app/data/center/">智算/超算中心</a>
+                             <a href="/app/data/big/">大型数据中心</a>
+                             <a href="/app/data/mid/">中型数据中心</a>
+                             <a href="/app/data/min/">小型/边缘数据中心</a>
+                           </div>
+                        </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/app/cbsaer/bs/">通信基站与机房</a></div>
+                             <div class="icon"><i class="icon-arrow-down"></i></div> 
+                            </div>
+                         <div class="secondLevelMain">
+                               <a href="/app/cbsaer/bs/">通信基站</a>
+                             <a href="/app/cbsaer/sr/">通信机房</a>
+                           </div>
+                        </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/product/escc/">储能热管理</a></div>
+                          </div>
+                       </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/product/ce/">供暖</a></div>
+                          </div>
+                       </div>
+                </div>
+      </div>
+      <!-- 应用场景 -->
+      <div class="oneLevel">
+        <div class="oneLevelTitle">
+          <div class="title"><a href="/product/caselist/">产品与服务</a></div>
+                    <div class="icon"><i class="icon-arrow-down"></i></div>
+                  </div>
+        <div class="oneLevelMain">
+                    <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/product/caselist/">解决方案及服务</a></div>
+                             <div class="icon"><i class="icon-arrow-down"></i></div> 
+                            </div>
+                         <div class="secondLevelMain">
+                               <a href="/solu/consultation/">咨询</a>
+                             <a href="/solu/design/">设计</a>
+                             <a href="/solu/united/">联合开发</a>
+                             <a href="/solu/total/">机电总包</a>
+                             <a href="/solu/test/">测试认证</a>
+                             <a href="/solu/comprehensive/">综合代维</a>
+                             <a href="/solu/uplevel/sl/">优化升级</a>
+                           </div>
+                        </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/product/solutions/">解决方案产品及服务</a></div>
+                             <div class="icon"><i class="icon-arrow-down"></i></div> 
+                            </div>
+                         <div class="secondLevelMain">
+                               <a href="/products/solutions/sjzx/">数据中心风冷解决方案产品</a>
+                             <a href="/products/solutions/sjzxyl/">数据中心液冷解决方案产品</a>
+                             <a href="/products/solutions/jzjjfa/">基站解决方案产品</a>
+                             <a href="/products/solutions/cnyl/">储能液冷解决方案产品</a>
+                             <a href="/products/solutions/cp/">解决方案产品服务</a>
+                           </div>
+                        </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/product/sbfw/">设备产品及服务</a></div>
+                             <div class="icon"><i class="icon-arrow-down"></i></div> 
+                            </div>
+                         <div class="secondLevelMain">
+                               <a href="/product/crac/rack/">机房空调</a>
+                             <a href="/product/dclc/">数据中心液冷</a>
+                             <a href="/product/bsac/">基站空调</a>
+                             <a href="/product/se/">智能电气</a>
+                             <a href="/product/escc/">储能及机柜空调</a>
+                             <a href="/product/ce/">清洁能源</a>
+                             <a href="/product/ess/">设备服务</a>
+                           </div>
+                        </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/product/lylb/">部件产品</a></div>
+                             <div class="icon"><i class="icon-arrow-down"></i></div> 
+                            </div>
+                         <div class="secondLevelMain">
+                               <a href="/product/lylb/">数据中心液冷部件产品</a>
+                           </div>
+                        </div>
+                </div>
+      </div>
+      <!-- 应用场景 -->
+      <div class="oneLevel">
+        <div class="oneLevelTitle">
+          <div class="title"><a href="/partners/dealers/">合作伙伴</a></div>
+                    <div class="icon"><i class="icon-arrow-down"></i></div>
+                  </div>
+        <div class="oneLevelMain">
+                    <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/partners/dealers/">经销商</a></div>
+                          </div>
+                       </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/partners/service/">服务商</a></div>
+                          </div>
+                       </div>
+                </div>
+      </div>
+      <!-- 应用场景 -->
+      <div class="oneLevel">
+        <div class="oneLevelTitle">
+          <div class="title"><a href="/news/dynamic/">新闻动态</a></div>
+                    <div class="icon"><i class="icon-arrow-down"></i></div>
+                  </div>
+        <div class="oneLevelMain">
+                    <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/news/dynamic/">动态</a></div>
+                          </div>
+                       </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/news/activity/">活动</a></div>
+                          </div>
+                       </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/news/greendl/">绿色发展</a></div>
+                          </div>
+                       </div>
+                </div>
+      </div>
+      <!-- 应用场景 -->
+      <div class="oneLevel">
+        <div class="oneLevelTitle">
+          <div class="title"><a href="/about/index/">关于海悟</a></div>
+                    <div class="icon"><i class="icon-arrow-down"></i></div>
+                  </div>
+        <div class="oneLevelMain">
+                    <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/about/index/">关于海悟</a></div>
+                          </div>
+                       </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/about/join/">加入我们</a></div>
+                          </div>
+                       </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/about/case/communication/">成功案例</a></div>
+                             <div class="icon"><i class="icon-arrow-down"></i></div> 
+                            </div>
+                         <div class="secondLevelMain">
+                               <a href="/about/case/communication/">运营商</a>
+                             <a href="/about/case/internet/">互联网</a>
+                             <a href="/about/case/energy/">能源</a>
+                             <a href="/about/case/finance/">金融</a>
+                             <a href="/about/case/transportation/">交通</a>
+                             <a href="/about/case/education/">教育</a>
+                             <a href="/about/case/medical-care/">医疗</a>
+                             <a href="/about/case/government-and-enterprises/">政企</a>
+                           </div>
+                        </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/about/philosophy/">技术服务</a></div>
+                             <div class="icon"><i class="icon-arrow-down"></i></div> 
+                            </div>
+                         <div class="secondLevelMain">
+                               <a href="/about/philosophy/">服务理念</a>
+                             <a href="/about/branch/">全国服务点</a>
+                             <a href="/about/principle/">服务原则</a>
+                           </div>
+                        </div>
+                  <!-- 二级：数据中心 -->
+          <div class="secondLevel">
+            <div class="secondLevelTitle">
+              <div class="title"><a href="/about/us/">联系我们</a></div>
+                          </div>
+                       </div>
+                </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 移动端栏目 end -->
+
+<script>
+    var think_lang = "zh-cn";
+console.log(think_lang);
+
+
+  $('.headerUserNickname').on('click', function () {
+    $('.headerUserInfo').toggle();
+  });
+
+  // 语言弹窗
+  $('.lang .langBtn').on('click', function () {
+    $(this).parent().find('.popup').toggle();
+  });
+  
+</script>
+        <!-- 主体 start -->
+    <main id="main">
+
+        <!-- 新闻详情 start -->
+        <section id="newsDetail">
+
+            <!-- 面包屑导航 start -->
+            <section id="breadcrumb">
+                <div class="content1632 flex items-center">
+                    <div class="list flex items-center"><a href><img src="/dist/images/icon-home.png" alt></a><i
+                            class="icon-a-jiantou2"></i></div>
+                    <div class="list flex items-center"><a href='/news/dynamic/'>新闻动态</a><i class="icon-a-jiantou2"></i></div>
+                    <div class="list flex items-center"><a href='/news/dynamic/'>动态</a><i class="icon-a-jiantou2"></i></div>
+                    <div class="list flex items-center"><a href="javascript:;">海悟PVT耦合热泵&ldquo;冷-暖-电-热水&rdquo;四联供综合能源系统方案</a><i class="icon-a-jiantou2"></i>
+                    </div>
+                </div>
+            </section>
+            <!-- 面包屑导航 end -->
+
+            <div class="content1632 flex items-start content-between xs:flex-col xs:content-start">
+                <div class="newsDetailLeft">
+                    <div class="newsDetailLeftTitle">
+                        <div class="title">海悟PVT耦合热泵&ldquo;冷-暖-电-热水&rdquo;四联供综合能源系统方案                        </div>
+                        <div class="timeBox flex items-center content-between">
+                            <div class="time"><i>发布时间：</i><span>2023-11-23</span>
+                            </div>
+                            <div class="shareBox flex items-center">
+                                <span>分享到</span>
+                                <div class="share flex" data-initialized="true">
+                                    <a href="#" class="social-share-icon icon-wechat"><img
+                                            src="/dist/images/newsDetailIcon1.png" alt></a>
+                                    <a href="#" class="social-share-icon icon-weibo"><img
+                                            src="/dist/images/newsDetailIcon2.png" alt></a>
+                                    <a href="#" class="social-share-icon icon-qq"><img
+                                            src="/dist/images/newsDetailIcon3.png" alt></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsDetailLeftMain">
+                        <p>海悟集团专注于热泵技术的创新和民用清洁能源应用的扩展，旨在成为数字能源和清洁能源领域的佼佼者。在民用供暖市场，随着降碳意识深入人心，许多客户开始寻求超越传统供暖设备的高效解决方案，从而对供应商提出更高的创新要求。本文我们将以北京某高端别墅住户的项目改造为例，分享一则&ldquo;PVT耦合热泵&rdquo;实现&ldquo;冷-暖-电-热水&rdquo;四联供综合能源系统的案例。<br>&nbsp;</p>
+<div><img height="214" src="/Upload/1700721115.png" width="376">
+<p>一、项目基本情况：<o:p></o:p></p>
+<p>该建筑为一栋独立的2层住宅，坐北朝南，屋顶为多面坡，面积约500㎡。已建成多年，原有设备、设施和装修已经老化或失去功能，此次进行整体改造、升级，力图改造后成为一栋具有绿色建筑、被动房理念的低能耗型住宅。</p>
+<p><img height="253" src="/Upload/1700721183.png" width="692"></p>
+<p>拟定的改造计划，包括：<o:p></o:p></p>
+<ol helvetica="" neue="">
+<li>
+<p>对建筑的围护结构进行改造，引入一些被动式太阳房的设计元素，以改善其自然舒适性和能耗水平；<o:p></o:p></p>
+</li>
+<li>
+<p>采用热泵技术为住宅提供空调制冷和供暖；<o:p></o:p></p>
+</li>
+<li>
+<p>将建筑向南侧和北侧分别扩展，扩大使用面积，扩展部分拟采用PVT光伏光热一体化组件进行覆盖，替代传统屋顶系统；<o:p></o:p></p>
+</li>
+<li>
+<p>在原有屋顶适度增设PVT组件，尽量扩大PVT组件的安装规模；<o:p></o:p></p>
+</li>
+<li>
+<p>光伏发电系统并网运行，并最大限度实现就地消纳、余电上网；<o:p></o:p></p>
+</li>
+<li>
+<p>探索最优的PVT与热泵的耦合方案，进一步提升整个系统的能源利用效率；<o:p></o:p></p>
+</li>
+<li>
+<p>利用热泵系统保障全年卫生热水需求。<o:p></o:p></p>
+</li>
+</ol>
+<p>&nbsp;</p>
+<p>二、针对需求给出初步规划<o:p></o:p></p>
+<p>2.1 屋顶PVT系统的布置</p>
+<p>建筑南北侧新扩建部分，其屋顶采用两组PVT组件平铺。原有屋顶有一处南向坡，依坡度铺设4块PVT组件。原有屋顶有一处小平台，拟采用支架安装4块PVT组件。如下图a，共计布设了尺寸2384mm&times;1303mm，规格为660Wp的PVT光伏组件40片，合计总装机约25.74 KW。拟选用1台光伏并网逆变器(型号GW25KF-DT)，其功率为25KW，拥有2路30A的输入。<o:p></o:p></p>
+<p>&nbsp;</p>
+<p>原有住宅建筑屋顶系统为采用深色大波纹瓦覆盖的多面坡结构，欧式风格突出，不宜粗鲁地打破。南北侧外扩部分，为实现发电、产热的功能而采用平铺方式，虽不尽完美，但对整栋住宅的观瞻影响相对较小，方案在可接受范围。<o:p></o:p></p>
+<p>&nbsp;</p>
+<p>原有屋面系统上2处坡度安装的PVT组件，则过于突兀，对建筑外观破坏过大；且位于小平台上的4块PVT组件采光条件复杂，在系统中又与南向坡面的4块PVT组件同处一个组串，相互干扰，影响系统效率。因此，重新考虑将其布置于东向和西向坡屋面上，如下图b，虽然也对建筑观瞻有一定负面影响，但随着近些年公众对屋面光伏系统的接受度越来越高，屋面上整齐敷贴布设的光伏板已经成为业主前卫新潮、崇尚环保的新标签。屋顶小平台建议恢复为屋顶花园景观，提升整个建筑的灵动感。</p>
+<p><img height="346" src="/Upload/1700721317.png" width="487"></p>
+<p>2.2 PV系统的设计<o:p></o:p></p>
+<p>原方案拟选用1台光伏并网逆变器(型号GW25KF-DT)，其功率为25KW，拥有2路30A的输入。由于屋面结构杂性，造成不同位置的PVT组件受光条件的巨大差异，而这一功率范围主流的并网逆变器，通常拥有的MPPT输入路数较少，不足以满足这种复杂性的需要，严重影响了整个光伏系统的发电效率。<o:p></o:p></p>
+<p>&nbsp;</p>
+<p>新的方案将采用光伏组件优化器，使得同一组串上，即使光照条件不一致，也能更好地发挥各电池板的最大发电效能。共安装40块PVT组件，系统示意图如下：</p>
+<p><img height="136" src="/Upload/1700721387.png" width="523"></p>
+<p>优化器的选型：选择采用华为公司出品的MERC-1300W-P优化器产品。</p>
+<p><img height="885" src="/Upload/1700721439.png" width="485"></p>
+<p>光伏并网逆变器选型：选用华为SUN2000-25KTL。</p>
+<p><img height="1127" src="/Upload/1700721489.png" width="539"></p>
+<p>2.3&nbsp;集热系统的设计<o:p></o:p></p>
+<p>PVT组件是将光伏电池板与换热板进行结合而衍生出的产品。其缩写中的&ldquo;T&rdquo;指的是Thermal，也就是指出了其具有集热的功能部分。通常这部分附加用于收集热量的部分，还需要兼顾在停机情况下光伏电池板的正常散热需求，所以不做保温处理。因此，其只适合工作于与环境温度差距不大的工况下。实际应用中，几乎必须与热泵耦合使用。<o:p></o:p></p>
+<p>&nbsp;</p>
+<p>从制造工艺上，最常见的换热板有吹胀型（a）和管板型（b），见下图：</p>
+<img height="523" src="/Upload/1700721552.png" width="435">
+<div>
+<p>本项目中，结合系统设计方面的众多因素，综合研判，更适合选择采用吹胀式的换热板体。此类PVT产品，一般原设计采用氟利昂作为换热工质，把PVT作为蒸发器使用，具有温度均匀性好的特点，但价格较高，且由于热胀冷缩等原因，产品的可靠性需要结合制造工艺、结构优化等，进行仔细甄别。<o:p></o:p></p>
+<p>&nbsp;</p>
+<p>在工质的选择上，由于本项目中大部分PVT为平铺，一旦积雪很难清除，且PVT阵列较大、安装情况复杂，不利于工质以及冷冻油的回流。因此，选择采用JM-EC-04液冷绝缘热管理液作为传热工质，并应用在闭式循环系统中。</p>
+<p>&nbsp;</p>
+<p>循环系统主管路采用焊接钢管，规格为DN32，检漏后刷2遍富锌底漆2遍偏氟面漆，采用20mm厚阻燃橡塑保温体系。所有40块PVT组件处于并联状态，分配支管路，采用12mm铝管，表面喷涂与屋面相融合的颜色涂层，不做保温处理。主循环管道按照最短管程设计，采用40路带流量显示的分集水器进行流量分配调节。主循环泵为定频湿转子泵，总流量按2.4m&sup3;/h选取，扬程大于8米，具体型号待确定。膨胀罐选用VR24气囊式膨胀罐。<o:p></o:p></p>
+<p>&nbsp;</p>
+<p>2.3&nbsp;热泵系统设计选型<o:p></o:p></p>
+<p>本工程为二层建筑，高9.6m，建筑面积为494㎡，采用海悟集团自产的热泵作为冷热源，进行供暖及制冷。<o:p></o:p></p>
+<p>&nbsp;</p>
+<p>项目地全年气温变化特点：</p>
+<p><img height="437" src="/Upload/1700721599.png" width="426"></p>
+<p>项目地全年各月温度变化曲线图：</p>
+<div>&nbsp;<img height="304" src="/Upload/1700721653.png" width="479"></div>
+<div>&nbsp;&nbsp;冬季室外设计参数：&nbsp;</div>
+<div><img height="403" src="/Upload/1700721749.png" width="666"></div>
+<div>夏季室外设计参数：</div>
+<div><img height="336" src="/Upload/1700721800.png" width="680"></div>
+<div>室内设计参数：</div>
+<div><img height="195" src="/Upload/1700721864.png" width="703"></div>
+<div>冷、热负荷计算结果见下表：</div>
+<div><img height="114" src="/Upload/1700721912.png" width="667"></div>
+<div>
+<p>基于此，需要就可能的系统方案进行分析对比。显而易见，该建筑空调冷负荷远大于供暖热负荷，而相比冷暖负荷，卫生热水的负荷可以忽略不计。<o:p></o:p></p>
+<p><o:p></o:p></p>
+<p>方案一：安装一台满足冷负荷64.22kW的空气源热泵。此方案为典型的冷暖热水3联供系统，常见系统如下图。空气源热泵夏季用于空调制冷、冬季用于供暖、热水在供暖季采用热泵切换加热、在非采暖季采用电加热管加热。如果设想夏季利用PVT的热量加热水箱，鉴于热水的需热量过小，系统的复杂程度不宜过高，不予采纳。又由于空气源热泵与pvt热量耦合利用的季节性矛盾，本项目不适用此方案。</p>
+<p><img height="340" src="/Upload/1700721964.png" width="671"></p>
+<p>方案二：安装一台满足冷负荷64.22kW的地源热泵，PVT从热源端耦合，构成冷暖热水3联供系统，系统如下图。地源热泵夏季用于空调制冷、冬季用于供暖、热水在供暖季采用热泵切换加热、在非采暖季采用电加热管加热。则，冬季PVT与换热井一起向地源热泵提供较高温度的低温热源，地源热泵将获得较高的运行COP，起到一定的节能效果；夏季，系统进入空调制冷模式，热泵输出的热量约80kw、PVT产生的热量约45kW需要通过地源井回灌，则需要约24口井方能满足消纳需求，这从场地、造价以及热量消纳等多维度看显然是不可能的，而采用额外的散热器进行散热，与采用PVT的意义相抵触，本项目不予采纳。</p>
+<p><img height="339" src="/Upload/1700722041.png" width="695"></p>
+<p>方案三：结合对方案一、方案二的思考，我们明确了需求方向。针对夏季空调负荷大，日照强烈，系统应尽可能发挥PVT水冷降温提效的优势，最大限度多发电，并将热量回灌到地源井；而房间制冷需要尽可能采用最直接的方式向自然环境散热，空气源热泵无疑是最佳选择。冬季供暖，地源和太阳能源可以提供高效稳定的低温热源，采用地源热泵可以最大限度的高能效供暖，又不会出现空气源热泵频繁化霜的情况，无疑也是最佳选项。综上，方案三鉴于供暖和供冷负荷的差异很大，整套系统设计包含2热泵：一台供暖输出19.76kW以上的地源热泵与PVT耦合用于供暖，室外采用单排、间距5米以上打4口120米深的地源井（双U管换热），室内采用地盘管末端；夏季空调时开启另一台满足冷负荷64.22kW的空气源热泵；PVT非采暖季白天通过地埋井向大地回热；卫生热水全年由地源热泵提供加热热源。<o:p></o:p></p>
+<p>设备位置：</p>
+<p><img height="385" src="/Upload/1700722090.png" width="383"></p>
+<p>设备选型：<o:p></o:p></p>
+<p>空气源热泵主机，选用海悟HLWD086P2C7A空气源热泵机组1台，该机组低温工况制热量（-12℃）为59kW、COP为2.2，极端气候或地源热泵系统故障时，可作为供暖热源备份；额定制冷量65kW，满足本项目夏季制冷的需求。<o:p></o:p></p>
+<p>&nbsp;</p>
+<p>具体技术参数如下：</p>
+<p><img height="574" src="/Upload/1700722162.png" width="419"></p>
+<p>地源热泵主机：</p>
+<p><img height="408" src="/Upload/1700722210.png" width="420"></p>
+<p>【注】</p>
+<p>1、机组参数根据标准GB/T&nbsp;19409-2013测试。</p>
+</div>
+</div>
+</div>                    </div>
+
+                    
+
+
+
+                    <div class="newsDetailLeftBtns flex items-center content-between">
+                                                <a href="/news/dynamic/1395.html" class="btn prevBtn"><i>上一篇:</i><span>【携手共进 合作共赢】海悟携手国铁集团，推动铁路通信事业高质量发展</span></a>
+                                                <a href="/news/dynamic/1393.html" class="btn nextBtn"><i>下一篇:</i><span>助力亚运 | 海悟收到来自中国铁塔的感谢信！</span></a>
+                        
+                    </div>
+                    
+                    <div class="newsDetailLeftReturnBtn flex content-end">
+                        <a href="/news/dynamic/" class="more"><i class="icon-xiangyoujiantou1"></i><span>返回列表</span></a>
+                      </div>
+
+
+                </div>
+                <div class="newsDetailRight">
+
+                    <div class="newsDetailRightRecommend2">
+                        <div class="title flex items-center content-between">
+                            <span>相关新闻</span><a href class="more">更多<i class="icon-a-jiantou2"></i></a>
+                        </div>
+                        <div class="listBox">
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 新闻详情 end -->
+
+    </main>
+    <!-- 主体 end -->
+    <!-- 底部 start -->
+<footer id="footer">
+
+  <div class="content1632">
+
+    <div class="footerMain flex content-between xs:flex-col xs:content-start">
+
+      <div class="footerLeft">
+
+        <div class="title">联系我们</div>
+
+        <div class="info">
+
+          <p>联系电话：<a href="mail:400-900-0909">400-900-0909</a></p>
+
+          <p>集团总部：北京市西城区三⾥河东路34号</p>
+
+          <p>产业园区：广东省东莞市海悟路1号</p>
+
+        </div>
+
+        <a href="/partners/dealers/" class="more"><span>合作伙伴招募</span><i class="icon-xiangyoujiantou1"></i></a>
+
+        <div class="codeBox flex">
+
+                    <div class="list">
+
+            <img src="/dist/images/footerCode1.jpg" alt>
+
+            <p>海悟数字能源</p>
+
+          </div>
+                    <div class="list">
+
+            <img src="/dist/images/footerCode2.jpg" alt>
+
+            <p>海悟抖音</p>
+
+          </div>
+          
+
+        </div>
+
+      </div>
+
+      <div class="footerRight flex xs:flex-wrap xs:content-center">
+                        <dl>
+
+          <dt><a href>应用场景</a></dt>
+                    <dd><a href="/app/data/center/">数据中心</a></dd>
+                    <dd><a href="/app/cbsaer/bs/">通信基站与机房</a></dd>
+                    <dd><a href="/product/escc/">储能热管理</a></dd>
+                    <dd><a href="/product/ce/">供暖</a></dd>
+          
+        </dl>
+                        <dl>
+
+          <dt><a href>产品与服务</a></dt>
+                    <dd><a href="/product/caselist/">解决方案及服务</a></dd>
+                    <dd><a href="/product/solutions/">解决方案产品及服务</a></dd>
+                    <dd><a href="/product/sbfw/">设备产品及服务</a></dd>
+                    <dd><a href="/product/lylb/">部件产品</a></dd>
+          
+        </dl>
+                        <dl>
+
+          <dt><a href>合作伙伴</a></dt>
+                    <dd><a href="/partners/dealers/">经销商</a></dd>
+                    <dd><a href="/partners/service/">服务商</a></dd>
+          
+        </dl>
+                        <dl>
+
+          <dt><a href>新闻动态</a></dt>
+                    <dd><a href="/news/dynamic/">动态</a></dd>
+                    <dd><a href="/news/activity/">活动</a></dd>
+                    <dd><a href="/news/greendl/">绿色发展</a></dd>
+          
+        </dl>
+                        <dl>
+
+          <dt><a href>关于海悟</a></dt>
+                    <dd><a href="/about/index/">关于海悟</a></dd>
+                    <dd><a href="/about/join/">加入我们</a></dd>
+                    <dd><a href="/about/case/communication/">成功案例</a></dd>
+                    <dd><a href="/about/philosophy/">技术服务</a></dd>
+                    <dd><a href="/about/us/">联系我们</a></dd>
+          
+        </dl>
+                
+      </div>
+
+    </div>
+
+    <div class="footerCopyright flex items-center content-between">
+
+      <div class="copyright">&copy; 2022-2026 北京海悟技术有限公司 版权所有 | <a href="https://beian.miit.gov.cn/"
+          target="_blank">京ICP备17007447号-2</a>  | <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802028112"
+          target="_blank">京公网安备11010802028112</a> | <a href="https://www.szweb.cn" target="_blank">Powered by szweb</a>
+          </div>
+
+
+
+      <div class="shareBox flex xs:content-center">
+                <a href="javascript::">
+
+          <img src="/dist/images/footerIcon1.png" alt>
+
+          <div class="popup"><img src="/dist/images/footerCode1.jpg" alt></div>
+
+        </a>
+                <a href="javascript::">
+
+          <img src="/dist/images/footerIcon2.png" alt>
+
+          <div class="popup"><img src="/uploads/04627539_1754549031.png" alt></div>
+
+        </a>
+                <a href="javascript::">
+
+          <img src="/dist/images/footerIcon4.png" alt>
+
+          <div class="popup"><img src="/dist/images/footerCode1.jpg" alt></div>
+
+        </a>
+                <a href="javascript::">
+
+          <img src="/dist/images/footerIcon5.png" alt>
+
+          <div class="popup"><img src="/uploads/58693421_1754548903.png" alt></div>
+
+        </a>
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+<!-- 底部 end --> <!-- 侧边栏 start -->
+<section id="sideBar" class="">
+    <a href="javascript:;" class="list">
+        <img src="/dist/images/sideBarIcon1.png" alt="">
+        <p>联系电话</p>
+        <div class="popup">
+            <div class="title">联系电话</div>
+            <div class="phone">400-900-0909</div>
+            <div class="intro">365 天7*24 不间断在线服务</div>
+        </div>
+    </a>
+    <a href="/about/us/" class="list">
+        <img src="/dist/images/sideBarIcon2.png" alt="">
+        <p>官方客服</p>
+    </a>
+    <a href="/partners/dealers/" class="list">
+        <img src="/dist/images/sideBarIcon3.png" alt="">
+        <p>合作伙伴招募</p>
+    </a>
+    <a href="javascript:;" class="list returnBtn">
+        <img src="/dist/images/sideBarIcon4.png" alt="">
+        <p>返回顶部</p>
+    </a>
+</section>
+<!-- 侧边栏 end -->
+
+<script src="/dist/plugins/js/wow.min.js"></script>
+
+<script src="/dist/plugins/js/jquery.waypoints.min.js"></script>
+
+<script src="/dist/plugins/js/jquery.countup.min.js"></script>
+
+<script src="/dist/plugins/js/swiper-bundle.min.js"></script>
+
+<script src="/dist/plugins/js/social-share.min.js"></script>
+
+<script src="/dist/plugins/js/gsap.min.js"></script>
+
+<script src="/dist/plugins/js/ScrollTrigger.min.js"></script>
+
+<script src="/dist/plugins/js/lenis.min.js"></script>
+
+<script src="/dist/layui/layui.js"></script>
+
+<script src="/dist/plugins/js/jquery.citys.js"></script>
+
+<script src="/dist/js/main.min.js?v=1.0.3"></script>
+
+    <script>
+        socialShare('.newsDetailLeftTitle .share')
+    </script>
+
+</body>
+
+</html>
