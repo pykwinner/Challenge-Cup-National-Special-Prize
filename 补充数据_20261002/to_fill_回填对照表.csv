@@ -1,0 +1,13 @@
+﻿原包模板,字段,本次能否回填,可用来源,限制
+building_parameters_to_fill / building_2R2C_parameters_to_fill,floor_area_m2 / building_use,部分,02_供热统计/tables/indicator_extracted.csv（分城市集中供热面积、住宅/公建拆分）,城市级面积可给，**楼栋级面积、H/C、Ca/Cm、R_air 仍缺**（需项目实测）
+building_parameters_to_fill,indoor_initial_temperature_C,是,07_规范（GB 50736 供暖室内设计温度 18~24℃）,设计区间可给，实测初值仍缺
+source_parameters_to_fill,capex_quote_CNY_per_kW,部分,04/tables/equipment_price_extracted.csv（热泵按 kW 分档 17800~42800 元/台；生物质锅炉 42.6 万元/6t·h）,**中标价为跨地区参考，非本项目报价**；地源打井元/米 not_found
+source_parameters_to_fill,capacity_verified_kw,部分,03/tables/source_capacity_extracted.csv（乌市 6 项燃气锅炉环评批复、固原 2 项、武汉能源站）,环评设计值，非运行实测；华电乌市机组有 2×300/2×330 两口径待核
+pipe_parameters_to_fill,capex_quote_CNY_per_m,是,04（邯郸住建局 2025 造价信息：DN159~DN1620 共 31 档除税/含税 元/m）,跨地区信息价，非本项目采购价；长度/管径仍缺
+storage_parameters_to_fill,capex_quote_CNY_per_kWh,部分,04（太原 3×18000m³ 共 2993.99 万元；酒泉 ≥19600m³ 共 2568 万元）,只给总价+容积，**未折算元/kWh**（避免凭空换算）；土壤测试件仍缺
+cost_lifetime_to_fill,（整体）,部分,04 设备中标价 + 08 供热价格（乌市 22、固原 3.70 元/㎡·月）+ 07 参考文献经济性摘录 106 条,运维/寿命/残值/物流/仓储/人工/噪声治理仍缺
+tariff_months_to_fill,（逐月电价）,见 01_电价,01_电价/（子代理产出，待回）,供暖季 2024-10~2025-04 逐月，2020-2024 年度需另补
+grid_carbon_reliability_hourly_to_fill,marginal_carbon_kgCO2_per_kWh,否（仅年均）,07/tables/电力排放因子_2022_官方公告抽取.csv（全国 0.5366；新疆 0.6231/宁夏 0.6423/湖北 0.4364）,**年均因子≠逐时边际因子**，该列仍为 not_found；变压器容量/停电标志亦缺
+source_resource_hourly_to_fill（生物质侧）,biomass_stock_kg 等资源量依据,是,04/tables/biomass_resource_extracted.csv（宁夏可收集 356.3 万吨、固原资源总量 112.5 万吨、可收集系数、到厂价）,资源量与系数可给；**逐时到货/库存时序仍缺**
+GIS_assets_to_fill,longitude/latitude/geometry_WKT,部分,06_GIS（OSM 建筑数与工业/热源要素坐标）,OSM 为众源数据，三城覆盖不均；**不可当项目资产台账**；管网 GIS 仍缺
+measured_hourly_data_template / operation_5_to_60min_to_fill / building_services_hourly_to_fill,（全部）,否,—,**项目实测数据，公开源无法补**，保持空白

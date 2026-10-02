@@ -1,0 +1,2208 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+ 
+ 
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/thscommon/style/artDialog/aero.css" />
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/baiduStatistics.js"></script>
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/json2.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.media.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/upload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/exportWord.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/handlers.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/content.js"></script>
+<!--validate start  -->
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/validationEngine.jquery.css" type="text/css" />
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/template.css" type="text/css" />
+ <script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<!--validate end  -->
+
+
+<!-- base64  -->
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.base64.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_button.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_style.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/swfupload/default.css" />
+<link rel=stylesheet type=text/css href="/perxxgkinfo/thscommon/style/page-base.css"/>
+
+<script type="text/javascript" src="/perxxgkinfo/js/urlhanzi.js"></script>
+
+<!-- èªå®ä¹éç¨æ ·å¼ -->
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/css/common/custom.css" />
+<!-- æºè½å®¡æ ¸js -->
+<script type="text/javascript" src="/perxxgkinfo/report/common/layer/layer.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/intelligent_checking.js"></script>
+<script>
+    var ctx = "/perxxgkinfo";
+</script>
+<title>大气污染物排放信息</title>
+<style type="text/css">
+#test {
+    width:100%;
+    height:100%;
+    background-color:#000;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:2;
+    opacity:0.3;
+    /*兼容IE8及以下版本浏览器*/
+    filter: alpha(opacity=30);
+}
+
+#log_window {
+    width:50px;
+    height:50px;
+    margin: auto;
+    position: absolute;
+    z-index:3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+<style type="text/css">
+.AutoNewline
+{
+  word-break: break-all;/*必须*/
+}
+ table td {
+	height: 18px;
+}
+
+table td input[type=text] {
+	height: 18px;
+	width: 85%;
+}
+#wintable td input[type=text]{
+	height: 18px;
+}
+#othertable td input[type=text]{
+	height: 18px;
+}
+.havecode {
+	display: inline-block;
+	float: left;
+}
+
+.input_hidden {
+	display: none;
+}
+
+.yq_table {
+	display: none;
+}
+.blue_style{
+	color: blue;
+}
+.edit-grid{
+  border:1px;
+}
+
+  
+.drains{  
+    border:1px solid #EA8B29;   /* 表格边框 */  
+    font-family:Arial;  
+    border-collapse:collapse;   /* 边框重叠 */  
+    background-color:#F5F3F4;   /* 表格背景色 */  
+}  
+.drains th{  
+    border:1px solid #EA8B29;   /* 行名称边框 */  
+    background-color:#F5F3F4;   /* 行名称背景色 */  
+    color:#EA8B29;              /* 行名称颜色 */  
+    font-weight:bold;  
+    padding-top:2px; padding-bottom:2px;  
+    padding-left:6px; padding-right:6px;  
+    text-align:center;  
+}  
+.drains td{  
+    border:1px solid #EA8B29;   /* 单元格边框 */ 
+    background-color:#FFFFFF;   
+    text-align:left;  
+    padding-top:2px; padding-bottom:2px;  
+    padding-left:5px; padding-right:5px;  
+}  
+
+
+</style>
+
+<script type="text/javascript" src="/perxxgkinfo/js/itemcard_right.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/report/common/layer/layer.js"></script>
+<script>
+
+
+$(document).ready(function() {
+	$("#mainForm").validationEngine("attach", {
+		promptPosition : "topLeft",
+		autoPositionUpdate : true,
+		autoHidePrompt : true,
+		autoHideDelay : 3000,
+		showOneMessage : true
+	});
+	
+});
+
+//查看信息公开内容时的遮盖，关闭
+function myths_cancel_shield(){ 
+	
+    var s = document.getElementById("test");
+    s.style.display = "none";
+    
+    var l = document.getElementById("log_window");
+    l.style.display = "none";
+}
+
+</script>
+</head>
+<body onload="initPage('readonly')">
+<iframe id="attfile_iFrame1" name="attfile_iFrame1" src="" frameborder="0" style="width: 200px; height: 200px; display:none;"></iframe>
+<div id="test" style="width: 100%;height: 100%"></div>
+<div id="log_window">
+<img alt="" src="/perxxgkinfo/css/img/loading1.gif" style="width: 100%;height: 100%">
+</div>
+<div class="list-title">
+	<span><img src="/perxxgkinfo/util/xzxk/images/title.png" /></span>
+		当前位置：大气污染物排放信息审核
+</div>
+<font color="red" style="font-weight: bold;"
+	class="annotation comment_text" id="wwnotice">注：*为必填项，没有相应内容的请填写“无”或“/”</font>
+<font color="red" style="font-weight: bold; display: none;" id="nwnotice">请审核完基本信息后，填写审批信息，审批通过后生产设施编号、污染物治理设施编号和排放口编号会自动更新为国家统一编号，您可在发证环节下载打印许可证正、副本内容。</font>
+<br />
+
+<form name="mainForm" method="post"  id="mainForm" target="_parent">
+<div id="airxk">
+<div style="width: 100%">
+</div>
+<div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">1、大气污染物有组织排放许可限值</span></div>
+<br />
+
+<div style="font-size: 18px; padding-left: 17px;font-family: Microsoft Yahei;"><span class="add_title">（1）主要排放口</span></div>
+<br />
+	<table id="grouptable" border="1" class="edit-grid-gg">
+		<tr>
+			<th rowspan="2" style="text-align: center;width:8%;" >排放口编号</th>
+			<th rowspan="2" style="text-align: center;width:8%;" >排放口名称</th>
+			<th rowspan="2" style="text-align: center;width:8%;">污染物种类</th>
+			
+                <th rowspan="2" style="text-align: center;width:10%;">许可排放小时浓度限值</th>
+                <th rowspan="2" style="text-align: center;width:10%;">许可排放日均浓度限值</th>
+            
+			<th rowspan="2" style="text-align: center;width:10%;">许可排放速率限值（kg/h）</th>
+			<th colspan="5" style="text-align: center;width:35%;">许可年排放量限值（t/a）</th>
+			<th rowspan="2" style="text-align: center;width:10%;">承诺更加严格排放浓度限值</th>
+		</tr>
+		<tr>
+			<th style="text-align: center;">第一年</th>
+			<th style="text-align: center;">第二年</th>
+			<th style="text-align: center;">第三年</th>
+			<th style="text-align: center;">第四年</th>
+			<th style="text-align: center;">第五年</th>
+		</tr>
+		
+			
+				<tr >
+					<td class="codes">
+						
+							DA001
+							
+						
+					</td>
+					<td>58MW锅炉排气筒</td>
+					<td>二氧化硫</td>
+					<td>
+						35mg/Nm3
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            mg/Nm3
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA001
+							
+						
+					</td>
+					<td>58MW锅炉排气筒</td>
+					<td>汞及其化合物</td>
+					<td>
+						0.03mg/Nm3
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            mg/Nm3
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA001
+							
+						
+					</td>
+					<td>58MW锅炉排气筒</td>
+					<td>氨（氨气）</td>
+					<td>
+						3.8mg/Nm3
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            mg/Nm3
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA001
+							
+						
+					</td>
+					<td>58MW锅炉排气筒</td>
+					<td>烟气黑度</td>
+					<td>
+						1级
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            级
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA001
+							
+						
+					</td>
+					<td>58MW锅炉排气筒</td>
+					<td>氮氧化物</td>
+					<td>
+						50mg/Nm3
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            mg/Nm3
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA001
+							
+						
+					</td>
+					<td>58MW锅炉排气筒</td>
+					<td>颗粒物</td>
+					<td>
+						10mg/Nm3
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            mg/Nm3
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA002
+							
+						
+					</td>
+					<td>46MW锅炉排气筒</td>
+					<td>烟气黑度</td>
+					<td>
+						1级
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            级
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA002
+							
+						
+					</td>
+					<td>46MW锅炉排气筒</td>
+					<td>二氧化硫</td>
+					<td>
+						35mg/Nm3
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            mg/Nm3
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						35
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA002
+							
+						
+					</td>
+					<td>46MW锅炉排气筒</td>
+					<td>氮氧化物</td>
+					<td>
+						50mg/Nm3
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            mg/Nm3
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						50
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA002
+							
+						
+					</td>
+					<td>46MW锅炉排气筒</td>
+					<td>汞及其化合物</td>
+					<td>
+						0.05mg/Nm3
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            mg/Nm3
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr >
+					<td class="codes">
+						
+							DA002
+							
+						
+					</td>
+					<td>46MW锅炉排气筒</td>
+					<td>颗粒物</td>
+					<td>
+						10mg/Nm3
+					</td>
+					<!-- 日均浓度限值 -->
+					
+                        <td>
+                            mg/Nm3
+                        </td>
+		            
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						10
+					</td>
+				</tr>
+			
+		
+		<tr>
+			<th rowspan="5" colspan="5">主要排放口合计</th>
+		</tr>
+		
+			
+				<tr>
+					<th>颗粒物</th>
+					<td>
+						9.965
+					</td>
+					<td>
+						9.965
+					</td>
+					<td>
+						9.965
+					</td>
+					<td>
+						9.965
+					</td>
+					<td>
+						9.965
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			
+				<tr>
+					<th>SO2</th>
+					<td>
+						29.13
+					</td>
+					<td>
+						29.13
+					</td>
+					<td>
+						29.13
+					</td>
+					<td>
+						29.13
+					</td>
+					<td>
+						29.13
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			
+				<tr>
+					<th>NOx</th>
+					<td>
+						60.6
+					</td>
+					<td>
+						60.6
+					</td>
+					<td>
+						60.6
+					</td>
+					<td>
+						60.6
+					</td>
+					<td>
+						60.6
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			
+				<tr>
+					<th>VOCs</th>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			
+		
+		
+	</table>
+<br />
+
+<div style="font-size: 18px; padding-left: 17px;font-family: Microsoft Yahei;"><span class="add_title">（2）一般排放口</span></div>
+<br />
+	<table id="apply_table1" class="edit-grid-gg">
+		<tr>
+			<th rowspan="2" style="text-align: center;width:8%;">排放口编号</th>
+			<th rowspan="2" style="text-align: center;width:8%;">排放口名称</th>
+			<th rowspan="2" style="text-align: center;width:8%;">污染物种类</th>
+            
+                <th rowspan="2" style="text-align: center;width:10%;">许可排放小时浓度限值</th>
+                <th rowspan="2" style="text-align: center;width:10%;">许可排放日均浓度限值</th>
+            
+			<th rowspan="2" style="text-align: center;width:10%;">许可排放速率限值（kg/h）</th>
+			<th colspan="5" style="text-align: center;width:35%;">许可年排放量限值（t/a）</th>
+			<th rowspan="2" style="text-align: center;width:10%;">承诺更加严格排放浓度限值</th>
+		</tr>
+		<tr>
+			<th style="text-align: center;">第一年</th>
+			<th style="text-align: center;">第二年</th>
+			<th style="text-align: center;">第三年</th>
+			<th style="text-align: center;">第四年</th>
+			<th style="text-align: center;">第五年</th>
+		</tr>
+		
+		<tr>
+			<th rowspan="5" colspan="5">一般排放口合计</th>
+		</tr>
+		
+			
+				<tr>
+					<th>颗粒物</th>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			
+				<tr>
+					<th>SO2</th>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			
+				<tr>
+					<th>NOx</th>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			
+				<tr>
+					<th>VOCs</th>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			
+		
+	</table>
+<br />
+
+<div style="font-size: 18px; padding-left: 17px;font-family: Microsoft Yahei;"><span class="add_title">（3）全厂有组织排放总计</span></div>
+<br />
+<div style="color: blue;margin-top: 3px;float: left;margin-right: 10px;padding-left: 24px;">
+    <img src="/perxxgkinfo/images/wwindex/u1315.png" alt="" />
+</div>
+<div style="color: blue;margin-top: 5px;margin-bottom: 5px;">
+    <span>说明：“全厂有组织排放总计”指的是，主要排放口与一般排放口之和数据。</span>
+</div>
+	<table id="groupcountair" border="1" class="edit-grid-gg">
+		<tr>
+			<th rowspan="6" style="text-align: center;">全厂有组织排放总计</th>
+			<th rowspan="2" style="text-align: center;width:10%;">污染物种类</th>
+			<th colspan="5" style="text-align: center;">申请年排放量限值（t/a）</th>
+			<!-- <th rowspan="2" style="text-align: center;width:10%;">申请特殊时段排放量限值</th> -->
+		</tr>
+		<tr>
+			<th style="text-align: center;">第一年</th>
+			<th style="text-align: center;">第二年</th>
+			<th style="text-align: center;">第三年</th>
+			<th style="text-align: center;">第四年</th>
+			<th style="text-align: center;">第五年</th>
+		</tr>
+		
+			
+				<tr>
+					<th>颗粒物</th>
+					<td>
+						9.965000
+					</td>
+					<td>
+						9.965000
+					</td>
+					<td>
+						9.965000
+					</td>
+					<td>
+						9.965000
+					</td>
+					<td>
+						9.965000
+					</td>
+				</tr>
+			
+				<tr>
+					<th>SO2</th>
+					<td>
+						29.130000
+					</td>
+					<td>
+						29.130000
+					</td>
+					<td>
+						29.130000
+					</td>
+					<td>
+						29.130000
+					</td>
+					<td>
+						29.130000
+					</td>
+				</tr>
+			
+				<tr>
+					<th>NOx</th>
+					<td>
+						60.600000
+					</td>
+					<td>
+						60.600000
+					</td>
+					<td>
+						60.600000
+					</td>
+					<td>
+						60.600000
+					</td>
+					<td>
+						60.600000
+					</td>
+				</tr>
+			
+				<tr>
+					<th>VOCs</th>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			
+		
+	</table>
+<br />
+<div id="airtsxk">
+<div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">2、特殊情况下大气污染物排放许可限值</span></div>
+<br />
+<div style="color: blue;margin-top: 3px;float: left;margin-right: 10px;padding-left: 24px;">
+<img src="/perxxgkinfo/images/wwindex/u1315.png" alt="" /></div>
+<div style="color: blue;margin-top: 5px;margin-bottom: 5px;"><span>说明：特殊情况指环境质量限期达标规划、重污染天气应对等对排污单位有更加严格的排放控制要求的情况。</span></div>
+<div style="font-size: 18px; padding-left: 17px;font-family: Microsoft Yahei;"><span class="add_title">（1）环境质量限期达标规划要求</span></div>
+<br />
+	<table id="wintable" class="edit-grid-gg">
+		<tr>
+			<th>污染物类型</th>
+			<th>污染物种类</th>
+			<th>许可排放时段</th>
+			<th>许可排放浓度限值（mg/Nm³）</th>
+			<th>许可日排放量限值（kg/d）</th>
+			<th>许可月排放量限值（t/m）</th>
+		</tr>
+		
+			
+				<tr>
+					
+					
+						<th rowspan="4">主要排放口</th>
+					
+					<th>颗粒物</th>
+					
+					<td rowspan="4">
+						/
+					</td>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					
+					<th>SO2</th>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					
+					<th>NOx</th>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					
+					<th>VOCs</th>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+		
+		
+			
+				<tr>
+					
+						<th rowspan="4">一般排放口</th>
+					
+					<th>颗粒物</th>
+					
+					<td rowspan="4">
+						/
+					</td>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					<th>SO2</th>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					<th>NOx</th>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					<th>VOCs</th>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+		
+		
+			
+				<tr>
+					
+						<th rowspan="4">无组织排放口</th>
+					
+					<th>颗粒物</th>
+					
+					<td rowspan="4">
+						/
+					</td>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					<th>SO2</th>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					<th>NOx</th>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					<th>VOCs</th>
+					
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+		
+		
+			
+				<tr>
+					
+						<th rowspan="4">全厂合计</th>
+					
+					<th>颗粒物</th>
+					
+					<td rowspan="4">
+						/
+					</td>
+					
+					<td align="center">
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					<th>SO2</th>
+					
+					<td align="center">
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					<th>NOx</th>
+					
+					<td align="center">
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+				<tr>
+					
+					<th>VOCs</th>
+					
+					<td align="center">
+						/
+					</td>
+					<td align="center">/</td>
+					<td>
+						/
+					</td>
+				</tr>
+			
+		
+		<tr align="left">
+			<td colspan="6">备注信息&nbsp;&nbsp;<br /><span style="color: blue;font-size: 14px;">说明：若有表格中无法囊括的信息或其他许可信息，可根据实际情况填写在备注信息中。</span></td>
+		</tr>
+		<tr align="left">
+			<td colspan="6"></td>
+		</tr>
+	</table>
+<br />
+<div style="font-size: 18px; padding-left: 17px;font-family: Microsoft Yahei;"><span class="add_title">（2）重污染天气应对要求</span></div>
+<br />
+	<table id="othertable" class="edit-grid-gg">
+		<tr>
+			<th>污染物类型</th>
+			<th>污染物种类</th>
+			<th>许可排放时段</th>
+			<th>许可排放浓度限值（mg/Nm³）</th>
+			<th>许可日排放量限值（kg/d）</th>
+			<th>许可月排放量限值（t/m）</th>
+		</tr>
+		
+			
+				<tr>
+					
+						<th rowspan="4">主要排放口</th>
+					
+					<th>颗粒物</th>
+					
+					<td rowspan="4">
+						/
+					</td>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>SO2</th>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>NOx</th>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>VOCs</th>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+		
+		
+			
+				<tr>
+					
+						<th rowspan="4">一般排放口</th>
+					
+					<th>颗粒物</th>
+					
+					<td rowspan="4">
+						/
+					</td>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>SO2</th>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>NOx</th>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>VOCs</th>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+		
+		
+			
+				<tr>
+					
+						<th rowspan="4">无组织排放口</th>
+					
+					<th>颗粒物</th>
+					
+					<td rowspan="4">
+						/
+					</td>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>SO2</th>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>NOx</th>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>VOCs</th>
+					
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+		
+		
+			
+				<tr>
+					
+						<th rowspan="4">全厂合计</th>
+					
+					<th>颗粒物</th>
+					
+					<td rowspan="4">
+						/
+					</td>
+					
+					<td align="center">
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>SO2</th>
+					
+					<td align="center">
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>NOx</th>
+					
+					<td align="center">
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+				<tr>
+					
+					<th>VOCs</th>
+					
+					<td align="center">
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td align="center">/</td>
+				</tr>
+			
+		
+		<tr align="left">
+			<td colspan="7">备注信息&nbsp;&nbsp;<br /><span style="color: blue;font-size: 14px;">说明：若有表格中无法囊括的信息或其他许可信息，可根据实际情况填写在备注信息中。</span></td>
+		</tr>
+		<tr align="left">
+			<td colspan="6"></td>
+		</tr>
+	</table>
+<br />
+</div>
+<br />
+	
+<br />
+<div id="airwzzxk">
+<div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">3、大气无组织排放许可条件</span></div>
+<div style="color: blue;margin-top: 3px;float: left;margin-right: 10px;padding-left: 24px;">
+<img src="/perxxgkinfo/images/wwindex/u1315.png" alt="" /></div>
+<div style="color: blue;margin-top: 5px;margin-bottom: 5px;"><span>说明：若有本表格中无法囊括的信息，可根据实际情况填写在“其他信息”列中。</span></div>
+<br />
+	<table id="apply_tablezz" class="edit-grid-gg">
+		<tr>
+			<th rowspan="2" width="5%" style="text-align: center;">无组织排放编号</th>
+			<th rowspan="2" width="5%" style="text-align: center;">产污环节</th>
+			<th rowspan="2" width="6%" style="text-align: center;">污染物种类</th>
+			<th rowspan="2" width="12%" style="text-align: center;">主要污染防治措施</th>
+			
+                <th colspan="3" width="14%" style="text-align: center;">国家或地方污染物排放标准</th>
+            
+			<th rowspan="2" width="10%" style="text-align: center;">其他信息</th>
+			<th colspan="5" width="25%">年许可排放量限值（t/a）</th>
+			<th rowspan="2" width="8%">申请特殊时段许可排放量限值</th>
+		</tr>
+		<tr>
+			<th width="9%" style="text-align: center;">名称</th>
+			
+			
+                <th width="5%" style="text-align: center;">小时浓度限值</th>
+                <th width="5%" style="text-align: center;">日均浓度限值</th>
+            
+			<th width="5%">第一年</th>
+			<th width="5%">第二年</th>
+			<th width="5%">第三年</th>
+			<th width="5%">第四年</th>
+			<th width="5%">第五年</th>
+		</tr>
+		
+			 
+			 <tr>
+			 	<td>
+						
+							
+								
+									MF0008
+								
+							
+							
+						
+			 	</td>
+			 	<td>输送系统无组织排放
+			 	</td>
+			 	<td>颗粒物</td>
+			 	<td></td>
+			 	<td style="text-align: center;">
+			 		燃煤电厂大气污染物排放标准DB64/1996-2024
+			 	</td>
+			 	<td>
+			 		/mg/Nm3
+			 	</td>
+			 	<!-- 日均浓度限值 -->
+			 	
+                    <td>
+                        mg/Nm3
+			 	    </td>
+	            
+			 	<td>/</td>
+			 	
+			 	<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+			 </tr>
+			 
+			 <tr>
+			 	<td>
+						
+							
+								
+									MF0005
+								
+							
+							
+						
+			 	</td>
+			 	<td>贮存系统无组织排放
+			 	</td>
+			 	<td>颗粒物</td>
+			 	<td>喷雾降尘机</td>
+			 	<td style="text-align: center;">
+			 		燃煤电厂大气污染物排放标准DB64/1996-2024
+			 	</td>
+			 	<td>
+			 		/mg/Nm3
+			 	</td>
+			 	<!-- 日均浓度限值 -->
+			 	
+                    <td>
+                        mg/Nm3
+			 	    </td>
+	            
+			 	<td>/</td>
+			 	
+			 	<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+			 </tr>
+			 
+			 <tr>
+			 	<td>
+						
+							
+								
+									MF0006
+								
+							
+							
+						
+			 	</td>
+			 	<td>贮存系统无组织排放
+			 	</td>
+			 	<td>颗粒物</td>
+			 	<td>喷雾降尘机</td>
+			 	<td style="text-align: center;">
+			 		燃煤电厂大气污染物排放标准DB64/1996-2024
+			 	</td>
+			 	<td>
+			 		/mg/Nm3
+			 	</td>
+			 	<!-- 日均浓度限值 -->
+			 	
+                    <td>
+                        mg/Nm3
+			 	    </td>
+	            
+			 	<td>/</td>
+			 	
+			 	<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+			 </tr>
+			 
+			 <tr>
+			 	<td>
+						
+							
+								
+									MF0007
+								
+							
+							
+						
+			 	</td>
+			 	<td>破碎废气
+			 	</td>
+			 	<td>颗粒物</td>
+			 	<td></td>
+			 	<td style="text-align: center;">
+			 		燃煤电厂大气污染物排放标准DB64/1996-2024
+			 	</td>
+			 	<td>
+			 		/mg/Nm3
+			 	</td>
+			 	<!-- 日均浓度限值 -->
+			 	
+                    <td>
+                        mg/Nm3
+			 	    </td>
+	            
+			 	<td>/</td>
+			 	
+			 	<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+			 </tr>
+			 
+			 <tr>
+			 	<td>
+						
+							
+								
+									MF0009
+								
+							
+							
+						
+			 	</td>
+			 	<td>输送系统无组织排放
+			 	</td>
+			 	<td>颗粒物</td>
+			 	<td></td>
+			 	<td style="text-align: center;">
+			 		燃煤电厂大气污染物排放标准DB64/1996-2024
+			 	</td>
+			 	<td>
+			 		/mg/Nm3
+			 	</td>
+			 	<!-- 日均浓度限值 -->
+			 	
+                    <td>
+                        mg/Nm3
+			 	    </td>
+	            
+			 	<td>/</td>
+			 	
+			 	<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+			 </tr>
+			 
+			 <tr>
+			 	<td>
+						
+							
+								
+									MF0010
+								
+							
+							
+						
+			 	</td>
+			 	<td>输送系统无组织排放
+			 	</td>
+			 	<td>颗粒物</td>
+			 	<td></td>
+			 	<td style="text-align: center;">
+			 		燃煤电厂大气污染物排放标准DB64/1996-2024
+			 	</td>
+			 	<td>
+			 		/mg/Nm3
+			 	</td>
+			 	<!-- 日均浓度限值 -->
+			 	
+                    <td>
+                        mg/Nm3
+			 	    </td>
+	            
+			 	<td>/</td>
+			 	
+			 	<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+			 </tr>
+			 
+			 <tr>
+			 	<td>
+						
+							
+								
+									厂界
+								
+							
+							
+						
+			 	</td>
+			 	<td>
+			 	</td>
+			 	<td>颗粒物</td>
+			 	<td>在装卸、贮存、输送阶段采用防风抑尘网或采取密闭措施并配置除尘器,在装卸、贮存、输送阶段采取全封闭罐车运输,储煤场四周应采取防风抑尘网、防尘墙、覆盖等形式的防尘措施，防风抑尘网高度不低于堆存物料高度的1.1倍</td>
+			 	<td style="text-align: center;">
+			 		燃煤电厂大气污染物排放标准DB64/1996-2024
+			 	</td>
+			 	<td>
+			 		1.0mg/Nm3
+			 	</td>
+			 	<!-- 日均浓度限值 -->
+			 	
+                    <td>
+                        mg/Nm3
+			 	    </td>
+	            
+			 	<td>环评批复标准为《大气污染物综合排放标准》(GB16297-1996)，本次执行宁夏地标《燃煤电厂大气污染物排放标准》(DB64/1996-2024)</td>
+			 	
+			 	<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+			 </tr>
+			 
+			 <tr>
+			 	<td>
+						
+							
+								
+									厂界
+								
+							
+							
+						
+			 	</td>
+			 	<td>
+			 	</td>
+			 	<td>氨（氨气）</td>
+			 	<td>在装卸、贮存、输送阶段采取全封闭罐车运输</td>
+			 	<td style="text-align: center;">
+			 		燃煤电厂大气污染物排放标准DB64/1996-2024
+			 	</td>
+			 	<td>
+			 		1.0mg/Nm3
+			 	</td>
+			 	<!-- 日均浓度限值 -->
+			 	
+                    <td>
+                        mg/Nm3
+			 	    </td>
+	            
+			 	<td></td>
+			 	
+			 	<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+				<td>/</td>
+			 </tr>
+			 
+			
+		
+			
+				<tr>
+					
+						<th rowspan="4" colspan="6">全厂无组织排放总计
+					
+					<th colspan="2">颗粒物</th>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td>
+						/
+					</td> 
+				</tr>
+			
+				<tr>
+					
+					<th colspan="2">SO2</th>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td>
+						/
+					</td> 
+				</tr>
+			
+				<tr>
+					
+					<th colspan="2">NOx</th>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td>
+						/
+					</td> 
+				</tr>
+			
+				<tr>
+					
+					<th colspan="2">VOCs</th>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td >
+						/
+					</td>
+					<td>
+						/
+					</td> 
+				</tr>
+			
+		
+	</table>
+	<br />
+</div>
+<br />
+ 
+<br />
+<div id="airqyxk" style="padding-bottom: 50px">
+<div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">4、排污单位大气排放总许可量</span></div>
+<div style="color: blue;margin-top: 3px;float: left;margin-right: 10px;padding-left: 24px;">
+<img src="/perxxgkinfo/images/wwindex/u1315.png" alt="" /></div>
+<div style="color: blue;margin-top: 5px;margin-bottom: 5px;"><span>说明：“全厂合计”指的是，“全厂有组织排放总计”与“全厂无组织排放总计”之和数据、全厂总量控制指标数据两者取严。</span></div>
+<br />
+	<table class="edit-grid-gg" border="1" id="spenterair">
+		<tr align="center">
+			<th style="width:10%;" rowspan="2" >污染物种类
+			<input type="hidden" name="spenterairMap.pkid" value="c0cabd7e8ada401a9a5590838bd35d4a" />
+			<input type="hidden" name="spenterairMap.dataid" value="2330981c2be9447d80e70be2acd2e35f" />
+			</th>
+			<th  colspan="5" width="30%">有组织(t/a)</th>
+			<th  colspan="5" width="30%">无组织(t/a)</th>
+			<th  colspan="5" width="30%">全厂合计(t/a)</th>
+			
+		</tr>
+		<tr align="center">
+			<th width="6%">第一年</th>
+			<th width="6%">第二年</th>
+			<th width="6%">第三年</th>
+			<th width="6%">第四年</th>
+			<th width="6%">第五年</th>
+			<th width="6%">第一年</th>
+			<th width="6%">第二年</th>
+			<th width="6%">第三年</th>
+			<th width="6%">第四年</th>
+			<th width="6%">第五年</th>
+			<th width="6%">第一年</th>
+			<th width="6%">第二年</th>
+			<th width="6%">第三年</th>
+			<th width="6%">第四年</th>
+			<th width="6%">第五年</th>
+		</tr>
+		
+			
+				<tr align="center">
+					<th style="">颗粒物</th>
+					<td>	
+						9.965000
+					</td>
+					<td>
+						9.965000
+					</td>
+					<td>
+						9.965000
+					</td>
+					<td>
+						9.965000
+					</td>
+					<td>
+						9.965000
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						9.965000
+					</td>	
+					<td>
+						9.965000
+					</td>	
+					<td>
+						9.965000
+					</td>	
+					<td>
+						9.965000
+					</td>	
+					<td>
+						9.965000
+					</td>		
+				</tr>
+			
+				<tr align="center">
+					<th style="">SO2</th>
+					<td>	
+						29.130000
+					</td>
+					<td>
+						29.130000
+					</td>
+					<td>
+						29.130000
+					</td>
+					<td>
+						29.130000
+					</td>
+					<td>
+						29.130000
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						29.130000
+					</td>	
+					<td>
+						29.130000
+					</td>	
+					<td>
+						29.130000
+					</td>	
+					<td>
+						29.130000
+					</td>	
+					<td>
+						29.130000
+					</td>		
+				</tr>
+			
+				<tr align="center">
+					<th style="">NOx</th>
+					<td>	
+						60.600000
+					</td>
+					<td>
+						60.600000
+					</td>
+					<td>
+						60.600000
+					</td>
+					<td>
+						60.600000
+					</td>
+					<td>
+						60.600000
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						60.600000
+					</td>	
+					<td>
+						60.600000
+					</td>	
+					<td>
+						60.600000
+					</td>	
+					<td>
+						60.600000
+					</td>	
+					<td>
+						60.600000
+					</td>		
+				</tr>
+			
+				<tr align="center">
+					<th style="">VOCs</th>
+					<td>	
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>
+					<td>
+						/
+					</td>	
+					<td>
+						/
+					</td>	
+					<td>
+						/
+					</td>	
+					<td>
+						/
+					</td>	
+					<td>
+						/
+					</td>		
+				</tr>
+			
+		
+	</table>
+	<br />
+</div>
+</form>
+
+</body>
+</html>

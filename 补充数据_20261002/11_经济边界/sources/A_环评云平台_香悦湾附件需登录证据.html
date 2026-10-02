@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>乌鲁木齐市大学路片区集中供热工程项目—香悦湾锅炉房环境影响报告表</title>
+    <link rel="shortcut icon" href="/gs/favicon.ico"/>
+    <link rel="stylesheet" href="/gs/webjars/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/gs/css/pageMe.min.css?v=3.0.8.0.3">
+    <link rel="stylesheet" href="/gs/gongkai/css/eia2106_style.css?v=3.0.8.0.3">
+    <link rel="stylesheet" href="/gs/css/common/reply.min.css?v=3.0.8.0.3">
+    <link rel="stylesheet" href="/gs/css/common/fixed.min.css?v=3.0.8.0.3">
+    <script src="/gs/webjars/jquery/3.3.1-2/jquery.min.js"></script>
+    <script src="/gs/webjars/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="/gs/layer-v3.0.1/layer/layer.js"></script>
+    <script src="/gs/js/pageMe.min.js?v=3.0.8.0.3"></script>
+    <script src="/gs/gongkai/js/pc_detail.min.js?v=3.0.8.0.3"></script>
+    <script src="/gs/js/common/html2canvas.min.js?v=3.0.8.0.3"></script>
+    <style>
+        html, body {
+            background-color: #F0F2F5;
+            height: auto;
+        }
+
+        .plr-item {
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .plr-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .plr_category img {
+            width: 8px;
+            margin-top: -4px;
+            margin-right: 2px;
+        }
+
+        .edit-btn{
+            display: inline-block;
+        }
+
+        .detail_btn7_disable{
+            position: relative;
+        }
+
+        .dbd_msg{
+            z-index: 1;
+            position: absolute;
+            top: 40px;
+            left: 12px;
+            display: none;
+            align-items: center;
+            padding: 17px 18px;
+            background: #FFF2F1;
+            border-radius: 4px;
+            font-weight: 400;
+            font-size: 14px;
+            color: #E03E33;
+            gap: 4px;
+            width: max-content;
+        }
+
+        .dbd_msg img{
+            width: 14px;
+        }
+
+        .detail_btns .detail_btn7_disable .detail_btn7{
+            background: rgba(67,122,221,0.4);
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+<div class="eia_header">
+
+    <div class="header_cen">
+        <div class="header_left" style="cursor: pointer" onclick="goLink(&#39;/&#39;)">
+            <img src="/gs/gongkai/images/modify/logo.svg" height="80px" alt="">
+        </div>
+        <div class="header_right">
+            <div class="hr_photo">
+                
+                
+                    <div class="pull-right" style="width: 80px">
+                        <span class="link-lr" type="button" onclick="toLoginAlert()">登录</span>
+                        <span>|</span>
+                        <span class="link-lr btn-register" id="registerUser">注册</span>
+                    </div>
+                
+            </div>
+            <div class="hr_search">
+                
+                <form action="/gs/search" id="inputFormCommon" method="post">
+                    <input type="hidden" id="pageNo" name="pageModel.numberNo">
+                    <input type="text" class="hr_txt" name="searchWord" placeholder="请输入关键词"/>
+                    <input type="submit" value="" class="hr_btn"/>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+    <!--<a id="goHelper">
+        <span>公示助手</span>
+    </a>-->
+
+    <a id="goOrgAuth" class="fixed-right" href="/gs/org/authEnterprise">
+        <span>企业认证</span>
+        <div class="org-tips">
+            认证企业得专享权限
+            <p class="org-tips-triangle"></p>
+        </div>
+    </a>
+
+    <div id="gkHelper" class="fixed-right">
+        <img src="https://cdntest.eiacloud.com/pc/gongkai/common/help.png">
+        <div class="gkh-show">
+            <div class="gkh-top">
+                <div class="gkht-left">
+                    <img src="https://cdntest.eiacloud.com/pc/gongkai/common/service.png">
+                    <p>公示平台小助手</p>
+                </div>
+                <div class="gkht-right">
+                    <p>添加官方客服微信</p>
+                    <p>专属人工在线为你服务</p>
+                </div>
+            </div>
+            <div class="gkh-bottom">
+                <a href="https://mp.weixin.qq.com/s/LE1sPaCCfwZecBNKOEiH4A" target="_blank">
+                    <img src="https://cdntest.eiacloud.com/pc/gongkai/common/manual.png">
+                    <span>公示平台使用指南</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="gkDownload" class="fixed-right">
+        <img src="https://cdntest.eiacloud.com/pc/gongkai/common/down.png">
+        <div class="gkd-pop-show">
+            <div class="gkd-pop-app">
+                <img src="https://cdntest.eiacloud.com/pc/gongkai/common/app_qr.png">
+                <p>iOS/Android</p>
+            </div>
+            <div class="gkd-pop">
+                <a class="gkd-pop-pc gkd-pc-windows" href="https://www.eiacloud.com/eia/api/down/windows">
+                    <img src="https://cdntest.eiacloud.com/pc/gongkai/common/window.png">
+                    <p>Windows</p>
+                </a>
+                <a class="gkd-pop-pc gkd-pc-mac" href="https://www.eiacloud.com/eia/api/down/mac">
+                    <img src="https://cdntest.eiacloud.com/pc/gongkai/common/mac.png">
+                    <p>macOS</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <a id="back_top" href="javascript:void(0)">
+        <img src="/gs/images/laws/top.png">
+    </a>
+</div>
+<div class="eia_main">
+    <div class="eia_xie">
+        <div class="eia_route"><a href="/gs/">建设项目公示与信息公开</a> > <a href="javascript:void(0)"
+                                                                                 onclick="goLink(&quot;\/list\/14&quot;)">环评审批前公示</a> >
+            <input type="hidden" id="plateId" value="14"/>
+            <input type="hidden" id="publishId" value="40930pJEvs"/>
+            <input type="hidden" id="publishStatus" value="1"/>
+            <a onclick="javascript:window.location.reload()" href="javascript:void(0)">乌鲁木齐市大学路片区集中供热工程项目—香悦湾锅炉房环境影响报告表</a>
+        </div>
+    </div>
+    <div class="detail_btns">
+        
+        <a style="background-color: #FF9900;margin-right: 20px;" href="javascript:void(0)"
+           class="detail_btn3" onclick="copyUrl()">复制链接</a>
+        <a style="margin-right: 0" href="javascript:void(0)" onclick="window.history.go(-1)"
+           class="detail_btn6">返回</a>
+        
+        
+
+        
+    </div>
+    <div class="detail_box">
+        <div class="list_tit">
+            <div>
+                <span class="box_tit"><em><span class="emphasize">[<a href="javascript:void(0)" class="classify_list"
+                                                                      data0="31"
+                                                                      data1="14">新疆</a>]</span></em>
+                <em id="publishTitle">乌鲁木齐市大学路片区集中供热工程项目—香悦湾锅炉房环境影响报告表</em></span>
+            </div>
+            <div class="top_details">
+                <div>
+                    
+                    <span class="top_details_sp1">5001好昵称都被注册了</span>
+                    <span>发表于 2024-09-30 09:06</span>
+                </div>
+                <div class="top_details_r">
+                    <img class="top_details_img" src="/gs/gongkai/images/look.png">
+                    <span>147</span>
+                    <img class="top_details_img" src="/gs/gongkai/images/comment.png">
+                    <span id="commentCount1">0</span>
+                    <img class="top_details_img" src="/gs/gongkai/images/thumbs-up.png">
+                    <span id="like">0</span>
+                    <img class="top_details_img" src="/gs/gongkai/images/collection.png">
+                    <span id="collect">0</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="detail_main" style="position: relative">
+
+            <div class="detail_right">
+                <div class="detail_content">
+                    <div id="contentContainer" class="detail_text"><p>根据建设项目环境影响评价审批程序的有关规定，2024年8月14日我局共受理5个建设项目环境影响评价文件。现将受理情况予以公示，公示期为2024年8月14日-2024年8月20日（5个工作日）。<br/></p><p>联系电话：0991-4184171（行政审批窗口）</p><p>传    真：0991-4184248</p><p>通讯地址：乌鲁木齐市水磨沟区龙盛街益民大厦</p><p>邮    编：830000</p><p>项目名字：乌鲁木齐市大学路片区集中供热工程项目—香悦湾锅炉房环境影响报告表</p><p>建设单位：乌鲁木齐热力(集团)有限公司</p><p>建设地点：新疆维吾尔自治区乌鲁木齐市天山区广汇香悦湾小区南侧</p><p>环评单位：新疆清风朗月环保科技有限公司<br/></p><p>审批单位：乌鲁木齐市生态环境局</p></div>
+
+                    
+                    <div class="detail_fj"
+                         down="true">
+                        <div>
+                            <span>附件1：</span>
+                            <a data="83bfd58900e744e893c79a6355cdf380"
+                               class="down-publish-att" href="javascript:void(0)">乌鲁木齐市大学路片区集中供热工程项目—香悦湾 锅炉房.pdf</a>
+                            <span style="margin-left: 10px">602.3 KB</span>
+                            <span>, 下载次数</span><span class="down-count"
+                                                         style="margin-left: 5px">1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_btn">
+                    <a href="javascript:void(0)" class="detail_btn2">
+                        <img src="/gs/gongkai/images/reply3x.png">
+                        回复
+                    </a>
+                    <a href="javascript:void(0)"
+                       class="btn_like">
+                        <img src="/gs/gongkai/images/like3x.png">
+                        <span>点赞</span>
+                    </a>
+                    <a href="javascript:void(0)"
+                       class="collect-btn">
+                        <img src="/gs/gongkai/images/collect3x.png">
+                        <!--                        <img th:src="@{/gongkai/images/collect3x.png}">-->
+                        <span>收藏</span>
+                    </a>
+                </div>
+                <div class="btm_box"
+                     style="display:block">
+                    <div id="bottomComment" class="bottom-comment">
+                        <div class="comment-title" id="commentTitle">
+                            <span class="comment-title-0">评论</span>
+                            <span class="comment-title-1">共<span id="commentCount" data="0">0</span>条评论</span>
+                            <input hidden="hidden" id="userId" value="">
+                            <input hidden="hidden" id="userShowName"
+                                   value="">
+                        </div>
+                        
+                            <div class="publish_comment">
+                                <img class="comment_photo_1" src="/gs/images/laws/userrect.png">
+                                <div class="common_input comment_no_login">
+                                    <span>请先</span>
+                                    <button class="comment_btn comment_btn_login" type="button"
+                                            onclick="toLoginAlert()">登录
+                                    </button>
+                                    <span>后发表评论</span>
+                                </div>
+                            </div>
+                            <div class=" publish_content">
+                                <div class="c-pull-right">
+                                    <p><span>0</span>/150</p>
+                                    <button disabled="disabled" class="comment_btn not_allow" type="button">发表评论
+                                    </button>
+                                </div>
+                            </div>
+                        
+                        
+                        <div class="comment-content" onshow="false">
+                            <div class="head-sort" id="headSort">
+                                <ul>
+                                    <li class="comment_active">按热度排序</li>
+                                    <li>按时间排序</li>
+                                </ul>
+                            </div>
+                            <div id="commentContent">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail_left">
+                <div class="fixed-user">
+                    <div class="user_info">
+                        <div><img class="user_img" src="https://cdntest.eiacloud.com/appPic/avatar/bb0c40914c874394afbb9de1cf2fae59/20241225102506.png" alt="头像"></div>
+                        <div class="user_info_r">
+                            <div class="user_info_r_d1">5001好昵称都被注册了</div>
+                            <div class="press_num">
+                                <span class="grade_R">R6</span>
+                                <i>2417</i>/<i>2500</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="press_pro">
+                        <div class="press_bar"
+                             style="width:96.6800%"></div>
+                    </div>
+                    <ul class="theme_ul">
+                        <li>
+                            <a href="javascript:void(0)"
+                               onclick="getUserPostUrl(&quot;bb0c40914c874394afbb9de1cf2fae59&quot;,0)">10715</a>
+                            <span>主题</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"
+                               onclick="getUserPostUrl(&quot;bb0c40914c874394afbb9de1cf2fae59&quot;,1)">3</a>
+                            <span>回复</span>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">10203</a>
+                            <span>云贝</span>
+                        </li>
+                    </ul>
+                    
+
+                    <ul class="project_ul">
+                        <li>
+                            <div class="project_li_l">项目名称</div>
+                            <div class="project_li_r">乌鲁木齐市大学路片区集中供热工程项目—香悦湾锅炉房环境影响报告表</div>
+                        </li>
+                        <li>
+                            <div class="project_li_l">报告类型</div>
+                            <div class="project_li_r">
+                                
+                                <span>报告表</span>
+                                
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="project_li_l">项目位置</div>
+                            <div class="project_li_r">新疆-乌鲁木齐</div>
+                        </li>
+                        
+
+                        
+
+                        
+                        
+                        <li>
+                            <div class="project_li_l">受理日期</div>
+                            <div class="project_li_r">2024.08.14</div>
+                        </li>
+                        <li>
+                            <div class="project_li_l">审批部门</div>
+                            <div class="project_li_r">乌鲁木齐市生态环境局</div>
+                        </li>
+                        
+                       
+                    </ul>
+                    <div  class="own-other" style="display: none">
+                        <div class="others">
+                            <div class="others_l">
+                                <a href="/gs/list/14?gkClassifyId=31">周边公示
+                                    [<span
+                                            id="classifyCount"></span>]</a>
+                                <span class="others_l_location" title="新疆-乌鲁木齐"><img
+                                        src="https://cdntest.eiacloud.com/pc/gongkai/common/location.png">新疆-乌鲁木齐</span>
+                            </div>
+                            <div class="others_r"><span>收起</span> <img src="/gs/gongkai/images/arrow-up.png"
+                                                                         alt="">
+                            </div>
+                        </div>
+                        <ul class="others_ul" id="otherUl">
+                        </ul>
+                        <div class="other-btn-group">
+                            <a href="javascript:void(0)" class="other-btn ob-pre">上一页</a>
+                            <a href="javascript:void(0)" class="other-btn ob-next">下一页</a>
+                            <span>第<em id="regionPageHigh"
+                                        style="color: #4285f4;font-style: normal;margin: 0 2px">1</em>页</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="alwaysShow">
+    <ul>
+        <li class="fixed-reply">
+            <img src="/gs/images/laws/comment.png">
+            <span>回复</span>
+        </li>
+        <li class="fixed-collect">
+            <img src="/gs/images/laws/collect0.png">
+            
+            <span>收藏</span>
+        </li>
+        <li class="fixed-share">
+            <div id="lawShare">
+                <img title="微信分享" class="law-share" src="/gs/images/laws/wechat.png"/>
+                <img title="QQ分享" class="law-share" src="/gs/images/laws/qq.png"/>
+                <img title="新浪微博分享" class="law-share" src="/gs/images/laws/weibo.png"/>
+                <div id="shareQR">
+                    <img class="qr-img"/>
+                    <p>微信扫一扫</p>
+                </div>
+            </div>
+            <img src="/gs/images/laws/share.png">
+            <span>分享</span>
+        </li>
+        <li class="fixed-list">
+            <div id="listShow">
+                <ul>
+                    <li onclick="goLink(&quot;\/list\/1&quot;)">1、环评报告公示</li>
+                    <li onclick="goLink(&quot;\/list\/2&quot;)">2、验收报告公示</li>
+                    <li onclick="goLink(&quot;\/list\/3&quot;)">3、公众参与公示</li>
+                    <li onclick="goLink(&quot;\/list\/5&quot;)">4、土壤与地下水调查公示</li>
+                    <li onclick="goLink(&quot;\/list\/13&quot;)">5、固废信息公开</li>
+                    <li onclick="goLink(&quot;\/list\/4&quot;)">6、水保验收公示</li>
+                    <li onclick="goLink(&quot;\/list\/9&quot;)">7、环境应急预案公示</li>
+                    <li onclick="goLink(&quot;\/list\/10&quot;)">8、企业环境信息披露</li>
+                    <li onclick="goLink(&quot;\/list\/6&quot;)">9、建设单位信息公开</li>
+                    <li onclick="goLink(&quot;\/list\/11&quot;)">10、清洁生产审核公示</li>
+                    <li onclick="goLink(&quot;\/list\/12&quot;)">11、排污单位信息披露</li>
+                    <li class="high-light" onclick="goLink(&quot;\/list\/14&quot;)">12、环评审批前公示</li>
+                    <li onclick="goLink(&quot;\/list\/7&quot;)">13、机构合作展示</li>
+                    <li onclick="goLink(&quot;\/list\/8&quot;)">14、问题反馈与求助</li>
+                </ul>
+            </div>
+            <img src="/gs/gongkai/images/list.png">
+            <span>列表</span>
+        </li>
+    </ul>
+</div>
+<script>
+    !(function(c,b,d,a){c[a]||(c[a]={});c[a]=
+        {
+            pid: 'ijhl0u6gnu@0268c2673b3b701',
+            endpoint: 'https://ijhl0u6gnu-default-cn.rum.aliyuncs.com',
+            // 设置环境信息，参考值：'prod' | 'gray' | 'pre' | 'daily' | 'local'
+            env: 'prod',
+            // 设置路由模式， 参考值：'history' | 'hash'
+            spaMode: 'history',
+            collectors: {
+                // 页面性能指标监听开关，默认开启
+                perf: true,
+                // WebVitals指标监听开关，默认开启
+                webVitals: true,
+                // Ajax监听开关，默认开启
+                api: true,
+                // 静态资源开关，默认开启
+                staticResource: true,
+                // JS错误监听开关，默认开启
+                jsError: true,
+                // 控制台错误监听开关，默认开启
+                consoleError: true,
+                // 用户行为监听开关，默认开启
+                action: true,
+            },
+            // 链路追踪配置开关，默认关闭
+            tracing: false,
+        }
+        with(b)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("crossorigin","",src=d)
+    })(window, document, "https://sdk.rum.aliyuncs.com/v2/browser-sdk.js", "__rum");
+</script>
+</body>
+<script src="/gs/js/common/reply.min.js?v=3.0.8.0.3"></script>
+<script src="/gs/js/common/fixed.min.js?v=3.0.8.0.3"></script>
+<script src="/gs/js/common/clipboard.min.js"></script>
+<script src="/gs/gongkai/js/common.min.js?v=3.0.8.0.3"></script>
+<!--<script th:src="@{/js/intercept.js(v=#{version})}"></script>-->
+</html>

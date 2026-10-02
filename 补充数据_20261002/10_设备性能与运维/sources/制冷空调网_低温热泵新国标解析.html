@@ -1,0 +1,2262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="keywords" content="制冷协会，制冷，制冷与空调，制冷与空调，空调协会，制冷协会，制冷产品，中央空调，家用空调，空调末端，特种空调，运输空调，冷冻冷藏，热泵热水机，蒸发冷却空调，水地源热泵，压缩机，热交换器，配件及原料，智能控制，空气净化" />
+    <meta name="description" content="制冷与空调网是中国制冷空调工业协会主办的行业信息交流传播网站，网站宗旨是传播行业信息，促进科技成果转化，推进制冷空调行业进步，链接制冷空调行业上游、厂商、应用及设计产业链，打造一体化资讯服务平台。" />
+
+    
+    <title>低环境温度空气源热泵（冷水）机组新版国家标准解析 - 技术 - 制冷与空调网</title>
+    <link href="/templates/main/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/main/css/main.css" rel="stylesheet" type="text/css" />
+    <script src="/templates/main/js/jquery-1.11.2.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="/templates/main/js/common.js"></script>
+    <script src="/templates/main/js/ruguoTextPager_1.0.js"></script>
+</head>
+<body>
+    <div style="height: 10px" class="no-pc">
+    </div>
+    <!--Header-->
+    <div style="margin:0;width:0px;height:0px;overflow:hidden;"><img src='/logoshares.jpg' /></div>
+<script src="/scripts/wx/jweixin-1.6.0.js"></script>
+<script src="/scripts/wx/rel_common.js"></script>
+<script src="https://hm.baidu.com/hm.js?cc5abead0c82b7dccc30bb0a9e354f08"></script>
+<script type="text/javascript">
+    $(function () {
+        getData('P_UpdAccessCount');
+    })
+    function getData(type, mode, callbacl) {
+        if (type == 'P_UpdAccessCount') {
+            var para = { type: '传媒网站' };
+            myRequest('/tools/eidData.ashx?oper=' + type, 'get', 'json', para, function (data) { });
+        }
+    }
+    // alert(location.href.split('#')[0]);
+    ////////////
+    //
+    var _tit = $(document).attr("title");
+    //console.log(_tit);
+    var _mid = $("meta[name=description]").attr("content");
+    // console.log(_mid);
+    var url = window.location.href;
+    //var url="http://www.chinarefac.com/et_show.aspx?id=15408";
+    //if (url == 'http://www.chinarefac.com/' || url == 'http://chinarefac.com//' || url == 'www.chinarefac.com//' || url == 'chinarefac.com/') {
+    //    location.href = url.replace("com/", "com/index.aspx");
+    //}
+    console.log(url);
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: "wx521cf369d0cf169b", // 必填，公众号的唯一标识
+        timestamp: "1790913664", // 必填，生成签名的时间戳
+        nonceStr: "CAQv4NdmbnRDeZBf", // 必填，生成签名的随机串
+        signature: "45d5ddefad5dc5cae104dda0f4a148131b1504d2",// 必填，签名，见附录145d5ddefad5dc5cae104dda0f4a148131b1504d2
+        jsApiList: ['updateTimelineShareData', 'updateAppMessageShareData']  // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+    wx.ready(function () {
+        //在此输入各种API
+        //自定义“分享到朋友圈”及“分享到QQ空间”按钮的分享内容（1.4.0）// 分享图标//http://www.chinarefac.com
+        wx.updateTimelineShareData({
+            title: _tit, // 分享标题
+            link: url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: window.location.origin + '/logoshares.jpg',
+            success: function () {
+                // 设置成功
+            }
+        })
+        //自定义“分享给朋友”及“分享到QQ”按钮的分享内容（1.4.0）
+        wx.updateAppMessageShareData({
+            title: _tit, // 分享标题
+            desc: _mid, // 分享描述
+            link: url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: window.location.origin + '/logoshares.jpg',
+            success: function () {
+                // 设置成功
+            }
+        })
+        // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，
+        //所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+    });
+    wx.error(function (res) {
+        console.log(JSON.stringify(res));
+        // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+    });
+</script>
+<link rel="stylesheet" href="/templates/main/css/swiper.min.css" />
+<script src="/templates/main/js/swiper.min.js"></script>
+<div class="wrapper">
+
+
+    <!--公示平台-->
+    <div class="adv" style="display:none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=50",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="line10 none-pc" style="display:none;"></div>
+    <div class="m-adv none-pc" style="display:none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=51",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                }
+            });
+        </script>
+    </div>
+    <div style="height: 5px;display:none;">
+    </div>
+
+
+    <!--开立-->
+    <div class="adv adv_2_1" style="display:none">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=58",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv adv_18_1" style="display:none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=59",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>
+
+    <div style="height: 5px;display:none;">
+    </div>
+
+    <!--<div class="adv adv_2_1">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=19",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv adv_18_1">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=20",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>-->
+    <!--<div class="adv" style="">
+        <script>
+                $.ajax({
+                    type: "get",
+                    url: "/plugins/fouce/a.aspx?id=29",
+                    data: '',
+                    async: false,//取消异步
+                    success: function (data) {
+                        document.write(data);
+                    }
+                });
+        </script>
+    </div>
+    <div class="m-adv" style="">
+        <script>
+                $.ajax({
+                    type: "get",
+                    url: "/plugins/fouce/a.aspx?id=30",
+                    data: '',
+                    async: false,//取消异步
+                    success: function (data) {
+                        document.write(data);
+                    }
+                });
+        </script>
+    </div>-->
+
+    <div style="height: 5px;display:none;">
+    </div>
+    <div style="height: 5px">
+    </div>
+    <div class="adv" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=27",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=31",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <!--江森-->
+    <div class="adv" style="display:none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=70",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="line10 none-pc" style="display: none;"></div>
+    <div class="m-adv none-pc" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=71",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                }
+            });
+        </script>
+    </div>
+    <!--格力-->
+    <div class="adv" style="">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=42",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="line10 none-pc" style=""></div>
+    <div class="m-adv none-pc" style="">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=41",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                }
+            });
+        </script>
+    </div>
+    <div style="height: 5px;  ">
+    </div>
+    <!--瑞孚-->
+    <div class="adv adv_2_1" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=39",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv adv_18_1" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=40",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div style="height: 5px;">
+    </div>
+    <!--科慕-->
+    <div class="adv" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=62",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=63",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="" style="height: 5px;"></div>
+    <div class="adv" style="">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=68",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv" style="">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=69",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div style="height: 5px;">
+    </div>
+    <div class="adv" style="display:none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=72",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=73",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <!--海立-->
+    <div class="adv" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=2072",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=2073",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div style="height: 5px;">
+    </div>
+
+    <div class="adv" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=72",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv" style="display:none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=73",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <!--滚动广告测试-->
+    <div class="adv adv_2_0" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=28",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv adv_18_1" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=32",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18_1").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="" style="height: 5px;display: none;"></div>
+    <div class="adv adv_2" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=2",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    //$(".adv_2").html(data);
+                }
+            });
+        </script>
+    </div>
+    <div class="m-adv adv_18" style="display: none;">
+        <script>
+            $.ajax({
+                type: "get",
+                url: "/plugins/fouce/a.aspx?id=18",
+                data: '',
+                async: false,//取消异步
+                success: function (data) {
+                    document.write(data);
+                    // $(".adv_18").html(data);
+                }
+            });
+
+            /**/</script>
+    </div>
+</div>
+<div class="top wrapper">
+    <div class="top-menu  no-pc-none">
+        <a href="javascript:void(0)" onclick="SetHome(this,'http://www.chinarefac.com')">
+            <i>
+                <img src="/templates/main/images/icon-01.png" />
+            </i>设为首页
+        </a>
+        <a href='/content.aspx?page=contact'>
+            <i>
+                <img src="/templates/main/images/icon-02.png" />
+            </i>联系我们
+        </a>
+        <a href='/link.aspx'>
+            <i>
+                <img src="/templates/main/images/icon-03.png" />
+            </i>友情链接
+        </a>
+        <a href="/sitemap.aspx">
+            <i>
+                <img src="/templates/main/images/icon-04.png" />
+            </i>网站导航
+        </a>
+        <a href='/lore_list.aspx?category_id=109'>
+            <i>
+                <img src="/templates/main/images/icon-05.png" />
+            </i>知识窗
+        </a>
+    </div>
+    <div class="logo-bg no-pc-block">
+        <div class="logo">
+            <a href='/index.aspx'>
+                <b>制冷与空调网</b>
+                <i>www.chinarefac.com</i>
+
+            </a>
+        </div>
+        <div class="search">
+            <div class="search-bg">
+                <div class="search-box">
+                    <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode == 13){SiteSearch('/search.aspx','#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+                    <input class="submit" type="submit" onclick="SiteSearch('/search.aspx', '#keywords');" value="搜索" />
+                </div>
+            </div>
+        </div>
+        <!--<a href='/search.aspx' class="search-link m-none">搜索</a>-->
+
+    </div>
+    <!--<div class="app no-pc-none">
+        <img src="/templates/main/images/app.jpg" />
+    </div>-->
+</div>
+<div class="nav">
+    <div class="wrapper" style="overflow:visible">
+        <!---->
+        <ul id="nav" style="display: flex; justify-content: space-between; ">
+            <li class="index"><a href='/index.aspx'>首页 </a></li>
+            <li><a href='/news_list.aspx?category_id=85'>国内信息</a></li>
+            <!--<li style="padding:0 7px"><a href='/news.aspx'>行业资讯 </a>
+                <ul>
+                        <li><a href='/news_list.aspx?category_id=86'>国际资讯</a></li>
+                        <li><a href='/news_list.aspx?category_id=85'>国内资讯</a></li>
+                        <li><a href='/news_list.aspx?category_id=3'>展会资讯</a></li>
+                </ul>
+            </li>-->
+            <li><a href='/dynamics_list.aspx?category_id=0'>厂商动态</a></li>
+            <li><a href='/interview_list.aspx?category_id=29'>高端访谈 </a></li>
+            <li><a href='/viewpoints_list.aspx?category_id=14'>专家视点</a></li>
+            <!--<li><a href='/bidding_list.aspx?category_id=26'>招标投标 </a></li>-->
+            <li><a href='/news_list.aspx?category_id=86'>国际信息</a></li>
+            <li><a href='/standards_list.aspx?category_id=83'>政策标准</a></li>
+            <li class="w"><a href='/refrigerant_list.aspx?category_id=80'>制冷剂替代</a></li>
+            <li><a href='/certification_list.aspx?category_id=82'>行业认证</a></li>
+            <li><a href='/coolft_list.aspx?category_id=202'>cool未来 </a></li>
+
+            <!--<li><a href='/architecture_list.aspx?category_id=79'>建筑节能 </a></li>-->
+            <li><a href='/et_list.aspx?category_id=88'>工程技术 </a></li>
+            <li class="m"><a href='/lore_list.aspx?category_id=109'>知识窗 </a></li>
+            <!--<li class="last"><a href='/goods_list.aspx?category_id=110'>产品检索</a></li>-->
+
+            <!--<li><a href=''>空气净化</a></li>-->
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //设为首页
+    function SetHome(obj, url) {
+        try {
+            obj.style.behavior = 'url(#default#homepage)';
+            obj.setHomePage(url);
+        } catch (e) {
+            if (window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                } catch (e) {
+                    alert("抱歉，此操作被浏览器拒绝！\n\n请在浏览器地址栏输入“about:config”并回车然后将[signed.applets.codebase_principal_support]设置为'true'");
+                }
+            } else {
+                alert("抱歉，您所使用的浏览器无法完成此操作。\n\n您需要手动将【" + url + "】设置为首页。");
+            }
+        }
+    }
+    //收藏本站
+    function AddFavorite(title, url) {
+        try {
+            window.external.addFavorite(url, title);
+        }
+        catch (e) {
+            try {
+                window.sidebar.addPanel(title, url, "");
+            }
+            catch (e) {
+                alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    //保存到桌面
+    function toDesktop(sUrl, sName) {
+        try {
+            var WshShell = new ActiveXObject("WScript.Shell");
+            var oUrlLink = WshShell.CreateShortcut(WshShell.SpecialFolders("Desktop") + "\\" + sName + ".url");
+            oUrlLink.TargetPath = sUrl;
+            oUrlLink.Save();
+        }
+        catch (e) {
+            alert("当前IE安全级别不允许操作！");
+        }
+    }
+</script>
+    <!--/Header-->
+    <div style="height: 10px" class="no-pc">
+    </div>
+    <!--Header-->
+    <div class="min-nav wrapper">
+    <!--示例一：显示频道名称为news的所有类别-->
+    
+    <a href='/list.aspx?category_id=52' class="first">中央空调</a>
+    
+    <a href='/list.aspx?category_id=53'>家用空调</a>
+    
+    <a href='/list.aspx?category_id=54'>空调末端</a>
+    
+    <a href='/list.aspx?category_id=55'>特种空调</a>
+    
+    <a href='/list.aspx?category_id=56'>运输空调</a>
+    
+    <a href='/list.aspx?category_id=57'>冷冻冷藏</a>
+    
+    <a href='/list.aspx?category_id=58'>热泵热水机</a>
+    
+    <a href='/list.aspx?category_id=59'>水/地源热泵</a>
+    
+    <a href='/list.aspx?category_id=60'>蒸发冷却空调</a>
+    
+    <a href='/list.aspx?category_id=61'>压缩机</a>
+    
+    <a href='/list.aspx?category_id=62'>热交换器</a>
+    
+    <a href='/list.aspx?category_id=63'>配件及原料</a>
+    
+    <a href='/list.aspx?category_id=138' style="display:none;">智能控制（NO）</a>
+    
+
+    <!--<a href='' class="last">空气净化 </a>-->
+    <!--  <a href="">中央空调 </a>
+      <a href="">家用空调 </a>
+      <a href="">空调末端 </a>
+      <a href="">特种空调 </a>
+      <a href="">运输空调 </a>
+      <a href="">冷冻冷藏 </a>
+      <a href="">热泵热水机 </a>
+      <a href="">水/地源热泵 </a>
+      <a href="">蒸发冷却空调 </a>
+      <a href="">压缩机 </a>
+      <a href="">热交换器 </a>
+      <a href="">配件及控制 </a>
+      -->
+</div>
+
+    <!--/Header-->
+    <div class="main wrapper">
+        <div style="height: 15px" class="no-pc">
+        </div>
+        <div class="address">
+       
+            
+            <span>您所在位置：</span><a href='/index.aspx'>首页</a>
+            &nbsp;&gt;&nbsp;技术
+          
+        </div>
+        <div style="height: 20px" class="no-pc">
+        </div>
+        <div class="mid">
+            <div style="height: 20px">
+            </div>
+            <div class="left" style="width: 67%;">
+                <div class="meta">
+                    <h1>
+                        低环境温度空气源热泵（冷水）机组新版国家标准解析</h1>
+                    <p class="meta-info">
+                        <span class="time">发表日期：2020/12/1 10:43:50</span>
+                        <span>来源：《制冷与空调》</span>
+                        <!--<a class="share" href="">分享</a>-->
+                        <a class="comm" href="#discuss" name="discuss">评论 </a>
+                        <span class="view">总点击量:
+                        <script type="text/javascript" src="/tools/submit_ajax.ashx?action=view_article_click&id=15408&click=1"></script> 次</span>
+                    </p>
+                </div>
+                <div class="box">
+                    <!-- 代码 开始 -->
+                    
+                </div>
+                 <div class="entry" id="entry">
+                  <div style="height: 15px">
+                    </div>
+                      <div class="entry" id="nc_con">
+						<p style="text-indent:2em;">
+	近年来，国家进一步加大清洁供暖力度，煤改清洁能源政策如雨后春笋般在北方各个省份推出，以低环境温度空气源为代表的热泵采暖技术得到了快速发展。2010年低环境温度空气源热泵（冷水）机组的产品标准首次发布，统一了产品技术要求，规范了产品设计，推动了产业的技术进步。但随着空气源热泵技术的不断发展，2010版标准在执行过程中已不能满足产品的发展需求。全国冷冻空调设备标准化技术委员会（以下简称“冷标委”）于2017年10月对GB/T 25127.1—2010和GB/T 25127.2—2010 2个标准展开了修订工作，新版标准2020年6月2日发布，并于2021年4月1日起正式实施。
+</p>
+<p style="text-indent:2em;">
+	笔者将对上述2个标准的修订背景和解决的重点问题进行介绍，并解读标准的主要内容，以期为新版标准的理解和执行提供技术指导。
+</p>
+<p style="text-indent:2em;">
+	<strong>1 &nbsp;产品的范围和机组型式</strong> 
+</p>
+<p style="text-indent:2em;">
+	通过统计分析多家企业的低环境温度空气源热泵（冷水）机组产品的制热量和使用场景，标准对产品的范围和机组型式做了更加合理的界定和划分。
+</p>
+<p style="text-indent:2em;">
+	GB/T 25127.1—2020和GB/T 25127.2—2020适用于能够在不低于-25 ℃的环境温度里制取热（冷）水，由电动机驱动的低环境温度空气源热泵（冷水）机组，并以室外环境温度-12 ℃对应的名义制热量35 kW作为区分GB/T 25127.1—2020和GB/T 25127.2—2020的适用范围，即工商业和户用产品的划分界限。该范围相较2010版标准的调整解决了以下2个问题：
+</p>
+<p style="text-indent:2em;">
+	1）旧版标准中单热型机组无法根据制冷量确定产品是适用工商业还是户用产品标准的问题。
+</p>
+<p style="text-indent:2em;">
+	2）低环境温度空气源热泵（冷水）机组覆盖到更加寒冷以及在寒冷地区出现极端天气状况，机组仍可以保证用户的正常供暖。
+</p>
+<p style="text-indent:2em;">
+	由于低环境温度空气源热泵（冷水）机组不同的使用场景所对应的性能参数差别较大，导致机组在设计时会有很大的不同，所以根据机组匹配的末端，新版标准将机组的型式划分为地板辐射型、风机盘管型和散热器型3种，分别对应不同的出水温度（见表1）。
+</p>
+<p align="center" style="text-indent:2em;">
+	表1 &nbsp;机组型式对应的出水温度
+</p>
+<p align="center" style="text-indent:2em;">
+	<img alt="" src="/upload/202012/01/202012011340024955.jpg" /> 
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+<p style="text-indent:2em;">
+	<strong>2 &nbsp;试验工况和允差</strong> 
+</p>
+<p style="text-indent:2em;">
+	新版标准中试验工况的变化主要体现在以下几个方面。
+</p>
+<p style="text-indent:2em;">
+	1）根据不同的应用场景，增加地板辐射型、风机盘管型和散热器型的工况条件，见表2的试验工况。该调整更加贴合产品的应用场景，企业可以根据不同的应用场景进行针对性开发设计，更利于产品的优化设计以及产品能效的提升，用户也可以根据自己使用的场景，选择更加合适的产品。
+</p>
+<p align="center" style="text-indent:2em;">
+	表2&nbsp; &nbsp;试验工况
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011340323940.jpg" /> 
+</p>
+<p style="text-indent:2em;">
+	2）名义制热工况热源侧入口空气状态进风湿球温度由-14 ℃升高为-13.5 ℃，解决了高相对湿度环境下试验室工况模拟很难达到的问题，也降低了试验室能耗。
+</p>
+<p style="text-indent:2em;">
+	3）明确了单热型机组的工况水流量由名义制热量确定，冷暖型机组的工况水流量由名义制冷量确定。其中地板辐射型和散热器型为单热型机组(不考核制冷状态)，风机盘管型机组为冷暖型机组。
+</p>
+<p style="text-indent:2em;">
+	4）增加-25 ℃制热工况，水流量按照对应的名义水流量，出水温度按照企业明示运行的最高出水温度运行，考验了机组在恶劣条件下运行的可靠性。
+</p>
+<p style="text-indent:2em;">
+	5）允差条件在冷标委的产品标准中第一次增加平均变动幅度和最大变动幅度的概念。平均变动幅度指实测的平均值与各试验工况的规定值的偏差；最大变动幅度指试验过程中实测的最大值和最小值与试验工况的规定值的偏差。这2个概念的提出明确了工况允差的要求，便于试验人员的操作。
+</p>
+<p style="text-indent:2em;">
+	6）缩小制热工况下温湿度允差，由±1 ℃缩小到±0.5 ℃，一方面解决了旧版标准中相对湿度范围过大导致试验重复性较差的问题，另一方面在满足试验室工况可控的状态下保证了制热量测试的准确性。试验工况的平均变动幅度允差见表3，最大变动幅度见表4。
+</p>
+<p align="center" style="text-indent:2em;">
+	表3 &nbsp; 试验工况平均变动幅度读数允差
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011340447441.jpg" /> 
+</p>
+<p align="center" style="text-indent:2em;">
+	表4 &nbsp;试验工况最大变动幅度读数允差
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011340586297.jpg" /> 
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+<p style="text-indent:2em;">
+	<strong>3 &nbsp;性能系数</strong> 
+</p>
+<p style="text-indent:2em;">
+	标准对性能系数进行修订时，主要考虑以下2个方面的问题：1）采用什么样的能效评价方法更加科学合理？2）需要限制哪些能效指标？
+</p>
+<p style="text-indent:2em;">
+	在标准修订的初期，关于低环境温度空气源热泵（冷水）机组的能效评价是继续采用综合部分负荷性能系数IPLV指标还是采用全年性能系数APF指标，业界进行了持续的探讨，最终还是选择了APF指标，主要出于以下几点考虑：
+</p>
+<p style="text-indent:2em;">
+	1）服务于相同功能建筑的多联机、风管机和单元机等产品，其能效评价指标体系已全部转为APF评价，而热源侧同为空气源的低环境温度热泵（冷水）机组若仍采用IPLV指标进行评价，则不利于设计人员和用户在工程实践中更好地比较与辨析这些不同的产品；
+</p>
+<p style="text-indent:2em;">
+	2）IPLV计算公式中权重的划分界限不是十分明确，而全年性能系数APF则是以外界环境温度为1 ℃的温频进行负荷计算并对各温度发生时间（即开机运行时间）进行统计，如图1所示。IPLV仅4个负荷率对应了空气源热泵全部运行时段的所有室外环境温度，显然APF的评价方式会更加精细、准确。
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011341171216.jpg" /> 
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+<p align="center" style="text-indent:2em;">
+	图1 &nbsp;IPLV和APF权重划分对比图
+</p>
+<p style="text-indent:2em;">
+	3）与使用风冷式冷凝器的多联机、单元机和风管机相同，低环境温度空气源热泵（冷水）机组的性能受外界环境温度的影响更为显著，而使用水冷式冷凝器的机组，其性能主要取决于冷却塔的出水温度，冷却塔的出水温度又取决于冷却塔性能和环境的相对湿度。因此，APF对于使用风冷式冷凝器的低环境温度空气源热泵（冷水）机组的性能评价更适用。
+</p>
+<p style="text-indent:2em;">
+	4）空气源热泵采用APF评价指标已经成为国际共识，低环境温度空气源热泵（冷水）机组采用APF的能效评价体系与国际接轨，既兼顾了全年的能效也兼顾了单点工况的能效，能效考核方式更加立体、全面。
+</p>
+<p style="text-indent:2em;">
+	<strong>4 &nbsp;APF计算和试验方法</strong> 
+</p>
+<p style="text-indent:2em;">
+	全年性能系数APF是机组在制冷和制热季节向室内送入的总冷量和总热量之和与制冷季和制热季消耗的总电量之比。首先确定制冷季节和制热季节的房间热负荷率线（见图2），然后根据热负荷率线确定符合机组负荷状况的测试工况点（见新版标准中相应的工况条件），最后根据制冷季节和制热季节统计的各温度发生时间采用新版标准中相应的公式计算APF值。
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011341367661.jpg" /> 
+</p>
+<p align="center" style="text-indent:2em;">
+	图2 &nbsp;机组制冷/制热负荷率
+</p>
+<p style="text-indent:2em;">
+	工商业用机组制冷房间热负荷的零负荷点定在21 ℃，制热零负荷点定在13 ℃；户用机组制冷房间热负荷的零负荷点定在26 ℃，制热零负荷点定在15 ℃。根据零负荷点和标准规定的名义工况点即100%负荷点做出相应的负荷率线。按照新标准中规定的各工况条件和允差要求对各负荷点进行能力测试。在制冷能力测试时要注意各负荷点须按照名义热冷比计算出的冷负荷调整压缩机的频率或容量，而不是直接按照标称的名义制冷量。工商业用和户用机组的计算用额定制冷量分别按热冷比1.0和1.4计算而来。
+</p>
+<p style="text-indent:2em;">
+	工商业用机组全年需要制冷/制热的发生时间不但与地域有关，还与建筑类型有关。新版标准以租赁商铺、办公建筑和酒店建筑为代表给出了若干典型城市的数据，APF的限定值则是以北京的酒店建筑为基准给出的。户用机组全年需要制冷/制热的发生时间仅存在地域差异，标准仍是以北京为典型城市统一衡量机组的APF。
+</p>
+<p style="text-indent:2em;">
+	<strong>5 &nbsp;技术要求</strong> 
+</p>
+<p style="text-indent:2em;">
+	新版标准中技术要求相较于2010版标准的主要变化如下：
+</p>
+<p style="text-indent:2em;">
+	1）从绿色可回收的角度增加了有害物质含量的规定。
+</p>
+<p style="text-indent:2em;">
+	2）考虑到山东、山西、河北、天津、北京、内蒙古等地区，-20 ℃的环境温度时有发生甚至低于-20 ℃，故增加低温制热性能的判定要求，以提高产品在低温状态下的热量输出和可靠性。
+</p>
+<p style="text-indent:2em;">
+	3）2010版标准中的气密性、真空和压力试验要求的表述修订为密封性能和强度要求。工商业用机组的要求略微调整，户用机组该部分要求没有变化。
+</p>
+<p style="text-indent:2em;">
+	4）噪声的判定增加名义制热状态下噪声（声压级）的判定要求，符合产品的应用场景。
+</p>
+<p style="text-indent:2em;">
+	5）安全指标做了细化，不再是单纯的引用其他标准，方便标准的使用。
+</p>
+<p style="text-indent:2em;">
+	技术要求的具体变化见表5。
+</p>
+<p align="center" style="text-indent:2em;">
+	表5 &nbsp;技术要求修订内容
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011342027263.jpg" /> 
+</p>
+<p style="text-indent:2em;">
+	<strong>6 &nbsp;融霜试验方法</strong> 
+</p>
+<p style="text-indent:2em;">
+	新版标准明确了融霜试验的具体要求和试验总时长的选取方法。融霜试验的时间段选取包含以下3种情况：
+</p>
+<p style="text-indent:2em;">
+	1）以融霜工况下首次融霜结束后（自动融霜或者手动触发融霜）再连续运行2个完整的制热融霜周期或者连续运行3 h，取其长者，如图3(b)和图3(c)所示。
+</p>
+<p style="text-indent:2em;">
+	2）如果连续运行3 h期间没有出现融霜，试验总时长从首次融霜结束时开始至3 h后首次出现的融霜结束为止，如图3(a)所示。
+</p>
+<p style="text-indent:2em;">
+	3）如果连续运行满3 h时，恰好遇到1个制热融霜周期还没有结束（如图3(d)所示），则试验总时长应延长至这一个制热融霜周期结束为止。
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011342241495.jpg" /> 
+</p>
+<p align="center" style="text-indent:2em;">
+	图3 &nbsp;融霜计算示例
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+<p style="text-indent:2em;">
+	<strong>7 &nbsp;水侧压力损失试验方法</strong> 
+</p>
+<p style="text-indent:2em;">
+	新版标准规定制冷和制热状态下均需要测量水侧压力损失，并取较大值作为机组的水侧压力损失。自带水泵的机组不需要进行水泵选型，因此，不测水侧压力损失。对于制热状态下的水侧压力损失测试工况条件，是在不影响水侧压力损失测量值的情况下，将环境温度定在零度以上且为一个范围（0~21 ℃），既解决了测量水侧压力损失用软管因低温结冰导致测量错误的问题，同时方便了试验操作，提高了测试效率。具体工况条件见表6。
+</p>
+<p align="center" style="text-indent:2em;">
+	表6 &nbsp;制热状态下水侧压力损失测量工况
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011342431620.jpg" /> 
+</p>
+<p style="text-indent:2em;">
+	<strong>8 &nbsp;制热性能试验方法</strong> 
+</p>
+<p style="text-indent:2em;">
+	考虑到低环境温度空气源热泵（冷水）机组在制热状态下会发生融霜，为了保证数据采集的统一性和重复性，故制定了统一的试验和数据采集方法，包括以下内容：
+</p>
+<p style="text-indent:2em;">
+	1）试验过程应该包括预处理阶段、平衡阶段和数据采集阶段。预处理阶段需要在平衡阶段之前发生一次除霜（自动除霜或者手动除霜）；预处理阶段结束后进入平衡阶段，该阶段的持续时间应该不少于1 h；平衡阶段结束后立即进入数据采集阶段，该阶段应采用一个积分式的电功率计或试验系统测量热泵机组的耗电量，并且在数据采集阶段的前35 min内计算机组使用侧进、出水的平均温差变化率。温差变化率的公式如下。
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011345226242.jpg" /> 
+</p>
+<p style="text-indent:2em;">
+	式中：%Δt为机组使用侧进出水的平均温度变化率；Δti(τ=0)为第1个5 min时间段的进出水温度偏差（℃）；Δti(τ)为第（τ+1）个5 &nbsp;min时间段的进出水温度偏差（℃）。
+</p>
+<p style="text-indent:2em;">
+	2）根据数据采集阶段计算出的平均温度变化率，判断此次制热试验是稳态试验还是非稳态试验。若在数据采集阶段的前35 min内进、出水的平均温差变化率超过2.5%或者机组进入融霜循环，则判定此次制热试验为一个非稳态试验。稳态和非稳态的判定逻辑图见图4。可以看出，在预处理阶段最好进行手动除霜或者自动除霜后再进行测试，否则最终还是会回到预处理阶段以除霜方式的路线进行后续试验。
+</p>
+<p align="center">
+	<img alt="" src="/upload/202012/01/202012011343131464.jpg" /> 
+</p>
+<p align="center" style="text-indent:2em;">
+	图4&nbsp; &nbsp;稳态与非稳态的判定流程图
+</p>
+<p style="text-indent:2em;">
+	3）若试验为非稳态试验，数据采集阶段应该延长至3 h（或热泵机组完成3个除霜循环，取其短者）。如果在3 h内，机组进行了一个除霜循环，必须等循环完成后方可结束数据采集。一个完整的循环应该包括一个连续的制热和除霜过程（从一次除霜结束到下一次除霜结束）。对于在数据采集期间，如果包含一个或多个完整循环，机组平均制热量应由积分的制热量和数据采集期间所包含的所有时间确定，平均输入电功率应由积分的输入功率和数据采集期间与测量制热量相同的时间确定。对于在数据采集期间，没有发生完整循环的，机组平均制热量应由积分的制热量和数据采集期间的发生时间确定，平均输入电功率应由积分的输入功率和数据采集期间与测量制热量相同的时间确定。新版标准中以采集示例给出了所有制热试验情况。
+</p>
+<p style="text-indent:2em;">
+	<strong>9 &nbsp;结束语</strong> 
+</p>
+<p style="text-indent:2em;">
+	低环境温度空气源热泵（冷水）机组新版国家标准从范围、机组型式、能效评价体系、试验方法、技术要求等方面进行了修订，重点解决了以下问题：
+</p>
+<p style="text-indent:2em;">
+	1）采用APF的能效评价体系，更加贴近低环境温度空气源热泵（冷水）机组在实际应用场景下的能效水平，更加科学、合理；
+</p>
+<p style="text-indent:2em;">
+	2）依据末端应用场景划分了3种型式的产品，规定了相应的出水温度；
+</p>
+<p style="text-indent:2em;">
+	3）增加制热试验方法，制定了统一的试验和数据采集方法，确保了制热试验的可重复性和精确性。在考核名义制热的同时考核-20 ℃低温状态下机组的输出能力和可靠性，从而引导热泵技术向着更加宽广的气候领域拓展应用；
+</p>
+<p style="text-indent:2em;">
+	4）修订了2010版标准中容易引起歧义的条款，如工商业用机组和户用机组的范围划分、工况水流量的确定、融霜试验、制热状态下的噪声测试和水侧压力损失测试等问题，增强了标准的可操作性。
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+<p style="text-indent:2em;">
+	（<span style="color:#337FE5;">本文选自《制冷与空调》2020年10月刊83-89页；</span><span style="color:#337FE5;">作者：谢宝刚 &nbsp;马金平 &nbsp;李芳 &nbsp;牛晓文 &nbsp;陈璞 &nbsp;于晓琳；</span><span style="color:#337FE5;">未经许可，不得转载</span>）
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+					</div>
+					<div id="nc_page" class="pagination">
+						<!--分页操作按钮-->
+					</div>
+                </div>
+
+                <div class="rel-list"></div>
+
+
+                <div class="ruguoPager" id="pager"></div>
+                <script>
+
+                                var pager = new ruguoPager();
+                                pager.objName = "pager";
+                                pager.pagerID = "pager";
+                                pager.txtID = "entry";
+                                pager.toPoint = "entry"
+                                pager.showPageCount = 3;
+                                pager.currPage = 1;
+                                pager.contents = "",
+                                ruguoPagerLoad(pager);
+
+
+                </script>
+
+                <div class="copy-info"></div>
+                <div style="height: 35px" class="no-pc">
+                </div>
+                <!--用户评论-->
+                
+                <!--用户评论-->
+                <div style="height: 45px" class="no-pc">
+                </div>
+                <div class="div-table no-pc-block con-adv">
+                    <div class="div-table-cell no-pc-block" style="width: 49%">
+                        <div class="min-adv">
+                      
+                            <script>
+
+                                $.ajax({
+                                    type: "get",
+                                    url: "/plugins/fouce/a.aspx?id=13",
+                                    data: '',
+                                    async: false,//取消异步
+                                    success: function (data) {
+                                        document.write(data);
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="div-table-cell no-pc-block" style="width: 2%; height:5px">
+                    </div>
+                    <div class="div-table-cell no-pc-block" style="width: 49%">
+                        <div class="min-adv">
+                    
+                            <script>
+
+                                $.ajax({
+                                    type: "get",
+                                    url: "/plugins/fouce/a.aspx?id=14",
+                                    data: '',
+                                    async: false,//取消异步
+                                    success: function (data) {
+                                        document.write(data);
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 5px">
+                </div>
+            </div>
+            <div class="right" style="width: 31%;">
+                <div class="adv">
+                    
+                    <script>
+
+                                $.ajax({
+                                    type: "get",
+                                    url: "/plugins/fouce/a.aspx?id=16",
+                                    data: '',
+                                    async: false,//取消异步
+                                    success: function (data) {
+                                        document.write(data);
+                                    }
+                                });
+                    </script>
+                </div>
+                <div style="height: 15px">
+                </div>
+                <h2 class="h-tit">
+                    精彩内容推荐</h2>
+                <div style="height: 5px">
+                </div>
+                <div class="line-b">
+                </div>
+                <div style="height: 15px">
+                </div>
+                <ul class="img-list">
+                    
+                    <li>
+                        <a href='/coolft_show.aspx?id=602974' target="_blank" class="twpic">
+                            <img src="/upload/202606/26/202606261603502461.png " onerror="this.src = '/templates/main/images/default.jpg'" alt="" />
+                        </a>
+                        <div class="b_txt">
+                            <h3>
+                                <a href='/coolft_show.aspx?id=602974' target="_blank">《制冷与空调》“液冷技术前沿与应用”专题文章征集</a>
+                            </h3>
+                            <p>随着新一代信息技术、高端装备制造及新能源产业的迅猛发展，电子器件的功率与热流密度持续攀升，传统风冷散热方式在能效、噪声及空间占用等方面的瓶颈日益凸显。液冷技术凭借其高效、节能、低噪、高集成度等显著优势，正成为解决高热密度场景热管理难题的核心路径。面向“双碳…</p>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+
+                    
+                    <li>
+                        <a href='/coolft_show.aspx?id=590904' target="_blank" class="twpic">
+                            <img src="/upload/202605/27/202605270949212363.png " onerror="this.src = '/templates/main/images/default.jpg'" alt="" />
+                        </a>
+                        <div class="b_txt">
+                            <h3>
+                                <a href='/coolft_show.aspx?id=590904' target="_blank">《制冷与空调》“面向‘好房子’建设的健康舒适与低碳空调技术”专题文章征集</a>
+                            </h3>
+                            <p>随着我国建筑业由高速增长阶段转向高质量发展阶段，住房建设的核心目标正由“有没有”向“好不好”转变。“好房子”不仅强调建筑空间品质和结构安全，更关注室内环境的健康舒适、能源利用的高效低碳、设备系统的智能可靠以及全生命周期的运行品质。空调系统作为建筑室内环境调…</p>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+
+                    
+                    <li>
+                        <a href='/coolft_show.aspx?id=590903' target="_blank" class="twpic">
+                            <img src="/upload/202605/27/202605270946422725.png " onerror="this.src = '/templates/main/images/default.jpg'" alt="" />
+                        </a>
+                        <div class="b_txt">
+                            <h3>
+                                <a href='/coolft_show.aspx?id=590903' target="_blank">《制冷与空调》“高温热泵技术前沿与创新应用：驱动工业深度低碳转型”专题文章征集</a>
+                            </h3>
+                            <p>在全球能源转型与工业绿色升级的关键时期，高温热泵凭借卓越的余热回收能力与高能效提温特性，已成为工业深度脱碳的核心技术装备之一。在关键技术上，通过革新前沿理论、优化热力循环架构、研发新型环保工质及突破关键部件，显著拓宽了高温热泵运行温区与能效边界；在应用实践…</p>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+
+                    
+                </ul>
+                <div style="height: 15px">
+                </div>
+                <div style="height: 15px">
+                </div>
+                <div class="tit-top">
+                    <h2>
+                        排行榜</h2>
+                    <span class="tab-nav">
+                    <a href="javascript:;" class="on">一周</a>
+                    |
+                    <a href="javascript:;">一月</a>
+                    </span>
+                </div>
+                <div class="tab-con">
+                    <div class="tab-item" style="display: block">
+                        <ul class="top-txt-list" style="min-height: 160px">
+                            
+                            <li class="t">
+                                <b>
+                                    1
+                                </b><a href='/interview_show.aspx?id=655128' class="blue"> 松下：锚定中国健康空气新赛道</a>
+                                <!--<span>79</span>-->
+                                
+                            </li>
+                            
+                            <li class="t">
+                                <b>
+                                    2
+                                </b><a href='/show.aspx?id=652131' class="blue"> EK火麒麟大型空气源热泵助力北京现代农业四季稳产</a>
+                                <!--<span>72</span>-->
+                                
+                            </li>
+                            
+                            <li class="t">
+                                <b>
+                                    3
+                                </b><a href='/dynamics_show.aspx?id=138696' class="blue"> 特灵中央空调故障代码分别代表什么？</a>
+                                <!--<span>50</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    4
+                                </b><a href='/show.aspx?id=26475'> 喜报! 海信日立“精工精心”荣获2023中国服务品牌100强</a>
+                                <!--<span>50</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    5
+                                </b><a href='/show.aspx?id=652134'> 全球首发新一代磁悬浮压缩机，Clivet携全链路液冷解决方案亮相北美Al lnfra Summit</a>
+                                <!--<span>49</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    6
+                                </b><a href='/show.aspx?id=652132'> 松洋制冷“船舶与海工用溴化锂吸收式制冷热泵”技术成果通过科技成果鉴定，获评“国际领先”</a>
+                                <!--<span>46</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    7
+                                </b><a href='/show.aspx?id=652127'> 服务东航维修，EK工业多联为亚洲最大宽体机维修机库提供温控支持！</a>
+                                <!--<span>44</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    8
+                                </b><a href='/show.aspx?id=653128'> 490万元！河南经贸职业学院空调采购及安装项目公开招标公告</a>
+                                <!--<span>44</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    9
+                                </b><a href='/show.aspx?id=19486'> 中国人民警察大学综合教学楼安装中央空调工程公开招标公告</a>
+                                <!--<span>41</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    10
+                                </b><a href='/dynamics_show.aspx?id=650128'> 松下2026纳诺怡探索之旅圆满收官  以技术实力守护健康“好空气”</a>
+                                <!--<span>41</span>-->
+                                
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="tab-item" style="display: none">
+                        <ul class="top-txt-list" style="min-height: 160px">
+                            
+                            <li class="t">
+                                <b>
+                                    1
+                                </b><a href='/show.aspx?id=545800' class="blue"> 449万元！友谊医院顺义院区洁净空调系统运维公开招标公告</a>
+                                <!--<span>231</span>-->
+                                
+                            </li>
+                            
+                            <li class="t">
+                                <b>
+                                    2
+                                </b><a href='/refrigerant_show.aspx?id=645134' class="blue"> 纪念《〈关于消耗臭氧层物质的蒙特利尔议定书〉基加利修正案》通过十周年暨2026年国际保护臭氧层日纪念大会成功召开</a>
+                                <!--<span>166</span>-->
+                                
+                            </li>
+                            
+                            <li class="t">
+                                <b>
+                                    3
+                                </b><a href='/refrigerant_show.aspx?id=639137' class="blue"> 转发|关于禁止生产以一氯二氟甲烷（HCFC-22）为制冷剂的多联式空调（热泵）机组产品的公告</a>
+                                <!--<span>148</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    4
+                                </b><a href='/refrigerant_show.aspx?id=460752'> 国家标准GB/T 45816—2025《道路车辆汽车空调系统用制冷剂系统安全要求》将于2026年2月1日开始正式实施</a>
+                                <!--<span>142</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    5
+                                </b><a href='/dynamics_show.aspx?id=634129'> 制冷空调行业部分上市公司2026年半年报部分数据一览</a>
+                                <!--<span>119</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    6
+                                </b><a href='/refrigerant_show.aspx?id=624114'> 科慕公司推出适用于数据中心、商业建筑及其他关键任务环境冷却设备的 Opteon™ ZE 和 Opteon™ 515B 制冷剂</a>
+                                <!--<span>119</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    7
+                                </b><a href='/dynamics_show.aspx?id=21735'> 坚持可持续发展，麦克维尔书写150载高光历程</a>
+                                <!--<span>118</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    8
+                                </b><a href='/dynamics_show.aspx?id=138696'> 特灵中央空调故障代码分别代表什么？</a>
+                                <!--<span>116</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    9
+                                </b><a href='/et_show.aspx?id=618026'> 行业解读∣从空气源热泵除霜到冰霜雪技术应用</a>
+                                <!--<span>115</span>-->
+                                
+                            </li>
+                            
+                            </li>
+                            <li>
+                                <b>
+                                    10
+                                </b><a href='/dynamics_show.aspx?id=3510'> 格力蒸发器自洁技术亮相深圳电子消费品及家电品牌展</a>
+                                <!--<span>110</span>-->
+                                
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div style="height: 15px">
+                </div>
+                <h2 class="h-tit">
+                    精彩专题<a href="/topic.aspx" class="more">更多</a></h2>
+                <div style="height: 5px">
+                </div>
+                <div class="line-b">
+                </div>
+                <div style="height: 15px">
+                </div>
+                <ul class="ztimg-list-v">
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202605/29/202605291608248399.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                （部分视频切片）制冷空调行业直播间  知今瞰未来
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="（部分视频切片）制冷空调行业直播间  知今瞰未来"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=11204\' target="_blank" class="v-mask" title="（部分视频切片）制冷空调行业直播间  知今瞰未来"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202605/29/202605291515159154.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                《制冷与空调》 探展2026
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="《制冷与空调》 探展2026"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=11203\' target="_blank" class="v-mask" title="《制冷与空调》 探展2026"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202605/12/202605120946481581.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2025年年报部分数据一览
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2025年年报部分数据一览"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=11202\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2025年年报部分数据一览"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202511/19/202511190916566496.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                关注第八届进博会制冷空调行业企业
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="关注第八届进博会制冷空调行业企业"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=10202\' target="_blank" class="v-mask" title="关注第八届进博会制冷空调行业企业"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202511/17/202511171102316079.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2025年三季度报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2025年三季度报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=9202\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2025年三季度报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202505/22/202505221349539012.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                《制冷与空调》杂志部分制冷剂相关文章一览（2023—2024年）
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="《制冷与空调》杂志部分制冷剂相关文章一览（2023—2024年）"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=8203\' target="_blank" class="v-mask" title="《制冷与空调》杂志部分制冷剂相关文章一览（2023—2024年）"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202505/22/202505221043160844.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                科普讲堂
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="科普讲堂"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=8202\' target="_blank" class="v-mask" title="科普讲堂"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202505/13/202505131422025407.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                《制冷与空调》 探展
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="《制冷与空调》 探展"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=7202\' target="_blank" class="v-mask" title="《制冷与空调》 探展"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202505/12/202505121020154784.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2024年年报部分数据一览
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2024年年报部分数据一览"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=6202\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2024年年报部分数据一览"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202502/24/202502241559109805.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                2025年家电以旧换新全新升级
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="2025年家电以旧换新全新升级"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=4202\' target="_blank" class="v-mask" title="2025年家电以旧换新全新升级"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202409/02/202409021107067974.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2024年半年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2024年半年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=3202\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2024年半年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202308/31/202308311656507960.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2023年半年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2023年半年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=201\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2023年半年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202305/04/202305041340290578.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2022年年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2022年年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=199\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2022年年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202303/07/202303071057142627.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                聚焦两会：关于推进制冷空调行业发展的声音
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="聚焦两会：关于推进制冷空调行业发展的声音"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=198\' target="_blank" class="v-mask" title="聚焦两会：关于推进制冷空调行业发展的声音"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202211/14/202211141008006120.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                第五届进博会行业企业风采回顾
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="第五届进博会行业企业风采回顾"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=197\' target="_blank" class="v-mask" title="第五届进博会行业企业风采回顾"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202209/01/202209011428034787.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2022年半年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2022年半年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=196\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2022年半年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202205/10/202205101847077400.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2021年年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2021年年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=195\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2021年年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202203/04/202203041127111088.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                2022年1—2月冷链相关政策汇总
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="2022年1—2月冷链相关政策汇总"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=194\' target="_blank" class="v-mask" title="2022年1—2月冷链相关政策汇总"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202202/17/202202171506517467.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                一起向未来，制冷空调行业助力“绿色冬奥”
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="一起向未来，制冷空调行业助力“绿色冬奥”"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=193\' target="_blank" class="v-mask" title="一起向未来，制冷空调行业助力“绿色冬奥”"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202112/30/202112301110325153.JPG" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                第三届“一带一路”可持续制冷与空调国际研讨会分论坛
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="第三届“一带一路”可持续制冷与空调国际研讨会分论坛"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=192\' target="_blank" class="v-mask" title="第三届“一带一路”可持续制冷与空调国际研讨会分论坛"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202108/31/202108311433537139.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2021年半年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2021年半年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=191\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2021年半年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202107/28/202107281715501865.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                第十五届中国制冷空调行业大学生科技竞赛
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="第十五届中国制冷空调行业大学生科技竞赛"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=189\' target="_blank" class="v-mask" title="第十五届中国制冷空调行业大学生科技竞赛"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202104/30/202104301038105778.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2020年年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2020年年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=188\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2020年年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202101/29/202101290957532840.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                《制冷与空调》杂志所刊登的部分标准解读文章一览
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="《制冷与空调》杂志所刊登的部分标准解读文章一览"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=187\' target="_blank" class="v-mask" title="《制冷与空调》杂志所刊登的部分标准解读文章一览"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202012/22/202012220945131442.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                2020年全国制冷空调行业年会系列会议
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="2020年全国制冷空调行业年会系列会议"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=186\' target="_blank" class="v-mask" title="2020年全国制冷空调行业年会系列会议"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202011/12/202011120938542273.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                第三届进博会制冷空调行业企业展示
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="第三届进博会制冷空调行业企业展示"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=185\' target="_blank" class="v-mask" title="第三届进博会制冷空调行业企业展示"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202011/12/202011120912398350.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2020年三季度报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2020年三季度报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=184\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2020年三季度报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202010/13/202010131037597541.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2020年半年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2020年半年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=181\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2020年半年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202010/10/202010101527229413.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                2020年全国行业职业技能竞赛——全国智能楼宇及空调系统职业技能竞赛
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="2020年全国行业职业技能竞赛——全国智能楼宇及空调系统职业技能竞赛"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=179\' target="_blank" class="v-mask" title="2020年全国行业职业技能竞赛——全国智能楼宇及空调系统职业技能竞赛"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/202005/08/202005081411048756.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2019年年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2019年年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=178\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2019年年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201909/12/201909120912009444.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2019年半年报一览
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2019年半年报一览"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=177\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2019年半年报一览"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201907/23/201907231157402647.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                第十三届中国制冷空调行业大学生科技竞赛
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="第十三届中国制冷空调行业大学生科技竞赛"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=175\' target="_blank" class="v-mask" title="第十三届中国制冷空调行业大学生科技竞赛"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201905/07/201905071116444625.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2018年年报盘点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2018年年报盘点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=174\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2018年年报盘点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201901/30/201901301023513505.png" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                臭氧气候技术路演及工业圆桌会议
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="臭氧气候技术路演及工业圆桌会议"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=173\' target="_blank" class="v-mask" title="臭氧气候技术路演及工业圆桌会议"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201901/29/201901291420366135.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                保护臭氧层与温室气体减排
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="保护臭氧层与温室气体减排"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=172\' target="_blank" class="v-mask" title="保护臭氧层与温室气体减排"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201811/30/201811301359375523.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                改革开放40年制冷空调企业展示
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="改革开放40年制冷空调企业展示"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=170\' target="_blank" class="v-mask" title="改革开放40年制冷空调企业展示"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201811/22/201811220954435028.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                中国制冷能效项目
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="中国制冷能效项目"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=169\' target="_blank" class="v-mask" title="中国制冷能效项目"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201811/01/201811011539274230.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2018年三季度报集锦
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2018年三季度报集锦"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=168\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2018年三季度报集锦"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201809/20/201809201358038595.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2018年中报集锦
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2018年中报集锦"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=167\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2018年中报集锦"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201810/09/201810091304596541.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                2018年中国技能大赛——全国机械行业职业技能竞赛制冷工（制冷与空调）赛项
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="2018年中国技能大赛——全国机械行业职业技能竞赛制冷工（制冷与空调）赛项"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=166\' target="_blank" class="v-mask" title="2018年中国技能大赛——全国机械行业职业技能竞赛制冷工（制冷与空调）赛项"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201808/02/201808021406143346.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                第十二届中国制冷空调行业大学生科技竞赛
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="第十二届中国制冷空调行业大学生科技竞赛"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=165\' target="_blank" class="v-mask" title="第十二届中国制冷空调行业大学生科技竞赛"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201804/02/201804021549386856.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                20号令变身94号令，关于质疑投诉的要点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="20号令变身94号令，关于质疑投诉的要点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=162\' target="_blank" class="v-mask" title="20号令变身94号令，关于质疑投诉的要点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201712/08/201712081533552977.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                详解《中华人民共和国标准化法》
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="详解《中华人民共和国标准化法》"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=158\' target="_blank" class="v-mask" title="详解《中华人民共和国标准化法》"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201711/01/201711011034260881.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                制冷空调行业部分上市公司2017年三季报集锦
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="制冷空调行业部分上市公司2017年三季报集锦"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=157\' target="_blank" class="v-mask" title="制冷空调行业部分上市公司2017年三季报集锦"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201709/15/201709151006411956.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                全国各地政府采购评审专家劳务报酬标准汇总
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="全国各地政府采购评审专家劳务报酬标准汇总"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=155\' target="_blank" class="v-mask" title="全国各地政府采购评审专家劳务报酬标准汇总"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201708/01/201708011424024490.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                第十一届中国制冷空调行业大学生科技竞赛
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="第十一届中国制冷空调行业大学生科技竞赛"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=154\' target="_blank" class="v-mask" title="第十一届中国制冷空调行业大学生科技竞赛"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201706/21/201706211139314310.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                2017“2+26”城市“煤改清洁能源”补贴政策一览
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="2017“2+26”城市“煤改清洁能源”补贴政策一览"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=153\' target="_blank" class="v-mask" title="2017“2+26”城市“煤改清洁能源”补贴政策一览"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201706/14/201706141448271922.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                您需要知道的几个要点
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="您需要知道的几个要点"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=152\' target="_blank" class="v-mask" title="您需要知道的几个要点"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201703/24/201703241101246348.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                2017北京“煤改清洁能源”招标陆续启动
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="2017北京“煤改清洁能源”招标陆续启动"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=147\' target="_blank" class="v-mask" title="2017北京“煤改清洁能源”招标陆续启动"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201703/17/201703171030474898.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                关注热泵采暖
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="关注热泵采暖"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=145\' target="_blank" class="v-mask" title="关注热泵采暖"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201702/23/201702231624497778.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                中央空调政府采购二三事儿
+                            </h2>
+                        </div>
+                        <script>
+                           if ("/purchase.aspx" != "") {
+                               document.write('<a href="/purchase.aspx" target="_blank" class="v-mask" title="中央空调政府采购二三事儿"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=144\' target="_blank" class="v-mask" title="中央空调政府采购二三事儿"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201611/09/201611091102008228.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                冷冻冷藏
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="冷冻冷藏"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=118\' target="_blank" class="v-mask" title="冷冻冷藏"></a>');
+                        </script>
+                    </li>
+                    
+                    <li>
+                        <img title="" alt="" class="videoimg" src="/upload/201610/17/201610171521027075.jpg" style="visibility: visible; display: block;" onerror="this.src = '/templates/main/images/default.jpg'" />
+                        <div class="videotxt">
+                            <h2>
+                                汽车空调
+                            </h2>
+                        </div>
+                        <script>
+                           if ("" != "") {
+                               document.write('<a href="" target="_blank" class="v-mask" title="汽车空调"></a>');
+                           }else
+                               document.write(' <a href=\'/topic_list.aspx?category_id=117\' target="_blank" class="v-mask" title="汽车空调"></a>');
+                        </script>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="clear">
+                <script>
+                    $(function () {
+                        var $li = $('.tab-nav>a');
+                        var $item = $('.tab-con .tab-item');
+
+                        $li.click(function () {
+                            var $this = $(this);
+                            var $t = $this.index();
+                            $li.removeClass();
+                            $this.addClass('on');
+                            $item.css('display', 'none');
+                            $item.eq($t).css('display', 'block');
+                        })
+                    })
+
+
+                </script>
+            </div>
+            <div style="height: 15px">
+            </div>
+        </div>
+        <div class="adv">
+        
+            <script>
+
+                                $.ajax({
+                                    type: "get",
+                                    url: "/plugins/fouce/a.aspx?id=15",
+                                    data: '',
+                                    async: false,//取消异步
+                                    success: function (data) {
+                                        document.write(data);
+                                    }
+                                });
+            </script>
+        </div>
+        <div style="height: 15px">
+        </div>
+    </div>
+    <!--Footer-->
+        <div class="footer">
+        <div class="wrapper">
+            <div style="height: 15px">
+            </div>
+            <p>
+                地址：北京市西城区广安门南街6号广安大厦北楼7层(100053)<br />
+                电话：010-83560065，010-83510099-243，651，246，623 <br />
+                传真：010-83560060 <br />
+                E-mail:zldt@chinacraa.org<br />
+                COPYRIGHT  &copy; 2007 CHINA REFRIGERATION AND AIR-CONDITIONING INDUSTRY ASSOCIATION     &nbsp;&nbsp;<a href="http://beian.miit.gov.cn/" target="_blank" style="color:#fff;">京ICP备16052263号-1</a>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260836168'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260836168%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                京ICP备16052263号-1
+            </p>
+            <div style="height: 15px">
+            </div>
+        </div>
+    </div>
+<a href="#0" class="cd-top">Top</a>
+<script type="text/javascript" charset="utf-8">
+    jQuery(document).ready(function ($) {
+        // browser window scroll (in pixels) after which the "back to top" link is shown
+        var offset = 300,
+            //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+            offset_opacity = 1200,
+            //duration of the top scrolling animation (in ms)
+            scroll_top_duration = 700,
+            //grab the "back to top" link
+            $back_to_top = $('.cd-top');
+
+        //hide or show the "back to top" link
+        $(window).scroll(function () {
+            ($(this).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+            if ($(this).scrollTop() > offset_opacity) {
+                $back_to_top.addClass('cd-fade-out');
+            }
+        });
+        //www.sucaijiayuan.com
+        //smooth scroll to top
+        $back_to_top.on('click', function (event) {
+            event.preventDefault();
+            $('body,html').animate({
+                scrollTop: 0,
+            }, scroll_top_duration
+            );
+        });
+
+    });
+</script>
+    <!--/Footer-->
+       <script type="text/javascript" charset="utf-8" src="/templates/main/js/kindEditor.js"></script>
+    <script type="text/javascript">
+        initpg();
+        searchpg();
+        getKeyWords("et_show");
+    </script>
+</body>
+</html>

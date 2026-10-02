@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+ 
+ 
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/thscommon/style/artDialog/aero.css" />
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/baiduStatistics.js"></script>
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/json2.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.media.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/upload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/exportWord.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/handlers.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/content.js"></script>
+<!--validate start  -->
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/validationEngine.jquery.css" type="text/css" />
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/template.css" type="text/css" />
+ <script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<!--validate end  -->
+
+
+<!-- base64  -->
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.base64.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_button.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_style.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/swfupload/default.css" />
+<link rel=stylesheet type=text/css href="/perxxgkinfo/thscommon/style/page-base.css"/>
+
+<script type="text/javascript" src="/perxxgkinfo/js/urlhanzi.js"></script>
+
+<!-- èªå®ä¹éç¨æ ·å¼ -->
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/css/common/custom.css" />
+<!-- æºè½å®¡æ ¸js -->
+<script type="text/javascript" src="/perxxgkinfo/report/common/layer/layer.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/intelligent_checking.js"></script>
+<script>
+    var ctx = "/perxxgkinfo";
+</script>
+<title>环境管理台账记录要求</title>
+<style>
+#test {
+    width:100%;
+    height:100%;
+    background-color:#000;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:2;
+    opacity:0.3;
+    /*兼容IE8及以下版本浏览器*/
+    filter: alpha(opacity=30);
+}
+
+#log_window {
+    width:50px;
+    height:50px;
+    margin: auto;
+    position: absolute;
+    z-index:3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+<style type="text/css">
+table td {
+	height: 18px;
+	word-break: break-all;
+}
+
+table td input[type=text] {
+	height: 99%;
+	width: 90%;
+}
+
+.havecode {
+	display: inline-block;
+	float: left;
+}
+
+.input_hidden {
+	display: none;
+}
+
+.yq_table {
+	display: none;
+}
+</style>
+<script type="text/javascript" src="/perxxgkinfo/js/itemcard_right.js"></script>
+<script>
+$(document).ready(function() {
+	$("#mainForm").validationEngine("attach", {
+		promptPosition : "topLeft",
+		autoPositionUpdate : true,
+		autoHidePrompt : true,
+		autoHideDelay : 3000,
+		showOneMessage : true
+	});
+
+});
+//查看信息公开内容时的遮盖，打开
+function shield(){
+    var s = document.getElementById("test");
+    s.style.display = "block";
+    
+    var l = document.getElementById("log_window");
+    l.style.display = "block";
+}
+//查看信息公开内容时的遮盖，关闭
+function myths_cancel_shield(){
+    var s = document.getElementById("test");
+    s.style.display = "none";
+    
+    var l = document.getElementById("log_window");
+    l.style.display = "none";
+}
+
+
+ //回调方法刷新当前页面
+function reloadJsp() {
+	location.reload();
+}
+function closerefresh() {
+	var win = art.dialog.open.origin;//来源页面
+	win.document.getElementById("mainForm").submit();
+}
+
+</script>
+</head>
+<body onload="initPage('readonly')">
+<iframe id="attfile_iFrame1" name="attfile_iFrame1" src="" frameborder="0" style="width: 200px; height: 200px; display:none;"></iframe>
+<div id="test" style="width: 100%;height: 100%"></div>
+<div id="log_window">
+<img alt="" src="/perxxgkinfo/css/img/loading1.gif" style="width: 100%;height: 100%"/>
+</div>
+<div class="list-title">
+	<span><img src="/perxxgkinfo/util/xzxk/images/title.png" /></span>当前位置：环境管理要求-环境管理台账记录要求
+</div>
+<br />	
+
+<div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">环境管理台账记录要求</span></div>
+
+<form name="mainForm" method="post"  id="mainForm" target="_parent">
+	<div style="text-align: right; margin-top: 30px">
+	</div>
+	<br />
+	<table id="fuel_table" class="edit-grid-gg" border="1">
+		<tr >
+			
+			<th style="text-align: center;width:15%;">类别</th>
+			<th style="text-align: center;width:17%;">记录内容</th>
+			<th style="text-align: center;width:17%;">记录频次</th>
+			<th style="text-align: center;width:13%;">记录形式</th>
+			<th style="text-align: center;width:17%;">其他信息</th>
+		</tr>
+		
+		
+			<tr>
+				<td  align="center">
+					基本信息
+   				</td>
+   				<td>
+   					单位基本信息、主要生产设施基本信思、污染防治设施基本信息。
+a)排污单位基本信息：排污单位名称、生产经营场所地址、行业类别、法定代表人、统一社会信用代码、环保投资情况、环境影响评价审批意见文号、排污权交易文件及排污许可证编号等。
+b)主要生产设施基本信息设施名称：(燃煤锅炉、燃油锅炉、燃气锅炉、燃生物质锅炉等)、编码、设施规格型号(标牌型号)、规格参数(锅炉容量)等。
+c)污染防治设施基本信息：设施名称(除尘设施、脱硫设施、脱设施、污水处理设施等)、编码、设施规格型号(标牌型号)、相关技术参数及设计值。对于防漏、防漏等污染防治措施，还应记录落实情况及问题整改情况等。
+   				</td>
+   				<td>
+   					无变化时1次/年；有变化时及时记录。
+   				</td>
+   				<td>
+   					<select style="width:95%!important" name="wrwBeanList[0].recordform" class="">
+     					<option value=""> --请选择-- </option>
+    					
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+    				</select>
+   				</td>
+   				<td>
+   					记录台账至少保存5年
+  				</tr>
+		
+			<tr>
+				<td  align="center">
+					生产设施运行管理信息
+   				</td>
+   				<td>
+   					生产设施运行管理信息（正常工况）：
+运行状态（是否正常运行，主要参数名称及数值），生产负荷（主要产品产量与设计生产能力之比），主要产品产量（名称、产量），原辅料（名称、用量、硫元素占比、VOCs成分占比（如有）、有毒有害物质及成分占比（如有）），燃料（名称、用量、硫元素占比、热值等），其他（用电量等）等。
+对于无实际产品、燃料消耗的相关生产设施，仅记录正常工况下的运行状态和生产负荷信息。对于防渗漏、防泄漏等污染防治措施，还应记录落实情况及问题整改情况等
+
+   				</td>
+   				<td>
+   					正常工况：
+1）运行状态：1次/日；
+2）生产负荷：1次/日；
+3）燃料：1次/批；
+非正常工况：1次/工况期
+   				</td>
+   				<td>
+   					<select style="width:95%!important" name="wrwBeanList[1].recordform" class="">
+     					<option value=""> --请选择-- </option>
+    					
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+    				</select>
+   				</td>
+   				<td>
+   					记录台账至少保存5年
+  				</tr>
+		
+			<tr>
+				<td  align="center">
+					生产设施运行管理信息
+   				</td>
+   				<td>
+   					生产设施运行管理信息（非正常工况）：
+起止时间、产品产量、原辅料及燃料消耗量、事件原因、应对措施、是否报告等。对于防渗漏、防泄漏等污染防治措施，还应记录落实情况及问题整改情况等
+   				</td>
+   				<td>
+   					1次/工况期。
+   				</td>
+   				<td>
+   					<select style="width:95%!important" name="wrwBeanList[2].recordform" class="">
+     					<option value=""> --请选择-- </option>
+    					
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+    				</select>
+   				</td>
+   				<td>
+   					记录台账至少保存5年
+  				</tr>
+		
+			<tr>
+				<td  align="center">
+					污染防治设施运行管理信息
+   				</td>
+   				<td>
+   					监测记录信息：对手工监测记录、自动监测运行维护记录、信息报告、应急报告内容的要求进行台账记录。监测质量控制根据HJ/T 373、HJ/T 819要求执行，同时记录监测时的生产工况，系统校准、校验工作等必检项目和记录，以及仪器说明书及相关标准，规范中规定的手工监测应记录手工监测的日期、时间、污染物排放口和监测点位、监测内容、监测方法、监测频次、手工监测仪器及型号、采样方法及个数、监测结果、是否超标等。对于防渗漏、防泄漏等污染防治措施，还应记录落实情况及问题整改情况等
+   				</td>
+   				<td>
+   					按照HJ 819及各行业自行监测技术指南规定执行。
+   				</td>
+   				<td>
+   					<select style="width:95%!important" name="wrwBeanList[3].recordform" class="">
+     					<option value=""> --请选择-- </option>
+    					
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+    				</select>
+   				</td>
+   				<td>
+   					记录台账至少保存5年
+  				</tr>
+		
+			<tr>
+				<td  align="center">
+					监测记录信息
+   				</td>
+   				<td>
+   					a)无组织废气污染防治措施管理维护信息管理维护时间及主要内容等。
+b)特殊时段环境管理信息具体管理要求及其执行情况。
+c)固体废物收集处置信息具体管理要求及其执行情况。
+d)其他信息法律法规、标准规范确定的其他信息，排污单位自主记录的环境管理信息。
+   				</td>
+   				<td>
+   					a)废气无组织污染防治措施管理信息：按日记录，1次日。
+b)特殊时段环境管理信：对于停产或错峰生产的，原则上仅对停产或错峰峰生产的起止日期各记录1次。
+c)其他信息：
+依据法律法规、标准规范或实际生产运行规律等确定记录频次。
+   				</td>
+   				<td>
+   					<select style="width:95%!important" name="wrwBeanList[4].recordform" class="">
+     					<option value=""> --请选择-- </option>
+    					
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+    				</select>
+   				</td>
+   				<td>
+   					记录台账至少保存5年
+  				</tr>
+		
+			<tr>
+				<td  align="center">
+					其他环境管理信息
+   				</td>
+   				<td>
+   					排污单位应建立环境管理台账，危险废物环境管理台账记录应符合《危险废物产生单位管理计划制定指南》等标准及管理文件的相关要求。待危险废物环境管理台账相关标准或管理文件发布实施后，从其规定 。
+一般工业固体废物环境管理台账记录应符合生态环境部规定的·般工业固体废物环境管理台账相关标准及管理文件要求。
+工业噪声排污单位应建立环境管理台账记录制度，落实环境管理台账记录的责任部门和责任人，明确工作职责，包括台账的记录、整理、维护和管理等，并对环境管理台账的真实性、完整性和规范性负责。
+   				</td>
+   				<td>
+   					依据法律法规、标准规范规定的频次记录
+   				</td>
+   				<td>
+   					<select style="width:95%!important" name="wrwBeanList[5].recordform" class="">
+     					<option value=""> --请选择-- </option>
+    					
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+						<option value="JLXS_1" >电子台账</option>
+  						
+						<option value="JLXS_2" >纸质台账</option>
+  						
+						<option value="JLXS_3" selected>电子台账+纸质台账</option>
+  						
+    				</select>
+   				</td>
+   				<td>
+   					记录台账至少保存5年
+  				</tr>
+		
+	 			
+	</table>
+	<br />
+	<br />
+</form>
+</body>
+</html>

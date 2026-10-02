@@ -1,0 +1,218 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Pragma" content="no-cache" /> 
+<meta http-equiv="Cache-Control" content="no-cache" /> 
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+ 
+ 
+ 
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/thscommon/style/artDialog/aero.css" />
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/baiduStatistics.js"></script>
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/json2.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.media.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/upload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/exportWord.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/handlers.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/content.js"></script>
+<!--validate start  -->
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/validationEngine.jquery.css" type="text/css" />
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/template.css" type="text/css" />
+ <script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<!--validate end  -->
+
+
+<!-- base64  -->
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.base64.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_button.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_style.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/swfupload/default.css" />
+<link rel=stylesheet type=text/css href="/perxxgkinfo/thscommon/style/page-base.css"/>
+
+<script type="text/javascript" src="/perxxgkinfo/js/urlhanzi.js"></script>
+
+<!-- èªå®ä¹éç¨æ ·å¼ -->
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/css/common/custom.css" />
+<!-- æºè½å®¡æ ¸js -->
+<script type="text/javascript" src="/perxxgkinfo/report/common/layer/layer.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/intelligent_checking.js"></script>
+<script>
+    var ctx = "/perxxgkinfo";
+</script>
+<title>许可信息公开内容</title>
+<link rel="shortcut icon" type="image/x-icon" href="/perxxgkinfo/gis/img/favicon.ico"/>
+<link rel="stylesheet" href="/perxxgkinfo/gis/css/default.css"/>
+<link rel="stylesheet" href="/perxxgkinfo/gis/css/app.css"/>
+<script src="/perxxgkinfo/gis/css/aes.js"></script>
+<script src="/perxxgkinfo/gis/css/mode-ecb-min.js"></script>
+<script type="text/javascript">
+/**
+ * 日期改变，重新请求数据
+ */
+function changeReportYear(){
+	var reportYear = $("#reportYear").val();
+	var dataid = $("#dataid").val();
+	$.ajax({
+	   type: "POST",
+	   url: "/perxxgkinfo/syssb/wysb/hpsp/hpsp-company-sewage!getZxbgByYear.action",
+	   data: {"reportYear":reportYear,"dataid":dataid},
+	   dataType:"json",
+	   success: function(msg){
+  			// 重新赋值 
+  			$("#zxbgTableBody").empty();
+  			if(msg && msg.length > 0){
+  				$.each(msg, function(index, item){
+  					var tr = "<tr align='center'><td>"+item.type+"</td><td>"+item.reportTime+"</td><td><a style='text-decoration: underline;' target='_blank' href='"+item.docUrl+"'>执行报告文档</a></td></tr>";
+  					$("#zxbgTableBody").append(tr);
+  				});
+  			} 
+  			// 重新设置高度
+  			resetHeight();
+		}
+	});
+}
+
+function resetHeight(){
+	var height = $(document).height();
+	if(parent && parent.setChildFrameHeight){
+		parent.setChildFrameHeight(height + 50);
+	} else if(parent && parent.$ && parent.$.fn.dialog){
+		parent.$("iframe").each(function(){
+			try{
+				var h = $(this).contents().find("body").height();
+				$(this).height(h + 50);
+			}catch(e){}
+		});
+	}
+}
+</script>
+</head>
+
+<body style="font-family:Microsoft YaHei;overflow-x:hidden;"  >
+
+<br />
+<div style="width: 100%;float: none;">
+<br />
+	<!-- <hr width="98%" color='green' size=1 /> -->
+<br />
+	<table style="width:99%;">
+		<tr>
+			<td align="left">
+				<h3 style="margin: 5px;color: green;display: inline-block;vertical-align: middle;">执行报告</h3>
+				
+				<input type="hidden" id="dataid" name="dataid" value="2330981c2be9447d80e70be2acd2e35f" />
+				
+				<input type="text" id="reportYear" name="reportYear" class="Wdate text-input" 
+				style="width: 5%;height: 20px; cursor:pointer;display: inline-block;vertical-align: middle;" readonly="readonly" 
+				onClick="WdatePicker({ el: this.id, dateFmt: 'yyyy', skin: 'whyGreen', onpicked: function(){changeReportYear();}})" value="2026" >	
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="edit-grid-gg" style="line-height: 32px;" >
+					<colgroup>
+				    	<col width="10%" />
+				    	<col width="10%" />
+				    	<col width="10%" />
+				    	<col width="15%" />
+				    	<col width="15%" />
+				    	<col width="15%" />
+				    	<col width="15%" />
+				    	<col width="10%" />
+				    </colgroup>
+					<tr>
+						<!-- <th style="border:#CCCCCC 1px solid;text-align: center;">公开时间</th> -->
+						<th style="border:#CCCCCC 1px solid;text-align: center;">报告类型</th>
+						<th style="border:#CCCCCC 1px solid;text-align: center;">报告期</th>
+						<!-- <th style="border:#CCCCCC 1px solid;text-align: center;">污染治理设施运行情况</th>
+						<th style="border:#CCCCCC 1px solid;text-align: center;">许可限值达标情况</th>
+						<th style="border:#CCCCCC 1px solid;text-align: center;">台账记录是否符合规范</th> -->
+						<th style="border:#CCCCCC 1px solid;text-align: center;">执行报告</th>
+						<!-- <th style="border:#CCCCCC 1px solid;text-align: center;">监测台账记录</th> -->
+					</tr>
+					<tbody id="zxbgTableBody">
+					
+						
+							<tr align="center">
+								<!-- <td></td> -->
+								<td>季报</td>
+								<td>2026年第2季度季报表</td>
+								<td>
+									<a style="text-decoration: underline;" target="_blank" href="https://permit.mee.gov.cn/permitrep/report/#/pubView?reportId=0fe1fdf00a49233ea1fc9f6af81eb742c3df00b154ed5380659144f9e477a951&provinceSharding=d3e805907af8411a0bbb7a22983d2e27&yearSharding=4410aea1bca90ad7ce4422f2b56aff09&reportType=quarter" >执行报告文档</a>
+								</td>
+							</tr>
+						
+							<tr align="center">
+								<!-- <td></td> -->
+								<td>季报</td>
+								<td>2026年第1季度季报表</td>
+								<td>
+									<a style="text-decoration: underline;" target="_blank" href="https://permit.mee.gov.cn/permitrep/report/#/pubView?reportId=d86d513b7c282cf7fcac49f973b5c81716c1bbfe2c630748f919abeccbc6ce6d&provinceSharding=d3e805907af8411a0bbb7a22983d2e27&yearSharding=4410aea1bca90ad7ce4422f2b56aff09&reportType=quarter" >执行报告文档</a>
+								</td>
+							</tr>
+						
+					
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr>
+			<td align="left"><h3 style="margin: 5px;color: green;">监督执法信息</h3></td>
+		</tr>
+		<tr>
+			<td>
+				<table class="edit-grid-gg" style="line-height: 32px;">
+					<colgroup>
+				    	<col width="20%" ></col>
+				    	<col width="20%" ></col>
+				    	<col width="20%" ></col>
+				    	<col width="20%" ></col>
+				    	<col width="20%" ></col>
+				    </colgroup>
+					<tr>
+						<th style="border:#CCCCCC 1px solid;text-align: center;">核查日期</th>
+						<th style="border:#CCCCCC 1px solid;text-align: center;">是否超许可浓度限值</th>
+						<th style="border:#CCCCCC 1px solid;text-align: center;">是否落实自行监测要求</th>
+						<th style="border:#CCCCCC 1px solid;text-align: center;">处罚情况</th>
+						<th style="border:#CCCCCC 1px solid;text-align: center;">详情查看</th>
+					</tr>
+					
+				</table>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr>
+			<td align="left"><h3 style="margin: 5px;color: green;">自行监测信息</h3></td>
+		</tr>
+		
+	</table>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,369 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+ 
+ 
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/thscommon/style/artDialog/aero.css" />
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/baiduStatistics.js"></script>
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/json2.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.media.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/upload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/exportWord.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/handlers.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/content.js"></script>
+<!--validate start  -->
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/validationEngine.jquery.css" type="text/css" />
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/template.css" type="text/css" />
+ <script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<!--validate end  -->
+
+
+<!-- base64  -->
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.base64.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_button.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_style.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/swfupload/default.css" />
+<link rel=stylesheet type=text/css href="/perxxgkinfo/thscommon/style/page-base.css"/>
+
+<script type="text/javascript" src="/perxxgkinfo/js/urlhanzi.js"></script>
+
+<!-- èªå®ä¹éç¨æ ·å¼ -->
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/css/common/custom.css" />
+<!-- æºè½å®¡æ ¸js -->
+<script type="text/javascript" src="/perxxgkinfo/report/common/layer/layer.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/intelligent_checking.js"></script>
+<script>
+    var ctx = "/perxxgkinfo";
+</script>
+<title>其他许可内容</title>
+<style>
+#test {
+    width:100%;
+    height:100%;
+    background-color:#000;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:2;
+    opacity:0.3;
+    /*兼容IE8及以下版本浏览器*/
+    filter: alpha(opacity=30);
+}
+
+#log_window {
+    width:50px;
+    height:50px;
+    margin: auto;
+    position: absolute;
+    z-index:3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+<style type="text/css">
+.AutoNewline
+{
+  word-break: break-all;/*必须*/
+}
+ table td {
+	height: 18px;
+}
+
+table td input[type=text] {
+	height: 99%;
+	width: 85%;
+}
+
+.havecode {
+	display: inline-block;
+	float: left;
+}
+
+.input_hidden {
+	display: none;
+}
+
+.yq_table {
+	display: none;
+}
+.blue_style{
+	color: blue;
+}
+.edit-grid{
+  border:1px;
+}
+</style>
+
+<script type="text/javascript" src="/perxxgkinfo/js/itemcard_right.js"></script>
+<script>
+$(document).ready(function() {
+	$("#mainForm").validationEngine("attach", {
+		promptPosition : "topLeft",
+		autoPositionUpdate : true,
+		autoHidePrompt : true,
+		autoHideDelay : 3000,
+		showOneMessage : true
+	});
+	
+});
+//查看信息公开内容时的遮盖，打开
+function shield(){
+    var s = document.getElementById("test");
+    s.style.display = "block";
+    
+    var l = document.getElementById("log_window");
+    l.style.display = "block";
+}
+//查看信息公开内容时的遮盖，关闭
+function myths_cancel_shield(){
+    var s = document.getElementById("test");
+    s.style.display = "none";
+    
+    var l = document.getElementById("log_window");
+    l.style.display = "none";
+}
+
+ //回调方法刷新当前页面
+function reloadJsp() {
+	location.reload();
+}
+function closerefresh() {
+	var win = art.dialog.open.origin;//来源页面
+	win.document.getElementById("mainForm").submit();
+}
+
+
+</script>
+</head>
+<body onload="initPage('readonly')">
+<iframe id="attfile_iFrame1" name="attfile_iFrame1" src="" frameborder="0" style="width: 200px; height: 200px; display:none;"></iframe>
+<div id="test" style="width: 100%;height: 100%"></div>
+<div id="log_window">
+<img alt="" src="/perxxgkinfo/css/img/loading1.gif" style="width: 100%;height: 100%"/>
+</div>
+<div class="list-title">
+	<span><img src="/perxxgkinfo/util/xzxk/images/title.png" /></span>
+		当前位置：其他许可内容
+</div>
+<br />
+<form name="mainForm" method="post"  id="mainForm" target="_parent">
+<div id="qtxknr">
+	
+	<div  style="font-family: Microsoft Yahei; font-size: 18px;" ><span class="add_title">噪声排放信息</span></div>
+	<table id="zspftable" class="edit-grid-gg">
+				<tr>
+					<th style="text-align:center;width:10%" rowspan="2" >噪声类别</th>
+					<th style="text-align:center;width:30%" colspan="2">生产时段</th>
+					<th style="text-align:center;width:20%" rowspan="2">执行排放标准名称</th>
+					<th style="text-align:center;width:20%" colspan="2">厂界噪声排放限制</th>
+					<th style="text-align:center;width:20%" rowspan="2">备注</th>
+				</tr>
+				<tr>
+					<th style="text-align:center;width:15%">昼间</th>
+					<th style="text-align:center;width:15%">夜间</th>
+					<th style="text-align:center;width:10%" >昼间,dB(A)</th>
+					<th style="text-align:center;width:10%">夜间,dB(A)</th>
+				</tr>
+				<tr>
+					<td style="text-align:center;">稳态噪声</td>
+					<td  style="text-align:center;border-right-style:none">
+						06
+						至
+						<br/>
+						22
+					</td>
+					<td  style="text-align:center;border-right-style:none">
+						22
+						<br/>
+						至
+						<br/>
+						06
+					</td>
+					<td style="text-align:center;" >
+						《工业企业厂界环境噪声排放标准》（GB12348-2008）
+					</td>
+					<td style="text-align:center;" >
+						60
+					</td>
+					<td style="text-align:center;" >
+						50
+					</td>
+					<td>
+						-
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">频发噪声</td>
+					
+					<td  style="text-align:center;border-right-style:none">
+						
+						
+							否
+						
+					</td>
+					<td style="text-align:center;border-right-style:none">
+						
+						
+							否
+						
+					</td>
+					<td style="text-align:center;" >
+						《工业企业厂界环境噪声排放标准》（GB12348-2008）
+					</td>
+					<td style="text-align:center;" >
+						-
+					</td>
+					<td style="text-align:center;" >
+						-
+					</td>
+					<td>
+						-
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">偶发噪声</td>
+					<td  style="text-align:center;border-right-style:none">
+						
+						
+							否
+						
+					</td>
+					<td  style="text-align:center;border-right-style:none">
+						
+						
+							否
+						
+					</td>
+					<td style="text-align:center;" >
+						《工业企业厂界环境噪声排放标准》（GB12348-2008）
+					</td>
+					<td style="text-align:center;" >
+						-
+					</td>
+					<td style="text-align:center;" >
+						-
+					</td>
+					<td>
+						-
+					</td>
+				</tr>
+				
+			</table>
+	<br/><br/>
+    
+
+    <table class="edit-grid" >
+	    <colgroup>
+	    	<col width="90%" ></col>
+	    </colgroup>
+	    <tr>
+            <td class="add_title"><div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">（一）大气环境管理要求</span></div></td>
+        </tr>
+		<tr>
+			<td>涉废气排放企业应严格执行《中华人民共和国大气污染防治法》《宁夏回族自治区大气污染防治条例》的有关要求；</td>
+		</tr>
+		<tr>
+			<td class="add_title"><div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">（二）水环境管理要求</span></div></td>
+		</tr>
+		<tr>
+			<td>涉废水产生及排放企业应严格执行《中华人民共和国水污染防治法》《宁夏回族自治区水污染防治条例》的有关要求；</td>
+		</tr>
+		<tr>
+            <td class="add_title"><div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">（三）土壤污染防治要求</span></div></td>
+        </tr>
+        <tr>
+            <td>涉土壤污染途径的企业应严格执行《中华人民共和国土壤污染防治法》《宁夏回族自治区土壤污染防治条例》的有关要求；</td>
+        </tr>
+        <tr>
+            <td class="add_title"><div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">（四）固体废物污染环境防治要求</span></div></td>
+        </tr>
+        <tr>
+            <td>涉固体废物产生、排放、处置、利用的企业严格执行《中华人民共和国固体废物污染环境防治法》《宁夏回族自治区固体废物污染环境防治条例》的有关要求；</td>
+        </tr>
+        <tr>
+            <td class="add_title"><div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">（五）其他控制及管理要求</span></div></td>
+        </tr>
+        <tr>
+            <td>根据《宁夏回族自治区冬季清洁取暖项目实施工作方案（2023—2025 年）》2025 年底前 65 蒸吨及以上燃煤锅炉全面实现超低排放，对现有的65t/h及以上的供热锅炉进行脱硫设施、脱销设施改造，改造后取得消减量为二氧化硫47.174t/a，氮氧化物34.78t/a，该消减量全部作为出让量，全部出让给国能宁夏六盘山能源发展有限公司。</td>
+        </tr>
+        <tr>
+            <td class="add_title"><div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">其他许可的内容</span></div></td>
+        </tr>
+        <tr>
+            <td>/</td>
+        </tr>
+		
+	    
+			<tr>
+				<td class="add_title"><div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">改正规定：</span></div></td>
+			</tr>
+			<tr>
+				<table id="gzwttable" class="edit-grid-gg">
+					<tr>
+					    <th class="align-center" width="17%">整改问题</th>
+	                    <th class="align-center" width="17%">整改措施</th>
+	                    <th class="align-center" width="17%">整改时限</th>
+	                    <th class="align-center" width="17%">整改计划</th>
+	                    
+	                    
+					</tr>
+					
+					
+						<tr id="tr_87a180e027c5497d9cbb3c3f14749d7c">
+							<td style="text-align:center;">
+								1
+							</td>
+							<td style="text-align:center;" id="problemname87a180e027c5497d9cbb3c3f14749d7c">
+							
+							
+								未批先建，但满足达标排放和总量控制要求
+							
+							</td>
+							<td id="measure87a180e027c5497d9cbb3c3f14749d7c">
+								1.了解学习相关法律法规，并对照企业情况进行梳理摸排，结合责令整改通知书的内容，对生产过程的产排污情况。污染治理设施运行情况等复盘，查找不足。
+2.委托第三方技术公司对企业进行评估、监测，并最终形成环境影响报告表,报生态环境主管部门取得批复。
+3.落实环境影响评价报告中的污染治理措施并完成环评验收。
+							</td>
+							<td style="text-align:center;">
+								2020-04-14
+								至
+								2021-04-13
+							</td>
+							
+						</tr>
+					
+					
+				</table>
+			</tr>
+		
+		
+		</table>
+	<br />
+	<br />
+	<br />
+</div>
+
+</form>
+
+</body>
+</html>

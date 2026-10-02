@@ -1,0 +1,6 @@
+﻿数据类,状态,时间范围,位置,来源,本次可核验内容,限制
+Open-Meteo/ERA5 三城逐时气象,verified_downloaded,2020-01-01~2025-04-30 UTC，逐时，每城46728行,05_气象交叉/sources、tables,https://archive-api.open-meteo.com/v1/archive,原始JSON未改一字+北京时间CSV+请求回执；含露点、100m风速、直射/散射分离辐射,再分析产品，非地面站实测；与NASA POWER口径不同；不能当当地实测验证
+NASA vs ERA5 交叉核对,derived_from_verified,2020—2024，每城每变量43840配对小时,05_气象交叉/tables/交叉核对_NASA_vs_ERA5.csv,本地计算（两套已核验产品配对）,均值差/MAE/RMSE/相关系数；乌鲁木齐气温NASA较ERA5高2.37℃,差异不等于误差；只能作为输入不确定性证据
+气象站逐时观测（Meteostat，WMO 51463 乌鲁木齐 / 57494 武汉）,verified_downloaded,51463: 2018-01-28起；57494: 1956-08-20起，均至2026年,05_气象交叉/sources/meteostat_*.csv.gz,https://bulk.meteostat.net/v2/hourly/<WMO>.csv.gz （Meteostat Bulk，底层为NOAA ISD等站点观测）,原始gz未改；与NASA逐时配对43848h；乌鲁木齐站距市中心5.2km、武汉站17.1km,Meteostat为二次分发，字段有缺测；**bulk为UTC**，本包已+8转北京时间；站点观测非项目现场仪表
+★ 气温三源交叉结论（乌鲁木齐）,derived_from_verified,2020—2024,05_气象交叉/tables/交叉核对_NASA_vs_气象站.csv,本地计算（NASA POWER / ERA5 / WMO51463 三者配对）,**NASA−站点=+2.16℃；ERA5−NASA=−2.37℃** ⟹ 站点与ERA5互相吻合(8.85 vs 8.64℃)，两者一致指向NASA偏高约2℃,不能据此判定谁绝对正确；但可作气象输入系统性不确定性的量化证据
+气象站逐时观测（固原替代站）,partial_reference,2020—2024（34799配对小时）,05_气象交叉/sources/meteostat_53915.csv.gz,Meteostat WMO 53915 平凉站,与NASA配对34799h，NASA−平凉=−2.39℃,**平凉距固原60.8km且海拔更低（约1350m vs 固原1773m）**，差异被海拔混淆，**不可当作固原偏差**；固原在Meteostat中国站列表中无本站

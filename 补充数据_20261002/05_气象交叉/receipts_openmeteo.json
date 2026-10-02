@@ -1,0 +1,50 @@
+[
+  {
+    "数据类": "Open-Meteo ERA5 逐时气象（scenario1_urumqi）",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=43.83&longitude=87.62&start_date=2020-01-01&end_date=2025-04-30&hourly=temperature_2m%2Crelative_humidity_2m%2Cdewpoint_2m%2Cwind_speed_10m%2Cwind_speed_100m%2Cshortwave_radiation%2Cdirect_normal_irradiance%2Cdiffuse_radiation%2Csurface_pressure%2Cprecipitation%2Ccloud_cover&timezone=UTC&wind_speed_unit=ms",
+    "抓取时间": "2026-10-02 11:01:42",
+    "http状态": 200,
+    "行数": 46728,
+    "用户本地文件": "sources/openmeteo_scenario1_urumqi_2020-01-01_2025-04-30_UTC.json",
+    "csv": "tables/openmeteo_scenario1_urumqi_hourly_beijing.csv",
+    "sha256": "903c042e13a53280a90d7287ace596a6d979795ea913a296d30d2c677fe4ade2",
+    "站点": {
+      "latitude": 43.83128,
+      "longitude": 87.549164,
+      "elevation": 832.0
+    },
+    "耗时s": 5.4
+  },
+  {
+    "数据类": "Open-Meteo ERA5 逐时气象（scenario2_guyuan）",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=36.02&longitude=106.24&start_date=2020-01-01&end_date=2025-04-30&hourly=temperature_2m%2Crelative_humidity_2m%2Cdewpoint_2m%2Cwind_speed_10m%2Cwind_speed_100m%2Cshortwave_radiation%2Cdirect_normal_irradiance%2Cdiffuse_radiation%2Csurface_pressure%2Cprecipitation%2Ccloud_cover&timezone=UTC&wind_speed_unit=ms",
+    "抓取时间": "2026-10-02 11:01:49",
+    "http状态": 200,
+    "行数": 46728,
+    "用户本地文件": "sources/openmeteo_scenario2_guyuan_2020-01-01_2025-04-30_UTC.json",
+    "csv": "tables/openmeteo_scenario2_guyuan_hourly_beijing.csv",
+    "sha256": "bceee47f4fd82b9a646f81ce87ecc3a647808ab82e458c640f14052df18a1b9a",
+    "站点": {
+      "latitude": 36.02812,
+      "longitude": 106.20466,
+      "elevation": 1773.0
+    },
+    "耗时s": 5.0
+  },
+  {
+    "数据类": "Open-Meteo ERA5 逐时气象（scenario3_wuhan）",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=30.59&longitude=114.31&start_date=2020-01-01&end_date=2025-04-30&hourly=temperature_2m%2Crelative_humidity_2m%2Cdewpoint_2m%2Cwind_speed_10m%2Cwind_speed_100m%2Cshortwave_radiation%2Cdirect_normal_irradiance%2Cdiffuse_radiation%2Csurface_pressure%2Cprecipitation%2Ccloud_cover&timezone=UTC&wind_speed_unit=ms",
+    "抓取时间": "2026-10-02 11:01:56",
+    "http状态": 200,
+    "行数": 46728,
+    "用户本地文件": "sources/openmeteo_scenario3_wuhan_2020-01-01_2025-04-30_UTC.json",
+    "csv": "tables/openmeteo_scenario3_wuhan_hourly_beijing.csv",
+    "sha256": "321fd7ae59eb2aa6b8471b8e4a29e603d821e77fa7500ae564fc4e0a286b8e02",
+    "站点": {
+      "latitude": 30.615112,
+      "longitude": 114.27562,
+      "elevation": 15.0
+    },
+    "耗时s": 4.8
+  }
+]

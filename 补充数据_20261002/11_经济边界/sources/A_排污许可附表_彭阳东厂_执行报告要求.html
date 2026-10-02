@@ -1,0 +1,213 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+ 
+ 
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/thscommon/style/artDialog/aero.css" />
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/baiduStatistics.js"></script>
+
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/json2.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.media.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/upload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/exportWord.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/handlers.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/util/xzxk/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/content.js"></script>
+<!--validate start  -->
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/validationEngine.jquery.css" type="text/css" />
+<link rel="stylesheet" href="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/css/template.css" type="text/css" />
+ <script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<script src="/perxxgkinfo/thscommon/javascript/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<!--validate end  -->
+
+
+<!-- base64  -->
+<script type="text/javascript" src="/perxxgkinfo/thscommon/javascript/jquery.base64.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_button.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/css/xzxk_style.css" />
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/xzxk/swfupload/default.css" />
+<link rel=stylesheet type=text/css href="/perxxgkinfo/thscommon/style/page-base.css"/>
+
+<script type="text/javascript" src="/perxxgkinfo/js/urlhanzi.js"></script>
+
+<!-- èªå®ä¹éç¨æ ·å¼ -->
+<link rel="stylesheet" type="text/css" href="/perxxgkinfo/util/css/common/custom.css" />
+<!-- æºè½å®¡æ ¸js -->
+<script type="text/javascript" src="/perxxgkinfo/report/common/layer/layer.js"></script>
+<script type="text/javascript" src="/perxxgkinfo/js/intelligent_checking.js"></script>
+<script>
+    var ctx = "/perxxgkinfo";
+</script>
+<title>执行（守法）报告要求 </title>
+<style>
+#test {
+    width:100%;
+    height:100%;
+    background-color:#000;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:2;
+    opacity:0.3;
+    /*兼容IE8及以下版本浏览器*/
+    filter: alpha(opacity=30);
+}
+
+#log_window {
+    width:50px;
+    height:50px;
+    margin: auto;
+    position: absolute;
+    z-index:3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+<style type="text/css">
+.AutoNewline
+{
+  word-break: break-all;/*必须*/
+}
+ table td {
+	height: 18px;
+}
+
+table td input[type=text] {
+	height: 99%;
+	width: 85%;
+}
+
+.havecode {
+	display: inline-block;
+	float: left;
+}
+
+.input_hidden {
+	display: none;
+}
+
+.yq_table {
+	display: none;
+}
+.blue_style{
+	color: blue;
+}
+.edit-grid{
+  border:1px;
+}
+</style>
+<script type="text/javascript" src="/perxxgkinfo/js/itemcard_right.js"></script>
+<script>
+$(document).ready(function() {
+	$("#mainForm").validationEngine("attach", {
+		promptPosition : "topLeft",
+		autoPositionUpdate : true,
+		autoHidePrompt : true,
+		autoHideDelay : 3000,
+		showOneMessage : true
+	});
+});
+//查看信息公开内容时的遮盖，打开
+function shield(){
+    var s = document.getElementById("test");
+    s.style.display = "block";
+    
+    var l = document.getElementById("log_window");
+    l.style.display = "block";
+}
+//查看信息公开内容时的遮盖，关闭
+function myths_cancel_shield(){
+    var s = document.getElementById("test");
+    s.style.display = "none";
+    
+    var l = document.getElementById("log_window");
+    l.style.display = "none";
+}
+
+
+ //回调方法刷新当前页面
+function reloadJsp() {
+	location.reload();
+}
+function closerefresh() {
+	var win = art.dialog.open.origin;//来源页面
+	win.document.getElementById("mainForm").submit();
+}
+
+</script>
+</head>
+<body onload="initPage('readonly')">
+<iframe id="attfile_iFrame1" name="attfile_iFrame1" src="" frameborder="0" style="width: 200px; height: 200px; display:none;"></iframe>
+<div id="test" style="width: 100%;height: 100%"></div>
+<div id="log_window">
+<img alt="" src="/perxxgkinfo/css/img/loading1.gif" style="width: 100%;height: 100%"/>
+</div>
+<div class="list-title">
+<span><img src="/perxxgkinfo/util/xzxk/images/title.png" /></span>
+当前位置：执行（守法）报告要求
+</div>
+<br />
+<form name="mainForm" method="post"  id="mainForm" target="_parent">
+<div id="zxbg">
+<div style="font-size: 18px;font-family: Microsoft Yahei;"><span class="add_title">执行（守法）报告</span></div>
+<br />
+		<div style="display: inline;float: right">
+		</div>
+<br />
+	<table class="edit-grid-gg" border="1" id="spreport">
+		<tr align="center">
+			<th style="width:30%;">主要内容</th>
+			<th style="width:30%;">上报频次</th>
+			<th style="width:30%;">其他信息</th>
+		</tr>
+		
+			 
+				<tr>
+					<td>
+						在全国排污许可证管理信息平台填报：污染物实际排放浓度和排放量、合规判定分析、超标排放或污染防治设施异常情况说明等内容。其中，季度执行报告还应包括各月度生产小时数、主要产品及其产量、主要原料及其消耗量、新水用量及废水排放量、主要污染物排放量等信息。
+					</td>
+					<td>
+						季报
+					</td>
+					<td>
+						1、企业环境管理台账记录要求及执行报告编制规范具体要求按照《环境管理台账及排污许可证执行报告技术规范》执行。2、对于持证时间超过三个月的年度，报告周期为当年全年（自然年）；对于持证时间不足三个月的年度，当年可不提交年度执行报告，排污许可证执行情况纳入下一年度执行报告。
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+						在全国排污许可证管理信息平台填报：1.排污单位基本情况、污染防治设施运行情况、自行监测执行情况、环境管理台账执行情况、实际排放情况及合规判定分析、信息公开情况（在全国排污许可证管理信息平台以外的途径公开信息的，还应提供相关证明材料）、排污单位内部环境管理体系建设与运行情况、其他排污许可证规定的内容执行情况、其他需要说明的问题、结论、附图附件等。2.对于排污单位信息有变化和违证排污等情形，应分析与排污许可证内容的差异，并说明原因。
+					</td>
+					<td>
+						年报
+					</td>
+					<td>
+						在全国排污许可证管理信息平台填报：1.排污单位基本情况、污染防治设施运行情况、自行监测执行情况、环境管理台账执行情况、实际排放情况及合规判定分析、信息公开情况（在全国排污许可证管理信息平台以外的途径公开信息的，还应提供相关证明材料）、排污单位内部环境管理体系建设与运行情况、其他排污许可证规定的内容执行情况、其他需要说明的问题、结论、附图附件等。2.对于排污单位信息有变化和违证排污等情形，应分析与排污许可证内容的差异，并说明原因。
+					</td>
+				</tr>
+			 
+		
+	</table>
+	<br />
+	<br />
+</div>
+</form>
+</body>
+</html>

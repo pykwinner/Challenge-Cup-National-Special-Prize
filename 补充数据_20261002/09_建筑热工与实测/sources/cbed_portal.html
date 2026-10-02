@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  <!-- Title -->
+  <title>建筑节能设计基础数据共享平台</title>
+
+  <!-- Meta -->
+  <meta http-equiv="content-type" content="text/html" charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="content-language" content="zh-cn">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Haoning, Bingpeng">
+  <meta name="description" content="建筑节能设计基础数据共享平台">
+  <meta name="keywords" content="建筑节能,典型气象年,模拟器气象年,太阳辐射,栅格数据,地球模拟,建筑节能,绿色建筑">
+
+  <!-- SEO -->
+  <meta name="baidu-site-verification" content="codeva-ESS5hKttC2" />
+  <meta name="msvalidate.01" content="13DB1AFACE76213906148D89FD7B5454" />
+  <meta name="google-site-verification" content="DRUwpnZ3nFZNDFoTinOqlsHauaT-lhbLCgfATyPfNt4" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="192x192" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="theme-color" content="#173c7d">
+<meta name="author" content="Haoning, Bingpeng">
+
+  <!-- 模块 Module CSS Files -->
+  <link href="assets/module/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/module/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/module/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/module/aos/aos.css" rel="stylesheet">
+
+  <!-- 主要 Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/module/slick/slick.min.css" rel="stylesheet">
+
+  <!-- 主题颜色切换 -->
+  <style id="switch-theme-color"></style>
+
+  <script type="text/javascript">
+    function loading() {
+      let lightstyle = ":root{--body-bg: #ffffff;--color-default: #0a0d13;--box-shadow: 0 16px 48px #e7ebf6;--color-secondary: #0e1d34;--title-color: #132848;--section-header-color: #001973;--color-secondary-hero: #0e1d34;--breadcrumbs-color: #f3f6fc;--card-color: #ffffff;}";
+      let darkstyle = ":root{--body-bg: #151521;--color-default: #9899ac;--box-shadow: 0 16px 48px #000000;--color-secondary: #528773;--title-color: #9899ac;--section-header-color: #76b8ff;--color-secondary-hero: #1e1e2d;--breadcrumbs-color: #1e1e2d;--card-color: #111111;}";
+      var checked = localStorage.getItem("theme");
+
+      if (checked == "theme-light" || checked == null) {
+        document.getElementById("theme-toggle").className = "bi bi-toggle-off";
+        document.getElementById("switch-theme-color").innerHTML = lightstyle;
+      } else if (checked == "theme-dark") {
+        document.getElementById("theme-toggle").className = "bi bi-toggle-on";
+        document.getElementById("switch-theme-color").innerHTML = darkstyle;
+      } else {
+        const themeMedia = window.matchMedia("(prefers-color-scheme: light)");
+        if (themeMedia.matches) {
+          document.getElementById("theme-toggle").className = "bi bi-toggle-off";
+          document.getElementById("switch-theme-color").innerHTML = lightstyle;
+        } else {
+          document.getElementById("theme-toggle").className = "bi bi-toggle-on";
+          document.getElementById("switch-theme-color").innerHTML = darkstyle;
+        }
+      }
+    }
+  </script>
+
+	<!-- Add PWA Support -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#173c7d">
+	<link rel="manifest" href="manifest.json">
+	<script type="text/javascript">
+		if (navigator.serviceWorker != null) {
+		  navigator.serviceWorker.register('sw.js')
+		  .then(function(registration) {
+			console.log('Registered events at scope: ', registration.scope);
+		  });
+		}
+	</script>
+</head>
+
+<body>
+
+  <!-- 头部 Header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- <img src="assets/images/logo-green-words.svg" alt=""> -->
+        <h1><img src="assets/images/logo-green-words.svg" class="img-fluid nodrag" alt="logo"></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+      <nav id="navbar" class="navbar">
+
+        <div class="language-button" style="display: none;">
+          <button type="button" id="switch">CN / EN</button>
+          <div class="language-tooltip">Switch Language</div>
+        </div>
+
+        <ul>
+          <li><a href="index.html" class="active">主页</a></li>
+          <li><a href="search.html">最新动态</a></li>
+          <li><a href="rights.html">知识产权</a></li>
+          <li class="dropdown"><a href="#"><span>服务与功能</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#features-1">地图索引与台站查询</a></li>
+              <li><a href="#features-2">城市基本气候特征</a></li>
+              <li><a href="#features-3">建筑节能设计参数</a></li>
+              <li><a href="#features-4">气象年数据</a></li>
+            </ul>
+          </li>
+          <li><a href="pwa.html">移动应用</a></li>
+          <li><a href="about.html">团队介绍</a></li>
+          <li><a class="get-a-quote" href="login.html">登录使用</a></li>
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- 顶部 Hero Section -->
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row gy-4 d-flex justify-content-between">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h2 data-aos="fade-up" style="font-size: 45px;" id="fanyi-1">建筑节能设计基础数据共享平台</h2>
+          <p data-aos="fade-up" data-aos-delay="100" style="letter-spacing: 1px;" id="fanyi-2">平台提供覆盖我国超过 1,019 个城镇的建筑热工、暖通空调设计与建筑能耗模拟用室内外参数集。实现对现行建筑热工、暖通空调、建筑节能设计标准规范及设计手册中设计计算参数的全覆盖、动态更新与实时共享。为建筑行业科研、教育、工程技术人员提供全方位节能设计基础数据服务；为建筑节能领域国家及行业标准的编制和建筑节能减排等国家重大战略的工程建设需求提供数据支撑。</p>
+          <form onsubmit="return false" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+            <input id="leb-search" type="text" class="form-control" placeholder="搜索数据平台内容..." onsearch="searchKey()" autocomplete="off">
+            <button type="button" class="btn btn-primary" onclick="searchKey()"><i class="fa-solid fa-search"></i></button>
+          </form>
+        </div>
+
+        <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+          <img src="assets/images/hero-img.svg" class="img-fluid mb-3 mb-lg-0 nodrag" alt="buildingdata">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Start #main -->
+  <main id="main">
+
+    <!-- 三个快速入口 -->
+    <section id="featured-services" class="featured-services">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
+            <div class="icon flex-shrink-0"><i class="fa-solid bi-easel2-fill"></i></div>
+            <div>
+              <h4 class="title">平台功能</h4>
+              <p class="description">快速了解建筑节能数据平台的主要功能，帮助你快速上手并使用。</p>
+              <a href="#call-to-action" class="readmore stretched-link"><span>查看功能</span><i class="bi bi-arrow-down"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="fa-solid fa-newspaper"></i></div>
+            <div>
+              <h4 class="title">最新动态</h4>
+              <p class="description">查看数字平台新发布的一些公告、研究进展、平台新功能介绍等内容。</p>
+              <a href="search.html" class="readmore stretched-link"><span>阅读更多</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="fa-solid bi-person-badge-fill"></i></div>
+            <div>
+              <h4 class="title">关于团队</h4>
+              <p class="description">了解我们建筑节能设计基础数据共享平台团队的基本信息或与我们联系。</p>
+              <a href="about.html" class="readmore stretched-link"><span>阅读更多</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 滚动 Banner -->
+    <section id="slick" class="pt-0">
+      <div class="container" data-aos="fade-up">
+
+        <div class="carousel">
+          <div class="slide1">
+            <div class="container">
+              <h2 style="color: #EFEFEF;">建筑节能设计基础数据共享平台</h2>
+              <h3 style="color: #EFEFEF;">平台提供覆盖我国超过 1,019 个城镇的建筑热工、暖通空调设计与建筑能耗模拟用室内外参数集。实现对现行建筑热工、暖通空调、建筑节能设计标准规范及设计手册中设计计算参数的全覆盖、动态更新与实时共享。为建筑行业科研、教育、工程技术人员提供全方位节能设计基础数据服务；为建筑节能领域国家及行业标准的编制和建筑节能减排等国家重大战略的工程建设需求提供数据支撑。</h3>
+            </div>
+          </div>
+          <div class="slide2">
+            <div class="container">
+              <h2>建筑气候设计数据模块</h2>
+              <h3>该模块包含城市基本气候特征参数查询（温度、湿度、太阳辐射、风速）、在线建筑气候分析、城市气候特征对比分析 3 个子功能。主要目的在于为工程设计人员提供城市基本气候特征信息，初步了解该地区的地域气候资源状况，为建筑的初步设计提供方向性设计策略指导。</h3>
+            </div>
+          </div>
+          <div class="slide3">
+            <div class="container">
+              <h2>建筑节能设计参数模块</h2>
+              <h3>该模块可查询民用建筑热工设计及民用建筑供暖通风与空气调节设计室内、外计算参数。包括供暖空调建筑和非供暖空调建筑热工设计室内计算参数；围护结构保温、隔热、防潮设计室外计算参数；动态保温设计典型日；热湿耦合计算室外计算参数；自然通风与建筑遮阳设计室外计算参数；供暖系统和供冷系统室内设计参数；多不保证率和多参数独立的暖通空调设计室外计算参数；干、湿球温度和太阳辐射同时发生暖通空调设计室外计算参数；冬夏季暖通空调设计典型气象日。为民用建筑热工设计及暖通空调设计提供基础数据支撑。</h3>
+            </div>
+          </div>
+          <div class="slide4">
+            <div class="container">
+              <h2>建筑能耗模拟气象年</h2>
+              <h3>该模块包括反映建筑所在地平均气候特征的典型气象年、气候变化下的未来气象年及考虑高温高湿和太阳能等可再生能源利用工程的极端气象年，为提高建筑能耗模拟计算的时效性、准确性和全面性提供基础数据支撑。</h3>
+            </div>
+          </div>
+          <div class="slide5">
+            <div class="container">
+              <h2>建筑节能设计参数数据共享接口</h2>
+              <h3>基于 Web Services 技术实现的数据共享接口，通过 HTTP/HTTPS 协议与对平台数据有访问需求的相关软件对接，按照 XML（扩展标记语言）格式为各种平台和框架上运行的软件应用提供数据服务。</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 平台简介 -->
+    <section id="about" class="about pt-0">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
+            <img src="assets/images/data-new.png" class="img-fluid nodrag" alt="data">
+          </div>
+          <div class="col-lg-6 content order-last  order-lg-first">
+            <h3 style="color: #64bba0;">覆盖地域广，统计时间长</h3>
+            <p>数据覆盖中国超过 1000+ 个城镇，统计时间从 1988 年至 2017 年。</p>
+            <ul>
+              <li data-aos="fade-up" data-aos-delay="100">
+                <i class="bi bi-pin-map-fill"></i>
+                <div>
+                  <h5 style="color: #9ccc64;">多维精准定向</h5>
+                  <p>平台包含建筑热工、暖通与能耗模拟用室内、外设计计算参数。</p>
+                </div>
+              </li>
+              <li data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-clipboard-data-fill"></i>
+                <div>
+                  <h5 style="color: #9ccc64;">数据类型</h5>
+                  <p>平台包含多种常用的 netCDF、HDF 等多种常用格式类型的数据。</p>
+                </div>
+              </li>
+              <li data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-people-fill"></i>
+                <div>
+                  <h5 style="color: #9ccc64;">服务人群</h5>
+                  <p>数据平台面向从事建筑行业的科研、教育工作者，工程技术人员等。</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 拓展内容 -->
+    <section id="service" class="services pt-0">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <span>拓展内容</span>
+          <h2>拓展内容</h2>
+
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/images/notice-1.jpg" alt="移动应用" class="img-fluid">
+              </div>
+              <h3><a href="pwa.html" class="stretched-link">移动应用</a></h3>
+              <p>将数据平台的常用功能安装到您的移动设备上</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/images/notice-2.jpg" alt="知识产权" class="img-fluid">
+              </div>
+              <h3><a href="rights.html" class="stretched-link">知识产权</a></h3>
+              <p>查看数据使用要求以及进行数据申请</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <div class="card-img">
+                <img src="assets/images/notice-3.jpg" alt="代码仓库" class="img-fluid">
+              </div>
+              <h3><a href="https://github.com/buildingdata" target="_blank" class="stretched-link">代码仓库</a></h3>
+              <p>欢迎访问我们的 Github 组织代码仓库</a></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 平台功能与搜索更多 -->
+    <section id="call-to-action" class="call-to-action">
+      <div class="container" data-aos="zoom-out">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h3>平台功能介绍</h3>
+            <p>浏览下方内容，可以快速了解建筑节能数据平台的主要功能，帮助你快速上手并使用。你也可以点击下方按钮，搜索平台更多的内容。</p>
+            <a class="cta-btn" href="search.html">搜索更多 <i class="fa-solid fa-search"></i></a>
+          </div>
+        </div>
+    </section>
+
+    <!-- 查看功能 -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div id="features-1" class="row gy-4 align-items-center features-item" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="assets/images/features-1.jpg" style="border-radius: 10px;" class="img-fluid nodrag isshadow" alt="地图索引与台站查询">
+          </div>
+          <div class="col-md-7" style="padding: 0 50px;">
+            <h3>地图索引与台站查询</h3>
+            <p class="fst-italic">地图索引与台站查询模块功能，可以让你在二维（2D）地图上，查看建筑节能基础数据数据平台的所有台站数据和栅格数据。</p>
+            <ul>
+              <li><i class="bi bi-check"></i> 台站气象数据展示</li>
+              <li><i class="bi bi-check"></i> 栅格气象数据展示</li>
+              <li><i class="bi bi-check"></i> 地图信息展示</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="features-2" class="row gy-4 align-items-center features-item" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="assets/images/features-2.jpg" style="border-radius: 10px;" class="img-fluid nodrag isshadow" alt="城市基本气候特征">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" style="padding: 0 50px;">
+            <h3>城市基本气候特征</h3>
+            <p class="fst-italic">气候特征模功能模块，包含城市基本气候特征参数查询（温度、湿度、太阳辐射、风速）、在线建筑气候分析、城市气候特征对比分析等。</p>
+            <ul>
+              <li><i class="bi bi-check"></i> 城市基本气候特征参数查询功能</li>
+              <li><i class="bi bi-check"></i> 在线建筑气候分析功能</li>
+              <li><i class="bi bi-check"></i> 城市气候特征对比分析功能</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="features-3" class="row gy-4 align-items-center features-item" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="assets/images/features-3.jpg" style="border-radius: 10px;" class="img-fluid nodrag isshadow" alt="建筑节能设计参数">
+          </div>
+          <div class="col-md-7" style="padding: 0 50px;">
+            <h3>建筑节能设计参数</h3>
+            <p class="fst-italic">该模块可查询民用建筑热工设计及民用建筑供暖通风与空气调节设计室内、外计算参数。为民用建筑热工设计及暖通空调设计提供基础数据支撑。</p>
+            <ul>
+              <li><i class="bi bi-check"></i> 供暖空调建筑和非供暖空调建筑热工设计室内计算参数</li>
+              <li><i class="bi bi-check"></i> 围护结构保温、隔热、防潮设计室外计算参数</li>
+              <li><i class="bi bi-check"></i> 动态保温设计典型日、热湿耦合计算室外计算参数</li>
+              <li><i class="bi bi-check"></i> 自然通风与建筑遮阳设计室外计算参数</li>
+              <li><i class="bi bi-check"></i> 供暖系统和供冷系统室内设计参数</li>
+              <li><i class="bi bi-check"></i> 多不保证率和多参数独立的暖通空调设计室外计算参数</li>
+              <li><i class="bi bi-check"></i> 干、湿球温度和太阳辐射同时发生暖通空调设计室外计算参数</li>
+              <li><i class="bi bi-check"></i> 冬、夏季暖通空调设计典型气象日</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="features-4" class="row gy-4 align-items-center features-item" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="assets/images/features-4.jpg" style="border-radius: 10px;" class="img-fluid nodrag isshadow" alt="气象年数据">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" style="padding: 0 50px;">
+            <h3>气象年数据</h3>
+            <p class="fst-italic">该模块包括反映建筑所在地平均气候特征的典型气象年、未来气象年及极端气象年，为提高建筑能耗模拟计算的时效性、准确性和全面性提供基础数据支撑。</p>
+            <ul>
+              <li><i class="bi bi-check"></i> 建筑所在地的平均气候特征的典型气象年</li>
+              <li><i class="bi bi-check"></i> 建筑所在地未来气候变化下的未来气象年</li>
+              <li><i class="bi bi-check"></i> 建筑所在地的高温高湿和太阳能等可再生能源利用工程的极端气象年</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 底部 Footer  -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/images/logo-green.svg" class="nodrag" alt="logo">
+          </a>
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>建筑节能设计基础数据共享平台</span>
+          </a>
+          <p>提供覆盖我国超过 1,019 个城镇的建筑热工、暖通空调设计与建筑能耗模拟数据集，以及数据平台在线数据展示和分析功能。</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.xauat.edu.cn" title="西安建筑科技大学"><i class="xauat-logo"></i></a>
+            <a href="https://github.com/buildingdata" title="Github 开放仓库"><i class="bi bi-github"></i></a>
+            <a href="mailto:buildingdata@xauat.edu.cn" title="发邮件到 buildingdata@xauat.edu.cn"><i class="bi bi-mailbox"></i></a>
+            <a style="cursor: pointer;" onclick="saveDarkMode()"><i class="bi bi-toggle-off" id="theme-toggle" title="深色主题"></i></a>
+            <a id="qrcode2" href="https://mp.weixin.qq.com/s/DiYdU9uPr5Ov_JKrxsOxiA" target="_blank" title="微信公众号"><i class="bi bi-wechat"></i><img src="assets/images/qrcode.jpg"></a>
+          </div>
+        </div>
+
+        <!-- 执行 Loading 函数 -->
+        <script type="text/javascript">loading();</script>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>导航链接</h4>
+          <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="search.html">最新动态</a></li>
+            <li><a href="rights.html">知识产权</a></li>
+            <li><a href="pwa.html">移动应用</a></li>
+            <li><a href="about.html">团队介绍</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>服务功能</h4>
+          <ul>
+            <li><a href="#features-1">地图索引与台站查询</a></li>
+            <li><a href="#features-2">城市基本气候特征</a></li>
+            <li><a href="#features-3">建筑节能设计参数</a></li>
+            <li><a href="#features-4">气象年数据</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>联系我们</h4>
+          <p>
+            西安建筑科技大学<br>
+            西安市碑林区雁塔路 13 号<br>
+            中国 · 陕西<br><br>
+            <strong>公众号:</strong> <a id="qrcode" href="https://mp.weixin.qq.com/s/DiYdU9uPr5Ov_JKrxsOxiA" target="_blank" title="微信公众号">建筑热环境与节能<img src="assets/images/qrcode.jpg"></a><br>
+            <strong>邮&#12288;箱:</strong> <a href="mailto:buildingdata@xauat.edu.cn" title="发送邮件"> buildingdata@xauat.edu.cn</a><br>
+          </p>
+        </div>
+        
+    </div>
+
+    <div class="container mt-4">
+      <div class="hero-xauat"><img src="assets/images/hero-img.png" class="img-fluid nodrag" alt="xauat"></div>
+      <div class="copyright">&copy; Copyright <span id="footerYear">2022</span> <span><a href="https://buildingdata.xauat.edu.cn/">建筑节能设计基础数据共享平台</a></span>. All Rights Reserved</div>
+      <div class="credits"><a href="https://beian.miit.gov.cn/">陕 ICP 备 05001615 号</a></div>
+    </div>
+
+    <!-- 引入不蒜子 JS，使用你自己的 API 地址 -->
+    <script defer data-api="https://buildingdata.xauat.edu.cn/bsz/api" src="https://busuanzi.9420.ltd/js"></script>
+    <div class="credits" style="color: #555;">
+      <!-- 页面中插入统计标签 -->
+      <p style="display: none;">本文总阅读量：<span id="busuanzi_page_pv"></span> 次，本文总访客量：<span id="busuanzi_page_uv"></span> 人</p>
+      <p>本站总访问量：<span id="busuanzi_site_pv"></span> 次，本站总访客数：<span id="busuanzi_site_uv"></span> 人</p>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- JQuery -->
+  <script src="assets/js/jquery.min.js"></script>
+
+  <!-- Module JS Files -->
+  <script src="assets/module/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/module/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/module/aos/aos.js"></script>
+
+  <!-- Imagesloaded js -->
+  <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/module/slick/slick.min.js"></script>
+
+  <script>
+    /* saveDarkMode */
+    function saveDarkMode() {
+      let lightstyle = ":root{--body-bg: #ffffff;--color-default: #0a0d13;--box-shadow: 0 16px 48px #e7ebf6;--color-secondary: #0e1d34;--title-color: #132848;--section-header-color: #001973;--color-secondary-hero: #0e1d34;--breadcrumbs-color: #f3f6fc;--card-color: #ffffff;}";
+      let darkstyle = ":root{--body-bg: #151521;--color-default: #9899ac;--box-shadow: 0 16px 48px #000000;--color-secondary: #528773;--title-color: #9899ac;--section-header-color: #76b8ff;--color-secondary-hero: #1e1e2d;--breadcrumbs-color: #1e1e2d;--card-color: #111111;}";
+      var checked = localStorage.getItem("theme");
+
+      if (checked == "theme-light" || checked == null) {
+        localStorage.setItem("theme", "theme-dark");
+        document.getElementById("theme-toggle").className = "bi bi-toggle-on";
+        document.getElementById("switch-theme-color").innerHTML = darkstyle;
+      } else if (checked == "theme-dark") {
+        localStorage.setItem("theme", "theme-light");
+        document.getElementById("theme-toggle").className = "bi bi-toggle-off";
+        document.getElementById("switch-theme-color").innerHTML = lightstyle;
+      }
+    }
+
+    /* footerYeaer */
+    document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+
+    /* searchKey */
+		function searchKey() {
+			var keyWords = document.getElementById("leb-search").value;
+			window.location.href = "https://buildingdata.xauat.edu.cn/search.html?q=" + keyWords;
+		}
+
+		/* searchEnter */
+		$("#leb-search").keydown(function () {
+      //window.event.returnValue = false;
+			if (event.keyCode == "13") {
+				var keyWords = document.getElementById("leb-search").value;
+				window.location.href = "https://buildingdata.xauat.edu.cn/search.html?q=" + keyWords;
+			}
+		});
+
+    $('.carousel').slick({
+      dots: true,
+      nextArrow: '<button class="arrow-next"><i class="fa fa-angle-right"></i></button>',
+      prevArrow: '<button class="arrow-prev"><i class="fa fa-angle-left"></i></button>',
+      autoplay: true,
+      autoplaySpeed: 4000
+    });
+  </script>
+
+</body>
+
+</html>
