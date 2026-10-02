@@ -1,0 +1,1424 @@
+{
+  "reviewed_at_utc": "2026-10-02T03:43:33.302507+00:00",
+  "source_directory": "D:\\competion\\xiaotiao\\datasets\\BDG2",
+  "review_type": "read-only authority, identity, semantics and independent-validation suitability review",
+  "main_integrity_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json",
+  "main_integrity_sha256": "e4970a788b08725680216e71dab66df8207bd1d3f45a19a4c8bfd103434b4aa5",
+  "main_integrity_statistics_reused_not_recomputed": true,
+  "no_meter_full_scan_or_optimization_this_task": true,
+  "repository": {
+    "owner": "buds-lab",
+    "name": "building-data-genome-project-2",
+    "commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+    "commit_date": "2023-10-14T11:26:45+08:00",
+    "wiki_commit": "87246a4d9f2d5c685a4c8f6e3c4ca7910f4dabf2",
+    "all_csv_use_LFS": true,
+    "Git_API_pointer_blob_SHA_is_not_payload_SHA": true,
+    "comparison_method": "validate Git tree pointer blobs via exact git show; compare their LFS oid sha256 and size with local whole-file hashes from main audit",
+    "all10_CSV_match_official_LFS_content_identity": true,
+    "large_CSV_redownloaded": false,
+    "csv_identity_checks": [
+      {
+        "local_file": "metadata.csv",
+        "repository_path": "data/metadata/metadata.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "2fc7f80ffd7a458d5cbf269362540aa33f847938",
+        "lfs_content_oid_sha256": "992d0b29f24f96ad4332bc4dbb534b7bdd7dd2689aad093f94e93068ecddca02",
+        "lfs_content_size": 272024,
+        "local_sha256_from_main_integrity": "992d0b29f24f96ad4332bc4dbb534b7bdd7dd2689aad093f94e93068ecddca02",
+        "local_git_blob_sha1_from_main_integrity": "9c59caec0b646f698874fbee88aa65fee2ac4f8a",
+        "local_bytes": 272024,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      },
+      {
+        "local_file": "chilledwater_cleaned.csv",
+        "repository_path": "data/meters/cleaned/chilledwater_cleaned.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "78812e7f07a3521781bf8583397bc0d437ec2f64",
+        "lfs_content_oid_sha256": "8211aaf210379af50cbf7af87579d12414c3500d3e3f4dea725761c93a172bcd",
+        "lfs_content_size": 77005463,
+        "local_sha256_from_main_integrity": "8211aaf210379af50cbf7af87579d12414c3500d3e3f4dea725761c93a172bcd",
+        "local_git_blob_sha1_from_main_integrity": "f09b0e11486c731555d3c0109f5352df97fc4c97",
+        "local_bytes": 77005463,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      },
+      {
+        "local_file": "electricity_cleaned.csv",
+        "repository_path": "data/meters/cleaned/electricity_cleaned.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "17f4f18c4e57c55313194d83398bd7775ca3531b",
+        "lfs_content_oid_sha256": "b6ffc9b4dfcefe5c753594730a08ae822b0d50fec6815abb8f185591e6c630a3",
+        "lfs_content_size": 174977911,
+        "local_sha256_from_main_integrity": "b6ffc9b4dfcefe5c753594730a08ae822b0d50fec6815abb8f185591e6c630a3",
+        "local_git_blob_sha1_from_main_integrity": "b229f463fea40724b40e478d658bceb3479b66dc",
+        "local_bytes": 174977911,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      },
+      {
+        "local_file": "gas_cleaned.csv",
+        "repository_path": "data/meters/cleaned/gas_cleaned.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "eea074808dc614cfdff4c9532043eed6e49ec999",
+        "lfs_content_oid_sha256": "b3b059d32e8a16a92fb274e2e90483fac9b7797e42a9e07840ab9df130266405",
+        "lfs_content_size": 22002654,
+        "local_sha256_from_main_integrity": "b3b059d32e8a16a92fb274e2e90483fac9b7797e42a9e07840ab9df130266405",
+        "local_git_blob_sha1_from_main_integrity": "9e8a139c01e5a217ed72f65eede4588afb5bce55",
+        "local_bytes": 22002654,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      },
+      {
+        "local_file": "hotwater_cleaned.csv",
+        "repository_path": "data/meters/cleaned/hotwater_cleaned.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "821f5bd63d8eb90b9a67275a1bf5ae77f7120958",
+        "lfs_content_oid_sha256": "9714f1e803c88f7efe294480e8a32c61317e84edc65ad55ea7e9fc3282e80fce",
+        "lfs_content_size": 24362948,
+        "local_sha256_from_main_integrity": "9714f1e803c88f7efe294480e8a32c61317e84edc65ad55ea7e9fc3282e80fce",
+        "local_git_blob_sha1_from_main_integrity": "b13cc6dd207ed5b02996261c6d5abd0ec9725e2d",
+        "local_bytes": 24362948,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      },
+      {
+        "local_file": "irrigation_cleaned.csv",
+        "repository_path": "data/meters/cleaned/irrigation_cleaned.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "bf5f16ada4912055aa4bcdc8256f1490fa3ad4c6",
+        "lfs_content_oid_sha256": "dc36305ba5b9a0e4b908b3e481d89ce6fc21b276e0e2a9df565f74e1b6c8e773",
+        "lfs_content_size": 3072060,
+        "local_sha256_from_main_integrity": "dc36305ba5b9a0e4b908b3e481d89ce6fc21b276e0e2a9df565f74e1b6c8e773",
+        "local_git_blob_sha1_from_main_integrity": "dd322f364ce06b82ac136f98503c1829dc642185",
+        "local_bytes": 3072060,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      },
+      {
+        "local_file": "solar_cleaned.csv",
+        "repository_path": "data/meters/cleaned/solar_cleaned.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "d597fcc0bba07fdb2d4384c1b5a4b9daa2858b19",
+        "lfs_content_oid_sha256": "4a419a993b084d41f7ef7014261350db889eb7bec6cf657c0dae446ad6717181",
+        "lfs_content_size": 736027,
+        "local_sha256_from_main_integrity": "4a419a993b084d41f7ef7014261350db889eb7bec6cf657c0dae446ad6717181",
+        "local_git_blob_sha1_from_main_integrity": "9682c9d61f96f8d73ccb7ddae0acf426620c2bb3",
+        "local_bytes": 736027,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      },
+      {
+        "local_file": "steam_cleaned.csv",
+        "repository_path": "data/meters/cleaned/steam_cleaned.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "42d14eda989b7462b08ecbbef4aed0875c8a1729",
+        "lfs_content_oid_sha256": "ea5956c49ed1d6cc1b611a752b5a9dc3bcd4d45ddcd674e53b3c41661a6d3b9b",
+        "lfs_content_size": 45422530,
+        "local_sha256_from_main_integrity": "ea5956c49ed1d6cc1b611a752b5a9dc3bcd4d45ddcd674e53b3c41661a6d3b9b",
+        "local_git_blob_sha1_from_main_integrity": "22320663105b46d446e3abeaa1a2fed08da6e683",
+        "local_bytes": 45422530,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      },
+      {
+        "local_file": "water_cleaned.csv",
+        "repository_path": "data/meters/cleaned/water_cleaned.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "04b5545cbcc5afa5b5516b46944c5753cd96e454",
+        "lfs_content_oid_sha256": "cf3474e7d3ca89b7e04674ef80ed6d6248473f5ccd523b1624ad73625d5fb220",
+        "lfs_content_size": 15394905,
+        "local_sha256_from_main_integrity": "cf3474e7d3ca89b7e04674ef80ed6d6248473f5ccd523b1624ad73625d5fb220",
+        "local_git_blob_sha1_from_main_integrity": "b817efbd643541e36509112a682632dfb7370d8c",
+        "local_bytes": 15394905,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      },
+      {
+        "local_file": "weather.csv",
+        "repository_path": "data/weather/weather.csv",
+        "repository_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+        "git_tree_pointer_blob_sha1": "2eb7f4586f3eef02da3c125d7270b17ed2797ba5",
+        "lfs_content_oid_sha256": "a8189f1c6acdf3b9933a9e6354b8e7c1278cd56a7075929623a17565d44f04bd",
+        "lfs_content_size": 19457782,
+        "local_sha256_from_main_integrity": "a8189f1c6acdf3b9933a9e6354b8e7c1278cd56a7075929623a17565d44f04bd",
+        "local_git_blob_sha1_from_main_integrity": "7a49b2943fdf2f0cbdcf9c4d1e53ef56e58c9799",
+        "local_bytes": 19457782,
+        "sha256_matches_lfs_oid": true,
+        "bytes_match_lfs_size": true,
+        "pointer_git_sha_is_not_csv_content_sha": true,
+        "local_main_audit_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      }
+    ],
+    "acquisition_limitations": "Git API blob calls were rate limited; unauthenticated public git sparse clone acquired exact pointer blobs, with LFS smudge skipped. Failures retained in acquisition_log.json."
+  },
+  "authority_sources": [
+    {
+      "source_id": "REPO_README.md",
+      "title": "README.md",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/README.md",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\README.md",
+      "sha256": "7f2a1539a17c3183fbfe69b06deea1d976ec9a4c92d34c4ad8d23e5b24fe8ca3",
+      "original_location": "complete file",
+      "verification_scope": "author repository, exact blob at pinned commit",
+      "pinned_git_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "git_blob_sha1": "fa8a40e0fd55a4240ec89dd1d93c7b16c923db6d"
+    },
+    {
+      "source_id": "REPO_LICENSE",
+      "title": "LICENSE",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/LICENSE",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\LICENSE",
+      "sha256": "1df42bd84afc40e676a0cbf3d34e30e5151e3f0d995a68b406178dad3b0e23dc",
+      "original_location": "complete file",
+      "verification_scope": "author repository, exact blob at pinned commit",
+      "pinned_git_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "git_blob_sha1": "9db908a02271f59a2bd6b171315f6cbc8c56fcca"
+    },
+    {
+      "source_id": "REPO_.gitattributes",
+      "title": ".gitattributes",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/.gitattributes",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\.gitattributes",
+      "sha256": "f4be960886c5cbb85dbf1bb408c362d758e95b919e99b5c9537865d0a9781e16",
+      "original_location": "complete file",
+      "verification_scope": "author repository, exact blob at pinned commit",
+      "pinned_git_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "git_blob_sha1": "87e654bb308782431638e9427dd9a0d1749f58b0"
+    },
+    {
+      "source_id": "WIKI_Metadata-features.md",
+      "title": "Metadata-features.md",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/wiki/Metadata-features",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\wiki__Metadata-features.md",
+      "sha256": "87d15bec854422da0ea7b7aba08862f166338242f7dde6d69a797d30f85168e3",
+      "original_location": "complete wiki page",
+      "verification_scope": "author data dictionary/documentation, exact wiki blob",
+      "pinned_git_commit": "87246a4d9f2d5c685a4c8f6e3c4ca7910f4dabf2",
+      "git_blob_sha1": "409be3d492ffab7693323fd87714b2610729a0ea"
+    },
+    {
+      "source_id": "WIKI_Metadata-description.md",
+      "title": "Metadata-description.md",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/wiki/Metadata-description",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\wiki__Metadata-description.md",
+      "sha256": "99fcd960ed14b67ce3c2c1acbcd3087accc8627aec81e982c11f13ca557358ec",
+      "original_location": "complete wiki page",
+      "verification_scope": "author data dictionary/documentation, exact wiki blob",
+      "pinned_git_commit": "87246a4d9f2d5c685a4c8f6e3c4ca7910f4dabf2",
+      "git_blob_sha1": "35f5639993364bd9e1c3ad37a367f1f0a074d025"
+    },
+    {
+      "source_id": "WIKI_Meters-data-features.md",
+      "title": "Meters-data-features.md",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/wiki/Meters-data-features",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\wiki__Meters-data-features.md",
+      "sha256": "54d930bdb54b4ba064f5765bf51023ed70a34533e33023f5d85552ba4b762644",
+      "original_location": "complete wiki page",
+      "verification_scope": "author data dictionary/documentation, exact wiki blob",
+      "pinned_git_commit": "87246a4d9f2d5c685a4c8f6e3c4ca7910f4dabf2",
+      "git_blob_sha1": "8afe7f5ba34cb1fc019fbdcf034bffbeb5ff178a"
+    },
+    {
+      "source_id": "WIKI_Meters-data-screening.md",
+      "title": "Meters-data-screening.md",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/wiki/Meters-data-screening",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\wiki__Meters-data-screening.md",
+      "sha256": "7085fd272fe855479f2c8ca4e44c9181b837f76769b757090bcd01efbd3c4d2a",
+      "original_location": "complete wiki page",
+      "verification_scope": "author data dictionary/documentation, exact wiki blob",
+      "pinned_git_commit": "87246a4d9f2d5c685a4c8f6e3c4ca7910f4dabf2",
+      "git_blob_sha1": "32006e7887b5b240dbdd17bb07624b2954c8434d"
+    },
+    {
+      "source_id": "WIKI_Weather-data-collection.md",
+      "title": "Weather-data-collection.md",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/wiki/Weather-data-collection",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\wiki__Weather-data-collection.md",
+      "sha256": "c1fd4a3207cd23329567e59574c06e6f54c8a55872574b0ce746c13954c9e050",
+      "original_location": "complete wiki page",
+      "verification_scope": "author data dictionary/documentation, exact wiki blob",
+      "pinned_git_commit": "87246a4d9f2d5c685a4c8f6e3c4ca7910f4dabf2",
+      "git_blob_sha1": "68f38b40f6cdf2ca6632a6789bb22c9f3748d95e"
+    },
+    {
+      "source_id": "WIKI_Weather-features.md",
+      "title": "Weather-features.md",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/wiki/Weather-features",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\wiki__Weather-features.md",
+      "sha256": "664cfa66a5f3d8e69315a7371c9ddc4e52f8da039587767d71b28f5438fbd1f2",
+      "original_location": "complete wiki page",
+      "verification_scope": "author data dictionary/documentation, exact wiki blob",
+      "pinned_git_commit": "87246a4d9f2d5c685a4c8f6e3c4ca7910f4dabf2",
+      "git_blob_sha1": "3d5dbed229d25a4f7e4a3d56b4195fbfda78a795"
+    },
+    {
+      "source_id": "WIKI_Git-LFS.md",
+      "title": "Git-LFS.md",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/wiki/Git-LFS",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\wiki__Git-LFS.md",
+      "sha256": "55c2f360a6bdca4e7488787a7e742fa42f1238d725576dc252b158131e31d0c1",
+      "original_location": "complete wiki page",
+      "verification_scope": "author data dictionary/documentation, exact wiki blob",
+      "pinned_git_commit": "87246a4d9f2d5c685a4c8f6e3c4ca7910f4dabf2",
+      "git_blob_sha1": "bbb07f61a36cd1273e6bf524baf77888ccd71c98"
+    },
+    {
+      "source_id": "PUBLISHED_ARTICLE",
+      "title": "The Building Data Genome Project 2, energy meter data from the ASHRAE Great Energy Predictor III competition",
+      "url": "https://doi.org/10.1038/s41597-020-00712-x",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\paper_published_europepmc.xml",
+      "sha256": "0bdc6bb4596352a3e50578ad12bb1ca33511efab39e7ede84b77298294a38130",
+      "original_location": "Tables 1/3/4/5; Methods; Data Records; Usage Notes; permissions",
+      "verification_scope": "published journal article JATS XML from official Europe PMC API; DOI/PMCID/PMID match",
+      "pinned_git_commit": null,
+      "git_blob_sha1": null
+    },
+    {
+      "source_id": "AUTHOR_PREPRINT_V4",
+      "title": "Author preprint version 4",
+      "url": "https://arxiv.org/html/2006.02273v4",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\author_paper_arxiv_v4.html",
+      "sha256": "29b4ba1ce8a582ab2b089e10e3efb45841d2bfc5013940bbd9ecc8f82ff1384b",
+      "original_location": "version 4, 2020-08-16",
+      "verification_scope": "author preprint, not substituted for published article",
+      "pinned_git_commit": null,
+      "git_blob_sha1": null
+    },
+    {
+      "source_id": "NOTEBOOK_10_Cleaned-dataset.ipynb",
+      "title": "10_Cleaned-dataset.ipynb",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/notebooks/10_Cleaned-dataset.ipynb",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\10_Cleaned-dataset.ipynb",
+      "sha256": "9caa98820215a33e4a502d9cd5b7e4d6fba426860a71a82618a29901b7c9d092",
+      "original_location": "code cells recorded in .cells.json; never executed",
+      "verification_scope": "static implementation inspection",
+      "pinned_git_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "git_blob_sha1": "d625f651f47e9a57f2356f1357817d904290d77f"
+    },
+    {
+      "source_id": "NOTEBOOK_05_Anomaly-detection.ipynb",
+      "title": "05_Anomaly-detection.ipynb",
+      "url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/notebooks/05_Anomaly-detection.ipynb",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_sources\\evidence\\05_Anomaly-detection.ipynb",
+      "sha256": "032996fdf09a2c6c4fbf8b348a39cf463c0d85dcba751b5e9886d29be4927ec8",
+      "original_location": "code cells recorded in .cells.json; never executed",
+      "verification_scope": "static implementation inspection",
+      "pinned_git_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "git_blob_sha1": "585ae45f3370794c0082f531e79b1c23118da2ed"
+    }
+  ],
+  "coverage": {
+    "metadata_all_rows_read": 1636,
+    "metadata_fields": [
+      "building_id",
+      "site_id",
+      "building_id_kaggle",
+      "site_id_kaggle",
+      "primaryspaceusage",
+      "sub_primaryspaceusage",
+      "sqm",
+      "sqft",
+      "lat",
+      "lng",
+      "timezone",
+      "electricity",
+      "hotwater",
+      "chilledwater",
+      "steam",
+      "water",
+      "irrigation",
+      "solar",
+      "gas",
+      "industry",
+      "subindustry",
+      "heatingtype",
+      "yearbuilt",
+      "date_opened",
+      "numberoffloors",
+      "occupants",
+      "energystarscore",
+      "eui",
+      "site_eui",
+      "source_eui",
+      "leed_level",
+      "rating"
+    ],
+    "meter_files_header_only_read": 8,
+    "weather_header_read": true,
+    "full_weather_statistics_from_main": true
+  },
+  "metadata": {
+    "row_count": 1636,
+    "column_count": 32,
+    "missing_by_field_from_main": {
+      "building_id": 0,
+      "site_id": 0,
+      "building_id_kaggle": 187,
+      "site_id_kaggle": 37,
+      "primaryspaceusage": 21,
+      "sub_primaryspaceusage": 21,
+      "sqm": 0,
+      "sqft": 0,
+      "lat": 237,
+      "lng": 237,
+      "timezone": 0,
+      "electricity": 58,
+      "hotwater": 1451,
+      "chilledwater": 1081,
+      "steam": 1266,
+      "water": 1490,
+      "irrigation": 1599,
+      "solar": 1631,
+      "gas": 1459,
+      "industry": 1057,
+      "subindustry": 1057,
+      "heatingtype": 1421,
+      "yearbuilt": 819,
+      "date_opened": 1615,
+      "numberoffloors": 1195,
+      "occupants": 1406,
+      "energystarscore": 1473,
+      "eui": 1337,
+      "site_eui": 1473,
+      "source_eui": 1473,
+      "leed_level": 1620,
+      "rating": 1452
+    },
+    "floor_area_available_all_buildings": true,
+    "coordinates_are_city_or_site_centroids_not_building_GIS": true,
+    "building_geometry_material_U_value_H_C_indoor_temperature_or_system_test_conditions_present": false,
+    "site_records": [
+      {
+        "site_id": "Bear",
+        "local_metadata_building_count": 92,
+        "timezone_in_metadata": "US/Pacific",
+        "local_kaggle_site_ids": [
+          "4.0"
+        ],
+        "country_identified_from_published_city_state": "United States",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Berkeley, CA",
+        "published_institution": "Univ. of California - Berkeley",
+        "published_building_count": 92,
+        "published_kaggle_id": "4",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "37.871903400000036",
+            "-122.26072860000008"
+          ]
+        ],
+        "published_ISD_station_code": "724930-23230",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17542,
+        "missing_hour_keys_against_17544": 2,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8783,
+            "expected_hours": 8784,
+            "coverage": 0.9998861566484517
+          },
+          "2017": {
+            "valid_hours": 8759,
+            "expected_hours": 8760,
+            "coverage": 0.9998858447488584
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Bobcat",
+        "local_metadata_building_count": 36,
+        "timezone_in_metadata": "US/Mountain",
+        "local_kaggle_site_ids": [
+          "10.0"
+        ],
+        "country_identified_from_published_city_state": null,
+        "country_basis": "anonymous source; timezone alias does not prove country",
+        "published_location": "N/A",
+        "published_institution": "Anonymous",
+        "published_building_count": 36,
+        "published_kaggle_id": "10",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "",
+            ""
+          ]
+        ],
+        "published_ISD_station_code": null,
+        "station_association_scope": "not publicly stated for anonymous site",
+        "weather_rows": 17525,
+        "missing_hour_keys_against_17544": 19,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8758,
+            "expected_hours": 8784,
+            "coverage": 0.9970400728597449
+          },
+          "2017": {
+            "valid_hours": 8736,
+            "expected_hours": 8760,
+            "coverage": 0.9972602739726028
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Bull",
+        "local_metadata_building_count": 124,
+        "timezone_in_metadata": "US/Central",
+        "local_kaggle_site_ids": [
+          "9.0"
+        ],
+        "country_identified_from_published_city_state": "United States",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Austin, TX",
+        "published_institution": "Univ. of Texas - Austin",
+        "published_building_count": 124,
+        "published_kaggle_id": "9",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "30.26719999999989",
+            "-97.74309999999979"
+          ]
+        ],
+        "published_ISD_station_code": "722544-13958",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17529,
+        "missing_hour_keys_against_17544": 15,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8775,
+            "expected_hours": 8784,
+            "coverage": 0.9989754098360656
+          },
+          "2017": {
+            "valid_hours": 8721,
+            "expected_hours": 8760,
+            "coverage": 0.9955479452054794
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Cockatoo",
+        "local_metadata_building_count": 124,
+        "timezone_in_metadata": "US/Eastern",
+        "local_kaggle_site_ids": [
+          "15.0"
+        ],
+        "country_identified_from_published_city_state": "United States",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Cornell, NY",
+        "published_institution": "Cornell University",
+        "published_building_count": 124,
+        "published_kaggle_id": "15",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "42.45983685925793",
+            "-76.4852915864667"
+          ]
+        ],
+        "published_ISD_station_code": "725155-94761",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 16975,
+        "missing_hour_keys_against_17544": 569,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8455,
+            "expected_hours": 8784,
+            "coverage": 0.9625455373406193
+          },
+          "2017": {
+            "valid_hours": 8518,
+            "expected_hours": 8760,
+            "coverage": 0.9723744292237443
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Crow",
+        "local_metadata_building_count": 5,
+        "timezone_in_metadata": "US/Eastern",
+        "local_kaggle_site_ids": [
+          "11.0"
+        ],
+        "country_identified_from_published_city_state": "Canada",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Ottawa, Ontario",
+        "published_institution": "Carleton Univ.",
+        "published_building_count": 5,
+        "published_kaggle_id": "11",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "45.3876",
+            "-75.696"
+          ]
+        ],
+        "published_ISD_station_code": "710630-99999",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 16860,
+        "missing_hour_keys_against_17544": 684,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8614,
+            "expected_hours": 8784,
+            "coverage": 0.9806466302367942
+          },
+          "2017": {
+            "valid_hours": 8246,
+            "expected_hours": 8760,
+            "coverage": 0.941324200913242
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Eagle",
+        "local_metadata_building_count": 106,
+        "timezone_in_metadata": "US/Eastern",
+        "local_kaggle_site_ids": [
+          "14.0"
+        ],
+        "country_identified_from_published_city_state": null,
+        "country_basis": "anonymous source; timezone alias does not prove country",
+        "published_location": "N/A",
+        "published_institution": "Anonymous",
+        "published_building_count": 47,
+        "published_kaggle_id": "6",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "",
+            ""
+          ]
+        ],
+        "published_ISD_station_code": null,
+        "station_association_scope": "not publicly stated for anonymous site",
+        "weather_rows": 17536,
+        "missing_hour_keys_against_17544": 8,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8776,
+            "expected_hours": 8784,
+            "coverage": 0.9990892531876139
+          },
+          "2017": {
+            "valid_hours": 8757,
+            "expected_hours": 8760,
+            "coverage": 0.9996575342465753
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load",
+        "source_conflict": "published Table 1 building counts/Kaggle IDs conflict with current metadata and wiki; do not automatically merge station/Kaggle mapping from conflicting table"
+      },
+      {
+        "site_id": "Fox",
+        "local_metadata_building_count": 137,
+        "timezone_in_metadata": "US/Mountain",
+        "local_kaggle_site_ids": [
+          "2.0"
+        ],
+        "country_identified_from_published_city_state": "United States",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Tempe, AZ",
+        "published_institution": "Arizona State Univ. (ASU)",
+        "published_building_count": 137,
+        "published_kaggle_id": "2",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "33.42442530000004",
+            "-111.92814039999979"
+          ]
+        ],
+        "published_ISD_station_code": "722780-23183",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17543,
+        "missing_hour_keys_against_17544": 1,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8782,
+            "expected_hours": 8784,
+            "coverage": 0.9997723132969034
+          },
+          "2017": {
+            "valid_hours": 8760,
+            "expected_hours": 8760,
+            "coverage": 1.0
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Gator",
+        "local_metadata_building_count": 74,
+        "timezone_in_metadata": "US/Eastern",
+        "local_kaggle_site_ids": [
+          "8.0"
+        ],
+        "country_identified_from_published_city_state": null,
+        "country_basis": "anonymous source; timezone alias does not prove country",
+        "published_location": "N/A",
+        "published_institution": "Anonymous",
+        "published_building_count": 74,
+        "published_kaggle_id": "8",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "",
+            ""
+          ]
+        ],
+        "published_ISD_station_code": null,
+        "station_association_scope": "not publicly stated for anonymous site",
+        "weather_rows": 17544,
+        "missing_hour_keys_against_17544": 0,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8781,
+            "expected_hours": 8784,
+            "coverage": 0.9996584699453552
+          },
+          "2017": {
+            "valid_hours": 8760,
+            "expected_hours": 8760,
+            "coverage": 1.0
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Hog",
+        "local_metadata_building_count": 163,
+        "timezone_in_metadata": "US/Central",
+        "local_kaggle_site_ids": [
+          "13.0"
+        ],
+        "country_identified_from_published_city_state": null,
+        "country_basis": "anonymous source; timezone alias does not prove country",
+        "published_location": "Anonymous",
+        "published_institution": "Anonymous",
+        "published_building_count": 163,
+        "published_kaggle_id": "13",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "44.97878184783975",
+            "-93.2553976421019"
+          ]
+        ],
+        "published_ISD_station_code": null,
+        "station_association_scope": "not publicly stated for anonymous site",
+        "weather_rows": 17542,
+        "missing_hour_keys_against_17544": 2,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8782,
+            "expected_hours": 8784,
+            "coverage": 0.9997723132969034
+          },
+          "2017": {
+            "valid_hours": 8758,
+            "expected_hours": 8760,
+            "coverage": 0.9997716894977169
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Lamb",
+        "local_metadata_building_count": 147,
+        "timezone_in_metadata": "Europe/London",
+        "local_kaggle_site_ids": [
+          "5.0"
+        ],
+        "country_identified_from_published_city_state": "United Kingdom",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Cardiff, UK",
+        "published_institution": "Cardiff - City Buildings",
+        "published_building_count": 147,
+        "published_kaggle_id": "5",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "51.49783804108846",
+            "-3.186245571244898"
+          ]
+        ],
+        "published_ISD_station_code": "037150-99999",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17500,
+        "missing_hour_keys_against_17544": 44,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8753,
+            "expected_hours": 8784,
+            "coverage": 0.9964708561020036
+          },
+          "2017": {
+            "valid_hours": 8745,
+            "expected_hours": 8760,
+            "coverage": 0.9982876712328768
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Moose",
+        "local_metadata_building_count": 15,
+        "timezone_in_metadata": "US/Eastern",
+        "local_kaggle_site_ids": [
+          "7.0"
+        ],
+        "country_identified_from_published_city_state": "Canada",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Ottawa, Ontario",
+        "published_institution": "Ottawa - City Buildings",
+        "published_building_count": 15,
+        "published_kaggle_id": "7",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "45.4215",
+            "-75.6972"
+          ]
+        ],
+        "published_ISD_station_code": "710630-99999",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 16860,
+        "missing_hour_keys_against_17544": 684,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8614,
+            "expected_hours": 8784,
+            "coverage": 0.9806466302367942
+          },
+          "2017": {
+            "valid_hours": 8246,
+            "expected_hours": 8760,
+            "coverage": 0.941324200913242
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Mouse",
+        "local_metadata_building_count": 7,
+        "timezone_in_metadata": "Europe/London",
+        "local_kaggle_site_ids": [
+          ""
+        ],
+        "country_identified_from_published_city_state": "United Kingdom",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "London, UK",
+        "published_institution": "Ormand Street Hospital",
+        "published_building_count": 7,
+        "published_kaggle_id": "—",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "51.52193899999999",
+            "-0.12006900000000001"
+          ]
+        ],
+        "published_ISD_station_code": "037720-99999",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17516,
+        "missing_hour_keys_against_17544": 28,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8762,
+            "expected_hours": 8784,
+            "coverage": 0.9974954462659381
+          },
+          "2017": {
+            "valid_hours": 8753,
+            "expected_hours": 8760,
+            "coverage": 0.9992009132420091
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Panther",
+        "local_metadata_building_count": 136,
+        "timezone_in_metadata": "US/Eastern",
+        "local_kaggle_site_ids": [
+          "0.0"
+        ],
+        "country_identified_from_published_city_state": "United States",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Orlando, FL",
+        "published_institution": "Univ. of Central Florida (UCF)",
+        "published_building_count": 136,
+        "published_kaggle_id": "0",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "28.5176885788321",
+            "-81.3790387999998"
+          ]
+        ],
+        "published_ISD_station_code": "722050-12815",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17544,
+        "missing_hour_keys_against_17544": 0,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8781,
+            "expected_hours": 8784,
+            "coverage": 0.9996584699453552
+          },
+          "2017": {
+            "valid_hours": 8760,
+            "expected_hours": 8760,
+            "coverage": 1.0
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Peacock",
+        "local_metadata_building_count": 47,
+        "timezone_in_metadata": "US/Eastern",
+        "local_kaggle_site_ids": [
+          "6.0"
+        ],
+        "country_identified_from_published_city_state": "United States",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Princeton, NJ",
+        "published_institution": "Princeton University",
+        "published_building_count": 106,
+        "published_kaggle_id": "14",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "40.349999999999966",
+            "-74.69999999999995"
+          ]
+        ],
+        "published_ISD_station_code": "724095-14792",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17539,
+        "missing_hour_keys_against_17544": 5,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8772,
+            "expected_hours": 8784,
+            "coverage": 0.9986338797814208
+          },
+          "2017": {
+            "valid_hours": 8756,
+            "expected_hours": 8760,
+            "coverage": 0.9995433789954338
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load",
+        "source_conflict": "published Table 1 building counts/Kaggle IDs conflict with current metadata and wiki; do not automatically merge station/Kaggle mapping from conflicting table"
+      },
+      {
+        "site_id": "Rat",
+        "local_metadata_building_count": 305,
+        "timezone_in_metadata": "US/Eastern",
+        "local_kaggle_site_ids": [
+          "3.0"
+        ],
+        "country_identified_from_published_city_state": "United States",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Washington DC",
+        "published_institution": "Washington DC - City Buildings",
+        "published_building_count": 305,
+        "published_kaggle_id": "3",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "38.9035039800032",
+            "-77.0053494170663"
+          ]
+        ],
+        "published_ISD_station_code": "724050-13743",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17539,
+        "missing_hour_keys_against_17544": 5,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8776,
+            "expected_hours": 8784,
+            "coverage": 0.9990892531876139
+          },
+          "2017": {
+            "valid_hours": 8757,
+            "expected_hours": 8760,
+            "coverage": 0.9996575342465753
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Robin",
+        "local_metadata_building_count": 52,
+        "timezone_in_metadata": "Europe/London",
+        "local_kaggle_site_ids": [
+          "1.0"
+        ],
+        "country_identified_from_published_city_state": "United Kingdom",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "London, UK",
+        "published_institution": "Univ. College London (UCL)",
+        "published_building_count": 52,
+        "published_kaggle_id": "1",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "51.51878965384613",
+            "-0.13455623076923076"
+          ]
+        ],
+        "published_ISD_station_code": "037720-99999",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17516,
+        "missing_hour_keys_against_17544": 28,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8762,
+            "expected_hours": 8784,
+            "coverage": 0.9974954462659381
+          },
+          "2017": {
+            "valid_hours": 8753,
+            "expected_hours": 8760,
+            "coverage": 0.9992009132420091
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Shrew",
+        "local_metadata_building_count": 9,
+        "timezone_in_metadata": "Europe/London",
+        "local_kaggle_site_ids": [
+          ""
+        ],
+        "country_identified_from_published_city_state": "United Kingdom",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "London, UK",
+        "published_institution": "UK Parliment",
+        "published_building_count": 9,
+        "published_kaggle_id": "—",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "51.49984",
+            "-0.12466300000000001"
+          ]
+        ],
+        "published_ISD_station_code": "037720-99999",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17516,
+        "missing_hour_keys_against_17544": 28,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8762,
+            "expected_hours": 8784,
+            "coverage": 0.9974954462659381
+          },
+          "2017": {
+            "valid_hours": 8753,
+            "expected_hours": 8760,
+            "coverage": 0.9992009132420091
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Swan",
+        "local_metadata_building_count": 21,
+        "timezone_in_metadata": "US/Pacific",
+        "local_kaggle_site_ids": [
+          ""
+        ],
+        "country_identified_from_published_city_state": null,
+        "country_basis": "anonymous source; timezone alias does not prove country",
+        "published_location": "N/A",
+        "published_institution": "Anonymous",
+        "published_building_count": 21,
+        "published_kaggle_id": "—",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "",
+            ""
+          ]
+        ],
+        "published_ISD_station_code": null,
+        "station_association_scope": "not publicly stated for anonymous site",
+        "weather_rows": 17535,
+        "missing_hour_keys_against_17544": 9,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8755,
+            "expected_hours": 8784,
+            "coverage": 0.9966985428051002
+          },
+          "2017": {
+            "valid_hours": 8752,
+            "expected_hours": 8760,
+            "coverage": 0.9990867579908675
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load"
+      },
+      {
+        "site_id": "Wolf",
+        "local_metadata_building_count": 36,
+        "timezone_in_metadata": "Europe/Dublin",
+        "local_kaggle_site_ids": [
+          "12.0"
+        ],
+        "country_identified_from_published_city_state": "Ireland",
+        "country_basis": "published named city/state in article Table 1",
+        "published_location": "Dublin, Ireland",
+        "published_institution": "Univ. College Dublin (UCD)",
+        "published_building_count": 36,
+        "published_kaggle_id": "12",
+        "city_or_site_centroid_coordinates_as_stored": [
+          [
+            "53.34979999999997",
+            "6.2603"
+          ]
+        ],
+        "published_ISD_station_code": "039690-99999",
+        "station_association_scope": "stated in article Table 3; original NOAA series not re-downloaded or independently matched",
+        "weather_rows": 17505,
+        "missing_hour_keys_against_17544": 39,
+        "air_temperature_coverage_full_calendar_by_year": {
+          "2016": {
+            "valid_hours": 8755,
+            "expected_hours": 8784,
+            "coverage": 0.9966985428051002
+          },
+          "2017": {
+            "valid_hours": 8750,
+            "expected_hours": 8760,
+            "coverage": 0.9988584474885844
+          }
+        },
+        "qualification": "no China site; do not use as measured Chinese project load",
+        "coordinate_issue": "longitude +6.2603 conflicts with named Dublin location; preserved, not corrected"
+      }
+    ]
+  },
+  "meter_units_and_boundaries": [
+    {
+      "file": "electricity_cleaned.csv",
+      "channels": 1578,
+      "unit": "kWh per hourly interval",
+      "measurement_boundary": "whole-building electrical energy, end uses not separated; not heat load",
+      "all_header_building_ids_match_metadata": true,
+      "header_set_equals_metadata_Yes_flags": true,
+      "rows_and_statistics_owner": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json",
+      "hour_rows_from_main": 17544,
+      "first": "2016-01-01 00:00:00",
+      "last": "2017-12-31 23:00:00",
+      "zero_count_from_main": 0,
+      "negative_count_from_main": 0,
+      "all_missing_channels_from_main": 6,
+      "missing_fraction_from_main": 0.0892867514854558,
+      "large_file_rescanned_this_task": false
+    },
+    {
+      "file": "hotwater_cleaned.csv",
+      "channels": 185,
+      "unit": "kWh per hourly interval",
+      "measurement_boundary": "heating/hot-water energy channel; DHW versus space heating and meter boundary not individually established",
+      "all_header_building_ids_match_metadata": true,
+      "header_set_equals_metadata_Yes_flags": true,
+      "rows_and_statistics_owner": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json",
+      "hour_rows_from_main": 17544,
+      "first": "2016-01-01 00:00:00",
+      "last": "2017-12-31 23:00:00",
+      "zero_count_from_main": 1068369,
+      "negative_count_from_main": 0,
+      "all_missing_channels_from_main": 0,
+      "missing_fraction_from_main": 0.07424698980786532,
+      "large_file_rescanned_this_task": false
+    },
+    {
+      "file": "chilledwater_cleaned.csv",
+      "channels": 555,
+      "unit": "kWh per hourly interval",
+      "measurement_boundary": "chilled-water cooling energy; not cooling-plant electrical input or winter heating demand",
+      "all_header_building_ids_match_metadata": true,
+      "header_set_equals_metadata_Yes_flags": true,
+      "rows_and_statistics_owner": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json",
+      "hour_rows_from_main": 17544,
+      "first": "2016-01-01 00:00:00",
+      "last": "2017-12-31 23:00:00",
+      "zero_count_from_main": 1609247,
+      "negative_count_from_main": 0,
+      "all_missing_channels_from_main": 5,
+      "missing_fraction_from_main": 0.0776586435957161,
+      "large_file_rescanned_this_task": false
+    },
+    {
+      "file": "steam_cleaned.csv",
+      "channels": 370,
+      "unit": "kWh per hourly interval",
+      "measurement_boundary": "steam energy converted from original meter units; source assumptions such as 0.305 kWh/lb are not measured site enthalpy",
+      "all_header_building_ids_match_metadata": true,
+      "header_set_equals_metadata_Yes_flags": true,
+      "rows_and_statistics_owner": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json",
+      "hour_rows_from_main": 17544,
+      "first": "2016-01-01 00:00:00",
+      "last": "2017-12-31 23:00:00",
+      "zero_count_from_main": 832511,
+      "negative_count_from_main": 0,
+      "all_missing_channels_from_main": 19,
+      "missing_fraction_from_main": 0.12182096597281276,
+      "large_file_rescanned_this_task": false
+    },
+    {
+      "file": "gas_cleaned.csv",
+      "channels": 177,
+      "unit": "kWh per hourly interval",
+      "measurement_boundary": "fuel energy input normalized from original units; output heat needs actual equipment efficiency and end-use separation",
+      "all_header_building_ids_match_metadata": true,
+      "header_set_equals_metadata_Yes_flags": true,
+      "rows_and_statistics_owner": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json",
+      "hour_rows_from_main": 17544,
+      "first": "2016-01-01 00:00:00",
+      "last": "2017-12-31 23:00:00",
+      "zero_count_from_main": 1172237,
+      "negative_count_from_main": 0,
+      "all_missing_channels_from_main": 0,
+      "missing_fraction_from_main": 0.04770056754800199,
+      "large_file_rescanned_this_task": false
+    },
+    {
+      "file": "solar_cleaned.csv",
+      "channels": 5,
+      "unit": "kWh per hourly interval",
+      "measurement_boundary": "solar energy channel; not incident irradiation or automatically useful solar heat",
+      "all_header_building_ids_match_metadata": true,
+      "header_set_equals_metadata_Yes_flags": true,
+      "rows_and_statistics_owner": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json",
+      "hour_rows_from_main": 17544,
+      "first": "2016-01-01 00:00:00",
+      "last": "2017-12-31 23:00:00",
+      "zero_count_from_main": 23853,
+      "negative_count_from_main": 0,
+      "all_missing_channels_from_main": 1,
+      "missing_fraction_from_main": 0.21722526219790242,
+      "large_file_rescanned_this_task": false
+    },
+    {
+      "file": "water_cleaned.csv",
+      "channels": 146,
+      "unit": "litres per hourly interval",
+      "measurement_boundary": "water volume; not energy",
+      "all_header_building_ids_match_metadata": true,
+      "header_set_equals_metadata_Yes_flags": true,
+      "rows_and_statistics_owner": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json",
+      "hour_rows_from_main": 17544,
+      "first": "2016-01-01 00:00:00",
+      "last": "2017-12-31 23:00:00",
+      "zero_count_from_main": 1231619,
+      "negative_count_from_main": 0,
+      "all_missing_channels_from_main": 2,
+      "missing_fraction_from_main": 0.06938289014235831,
+      "large_file_rescanned_this_task": false
+    },
+    {
+      "file": "irrigation_cleaned.csv",
+      "channels": 37,
+      "unit": "litres per hourly interval",
+      "measurement_boundary": "irrigation water volume; not energy",
+      "all_header_building_ids_match_metadata": true,
+      "header_set_equals_metadata_Yes_flags": true,
+      "rows_and_statistics_owner": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json",
+      "hour_rows_from_main": 17544,
+      "first": "2016-01-01 00:00:00",
+      "last": "2017-12-31 23:00:00",
+      "zero_count_from_main": 497389,
+      "negative_count_from_main": 0,
+      "all_missing_channels_from_main": 0,
+      "missing_fraction_from_main": 0.11891337301734019,
+      "large_file_rescanned_this_task": false
+    }
+  ],
+  "weather": {
+    "source": "NOAA NCEI Integrated Surface Database ISD-Lite, nearest available station selected by authors",
+    "fields_and_units": {
+      "timestamp": "local datetime label, DST ignored according to author dictionary",
+      "site_id": "animal site code",
+      "airTemperature": "degC",
+      "cloudCoverage": "oktas / source sky-cover coding",
+      "dewTemperature": "degC",
+      "precipDepth1HR": "mm accumulated over1hour",
+      "precipDepth6HR": "mm accumulated over6hours",
+      "seaLvlPressure": "hPa or mbar",
+      "windDirection": "degrees clockwise from true north, wind from direction",
+      "windSpeed": "m/s"
+    },
+    "rows": 331166,
+    "sites": 19,
+    "expected_site_hour_keys": 333336,
+    "missing_site_hour_keys": 2170,
+    "missing_by_field_from_main": {
+      "airTemperature": 128,
+      "cloudCoverage": 170987,
+      "dewTemperature": 328,
+      "precipDepth1HR": 133186,
+      "precipDepth6HR": 313004,
+      "seaLvlPressure": 21624,
+      "windDirection": 13005,
+      "windSpeed": 574
+    },
+    "all_sites_join_metadata": true,
+    "explicit_relative_humidity_or_solar_irradiance_columns": false,
+    "station_id_present_in_CSV": false,
+    "source_station_mapping": {
+      "Panther": "722050-12815",
+      "Robin": "037720-99999",
+      "Fox": "722780-23183",
+      "Rat": "724050-13743",
+      "Bear": "724930-23230",
+      "Lamb": "037150-99999",
+      "Moose": "710630-99999",
+      "Bull": "722544-13958",
+      "Crow": "710630-99999",
+      "Wolf": "039690-99999",
+      "Peacock": "724095-14792",
+      "Cockatoo": "725155-94761",
+      "Shrew": "037720-99999",
+      "Mouse": "037720-99999"
+    },
+    "independent_NOAA_source_time_series_matching_performed": false
+  },
+  "cleaning": {
+    "publication_initial_preprocessing": [
+      "normalize energy to hourly kWh and water volumes to litres",
+      "remove single-value and duplicate meters",
+      "replace negative readings with NaN; drop meters with more than50% negatives",
+      "exclude meters with more than100 consecutive days missing",
+      "prune high outliers more than3standard deviations on log-transformed readings",
+      "round readings to4decimal places"
+    ],
+    "cleaned_additional_steps_documented": [
+      "S-H-ESD/Twitter AnomalyDetection outliers set to NaN",
+      "long zero runs greater than24hours set to NaN",
+      "all electricity zeros set to NaN"
+    ],
+    "interpolation_or_missing_imputation_verified": false,
+    "actual_electricity_zero_count_from_main": 0,
+    "cleaning_pipeline_rerun_or_sensor_calibration_verified": false
+  },
+  "license_and_citation": {
+    "dataset_repository_license_title": "Attribution-ShareAlike4.0Unported (exact repository heading)",
+    "article_license": "CC BY4.0",
+    "citation": "Miller,C.,Kathirgamanathan,A.,Picchetti,B.et al. The Building Data Genome Project2, energy meter data from the ASHRAE Great Energy PredictorIII competition. Scientific Data7,368(2020). DOI:10.1038/s41597-020-00712-x.",
+    "reproducibility_citation_additions": [
+      "repository URL and fixed commit",
+      "selected building_id/site_id/meter channels",
+      "time and weather missingness masks",
+      "access date2026-10-02",
+      "document filtering and derived quantities; retain LICENSE"
+    ],
+    "legal_relicensing_or_dataset_distribution_performed": false
+  },
+  "source_issues_and_limits": [
+    {
+      "id": "EAGLE_PEACOCK_MAPPING",
+      "finding": "Published Table 1: Eagle 47/Kaggle6, Peacock106/Kaggle14; local metadata/wiki: Eagle106/Kaggle14, Peacock47/Kaggle6. Preserve metadata IDs; do not silently remap the paper table.",
+      "sources": [
+        "PUBLISHED_ARTICLE",
+        "WIKI_Metadata-description.md",
+        "metadata.csv"
+      ]
+    },
+    {
+      "id": "WOLF_COORDINATE",
+      "finding": "Official metadata stores Wolf longitude +6.2603 with Europe/Dublin; published named location Dublin is inconsistent with this longitude. No source edit or correction performed.",
+      "sources": [
+        "metadata.csv",
+        "PUBLISHED_ARTICLE"
+      ]
+    },
+    {
+      "id": "CONVERSION_TABLE",
+      "finding": "Published Table 5 writes MJ times3.6 to kWh and gallons times0.264172 to litres; the conversion directions are inconsistent with standard MJ/kWh and customary US-gallon/litre relations. The author preprint uses MJ times0.277778. Do not apply this table again to already normalized CSV, and do not claim independent metrological calibration.",
+      "sources": [
+        "PUBLISHED_ARTICLE",
+        "AUTHOR_PREPRINT_V4"
+      ]
+    },
+    {
+      "id": "CLEANING_NOTEBOOK_REPRODUCIBILITY",
+      "finding": "Notebook10 uses files[0:1] for non-electricity zero-gap processing, removeAnoms rereads raw CSV rather than using the already-cleaned argument, and exports _cleaned1.csv. find_zero_gaps starts count at0, while removal requires cnt>24, and trailing gap removal excludes the final timestamp. Thus the current illustrative notebook is not certified as an end-to-end reproduction of all8 published cleaned CSV. No cleaning rerun was performed.",
+      "sources": [
+        "NOTEBOOK_10_Cleaned-dataset.ipynb"
+      ]
+    },
+    {
+      "id": "MISSINGNESS_SEMANTICS",
+      "finding": "NaN can mean original absence or cleaning removal, including seasonal long zero runs; cleaned does not mean complete, unbiased or individually calibrated. Valid non-electricity zero readings can denote off-season/off-operation.",
+      "sources": [
+        "WIKI_Meters-data-features.md",
+        "PUBLISHED_ARTICLE"
+      ]
+    },
+    {
+      "id": "WEATHER_DENOMINATOR",
+      "finding": "331166 weather rows versus19*17544=333336 expected site-hours:2170 missing hour keys plus128 blank temperatures. Crow/Moose2017 valid8246/8760=94.1324%; valid/included-row coverage100% for these sites is not calendar completeness.",
+      "sources": [
+        "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\bdg2_integrity.json"
+      ]
+    },
+    {
+      "id": "TIME_LABEL_BOUNDARY",
+      "finding": "Hourly interval sums and local-time labels are documented; weather DST is explicitly ignored. The10 CSV do not specify timezone offsets, per-meter clock transformations, or whether labels denote interval start/end. Do not treat timestamps as UTC or apply Kaggle UTC alignment to BDG2 blindly.",
+      "sources": [
+        "WIKI_Weather-features.md",
+        "PUBLISHED_ARTICLE"
+      ]
+    },
+    {
+      "id": "LICENSE_SCOPE",
+      "finding": "Repository LICENSE is labelled Attribution-ShareAlike4.0Unported; article is CC BY4.0 and separately mentions CC0 for associated article metadata. Preserve the repository LICENSE and do not assume the article license or its metadata clause overrides all dataset CSV licensing.",
+      "sources": [
+        "REPO_LICENSE",
+        "PUBLISHED_ARTICLE"
+      ]
+    }
+  ],
+  "completeness": {
+    "BDG2_cleaned_core_10_files_present_and_upstream_identical": true,
+    "independent_overseas_meter_weather_benchmark_available": true,
+    "China_three_city_real_load_observations_complete": false,
+    "China_project_building_H_C_calibration_complete": false,
+    "model_specific_heat_pump_COP_and_capacity_verified": false,
+    "project_tariffs_quotes_biomass_contracts_GIS_grid_verified_by_BDG2": false,
+    "independent_validation_has_been_executed": false
+  },
+  "suitable_independent_validation": [
+    "held-out2016/2017 hourly meter forecasting and weather-response benchmarking with explicit unit/mask and building/site split",
+    "external heating/cooling energy-channel pattern checks after meter-boundary qualification"
+  ],
+  "not_supported": [
+    "foreign meter series as observed loads of Guyuan/Urumqi/Tongliao",
+    "whole-building electrical use as heat load",
+    "gas energy as delivered heat without measured efficiency/end-use split",
+    "all same-building heat meters summed without connection boundaries",
+    "H/C or2R2C validation without indoor temperature, actual heat inputs and building envelope/ventilation/gain evidence",
+    "optimization dispatch, equipment COP, pipe hydraulics, grid connections, tariffs and storage cost/loss validation from BDG2 alone"
+  ],
+  "historical_inputs_models_paper_or_frozen_ledgers_modified": false
+}

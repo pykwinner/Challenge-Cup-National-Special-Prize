@@ -1,0 +1,341 @@
+{
+  "review_date_local": "2026-10-02",
+  "identity": "Actual original OSM CSV and captured native response recomputation; no synthetic observations",
+  "independence": "Does not import osm_reference or build_osm_reference_cases; raw selection, projection, nearest segment and native graph/Dijkstra reconstructed separately",
+  "geodesic_library_limit": "Recomputed from raw node coordinates using same installed pyproj.Geod library; not an independent geodesic implementation or certified survey",
+  "code_and_artifact_sha256": {
+    "src\\heatplan\\osm_reference.py": "03a022e3f5f7634e3ae44dffa3beaa1ec40e894ca16432816392e293ffbca25f",
+    "scripts\\build_osm_reference_cases.py": "ceea4aab14ad9d5595a1d1f71aa1faecfd9fdf1b6e60ee2014f6f48569e7418a",
+    "docs\\execution_20261002\\spatial_reference\\protocol.md": "971746021e3b022b4a15620f9f82a96efbdd91ee9883bdb294680cb7f799640a",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\selection.json": "e30670571348a52ca6fc4f89e856d7a14241ee97bdbe0e0822cd758c714e340d",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\native_intake.json": "c0dc9c7c6663728a61f58e94871c48fe92aff159ace5e2923290eded82a6b6b9",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\native_intake_receipts.json": "45e21ea3b457d5ff0ace198cdffdb4f5bf7fcd61af64b35a15a6893751325a9f",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\snaps.json": "3ab8830d0f3d7cd808d6887a4fd9ec6e1ff2b42e58640e0419cdb56b41de01b7",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\routes.json": "0c377fa26e0bc99ba623ec8c12569ad1e04518a0219887715a41afa78eeed068",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\failures.json": "34ede82f405ff7ee16dd9db033c958944a23f0f03b38ac8d8fb45497bb1ec41b",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\reference_network.json": "2496a932b4172d05bd8ae2394eb5aff45054dc3e39c673e22cc84919d523a73a",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\distance_error.json": "162adb047367ad7212d9ac167c1423f5457c36597a34d937d3c2ce473c449d70",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\connectivity.json": "f038a5279030b5a05ace2955e63290d15429d7bacc9ae1a7ff9ce73f5853dd7c",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\admission_report.json": "8bf4b1a360ca45ececfe8b35f01cd4fdbb1c206b7430fc68d8a90b054241d77e",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\result.json": "87371964709f10131de80421038bde4a96cd391bec66ac057b38cd04187f5178",
+    "docs\\execution_20261002\\spatial_reference\\guyuan\\model_interface.json": "309a886984a76948ecfef8a6a9b77b2a8878d44698dfe0709f32612dd0bdeace",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\selection.json": "1c584c3552270888b852fa1927a11e165f4470aeb441e909e6d29cc432c36b74",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\native_intake.json": "025b06fe8ca4ee33e54e0d4079b2863bc60823cf1167c30044368eafdc647aad",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\native_intake_receipts.json": "6eb9492b65e7443881b252ec06175d3ec241412843126bd0a886fbdfc2dbe4a7",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\snaps.json": "5e6a137dc4f521a8298b14d2fec030f84caddb1fa3656a5fe53eeee0816a2cbe",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\routes.json": "51c4e34a516c1f774e98371608b9aad4cb3fe03c37eb4e7d9867040ce765bec6",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\failures.json": "9cf8226384e5286e71acc58cdfdc720f26962de7e8c318644ea6f14d4022d0dc",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\reference_network.json": "97ec282b739a265ae47303c87c13fabc0f1bb244b07028f1cb8ac045f5407556",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\distance_error.json": "fa952f066880d7d546a10fcf94341c95a871aa5821c601bad8a1f63134b15982",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\connectivity.json": "080051d1418578abf4075adc0363df2671bc0a045757ec1c3545cfbcf8f8e21e",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\admission_report.json": "1a77cd1986b41a125b296ec317b0c61bfc4f9b570e45da9c8286566cf86727b7",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\result.json": "854be314d101146b78506ebe99fad645df21f263f3ddb56b99ec462f9e685cfc",
+    "docs\\execution_20261002\\spatial_reference\\urumqi\\model_interface.json": "90a2fa40de39e79c3942a7e4fe0c94dbb917eb00a6e4bbef92a1f332f6befdc0",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\selection.json": "b8404955ebefd4dfe8df31440ab20c8d290f46be47dc6e4e06b820003e6e4e67",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\native_intake.json": "98aa2023942334c0bd124267d1b429bc09427b2375f57b3debd5bffb29619896",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\native_intake_receipts.json": "e51e4f709bc3f4cfc8a239459b2d6f932d8910307a862a8ac3e9e7c26409e544",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\snaps.json": "740996be93e418a693a4b88e951ec01653a5169ac94df9a47e4f215967d07699",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\routes.json": "8f783ed7458c1b95e8f2231427175798585da95aa01046b371ee81bdf834e1cf",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\failures.json": "9cf8226384e5286e71acc58cdfdc720f26962de7e8c318644ea6f14d4022d0dc",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\reference_network.json": "afc2bff42ea5f58b5b05dcb5fd88b68cdbb5bd8597917624f045de944d6ecab6",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\distance_error.json": "0410c5af85356e3fa779d4d6bd492697e4738fbc9d90efab255241928946fb1e",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\connectivity.json": "0334f2216f643b11c86fe7880de19faac9f76c3edf00ebc4794229a0ed9622eb",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\admission_report.json": "dc419a01617738dfdb78ed98db1c5439823458f799685a295b46b8063e0bdafa",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\result.json": "4cfd48116f54ab0e41f5346a35fad6ccf3209a14f288964ffddc093a019b9536",
+    "docs\\execution_20261002\\spatial_reference\\wuhan\\model_interface.json": "e30f6e0c35972b0cd07c7ae1585e3d486c49cd9d62711ee78ed3f0b74d3fef21"
+  },
+  "source_unchanged_during_recompute": true,
+  "original_files_checked": 33,
+  "original_sha256_recomputed": {
+    "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_boundary.csv": "3fb84be80ed8a650ab46447f1c55fa341514c69b32e85d5e099570f8958ae5c0",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_buildings.csv": "0aa241f09725bc08c087b43e8473ae4ea17415e6905272f446cfa19808706294",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_landuse.csv": "8f7db5049b7bfa2a9d1ef42575c0049e0f9764028456288989ba8a716c8d3ed7",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_pois.csv": "f4348b7782d37abe0210b811d4a0dcb8ff96217b8edae84705162417a186a4d4",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_power.csv": "f00ebfb41623ab09051c3618c0c0d1fd7df266d493d0b548ccaf1bfff8866ee0",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_railways.csv": "f17ee50b2f46d6efd1585e760905930ea4188a6bf7ff5f589e61a308ae458f35",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_roads.csv": "66236c509fdeea5bf8e5fb1532f3e963f9d877e09bebf712de67eefefa86bf47",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_water.csv": "cddd274cc06fa0eaf93069f6358ed5ea1a8d3e82665c51e458b889b847809da3",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_boundary.csv": "eda6e747b77c2a905e3d199f55bbd7cbf3c4b6d082d18bc32a5ffea0b4ddee1b",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_buildings.csv": "af86442a5ac8f9f74429c996f7f172c4d214726b17740d5c3d877b5dc5e197ff",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_landuse.csv": "e76a6de5b6ef13b54b55f212c7746031ddc4325e2628357db3b0a027fde3a544",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_pois.csv": "925d40863f9ce36871bf11cc30ec72d34688f768f62a2a8d8288d44114607000",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_power.csv": "f0003427b62b7101862eb49e5804e42d76fe4f516661217f202b8d1cee5b3531",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_railways.csv": "db87daca6aebb30209636bcf706ea0129de4289e1cc16cfeeca6808db2213408",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_roads.csv": "c0de0954bd358373a011f098a1220b4d68c5a4fb79dbd262b1102f9865fe5809",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_water.csv": "ae0c93945406cdf60448cbc5b71d0dbf10b949d0cb461652f497878c9410af1a",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_boundary.csv": "b259268bb6c7cb8a8de8975c8b04515fff78fb2f34c98daaa01b928cc77d0b7d",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_buildings.csv": "581a2af606d6a25ce062496f61ef3a060ba619183f1468ac91d58334484d8b34",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_landuse.csv": "2154badc4233daa993fc712237a7705b7903c99d23ae0299b78ced57e4126587",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_pois.csv": "7f2ec4b9207170625c1047da30d668ff9db10c9ce8651b9bb35621835e842ba8",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_power.csv": "239dac302fec173a9794f457d6336abcba40f315bcceca8d8c18e18a3e8a5bdf",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_railways.csv": "bc1fdf24c05d6a7442ecd30e49d891630a42a82094571099f534a313d1ae6706",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_roads.csv": "d83bbe8b41334dcafaa762463f5e091d46ae9b22e77c4adca193ce27c63b3e96",
+    "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_water.csv": "eae55ec1bda24eb7eb1484760c8002e2e38e7d96429e912302b93b91b20fbfc7",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\osm\\audit.json": "3a143adf3638a75b4489af5c7b57a3c285aa63939ae8a3269a7feab0e5b6764c",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\osm\\audit_osm.py": "6b5ffde6b4bb860301e603c7e6b504e0b346978931ba2deb9a71ddb1e6f0564e",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\osm\\enrich_report.py": "a49f8f902366eaef0523291c7ca00fccc3f5f5b85416ae77697c1d1bd66278b6",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\osm\\evidence\\osm_way_37407276_current.json": "f82ea534b45ee4cc8bbbf68f596002e4e45943835c9a7dd0e0d12f3b11af39a1",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\osm\\evidence\\osm_way_428700030_current.json": "65f4209a7e6040b85340282c6450508edd4d9ce9f8cfd097a583dbc383904b86",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\osm\\manifest.json": "f7d3d12359855065c371eebb2e313a82c939ca5e73712e784956588a9943af92",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\osm\\README.md": "429be8fcb4e6d6e16b9006dd808a245d2677a9a0c64eb1a30f31c1771930105c",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\osm\\verification.json": "fdc71aa1c5e7b3f05f8fd5dcc4068ad94d3353721a6cb4ce424ef06f633aed59",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\datasets_batch_03\\osm\\verify_report.py": "49f435aaed4b43681854c0b52fc35499c69c29e6c2ddb4e27b88368116f62248"
+  },
+  "checks": 1909,
+  "issue_count": 0,
+  "issues": [],
+  "cities": [
+    {
+      "city": "guyuan",
+      "fixed_building_ids_verified": [
+        "w1110532027",
+        "w913579717",
+        "w913579715",
+        "w913579721",
+        "w471117854",
+        "w913579720"
+      ],
+      "native_ways": 36,
+      "native_nodes": 300,
+      "segments_reconstructed": 317,
+      "api_receipts_checked": 2,
+      "components": [
+        268,
+        35
+      ],
+      "maximum_projection_error_percent": 0.025404321982402944,
+      "full_way_vertex_max_radius_m": 3411.8513370703504,
+      "snaps": [
+        {
+          "osm_id": "w1110532027",
+          "status": "snapped",
+          "independent_distance_m": 103.30492598856658
+        },
+        {
+          "osm_id": "w913579717",
+          "status": "snap_distance_exceeded",
+          "independent_distance_m": 209.31910612675762
+        },
+        {
+          "osm_id": "w913579715",
+          "status": "snapped",
+          "independent_distance_m": 102.3093325214308
+        },
+        {
+          "osm_id": "w913579721",
+          "status": "snap_distance_exceeded",
+          "independent_distance_m": 185.44642935386224
+        },
+        {
+          "osm_id": "w471117854",
+          "status": "snapped",
+          "independent_distance_m": 22.199660496232905
+        },
+        {
+          "osm_id": "w913579720",
+          "status": "snap_distance_exceeded",
+          "independent_distance_m": 175.02061890925515
+        }
+      ],
+      "routes": [
+        {
+          "target_osm_id": "w913579717",
+          "status": "snap_not_available",
+          "independent_road_length_m": null
+        },
+        {
+          "target_osm_id": "w913579715",
+          "status": "routed",
+          "independent_road_length_m": 3398.0371753215773
+        },
+        {
+          "target_osm_id": "w913579721",
+          "status": "snap_not_available",
+          "independent_road_length_m": null
+        },
+        {
+          "target_osm_id": "w471117854",
+          "status": "routed",
+          "independent_road_length_m": 483.2925630932709
+        },
+        {
+          "target_osm_id": "w913579720",
+          "status": "snap_not_available",
+          "independent_road_length_m": null
+        }
+      ],
+      "grade_conflict_refs": []
+    },
+    {
+      "city": "urumqi",
+      "fixed_building_ids_verified": [
+        "w116582563",
+        "w116578336",
+        "w116578459",
+        "w1259089948",
+        "w1259089951",
+        "w1259089950"
+      ],
+      "native_ways": 29,
+      "native_nodes": 149,
+      "segments_reconstructed": 143,
+      "api_receipts_checked": 2,
+      "components": [
+        130,
+        6,
+        6,
+        5,
+        2,
+        2,
+        2,
+        2
+      ],
+      "maximum_projection_error_percent": 0.037043417805304735,
+      "full_way_vertex_max_radius_m": 1320.7292228827207,
+      "snaps": [
+        {
+          "osm_id": "w116582563",
+          "status": "snapped",
+          "independent_distance_m": 25.37072552348695
+        },
+        {
+          "osm_id": "w116578336",
+          "status": "snapped",
+          "independent_distance_m": 98.38596454229277
+        },
+        {
+          "osm_id": "w116578459",
+          "status": "snapped",
+          "independent_distance_m": 67.42827602430187
+        },
+        {
+          "osm_id": "w1259089948",
+          "status": "snapped",
+          "independent_distance_m": 30.498329302875835
+        },
+        {
+          "osm_id": "w1259089951",
+          "status": "snapped",
+          "independent_distance_m": 3.259561850273554
+        },
+        {
+          "osm_id": "w1259089950",
+          "status": "snapped",
+          "independent_distance_m": 21.940741783275584
+        }
+      ],
+      "routes": [
+        {
+          "target_osm_id": "w116578336",
+          "status": "routed",
+          "independent_road_length_m": 845.8902462898001
+        },
+        {
+          "target_osm_id": "w116578459",
+          "status": "routed",
+          "independent_road_length_m": 879.5275119267825
+        },
+        {
+          "target_osm_id": "w1259089948",
+          "status": "routed",
+          "independent_road_length_m": 375.0077508466162
+        },
+        {
+          "target_osm_id": "w1259089951",
+          "status": "routed",
+          "independent_road_length_m": 512.4084973611078
+        },
+        {
+          "target_osm_id": "w1259089950",
+          "status": "routed",
+          "independent_road_length_m": 520.926856592266
+        }
+      ],
+      "grade_conflict_refs": []
+    },
+    {
+      "city": "wuhan",
+      "fixed_building_ids_verified": [
+        "w1091893005",
+        "w1095192390",
+        "w1095192364",
+        "w1095192392",
+        "w1095192365",
+        "w770782892"
+      ],
+      "native_ways": 33,
+      "native_nodes": 317,
+      "segments_reconstructed": 341,
+      "api_receipts_checked": 2,
+      "components": [
+        320,
+        3
+      ],
+      "maximum_projection_error_percent": 0.04342665798020562,
+      "full_way_vertex_max_radius_m": 2760.529880404003,
+      "snaps": [
+        {
+          "osm_id": "w1091893005",
+          "status": "snapped",
+          "independent_distance_m": 0.7473686619899341
+        },
+        {
+          "osm_id": "w1095192390",
+          "status": "snapped",
+          "independent_distance_m": 24.429646601096458
+        },
+        {
+          "osm_id": "w1095192364",
+          "status": "snapped",
+          "independent_distance_m": 37.10889658391362
+        },
+        {
+          "osm_id": "w1095192392",
+          "status": "snapped",
+          "independent_distance_m": 23.39435101951827
+        },
+        {
+          "osm_id": "w1095192365",
+          "status": "snapped",
+          "independent_distance_m": 24.08464087974946
+        },
+        {
+          "osm_id": "w770782892",
+          "status": "snapped",
+          "independent_distance_m": 34.73805959752659
+        }
+      ],
+      "routes": [
+        {
+          "target_osm_id": "w1095192390",
+          "status": "routed",
+          "independent_road_length_m": 182.99982326375746
+        },
+        {
+          "target_osm_id": "w1095192364",
+          "status": "routed",
+          "independent_road_length_m": 106.7681446283236
+        },
+        {
+          "target_osm_id": "w1095192392",
+          "status": "routed",
+          "independent_road_length_m": 205.39811924101815
+        },
+        {
+          "target_osm_id": "w1095192365",
+          "status": "routed",
+          "independent_road_length_m": 204.86951111331118
+        },
+        {
+          "target_osm_id": "w770782892",
+          "status": "routed",
+          "independent_road_length_m": 105.1931449859191
+        }
+      ],
+      "grade_conflict_refs": []
+    }
+  ],
+  "engineering_solve": false,
+  "network_requests": false,
+  "core_edits": false
+}

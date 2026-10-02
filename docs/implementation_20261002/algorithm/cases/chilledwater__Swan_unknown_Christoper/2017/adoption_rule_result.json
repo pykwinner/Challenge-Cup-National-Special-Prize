@@ -1,0 +1,122 @@
+{
+  "statistical_candidate_adopted": true,
+  "selected_method": "extreme_calibrated",
+  "selected_weights": [
+    46.604169746474334,
+    42.606018814738285,
+    98.63451194192777,
+    24.05256034513541,
+    89.14874823670867,
+    1.0000000301884286,
+    42.942362173208934,
+    1.0116287116181795
+  ],
+  "candidate_rejection_reasons": [],
+  "fallback_passes_research_policy": false,
+  "fallback_rejection_reasons": [
+    "energy_error_exceeds_research_threshold"
+  ],
+  "selected_passes_research_policy": true,
+  "candidate_diagnostics": {
+    "conservation_residual_days": 0.0,
+    "maximum_lower_bound_violation": 0.0,
+    "energy_residual_original_units": [
+      2.715048720827326
+    ],
+    "zero_energy_target_rows": [],
+    "maximum_absolute_relative_energy_error": 1.4706843081315796e-06
+  },
+  "fallback_diagnostics": {
+    "conservation_residual_days": 0.0,
+    "maximum_lower_bound_violation": 0.0,
+    "energy_residual_original_units": [
+      9819.178400000092
+    ],
+    "zero_energy_target_rows": [],
+    "maximum_absolute_relative_energy_error": 0.005318840682617389
+  },
+  "policy": {
+    "maximum_absolute_relative_energy_error": 0.001,
+    "maximum_w1_degradation": 0.0,
+    "minimum_peak_retention": 1.0,
+    "minimum_ramp_retention": 1.0,
+    "minimum_original_observed_peak_retention": 1.0,
+    "numerical_tolerance": 1e-08,
+    "metric_tolerance": 1e-12
+  },
+  "policy_origin": "predeclared_research_adoption_rule_not_official_requirement",
+  "engineering_operation_validated": false,
+  "caveat": "Statistical gate only. Costs, capacities, comfort, storage and fixed-investment chronological operation are not validated.",
+  "case_id": "chilledwater__Swan_unknown_Christoper",
+  "category": "chilledwater",
+  "site_id": "Swan",
+  "year": 2017,
+  "exact_matching_status": "feasible",
+  "elapsed_seconds": 0.00014660000306321308,
+  "selected_metrics": {
+    "retained_days_n": 346,
+    "actual_representative_days_m": 8,
+    "representative_hours": 192,
+    "weight_sum_days": 346.0,
+    "compression_n_over_m": 43.25,
+    "representative_day_fraction": 0.023121387283236993,
+    "retained_scope_energy_kwh": 1846112.5245,
+    "weighted_representative_energy_kwh": 1846115.239548721,
+    "retained_scope_energy_bias": 1.4706843081315796e-06,
+    "retained_scope_abs_energy_bias": 1.4706843081315796e-06,
+    "retained_scope_peak_kw": 1144.8331,
+    "representative_peak_kw": 1144.8331,
+    "peak_retention_ratio": 1.0,
+    "maximum_peak_day_selected": true,
+    "ldc_wasserstein1_kw": 13.213482647962055,
+    "ldc_w1_over_mean_load": 0.059435575271011544,
+    "cold_day_count": 18,
+    "cold_day_hit_count": 1,
+    "cold_day_coverage": 0.05555555555555555,
+    "hot_day_hit_count": 0,
+    "hot_day_coverage": 0.0,
+    "minimum_temperature_gap_c": 0.0,
+    "absolute_minimum_temperature_day_selected": true,
+    "real_hour_edges": 8287,
+    "positive_ramp_edges": 8085,
+    "maximum_real_ramp_kw_per_hour": 854.8727,
+    "maximum_selected_original_ramp_kw_per_hour": 854.8727,
+    "maximum_real_ramp_retention_ratio": 1.0,
+    "maximum_real_ramp_both_days_selected": true,
+    "maximum_real_ramp_crosses_midnight": false,
+    "ramp_tail_event_count": 81,
+    "ramp_tail_hit_count": 8,
+    "ramp_tail_event_coverage": 0.09876543209876543,
+    "midnight_tail_event_count": 0,
+    "midnight_tail_event_coverage": null,
+    "capacity_only_k_kw": 1144.8331,
+    "capacity_only_deficit_hours": 0,
+    "capacity_only_deficit_hour_fraction": 0.0,
+    "capacity_only_deficit_energy_kwh": 0.0,
+    "capacity_only_deficit_energy_fraction": 0.0,
+    "null_reasons": {
+      "midnight_tail_event_coverage": "no midnight events in fixed top-1pct positive ramp set"
+    }
+  },
+  "original_observed_scope": {
+    "all_valid_meter_hours": 8725,
+    "retained_complete_day_valid_hours": 8304,
+    "valid_meter_hours_excluded_by_complete_day_filter": 421,
+    "observed_partial_year_energy_kwh": 1946072.2895,
+    "retained_energy_kwh": 1846112.5245,
+    "observed_energy_excluded_kwh": 99959.7649999999,
+    "observed_energy_excluded_fraction": 0.05136487762522036,
+    "original_observed_peak_kw": 1144.8331,
+    "selected_peak_kw": 1144.8331,
+    "original_observed_peak_retention_ratio": 1.0,
+    "original_peak_lost_by_complete_day_filter": false,
+    "maximum_original_valid_adjacent_ramp_kw_per_hour": 854.8727,
+    "maximum_selected_original_adjacent_ramp_kw_per_hour": 854.8727,
+    "original_observed_ramp_retention_ratio": 1.0,
+    "capacity_only_observed_deficit_hours": 0,
+    "capacity_only_observed_deficit_energy_kwh": 0.0,
+    "interpretation": "Meter observations only. Calendar gaps remain missing; capacity-only diagnostic is not engineering dispatch."
+  },
+  "paired_actual_budget": 8,
+  "total_case_seconds": 0.7273075999983121
+}

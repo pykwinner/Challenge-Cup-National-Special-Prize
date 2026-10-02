@@ -1,0 +1,118 @@
+{
+  "case_id": "hotwater__Fox_assembly_Adrianne",
+  "category": "hotwater",
+  "site_id": "Fox",
+  "year": 2017,
+  "core_label": "legacy",
+  "method": "ordinary",
+  "requested_k": 8,
+  "core_sha256": "8922b290663584ca477d4997702158389a99e22945b1878c8c548e925edaf5a1",
+  "observed_calendar_sha256": "f81123dfa0f9c609ad745cb3cc4e3ade1a57ffdacda12dbdf469e361ecb95f8a",
+  "input_retained_days": 312,
+  "status": "ok",
+  "metrics": {
+    "retained_days_n": 312,
+    "actual_representative_days_m": 8,
+    "representative_hours": 192,
+    "weight_sum_days": 312.0,
+    "compression_n_over_m": 39.0,
+    "representative_day_fraction": 0.02564102564102564,
+    "retained_scope_energy_kwh": 35281306.4201,
+    "weighted_representative_energy_kwh": 36184021.597399995,
+    "retained_scope_energy_bias": 0.025586217430591182,
+    "retained_scope_abs_energy_bias": 0.025586217430591182,
+    "retained_scope_peak_kw": 30061.6992,
+    "representative_peak_kw": 29202.796,
+    "peak_retention_ratio": 0.971428654305742,
+    "maximum_peak_day_selected": false,
+    "ldc_wasserstein1_kw": 490.8192892227565,
+    "ldc_w1_over_mean_load": 0.10417003253615865,
+    "cold_day_count": 16,
+    "cold_day_hit_count": 1,
+    "cold_day_coverage": 0.0625,
+    "hot_day_hit_count": 0,
+    "hot_day_coverage": 0.0,
+    "minimum_temperature_gap_c": 1.1000000000000005,
+    "absolute_minimum_temperature_day_selected": false,
+    "real_hour_edges": 7473,
+    "positive_ramp_edges": 4116,
+    "maximum_real_ramp_kw_per_hour": 30061.6992,
+    "maximum_selected_original_ramp_kw_per_hour": 19754.8317,
+    "maximum_real_ramp_retention_ratio": 0.65714288365975,
+    "maximum_real_ramp_both_days_selected": false,
+    "maximum_real_ramp_crosses_midnight": false,
+    "ramp_tail_event_count": 42,
+    "ramp_tail_hit_count": 1,
+    "ramp_tail_event_coverage": 0.023809523809523808,
+    "midnight_tail_event_count": 0,
+    "midnight_tail_event_coverage": null,
+    "capacity_only_k_kw": 29202.796,
+    "capacity_only_deficit_hours": 6,
+    "capacity_only_deficit_hour_fraction": 0.0008012820512820513,
+    "capacity_only_deficit_energy_kwh": 5153.419200000004,
+    "capacity_only_deficit_energy_fraction": 0.0001460665639372148,
+    "null_reasons": {
+      "midnight_tail_event_coverage": "no midnight events in fixed top-1pct positive ramp set"
+    }
+  },
+  "elapsed_seconds": [
+    0.021382400002039503,
+    0.022011000000929926,
+    0.02135450000059791
+  ],
+  "elapsed_median_seconds": 0.021382400002039503,
+  "metrics_elapsed_seconds": 0.013994299995829351,
+  "selected_days": [
+    {
+      "original_day_index": 139,
+      "date": "2017-06-29",
+      "weight_days": 38.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 52,
+      "date": "2017-04-03",
+      "weight_days": 45.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 292,
+      "date": "2017-11-29",
+      "weight_days": 33.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 307,
+      "date": "2017-12-19",
+      "weight_days": 10.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 97,
+      "date": "2017-05-18",
+      "weight_days": 13.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 176,
+      "date": "2017-08-05",
+      "weight_days": 74.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 10,
+      "date": "2017-02-05",
+      "weight_days": 31.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 71,
+      "date": "2017-04-22",
+      "weight_days": 68.0,
+      "extreme_reasons": ""
+    }
+  ],
+  "actual_m": 8,
+  "paired_actual_budget": 8,
+  "budget_matched": true
+}

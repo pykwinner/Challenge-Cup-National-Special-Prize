@@ -1,0 +1,156 @@
+{
+  "fixture_identity": "synthetic analytic program checks, never empirical benchmark data",
+  "source_file": "src/heatplan/scenarios.py",
+  "reviewed_source_sha256": "90f826c9b52adc914eb4470d16c22c67bace5dadf1f788a216d31e74e32d05f1",
+  "source_unchanged_at_end": true,
+  "no_engineering_solver": true,
+  "no_model_parameter_fit": true,
+  "midnight_ramp": {
+    "real_hourly_maximum_ramp": 80.0,
+    "daily_only_maximum_ramp": 0.0,
+    "actual_largest_transition_rows": [
+      71,
+      72
+    ],
+    "selected_original_days": [
+      1,
+      2,
+      3
+    ],
+    "selected_reasons": [
+      "",
+      "maximum_system_demand;maximum_system_ramp;maximum_peak::demand;maximum_ramp::demand",
+      "maximum_system_ramp;maximum_ramp::demand"
+    ],
+    "maximum_ramp_reason_retained": true
+  },
+  "nearest_centroid": {
+    "selected_day_index": 3,
+    "selected_value": 4.0,
+    "fixed_cluster_sum_squared_minimizer_indices": [
+      3
+    ],
+    "unsquared_l2_medoid_indices": [
+      0,
+      1,
+      2
+    ],
+    "interpretation": "KMeans cluster + nearest centroid actual day; squared-distance medoid of fixed cluster, not an independently optimized k-medoids partition."
+  },
+  "missing_hour": {
+    "accepted": false,
+    "error_type": "ValueError",
+    "error": "每个24小时日块必须包含连续逐小时时标，不得拼接缺测小时",
+    "rows": 48,
+    "maximum_hour_gap": 2.0,
+    "first_24_rows_last_hour": "2026-01-02 00:00:00"
+  },
+  "duplicate_profiles": {
+    "accepted": true,
+    "warnings": []
+  },
+  "genuine_timestamp_priority": {
+    "adjacency_mode": "opaque_labels_within_block_only",
+    "genuine_timestamp_column_present": true,
+    "maximum_ramp_reason_retained": false
+  },
+  "legacy_integer_source_time": {
+    "accepted": false,
+    "error_type": "ValueError",
+    "error": "source_time 必须提供可解析的真实时标"
+  },
+  "infeasible_energy_match": {
+    "analytic_match_feasible": false,
+    "proof": "Both target energies require w_A=w_B=0.5, contradicting hard sum(w)=2; retained a+b total is always480 versus target240.",
+    "rank_design_and_sum": 2,
+    "rank_augmented": 3,
+    "returned_summary": {
+      "application_mode": "explicit_function_call_only",
+      "source_files_modified": false,
+      "solver": "SLSQP_constrained_least_squares",
+      "solver_success": true,
+      "solver_message": "Optimization terminated successfully",
+      "energy_matching": "soft_regularized_least_squares",
+      "weight_conservation_residual": 0.0,
+      "maximum_bound_violation": 0.0,
+      "objective_value": 1.0,
+      "matched_columns": [
+        "a",
+        "b"
+      ],
+      "representative_days": 2,
+      "original_weight_sum_days": 2.0,
+      "calibrated_weight_sum_days": 2.0,
+      "minimum_calibrated_weight": 1.0,
+      "minimum_extreme_calibrated_weight": null,
+      "maximum_absolute_original_bias": 1.0,
+      "maximum_absolute_calibrated_bias": 1.0,
+      "regularization": 0.0001,
+      "caveat": "candidate weights only; rerun coverage, investment stability and fixed-investment chronological replay before adoption"
+    },
+    "weights": [
+      {
+        "representative_day": "A",
+        "is_extreme_day": false,
+        "original_weight": 1.0,
+        "calibrated_weight": 1.0,
+        "weight_change": 0.0
+      },
+      {
+        "representative_day": "B",
+        "is_extreme_day": false,
+        "original_weight": 1.0,
+        "calibrated_weight": 1.0,
+        "weight_change": 0.0
+      }
+    ],
+    "diagnostics": [
+      {
+        "column": "a",
+        "chronology_total": 120.0,
+        "original_representative_total": 240.0,
+        "calibrated_representative_total": 240.0,
+        "original_relative_bias": 1.0,
+        "calibrated_relative_bias": 1.0
+      },
+      {
+        "column": "b",
+        "chronology_total": 120.0,
+        "original_representative_total": 240.0,
+        "calibrated_representative_total": 240.0,
+        "original_relative_bias": 1.0,
+        "calibrated_relative_bias": 1.0
+      }
+    ],
+    "original_frame_unchanged": true
+  },
+  "feasible_soft_energy_match": {
+    "exact_solution": [
+      0.3,
+      1.7
+    ],
+    "returned_weights": [
+      0.30001221924978333,
+      1.6999877807502168
+    ],
+    "diagnostics": [
+      {
+        "column": "a",
+        "chronology_total": 72.0,
+        "original_representative_total": 240.0,
+        "calibrated_representative_total": 72.002932619948,
+        "original_relative_bias": 2.3333333333333335,
+        "calibrated_relative_bias": 4.073083261108618e-05
+      },
+      {
+        "column": "b",
+        "chronology_total": 408.0,
+        "original_representative_total": 240.0,
+        "calibrated_representative_total": 407.99706738005204,
+        "original_relative_bias": -0.4117647058823529,
+        "calibrated_relative_bias": -7.187793990087187e-06
+      }
+    ],
+    "explanation": "Positive regularization makes exact energy matching a soft preference even when an exact feasible solution exists."
+  }
+}

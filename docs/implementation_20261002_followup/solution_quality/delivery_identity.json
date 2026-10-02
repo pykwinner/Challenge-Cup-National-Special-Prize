@@ -1,0 +1,21 @@
+{
+  "epoch": "11.12.0rc2_solution_quality",
+  "source_sha256": {
+    "src\\heatplan\\model.py": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+    "src\\heatplan\\solution_quality.py": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+    "tests\\test_solution_quality.py": "caa89115f756aefc52de650b4361d6a6e2a7027cd3b81ca3c351fc6289a17a4b",
+    "scripts\\audit_solution_quality.py": "cacded2ed553f2e1b1dcaa35530e87f28a9b89f95db14341fa9b94f1707229b5",
+    "scripts\\run_solution_quality_examples.py": "873b9ea4d4badb05d644cc3b85afc94063afff5b761039889d68c7f3e2174922"
+  },
+  "final_targeted_tests": 86,
+  "quality_tests": 34,
+  "other_related_tests": 52,
+  "historical_record_count": 192,
+  "historical_inventory_errors": 27,
+  "actual_reference_cases": 3,
+  "actual_reference_solver_stages": 4,
+  "independent_reference_check_passed": true,
+  "final_examples_manifest_hash_check_count": 26,
+  "final_examples_source_bound": true,
+  "old_protocol_covers_modified_source": false
+}

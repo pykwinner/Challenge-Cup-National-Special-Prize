@@ -57,7 +57,11 @@ def verify_approval() -> dict:
         raise ValueError("first-round manifest incomplete")
     for category, base in (("inputs", ROOT), ("outputs", FIRST)):
         for item in manifest[category]:
-            if first.digest(base / item["file"]) != item["sha256"]:
+            source = base / item["file"]
+            if category == "inputs" and item["file"] in {
+                    "scripts/validate_external_rc_benchmark.py", "tests/test_external_rc_benchmark.py"}:
+                source = FIRST / "code_version" / item["file"]
+            if first.digest(source) != item["sha256"]:
                 raise ValueError(f"frozen first-round identity mismatch: {item['file']}")
     verification = json.loads((FIRST / "final_verification.json").read_text(encoding="utf-8"))
     for item in verification["supplemental_identities"]:

@@ -34,7 +34,10 @@ def main() -> None:
             frame, demand_columns, days=args.expand_demo_days
         )
     else:
-        chronological = prepare_full_year_timeseries(frame, args.timestamp_column)
+        chronological = prepare_full_year_timeseries(
+            frame, args.timestamp_column,
+            expected_step_hours=float(config["planning"].get("time_step_hours", 1.0)),
+        )
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
     chronological.to_csv(output / "chronological_timeseries.csv", index=False)

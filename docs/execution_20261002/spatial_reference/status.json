@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "date_local": "2026-10-02",
+  "stage": "complete_spatial_reference_only",
+  "state": "complete",
+  "objective": "Three reproducible geometry-only spatial reference cases, six frozen real building candidates per city, actual road geometry, bounded native topology intake, maps and focused tests",
+  "write_owner": "spatial_reference",
+  "owned_new_files": [
+    "src/heatplan/osm_reference.py",
+    "scripts/build_osm_reference_cases.py",
+    "tests/test_osm_reference.py",
+    "docs/execution_20261002/spatial_reference/"
+  ],
+  "read_only": [
+    "datasets/osm/*.csv",
+    "docs/source_intake_20261002/datasets_batch_03/osm/",
+    "src/heatplan/spatial_quality.py",
+    "src/heatplan/model.py"
+  ],
+  "github_push": false,
+  "milp_run": false,
+  "physical_parameters_invented": false,
+  "outputs": [
+    "docs/execution_20261002/spatial_reference/protocol.md"
+  ],
+  "completed_stages": [
+    "protocol_registered",
+    "selection_frozen",
+    "bounded_native_intake",
+    "topology_and_routes",
+    "three_png_and_pdf_maps",
+    "23_focused_tests_passed",
+    "original_inputs_integrity",
+    "png_pdf_visual_qa",
+    "manifest_registered"
+  ],
+  "next_stage": null,
+  "updated_utc": "2026-10-02T04:43:37.388560+00:00",
+  "github_upload": false,
+  "selections": {
+    "guyuan": {
+      "buildings": [
+        "w1110532027",
+        "w913579717",
+        "w913579715",
+        "w913579721",
+        "w471117854",
+        "w913579720"
+      ],
+      "road_count": 36
+    },
+    "urumqi": {
+      "buildings": [
+        "w116582563",
+        "w116578336",
+        "w116578459",
+        "w1259089948",
+        "w1259089951",
+        "w1259089950"
+      ],
+      "road_count": 29
+    },
+    "wuhan": {
+      "buildings": [
+        "w1091893005",
+        "w1095192390",
+        "w1095192364",
+        "w1095192392",
+        "w1095192365",
+        "w770782892"
+      ],
+      "road_count": 33
+    }
+  },
+  "active_city": null,
+  "cities_completed": [
+    "guyuan",
+    "urumqi",
+    "wuhan"
+  ],
+  "latest_result": {
+    "city": "wuhan",
+    "city_label": "武汉",
+    "buildings": 6,
+    "selected_road_ways": 33,
+    "admitted_road_ways": 33,
+    "native_complete": true,
+    "geometry_changed_ways": 0,
+    "snapped_buildings": 6,
+    "routes_success": 5,
+    "routes_failed": 0,
+    "connected_components": 2,
+    "max_projection_relative_error_percent": 0.04342665798020562,
+    "unknown_access_ways": 33,
+    "eligible_for_milp": false
+  },
+  "optional_dependencies": "Only process-local isolated pyproj/support packages; ignored, excluded from deliverable, no global installs"
+}

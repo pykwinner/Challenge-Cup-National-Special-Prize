@@ -41,7 +41,7 @@ SPATIAL = Path("data/competition_spatial/s3_spatial.yaml")
 OUTPUT = Path("outputs/competition_20261001/C4")
 CODE_FILES = [f"src/heatplan/{name}.py" for name in (
     "competition_runner", "model", "io", "linear", "chronology", "heating_season",
-    "building_thermal", "building_audit", "spatial_quality", "experiments", "accounting", "policy_alignment")]
+    "building_thermal", "building_audit", "spatial_quality", "experiments", "accounting", "policy_alignment", "physical_extensions", "solution_quality")]
 CODE_FILES += ["scripts/run_competition_case.py"]
 EVIDENCE_FLAGS = {
     "evidence_purpose": "mathematical_scenario_validation",

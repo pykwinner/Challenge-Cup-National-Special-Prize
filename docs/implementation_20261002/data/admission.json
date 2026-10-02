@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "case_id": "BESTEST600_derived_Wuhan_weather_2024_2025_reference",
+  "physical_reference_admitted": true,
+  "rc_reference_admitted": true,
+  "full_economics_admitted": false,
+  "external_building_validation_passed": false,
+  "admission_scope": "These exact hashes only: source-backed public prototype method reference, not local empirical case or BESTEST certification",
+  "time_scope": {
+    "start_inclusive": "2024-11-16T00:00:00+08:00",
+    "end_exclusive": "2025-03-16T00:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "hours": 2880,
+    "identity": "borrowed Wuchang/surrounding-area 2024 government-news service window; not citywide law"
+  },
+  "input_paths": {
+    "rc_config": "configs/evidence_case_20261002/wuhan_bestest600_rc.yaml",
+    "steady_config": "configs/evidence_case_20261002/wuhan_bestest600_steady.yaml",
+    "timeseries": "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly.csv",
+    "field_provenance": "docs/implementation_20261002/data/field_provenance.csv"
+  },
+  "input_sha256": {
+    "configs/evidence_case_20261002/wuhan_bestest600_steady.yaml": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3",
+    "configs/evidence_case_20261002/wuhan_bestest600_rc.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly.csv": "dcf861aed4914bc873086b27c9d0fe6b59e0bd77c49bd5350f0b1ed079e3b5b2",
+    "docs/implementation_20261002/data/field_provenance.csv": "d8bd5e88d3cc356dfe7d47ff1a4d667d1a7de0123d74ec00a0ae70b280aea7b7",
+    "docs/implementation_20261002/data/derivation.json": "7cc4dc53504f4a8cf2411c3527b4864f808acccd130c4d00707cf21270b46194",
+    "scripts/prepare_evidence_case_20261002.py": "66d5f805228d89b0948b4baa57458a05ceed5960bd16490a7a51916570ccd3b9",
+    "docs/implementation_20261002/data/evidence/bestest_6231.pdf": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+    "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+    "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+    "docs/implementation_20261002/data/evidence/wuhan_weather_receipt.json": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+    "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+    "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d"
+  },
+  "active_field_coverage": {
+    "covered_rows": 132,
+    "missing": [],
+    "all_config_leaves_and_timeseries_columns": true
+  },
+  "sources": {
+    "BESTEST": {
+      "path": "docs/implementation_20261002/data/evidence/bestest_6231.pdf",
+      "url": "https://www.iea-ebc.org/Data/publications/EBC_Annex_21_BESTEST.pdf",
+      "identity": "1995 NREL/TP-472-6231, prescribed reference prototype",
+      "locators": "PDF p34/36/39/41/48/49/50/53; printed 1-3/1-5/1-8/1-10/1-17/1-18/1-19/1-22"
+    },
+    "NASA": {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json",
+      "url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&latitude=30.5928&longitude=114.3055&start=20241009&end=20250416&format=JSON&time-standard=UTC",
+      "identity": "NASA POWER gridded MERRA2/SYN1DEG product, UTC hourly; not station measurement"
+    },
+    "PRICE": {
+      "path": "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf",
+      "url": "https://fgw.hubei.gov.cn/fbjd/zc/gfwj/gf/202110/P020211025720835003479.pdf",
+      "identity": "2021 historical schedule, appendix 2 PDF p6; residential combined-meter <1kV class"
+    },
+    "GRID": {
+      "path": "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf",
+      "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/W020251231726284332528.pdf",
+      "identity": "2023 Hubei province annual-average electricity CO2 factor, table 3; reference applied to 2024/25"
+    },
+    "WINDOW": {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html",
+      "url": "https://www.wuhan.gov.cn/sy/whyw/202411/t20241117_2485509.shtml",
+      "identity": "Wuhan government news, 2024-11-17: Wuchang and surrounding district 11/16 to 3/15; borrowed experiment window, not citywide statutory season"
+    },
+    "PROTOCOL": {
+      "identity": "Explicit model boundary/derived convention; not measured data",
+      "url": ""
+    }
+  },
+  "parameters": {
+    "area_m2": 48.0,
+    "volume_m3": 129.6,
+    "H_kw_per_K": 0.10430000000000002,
+    "C_kwh_per_K": 0.535576,
+    "internal_gain_kw": 0.2,
+    "price_yuan_per_kwh": 0.58,
+    "grid_factor_kg_per_kwh": 0.4044
+  },
+  "structure_approximations": [
+    "H retains original prescribed high-altitude infiltration; Wuhan weather replacement does not make this a local building",
+    "Inner-side material capacity is lumped into one air/zone state; no measured effective RC C or predictive accuracy claim",
+    "No solar gains, latent loads, domestic hot water, thermal bridges, occupancy-based behavior or ground dynamics",
+    "Ideal 1000kW 100%-efficient benchmark air system, no finite emitter/COP curve or actual rated equipment claim",
+    "27C delivery tag is maximum-zone-bound ideal accounting convention, not a reported outlet temperature; exergy efficacy out of scope",
+    "20C initial and terminal conditioned boundary; preconditioning outside seasonal accounting",
+    "Shared ideal heating/cooling capacity with exclusive RC operation; no real compressor asset claimed"
+  ],
+  "economic_scope": "Electricity energy charges only under explicitly selected historical residential combined-meter <1kV reference class; no tariff account eligibility observation",
+  "excluded_economic_fields": [
+    "CAPEX",
+    "installation",
+    "fixed_OM",
+    "variable_OM",
+    "equipment_lifetime",
+    "discounted cash flow",
+    "heat revenue",
+    "subsidy",
+    "payback"
+  ],
+  "blocked_fields": [
+    "Actual device model-linked performance/capacity/quotation for equipment extension",
+    "Target-project installed cost, OM and life for full economic evaluation"
+  ],
+  "inactive_interface_fields": {
+    "discount_rate": 1.0,
+    "asset_lifetime_years": 1,
+    "reason": "required constructor arithmetic only; all investment/retirement disabled; never use for financial claims"
+  },
+  "disabled_branches": [
+    "network",
+    "storage",
+    "capacity investment",
+    "retirement",
+    "legacy demand shifting",
+    "fuel",
+    "biomass",
+    "shared waste heat",
+    "grid capacity",
+    "reliability events"
+  ],
+  "excluded_intake_claims": [
+    "Supplementary package per-layer 100mm ISO effective-C derivation",
+    "Summer Yangtze residential air-conditioning survey as winter Wuhan schedule",
+    "GB55015 schedule extraction with missing evening/kitchen midday hours",
+    "Unlocked Open-Meteo and model-filled Meteostat as independent station bias proof",
+    "Procurement minimum COP ratios as actual COP derating curves"
+  ],
+  "checks": {
+    "exact_source_hashes": true,
+    "exact_hourly_grid": true,
+    "no_inherited_defaults": true,
+    "no_missing_weather_filling": true,
+    "positive_H_C": true,
+    "core_input_validation": true,
+    "source_temperature_tag_admissible": true,
+    "full_solver_run": "owned by integration runner, not E0 source admission"
+  }
+}

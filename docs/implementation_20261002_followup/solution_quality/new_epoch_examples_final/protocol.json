@@ -1,0 +1,44 @@
+{
+  "epoch": "11.12.0rc2_solution_quality_examples",
+  "frozen_utc": "2026-10-02T09:08:30.978473+00:00",
+  "chronology": {
+    "passed": true,
+    "hours": 2880,
+    "start_inclusive": "2024-11-16T00:00:00+08:00",
+    "end_exclusive": "2025-03-16T00:00:00+08:00",
+    "step_hours": 1
+  },
+  "code_sha256": {
+    "src\\heatplan\\model.py": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+    "src\\heatplan\\physical_extensions.py": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+    "src\\heatplan\\solution_quality.py": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+    "src\\heatplan\\linear.py": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+    "src\\heatplan\\io.py": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+    "src\\heatplan\\policy_alignment.py": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+    "src\\heatplan\\building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src\\heatplan\\building_audit.py": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+    "src\\heatplan\\chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+    "src\\heatplan\\experiments.py": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+    "src\\heatplan\\accounting.py": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+    "scripts\\run_evidence_case_experiments.py": "ccb81b5a8d0eb348bcd5aa1216d745614988fa3bedc926e1e2ba0cd93532a26c",
+    "scripts\\run_solution_quality_examples.py": "873b9ea4d4badb05d644cc3b85afc94063afff5b761039889d68c7f3e2174922",
+    "src/heatplan/solution_quality.py": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f"
+  },
+  "input_sha256": {
+    "configs\\evidence_case_20261002\\wuhan_bestest600_rc_tou.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "data\\derived\\evidence_case_20261002\\wuhan_2024_2025_hourly_tou.csv": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+    "docs\\implementation_20261002\\data\\admission_tou.json": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f"
+  },
+  "time_limit_per_stage_seconds": 120.0,
+  "mip_gap_target": 0.0001,
+  "runs": [
+    "existing_assets_cost",
+    "fixed_plan_replay",
+    "emission_endpoint"
+  ],
+  "solver_stages": 4,
+  "scope": "admitted public ideal RC prototype electricity bill/average-factor CO2; new metadata epoch",
+  "full_economics_admitted": false,
+  "empirical_validation": false,
+  "old_protocol_covers_new_source": false
+}

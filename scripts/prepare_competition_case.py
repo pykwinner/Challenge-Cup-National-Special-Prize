@@ -236,6 +236,14 @@ def build_frame(weather: pd.DataFrame, buildings: pd.DataFrame, template: pd.Dat
     return frame
 
 
+def _path_reference(path: Path, base: Path) -> str:
+    """Prefer a relocatable same-drive reference; support Windows cross-drive output."""
+    try:
+        return Path(os.path.relpath(path, base)).as_posix()
+    except ValueError:
+        return path.resolve().as_posix()
+
+
 def candidate_config(buildings: pd.DataFrame, parent_relative: str) -> dict:
     parent = load_config(PARENT)
     rows = []
@@ -341,7 +349,7 @@ def prepare(output: Path = OUTPUT) -> dict:
     season["boundary_group"] = "heating_season_2023_2024"
     calendar_year = build_frame(select_window(weather, CALENDAR_START, CALENDAR_END), buildings,
                                pd.read_csv(template_path), "utc_calendar_year_2023")
-    config = candidate_config(buildings, Path(os.path.relpath(PARENT, output)).as_posix())
+    config = candidate_config(buildings, _path_reference(PARENT, output))
     config_path = output / "wuhan_rc_candidate.yaml"
     config_path.write_text(yaml.safe_dump(config, allow_unicode=True, sort_keys=False), encoding="utf-8")
     calendar_config_path = output / "wuhan_rc_calendar_2023_candidate.yaml"
@@ -395,8 +403,8 @@ def prepare(output: Path = OUTPUT) -> dict:
                 "utc_calendar_year_timeseries": CALENDAR_FILE,
                 "utc_calendar_year_config": calendar_config_path.name,
                 "heating_season_timeseries": SEASON_FILE,
-                "building_archetypes": os.path.relpath(building_path, output).replace("\\", "/"),
-                "inputs": [{"file": os.path.relpath(p, ROOT).replace("\\", "/"), "sha256": sha256(p)} for p in source_paths],
+                "building_archetypes": _path_reference(building_path, output),
+                "inputs": [{"file": _path_reference(p, ROOT), "sha256": sha256(p)} for p in source_paths],
                 "raw_weather_inputs": inventory,
                 "artifacts": [{"file": p.name, "sha256": sha256(p)} for p in sorted(output.iterdir()) if p.is_file() and p.name != "manifest.json"],
                 "validation": {"legacy_load_inputs_passed": True, "data_quality_passed": True,

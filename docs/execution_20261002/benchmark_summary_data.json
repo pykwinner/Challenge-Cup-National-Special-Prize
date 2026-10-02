@@ -1,0 +1,123 @@
+{
+  "input": "external_benchmark/versions/new_core/results.json",
+  "input_sha256": "4fd740e424156ed21c9ac1f011344fb5d0dd684a87c904bf236dc7e88eaf9364",
+  "common_case_years": [
+    [
+      "chilledwater__Bobcat_assembly_Camilla",
+      2016
+    ],
+    [
+      "chilledwater__Bull_assembly_Beau",
+      2016
+    ],
+    [
+      "chilledwater__Bull_assembly_Beau",
+      2017
+    ],
+    [
+      "chilledwater__Eagle_assembly_Estelle",
+      2016
+    ],
+    [
+      "chilledwater__Eagle_assembly_Estelle",
+      2017
+    ],
+    [
+      "chilledwater__Fox_assembly_Audrey",
+      2016
+    ],
+    [
+      "chilledwater__Fox_assembly_Audrey",
+      2017
+    ],
+    [
+      "hotwater__Bobcat_assembly_Billy",
+      2016
+    ],
+    [
+      "hotwater__Bobcat_assembly_Billy",
+      2017
+    ],
+    [
+      "hotwater__Eagle_assembly_Candice",
+      2016
+    ],
+    [
+      "hotwater__Eagle_assembly_Candice",
+      2017
+    ],
+    [
+      "hotwater__Fox_assembly_Adrianne",
+      2016
+    ],
+    [
+      "hotwater__Fox_assembly_Adrianne",
+      2017
+    ],
+    [
+      "hotwater__Robin_education_Cecilia",
+      2016
+    ],
+    [
+      "hotwater__Robin_education_Cecilia",
+      2017
+    ],
+    [
+      "steam__Bull_assembly_Amalia",
+      2016
+    ],
+    [
+      "steam__Bull_assembly_Amalia",
+      2017
+    ],
+    [
+      "steam__Eagle_education_Alberto",
+      2016
+    ],
+    [
+      "steam__Eagle_education_Alberto",
+      2017
+    ],
+    [
+      "steam__Hog_assembly_Annemarie",
+      2016
+    ],
+    [
+      "steam__Hog_assembly_Annemarie",
+      2017
+    ],
+    [
+      "steam__Peacock_lodging_Erica",
+      2016
+    ],
+    [
+      "steam__Peacock_lodging_Erica",
+      2017
+    ]
+  ],
+  "case_count": 23,
+  "same_actual_day_budget_each_case": true,
+  "display_percent_medians": {
+    "retained_scope_abs_energy_bias": {
+      "ordinary": 1.7165592999183004,
+      "extreme_aware": 2.424229652883655,
+      "extreme_calibrated": 0.0009698195808529458
+    },
+    "peak_retention_ratio": {
+      "ordinary": 83.9033933284497,
+      "extreme_aware": 100.0,
+      "extreme_calibrated": 100.0
+    },
+    "maximum_real_ramp_retention_ratio": {
+      "ordinary": 45.684846891753416,
+      "extreme_aware": 100.0,
+      "extreme_calibrated": 100.0
+    },
+    "ldc_w1_over_mean_load": {
+      "ordinary": 5.89976338798553,
+      "extreme_aware": 7.219804090380695,
+      "extreme_calibrated": 6.479271905718844
+    }
+  },
+  "scope": "Retained complete observed days; paired positive-energy cases only."
+}

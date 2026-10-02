@@ -1,0 +1,66 @@
+{
+  "failed_routes": [
+    {
+      "anchor_osm_id": "w1110532027",
+      "target_osm_id": "w913579717",
+      "anchor_is_not_heat_source": true,
+      "route_is_not_heating_pipe_design": true,
+      "straight_line_m": 1351.5863255150846,
+      "status": "snap_not_available",
+      "anchor_snap_status": "snapped",
+      "target_snap_status": "snap_distance_exceeded"
+    },
+    {
+      "anchor_osm_id": "w1110532027",
+      "target_osm_id": "w913579721",
+      "anchor_is_not_heat_source": true,
+      "route_is_not_heating_pipe_design": true,
+      "straight_line_m": 1372.5489989081389,
+      "status": "snap_not_available",
+      "anchor_snap_status": "snapped",
+      "target_snap_status": "snap_distance_exceeded"
+    },
+    {
+      "anchor_osm_id": "w1110532027",
+      "target_osm_id": "w913579720",
+      "anchor_is_not_heat_source": true,
+      "route_is_not_heating_pipe_design": true,
+      "straight_line_m": 1383.7758532696785,
+      "status": "snap_not_available",
+      "anchor_snap_status": "snapped",
+      "target_snap_status": "snap_distance_exceeded"
+    }
+  ],
+  "failed_snaps": [
+    {
+      "osm_id": "w913579717",
+      "status": "snap_distance_exceeded",
+      "distance_m": 209.31910612675762,
+      "nearest_segment_id": "w913579729:1",
+      "point_xy_m": [
+        612270.7776206258,
+        3984896.038028712
+      ]
+    },
+    {
+      "osm_id": "w913579720",
+      "status": "snap_distance_exceeded",
+      "distance_m": 175.02061890925515,
+      "nearest_segment_id": "w913579729:1",
+      "point_xy_m": [
+        612240.8260667848,
+        3984851.267774203
+      ]
+    },
+    {
+      "osm_id": "w913579721",
+      "status": "snap_distance_exceeded",
+      "distance_m": 185.44642935386224,
+      "nearest_segment_id": "w913579729:1",
+      "point_xy_m": [
+        612195.0763236907,
+        3984848.453375998
+      ]
+    }
+  ]
+}

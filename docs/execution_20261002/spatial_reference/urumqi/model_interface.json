@@ -1,0 +1,132 @@
+{
+  "schema": "osm_spatial_reference_v1",
+  "eligible_for_engineering_solver_input": false,
+  "buildings": [
+    {
+      "reference_node_id": "w116582563",
+      "longitude": 87.6158814,
+      "latitude": 43.8255715,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w116578336",
+      "longitude": 87.615844,
+      "latitude": 43.8242419,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w116578459",
+      "longitude": 87.6161787,
+      "latitude": 43.8239092,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w1259089948",
+      "longitude": 87.6160455,
+      "latitude": 43.8262701,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w1259089951",
+      "longitude": 87.6170241,
+      "latitude": 43.8265755,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w1259089950",
+      "longitude": 87.6167757,
+      "latitude": 43.8266183,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    }
+  ],
+  "candidate_connections": [
+    {
+      "from_reference": "w116582563",
+      "to_reference": "w116578336",
+      "status": "routed",
+      "reference_length_m": 969.6469363555801,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    },
+    {
+      "from_reference": "w116582563",
+      "to_reference": "w116578459",
+      "status": "routed",
+      "reference_length_m": 972.3265134745716,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    },
+    {
+      "from_reference": "w116582563",
+      "to_reference": "w1259089948",
+      "status": "routed",
+      "reference_length_m": 430.876805672979,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    },
+    {
+      "from_reference": "w116582563",
+      "to_reference": "w1259089951",
+      "status": "routed",
+      "reference_length_m": 541.0387847348684,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    },
+    {
+      "from_reference": "w116582563",
+      "to_reference": "w1259089950",
+      "status": "routed",
+      "reference_length_m": 568.2383238990286,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    }
+  ],
+  "source_capacity_kw": null,
+  "costs_verified": false,
+  "adapter_note": "Keep separate from spatial_quality preprocessing, which recalculates length as straight distance times route_factor. Requires explicit project mapping and physical input evidence before solver admission."
+}

@@ -13,6 +13,12 @@ import pandas as pd
 from .accounting import HEATING_CASH_COMPONENTS
 from .io import load_inputs, validate_electricity_module_compatibility
 from .linear import LinearMILP
+from .solution_quality import SolveFailure, investment_scope, solution_quality_from_summary, solver_stage_evidence
+from .physical_extensions import (
+    EventStateBoundary, add_shared_heat_resources,
+    add_monthly_electricity_tariff, extension_summary,
+    add_resource_firm_portfolios, add_firm_resource_limits,
+)
 from .building_thermal import add_building_thermal_constraints, building_heat_reference, validate_building_thermal_inputs
 
 
@@ -1151,6 +1157,8 @@ class HeatPlanningModel:
                     p.add_constraint(lower_row, lb=0.0)
                     p.add_constraint(upper_row, ub=0.0)
 
+        add_shared_heat_resources(self)
+
         # Biomass procurement, transport and inventory. Heat dispatch consumes
         # physical fuel; deliveries replenish a bounded store in every scenario.
         for chain in self.config.get("biomass_supply_chains", []):
@@ -1217,26 +1225,33 @@ class HeatPlanningModel:
                     supply,
                     self._physical_weight(t),
                 )
+            inventory_indices = {t: self.variables["biomass_inventory"][(chain_name, t)] for t in self.times}
+            inventory_boundary = EventStateBoundary(
+                self, chain, label=f"biomass:{chain_name}", mode_key="boundary_mode",
+                initial_key="initial_inventory_kg", minimum_key="terminal_inventory_min_kg",
+                maximum_key="terminal_inventory_max_kg", existing_capacity=existing_inventory,
+                capacity_index=inventory_cap_idx,
+            )
+            inventory_retention = float(chain.get("inventory_retention_per_hour", 1.0))
+            if not np.isfinite(inventory_retention) or not 0 <= inventory_retention <= 1:
+                raise ValueError("inventory_retention_per_hour must be in [0, 1]")
             for t in self.times:
                 supply = self.variables["biomass_delivery"][(chain_name, t)]
                 inventory = self.variables["biomass_inventory"][(chain_name, t)]
-                prev = self.time_predecessor[t]
                 balance = {
                     inventory: 1.0,
                     supply: -self.dt,
                 }
-                self._add(
-                    balance,
-                    self.variables["biomass_inventory"][(chain_name, prev)],
-                    -float(chain.get("inventory_retention_per_hour", 1.0)) ** self.dt,
-                )
+                boundary_rhs = inventory_boundary.add_predecessor(
+                    balance, t, inventory_indices, inventory_retention ** self.dt)
                 for source_name in source_names:
                     for grade_name in self.grades:
                         heat_idx = self.variables["source_heat"].get((source_name, grade_name, t))
                         if heat_idx is not None:
                             self._add(balance, heat_idx, self.dt / (lhv * efficiency))
                             self._record_time_metric("biomass_heat_kwh", heat_idx, 1.0, t)
-                p.add_constraint(balance, lb=0.0, ub=0.0)
+                p.add_constraint(balance, lb=boundary_rhs, ub=boundary_rhs)
+            inventory_boundary.finish(inventory_indices)
             annual_limit = chain.get("annual_supply_limit_kg")
             if annual_limit is not None:
                 for scenario, row in annual_supply_rows.items():
@@ -1743,6 +1758,8 @@ class HeatPlanningModel:
                     lb=firm_requirement - (existing_firm - outage_existing),
                 )
 
+            add_resource_firm_portfolios(self, source_firm, firm_requirement)
+
             # Contingency network-flow feasibility for critical pipe outages.
             # Dispatch variables are scenario-specific, while all investment
             # variables remain shared with the nominal planning problem.
@@ -1763,6 +1780,7 @@ class HeatPlanningModel:
                         capacity_row[retire_idx] = effective_credit
                     p.add_constraint(capacity_row, ub=existing_contribution)
 
+                add_firm_resource_limits(self, contingency_source, f"pipe_outage:{outage_name}")
                 contingency_flow: dict[tuple[str, str], int] = {}
                 for e_name, pipe in self.pipes.items():
                     if e_name == outage_name:
@@ -1992,18 +2010,22 @@ class HeatPlanningModel:
                     "microgrid_battery_charge_kwh", battery_charge, 1.0, t
                 )
 
+            battery_boundary = EventStateBoundary(
+                self, microgrid, label="microgrid:battery", mode_key="battery_boundary_mode",
+                initial_key="battery_initial_soc_kwh", minimum_key="battery_terminal_soc_min_kwh",
+                maximum_key="battery_terminal_soc_max_kwh", existing_capacity=existing_battery_energy,
+                capacity_index=battery_energy_idx,
+            )
             for t in self.times:
                 battery_row = {
                     self.variables["microgrid_battery_soc"][t]: 1.0,
                     self.variables["microgrid_battery_charge"][t]: -eta_charge * self.dt,
                     self.variables["microgrid_battery_discharge"][t]: self.dt / eta_discharge,
                 }
-                self._add(
-                    battery_row,
-                    self.variables["microgrid_battery_soc"][self.time_predecessor[t]],
-                    -retention,
-                )
-                p.add_constraint(battery_row, lb=0.0, ub=0.0)
+                boundary_rhs = battery_boundary.add_predecessor(
+                    battery_row, t, self.variables["microgrid_battery_soc"], retention)
+                p.add_constraint(battery_row, lb=boundary_rhs, ub=boundary_rhs)
+            battery_boundary.finish(self.variables["microgrid_battery_soc"])
 
         # Local electricity connection adequacy for heat pumps and circulation
         # pumps. This prevents a heat-only optimum that cannot be connected to
@@ -2131,6 +2153,9 @@ class HeatPlanningModel:
                             {storage_dispatch: 1.0, firm_idx: -storage_credit}, ub=0.0
                         )
                         heat_row[storage_dispatch] = 1.0
+                    add_firm_resource_limits(self, {
+                        name: self.variables["firm_source_dispatch"][(label, name)] for name in self.sources
+                    }, f"grid_portfolio:{label}")
                     p.add_constraint(heat_row, lb=required_firm_heat)
                     if grid_idx is not None:
                         electric_row[grid_idx] = -1.0
@@ -2227,6 +2252,8 @@ class HeatPlanningModel:
                 local_renewable = self.variables["renewable_electricity_use"].get(t)
                 if local_renewable is not None:
                     self._record_time_metric("grid_electricity_kwh", local_renewable, -1.0, t)
+
+        add_monthly_electricity_tariff(self)
 
         # Add risk aversion only after every scenario-level operating debit and
         # credit has been posted. In particular, renewable-electricity and
@@ -2723,18 +2750,39 @@ class HeatPlanningModel:
             for idx, coefficient in emission_row.items():
                 self.problem.objective[idx] = coefficient
         solve_started = perf_counter()
+        effective_gap = float(mip_gap if mip_gap is not None else planning.get("mip_gap", 0.005))
+        effective_time_limit = float(time_limit if time_limit is not None else planning.get("time_limit_seconds", 120.0))
         try:
             result = self.problem.solve(
-                mip_gap=float(mip_gap if mip_gap is not None else planning.get("mip_gap", 0.005)),
-                time_limit=float(time_limit if time_limit is not None else planning.get("time_limit_seconds", 120.0)),
+                mip_gap=effective_gap,
+                time_limit=effective_time_limit,
             )
         finally:
             self.problem.objective = original_objective
         solver_elapsed_seconds = perf_counter() - solve_started
         if result.x is None:
-            raise RuntimeError(f"MILP 未得到可行解: status={result.status}, message={result.message}")
+            failure_summary = {
+                "solver_status": int(result.status), "solver_message": str(result.message),
+                "objective_mode": objective_mode, "objective_value": None,
+                "mip_gap": getattr(result, "mip_gap", None),
+                "mip_dual_bound": getattr(result, "mip_dual_bound", None),
+                "solver_requested_mip_gap": effective_gap, "solver_time_limit_seconds": effective_time_limit,
+                "solver_elapsed_seconds": solver_elapsed_seconds,
+                "solver_integer_variables": sum(int(i != 0) for i in self.problem.integrality),
+                "numerical_audit_passed": False, "numerical_solution_finite": False,
+                "failure_reason": "no feasible solver incumbent",
+            }
+            scope = investment_scope(self.config, self.variables, self.problem.lower, self.problem.upper)
+            failure_summary["solution_scope"] = scope["investment_scope"]
+            failure_summary["solver_stages"] = [solver_stage_evidence(failure_summary)]
+            failure_summary["solution_quality"] = solution_quality_from_summary(failure_summary, scope=scope)
+            raise SolveFailure(f"MILP 未得到可行解: status={result.status}, message={result.message}", failure_summary)
         values = np.asarray(result.x)
         summary = self._make_summary(result, values, objective_mode)
+        summary["solver_requested_mip_gap"] = effective_gap
+        summary["solver_time_limit_seconds"] = effective_time_limit
+        summary["solver_integer_variables"] = sum(int(i != 0) for i in self.problem.integrality)
+        summary["solver_objective_constant"] = self.total_service_emissions_expression()[1] if objective_mode == "emissions" else 0.0
         summary["solver_elapsed_seconds"] = solver_elapsed_seconds
         summary["matrix_compile_seconds"] = float(
             self.problem.last_matrix_compile_seconds
@@ -2772,6 +2820,10 @@ class HeatPlanningModel:
             })
         investments = self._make_investments(values)
         dispatch = self._make_dispatch(values)
+        scope = investment_scope(self.config, self.variables, self.problem.lower, self.problem.upper)
+        summary["solution_scope"] = scope["investment_scope"]
+        summary["solver_stages"] = [solver_stage_evidence(summary)]
+        summary["solution_quality"] = solution_quality_from_summary(summary, scope=scope)
         return SolveArtifacts(result, values, summary, investments, dispatch, trajectory, comfort)
 
     def solve_lexicographic(
@@ -2803,17 +2855,36 @@ class HeatPlanningModel:
             secondary = "emissions"
         allowance = absolute_tolerance + relative_tolerance * abs(value)
         self.problem.add_constraint(coefficients, ub=value+allowance-constant)
-        second = self.solve(mip_gap=mip_gap, time_limit=time_limit, objective_mode=secondary)
-        second.summary.update({
+        failed_second = None
+        try:
+            second = self.solve(mip_gap=mip_gap, time_limit=time_limit, objective_mode=secondary)
+            endpoint_summary = second.summary
+        except SolveFailure as error:
+            failed_second = error
+            endpoint_summary = error.summary
+        endpoint_summary.update({
             "endpoint_method": "two_stage_lexicographic_with_reported_tolerance",
             "primary_objective": primary, "primary_incumbent_value": value,
             "primary_objective_allowance": allowance,
             "primary_solver_status": first.summary["solver_status"],
             "primary_mip_gap": first.summary.get("mip_gap"),
             "primary_numerical_audit_passed": first.summary["numerical_audit_passed"],
+            "primary_solver_message": first.summary["solver_message"],
+            "primary_solver_objective_value": first.summary["objective_value"],
+            "primary_mip_dual_bound": first.summary.get("mip_dual_bound"),
+            "primary_solver_requested_mip_gap": first.summary["solver_requested_mip_gap"],
+            "primary_solver_time_limit_seconds": first.summary["solver_time_limit_seconds"],
             "primary_solver_elapsed_seconds": first.summary["solver_elapsed_seconds"],
-            "endpoint_solver_elapsed_seconds": first.summary["solver_elapsed_seconds"]+second.summary["solver_elapsed_seconds"],
+            "endpoint_solver_elapsed_seconds": first.summary["solver_elapsed_seconds"]+endpoint_summary["solver_elapsed_seconds"],
         })
+        stages = [deepcopy(first.summary["solver_stages"][0]), deepcopy(endpoint_summary["solver_stages"][0])]
+        stages[0]["stage_id"], stages[1]["stage_id"] = "primary", "secondary"
+        endpoint_summary["solver_stages"] = stages
+        endpoint_summary["solution_quality"] = solution_quality_from_summary(
+            endpoint_summary, scope=first.summary["solution_quality"]["scope"])
+        if failed_second is not None:
+            failed_second.solution_quality = endpoint_summary["solution_quality"]
+            raise failed_second
         return second
 
     def _make_summary(self, result: Any, values: np.ndarray, objective_mode: str) -> dict[str, Any]:
@@ -2868,6 +2939,7 @@ class HeatPlanningModel:
         cooling_variable_cost = (
             components.get("cooling_operating_cost", 0.0)
             + components.get("cooling_carbon_cost", 0.0)
+            + components.get("shared_non_heating_electricity_basic_cost", 0.0)
         )
         microgrid = self.config.get("microgrid_islanding", {})
         def installed_microgrid(category: str, existing_key: str) -> float:
@@ -3102,6 +3174,9 @@ class HeatPlanningModel:
                 unit_commitment_indicator_fractionality
             ),
             "components_yuan_per_year": components,
+            **extension_summary(self, values),
+            **({"replay_service_policy": self.config["replay_service_policy"]}
+               if "replay_service_policy" in self.config else {}),
             "emissions_kg_per_year": metrics.get("emissions_kg", 0.0),
             "cooling_emissions_kg_per_year": metrics.get("cooling_emissions_kg", 0.0),
             "total_service_emissions_kg_per_year": metrics.get("emissions_kg", 0.0)
@@ -3309,6 +3384,7 @@ class HeatPlanningModel:
             "chp_heat_rejection": ("kW", lambda key: (key[0], self.sources[key[0]]["node"], "rejected_heat", key[1])),
             "biomass_delivery": ("kg/h", lambda key: (key[0], "supply_chain", "fuel", key[1])),
             "biomass_inventory": ("kg", lambda key: (key[0], "supply_chain", "fuel", key[1])),
+            "shared_heat_resource_use": ("kW", lambda key: (key[0], "resource_pool", "upstream_heat", key[1])),
         }
         if self.building_inputs is not None:
             buildings = {building.name:building for building in self.building_inputs.buildings}

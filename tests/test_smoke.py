@@ -353,6 +353,8 @@ class SmokeTest(unittest.TestCase):
         result = monte_carlo_out_of_sample_replay(config, frame, samples=3, time_limit=60)
         self.assertEqual(len(result), 3)
         self.assertTrue((result["unserved_rate"] >= 0).all())
+        self.assertTrue((result["replay_service_policy"] == "diagnostic_relaxed_reliability").all())
+        self.assertTrue((result["disturbance_evidence"] == "generated_research_stress_scenarios").all())
 
     def test_btes_multi_year_screening(self):
         import yaml

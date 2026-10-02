@@ -1,0 +1,124 @@
+{
+  "case_id": "steam__Hog_assembly_Annemarie",
+  "category": "steam",
+  "site_id": "Hog",
+  "year": 2017,
+  "core_label": "new_core",
+  "method": "extreme_aware",
+  "requested_k": 6,
+  "core_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+  "observed_calendar_sha256": "ad71b5778fbf571f09f6921ca36b9679c52297a19275116b9ccf7b4871a19baf",
+  "input_retained_days": 364,
+  "status": "ok",
+  "metrics": {
+    "retained_days_n": 364,
+    "actual_representative_days_m": 9,
+    "representative_hours": 216,
+    "weight_sum_days": 364.0,
+    "compression_n_over_m": 40.44444444444444,
+    "representative_day_fraction": 0.024725274725274724,
+    "retained_scope_energy_kwh": 771130.5475000001,
+    "weighted_representative_energy_kwh": 772974.8910000001,
+    "retained_scope_energy_bias": 0.002391739642501919,
+    "retained_scope_abs_energy_bias": 0.002391739642501919,
+    "retained_scope_peak_kw": 386.0156,
+    "representative_peak_kw": 386.0156,
+    "peak_retention_ratio": 1.0,
+    "maximum_peak_day_selected": true,
+    "ldc_wasserstein1_kw": 4.179197790750915,
+    "ldc_w1_over_mean_load": 0.04734538401878054,
+    "cold_day_count": 19,
+    "cold_day_hit_count": 3,
+    "cold_day_coverage": 0.15789473684210525,
+    "hot_day_hit_count": 0,
+    "hot_day_coverage": 0.0,
+    "minimum_temperature_gap_c": 0.0,
+    "absolute_minimum_temperature_day_selected": true,
+    "real_hour_edges": 8734,
+    "positive_ramp_edges": 3586,
+    "maximum_real_ramp_kw_per_hour": 147.7344,
+    "maximum_selected_original_ramp_kw_per_hour": 147.7344,
+    "maximum_real_ramp_retention_ratio": 1.0,
+    "maximum_real_ramp_both_days_selected": true,
+    "maximum_real_ramp_crosses_midnight": false,
+    "ramp_tail_event_count": 36,
+    "ramp_tail_hit_count": 6,
+    "ramp_tail_event_coverage": 0.16666666666666666,
+    "midnight_tail_event_count": 0,
+    "midnight_tail_event_coverage": null,
+    "capacity_only_k_kw": 386.0156,
+    "capacity_only_deficit_hours": 0,
+    "capacity_only_deficit_hour_fraction": 0.0,
+    "capacity_only_deficit_energy_kwh": 0.0,
+    "capacity_only_deficit_energy_fraction": 0.0,
+    "null_reasons": {
+      "midnight_tail_event_coverage": "no midnight events in fixed top-1pct positive ramp set"
+    }
+  },
+  "elapsed_seconds": [
+    0.03595080000377493,
+    0.03575450000062119,
+    0.035685800001374446
+  ],
+  "elapsed_median_seconds": 0.03575450000062119,
+  "metrics_elapsed_seconds": 0.01669009999750415,
+  "selected_days": [
+    {
+      "original_day_index": 3,
+      "date": "2017-01-04",
+      "weight_days": 16.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 18,
+      "date": "2017-01-19",
+      "weight_days": 73.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 93,
+      "date": "2017-04-04",
+      "weight_days": 68.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 175,
+      "date": "2017-06-25",
+      "weight_days": 68.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 183,
+      "date": "2017-07-03",
+      "weight_days": 85.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 282,
+      "date": "2017-10-10",
+      "weight_days": 1.0,
+      "extreme_reasons": "maximum_system_ramp;maximum_ramp::load_kw"
+    },
+    {
+      "original_day_index": 354,
+      "date": "2017-12-22",
+      "weight_days": 51.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 359,
+      "date": "2017-12-27",
+      "weight_days": 1.0,
+      "extreme_reasons": "maximum_system_demand;maximum_peak::load_kw"
+    },
+    {
+      "original_day_index": 363,
+      "date": "2017-12-31",
+      "weight_days": 1.0,
+      "extreme_reasons": "minimum_temperature"
+    }
+  ],
+  "actual_m": 9,
+  "paired_actual_budget": 9,
+  "budget_matched": true
+}

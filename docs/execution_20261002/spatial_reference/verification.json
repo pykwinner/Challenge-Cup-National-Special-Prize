@@ -1,0 +1,131 @@
+{
+  "verified_utc": "2026-10-02T04:41:59.874199+00:00",
+  "state": "complete_spatial_reference_only",
+  "focused_tests": {
+    "command": [
+      "D:\\app\\anaconda3\\python.exe",
+      "-B",
+      "-m",
+      "pytest",
+      "tests/test_osm_reference.py",
+      "-q",
+      "-p",
+      "no:cacheprovider"
+    ],
+    "process_local_PYTHONPATH": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\execution_20261002\\spatial_reference\\_runtime_packages",
+    "exit_code": 0,
+    "stdout_file": "focused_tests.txt",
+    "output": ".......................                                                  [100%]\n23 passed in 1.31s\n"
+  },
+  "test_environment": {
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "executable": "D:\\app\\anaconda3\\python.exe",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.15.3",
+    "shapely": "2.1.2",
+    "networkx": "3.4.2",
+    "pyproj": "3.8.0",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1"
+  },
+  "build_environment": {
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "executable": "D:\\app\\anaconda3\\python.exe",
+    "numpy": "1.26.4",
+    "shapely": "2.1.2",
+    "networkx": "3.4.2",
+    "pyproj": "3.8.0",
+    "matplotlib": "3.9.2"
+  },
+  "no_global_dependency_install": true,
+  "runtime_packages_excluded_from_delivery": true,
+  "optional_test_without_pyproj": {
+    "result": "module skipped as intended",
+    "observed_output": "1 skipped in 0.03s",
+    "not_claimed_as_test_pass": true
+  },
+  "original_csv_count": 24,
+  "original_csv_and_old_audit_files": 33,
+  "original_inputs_sha256_valid": true,
+  "native_responses_sha256_checks": [
+    {
+      "city": "guyuan",
+      "raw_file": "guyuan/native/ways_05807a319f7d3407.json",
+      "sha256_valid": true,
+      "retrieved_utc": "2026-10-02T04:29:53.379878+00:00"
+    },
+    {
+      "city": "guyuan",
+      "raw_file": "guyuan/native/nodes_faa82ba6ff08fa9b.json",
+      "sha256_valid": true,
+      "retrieved_utc": "2026-10-02T04:29:54.811911+00:00"
+    },
+    {
+      "city": "urumqi",
+      "raw_file": "urumqi/native/ways_738a3491dbaf275c.json",
+      "sha256_valid": true,
+      "retrieved_utc": "2026-10-02T04:29:57.752261+00:00"
+    },
+    {
+      "city": "urumqi",
+      "raw_file": "urumqi/native/nodes_1e49fb4422ffc945.json",
+      "sha256_valid": true,
+      "retrieved_utc": "2026-10-02T04:29:59.171094+00:00"
+    },
+    {
+      "city": "wuhan",
+      "raw_file": "wuhan/native/ways_a81421f0dced124f.json",
+      "sha256_valid": true,
+      "retrieved_utc": "2026-10-02T04:30:01.359259+00:00"
+    },
+    {
+      "city": "wuhan",
+      "raw_file": "wuhan/native/nodes_74c7ea13c8e917ea.json",
+      "sha256_valid": true,
+      "retrieved_utc": "2026-10-02T04:30:02.640370+00:00"
+    }
+  ],
+  "png_visual_qa": {
+    "passed": true,
+    "checked_via": "view_image on all three maps; labels separated and Guyuan red-cross legend added"
+  },
+  "pdf_checks": [
+    {
+      "city": "guyuan",
+      "pages": 1,
+      "pdf_sha256": "b8aa865e0d163308b3ebfb8e569734487c06f5b5920eae7514553cb1d7abf26e",
+      "render_file": "qa\\guyuan_pdf.png",
+      "render_sha256": "d9302ec8948818ad3fcf182c2468f5ad4ee0b2d51e377843b4046f07d43f6f4d"
+    },
+    {
+      "city": "urumqi",
+      "pages": 1,
+      "pdf_sha256": "009facc5209b1388985de09ecb3119016e4c439097b2fd23b149056c209340a7",
+      "render_file": "qa\\urumqi_pdf.png",
+      "render_sha256": "c41975c6c49723c9e03b80d4caac340352c2baf51b9ca5923ff081e276f17537"
+    },
+    {
+      "city": "wuhan",
+      "pages": 1,
+      "pdf_sha256": "2d386d7b473e0f60c36907b36b6ec3a9094d7959d693771b291f5a148d12f755",
+      "render_file": "qa\\wuhan_pdf.png",
+      "render_sha256": "8d19e1fd2cb9738e8cb7c455bc6def35b03fd52de5575aa318503d608606ccc6"
+    }
+  ],
+  "pdf_rendering_note": "Each independent PDF rendered in a fresh process to avoid cross-document subset-font cache reuse",
+  "pdf_visual_qa": {
+    "passed": true,
+    "checked_utc": "2026-10-02T04:43:37.388560+00:00",
+    "checked_via": "view_image of all saved PDF renders; Wuhan text crop additionally checked; coordinates, legends and all six IDs readable",
+    "pdf_export": "Type 3 vector glyphs",
+    "no_actual_heating_network_claim": true
+  },
+  "not_run": {
+    "full_project_regression": "outside this delegated spatial scope; parent task handles project regression",
+    "MILP": "spatial-reference-only task; physical data not admitted",
+    "heating_performance_and_cost": "no verified physical inputs",
+    "GitHub_upload": "not authorized in this batch"
+  },
+  "finalized_utc": "2026-10-02T04:43:37.388560+00:00"
+}

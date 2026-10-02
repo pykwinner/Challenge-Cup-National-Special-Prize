@@ -1,0 +1,45 @@
+{
+  "heat_loss_kw_per_c": 0.10430000000000002,
+  "inner_mass_capacity_kwh_per_c": 0.535576,
+  "capacity_terms_j_per_k": {
+    "wall_plasterboard": 609033.6,
+    "floor_timber": 936000.0000000001,
+    "ceiling_plasterboard": 383040.0
+  },
+  "formula": "sum(A_m2*d_m*rho_kg_m3*cp_J_kg_K)/3600000",
+  "published_capacity_check": "Table1-16 1015.912Btu/F approximately 1.9293MJ/K; small rounding difference to SI-layer derivation",
+  "source_role": "public prescribed prototype -> declared 1R1C structural approximation, NOT identified effective thermal capacity",
+  "solar_pathway": "excluded; NASA solar still preserved as original weather metadata",
+  "source_registry": {
+    "BESTEST": {
+      "path": "docs/implementation_20261002/data/evidence/bestest_6231.pdf",
+      "url": "https://www.iea-ebc.org/Data/publications/EBC_Annex_21_BESTEST.pdf",
+      "identity": "1995 NREL/TP-472-6231, prescribed reference prototype",
+      "locators": "PDF p34/36/39/41/48/49/50/53; printed 1-3/1-5/1-8/1-10/1-17/1-18/1-19/1-22"
+    },
+    "NASA": {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json",
+      "url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&latitude=30.5928&longitude=114.3055&start=20241009&end=20250416&format=JSON&time-standard=UTC",
+      "identity": "NASA POWER gridded MERRA2/SYN1DEG product, UTC hourly; not station measurement"
+    },
+    "PRICE": {
+      "path": "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf",
+      "url": "https://fgw.hubei.gov.cn/fbjd/zc/gfwj/gf/202110/P020211025720835003479.pdf",
+      "identity": "2021 historical schedule, appendix 2 PDF p6; residential combined-meter <1kV class"
+    },
+    "GRID": {
+      "path": "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf",
+      "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/W020251231726284332528.pdf",
+      "identity": "2023 Hubei province annual-average electricity CO2 factor, table 3; reference applied to 2024/25"
+    },
+    "WINDOW": {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html",
+      "url": "https://www.wuhan.gov.cn/sy/whyw/202411/t20241117_2485509.shtml",
+      "identity": "Wuhan government news, 2024-11-17: Wuchang and surrounding district 11/16 to 3/15; borrowed experiment window, not citywide statutory season"
+    },
+    "PROTOCOL": {
+      "identity": "Explicit model boundary/derived convention; not measured data",
+      "url": ""
+    }
+  }
+}

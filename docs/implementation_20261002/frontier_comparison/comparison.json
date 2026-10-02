@@ -1,0 +1,63 @@
+{
+  "all_requested_points_passed": true,
+  "weighted_five_positions": {
+    "passed_points": 5,
+    "distinct_emission_positions": 4,
+    "minimum_normalized_emissions": -2.2908950767758984e-07,
+    "maximum_normalized_emissions": 1.0,
+    "normalized_emissions_span": 1.0000002290895076,
+    "maximum_adjacent_normalized_emissions_gap": 0.43934046569238183,
+    "sorted_distinct_normalized_emissions": [
+      -2.2908950767758984e-07,
+      0.432858588369826,
+      0.5606595343076182,
+      1.0
+    ]
+  },
+  "epsilon_five_positions": {
+    "passed_points": 5,
+    "distinct_emission_positions": 5,
+    "minimum_normalized_emissions": -2.2908951607501555e-07,
+    "maximum_normalized_emissions": 1.0000002390895737,
+    "normalized_emissions_span": 1.0000004681790897,
+    "maximum_adjacent_normalized_emissions_gap": 0.2500004606791074,
+    "sorted_distinct_normalized_emissions": [
+      -2.2908951607501555e-07,
+      0.25000023158959134,
+      0.5000002340895785,
+      0.7500002365895236,
+      1.0000002390895737
+    ]
+  },
+  "epsilon_with_shared_endpoint_anchors": {
+    "passed_points": 7,
+    "distinct_emission_positions": 5,
+    "minimum_normalized_emissions": -2.2908951607501555e-07,
+    "maximum_normalized_emissions": 1.0000002390895737,
+    "normalized_emissions_span": 1.0000004681790897,
+    "maximum_adjacent_normalized_emissions_gap": 0.2500004606791074,
+    "sorted_distinct_normalized_emissions": [
+      -2.2908951607501555e-07,
+      0.25000023158959134,
+      0.5000002340895785,
+      0.7500002365895236,
+      1.0
+    ]
+  },
+  "shared_endpoint_solver_stages": 4,
+  "weighted_additional_solver_stages": 3,
+  "epsilon_additional_solver_stages": 5,
+  "shared_endpoint_solver_seconds": 6.361631000007037,
+  "weighted_additional_solver_seconds": 2.567047599994112,
+  "epsilon_additional_solver_seconds": 38.09853510002722,
+  "shared_endpoint_recorded_wall_seconds": 11.099861800001236,
+  "weighted_additional_recorded_wall_seconds": 7.863259800011292,
+  "epsilon_additional_recorded_wall_seconds": 49.131149099979666,
+  "current_run_wall_seconds_before_report": 8.243894300001557,
+  "equal_compute_budget": false,
+  "acceleration_claim": false,
+  "engineering_structure_comparison": false,
+  "empirical_validation": false,
+  "full_economics_admitted": false,
+  "interpretation": "Observed sampled coverage only; different extra solve counts and reused historical timing prevent equal-budget speed claims."
+}

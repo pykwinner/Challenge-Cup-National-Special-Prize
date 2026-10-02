@@ -1,0 +1,153 @@
+{
+  "completed_utc": "2026-10-02T04:51:53.251885+00:00",
+  "status": "completed",
+  "core_reviewed_hashes": {
+    "src/heatplan/representative.py": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+    "src/heatplan/scenarios.py": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+    "src/heatplan/chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+    "src/heatplan/chronology_cli.py": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+    "src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src/heatplan/model.py": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5"
+  },
+  "write_scope": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\execution_20261002\\independent_review",
+  "github_uploaded": false,
+  "engineering_solve": false,
+  "small_synthetic_interface_model_builds_only": true,
+  "module_artifact_sources": {
+    "core_interfaces": "support/core_interfaces/latest.json",
+    "external_recomputation": "support/external_recomputation/results.json",
+    "spatial_recomputation": "support/spatial_recomputation/results.json"
+  },
+  "files": [
+    {
+      "path": "external_benchmark_review.md",
+      "bytes": 4293,
+      "sha256": "ee9c81e12cba418eff5e4d5c7d2f15955969579a668d110ba2754c97c9692c9c"
+    },
+    {
+      "path": "findings.md",
+      "bytes": 8796,
+      "sha256": "f70bec77122317732bf3fb40a7b3c44b9df06f0f1b5f91cda60371c3f0076831"
+    },
+    {
+      "path": "protocol.md",
+      "bytes": 3414,
+      "sha256": "b901f1f38cbff2e843f7280336776ff112175e2d92a707d53673d10fa28cd615"
+    },
+    {
+      "path": "recompute_current_core_interfaces.py",
+      "bytes": 6127,
+      "sha256": "a4ea14f9eedce5797cf6d78990a932139ecc688136ca6a0b066c64e5fffe5077"
+    },
+    {
+      "path": "recompute_external_results.py",
+      "bytes": 25268,
+      "sha256": "d1be005c2017085b1f46b3fea5ab37d80fed0ccbf6c426754c9ecc1e167eaa49"
+    },
+    {
+      "path": "recompute_selection_and_weights.py",
+      "bytes": 8476,
+      "sha256": "36aded785ecb1232eb19aab23914be9e452947d2a67f38c79419df067887f0cc"
+    },
+    {
+      "path": "recompute_spatial_results.py",
+      "bytes": 14764,
+      "sha256": "57b7eff62ae43eca4403f2abfe19dbadde70a1334f94c4e259242f8ad08f69ed"
+    },
+    {
+      "path": "review_issues.json",
+      "bytes": 10842,
+      "sha256": "c5ed9ded007a187799483ac2f3b790ae753e9e28203b55c11c80f2e74ea579f4"
+    },
+    {
+      "path": "spatial_reference_review.md",
+      "bytes": 2973,
+      "sha256": "a6646105eea65226ae2c48c9d2bc5cc074cd0c48ab5771702152c24300f30235"
+    },
+    {
+      "path": "status.json",
+      "bytes": 2228,
+      "sha256": "4aec599000e6da664919f9bed93e5ae258d038b91ebe10e0412d65afd94af7a1"
+    },
+    {
+      "path": "support\\chronology_boundary_review\\fixture_results.json",
+      "bytes": 3842,
+      "sha256": "7221e57ceb5fee7791410cf93f2e3f5dda3453eb24a2c48ee6cdff50c9f99ab5"
+    },
+    {
+      "path": "support\\chronology_boundary_review\\fixture_results_30bd6e2f4ebf.json",
+      "bytes": 3853,
+      "sha256": "422dd8cddda13806f99ef4feb9a6735b38a41f193ee6d4a32c15c422c7f1edf1"
+    },
+    {
+      "path": "support\\chronology_boundary_review\\recompute_boundaries.py",
+      "bytes": 6467,
+      "sha256": "eeb1b42dc87e2b9b7ae87b5671af046f76287ea9b0952c45ddf4438960485b6d"
+    },
+    {
+      "path": "support\\chronology_boundary_review\\review.md",
+      "bytes": 6251,
+      "sha256": "6ed4ec6ccda346f3123319b46ffea51d93c457cdbfbd04510cb408649fe3e21c"
+    },
+    {
+      "path": "support\\core_interfaces\\653f6d10ae6acda1640b309c32fd1b3d31bd3043c35d6cce23f1ffb4bbebdde0.json",
+      "bytes": 3298,
+      "sha256": "4ce66b0d8ce4c620ff4371b505e520c0a5501d451e41818e35e69e244e6b6e60"
+    },
+    {
+      "path": "support\\core_interfaces\\findings_before_interface_fixes.md",
+      "bytes": 7230,
+      "sha256": "d5d7d91e198b17dc97c1a550da64ed878e092618c2b7e198dbfab0eb79959fe5"
+    },
+    {
+      "path": "support\\core_interfaces\\latest.json",
+      "bytes": 3298,
+      "sha256": "4ce66b0d8ce4c620ff4371b505e520c0a5501d451e41818e35e69e244e6b6e60"
+    },
+    {
+      "path": "support\\core_interfaces\\review_issues_before_interface_fixes.json",
+      "bytes": 7759,
+      "sha256": "7578d84235f48a40fb86f0b4bcba2a2240d37e93d01db870a5417031afc1112c"
+    },
+    {
+      "path": "support\\external_recomputation\\results.json",
+      "bytes": 442983,
+      "sha256": "b5ad298bde4b0c52ef912d4b09c8d857d97448ab38e20120451040df22111086"
+    },
+    {
+      "path": "support\\selection_and_weights\\5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131\\recomputation.json",
+      "bytes": 5132,
+      "sha256": "285bb3ceb8149f90d4dd6ba7260292ba6a8afe8c55a3d3901de263a4b8ddb3d5"
+    },
+    {
+      "path": "support\\selection_and_weights\\5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131\\scenarios_reviewed_snapshot.py",
+      "bytes": 26885,
+      "sha256": "4d5b7769849324c0fa2446f9da57d170af0ea62d390dc067557828a5c04c8538"
+    },
+    {
+      "path": "support\\selection_and_weights\\90f826c9b52adc914eb4470d16c22c67bace5dadf1f788a216d31e74e32d05f1\\recomputation.json",
+      "bytes": 5143,
+      "sha256": "868bc3e7b230d8b22531c5169ba06e8e855c6669d07171fe139ce7752b7bc8c6"
+    },
+    {
+      "path": "support\\selection_and_weights\\90f826c9b52adc914eb4470d16c22c67bace5dadf1f788a216d31e74e32d05f1\\scenarios_reviewed_snapshot.py",
+      "bytes": 26815,
+      "sha256": "fbe62f9911e719ff4de0dc694a5106ffba9c11e40d580066b6ea5d9efe983611"
+    },
+    {
+      "path": "support\\selection_and_weights\\recomputation.json",
+      "bytes": 5132,
+      "sha256": "285bb3ceb8149f90d4dd6ba7260292ba6a8afe8c55a3d3901de263a4b8ddb3d5"
+    },
+    {
+      "path": "support\\selection_and_weights\\scenarios_reviewed_snapshot.py",
+      "bytes": 26885,
+      "sha256": "4d5b7769849324c0fa2446f9da57d170af0ea62d390dc067557828a5c04c8538"
+    },
+    {
+      "path": "support\\spatial_recomputation\\results.json",
+      "bytes": 18781,
+      "sha256": "97d73f23c6f539b6231772238529a443499d24fbe6f70081364d2d2ebf91230b"
+    }
+  ]
+}

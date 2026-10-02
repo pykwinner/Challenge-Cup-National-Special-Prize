@@ -1,0 +1,132 @@
+{
+  "schema": "osm_spatial_reference_v1",
+  "eligible_for_engineering_solver_input": false,
+  "buildings": [
+    {
+      "reference_node_id": "w1091893005",
+      "longitude": 114.298558,
+      "latitude": 30.5916492,
+      "building_tag": "commercial",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w1095192390",
+      "longitude": 114.2975577,
+      "latitude": 30.5902174,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w1095192364",
+      "longitude": 114.2977514,
+      "latitude": 30.590905,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w1095192392",
+      "longitude": 114.2974828,
+      "latitude": 30.5900259,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w1095192365",
+      "longitude": 114.2975365,
+      "latitude": 30.5907197,
+      "building_tag": "yes",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "reference_node_id": "w770782892",
+      "longitude": 114.2976896,
+      "latitude": 30.5911174,
+      "building_tag": "commercial",
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    }
+  ],
+  "candidate_connections": [
+    {
+      "from_reference": "w1091893005",
+      "to_reference": "w1095192390",
+      "status": "routed",
+      "reference_length_m": 208.17683852684385,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    },
+    {
+      "from_reference": "w1091893005",
+      "to_reference": "w1095192364",
+      "status": "routed",
+      "reference_length_m": 144.62440987422715,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    },
+    {
+      "from_reference": "w1091893005",
+      "to_reference": "w1095192392",
+      "status": "routed",
+      "reference_length_m": 229.53983892252634,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    },
+    {
+      "from_reference": "w1091893005",
+      "to_reference": "w1095192365",
+      "status": "routed",
+      "reference_length_m": 229.70152065505056,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    },
+    {
+      "from_reference": "w1091893005",
+      "to_reference": "w770782892",
+      "status": "routed",
+      "reference_length_m": 140.67857324543564,
+      "actual_pipe_length_m": null,
+      "capacity_kw": null,
+      "diameter_mm": null,
+      "delivery_efficiency": null,
+      "capex_total_yuan": null
+    }
+  ],
+  "source_capacity_kw": null,
+  "costs_verified": false,
+  "adapter_note": "Keep separate from spatial_quality preprocessing, which recalculates length as straight distance times route_factor. Requires explicit project mapping and physical input evidence before solver admission."
+}

@@ -1,0 +1,123 @@
+{
+  "statistical_candidate_adopted": false,
+  "selected_method": "extreme_aware_fallback",
+  "selected_weights": [
+    12.0,
+    45.0,
+    1.0,
+    43.0,
+    1.0,
+    57.0,
+    81.0,
+    33.0,
+    1.0
+  ],
+  "candidate_rejection_reasons": [
+    "original_observed_peak_retention_failed"
+  ],
+  "fallback_passes_research_policy": false,
+  "fallback_rejection_reasons": [
+    "original_observed_peak_retention_failed"
+  ],
+  "selected_passes_research_policy": false,
+  "candidate_diagnostics": {
+    "conservation_residual_days": 0.0,
+    "maximum_lower_bound_violation": 0.0,
+    "energy_residual_original_units": [
+      -307.5673081888817
+    ],
+    "zero_energy_target_rows": [],
+    "maximum_absolute_relative_energy_error": 8.106052773306531e-05
+  },
+  "fallback_diagnostics": {
+    "conservation_residual_days": 0.0,
+    "maximum_lower_bound_violation": 0.0,
+    "energy_residual_original_units": [
+      -2731.930499999784
+    ],
+    "zero_energy_target_rows": [],
+    "maximum_absolute_relative_energy_error": 0.0007200106193472377
+  },
+  "policy": {
+    "maximum_absolute_relative_energy_error": 0.001,
+    "maximum_w1_degradation": 0.0,
+    "minimum_peak_retention": 1.0,
+    "minimum_ramp_retention": 1.0,
+    "minimum_original_observed_peak_retention": 1.0,
+    "numerical_tolerance": 1e-08,
+    "metric_tolerance": 1e-12
+  },
+  "policy_origin": "predeclared_research_adoption_rule_not_official_requirement",
+  "engineering_operation_validated": false,
+  "caveat": "Statistical gate only. Costs, capacities, comfort, storage and fixed-investment chronological operation are not validated.",
+  "case_id": "steam__Cockatoo_assembly_Fernanda",
+  "category": "steam",
+  "site_id": "Cockatoo",
+  "year": 2017,
+  "exact_matching_status": "feasible",
+  "elapsed_seconds": 0.00018599999748403206,
+  "selected_metrics": {
+    "retained_days_n": 274,
+    "actual_representative_days_m": 9,
+    "representative_hours": 216,
+    "weight_sum_days": 274.0,
+    "compression_n_over_m": 30.444444444444443,
+    "representative_day_fraction": 0.032846715328467155,
+    "retained_scope_energy_kwh": 3794291.9543000003,
+    "weighted_representative_energy_kwh": 3791560.0237999996,
+    "retained_scope_energy_bias": -0.0007200106193474831,
+    "retained_scope_abs_energy_bias": 0.0007200106193474831,
+    "retained_scope_peak_kw": 1574.8793,
+    "representative_peak_kw": 1574.8793,
+    "peak_retention_ratio": 1.0,
+    "maximum_peak_day_selected": true,
+    "ldc_wasserstein1_kw": 21.11067106143551,
+    "ldc_w1_over_mean_load": 0.036587530578049886,
+    "cold_day_count": 14,
+    "cold_day_hit_count": 3,
+    "cold_day_coverage": 0.21428571428571427,
+    "hot_day_hit_count": 0,
+    "hot_day_coverage": 0.0,
+    "minimum_temperature_gap_c": 0.0,
+    "absolute_minimum_temperature_day_selected": true,
+    "real_hour_edges": 6531,
+    "positive_ramp_edges": 6519,
+    "maximum_real_ramp_kw_per_hour": 579.6285,
+    "maximum_selected_original_ramp_kw_per_hour": 579.6285,
+    "maximum_real_ramp_retention_ratio": 1.0,
+    "maximum_real_ramp_both_days_selected": true,
+    "maximum_real_ramp_crosses_midnight": false,
+    "ramp_tail_event_count": 66,
+    "ramp_tail_hit_count": 6,
+    "ramp_tail_event_coverage": 0.09090909090909091,
+    "midnight_tail_event_count": 1,
+    "midnight_tail_event_coverage": 0.0,
+    "capacity_only_k_kw": 1574.8793,
+    "capacity_only_deficit_hours": 0,
+    "capacity_only_deficit_hour_fraction": 0.0,
+    "capacity_only_deficit_energy_kwh": 0.0,
+    "capacity_only_deficit_energy_fraction": 0.0,
+    "null_reasons": {}
+  },
+  "original_observed_scope": {
+    "all_valid_meter_hours": 8629,
+    "retained_complete_day_valid_hours": 6576,
+    "valid_meter_hours_excluded_by_complete_day_filter": 2053,
+    "observed_partial_year_energy_kwh": 5176895.0534,
+    "retained_energy_kwh": 3794291.9543000003,
+    "observed_energy_excluded_kwh": 1382603.0990999993,
+    "observed_energy_excluded_fraction": 0.26707188089353967,
+    "original_observed_peak_kw": 1661.5479999999998,
+    "selected_peak_kw": 1574.8793,
+    "original_observed_peak_retention_ratio": 0.9478385818525858,
+    "original_peak_lost_by_complete_day_filter": true,
+    "maximum_original_valid_adjacent_ramp_kw_per_hour": 803.3638,
+    "maximum_selected_original_adjacent_ramp_kw_per_hour": 579.6285,
+    "original_observed_ramp_retention_ratio": 0.721501889928324,
+    "capacity_only_observed_deficit_hours": 28,
+    "capacity_only_observed_deficit_energy_kwh": 855.8390999999981,
+    "interpretation": "Meter observations only. Calendar gaps remain missing; capacity-only diagnostic is not engineering dispatch."
+  },
+  "paired_actual_budget": 9,
+  "total_case_seconds": 0.6900433999981033
+}

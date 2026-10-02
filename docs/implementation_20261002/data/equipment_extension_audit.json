@@ -1,0 +1,87 @@
+{
+  "equipment_extension_admitted": false,
+  "base_input_unchanged": true,
+  "review_date": "2026-10-02",
+  "identity": "Public reference quotation/certification joins only; neither local project quotation nor complete performance curve",
+  "sources": {
+    "qipanjing_award_2024.pdf": {
+      "path": "docs/implementation_20261002/data/equipment_extension_evidence/qipanjing_award_2024.pdf",
+      "url": "https://www.ccgp-neimenggu.gov.cn/gpx-bid-file/ZF_JGBM_000001/150624/2024/10/14/402881e290866d3b0192796a65294467/gpx-bidconfirm/402881ef92fee5770192ff2a4bc91b89.pdf?accessCode=3a0630a0b3f8ba77b31da4d0e0cb8ffc",
+      "sha256": "64efab2faf550fded7e3712af2d48cdd95523e9d229e816ab524d911f5f3a7e5"
+    },
+    "lingwu_award_2024.html": {
+      "path": "docs/implementation_20261002/data/equipment_extension_evidence/lingwu_award_2024.html",
+      "url": "https://ggzyjy.fzggw.nx.gov.cn/dzjy/001001/001001002/001001002003/20240822/fd0b56c8-16cb-46db-af49-a404c469088c.html",
+      "sha256": "f44eb172bd7c7ed84d40ed133e240433c6d4cf1ed2ed19550f0cac87eb937969"
+    },
+    "cqc_nulite_2024.pdf": {
+      "path": "docs/implementation_20261002/data/equipment_extension_evidence/cqc_nulite_2024.pdf",
+      "url": "https://www.cqc.com.cn/www/upload/files/upload/resources/file/2024/04/02/60353.pdf",
+      "sha256": "4a004cac98146d70609eaa643b27791c7f996591e620ce614425a7d25b9b29b2"
+    },
+    "cqc_vanward_2023.pdf": {
+      "path": "docs/implementation_20261002/data/equipment_extension_evidence/cqc_vanward_2023.pdf",
+      "url": "https://www.cqc.com.cn/www/upload/files/upload/resources/file/2023/05/22/43536.pdf",
+      "sha256": "8200906c55f2d7b6406419da6f5548c5f0ace4987dd8b2ed186b8688bfb1fc97"
+    }
+  },
+  "candidates": [
+    {
+      "model": "FT-FDRS-8/380FWAW",
+      "brand": "非圖",
+      "manufacturer_in_award": "鄂托克旗一公里科技发展有限责任公司",
+      "price_yuan_per_unit": 17800,
+      "nominal_heat_capacity_kw": 8,
+      "price_date_on_original": "2024-11-06",
+      "price_scope": "Inner Mongolia Qipanjing award ESZCEQS-G-H-240131, goods item1-1, PDF p1; 303 units; published nominal heating capacity, not full weather capacity",
+      "curve_admitted": false,
+      "missing": [
+        "Nominal rating ambient/water conditions",
+        "Model-specific COP/capacity/defrost curves at applicable zone delivery conditions",
+        "Quote installation/terminal/OM/lifetime boundary"
+      ]
+    },
+    {
+      "model": "NE-C4AZ-B2D/N-H",
+      "brand": "纽恩泰",
+      "price_yuan_per_unit": 6950,
+      "price_scope": "Lingwu award ZCJY20240708, lot1, 712 units; amount settled per actual installed count, 2024-08-22",
+      "certificate_id": "CQC24701423643",
+      "join": "Award names exact certificate CQC24701423643; CQC April2024 list p32 maps it to exact model",
+      "rated_water_outlet_c": 41,
+      "catalog_certificate_start": "2024-03-07",
+      "catalog_certificate_end": "2029-03-06",
+      "curve_admitted": false,
+      "missing": [
+        "Model-specific actual/test COP and heating-capacity table under ambient/return/outlet temperature and load",
+        "Quote installation/OM/lifetime boundary"
+      ],
+      "not_used": "Secondary ZOL 12.2kW marketing parameter and retail price are not primary sources and not admitted"
+    },
+    {
+      "model": "WDK12/AN1-BpQHLN",
+      "brand": "万和",
+      "price_yuan_per_unit": 6950,
+      "price_scope": "Lingwu award ZCJY20240708, lot2, 350 units; 2024-08-22",
+      "certificate_id": "CQC23701388136",
+      "join": "Award certificate CQC23701388136; CQC May2023 list p32 maps exact model",
+      "rated_water_outlet_c": 41,
+      "catalog_certificate_start": "2023-05-15",
+      "catalog_certificate_end": "2028-05-14",
+      "curve_admitted": false,
+      "missing": [
+        "Model-specific COP/capacity/defrost table at matched rating conditions",
+        "Quote installation/OM/lifetime boundary"
+      ]
+    }
+  ],
+  "attachment_download": [
+    {
+      "path": "lingwu_award_attachment.pdf",
+      "url": "https://222.75.70.90:7075/NXGPPSP_MG/downloadFileServlet?num=8b80b27b917917b6019179c5c3c3115d&flag=isWebsite",
+      "status": "not_downloaded",
+      "reason": "502 Server Error: Bad Gateway for url: https://222.75.70.90:7075/NXGPPSP_MG/downloadFileServlet?num=8b80b27b917917b6019179c5c3c3115d&flag=isWebsite"
+    }
+  ],
+  "conclusion": "Price/model/certificate/rated-outlet links are source-backed. No actual COP curves from these originals, so no new source is silently enabled. Does not assert all public sources lack this information; these specific candidates remain incomplete."
+}

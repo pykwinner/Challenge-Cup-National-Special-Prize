@@ -205,7 +205,59 @@
         "type_prefix_counts": {
           "w": 3531
         },
-        "identity_external_osm_api_checked": false
+        "identity_external_osm_api_checked": false,
+        "bounded_current_individual_spot_checks": [
+          {
+            "url": "https://api.openstreetmap.org/api/0.6/way/428700030.json",
+            "typed_osm_id": "w428700030",
+            "reviewed_at_utc": "2026-10-02T03:37:53.790921+00:00",
+            "scope": "current individual object identity/tag spot check only; original CSV snapshot date remains unknown",
+            "prior_web_tool_attempt": "not_accessible_via_web_tool",
+            "http_status": 200,
+            "local_prior_successful_response_reused": true,
+            "status": "retrieved",
+            "local_file": "evidence/osm_way_428700030_current.json",
+            "sha256": "65f4209a7e6040b85340282c6450508edd4d9ce9f8cfd097a583dbc383904b86",
+            "object_version": 2,
+            "object_timestamp": "2018-10-03T04:47:48Z",
+            "node_refs_present": true,
+            "tags": {
+              "building": "dam",
+              "source": "digitalGlobe Premium",
+              "waterway": "dam"
+            },
+            "closed_way_by_node_ids": true
+          },
+          {
+            "url": "https://api.openstreetmap.org/api/0.6/way/37407276.json",
+            "typed_osm_id": "w37407276",
+            "reviewed_at_utc": "2026-10-02T03:37:53.790921+00:00",
+            "scope": "current individual object identity/tag spot check only; original CSV snapshot date remains unknown",
+            "prior_web_tool_attempt": "not_accessible_via_web_tool",
+            "http_status": 200,
+            "local_prior_successful_response_reused": true,
+            "status": "retrieved",
+            "local_file": "evidence/osm_way_37407276_current.json",
+            "sha256": "f82ea534b45ee4cc8bbbf68f596002e4e45943835c9a7dd0e0d12f3b11af39a1",
+            "object_version": 11,
+            "object_timestamp": "2023-04-14T16:45:34Z",
+            "node_refs_present": true,
+            "tags": {
+              "landuse": "industrial",
+              "name": "华电新疆红雁池发电有限公司",
+              "name:en": "Hongyanchi-1 Power Plant",
+              "not:operator:wikidata": "Q2580472",
+              "old_name": "国电新疆红雁池发电有限公司",
+              "operator": "中国华电",
+              "plant:method": "combustion",
+              "plant:output:electricity": "660 MW",
+              "plant:source": "coal",
+              "power": "plant",
+              "source": "https://www.gem.wiki/Hongyanchi-1_power_station"
+            },
+            "closed_way_by_node_ids": true
+          }
+        ]
       },
       "numeric_fields": {
         "levels": {
@@ -414,7 +466,25 @@
           "H/C or 2R2C parameters",
           "measured heat/room temperature",
           "occupancy/service calendars"
-        ]
+        ],
+        "footprint_polygon_recoverable_by_same_id_from_other_supplied_polygon_layers": {
+          "building_ids": 197,
+          "share_of_building_rows": 0.055791560464457664,
+          "invalid_joined_polygons": 0,
+          "matching_layers": {
+            "pois": 131,
+            "water": 66
+          },
+          "not_complete_building_geometry_and_not_an_independent_survey": true
+        },
+        "source_label_present_but_estimate_missing_records": [],
+        "generic_building_yes_count": 3221,
+        "non_heated_or_structure_only_tags_require_screening": {
+          "dam": 66,
+          "kiln": 17,
+          "roof": 9,
+          "greenhouse": 2
+        }
       }
     },
     {
@@ -1037,7 +1107,13 @@
         ],
         "equivalent_geometry_duplicate_extra_count": 0,
         "validity_is_only_2D_topological_not_real_world_accuracy": true,
-        "building_footprint_polygon_validity_tested": null
+        "building_footprint_polygon_validity_tested": null,
+        "closed_LineString_count_by_power_tag": {
+          "substation": 48,
+          "plant": 8,
+          "generator": 5,
+          "line": 2
+        }
       },
       "CRS": {
         "declared_in_file": false,
@@ -1180,6 +1256,24 @@
         "element_versions": null,
         "source_urls": null,
         "licenses_in_file": null
+      },
+      "power_audit": {
+        "all_exported_ids_are_ways": true,
+        "node_and_relation_features_not_present": true,
+        "plant_generator_substation_are_candidates_not_available_heat_or_grid_capacity": true,
+        "closed_lines_can_represent_facility_boundaries_not_transmission_routes": true,
+        "voltage_multivalue_is_valid_tag_syntax_not_necessarily_corruption": true,
+        "missing": [
+          "plant:output:electricity",
+          "plant:output:heat",
+          "generator output",
+          "source temperature/flow",
+          "connection capacity",
+          "transformer capacity",
+          "operating state",
+          "hourly availability",
+          "permits/tariffs"
+        ]
       }
     },
     {
@@ -1730,7 +1824,59 @@
         "type_prefix_counts": {
           "w": 498
         },
-        "identity_external_osm_api_checked": false
+        "identity_external_osm_api_checked": false,
+        "bounded_current_individual_spot_checks": [
+          {
+            "url": "https://api.openstreetmap.org/api/0.6/way/428700030.json",
+            "typed_osm_id": "w428700030",
+            "reviewed_at_utc": "2026-10-02T03:37:53.790921+00:00",
+            "scope": "current individual object identity/tag spot check only; original CSV snapshot date remains unknown",
+            "prior_web_tool_attempt": "not_accessible_via_web_tool",
+            "http_status": 200,
+            "local_prior_successful_response_reused": true,
+            "status": "retrieved",
+            "local_file": "evidence/osm_way_428700030_current.json",
+            "sha256": "65f4209a7e6040b85340282c6450508edd4d9ce9f8cfd097a583dbc383904b86",
+            "object_version": 2,
+            "object_timestamp": "2018-10-03T04:47:48Z",
+            "node_refs_present": true,
+            "tags": {
+              "building": "dam",
+              "source": "digitalGlobe Premium",
+              "waterway": "dam"
+            },
+            "closed_way_by_node_ids": true
+          },
+          {
+            "url": "https://api.openstreetmap.org/api/0.6/way/37407276.json",
+            "typed_osm_id": "w37407276",
+            "reviewed_at_utc": "2026-10-02T03:37:53.790921+00:00",
+            "scope": "current individual object identity/tag spot check only; original CSV snapshot date remains unknown",
+            "prior_web_tool_attempt": "not_accessible_via_web_tool",
+            "http_status": 200,
+            "local_prior_successful_response_reused": true,
+            "status": "retrieved",
+            "local_file": "evidence/osm_way_37407276_current.json",
+            "sha256": "f82ea534b45ee4cc8bbbf68f596002e4e45943835c9a7dd0e0d12f3b11af39a1",
+            "object_version": 11,
+            "object_timestamp": "2023-04-14T16:45:34Z",
+            "node_refs_present": true,
+            "tags": {
+              "landuse": "industrial",
+              "name": "华电新疆红雁池发电有限公司",
+              "name:en": "Hongyanchi-1 Power Plant",
+              "not:operator:wikidata": "Q2580472",
+              "old_name": "国电新疆红雁池发电有限公司",
+              "operator": "中国华电",
+              "plant:method": "combustion",
+              "plant:output:electricity": "660 MW",
+              "plant:source": "coal",
+              "power": "plant",
+              "source": "https://www.gem.wiki/Hongyanchi-1_power_station"
+            },
+            "closed_way_by_node_ids": true
+          }
+        ]
       },
       "numeric_fields": {
         "area_m2": {
@@ -2374,7 +2520,46 @@
           "H/C or 2R2C parameters",
           "measured heat/room temperature",
           "occupancy/service calendars"
-        ]
+        ],
+        "footprint_polygon_recoverable_by_same_id_from_other_supplied_polygon_layers": {
+          "building_ids": 569,
+          "share_of_building_rows": 0.020923733176435977,
+          "invalid_joined_polygons": 0,
+          "matching_layers": {
+            "landuse": 77,
+            "pois": 489,
+            "water": 3
+          },
+          "not_complete_building_geometry_and_not_an_independent_survey": true
+        },
+        "source_label_present_but_estimate_missing_records": [
+          {
+            "csv_row": 26257,
+            "record": {
+              "osm_id": "w1333650196",
+              "building": "yes",
+              "name": "林学与风景 园林学院",
+              "levels": "0",
+              "height_m": "25",
+              "centroid_lon": "87.5680108",
+              "centroid_lat": "43.8103566",
+              "footprint_area_m2": "1465.2",
+              "perimeter_m": "191.0",
+              "est_levels": "",
+              "est_floor_area_m2": "",
+              "est_floor_area_src": "height"
+            }
+          }
+        ],
+        "generic_building_yes_count": 25286,
+        "non_heated_or_structure_only_tags_require_screening": {
+          "dam": 3,
+          "roof": 55,
+          "pavilion": 1,
+          "construction": 22,
+          "kiln": 1,
+          "ruins": 1
+        }
       }
     },
     {
@@ -3013,7 +3198,59 @@
         "type_prefix_counts": {
           "w": 1482
         },
-        "identity_external_osm_api_checked": false
+        "identity_external_osm_api_checked": false,
+        "bounded_current_individual_spot_checks": [
+          {
+            "url": "https://api.openstreetmap.org/api/0.6/way/428700030.json",
+            "typed_osm_id": "w428700030",
+            "reviewed_at_utc": "2026-10-02T03:37:53.790921+00:00",
+            "scope": "current individual object identity/tag spot check only; original CSV snapshot date remains unknown",
+            "prior_web_tool_attempt": "not_accessible_via_web_tool",
+            "http_status": 200,
+            "local_prior_successful_response_reused": true,
+            "status": "retrieved",
+            "local_file": "evidence/osm_way_428700030_current.json",
+            "sha256": "65f4209a7e6040b85340282c6450508edd4d9ce9f8cfd097a583dbc383904b86",
+            "object_version": 2,
+            "object_timestamp": "2018-10-03T04:47:48Z",
+            "node_refs_present": true,
+            "tags": {
+              "building": "dam",
+              "source": "digitalGlobe Premium",
+              "waterway": "dam"
+            },
+            "closed_way_by_node_ids": true
+          },
+          {
+            "url": "https://api.openstreetmap.org/api/0.6/way/37407276.json",
+            "typed_osm_id": "w37407276",
+            "reviewed_at_utc": "2026-10-02T03:37:53.790921+00:00",
+            "scope": "current individual object identity/tag spot check only; original CSV snapshot date remains unknown",
+            "prior_web_tool_attempt": "not_accessible_via_web_tool",
+            "http_status": 200,
+            "local_prior_successful_response_reused": true,
+            "status": "retrieved",
+            "local_file": "evidence/osm_way_37407276_current.json",
+            "sha256": "f82ea534b45ee4cc8bbbf68f596002e4e45943835c9a7dd0e0d12f3b11af39a1",
+            "object_version": 11,
+            "object_timestamp": "2023-04-14T16:45:34Z",
+            "node_refs_present": true,
+            "tags": {
+              "landuse": "industrial",
+              "name": "华电新疆红雁池发电有限公司",
+              "name:en": "Hongyanchi-1 Power Plant",
+              "not:operator:wikidata": "Q2580472",
+              "old_name": "国电新疆红雁池发电有限公司",
+              "operator": "中国华电",
+              "plant:method": "combustion",
+              "plant:output:electricity": "660 MW",
+              "plant:source": "coal",
+              "power": "plant",
+              "source": "https://www.gem.wiki/Hongyanchi-1_power_station"
+            },
+            "closed_way_by_node_ids": true
+          }
+        ]
       },
       "numeric_fields": {
         "voltage": {
@@ -3084,7 +3321,13 @@
         ],
         "equivalent_geometry_duplicate_extra_count": 0,
         "validity_is_only_2D_topological_not_real_world_accuracy": true,
-        "building_footprint_polygon_validity_tested": null
+        "building_footprint_polygon_validity_tested": null,
+        "closed_LineString_count_by_power_tag": {
+          "plant": 15,
+          "substation": 166,
+          "generator": 2,
+          "line": 4
+        }
       },
       "CRS": {
         "declared_in_file": false,
@@ -3227,6 +3470,24 @@
         "element_versions": null,
         "source_urls": null,
         "licenses_in_file": null
+      },
+      "power_audit": {
+        "all_exported_ids_are_ways": true,
+        "node_and_relation_features_not_present": true,
+        "plant_generator_substation_are_candidates_not_available_heat_or_grid_capacity": true,
+        "closed_lines_can_represent_facility_boundaries_not_transmission_routes": true,
+        "voltage_multivalue_is_valid_tag_syntax_not_necessarily_corruption": true,
+        "missing": [
+          "plant:output:electricity",
+          "plant:output:heat",
+          "generator output",
+          "source temperature/flow",
+          "connection capacity",
+          "transformer capacity",
+          "operating state",
+          "hourly availability",
+          "permits/tariffs"
+        ]
       }
     },
     {
@@ -4615,7 +4876,102 @@
           "H/C or 2R2C parameters",
           "measured heat/room temperature",
           "occupancy/service calendars"
-        ]
+        ],
+        "footprint_polygon_recoverable_by_same_id_from_other_supplied_polygon_layers": {
+          "building_ids": 1479,
+          "share_of_building_rows": 0.026313448502855517,
+          "invalid_joined_polygons": 0,
+          "matching_layers": {
+            "landuse": 35,
+            "pois": 1438,
+            "water": 6
+          },
+          "not_complete_building_geometry_and_not_an_independent_survey": true
+        },
+        "source_label_present_but_estimate_missing_records": [
+          {
+            "csv_row": 13807,
+            "record": {
+              "osm_id": "w618748929",
+              "building": "yes",
+              "name": "",
+              "levels": "",
+              "height_m": "1",
+              "centroid_lon": "114.0450849",
+              "centroid_lat": "30.3558445",
+              "footprint_area_m2": "1187.9",
+              "perimeter_m": "151.2",
+              "est_levels": "",
+              "est_floor_area_m2": "",
+              "est_floor_area_src": "height"
+            }
+          },
+          {
+            "csv_row": 13808,
+            "record": {
+              "osm_id": "w618748930",
+              "building": "yes",
+              "name": "",
+              "levels": "",
+              "height_m": "1",
+              "centroid_lon": "114.0442863",
+              "centroid_lat": "30.3558114",
+              "footprint_area_m2": "712.4",
+              "perimeter_m": "107.5",
+              "est_levels": "",
+              "est_floor_area_m2": "",
+              "est_floor_area_src": "height"
+            }
+          },
+          {
+            "csv_row": 23818,
+            "record": {
+              "osm_id": "w908272801",
+              "building": "school",
+              "name": "书法教室",
+              "levels": "",
+              "height_m": "1",
+              "centroid_lon": "114.290902",
+              "centroid_lat": "30.5421509",
+              "footprint_area_m2": "165.1",
+              "perimeter_m": "51.8",
+              "est_levels": "",
+              "est_floor_area_m2": "",
+              "est_floor_area_src": "height"
+            }
+          },
+          {
+            "csv_row": 47746,
+            "record": {
+              "osm_id": "w1272457990",
+              "building": "yes",
+              "name": "瑜越东方大门",
+              "levels": "0",
+              "height_m": "5",
+              "centroid_lon": "114.4008408",
+              "centroid_lat": "30.506171",
+              "footprint_area_m2": "1218.5",
+              "perimeter_m": "209.4",
+              "est_levels": "",
+              "est_floor_area_m2": "",
+              "est_floor_area_src": "height"
+            }
+          }
+        ],
+        "generic_building_yes_count": 40865,
+        "non_heated_or_structure_only_tags_require_screening": {
+          "greenhouse": 35,
+          "roof": 267,
+          "pavilion": 7,
+          "ruins": 11,
+          "dam": 5,
+          "storage_tank": 40,
+          "construction": 6,
+          "garage": 2,
+          "water_tower": 1,
+          "bridge": 2,
+          "carport": 19
+        }
       }
     },
     {
@@ -5671,7 +6027,14 @@
         ],
         "equivalent_geometry_duplicate_extra_count": 0,
         "validity_is_only_2D_topological_not_real_world_accuracy": true,
-        "building_footprint_polygon_validity_tested": null
+        "building_footprint_polygon_validity_tested": null,
+        "closed_LineString_count_by_power_tag": {
+          "substation": 238,
+          "plant": 17,
+          "line": 11,
+          "converter": 1,
+          "generator": 2
+        }
       },
       "CRS": {
         "declared_in_file": false,
@@ -5814,6 +6177,24 @@
         "element_versions": null,
         "source_urls": null,
         "licenses_in_file": null
+      },
+      "power_audit": {
+        "all_exported_ids_are_ways": true,
+        "node_and_relation_features_not_present": true,
+        "plant_generator_substation_are_candidates_not_available_heat_or_grid_capacity": true,
+        "closed_lines_can_represent_facility_boundaries_not_transmission_routes": true,
+        "voltage_multivalue_is_valid_tag_syntax_not_necessarily_corruption": true,
+        "missing": [
+          "plant:output:electricity",
+          "plant:output:heat",
+          "generator output",
+          "source temperature/flow",
+          "connection capacity",
+          "transformer capacity",
+          "operating state",
+          "hourly availability",
+          "permits/tariffs"
+        ]
       }
     },
     {
@@ -25320,5 +25701,68 @@
   "osm_originals_unchanged": true,
   "solver_run": false,
   "original_csv_modified": false,
-  "field_level_records_corrected": false
+  "field_level_records_corrected": false,
+  "bounded_current_OSM_API_spot_checks": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/428700030.json",
+      "typed_osm_id": "w428700030",
+      "reviewed_at_utc": "2026-10-02T03:37:53.790921+00:00",
+      "scope": "current individual object identity/tag spot check only; original CSV snapshot date remains unknown",
+      "prior_web_tool_attempt": "not_accessible_via_web_tool",
+      "http_status": 200,
+      "local_prior_successful_response_reused": true,
+      "status": "retrieved",
+      "local_file": "evidence/osm_way_428700030_current.json",
+      "sha256": "65f4209a7e6040b85340282c6450508edd4d9ce9f8cfd097a583dbc383904b86",
+      "object_version": 2,
+      "object_timestamp": "2018-10-03T04:47:48Z",
+      "node_refs_present": true,
+      "tags": {
+        "building": "dam",
+        "source": "digitalGlobe Premium",
+        "waterway": "dam"
+      },
+      "closed_way_by_node_ids": true
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/37407276.json",
+      "typed_osm_id": "w37407276",
+      "reviewed_at_utc": "2026-10-02T03:37:53.790921+00:00",
+      "scope": "current individual object identity/tag spot check only; original CSV snapshot date remains unknown",
+      "prior_web_tool_attempt": "not_accessible_via_web_tool",
+      "http_status": 200,
+      "local_prior_successful_response_reused": true,
+      "status": "retrieved",
+      "local_file": "evidence/osm_way_37407276_current.json",
+      "sha256": "f82ea534b45ee4cc8bbbf68f596002e4e45943835c9a7dd0e0d12f3b11af39a1",
+      "object_version": 11,
+      "object_timestamp": "2023-04-14T16:45:34Z",
+      "node_refs_present": true,
+      "tags": {
+        "landuse": "industrial",
+        "name": "华电新疆红雁池发电有限公司",
+        "name:en": "Hongyanchi-1 Power Plant",
+        "not:operator:wikidata": "Q2580472",
+        "old_name": "国电新疆红雁池发电有限公司",
+        "operator": "中国华电",
+        "plant:method": "combustion",
+        "plant:output:electricity": "660 MW",
+        "plant:source": "coal",
+        "power": "plant",
+        "source": "https://www.gem.wiki/Hongyanchi-1_power_station"
+      },
+      "closed_way_by_node_ids": true
+    }
+  ],
+  "summary": {
+    "boundary_vertex_rows": 13748,
+    "non_boundary_feature_rows": 258227,
+    "OSM_id_duplicate_extra_rows_within_files": 0,
+    "invalid_WKT_polygons": 4,
+    "WKT_parse_errors": 0,
+    "cross_boundary_features": 1188,
+    "wholly_outside_features_or_centroids": 9,
+    "source_labeled_missing_floor_estimates": 5,
+    "footprint_polygons_available_in_building_csv": 0
+  }
 }

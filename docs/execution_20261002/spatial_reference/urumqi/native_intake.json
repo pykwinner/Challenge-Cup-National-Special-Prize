@@ -1,0 +1,995 @@
+{
+  "requested_way_count": 29,
+  "returned_way_count": 29,
+  "requested_node_count": 149,
+  "returned_node_count": 149,
+  "complete_way_count": 29,
+  "all_ways_native_complete": true,
+  "native_api_is_not_transactional_snapshot": true,
+  "source_time_note": "Original building/road CSV export time unknown. Current way and node versions/times preserved; requests are not a historical or atomic city snapshot.",
+  "geometry_changed_way_count": 0,
+  "selected_admitted_way_count": 29,
+  "excluded_ways": [],
+  "native_way_audit": [
+    {
+      "osm_id": "w1054985240",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 2,
+      "way_timestamp": "2024-03-04T14:35:00Z",
+      "node_versions": {
+        "436261563": 1,
+        "4326654691": 1,
+        "4326654683": 1,
+        "4326654675": 1
+      },
+      "node_timestamps": {
+        "436261563": "2009-07-07T14:02:10Z",
+        "4326654691": "2016-07-29T10:21:28Z",
+        "4326654683": "2016-07-29T10:21:28Z",
+        "4326654675": "2016-07-29T10:21:28Z"
+      },
+      "tags": {
+        "highway": "primary",
+        "name": "南湖东路",
+        "note": "Tip: use layer=* filter in JOSM",
+        "oneway": "yes"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 4,
+      "csv_vertex_count": 4,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w1054985241",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2022-04-26T05:55:21Z",
+      "node_versions": {
+        "4326654670": 1,
+        "4326654672": 1,
+        "4326654673": 2,
+        "4326654678": 1
+      },
+      "node_timestamps": {
+        "4326654670": "2016-07-29T10:21:28Z",
+        "4326654672": "2016-07-29T10:21:28Z",
+        "4326654673": "2024-03-08T16:13:52Z",
+        "4326654678": "2016-07-29T10:21:28Z"
+      },
+      "tags": {
+        "highway": "primary",
+        "name": "南湖东路",
+        "note": "Tip: use layer=* filter in JOSM",
+        "oneway": "yes"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 4,
+      "csv_vertex_count": 4,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w116559395",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 9,
+      "way_timestamp": "2025-06-26T16:43:18Z",
+      "node_versions": {
+        "1313799920": 4,
+        "437369331": 5,
+        "1313816623": 3,
+        "1313818227": 3,
+        "1313818343": 3,
+        "1313818652": 4,
+        "437369324": 5,
+        "437369323": 5,
+        "437369322": 5,
+        "437369321": 5,
+        "437369320": 5,
+        "437369319": 5,
+        "4687994857": 1,
+        "437369318": 5,
+        "1313799919": 4,
+        "437369317": 6,
+        "437369315": 5,
+        "437369314": 5,
+        "437369313": 5,
+        "437369312": 5,
+        "4687994854": 1,
+        "442554058": 3,
+        "4687994855": 1,
+        "437369311": 5,
+        "437369310": 5,
+        "437369309": 5,
+        "437369308": 6,
+        "12954492056": 1,
+        "1313819737": 4
+      },
+      "node_timestamps": {
+        "1313799920": "2017-02-16T06:00:02Z",
+        "437369331": "2017-02-16T06:00:02Z",
+        "1313816623": "2017-02-16T06:00:02Z",
+        "1313818227": "2017-02-16T06:00:02Z",
+        "1313818343": "2017-02-16T06:00:02Z",
+        "1313818652": "2017-02-16T06:00:02Z",
+        "437369324": "2017-02-16T04:00:45Z",
+        "437369323": "2017-02-16T04:00:45Z",
+        "437369322": "2017-02-16T04:00:45Z",
+        "437369321": "2017-02-16T04:00:45Z",
+        "437369320": "2017-02-16T04:00:45Z",
+        "437369319": "2017-02-16T04:00:45Z",
+        "4687994857": "2017-02-16T04:00:45Z",
+        "437369318": "2017-02-16T04:00:45Z",
+        "1313799919": "2017-02-16T04:00:45Z",
+        "437369317": "2017-02-16T04:00:45Z",
+        "437369315": "2017-02-16T04:00:45Z",
+        "437369314": "2017-02-16T04:00:45Z",
+        "437369313": "2017-02-16T04:00:45Z",
+        "437369312": "2017-02-16T04:00:45Z",
+        "4687994854": "2017-02-16T04:00:45Z",
+        "442554058": "2017-02-16T04:00:45Z",
+        "4687994855": "2017-02-16T04:00:45Z",
+        "437369311": "2017-02-16T04:00:45Z",
+        "437369310": "2017-02-16T04:00:45Z",
+        "437369309": "2017-02-16T04:00:45Z",
+        "437369308": "2025-06-26T16:43:18Z",
+        "12954492056": "2025-06-26T16:43:18Z",
+        "1313819737": "2017-02-16T04:00:45Z"
+      },
+      "tags": {
+        "highway": "residential",
+        "name": "南湖南路东四巷"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 29,
+      "csv_vertex_count": 29,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w116564899",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 9,
+      "way_timestamp": "2025-06-24T01:11:43Z",
+      "node_versions": {
+        "1313822921": 3,
+        "1313819737": 4,
+        "1313850542": 2,
+        "1313853434": 2,
+        "1313850540": 1,
+        "12947750654": 1,
+        "1313854064": 4,
+        "12947750652": 1,
+        "4326654698": 1
+      },
+      "node_timestamps": {
+        "1313822921": "2017-02-16T04:00:45Z",
+        "1313819737": "2017-02-16T04:00:45Z",
+        "1313850542": "2025-06-26T16:43:18Z",
+        "1313853434": "2015-10-12T18:58:50Z",
+        "1313850540": "2011-06-06T07:35:51Z",
+        "12947750654": "2025-06-24T01:11:43Z",
+        "1313854064": "2025-06-24T01:11:43Z",
+        "12947750652": "2025-06-24T01:11:43Z",
+        "4326654698": "2016-07-29T10:21:28Z"
+      },
+      "tags": {
+        "highway": "residential",
+        "name": "南湖东路南一巷"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 9,
+      "csv_vertex_count": 9,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w116565137",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2011-06-06T07:42:28Z",
+      "node_versions": {
+        "1313853434": 2,
+        "1313853430": 1,
+        "1313853435": 2,
+        "1313853432": 2,
+        "437371961": 2
+      },
+      "node_timestamps": {
+        "1313853434": "2015-10-12T18:58:50Z",
+        "1313853430": "2011-06-06T07:42:28Z",
+        "1313853435": "2025-06-26T16:43:18Z",
+        "1313853432": "2025-06-26T16:43:18Z",
+        "437371961": "2025-06-26T16:43:18Z"
+      },
+      "tags": {
+        "highway": "residential",
+        "name": "西虹东路西二巷"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 5,
+      "csv_vertex_count": 5,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w116565244",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 5,
+      "way_timestamp": "2025-06-24T01:11:43Z",
+      "node_versions": {
+        "1313854064": 4,
+        "12947750655": 1,
+        "9209391898": 1,
+        "2558243893": 1,
+        "4326756697": 1,
+        "4326756698": 2,
+        "1313854065": 2
+      },
+      "node_timestamps": {
+        "1313854064": "2025-06-24T01:11:43Z",
+        "12947750655": "2025-06-24T01:11:43Z",
+        "9209391898": "2021-10-29T08:44:58Z",
+        "2558243893": "2013-11-30T10:05:07Z",
+        "4326756697": "2016-07-29T11:46:59Z",
+        "4326756698": "2025-06-26T16:43:18Z",
+        "1313854065": "2021-03-26T10:54:57Z"
+      },
+      "tags": {
+        "highway": "residential",
+        "name": "天平巷"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 7,
+      "csv_vertex_count": 7,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w116575729",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2011-06-06T09:39:18Z",
+      "node_versions": {
+        "1313927330": 2,
+        "1313927332": 2,
+        "1313927334": 1,
+        "1313927333": 1,
+        "1313927331": 1
+      },
+      "node_timestamps": {
+        "1313927330": "2017-02-17T06:20:16Z",
+        "1313927332": "2017-02-17T06:20:16Z",
+        "1313927334": "2011-06-06T09:39:18Z",
+        "1313927333": "2011-06-06T09:39:18Z",
+        "1313927331": "2011-06-06T09:39:18Z"
+      },
+      "tags": {
+        "highway": "unclassified"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 5,
+      "csv_vertex_count": 5,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w116575921",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 2,
+      "way_timestamp": "2015-08-03T17:12:22Z",
+      "node_versions": {
+        "1313930563": 2,
+        "1313930558": 1,
+        "1313930556": 2,
+        "1313930569": 2,
+        "1313930562": 2,
+        "1313930560": 3
+      },
+      "node_timestamps": {
+        "1313930563": "2016-07-29T11:47:20Z",
+        "1313930558": "2011-06-06T09:42:36Z",
+        "1313930556": "2016-05-17T15:20:36Z",
+        "1313930569": "2016-05-17T15:20:36Z",
+        "1313930562": "2016-05-17T15:20:36Z",
+        "1313930560": "2016-05-17T15:20:36Z"
+      },
+      "tags": {
+        "highway": "unclassified"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 6,
+      "csv_vertex_count": 6,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w1165942206",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 3,
+      "way_timestamp": "2025-06-01T01:16:07Z",
+      "node_versions": {
+        "436261250": 1,
+        "436261249": 1,
+        "9119214657": 1,
+        "2558243884": 1,
+        "436261244": 2
+      },
+      "node_timestamps": {
+        "436261250": "2009-07-07T14:01:55Z",
+        "436261249": "2009-07-07T14:01:55Z",
+        "9119214657": "2021-09-24T06:05:51Z",
+        "2558243884": "2013-11-30T10:05:07Z",
+        "436261244": "2025-06-26T16:43:18Z"
+      },
+      "tags": {
+        "highway": "residential",
+        "oneway": "no"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 5,
+      "csv_vertex_count": 5,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w1165942207",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 2,
+      "way_timestamp": "2024-12-03T16:44:48Z",
+      "node_versions": {
+        "436261250": 1,
+        "436261563": 1
+      },
+      "node_timestamps": {
+        "436261250": "2009-07-07T14:01:55Z",
+        "436261563": "2009-07-07T14:02:10Z"
+      },
+      "tags": {
+        "highway": "unclassified"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 2,
+      "csv_vertex_count": 2,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w1165942210",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 2,
+      "way_timestamp": "2024-12-03T16:44:48Z",
+      "node_versions": {
+        "436261251": 3,
+        "436261250": 1
+      },
+      "node_timestamps": {
+        "436261251": "2016-07-29T10:21:54Z",
+        "436261250": "2009-07-07T14:01:55Z"
+      },
+      "tags": {
+        "highway": "unclassified",
+        "oneway": "no"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 2,
+      "csv_vertex_count": 2,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w1408945817",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2025-06-24T01:11:43Z",
+      "node_versions": {
+        "12947750657": 1,
+        "12947750658": 1,
+        "1313961731": 3
+      },
+      "node_timestamps": {
+        "12947750657": "2025-06-24T01:11:43Z",
+        "12947750658": "2025-06-24T01:11:43Z",
+        "1313961731": "2025-06-24T01:11:43Z"
+      },
+      "tags": {
+        "highway": "service",
+        "source": "maxar"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 3,
+      "csv_vertex_count": 3,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w1408945824",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2025-06-24T01:11:43Z",
+      "node_versions": {
+        "12947750676": 1,
+        "12947750677": 1
+      },
+      "node_timestamps": {
+        "12947750676": "2025-06-24T01:11:43Z",
+        "12947750677": "2025-06-24T01:11:43Z"
+      },
+      "tags": {
+        "highway": "service"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 2,
+      "csv_vertex_count": 2,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w1546217543",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 2,
+      "way_timestamp": "2026-07-31T07:34:40Z",
+      "node_versions": {
+        "2558243899": 1,
+        "2558243905": 1
+      },
+      "node_timestamps": {
+        "2558243899": "2013-11-30T10:05:07Z",
+        "2558243905": "2013-11-30T10:05:07Z"
+      },
+      "tags": {
+        "highway": "residential",
+        "name": "青柳六巷"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 2,
+      "csv_vertex_count": 2,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w249168787",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 2,
+      "way_timestamp": "2021-10-29T08:44:58Z",
+      "node_versions": {
+        "2558243884": 1,
+        "2558243880": 1,
+        "2558243905": 1,
+        "9209391909": 1,
+        "2558243878": 1,
+        "2558243897": 1,
+        "9209391903": 1,
+        "2558243889": 1,
+        "2558243907": 1,
+        "2558243877": 1
+      },
+      "node_timestamps": {
+        "2558243884": "2013-11-30T10:05:07Z",
+        "2558243880": "2013-11-30T10:05:07Z",
+        "2558243905": "2013-11-30T10:05:07Z",
+        "9209391909": "2021-10-29T08:44:58Z",
+        "2558243878": "2013-11-30T10:05:07Z",
+        "2558243897": "2013-11-30T10:05:07Z",
+        "9209391903": "2021-10-29T08:44:58Z",
+        "2558243889": "2013-11-30T10:05:07Z",
+        "2558243907": "2013-11-30T10:05:07Z",
+        "2558243877": "2013-11-30T10:05:07Z"
+      },
+      "tags": {
+        "highway": "residential"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 10,
+      "csv_vertex_count": 10,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w37374747",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 10,
+      "way_timestamp": "2026-06-04T14:00:20Z",
+      "node_versions": {
+        "436239348": 1,
+        "436239594": 2,
+        "13909857455": 1,
+        "9292759431": 2,
+        "9292759432": 2,
+        "9292759433": 2,
+        "13909867326": 1,
+        "1313961731": 3
+      },
+      "node_timestamps": {
+        "436239348": "2009-07-07T13:42:05Z",
+        "436239594": "2017-02-17T06:20:15Z",
+        "13909857455": "2026-06-04T14:00:20Z",
+        "9292759431": "2025-06-24T01:11:43Z",
+        "9292759432": "2025-06-24T01:11:43Z",
+        "9292759433": "2025-06-24T01:11:43Z",
+        "13909867326": "2026-06-04T14:00:20Z",
+        "1313961731": "2025-06-24T01:11:43Z"
+      },
+      "tags": {
+        "highway": "unclassified",
+        "name": "南湖路西三巷"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 8,
+      "csv_vertex_count": 8,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w37375340",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 6,
+      "way_timestamp": "2024-12-03T16:44:48Z",
+      "node_versions": {
+        "436261251": 3,
+        "436293805": 2
+      },
+      "node_timestamps": {
+        "436261251": "2016-07-29T10:21:54Z",
+        "436293805": "2024-12-03T16:44:48Z"
+      },
+      "tags": {
+        "highway": "unclassified",
+        "oneway": "yes"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 2,
+      "csv_vertex_count": 2,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w37375349",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 6,
+      "way_timestamp": "2025-06-01T01:16:07Z",
+      "node_versions": {
+        "436261432": 2,
+        "436261250": 1
+      },
+      "node_timestamps": {
+        "436261432": "2025-06-26T16:43:18Z",
+        "436261250": "2009-07-07T14:01:55Z"
+      },
+      "tags": {
+        "highway": "unclassified",
+        "oneway": "yes"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 2,
+      "csv_vertex_count": 2,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w37376310",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 2,
+      "way_timestamp": "2016-07-26T13:43:32Z",
+      "node_versions": {
+        "436294429": 1,
+        "436294431": 1
+      },
+      "node_timestamps": {
+        "436294429": "2009-07-07T14:30:49Z",
+        "436294431": "2009-07-07T14:30:49Z"
+      },
+      "tags": {
+        "highway": "residential"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 2,
+      "csv_vertex_count": 2,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w37376312",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 2,
+      "way_timestamp": "2016-07-26T13:43:32Z",
+      "node_versions": {
+        "436294476": 1,
+        "436294478": 1
+      },
+      "node_timestamps": {
+        "436294476": "2009-07-07T14:30:53Z",
+        "436294478": "2009-07-07T14:30:53Z"
+      },
+      "tags": {
+        "highway": "residential"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 2,
+      "csv_vertex_count": 2,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w37376318",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 2,
+      "way_timestamp": "2016-07-26T13:43:32Z",
+      "node_versions": {
+        "436294612": 1,
+        "436294615": 1
+      },
+      "node_timestamps": {
+        "436294612": "2009-07-07T14:31:01Z",
+        "436294615": "2009-07-07T14:31:01Z"
+      },
+      "tags": {
+        "highway": "residential"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 2,
+      "csv_vertex_count": 2,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w37730057",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2009-07-16T12:20:11Z",
+      "node_versions": {
+        "437371874": 2,
+        "442554057": 2,
+        "442554058": 3
+      },
+      "node_timestamps": {
+        "437371874": "2011-06-06T09:04:48Z",
+        "442554057": "2011-06-06T09:04:48Z",
+        "442554058": "2017-02-16T04:00:45Z"
+      },
+      "tags": {
+        "highway": "residential"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 3,
+      "csv_vertex_count": 3,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w433280471",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2016-07-26T13:43:30Z",
+      "node_versions": {
+        "1313936461": 1,
+        "4321204825": 1,
+        "4321204826": 1,
+        "4321204829": 1,
+        "4321204827": 1,
+        "1313936451": 1
+      },
+      "node_timestamps": {
+        "1313936461": "2011-06-06T09:46:03Z",
+        "4321204825": "2016-07-26T13:43:26Z",
+        "4321204826": "2016-07-26T13:43:26Z",
+        "4321204829": "2016-07-26T13:43:27Z",
+        "4321204827": "2016-07-26T13:43:26Z",
+        "1313936451": "2011-06-06T09:46:03Z"
+      },
+      "tags": {
+        "highway": "service"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 6,
+      "csv_vertex_count": 6,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w434722685",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 6,
+      "way_timestamp": "2025-06-26T16:43:18Z",
+      "node_versions": {
+        "4326654754": 1,
+        "12947725989": 1,
+        "4326654749": 1,
+        "12954492094": 1,
+        "4326654734": 1,
+        "4326700136": 1,
+        "436260900": 2,
+        "12947750674": 1,
+        "4326654713": 1,
+        "4326654710": 1,
+        "4326654700": 1,
+        "436261563": 1
+      },
+      "node_timestamps": {
+        "4326654754": "2016-07-29T10:21:29Z",
+        "12947725989": "2025-06-24T01:11:43Z",
+        "4326654749": "2016-07-29T10:21:29Z",
+        "12954492094": "2025-06-26T16:43:18Z",
+        "4326654734": "2016-07-29T10:21:29Z",
+        "4326700136": "2016-07-29T11:05:27Z",
+        "436260900": "2016-07-29T10:21:54Z",
+        "12947750674": "2025-06-24T01:11:43Z",
+        "4326654713": "2016-07-29T10:21:28Z",
+        "4326654710": "2016-07-29T10:21:28Z",
+        "4326654700": "2016-07-29T10:21:28Z",
+        "436261563": "2009-07-07T14:02:10Z"
+      },
+      "tags": {
+        "highway": "primary",
+        "name": "南湖东路",
+        "note": "Tip: use layer=* filter in JOSM",
+        "oneway": "yes"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 12,
+      "csv_vertex_count": 12,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w434722736",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2016-07-29T10:21:36Z",
+      "node_versions": {
+        "436261251": 3,
+        "4326654701": 1,
+        "4326654699": 1,
+        "4326654683": 1,
+        "4326654678": 1
+      },
+      "node_timestamps": {
+        "436261251": "2016-07-29T10:21:54Z",
+        "4326654701": "2016-07-29T10:21:28Z",
+        "4326654699": "2016-07-29T10:21:28Z",
+        "4326654683": "2016-07-29T10:21:28Z",
+        "4326654678": "2016-07-29T10:21:28Z"
+      },
+      "tags": {
+        "highway": "tertiary"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 5,
+      "csv_vertex_count": 5,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w434722741",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 3,
+      "way_timestamp": "2022-04-26T05:55:21Z",
+      "node_versions": {
+        "4326654678": 1,
+        "4326654685": 1,
+        "4326654694": 1,
+        "4326654698": 1,
+        "4326654703": 1,
+        "9209391902": 1,
+        "4326654709": 1
+      },
+      "node_timestamps": {
+        "4326654678": "2016-07-29T10:21:28Z",
+        "4326654685": "2016-07-29T10:21:28Z",
+        "4326654694": "2016-07-29T10:21:28Z",
+        "4326654698": "2016-07-29T10:21:28Z",
+        "4326654703": "2016-07-29T10:21:28Z",
+        "9209391902": "2021-10-29T08:44:58Z",
+        "4326654709": "2016-07-29T10:21:28Z"
+      },
+      "tags": {
+        "highway": "primary",
+        "name": "南湖东路",
+        "note": "Tip: use layer=* filter in JOSM",
+        "oneway": "yes"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 7,
+      "csv_vertex_count": 7,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w986554298",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 4,
+      "way_timestamp": "2025-06-24T01:11:43Z",
+      "node_versions": {
+        "1313854064": 4,
+        "12947750653": 1,
+        "9119214640": 2,
+        "9119214642": 2,
+        "9119214643": 2,
+        "9119214644": 1,
+        "9119214645": 2,
+        "9119214646": 2,
+        "9119214647": 2,
+        "9119214648": 2,
+        "9119214649": 2,
+        "1313925892": 3,
+        "12947750656": 1,
+        "12947750657": 1
+      },
+      "node_timestamps": {
+        "1313854064": "2025-06-24T01:11:43Z",
+        "12947750653": "2025-06-24T01:11:43Z",
+        "9119214640": "2025-06-24T01:11:43Z",
+        "9119214642": "2025-06-24T01:11:43Z",
+        "9119214643": "2025-06-24T01:11:43Z",
+        "9119214644": "2021-09-24T06:05:51Z",
+        "9119214645": "2025-06-24T01:11:43Z",
+        "9119214646": "2025-06-24T01:11:43Z",
+        "9119214647": "2025-06-24T01:11:43Z",
+        "9119214648": "2025-06-24T01:11:43Z",
+        "9119214649": "2025-06-24T01:11:43Z",
+        "1313925892": "2025-06-24T01:11:43Z",
+        "12947750656": "2025-06-24T01:11:43Z",
+        "12947750657": "2025-06-24T01:11:43Z"
+      },
+      "tags": {
+        "highway": "service",
+        "source": "maxar"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 14,
+      "csv_vertex_count": 14,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w986554299",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2021-09-24T06:05:51Z",
+      "node_versions": {
+        "9119214650": 1,
+        "9119214651": 1,
+        "9119214652": 1,
+        "9119214653": 1,
+        "9119214654": 1,
+        "9119214655": 1,
+        "9119214656": 1,
+        "9119214657": 1
+      },
+      "node_timestamps": {
+        "9119214650": "2021-09-24T06:05:51Z",
+        "9119214651": "2021-09-24T06:05:51Z",
+        "9119214652": "2021-09-24T06:05:51Z",
+        "9119214653": "2021-09-24T06:05:51Z",
+        "9119214654": "2021-09-24T06:05:51Z",
+        "9119214655": "2021-09-24T06:05:51Z",
+        "9119214656": "2021-09-24T06:05:51Z",
+        "9119214657": "2021-09-24T06:05:51Z"
+      },
+      "tags": {
+        "highway": "residential",
+        "source": "maxar"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 8,
+      "csv_vertex_count": 8,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    },
+    {
+      "osm_id": "w997370400",
+      "csv_geometry_timestamp_unknown": true,
+      "missing_native_refs": [],
+      "status": "complete_current_native",
+      "way_version": 1,
+      "way_timestamp": "2021-10-29T08:44:58Z",
+      "node_versions": {
+        "9119214653": 1,
+        "9209391907": 1,
+        "9209391908": 1,
+        "9209391909": 1
+      },
+      "node_timestamps": {
+        "9119214653": "2021-09-24T06:05:51Z",
+        "9209391907": "2021-10-29T08:44:58Z",
+        "9209391908": "2021-10-29T08:44:58Z",
+        "9209391909": "2021-10-29T08:44:58Z"
+      },
+      "tags": {
+        "highway": "residential",
+        "source": "maxar"
+      },
+      "csv_equals_current_native_forward": true,
+      "csv_equals_current_native_reverse": false,
+      "geometry_changed_since_csv": false,
+      "current_vertex_count": 4,
+      "csv_vertex_count": 4,
+      "geometry_refs_pairing": "native way refs and coordinates from matching returned native node IDs; never refs attached to old WKT"
+    }
+  ],
+  "fallback_reason": null
+}

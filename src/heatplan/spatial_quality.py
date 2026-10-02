@@ -335,7 +335,8 @@ def preprocess_spatial_quality(
     """Return a deep-copied config with inadmissible candidate pipes removed.
 
     Spatial schema v1 requires systems, districts, node coordinates in metres,
-    and one candidate rule per config pipe. Route length = Euclidean distance
+    and one candidate rule per config pipe. An explicit route_length_m with
+    basis/provenance takes precedence; otherwise length = Euclidean distance
     * route_factor (>=1). Rules enforce max_route_length_m, connection_allowed,
     and optional cross-system permission. Cost mode ``per_m`` replaces each
     option's capex by fixed_yuan + route_length_m * yuan_per_m; ``preserve``
@@ -361,6 +362,7 @@ def preprocess_spatial_quality(
         raise SpatialQualityError("candidate_rules must exactly cover config pipes")
     processed = deepcopy(dict(config))
     accepted, reports = [], []
+    physical_edges = set()
     for name, pipe in pipes.items():
         rule = rules[name]
         start, end = pipe.get("from"), pipe.get("to")
@@ -370,7 +372,6 @@ def preprocess_spatial_quality(
             raise SpatialQualityError(f"pipe {name}: grade-changing pipe fields are unsupported; a pipe cannot lift temperature")
         if "allowed_grades" in pipe and set(pipe["allowed_grades"]) != set(hierarchy.grades):
             raise SpatialQualityError(f"pipe {name}: per-pipe grade restrictions are unsupported by the core")
-        factor = _number(rule.get("route_factor"), f"pipe {name} route_factor", minimum=1)
         limit = _number(rule.get("max_route_length_m"), f"pipe {name} max_route_length_m", minimum=0)
         permitted = rule.get("connection_allowed")
         cross_system = rule.get("allow_cross_system", False)
@@ -378,7 +379,25 @@ def preprocess_spatial_quality(
             raise SpatialQualityError(f"pipe {name} connection permissions must be explicit booleans")
         a, b = coordinates[start], coordinates[end]
         direct = hypot(a[0] - b[0], a[1] - b[1])
-        route = direct * factor
+        physical_id = rule.get("physical_edge_id")
+        if physical_id is not None:
+            if not isinstance(physical_id, str) or not physical_id.strip() or physical_id in physical_edges:
+                raise SpatialQualityError(f"pipe {name}: physical_edge_id must be nonempty and unique; shared routes must use one edge")
+            physical_edges.add(physical_id)
+            pipe["physical_edge_id"] = physical_id
+        if "route_length_m" in rule:
+            route = _number(rule["route_length_m"], f"pipe {name} route_length_m", minimum=0)
+            basis, provenance = rule.get("route_length_basis"), rule.get("route_provenance")
+            if not isinstance(basis, str) or not basis.strip() or not provenance:
+                raise SpatialQualityError(f"pipe {name}: explicit route length requires basis and provenance")
+            if route <= 0 or route + 1e-6 < direct:
+                raise SpatialQualityError(f"pipe {name}: explicit route length must be positive and at least endpoint distance")
+            pipe["route_length_basis"] = basis
+            pipe["route_provenance"] = deepcopy(provenance)
+        else:
+            factor = _number(rule.get("route_factor"), f"pipe {name} route_factor", minimum=1)
+            route = direct * factor
+            basis = "euclidean_distance_times_route_factor"
         if not isfinite(route):
             raise SpatialQualityError(f"pipe {name} route length overflow")
         systems = [hierarchy.district_to_system[hierarchy.node_to_district[n]] for n in (start, end)]
@@ -414,6 +433,7 @@ def preprocess_spatial_quality(
             accepted.append(pipe)
         reports.append({"pipe": name, "from": start, "to": end, "accepted": not reasons,
                         "reasons": reasons, "euclidean_distance_m": direct, "route_length_m": route,
+                        "route_length_basis": basis, "physical_edge_id": physical_id,
                         "max_route_length_m": limit, "cost_mode": mode, "option_capex_yuan": option_costs})
     processed["pipes"] = accepted
     return SpatialQualityResult(processed, hierarchy, reports, source_report)

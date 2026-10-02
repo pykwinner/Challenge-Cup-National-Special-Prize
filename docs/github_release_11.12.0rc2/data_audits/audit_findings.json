@@ -1,0 +1,209 @@
+{
+  "review_date_Asia_Shanghai": "2026-10-02",
+  "repository": "https://github.com/pykwinner/xiaotiao",
+  "baseline_commit": "4722991341334d39c129eec8ad1d2c551eca36c8",
+  "reviewed_commit": "93b96447330f9aa7a03d143a72aa6deb9716a38f",
+  "scope": "Read-only review of newly added public source package. No model run, core edit, merge, push or tag in this audit.",
+  "new_files": 471,
+  "all_new_files_match_git_blob_identity": true,
+  "declared_receipt_sha256_matches": 295,
+  "receipt_records_without_sha256": 57,
+  "receipt_note": "Records without hashes include documented failed, not-downloaded or not-archived requests. They are not treated as successful source retrievals.",
+  "integrity_evidence": "snapshot_integrity_audit.json",
+  "confirmed_additions": [
+    {
+      "topic": "monthly_tariffs",
+      "rows": 245,
+      "city_month_combinations": 35,
+      "guyuan": "2024-01 to 2025-04, 16 months",
+      "wuhan": "2024-05 to 2025-04, 12 months",
+      "urumqi": "2024-10 to 2025-04, 7 months",
+      "common_window": "2024-10 to 2025-04",
+      "boundary": "Published ordinary tariff schedules; actual customer category and applicable heating policy still need selection."
+    },
+    {
+      "topic": "equipment_prices",
+      "rows": 89,
+      "pipe_price_rows": 62,
+      "pipe_specifications": 31,
+      "boundary": "Published procurement and price references; not 89 comparable equipment quotations, nor target-project quotations."
+    },
+    {
+      "topic": "equipment_performance",
+      "rows": 71,
+      "standard_limit_rows": 13,
+      "procurement_requirement_rows": 39,
+      "other_reference_rows": 19,
+      "measured_or_test_report_rows": 0,
+      "boundary": "Performance thresholds are available. Same-model price and measured performance identity remain unjoined."
+    },
+    {
+      "topic": "building_and_schedule",
+      "boundary": "National standard schedules, material properties and public building references are available. Some extracted entries and effective-capacity calculations need correction before model use."
+    },
+    {
+      "topic": "economic_boundary",
+      "rows": 185,
+      "boundary": "Includes project documents, fuel prices, cost reviews and subsidies with different years and scopes; not 185 independent parameters for one complete case."
+    },
+    {
+      "topic": "weather",
+      "rows_per_openmeteo_city": 46728,
+      "city_count": 3,
+      "boundary": "Captured responses and derived CSV agree. Exact model selection and station-observation identity need qualification."
+    }
+  ],
+  "priority_corrections": [
+    {
+      "id": "schedule_kitchen",
+      "priority": "P0",
+      "file": "12_服务日程与热容/tables/service_schedule_extracted.csv",
+      "line": 21,
+      "finding": "Kitchen occupancy omits 12:00 at 100 percent from GB55015 table C.0.6-6.",
+      "action": "Re-extract and verify the complete 24-hour sequence against the source table."
+    },
+    {
+      "id": "schedule_bedroom_living",
+      "priority": "P0",
+      "file": "12_服务日程与热容/tables/service_schedule_extracted.csv",
+      "lines": [
+        61,
+        62
+      ],
+      "finding": "Summer-hot/winter-cold bedroom schedule omits active 21-24h; living-room schedule incorrectly extends 8-20h service to 8-24h.",
+      "action": "Correct both heating and cooling schedules against GB55015 table C.0.6-2 before mapping Wuhan services."
+    },
+    {
+      "id": "effective_heat_capacity",
+      "priority": "P0",
+      "file": "12_服务日程与热容/sources/推导脚本_热容计算.py",
+      "line": 15,
+      "finding": "The cap is applied independently to each material layer; there is no cumulative inward depth, interior/exterior-side identification or insulation stopping logic. Seventeen ISO-effective derived records do not establish verified effective RC capacity.",
+      "action": "Separate full-thickness material capacity from effective dynamic capacity, correct the method and validate the selected RC parameterization. Keep layer thickness and area ratios explicitly hypothetical."
+    },
+    {
+      "id": "window_opening_survey",
+      "priority": "P1",
+      "file": "09_建筑热工与实测/tables/building_thermal_extracted.csv",
+      "line": 88,
+      "finding": "Urban summer window-opening duration >=13h is recorded as 44.4 percent, but source bins are 14.4 percent at 13-18h plus 44.4 percent at 19-24h, totaling 58.8 percent.",
+      "action": "Correct the aggregation and retain the survey population/time scope; do not label it target-building hourly measurement."
+    },
+    {
+      "id": "weather_identity",
+      "priority": "P0",
+      "file": "05_气象交叉/README.md",
+      "finding": "Request URLs do not specify models=era5. Meteostat hourly inventory is absent for 51463 and 53915 while model inventory is present. The current package does not establish two independent observed sources confirming a NASA bias.",
+      "action": "Record model choice and point-level observation/fill flags, use matched source identities and clocks, then rerun comparisons. Do not automatically apply a bias adjustment."
+    },
+    {
+      "id": "failed_download_artifacts",
+      "priority": "P1",
+      "files": [
+        "05_气象交叉/sources/meteostat_53817.csv.gz",
+        "05_气象交叉/sources/meteostat_stations_cn.json"
+      ],
+      "finding": "Both files contain 404 HTML, not the data formats suggested by their names.",
+      "action": "Keep failure records but exclude these files from data ingestion."
+    },
+    {
+      "id": "tariff_customer_policy",
+      "priority": "P0",
+      "file": "11_经济边界/sources/D_新疆电采暖电价通知_新发改规2024-6号_昌吉市政府网.html",
+      "source_lines": [
+        222,
+        224,
+        226,
+        231
+      ],
+      "finding": "Ordinary Xinjiang tariff table does not apply the nonresidential heating valley-period transmission/distribution discount. Residential 0.22 tariff is conditional and cannot be applied to a heating company by default.",
+      "action": "Bind case/customer identity and billing components before constructing applicable hourly tariffs. Preserve published ordinary tables."
+    },
+    {
+      "id": "available_waste_heat_constraints",
+      "priority": "P0",
+      "file": "11_经济边界/sources/B_八钢低温余热回收利用招标公告.html",
+      "source_lines": [
+        137,
+        140,
+        143,
+        145
+      ],
+      "finding": "Priority internal/community heat use, backup during production adjustment, minimum annual settlement volume and piecewise settlement terms are already present in the source but incompletely extracted.",
+      "action": "Extract existing constraints first. Do not treat 154/355.4 ten-thousand GJ settlement thresholds as observed available heat capacity or automatically transfer a different agreement's 11.5 CNY/GJ price."
+    },
+    {
+      "id": "osm_provenance",
+      "priority": "P0_for_spatial_validation",
+      "file": "附_datasets核验/核验报告.md",
+      "finding": "Original OSM snapshot and original query are not available. Reconstructed arithmetic and current bounding-box counts do not uniquely identify the historical extraction method. Building polygons are absent from the original building CSV layers.",
+      "action": "Acquire a new dated/versioned raw snapshot with building geometry and reproducible queries. Label reconstructed methods as reconstructions."
+    },
+    {
+      "id": "derived_table_reproducibility",
+      "priority": "P1",
+      "file": "12_服务日程与热容/tables/_manual_thermal.csv",
+      "lines": [
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "finding": "Five source rows have eight fields under a nine-field header; the final thermal_capacity_extracted.csv is rectangular.",
+      "action": "Correct or quarantine the intermediate source before regeneration so that fixed final columns are not re-corrupted."
+    },
+    {
+      "id": "documentation_sync",
+      "priority": "P1",
+      "files": [
+        "to_fill_回填对照表.csv",
+        "../补充数据_20261002_入库说明.md",
+        "07_规范/README.md"
+      ],
+      "finding": "Some index and backfill statements predate the completed tariff package and section 12. The final admission table needs one consistent current status.",
+      "action": "Update the backfill matrix from source-level review, preserving dated historical notes."
+    },
+    {
+      "id": "weather_comparison_label",
+      "priority": "P0_before_citation",
+      "file": "05_气象交叉/tables/交叉核对_NASA_vs_ERA5.csv",
+      "finding": "The compared quantity is NASA minus Open-Meteo, not ERA5 minus NASA. Temperature differences are +2.36537, +0.01743, +0.11141 C for Urumqi, Guyuan, Wuhan, using 43840 matched hours.",
+      "source_identity": "D:/competion/xiaotiao/三城市数据包/三城市论文核验数据包_20261002/verified_public/weather_hourly uses verified UTC before conversion to Beijing time. This does not automatically validate the current V10 LST input identity.",
+      "action": "Correct names and sign, preserve exact input identities, and redo observed-source comparison only after station fill/model flags are established."
+    }
+  ],
+  "remaining_by_city": {
+    "urumqi": [
+      "Selected site and billing identity/contracted capacity",
+      "Waste-heat temperature, flow, production stops and surplus after priority heat use",
+      "Final matching heat purchase/sale contract",
+      "Actual connected buildings/network or a fully documented reference case"
+    ],
+    "guyuan": [
+      "One identifiable rural-building prototype with areas, layers, service schedule and defensible H/C",
+      "Selected low-temperature heat-pump price and performance under the same model/conditions including defrost and backup",
+      "Fuel type, received-basis calorific value/moisture, contracted deliverable biomass, logistics and price",
+      "Clear distinction between Guyuan city and Jingyuan/Pengyang project boundaries"
+    ],
+    "wuhan": [
+      "Selected building or energy-station service boundary and actual hourly heat/cool/indoor-temperature observations if claiming local validation",
+      "Corrected room-specific hourly service schedules",
+      "Selected river/sewage/ground-source resource parameters, not interchangeable source types",
+      "Matching equipment performance, pumping/network parameters and project billing/heat-sales terms"
+    ]
+  },
+  "work_that_is_not_missing_source_data": [
+    "Correct extracted values and the effective-capacity method",
+    "Build field-level source-to-parameter mapping for one coherent case",
+    "Separate actual measurements, design values, standard limits, procurement thresholds and explicit assumptions",
+    "Convert validated tariffs, schedules, weather and constraints through the current model interfaces",
+    "Run new feasibility, endpoints/epsilon scan and fixed-investment continuous replay only after inputs and interfaces are validated",
+    "Update performance claims only from actual new output records"
+  ],
+  "specialist_reports": {
+    "building": "D:/competion/xiaotiao/.algorithm_doc_work/audit_building_readonly_20261002/report.json",
+    "weather_gis": "D:/competion/xiaotiao/.algorithm_doc_work/weather_gis_independent_93b9644/audit_results.json"
+  },
+  "bdg2_prior_evidence": "This increment does not replace earlier original-project datasets_batch_03 evidence checking all 10 BDG2 files against official LFS SHA256 and sizes; do not reclassify those prior verified files as missing simply because the increment includes only metadata and solar copies."
+}

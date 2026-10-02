@@ -1,0 +1,36 @@
+{
+  "method": "standard_linear_feasibility_HiGHS",
+  "equations": "M w = b; sum(w) = W; w >= lower",
+  "total_weight_days": 363.0,
+  "lower_bound_sum_days": 3.000006,
+  "zero_target_rows": [],
+  "source_data_modified": false,
+  "engineering_operation_validated": false,
+  "solver_status": 0,
+  "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "status": "feasible",
+  "reason": "verified_LP_witness",
+  "witness_weights": [
+    1.0,
+    1e-06,
+    288.8486739148929,
+    1.0,
+    1.0,
+    1e-06,
+    71.15132208510714,
+    1e-06,
+    1e-06
+  ],
+  "energy_residual_original_units": [
+    0.0
+  ],
+  "maximum_normalized_energy_residual": 0.0,
+  "conservation_residual_days": 5.684341886080802e-14,
+  "maximum_lower_bound_violation": 0.0,
+  "elapsed_seconds": [
+    0.015396399998280685,
+    0.014580399998521898,
+    0.014827300001343247
+  ],
+  "elapsed_median_seconds": 0.014827300001343247
+}

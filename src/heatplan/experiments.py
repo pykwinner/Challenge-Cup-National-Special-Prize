@@ -14,16 +14,18 @@ def freeze_investment_plan(
     config: dict,
     nominal,
     *,
-    relax_reliability: bool = True,
+    relax_reliability: bool = False,
 ) -> dict:
     """Convert an optimized plan into fixed existing assets for replay.
 
-    Stress tests historically relaxed the service constraint so that shortage
-    became an observed output instead of making an event infeasible.  Formal
-    annual replay can now retain the original reliability requirements by
-    passing ``relax_reliability=False``.
+    Reliability is retained by default. A diagnostic stress test may explicitly
+    pass ``relax_reliability=True`` to quantify shortage, but that relaxed run
+    is not evidence of compliance with the original service requirement.
     """
     fixed = copy.deepcopy(config)
+    fixed["replay_service_policy"] = (
+        "diagnostic_relaxed_reliability" if relax_reliability else "original_service_requirements"
+    )
     # A frozen asset has no *new* investment variable, but its selected annual
     # capital charge still belongs in annual replay and affordability tests.
     planning_summary = getattr(nominal, "summary", {})
@@ -299,8 +301,6 @@ def carbon_price_scan(config_path: str | Path, timeseries_path: str | Path, pric
     epsilon-constraint: minimize cost under a sequence of explicit emission caps.
     """
     base_config, frame = load_inputs(config_path, timeseries_path)
-    if base_config.get("building_thermal", {}).get("enabled", False):
-        raise ValueError("Legacy no_demand_response ablation does not disable RC temperature flexibility; use an explicit RC control comparison")
     rows = []
     for price in prices:
         config = copy.deepcopy(base_config)
@@ -414,6 +414,8 @@ def epsilon_constraint_pareto(
 def ablation_study(config_path: str | Path, timeseries_path: str | Path) -> pd.DataFrame:
     """Run four transparent ablations used by the report's contribution analysis."""
     base_config, frame = load_inputs(config_path, timeseries_path)
+    if base_config.get("building_thermal", {}).get("enabled", False):
+        raise ValueError("Legacy no_demand_response ablation does not disable RC temperature flexibility; use an explicit RC control comparison")
     variants = {
         "baseline": {},
         "no_exergy_penalty": {"exergy": False},
@@ -451,7 +453,7 @@ def northern_cold_wave_stress_test(
         raise ValueError("Legacy load-column stress is not an RC load perturbation; specify building H, outdoor temperature and gains explicitly")
     nominal_model = HeatPlanningModel(copy.deepcopy(config), frame)
     nominal = nominal_model.solve()
-    fixed = _freeze_investment_plan(config, nominal)
+    fixed = _freeze_investment_plan(config, nominal, relax_reliability=True)
 
     stressed = frame.copy()
     if "outdoor_temp" in stressed:
@@ -483,7 +485,7 @@ def northern_resilience_stress_suite(
     if config.get("building_thermal", {}).get("enabled", False):
         raise ValueError("Legacy load-column stress is not an RC load perturbation; use the RC competition runner")
     nominal = HeatPlanningModel(copy.deepcopy(config), frame).solve()
-    fixed = _freeze_investment_plan(config, nominal)
+    fixed = _freeze_investment_plan(config, nominal, relax_reliability=True)
     demand_columns = [column for node in fixed["nodes"] for column in node.get("demand_columns", {}).values()]
 
     def cold_wave_frame() -> pd.DataFrame:

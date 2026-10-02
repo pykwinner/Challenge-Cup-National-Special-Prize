@@ -1,0 +1,376 @@
+{
+  "candidate_rules": [
+    {
+      "pipe": "corridor:wuhan:173275e811392c30fb125486a99e3899001c7bbf2f428e348aa286c7ea18a20b",
+      "route_length_m": 22.398295977260673,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1525361212",
+            "original_segment_id": "w1525361212:9",
+            "split_edge_key": "w1525361212:9:1",
+            "way_version": 1,
+            "way_timestamp": "2026-06-02T03:20:06Z",
+            "original_segment_native_node_refs": [
+              1881983319,
+              7170382600
+            ],
+            "native_node_versions": {
+              "1881983319": 2,
+              "7170382600": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:173275e811392c30fb125486a99e3899001c7bbf2f428e348aa286c7ea18a20b",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:40bbf6b189434c12824811016810870279ed7db3dff92784f0b7551ace3c6e1a",
+      "route_length_m": 34.73805959752659,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w770782892",
+            "snap_node": "snap:w177782758:1:0.375750530511",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:40bbf6b189434c12824811016810870279ed7db3dff92784f0b7551ace3c6e1a",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:729bb20a8dd9de145937081859a9f140c1abbcd59ba36767c072e7e56a9122d7",
+      "route_length_m": 53.10500357071492,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1525361212",
+            "original_segment_id": "w1525361212:8",
+            "split_edge_key": "w1525361212:8:0",
+            "way_version": 1,
+            "way_timestamp": "2026-06-02T03:20:06Z",
+            "original_segment_native_node_refs": [
+              1881983569,
+              1881983319
+            ],
+            "native_node_versions": {
+              "1881983569": 3,
+              "1881983319": 2
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:729bb20a8dd9de145937081859a9f140c1abbcd59ba36767c072e7e56a9122d7",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:89c21bad18cb3f618da149c5356b5d571498294ef374e36e0b04b85d3239f4d6",
+      "route_length_m": 24.08464087974946,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1095192365",
+            "snap_node": "snap:w177782716:0:0.686912919193",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:89c21bad18cb3f618da149c5356b5d571498294ef374e36e0b04b85d3239f4d6",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:8f08899aecb48def9926da586dd2d608c15e4e9329ced2e50c27c4823b54f302",
+      "route_length_m": 23.39435101951827,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1095192392",
+            "snap_node": "snap:w1525361212:9:0.287297517339",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:8f08899aecb48def9926da586dd2d608c15e4e9329ced2e50c27c4823b54f302",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:96614b719a419a90a83386e7def6ef91e1c57d7b5f10dfa27deca3e5a1543665",
+      "route_length_m": 47.40623570657721,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w177782716",
+            "original_segment_id": "w177782716:0",
+            "split_edge_key": "w177782716:0:1",
+            "way_version": 2,
+            "way_timestamp": "2026-06-03T00:19:11Z",
+            "original_segment_native_node_refs": [
+              1881983318,
+              1881983319
+            ],
+            "native_node_versions": {
+              "1881983318": 2,
+              "1881983319": 2
+            },
+            "traffic_oneway": "no",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:96614b719a419a90a83386e7def6ef91e1c57d7b5f10dfa27deca3e5a1543665",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:a0dcbe91ddad05dfd8733c14f814af1fad80aed8f0eca0bd6b87c38e8a006406",
+      "route_length_m": 51.53000392831043,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w177782758",
+            "original_segment_id": "w177782758:1",
+            "split_edge_key": "w177782758:1:0",
+            "way_version": 1,
+            "way_timestamp": "2012-08-25T05:29:55Z",
+            "original_segment_native_node_refs": [
+              1881983569,
+              1881983568
+            ],
+            "native_node_versions": {
+              "1881983569": 3,
+              "1881983568": 3
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:a0dcbe91ddad05dfd8733c14f814af1fad80aed8f0eca0bd6b87c38e8a006406",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:b6c9d1cacb00d2cbcc70fb982aef283f0216cf93d55685b7519e8694198a7f71",
+      "route_length_m": 24.429646601096458,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1095192390",
+            "snap_node": "snap:w1525361212:9:0.153053315999",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:b6c9d1cacb00d2cbcc70fb982aef283f0216cf93d55685b7519e8694198a7f71",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:beb1ee65297a17136e5a1d73246312cb17b60e6b14f42e185a41b070b626466d",
+      "route_length_m": 50.695130778410366,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1525361212",
+            "original_segment_id": "w1525361212:8",
+            "split_edge_key": "w1525361212:8:1",
+            "way_version": 1,
+            "way_timestamp": "2026-06-02T03:20:06Z",
+            "original_segment_native_node_refs": [
+              1881983569,
+              1881983319
+            ],
+            "native_node_versions": {
+              "1881983569": 3,
+              "1881983319": 2
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:beb1ee65297a17136e5a1d73246312cb17b60e6b14f42e185a41b070b626466d",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:ca32e43e1f102e4e836e41a9379fe97559946ea12b5cdb00fab339d65d802434",
+      "route_length_m": 53.663141057608684,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1525361212",
+            "original_segment_id": "w1525361212:7",
+            "split_edge_key": "w1525361212:7:1",
+            "way_version": 1,
+            "way_timestamp": "2026-06-02T03:20:06Z",
+            "original_segment_native_node_refs": [
+              1882003792,
+              1881983569
+            ],
+            "native_node_versions": {
+              "1882003792": 3,
+              "1881983569": 3
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:ca32e43e1f102e4e836e41a9379fe97559946ea12b5cdb00fab339d65d802434",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:e40ec3d7b6fedf4821a72d6b75ca8055a15bcde5e034ddcb71491ff0963c47ee",
+      "route_length_m": 37.10889658391362,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1095192364",
+            "snap_node": "snap:w1525361212:8:0.511608235420",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:e40ec3d7b6fedf4821a72d6b75ca8055a15bcde5e034ddcb71491ff0963c47ee",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:ecea4e4469abf937fb148942a6dfe8da2e67723827f6438b65df34a21d4c7658",
+      "route_length_m": 0.7473686619899341,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1091893005",
+            "snap_node": "snap:w1525361212:7:0.687732875638",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:ecea4e4469abf937fb148942a6dfe8da2e67723827f6438b65df34a21d4c7658",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:wuhan:eee2363dead67ac23adc0e59e58bbc408f8271f896e1f732397ded6fce335483",
+      "route_length_m": 25.536547857023496,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+        "metric_epsg": 32650,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1525361212",
+            "original_segment_id": "w1525361212:9",
+            "split_edge_key": "w1525361212:9:0",
+            "way_version": 1,
+            "way_timestamp": "2026-06-02T03:20:06Z",
+            "original_segment_native_node_refs": [
+              1881983319,
+              7170382600
+            ],
+            "native_node_versions": {
+              "1881983319": 2,
+              "7170382600": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:wuhan:eee2363dead67ac23adc0e59e58bbc408f8271f896e1f732397ded6fce335483",
+      "connection_allowed": null
+    }
+  ],
+  "geometry_manifest_id": "95c25c4376bc1ae0bf1c1ac82384317a30d75ceb224d44629117273b20c26867",
+  "eligible_for_engineering_solver_input": false
+}

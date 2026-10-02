@@ -118,6 +118,49 @@ def test_layered_power_conservation_and_grade_separation(case):
         np.testing.assert_array_equal(sum(layer.values()), [24, 35])
 
 
+def test_explicit_route_length_drives_cost_without_route_factor_override(case):
+    config, spatial, buildings, frame = case
+    rule = spatial["candidate_rules"][0]
+    rule.update(route_length_m=575.0, route_length_basis="surveyed_polyline",
+                route_provenance={"source_id": "analytical_test"}, physical_edge_id="edge:1",
+                route_factor=100.0)
+    result = preprocess_spatial_quality(config, spatial, buildings=buildings, timeseries=frame)
+    pipe = result.config["pipes"][0]
+    assert pipe["length_m"] == 575
+    assert pipe["diameter_options"][0]["capex_total_yuan"] == 1250
+    assert pipe["physical_edge_id"] == "edge:1"
+    # The source config and rule are not overwritten.
+    assert config["pipes"][0]["diameter_options"][0]["capex_total_yuan"] == 99
+    assert rule["route_factor"] == 100
+
+
+@pytest.mark.parametrize("failure", ["missing_basis", "missing_provenance", "too_short", "duplicate_edge"])
+def test_route_provenance_and_unique_physical_edge_identity_are_required(case, failure):
+    config, spatial, buildings, frame = case
+    rule = spatial["candidate_rules"][0]
+    rule.update(route_length_m=550., route_length_basis="test_geometry",
+                route_provenance="analytical_test", physical_edge_id="one")
+    if failure == "missing_basis": rule.pop("route_length_basis")
+    if failure == "missing_provenance": rule.pop("route_provenance")
+    if failure == "too_short": rule["route_length_m"] = 499
+    if failure == "duplicate_edge":
+        config["pipes"].append({**deepcopy(config["pipes"][0]), "name": "second"})
+        spatial["candidate_rules"].append({**deepcopy(rule), "pipe": "second"})
+    with pytest.raises(SpatialQualityError):
+        preprocess_spatial_quality(config, spatial, buildings=buildings, timeseries=frame)
+
+
+def test_coincident_coordinates_do_not_divide_by_zero_for_explicit_route(case):
+    config, spatial, buildings, frame = case
+    spatial["nodes"][1].update(x_m=0, y_m=0)
+    rule = spatial["candidate_rules"][0]
+    rule.pop("route_factor")
+    rule.update(route_length_m=10., route_length_basis="test_loop",
+                route_provenance="analytical_test")
+    result = preprocess_spatial_quality(config, spatial, buildings=buildings, timeseries=frame)
+    assert result.config["pipes"][0]["length_m"] == 10
+
+
 def test_multiple_nodes_can_share_district_without_losing_ownership(case):
     config, spatial, buildings, _ = case
     spatial["nodes"][1]["district"] = "west"

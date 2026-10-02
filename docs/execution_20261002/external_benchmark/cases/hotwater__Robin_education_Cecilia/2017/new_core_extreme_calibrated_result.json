@@ -1,0 +1,221 @@
+{
+  "case_id": "hotwater__Robin_education_Cecilia",
+  "category": "hotwater",
+  "site_id": "Robin",
+  "year": 2017,
+  "core_label": "new_core",
+  "method": "extreme_calibrated",
+  "requested_k": 9,
+  "core_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+  "observed_calendar_sha256": "5222a39335d61cff358a82bf69f250e19292e501112d0700c8e9ac3c8db8d32f",
+  "input_retained_days": 359,
+  "status": "ok",
+  "metrics": {
+    "retained_days_n": 359,
+    "actual_representative_days_m": 9,
+    "representative_hours": 216,
+    "weight_sum_days": 359.00000000000006,
+    "compression_n_over_m": 39.888888888888886,
+    "representative_day_fraction": 0.025069637883008356,
+    "retained_scope_energy_kwh": 298338.02040000004,
+    "weighted_representative_energy_kwh": 298333.925229201,
+    "retained_scope_energy_bias": -1.3726613837452158e-05,
+    "retained_scope_abs_energy_bias": 1.3726613837452158e-05,
+    "retained_scope_peak_kw": 90.0727,
+    "representative_peak_kw": 90.0727,
+    "peak_retention_ratio": 1.0,
+    "maximum_peak_day_selected": true,
+    "ldc_wasserstein1_kw": 2.4442764735176485,
+    "ldc_w1_over_mean_load": 0.07059068793039446,
+    "cold_day_count": 18,
+    "cold_day_hit_count": 2,
+    "cold_day_coverage": 0.1111111111111111,
+    "hot_day_hit_count": 0,
+    "hot_day_coverage": 0.0,
+    "minimum_temperature_gap_c": 0.0,
+    "absolute_minimum_temperature_day_selected": true,
+    "real_hour_edges": 8609,
+    "positive_ramp_edges": 6815,
+    "maximum_real_ramp_kw_per_hour": 46.8429,
+    "maximum_selected_original_ramp_kw_per_hour": 46.8429,
+    "maximum_real_ramp_retention_ratio": 1.0,
+    "maximum_real_ramp_both_days_selected": true,
+    "maximum_real_ramp_crosses_midnight": false,
+    "ramp_tail_event_count": 69,
+    "ramp_tail_hit_count": 3,
+    "ramp_tail_event_coverage": 0.043478260869565216,
+    "midnight_tail_event_count": 3,
+    "midnight_tail_event_coverage": 0.0,
+    "capacity_only_k_kw": 90.0727,
+    "capacity_only_deficit_hours": 0,
+    "capacity_only_deficit_hour_fraction": 0.0,
+    "capacity_only_deficit_energy_kwh": 0.0,
+    "capacity_only_deficit_energy_fraction": 0.0,
+    "null_reasons": {}
+  },
+  "elapsed_seconds": [
+    0.003925299999536946,
+    0.003841199999442324,
+    0.004490100000111852
+  ],
+  "elapsed_median_seconds": 0.003925299999536946,
+  "metrics_elapsed_seconds": 0.04185199999483302,
+  "selected_days": [
+    {
+      "original_day_index": 13,
+      "date": "2017-01-14",
+      "weight_days": 32.558404704203674,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 20,
+      "date": "2017-01-22",
+      "weight_days": 1.0179702895470606,
+      "extreme_reasons": "minimum_temperature"
+    },
+    {
+      "original_day_index": 40,
+      "date": "2017-02-11",
+      "weight_days": 1.0,
+      "extreme_reasons": "maximum_system_demand;maximum_peak::load_kw"
+    },
+    {
+      "original_day_index": 61,
+      "date": "2017-03-04",
+      "weight_days": 55.666796866063315,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 123,
+      "date": "2017-05-06",
+      "weight_days": 91.29355387693191,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 175,
+      "date": "2017-06-27",
+      "weight_days": 1.0,
+      "extreme_reasons": "maximum_system_ramp;maximum_ramp::load_kw"
+    },
+    {
+      "original_day_index": 213,
+      "date": "2017-08-04",
+      "weight_days": 82.83214977052937,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 273,
+      "date": "2017-10-07",
+      "weight_days": 65.7702679872195,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 342,
+      "date": "2017-12-15",
+      "weight_days": 27.860856505505208,
+      "extreme_reasons": ""
+    }
+  ],
+  "actual_m": 9,
+  "paired_actual_budget": 9,
+  "budget_matched": true,
+  "calibration_summary": {
+    "application_mode": "explicit_function_call_only",
+    "source_files_modified": false,
+    "solver": "SLSQP_constrained_least_squares",
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully",
+    "energy_matching": "soft_regularized_least_squares",
+    "weight_conservation_residual": 5.684341886080802e-14,
+    "maximum_bound_violation": 0.0,
+    "objective_value": 3.8110195906467097e-07,
+    "matched_columns": [
+      "load_kw"
+    ],
+    "representative_days": 9,
+    "original_weight_sum_days": 359.0,
+    "calibrated_weight_sum_days": 359.00000000000006,
+    "minimum_calibrated_weight": 1.0,
+    "minimum_extreme_calibrated_weight": 1.0,
+    "maximum_absolute_original_bias": 0.02776383241027911,
+    "maximum_absolute_calibrated_bias": 1.3726613837647264e-05,
+    "regularization": 0.0001,
+    "caveat": "candidate weights only; rerun coverage, investment stability and fixed-investment chronological replay before adoption"
+  },
+  "calibration_diagnostics": [
+    {
+      "column": "load_kw",
+      "chronology_total": 298338.02040000004,
+      "original_representative_total": 290055.0136,
+      "calibrated_representative_total": 298333.9252292009,
+      "original_relative_bias": -0.02776383241027911,
+      "calibrated_relative_bias": -1.3726613837647264e-05
+    }
+  ],
+  "calibration_weight_audit": [
+    {
+      "representative_day": "day_13",
+      "is_extreme_day": false,
+      "original_weight": 28.0,
+      "calibrated_weight": 32.558404704203674,
+      "weight_change": 4.558404704203674
+    },
+    {
+      "representative_day": "day_20",
+      "is_extreme_day": true,
+      "original_weight": 1.0,
+      "calibrated_weight": 1.0179702895470606,
+      "weight_change": 0.01797028954706059
+    },
+    {
+      "representative_day": "day_40",
+      "is_extreme_day": true,
+      "original_weight": 1.0,
+      "calibrated_weight": 1.0,
+      "weight_change": 0.0
+    },
+    {
+      "representative_day": "day_61",
+      "is_extreme_day": false,
+      "original_weight": 53.0,
+      "calibrated_weight": 55.666796866063315,
+      "weight_change": 2.666796866063315
+    },
+    {
+      "representative_day": "day_123",
+      "is_extreme_day": false,
+      "original_weight": 91.0,
+      "calibrated_weight": 91.29355387693191,
+      "weight_change": 0.2935538769319095
+    },
+    {
+      "representative_day": "day_175",
+      "is_extreme_day": true,
+      "original_weight": 1.0,
+      "calibrated_weight": 1.0,
+      "weight_change": 0.0
+    },
+    {
+      "representative_day": "day_213",
+      "is_extreme_day": false,
+      "original_weight": 87.0,
+      "calibrated_weight": 82.83214977052937,
+      "weight_change": -4.1678502294706306
+    },
+    {
+      "representative_day": "day_273",
+      "is_extreme_day": false,
+      "original_weight": 68.0,
+      "calibrated_weight": 65.7702679872195,
+      "weight_change": -2.2297320127805023
+    },
+    {
+      "representative_day": "day_342",
+      "is_extreme_day": false,
+      "original_weight": 29.0,
+      "calibrated_weight": 27.860856505505208,
+      "weight_change": -1.1391434944947925
+    }
+  ],
+  "timing_scope": "weight-calibration invocation only; fixed selection reused"
+}

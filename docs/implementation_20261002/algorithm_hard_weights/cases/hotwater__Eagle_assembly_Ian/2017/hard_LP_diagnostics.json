@@ -1,0 +1,63 @@
+{
+  "method": "standard_LP_hard_energy_minimum_1D_CDF_W1",
+  "energy_matching": "hard_equality_with_independent_residual_check",
+  "source_data_modified": false,
+  "selected_profiles_modified": false,
+  "engineering_operation_validated": false,
+  "total_weight_days": 345.0,
+  "original_weights": [
+    10.0,
+    30.0,
+    57.0,
+    1.0,
+    1.0,
+    50.0,
+    89.0,
+    105.0,
+    1.0,
+    1.0
+  ],
+  "lower_bounds": [
+    1e-06,
+    1e-06,
+    1e-06,
+    1.0,
+    1.0,
+    1e-06,
+    1e-06,
+    1e-06,
+    1.0,
+    1.0
+  ],
+  "solver_status": 0,
+  "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "solver_iterations": 5326,
+  "support_intervals": 4994,
+  "status": "ok",
+  "reason": "independently_verified_hard_energy_and_CDF_objective",
+  "weights": [
+    16.344242321054246,
+    44.10115879995578,
+    1e-06,
+    1.0,
+    1.0,
+    41.33930452002189,
+    76.00771631737685,
+    161.49847347096357,
+    1.0,
+    2.709103570628211
+  ],
+  "energy_residual_original_units": 5.0067901611328125e-06,
+  "relative_energy_residual": 3.571311380241509e-15,
+  "day_conservation_residual": 5.115907697472721e-13,
+  "maximum_lower_bound_violation": 0.0,
+  "normalized_W1": 0.049463004411282895,
+  "W1_original_units": 8374.942380454366,
+  "solver_objective_residual": 1.394717674685353e-15,
+  "caveat": "Minimum W1 on fixed selected profiles subject to these statistical constraints only; chronology and engineering operation unvalidated.",
+  "elapsed_seconds": [
+    0.8000713000074029,
+    0.7963830999942729,
+    0.7828881999885198
+  ]
+}

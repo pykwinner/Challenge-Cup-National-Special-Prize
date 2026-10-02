@@ -1,0 +1,122 @@
+{
+  "case_id": "chilledwater__Bull_assembly_Beau",
+  "category": "chilledwater",
+  "site_id": "Bull",
+  "year": 2016,
+  "core_label": "new_core",
+  "method": "ordinary",
+  "requested_k": 9,
+  "core_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+  "observed_calendar_sha256": "a711b7de75e4b4ece901928240bae7d40b4281378f20329c465c8e667bb296ba",
+  "input_retained_days": 342,
+  "status": "ok",
+  "metrics": {
+    "retained_days_n": 342,
+    "actual_representative_days_m": 9,
+    "representative_hours": 216,
+    "weight_sum_days": 342.0,
+    "compression_n_over_m": 38.0,
+    "representative_day_fraction": 0.02631578947368421,
+    "retained_scope_energy_kwh": 25964970.5138,
+    "weighted_representative_energy_kwh": 26685173.186800003,
+    "retained_scope_energy_bias": 0.02773747317052515,
+    "retained_scope_abs_energy_bias": 0.02773747317052515,
+    "retained_scope_peak_kw": 12660.6189,
+    "representative_peak_kw": 9590.5759,
+    "peak_retention_ratio": 0.7575124072331093,
+    "maximum_peak_day_selected": false,
+    "ldc_wasserstein1_kw": 239.00609412768029,
+    "ldc_w1_over_mean_load": 0.0755541786406941,
+    "cold_day_count": 18,
+    "cold_day_hit_count": 0,
+    "cold_day_coverage": 0.0,
+    "hot_day_hit_count": 0,
+    "hot_day_coverage": 0.0,
+    "minimum_temperature_gap_c": 10.6,
+    "absolute_minimum_temperature_day_selected": false,
+    "real_hour_edges": 8190,
+    "positive_ramp_edges": 8171,
+    "maximum_real_ramp_kw_per_hour": 11058.067,
+    "maximum_selected_original_ramp_kw_per_hour": 3057.6746,
+    "maximum_real_ramp_retention_ratio": 0.27651076811164194,
+    "maximum_real_ramp_both_days_selected": false,
+    "maximum_real_ramp_crosses_midnight": false,
+    "ramp_tail_event_count": 82,
+    "ramp_tail_hit_count": 1,
+    "ramp_tail_event_coverage": 0.012195121951219513,
+    "midnight_tail_event_count": 9,
+    "midnight_tail_event_coverage": 0.0,
+    "capacity_only_k_kw": 9590.5759,
+    "capacity_only_deficit_hours": 72,
+    "capacity_only_deficit_hour_fraction": 0.008771929824561403,
+    "capacity_only_deficit_energy_kwh": 64579.74870000001,
+    "capacity_only_deficit_energy_fraction": 0.0024871874460892156,
+    "null_reasons": {}
+  },
+  "elapsed_seconds": [
+    0.026559999998426065,
+    0.025760600001376588,
+    0.026562999999441672
+  ],
+  "elapsed_median_seconds": 0.026559999998426065,
+  "metrics_elapsed_seconds": 0.017639199999393895,
+  "selected_days": [
+    {
+      "original_day_index": 39,
+      "date": "2016-02-13",
+      "weight_days": 63.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 216,
+      "date": "2016-08-23",
+      "weight_days": 44.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 108,
+      "date": "2016-04-26",
+      "weight_days": 23.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 230,
+      "date": "2016-09-06",
+      "weight_days": 12.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 2,
+      "date": "2016-01-03",
+      "weight_days": 48.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 111,
+      "date": "2016-04-29",
+      "weight_days": 20.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 254,
+      "date": "2016-09-30",
+      "weight_days": 54.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 168,
+      "date": "2016-06-29",
+      "weight_days": 53.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 104,
+      "date": "2016-04-22",
+      "weight_days": 25.0,
+      "extreme_reasons": ""
+    }
+  ],
+  "actual_m": 9,
+  "paired_actual_budget": 9,
+  "budget_matched": true
+}

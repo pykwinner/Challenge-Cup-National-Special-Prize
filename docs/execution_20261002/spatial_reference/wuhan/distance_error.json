@@ -1,0 +1,21 @@
+{
+  "projection": "EPSG:32650",
+  "axis_order": "lon,lat -> easting_m,northing_m",
+  "comparison": "each full-way segment vs independent WGS84 ellipsoid Geod.inv",
+  "segment_count": 341,
+  "max_absolute_error_m": 0.15054094536060347,
+  "max_relative_error_percent": 0.04342665798020562,
+  "p95_relative_error_percent": 0.04329531912590223,
+  "max_full_way_vertex_radius_m": 2760.529880404003,
+  "full_way_segments_not_clipped_to_window": true,
+  "sum_projected_m": 18839.668591977537,
+  "sum_geodesic_m": 18831.603002022177,
+  "not_certified_survey_accuracy": true,
+  "way_ids_with_vertices_outside_fixed_window": [
+    "w1056630005",
+    "w1525361213"
+  ],
+  "way_ids_crossing_supplied_city_boundary": [],
+  "way_ids_wholly_outside_supplied_city_boundary": [],
+  "vertex_occurrences_outside_fixed_window": 51
+}

@@ -18,11 +18,15 @@ def monte_carlo_out_of_sample_replay(
     random_seed: int = 42,
     time_limit: float = 60.0,
 ) -> pd.DataFrame:
-    """Freeze the optimized plan and replay correlated unseen disturbances."""
+    """Diagnose shortages under generated correlated disturbances.
+
+    Reliability limits are explicitly relaxed to measure shortages; this is
+    not an original-service acceptance check or observed weather validation.
+    """
     if samples < 1:
         raise ValueError("samples 必须为正")
     nominal = HeatPlanningModel(copy.deepcopy(config), base_frame).solve(time_limit=time_limit)
-    fixed = _freeze_investment_plan(config, nominal)
+    fixed = _freeze_investment_plan(config, nominal, relax_reliability=True)
     demand_columns = [column for node in config["nodes"] for column in node.get("demand_columns", {}).values()]
     rng = np.random.default_rng(random_seed)
     specifications = []
@@ -48,5 +52,6 @@ def monte_carlo_out_of_sample_replay(
         rows.append({"scenario": scenario, **metrics})
     result = pd.DataFrame(rows).sort_values("unserved_rate", ascending=False).reset_index(drop=True)
     result["unserved_rate_rank"] = np.arange(1, len(result) + 1)
+    result["replay_service_policy"] = fixed["replay_service_policy"]
+    result["disturbance_evidence"] = "generated_research_stress_scenarios"
     return result
-

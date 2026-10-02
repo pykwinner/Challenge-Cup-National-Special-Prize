@@ -1,0 +1,3131 @@
+{
+  "checked_utc": "2026-10-02T06:54:07.034788+00:00",
+  "passed": true,
+  "status": "local_research_implementation_not_complete_engineering_certification",
+  "source_and_artifact_hash_checks": 610,
+  "checks": [
+    {
+      "path": "configs\\evidence_case_20261002\\wuhan_bestest600_steady.yaml",
+      "sha256": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3",
+      "scope": "admission.json"
+    },
+    {
+      "path": "configs\\evidence_case_20261002\\wuhan_bestest600_rc.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "admission.json"
+    },
+    {
+      "path": "data\\derived\\evidence_case_20261002\\wuhan_2024_2025_hourly.csv",
+      "sha256": "dcf861aed4914bc873086b27c9d0fe6b59e0bd77c49bd5350f0b1ed079e3b5b2",
+      "scope": "admission.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\field_provenance.csv",
+      "sha256": "d8bd5e88d3cc356dfe7d47ff1a4d667d1a7de0123d74ec00a0ae70b280aea7b7",
+      "scope": "admission.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\derivation.json",
+      "sha256": "7cc4dc53504f4a8cf2411c3527b4864f808acccd130c4d00707cf21270b46194",
+      "scope": "admission.json"
+    },
+    {
+      "path": "scripts\\prepare_evidence_case_20261002.py",
+      "sha256": "66d5f805228d89b0948b4baa57458a05ceed5960bd16490a7a51916570ccd3b9",
+      "scope": "admission.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\bestest_6231.pdf",
+      "sha256": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+      "scope": "admission.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\hubei_sales_price_2021.pdf",
+      "sha256": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+      "scope": "admission.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json",
+      "sha256": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+      "scope": "admission.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\wuhan_weather_receipt.json",
+      "sha256": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+      "scope": "admission.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\grid_factor_2023.pdf",
+      "sha256": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+      "scope": "admission.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\wuhan_heating_window_2024.html",
+      "sha256": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d",
+      "scope": "admission.json"
+    },
+    {
+      "path": "configs\\evidence_case_20261002\\wuhan_bestest600_steady.yaml",
+      "sha256": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "configs\\evidence_case_20261002\\wuhan_bestest600_rc.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "data\\derived\\evidence_case_20261002\\wuhan_2024_2025_hourly.csv",
+      "sha256": "dcf861aed4914bc873086b27c9d0fe6b59e0bd77c49bd5350f0b1ed079e3b5b2",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\field_provenance.csv",
+      "sha256": "d8bd5e88d3cc356dfe7d47ff1a4d667d1a7de0123d74ec00a0ae70b280aea7b7",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\derivation.json",
+      "sha256": "7cc4dc53504f4a8cf2411c3527b4864f808acccd130c4d00707cf21270b46194",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "scripts\\prepare_evidence_case_20261002.py",
+      "sha256": "66d5f805228d89b0948b4baa57458a05ceed5960bd16490a7a51916570ccd3b9",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\bestest_6231.pdf",
+      "sha256": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\hubei_sales_price_2021.pdf",
+      "sha256": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json",
+      "sha256": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\wuhan_weather_receipt.json",
+      "sha256": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\grid_factor_2023.pdf",
+      "sha256": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\evidence\\wuhan_heating_window_2024.html",
+      "sha256": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\admission.json",
+      "sha256": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "configs\\evidence_case_20261002\\wuhan_bestest600_rc_tou.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "data\\derived\\evidence_case_20261002\\wuhan_2024_2025_hourly_tou.csv",
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\field_provenance_tou.csv",
+      "sha256": "16f8f749f3c1c6354d22a9f2fbeece3da170a9c1d90ecfa9508ac38a4e108474",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\monthly_tariff_verified.csv",
+      "sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\tou_account_and_hours.json",
+      "sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\prepare_tou.py",
+      "sha256": "bebafd08b4057a79c17e62ad07085acd6a091671cad622f9b960c43d8aee68c8",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\tou_evidence\\hubei_2024_11.pdf",
+      "sha256": "9fa81bc3be47c1917fbd0e0f6cac1bf1dfb5edc47559f155b9b82e97611f8b33",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\tou_evidence\\hubei_2024_12.pdf",
+      "sha256": "74161836e189120f1f86c33f38010fc01a4e6e7e3706dfc55b07a6bf5a48163a",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\tou_evidence\\hubei_2025_months.pdf",
+      "sha256": "efccc95604a44d0871a82d2315e3b30ff3c9f2aa4b7c2d5d29efd187294b632d",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\tou_evidence\\hubei_tou_policy_77_2024.pdf",
+      "sha256": "086aea2d5388ed5fb18cbfb8a7c2ef362c66896c43027681d8a6a8347856edc4",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\tou_evidence\\hubei_single_two_part_policy_163_2023.pdf",
+      "sha256": "40cf12a479b73eec03940773caf2fb7d8834481214075af1ada0a6f304f16182",
+      "scope": "admission_tou.json"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\all_epsilon_samples.json",
+      "sha256": "7a173f4bd64233f1b4311731b344e2797e2d2655442a6557a96f7a6fd35f7e15",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\baseline\\audit.json",
+      "sha256": "afec32bca32bef5a032eca9736ccfd0d20cda34aff549def0762dbfa1753233f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\baseline\\building_trajectory.csv",
+      "sha256": "a078603d549f100824f2981496cd880b2f8194959f0dc49ae281fb4242e84448",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\baseline\\dispatch.csv",
+      "sha256": "139ba4300c1f0425fd644f1b9937060738f71e90780449b901de849305a1d8f1",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\baseline\\effective_config.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\baseline\\independent_building_audit.json",
+      "sha256": "a67e1b0b7c5e19d98d8fca7484aebdcfdfd886e6daf7cee84501d4becf48dd38",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\baseline\\input_identity.json",
+      "sha256": "c0339dd3fd64810f7b16cb4da63271aef6c33c6387f70f5c80816904ea6ddd91",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\baseline\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\baseline\\summary.json",
+      "sha256": "f1c1b7a102173063262b205128402e42d566ad62541f46d5bd45f6f586756477",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\comfort_ablation_changes.json",
+      "sha256": "787873a60b503ce925789eff55266b7f3c3633723372fb1990209f3efae36de0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\cost_endpoint\\audit.json",
+      "sha256": "34f1ef29504d93b8aa8872ab6e61d9d152011c623a1743d5ec0960971a908b17",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\cost_endpoint\\building_trajectory.csv",
+      "sha256": "b6f7cbed7231fea7fcff2f9e5479a5312926390615b6d540f9b12087bf606833",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\cost_endpoint\\dispatch.csv",
+      "sha256": "c7e372751f993748a50242f7f2cf99516e9a8c6adb5d4b938f6a2a4631578eb0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\cost_endpoint\\effective_config.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\cost_endpoint\\independent_building_audit.json",
+      "sha256": "a67e1b0b7c5e19d98d8fca7484aebdcfdfd886e6daf7cee84501d4becf48dd38",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\cost_endpoint\\input_identity.json",
+      "sha256": "c0339dd3fd64810f7b16cb4da63271aef6c33c6387f70f5c80816904ea6ddd91",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\cost_endpoint\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\cost_endpoint\\summary.json",
+      "sha256": "571e797644f2d33598b1498fd406e79aa99f6d6ea9318dab85ef59611494d494",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\emission_endpoint\\audit.json",
+      "sha256": "17891d4cf34175ab3659f061ef9dca2718643fed6e555e4d97a20016f1484838",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\emission_endpoint\\building_trajectory.csv",
+      "sha256": "a462c4c11d6adde7fcf7224f6fe195ae1a2b46edb990424528d38fc51704a513",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\emission_endpoint\\dispatch.csv",
+      "sha256": "a8315b020edbdfbd26fa2e846aa1e32a5a4960b4bce749aa5f63ff3f5ac1fab7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\emission_endpoint\\effective_config.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\emission_endpoint\\independent_building_audit.json",
+      "sha256": "a67e1b0b7c5e19d98d8fca7484aebdcfdfd886e6daf7cee84501d4becf48dd38",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\emission_endpoint\\input_identity.json",
+      "sha256": "c0339dd3fd64810f7b16cb4da63271aef6c33c6387f70f5c80816904ea6ddd91",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\emission_endpoint\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\emission_endpoint\\summary.json",
+      "sha256": "1519e589822eb3e8142d44422efb2cf94f6ffbc546e53747d70f1651f6e58a57",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\endpoints.json",
+      "sha256": "f52fd40d1f1c434b69cb2480b590ea80bcf73f3bb42c802397fb406c284b09be",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_0\\audit.json",
+      "sha256": "5454d10e7eeebce812585713bdbdd615fafff7d4aa4f93f8f54ff5979f0091d9",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_0\\building_trajectory.csv",
+      "sha256": "ef3f9b946e2998977c29e2339858b70faac9f3ba946f04cd56448965eccf22b7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_0\\dispatch.csv",
+      "sha256": "4bb994b6772e13c3f6a2154239ac3a8ac2585541b0b4b1085b4c0ad810d16a08",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_0\\effective_config.yaml",
+      "sha256": "2ee8d19019dc8e79d103902e8368e5ff5ee403b547e7c1bc3270da3546cef5b0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_0\\independent_building_audit.json",
+      "sha256": "f6a1792aef298cc06f0f601977ae8de1f3926c08c5b53fb3fedb0c9d895e551d",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_0\\input_identity.json",
+      "sha256": "3aa85bb992a5be27c006c6b5b08ebfc5882224854835136c6820ed2a36ce9f91",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_0\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_0\\summary.json",
+      "sha256": "44bbb3f9be0aa099ccb84167d40593243fab75fc55400900b54f9ecd165ec510",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_1\\audit.json",
+      "sha256": "e007ccbbb7f3c1dbd32b314056d9150523a046d40cd605dc35d12a59b3063790",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_1\\building_trajectory.csv",
+      "sha256": "ef3f9b946e2998977c29e2339858b70faac9f3ba946f04cd56448965eccf22b7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_1\\dispatch.csv",
+      "sha256": "4bb994b6772e13c3f6a2154239ac3a8ac2585541b0b4b1085b4c0ad810d16a08",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_1\\effective_config.yaml",
+      "sha256": "2ee8d19019dc8e79d103902e8368e5ff5ee403b547e7c1bc3270da3546cef5b0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_1\\independent_building_audit.json",
+      "sha256": "f6a1792aef298cc06f0f601977ae8de1f3926c08c5b53fb3fedb0c9d895e551d",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_1\\input_identity.json",
+      "sha256": "3aa85bb992a5be27c006c6b5b08ebfc5882224854835136c6820ed2a36ce9f91",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_1\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_1\\summary.json",
+      "sha256": "d3ecf9837ebc80f36c3769a5bee6dd720704dc4b741a6a7931b11068c449cf21",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_2\\audit.json",
+      "sha256": "8720f9ed2451393f0e22e8b0dd526f165dfaafccb31b247338ccc7fd4bf02bc8",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_2\\building_trajectory.csv",
+      "sha256": "ef3f9b946e2998977c29e2339858b70faac9f3ba946f04cd56448965eccf22b7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_2\\dispatch.csv",
+      "sha256": "4bb994b6772e13c3f6a2154239ac3a8ac2585541b0b4b1085b4c0ad810d16a08",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_2\\effective_config.yaml",
+      "sha256": "2ee8d19019dc8e79d103902e8368e5ff5ee403b547e7c1bc3270da3546cef5b0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_2\\independent_building_audit.json",
+      "sha256": "f6a1792aef298cc06f0f601977ae8de1f3926c08c5b53fb3fedb0c9d895e551d",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_2\\input_identity.json",
+      "sha256": "3aa85bb992a5be27c006c6b5b08ebfc5882224854835136c6820ed2a36ce9f91",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_2\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_2\\summary.json",
+      "sha256": "5b5417d7b29d0ed88ff1b31b68a53bc2d1ca3fd7f1a5eb0eee067f24fccc862a",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_3\\audit.json",
+      "sha256": "89504b67d69a7f8846a6232d4817c2a6e270b5940488b5b61c5a420c68aeb075",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_3\\building_trajectory.csv",
+      "sha256": "ef3f9b946e2998977c29e2339858b70faac9f3ba946f04cd56448965eccf22b7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_3\\dispatch.csv",
+      "sha256": "4bb994b6772e13c3f6a2154239ac3a8ac2585541b0b4b1085b4c0ad810d16a08",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_3\\effective_config.yaml",
+      "sha256": "2ee8d19019dc8e79d103902e8368e5ff5ee403b547e7c1bc3270da3546cef5b0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_3\\independent_building_audit.json",
+      "sha256": "f6a1792aef298cc06f0f601977ae8de1f3926c08c5b53fb3fedb0c9d895e551d",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_3\\input_identity.json",
+      "sha256": "3aa85bb992a5be27c006c6b5b08ebfc5882224854835136c6820ed2a36ce9f91",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_3\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_3\\summary.json",
+      "sha256": "c1dc7b3262f8137a323aa02e3bc69a602d0fdc97c36122b2b460e002cb66ebef",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_4\\audit.json",
+      "sha256": "debf8fc0a1a876db56c4fcb9977c08fd4a0d22daa90f87f4c4b5b66011bc4a49",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_4\\building_trajectory.csv",
+      "sha256": "ef3f9b946e2998977c29e2339858b70faac9f3ba946f04cd56448965eccf22b7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_4\\dispatch.csv",
+      "sha256": "4bb994b6772e13c3f6a2154239ac3a8ac2585541b0b4b1085b4c0ad810d16a08",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_4\\effective_config.yaml",
+      "sha256": "2ee8d19019dc8e79d103902e8368e5ff5ee403b547e7c1bc3270da3546cef5b0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_4\\independent_building_audit.json",
+      "sha256": "f6a1792aef298cc06f0f601977ae8de1f3926c08c5b53fb3fedb0c9d895e551d",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_4\\input_identity.json",
+      "sha256": "3aa85bb992a5be27c006c6b5b08ebfc5882224854835136c6820ed2a36ce9f91",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_4\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_4\\summary.json",
+      "sha256": "1f03483d93e3a6c801b649311685fc077b6b896995f100aa9c40d84989824d99",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\epsilon_caps.json",
+      "sha256": "276fc45d087b60a5ec5d5bf17e1af5a2ef9eb828152d2adf1deec191a18e0122",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\experiment_records.json",
+      "sha256": "d68df44c7d65b197bfac8b8fe6f45a1f3d77139cfc6c9acec8318b9326249eaa",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_lower_temperature\\audit.json",
+      "sha256": "ea76f92d9963b182476145eaee1b6188339d6bd0eecabea12a9f2d6d06650f82",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_lower_temperature\\building_trajectory.csv",
+      "sha256": "76c4ac4ac9a29e4554f3fd9f544052ee99dfec27a089b3c9315bc171bd13b443",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_lower_temperature\\dispatch.csv",
+      "sha256": "4f086c0e5e9cbd4075c06f5cb5df8fb9f3cf31a1c8b80c880634f694d4fb2942",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_lower_temperature\\effective_config.yaml",
+      "sha256": "4dae879ae4564e42e3d1227dc0bf4bbf4740a2b286cb6c344e7d98b64bd7b643",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_lower_temperature\\independent_building_audit.json",
+      "sha256": "048fa826ebd70264bdd1be0add8ad6561c03d6c5cdcca800d4b2ae21577827a3",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_lower_temperature\\input_identity.json",
+      "sha256": "501c4a0bc6b11bebf846f60268517ff7f978285b949db9e782bbf1081e828da3",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_lower_temperature\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_lower_temperature\\summary.json",
+      "sha256": "b8a92a29078f8bc67f4ab93c8fe84911a99d6520e36151cbb67e6897ebb3ad0b",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_replay\\audit.json",
+      "sha256": "3e50b22161318b7f2415b6347066ff099cdf909bbbc8bc0bcfbf69aa39cbb711",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_replay\\building_trajectory.csv",
+      "sha256": "a078603d549f100824f2981496cd880b2f8194959f0dc49ae281fb4242e84448",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_replay\\dispatch.csv",
+      "sha256": "139ba4300c1f0425fd644f1b9937060738f71e90780449b901de849305a1d8f1",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_replay\\effective_config.yaml",
+      "sha256": "41b26f52e5a3b6705e73d9c104353425ac70502b10854aeadd80fb536c18dba0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_replay\\independent_building_audit.json",
+      "sha256": "812171eeb32fac7e8d30a642ee59dbac381cdc3674ca9722ed481f79452f9811",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_replay\\input_identity.json",
+      "sha256": "22f108a0c013b7611708a9a7e9a2c5c49f8857eb2d8854e01c50cb77cec8f610",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_replay\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\fixed_replay\\summary.json",
+      "sha256": "81e1a6011758ee7f30b5bb4e28873d194e04f3343180b0ce97ab0787f53fe842",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\investment_freeze_audit.csv",
+      "sha256": "bf217b2f83aa16776d6b511f46286a09656bc71202ecf3ef05f50eb5998ba720",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\protocol.json",
+      "sha256": "4568c15f3987cd5aab6422215995c39597cf46ecc10e136e9f6703591e798ca6",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\rc\\sampled_nondominated.csv",
+      "sha256": "021fa5c33bc1a77abe8a2e41e1d8dd46834644b8b1e417fb0a16481badad1e2f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "configs\\evidence_case_20261002\\wuhan_bestest600_rc.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "frozen_experiment_input"
+    },
+    {
+      "path": "data\\derived\\evidence_case_20261002\\wuhan_2024_2025_hourly.csv",
+      "sha256": "dcf861aed4914bc873086b27c9d0fe6b59e0bd77c49bd5350f0b1ed079e3b5b2",
+      "scope": "frozen_experiment_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\admission.json",
+      "sha256": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+      "scope": "frozen_experiment_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\model.py",
+      "sha256": "b7f7a208da2c12554f5bb4b6080ad03761e188d79ef5e6aaa627b5cdd512cb9c",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\physical_extensions.py",
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\linear.py",
+      "sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\io.py",
+      "sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\policy_alignment.py",
+      "sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\building_audit.py",
+      "sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\chronology.py",
+      "sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\experiments.py",
+      "sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\accounting.py",
+      "sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\scripts\\run_evidence_case_experiments.py",
+      "sha256": "5713f632d59cfc9bbffd6200c96bb1b80f6dfd3e5a4f9fb6b0745ea71b49489b",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\baseline\\audit.json",
+      "sha256": "756e0791592520011633877798a7bde775b95a68a9e4ecf60997eb2a8573ef4e",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\baseline\\dispatch.csv",
+      "sha256": "b126a8e1b763437da4e87521bdb4b80cc07cba61f7d75db36a112bd5acd92b79",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\baseline\\effective_config.yaml",
+      "sha256": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\baseline\\input_identity.json",
+      "sha256": "f792dafa88b805d6317efe2d5e5e9084920b5d68e3c997bfc7180117cca05ccd",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\baseline\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\baseline\\summary.json",
+      "sha256": "656ec86e71d1d0daf42721ff7b047f078a90daada28db4dd5bd7e289003b140f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\experiment_records.json",
+      "sha256": "e05cebfe5f3dbb46392668a57d275807b3e84af570b0eeaa203ae186632562dd",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\fixed_replay\\audit.json",
+      "sha256": "242004e984a8ca60257cf1cac62098983ffa07d041b7497c46f044f0a504f109",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\fixed_replay\\dispatch.csv",
+      "sha256": "b126a8e1b763437da4e87521bdb4b80cc07cba61f7d75db36a112bd5acd92b79",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\fixed_replay\\effective_config.yaml",
+      "sha256": "856fdbb0528e7356df7b141663aa1731ca2c0d38ed0dfa998f2bdf97f034f67f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\fixed_replay\\input_identity.json",
+      "sha256": "d0b672f86e130c57715d0ca22e8978c8c40764968a0ba36899f733f47991c544",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\fixed_replay\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\fixed_replay\\summary.json",
+      "sha256": "ea6a9cfff942b477476501ea65eebc7f7bd2b9be550a71c07c46760748078648",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\investment_freeze_audit.csv",
+      "sha256": "bf217b2f83aa16776d6b511f46286a09656bc71202ecf3ef05f50eb5998ba720",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\steady\\protocol.json",
+      "sha256": "ef1e12c78b80d234e7c2366ac0720b40416be7b8a31f564832739a6a8655d37e",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "configs\\evidence_case_20261002\\wuhan_bestest600_steady.yaml",
+      "sha256": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3",
+      "scope": "frozen_experiment_input"
+    },
+    {
+      "path": "data\\derived\\evidence_case_20261002\\wuhan_2024_2025_hourly.csv",
+      "sha256": "dcf861aed4914bc873086b27c9d0fe6b59e0bd77c49bd5350f0b1ed079e3b5b2",
+      "scope": "frozen_experiment_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\admission.json",
+      "sha256": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+      "scope": "frozen_experiment_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\model.py",
+      "sha256": "b7f7a208da2c12554f5bb4b6080ad03761e188d79ef5e6aaa627b5cdd512cb9c",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\physical_extensions.py",
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\linear.py",
+      "sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\io.py",
+      "sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\policy_alignment.py",
+      "sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\building_audit.py",
+      "sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\chronology.py",
+      "sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\experiments.py",
+      "sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\src\\heatplan\\accounting.py",
+      "sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments\\code_version\\scripts\\run_evidence_case_experiments.py",
+      "sha256": "5713f632d59cfc9bbffd6200c96bb1b80f6dfd3e5a4f9fb6b0745ea71b49489b",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\all_epsilon_samples.json",
+      "sha256": "7b1483ee4facf479b3968b65d425d3970c3d9f36b382c745c64ffeccde72c982",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\baseline\\audit.json",
+      "sha256": "0de051a755064c6f2f6c7c8bdad7c6d96a4af492bc7701d3d9bdaa9d2c8779d2",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\baseline\\building_trajectory.csv",
+      "sha256": "4b3a487d0d6e1783ddb12a4e57b29545f9098f8a417cbf1d4461f0e05776a8e2",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\baseline\\dispatch.csv",
+      "sha256": "59d0b98e77ffe3915de685c09bdf73f8ed151fea5423b49ccdcd953621cccebb",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\baseline\\effective_config.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\baseline\\independent_building_audit.json",
+      "sha256": "2eb3f60ff10d795bd6ffbf7691173feb1ab7bb785c6378e7ca269bc9df2da077",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\baseline\\input_identity.json",
+      "sha256": "8bd4ec591a445a3c46519268fb2080b077002899a720f7b4fa04a60f45b81bb6",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\baseline\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\baseline\\summary.json",
+      "sha256": "dc3212f0264747434c6ca0a9de51ca25d86451f24170caaf94ea3ad72753108d",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\comfort_ablation_changes.json",
+      "sha256": "787873a60b503ce925789eff55266b7f3c3633723372fb1990209f3efae36de0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\cost_endpoint\\audit.json",
+      "sha256": "ad4923d45166f01ffb50e61f0c72db818a747536dec59c84a80821b809e95d69",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\cost_endpoint\\building_trajectory.csv",
+      "sha256": "34ac08dc05f8de23952683c58f90456cc8a0eaf4b20d9a42530b7d8c24950b67",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\cost_endpoint\\dispatch.csv",
+      "sha256": "e0e39c11938cd8b7e0ad486716f7ec790f5bb707cedad45956a84670dd839347",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\cost_endpoint\\effective_config.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\cost_endpoint\\independent_building_audit.json",
+      "sha256": "0f9fe8f47cabe257b83fab27675d01fd3adc8e2acc782c21922058b654923f60",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\cost_endpoint\\input_identity.json",
+      "sha256": "8bd4ec591a445a3c46519268fb2080b077002899a720f7b4fa04a60f45b81bb6",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\cost_endpoint\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\cost_endpoint\\summary.json",
+      "sha256": "405200a1126c26d0e55f33d52882b5c931361baa466fbd10216c7da1d3c21583",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\emission_endpoint\\audit.json",
+      "sha256": "4be3af6f3059f0fb61cdff10d5a913cd85bbc457abbd5c510096e6fee9dc8836",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\emission_endpoint\\building_trajectory.csv",
+      "sha256": "910f6e1dc07b624bb5a0dc5c512d5422ee3c8632e7b9393fb3f16257a94e369d",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\emission_endpoint\\dispatch.csv",
+      "sha256": "742d250e8e08735d1192907398f90cff1fbeb51819754bb72a67396c972b15e1",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\emission_endpoint\\effective_config.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\emission_endpoint\\independent_building_audit.json",
+      "sha256": "d8cda45f4a038a82e94f27675e7cc475c5a1f090e7b3e1333937ae62002d5701",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\emission_endpoint\\input_identity.json",
+      "sha256": "8bd4ec591a445a3c46519268fb2080b077002899a720f7b4fa04a60f45b81bb6",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\emission_endpoint\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\emission_endpoint\\summary.json",
+      "sha256": "3edc323e9a4d855f964fc7a547a36ef292d7eca5bc3261c0c06040cb4864caa0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\endpoints.json",
+      "sha256": "b5e3acb0f42b06c9f0537ce8223ce550d02b263cd626627e8efbca251ddbccc1",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_0\\audit.json",
+      "sha256": "01776e47ff7e4367f83d272bc9edd704b0484c84b80c147e23f9c2bf62a83bd1",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_0\\building_trajectory.csv",
+      "sha256": "ef3f9b946e2998977c29e2339858b70faac9f3ba946f04cd56448965eccf22b7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_0\\dispatch.csv",
+      "sha256": "4bb994b6772e13c3f6a2154239ac3a8ac2585541b0b4b1085b4c0ad810d16a08",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_0\\effective_config.yaml",
+      "sha256": "bb7b6b47cda33baad8be417a80a9c058a309a47b32793b1d9832e833507f0129",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_0\\independent_building_audit.json",
+      "sha256": "b8ef6cd761d3dfa23c8d0c0930684caadeae9e0e7173ed6e0938c8be5afa48ff",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_0\\input_identity.json",
+      "sha256": "b81f9f041633fab888b8dd1968b42fc4aeb6bb81dccd23c1d367baf61f1f081d",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_0\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_0\\summary.json",
+      "sha256": "4cf44b497d5292fe3b704672ab6cfd05c32f5e1ad5e1b0cce30dfd1ac453ab51",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_1\\audit.json",
+      "sha256": "88c95083b2301f945272fb06d55d33d997f5a23c3dc1568ca6ca93966e1bddd4",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_1\\building_trajectory.csv",
+      "sha256": "e2e1211dca997d371b59812ec6be21febf946ab5b03b26c791e6495fc9dfdc0f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_1\\dispatch.csv",
+      "sha256": "e9e4f060a8a01b9c0844670ffc75b1481d4e2bf8d7bb4b95edcc735633ecf021",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_1\\effective_config.yaml",
+      "sha256": "d40b6232bb062fea9a71cf4f0916525bbebcb023892aeff8cbbc9b8a6d5d11f7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_1\\independent_building_audit.json",
+      "sha256": "e9f4892a97db887ec1e0f287aa4cd5dbeaa68150986280ba9c961976e239f513",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_1\\input_identity.json",
+      "sha256": "2cddd71c6bc776bc3b7686c6f5e53fb16cf5c83af51225fbe97a06f090e7ec0e",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_1\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_1\\summary.json",
+      "sha256": "d125c2829d9c68a80b3d17dabe8e887ef0e5d64fc97657983a0a4a30b0419483",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_2\\audit.json",
+      "sha256": "e1ed9e131817540eff9abfcd2a7c0a6b39c01ee582b9cae5f3f3d14cf615c38a",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_2\\building_trajectory.csv",
+      "sha256": "cd6cb078ac01e32b2275389be1844be353892c59f54e17aac7d5cfca8eec44ee",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_2\\dispatch.csv",
+      "sha256": "d37c6e475490047deb3afe98d5d9d6407c4ac009254c26764649d7e98d4008a7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_2\\effective_config.yaml",
+      "sha256": "cf157a4113f0658a60d4e5d465eeb30a042cc6141a1d0638170b908cdb2d0f2c",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_2\\independent_building_audit.json",
+      "sha256": "fada2fb5eaabaae894cfe4eb4cca6aa1908c7d02365301c5561bb7ddeb1382bd",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_2\\input_identity.json",
+      "sha256": "95c1bc8e6e79d7206e080126ea33495c3042f66fd6a62ef4cc7a97469cc7a858",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_2\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_2\\summary.json",
+      "sha256": "159f704e67a7145821a1b34a660083f9be982dd81bbd075a5caac956f7cf9dc7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_3\\audit.json",
+      "sha256": "c959e35b9fbf2e88cccb76fcc3b81fd16e77511e96de166558f890c8a57d8bb4",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_3\\building_trajectory.csv",
+      "sha256": "c3b708f45e62850b37e3914f4adde06221d62d82fdb90ff28f07cb0e1e81153a",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_3\\dispatch.csv",
+      "sha256": "8ea3bc45a72a80b326087c4920f70e9893403e0b2c75687bb5b5f401b3e8e0b8",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_3\\effective_config.yaml",
+      "sha256": "2737eeec70e2f0005e0d64672bf928af2d06d4594ca5a663378c87d94073cf39",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_3\\independent_building_audit.json",
+      "sha256": "0972f728097ed5281f492060b1a69bfb7dcf5f090fdc66659316d7ae06cf379c",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_3\\input_identity.json",
+      "sha256": "8ac6635719517af366a5d247945752aa19318ec0d67733fc561618b7eebaf795",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_3\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_3\\summary.json",
+      "sha256": "44cda9d77e6c7dc4ae55d5a7ffb99ee625dbf9757a9a2a6317dc131722b6959f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_4\\audit.json",
+      "sha256": "e1b82aa802dcfefd2a9fe12789ba41f54c83eac27934b6dad51963c2e70a4e0e",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_4\\building_trajectory.csv",
+      "sha256": "64cd969e45d02949187ede00e4e63612d0ea53abf8e6d59815262525c5a658c7",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_4\\dispatch.csv",
+      "sha256": "8f1d06dba077f1d16f66131daa1cfb5343b765f95697b2791d87d612cbd09407",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_4\\effective_config.yaml",
+      "sha256": "2394e3f96f9fac3f50e4bce86ab1744c9a2568e5e1685b921df3ddd1c3f257e9",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_4\\independent_building_audit.json",
+      "sha256": "42e26d94601448c451df2c83af798c0f800a374680df7e79c2ae64d48a079ec2",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_4\\input_identity.json",
+      "sha256": "75dd123e3217dec64962d56308723821721a5f15dc4233067fecb3d1ae11f25b",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_4\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_4\\summary.json",
+      "sha256": "63b7cec0e041a059016b290dac182bd15bc5a902f8824e9689204c2e15ee4633",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\epsilon_caps.json",
+      "sha256": "e868cdc3d1ca9d0e663950496acdb57d8ae556018a069f8ed19f7328ab94c7aa",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\experiment_records.json",
+      "sha256": "4a6bf2531f30e928efc926e7f751799efa7e74a23d2686927f46a2e04ccdf4ed",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_lower_temperature\\audit.json",
+      "sha256": "e3f8b190be324102716adbc80388d44a3357dfe839f36b77fe812f43480a6985",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_lower_temperature\\building_trajectory.csv",
+      "sha256": "42905c2e93d3012c620dd28cbff951c26f3cc3fe34e0c48ab6d819a773103fa1",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_lower_temperature\\dispatch.csv",
+      "sha256": "354223035f665fdeb798c9fbcb94f7ff64865a6f5ae084a7b9bf91906233563e",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_lower_temperature\\effective_config.yaml",
+      "sha256": "4dae879ae4564e42e3d1227dc0bf4bbf4740a2b286cb6c344e7d98b64bd7b643",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_lower_temperature\\independent_building_audit.json",
+      "sha256": "cffe02f9fb58d19cfb05b73df1febcc53436dea0a6537e6aa6958350f06665d0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_lower_temperature\\input_identity.json",
+      "sha256": "fb2e209b6eb5743fb429081f58983f9eaaa51724ace1753b5bda622416c025ef",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_lower_temperature\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_lower_temperature\\summary.json",
+      "sha256": "a83911cbf10c8d94c0c25f5b8a38f109581f2d7fc23d77a224faa0ffd477535b",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_replay\\audit.json",
+      "sha256": "6759e35fb6630b4466256f126fd4c2745680cf31da753c77f7b91ac630961a43",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_replay\\building_trajectory.csv",
+      "sha256": "4b3a487d0d6e1783ddb12a4e57b29545f9098f8a417cbf1d4461f0e05776a8e2",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_replay\\dispatch.csv",
+      "sha256": "59d0b98e77ffe3915de685c09bdf73f8ed151fea5423b49ccdcd953621cccebb",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_replay\\effective_config.yaml",
+      "sha256": "41b26f52e5a3b6705e73d9c104353425ac70502b10854aeadd80fb536c18dba0",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_replay\\independent_building_audit.json",
+      "sha256": "506c3951dc127ec21cb439b3b5c1322eff2c059a39e65907c87898b5fa3568dc",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_replay\\input_identity.json",
+      "sha256": "63765500102dce3a8e2946a85f2bb0df37e1b0c69d6c6c3ff9c5073d3d88f704",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_replay\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\fixed_replay\\summary.json",
+      "sha256": "5706165f5617178ee6fdc8447f6787189a0cceb9b811c6e559a3797fe5f85882",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\investment_freeze_audit.csv",
+      "sha256": "bf217b2f83aa16776d6b511f46286a09656bc71202ecf3ef05f50eb5998ba720",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\protocol.json",
+      "sha256": "29985b01a171fe75b2fda4874fc9d3ad4f3679fefccef333b856a5c3e9e3a63d",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\sampled_nondominated.csv",
+      "sha256": "8f412be632156ee56ad095e92ce3f14ac49d9fd41288e841781e1fa9ad7dcc3f",
+      "scope": "frozen_experiment_output"
+    },
+    {
+      "path": "configs\\evidence_case_20261002\\wuhan_bestest600_rc_tou.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "scope": "frozen_experiment_input"
+    },
+    {
+      "path": "data\\derived\\evidence_case_20261002\\wuhan_2024_2025_hourly_tou.csv",
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "scope": "frozen_experiment_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\data\\admission_tou.json",
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "scope": "frozen_experiment_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\model.py",
+      "sha256": "31939e4ea2c577558f1b616d31b3206c0b354cc6ac56ed175ec0198860bce950",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\physical_extensions.py",
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\linear.py",
+      "sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\io.py",
+      "sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\policy_alignment.py",
+      "sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\building_audit.py",
+      "sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\chronology.py",
+      "sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\experiments.py",
+      "sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\src\\heatplan\\accounting.py",
+      "sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\code_version\\scripts\\run_evidence_case_experiments.py",
+      "sha256": "5713f632d59cfc9bbffd6200c96bb1b80f6dfd3e5a4f9fb6b0745ea71b49489b",
+      "scope": "exact_experiment_code_epoch"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\adoption_records.json",
+      "sha256": "26d651dd1d78ab55c974b16197a5117fc11bcf592096ddc6e1fb8a04b03bdb55",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\boundary_tests.xml",
+      "sha256": "f840e7be6288ea0493bb6b2c0b421216eb764206c64421ef99d55a0dc5d3a2b3",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\adoption_rule_result.json",
+      "sha256": "cdee2b3e91a9a1625898d3f0227081912a55d7928aad41aeb0d21b38aad8427c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\coverage.json",
+      "sha256": "9eb2ff82f0a41dc0af09cb2c0047138adc0ee830531986ba99fd00844a504aa7",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\exact_matching_feasibility.json",
+      "sha256": "3e421d767582c7e87a732b75c42ee149018c4c74b4162e2ea68c5f3294492b89",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\excluded_days.json",
+      "sha256": "52e828769a696c49d047df02ad511daa427959ebdd354354751d701b8be2a365",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "0e5465f842409ae7f2853e910aa9ad5bc19721f0d4cfd900299a5f9723502c37",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "6c9b95b025522ba3949dd628a2330ccfcec5cc654d88198c21c874a292533da5",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_aware_result.json",
+      "sha256": "45a3c6c70384d02d170f9b4dbeb2122f5e34d528df85594f6eaf9816bade4ab2",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "3a4fa37741667588bf120a93ec07aa00321f9a9885b60e2583c77a0f33b5facc",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "6c9b95b025522ba3949dd628a2330ccfcec5cc654d88198c21c874a292533da5",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_calibrated_result.json",
+      "sha256": "6e058704f9579f1e4373e8dab61d58d1ed950d25305cb3fbdec23c28196ddc3f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\observed_calendar.csv",
+      "sha256": "b29eaf7cf00ed8fa50fdccf7804d455a16d42f576716ae60c72d18c529e0f3a4",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\ordinary_actual_days.csv",
+      "sha256": "3af58a0f5eddcfd50dde814f57eb60644ae85789dd5a2c6a3d3f3224aaeb6a27",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\ordinary_ramp_events.json",
+      "sha256": "d778b7d084a3ee2df5b02d4ddc4e427d4197738058790927c9fe3e10ea1c774b",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\ordinary_result.json",
+      "sha256": "8d4414ef269d5bb688676a03198ac8df0ebd12fe98fc9272db4a34798690bfd0",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\original_observed_scope_audit.json",
+      "sha256": "3fc3a09822139a9b03c1b41eeb1e010651b08810164f9b9c23dd55bc9d92005d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\adoption_rule_result.json",
+      "sha256": "34c58efed43c143a657bcc2fb519e3393b3b0e2fcf7e88af804e33de3dd2360c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\coverage.json",
+      "sha256": "508dcfa83805f82d1a79fcd86721c24c517ee4de8d743be66ebbd781e90d632c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\exact_matching_feasibility.json",
+      "sha256": "12daaac3c6102950522a4d2cd33809412ecc7d6937c1d995c5e41c63c977ad5c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\excluded_days.json",
+      "sha256": "52e828769a696c49d047df02ad511daa427959ebdd354354751d701b8be2a365",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "8e05c04edfd7e2407b34b73d7e34652f28537b517dd175a7fdf3de6eceadfa59",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "cd858fa0f35e9ec15121f2c07d7b0124f585b83ff034cfc4a2efbdade33a113c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_aware_result.json",
+      "sha256": "3680577c80f181cf02502f3632072c490df5a2a187bbfedc577d3e4b247c8e13",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "f074f84ffce147e56c17fa47d9c970b7883728f146bb624f1371f9db59afadab",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "cd858fa0f35e9ec15121f2c07d7b0124f585b83ff034cfc4a2efbdade33a113c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_calibrated_result.json",
+      "sha256": "4793bc1b83794ee1b58d42a3605493110d61b7aa4220df88d44a410bdae61edd",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\observed_calendar.csv",
+      "sha256": "32ea3205bcabb746e9dbf3652f11184ce4379ae920c1d2c31138994ef6935b78",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\ordinary_actual_days.csv",
+      "sha256": "e3df7bc70ce70559af24dd6c18cd77089dfc65420ae6499705b69bfee6d6cc68",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\ordinary_ramp_events.json",
+      "sha256": "740b2e5352cf2f24756a02868a9c312f5d7f3bb8670f1ac91c3436916a5dd484",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\ordinary_result.json",
+      "sha256": "c9abe7f2faae969099c7370510f3c6a29cbcbe0e88e262c7bdb55b44642780f3",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\original_observed_scope_audit.json",
+      "sha256": "fb89d8494df4938b6cfc4d391d3a3fac32b7c5e8735a9d7af957b2a313e27992",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\adoption_rule_result.json",
+      "sha256": "c394cc36b434b1c9fe45873dbc0ca567d0b3ed22b07d5af686694411cd64c178",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\coverage.json",
+      "sha256": "9bcc8ffc85e47f846355d226abf6803d5ce2b73709ca63f0a62575cf9b75a3d6",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\exact_matching_feasibility.json",
+      "sha256": "efffbbc7a9546c9a48e4ba7a65cd589ca600701fe89cd6b6e45f52d03fb4e1b0",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\excluded_days.json",
+      "sha256": "307e304b4ab7c4db3813abfdaf99e60b5265296e93c4d51631fec613f4b8a5c1",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "b887eace624cabb60d079b2ddce43c09812d1a16dfc9c7477c16d9276f14e292",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "9b890e54e6678abbd79960786077015cff34c87d6b61f5c8e6ef42b88dc347fa",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_aware_result.json",
+      "sha256": "5947d803ef2db076c3f269c319911aef8d1837fa5fd8992bf5c90c6adae8224e",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "0e7d511b9e037bf6e63271048cbb13df796ddf5973191ad917921a6854df3deb",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "9b890e54e6678abbd79960786077015cff34c87d6b61f5c8e6ef42b88dc347fa",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_calibrated_result.json",
+      "sha256": "6fd4d47f26b625db693933a1275fabfb8cd59dea08edbf138308984fbe5c1f5f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\observed_calendar.csv",
+      "sha256": "d9ea77c3e52f92f8ca539b43d57e4a09253389381f852f0953f869e6aeabcf70",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\ordinary_actual_days.csv",
+      "sha256": "5c5ede6e5312bf4ef811c9cc85999afc6677fef81b5afe247f2b064754b960b8",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\ordinary_ramp_events.json",
+      "sha256": "ef816fa937651a0205612f56d2723823ab01b42c3f329636a0492af1393ef69d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\ordinary_result.json",
+      "sha256": "c0cbd4d0908f4a478b36a494e95f6ffa15e3244b82c215b13d4313cfa5fe18dc",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\original_observed_scope_audit.json",
+      "sha256": "d9917be9ced34b4304d9ea9503a9f8bfc1da7553bfab2b03dc4023363d154ca0",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\adoption_rule_result.json",
+      "sha256": "33352f95cf01c527931c1f589536fee15486ec6290b61590c1eb2a683e758b2c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\coverage.json",
+      "sha256": "352714f7512ec02df169d6eaf083ad260e8b145e381d4cdd116949fd2a1c30ad",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\exact_matching_feasibility.json",
+      "sha256": "5830b608e2c3ae99607f5182fde446a5cb392c340fe55ca948f7dee6011eef69",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\excluded_days.json",
+      "sha256": "33911f56dc5a261c4bb19bda737be2cf8bfc148dd7e247042d1988e562a8213f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "7c88bbd16f7f99e96b954b91d410ce72bcf684230cf5b230d7e377fe4e28cadc",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "79ed164aba046de149602f7d39dd771f677b417cf04591ab21a21f9dce32f19c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_aware_result.json",
+      "sha256": "c675ad4b0346ad02224672b45e9b9b35f76f84090778df52d05529a2a4912a08",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "53ecb218453e953dc3e2359a62a761771a1b4ff8675b28ed986267f0d29a1534",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "79ed164aba046de149602f7d39dd771f677b417cf04591ab21a21f9dce32f19c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_calibrated_result.json",
+      "sha256": "0f151ba61296f8a385b3baed2c35d337a700f5b0d5f0f27ac3a28db104a1575d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\observed_calendar.csv",
+      "sha256": "a62e703145bc516275a810d16dd92c767a257acc10d60fcabd201bff2c4d82f1",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\ordinary_actual_days.csv",
+      "sha256": "052661352862647b3c34b162f400a74d7d25d59b976d8964d0a871ad74a91cd6",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\ordinary_ramp_events.json",
+      "sha256": "8e6146c43fcc5117605edb10670e49f7182151a17dc42d79315325f680261650",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\ordinary_result.json",
+      "sha256": "af59de753b6ef15c646f19873c2e0d36169235adee8bc6335a6b4a709ae5e431",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\original_observed_scope_audit.json",
+      "sha256": "53a7e040f5c17e5acf983e23932b91cfc9a1f023fcdd111a61898951c9bd716e",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\adoption_rule_result.json",
+      "sha256": "0dc5f3b527c55d6ba4a71ca343de5c005e0e9f6d2a1c667fae5527e7b0609128",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\coverage.json",
+      "sha256": "c9820c8779bef5010f0097aee691a2adc53d58892bbb7fea5707320f6f8d35e1",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\exact_matching_feasibility.json",
+      "sha256": "21f2566c5dec52d9a726d9550688f0d437817e23a8d53c32777157fbd2ae4193",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\excluded_days.json",
+      "sha256": "5dc99f03f2dde17b540fc145f51e7b40ae61c81573b03d27447cfa2de968bbe1",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "0c659991fbbf3b915cb62c5912b16a870c1fcf6dc7149bf7ee75ef4f5163357c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "2c6c712546b4f6bf2aa5efacfa09c03c826eefaa438abfdc5ce1c45d13ccf253",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_aware_result.json",
+      "sha256": "933539da6540b9250fef0e4e858142865439b2c9867d4fed86701a6d3decffec",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "1d71c0fd8c5ab8de0e6355c633eb636130140766968fc07268531c15bce3febd",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "2c6c712546b4f6bf2aa5efacfa09c03c826eefaa438abfdc5ce1c45d13ccf253",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_calibrated_result.json",
+      "sha256": "2b2d38e85433587e8bf922a20c68ff65fada02aed482452f7f2bc553d1844a8f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\observed_calendar.csv",
+      "sha256": "19e0516e982553723bca2575c849ef93fdff7219135ec41ca110c90994d398d2",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\ordinary_actual_days.csv",
+      "sha256": "4eff27f9bc2c3ab40f035ca8ffab19132e0ea0a63633b9a4aff4d116335c5c45",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\ordinary_ramp_events.json",
+      "sha256": "2c6c712546b4f6bf2aa5efacfa09c03c826eefaa438abfdc5ce1c45d13ccf253",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\ordinary_result.json",
+      "sha256": "7fe2924b88aaadca89ffb8357fc0daf3d445e0c5db7deb4348e33f273050e8b1",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\original_observed_scope_audit.json",
+      "sha256": "13f763ccb6bddbeb4a6c51a50f47f280a9edb604b75ff45c84992bbb37fe74d8",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\adoption_rule_result.json",
+      "sha256": "a83d2d173a744422b24c4c945eb86a7e07256c8152e40bb9d74c05848107f5e6",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\coverage.json",
+      "sha256": "c0e4c216c29d0dddc56507d5e2ecf3b434e63182223c43a1cc222b109df467fa",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\exact_matching_feasibility.json",
+      "sha256": "537479e2ed582cc850a77dd80b7013c684ee847497a7448b2e71b604ddb30f58",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\excluded_days.json",
+      "sha256": "71cfd1c596cf1f4d7afb9de2f709dd3c346b9d548a201c52ce6111847e2aee2c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "ca85b10f9b94fff52a7067efcb21c5d269ef950a5fae7909e82ccfead4a0886d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "7ca57cfdc3b9dca91c312e7fc201e1ab07f4d3925bd60f84335b461b6c08f26a",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_aware_result.json",
+      "sha256": "11185dbe750cc7e2b9627718dccce8416766c116ced37a9c4e5970a1ffc18774",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "81d7b753458f3d1ed0406f1eac8ee7d913d25e8f1c65c61f69b94b3bc59d6e58",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "7ca57cfdc3b9dca91c312e7fc201e1ab07f4d3925bd60f84335b461b6c08f26a",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_calibrated_result.json",
+      "sha256": "84bee41769b05f562d9aa902256e8fb52701866f6e597220318a502fde3e4fd2",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\observed_calendar.csv",
+      "sha256": "ca78d13df98dea9fecccbbf603ec20ec3f939cde56bb7dcb971f5e9f16bb2c04",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\ordinary_actual_days.csv",
+      "sha256": "8de397fdf5b204aaf31e6e66f110ac4c187a875a0da97f02755781a7bf991df5",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\ordinary_ramp_events.json",
+      "sha256": "0d4695ec7be8418cb518df2a57c53ede313baa778e1af5df732bc39a9c0653d0",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\ordinary_result.json",
+      "sha256": "eeee272c9161f07fe3d1858c1289303cbe88d4c05d256196982f1f8e52307429",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\original_observed_scope_audit.json",
+      "sha256": "6f5a624020e4ff2a4630fdf626a14d7d198d6868549fdd58e1fea3c0148026b7",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\adoption_rule_result.json",
+      "sha256": "e97309906c889f99a5f21fbba4c52979b2f228aa57ca2731bf2c4d33619c0467",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\coverage.json",
+      "sha256": "c24ab443ef74dc763a4fd91c2085c91bede017deda62fec45857755c2afd4b42",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\exact_matching_feasibility.json",
+      "sha256": "0c6515073f7617b5c2a3b02d88d56cb6bf95db5e095ddbdd667df586bec5d3f3",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\excluded_days.json",
+      "sha256": "2a29f2cf621745b2b4c89408a68aa924005edb041efffc8d6e8b7d77d2e46171",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "f6998e233fc22b670a65000a4a763729f4ee94d804d976e09c3ecdd61007e415",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "0bac2372ec020c8233e87e71e8ea8602683d7493e3784c9f41da937924e76079",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_aware_result.json",
+      "sha256": "abc0c481b97ad8a0582f765368eba0c9b399fbe62d64ebab2fcf80e5ce64fd47",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "d603ace27784ac11860b4a6bc0ad1313fcdbd29e1e98e117bfa92c215eff1687",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "0bac2372ec020c8233e87e71e8ea8602683d7493e3784c9f41da937924e76079",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_calibrated_result.json",
+      "sha256": "82a898bb3408c0b85e9779d552e94fa6b549760f126d8e4dbc54ca6c62fb76be",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\observed_calendar.csv",
+      "sha256": "a9084475f73c88cd57a62ba91f14cd31347851a484e41afee1ad004e0414b659",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\ordinary_actual_days.csv",
+      "sha256": "e49638e1e67f2202a3736ee086022f3b552ba92cdb370daaf79e06167677ce80",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\ordinary_ramp_events.json",
+      "sha256": "e1f6cb5c5410988ab75dd85b71c425ff1c1bce7f9f3b613ef17740133c76ff5d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\ordinary_result.json",
+      "sha256": "d9267cc77e238daf2472935ca92dbef44b5d6b0bee812aee5660219bf2ae8540",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\original_observed_scope_audit.json",
+      "sha256": "bfdaa277d8b32d577a5b68095833d8e980327f2712052172a719b16b3995f506",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\adoption_rule_result.json",
+      "sha256": "c0ea39687e4412631a84d86e3ade62e60fcd125b0bea7e8f87257ce1242226f4",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\coverage.json",
+      "sha256": "88dc8236d13fb936870afbded77f9b979d604bb5c5dcfe2c08e1c1b8de519662",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\exact_matching_feasibility.json",
+      "sha256": "10c50ef0287af599e6510fcb3e2fcf3a1eb29d47b2c0d22f6ad5401bea445f88",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\excluded_days.json",
+      "sha256": "b789958f648228f6e5ede2accc11829bb87e910e1c47504f7d98e5457e7c2c65",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "4c70ef3466027644adfde305b4850c92128e07ee451bc23486f271648b94897b",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "c696ad3bed243917f512181daa432cfcb3344c62a0bbb48ac3be92d321d1f6dd",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_aware_result.json",
+      "sha256": "b50975046362fa7e53184d177eda9340b71ba221fd330a8ffcb6accb1a80291d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "bc0e3148061f6ee9a601016104a9c17139ae6102ab2347ef4784201bc12a8854",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "c696ad3bed243917f512181daa432cfcb3344c62a0bbb48ac3be92d321d1f6dd",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_calibrated_result.json",
+      "sha256": "1c02a67a37f9c71659dfeeddc7a42fa32f4c5ad26c81c1418a4b0e3bf2cc38d1",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\observed_calendar.csv",
+      "sha256": "a50e8914e6ea69c254728fffe4c4ff4444ab954b4cc5c6cbf8b710e7d694cd06",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\ordinary_actual_days.csv",
+      "sha256": "f2bf397eb3e6c23935ef7c0b421338565bb334665fecb0f427ed953d3516f53d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\ordinary_ramp_events.json",
+      "sha256": "04d690c8ed89195fc74241f7021d2adad61846c0a87a6d269ec6e2072681395d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\ordinary_result.json",
+      "sha256": "d2db96e57e1428d181805c11353f9ddeeff799c10be6f427b4f0eab2f336d566",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\original_observed_scope_audit.json",
+      "sha256": "6485e757a12d4f4bd76625b1f0f577c48ce944425fc79f9042bd16a2d1d65942",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\adoption_rule_result.json",
+      "sha256": "498a3eb01133ea8ca25f3622e1bfc235daa1387d598abd17c575a65e4401d20b",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\coverage.json",
+      "sha256": "379fd8b9dd3869b4aa4c9efb78bb771df5b0a82cb1f30af5ce5a2422e6325434",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\exact_matching_feasibility.json",
+      "sha256": "2416bff638d7ef01db1ff3744586664f7419bf2c8c6bd0dab9e7013daa85055d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\excluded_days.json",
+      "sha256": "b8955e9e4f3613926d013f4666562a8781cf1ebcfed6a5c8913212f785ed3f8f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "a7caaaffaf83c55d69251abeca3dca242bf700533a6516a793107ef149948b7b",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "a0f071052fcaf0ee61e74792d9ae0730bc51e4b23b3ecd9ed705114efd6ff2d1",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_aware_result.json",
+      "sha256": "fffe4b96e5574a5435c58ac1a4a68925ada72a3f38e9b31e7d7c8c895f6ba49b",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "7fe5689d932ee42036b5f4ffcddb955caf476c0a8cbb42cceb5a853a14667f7d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "a0f071052fcaf0ee61e74792d9ae0730bc51e4b23b3ecd9ed705114efd6ff2d1",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_calibrated_result.json",
+      "sha256": "311af4be673ae9229b6eabffb6e6746386f6589be131612870e9cdb38013d0dc",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\observed_calendar.csv",
+      "sha256": "6cebe9763039456415615bd4e55ac37e83ed2537b2e4b2597558d1796d35c380",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\ordinary_actual_days.csv",
+      "sha256": "28fe739c975ed3712a9f0de3dab54939f3f52a34960431f5a89cbfbf2fd8720f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\ordinary_ramp_events.json",
+      "sha256": "f22e7b170856ff52f3b0355246c3c9ad5dda776c10ded7e11e8093bbec6ca9ac",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\ordinary_result.json",
+      "sha256": "773d129fb30bccd6356c3bc3b239d58e39a65b4542dca1e46bf9f9ec0f41255d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\original_observed_scope_audit.json",
+      "sha256": "ee4ef5ddbf9429be375d53b50ecb43321b59c1cfff59fb4abd237e56ae1bf6a4",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\coverage.json",
+      "sha256": "5b80386551af19c9556b093501838a2f287258498c38c575948da43063d2a404",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\environment.json",
+      "sha256": "606775cad8936170ca91d03f320916485d754d1863fd721467db016e3e0913d9",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\protocol.json",
+      "sha256": "361fda801a88743d2605ee7ed38a5f92aa85b238c7a23ebc4637dfd2bf799bf4",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\protocol_lock.json",
+      "sha256": "a203caca8c643de7b0fc9b5b1efee86878d317d6f9a0fcbb649d02faaa9eb7c0",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\results.json",
+      "sha256": "eaa90038b7ea1ec780d3f410a9c059cae52d63cb2c63a03ae0831aeb6405f7b6",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\selection.json",
+      "sha256": "930afcdb1d89d0bf5f62ccf5d303c8ae4fb4f1660e59d5bf859a29eb213485f8",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\version\\__pycache__\\representative_adoption.cpython-312.pyc",
+      "sha256": "85651deb4de834e587ed51a6431b5e35e3524d955bb0e4156cc13d31c28720ec",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\version\\__pycache__\\scenarios.cpython-312.pyc",
+      "sha256": "3dee418e4249adb270ae877c9659b3325a75fd21ec386a622efd5eeeefd537bf",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\version\\representative_adoption.py",
+      "sha256": "81f16ae1b7ac68e0203abb44c3064a1421037579159c3e36d8d4c38392608501",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm\\version\\scenarios.py",
+      "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\adoption_records.json",
+      "sha256": "fb0abd43af4c8b925265048c72e7b0c742c9d5c4312582154353eed67e3dff7f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\adoption_hard_result.json",
+      "sha256": "c239f2b85e9c11aa2fb994616ccfba1c08ff0f9c69137b5bff2c13e7d8b30a35",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\adoption_soft_result.json",
+      "sha256": "be4ca6e7b99fb6cde2967f46b985b605149db4e433ccb9c3827b807b3c3f3e67",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\coverage.json",
+      "sha256": "cb41a8e94f86bdcbb1d81b74feba746c730fc95e4c61f212c8cb5ebfef2416ef",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\excluded_days.json",
+      "sha256": "9c37996e2a251f6cc45f70c5947939b33196eff0da6d94ebfe6efdbe923ecf4c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "fbe0997f13647e8a44d35673015a9c7fceec7dc2741ac3340b854c263e6bc430",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "32cca5da1cce913c9f9d650bf074ca61ebbabc45ca0693cd8d4191e6ba34b700",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\extreme_aware_result.json",
+      "sha256": "f40f3637b4466cafd3cc7cfcf3222c0cff7338e1a04b9c0e902bc0c0cbdd3494",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "aaa8be0ebba894b76c0502c0aef148435a5d74fa1b99d918b098cdee032fe16d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "32cca5da1cce913c9f9d650bf074ca61ebbabc45ca0693cd8d4191e6ba34b700",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\extreme_calibrated_result.json",
+      "sha256": "b5a8ecb33f0326ae62b19919a5fc9fffefc2990acb2fe7cd61d8329638c174fb",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "3894035f8635c8b40a10cc1f9a47aed354965181b4f9569eb9fb48a951a4e133",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\hard_energy_minimum_W1_ramp_events.json",
+      "sha256": "32cca5da1cce913c9f9d650bf074ca61ebbabc45ca0693cd8d4191e6ba34b700",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\hard_energy_minimum_W1_result.json",
+      "sha256": "166274931353af0b8b0974568a1e8de1a9af7ec0418cc81a0e5f44abd5091490",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\hard_LP_diagnostics.json",
+      "sha256": "2f0b86fd6c764e854a3663498dd50fbdeefd5d5e8e33674e9f3bdb17cf03f0a9",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\observed_calendar.csv",
+      "sha256": "e9a315253b7642509c13d5b7540d141752179a13078f1695e94967fc5814293c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bobcat_education_Angela\\2017\\original_observed_scope_audit.json",
+      "sha256": "096020be395926a35751f6cb69772cd491d245fd1c2671aa170df207357f4050",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\adoption_hard_result.json",
+      "sha256": "2b158bdf929567847c445bb826879493c8b225d1e21a791c1cd651903e77cac2",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\adoption_soft_result.json",
+      "sha256": "2761728c6ceba4d0a7a5242a0a2d500d592c16990b9f1b1e5cd4099b9692b2c2",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\coverage.json",
+      "sha256": "c9082d27cb535b4e4a9a7ea0eb77c028a680f23a4280242459d9ddc828f04a43",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\excluded_days.json",
+      "sha256": "570e5376044aa0f3a2e0be8aa9931de0528a4b425a7c70c707dc624a30ef78bd",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "da8fc035608ae6d927c651ef549801dbf95a063f04d5d31feecd8bf152953f90",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "c70e506eddc6bd61b4da64624bdda2081875b27236e2df7f6c38e75fc56f3ebc",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\extreme_aware_result.json",
+      "sha256": "f69356831b286037f70be564a4343813ccb7c2c26cdf30e2b2910527149429a5",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "6fb7ce0ecca54923d797ee8a442e2a2af4648d5c3ef493784d4f68330f6d186f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "c70e506eddc6bd61b4da64624bdda2081875b27236e2df7f6c38e75fc56f3ebc",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\extreme_calibrated_result.json",
+      "sha256": "50bfac1dfad3fdd0b73644f91417353b286c292434eb268e11e740fc5897dec5",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "2c8016235501f55c1bad42338f5f3abb2b76797610eb2fb5e68888bf3cda1579",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\hard_energy_minimum_W1_ramp_events.json",
+      "sha256": "c70e506eddc6bd61b4da64624bdda2081875b27236e2df7f6c38e75fc56f3ebc",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\hard_energy_minimum_W1_result.json",
+      "sha256": "a31713da3e1712f149ec076eca9ad577b42f9a52b3e130493ca76ce46200ac9e",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\hard_LP_diagnostics.json",
+      "sha256": "07f56a6d4132594b1afe73f2d98c9daa047a0fd54c6bfab3334edd2c43fc7481",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\observed_calendar.csv",
+      "sha256": "2c651f4f4e48611610f8f185abd2779de8756047b76a0fe972772656c2fea703",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\chilledwater__Bull_assembly_Dorethea\\2017\\original_observed_scope_audit.json",
+      "sha256": "fea8a25e9fc18933df877065676ede9e5e0070566804effa5449e5f85b5091ab",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\adoption_hard_result.json",
+      "sha256": "0a568152f57246fe0ac6cfbf6b724f9ac8f98e9dfc8c202c90c2916e0bf55188",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\adoption_soft_result.json",
+      "sha256": "6c91fd13e16892cf7da0ddfbe101c117b9d3dd5c5b63f234c3042118dfc1d19c",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\coverage.json",
+      "sha256": "e45ee69cbf2bb72521baa00727ab2b7d405526fa12e6c3a02df655aa603dbe5b",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\excluded_days.json",
+      "sha256": "44ce01712b29ce581610b7e1a170069bf872565630a00c3abc41a6aebdda8ef4",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "0949d35acfe019d32656bdc4bc9942f8b12397830193a1827b72ad37a0753be4",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "79eda4e9838a89ccfa135fb18fb5693177dc7cc03cc2a2821cf54a485424cc5b",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\extreme_aware_result.json",
+      "sha256": "06ff234c6b92404dfa309a58c776e41e6d8b61fe11519d3a2a14333dd5cac1dc",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "b93df1ad9be5b86425f9e23b963fcd3e54c6707c4b3368ea28d877beef7ca593",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "79eda4e9838a89ccfa135fb18fb5693177dc7cc03cc2a2821cf54a485424cc5b",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\extreme_calibrated_result.json",
+      "sha256": "a090eb5a7f5b1ef99edfc8cb5e98a4f7582ea821227772e86ee11ddc837968a0",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "014363488d2f01957f861d8c165627bd935367a609e9df2066369a104b9b72fe",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\hard_energy_minimum_W1_ramp_events.json",
+      "sha256": "79eda4e9838a89ccfa135fb18fb5693177dc7cc03cc2a2821cf54a485424cc5b",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\hard_energy_minimum_W1_result.json",
+      "sha256": "66e706b05413c3555f965a103d7d45e171835736515b1b9396ddab9937f57d27",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\hard_LP_diagnostics.json",
+      "sha256": "4449c0f539bb1f3f8ff539d7dfe6270739d157907ee8d0a2e55809fbf71e75c0",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\observed_calendar.csv",
+      "sha256": "54516e8bee8a2c5c81c96f3acd3bee7cd387246111e454f7e4e1c82107ddebd4",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Bobcat_education_Alissa\\2017\\original_observed_scope_audit.json",
+      "sha256": "14ea1c1f0dcc2f7395f996f284092a3f50946eee7ef6a9aaac7cff6d1ea2772d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\adoption_hard_result.json",
+      "sha256": "f26bb6b836fdd4ae8abffc5ca4c4969f4827b760fb7897ccf78fdbf59f5c9849",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\adoption_soft_result.json",
+      "sha256": "3f0e74849d97a394117bf5d0511139ec999f36a14a5c01740126bae13af526ec",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\coverage.json",
+      "sha256": "6124e8b8512e0ce180d8e52ba876127b3c1adba62027755c42b7159081a0e4f5",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\excluded_days.json",
+      "sha256": "a8faaef2d32a248db0f76d5b6b515c9409d95dd9caa3ac11d360f2df14505f78",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "c207d4900507aad8623090965850fadbce94af296c1817fda4e9a42eecc7a97e",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "c6bd57a21ca73b2e7e04d79e28133719de7d47ed102d54cf63fa12025584a894",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\extreme_aware_result.json",
+      "sha256": "140029bd6c4ed166578119145284868d6128b267a7079f17718ed7da0cb21be8",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "2fc1906437f61f686d7782b6f9e04a5b3d3a233b81d0cba3ba501bc4c08da169",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "c6bd57a21ca73b2e7e04d79e28133719de7d47ed102d54cf63fa12025584a894",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\extreme_calibrated_result.json",
+      "sha256": "c3c338bb2f24869e9fb6ba61926c04920b9a82be150607810f28bff61380480e",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "f1ac05d35c88c20524786477e1de5d461a76c1b02c765b7382aff4094eca2f1f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\hard_energy_minimum_W1_ramp_events.json",
+      "sha256": "c6bd57a21ca73b2e7e04d79e28133719de7d47ed102d54cf63fa12025584a894",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\hard_energy_minimum_W1_result.json",
+      "sha256": "b9b9d13c44adfcc71970c6f3fa437bde71c8a7ddf17901e0d658ad989a41a82a",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\hard_LP_diagnostics.json",
+      "sha256": "21641b42488ca5e2ff517a67c3a71bc7ec13b2283a5a24dad50e7852af03d407",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\observed_calendar.csv",
+      "sha256": "4752c2fe2d0e4f5b2245f287255df7a12bdd21cf5dbdf0213bf1000671fcd951",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\hotwater__Eagle_assembly_Ian\\2017\\original_observed_scope_audit.json",
+      "sha256": "2e3598b6667b7ec3f3662c73d9dc724ebea732fe4fd243fc0bd560c7f504da14",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\adoption_hard_result.json",
+      "sha256": "5540420854d42a76d1b1e5c7fae751e6839a08f8db69d9a0d70cb8cb567befb6",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\adoption_soft_result.json",
+      "sha256": "580f7fd9d2f489c81a26289a1b8c080fcc4481eb6dd61f25a8c19b86db2944f7",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\coverage.json",
+      "sha256": "53ea85d9a90737539e0d9914ccfdacf6ddd98144ca38f5b32e97e411c7719c0a",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\excluded_days.json",
+      "sha256": "d44ea35862cf59a1dd95cc4a2416470a101e287d3ededba4b5ef0a82cc2e9436",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "edda6aeefadf8d43aacb884e7d3ec11b4485772395f47aa455a4587fa0fdd6a0",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "b1fb862fc44979b6f48e90ba662221d34eb90f86572eff76c115077e78daf6db",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\extreme_aware_result.json",
+      "sha256": "2ec80dc13b6e76d817c0ea4a150a40f508fed11b8fe136bec4ef9e4e4f54d777",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "a2d1eb55dbe4f2c89e76a9784cb22eb9e7e4511cfd0993afbe48e6e32596cbfb",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "b1fb862fc44979b6f48e90ba662221d34eb90f86572eff76c115077e78daf6db",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\extreme_calibrated_result.json",
+      "sha256": "38de2da1b9a2c7b2e887ff504ee39b147e5ae7e409908e45dd4eaa276e3e6eff",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "fead9bd2871e3faf0efd91dd6875a7946c1aa03f38f818629cd7042d8fd59772",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\hard_energy_minimum_W1_ramp_events.json",
+      "sha256": "b1fb862fc44979b6f48e90ba662221d34eb90f86572eff76c115077e78daf6db",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\hard_energy_minimum_W1_result.json",
+      "sha256": "a75cb024173abada2c0dc272471932e2e907e4ec835a50afbb42619cfcb63dd5",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\hard_LP_diagnostics.json",
+      "sha256": "04c7e07c43badbfbbbcf76aba0d92c3f201be85152fb64bd0264d6dd8e136099",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\observed_calendar.csv",
+      "sha256": "523e4cc47f56ece6b3ba90f155add1f5821f9e2ad82444b758db3da033273c06",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Bull_assembly_Brandon\\2017\\original_observed_scope_audit.json",
+      "sha256": "52074319f04157bd1177d9d4397b20ad7e636db8c860211d7cad87d19b500ea3",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\adoption_hard_result.json",
+      "sha256": "ff0204b2d3a807166ee22a24eb19f10633912edd7358d49d9626695d9fb2d555",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\adoption_soft_result.json",
+      "sha256": "67faad5ad7e25b6f2e0b7d42c2f42352d37885f914376704b53248c361938d9d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\coverage.json",
+      "sha256": "06791afd24b6dd6b8726552801aefbc4eecdb5bb6bb0e3ff76f47bef2a1253d3",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\excluded_days.json",
+      "sha256": "b789958f648228f6e5ede2accc11829bb87e910e1c47504f7d98e5457e7c2c65",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\extreme_aware_actual_days.csv",
+      "sha256": "3dcf350bcbb014aed11102980878a7b408dc0534701a076264c523f929e93e47",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\extreme_aware_ramp_events.json",
+      "sha256": "3c9ff5159a75122ccedda59df7c689ab4314abf39d0abd30aaf3d828e458d355",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\extreme_aware_result.json",
+      "sha256": "1db51fb24a4e7d03a545d0d9097d19a02ed20b61f56bfd88fc24f21c669b2a52",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\extreme_calibrated_actual_days.csv",
+      "sha256": "16c00047546148965d676477c0387f743790081ec082ca21bb3c35ae792d1afd",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\extreme_calibrated_ramp_events.json",
+      "sha256": "3c9ff5159a75122ccedda59df7c689ab4314abf39d0abd30aaf3d828e458d355",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\extreme_calibrated_result.json",
+      "sha256": "f27bf7faf45cac75410d5267583b8b8b0c716681ca8f46f5f3ecd9da9eb5999d",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "c5a46923b205a825a9bf4ad68a0a3be591f4edc347b5b266885068fc570f4e17",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\hard_energy_minimum_W1_ramp_events.json",
+      "sha256": "3c9ff5159a75122ccedda59df7c689ab4314abf39d0abd30aaf3d828e458d355",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\hard_energy_minimum_W1_result.json",
+      "sha256": "609e629834d9c6cf8c3393990adbf46e56abe15cf3dcb4653901f766753af7d3",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\hard_LP_diagnostics.json",
+      "sha256": "f2f00e37e0044be464b4e88656fc038adadbaefdb30463b301d6527ff29160d4",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\observed_calendar.csv",
+      "sha256": "991eaedd33655e546a8473b3ce18b4f700f6491d6698302126d650b5e823fcdd",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\cases\\steam__Cockatoo_assembly_Genoveva\\2017\\original_observed_scope_audit.json",
+      "sha256": "dca9a449a4a5d76768e5e0c51be9ecbf0aa090c494026bd3f1baa8168322ebbc",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\environment.json",
+      "sha256": "606775cad8936170ca91d03f320916485d754d1863fd721467db016e3e0913d9",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\protocol.json",
+      "sha256": "e64ce2ed48a069d875cd10d6092d76a507310681622b2467e339f3c5e7830a3a",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\protocol_lock.json",
+      "sha256": "65c80f389c374a5c2bffb2bd77804417e27e7fadca7a9b780bc68534612b9cc0",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\results.json",
+      "sha256": "f9c2006e32ff952b4d65d8780f4cf54b1be951cd7dc42b037b2067534cb2a757",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\selection.json",
+      "sha256": "001568b82186448184527bb6fa33330c12172cd5b937fab343cf6066ff6b39df",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\version\\__pycache__\\hard_weight_calibration.cpython-312.pyc",
+      "sha256": "f1de0e0ab1f060931f215a4d3543d7ef998b9bf770aa1a6d2ba8e37cc91847a5",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\version\\__pycache__\\representative_adoption.cpython-312.pyc",
+      "sha256": "767502add4b7ce032f65509f413bb2af4ef13ec84382cf036bde410fff19da7a",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\version\\__pycache__\\scenarios.cpython-312.pyc",
+      "sha256": "6943018156505f015a9f2d483b21a0b7fb6e738a32a02e382ba98854bc3617ed",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\version\\hard_weight_calibration.py",
+      "sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\version\\representative_adoption.py",
+      "sha256": "81f16ae1b7ac68e0203abb44c3064a1421037579159c3e36d8d4c38392608501",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\version\\scenarios.py",
+      "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "scope": "frozen_metering_experiment"
+    },
+    {
+      "path": "src\\heatplan\\spatial_adapter.py",
+      "sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "scripts\\build_shared_osm_candidates.py",
+      "sha256": "14052586b87c7e13d1b61249be6304ff2ce895058cf22426fc1fd3c86719fdcc",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "tests\\test_spatial_adapter.py",
+      "sha256": "b18c5e3b0a2822f714c8df3746a8c6838c87f857c15685cfec50d7e3a0f0510d",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\focused_tests.txt",
+      "sha256": "dde32bb01b871a3e08ee6e236e41377bdc0c4e1d86e38007b5f2a4938a708797",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\guyuan\\candidate_edges.csv",
+      "sha256": "9c564cc5e08da58843940da88e9ab4f7abec42ed77b93cee12a0909df2fdc124",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\guyuan\\candidate_edges.geojson",
+      "sha256": "8dec330e30f4612344ed0ee23bfc94721728a6bb01501b3d4b724638ceb999d2",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\guyuan\\candidate_network.json",
+      "sha256": "6c55ea5e849b8e782fe7ffda2940e97d770e413bb3e6d0a6bd6037e366764f08",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\guyuan\\candidate_rules.json",
+      "sha256": "11cfea92eab18175b8bfaa616ce2d5005e933c706b3178f046c56a549ac08c6b",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\guyuan\\failures.json",
+      "sha256": "8f6302b304c79df1fe9d81b56a9af10229aff1a44eb9405be43ce438fa6717ab",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\guyuan\\path_edge_incidence.csv",
+      "sha256": "c52d9b1392ed385d4b0b0c86b4b362592ce0df16cf01d634e411378d160b5d29",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\mechanism_diagnostic_entrypoints.md",
+      "sha256": "6f2b6b6f130066d246e512b558d4bd690c0237ab40845f88ee609ef34df50c66",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\README.md",
+      "sha256": "4470a56eee1992eceb05959c7fbb4844f35e4f4a565c6e0f4c96a930d96830fb",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\results.json",
+      "sha256": "7d00b0f4841dde6646186fbd4df7c10bf5ac1135363783106b8acbf2e2ec7d27",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\runs\\20261002T055317619515Z.json",
+      "sha256": "479d1e0603d745fe864674de893ec684941a93e9b2e82cd9bcf079b8b6205aba",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\runs\\20261002T055659465884Z.json",
+      "sha256": "1bbfce7c53720ed7c01dc97c49c11a3cb79b7c074e0b96b4c9807f40d1c1970b",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\runs\\20261002T055939740712Z.json",
+      "sha256": "23be4db8306a57dbd0e6dc981469f3b482864d56e8a5df595abdfd0ff5965cf8",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\runs\\20261002T060054388575Z.json",
+      "sha256": "e8110eea6e07f74f82c8f9637684d89d21bd1295e16b22da621e8349e406b113",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\runs\\20261002T060547600086Z.json",
+      "sha256": "b43fcacad5e5a083ec19d9566997a4c32949f779539c180e9176ff86c81f79d8",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\runs\\focused_tests_before_identity_check_98.txt",
+      "sha256": "63fd334139f1dd43e609a855ad36fb3bc9cd4988333858455eb71363f915d7fb",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\urumqi\\candidate_edges.csv",
+      "sha256": "942775c0e98cb53bc7828aeabaca1ca331413dde027b986adf243b48940cb1d9",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\urumqi\\candidate_edges.geojson",
+      "sha256": "529ac840e11038b7b3d5b983b9a1f5b1a19c53879eb79e15b5dedc2b843a6f9b",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\urumqi\\candidate_network.json",
+      "sha256": "da5f97e3ee1a98eb67a7f043502a329994fd2b96df36ca3e75450dc1640fae27",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\urumqi\\candidate_rules.json",
+      "sha256": "089310764a1bb72e9eb5be792071bd6d0e28611bc25045d23c8c405b3263b459",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\urumqi\\failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\urumqi\\path_edge_incidence.csv",
+      "sha256": "f195751ee82e50308a1c6af8c456a7f988c20606ec97bc4fd5d7ffdd5f902b28",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\verification.json",
+      "sha256": "f1437c54c45cdb4cbcd7f1e32008bea77a144b8e62e89e20bead62b9112b2737",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\wuhan\\candidate_edges.csv",
+      "sha256": "f8f1e1108bb5705c47e525b427cd41b65774b6dcfffdefdab2b72c2540b9b51a",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\wuhan\\candidate_edges.geojson",
+      "sha256": "c23351a26424ef474228c2be38e8cecd04030393c06b6fb20bb80f1928a134ea",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\wuhan\\candidate_network.json",
+      "sha256": "cb30cf322df40738ca48599fd608401ff07b836061e6ec774c13a0a079994b82",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\wuhan\\candidate_rules.json",
+      "sha256": "a78c00093991fdea6b5c10374b3a5867f0b101032b35a44005f9b6240cfa2d1b",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\wuhan\\failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\wuhan\\path_edge_incidence.csv",
+      "sha256": "3556b4a69e3ba2256a61ea75e03d5aeede6508b5e975a51d630a561303cd1304",
+      "scope": "spatial_reference"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\comparison.json",
+      "sha256": "84bb3ff0dafeb44fe8e0b50736674989589bf7887a5861bb3ebaf8456066e746",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\frontier_points.png",
+      "sha256": "1096d579a4df46298ea5efea6d7ecf33b09aa7ab252572292372e41c9af69d0c",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\frozen_code\\compare_reference_frontier.py",
+      "sha256": "524f6b3868257a89b4dfc581dd06a58f27213f09cd80bccfee994cb611a09f9d",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\point_ledgers.csv",
+      "sha256": "afbdfb45778ebb286fa07d4e6d15e6fe76a014ce6ddb08ead7680d0360087e7c",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\point_ledgers.json",
+      "sha256": "1ff781dc79a25edc922564f78083b17267b2859ff1ade00add4ccbf785cdb90e",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\protocol.json",
+      "sha256": "0a72d4099b469601a5efaf71f0e15d0eddc6454a5c26f7bf19226b0895ef67df",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\protocol.lock.json",
+      "sha256": "cc873cbd3f0ac6a34050752f72606a1ebf6f3a3395f32a7258b728c67d172660",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\README.md",
+      "sha256": "2c0dcc6a95801d2c339dbb6e059b55f62babcdf7e59a0066fbffe96b650833bc",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\reused_point_ledgers.json",
+      "sha256": "536b88afd369b7ee4f96b486ffa10b9afe21481307ccec3e983564c411963949",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_25\\audit.json",
+      "sha256": "a95fe442ca832298996c62a7be1f0b2dc56dabf7e947faa151b35748ed7b9dba",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_25\\building_trajectory.csv",
+      "sha256": "486f37a2c8df74ebd18e91930792098ffd78eebb24adbdd0580f683353ae97fe",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_25\\dispatch.csv",
+      "sha256": "ed56cba468b6d6a20e15ca79c49207513ea0c3caaf6473fedc381f7d8a807b28",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_25\\effective_config.yaml",
+      "sha256": "e3144823fe5b9414d187478cffeb3a7428bbf056bf5906709d8f93f553b0dd28",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_25\\independent_building_audit.json",
+      "sha256": "492e009d984f8f6cdab0a0597ba3f66129f649cc364f4c0194e8ff410bfc6061",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_25\\input_identity.json",
+      "sha256": "19ef0700cfa849789685775b3adb20a1665c5ce701d0a985c34596d5847720cf",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_25\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_25\\summary.json",
+      "sha256": "0b0cd7db8c6583071a25b05611c71005fba8880fa359b9a21e21639dfb661d5b",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_5\\audit.json",
+      "sha256": "fb68f1c9a967e58b81a932c842912bb8ecc3213fc742f54d8d3d392bae4b19d0",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_5\\building_trajectory.csv",
+      "sha256": "147f57803d57f1fbd848d26cf724ef328a8c61f51f6c39df0b28d5edbb8f2234",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_5\\dispatch.csv",
+      "sha256": "55d82b0f0df5d59471ba25eabb3e5c1a8062c3cc23246029edfbb7236853af2c",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_5\\effective_config.yaml",
+      "sha256": "b83e6de1f7682c43d3b557eda233b02de133893cb6df278aea6bbeb416ecb87c",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_5\\independent_building_audit.json",
+      "sha256": "3463d3fa0cf603aeff60b54f05ef7cf0234b9ac58fe4573cc8736faa8be437c5",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_5\\input_identity.json",
+      "sha256": "2bd6eb80896ccb35fb5427a585b77d7d1fafd6fda4142f13f9f277f5173f3694",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_5\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_5\\summary.json",
+      "sha256": "f1c3a532c3d2245c97b0f57f7019dcddf819aed0f2272a4600d3e5b0f3df273b",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_75\\audit.json",
+      "sha256": "1d2649a595bed36f495f0661c0114664220f706da39745b0404b15b574ec59ea",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_75\\building_trajectory.csv",
+      "sha256": "a462c4c11d6adde7fcf7224f6fe195ae1a2b46edb990424528d38fc51704a513",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_75\\dispatch.csv",
+      "sha256": "a8315b020edbdfbd26fa2e846aa1e32a5a4960b4bce749aa5f63ff3f5ac1fab7",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_75\\effective_config.yaml",
+      "sha256": "87a037cb506badf3c64dade975716ee61debb6ac39a9a428b74cfd3471498c47",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_75\\independent_building_audit.json",
+      "sha256": "b12aa30c2869ed1b134362b24823207b5853e83866329ffbb5e5d6c7687c3481",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_75\\input_identity.json",
+      "sha256": "33615e2736cb7878db3bfe5b31006a6865c07d02897ab982e517d46c4e4c2219",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_75\\investments.csv",
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\weighted_points\\lambda_0_75\\summary.json",
+      "sha256": "5c3216d3d149c64d83c0d3b96a893a52f0a5f9ca15551b78d23a0a42cc59d448",
+      "scope": "weighted_frontier_comparison"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\manifest.json",
+      "sha256": "cf583a204ab4094cf9f53d92e3ecdd409daf413f17a5aadefd6f783335a7289b",
+      "scope": "frontier_supplement_parent"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\RESULTS.md",
+      "sha256": "53a2f934ae743b84fa448ba469c154dad28e4d97e743b132252fdd7d5f0489ab",
+      "scope": "frontier_supplement"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\frontier_points_readable.png",
+      "sha256": "14fc054b09b8a032dd5a710d088f3e74f20b99b57ca3f37c41dd17f055cccd06",
+      "scope": "frontier_supplement"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\frontier_points_readable.svg",
+      "sha256": "5326593764f41734b3f755e5a8fb16b720d201c4b49e22e0848359dac93dedaf",
+      "scope": "frontier_supplement"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\independent_verification.json",
+      "sha256": "293f322e9ab1eb2d0c5a4473bb815a6b3780be9e13a7af0745b742b6f5e5e223",
+      "scope": "frontier_supplement"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\self_check.json",
+      "sha256": "b9f252c1840becb4072df9fe19742b0404e4b2cdae9f3085f662c6cc11180e0d",
+      "scope": "frontier_supplement"
+    },
+    {
+      "path": "docs\\implementation_20261002\\algorithm_hard_weights\\results.json",
+      "sha256": "f9c2006e32ff952b4d65d8780f4cf54b1be951cd7dc42b037b2067534cb2a757",
+      "scope": "figure_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\guyuan\\candidate_network.json",
+      "sha256": "6c55ea5e849b8e782fe7ffda2940e97d770e413bb3e6d0a6bd6037e366764f08",
+      "scope": "figure_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\urumqi\\candidate_network.json",
+      "sha256": "da5f97e3ee1a98eb67a7f043502a329994fd2b96df36ca3e75450dc1640fae27",
+      "scope": "figure_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\spatial\\wuhan\\candidate_network.json",
+      "sha256": "cb30cf322df40738ca48599fd608401ff07b836061e6ec774c13a0a079994b82",
+      "scope": "figure_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\endpoints.json",
+      "sha256": "b5e3acb0f42b06c9f0537ce8223ce550d02b263cd626627e8efbca251ddbccc1",
+      "scope": "figure_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\all_epsilon_samples.json",
+      "sha256": "7b1483ee4facf479b3968b65d425d3970c3d9f36b382c745c64ffeccde72c982",
+      "scope": "figure_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\cost_endpoint\\building_trajectory.csv",
+      "sha256": "34ac08dc05f8de23952683c58f90456cc8a0eaf4b20d9a42530b7d8c24950b67",
+      "scope": "figure_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\reference_experiments_tou\\rc\\emission_endpoint\\building_trajectory.csv",
+      "sha256": "910f6e1dc07b624bb5a0dc5c512d5422ee3c8632e7b9393fb3f16257a94e369d",
+      "scope": "figure_input"
+    },
+    {
+      "path": "docs\\implementation_20261002\\frontier_comparison\\point_ledgers.json",
+      "sha256": "1ff781dc79a25edc922564f78083b17267b2859ff1ade00add4ccbf785cdb90e",
+      "scope": "figure_input"
+    }
+  ],
+  "current_core_code_sha256": {
+    "src\\heatplan\\__init__.py": "c173069be5c055c4ec25a44b62a7fafa47dad5c761c32e910a8f0253734e0832",
+    "src\\heatplan\\accounting.py": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+    "src\\heatplan\\annual_preflight_batch_cli.py": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e",
+    "src\\heatplan\\annual_replay_batch_cli.py": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20",
+    "src\\heatplan\\annual_replay_certify_cli.py": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8",
+    "src\\heatplan\\annual_replay_cli.py": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7",
+    "src\\heatplan\\btes.py": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687",
+    "src\\heatplan\\building_audit.py": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+    "src\\heatplan\\building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src\\heatplan\\chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+    "src\\heatplan\\chronology_cli.py": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+    "src\\heatplan\\cli.py": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35",
+    "src\\heatplan\\competition_runner.py": "88d6f960cbce00102c75a9ea88ae019007f658e156f6ba02d5b98b8275692772",
+    "src\\heatplan\\experiment_cli.py": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b",
+    "src\\heatplan\\experiments.py": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+    "src\\heatplan\\feasibility.py": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a",
+    "src\\heatplan\\finance.py": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8",
+    "src\\heatplan\\hard_weight_calibration.py": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+    "src\\heatplan\\heating_season.py": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+    "src\\heatplan\\heating_season_cli.py": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2",
+    "src\\heatplan\\hydraulics.py": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd",
+    "src\\heatplan\\io.py": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+    "src\\heatplan\\linear.py": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+    "src\\heatplan\\model.py": "31939e4ea2c577558f1b616d31b3206c0b354cc6ac56ed175ec0198860bce950",
+    "src\\heatplan\\mpc.py": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31",
+    "src\\heatplan\\multistage.py": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636",
+    "src\\heatplan\\multistage_cli.py": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3",
+    "src\\heatplan\\multiyear.py": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106",
+    "src\\heatplan\\multiyear_readiness_cli.py": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2",
+    "src\\heatplan\\multiyear_replay_cli.py": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1",
+    "src\\heatplan\\operations_cli.py": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85",
+    "src\\heatplan\\osm_reference.py": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+    "src\\heatplan\\physical_extensions.py": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+    "src\\heatplan\\policy_alignment.py": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+    "src\\heatplan\\policy_alignment_cli.py": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6",
+    "src\\heatplan\\policy_cli.py": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf",
+    "src\\heatplan\\provenance.py": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2",
+    "src\\heatplan\\reporting.py": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c",
+    "src\\heatplan\\representative.py": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+    "src\\heatplan\\representative_adoption.py": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+    "src\\heatplan\\risk_scan_cli.py": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21",
+    "src\\heatplan\\scenario_cli.py": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385",
+    "src\\heatplan\\scenarios.py": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+    "src\\heatplan\\spatial_adapter.py": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+    "src\\heatplan\\spatial_quality.py": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347",
+    "src\\heatplan\\unified_cli.py": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+    "src\\heatplan\\validation.py": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9"
+  },
+  "delivery_document_sha256": {
+    "README.md": "a06812ce68dc36be0ed9272f6ddb04c64e21ba065c7f4eb4d10b66c67e680db7",
+    "physical_extensions.md": "610e72426ca2d081220aa0257d84ce8244dd484447aafbe9bf03eececd073686",
+    "REPRODUCE.md": "8dad35ffbf938f4c9ca30b2ac43c6d453c80f6c5a751b20537ec0a64c09b014a"
+  },
+  "regression": {
+    "pytest_cases_passed": 842,
+    "subtests_passed": 26,
+    "junit_inclusive_tests": 868,
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "warnings": "two expected legacy empty-cluster regression warnings",
+    "xml_sha256": "772830e4781699f39d405b4f92f583b675ee3c699b8dec5553bcde61f6e136b6"
+  },
+  "scope_limits": [
+    "public prototype, not observed Chinese city building",
+    "statistical compression, not chronological planning validation",
+    "OSM geometry, not an admitted actual heating network",
+    "operating energy charge, not full engineering life-cycle economics"
+  ],
+  "github_uploaded_by_this_batch": false,
+  "paper_or_presentation_created": false,
+  "audit_script_sha256": "cc49ee26f22ec3894fea6e62898789328302a7a5eddec183595ff66227e31d0d"
+}

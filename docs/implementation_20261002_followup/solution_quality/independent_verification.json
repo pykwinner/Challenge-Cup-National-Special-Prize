@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "scope": "independent one-zone ideal-source chronology, RC, service, power, electricity bill and emissions audit",
+  "empirical_validation": false,
+  "whole_engineering_economics": false,
+  "cases_checked": 3,
+  "records": [
+    {
+      "experiment": "new_epoch_examples_final/emission_endpoint",
+      "hours": 2880,
+      "heat_kwh": 3043.010107379664,
+      "cooling_kwh": 0.0,
+      "electricity_kwh": 3043.010107379664,
+      "reference_energy_charge_yuan": 2305.8219444153565,
+      "maximum_ideal_source_electric_import_kw": 2.391855,
+      "reference_average_factor_co2_kg": 1230.5932874243363,
+      "capacity_max_excess_kw": 0.0,
+      "numerical_audit_passed": true,
+      "rc_max_residual_c": 7.105427357601002e-15,
+      "max_temperature_c": 26.02518687793716,
+      "min_temperature_c": 20.0,
+      "outside_comfort_degree_hours": 0.0
+    },
+    {
+      "experiment": "new_epoch_examples_final/existing_assets_cost",
+      "hours": 2880,
+      "heat_kwh": 3176.9210947874917,
+      "cooling_kwh": 0.0,
+      "electricity_kwh": 3176.9210947874917,
+      "reference_energy_charge_yuan": 2265.428715014252,
+      "maximum_ideal_source_electric_import_kw": 6.348812042875044,
+      "reference_average_factor_co2_kg": 1284.7468907320613,
+      "capacity_max_excess_kw": 0.0,
+      "numerical_audit_passed": true,
+      "rc_max_residual_c": 1.4210854715202004e-14,
+      "max_temperature_c": 27.000000000000004,
+      "min_temperature_c": 20.0,
+      "outside_comfort_degree_hours": 1.0658141036401503e-14
+    },
+    {
+      "experiment": "new_epoch_examples_final/fixed_plan_replay",
+      "hours": 2880,
+      "heat_kwh": 3176.9210947874917,
+      "cooling_kwh": 0.0,
+      "electricity_kwh": 3176.9210947874917,
+      "reference_energy_charge_yuan": 2265.428715014252,
+      "maximum_ideal_source_electric_import_kw": 6.348812042875044,
+      "reference_average_factor_co2_kg": 1284.7468907320613,
+      "capacity_max_excess_kw": 0.0,
+      "numerical_audit_passed": true,
+      "rc_max_residual_c": 1.4210854715202004e-14,
+      "max_temperature_c": 27.000000000000004,
+      "min_temperature_c": 20.0,
+      "outside_comfort_degree_hours": 1.0658141036401503e-14
+    }
+  ],
+  "verifier_sha256": "5ad49ed143d0b44f57b7f99b5ae3372edc177752d66df4e45551c2cfa1fdc319",
+  "timeseries": "data\\derived\\evidence_case_20261002\\wuhan_2024_2025_hourly_tou.csv",
+  "timeseries_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+  "reference_import_screen_upper_kw": null,
+  "actual_grid_connection_verified": false
+}

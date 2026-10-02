@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "date_local": "2026-10-02",
+  "phase": "core_review_complete_parallel_artifact_review_pending",
+  "scope": "Independent read-only review; synthetic analytical fixtures are not empirical benchmark data",
+  "reviewed_source_sha256": {
+    "src/heatplan/scenarios.py": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+    "src/heatplan/representative.py": "720adc5e96c6198787111b9333cdd2e25ad6b27b01f70c3ed2988e05fd0d3ade",
+    "src/heatplan/chronology.py": "5c7a883c757e38522e488b14d102fcc298f568ceb55f67c847a0773c7272186d",
+    "src/heatplan/chronology_cli.py": "db878875c926ae5f5ea961275f6bd8bee67fe0e007d5f9eeb2705fdfE4fddb09",
+    "src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src/heatplan/model.py": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5"
+  },
+  "freeze_assessment": {
+    "meter_only_scenarios_snapshot_benchmark": "May proceed with immutable reviewed source and source hash; no open selection-blocking issue established by current fixtures",
+    "rc_enabled_multiyear_path": "Blocked by IR-001",
+    "legacy_coverage_metrics": "IR-002 affects reported observed ramp; do not reuse blindly for external metrics",
+    "legacy_chronology_cli": "IR-003 requires step gate before using this entry point",
+    "full_model_or_reliability_certification": "Not assessed or authorized by this independent review"
+  },
+  "issues": [
+    {
+      "id": "IR-001", "severity": "P1", "status": "open", "kind": "code_interface_defect",
+      "title": "Prefixed unique time labels break valid physical UTC RC input",
+      "scope": "RC-enabled multiyear builder and representative-frame model construction",
+      "code": ["src/heatplan/representative.py:194-201", "src/heatplan/scenarios.py:341-342", "src/heatplan/building_thermal.py:211"],
+      "evidence": "support/chronology_boundary_review/fixture_results.json#/rc_builder_interface",
+      "observed": "Original 48h UTC RC input validates; builder raises building time must be timezone-aware after year:: prefix",
+      "recommended_fix": "Keep physical time separate from unique row labels; preserve source-year and continuous-trajectory boundary identity without weakening RC validation",
+      "verification": ["Single UTC year builds", "Two nonadjacent UTC years remain distinct groups", "Representative RC frame builds with correct 1h internal spacing", "No engineering solve needed"]
+    },
+    {
+      "id": "IR-002", "severity": "P2", "status": "open", "kind": "metric_semantics_defect",
+      "title": "Coverage ramp helper connects nonadjacent years or gaps",
+      "scope": "representative_period_coverage_audit; external adapter should use its independently specified edge mask",
+      "code": ["src/heatplan/chronology.py:667-685", "src/heatplan/chronology.py:785-786"],
+      "evidence": "support/chronology_boundary_review/fixture_results.json#/cross_year_ramp",
+      "observed": {"legacy_coverage_max_ramp": 100.0, "observed_contiguous_max_ramp": 0.0},
+      "recommended_fix": "Share observed physical-edge semantics using all existing boundary IDs and genuine consecutive time; report artificial model-cycle edges separately",
+      "verification": ["True midnight edge", "Missing hour/day", "Distinct weather years", "Scenario/boundary transitions", "Interleaved groups", "Integer time plus timestamp"]
+    },
+    {
+      "id": "IR-003", "severity": "P2", "status": "open", "kind": "entrypoint_validation_defect",
+      "title": "Legacy chronology CLI does not match observed time step to configured dt",
+      "scope": "Legacy CLI only; annual_replay_preflight already rejects incompatible step",
+      "code": ["src/heatplan/chronology_cli.py:37-43", "src/heatplan/chronology.py:1439-1447"],
+      "evidence": "support/chronology_boundary_review/fixture_results.json#/uniform_2h_helper_accepted",
+      "observed": "Uniform 2h observations accepted by preparation while dt=1 quality gate rejects them",
+      "recommended_fix": "Pass configured expected_step_hours into preparation or invoke chronology quality gate from CLI",
+      "verification": ["1h/dt1 accepts", "2h/dt1 rejects", "2h/dt2 accepts", "Duplicate and missing times reject"]
+    },
+    {
+      "id": "IR-004", "severity": "P2", "status": "enhancement_nonblocking", "kind": "adoption_diagnostic",
+      "title": "Soft optimizer success is not an energy-accuracy gate",
+      "code": ["src/heatplan/scenarios.py:366-558"],
+      "evidence": "support/selection_and_weights/recomputation.json#/infeasible_energy_match",
+      "observed": "Feasible constrained optimizer result has 0 calendar residual and +100% energy bias on both columns; target equality is analytically impossible",
+      "recommended_fix": "Preserve honest soft objective and add exact-match feasibility/residual diagnostics and predeclared adoption thresholds if candidate weights are used",
+      "verification": ["Analytically infeasible two-column case", "Feasible case with nonzero regularization retains small residual", "Zero-energy targets", "Extreme lower-bound saturation"],
+      "current_protection": "energy_matching is explicitly soft and caveat requires further validation before adoption"
+    }
+  ],
+  "closed_or_clarified": [
+    {"id": "IR-C01", "status": "verified_fixed", "description": "Cross-midnight maximum-ramp anchors retain both incident original days", "evidence": "support/selection_and_weights/recomputation.json#/midnight_ramp"},
+    {"id": "IR-C02", "status": "verified_fixed", "description": "Integer time plus genuine timestamp has 47 correct edges in 48h", "evidence": "support/chronology_boundary_review/fixture_results.json#/integer_time_with_real_timestamp"},
+    {"id": "IR-C03", "status": "verified_fixed", "description": "Within-block missing hour rejects and repeated identical profiles cap effective clusters", "evidence": "support/selection_and_weights/recomputation.json"},
+    {"id": "IR-C04", "status": "clarified", "description": "Multiyear API accepts weather-year 24h blocks and now states partial scope; complete-year claim still requires separate preflight"},
+    {"id": "IR-C05", "status": "clarified", "description": "Explicit invalid source_time correctly rejects; this is not the legacy integer time API, whose builder no longer fabricates source_time"},
+    {"id": "IR-C06", "status": "clarified", "description": "Nearest-centroid sample is fixed-cluster squared-L2 medoid; not an optimized k-medoids partition"}
+  ],
+  "known_model_limits_not_current_bugs": [
+    "Independent representative-day cyclic states do not transfer seasonal energy",
+    "Retaining original midnight endpoints does not add cross-day operational constraints",
+    "Artificial model wrap ramps must be distinguished from observed chronological ramps",
+    "No Kotzur inter/intra seasonal decomposition or operational-feedback extreme iteration established"
+  ],
+  "actual_verification": [
+    "Ran recompute_selection_and_weights.py against current source with before/after hash guard",
+    "Existing boundary reviewer ran recompute_boundaries.py against current source with before/after hash guard; only model initialization, no build/solve",
+    "Read original primary papers and their equations",
+    "Focused 28 tests passed is main-executor report, not independently rerun"
+  ],
+  "excluded": [{"item": "Engineering MILP and full-year model replay", "reason": "Outside authorized review scope"}, {"item": "New model fitting", "reason": "Not needed for analytical interface and metric checks"}, {"item": "GitHub upload", "reason": "Not requested"}],
+  "parallel_artifacts": {"external_benchmark": "protocol_read_results_pending", "spatial_reference": "protocol_read_results_pending"}
+}

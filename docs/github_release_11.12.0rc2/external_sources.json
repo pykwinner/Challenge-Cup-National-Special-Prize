@@ -1,0 +1,252 @@
+{
+  "version": "11.12.0rc2",
+  "status": "candidate",
+  "sources": [
+    {
+      "group": "bdg2",
+      "path": "data/external/bdg2/metadata.csv",
+      "bytes": 272024,
+      "sha256": "992d0b29f24f96ad4332bc4dbb534b7bdd7dd2689aad093f94e93068ecddca02",
+      "urls": [
+        "https://media.githubusercontent.com/media/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/metadata/metadata.csv",
+        "https://raw.githubusercontent.com/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/metadata/metadata.csv"
+      ],
+      "license_url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/LICENSE",
+      "fixed_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "source_scope": "Overseas public metering benchmark, not China field observations"
+    },
+    {
+      "group": "bdg2",
+      "path": "data/external/bdg2/chilledwater_cleaned.csv",
+      "bytes": 77005463,
+      "sha256": "8211aaf210379af50cbf7af87579d12414c3500d3e3f4dea725761c93a172bcd",
+      "urls": [
+        "https://media.githubusercontent.com/media/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/meters/cleaned/chilledwater_cleaned.csv",
+        "https://raw.githubusercontent.com/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/meters/cleaned/chilledwater_cleaned.csv"
+      ],
+      "license_url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/LICENSE",
+      "fixed_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "source_scope": "Overseas public metering benchmark, not China field observations"
+    },
+    {
+      "group": "bdg2",
+      "path": "data/external/bdg2/hotwater_cleaned.csv",
+      "bytes": 24362948,
+      "sha256": "9714f1e803c88f7efe294480e8a32c61317e84edc65ad55ea7e9fc3282e80fce",
+      "urls": [
+        "https://media.githubusercontent.com/media/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/meters/cleaned/hotwater_cleaned.csv",
+        "https://raw.githubusercontent.com/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/meters/cleaned/hotwater_cleaned.csv"
+      ],
+      "license_url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/LICENSE",
+      "fixed_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "source_scope": "Overseas public metering benchmark, not China field observations"
+    },
+    {
+      "group": "bdg2",
+      "path": "data/external/bdg2/steam_cleaned.csv",
+      "bytes": 45422530,
+      "sha256": "ea5956c49ed1d6cc1b611a752b5a9dc3bcd4d45ddcd674e53b3c41661a6d3b9b",
+      "urls": [
+        "https://media.githubusercontent.com/media/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/meters/cleaned/steam_cleaned.csv",
+        "https://raw.githubusercontent.com/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/meters/cleaned/steam_cleaned.csv"
+      ],
+      "license_url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/LICENSE",
+      "fixed_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "source_scope": "Overseas public metering benchmark, not China field observations"
+    },
+    {
+      "group": "bdg2",
+      "path": "data/external/bdg2/weather.csv",
+      "bytes": 19457782,
+      "sha256": "a8189f1c6acdf3b9933a9e6354b8e7c1278cd56a7075929623a17565d44f04bd",
+      "urls": [
+        "https://media.githubusercontent.com/media/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/weather/weather.csv",
+        "https://raw.githubusercontent.com/buds-lab/building-data-genome-project-2/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/data/weather/weather.csv"
+      ],
+      "license_url": "https://github.com/buds-lab/building-data-genome-project-2/blob/9b97ccbe90096aff42ed4fd6493bf7ae692d7118/LICENSE",
+      "fixed_commit": "9b97ccbe90096aff42ed4fd6493bf7ae692d7118",
+      "source_scope": "Overseas public metering benchmark, not China field observations"
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/evidence/bestest_6231.pdf",
+      "bytes": 14125344,
+      "sha256": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+      "urls": [
+        "https://www.iea-ebc.org/Data/publications/EBC_Annex_21_BESTEST.pdf"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "scripts/prepare_evidence_case_20261002.py --verify-only",
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_base_experiments.py",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new base or TOU run"
+      ]
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf",
+      "bytes": 121854,
+      "sha256": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+      "urls": [
+        "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/W020251231726284332528.pdf"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "scripts/prepare_evidence_case_20261002.py --verify-only",
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_base_experiments.py",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new base or TOU run"
+      ]
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf",
+      "bytes": 839889,
+      "sha256": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+      "urls": [
+        "https://fgw.hubei.gov.cn/fbjd/zc/gfwj/gf/202110/P020211025720835003479.pdf"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "scripts/prepare_evidence_case_20261002.py --verify-only",
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_base_experiments.py",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new base or TOU run"
+      ]
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html",
+      "bytes": 107762,
+      "sha256": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d",
+      "urls": [
+        "https://www.wuhan.gov.cn/sy/whyw/202411/t20241117_2485509.shtml"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "scripts/prepare_evidence_case_20261002.py --verify-only",
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_base_experiments.py",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new base or TOU run"
+      ]
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json",
+      "bytes": 335605,
+      "sha256": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+      "urls": [
+        "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&latitude=30.5928&longitude=114.3055&start=20241009&end=20250416&format=JSON&time-standard=UTC"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "scripts/prepare_evidence_case_20261002.py --verify-only",
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_base_experiments.py",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new base or TOU run"
+      ]
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_11.pdf",
+      "bytes": 684135,
+      "sha256": "9fa81bc3be47c1917fbd0e0f6cac1bf1dfb5edc47559f155b9b82e97611f8b33",
+      "urls": [
+        "http://www.yingcheng.gov.cn/u/cms/yingcheng/202410/29154032ntk8.pdf"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new TOU run"
+      ]
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_12.pdf",
+      "bytes": 232689,
+      "sha256": "74161836e189120f1f86c33f38010fc01a4e6e7e3706dfc55b07a6bf5a48163a",
+      "urls": [
+        "http://www.yingcheng.gov.cn/u/cms/yingcheng/202412/04105911f9b9.pdf"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new TOU run"
+      ]
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2025_months.pdf",
+      "bytes": 23874599,
+      "sha256": "efccc95604a44d0871a82d2315e3b30ff3c9f2aa4b7c2d5d29efd187294b632d",
+      "urls": [
+        "http://www.hb.sgcc.com.cn/html/files/2026-03/06/20260306144020453109213.pdf"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new TOU run"
+      ]
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_single_two_part_policy_163_2023.pdf",
+      "bytes": 810147,
+      "sha256": "40cf12a479b73eec03940773caf2fb7d8834481214075af1ada0a6f304f16182",
+      "urls": [
+        "https://www.liangzh.gov.cn/lzhxxgk/xxgkml/ggqsydwxxgk/sdq/202508/P020250825378015593092.pdf"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new TOU run"
+      ]
+    },
+    {
+      "group": "reference",
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_tou_policy_77_2024.pdf",
+      "bytes": 588336,
+      "sha256": "086aea2d5388ed5fb18cbfb8a7c2ef362c66896c43027681d8a6a8347856edc4",
+      "urls": [
+        "https://www.liangzh.gov.cn/lzhxxgk/xxgkml/ggqsydwxxgk/sdq/202508/P020250825377454860287.pdf"
+      ],
+      "distribution_status": "These admission registers have source identity but no explicit redistribution license. External fetch is the conservative plan; it is not a finding that use is prohibited.",
+      "affected_entrypoints": [
+        "docs/implementation_20261002/data/prepare_tou.py --verify-only",
+        "data/review_tou_experiments.py",
+        "scripts/audit_implementation_evidence.py",
+        "source-admitted new TOU run"
+      ]
+    },
+    {
+      "group": "method",
+      "path": "data/published_multiobjective_20261002/epscm.pdf",
+      "bytes": 237007,
+      "sha256": "964c7bef93a278a4bea264a1d6f8fb51faf328644f3034215e871343eea3730a",
+      "urls": [
+        "https://www.gams.com/modlib/adddocs/epscm.pdf"
+      ],
+      "distribution_status": "Obtain independently; no repository redistribution permission established"
+    }
+  ],
+  "policy": "Accept exact hash and size only; do not change frozen locks after fetch failures."
+}

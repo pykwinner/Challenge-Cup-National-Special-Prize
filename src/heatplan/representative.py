@@ -160,17 +160,22 @@ def build_multiyear_representative_days(
     random_state: int = 42,
     regularization: float = 1e-6,
 ) -> MultiYearRepresentativeArtifacts:
-    """Compress several complete years into one average-year planning set.
+    """Compress hourly blocks from weather years into an average planning set.
 
     Clustering and extreme-day anchoring operate on all supplied years. Day
     occurrence weights are divided by the number of years, so their sum is the
     average calendar length (365 for ordinary years and 366 for leap years).
     Demand-energy targets are likewise the arithmetic mean across years.
+    This function accepts partial years for diagnostics. Calendar completeness
+    must be established with the chronology preflight before annual claims.
     """
 
     if not annual_timeseries:
         raise ValueError("多气象年代表日生成至少需要一个完整年度")
+    if float(config["planning"].get("time_step_hours", 1.0)) != 1.0:
+        raise ValueError("24小时代表日聚合要求 time_step_hours=1")
     blocks: list[pd.DataFrame] = []
+    anchor_blocks: list[pd.DataFrame] = []
     years = [str(year) for year in annual_timeseries]
     for year, annual in annual_timeseries.items():
         if len(annual) == 0 or len(annual) % 24:
@@ -178,17 +183,28 @@ def build_multiyear_representative_days(
         block = annual.copy().reset_index(drop=True)
         block["source_weather_year"] = str(year)
         block["source_hour_index"] = range(len(block))
+        # Keep calendar time separately from the unique model key so ramp
+        # selection cannot mistake gaps or concatenated weather years for edges.
+        timestamp_column = "timestamp" if "timestamp" in block else "time"
+        if "source_time" not in block and pd.to_datetime(
+            block[timestamp_column].astype(str), format="ISO8601", errors="coerce"
+        ).notna().any():
+            block["source_time"] = block[timestamp_column].astype(str)
+        # Probe each original trajectory before replacing its model key. The
+        # RC input validator requires real timezone-aware timestamps and must
+        # never receive concatenated years or synthetic year::time strings.
+        anchored, effective_columns, score_columns = add_model_derived_anchor_columns(config, block)
         # Preserve the original timestamp while guaranteeing uniqueness even
         # when callers use integer hour labels in more than one year.
         block["time"] = (
             str(year) + "::" + block["time"].astype(str)
         )
+        anchored["time"] = block["time"]
         blocks.append(block)
+        anchor_blocks.append(anchored)
     combined = pd.concat(blocks, ignore_index=True)
     service_columns = service_demand_columns(config)
-    anchor_frame, effective_columns, score_columns = (
-        add_model_derived_anchor_columns(config, combined)
-    )
+    anchor_frame = pd.concat(anchor_blocks, ignore_index=True)
     candidate = extreme_aware_typical_days(
         anchor_frame,
         feature_columns=representative_feature_columns(
@@ -207,6 +223,9 @@ def build_multiyear_representative_days(
         candidate["period_weight"].astype(float) / year_count
     )
     candidate["boundary_group"] = candidate["representative_day"].astype(str)
+    if config.get("building_thermal", {}).get("enabled", False):
+        candidate["representative_time_id"] = candidate["time"]
+        candidate["time"] = candidate["source_time"]
 
     # The calibration function accepts an unweighted chronology target. Scaling
     # its matched demand columns by 1/N produces the exact multi-year mean.
@@ -224,6 +243,8 @@ def build_multiyear_representative_days(
         minimum_extreme_weight=1.0 / year_count,
         regularization=regularization,
     )
+    if config.get("building_thermal", {}).get("enabled", False):
+        calibration.summary["energy_target_scope"] = "exogenous_reference_columns_not_endogenous_RC_dispatch"
     return MultiYearRepresentativeArtifacts(
         candidate_timeseries=candidate,
         calibration=calibration,
@@ -250,8 +271,9 @@ def build_multiyear_stochastic_representative_bundle(
     average all years into one chronology.  Investment variables remain shared
     by :class:`HeatPlanningModel`, while dispatch, unit commitment, storage and
     demand response close independently inside every weather-year scenario.
-    Per-year occurrence weights reproduce that year's annual service energy;
-    scenario probabilities then form the expected annual objective and CVaR.
+    Per-year occurrence weights softly fit the supplied year's service energy;
+    scenario probabilities form the expected objective and CVaR. Complete-year
+    coverage and the achieved energy residual require separate verification.
     """
 
     if not annual_timeseries:

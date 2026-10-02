@@ -1,0 +1,122 @@
+{
+  "case_id": "hotwater__Bobcat_assembly_Billy",
+  "category": "hotwater",
+  "site_id": "Bobcat",
+  "year": 2017,
+  "core_label": "new_core",
+  "method": "ordinary",
+  "requested_k": 9,
+  "core_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+  "observed_calendar_sha256": "e28d7746ea8f37d2c21e61517ca6ca8be2a580218ac0659cbf10d8e795399c75",
+  "input_retained_days": 295,
+  "status": "ok",
+  "metrics": {
+    "retained_days_n": 295,
+    "actual_representative_days_m": 9,
+    "representative_hours": 216,
+    "weight_sum_days": 295.0,
+    "compression_n_over_m": 32.77777777777778,
+    "representative_day_fraction": 0.030508474576271188,
+    "retained_scope_energy_kwh": 24975462.339,
+    "weighted_representative_energy_kwh": 15155545.2072,
+    "retained_scope_energy_bias": -0.39318259652258286,
+    "retained_scope_abs_energy_bias": 0.39318259652258286,
+    "retained_scope_peak_kw": 21662.5924,
+    "representative_peak_kw": 20270.222,
+    "peak_retention_ratio": 0.9357246642373237,
+    "maximum_peak_day_selected": false,
+    "ldc_wasserstein1_kw": 1386.9939451694918,
+    "ldc_w1_over_mean_load": 0.39318259652258286,
+    "cold_day_count": 15,
+    "cold_day_hit_count": 1,
+    "cold_day_coverage": 0.06666666666666667,
+    "hot_day_hit_count": 0,
+    "hot_day_coverage": 0.0,
+    "minimum_temperature_gap_c": 12.2,
+    "absolute_minimum_temperature_day_selected": false,
+    "real_hour_edges": 7041,
+    "positive_ramp_edges": 5122,
+    "maximum_real_ramp_kw_per_hour": 19212.7296,
+    "maximum_selected_original_ramp_kw_per_hour": 11724.6635,
+    "maximum_real_ramp_retention_ratio": 0.6102549582543441,
+    "maximum_real_ramp_both_days_selected": false,
+    "maximum_real_ramp_crosses_midnight": false,
+    "ramp_tail_event_count": 52,
+    "ramp_tail_hit_count": 0,
+    "ramp_tail_event_coverage": 0.0,
+    "midnight_tail_event_count": 3,
+    "midnight_tail_event_coverage": 0.0,
+    "capacity_only_k_kw": 20270.222,
+    "capacity_only_deficit_hours": 34,
+    "capacity_only_deficit_hour_fraction": 0.00480225988700565,
+    "capacity_only_deficit_energy_kwh": 21876.340199999948,
+    "capacity_only_deficit_energy_fraction": 0.0008759133225669792,
+    "null_reasons": {}
+  },
+  "elapsed_seconds": [
+    0.022448499999882188,
+    0.02435939999850234,
+    0.023305000002437737
+  ],
+  "elapsed_median_seconds": 0.023305000002437737,
+  "metrics_elapsed_seconds": 0.014359200002218131,
+  "selected_days": [
+    {
+      "original_day_index": 12,
+      "date": "2017-01-15",
+      "weight_days": 41.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 244,
+      "date": "2017-10-29",
+      "weight_days": 21.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 121,
+      "date": "2017-05-15",
+      "weight_days": 42.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 283,
+      "date": "2017-12-13",
+      "weight_days": 17.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 211,
+      "date": "2017-09-07",
+      "weight_days": 24.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 220,
+      "date": "2017-09-22",
+      "weight_days": 65.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 205,
+      "date": "2017-08-26",
+      "weight_days": 53.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 258,
+      "date": "2017-11-14",
+      "weight_days": 12.0,
+      "extreme_reasons": ""
+    },
+    {
+      "original_day_index": 242,
+      "date": "2017-10-26",
+      "weight_days": 20.0,
+      "extreme_reasons": ""
+    }
+  ],
+  "actual_m": 9,
+  "paired_actual_budget": 9,
+  "budget_matched": true
+}

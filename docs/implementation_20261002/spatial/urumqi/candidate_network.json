@@ -1,0 +1,4921 @@
+{
+  "schema": "shared_candidate_corridors_v1",
+  "namespace": "urumqi",
+  "scope": "geometry_reference_only_not_actual_heating_network",
+  "eligible_for_engineering_solver_input": false,
+  "source_capacity_kw": null,
+  "costs_verified": false,
+  "road_direction_policy": "bidirectional_candidate_corridor; traffic oneway is not thermal flow direction",
+  "max_snap_distance_m": 150.0,
+  "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+  "geometry_provenance": {
+    "reference_kind": "frozen_OSM_native_node_corridor_reference",
+    "metric_epsg": 32645,
+    "selection_frozen_utc": "2026-10-02T04:29:40.481854+00:00",
+    "selection_file": "urumqi/selection.json",
+    "selection_sha256": "1c584c3552270888b852fa1927a11e165f4470aeb441e909e6d29cc432c36b74",
+    "native_audit_file": "urumqi/native_intake.json",
+    "native_audit_sha256": "025b06fe8ca4ee33e54e0d4079b2863bc60823cf1167c30044368eafdc647aad",
+    "native_response_files": [
+      {
+        "file": "urumqi/native/ways_738a3491dbaf275c.json",
+        "sha256": "c847a6a6e47f873685e300acd45eee26bfbfb713155078768d4bac8a1e4e0529",
+        "url": "https://api.openstreetmap.org/api/0.6/ways.json?ways=37374747,37375340,37375349,37376310,37376312,37376318,37730057,116559395,116564899,116565137,116565244,116575729,116575921,249168787,433280471,434722685,434722736,434722741,986554298,986554299,997370400,1054985240,1054985241,1165942206,1165942207,1165942210,1408945817,1408945824,1546217543",
+        "capture_utc": "2026-10-02T04:29:57.752261+00:00"
+      },
+      {
+        "file": "urumqi/native/nodes_1e49fb4422ffc945.json",
+        "sha256": "243f879cf35af0bb681cb4ddbe1fc2aa25e625b0159ca1b10c9d16a047a76e75",
+        "url": "https://api.openstreetmap.org/api/0.6/nodes.json?nodes=436239348,436239594,436260900,436261244,436261249,436261250,436261251,436261432,436261563,436293805,436294429,436294431,436294476,436294478,436294612,436294615,437369308,437369309,437369310,437369311,437369312,437369313,437369314,437369315,437369317,437369318,437369319,437369320,437369321,437369322,437369323,437369324,437369331,437371874,437371961,442554057,442554058,1313799919,1313799920,1313816623,1313818227,1313818343,1313818652,1313819737,1313822921,1313850540,1313850542,1313853430,1313853432,1313853434,1313853435,1313854064,1313854065,1313925892,1313927330,1313927331,1313927332,1313927333,1313927334,1313930556,1313930558,1313930560,1313930562,1313930563,1313930569,1313936451,1313936461,1313961731,2558243877,2558243878,2558243880,2558243884,2558243889,2558243893,2558243897,2558243899,2558243905,2558243907,4321204825,4321204826,4321204827,4321204829,4326654670,4326654672,4326654673,4326654675,4326654678,4326654683,4326654685,4326654691,4326654694,4326654698,4326654699,4326654700,4326654701,4326654703,4326654709,4326654710,4326654713,4326654734,4326654749,4326654754,4326700136,4326756697,4326756698,4687994854,4687994855,4687994857,9119214640,9119214642,9119214643,9119214644,9119214645,9119214646,9119214647,9119214648,9119214649,9119214650,9119214651,9119214652,9119214653,9119214654,9119214655,9119214656,9119214657,9209391898,9209391902,9209391903,9209391907,9209391908,9209391909,9292759431,9292759432,9292759433,12947725989,12947750652,12947750653,12947750654,12947750655,12947750656,12947750657,12947750658,12947750674,12947750676,12947750677,12954492056,12954492094,13909857455,13909867326",
+        "capture_utc": "2026-10-02T04:29:59.171094+00:00"
+      }
+    ],
+    "reference_root_project_path": "docs/execution_20261002/spatial_reference",
+    "native_API_is_not_atomic_snapshot": true,
+    "identity_valid_for": "same frozen native versions and snap batch; changed splits create a new geometry version",
+    "heat_source_location_verified": false,
+    "physical_pipe_properties_verified": false
+  },
+  "nodes": [
+    {
+      "node_id": "building:urumqi:w116578336",
+      "xy_m": [
+        549520.3066581922,
+        4852536.365361937
+      ],
+      "node_kind": "building_centroid_reference",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "building:urumqi:w116578459",
+      "xy_m": [
+        549547.495266789,
+        4852499.614529559
+      ],
+      "node_kind": "building_centroid_reference",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "building:urumqi:w116582563",
+      "xy_m": [
+        549522.214804283,
+        4852684.05931192
+      ],
+      "node_kind": "building_centroid_reference",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "building:urumqi:w1259089948",
+      "xy_m": [
+        549534.8321784469,
+        4852761.747327129
+      ],
+      "node_kind": "building_centroid_reference",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "building:urumqi:w1259089950",
+      "xy_m": [
+        549593.257722934,
+        4852800.857480301
+      ],
+      "node_kind": "building_centroid_reference",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "building:urumqi:w1259089951",
+      "xy_m": [
+        549613.2663752962,
+        4852796.252835002
+      ],
+      "node_kind": "building_centroid_reference",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "n12947750652",
+      "xy_m": [
+        549886.1467163536,
+        4852607.2070694845
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n12947750652"
+    },
+    {
+      "node_id": "n12947750653",
+      "xy_m": [
+        549880.4231248816,
+        4852599.444727591
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n12947750653"
+    },
+    {
+      "node_id": "n1313854064",
+      "xy_m": [
+        549887.4088738237,
+        4852600.818849576
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n1313854064"
+    },
+    {
+      "node_id": "n4326654678",
+      "xy_m": [
+        549357.5641153479,
+        4852672.750511435
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n4326654678"
+    },
+    {
+      "node_id": "n4326654683",
+      "xy_m": [
+        549354.3342990013,
+        4852694.05213988
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n4326654683"
+    },
+    {
+      "node_id": "n4326654685",
+      "xy_m": [
+        549467.4882964827,
+        4852697.7470546
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n4326654685"
+    },
+    {
+      "node_id": "n4326654691",
+      "xy_m": [
+        549567.7020201968,
+        4852737.289994129
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n4326654691"
+    },
+    {
+      "node_id": "n4326654694",
+      "xy_m": [
+        549763.7702321615,
+        4852764.433313975
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n4326654694"
+    },
+    {
+      "node_id": "n4326654698",
+      "xy_m": [
+        549850.7424093448,
+        4852786.143499035
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n4326654698"
+    },
+    {
+      "node_id": "n436261563",
+      "xy_m": [
+        549626.535317913,
+        4852747.6139081335
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n436261563"
+    },
+    {
+      "node_id": "n9119214640",
+      "xy_m": [
+        549744.6345559477,
+        4852572.67072643
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n9119214640"
+    },
+    {
+      "node_id": "n9119214642",
+      "xy_m": [
+        549719.1399615142,
+        4852573.0910450565
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n9119214642"
+    },
+    {
+      "node_id": "n9119214643",
+      "xy_m": [
+        549671.9303735706,
+        4852584.689635775
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n9119214643"
+    },
+    {
+      "node_id": "n9119214644",
+      "xy_m": [
+        549660.8776403983,
+        4852586.273188112
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n9119214644"
+    },
+    {
+      "node_id": "n9119214645",
+      "xy_m": [
+        549651.3682024102,
+        4852585.791251331
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n9119214645"
+    },
+    {
+      "node_id": "n9119214646",
+      "xy_m": [
+        549639.1519134843,
+        4852579.502341204
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n9119214646"
+    },
+    {
+      "node_id": "n9119214647",
+      "xy_m": [
+        549632.9957982932,
+        4852574.702581458
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n9119214647"
+    },
+    {
+      "node_id": "n9119214648",
+      "xy_m": [
+        549624.1360245859,
+        4852561.50792073
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n9119214648"
+    },
+    {
+      "node_id": "n9119214649",
+      "xy_m": [
+        549620.5733600773,
+        4852548.608240162
+      ],
+      "node_kind": "native_OSM",
+      "native_node_identity": "n9119214649"
+    },
+    {
+      "node_id": "snap:w1054985240:1:0.125663959759",
+      "xy_m": [
+        549540.8893874667,
+        4852731.856554152
+      ],
+      "node_kind": "reference_split",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "snap:w1165942207:0:0.552277376367",
+      "xy_m": [
+        549614.753992724,
+        4852805.251400545
+      ],
+      "node_kind": "reference_split",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "snap:w1165942207:0:0.617106732852",
+      "xy_m": [
+        549616.4599054705,
+        4852796.905604855
+      ],
+      "node_kind": "reference_split",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "snap:w434722741:1:0.165907885047",
+      "xy_m": [
+        549516.6438058087,
+        4852708.810830855
+      ],
+      "node_kind": "reference_split",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "snap:w986554298:10:0.289345597242",
+      "xy_m": [
+        549618.1300328645,
+        4852525.858916933
+      ],
+      "node_kind": "reference_split",
+      "native_node_identity": null
+    },
+    {
+      "node_id": "snap:w986554298:10:0.714727074555",
+      "xy_m": [
+        549614.5379749611,
+        4852492.4139956515
+      ],
+      "node_kind": "reference_split",
+      "native_node_identity": null
+    }
+  ],
+  "buildings": [
+    {
+      "osm_id": "w116578336",
+      "snap_status": "snapped",
+      "terminal_reference_node": "building:urumqi:w116578336",
+      "snap_distance_m": 98.38596454229277,
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "osm_id": "w116578459",
+      "snap_status": "snapped",
+      "terminal_reference_node": "building:urumqi:w116578459",
+      "snap_distance_m": 67.42827602430187,
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "osm_id": "w116582563",
+      "snap_status": "snapped",
+      "terminal_reference_node": "building:urumqi:w116582563",
+      "snap_distance_m": 25.37072552348695,
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "osm_id": "w1259089948",
+      "snap_status": "snapped",
+      "terminal_reference_node": "building:urumqi:w1259089948",
+      "snap_distance_m": 30.498329302875835,
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "osm_id": "w1259089950",
+      "snap_status": "snapped",
+      "terminal_reference_node": "building:urumqi:w1259089950",
+      "snap_distance_m": 21.940741783275584,
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    },
+    {
+      "osm_id": "w1259089951",
+      "snap_status": "snapped",
+      "terminal_reference_node": "building:urumqi:w1259089951",
+      "snap_distance_m": 3.259561850273554,
+      "confirmed_heating_use": null,
+      "actual_heated_area_m2": null,
+      "heat_loss_kw_per_c": null,
+      "thermal_capacity_kwh_per_c": null,
+      "demand_series": null
+    }
+  ],
+  "candidate_edges": [
+    {
+      "name": "corridor:urumqi:00d9bc041ff33638bfcbf2b233b9db3283f6a5916e2cade9d56792e82b30ccd3",
+      "identity": "corridor:urumqi:00d9bc041ff33638bfcbf2b233b9db3283f6a5916e2cade9d56792e82b30ccd3",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n12947750652",
+          "n4326654698"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n12947750652",
+      "to_node": "n4326654698",
+      "route_length_m": 182.40534744132344,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549886.1467163536,
+          4852607.2070694845
+        ],
+        [
+          549850.7424093448,
+          4852786.143499035
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w116564899",
+            "original_segment_id": "w116564899:7",
+            "split_edge_key": "w116564899:7",
+            "way_version": 9,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              12947750652,
+              4326654698
+            ],
+            "native_node_versions": {
+              "12947750652": 1,
+              "4326654698": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:00d9bc041ff33638bfcbf2b233b9db3283f6a5916e2cade9d56792e82b30ccd3",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w116564899",
+            "original_segment_id": "w116564899:7",
+            "split_edge_key": "w116564899:7",
+            "way_version": 9,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              12947750652,
+              4326654698
+            ],
+            "native_node_versions": {
+              "12947750652": 1,
+              "4326654698": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:066f058f498287f0b7c11dc60c25208ff56a63fc512bed68dab9244c0c10424c",
+      "identity": "corridor:urumqi:066f058f498287f0b7c11dc60c25208ff56a63fc512bed68dab9244c0c10424c",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n4326654691",
+          "n436261563"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n4326654691",
+      "to_node": "n436261563",
+      "route_length_m": 59.73223686199586,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549567.7020201968,
+          4852737.289994129
+        ],
+        [
+          549626.535317913,
+          4852747.6139081335
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1054985240",
+            "original_segment_id": "w1054985240:0",
+            "split_edge_key": "w1054985240:0",
+            "way_version": 2,
+            "way_timestamp": "2024-03-04T14:35:00Z",
+            "original_segment_native_node_refs": [
+              436261563,
+              4326654691
+            ],
+            "native_node_versions": {
+              "436261563": 1,
+              "4326654691": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089950",
+        "path:urumqi:w116582563:w1259089951"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:066f058f498287f0b7c11dc60c25208ff56a63fc512bed68dab9244c0c10424c",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1054985240",
+            "original_segment_id": "w1054985240:0",
+            "split_edge_key": "w1054985240:0",
+            "way_version": 2,
+            "way_timestamp": "2024-03-04T14:35:00Z",
+            "original_segment_native_node_refs": [
+              436261563,
+              4326654691
+            ],
+            "native_node_versions": {
+              "436261563": 1,
+              "4326654691": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:104175022e216444b5a0f6395b598b40b2dc84d3f5548821fc3b6f45dc45c9fa",
+      "identity": "corridor:urumqi:104175022e216444b5a0f6395b598b40b2dc84d3f5548821fc3b6f45dc45c9fa",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "building_reference_connector",
+        "endpoints": [
+          "building:urumqi:w116578459",
+          "snap:w986554298:10:0.714727074555"
+        ],
+        "grade_signature": []
+      },
+      "from_node": "building:urumqi:w116578459",
+      "to_node": "snap:w986554298:10:0.714727074555",
+      "route_length_m": 67.42827602430187,
+      "kind": "building_reference_connector",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549547.495266789,
+          4852499.614529559
+        ],
+        [
+          549614.5379749611,
+          4852492.4139956515
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w116578459",
+            "snap_node": "snap:w986554298:10:0.714727074555",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 1,
+      "use_count": 1,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:104175022e216444b5a0f6395b598b40b2dc84d3f5548821fc3b6f45dc45c9fa",
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w116578459",
+            "snap_node": "snap:w986554298:10:0.714727074555",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:1730fa982bc8435e2efe0b7bbd750106186a847886644e1bd43d29fe4d7300b0",
+      "identity": "corridor:urumqi:1730fa982bc8435e2efe0b7bbd750106186a847886644e1bd43d29fe4d7300b0",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n4326654694",
+          "snap:w434722741:1:0.165907885047"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n4326654694",
+      "to_node": "snap:w434722741:1:0.165907885047",
+      "route_length_m": 253.30876658798957,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549763.7702321615,
+          4852764.433313975
+        ],
+        [
+          549516.6438058087,
+          4852708.810830855
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:1",
+            "split_edge_key": "w434722741:1:1",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654685,
+              4326654694
+            ],
+            "native_node_versions": {
+              "4326654685": 1,
+              "4326654694": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:1730fa982bc8435e2efe0b7bbd750106186a847886644e1bd43d29fe4d7300b0",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:1",
+            "split_edge_key": "w434722741:1:1",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654685,
+              4326654694
+            ],
+            "native_node_versions": {
+              "4326654685": 1,
+              "4326654694": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:19a3b81f02f359c901c2fd6f91d90f82d555b37c764027ce082e4814a0310650",
+      "identity": "corridor:urumqi:19a3b81f02f359c901c2fd6f91d90f82d555b37c764027ce082e4814a0310650",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n12947750652",
+          "n1313854064"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n12947750652",
+      "to_node": "n1313854064",
+      "route_length_m": 6.511712146791442,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549886.1467163536,
+          4852607.2070694845
+        ],
+        [
+          549887.4088738237,
+          4852600.818849576
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w116564899",
+            "original_segment_id": "w116564899:6",
+            "split_edge_key": "w116564899:6",
+            "way_version": 9,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              1313854064,
+              12947750652
+            ],
+            "native_node_versions": {
+              "1313854064": 4,
+              "12947750652": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:19a3b81f02f359c901c2fd6f91d90f82d555b37c764027ce082e4814a0310650",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w116564899",
+            "original_segment_id": "w116564899:6",
+            "split_edge_key": "w116564899:6",
+            "way_version": 9,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              1313854064,
+              12947750652
+            ],
+            "native_node_versions": {
+              "1313854064": 4,
+              "12947750652": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:1def04350be925f293371286a81f659f264ea9510a082a806ebb350e11f50672",
+      "identity": "corridor:urumqi:1def04350be925f293371286a81f659f264ea9510a082a806ebb350e11f50672",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n4326654685",
+          "snap:w434722741:1:0.165907885047"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n4326654685",
+      "to_node": "snap:w434722741:1:0.165907885047",
+      "route_length_m": 50.38522841190703,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549467.4882964827,
+          4852697.7470546
+        ],
+        [
+          549516.6438058087,
+          4852708.810830855
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:1",
+            "split_edge_key": "w434722741:1:0",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654685,
+              4326654694
+            ],
+            "native_node_versions": {
+              "4326654685": 1,
+              "4326654694": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089948",
+        "path:urumqi:w116582563:w1259089950",
+        "path:urumqi:w116582563:w1259089951"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 3,
+      "use_count": 3,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:1def04350be925f293371286a81f659f264ea9510a082a806ebb350e11f50672",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:1",
+            "split_edge_key": "w434722741:1:0",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654685,
+              4326654694
+            ],
+            "native_node_versions": {
+              "4326654685": 1,
+              "4326654694": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:2416f9cccf87447071d8c68f45227977a46d2fab62261d59be7a127f6df219f8",
+      "identity": "corridor:urumqi:2416f9cccf87447071d8c68f45227977a46d2fab62261d59be7a127f6df219f8",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n4326654691",
+          "snap:w1054985240:1:0.125663959759"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n4326654691",
+      "to_node": "snap:w1054985240:1:0.125663959759",
+      "route_length_m": 27.357623140562925,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549567.7020201968,
+          4852737.289994129
+        ],
+        [
+          549540.8893874667,
+          4852731.856554152
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1054985240",
+            "original_segment_id": "w1054985240:1",
+            "split_edge_key": "w1054985240:1:0",
+            "way_version": 2,
+            "way_timestamp": "2024-03-04T14:35:00Z",
+            "original_segment_native_node_refs": [
+              4326654691,
+              4326654683
+            ],
+            "native_node_versions": {
+              "4326654691": 1,
+              "4326654683": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089950",
+        "path:urumqi:w116582563:w1259089951"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:2416f9cccf87447071d8c68f45227977a46d2fab62261d59be7a127f6df219f8",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1054985240",
+            "original_segment_id": "w1054985240:1",
+            "split_edge_key": "w1054985240:1:0",
+            "way_version": 2,
+            "way_timestamp": "2024-03-04T14:35:00Z",
+            "original_segment_native_node_refs": [
+              4326654691,
+              4326654683
+            ],
+            "native_node_versions": {
+              "4326654691": 1,
+              "4326654683": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:2722d3faf99e3e59c40bbe464aad0e17c2c5efdc1dda02923ace1bbfeb18ef08",
+      "identity": "corridor:urumqi:2722d3faf99e3e59c40bbe464aad0e17c2c5efdc1dda02923ace1bbfeb18ef08",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n9119214640",
+          "n9119214642"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n9119214640",
+      "to_node": "n9119214642",
+      "route_length_m": 25.49805900614097,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549744.6345559477,
+          4852572.67072643
+        ],
+        [
+          549719.1399615142,
+          4852573.0910450565
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:2",
+            "split_edge_key": "w986554298:2",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214640,
+              9119214642
+            ],
+            "native_node_versions": {
+              "9119214640": 2,
+              "9119214642": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:2722d3faf99e3e59c40bbe464aad0e17c2c5efdc1dda02923ace1bbfeb18ef08",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:2",
+            "split_edge_key": "w986554298:2",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214640,
+              9119214642
+            ],
+            "native_node_versions": {
+              "9119214640": 2,
+              "9119214642": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:2c7a4b812b91d6c6af687e5fab93eb932abebed68e6adff7416687324527e627",
+      "identity": "corridor:urumqi:2c7a4b812b91d6c6af687e5fab93eb932abebed68e6adff7416687324527e627",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n436261563",
+          "snap:w1165942207:0:0.617106732852"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n436261563",
+      "to_node": "snap:w1165942207:0:0.617106732852",
+      "route_length_m": 50.310886511932885,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549626.535317913,
+          4852747.6139081335
+        ],
+        [
+          549616.4599054705,
+          4852796.905604855
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1165942207",
+            "original_segment_id": "w1165942207:0",
+            "split_edge_key": "w1165942207:0:2",
+            "way_version": 2,
+            "way_timestamp": "2024-12-03T16:44:48Z",
+            "original_segment_native_node_refs": [
+              436261250,
+              436261563
+            ],
+            "native_node_versions": {
+              "436261250": 1,
+              "436261563": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089950",
+        "path:urumqi:w116582563:w1259089951"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:2c7a4b812b91d6c6af687e5fab93eb932abebed68e6adff7416687324527e627",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1165942207",
+            "original_segment_id": "w1165942207:0",
+            "split_edge_key": "w1165942207:0:2",
+            "way_version": 2,
+            "way_timestamp": "2024-12-03T16:44:48Z",
+            "original_segment_native_node_refs": [
+              436261250,
+              436261563
+            ],
+            "native_node_versions": {
+              "436261250": 1,
+              "436261563": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:332ce99b0a0f85b82f158fa998a1d3828810e72034bdaa513e0ee570bba1fb64",
+      "identity": "corridor:urumqi:332ce99b0a0f85b82f158fa998a1d3828810e72034bdaa513e0ee570bba1fb64",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "snap:w1165942207:0:0.552277376367",
+          "snap:w1165942207:0:0.617106732852"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "snap:w1165942207:0:0.552277376367",
+      "to_node": "snap:w1165942207:0:0.617106732852",
+      "route_length_m": 8.518359231158165,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549614.753992724,
+          4852805.251400545
+        ],
+        [
+          549616.4599054705,
+          4852796.905604855
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1165942207",
+            "original_segment_id": "w1165942207:0",
+            "split_edge_key": "w1165942207:0:1",
+            "way_version": 2,
+            "way_timestamp": "2024-12-03T16:44:48Z",
+            "original_segment_native_node_refs": [
+              436261250,
+              436261563
+            ],
+            "native_node_versions": {
+              "436261250": 1,
+              "436261563": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089950"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 1,
+      "use_count": 1,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:332ce99b0a0f85b82f158fa998a1d3828810e72034bdaa513e0ee570bba1fb64",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1165942207",
+            "original_segment_id": "w1165942207:0",
+            "split_edge_key": "w1165942207:0:1",
+            "way_version": 2,
+            "way_timestamp": "2024-12-03T16:44:48Z",
+            "original_segment_native_node_refs": [
+              436261250,
+              436261563
+            ],
+            "native_node_versions": {
+              "436261250": 1,
+              "436261563": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:34177e8af6a5344f33ae0976281f9f80c6af368f1c063cfbf44faa818ed69b5a",
+      "identity": "corridor:urumqi:34177e8af6a5344f33ae0976281f9f80c6af368f1c063cfbf44faa818ed69b5a",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n4326654678",
+          "n4326654685"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n4326654678",
+      "to_node": "n4326654685",
+      "route_length_m": 112.73044295295072,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549357.5641153479,
+          4852672.750511435
+        ],
+        [
+          549467.4882964827,
+          4852697.7470546
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:0",
+            "split_edge_key": "w434722741:0",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654678,
+              4326654685
+            ],
+            "native_node_versions": {
+              "4326654678": 1,
+              "4326654685": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089948",
+        "path:urumqi:w116582563:w1259089950",
+        "path:urumqi:w116582563:w1259089951"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 3,
+      "use_count": 3,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:34177e8af6a5344f33ae0976281f9f80c6af368f1c063cfbf44faa818ed69b5a",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:0",
+            "split_edge_key": "w434722741:0",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654678,
+              4326654685
+            ],
+            "native_node_versions": {
+              "4326654678": 1,
+              "4326654685": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:3800b4a81d1350e8a8c86c41a036b7fde565683ee434e7e72777c071fb894979",
+      "identity": "corridor:urumqi:3800b4a81d1350e8a8c86c41a036b7fde565683ee434e7e72777c071fb894979",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n12947750653",
+          "n1313854064"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n12947750653",
+      "to_node": "n1313854064",
+      "route_length_m": 7.119613719199735,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549880.4231248816,
+          4852599.444727591
+        ],
+        [
+          549887.4088738237,
+          4852600.818849576
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:0",
+            "split_edge_key": "w986554298:0",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              1313854064,
+              12947750653
+            ],
+            "native_node_versions": {
+              "1313854064": 4,
+              "12947750653": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:3800b4a81d1350e8a8c86c41a036b7fde565683ee434e7e72777c071fb894979",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:0",
+            "split_edge_key": "w986554298:0",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              1313854064,
+              12947750653
+            ],
+            "native_node_versions": {
+              "1313854064": 4,
+              "12947750653": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:3c41ea887b7838827a7d845ec043aa186d5c2ed0967b89b300c1ee6f9b2d5941",
+      "identity": "corridor:urumqi:3c41ea887b7838827a7d845ec043aa186d5c2ed0967b89b300c1ee6f9b2d5941",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "building_reference_connector",
+        "endpoints": [
+          "building:urumqi:w1259089950",
+          "snap:w1165942207:0:0.552277376367"
+        ],
+        "grade_signature": []
+      },
+      "from_node": "building:urumqi:w1259089950",
+      "to_node": "snap:w1165942207:0:0.552277376367",
+      "route_length_m": 21.940741783275584,
+      "kind": "building_reference_connector",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549593.257722934,
+          4852800.857480301
+        ],
+        [
+          549614.753992724,
+          4852805.251400545
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1259089950",
+            "snap_node": "snap:w1165942207:0:0.552277376367",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089950"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 1,
+      "use_count": 1,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:3c41ea887b7838827a7d845ec043aa186d5c2ed0967b89b300c1ee6f9b2d5941",
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1259089950",
+            "snap_node": "snap:w1165942207:0:0.552277376367",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:49fc26c182000ef5b768de43717a913e82bbc9e7c15caf45a5c50ded41ffe368",
+      "identity": "corridor:urumqi:49fc26c182000ef5b768de43717a913e82bbc9e7c15caf45a5c50ded41ffe368",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n9119214649",
+          "snap:w986554298:10:0.289345597242"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n9119214649",
+      "to_node": "snap:w986554298:10:0.289345597242",
+      "route_length_m": 22.88015636411686,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549620.5733600773,
+          4852548.608240162
+        ],
+        [
+          549618.1300328645,
+          4852525.858916933
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:10",
+            "split_edge_key": "w986554298:10:0",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214649,
+              1313925892
+            ],
+            "native_node_versions": {
+              "9119214649": 2,
+              "1313925892": 3
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:49fc26c182000ef5b768de43717a913e82bbc9e7c15caf45a5c50ded41ffe368",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:10",
+            "split_edge_key": "w986554298:10:0",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214649,
+              1313925892
+            ],
+            "native_node_versions": {
+              "9119214649": 2,
+              "1313925892": 3
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:5337ba51cfedbfc3d82700891247a86fdd12a2d8649dd687a97049042005a6b4",
+      "identity": "corridor:urumqi:5337ba51cfedbfc3d82700891247a86fdd12a2d8649dd687a97049042005a6b4",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "building_reference_connector",
+        "endpoints": [
+          "building:urumqi:w1259089948",
+          "snap:w1054985240:1:0.125663959759"
+        ],
+        "grade_signature": []
+      },
+      "from_node": "building:urumqi:w1259089948",
+      "to_node": "snap:w1054985240:1:0.125663959759",
+      "route_length_m": 30.498329302875835,
+      "kind": "building_reference_connector",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549534.8321784469,
+          4852761.747327129
+        ],
+        [
+          549540.8893874667,
+          4852731.856554152
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1259089948",
+            "snap_node": "snap:w1054985240:1:0.125663959759",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089948"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 1,
+      "use_count": 1,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:5337ba51cfedbfc3d82700891247a86fdd12a2d8649dd687a97049042005a6b4",
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1259089948",
+            "snap_node": "snap:w1054985240:1:0.125663959759",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:616b548dd9bd802ea75a470ddef2fd7537fa9b27e4ad592e37f5401944eda75d",
+      "identity": "corridor:urumqi:616b548dd9bd802ea75a470ddef2fd7537fa9b27e4ad592e37f5401944eda75d",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n12947750653",
+          "n9119214640"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n12947750653",
+      "to_node": "n9119214640",
+      "route_length_m": 138.4029717574765,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549880.4231248816,
+          4852599.444727591
+        ],
+        [
+          549744.6345559477,
+          4852572.67072643
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:1",
+            "split_edge_key": "w986554298:1",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              12947750653,
+              9119214640
+            ],
+            "native_node_versions": {
+              "12947750653": 1,
+              "9119214640": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:616b548dd9bd802ea75a470ddef2fd7537fa9b27e4ad592e37f5401944eda75d",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:1",
+            "split_edge_key": "w986554298:1",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              12947750653,
+              9119214640
+            ],
+            "native_node_versions": {
+              "12947750653": 1,
+              "9119214640": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:685e167947837f7d932e14d21e9023b1812ebe77e951be10edf461b1926defcf",
+      "identity": "corridor:urumqi:685e167947837f7d932e14d21e9023b1812ebe77e951be10edf461b1926defcf",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n9119214646",
+          "n9119214647"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n9119214646",
+      "to_node": "n9119214647",
+      "route_length_m": 7.8061160554658535,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549639.1519134843,
+          4852579.502341204
+        ],
+        [
+          549632.9957982932,
+          4852574.702581458
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:7",
+            "split_edge_key": "w986554298:7",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214646,
+              9119214647
+            ],
+            "native_node_versions": {
+              "9119214646": 2,
+              "9119214647": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:685e167947837f7d932e14d21e9023b1812ebe77e951be10edf461b1926defcf",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:7",
+            "split_edge_key": "w986554298:7",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214646,
+              9119214647
+            ],
+            "native_node_versions": {
+              "9119214646": 2,
+              "9119214647": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:86ba4a1b81bab5589376a38fe894174242bd4b24a50dba85d194b652dd5bd543",
+      "identity": "corridor:urumqi:86ba4a1b81bab5589376a38fe894174242bd4b24a50dba85d194b652dd5bd543",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n4326654694",
+          "n4326654698"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n4326654694",
+      "to_node": "n4326654698",
+      "route_length_m": 89.64090438715519,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549763.7702321615,
+          4852764.433313975
+        ],
+        [
+          549850.7424093448,
+          4852786.143499035
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:2",
+            "split_edge_key": "w434722741:2",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654694,
+              4326654698
+            ],
+            "native_node_versions": {
+              "4326654694": 1,
+              "4326654698": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:86ba4a1b81bab5589376a38fe894174242bd4b24a50dba85d194b652dd5bd543",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:2",
+            "split_edge_key": "w434722741:2",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654694,
+              4326654698
+            ],
+            "native_node_versions": {
+              "4326654694": 1,
+              "4326654698": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:880176aa8a06a9803834d130c9442dc7db33e4da9b98c3e471840981b01a395f",
+      "identity": "corridor:urumqi:880176aa8a06a9803834d130c9442dc7db33e4da9b98c3e471840981b01a395f",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n9119214643",
+          "n9119214644"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n9119214643",
+      "to_node": "n9119214644",
+      "route_length_m": 11.165596651463373,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549671.9303735706,
+          4852584.689635775
+        ],
+        [
+          549660.8776403983,
+          4852586.273188112
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:4",
+            "split_edge_key": "w986554298:4",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214643,
+              9119214644
+            ],
+            "native_node_versions": {
+              "9119214643": 2,
+              "9119214644": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:880176aa8a06a9803834d130c9442dc7db33e4da9b98c3e471840981b01a395f",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:4",
+            "split_edge_key": "w986554298:4",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214643,
+              9119214644
+            ],
+            "native_node_versions": {
+              "9119214643": 2,
+              "9119214644": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:9f1fc8b1dfbfd7f9e127c4ec8b787890775e6acb02a5da48d6f84636a9be00b6",
+      "identity": "corridor:urumqi:9f1fc8b1dfbfd7f9e127c4ec8b787890775e6acb02a5da48d6f84636a9be00b6",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n9119214645",
+          "n9119214646"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n9119214645",
+      "to_node": "n9119214646",
+      "route_length_m": 13.74001840233929,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549651.3682024102,
+          4852585.791251331
+        ],
+        [
+          549639.1519134843,
+          4852579.502341204
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:6",
+            "split_edge_key": "w986554298:6",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214645,
+              9119214646
+            ],
+            "native_node_versions": {
+              "9119214645": 2,
+              "9119214646": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:9f1fc8b1dfbfd7f9e127c4ec8b787890775e6acb02a5da48d6f84636a9be00b6",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:6",
+            "split_edge_key": "w986554298:6",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214645,
+              9119214646
+            ],
+            "native_node_versions": {
+              "9119214645": 2,
+              "9119214646": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:a2e9287b1e5122edd22078c4b56ef8ce5cd0909929ba49680a60d26d467715ed",
+      "identity": "corridor:urumqi:a2e9287b1e5122edd22078c4b56ef8ce5cd0909929ba49680a60d26d467715ed",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n9119214642",
+          "n9119214643"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n9119214642",
+      "to_node": "n9119214643",
+      "route_length_m": 48.61350121574189,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549719.1399615142,
+          4852573.0910450565
+        ],
+        [
+          549671.9303735706,
+          4852584.689635775
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:3",
+            "split_edge_key": "w986554298:3",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214642,
+              9119214643
+            ],
+            "native_node_versions": {
+              "9119214642": 2,
+              "9119214643": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:a2e9287b1e5122edd22078c4b56ef8ce5cd0909929ba49680a60d26d467715ed",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:3",
+            "split_edge_key": "w986554298:3",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214642,
+              9119214643
+            ],
+            "native_node_versions": {
+              "9119214642": 2,
+              "9119214643": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:b4ffd1d31fef2fed9fe5ddc85b2c7ad0e2dc179547854784850aa17ee3dd3860",
+      "identity": "corridor:urumqi:b4ffd1d31fef2fed9fe5ddc85b2c7ad0e2dc179547854784850aa17ee3dd3860",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n9119214647",
+          "n9119214648"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n9119214647",
+      "to_node": "n9119214648",
+      "route_length_m": 15.893226917991115,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549632.9957982932,
+          4852574.702581458
+        ],
+        [
+          549624.1360245859,
+          4852561.50792073
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:8",
+            "split_edge_key": "w986554298:8",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214647,
+              9119214648
+            ],
+            "native_node_versions": {
+              "9119214647": 2,
+              "9119214648": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:b4ffd1d31fef2fed9fe5ddc85b2c7ad0e2dc179547854784850aa17ee3dd3860",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:8",
+            "split_edge_key": "w986554298:8",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214647,
+              9119214648
+            ],
+            "native_node_versions": {
+              "9119214647": 2,
+              "9119214648": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:b8b9f30f4ab69c3f65aca84c3a996895229f7bf273bccb413af065dd755c6bb6",
+      "identity": "corridor:urumqi:b8b9f30f4ab69c3f65aca84c3a996895229f7bf273bccb413af065dd755c6bb6",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n4326654683",
+          "snap:w1054985240:1:0.125663959759"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n4326654683",
+      "to_node": "snap:w1054985240:1:0.125663959759",
+      "route_length_m": 190.34698518969927,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549354.3342990013,
+          4852694.05213988
+        ],
+        [
+          549540.8893874667,
+          4852731.856554152
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1054985240",
+            "original_segment_id": "w1054985240:1",
+            "split_edge_key": "w1054985240:1:1",
+            "way_version": 2,
+            "way_timestamp": "2024-03-04T14:35:00Z",
+            "original_segment_native_node_refs": [
+              4326654691,
+              4326654683
+            ],
+            "native_node_versions": {
+              "4326654691": 1,
+              "4326654683": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089948",
+        "path:urumqi:w116582563:w1259089950",
+        "path:urumqi:w116582563:w1259089951"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 3,
+      "use_count": 3,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:b8b9f30f4ab69c3f65aca84c3a996895229f7bf273bccb413af065dd755c6bb6",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1054985240",
+            "original_segment_id": "w1054985240:1",
+            "split_edge_key": "w1054985240:1:1",
+            "way_version": 2,
+            "way_timestamp": "2024-03-04T14:35:00Z",
+            "original_segment_native_node_refs": [
+              4326654691,
+              4326654683
+            ],
+            "native_node_versions": {
+              "4326654691": 1,
+              "4326654683": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:c41d24e4790430df808ffb455ae2282975ec1a0e4af0e890c6faea38760b0c30",
+      "identity": "corridor:urumqi:c41d24e4790430df808ffb455ae2282975ec1a0e4af0e890c6faea38760b0c30",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "building_reference_connector",
+        "endpoints": [
+          "building:urumqi:w1259089951",
+          "snap:w1165942207:0:0.617106732852"
+        ],
+        "grade_signature": []
+      },
+      "from_node": "building:urumqi:w1259089951",
+      "to_node": "snap:w1165942207:0:0.617106732852",
+      "route_length_m": 3.259561850273554,
+      "kind": "building_reference_connector",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549613.2663752962,
+          4852796.252835002
+        ],
+        [
+          549616.4599054705,
+          4852796.905604855
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1259089951",
+            "snap_node": "snap:w1165942207:0:0.617106732852",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089951"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 1,
+      "use_count": 1,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:c41d24e4790430df808ffb455ae2282975ec1a0e4af0e890c6faea38760b0c30",
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1259089951",
+            "snap_node": "snap:w1165942207:0:0.617106732852",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:c7ededba51cc732b68fc4b48ebd5912a99132effa13c66d09638c44a5a3f0e38",
+      "identity": "corridor:urumqi:c7ededba51cc732b68fc4b48ebd5912a99132effa13c66d09638c44a5a3f0e38",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n4326654678",
+          "n4326654683"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n4326654678",
+      "to_node": "n4326654683",
+      "route_length_m": 21.54509429205916,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549357.5641153479,
+          4852672.750511435
+        ],
+        [
+          549354.3342990013,
+          4852694.05213988
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722736",
+            "original_segment_id": "w434722736:3",
+            "split_edge_key": "w434722736:3",
+            "way_version": 1,
+            "way_timestamp": "2016-07-29T10:21:36Z",
+            "original_segment_native_node_refs": [
+              4326654683,
+              4326654678
+            ],
+            "native_node_versions": {
+              "4326654683": 1,
+              "4326654678": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w1259089948",
+        "path:urumqi:w116582563:w1259089950",
+        "path:urumqi:w116582563:w1259089951"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 3,
+      "use_count": 3,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:c7ededba51cc732b68fc4b48ebd5912a99132effa13c66d09638c44a5a3f0e38",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722736",
+            "original_segment_id": "w434722736:3",
+            "split_edge_key": "w434722736:3",
+            "way_version": 1,
+            "way_timestamp": "2016-07-29T10:21:36Z",
+            "original_segment_native_node_refs": [
+              4326654683,
+              4326654678
+            ],
+            "native_node_versions": {
+              "4326654683": 1,
+              "4326654678": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:cb63b5d10dbdef0392cf9ce99f35791bdb5897833f33ca609f398eeb156a4447",
+      "identity": "corridor:urumqi:cb63b5d10dbdef0392cf9ce99f35791bdb5897833f33ca609f398eeb156a4447",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n9119214648",
+          "n9119214649"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n9119214648",
+      "to_node": "n9119214649",
+      "route_length_m": 13.382613240871061,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549624.1360245859,
+          4852561.50792073
+        ],
+        [
+          549620.5733600773,
+          4852548.608240162
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:9",
+            "split_edge_key": "w986554298:9",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214648,
+              9119214649
+            ],
+            "native_node_versions": {
+              "9119214648": 2,
+              "9119214649": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:cb63b5d10dbdef0392cf9ce99f35791bdb5897833f33ca609f398eeb156a4447",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:9",
+            "split_edge_key": "w986554298:9",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214648,
+              9119214649
+            ],
+            "native_node_versions": {
+              "9119214648": 2,
+              "9119214649": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:ce3ee5bd663a982e668e05aa2fdbcc607c23ce93843d34f8c4158efe0a67ad19",
+      "identity": "corridor:urumqi:ce3ee5bd663a982e668e05aa2fdbcc607c23ce93843d34f8c4158efe0a67ad19",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "snap:w986554298:10:0.289345597242",
+          "snap:w986554298:10:0.714727074555"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "snap:w986554298:10:0.289345597242",
+      "to_node": "snap:w986554298:10:0.714727074555",
+      "route_length_m": 33.63726563698238,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549618.1300328645,
+          4852525.858916933
+        ],
+        [
+          549614.5379749611,
+          4852492.4139956515
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:10",
+            "split_edge_key": "w986554298:10:1",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214649,
+              1313925892
+            ],
+            "native_node_versions": {
+              "9119214649": 2,
+              "1313925892": 3
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 1,
+      "use_count": 1,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:ce3ee5bd663a982e668e05aa2fdbcc607c23ce93843d34f8c4158efe0a67ad19",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:10",
+            "split_edge_key": "w986554298:10:1",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214649,
+              1313925892
+            ],
+            "native_node_versions": {
+              "9119214649": 2,
+              "1313925892": 3
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:d3132614ad3ed96b519823fe85a0206e5e201c25da2c6fc92c06cf4b2be8078d",
+      "identity": "corridor:urumqi:d3132614ad3ed96b519823fe85a0206e5e201c25da2c6fc92c06cf4b2be8078d",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "road",
+        "endpoints": [
+          "n9119214644",
+          "n9119214645"
+        ],
+        "grade_signature": [
+          "0",
+          "no",
+          "no"
+        ]
+      },
+      "from_node": "n9119214644",
+      "to_node": "n9119214645",
+      "route_length_m": 9.521642395734085,
+      "kind": "road",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549660.8776403983,
+          4852586.273188112
+        ],
+        [
+          549651.3682024102,
+          4852585.791251331
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:5",
+            "split_edge_key": "w986554298:5",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214644,
+              9119214645
+            ],
+            "native_node_versions": {
+              "9119214644": 1,
+              "9119214645": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 2,
+      "use_count": 2,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:d3132614ad3ed96b519823fe85a0206e5e201c25da2c6fc92c06cf4b2be8078d",
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:5",
+            "split_edge_key": "w986554298:5",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214644,
+              9119214645
+            ],
+            "native_node_versions": {
+              "9119214644": 1,
+              "9119214645": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+      "identity": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "building_reference_connector",
+        "endpoints": [
+          "building:urumqi:w116582563",
+          "snap:w434722741:1:0.165907885047"
+        ],
+        "grade_signature": []
+      },
+      "from_node": "building:urumqi:w116582563",
+      "to_node": "snap:w434722741:1:0.165907885047",
+      "route_length_m": 25.37072552348695,
+      "kind": "building_reference_connector",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549522.214804283,
+          4852684.05931192
+        ],
+        [
+          549516.6438058087,
+          4852708.810830855
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w116582563",
+            "snap_node": "snap:w434722741:1:0.165907885047",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336",
+        "path:urumqi:w116582563:w116578459",
+        "path:urumqi:w116582563:w1259089948",
+        "path:urumqi:w116582563:w1259089950",
+        "path:urumqi:w116582563:w1259089951"
+      ],
+      "directions_used": [
+        1
+      ],
+      "traversal_count": 5,
+      "use_count": 5,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w116582563",
+            "snap_node": "snap:w434722741:1:0.165907885047",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    },
+    {
+      "name": "corridor:urumqi:fd03bbfd735a5465f14dd9a92ac1ff9ff1aa5c3cdef1f6c70352a397c2d95c11",
+      "identity": "corridor:urumqi:fd03bbfd735a5465f14dd9a92ac1ff9ff1aa5c3cdef1f6c70352a397c2d95c11",
+      "identity_details": {
+        "namespace": "urumqi",
+        "geometry_manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "kind": "building_reference_connector",
+        "endpoints": [
+          "building:urumqi:w116578336",
+          "snap:w986554298:10:0.289345597242"
+        ],
+        "grade_signature": []
+      },
+      "from_node": "building:urumqi:w116578336",
+      "to_node": "snap:w986554298:10:0.289345597242",
+      "route_length_m": 98.38596454229277,
+      "kind": "building_reference_connector",
+      "bidirectional": true,
+      "geometry_xy_m": [
+        [
+          549520.3066581922,
+          4852536.365361937
+        ],
+        [
+          549618.1300328645,
+          4852525.858916933
+        ]
+      ],
+      "geometry_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w116578336",
+            "snap_node": "snap:w986554298:10:0.289345597242",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "path_ids": [
+        "path:urumqi:w116582563:w116578336"
+      ],
+      "directions_used": [
+        -1
+      ],
+      "traversal_count": 1,
+      "use_count": 1,
+      "engineering_admitted": false,
+      "connection_allowed": null,
+      "actual_heating_asset_identity": null,
+      "physical_parameters": {
+        "actual_pipe_length_m": null,
+        "diameter_mm": null,
+        "capacity_kw": null,
+        "delivery_efficiency": null,
+        "mass_flow_kg_s": null,
+        "pump_power_kw": null,
+        "capex_total_yuan": null,
+        "capex_yuan_per_m": null
+      },
+      "physical_edge_id": "corridor:urumqi:fd03bbfd735a5465f14dd9a92ac1ff9ff1aa5c3cdef1f6c70352a397c2d95c11",
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w116578336",
+            "snap_node": "snap:w986554298:10:0.289345597242",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      }
+    }
+  ],
+  "candidate_rules": [
+    {
+      "pipe": "corridor:urumqi:00d9bc041ff33638bfcbf2b233b9db3283f6a5916e2cade9d56792e82b30ccd3",
+      "route_length_m": 182.40534744132344,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w116564899",
+            "original_segment_id": "w116564899:7",
+            "split_edge_key": "w116564899:7",
+            "way_version": 9,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              12947750652,
+              4326654698
+            ],
+            "native_node_versions": {
+              "12947750652": 1,
+              "4326654698": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:00d9bc041ff33638bfcbf2b233b9db3283f6a5916e2cade9d56792e82b30ccd3",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:066f058f498287f0b7c11dc60c25208ff56a63fc512bed68dab9244c0c10424c",
+      "route_length_m": 59.73223686199586,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1054985240",
+            "original_segment_id": "w1054985240:0",
+            "split_edge_key": "w1054985240:0",
+            "way_version": 2,
+            "way_timestamp": "2024-03-04T14:35:00Z",
+            "original_segment_native_node_refs": [
+              436261563,
+              4326654691
+            ],
+            "native_node_versions": {
+              "436261563": 1,
+              "4326654691": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:066f058f498287f0b7c11dc60c25208ff56a63fc512bed68dab9244c0c10424c",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:104175022e216444b5a0f6395b598b40b2dc84d3f5548821fc3b6f45dc45c9fa",
+      "route_length_m": 67.42827602430187,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w116578459",
+            "snap_node": "snap:w986554298:10:0.714727074555",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:104175022e216444b5a0f6395b598b40b2dc84d3f5548821fc3b6f45dc45c9fa",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:1730fa982bc8435e2efe0b7bbd750106186a847886644e1bd43d29fe4d7300b0",
+      "route_length_m": 253.30876658798957,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:1",
+            "split_edge_key": "w434722741:1:1",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654685,
+              4326654694
+            ],
+            "native_node_versions": {
+              "4326654685": 1,
+              "4326654694": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:1730fa982bc8435e2efe0b7bbd750106186a847886644e1bd43d29fe4d7300b0",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:19a3b81f02f359c901c2fd6f91d90f82d555b37c764027ce082e4814a0310650",
+      "route_length_m": 6.511712146791442,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w116564899",
+            "original_segment_id": "w116564899:6",
+            "split_edge_key": "w116564899:6",
+            "way_version": 9,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              1313854064,
+              12947750652
+            ],
+            "native_node_versions": {
+              "1313854064": 4,
+              "12947750652": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:19a3b81f02f359c901c2fd6f91d90f82d555b37c764027ce082e4814a0310650",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:1def04350be925f293371286a81f659f264ea9510a082a806ebb350e11f50672",
+      "route_length_m": 50.38522841190703,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:1",
+            "split_edge_key": "w434722741:1:0",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654685,
+              4326654694
+            ],
+            "native_node_versions": {
+              "4326654685": 1,
+              "4326654694": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:1def04350be925f293371286a81f659f264ea9510a082a806ebb350e11f50672",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:2416f9cccf87447071d8c68f45227977a46d2fab62261d59be7a127f6df219f8",
+      "route_length_m": 27.357623140562925,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1054985240",
+            "original_segment_id": "w1054985240:1",
+            "split_edge_key": "w1054985240:1:0",
+            "way_version": 2,
+            "way_timestamp": "2024-03-04T14:35:00Z",
+            "original_segment_native_node_refs": [
+              4326654691,
+              4326654683
+            ],
+            "native_node_versions": {
+              "4326654691": 1,
+              "4326654683": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:2416f9cccf87447071d8c68f45227977a46d2fab62261d59be7a127f6df219f8",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:2722d3faf99e3e59c40bbe464aad0e17c2c5efdc1dda02923ace1bbfeb18ef08",
+      "route_length_m": 25.49805900614097,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:2",
+            "split_edge_key": "w986554298:2",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214640,
+              9119214642
+            ],
+            "native_node_versions": {
+              "9119214640": 2,
+              "9119214642": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:2722d3faf99e3e59c40bbe464aad0e17c2c5efdc1dda02923ace1bbfeb18ef08",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:2c7a4b812b91d6c6af687e5fab93eb932abebed68e6adff7416687324527e627",
+      "route_length_m": 50.310886511932885,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1165942207",
+            "original_segment_id": "w1165942207:0",
+            "split_edge_key": "w1165942207:0:2",
+            "way_version": 2,
+            "way_timestamp": "2024-12-03T16:44:48Z",
+            "original_segment_native_node_refs": [
+              436261250,
+              436261563
+            ],
+            "native_node_versions": {
+              "436261250": 1,
+              "436261563": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:2c7a4b812b91d6c6af687e5fab93eb932abebed68e6adff7416687324527e627",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:332ce99b0a0f85b82f158fa998a1d3828810e72034bdaa513e0ee570bba1fb64",
+      "route_length_m": 8.518359231158165,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1165942207",
+            "original_segment_id": "w1165942207:0",
+            "split_edge_key": "w1165942207:0:1",
+            "way_version": 2,
+            "way_timestamp": "2024-12-03T16:44:48Z",
+            "original_segment_native_node_refs": [
+              436261250,
+              436261563
+            ],
+            "native_node_versions": {
+              "436261250": 1,
+              "436261563": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:332ce99b0a0f85b82f158fa998a1d3828810e72034bdaa513e0ee570bba1fb64",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:34177e8af6a5344f33ae0976281f9f80c6af368f1c063cfbf44faa818ed69b5a",
+      "route_length_m": 112.73044295295072,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:0",
+            "split_edge_key": "w434722741:0",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654678,
+              4326654685
+            ],
+            "native_node_versions": {
+              "4326654678": 1,
+              "4326654685": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:34177e8af6a5344f33ae0976281f9f80c6af368f1c063cfbf44faa818ed69b5a",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:3800b4a81d1350e8a8c86c41a036b7fde565683ee434e7e72777c071fb894979",
+      "route_length_m": 7.119613719199735,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:0",
+            "split_edge_key": "w986554298:0",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              1313854064,
+              12947750653
+            ],
+            "native_node_versions": {
+              "1313854064": 4,
+              "12947750653": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:3800b4a81d1350e8a8c86c41a036b7fde565683ee434e7e72777c071fb894979",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:3c41ea887b7838827a7d845ec043aa186d5c2ed0967b89b300c1ee6f9b2d5941",
+      "route_length_m": 21.940741783275584,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1259089950",
+            "snap_node": "snap:w1165942207:0:0.552277376367",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:3c41ea887b7838827a7d845ec043aa186d5c2ed0967b89b300c1ee6f9b2d5941",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:49fc26c182000ef5b768de43717a913e82bbc9e7c15caf45a5c50ded41ffe368",
+      "route_length_m": 22.88015636411686,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:10",
+            "split_edge_key": "w986554298:10:0",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214649,
+              1313925892
+            ],
+            "native_node_versions": {
+              "9119214649": 2,
+              "1313925892": 3
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:49fc26c182000ef5b768de43717a913e82bbc9e7c15caf45a5c50ded41ffe368",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:5337ba51cfedbfc3d82700891247a86fdd12a2d8649dd687a97049042005a6b4",
+      "route_length_m": 30.498329302875835,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1259089948",
+            "snap_node": "snap:w1054985240:1:0.125663959759",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:5337ba51cfedbfc3d82700891247a86fdd12a2d8649dd687a97049042005a6b4",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:616b548dd9bd802ea75a470ddef2fd7537fa9b27e4ad592e37f5401944eda75d",
+      "route_length_m": 138.4029717574765,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:1",
+            "split_edge_key": "w986554298:1",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              12947750653,
+              9119214640
+            ],
+            "native_node_versions": {
+              "12947750653": 1,
+              "9119214640": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:616b548dd9bd802ea75a470ddef2fd7537fa9b27e4ad592e37f5401944eda75d",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:685e167947837f7d932e14d21e9023b1812ebe77e951be10edf461b1926defcf",
+      "route_length_m": 7.8061160554658535,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:7",
+            "split_edge_key": "w986554298:7",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214646,
+              9119214647
+            ],
+            "native_node_versions": {
+              "9119214646": 2,
+              "9119214647": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:685e167947837f7d932e14d21e9023b1812ebe77e951be10edf461b1926defcf",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:86ba4a1b81bab5589376a38fe894174242bd4b24a50dba85d194b652dd5bd543",
+      "route_length_m": 89.64090438715519,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722741",
+            "original_segment_id": "w434722741:2",
+            "split_edge_key": "w434722741:2",
+            "way_version": 3,
+            "way_timestamp": "2022-04-26T05:55:21Z",
+            "original_segment_native_node_refs": [
+              4326654694,
+              4326654698
+            ],
+            "native_node_versions": {
+              "4326654694": 1,
+              "4326654698": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:86ba4a1b81bab5589376a38fe894174242bd4b24a50dba85d194b652dd5bd543",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:880176aa8a06a9803834d130c9442dc7db33e4da9b98c3e471840981b01a395f",
+      "route_length_m": 11.165596651463373,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:4",
+            "split_edge_key": "w986554298:4",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214643,
+              9119214644
+            ],
+            "native_node_versions": {
+              "9119214643": 2,
+              "9119214644": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:880176aa8a06a9803834d130c9442dc7db33e4da9b98c3e471840981b01a395f",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:9f1fc8b1dfbfd7f9e127c4ec8b787890775e6acb02a5da48d6f84636a9be00b6",
+      "route_length_m": 13.74001840233929,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:6",
+            "split_edge_key": "w986554298:6",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214645,
+              9119214646
+            ],
+            "native_node_versions": {
+              "9119214645": 2,
+              "9119214646": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:9f1fc8b1dfbfd7f9e127c4ec8b787890775e6acb02a5da48d6f84636a9be00b6",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:a2e9287b1e5122edd22078c4b56ef8ce5cd0909929ba49680a60d26d467715ed",
+      "route_length_m": 48.61350121574189,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:3",
+            "split_edge_key": "w986554298:3",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214642,
+              9119214643
+            ],
+            "native_node_versions": {
+              "9119214642": 2,
+              "9119214643": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:a2e9287b1e5122edd22078c4b56ef8ce5cd0909929ba49680a60d26d467715ed",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:b4ffd1d31fef2fed9fe5ddc85b2c7ad0e2dc179547854784850aa17ee3dd3860",
+      "route_length_m": 15.893226917991115,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:8",
+            "split_edge_key": "w986554298:8",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214647,
+              9119214648
+            ],
+            "native_node_versions": {
+              "9119214647": 2,
+              "9119214648": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:b4ffd1d31fef2fed9fe5ddc85b2c7ad0e2dc179547854784850aa17ee3dd3860",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:b8b9f30f4ab69c3f65aca84c3a996895229f7bf273bccb413af065dd755c6bb6",
+      "route_length_m": 190.34698518969927,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w1054985240",
+            "original_segment_id": "w1054985240:1",
+            "split_edge_key": "w1054985240:1:1",
+            "way_version": 2,
+            "way_timestamp": "2024-03-04T14:35:00Z",
+            "original_segment_native_node_refs": [
+              4326654691,
+              4326654683
+            ],
+            "native_node_versions": {
+              "4326654691": 1,
+              "4326654683": 1
+            },
+            "traffic_oneway": "yes",
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:b8b9f30f4ab69c3f65aca84c3a996895229f7bf273bccb413af065dd755c6bb6",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:c41d24e4790430df808ffb455ae2282975ec1a0e4af0e890c6faea38760b0c30",
+      "route_length_m": 3.259561850273554,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w1259089951",
+            "snap_node": "snap:w1165942207:0:0.617106732852",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:c41d24e4790430df808ffb455ae2282975ec1a0e4af0e890c6faea38760b0c30",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:c7ededba51cc732b68fc4b48ebd5912a99132effa13c66d09638c44a5a3f0e38",
+      "route_length_m": 21.54509429205916,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w434722736",
+            "original_segment_id": "w434722736:3",
+            "split_edge_key": "w434722736:3",
+            "way_version": 1,
+            "way_timestamp": "2016-07-29T10:21:36Z",
+            "original_segment_native_node_refs": [
+              4326654683,
+              4326654678
+            ],
+            "native_node_versions": {
+              "4326654683": 1,
+              "4326654678": 1
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:c7ededba51cc732b68fc4b48ebd5912a99132effa13c66d09638c44a5a3f0e38",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:cb63b5d10dbdef0392cf9ce99f35791bdb5897833f33ca609f398eeb156a4447",
+      "route_length_m": 13.382613240871061,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:9",
+            "split_edge_key": "w986554298:9",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214648,
+              9119214649
+            ],
+            "native_node_versions": {
+              "9119214648": 2,
+              "9119214649": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:cb63b5d10dbdef0392cf9ce99f35791bdb5897833f33ca609f398eeb156a4447",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:ce3ee5bd663a982e668e05aa2fdbcc607c23ce93843d34f8c4158efe0a67ad19",
+      "route_length_m": 33.63726563698238,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:10",
+            "split_edge_key": "w986554298:10:1",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214649,
+              1313925892
+            ],
+            "native_node_versions": {
+              "9119214649": 2,
+              "1313925892": 3
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:ce3ee5bd663a982e668e05aa2fdbcc607c23ce93843d34f8c4158efe0a67ad19",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:d3132614ad3ed96b519823fe85a0206e5e201c25da2c6fc92c06cf4b2be8078d",
+      "route_length_m": 9.521642395734085,
+      "route_length_basis": "projected_native_road_segment",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "native_OSM_road_corridor",
+        "source_records": [
+          {
+            "osm_way_id": "w986554298",
+            "original_segment_id": "w986554298:5",
+            "split_edge_key": "w986554298:5",
+            "way_version": 4,
+            "way_timestamp": "2025-06-24T01:11:43Z",
+            "original_segment_native_node_refs": [
+              9119214644,
+              9119214645
+            ],
+            "native_node_versions": {
+              "9119214644": 1,
+              "9119214645": 2
+            },
+            "traffic_oneway": null,
+            "access": null,
+            "excavation_permission_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:d3132614ad3ed96b519823fe85a0206e5e201c25da2c6fc92c06cf4b2be8078d",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+      "route_length_m": 25.37072552348695,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w116582563",
+            "snap_node": "snap:w434722741:1:0.165907885047",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+      "connection_allowed": null
+    },
+    {
+      "pipe": "corridor:urumqi:fd03bbfd735a5465f14dd9a92ac1ff9ff1aa5c3cdef1f6c70352a397c2d95c11",
+      "route_length_m": 98.38596454229277,
+      "route_length_basis": "projected_reference_connector",
+      "route_provenance": {
+        "manifest_id": "b4a2725dffb639e7eb682a8661de8e88e76f50c14b2eddf5aa0b0c2f3cba1db7",
+        "metric_epsg": 32645,
+        "source_kind": "reference_centroid_to_road",
+        "source_records": [
+          {
+            "building_osm_id": "w116578336",
+            "snap_node": "snap:w986554298:10:0.289345597242",
+            "entrance_verified": false,
+            "excavation_right_verified": false
+          }
+        ],
+        "geometry_only": true,
+        "grade_context_is_not_verified_elevation": true
+      },
+      "physical_edge_id": "corridor:urumqi:fd03bbfd735a5465f14dd9a92ac1ff9ff1aa5c3cdef1f6c70352a397c2d95c11",
+      "connection_allowed": null
+    }
+  ],
+  "paths": [
+    {
+      "path_id": "path:urumqi:w116582563:w116578336",
+      "anchor_osm_id": "w116582563",
+      "target_osm_id": "w116578336",
+      "status": "routed",
+      "anchor_is_not_heat_source": true,
+      "from_node": "building:urumqi:w116582563",
+      "to_node": "building:urumqi:w116578336",
+      "road_length_m": 845.8902462898001,
+      "route_length_m": 969.6469363555801,
+      "traversals": [
+        {
+          "edge_identity": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:1730fa982bc8435e2efe0b7bbd750106186a847886644e1bd43d29fe4d7300b0",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:86ba4a1b81bab5589376a38fe894174242bd4b24a50dba85d194b652dd5bd543",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:00d9bc041ff33638bfcbf2b233b9db3283f6a5916e2cade9d56792e82b30ccd3",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:19a3b81f02f359c901c2fd6f91d90f82d555b37c764027ce082e4814a0310650",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:3800b4a81d1350e8a8c86c41a036b7fde565683ee434e7e72777c071fb894979",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:616b548dd9bd802ea75a470ddef2fd7537fa9b27e4ad592e37f5401944eda75d",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:2722d3faf99e3e59c40bbe464aad0e17c2c5efdc1dda02923ace1bbfeb18ef08",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:a2e9287b1e5122edd22078c4b56ef8ce5cd0909929ba49680a60d26d467715ed",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:880176aa8a06a9803834d130c9442dc7db33e4da9b98c3e471840981b01a395f",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:d3132614ad3ed96b519823fe85a0206e5e201c25da2c6fc92c06cf4b2be8078d",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:9f1fc8b1dfbfd7f9e127c4ec8b787890775e6acb02a5da48d6f84636a9be00b6",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:685e167947837f7d932e14d21e9023b1812ebe77e951be10edf461b1926defcf",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:b4ffd1d31fef2fed9fe5ddc85b2c7ad0e2dc179547854784850aa17ee3dd3860",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:cb63b5d10dbdef0392cf9ce99f35791bdb5897833f33ca609f398eeb156a4447",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:49fc26c182000ef5b768de43717a913e82bbc9e7c15caf45a5c50ded41ffe368",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:fd03bbfd735a5465f14dd9a92ac1ff9ff1aa5c3cdef1f6c70352a397c2d95c11",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "path_id": "path:urumqi:w116582563:w116578459",
+      "anchor_osm_id": "w116582563",
+      "target_osm_id": "w116578459",
+      "status": "routed",
+      "anchor_is_not_heat_source": true,
+      "from_node": "building:urumqi:w116582563",
+      "to_node": "building:urumqi:w116578459",
+      "road_length_m": 879.5275119267825,
+      "route_length_m": 972.3265134745716,
+      "traversals": [
+        {
+          "edge_identity": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:1730fa982bc8435e2efe0b7bbd750106186a847886644e1bd43d29fe4d7300b0",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:86ba4a1b81bab5589376a38fe894174242bd4b24a50dba85d194b652dd5bd543",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:00d9bc041ff33638bfcbf2b233b9db3283f6a5916e2cade9d56792e82b30ccd3",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:19a3b81f02f359c901c2fd6f91d90f82d555b37c764027ce082e4814a0310650",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:3800b4a81d1350e8a8c86c41a036b7fde565683ee434e7e72777c071fb894979",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:616b548dd9bd802ea75a470ddef2fd7537fa9b27e4ad592e37f5401944eda75d",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:2722d3faf99e3e59c40bbe464aad0e17c2c5efdc1dda02923ace1bbfeb18ef08",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:a2e9287b1e5122edd22078c4b56ef8ce5cd0909929ba49680a60d26d467715ed",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:880176aa8a06a9803834d130c9442dc7db33e4da9b98c3e471840981b01a395f",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:d3132614ad3ed96b519823fe85a0206e5e201c25da2c6fc92c06cf4b2be8078d",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:9f1fc8b1dfbfd7f9e127c4ec8b787890775e6acb02a5da48d6f84636a9be00b6",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:685e167947837f7d932e14d21e9023b1812ebe77e951be10edf461b1926defcf",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:b4ffd1d31fef2fed9fe5ddc85b2c7ad0e2dc179547854784850aa17ee3dd3860",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:cb63b5d10dbdef0392cf9ce99f35791bdb5897833f33ca609f398eeb156a4447",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:49fc26c182000ef5b768de43717a913e82bbc9e7c15caf45a5c50ded41ffe368",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:ce3ee5bd663a982e668e05aa2fdbcc607c23ce93843d34f8c4158efe0a67ad19",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:104175022e216444b5a0f6395b598b40b2dc84d3f5548821fc3b6f45dc45c9fa",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "path_id": "path:urumqi:w116582563:w1259089948",
+      "anchor_osm_id": "w116582563",
+      "target_osm_id": "w1259089948",
+      "status": "routed",
+      "anchor_is_not_heat_source": true,
+      "from_node": "building:urumqi:w116582563",
+      "to_node": "building:urumqi:w1259089948",
+      "road_length_m": 375.0077508466162,
+      "route_length_m": 430.87680567297895,
+      "traversals": [
+        {
+          "edge_identity": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:1def04350be925f293371286a81f659f264ea9510a082a806ebb350e11f50672",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:34177e8af6a5344f33ae0976281f9f80c6af368f1c063cfbf44faa818ed69b5a",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:c7ededba51cc732b68fc4b48ebd5912a99132effa13c66d09638c44a5a3f0e38",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:b8b9f30f4ab69c3f65aca84c3a996895229f7bf273bccb413af065dd755c6bb6",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:5337ba51cfedbfc3d82700891247a86fdd12a2d8649dd687a97049042005a6b4",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "path_id": "path:urumqi:w116582563:w1259089950",
+      "anchor_osm_id": "w116582563",
+      "target_osm_id": "w1259089950",
+      "status": "routed",
+      "anchor_is_not_heat_source": true,
+      "from_node": "building:urumqi:w116582563",
+      "to_node": "building:urumqi:w1259089950",
+      "road_length_m": 520.926856592266,
+      "route_length_m": 568.2383238990285,
+      "traversals": [
+        {
+          "edge_identity": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:1def04350be925f293371286a81f659f264ea9510a082a806ebb350e11f50672",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:34177e8af6a5344f33ae0976281f9f80c6af368f1c063cfbf44faa818ed69b5a",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:c7ededba51cc732b68fc4b48ebd5912a99132effa13c66d09638c44a5a3f0e38",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:b8b9f30f4ab69c3f65aca84c3a996895229f7bf273bccb413af065dd755c6bb6",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:2416f9cccf87447071d8c68f45227977a46d2fab62261d59be7a127f6df219f8",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:066f058f498287f0b7c11dc60c25208ff56a63fc512bed68dab9244c0c10424c",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:2c7a4b812b91d6c6af687e5fab93eb932abebed68e6adff7416687324527e627",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:332ce99b0a0f85b82f158fa998a1d3828810e72034bdaa513e0ee570bba1fb64",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:3c41ea887b7838827a7d845ec043aa186d5c2ed0967b89b300c1ee6f9b2d5941",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "path_id": "path:urumqi:w116582563:w1259089951",
+      "anchor_osm_id": "w116582563",
+      "target_osm_id": "w1259089951",
+      "status": "routed",
+      "anchor_is_not_heat_source": true,
+      "from_node": "building:urumqi:w116582563",
+      "to_node": "building:urumqi:w1259089951",
+      "road_length_m": 512.4084973611078,
+      "route_length_m": 541.0387847348684,
+      "traversals": [
+        {
+          "edge_identity": "corridor:urumqi:e2fc0593af9eff2a706df4343b9a75c27384957d57c2975b28ce0f97d3d8770f",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:1def04350be925f293371286a81f659f264ea9510a082a806ebb350e11f50672",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:34177e8af6a5344f33ae0976281f9f80c6af368f1c063cfbf44faa818ed69b5a",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:c7ededba51cc732b68fc4b48ebd5912a99132effa13c66d09638c44a5a3f0e38",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:b8b9f30f4ab69c3f65aca84c3a996895229f7bf273bccb413af065dd755c6bb6",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:2416f9cccf87447071d8c68f45227977a46d2fab62261d59be7a127f6df219f8",
+          "direction": -1
+        },
+        {
+          "edge_identity": "corridor:urumqi:066f058f498287f0b7c11dc60c25208ff56a63fc512bed68dab9244c0c10424c",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:2c7a4b812b91d6c6af687e5fab93eb932abebed68e6adff7416687324527e627",
+          "direction": 1
+        },
+        {
+          "edge_identity": "corridor:urumqi:c41d24e4790430df808ffb455ae2282975ec1a0e4af0e890c6faea38760b0c30",
+          "direction": -1
+        }
+      ]
+    }
+  ],
+  "failed_paths": [],
+  "validation": {
+    "passed": true,
+    "unique_candidate_edges": 30,
+    "unique_road_edges": 24,
+    "unique_reference_connectors": 6,
+    "shared_road_edges": 22,
+    "both_directions_used_edges": 0,
+    "successful_paths": 5,
+    "failed_paths": 0,
+    "unique_road_length_m": 1400.4543685190488,
+    "unique_reference_connector_length_m": 246.88359902650654,
+    "unique_candidate_route_length_m": 1647.3379675455553,
+    "sum_individual_road_route_length_m": 3133.7608630165723,
+    "sum_individual_route_length_m": 3482.127364137027,
+    "repeated_length_if_paths_built_independently_m": 1834.7893965914718,
+    "interpretation": "geometric reuse only; no verified construction savings or heat-pipe capacity"
+  },
+  "reference_replay": {
+    "unchanged_statuses": true,
+    "route_length_tolerance_m": 1e-05,
+    "selected_buildings": 6,
+    "native_road_ways": 29,
+    "network_summary": {
+      "mode": "native_OSM_node_reference_with_conservative_grade_admission",
+      "nodes": 155,
+      "edges": 149,
+      "connected_components": 8,
+      "component_node_sizes": [
+        130,
+        6,
+        6,
+        5,
+        2,
+        2,
+        2,
+        2
+      ],
+      "original_road_total_m": 10127.700806851437,
+      "road_total_after_split_m": 10127.700806851437,
+      "snap_status_counts": {
+        "snapped": 6
+      },
+      "diagnostics": [],
+      "unknown_access_way_ids": [
+        "w1054985240",
+        "w1054985241",
+        "w116559395",
+        "w116564899",
+        "w116565137",
+        "w116565244",
+        "w116575729",
+        "w116575921",
+        "w1165942206",
+        "w1165942207",
+        "w1165942210",
+        "w1408945817",
+        "w1408945824",
+        "w1546217543",
+        "w249168787",
+        "w37374747",
+        "w37375340",
+        "w37375349",
+        "w37376310",
+        "w37376312",
+        "w37376318",
+        "w37730057",
+        "w433280471",
+        "w434722685",
+        "w434722736",
+        "w434722741",
+        "w986554298",
+        "w986554299",
+        "w997370400"
+      ],
+      "grade_unknown_way_ids": [
+        "w1054985240",
+        "w1054985241",
+        "w116559395",
+        "w116564899",
+        "w116565137",
+        "w116565244",
+        "w116575729",
+        "w116575921",
+        "w1165942206",
+        "w1165942207",
+        "w1165942210",
+        "w1408945817",
+        "w1408945824",
+        "w1546217543",
+        "w249168787",
+        "w37374747",
+        "w37375340",
+        "w37375349",
+        "w37376310",
+        "w37376312",
+        "w37376318",
+        "w37730057",
+        "w433280471",
+        "w434722685",
+        "w434722736",
+        "w434722741",
+        "w986554298",
+        "w986554299",
+        "w997370400"
+      ],
+      "fallback_default_grade_is_not_verified_same_elevation": false,
+      "internal_shared_node_grade_conflict_isolation_is_extra_admission_policy": true,
+      "not_identical_to_unfiltered_native_node_graph": false,
+      "not_a_heat_network_or_excavation_certificate": true
+    }
+  }
+}

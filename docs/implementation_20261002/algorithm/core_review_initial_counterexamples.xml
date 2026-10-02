@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="5" time="1.000" timestamp="2026-10-02T13:58:49.909873" hostname="LAPTOP-9T38KD8F"><testcase classname="tests.test_physical_extensions_independent_review" name="test_fixed_fuel_event_rejects_gap_reverse_and_duplicate_timestamps[times0]" time="0.008"><failure message="Failed: DID NOT RAISE &lt;class 'ValueError'&gt;">times = ['2024-01-01 00:00', '2024-01-02 00:00']
+
+    @pytest.mark.parametrize("times", [
+        ["2024-01-01 00:00", "2024-01-02 00:00"],
+        ["2024-01-01 01:00", "2024-01-01 00:00"],
+        ["2024-01-01 00:00", "2024-01-01 00:00"],
+    ])
+    def test_fixed_fuel_event_rejects_gap_reverse_and_duplicate_timestamps(times):
+        c, ts = configuration(), frame()
+        ts["time"] = times
+        c["biomass_supply_chains"] = [{"name": "f", "source_names": ["s"],
+            "lower_heating_value_kwh_per_kg": 1, "conversion_efficiency": 1,
+            "existing_inventory_capacity_kg": 1, "delivery_capacity_kg_per_hour": 0,
+            "inventory_retention_per_hour": .5, "boundary_mode": "fixed",
+            "initial_inventory_kg": 1, "terminal_inventory_min_kg": 0,
+            "terminal_inventory_max_kg": 1}]
+&gt;       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE &lt;class 'ValueError'&gt;
+
+tests\test_physical_extensions_independent_review.py:44: Failed</failure></testcase><testcase classname="tests.test_physical_extensions_independent_review" name="test_fixed_fuel_event_rejects_gap_reverse_and_duplicate_timestamps[times1]" time="0.006"><failure message="Failed: DID NOT RAISE &lt;class 'ValueError'&gt;">times = ['2024-01-01 01:00', '2024-01-01 00:00']
+
+    @pytest.mark.parametrize("times", [
+        ["2024-01-01 00:00", "2024-01-02 00:00"],
+        ["2024-01-01 01:00", "2024-01-01 00:00"],
+        ["2024-01-01 00:00", "2024-01-01 00:00"],
+    ])
+    def test_fixed_fuel_event_rejects_gap_reverse_and_duplicate_timestamps(times):
+        c, ts = configuration(), frame()
+        ts["time"] = times
+        c["biomass_supply_chains"] = [{"name": "f", "source_names": ["s"],
+            "lower_heating_value_kwh_per_kg": 1, "conversion_efficiency": 1,
+            "existing_inventory_capacity_kg": 1, "delivery_capacity_kg_per_hour": 0,
+            "inventory_retention_per_hour": .5, "boundary_mode": "fixed",
+            "initial_inventory_kg": 1, "terminal_inventory_min_kg": 0,
+            "terminal_inventory_max_kg": 1}]
+&gt;       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE &lt;class 'ValueError'&gt;
+
+tests\test_physical_extensions_independent_review.py:44: Failed</failure></testcase><testcase classname="tests.test_physical_extensions_independent_review" name="test_fixed_fuel_event_rejects_gap_reverse_and_duplicate_timestamps[times2]" time="0.004"><failure message="Failed: DID NOT RAISE &lt;class 'ValueError'&gt;">times = ['2024-01-01 00:00', '2024-01-01 00:00']
+
+    @pytest.mark.parametrize("times", [
+        ["2024-01-01 00:00", "2024-01-02 00:00"],
+        ["2024-01-01 01:00", "2024-01-01 00:00"],
+        ["2024-01-01 00:00", "2024-01-01 00:00"],
+    ])
+    def test_fixed_fuel_event_rejects_gap_reverse_and_duplicate_timestamps(times):
+        c, ts = configuration(), frame()
+        ts["time"] = times
+        c["biomass_supply_chains"] = [{"name": "f", "source_names": ["s"],
+            "lower_heating_value_kwh_per_kg": 1, "conversion_efficiency": 1,
+            "existing_inventory_capacity_kg": 1, "delivery_capacity_kg_per_hour": 0,
+            "inventory_retention_per_hour": .5, "boundary_mode": "fixed",
+            "initial_inventory_kg": 1, "terminal_inventory_min_kg": 0,
+            "terminal_inventory_max_kg": 1}]
+&gt;       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE &lt;class 'ValueError'&gt;
+
+tests\test_physical_extensions_independent_review.py:44: Failed</failure></testcase><testcase classname="tests.test_physical_extensions_independent_review" name="test_fixed_battery_event_rejects_missing_elapsed_hours" time="0.004"><failure message="Failed: DID NOT RAISE &lt;class 'ValueError'&gt;">def test_fixed_battery_event_rejects_missing_elapsed_hours():
+        c, ts = configuration(), frame()
+        c["sources"][0]["type"] = "electric_boiler"
+        c["microgrid_islanding"] = {"existing_battery_energy_kwh": 1,
+            "existing_battery_power_kw": 1, "battery_charge_efficiency": 1,
+            "battery_discharge_efficiency": 1, "battery_self_loss_per_hour": .5,
+            "battery_boundary_mode": "fixed", "battery_initial_soc_kwh": 1,
+            "battery_terminal_soc_min_kwh": 0, "battery_terminal_soc_max_kwh": 1}
+        c["grid_connection"] = {"existing_capacity_kw": 100, "availability_column": "grid"}
+        ts["grid"] = 0
+&gt;       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE &lt;class 'ValueError'&gt;
+
+tests\test_physical_extensions_independent_review.py:58: Failed</failure></testcase><testcase classname="tests.test_physical_extensions_independent_review" name="test_cooling_only_basic_fee_is_not_automatically_heating_cash" time="0.006"><failure message="assert 20.0 == 0 ± 1.0e-12&#10;  comparison failed&#10;  Obtained: 20.0&#10;  Expected: 0 ± 1.0e-12">def test_cooling_only_basic_fee_is_not_automatically_heating_cash():
+        c, ts = configuration(), frame().iloc[:1].copy()
+        c["sources"][0].update(type="heat_pump", cop_min=3, cop_max=3)
+        c["multi_energy_services"] = {"cooling": {"demand_columns": {"n": "cold"},
+            "sources": {"s": {"eer": 3}}, "max_unserved_rate": 0}}
+        ts["cold"] = 6
+        c["electricity_tariff"] = {"method": "monthly_demand",
+            "meter_scope": "modeled_energy_system_import", "coverage_policy": "modeled_hours_only",
+            "rate_yuan_per_kw_month": 10}
+        result = HeatPlanningModel(c, ts).solve(time_limit=10, mip_gap=0)
+        assert result.summary["objective_yuan_per_year"] == pytest.approx(22)
+&gt;       assert result.summary["heating_cash_operating_cost_yuan_per_year"] == pytest.approx(0)
+E       assert 20.0 == 0 ± 1.0e-12
+E         comparison failed
+E         Obtained: 20.0
+E         Expected: 0 ± 1.0e-12
+
+tests\test_physical_extensions_independent_review.py:73: AssertionError</failure></testcase></testsuite></testsuites>

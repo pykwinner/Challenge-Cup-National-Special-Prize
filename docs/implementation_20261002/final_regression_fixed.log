@@ -1,0 +1,83 @@
+........................................................................ [  9%]
+........................................................................ [ 18%]
+........................................................................ [ 27%]
+........................................................................ [ 36%]
+........................................................................ [ 45%]
+........................................................................ [ 54%]
+........................................................................ [ 63%]
+........................................................................ [ 72%]
+........................................................................ [ 81%]
+....................................................F................... [ 90%]
+........................................................................ [ 99%]
+...                                                                      [100%]
+================================== FAILURES ===================================
+_______________ SmokeTest.test_monte_carlo_out_of_sample_replay _______________
+
+self = <test_smoke.SmokeTest testMethod=test_monte_carlo_out_of_sample_replay>
+
+    def test_monte_carlo_out_of_sample_replay(self):
+        config, frame = load_inputs(ROOT / "data/example_city.yaml", ROOT / "data/example_timeseries.csv")
+>       result = monte_carlo_out_of_sample_replay(config, frame, samples=3, time_limit=60)
+
+tests\test_smoke.py:353: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\heatplan\validation.py:45: in monte_carlo_out_of_sample_replay
+    bundle = build_correlated_northern_scenario_bundle(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <heatplan.model.HeatPlanningModel object at 0x00000206A11E8D10>
+mip_gap = None, time_limit = 60, objective_mode = 'total_cost'
+
+    def solve(
+        self,
+        mip_gap: float | None = None,
+        time_limit: float | None = None,
+        objective_mode: str = "total_cost",
+    ) -> SolveArtifacts:
+        self.build()
+        planning = self.config["planning"]
+        if objective_mode not in {"total_cost", "emissions"}:
+            raise ValueError("objective_mode 仅支持 total_cost 或 emissions")
+        original_objective = list(self.problem.objective)
+        if objective_mode == "emissions":
+            # A fixed epsilon times cost can reverse the carbon optimum when
+            # cost scales change. Ties are handled by an explicit second solve.
+            self.problem.objective = [0.0] * len(original_objective)
+            emission_row, _ = self.total_service_emissions_expression()
+            for idx, coefficient in emission_row.items():
+                self.problem.objective[idx] = coefficient
+        solve_started = perf_counter()
+        try:
+            result = self.problem.solve(
+                mip_gap=float(mip_gap if mip_gap is not None else planning.get("mip_gap", 0.005)),
+                time_limit=float(time_limit if time_limit is not None else planning.get("time_limit_seconds", 120.0)),
+            )
+        finally:
+            self.problem.objective = original_objective
+        solver_elapsed_seconds = perf_counter() - solve_started
+        if result.x is None:
+>           raise RuntimeError(f"MILP 未得到可行解: status={result.status}, message={result.message}")
+E           RuntimeError: MILP 未得到可行解: status=2, message=The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)
+
+src\heatplan\model.py:2761: RuntimeError
+============================== warnings summary ===============================
+tests/test_audit_and_heating_season.py::test_season_cli_exports_scope_specific_artifacts
+  D:\app\anaconda3\Lib\site-packages\_pytest\threadexception.py:73: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-6 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "D:\app\anaconda3\Lib\threading.py", line 1075, in _bootstrap_inner
+      self.run()
+    File "D:\app\anaconda3\Lib\threading.py", line 1012, in run
+      self._target(*self._args, **self._kwargs)
+    File "D:\app\anaconda3\Lib\subprocess.py", line 1599, in _readerthread
+      buffer.append(fh.read())
+                    ^^^^^^^^^
+  UnicodeDecodeError: 'gbk' codec can't decode byte 0xac in position 948: illegal multibyte sequence
+  
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: D:\competion\xiaotiao\北方供热三类场景公用总框架V10\north_heat_challenge\docs\implementation_20261002\final_regression_fixed.xml -
+=========================== short test summary info ===========================
+FAILED tests/test_smoke.py::SmokeTest::test_monte_carlo_out_of_sample_replay
+1 failed, 794 passed, 1 skipped, 1 warning in 74.62s (0:01:14)

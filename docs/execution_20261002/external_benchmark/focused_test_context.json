@@ -1,0 +1,14 @@
+{
+  "verified_utc": "2026-10-02T04:41:58.063879+00:00",
+  "command": "D:\\app\\anaconda3\\python.exe -m pytest tests/test_bdg2_external_benchmark.py -q --junitxml=docs/execution_20261002/external_benchmark/focused_tests.xml",
+  "tests": 15,
+  "failures": 0,
+  "errors": 0,
+  "suite_timestamp": "2026-10-02T12:36:41.144428",
+  "suite_elapsed_seconds": 5.205,
+  "adapter_test_sha256": "6f6face544fde2932c10da93b745942ef943d648d70ffcf366a17fcf75fc5d06",
+  "live_core_sha256_checked_after_tests": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+  "new_core_frozen_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+  "core_match": true,
+  "note": "Adapter metrics/selection tests do not depend on live core; calibration test imports live core, which matched the frozen new_core at this check."
+}

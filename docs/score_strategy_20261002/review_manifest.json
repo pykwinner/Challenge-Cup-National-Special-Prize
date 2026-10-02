@@ -1,0 +1,169 @@
+{
+  "checked_utc": "2026-10-02T05:33:20.990722+00:00",
+  "scope": "Technical strategy review only; new proposed experiments were not executed in this review. Paper/PPT were not edited by this review.",
+  "source_pdf": {
+    "path": "D:\\competion\\xiaotiao\\CP-202611中国建筑科学研究院有限公司-面向供热格局变革的城镇供热源荷匹配与规划寻优模型构建比赛方案(1).pdf",
+    "sha256": "fed214ef578cbed4cc808275498acd00e848b5d3c66b93000b8e7b643de746e2",
+    "matches_reviewed_source": true
+  },
+  "review_files": [
+    {
+      "file": "data_gap_review.md",
+      "sha256": "035aa65ec9db991fa1673517e89a514026a95fa77eca59e67615ba1f9b83c801",
+      "bytes": 32463
+    },
+    {
+      "file": "method_experiment_review.md",
+      "sha256": "4686ea04839e1c7ac5b2f307e13a2b8c4bad8a64c3732183deb51d06d2f17b5d",
+      "bytes": 29437
+    },
+    {
+      "file": "README.md",
+      "sha256": "707adec6061885ffd44f951b6ab3af97ce01f13c12c7947277536a50457eb56f",
+      "bytes": 25865
+    },
+    {
+      "file": "rubric_reference.json",
+      "sha256": "44b768715e53cf7dbc11cb623c9a9b08ba8169f7c1459f9e01b80ce07682287e",
+      "bytes": 1323
+    },
+    {
+      "file": "spatial_scenario_review.md",
+      "sha256": "84333f2f2ca23597bddddacdf1da896c7a9756d7c92dc00db2ca0e187636edc2",
+      "bytes": 27734
+    }
+  ],
+  "checked_core_files": [
+    {
+      "path": "src/heatplan/scenarios.py",
+      "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "matches_prior_execution": true
+    },
+    {
+      "path": "src/heatplan/representative.py",
+      "sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+      "matches_prior_execution": true
+    },
+    {
+      "path": "src/heatplan/chronology.py",
+      "sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "matches_prior_execution": true
+    },
+    {
+      "path": "src/heatplan/chronology_cli.py",
+      "sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+      "matches_prior_execution": true
+    },
+    {
+      "path": "src/heatplan/osm_reference.py",
+      "sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+      "matches_prior_execution": true
+    },
+    {
+      "path": "scripts/prepare_competition_case.py",
+      "sha256": "3614ace2074bf40448261d5f8be99a42f19748c5d36d4ef0ee98bc0cd9e82275",
+      "matches_prior_execution": true
+    },
+    {
+      "path": "scripts/bdg2_external_benchmark.py",
+      "sha256": "09a8ce844f10d5e3f82aea3c9906a075bbda1632aa829aedb300ea43ccaa6bb1",
+      "matches_prior_execution": true
+    },
+    {
+      "path": "scripts/build_osm_reference_cases.py",
+      "sha256": "163d2f4a85075756b6331815ed84fd50ff529ba6ecb5f316290d640ba6318438",
+      "matches_prior_execution": true
+    }
+  ],
+  "local_markdown_links": [
+    {
+      "document": "method_experiment_review.md",
+      "target": "README.md",
+      "exists": true
+    },
+    {
+      "document": "method_experiment_review.md",
+      "target": "D:/competion/xiaotiao/CP-202611中国建筑科学研究院有限公司-面向供热格局变革的城镇供热源荷匹配与规划寻优模型构建比赛方案(1).pdf",
+      "exists": true
+    },
+    {
+      "document": "method_experiment_review.md",
+      "target": "../execution_20261001/评分逐项验收与算法优势.md",
+      "exists": true
+    },
+    {
+      "document": "method_experiment_review.md",
+      "target": "../execution_20261002/independent_review/findings.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "../source_intake_20261002/新增材料核查与剩余数据清单.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "data_gap_review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "spatial_scenario_review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "method_experiment_review.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "../execution_20261002/RESULTS.md",
+      "exists": true
+    },
+    {
+      "document": "spatial_scenario_review.md",
+      "target": "D:/competion/xiaotiao/CP-202611中国建筑科学研究院有限公司-面向供热格局变革的城镇供热源荷匹配与规划寻优模型构建比赛方案(1).pdf",
+      "exists": true
+    },
+    {
+      "document": "spatial_scenario_review.md",
+      "target": "../execution_20261002/RESULTS.md",
+      "exists": true
+    },
+    {
+      "document": "spatial_scenario_review.md",
+      "target": "../execution_20261002/spatial_reference/README.md",
+      "exists": true
+    },
+    {
+      "document": "spatial_scenario_review.md",
+      "target": "../source_intake_20261002/city_batch_02/urumqi/README.md",
+      "exists": true
+    },
+    {
+      "document": "spatial_scenario_review.md",
+      "target": "../source_intake_20261002/city_batch_02/guyuan/README.md",
+      "exists": true
+    },
+    {
+      "document": "spatial_scenario_review.md",
+      "target": "../source_intake_20261002/city_batch_02/wuhan/README.md",
+      "exists": true
+    },
+    {
+      "document": "spatial_scenario_review.md",
+      "target": "README.md",
+      "exists": true
+    }
+  ],
+  "all_checked_core_files_unchanged": true,
+  "all_local_markdown_links_exist": true,
+  "new_experiments_executed": false,
+  "regression_tests_rerun_for_document_only_review": false,
+  "review_threads_completed": [
+    "01a0f7dc-e521-74f2-a1a2-84ed9785f1bc",
+    "01a0f7dc-ed6b-7a20-9160-4d084f084929",
+    "01a0f7f0-e26e-7c72-8d02-6e77fed6cef0"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "summaries": [
+    {
+      "method": "extreme_aware",
+      "successful_records": 6,
+      "failed_records": 0,
+      "median_retained_scope_abs_energy_bias": 0.08292280266946002,
+      "median_ldc_w1_over_mean_load": 0.15444991320526966,
+      "median_peak_retention_ratio": 1.0,
+      "median_maximum_real_ramp_retention_ratio": 1.0,
+      "candidate_adopted_cases": 0
+    },
+    {
+      "method": "extreme_calibrated",
+      "successful_records": 6,
+      "failed_records": 0,
+      "median_retained_scope_abs_energy_bias": 1.3851259822579564e-05,
+      "median_ldc_w1_over_mean_load": 0.12315005340730362,
+      "median_peak_retention_ratio": 1.0,
+      "median_maximum_real_ramp_retention_ratio": 1.0,
+      "candidate_adopted_cases": 0
+    },
+    {
+      "method": "hard_energy_minimum_W1",
+      "successful_records": 6,
+      "failed_records": 0,
+      "median_retained_scope_abs_energy_bias": 6.981991363211688e-16,
+      "median_ldc_w1_over_mean_load": 0.044775275390452146,
+      "median_peak_retention_ratio": 1.0,
+      "median_maximum_real_ramp_retention_ratio": 1.0,
+      "candidate_adopted_cases": 0
+    },
+    {
+      "method": "adoption_soft",
+      "successful_records": 6,
+      "failed_records": 0,
+      "median_retained_scope_abs_energy_bias": 0.006045686369151258,
+      "median_ldc_w1_over_mean_load": 0.15444991320526966,
+      "median_peak_retention_ratio": 1.0,
+      "median_maximum_real_ramp_retention_ratio": 1.0,
+      "candidate_adopted_cases": 3
+    },
+    {
+      "method": "adoption_hard",
+      "successful_records": 6,
+      "failed_records": 0,
+      "median_retained_scope_abs_energy_bias": 1.0831356509550314e-15,
+      "median_ldc_w1_over_mean_load": 0.044775275390452146,
+      "median_peak_retention_ratio": 1.0,
+      "median_maximum_real_ramp_retention_ratio": 1.0,
+      "candidate_adopted_cases": 4
+    }
+  ],
+  "case_count": 6,
+  "failed_method_records": 0,
+  "total_elapsed_seconds": 14.45477270000265,
+  "old_nine_role": "development_reference_only_for_this_new_method",
+  "engineering_operation_validated": false
+}

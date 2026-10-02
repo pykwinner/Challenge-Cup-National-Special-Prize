@@ -15,6 +15,7 @@ HEATING_CASH_COMPONENTS = (
     "fixed_om_cost",
     "startup_shutdown_cost",
     "biomass_fuel_cost",
+    "heating_electricity_basic_cost",
 )
 
 

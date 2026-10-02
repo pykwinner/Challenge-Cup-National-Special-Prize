@@ -1,0 +1,734 @@
+........................................................................ [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 32%]
+...............................FEEEEEEE.EEEE.EF......................... [ 40%]
+..................F..........F............................ [ 47%]
+..................................................................... [ 55%]
+........................................................................ [ 63%]
+......................FF................................................ [ 71%]
+........................................................................ [ 79%]
+........................................................................ [ 87%]
+........................................................................ [ 96%]
+...................................                             [100%]
+=================================== ERRORS ====================================
+______ ERROR at setup of test_raw_weather_clock_and_no_synthetic_weather ______
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+_____ ERROR at setup of test_reject_changed_physical_clock_or_scope[gap] ______
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+__ ERROR at setup of test_reject_changed_physical_clock_or_scope[duplicate] ___
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+_____ ERROR at setup of test_reject_changed_physical_clock_or_scope[nan] ______
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+____ ERROR at setup of test_reject_changed_physical_clock_or_scope[weight] ____
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+____ ERROR at setup of test_reject_changed_physical_clock_or_scope[naive] _____
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+____ ERROR at setup of test_reject_changed_physical_clock_or_scope[tariff] ____
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+____ ERROR at setup of test_new_unreviewed_branches_fail_gate[investment] _____
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+____ ERROR at setup of test_new_unreviewed_branches_fail_gate[inheritance] ____
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+_________ ERROR at setup of test_new_unreviewed_branches_fail_gate[C] _________
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+___ ERROR at setup of test_new_unreviewed_branches_fail_gate[heat_mapping] ____
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_no_gain_screen_and_actual_steady_service_are_distinct _
+
+    @pytest.fixture(scope="module")
+    def frame():
+>       return case.build_frame()
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:99: in build_frame
+    frame = weather_from_original(root)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:81: in weather_from_original
+    raw = json.loads((root / EVIDENCE / "wuhan_nasa_power_utc.json").read_text(encoding="utf-8-sig"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json')
+mode = 'r', buffering = -1, encoding = 'utf-8-sig', errors = None
+newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\wuhan_nasa_power_utc.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+================================== FAILURES ===================================
+_______________ test_exact_admission_and_non_empirical_identity _______________
+
+    def test_exact_admission_and_non_empirical_identity():
+>       report = case.verify_admission()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\prepare_evidence_case_20261002.py:267: in verify_admission
+    if sha256(root / relative) != expected:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:51: in sha256
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/bestest_6231.pdf')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\bestest_6231.pdf'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+_________ test_tou_separate_gate_preserves_base_and_conditional_scope _________
+
+    def test_tou_separate_gate_preserves_base_and_conditional_scope():
+        before = case.sha256(ROOT / case.DOC_DIR / "admission.json")
+>       report = tou.verify_admission()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_evidence_case_20261002.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+docs\implementation_20261002\data\prepare_tou.py:225: in verify_admission
+    base.verify_admission(root)
+scripts\prepare_evidence_case_20261002.py:267: in verify_admission
+    if sha256(root / relative) != expected:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+scripts\prepare_evidence_case_20261002.py:51: in sha256
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/docs/implementation_20261002/data/evidence/bestest_6231.pdf')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\docs\\implementation_20261002\\data\\evidence\\bestest_6231.pdf'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+_________________________ test_final_manifest_hashes __________________________
+
+    def test_final_manifest_hashes():
+        manifest = json.loads((benchmark.OUTPUT / "manifest.json").read_text(encoding="utf-8"))
+        assert manifest["complete"] is True
+        for item in manifest["inputs"]:
+            # Historical experiment inputs remain bound to their original code
+            # epoch. Only the two explicitly archived sources are resolved here;
+            # data inputs still have to match their original paths and hashes.
+            source = ROOT / item["file"]
+            if item["file"] in {"scripts/validate_external_rc_benchmark.py", "tests/test_external_rc_benchmark.py"}:
+                source = benchmark.OUTPUT / "code_version" / item["file"]
+>           assert benchmark.digest(source) == item["sha256"]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_external_rc_benchmark.py:165: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\validate_external_rc_benchmark.py:39: in digest
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/outputs/competition_20261001/C1_external/code_version/scripts/validate_external_rc_benchmark.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\outputs\\competition_20261001\\C1_external\\code_version\\scripts\\validate_external_rc_benchmark.py'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+______________ test_existing_output_or_file_is_never_overwritten ______________
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/.algorithm_doc_work/github_release_20261002/pytest_rc2/test_existing_output_or_file_i0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000018CDF6D2D50>
+
+    def test_existing_output_or_file_is_never_overwritten(tmp_path, monkeypatch):
+        target = tmp_path / "existing.json"
+        target.write_text("original", encoding="utf-8")
+        with pytest.raises(FileExistsError):
+            followup.write_json_new(target, {"replacement": True})
+        assert target.read_text(encoding="utf-8") == "original"
+        monkeypatch.setattr(followup, "fit_training_only", lambda *args: pytest.fail("must not fit into existing output"))
+        with pytest.raises(FileExistsError):
+>           followup.run()
+
+tests\test_external_rc_followup.py:214: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\validate_external_rc_followup.py:253: in run
+    approval = verify_approval()
+               ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def verify_approval() -> dict:
+        approval = json.loads(APPROVAL.read_text(encoding="utf-8"))
+        if (approval["approved_by"] != "C0" or approval["plan"] != PLAN.relative_to(ROOT).as_posix()
+                or first.digest(PLAN) != approval["plan_sha256"]
+                or first.digest(FIRST / "manifest.json") != approval["first_manifest_sha256"]
+                or not all(approval[key] is True for key in ("first_results_read_only",
+                    "exploratory_after_first_test_inspection", "no_further_loss_model_or_start_search",
+                    "report_all_metrics_even_if_worse"))):
+            raise ValueError("approval identity or fixed exploratory restrictions mismatch")
+        manifest = json.loads((FIRST / "manifest.json").read_text(encoding="utf-8"))
+        if manifest["complete"] is not True:
+            raise ValueError("first-round manifest incomplete")
+        for category, base in (("inputs", ROOT), ("outputs", FIRST)):
+            for item in manifest[category]:
+                if first.digest(base / item["file"]) != item["sha256"]:
+>                   raise ValueError(f"frozen first-round identity mismatch: {item['file']}")
+E                   ValueError: frozen first-round identity mismatch: scripts/validate_external_rc_benchmark.py
+
+scripts\validate_external_rc_followup.py:61: ValueError
+_________________ test_failure_never_writes_complete_manifest _________________
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/.algorithm_doc_work/github_release_20261002/pytest_rc2/test_failure_never_writes_comp0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000018CD9952DE0>
+
+    def test_failure_never_writes_complete_manifest(tmp_path, monkeypatch):
+        monkeypatch.setattr(validation, "OUTPUT", tmp_path)
+        def fail(*args, **kwargs):
+            raise RuntimeError("injected stage failure")
+        monkeypatch.setattr(validation, "solve_lexicographic", fail)
+        with pytest.raises(RuntimeError, match="injected stage failure"):
+>           validation.run_experiment("failure_case")
+
+tests\test_published_multiobjective.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\validate_published_multiobjective.py:322: in run_experiment
+    if any(sha256(DATA / name) != digest for name, digest in reviewed_identity["reviewed_files_sha256"].items()):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\validate_published_multiobjective.py:322: in <genexpr>
+    if any(sha256(DATA / name) != digest for name, digest in reviewed_identity["reviewed_files_sha256"].items()):
+           ^^^^^^^^^^^^^^^^^^^
+scripts\validate_published_multiobjective.py:46: in sha256
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/data/published_multiobjective_20261002/epscm.pdf')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\data\\published_multiobjective_20261002\\epscm.pdf'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+_________________ test_run_directory_cannot_overwrite_history _________________
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/.algorithm_doc_work/github_release_20261002/pytest_rc2/test_run_directory_cannot_over0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000018CD99532C0>
+
+    def test_run_directory_cannot_overwrite_history(tmp_path, monkeypatch):
+        monkeypatch.setattr(validation, "OUTPUT", tmp_path)
+        (tmp_path / "existing").mkdir()
+        sentinel = tmp_path / "existing/sentinel.json"
+        sentinel.write_text("preserved", encoding="utf-8")
+        with pytest.raises(FileExistsError):
+>           validation.run_experiment("existing")
+
+tests\test_published_multiobjective.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\validate_published_multiobjective.py:322: in run_experiment
+    if any(sha256(DATA / name) != digest for name, digest in reviewed_identity["reviewed_files_sha256"].items()):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\validate_published_multiobjective.py:322: in <genexpr>
+    if any(sha256(DATA / name) != digest for name, digest in reviewed_identity["reviewed_files_sha256"].items()):
+           ^^^^^^^^^^^^^^^^^^^
+scripts\validate_published_multiobjective.py:46: in sha256
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+D:\app\anaconda3\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc2/data/published_multiobjective_20261002/epscm.pdf')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc2\\data\\published_multiobjective_20261002\\epscm.pdf'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+============================== warnings summary ===============================
+tests/test_bdg2_external_benchmark.py::test_legacy_repeated_profiles_failure_is_not_hidden
+  D:\competion\xiaotiao\github_candidate_20261002_rc2\docs\execution_20261002\algorithm\scenarios_before.py:38: RuntimeWarning: Mean of empty slice.
+    center = scaled[members].mean(axis=0)
+
+tests/test_bdg2_external_benchmark.py::test_legacy_repeated_profiles_failure_is_not_hidden
+  D:\competion\xiaotiao\.algorithm_doc_work\github_release_20261002\venv\Lib\site-packages\numpy\core\_methods.py:121: RuntimeWarning: invalid value encountered in divide
+    ret = um.true_divide(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_evidence_case_20261002.py::test_exact_admission_and_non_empirical_identity
+FAILED tests/test_evidence_case_20261002.py::test_tou_separate_gate_preserves_base_and_conditional_scope
+FAILED tests/test_external_rc_benchmark.py::test_final_manifest_hashes - File...
+FAILED tests/test_external_rc_followup.py::test_existing_output_or_file_is_never_overwritten
+FAILED tests/test_published_multiobjective.py::test_failure_never_writes_complete_manifest
+FAILED tests/test_published_multiobjective.py::test_run_directory_cannot_overwrite_history
+ERROR tests/test_evidence_case_20261002.py::test_raw_weather_clock_and_no_synthetic_weather
+ERROR tests/test_evidence_case_20261002.py::test_reject_changed_physical_clock_or_scope[gap]
+ERROR tests/test_evidence_case_20261002.py::test_reject_changed_physical_clock_or_scope[duplicate]
+ERROR tests/test_evidence_case_20261002.py::test_reject_changed_physical_clock_or_scope[nan]
+ERROR tests/test_evidence_case_20261002.py::test_reject_changed_physical_clock_or_scope[weight]
+ERROR tests/test_evidence_case_20261002.py::test_reject_changed_physical_clock_or_scope[naive]
+ERROR tests/test_evidence_case_20261002.py::test_reject_changed_physical_clock_or_scope[tariff]
+ERROR tests/test_evidence_case_20261002.py::test_new_unreviewed_branches_fail_gate[investment]
+ERROR tests/test_evidence_case_20261002.py::test_new_unreviewed_branches_fail_gate[inheritance]
+ERROR tests/test_evidence_case_20261002.py::test_new_unreviewed_branches_fail_gate[C]
+ERROR tests/test_evidence_case_20261002.py::test_new_unreviewed_branches_fail_gate[heat_mapping]
+ERROR tests/test_evidence_case_20261002.py::test_no_gain_screen_and_actual_steady_service_are_distinct
+6 failed, 864 passed, 2 deselected, 2 warnings, 12 errors, 26 subtests passed in 94.12s (0:01:34)

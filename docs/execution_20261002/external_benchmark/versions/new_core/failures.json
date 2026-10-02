@@ -1,0 +1,24 @@
+[
+  {
+    "case_id": "chilledwater__Bobcat_assembly_Camilla",
+    "category": "chilledwater",
+    "site_id": "Bobcat",
+    "year": 2017,
+    "core_label": "new_core",
+    "method": "extreme_calibrated",
+    "requested_k": 7,
+    "core_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+    "observed_calendar_sha256": "3b3db8e55442f4c0d7eb77781f9a447d5036cd006522f7e5dfe1f9424f34f41b",
+    "input_retained_days": 349,
+    "status": "failed",
+    "failure_stage": "method",
+    "exception_type": "ValueError",
+    "exception": "所选校准列均没有有效能量",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\scripts\\bdg2_external_benchmark.py\", line 558, in run\n    run_result = execute_calibration(core, retained, extreme_selection)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\scripts\\bdg2_external_benchmark.py\", line 355, in execute_calibration\n    calibration = core.calibrate_representative_day_weights(\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\execution_20261002\\external_benchmark\\versions\\new_core\\scenarios.py\", line 450, in calibrate_representative_day_weights\n    raise ValueError(\"所选校准列均没有有效能量\")\nValueError: 所选校准列均没有有效能量\n",
+    "budget_matched": false,
+    "failure_total_elapsed_seconds": 0.018315299996174872,
+    "elapsed_seconds": [
+      0.0016340000001946464
+    ]
+  }
+]

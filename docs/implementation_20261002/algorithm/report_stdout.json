@@ -1,0 +1,666 @@
+{
+  "generated_utc": "2026-10-02T05:52:48.778837+00:00",
+  "summaries": [
+    {
+      "method": "ordinary",
+      "successful_records": 9,
+      "failed_records": 0,
+      "median_retained_scope_abs_energy_bias": 0.020177715878986785,
+      "median_ldc_w1_over_mean_load": 0.0598537341216115,
+      "median_peak_retention_ratio": 0.7873649745729719,
+      "median_maximum_real_ramp_retention_ratio": 0.49399546653886106,
+      "median_hot_day_coverage": 0.0,
+      "median_ramp_tail_event_coverage": 0.015151515151515152,
+      "median_compression_n_over_m": 40.333333333333336
+    },
+    {
+      "method": "extreme_aware",
+      "successful_records": 9,
+      "failed_records": 0,
+      "median_retained_scope_abs_energy_bias": 0.00808193639178864,
+      "median_ldc_w1_over_mean_load": 0.06213645918543541,
+      "median_peak_retention_ratio": 1.0,
+      "median_maximum_real_ramp_retention_ratio": 1.0,
+      "median_hot_day_coverage": 0.0,
+      "median_ramp_tail_event_coverage": 0.0392156862745098,
+      "median_compression_n_over_m": 40.333333333333336
+    },
+    {
+      "method": "extreme_calibrated",
+      "successful_records": 9,
+      "failed_records": 0,
+      "median_retained_scope_abs_energy_bias": 1.7609315696858795e-05,
+      "median_ldc_w1_over_mean_load": 0.06007237374404402,
+      "median_peak_retention_ratio": 1.0,
+      "median_maximum_real_ramp_retention_ratio": 1.0,
+      "median_hot_day_coverage": 0.0,
+      "median_ramp_tail_event_coverage": 0.0392156862745098,
+      "median_compression_n_over_m": 40.333333333333336
+    },
+    {
+      "method": "adoption_rule",
+      "successful_records": 9,
+      "failed_records": 0,
+      "median_retained_scope_abs_energy_bias": 0.0013582643030883616,
+      "median_ldc_w1_over_mean_load": 0.05947409072841915,
+      "median_peak_retention_ratio": 1.0,
+      "median_maximum_real_ramp_retention_ratio": 1.0,
+      "median_hot_day_coverage": 0.0,
+      "median_ramp_tail_event_coverage": 0.0392156862745098,
+      "median_compression_n_over_m": 40.333333333333336
+    }
+  ],
+  "candidate_adopted_cases": 2,
+  "selected_passes_research_policy_cases": 2,
+  "fallback_cases": 7,
+  "LP_feasible_cases": 9,
+  "LP_infeasible_cases": 0,
+  "LP_feasible_but_candidate_rejected_cases": 7,
+  "complete_day_filter_original_peak_loss_cases": 5,
+  "timing": {
+    "completed_utc": "2026-10-02T05:52:31.893274+00:00",
+    "protocol_lock_sha256": "a203caca8c643de7b0fc9b5b1efee86878d317d6f9a0fcbb649d02faaa9eb7c0",
+    "case_count": 9,
+    "method_records": 36,
+    "failed_method_records": 0,
+    "source_load_io_seconds": 0.8613786999994772,
+    "total_elapsed_seconds": 12.447474400003557,
+    "no_acceleration_enabled": true,
+    "timing_scope": "3 independent stock single-thread method invocations; calibration reuses fixed selection; LP and gate additional work; case/end-to-end totals retained",
+    "artifacts": [
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\adoption_records.json",
+        "sha256": "26d651dd1d78ab55c974b16197a5117fc11bcf592096ddc6e1fb8a04b03bdb55"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\boundary_tests.xml",
+        "sha256": "f840e7be6288ea0493bb6b2c0b421216eb764206c64421ef99d55a0dc5d3a2b3"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\adoption_rule_result.json",
+        "sha256": "cdee2b3e91a9a1625898d3f0227081912a55d7928aad41aeb0d21b38aad8427c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\coverage.json",
+        "sha256": "9eb2ff82f0a41dc0af09cb2c0047138adc0ee830531986ba99fd00844a504aa7"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\exact_matching_feasibility.json",
+        "sha256": "3e421d767582c7e87a732b75c42ee149018c4c74b4162e2ea68c5f3294492b89"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\excluded_days.json",
+        "sha256": "52e828769a696c49d047df02ad511daa427959ebdd354354751d701b8be2a365"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_aware_actual_days.csv",
+        "sha256": "0e5465f842409ae7f2853e910aa9ad5bc19721f0d4cfd900299a5f9723502c37"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_aware_ramp_events.json",
+        "sha256": "6c9b95b025522ba3949dd628a2330ccfcec5cc654d88198c21c874a292533da5"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_aware_result.json",
+        "sha256": "45a3c6c70384d02d170f9b4dbeb2122f5e34d528df85594f6eaf9816bade4ab2"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_calibrated_actual_days.csv",
+        "sha256": "3a4fa37741667588bf120a93ec07aa00321f9a9885b60e2583c77a0f33b5facc"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_calibrated_ramp_events.json",
+        "sha256": "6c9b95b025522ba3949dd628a2330ccfcec5cc654d88198c21c874a292533da5"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\extreme_calibrated_result.json",
+        "sha256": "6e058704f9579f1e4373e8dab61d58d1ed950d25305cb3fbdec23c28196ddc3f"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\observed_calendar.csv",
+        "sha256": "b29eaf7cf00ed8fa50fdccf7804d455a16d42f576716ae60c72d18c529e0f3a4"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\ordinary_actual_days.csv",
+        "sha256": "3af58a0f5eddcfd50dde814f57eb60644ae85789dd5a2c6a3d3f3224aaeb6a27"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\ordinary_ramp_events.json",
+        "sha256": "d778b7d084a3ee2df5b02d4ddc4e427d4197738058790927c9fe3e10ea1c774b"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\ordinary_result.json",
+        "sha256": "8d4414ef269d5bb688676a03198ac8df0ebd12fe98fc9272db4a34798690bfd0"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Aurora\\2017\\original_observed_scope_audit.json",
+        "sha256": "3fc3a09822139a9b03c1b41eeb1e010651b08810164f9b9c23dd55bc9d92005d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\adoption_rule_result.json",
+        "sha256": "34c58efed43c143a657bcc2fb519e3393b3b0e2fcf7e88af804e33de3dd2360c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\coverage.json",
+        "sha256": "508dcfa83805f82d1a79fcd86721c24c517ee4de8d743be66ebbd781e90d632c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\exact_matching_feasibility.json",
+        "sha256": "12daaac3c6102950522a4d2cd33809412ecc7d6937c1d995c5e41c63c977ad5c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\excluded_days.json",
+        "sha256": "52e828769a696c49d047df02ad511daa427959ebdd354354751d701b8be2a365"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_aware_actual_days.csv",
+        "sha256": "8e05c04edfd7e2407b34b73d7e34652f28537b517dd175a7fdf3de6eceadfa59"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_aware_ramp_events.json",
+        "sha256": "cd858fa0f35e9ec15121f2c07d7b0124f585b83ff034cfc4a2efbdade33a113c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_aware_result.json",
+        "sha256": "3680577c80f181cf02502f3632072c490df5a2a187bbfedc577d3e4b247c8e13"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_calibrated_actual_days.csv",
+        "sha256": "f074f84ffce147e56c17fa47d9c970b7883728f146bb624f1371f9db59afadab"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_calibrated_ramp_events.json",
+        "sha256": "cd858fa0f35e9ec15121f2c07d7b0124f585b83ff034cfc4a2efbdade33a113c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\extreme_calibrated_result.json",
+        "sha256": "4793bc1b83794ee1b58d42a3605493110d61b7aa4220df88d44a410bdae61edd"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\observed_calendar.csv",
+        "sha256": "32ea3205bcabb746e9dbf3652f11184ce4379ae920c1d2c31138994ef6935b78"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\ordinary_actual_days.csv",
+        "sha256": "e3df7bc70ce70559af24dd6c18cd77089dfc65420ae6499705b69bfee6d6cc68"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\ordinary_ramp_events.json",
+        "sha256": "740b2e5352cf2f24756a02868a9c312f5d7f3bb8670f1ac91c3436916a5dd484"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\ordinary_result.json",
+        "sha256": "c9abe7f2faae969099c7370510f3c6a29cbcbe0e88e262c7bdb55b44642780f3"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Panther_education_Cleopatra\\2017\\original_observed_scope_audit.json",
+        "sha256": "fb89d8494df4938b6cfc4d391d3a3fac32b7c5e8735a9d7af957b2a313e27992"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\adoption_rule_result.json",
+        "sha256": "c394cc36b434b1c9fe45873dbc0ca567d0b3ed22b07d5af686694411cd64c178"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\coverage.json",
+        "sha256": "9bcc8ffc85e47f846355d226abf6803d5ce2b73709ca63f0a62575cf9b75a3d6"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\exact_matching_feasibility.json",
+        "sha256": "efffbbc7a9546c9a48e4ba7a65cd589ca600701fe89cd6b6e45f52d03fb4e1b0"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\excluded_days.json",
+        "sha256": "307e304b4ab7c4db3813abfdaf99e60b5265296e93c4d51631fec613f4b8a5c1"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_aware_actual_days.csv",
+        "sha256": "b887eace624cabb60d079b2ddce43c09812d1a16dfc9c7477c16d9276f14e292"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_aware_ramp_events.json",
+        "sha256": "9b890e54e6678abbd79960786077015cff34c87d6b61f5c8e6ef42b88dc347fa"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_aware_result.json",
+        "sha256": "5947d803ef2db076c3f269c319911aef8d1837fa5fd8992bf5c90c6adae8224e"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_calibrated_actual_days.csv",
+        "sha256": "0e7d511b9e037bf6e63271048cbb13df796ddf5973191ad917921a6854df3deb"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_calibrated_ramp_events.json",
+        "sha256": "9b890e54e6678abbd79960786077015cff34c87d6b61f5c8e6ef42b88dc347fa"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\extreme_calibrated_result.json",
+        "sha256": "6fd4d47f26b625db693933a1275fabfb8cd59dea08edbf138308984fbe5c1f5f"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\observed_calendar.csv",
+        "sha256": "d9ea77c3e52f92f8ca539b43d57e4a09253389381f852f0953f869e6aeabcf70"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\ordinary_actual_days.csv",
+        "sha256": "5c5ede6e5312bf4ef811c9cc85999afc6677fef81b5afe247f2b064754b960b8"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\ordinary_ramp_events.json",
+        "sha256": "ef816fa937651a0205612f56d2723823ab01b42c3f329636a0492af1393ef69d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\ordinary_result.json",
+        "sha256": "c0cbd4d0908f4a478b36a494e95f6ffa15e3244b82c215b13d4313cfa5fe18dc"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\chilledwater__Swan_unknown_Christoper\\2017\\original_observed_scope_audit.json",
+        "sha256": "d9917be9ced34b4304d9ea9503a9f8bfc1da7553bfab2b03dc4023363d154ca0"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\adoption_rule_result.json",
+        "sha256": "33352f95cf01c527931c1f589536fee15486ec6290b61590c1eb2a683e758b2c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\coverage.json",
+        "sha256": "352714f7512ec02df169d6eaf083ad260e8b145e381d4cdd116949fd2a1c30ad"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\exact_matching_feasibility.json",
+        "sha256": "5830b608e2c3ae99607f5182fde446a5cb392c340fe55ca948f7dee6011eef69"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\excluded_days.json",
+        "sha256": "33911f56dc5a261c4bb19bda737be2cf8bfc148dd7e247042d1988e562a8213f"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_aware_actual_days.csv",
+        "sha256": "7c88bbd16f7f99e96b954b91d410ce72bcf684230cf5b230d7e377fe4e28cadc"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_aware_ramp_events.json",
+        "sha256": "79ed164aba046de149602f7d39dd771f677b417cf04591ab21a21f9dce32f19c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_aware_result.json",
+        "sha256": "c675ad4b0346ad02224672b45e9b9b35f76f84090778df52d05529a2a4912a08"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_calibrated_actual_days.csv",
+        "sha256": "53ecb218453e953dc3e2359a62a761771a1b4ff8675b28ed986267f0d29a1534"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_calibrated_ramp_events.json",
+        "sha256": "79ed164aba046de149602f7d39dd771f677b417cf04591ab21a21f9dce32f19c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\extreme_calibrated_result.json",
+        "sha256": "0f151ba61296f8a385b3baed2c35d337a700f5b0d5f0f27ac3a28db104a1575d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\observed_calendar.csv",
+        "sha256": "a62e703145bc516275a810d16dd92c767a257acc10d60fcabd201bff2c4d82f1"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\ordinary_actual_days.csv",
+        "sha256": "052661352862647b3c34b162f400a74d7d25d59b976d8964d0a871ad74a91cd6"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\ordinary_ramp_events.json",
+        "sha256": "8e6146c43fcc5117605edb10670e49f7182151a17dc42d79315325f680261650"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\ordinary_result.json",
+        "sha256": "af59de753b6ef15c646f19873c2e0d36169235adee8bc6335a6b4a709ae5e431"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Allison\\2017\\original_observed_scope_audit.json",
+        "sha256": "53a7e040f5c17e5acf983e23932b91cfc9a1f023fcdd111a61898951c9bd716e"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\adoption_rule_result.json",
+        "sha256": "0dc5f3b527c55d6ba4a71ca343de5c005e0e9f6d2a1c667fae5527e7b0609128"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\coverage.json",
+        "sha256": "c9820c8779bef5010f0097aee691a2adc53d58892bbb7fea5707320f6f8d35e1"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\exact_matching_feasibility.json",
+        "sha256": "21f2566c5dec52d9a726d9550688f0d437817e23a8d53c32777157fbd2ae4193"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\excluded_days.json",
+        "sha256": "5dc99f03f2dde17b540fc145f51e7b40ae61c81573b03d27447cfa2de968bbe1"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_aware_actual_days.csv",
+        "sha256": "0c659991fbbf3b915cb62c5912b16a870c1fcf6dc7149bf7ee75ef4f5163357c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_aware_ramp_events.json",
+        "sha256": "2c6c712546b4f6bf2aa5efacfa09c03c826eefaa438abfdc5ce1c45d13ccf253"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_aware_result.json",
+        "sha256": "933539da6540b9250fef0e4e858142865439b2c9867d4fed86701a6d3decffec"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_calibrated_actual_days.csv",
+        "sha256": "1d71c0fd8c5ab8de0e6355c633eb636130140766968fc07268531c15bce3febd"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_calibrated_ramp_events.json",
+        "sha256": "2c6c712546b4f6bf2aa5efacfa09c03c826eefaa438abfdc5ce1c45d13ccf253"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\extreme_calibrated_result.json",
+        "sha256": "2b2d38e85433587e8bf922a20c68ff65fada02aed482452f7f2bc553d1844a8f"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\observed_calendar.csv",
+        "sha256": "19e0516e982553723bca2575c849ef93fdff7219135ec41ca110c90994d398d2"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\ordinary_actual_days.csv",
+        "sha256": "4eff27f9bc2c3ab40f035ca8ffab19132e0ea0a63633b9a4aff4d116335c5c45"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\ordinary_ramp_events.json",
+        "sha256": "2c6c712546b4f6bf2aa5efacfa09c03c826eefaa438abfdc5ce1c45d13ccf253"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\ordinary_result.json",
+        "sha256": "7fe2924b88aaadca89ffb8357fc0daf3d445e0c5db7deb4348e33f273050e8b1"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Andres\\2017\\original_observed_scope_audit.json",
+        "sha256": "13f763ccb6bddbeb4a6c51a50f47f280a9edb604b75ff45c84992bbb37fe74d8"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\adoption_rule_result.json",
+        "sha256": "a83d2d173a744422b24c4c945eb86a7e07256c8152e40bb9d74c05848107f5e6"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\coverage.json",
+        "sha256": "c0e4c216c29d0dddc56507d5e2ecf3b434e63182223c43a1cc222b109df467fa"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\exact_matching_feasibility.json",
+        "sha256": "537479e2ed582cc850a77dd80b7013c684ee847497a7448b2e71b604ddb30f58"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\excluded_days.json",
+        "sha256": "71cfd1c596cf1f4d7afb9de2f709dd3c346b9d548a201c52ce6111847e2aee2c"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_aware_actual_days.csv",
+        "sha256": "ca85b10f9b94fff52a7067efcb21c5d269ef950a5fae7909e82ccfead4a0886d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_aware_ramp_events.json",
+        "sha256": "7ca57cfdc3b9dca91c312e7fc201e1ab07f4d3925bd60f84335b461b6c08f26a"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_aware_result.json",
+        "sha256": "11185dbe750cc7e2b9627718dccce8416766c116ced37a9c4e5970a1ffc18774"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_calibrated_actual_days.csv",
+        "sha256": "81d7b753458f3d1ed0406f1eac8ee7d913d25e8f1c65c61f69b94b3bc59d6e58"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_calibrated_ramp_events.json",
+        "sha256": "7ca57cfdc3b9dca91c312e7fc201e1ab07f4d3925bd60f84335b461b6c08f26a"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\extreme_calibrated_result.json",
+        "sha256": "84bee41769b05f562d9aa902256e8fb52701866f6e597220318a502fde3e4fd2"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\observed_calendar.csv",
+        "sha256": "ca78d13df98dea9fecccbbf603ec20ec3f939cde56bb7dcb971f5e9f16bb2c04"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\ordinary_actual_days.csv",
+        "sha256": "8de397fdf5b204aaf31e6e66f110ac4c187a875a0da97f02755781a7bf991df5"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\ordinary_ramp_events.json",
+        "sha256": "0d4695ec7be8418cb518df2a57c53ede313baa778e1af5df732bc39a9c0653d0"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\ordinary_result.json",
+        "sha256": "eeee272c9161f07fe3d1858c1289303cbe88d4c05d256196982f1f8e52307429"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\hotwater__Swan_unknown_Darrin\\2017\\original_observed_scope_audit.json",
+        "sha256": "6f5a624020e4ff2a4630fdf626a14d7d198d6868549fdd58e1fea3c0148026b7"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\adoption_rule_result.json",
+        "sha256": "e97309906c889f99a5f21fbba4c52979b2f228aa57ca2731bf2c4d33619c0467"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\coverage.json",
+        "sha256": "c24ab443ef74dc763a4fd91c2085c91bede017deda62fec45857755c2afd4b42"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\exact_matching_feasibility.json",
+        "sha256": "0c6515073f7617b5c2a3b02d88d56cb6bf95db5e095ddbdd667df586bec5d3f3"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\excluded_days.json",
+        "sha256": "2a29f2cf621745b2b4c89408a68aa924005edb041efffc8d6e8b7d77d2e46171"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_aware_actual_days.csv",
+        "sha256": "f6998e233fc22b670a65000a4a763729f4ee94d804d976e09c3ecdd61007e415"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_aware_ramp_events.json",
+        "sha256": "0bac2372ec020c8233e87e71e8ea8602683d7493e3784c9f41da937924e76079"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_aware_result.json",
+        "sha256": "abc0c481b97ad8a0582f765368eba0c9b399fbe62d64ebab2fcf80e5ce64fd47"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_calibrated_actual_days.csv",
+        "sha256": "d603ace27784ac11860b4a6bc0ad1313fcdbd29e1e98e117bfa92c215eff1687"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_calibrated_ramp_events.json",
+        "sha256": "0bac2372ec020c8233e87e71e8ea8602683d7493e3784c9f41da937924e76079"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\extreme_calibrated_result.json",
+        "sha256": "82a898bb3408c0b85e9779d552e94fa6b549760f126d8e4dbc54ca6c62fb76be"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\observed_calendar.csv",
+        "sha256": "a9084475f73c88cd57a62ba91f14cd31347851a484e41afee1ad004e0414b659"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\ordinary_actual_days.csv",
+        "sha256": "e49638e1e67f2202a3736ee086022f3b552ba92cdb370daaf79e06167677ce80"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\ordinary_ramp_events.json",
+        "sha256": "e1f6cb5c5410988ab75dd85b71c425ff1c1bce7f9f3b613ef17740133c76ff5d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\ordinary_result.json",
+        "sha256": "d9267cc77e238daf2472935ca92dbef44b5d6b0bee812aee5660219bf2ae8540"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Britt\\2017\\original_observed_scope_audit.json",
+        "sha256": "bfdaa277d8b32d577a5b68095833d8e980327f2712052172a719b16b3995f506"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\adoption_rule_result.json",
+        "sha256": "c0ea39687e4412631a84d86e3ade62e60fcd125b0bea7e8f87257ce1242226f4"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\coverage.json",
+        "sha256": "88dc8236d13fb936870afbded77f9b979d604bb5c5dcfe2c08e1c1b8de519662"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\exact_matching_feasibility.json",
+        "sha256": "10c50ef0287af599e6510fcb3e2fcf3a1eb29d47b2c0d22f6ad5401bea445f88"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\excluded_days.json",
+        "sha256": "b789958f648228f6e5ede2accc11829bb87e910e1c47504f7d98e5457e7c2c65"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_aware_actual_days.csv",
+        "sha256": "4c70ef3466027644adfde305b4850c92128e07ee451bc23486f271648b94897b"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_aware_ramp_events.json",
+        "sha256": "c696ad3bed243917f512181daa432cfcb3344c62a0bbb48ac3be92d321d1f6dd"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_aware_result.json",
+        "sha256": "b50975046362fa7e53184d177eda9340b71ba221fd330a8ffcb6accb1a80291d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_calibrated_actual_days.csv",
+        "sha256": "bc0e3148061f6ee9a601016104a9c17139ae6102ab2347ef4784201bc12a8854"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_calibrated_ramp_events.json",
+        "sha256": "c696ad3bed243917f512181daa432cfcb3344c62a0bbb48ac3be92d321d1f6dd"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\extreme_calibrated_result.json",
+        "sha256": "1c02a67a37f9c71659dfeeddc7a42fa32f4c5ad26c81c1418a4b0e3bf2cc38d1"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\observed_calendar.csv",
+        "sha256": "a50e8914e6ea69c254728fffe4c4ff4444ab954b4cc5c6cbf8b710e7d694cd06"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\ordinary_actual_days.csv",
+        "sha256": "f2bf397eb3e6c23935ef7c0b421338565bb334665fecb0f427ed953d3516f53d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\ordinary_ramp_events.json",
+        "sha256": "04d690c8ed89195fc74241f7021d2adad61846c0a87a6d269ec6e2072681395d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\ordinary_result.json",
+        "sha256": "d2db96e57e1428d181805c11353f9ddeeff799c10be6f427b4f0eab2f336d566"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Emilio\\2017\\original_observed_scope_audit.json",
+        "sha256": "6485e757a12d4f4bd76625b1f0f577c48ce944425fc79f9042bd16a2d1d65942"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\adoption_rule_result.json",
+        "sha256": "498a3eb01133ea8ca25f3622e1bfc235daa1387d598abd17c575a65e4401d20b"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\coverage.json",
+        "sha256": "379fd8b9dd3869b4aa4c9efb78bb771df5b0a82cb1f30af5ce5a2422e6325434"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\exact_matching_feasibility.json",
+        "sha256": "2416bff638d7ef01db1ff3744586664f7419bf2c8c6bd0dab9e7013daa85055d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\excluded_days.json",
+        "sha256": "b8955e9e4f3613926d013f4666562a8781cf1ebcfed6a5c8913212f785ed3f8f"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_aware_actual_days.csv",
+        "sha256": "a7caaaffaf83c55d69251abeca3dca242bf700533a6516a793107ef149948b7b"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_aware_ramp_events.json",
+        "sha256": "a0f071052fcaf0ee61e74792d9ae0730bc51e4b23b3ecd9ed705114efd6ff2d1"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_aware_result.json",
+        "sha256": "fffe4b96e5574a5435c58ac1a4a68925ada72a3f38e9b31e7d7c8c895f6ba49b"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_calibrated_actual_days.csv",
+        "sha256": "7fe5689d932ee42036b5f4ffcddb955caf476c0a8cbb42cceb5a853a14667f7d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_calibrated_ramp_events.json",
+        "sha256": "a0f071052fcaf0ee61e74792d9ae0730bc51e4b23b3ecd9ed705114efd6ff2d1"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\extreme_calibrated_result.json",
+        "sha256": "311af4be673ae9229b6eabffb6e6746386f6589be131612870e9cdb38013d0dc"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\observed_calendar.csv",
+        "sha256": "6cebe9763039456415615bd4e55ac37e83ed2537b2e4b2597558d1796d35c380"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\ordinary_actual_days.csv",
+        "sha256": "28fe739c975ed3712a9f0de3dab54939f3f52a34960431f5a89cbfbf2fd8720f"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\ordinary_ramp_events.json",
+        "sha256": "f22e7b170856ff52f3b0355246c3c9ad5dda776c10ded7e11e8093bbec6ca9ac"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\ordinary_result.json",
+        "sha256": "773d129fb30bccd6356c3bc3b239d58e39a65b4542dca1e46bf9f9ec0f41255d"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\cases\\steam__Cockatoo_assembly_Fernanda\\2017\\original_observed_scope_audit.json",
+        "sha256": "ee4ef5ddbf9429be375d53b50ecb43321b59c1cfff59fb4abd237e56ae1bf6a4"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\coverage.json",
+        "sha256": "5b80386551af19c9556b093501838a2f287258498c38c575948da43063d2a404"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\environment.json",
+        "sha256": "606775cad8936170ca91d03f320916485d754d1863fd721467db016e3e0913d9"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\failures.json",
+        "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\protocol.json",
+        "sha256": "361fda801a88743d2605ee7ed38a5f92aa85b238c7a23ebc4637dfd2bf799bf4"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\protocol_lock.json",
+        "sha256": "a203caca8c643de7b0fc9b5b1efee86878d317d6f9a0fcbb649d02faaa9eb7c0"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\results.json",
+        "sha256": "eaa90038b7ea1ec780d3f410a9c059cae52d63cb2c63a03ae0831aeb6405f7b6"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\selection.json",
+        "sha256": "930afcdb1d89d0bf5f62ccf5d303c8ae4fb4f1660e59d5bf859a29eb213485f8"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\version\\__pycache__\\representative_adoption.cpython-312.pyc",
+        "sha256": "85651deb4de834e587ed51a6431b5e35e3524d955bb0e4156cc13d31c28720ec"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\version\\__pycache__\\scenarios.cpython-312.pyc",
+        "sha256": "3dee418e4249adb270ae877c9659b3325a75fd21ec386a622efd5eeeefd537bf"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\version\\representative_adoption.py",
+        "sha256": "81f16ae1b7ac68e0203abb44c3064a1421037579159c3e36d8d4c38392608501"
+      },
+      {
+        "path": "docs\\implementation_20261002\\algorithm\\version\\scenarios.py",
+        "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131"
+      }
+    ]
+  },
+  "engineering_operation_validated": false
+}

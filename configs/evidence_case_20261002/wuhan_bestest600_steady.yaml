@@ -1,0 +1,60 @@
+planning:
+  region_profile: BESTEST600_derived_Wuhan_weather_reference
+  time_step_hours: 1
+  representative_day_weight: 1
+  discount_rate: 1.0
+  asset_lifetime_years: 1
+  carbon_price_yuan_per_kg: 0.0
+  exergy_penalty_yuan_per_kwh: 0.0
+  ambient_reference_c: 0.0
+  max_unserved_rate: 0.0
+  max_scenario_unserved_rate: 0.0
+  unserved_heat_penalty_yuan_per_kwh: 0.0
+  firm_capacity_reserve_margin: 0.0
+  enforce_n_minus_one: false
+  design_outdoor_temperature_c: -4.85
+grades:
+- name: ideal_zone_service
+  temperature_c: 27.0
+nodes:
+- name: reference_building
+  demand_columns:
+    ideal_zone_service: steady_heat_demand_kw
+sources:
+- name: bestest_ideal_air_system
+  type: electric_boiler
+  node: reference_building
+  resource_kind: electric
+  allowed_grades:
+  - ideal_zone_service
+  supply_temp_c: 27.0
+  existing_capacity_kw: 1000.0
+  max_new_capacity_kw: 0.0
+  max_retire_capacity_kw: 0.0
+  efficiency: 1.0
+  variable_om_yuan_per_kwh_heat: 0.0
+  firm_capacity_credit: 1.0
+  firm_capacity_availability: 1.0
+pipes: []
+storages: []
+demand_response:
+  max_shift_fraction: 0.0
+multi_energy_services:
+  cooling:
+    enabled: true
+    demand_columns:
+      reference_building: steady_cooling_demand_kw
+    max_unserved_rate: 0.0
+    max_scenario_unserved_rate: 0.0
+    unserved_penalty_yuan_per_kwh: 0.0
+    sources:
+      bestest_ideal_air_system:
+        eer: 1.0
+        eer_min: 1.0
+        eer_max: 1.0
+        eer_loss_per_c_above_reference: 0.0
+        capacity_equivalence: 1.0
+        variable_om_yuan_per_kwh_cooling: 0.0
+        direct_emission_kg_per_kwh_cooling: 0.0
+building_thermal:
+  enabled: false

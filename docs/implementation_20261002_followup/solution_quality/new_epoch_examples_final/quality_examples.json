@@ -1,0 +1,200 @@
+[
+  {
+    "name": "existing_assets_cost",
+    "solution_scope": "existing_assets_dispatch",
+    "quality": "solver_proven_optimal_within_registered_tolerance",
+    "lexicographic_claim": "not_applicable",
+    "solver_stages": [
+      {
+        "solver_status": 0.0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_mode": "total_cost",
+        "objective_value": 2265.428715014251,
+        "mip_dual_bound": 2265.428715014251,
+        "mip_gap": 0.0,
+        "mip_node_count": 1.0,
+        "solver_elapsed_seconds": 1.0865264999883948,
+        "solver_requested_mip_gap": 0.0001,
+        "solver_time_limit_seconds": 120.0,
+        "solver_integer_variables": 2880.0,
+        "solver_objective_constant": 0.0,
+        "numerical_audit_passed": true,
+        "numerical_objective_checked": true,
+        "numerical_solution_finite": true,
+        "stage_id": "single",
+        "quality": "solver_proven_optimal_within_registered_tolerance",
+        "feasible_incumbent_audited": true,
+        "optimality_proven_within_solver_tolerance": true,
+        "objective_unit": "yuan_model_objective",
+        "objective_sense": "minimize",
+        "reasons": [
+          "solver optimal termination and reported relative gap within recorded target or closed reported gap"
+        ],
+        "objective_interval": {
+          "lower": 2265.428715014251,
+          "upper": 2265.428715014251,
+          "unit": "yuan_model_objective",
+          "objective_mode": "total_cost",
+          "expression": "this stage's solver linear objective, excluding separately reported constant",
+          "status": "solver_bound_and_feasible_incumbent",
+          "solver_tolerance_limited": true,
+          "not_a_KPI_perturbation_interval": true
+        }
+      }
+    ],
+    "cash_cost_KPI_interval": {
+      "status": "not_separately_solved",
+      "lower": null,
+      "upper": null
+    },
+    "carbon_KPI_interval": {
+      "status": "not_separately_solved",
+      "lower": null,
+      "upper": null
+    }
+  },
+  {
+    "name": "fixed_plan_replay",
+    "solution_scope": "fixed_investment_dispatch",
+    "quality": "solver_proven_optimal_within_registered_tolerance",
+    "lexicographic_claim": "not_applicable",
+    "solver_stages": [
+      {
+        "solver_status": 0.0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_mode": "total_cost",
+        "objective_value": 2265.428715014251,
+        "mip_dual_bound": 2265.428715014251,
+        "mip_gap": 0.0,
+        "mip_node_count": 1.0,
+        "solver_elapsed_seconds": 1.1036605999979656,
+        "solver_requested_mip_gap": 0.0001,
+        "solver_time_limit_seconds": 120.0,
+        "solver_integer_variables": 2880.0,
+        "solver_objective_constant": 0.0,
+        "numerical_audit_passed": true,
+        "numerical_objective_checked": true,
+        "numerical_solution_finite": true,
+        "stage_id": "single",
+        "quality": "solver_proven_optimal_within_registered_tolerance",
+        "feasible_incumbent_audited": true,
+        "optimality_proven_within_solver_tolerance": true,
+        "objective_unit": "yuan_model_objective",
+        "objective_sense": "minimize",
+        "reasons": [
+          "solver optimal termination and reported relative gap within recorded target or closed reported gap"
+        ],
+        "objective_interval": {
+          "lower": 2265.428715014251,
+          "upper": 2265.428715014251,
+          "unit": "yuan_model_objective",
+          "objective_mode": "total_cost",
+          "expression": "this stage's solver linear objective, excluding separately reported constant",
+          "status": "solver_bound_and_feasible_incumbent",
+          "solver_tolerance_limited": true,
+          "not_a_KPI_perturbation_interval": true
+        }
+      }
+    ],
+    "cash_cost_KPI_interval": {
+      "status": "not_separately_solved",
+      "lower": null,
+      "upper": null
+    },
+    "carbon_KPI_interval": {
+      "status": "not_separately_solved",
+      "lower": null,
+      "upper": null
+    }
+  },
+  {
+    "name": "emission_endpoint",
+    "solution_scope": "existing_assets_dispatch",
+    "quality": "solver_proven_optimal_within_registered_tolerance",
+    "lexicographic_claim": "two_stage_tolerance_limited_endpoint",
+    "solver_stages": [
+      {
+        "solver_status": 0.0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_mode": "emissions",
+        "objective_value": 1230.5932750184095,
+        "mip_dual_bound": 1230.5932750184095,
+        "mip_gap": 0.0,
+        "mip_node_count": 1.0,
+        "solver_elapsed_seconds": 0.7321730000112439,
+        "solver_requested_mip_gap": 0.0001,
+        "solver_time_limit_seconds": 120.0,
+        "solver_integer_variables": 2880.0,
+        "solver_objective_constant": 0.0,
+        "numerical_audit_passed": true,
+        "numerical_objective_checked": true,
+        "numerical_solution_finite": true,
+        "stage_id": "primary",
+        "quality": "solver_proven_optimal_within_registered_tolerance",
+        "feasible_incumbent_audited": true,
+        "optimality_proven_within_solver_tolerance": true,
+        "objective_unit": "kg_CO2_solver_linear_expression",
+        "objective_sense": "minimize",
+        "reasons": [
+          "solver optimal termination and reported relative gap within recorded target or closed reported gap"
+        ],
+        "objective_interval": {
+          "lower": 1230.5932750184095,
+          "upper": 1230.5932750184095,
+          "unit": "kg_CO2_solver_linear_expression",
+          "objective_mode": "emissions",
+          "expression": "this stage's solver linear objective, excluding separately reported constant",
+          "status": "solver_bound_and_feasible_incumbent",
+          "solver_tolerance_limited": true,
+          "not_a_KPI_perturbation_interval": true
+        }
+      },
+      {
+        "solver_status": 0.0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "objective_mode": "total_cost",
+        "objective_value": 2305.8219444153565,
+        "mip_dual_bound": 2305.8219444153565,
+        "mip_gap": 0.0,
+        "mip_node_count": 1.0,
+        "solver_elapsed_seconds": 0.8844140000001062,
+        "solver_requested_mip_gap": 0.0001,
+        "solver_time_limit_seconds": 120.0,
+        "solver_integer_variables": 2880.0,
+        "solver_objective_constant": 0.0,
+        "numerical_audit_passed": true,
+        "numerical_objective_checked": true,
+        "numerical_solution_finite": true,
+        "stage_id": "secondary",
+        "quality": "solver_proven_optimal_within_registered_tolerance",
+        "feasible_incumbent_audited": true,
+        "optimality_proven_within_solver_tolerance": true,
+        "objective_unit": "yuan_model_objective",
+        "objective_sense": "minimize",
+        "reasons": [
+          "solver optimal termination and reported relative gap within recorded target or closed reported gap"
+        ],
+        "objective_interval": {
+          "lower": 2305.8219444153565,
+          "upper": 2305.8219444153565,
+          "unit": "yuan_model_objective",
+          "objective_mode": "total_cost",
+          "expression": "this stage's solver linear objective, excluding separately reported constant",
+          "status": "solver_bound_and_feasible_incumbent",
+          "solver_tolerance_limited": true,
+          "not_a_KPI_perturbation_interval": true
+        }
+      }
+    ],
+    "cash_cost_KPI_interval": {
+      "status": "not_separately_solved",
+      "lower": null,
+      "upper": null
+    },
+    "carbon_KPI_interval": {
+      "status": "not_separately_solved",
+      "lower": null,
+      "upper": null
+    }
+  }
+]

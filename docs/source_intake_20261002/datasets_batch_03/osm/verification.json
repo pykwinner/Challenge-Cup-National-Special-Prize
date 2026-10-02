@@ -1,0 +1,164 @@
+{
+  "audit_date_local": "2026-10-02",
+  "independent_csv_row_header_width_ID_count_controls": [
+    {
+      "file": "guyuan_boundary.csv",
+      "rows": 4210,
+      "fields": 7,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "guyuan_buildings.csv",
+      "rows": 3531,
+      "fields": 12,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "guyuan_landuse.csv",
+      "rows": 1749,
+      "fields": 7,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "guyuan_pois.csv",
+      "rows": 1495,
+      "fields": 9,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "guyuan_power.csv",
+      "rows": 367,
+      "fields": 6,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "guyuan_railways.csv",
+      "rows": 275,
+      "fields": 6,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "guyuan_roads.csv",
+      "rows": 10758,
+      "fields": 9,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "guyuan_water.csv",
+      "rows": 498,
+      "fields": 7,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "urumqi_boundary.csv",
+      "rows": 4560,
+      "fields": 7,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "urumqi_buildings.csv",
+      "rows": 27194,
+      "fields": 12,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "urumqi_landuse.csv",
+      "rows": 3516,
+      "fields": 7,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "urumqi_pois.csv",
+      "rows": 6753,
+      "fields": 9,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "urumqi_power.csv",
+      "rows": 1482,
+      "fields": 6,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "urumqi_railways.csv",
+      "rows": 2090,
+      "fields": 6,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "urumqi_roads.csv",
+      "rows": 16990,
+      "fields": 9,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "urumqi_water.csv",
+      "rows": 524,
+      "fields": 7,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "wuhan_boundary.csv",
+      "rows": 4978,
+      "fields": 7,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "wuhan_buildings.csv",
+      "rows": 56207,
+      "fields": 12,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "wuhan_landuse.csv",
+      "rows": 12607,
+      "fields": 7,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "wuhan_pois.csv",
+      "rows": 14718,
+      "fields": 9,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "wuhan_power.csv",
+      "rows": 2516,
+      "fields": 6,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "wuhan_railways.csv",
+      "rows": 6172,
+      "fields": 6,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "wuhan_roads.csv",
+      "rows": 69496,
+      "fields": 9,
+      "input_sha256_matches": true
+    },
+    {
+      "file": "wuhan_water.csv",
+      "rows": 19289,
+      "fields": 7,
+      "input_sha256_matches": true
+    }
+  ],
+  "all_24_original_CSV_sha_unchanged": true,
+  "building_audit_present_for_3_cities": true,
+  "road_connectivity_present_for_3_cities": true,
+  "metric_QA_branches_nonempty": true,
+  "building_estimate_counts_reconciled": true,
+  "boundary_rings_closed_valid": true,
+  "four_invalid_Wuhan_POI_polygons_reported": true,
+  "README_and_audit_totals_reconciled": true,
+  "actual_project_completeness_certified": false,
+  "optimization_run": false,
+  "analysis_script_identities": {
+    "audit_osm.py": "6b5ffde6b4bb860301e603c7e6b504e0b346978931ba2deb9a71ddb1e6f0564e",
+    "enrich_report.py": "a49f8f902366eaef0523291c7ca00fccc3f5f5b85416ae77697c1d1bd66278b6",
+    "verify_report.py": "49f435aaed4b43681854c0b52fc35499c69c29e6c2ddb4e27b88368116f62248"
+  }
+}

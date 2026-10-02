@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.986" timestamp="2026-10-02T14:05:52.262254" hostname="LAPTOP-9T38KD8F"><testcase classname="tests.test_physical_extensions_independent_review" name="test_shared_upstream_cap_cannot_be_counted_twice_as_firm_reserve" time="0.007"><failure message="Failed: DID NOT RAISE (&lt;class 'ValueError'&gt;, &lt;class 'RuntimeError'&gt;)">def test_shared_upstream_cap_cannot_be_counted_twice_as_firm_reserve():
+        c, ts = configuration(), frame().iloc[:1].copy()
+        c["planning"]["firm_capacity_reserve_margin"] = 1
+        c["sources"] = [{"name": name, "node": "n", "type": "direct_heat",
+            "supply_temp_c": 50, "allowed_grades": ["low"], "existing_capacity_kw": 60,
+            "max_new_capacity_kw": 0} for name in ["a", "b"]]
+        c["shared_heat_resources"] = [{"name": "shared", "source_names": ["a", "b"],
+            "available_heat_kw": 75, "transfer_efficiency": 1}]
+        ts["demand"] = 50
+        # 100 kW reserve is required, but both devices together can draw only 75.
+        # Reject an unsupported combination or prove the correct model infeasible.
+&gt;       with pytest.raises((ValueError, RuntimeError)):
+E       Failed: DID NOT RAISE (&lt;class 'ValueError'&gt;, &lt;class 'RuntimeError'&gt;)
+
+tests\test_physical_extensions_independent_review.py:119: Failed</failure></testcase></testsuite></testsuites>

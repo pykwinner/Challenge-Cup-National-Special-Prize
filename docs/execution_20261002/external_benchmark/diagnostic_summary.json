@@ -1,0 +1,72 @@
+{
+  "calibration_successful_pairs": 23,
+  "calibration_failed_pairs": 1,
+  "calibration_energy_bias": {
+    "improved": 23,
+    "worsened": 0,
+    "tied": 0
+  },
+  "calibration_ldc": {
+    "improved": 15,
+    "worsened": 8,
+    "tied": 0
+  },
+  "calibration_maximum_conservation_residual": 5.684341886080802e-14,
+  "calibration_maximum_bound_violation": 0.0,
+  "scope_summaries": [
+    {
+      "core_label": "legacy",
+      "method": "extreme_aware",
+      "successful_records": 24,
+      "positive_full_scope_deficit_cases": 13,
+      "positive_retained_scope_deficit_cases": 0,
+      "median_full_observed_peak_retention_ratio": 0.9957356798789714,
+      "median_full_observed_deficit_hour_fraction": 0.00011424004846957226,
+      "median_full_observed_deficit_energy_fraction": 2.5346547001355994e-06
+    },
+    {
+      "core_label": "legacy",
+      "method": "ordinary",
+      "successful_records": 24,
+      "positive_full_scope_deficit_cases": 22,
+      "positive_retained_scope_deficit_cases": 20,
+      "median_full_observed_peak_retention_ratio": 0.8243243703073986,
+      "median_full_observed_deficit_hour_fraction": 0.008732876712328766,
+      "median_full_observed_deficit_energy_fraction": 0.002399016741346602
+    },
+    {
+      "core_label": "new_core",
+      "method": "extreme_aware",
+      "successful_records": 24,
+      "positive_full_scope_deficit_cases": 13,
+      "positive_retained_scope_deficit_cases": 0,
+      "median_full_observed_peak_retention_ratio": 0.9957356798789714,
+      "median_full_observed_deficit_hour_fraction": 0.00011424004846957226,
+      "median_full_observed_deficit_energy_fraction": 2.5346547001355994e-06
+    },
+    {
+      "core_label": "new_core",
+      "method": "extreme_calibrated",
+      "successful_records": 23,
+      "positive_full_scope_deficit_cases": 13,
+      "positive_retained_scope_deficit_cases": 0,
+      "median_full_observed_peak_retention_ratio": 0.9957356798789714,
+      "median_full_observed_deficit_hour_fraction": 0.00011429877700308607,
+      "median_full_observed_deficit_energy_fraction": 2.5346547001355994e-06
+    },
+    {
+      "core_label": "new_core",
+      "method": "ordinary",
+      "successful_records": 24,
+      "positive_full_scope_deficit_cases": 22,
+      "positive_retained_scope_deficit_cases": 20,
+      "median_full_observed_peak_retention_ratio": 0.8243243703073986,
+      "median_full_observed_deficit_hour_fraction": 0.00911956808851649,
+      "median_full_observed_deficit_energy_fraction": 0.002399016741346602
+    }
+  ],
+  "calibration_paired_median_before_retained_scope_abs_energy_bias": 0.02424229652883655,
+  "calibration_paired_median_after_retained_scope_abs_energy_bias": 9.698195808529458e-06,
+  "calibration_paired_median_before_ldc_w1_over_mean_load": 0.07219804090380695,
+  "calibration_paired_median_after_ldc_w1_over_mean_load": 0.06479271905718843
+}

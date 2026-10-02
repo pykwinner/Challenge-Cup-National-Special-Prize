@@ -1,0 +1,68 @@
+........................................................................ [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 32%]
+........................................................................ [ 40%]
+.............................F............................ [ 47%]
+..................................................................... [ 55%]
+........................................................................ [ 63%]
+........................................................................ [ 71%]
+........................................................................ [ 79%]
+........................................................................ [ 87%]
+........................................................................ [ 96%]
+...................................                             [100%]
+================================== FAILURES ===================================
+______________ test_existing_output_or_file_is_never_overwritten ______________
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/.test_tmp/rc2_final/test_existing_output_or_file_i0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001C7D4F6AF60>
+
+    def test_existing_output_or_file_is_never_overwritten(tmp_path, monkeypatch):
+        target = tmp_path / "existing.json"
+        target.write_text("original", encoding="utf-8")
+        with pytest.raises(FileExistsError):
+            followup.write_json_new(target, {"replacement": True})
+        assert target.read_text(encoding="utf-8") == "original"
+        monkeypatch.setattr(followup, "fit_training_only", lambda *args: pytest.fail("must not fit into existing output"))
+        with pytest.raises(FileExistsError):
+>           followup.run()
+
+tests\test_external_rc_followup.py:214: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\validate_external_rc_followup.py:253: in run
+    approval = verify_approval()
+               ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def verify_approval() -> dict:
+        approval = json.loads(APPROVAL.read_text(encoding="utf-8"))
+        if (approval["approved_by"] != "C0" or approval["plan"] != PLAN.relative_to(ROOT).as_posix()
+                or first.digest(PLAN) != approval["plan_sha256"]
+                or first.digest(FIRST / "manifest.json") != approval["first_manifest_sha256"]
+                or not all(approval[key] is True for key in ("first_results_read_only",
+                    "exploratory_after_first_test_inspection", "no_further_loss_model_or_start_search",
+                    "report_all_metrics_even_if_worse"))):
+            raise ValueError("approval identity or fixed exploratory restrictions mismatch")
+        manifest = json.loads((FIRST / "manifest.json").read_text(encoding="utf-8"))
+        if manifest["complete"] is not True:
+            raise ValueError("first-round manifest incomplete")
+        for category, base in (("inputs", ROOT), ("outputs", FIRST)):
+            for item in manifest[category]:
+                if first.digest(base / item["file"]) != item["sha256"]:
+>                   raise ValueError(f"frozen first-round identity mismatch: {item['file']}")
+E                   ValueError: frozen first-round identity mismatch: scripts/validate_external_rc_benchmark.py
+
+scripts\validate_external_rc_followup.py:61: ValueError
+============================== warnings summary ===============================
+tests/test_bdg2_external_benchmark.py::test_legacy_repeated_profiles_failure_is_not_hidden
+  D:\competion\xiaotiao\北方供热三类场景公用总框架V10\north_heat_challenge\docs\execution_20261002\algorithm\scenarios_before.py:38: RuntimeWarning: Mean of empty slice.
+    center = scaled[members].mean(axis=0)
+
+tests/test_bdg2_external_benchmark.py::test_legacy_repeated_profiles_failure_is_not_hidden
+  C:\Users\Lenovo\AppData\Roaming\Python\Python312\site-packages\numpy\core\_methods.py:121: RuntimeWarning: invalid value encountered in divide
+    ret = um.true_divide(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_external_rc_followup.py::test_existing_output_or_file_is_never_overwritten
+1 failed, 881 passed, 2 deselected, 2 warnings, 26 subtests passed in 84.00s (0:01:23)

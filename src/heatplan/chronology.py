@@ -664,25 +664,38 @@ def _representative_row_weights(
     )
 
 
-def _maximum_grouped_ramp(frame: pd.DataFrame, column: str) -> float:
+def _maximum_grouped_ramp(frame: pd.DataFrame, column: str, *, expected_step_hours: float = 1.0) -> float:
+    """Maximum observed step change, excluding missing intervals and group seams.
+
+    Opaque legacy time keys permit row adjacency within the full set of supplied
+    boundaries. No cyclic end-to-start edge is counted as an observation.
+    """
     if len(frame) < 2:
         return 0.0
-    group_column = (
-        "boundary_group"
-        if "boundary_group" in frame.columns
-        else "scenario"
-        if "scenario" in frame.columns
-        else None
-    )
-    if group_column is None:
-        return float(frame[column].astype(float).diff().abs().max())
-    maxima = [
-        block[column].astype(float).diff().abs().max()
-        for _, block in frame.groupby(group_column, sort=False)
-        if len(block) > 1
-    ]
-    finite = [float(value) for value in maxima if pd.notna(value)]
-    return max(finite, default=0.0)
+    step = float(expected_step_hours)
+    if not np.isfinite(step) or step <= 0:
+        raise ValueError("expected_step_hours 必须为正有限值")
+    values = frame[column].to_numpy(dtype=float)
+    if not np.isfinite(values).all():
+        raise ValueError(f"爬坡审计列 {column} 含非有限值")
+    valid = np.ones(len(frame) - 1, dtype=bool)
+    for group_column in ("scenario", "boundary_group", "source_weather_year", "representative_day"):
+        if group_column in frame:
+            groups = frame[group_column].astype(str).to_numpy()
+            valid &= groups[1:] == groups[:-1]
+    for time_column in ("source_time", "timestamp", "original_time", "time"):
+        if time_column not in frame or pd.api.types.is_numeric_dtype(frame[time_column]):
+            continue
+        observed = pd.to_datetime(frame[time_column], format="ISO8601", errors="coerce")
+        if observed.notna().any():
+            if observed.isna().any():
+                raise ValueError(f"爬坡审计时标 {time_column} 部分缺失或无效")
+            differences = observed.diff().iloc[1:].dt.total_seconds().to_numpy() / 3600.
+            valid &= np.isclose(differences, step, rtol=0., atol=1e-9)
+            break
+        if time_column in {"source_time", "timestamp"}:
+            raise ValueError(f"爬坡审计时标 {time_column} 无法解析")
+    return float(np.abs(np.diff(values))[valid].max()) if valid.any() else 0.0
 
 
 def representative_period_coverage_audit(
@@ -782,8 +795,9 @@ def representative_period_coverage_audit(
             if kind == "demand"
             else np.nan
         )
-        rep_ramp = _maximum_grouped_ramp(representative, column)
-        annual_ramp = _maximum_grouped_ramp(chronology, column)
+        step_hours = float(config["planning"].get("time_step_hours", 1.0))
+        rep_ramp = _maximum_grouped_ramp(representative, column, expected_step_hours=step_hours)
+        annual_ramp = _maximum_grouped_ramp(chronology, column, expected_step_hours=step_hours)
         peak_capture = (
             float(rep.max()) / float(annual.max())
             if kind == "demand" and float(annual.max()) > 1e-12
@@ -1431,16 +1445,26 @@ def prepare_full_year_timeseries(
     frame: pd.DataFrame,
     timestamp_column: str = "timestamp",
     scenario: str = "full_year",
+    *,
+    expected_step_hours: float | None = None,
 ) -> pd.DataFrame:
     """Prepare a continuous chronological series for seasonal-storage studies."""
     if timestamp_column not in frame.columns:
         raise ValueError(f"全年时序必须包含 {timestamp_column} 列")
     result = frame.copy()
     timestamp = pd.to_datetime(result[timestamp_column], errors="raise")
+    if timestamp.isna().any():
+        raise ValueError("连续时序不允许缺失时间戳")
     order = np.argsort(timestamp.to_numpy())
     result = result.iloc[order].reset_index(drop=True)
     timestamp = pd.to_datetime(result[timestamp_column])
     differences = timestamp.diff().dropna().dt.total_seconds() / 3600.0
+    if expected_step_hours is not None:
+        step = float(expected_step_hours)
+        if not np.isfinite(step) or step <= 0:
+            raise ValueError("expected_step_hours 必须为正有限值")
+        if not np.allclose(differences, step, rtol=0., atol=1e-9):
+            raise ValueError("连续时序步长与配置 time_step_hours 不一致")
     if not differences.empty and not np.allclose(differences, differences.iloc[0]):
         raise ValueError("全年时序步长不连续，需先补齐缺失时段")
     if timestamp.duplicated().any():

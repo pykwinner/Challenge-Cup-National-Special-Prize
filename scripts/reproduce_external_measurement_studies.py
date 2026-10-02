@@ -43,9 +43,15 @@ def run(output: Path, refit: bool) -> None:
         raise ValueError("incomplete first study")
     for item in first_manifest["inputs"]:
         path = ROOT/item["file"]
+        if item["file"] in {"scripts/validate_external_rc_benchmark.py", "tests/test_external_rc_benchmark.py"}:
+            # Preserve the original study's identity while executing the
+            # maintained implementation, whose identity is recorded separately.
+            path = BASE/"C1_external/code_version"/item["file"]
         if digest(path) != item["sha256"]:
             raise ValueError(f"changed selected source input: {item['file']}")
-        required[item["file"]] = item["sha256"]
+        required[path.relative_to(ROOT).as_posix()] = item["sha256"]
+    for file in ("scripts/validate_external_rc_benchmark.py", "scripts/validate_external_rc_followup.py"):
+        required[file] = digest(ROOT/file)
     required[first_manifest_file.relative_to(ROOT).as_posix()] = digest(first_manifest_file)
     original_observations, _ = first.prepare_observations(
         pd.read_excel(first.EVIDENCE/first.HOUSE_FILE), pd.read_excel(first.EVIDENCE/first.WEATHER_FILE))
@@ -64,9 +70,12 @@ def run(output: Path, refit: bool) -> None:
                 raise ValueError(f"changed frozen result: {path.name}")
         for item in manifest["inputs"]:
             if item["file"] in {"scripts/validate_external_rc_followup.py", "tests/test_external_rc_followup.py"}:
-                if digest(ROOT/item["file"]) != item["sha256"]:
+                source = ROOT/item["file"]
+                if item["file"] == "scripts/validate_external_rc_followup.py":
+                    source = BASE/"C1_external_followup/code_version"/item["file"]
+                if digest(source) != item["sha256"]:
                     raise ValueError("follow-up implementation identity changed")
-                required[item["file"]] = item["sha256"]
+                required[source.relative_to(ROOT).as_posix()] = item["sha256"]
         report_file = directory/"validation_report.json"
         report = json.loads(report_file.read_text(encoding="utf-8"))
         for path in (manifest_file, report_file):
@@ -103,6 +112,7 @@ def run(output: Path, refit: bool) -> None:
         if digest(ROOT/file) != sha:
             raise ValueError("selected input changed during reproduction")
     result = {"complete": True, "studies": results, "selected_inputs_unchanged": True,
+              "implementation_scope": "maintained implementation checked against frozen historical results; original code snapshots verified separately",
               "unused_discovery_files_not_needed": True, "original_results_not_overwritten": True,
               "accuracy_approval": False, "scope": "same-study numerical reproduction, including adverse results"}
     (output/"reproduction_report.json").write_text(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")

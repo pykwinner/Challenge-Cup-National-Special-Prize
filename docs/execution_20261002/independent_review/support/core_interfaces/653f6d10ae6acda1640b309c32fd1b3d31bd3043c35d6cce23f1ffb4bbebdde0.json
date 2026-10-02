@@ -1,0 +1,94 @@
+{
+  "identity": "Synthetic 24/48h interface fixtures; not measured observations or engineering experiments",
+  "core_edits": false,
+  "engineering_solve": false,
+  "tiny_fixture_model_builds": true,
+  "source_sha256_before": {
+    "src/heatplan/representative.py": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+    "src/heatplan/scenarios.py": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+    "src/heatplan/chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+    "src/heatplan/chronology_cli.py": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+    "src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src/heatplan/model.py": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5"
+  },
+  "rc_single_year": {
+    "accepted": true,
+    "rows": 48,
+    "groups": [
+      24,
+      24
+    ],
+    "within_group_all_1h": true,
+    "model_build_completed": true,
+    "variables": 144,
+    "constraint_rows": 148,
+    "scenario_probabilities": {
+      "base": 1.0
+    },
+    "unique_representative_time_id": true,
+    "solve_called": false
+  },
+  "rc_nonadjacent_two_years": {
+    "accepted": true,
+    "rows": 48,
+    "groups": [
+      24,
+      24
+    ],
+    "within_group_all_1h": true,
+    "model_build_completed": true,
+    "variables": 144,
+    "constraint_rows": 148,
+    "scenario_probabilities": {
+      "base": 1.0
+    },
+    "unique_representative_time_id": true,
+    "solve_called": false
+  },
+  "rc_stochastic_year_bundle": {
+    "accepted": true,
+    "rows": 96,
+    "groups": [
+      24,
+      24,
+      24,
+      24
+    ],
+    "within_group_all_1h": true,
+    "model_build_completed": true,
+    "variables": 288,
+    "constraint_rows": 295,
+    "scenario_probabilities": {
+      "weather_year_2020": 0.3,
+      "weather_year_2022": 0.7
+    },
+    "unique_representative_time_id": true,
+    "solve_called": false
+  },
+  "rc_energy_target_scope": "exogenous_reference_columns_not_endogenous_RC_dispatch",
+  "legacy_integer_time_mode": "opaque_labels_within_block_only",
+  "observed_ramps": {
+    "cross_year": 0.0,
+    "missing_day": 0.0,
+    "actual_midnight": 100.0
+  },
+  "prepare_2h_with_dt1": {
+    "accepted": false,
+    "exception_type": "ValueError",
+    "exception": "连续时序步长与配置 time_step_hours 不一致"
+  },
+  "prepare_2h_with_dt2": {
+    "accepted": true,
+    "rows": 24,
+    "expected_step_hours": 2
+  },
+  "source_sha256_after": {
+    "src/heatplan/representative.py": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+    "src/heatplan/scenarios.py": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+    "src/heatplan/chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+    "src/heatplan/chronology_cli.py": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+    "src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src/heatplan/model.py": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5"
+  },
+  "source_unchanged_during_recompute": true
+}

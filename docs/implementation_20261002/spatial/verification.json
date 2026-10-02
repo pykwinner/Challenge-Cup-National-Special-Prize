@@ -1,0 +1,43 @@
+{
+  "verified_at_local": "2026-10-02T14:07:17.880078+08:00",
+  "status": "geometry_reference_verified_engineering_admission_pending",
+  "focused_tests_passed": 98,
+  "new_adapter_tests_passed": 23,
+  "focused_tests_skipped": 0,
+  "test_modules": [
+    "tests/test_spatial_adapter.py",
+    "tests/test_osm_reference.py",
+    "tests/test_spatial_quality.py"
+  ],
+  "test_output_sha256": "dde32bb01b871a3e08ee6e236e41377bdc0c4e1d86e38007b5f2a4938a708797",
+  "cities": {
+    "guyuan": {
+      "candidate_graph_validation": true,
+      "physical_and_cost_fields_missing": true,
+      "permission_not_granted": true,
+      "explicit_length_endpoint_tolerance_m": 1e-06
+    },
+    "urumqi": {
+      "candidate_graph_validation": true,
+      "physical_and_cost_fields_missing": true,
+      "permission_not_granted": true,
+      "explicit_length_endpoint_tolerance_m": 1e-06
+    },
+    "wuhan": {
+      "candidate_graph_validation": true,
+      "physical_and_cost_fields_missing": true,
+      "permission_not_granted": true,
+      "explicit_length_endpoint_tolerance_m": 1e-06
+    }
+  },
+  "historical_reference_files_verified": 94,
+  "original_input_files_verified": 33,
+  "original_CSV_count": 24,
+  "old_OSM_audit_file_count": 9,
+  "new_network_requests": 0,
+  "excluded_checks": {
+    "all_project_tests": "Coordinated by the main task; this component runs focused geometry and preprocessing regressions only",
+    "city_heating_MILP_and_full_season": "Engineering fields and project-object mapping remain unadmitted; no modeled local performance claim",
+    "paper_PPT_GitHub": "Not part of the authorized current stage"
+  }
+}

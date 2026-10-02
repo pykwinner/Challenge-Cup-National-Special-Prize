@@ -1,0 +1,48 @@
+{
+  "registered_date_Asia_Shanghai": "2026-10-02",
+  "owner": "independent_review",
+  "status": "completed",
+  "phase": "independent_review_completed",
+  "protocol_registered": true,
+  "write_scope": "docs/execution_20261002/independent_review",
+  "completed": [
+    "Read workspace AGENTS.md",
+    "Registered protocol and initial status",
+    "Read four primary papers",
+    "Independently recomputed selection and soft calibration against current source",
+    "Completed existing boundary review and current source-hash verification",
+    "Delivered findings.md and review_issues.json",
+    "Read external benchmark and spatial reference protocols",
+    "Independently verified and closed IR-001/002/003 against new hashes; historical findings retained",
+    "Recomputed external actual inputs, all 119 successes, zero-energy failure, 120 posthoc records and 23-case summary chart data",
+    "Recomputed fixed three-city CSV selections, captured API checksums, all 98 native ways, all 18 snaps and 15 routes",
+    "Viewed three spatial PNG maps; checked original hashes and saved XML evidence",
+    "Delivered final external_benchmark_review.md and spatial_reference_review.md; IR-004 remains nonblocking future enhancement"
+  ],
+  "next": [],
+  "parallel_artifacts": {
+    "external_benchmark": "independently_recomputed_current_frozen_results_accepted_with_declared_scope",
+    "spatial_reference": "independently_reconstructed_actual_native_results_accepted_as_spatial_reference"
+  },
+  "execution_limits": {
+    "core_edits": false,
+    "original_csv_edits": false,
+    "engineering_MILP": false,
+    "github_push": false,
+    "analytic_fixtures_are_empirical_data": false,
+    "tiny_fixture_model_builds": true
+  },
+  "completed_utc": "2026-10-02T04:51:53.251885+00:00",
+  "final_counts": {
+    "open_blocking_core_issues": 0,
+    "verified_fixed_core_issues": 3,
+    "future_nonblocking_enhancements": 1,
+    "external_successful_records_recomputed": 119,
+    "external_failures_checked": 1,
+    "posthoc_records_recomputed": 120,
+    "external_scalar_comparisons": 37077,
+    "external_discrepancies": 0,
+    "spatial_checks": 1909,
+    "spatial_discrepancies": 0
+  }
+}

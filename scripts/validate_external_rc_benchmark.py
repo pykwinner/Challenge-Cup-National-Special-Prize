@@ -83,7 +83,9 @@ def prepare_observations(house: pd.DataFrame, weather: pd.DataFrame) -> tuple[pd
         time = pd.DatetimeIndex(pd.to_datetime(frame["DATE"]))
         if time.tz is not None or time.has_duplicates or not time.is_monotonic_increasing:
             raise ValueError(f"{label} original DATE must be ordered, unique naive CET")
-        if not np.allclose(np.diff(time.asi8) / 1e9, 600, rtol=0, atol=1e-6):
+        # DatetimeIndex.asi8 uses the index's storage unit (s/ms/us/ns), which
+        # is not guaranteed to be nanoseconds. Compare physical timedeltas.
+        if not ((time[1:] - time[:-1]) == pd.Timedelta(minutes=10)).all():
             raise ValueError(f"{label} time series has gaps or wrong sampling")
     if not pd.DatetimeIndex(house["DATE"]).equals(pd.DatetimeIndex(weather["DATE"])):
         raise ValueError("measured weather and house time grids do not match exactly")

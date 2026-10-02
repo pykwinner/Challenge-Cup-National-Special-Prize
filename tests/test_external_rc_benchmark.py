@@ -78,6 +78,23 @@ def test_temporal_splits_cover_all_targets_without_random_leakage(observations):
         benchmark.split_ranges(50)
 
 
+@pytest.mark.parametrize("unit", ["s", "ms", "us", "ns"])
+@pytest.mark.parametrize("missing_interval", [False, True])
+def test_sampling_validation_is_independent_of_datetime_storage_unit(original_frames, unit, missing_interval):
+    frames = [frame.head(100).copy() for frame in original_frames]
+    for frame in frames:
+        frame["DATE"] = frame["DATE"].astype(f"datetime64[{unit}]")
+        assert np.datetime_data(frame["DATE"].dtype)[0] == unit
+    if missing_interval:
+        frames = [frame.drop(index=5) for frame in frames]
+        with pytest.raises(ValueError, match="gaps or wrong sampling"):
+            benchmark.prepare_observations(*frames)
+    else:
+        actual, _ = benchmark.prepare_observations(*frames)
+        expected, _ = benchmark.prepare_observations(*[frame.head(100) for frame in original_frames])
+        pd.testing.assert_frame_equal(actual, expected)
+
+
 def test_interval_mean_equation_against_independent_continuous_integral():
     # This is a mathematical unit test, never used as benchmark observations.
     h, c, area, dt = .1, 2., 0., benchmark.DT
@@ -139,6 +156,12 @@ def test_final_manifest_hashes():
     manifest = json.loads((benchmark.OUTPUT / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["complete"] is True
     for item in manifest["inputs"]:
-        assert benchmark.digest(ROOT / item["file"]) == item["sha256"]
+        # Historical experiment inputs remain bound to their original code
+        # epoch. Only the two explicitly archived sources are resolved here;
+        # data inputs still have to match their original paths and hashes.
+        source = ROOT / item["file"]
+        if item["file"] in {"scripts/validate_external_rc_benchmark.py", "tests/test_external_rc_benchmark.py"}:
+            source = benchmark.OUTPUT / "code_version" / item["file"]
+        assert benchmark.digest(source) == item["sha256"]
     for item in manifest["outputs"]:
         assert benchmark.digest(benchmark.OUTPUT / item["file"]) == item["sha256"]

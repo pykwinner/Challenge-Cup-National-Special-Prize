@@ -1,0 +1,47 @@
+{
+  "frozen_utc": "2026-10-02T05:51:55.756358+00:00",
+  "settings": {
+    "year": 2017,
+    "target_per_category": 3,
+    "base_k": 6,
+    "seed": 42,
+    "repeats": 3,
+    "threads": 1,
+    "coverage_gate": 0.95,
+    "selection": "new sites first; stable site/building IDs; round robin sites; unique building across meter types",
+    "no_acceleration_enabled": true
+  },
+  "adoption_policy": {
+    "maximum_absolute_relative_energy_error": 0.001,
+    "maximum_w1_degradation": 0.0,
+    "minimum_peak_retention": 1.0,
+    "minimum_ramp_retention": 1.0,
+    "minimum_original_observed_peak_retention": 1.0,
+    "numerical_tolerance": 1e-08,
+    "metric_tolerance": 1e-12
+  },
+  "policy_origin": "research choices, not official score requirements",
+  "scope": "overseas metering compression, not Chinese three-city engineering validation",
+  "methods": [
+    "ordinary",
+    "extreme_aware",
+    "extreme_calibrated",
+    "adoption_rule"
+  ],
+  "soft_calibration": {
+    "regularization": 0.0001,
+    "minimum_extreme_weight": 1.0,
+    "minimum_day_weight": 1e-06
+  },
+  "budget": "ordinary uses extreme actual positive day count; fixed selection reused for soft calibration and adoption",
+  "zero_energy": "retain case and failures; relative gates undefined; fall back without qualification",
+  "no_engineering_claims": [
+    "costs",
+    "carbon",
+    "comfort",
+    "storage",
+    "MILP operation",
+    "full-calendar planning feasibility"
+  ],
+  "selection_freeze_before_algorithm_run": true
+}

@@ -1,0 +1,123 @@
+{
+  "review_date_local": "2026-10-02",
+  "identity": "Synthetic analytical fixtures, not measured data or an engineering experiment",
+  "no_core_edits_no_milp_build_or_solve": true,
+  "source_sha256_before": {
+    "src\\heatplan\\representative.py": "953d15e3c8f18bfb872819d55bbbaa03ce66016c87e6beb03a0c66ed2b63dd25",
+    "src\\heatplan\\scenarios.py": "90f826c9b52adc914eb4470d16c22c67bace5dadf1f788a216d31e74e32d05f1",
+    "src\\heatplan\\chronology.py": "5c7a883c757e38522e488b14d102fcc298f568ceb55f67c847a0773c7272186d",
+    "src\\heatplan\\building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src\\heatplan\\model.py": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5"
+  },
+  "partial_24h_claimed_annual": {
+    "accepted": true,
+    "rows": 24,
+    "weight_days": 1.0,
+    "candidate_first_time": "rep_00_2023::2023-01-01 00:00:00+00:00"
+  },
+  "missing_day_with_24h_blocks": {
+    "accepted": true,
+    "rows": 48,
+    "weight_days": 2.0,
+    "candidate_first_time": "rep_00_2023::2023-01-01 00:00:00+00:00"
+  },
+  "shifted_06h_blocks": {
+    "accepted": true,
+    "rows": 48,
+    "weight_days": 2.0,
+    "candidate_first_time": "rep_00_2023::2023-01-01 06:00:00+00:00"
+  },
+  "original_rc_input_valid": true,
+  "rc_builder_interface": {
+    "accepted": false,
+    "error": "building time must be timezone-aware; convert source clock to UTC explicitly"
+  },
+  "cross_year_ramp": {
+    "coverage_helper_reported": 100.0,
+    "selection_adjacency_mode": "observed_hourly_edges",
+    "selection_valid_edges": 46,
+    "observed_contiguous_edge_max": 0.0
+  },
+  "representative_cyclic_wrap": {
+    "coverage_reported_ramp": 1.0,
+    "model_first_predecessor": 23,
+    "model_wrap_ramp": 23.0,
+    "note": "Artificial daily cycle edge; do not label it an observed chronological ramp"
+  },
+  "daily_state_partition": {
+    "day0_first_predecessor": 23,
+    "day1_first_predecessor": 47,
+    "groups": {
+      "day0": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "day1": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    "lossless_cyclic_storage_derivation": "Summing each day's SOC equations gives eta_ch*sum(charge)*dt = sum(discharge)*dt/eta_dis separately for each day. Day weights do not link days."
+  },
+  "integer_time_with_real_timestamp": {
+    "selection_mode": "opaque_labels_within_block_only",
+    "reported_valid_edges": 46,
+    "midnight_edge_23_to_24_included": false,
+    "independent_timestamp_expected_valid_edges": 47
+  },
+  "uniform_2h_helper_accepted": true,
+  "uniform_2h_quality_valid_for_dt1": false,
+  "missing_day_quality_valid": false,
+  "source_sha256_after": {
+    "src\\heatplan\\representative.py": "953d15e3c8f18bfb872819d55bbbaa03ce66016c87e6beb03a0c66ed2b63dd25",
+    "src\\heatplan\\scenarios.py": "90f826c9b52adc914eb4470d16c22c67bace5dadf1f788a216d31e74e32d05f1",
+    "src\\heatplan\\chronology.py": "5c7a883c757e38522e488b14d102fcc298f568ceb55f67c847a0773c7272186d",
+    "src\\heatplan\\building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src\\heatplan\\model.py": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5"
+  },
+  "source_unchanged_during_recompute": true
+}
