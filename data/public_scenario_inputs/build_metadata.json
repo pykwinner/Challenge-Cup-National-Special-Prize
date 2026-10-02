@@ -1,0 +1,56 @@
+{
+  "profiles": {
+    "scenario1_urumqi": {
+      "full_year_file": "scenario1_urumqi_full_year_2023.csv",
+      "full_year_rows": 8760,
+      "representative_file": "scenario1_urumqi_representative_days_2023.csv",
+      "representative_rows": 216,
+      "representative_days": 9,
+      "weight_days": 365.0,
+      "extreme_days": [
+        "minimum_temperature",
+        "maximum_ramp",
+        "minimum_waste_heat"
+      ],
+      "annual_demand_proxy_kwh": 4411569.899904674,
+      "annual_cooling_proxy_kwh": 0.0
+    },
+    "scenario2_guyuan": {
+      "full_year_file": "scenario2_guyuan_full_year_2023.csv",
+      "full_year_rows": 8760,
+      "representative_file": "scenario2_guyuan_representative_days_2023.csv",
+      "representative_rows": 216,
+      "representative_days": 9,
+      "weight_days": 365.0,
+      "extreme_days": [
+        "minimum_temperature",
+        "maximum_demand",
+        "maximum_ramp"
+      ],
+      "annual_demand_proxy_kwh": 4362316.507261209,
+      "annual_cooling_proxy_kwh": 0.0
+    },
+    "scenario3_wuhan": {
+      "full_year_file": "scenario3_wuhan_full_year_2023.csv",
+      "full_year_rows": 8760,
+      "representative_file": "scenario3_wuhan_representative_days_2023.csv",
+      "representative_rows": 216,
+      "representative_days": 9,
+      "weight_days": 365.0,
+      "extreme_days": [
+        "minimum_temperature",
+        "maximum_demand",
+        "maximum_ramp"
+      ],
+      "annual_demand_proxy_kwh": 1386246.1464746404,
+      "annual_cooling_proxy_kwh": 688725.5040727272
+    }
+  },
+  "assumptions": {
+    "base_temperature_c": 18.0,
+    "demand_method": "24-hour audited shape multiplied by hourly heating-degree ratio",
+    "representative_day_clusters": 6,
+    "weather_source": "data/public_sources NASA POWER 2023 prototype",
+    "formal_use_warning": "replace/calibrate with CMA station and measured heat-load data"
+  }
+}

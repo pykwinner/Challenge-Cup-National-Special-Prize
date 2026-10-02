@@ -1,0 +1,188 @@
+{
+  "complete": true,
+  "date": "2026-10-01T22:39:31.927228+08:00",
+  "status": "C3 independent preprocessing and tests passed; no integrated seasonal or annual solve performed",
+  "test_run": {
+    "command": "python -m pytest tests/test_spatial_quality.py -q --junitxml=data/competition_spatial/test_results.xml",
+    "started_at": "2026-10-01T22:43:29.668949+08:00",
+    "process_exit_code": 0,
+    "stdout": "..............................................                           [100%]\n- generated xml file: D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\data\\competition_spatial\\test_results.xml -\n46 passed in 0.93s\n",
+    "stderr": "",
+    "code_hashes_before": {
+      "src/heatplan/spatial_quality.py": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+      "tests/test_spatial_quality.py": "77774da3d6f84b2af3c3d25326ce01fb4f245c9bbe62efb3a5868286836b2a5f",
+      "src/heatplan/model.py": "5f7397a6cbd5ff653022cd73500a86fee4102a41e44bb543107565924af63a06",
+      "src/heatplan/io.py": "dfddc735247c2d9a797f0a99a46ee36253cc79a8db74ad77499dba8bfcec18fb",
+      "src/heatplan/linear.py": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40"
+    },
+    "code_hashes_after": {
+      "src/heatplan/spatial_quality.py": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+      "tests/test_spatial_quality.py": "77774da3d6f84b2af3c3d25326ce01fb4f245c9bbe62efb3a5868286836b2a5f",
+      "src/heatplan/model.py": "5f7397a6cbd5ff653022cd73500a86fee4102a41e44bb543107565924af63a06",
+      "src/heatplan/io.py": "dfddc735247c2d9a797f0a99a46ee36253cc79a8db74ad77499dba8bfcec18fb",
+      "src/heatplan/linear.py": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40"
+    },
+    "code_unchanged_during_test": true,
+    "python_version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "scope": "46 targeted checks, including two one-hour feasible MILPs and one one-hour infeasible MILP; no full-season/year solve"
+  },
+  "c1_readonly_preprocessing": {
+    "rows_checked": 8784,
+    "time_start": "2023-06-30T16:00:00Z",
+    "time_end": "2024-06-30T15:00:00Z",
+    "elapsed_seconds": 0.055794600000808714,
+    "buildings": 4,
+    "building_master_agreement": true,
+    "config_build_performed": false,
+    "solve_performed": false
+  },
+  "candidate_report": [
+    {
+      "pipe": "interconnector_ab",
+      "from": "district_a",
+      "to": "district_b",
+      "accepted": true,
+      "reasons": [],
+      "euclidean_distance_m": 1345.362404707371,
+      "route_length_m": 1452.991397083961,
+      "max_route_length_m": 1600.0,
+      "cost_mode": "per_m",
+      "option_capex_yuan": {
+        "DN100": 440897.41912518826,
+        "DN80": 290598.2794167922
+      }
+    }
+  ],
+  "source_grade_report": [
+    {
+      "source": "distributed_air_hp_b",
+      "grade": "low",
+      "mode": "heat_pump",
+      "checked_steps": 8784,
+      "cop_min": 2.188306611287356,
+      "cop_max": 4.2,
+      "electricity_kwh_per_kwh_heat_min": 0.23809523809523808,
+      "electricity_kwh_per_kwh_heat_max": 0.45697435397853653
+    },
+    {
+      "source": "district_a_emergency_eb",
+      "grade": "low",
+      "mode": "direct",
+      "supply_temp_c": 100.0,
+      "required_temp_c": 45.0
+    },
+    {
+      "source": "district_a_air_hp",
+      "grade": "low",
+      "mode": "heat_pump",
+      "checked_steps": 8784,
+      "cop_min": 2.292511688015326,
+      "cop_max": 4.8,
+      "electricity_kwh_per_kwh_heat_min": 0.20833333333333334,
+      "electricity_kwh_per_kwh_heat_max": 0.4362027924340575
+    },
+    {
+      "source": "district_a_ground_hp",
+      "grade": "low",
+      "mode": "heat_pump",
+      "checked_steps": 1,
+      "cop_min": 4.926193548387096,
+      "cop_max": 4.926193548387096,
+      "electricity_kwh_per_kwh_heat_min": 0.20299649012520302,
+      "electricity_kwh_per_kwh_heat_max": 0.20299649012520302
+    },
+    {
+      "source": "district_b_ground_hp",
+      "grade": "low",
+      "mode": "heat_pump",
+      "checked_steps": 1,
+      "cop_min": 4.926193548387096,
+      "cop_max": 4.926193548387096,
+      "electricity_kwh_per_kwh_heat_min": 0.20299649012520302,
+      "electricity_kwh_per_kwh_heat_max": 0.20299649012520302
+    },
+    {
+      "source": "district_a_solar_thermal",
+      "grade": "low",
+      "mode": "direct",
+      "supply_temp_c": 52.0,
+      "required_temp_c": 45.0
+    },
+    {
+      "source": "district_b_solar_thermal",
+      "grade": "low",
+      "mode": "direct",
+      "supply_temp_c": 52.0,
+      "required_temp_c": 45.0
+    }
+  ],
+  "system_grade_property_totals": [
+    {
+      "system": "s3_wuhan_prototype",
+      "heat_grade": "low",
+      "building_names": [
+        "apartments_a",
+        "office_a",
+        "apartments_b",
+        "retail_b"
+      ],
+      "area_m2": 44000.0,
+      "heat_loss_kw_per_c": 43.9,
+      "thermal_capacity_kwh_per_c": 2730.0
+    }
+  ],
+  "synthetic_power_aggregation_test": {
+    "input_building_kw": {
+      "apartments_a": [
+        1.0,
+        3.0
+      ],
+      "office_a": [
+        2.0,
+        5.0
+      ],
+      "apartments_b": [
+        3.0,
+        7.0
+      ],
+      "retail_b": [
+        4.0,
+        9.0
+      ]
+    },
+    "system_totals_kw": [
+      10.0,
+      24.0
+    ],
+    "node_totals_equal_system_totals": true,
+    "identity": "arbitrary test dispatch; not optimized or observed"
+  },
+  "resolved_input_config_sha256": "092e4c4edba2e84f1c30a3c0c50180dbb1887d5c912dd3be24231e4a99ba585d",
+  "resolved_processed_config_sha256": "0743ddf2b3e3d68db626dff9f98e4213e21ea851881d9e9c78cd75204c063582",
+  "file_sha256": {
+    "src/heatplan/spatial_quality.py": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+    "tests/test_spatial_quality.py": "77774da3d6f84b2af3c3d25326ce01fb4f245c9bbe62efb3a5868286836b2a5f",
+    "data/competition_spatial/s3_spatial.yaml": "81092ff95565f84ad4e848d05a36844ff81fb4ee87a10ea4b29eb11024a29977",
+    "data/competition_spatial/parameter_manifest.json": "fe44cf5540f0b894ee0fe684b978268a00259bdf7f3cb37705e0f95080b4d2bb",
+    "data/competition_20261001/manifest.json": "e964bc437a3a0919433d3d0d4914598d940ef531d868b6116607185337b27e73",
+    "data/competition_20261001/wuhan_service_year_2023_2024_utc.csv": "02f58ddef8d9a7df243aacc5a22b87f633660332d137d9c0f868ff5b01175fc1",
+    "data/competition_20261001/building_archetypes.csv": "23d04b08ef0e9eff639a4a5547e39e3d8fbda7181b460ab47037cece30df38b7",
+    "data/competition_20261001/wuhan_rc_candidate.yaml": "0584f9bcbcee5676f9d7745dc332a9b23837d1441ca72c970781faa0ef831def",
+    "data/public_scenario_inputs/scenario3_wuhan_joint_public.yaml": "e4dc29f92cd3f52ac7837df90327bec5645086b0b573a546540c29881d738fce",
+    "data/public_scenario_inputs/scenario3_wuhan_public.yaml": "5b4bb71d2ba5aaa01e2a4351525e2916b0ef6c80b7728e44afb3d7de8bffe8ce",
+    "data/scenario3_high_quality_newbuild.yaml": "93fbf8dc3c7b71b51d247e8338eb702aaa43587c43e60efc5453344d6bbbaa9a",
+    "data/example_city.yaml": "f9cff13710fc2ca3b7262db3d9c730ed5c276fb642ad6957dc3f4ab4a8e0e1f2"
+  },
+  "limitations": [
+    "Prototype geometry and costs are synthetic.",
+    "No hydraulic, variable-flow transport delay, or underground utility certification.",
+    "District property totals do not replace independent building RC states.",
+    "No serial low-grade-heat-to-high-grade booster balance is implemented.",
+    "Shared-core integration is owned by C0."
+  ],
+  "diagnostics": [
+    "One earlier evidence wrapper failed while printing a Chinese path through Windows GBK after pytest had passed. Re-ran capture with PYTHONIOENCODING=utf-8 and ASCII-safe summary; no code/test failure occurred."
+  ]
+}

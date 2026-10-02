@@ -1,0 +1,58 @@
+profiles:
+- name: scenario1_urumqi
+  config: ../public_scenario_inputs/scenario1_urumqi_deterministic_public.yaml
+  representative_timeseries: ../../outputs/v11_4_representative_days/scenario1_urumqi/representative_days_calibrated.csv
+  annual_timeseries:
+  - year: 2020
+    path: scenario1_urumqi/scenario1_urumqi_full_year_2020.csv
+    timestamp_column: time
+  - year: 2021
+    path: scenario1_urumqi/scenario1_urumqi_full_year_2021.csv
+    timestamp_column: time
+  - year: 2022
+    path: scenario1_urumqi/scenario1_urumqi_full_year_2022.csv
+    timestamp_column: time
+  - year: 2023
+    path: scenario1_urumqi/scenario1_urumqi_full_year_2023.csv
+    timestamp_column: time
+  - year: 2024
+    path: scenario1_urumqi/scenario1_urumqi_full_year_2024.csv
+    timestamp_column: time
+- name: scenario2_guyuan
+  config: ../public_scenario_inputs/scenario2_guyuan_evidence_public.yaml
+  representative_timeseries: ../../outputs/v11_4_representative_days/scenario2_guyuan/representative_days_calibrated.csv
+  annual_timeseries:
+  - year: 2020
+    path: scenario2_guyuan/scenario2_guyuan_full_year_2020.csv
+    timestamp_column: time
+  - year: 2021
+    path: scenario2_guyuan/scenario2_guyuan_full_year_2021.csv
+    timestamp_column: time
+  - year: 2022
+    path: scenario2_guyuan/scenario2_guyuan_full_year_2022.csv
+    timestamp_column: time
+  - year: 2023
+    path: scenario2_guyuan/scenario2_guyuan_full_year_2023.csv
+    timestamp_column: time
+  - year: 2024
+    path: scenario2_guyuan/scenario2_guyuan_full_year_2024.csv
+    timestamp_column: time
+- name: scenario3_wuhan
+  config: ../public_scenario_inputs/scenario3_wuhan_joint_public.yaml
+  representative_timeseries: ../../outputs/v11_4_representative_days/scenario3_wuhan/representative_days_calibrated.csv
+  annual_timeseries:
+  - year: 2020
+    path: scenario3_wuhan/scenario3_wuhan_full_year_2020.csv
+    timestamp_column: time
+  - year: 2021
+    path: scenario3_wuhan/scenario3_wuhan_full_year_2021.csv
+    timestamp_column: time
+  - year: 2022
+    path: scenario3_wuhan/scenario3_wuhan_full_year_2022.csv
+    timestamp_column: time
+  - year: 2023
+    path: scenario3_wuhan/scenario3_wuhan_full_year_2023.csv
+    timestamp_column: time
+  - year: 2024
+    path: scenario3_wuhan/scenario3_wuhan_full_year_2024.csv
+    timestamp_column: time

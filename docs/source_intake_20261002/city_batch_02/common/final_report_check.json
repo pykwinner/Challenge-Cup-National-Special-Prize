@@ -1,0 +1,96 @@
+{
+  "report_sha256": "52caead0ecf4c7874b3bd80aab3f0952b7923c4e1d9c47348d9f91440c1a1c9e",
+  "remaining_gaps": 13,
+  "missing_local_links": [],
+  "city_reports_checked": [
+    {
+      "city": "urumqi",
+      "file": "sources.json",
+      "sha256": "071e2db82dc081e96853b19456866c53e18e78bfe5ebe75e824ffcfffc59d41d",
+      "json_valid": true
+    },
+    {
+      "city": "urumqi",
+      "file": "verified_facts.json",
+      "sha256": "2d66ed0bdfde6399f69d1791542b79482c3c0ab780be0eacb10bcce943366d0a",
+      "json_valid": true
+    },
+    {
+      "city": "urumqi",
+      "file": "local_document_review.json",
+      "sha256": "8a633f498f94a9f015bffef026c8eadace59633d8a13871d6ef3e0855bcbc967",
+      "json_valid": true
+    },
+    {
+      "city": "urumqi",
+      "file": "package_review.json",
+      "sha256": "3af381362f1eb4dc004ce62787424b780640515efec07bd746dcc1771f8c6c15",
+      "json_valid": true
+    },
+    {
+      "city": "guyuan",
+      "file": "sources.json",
+      "sha256": "0d9e57f9324f216d394028de584c6650f5031c0f811a543f5cfe9894ccd5ad05",
+      "json_valid": true
+    },
+    {
+      "city": "guyuan",
+      "file": "verified_facts.json",
+      "sha256": "db98cc6aca68917af86cf4a3ac7980871ffdf233d9465c8ba9f59f384bba55b1",
+      "json_valid": true
+    },
+    {
+      "city": "guyuan",
+      "file": "local_document_review.json",
+      "sha256": "0b9aff6206de28a8007bc1579782a5c1daa460ff5885047243434a657b5350da",
+      "json_valid": true
+    },
+    {
+      "city": "guyuan",
+      "file": "package_review.json",
+      "sha256": "6c351673fb8b2bc4a89a2617c2cbcf65a37746ef2f6a0b9065088ac19e512a18",
+      "json_valid": true
+    },
+    {
+      "city": "wuhan",
+      "file": "sources.json",
+      "sha256": "25b4b0030193030b44d4b650db4d99708de07ec685b43e0bd126b37fa9fb4cda",
+      "json_valid": true
+    },
+    {
+      "city": "wuhan",
+      "file": "verified_facts.json",
+      "sha256": "59182a0509e1ab3069f1cdf6d49a9fb70c37989f9e79be8c2d54357a635d7cbb",
+      "json_valid": true
+    },
+    {
+      "city": "wuhan",
+      "file": "local_document_review.json",
+      "sha256": "c32d16167039cd1157c990570f6231edba30e29284cc7bec84f3c5e112292d1f",
+      "json_valid": true
+    },
+    {
+      "city": "wuhan",
+      "file": "package_review.json",
+      "sha256": "1cdd65efb80f19257f76acf863b13ce6a1c5264f94ad969da87fb4c2cbf0967a",
+      "json_valid": true
+    }
+  ],
+  "package_file_hash_mismatches": [],
+  "weather_tables_passed": 18,
+  "current_input_tables_passed": 24,
+  "preflight_failures": [
+    {
+      "profile": "scenario3_wuhan",
+      "kind": "paper_baseline_season",
+      "error": "operating_scenario must explicitly map user_behavior for node district_a; choose from ['evening_rebound', 'high_comfort_preference']"
+    },
+    {
+      "profile": "scenario3_wuhan",
+      "kind": "updated_utc_season",
+      "error": "operating_scenario must explicitly map user_behavior for node district_a; choose from ['evening_rebound', 'high_comfort_preference']"
+    }
+  ],
+  "current_annual_coverage_review_count": 33,
+  "optimization_run": false
+}

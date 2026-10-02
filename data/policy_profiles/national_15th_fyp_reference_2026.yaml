@@ -1,0 +1,399 @@
+profile:
+  id: national_15th_fyp_reference_2026
+  name: 国家“十五五”供热低碳转型战略参考画像
+  period: 2026-2030
+  issued_date: 2026-07-20
+  last_verified_date: 2026-07-20
+  version: 1.2
+  default_enforcement: false
+  note: >-
+    本画像只使用已核验的国家正式文件，用于战略对齐、机制设计和证据追溯。
+    国家宏观目标不得直接作为单个城市或项目的硬约束；只有分母口径一致、
+    地方任务已分解、资产清单与基线经审计后，才能转为项目约束。
+
+sources:
+  - id: fifteenth_fyp_outline
+    title: 中华人民共和国国民经济和社会发展第十五个五年规划纲要
+    authority: 全国人民代表大会 / 中国政府网
+    source_tier: national_plan
+    issued_date: 2026-03-13
+    retrieved_date: 2026-07-20
+    verification_status: verified_official
+    url: https://www.gov.cn/yaowen/liebiao/202603/content_7062633.htm
+  - id: fifteenth_fyp_carbon_peak_action
+    title: 国务院关于印发《“十五五”碳达峰行动方案》的通知
+    authority: 国务院 / 生态环境部
+    source_tier: state_council_action_plan
+    document_number: 国发〔2026〕22号
+    issued_date: 2026-07-05
+    published_date: 2026-07-14
+    retrieved_date: 2026-07-20
+    verification_status: verified_official
+    url: https://www.mee.gov.cn/zcwj/gwywj/202607/t20260714_1161655.shtml
+  - id: beautiful_china_fifteenth_fyp
+    title: 国务院关于印发《美丽中国建设“十五五”规划》的通知
+    authority: 国务院 / 中国政府网
+    source_tier: state_council_plan
+    document_number: 国发〔2026〕20号
+    issued_date: 2026-06-21
+    published_date: 2026-07-03
+    retrieved_date: 2026-07-20
+    verification_status: verified_official
+    url: https://www.gov.cn/zhengce/content/202607/content_7074199.htm
+
+targets:
+  - code: FYP_CO2_INTENSITY_17
+    name: 2030年单位国内生产总值二氧化碳排放比2025年降低17%
+    source_id: fifteenth_fyp_outline
+    policy_scope: national_macro
+    policy_role: strategic_context
+    enforcement_readiness: reference_only
+    applicable_scenarios: &all_scenarios
+      - scenario1_existing_network
+      - scenario2_distributed_clean
+      - scenario3_high_quality_newbuild
+    assessment_mode: contextual_reference
+    comparison: none
+    target_value: 0.17
+    unit: fraction_reduction_from_2025
+    model_metric: emission_intensity_kg_per_kwh
+    model_mapping: policy.minimum_emission_intensity_reduction_fraction
+    evidence_required:
+      - 地方分解目标
+      - 项目2025年供热碳强度审计基线
+      - 一致的排放边界与分母
+    caveat: GDP碳强度与项目供热碳强度分母不同，只能作为方向性参考。
+
+  - code: FYP_ENERGY_INTENSITY_10
+    name: 单位GDP能耗下降10%左右
+    source_id: fifteenth_fyp_outline
+    policy_scope: national_macro
+    policy_role: strategic_context
+    enforcement_readiness: reference_only
+    applicable_scenarios: *all_scenarios
+    assessment_mode: contextual_reference
+    comparison: none
+    target_value: 0.10
+    unit: approximate_fraction_reduction
+    model_metric:
+    model_mapping: 能效、COP、管网热损和建筑节能情景
+    evidence_required:
+      - 地方能耗强度分解任务
+      - 项目综合能耗核算边界
+    caveat: “左右”为宏观预期性表述，不能直接改写为项目精确阈值。
+
+  - code: ENERGY_SECURITY_ORDERLY_TRANSITION
+    name: 统筹能源安全与非化石能源安全可靠有序替代
+    source_id: fifteenth_fyp_outline
+    policy_scope: national_energy_security
+    policy_role: model_mechanism
+    enforcement_readiness: qualitative
+    applicable_scenarios: *all_scenarios
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: worst_scenario_unserved_rate
+    model_mapping: 可靠容量、N-1、极端年复算、备用燃料、配网容量和先立后破转型时序
+    evidence_required:
+      - 设计气象年与极端年
+      - 设备可用率和故障清单
+      - 燃料与电网保供边界
+    caveat: 安全可靠是转型前置条件，但可靠性阈值仍由地方规范和项目服务标准确定。
+
+  - code: NON_FOSSIL_ENERGY_25
+    name: 2030年非化石能源消费占比达到25%
+    source_id: fifteenth_fyp_carbon_peak_action
+    policy_scope: national_energy_system
+    policy_role: strategic_context
+    enforcement_readiness: reference_only
+    applicable_scenarios: *all_scenarios
+    assessment_mode: contextual_reference
+    comparison: none
+    target_value: 0.25
+    unit: share
+    model_metric: non_fossil_heat_share
+    model_mapping: policy.minimum_non_fossil_heat_share
+    evidence_required:
+      - 地方能源平衡表
+      - 供热系统购电来源与环境热核算规则
+    caveat: 全国一次能源消费占比不能直接等同于单个供热系统的非化石热占比。
+
+  - code: GREEN_HEAT_TRANSITION
+    name: 热力系统绿色低碳转型、余热利用和非化石能源供热
+    source_id: fifteenth_fyp_outline
+    policy_scope: heat_system
+    policy_role: model_mechanism
+    enforcement_readiness: qualitative
+    applicable_scenarios: *all_scenarios
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: clean_heat_share
+    model_mapping: >-
+      minimum_clean_heat_share, minimum_waste_heat_share,
+      minimum_non_fossil_heat_share, maximum_fossil_heat_share
+    evidence_required:
+      - 地方资源禀赋
+      - 余热可获得率和可中断性
+      - 可再生能源核算边界
+    caveat: 数值目标由地方规划、资源条件和项目边界校准。
+
+  - code: CLEAN_HEAT_SOURCE_LOAD_MATCHING
+    name: 强化清洁热力供给和用热需求匹配
+    source_id: fifteenth_fyp_carbon_peak_action
+    policy_scope: heat_supply_demand_coordination
+    policy_role: model_mechanism
+    enforcement_readiness: qualitative
+    applicable_scenarios: *all_scenarios
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: worst_scenario_unserved_rate
+    model_mapping: 源网荷储联合优化、温级匹配、逐时平衡、代表日规划和多气象年连续回放
+    evidence_required:
+      - 逐时热负荷
+      - 热源温度与容量曲线
+      - 管网和储热状态数据
+    caveat: 这是模型核心机制映射，不等同于国家给出了统一数值门槛。
+
+  - code: BUILDING_DIRECT_CO2_3
+    name: 十五五期间单位建筑面积直接碳排放降低3%
+    source_id: fifteenth_fyp_carbon_peak_action
+    policy_scope: national_building_sector
+    policy_role: conditional_constraint
+    enforcement_readiness: requires_local_baseline
+    applicable_scenarios: *all_scenarios
+    assessment_mode: conditional_proxy
+    comparison: none
+    target_value: 0.03
+    unit: fraction_reduction
+    model_metric: direct_fossil_emission_intensity_kg_per_m2
+    model_mapping: policy.minimum_direct_fossil_emission_reduction_fraction
+    evidence_required:
+      - 项目2025年直接排放审计基线
+      - 服务建筑面积
+      - 燃料直接排放因子
+    caveat: 只有基线、服务面积和直接排放边界一致时才能形成项目约束。
+
+  - code: CHP_DECOUPLING_AND_STORAGE
+    name: 在不影响供热前提下开展热电解耦并支持热电厂储热
+    source_id: fifteenth_fyp_carbon_peak_action
+    policy_scope: existing_district_heating
+    policy_role: model_mechanism
+    enforcement_readiness: qualitative
+    applicable_scenarios:
+      - scenario1_existing_network
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: rejected_heat_kwh_per_year
+    model_mapping: CHP可行域、弃热、最小出力、储热容量、零失供和N-1约束
+    evidence_required:
+      - 机组热电运行曲线
+      - 最小技术出力
+      - 储热场地与温度边界
+    caveat: 适用于既有大型集中供热系统，模型弃热量必须由真实机组工况复核。
+
+  - code: NETWORK_AND_THERMAL_STORAGE
+    name: 集中供热管网升级改造和储热蓄冷合理布局
+    source_id: fifteenth_fyp_carbon_peak_action
+    policy_scope: heat_and_cooling_infrastructure
+    policy_role: model_mechanism
+    enforcement_readiness: qualitative
+    applicable_scenarios:
+      - scenario1_existing_network
+      - scenario3_high_quality_newbuild
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: worst_scenario_unserved_rate
+    model_mapping: 管网候选规格、管网改造、温级降低、储热蓄冷和冷热联供容量
+    evidence_required:
+      - 管网GIS和水力参数
+      - 施工与场地边界
+      - 储热蓄冷循环效率
+    caveat: 必须结合当地管网GIS、水力、施工和场地条件校核。
+
+  - code: HEAT_METERING_REFORM
+    name: 推进供热计量改造和按热量收费
+    source_id: fifteenth_fyp_carbon_peak_action
+    policy_scope: heat_market_and_demand_side
+    policy_role: model_mechanism
+    enforcement_readiness: requires_local_policy_target
+    applicable_scenarios: *all_scenarios
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: heat_metering_coverage_fraction
+    model_mapping: >-
+      节点既有/新增计量覆盖率、计量节热响应、计量改造投资、
+      按热收费情景、居民平均热费与可负担性约束
+    evidence_required:
+      - 地方计量收费办法
+      - 户表覆盖率
+      - 用户热需求弹性调查
+    caveat: 国家文件未规定统一项目覆盖率或热价，数值必须由地方政策校准。
+
+  - code: POWER_DEMAND_RESPONSE_5
+    name: 电力需求响应能力达到最大用电负荷的5%以上
+    source_id: fifteenth_fyp_carbon_peak_action
+    policy_scope: national_power_system
+    policy_role: strategic_context
+    enforcement_readiness: reference_only
+    applicable_scenarios: *all_scenarios
+    assessment_mode: contextual_reference
+    comparison: none
+    target_value: 0.05
+    unit: share_of_maximum_electric_load
+    model_metric: building_flex_firm_capacity_kw
+    model_mapping: demand_response、firm_building_flexibility、储热和微网调节能力
+    evidence_required:
+      - 地方需求响应市场规则
+      - 项目可调负荷基线
+    caveat: 全国电力系统指标不能直接作为单个供热项目硬约束。
+
+  - code: TOU_PRICE_AND_DR_MARKET
+    name: 完善分时零售价格并探索需求响应价格机制
+    source_id: fifteenth_fyp_carbon_peak_action
+    policy_scope: electricity_heat_market_coupling
+    policy_role: model_mechanism
+    enforcement_readiness: requires_local_policy_target
+    applicable_scenarios: *all_scenarios
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: grid_connection_capacity_kw
+    model_mapping: 分时购电价、需求响应补偿、热泵/电锅炉/储热协同调度和配网容量
+    evidence_required:
+      - 当地分时电价
+      - 接入电压等级与用户类别
+      - 需求响应补偿规则
+    caveat: 居民、工商业和区域微网的价格资格不同，必须按接入点逐项认定。
+
+  - code: URBAN_LIFELINE_OLD_NETWORK
+    name: 城市基础设施生命线安全与老旧管网改造
+    source_id: fifteenth_fyp_outline
+    policy_scope: urban_renewal
+    policy_role: model_mechanism
+    enforcement_readiness: qualitative
+    applicable_scenarios:
+      - scenario1_existing_network
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: worst_scenario_unserved_rate
+    model_mapping: 骨干管网保留、管段改造、故障情景、N-1和服务恢复时间
+    evidence_required:
+      - 管龄与事故台账
+      - 管段状态评估
+      - 生命线风险分区
+    caveat: 规划方向不替代地方供热管网设计规范和事故处置标准。
+
+  - code: DISTRIBUTED_ENERGY_AND_GRID
+    name: 分布式能源就近开发利用并完善城乡配电网
+    source_id: fifteenth_fyp_outline
+    policy_scope: distributed_energy_and_rural_grid
+    policy_role: model_mechanism
+    enforcement_readiness: qualitative
+    applicable_scenarios:
+      - scenario2_distributed_clean
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: grid_connection_capacity_kw
+    model_mapping: 分布式热泵、生物质、区域微网、配网扩容、孤岛运行和运维半径
+    evidence_required:
+      - 村镇配网容量
+      - 生物质可持续供应半径
+      - 户级与区域级设备运维数据
+    caveat: 全国方向只能形成技术候选集，具体路线由资源、配网和可负担性共同决定。
+
+  - code: SMALL_COAL_BOILER_PHASEOUT
+    name: 全面淘汰10蒸吨/小时及以下燃煤锅炉并逐步替代中小燃煤锅炉
+    source_id: fifteenth_fyp_carbon_peak_action
+    policy_scope: coal_boiler_inventory
+    policy_role: mandatory_inventory_screen
+    enforcement_readiness: requires_asset_inventory
+    applicable_scenarios:
+      - scenario1_existing_network
+      - scenario2_distributed_clean
+    assessment_mode: conditional_proxy
+    comparison: none
+    model_metric: fossil_heat_share
+    model_mapping: 现状锅炉资产清单、禁止新增/强制退役时序和替代容量约束
+    evidence_required:
+      - 锅炉逐台容量清单
+      - 环保能耗安全和年限状态
+      - 地方淘汰实施计划
+    caveat: 必须先完成逐台锅炉清单；蒸吨/小时不能用系统总热功率简单替代。
+
+  - code: BUILDING_EFFICIENCY_AND_COOLING
+    name: 既有建筑节能降碳、绿色建筑和制冷能效提升
+    source_id: fifteenth_fyp_outline
+    policy_scope: building_and_cooling_efficiency
+    policy_role: model_mechanism
+    enforcement_readiness: qualitative
+    applicable_scenarios:
+      - scenario3_high_quality_newbuild
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: cooling_unserved_rate
+    model_mapping: 建筑围护、热惯性、舒适度、可逆热泵、冷热共享容量和地源年平衡
+    evidence_required:
+      - 建筑能效标准
+      - 室内舒适度与占用数据
+      - 冷热逐时负荷
+    caveat: 高品质供热不能只考察零失供，还应同时验证舒适、制冷能效和冷热协同。
+
+  - code: CLEAN_HEATING_OPERATION_GUARANTEE
+    name: 完善清洁取暖运行保障长效机制
+    source_id: beautiful_china_fifteenth_fyp
+    policy_scope: clean_heating_operation
+    policy_role: model_mechanism
+    enforcement_readiness: requires_local_policy_target
+    applicable_scenarios:
+      - scenario1_existing_network
+      - scenario2_distributed_clean
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: worst_scenario_unserved_rate
+    model_mapping: >-
+      全寿命成本、燃料与电价情景、备用容量、年度连续回放、
+      运维现金流和居民热费可负担性共同构成“建得成且用得起”的运行保障门
+    evidence_required:
+      - 地方清洁取暖运行补贴与价格机制
+      - 热源和管网运维预算
+      - 燃料、电力与备件保供协议
+      - 居民热费可负担性调查
+    caveat: 国家规划提出长效机制方向，但具体补贴、热价和运维标准必须由地方正式文件校准。
+
+  - code: CLIMATE_RESILIENT_HEAT_INFRASTRUCTURE
+    name: 提升极端天气下能源与供热基础设施气候韧性
+    source_id: beautiful_china_fifteenth_fyp
+    policy_scope: climate_adaptation_and_resilience
+    policy_role: model_mechanism
+    enforcement_readiness: qualitative
+    applicable_scenarios: *all_scenarios
+    assessment_mode: qualitative_mapping
+    comparison: none
+    model_metric: worst_scenario_unserved_rate
+    model_mapping: >-
+      多气象年共享投资、CVaR尾部风险、极端年8760/8784小时回放、
+      N-1故障、低温热泵衰减、微网孤岛和储热边界联合验证
+    evidence_required:
+      - 本地极端寒潮、湿冷和热浪序列
+      - 设备低温或高湿性能曲线
+      - 电网、燃料和工业余热中断情景
+      - 灾后服务恢复目标
+    caveat: 历史气象年不能完全代表未来气候风险，正式项目还需叠加气候变化扰动和地方灾害情景。
+
+  - code: PROJECT_CARBON_ACCOUNTING_MONITORING
+    name: 建立项目碳排放和碳减排核算及动态监测证据链
+    source_id: beautiful_china_fifteenth_fyp
+    policy_scope: carbon_accounting_and_monitoring
+    policy_role: conditional_constraint
+    enforcement_readiness: requires_local_baseline
+    applicable_scenarios: *all_scenarios
+    assessment_mode: conditional_proxy
+    comparison: none
+    model_metric: emissions_kg_per_year
+    model_mapping: >-
+      直接燃料、购电、热泵环境热、余热和可再生能源分账，
+      排放因子版本、基线、边界、时间戳及场景结果可追溯输出
+    evidence_required:
+      - 项目基准年燃料和购电台账
+      - 适用年度电力排放因子
+      - 热量计量与能源流向数据
+      - 项目边界和碳减排核算方法
+    caveat: 当前模型已具备决策核算账本，但不能替代法定监测、报告、核查或核证减排量方法学。

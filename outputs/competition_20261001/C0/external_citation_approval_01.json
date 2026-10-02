@@ -1,0 +1,17 @@
+{
+  "reviewed_by": "C0",
+  "reviewed_at_utc": "2026-10-01T16:25:54.849590+00:00",
+  "approved_for_limited_method_applicability_citation": true,
+  "empirical_planning_case_approved": false,
+  "external_manifest_sha256": "180f79e8fc15ce4c2054501a475553a8702e135167606699dbcaa02d6487e130",
+  "independent_review_sha256": "ce5e433c307705975db105aa0ea6a9936585c46bc4b784b8a2fe46745e85388a",
+  "required_scope": "publisher-processed N2 measurements; derived room aggregate; recorded conditional inputs; all three prediction modes and matching persistence baselines",
+  "required_qualifications": [
+    "exact ten-minute indoor/power aggregation window not fully established",
+    "publisher interpolation/zero-fill lacks row flags, source-processing leakage cannot be excluded",
+    "solar area bound is declared proxy constraint, not certified whole-house solar gain upper bound",
+    "internal analysis plan is not independent proof of immutable preregistration",
+    "no Wuhan calibration, parameter transfer, general long-horizon accuracy or enterprise validation"
+  ],
+  "exploratory_followup_is_separate": true
+}

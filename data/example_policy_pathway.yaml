@@ -1,0 +1,85 @@
+# Demonstration pathway, not an official city target. National documents define
+# direction; city-level numerical targets must be calibrated and approved locally.
+horizon_end_year: 2040
+finance:
+  discount_rate: 0.06
+  tariff_yuan_per_kwh: 0.23
+  tariff_search_upper_yuan_per_kwh: 1.50
+  collection_rate: 0.96
+  fixed_om_fraction_of_cumulative_capex: 0.012
+  income_tax_rate: 0.25
+  debt_fraction: 0.70
+  debt_interest_rate: 0.045
+  debt_term_years: 12
+
+stages:
+  - name: "2026"
+    demand_multiplier: 1.00
+    grid_emission_multiplier: 1.00
+    policy:
+      minimum_clean_heat_share: 0.80
+      minimum_waste_heat_share: 0.35
+      maximum_fossil_heat_share: 0.20
+      emission_intensity_cap_kg_per_kwh: 0.070
+      maximum_levelized_heat_cost_yuan_per_kwh: 0.25
+      annualized_investment_budget_yuan: 600000
+
+  - name: "2030"
+    demand_multiplier: 0.96
+    grid_emission_multiplier: 0.82
+    additional_build_limits:
+      sources_kw:
+        industrial_waste_heat: 200
+        central_waste_source_hp: 400
+        distributed_air_hp_b: 400
+      storages_kwh:
+        central_low_temp_tank: 800
+        district_a_pcm: 300
+      grid_connection_kw: 600
+    policy:
+      minimum_clean_heat_share: 0.90
+      minimum_waste_heat_share: 0.50
+      maximum_fossil_heat_share: 0.08
+      emission_intensity_cap_kg_per_kwh: 0.050
+      minimum_retrofit_heat_share: 0.05
+      maximum_levelized_heat_cost_yuan_per_kwh: 0.22
+      annualized_investment_budget_yuan: 350000
+      public_subsidy_budget_yuan_per_year: 120000
+      capex_subsidy_fraction:
+        terminal_temperature_retrofit: 0.35
+        source_capacity:
+          central_waste_source_hp: 0.15
+          distributed_air_hp_b: 0.15
+          default: 0.0
+        storage_capacity: 0.20
+        grid_connection_capacity: 0.10
+
+  - name: "2035"
+    demand_multiplier: 0.90
+    grid_emission_multiplier: 0.60
+    additional_build_limits:
+      sources_kw:
+        industrial_waste_heat: 250
+        central_waste_source_hp: 500
+        distributed_air_hp_b: 500
+      storages_kwh:
+        central_low_temp_tank: 1000
+        district_a_pcm: 400
+      grid_connection_kw: 800
+    policy:
+      minimum_clean_heat_share: 0.98
+      minimum_waste_heat_share: 0.60
+      maximum_fossil_heat_share: 0.02
+      emission_intensity_cap_kg_per_kwh: 0.035
+      minimum_retrofit_heat_share: 0.15
+      maximum_levelized_heat_cost_yuan_per_kwh: 0.20
+      annualized_investment_budget_yuan: 400000
+      public_subsidy_budget_yuan_per_year: 180000
+      capex_subsidy_fraction:
+        terminal_temperature_retrofit: 0.45
+        source_capacity:
+          central_waste_source_hp: 0.20
+          distributed_air_hp_b: 0.20
+          default: 0.0
+        storage_capacity: 0.25
+        grid_connection_capacity: 0.15

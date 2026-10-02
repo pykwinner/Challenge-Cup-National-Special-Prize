@@ -1,0 +1,119 @@
+{
+  "reviewed_local_date": "2026-10-02",
+  "manual_reference_numbers_match_body": true,
+  "references": [
+    {
+      "number": 1,
+      "authors": "中国建筑科学研究院有限公司",
+      "year_or_version": "2026",
+      "title": "面向供热格局变革的城镇供热源荷匹配与规划寻优模型构建比赛方案",
+      "primary_source": "local contest PDF",
+      "verified_reading_scope": "第4页要求；不作为参数数值来源",
+      "does_not_certify_Wuhan_building_prices_or_performance": true
+    },
+    {
+      "number": 2,
+      "authors": "Peder Bacher; Henrik Madsen",
+      "year_or_version": "2011",
+      "title": "Identifying suitable models for the heat dynamics of buildings",
+      "primary_source": "https://backend.orbit.dtu.dk/ws/portalfiles/portal/126769045/modelselection09.pdf",
+      "verified_reading_scope": "本轮PDF第1–2页元数据与网页第4–8页RC结构/验证；原索引阅读范围另保留",
+      "does_not_certify_Wuhan_building_prices_or_performance": true,
+      "local_evidence": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\competition_research\\physics_downloads\\bacher2011.pdf",
+      "sha256": "08d2a1eb45580da57e07f34061694a097cd6b8b11831ebf201591805e3c56d5e"
+    },
+    {
+      "number": 3,
+      "authors": "Henrik Madsen; Peder Bacher; Geert Bauwens; An-Heleen Deconinck; Glenn Reynders; Staf Roels; Eline Himpe; Guillaume Lethé",
+      "year_or_version": "2016 publication; December 2015 report body date",
+      "title": "Thermal performance characterisation using time series data – statistical guidelines",
+      "primary_source": "https://iea-ebc.org/Data/publications/EBC_Annex_58_Final_Report_ST3b.pdf",
+      "verified_reading_scope": "本轮PDF1–4、11页核对题名/作者/出版年与编写日期；24–25、35–36、40–42页抽读平均窗口与验证，不称全文阅读",
+      "does_not_certify_Wuhan_building_prices_or_performance": true,
+      "local_evidence": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\competition_research\\physics_downloads\\ebc58_st3b.pdf",
+      "sha256": "d5a388ff3a41bfcc1526e6e86382fbc8835be4e190b10f24bad98687ef5237e9"
+    },
+    {
+      "number": 4,
+      "authors": "Leander Kotzur; Peter Markewitz; Martin Robinius; Detlef Stolten",
+      "year_or_version": "2018 author manuscript v2",
+      "title": "Time series aggregation for energy system design: Modeling seasonal storage",
+      "primary_source": "https://arxiv.org/abs/1710.07593",
+      "verified_reading_scope": "本轮arXiv元数据与此前第1–2页；索引有状态联系方法阅读范围；不声称实现作者状态分解",
+      "does_not_certify_Wuhan_building_prices_or_performance": true,
+      "local_evidence": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\competition_research\\optimization_downloads\\kotzur_2018.pdf",
+      "sha256": "4abf3b140380da3dcd26a4b38315a303ff932adc9517f6315f70b91660903eef"
+    },
+    {
+      "number": 5,
+      "authors": "George Mavrotas",
+      "year_or_version": "2009",
+      "title": "Effective implementation of the ε-constraint method in Multi-Objective Mathematical Programming problems",
+      "primary_source": "https://dspace.lib.ntua.gr/xmlui/handle/123456789/19533",
+      "verified_reading_scope": "机构元数据核对作者/年份；GAMS官方模型页核对刊名/213(2)/455–465；作者配套报告第4–8页词典序/ε约束。未获取期刊全文；DOI来自已有索引，DOI重定向本轮失败",
+      "does_not_certify_Wuhan_building_prices_or_performance": true,
+      "local_evidence": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\competition_research\\optimization_downloads\\mavrotas_gams_technical_report.pdf",
+      "sha256": "964c7bef93a278a4bea264a1d6f8fb51faf328644f3034215e871343eea3730a"
+    },
+    {
+      "number": 6,
+      "authors": "SciPy developers",
+      "year_or_version": "version 1.15.3; accessed 2026-10-02",
+      "title": "scipy.optimize.milp — SciPy 1.15.3 Reference Manual",
+      "primary_source": "https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.optimize.milp.html",
+      "verified_reading_scope": "Options、Returns、Notes；不把开发新版功能列为已安装支持",
+      "does_not_certify_Wuhan_building_prices_or_performance": true
+    },
+    {
+      "number": 7,
+      "authors": "HiGHS developers",
+      "year_or_version": "dev documentation; accessed 2026-10-02",
+      "title": "List of options — HiGHS Documentation",
+      "primary_source": "https://ergo-code.github.io/HiGHS/dev/options/definitions/",
+      "verified_reading_scope": "time_limit、mip_rel_gap、mip_abs_gap选项定义；不宣称SciPy开放全部原生选项",
+      "does_not_certify_Wuhan_building_prices_or_performance": true
+    },
+    {
+      "number": 8,
+      "authors": "Matthias Kersken; Paul Strachan",
+      "year_or_version": "version 2, 2020-06-23",
+      "title": "Twin House Experiment IEA EBC Annex 71 Validation of Building Energy Simulation Tools - Specifications and dataset",
+      "primary_source": "https://fordatis.fraunhofer.de/handle/fordatis/161.2?locale=en",
+      "verified_reading_scope": "机构发布页作者/题名/版本/DOI/许可；实测处理与误差采用C6完整审查+C0首轮正式准入",
+      "does_not_certify_Wuhan_building_prices_or_performance": true
+    },
+    {
+      "number": 9,
+      "authors": "NASA Langley Research Center POWER Project",
+      "year_or_version": "response v2.10.2; retrieved 2026-10-02 local",
+      "title": "Hourly API",
+      "primary_source": "https://power.larc.nasa.gov/docs/services/api/temporal/hourly/",
+      "verified_reading_scope": "官方时钟说明；15份响应单位和逐字段比对见C0_weather_02；2023重新构造校验查询，不恢复旧元数据",
+      "does_not_certify_Wuhan_building_prices_or_performance": true
+    }
+  ],
+  "scope": "Seven original method/data references plus contest and NASA source. Bibliographic/reading verification is distinct from engineering input admission.",
+  "weather": {
+    "report_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0_weather_02\\verification_report.json",
+    "report_sha256": "aa48bebc74004715c8144854ab4e2e9db159ffa274276fbf9b83ba0739d2306a",
+    "manifest_sha256": "d0778e3fb018734c40d9b96b34c2465fe516541e78f37cc94857cb1bae962244",
+    "profiles": 15,
+    "hours": 131544,
+    "numeric_values": 526176,
+    "unit": "Wh/m^2",
+    "time_standard": "LST",
+    "all_original_and_response_sha256_verified": true,
+    "certifies_only_four_NASA_product_fields": true
+  },
+  "external_citation_approvals": {
+    "first_round": "C0/external_citation_approval_01.json",
+    "followup": "C0/external_followup_citation_approval_01.json",
+    "C0_full_refit": "C0_external_reproduction_01/reproduction_report.json",
+    "both_approved_as_limited_or_exploratory_not_engineering": true
+  },
+  "published_mathematical_example_approval": {
+    "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\published_method_citation_approval_01.json",
+    "manifest_sha256": "5d9352ebadfc19482decaf1f0757c60e39f46c1171b7d9e750d57c67d33e5c9e",
+    "figure_is_native_redraw_of_approved_actual_points": true
+  }
+}

@@ -1,0 +1,753 @@
+sources:
+  - id: S3_WUHAN_SPATIAL_PLAN_2025
+    title: "武汉市国土空间总体规划（2021—2035年）"
+    institution: "武汉市人民政府、武汉市自然资源和城乡建设局"
+    year: 2025
+    authority_type: official_government_plan
+    url: "https://zrzyhgh.wuhan.gov.cn/zwgk_18/fdzdgk/ghjh/zzqgh/202508/t20250822_2636676.shtml"
+    accessed_on: "2026-07-12"
+    limitations: "战略规划只规定空间与技术方向，不提供逐时负荷、设备投资或运行绩效。"
+
+  - id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    title: "武汉市低能耗居住建筑节能设计标准（征求意见稿）"
+    institution: "武汉市市场监督管理局"
+    year: 2024
+    authority_type: official_local_standard_draft
+    url: "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgs/202410/P020241024763787490327.pdf"
+    accessed_on: "2026-07-12"
+    limitations: "属于征求意见稿，适合用作先进情景和工程边界，不能表述为已生效强制条文。"
+
+  - id: S3_GB50736_COMFORT_GUIDE_2026
+    title: "湖南省绿色建筑工程设计要点（附录引用GB 50736-2012室内设计参数）"
+    institution: "湖南省住房和城乡建设厅"
+    year: 2026
+    authority_type: official_government_standard_guide
+    url: "https://www.hunan.gov.cn/zqt/zcsd/202601/33892718/files/4e61f24b71724accba0688c2f2f136d5.pdf"
+    accessed_on: "2026-07-12"
+    limitations: "引用的是全国通用GB 50736参数，但文件发布地不是武汉；实际项目仍须执行湖北和武汉审图要求。"
+
+  - id: S3_CAIDIAN_ENERGY_STATION_2023
+    title: "武汉首座能源站基本建成，中法生态城实现区域集中供冷供暖"
+    institution: "武汉市蔡甸区人民政府"
+    year: 2023
+    authority_type: official_government_project_report
+    url: "https://www.caidian.gov.cn/zwgk/zwdt/cdxw/202301/t20230106_2126240.shtml"
+    accessed_on: "2026-07-12"
+    limitations: "数据来自建设调试阶段，不是多年运行审计；投资包含站房和约9公里管网。"
+
+  - id: S3_HANKOU_RIVER_ENERGY_2022
+    title: "江水空调：汉口滨江国际商务区江水源可再生能源站"
+    institution: "武汉市生态环境局"
+    year: 2022
+    authority_type: official_government_project_report
+    url: "https://hbj.wuhan.gov.cn/hjxw/202203/t20220310_1935893.html"
+    accessed_on: "2026-07-12"
+    limitations: "节电量和成本降幅是项目测算；报道水温不应直接外推为全年逐时水温。"
+
+  - id: S3_HANKOU_RIVER_BOND_2021
+    title: "湖北省政府专项债券项目披露：汉口滨江国际商务区江水源可再生能源站"
+    institution: "中国地方政府债券信息公开平台、湖北省财政部门"
+    year: 2021
+    authority_type: official_project_financing_disclosure
+    url: "https://www.governbond.org.cn/uploadFiles/42/attachFiles/202112/00389de7-94fd-49d0-9985-b7f269bdc263.pdf"
+    accessed_on: "2026-07-12"
+    limitations: "以办公商业建筑为主，投资含地下站房、取退水和管网，价格基年早于2026年。"
+
+  - id: S3_SIXIN_WASTEWATER_GROUND_2023
+    title: "四新方岛污水源与地源热泵复合能源站"
+    institution: "武汉市人民政府"
+    year: 2023
+    authority_type: official_government_project_report
+    url: "https://www.wuhan.gov.cn/sy/whyw/202309/t20230908_2261166.shtml"
+    accessed_on: "2026-07-12"
+    limitations: "能源占比和减排量为规划测算，缺少投资、逐时污水流量和长期实测COP。"
+
+  - id: S3_WUHAN_GROUNDWATER_RULE_2022
+    title: "武汉市地下水管理办法（2022年第三次修改）"
+    institution: "武汉市人民政府"
+    year: 2022
+    authority_type: official_local_regulation
+    url: "https://www.wuhan.gov.cn/zwgk/xxgk/zfgb/202211/P020221117672366609914.pdf"
+    accessed_on: "2026-07-12"
+    limitations: "主要约束开式地下水热泵；闭式地埋管仍需按场地勘察、热响应试验和地下空间条件另行判断。"
+
+  - id: S3_HUBEI_TOU_2024
+    title: "湖北省工商业分时电价机制调整方案"
+    institution: "湖北省发展和改革委员会"
+    year: 2024
+    authority_type: official_price_policy
+    url: "https://media.hubei.gov.cn/zyxmt/push/weixin/202403/t20240329_5139254.shtml"
+    accessed_on: "2026-07-12"
+    limitations: "倍率作用于市场化交易或代理购电基价；能源站是否适用及基本电费需按接电类别复核。"
+
+  - id: S3_WUHAN_CLIMATE_2024
+    title: "武汉市概况：2024年气候气象"
+    institution: "武汉市生态环境局、武汉气象资料"
+    year: 2025
+    authority_type: official_government_climate_report
+    url: "https://hbj.wuhan.gov.cn/gkxx/202504/t20250421_2569976.html"
+    accessed_on: "2026-07-12"
+    limitations: "单一年份适合极端年压力测试，不能替代典型气象年和多年联合概率分布。"
+
+  - id: S3_WUHAN_GRID_PEAK_2025
+    title: "武汉电网负荷创历史新高"
+    institution: "武汉市人民政府、国网武汉供电公司"
+    year: 2025
+    authority_type: official_grid_report
+    url: "https://www.wuhan.gov.cn/sy/kwh/202507/t20250709_2617474.shtml"
+    accessed_on: "2026-07-12"
+    limitations: "为全市电网尺度，不能替代具体地块的10kV接入容量、短路容量和增容批复。"
+
+  - id: S3_CAMPUS_GRID_EPC_2024
+    title: "武汉理工大学马房山校区供配电及电力管线EPC"
+    institution: "武汉市公共资源交易服务平台"
+    year: 2024
+    authority_type: official_public_procurement
+    url: "https://ggzyfw.wuhan.gov.cn/whggzy/jygkjt/978947.jhtml"
+    accessed_on: "2026-07-12"
+    limitations: "中标价含设计、箱变、电缆、迁改和报装，不能作为纯变压器设备单价。"
+
+  - id: S3_WUHAN_VPP_2025
+    title: "武汉虚拟电厂精准需求响应奖励"
+    institution: "武汉市人民政府、国网武汉供电公司"
+    year: 2025
+    authority_type: official_demand_response_report
+    url: "https://www.wuhan.gov.cn/sy/whyw/202507/t20250710_2618427.shtml"
+    accessed_on: "2026-07-12"
+    limitations: "属于试点事件和事件型补偿，不应假设为全年固定容量收入。"
+
+  - id: S3_DEFROST_EXPERIMENT_2024
+    title: "空气源热泵多台室外机并联轮换除霜实验研究"
+    institution: "制冷学报、北京工业大学等"
+    year: 2024
+    authority_type: peer_reviewed_experimental_paper
+    url: "https://www.zhilengxuebao.com/zh/article/doi/10.12465/j.issn.0253-4339.2024.06.158/"
+    accessed_on: "2026-07-12"
+    limitations: "实验中的-10摄氏度比武汉多数小时更冷，适合校准极端除霜损失而不是全年平均COP。"
+
+  - id: S3_DEFROST_WEATHER_CONTROL_2025
+    title: "基于气象参数联动控制技术的热泵空调器热气除霜研究"
+    institution: "格力电器、制冷"
+    year: 2025
+    authority_type: original_experimental_paper
+    url: "https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CJFQ&dbname=CJFD2025&filename=ZLZZ202506015"
+    accessed_on: "2026-07-12"
+    limitations: "厂商实验仅报告相对改进量，未披露增量投资和武汉现场多年运行结果。"
+
+facts:
+  - id: S3F001
+    source_id: S3_WUHAN_SPATIAL_PLAN_2025
+    topic: spatial_policy
+    metric: named_priority_district_energy_zones
+    value: 6
+    unit: zone
+    model_field: planning.resource_zone_count
+    use_in_model: "建立集中区域能源站可选区与非集中区分布式供能约束。"
+
+  - id: S3F002
+    source_id: S3_WUHAN_SPATIAL_PLAN_2025
+    topic: spatial_policy
+    metric: planning_horizon_end_year
+    value: 2035
+    unit: year
+    model_field: planning.long_term_horizon_year
+    use_in_model: "用于阶段建设终点和远期负荷情景。"
+
+  - id: S3F003
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: building_efficiency
+    metric: minimum_average_energy_saving_rate
+    value: 0.75
+    unit: fraction
+    model_field: building.minimum_energy_saving_rate
+    use_in_model: "作为高品质新建建筑围护结构情景的最低节能率。"
+
+  - id: S3F004
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: renewable_energy
+    metric: minimum_renewable_share_building_height_ge_60m
+    value: 0.05
+    unit: fraction
+    model_field: policy.minimum_building_renewable_share_highrise
+    use_in_model: "高层建筑可再生能源利用率下限。"
+
+  - id: S3F005
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: renewable_energy
+    metric: minimum_renewable_share_building_height_lt_60m
+    value: 0.10
+    unit: fraction
+    model_field: policy.minimum_building_renewable_share_lowrise
+    use_in_model: "低于60米建筑的可再生能源利用率下限。"
+
+  - id: S3F006
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: passive_cooling
+    metric: natural_ventilation_max_outdoor_temperature
+    value: 28
+    unit: degC
+    model_field: multi_energy_services.cooling.natural_ventilation.max_outdoor_temp_c
+    use_in_model: "满足温湿度条件时削减机械制冷需求。"
+
+  - id: S3F007
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: passive_cooling
+    metric: natural_ventilation_max_relative_humidity
+    value: 0.70
+    unit: fraction
+    model_field: multi_energy_services.cooling.natural_ventilation.max_relative_humidity
+    use_in_model: "与28摄氏度阈值联合判断自然通风可用性。"
+
+  - id: S3F008
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: ground_source
+    metric: large_ground_source_project_floor_area_threshold
+    value: 50000
+    unit: m2
+    model_field: multi_energy_services.cooling.ground_source_annual_balance.large_project_floor_area_threshold_m2
+    use_in_model: "超过阈值时启用长期地温平衡校核。"
+
+  - id: S3F009
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: ground_source
+    metric: minimum_ground_balance_analysis_horizon
+    value: 10
+    unit: year
+    model_field: multi_energy_services.cooling.ground_source_annual_balance.analysis_horizon_years
+    use_in_model: "大型地埋管项目至少进行10年地源侧平衡分析。"
+
+  - id: S3F010
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: ground_source
+    metric: annual_heat_rejection_to_extraction_ratio_lower
+    value: 0.80
+    unit: ratio
+    model_field: multi_energy_services.cooling.ground_source_annual_balance.minimum_ratio
+    use_in_model: "地源全年释热量除以吸热量的下限。"
+
+  - id: S3F011
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: ground_source
+    metric: annual_heat_rejection_to_extraction_ratio_upper
+    value: 1.25
+    unit: ratio
+    model_field: multi_energy_services.cooling.ground_source_annual_balance.maximum_ratio
+    use_in_model: "地源全年释热量除以吸热量的上限。"
+
+  - id: S3F012
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: equipment_sizing
+    metric: maximum_selected_chiller_capacity_to_calculated_peak
+    value: 1.10
+    unit: ratio
+    model_field: multi_energy_services.cooling.maximum_capacity_oversize_ratio
+    use_in_model: "防止冷机装机无依据放大。"
+
+  - id: S3F013
+    source_id: S3_WUHAN_LOW_ENERGY_DRAFT_2024
+    topic: domestic_hot_water
+    metric: heat_pump_dhw_storage_temperature
+    value: 50
+    unit: degC
+    model_field: multi_energy_services.domestic_hot_water.storage_temperature_c
+    use_in_model: "用于热泵生活热水COP和储热损失计算。"
+
+  - id: S3F014
+    source_id: S3_GB50736_COMFORT_GUIDE_2026
+    topic: high_quality_comfort
+    metric: grade_i_heating_temperature_range
+    value: [22, 24]
+    unit: degC
+    model_field: comfort.grade_i.heating_temperature_c
+    use_in_model: "作为高品质供热而非仅零失供的舒适约束。"
+
+  - id: S3F015
+    source_id: S3_GB50736_COMFORT_GUIDE_2026
+    topic: high_quality_comfort
+    metric: grade_i_cooling_temperature_range
+    value: [24, 26]
+    unit: degC
+    model_field: comfort.grade_i.cooling_temperature_c
+    use_in_model: "作为高品质供冷室温约束。"
+
+  - id: S3F016
+    source_id: S3_GB50736_COMFORT_GUIDE_2026
+    topic: high_quality_comfort
+    metric: grade_i_cooling_relative_humidity_range
+    value: [0.40, 0.60]
+    unit: fraction
+    model_field: comfort.grade_i.cooling_relative_humidity
+    use_in_model: "限制武汉湿热天气下只降温不除湿的伪舒适解。"
+
+  - id: S3F017
+    source_id: S3_GB50736_COMFORT_GUIDE_2026
+    topic: high_quality_comfort
+    metric: grade_i_cooling_max_air_speed
+    value: 0.25
+    unit: m_per_s
+    model_field: comfort.grade_i.cooling_max_air_speed_m_per_s
+    use_in_model: "用于高品质末端系统技术筛选。"
+
+  - id: S3F018
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: real_project_scale
+    metric: served_floor_area
+    value: 1030000
+    unit: m2
+    model_field: calibration.caidian.served_floor_area_m2
+    use_in_model: "武汉区域能源站规模对标。"
+
+  - id: S3F019
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: real_project_scale
+    metric: design_heating_capacity
+    value: 29.67
+    unit: MW
+    model_field: calibration.caidian.heating_capacity_mw
+    use_in_model: "折合约28.8 W/m2的公开设计供热容量。"
+
+  - id: S3F020
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: real_project_scale
+    metric: design_cooling_capacity
+    value: 29.68
+    unit: MW
+    model_field: calibration.caidian.cooling_capacity_mw
+    use_in_model: "证明武汉新建场景必须同时考虑夏季制冷。"
+
+  - id: S3F021
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: project_cost
+    metric: phase_i_investment
+    value: 240000000
+    unit: yuan
+    model_field: calibration.caidian.total_investment_yuan
+    use_in_model: "约233元/m2，作为站房加管网综合投资对标。"
+
+  - id: S3F022
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: network
+    metric: thermal_network_length
+    value: 9
+    unit: km
+    model_field: calibration.caidian.network_length_km
+    use_in_model: "区分能源站本体与区域输配投资。"
+
+  - id: S3F023
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: equipment
+    metric: air_source_heat_pump_count
+    value: 8
+    unit: unit
+    model_field: reliability.modular_air_hp_unit_count
+    use_in_model: "支持模块化检修和N-1运行情景。"
+
+  - id: S3F024
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: equipment
+    metric: centrifugal_chiller_count
+    value: 4
+    unit: unit
+    model_field: reliability.modular_chiller_unit_count
+    use_in_model: "支持冷机离散模块与部分负荷调度。"
+
+  - id: S3F025
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: heating_operation
+    metric: winter_supply_temperature_range
+    value: [50, 55]
+    unit: degC
+    model_field: grades.low.temperature_range_c
+    use_in_model: "武汉低温热网和热泵温升基准。"
+
+  - id: S3F026
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: sector_coupling
+    metric: onsite_electricity_share_at_full_load
+    value: 0.75
+    unit: fraction
+    model_field: multi_energy_services.electricity.maximum_onsite_share
+    use_in_model: "光伏与燃气发电联合满足站内用电的项目对标。"
+
+  - id: S3F027
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: operating_calendar
+    metric: residential_heating_months
+    value: 3.5
+    unit: month_per_year
+    model_field: demand.residential_heating_months
+    use_in_model: "反映夏热冬冷地区供热间歇性。"
+
+  - id: S3F028
+    source_id: S3_CAIDIAN_ENERGY_STATION_2023
+    topic: operating_calendar
+    metric: public_building_heating_cooling_months
+    value: 10
+    unit: month_per_year
+    model_field: demand.public_building_joint_service_months
+    use_in_model: "解释冷热共享资产的高利用小时。"
+
+  - id: S3F029
+    source_id: S3_HANKOU_RIVER_ENERGY_2022
+    topic: river_source_project
+    metric: served_floor_area
+    value: 2100000
+    unit: m2
+    model_field: calibration.hankou_river.served_floor_area_m2
+    use_in_model: "大型公共建筑区域能源站对标。"
+
+  - id: S3F030
+    source_id: S3_HANKOU_RIVER_ENERGY_2022
+    topic: river_source_project
+    metric: reported_total_investment
+    value: 550000000
+    unit: yuan
+    model_field: calibration.hankou_river.total_investment_yuan
+    use_in_model: "折合约262元/m2的早期投资口径。"
+
+  - id: S3F031
+    source_id: S3_HANKOU_RIVER_ENERGY_2022
+    topic: river_source_project
+    metric: reported_annual_electricity_saving
+    value: 18000000
+    unit: kWh_per_year
+    model_field: calibration.hankou_river.annual_electricity_saving_kwh
+    use_in_model: "作为项目宣传值，仅用于事后量级校核。"
+
+  - id: S3F032
+    source_id: S3_HANKOU_RIVER_ENERGY_2022
+    topic: river_source_project
+    metric: reported_electricity_cost_reduction
+    value: 0.30
+    unit: fraction
+    model_field: calibration.hankou_river.electricity_cost_reduction
+    use_in_model: "不得设为硬约束，只做结果对比。"
+
+  - id: S3F033
+    source_id: S3_HANKOU_RIVER_BOND_2021
+    topic: official_project_finance
+    metric: disclosed_total_investment
+    value: 573801400
+    unit: yuan
+    model_field: calibration.hankou_river_bond.total_investment_yuan
+    use_in_model: "专项债公开口径，折合约272元/m2。"
+
+  - id: S3F034
+    source_id: S3_HANKOU_RIVER_BOND_2021
+    topic: source_infrastructure
+    metric: river_intake_return_design_flow
+    value: 14000
+    unit: m3_per_h
+    model_field: resources.river_water.maximum_flow_m3_per_h
+    use_in_model: "形成水源可用量和取退水泵耗电边界。"
+
+  - id: S3F035
+    source_id: S3_HANKOU_RIVER_BOND_2021
+    topic: equipment
+    metric: water_source_heat_pump_count
+    value: 5
+    unit: unit
+    model_field: reliability.water_source_hp_unit_count
+    use_in_model: "用于机组模块化和停机检修情景。"
+
+  - id: S3F036
+    source_id: S3_HANKOU_RIVER_BOND_2021
+    topic: equipment
+    metric: chiller_count
+    value: 9
+    unit: unit
+    model_field: reliability.chiller_unit_count
+    use_in_model: "证明大型系统通过多机组合覆盖部分负荷。"
+
+  - id: S3F037
+    source_id: S3_HANKOU_RIVER_BOND_2021
+    topic: network
+    metric: supply_network_length
+    value: 12.385
+    unit: km
+    model_field: calibration.hankou_river_bond.network_length_km
+    use_in_model: "用于管网资本和循环泵能耗校准。"
+
+  - id: S3F038
+    source_id: S3_HANKOU_RIVER_BOND_2021
+    topic: construction_stage
+    metric: staged_construction_duration
+    value: 8
+    unit: year
+    model_field: planning.connection_ramp_years
+    use_in_model: "新城项目不应假设首年满负荷接入。"
+
+  - id: S3F039
+    source_id: S3_SIXIN_WASTEWATER_GROUND_2023
+    topic: wastewater_source_project
+    metric: served_floor_area
+    value: 1300000
+    unit: m2
+    model_field: calibration.sixin.served_floor_area_m2
+    use_in_model: "污水源与地源复合方案规模对标。"
+
+  - id: S3F040
+    source_id: S3_SIXIN_WASTEWATER_GROUND_2023
+    topic: wastewater_source_project
+    metric: planned_wastewater_energy_share
+    value: 0.80
+    unit: fraction
+    model_field: resources.wastewater.maximum_energy_share
+    use_in_model: "仅作为规划上界或情景目标。"
+
+  - id: S3F041
+    source_id: S3_SIXIN_WASTEWATER_GROUND_2023
+    topic: source_temperature
+    metric: winter_wastewater_temperature_minimum
+    value: 13
+    unit: degC
+    model_field: resources.wastewater.winter_source_temp_c
+    use_in_model: "计算冬季污水源热泵COP。"
+
+  - id: S3F042
+    source_id: S3_SIXIN_WASTEWATER_GROUND_2023
+    topic: source_temperature
+    metric: summer_wastewater_temperature
+    value: 25
+    unit: degC
+    model_field: resources.wastewater.summer_source_temp_c
+    use_in_model: "计算夏季排热能力和制冷EER。"
+
+  - id: S3F043
+    source_id: S3_SIXIN_WASTEWATER_GROUND_2023
+    topic: source_temperature
+    metric: reported_soil_temperature
+    value: 18
+    unit: degC
+    model_field: resources.ground.source_temp_c
+    use_in_model: "作为本地报道初值，最终应以热响应试验修正。"
+
+  - id: S3F044
+    source_id: S3_WUHAN_GROUNDWATER_RULE_2022
+    topic: permitting
+    metric: district_approval_upper_annual_groundwater_volume
+    value: 300000
+    unit: m3_per_year
+    model_field: permitting.groundwater.district_approval_upper_m3_per_year
+    use_in_model: "按取水规模加入许可层级和前期成本。"
+
+  - id: S3F045
+    source_id: S3_WUHAN_GROUNDWATER_RULE_2022
+    topic: permitting
+    metric: municipal_approval_upper_annual_groundwater_volume
+    value: 700000
+    unit: m3_per_year
+    model_field: permitting.groundwater.municipal_approval_upper_m3_per_year
+    use_in_model: "达到或超过该值需报省级审批。"
+
+  - id: S3F046
+    source_id: S3_WUHAN_GROUNDWATER_RULE_2022
+    topic: groundwater_protection
+    metric: required_same_aquifer_recharge_fraction
+    value: 1.0
+    unit: fraction
+    model_field: resources.groundwater.minimum_recharge_fraction
+    use_in_model: "开式地下水热泵必须同层等量回灌。"
+
+  - id: S3F047
+    source_id: S3_HUBEI_TOU_2024
+    topic: electricity_tariff
+    metric: tou_applicability_capacity_threshold
+    value: 100
+    unit: kVA
+    model_field: grid_connection.tou_capacity_threshold_kva
+    use_in_model: "大型能源站通常需核验分时电价适用性。"
+
+  - id: S3F048
+    source_id: S3_HUBEI_TOU_2024
+    topic: electricity_tariff
+    metric: daily_tou_period_hours
+    value:
+      critical_peak: 2
+      peak: 6
+      flat: 8
+      valley: 8
+    unit: hour_per_day
+    model_field: tariff.period_hours
+    use_in_model: "生成逐时电价标签。"
+
+  - id: S3F049
+    source_id: S3_HUBEI_TOU_2024
+    topic: electricity_tariff
+    metric: normal_month_price_multipliers
+    value:
+      critical_peak: 1.80
+      peak: 1.49
+      flat: 1.00
+      valley: 0.48
+    unit: multiplier
+    model_field: tariff.normal_month_multiplier
+    use_in_model: "用于蓄冷、蓄热和需求响应调度。"
+
+  - id: S3F050
+    source_id: S3_HUBEI_TOU_2024
+    topic: electricity_tariff
+    metric: summer_winter_peak_month_price_multipliers
+    value:
+      critical_peak: 2.00
+      peak: 1.49
+      flat: 1.00
+      valley: 0.45
+    unit: multiplier
+    model_field: tariff.peak_month_multiplier
+    use_in_model: "覆盖1月、7月、8月、12月的季节性价格压力。"
+
+  - id: S3F051
+    source_id: S3_WUHAN_CLIMATE_2024
+    topic: climate_extreme
+    metric: annual_extreme_temperature_range
+    value: [-7.5, 39.9]
+    unit: degC
+    model_field: uncertainty.extreme_outdoor_temperature_c
+    use_in_model: "同时构建湿冷供暖和酷热制冷压力工况。"
+
+  - id: S3F052
+    source_id: S3_WUHAN_CLIMATE_2024
+    topic: cooling_demand
+    metric: maximum_reported_days_ge_35c
+    value: 54
+    unit: day_per_year
+    model_field: uncertainty.high_temperature_days
+    use_in_model: "校核制冷利用小时和配电峰值持续期。"
+
+  - id: S3F053
+    source_id: S3_WUHAN_GRID_PEAK_2025
+    topic: grid_stress
+    metric: city_grid_historical_peak_load
+    value: 17741.5
+    unit: MW
+    model_field: grid_context.city_peak_load_mw
+    use_in_model: "设置夏季系统性电网紧张场景。"
+
+  - id: S3F054
+    source_id: S3_WUHAN_GRID_PEAK_2025
+    topic: grid_stress
+    metric: amount_above_previous_peak
+    value: 320
+    unit: MW
+    model_field: grid_context.peak_record_increment_mw
+    use_in_model: "避免把32万千瓦误写为32MW。"
+
+  - id: S3F055
+    source_id: S3_CAMPUS_GRID_EPC_2024
+    topic: grid_connection_cost
+    metric: transformer_configuration
+    value:
+      count: 2
+      unit_capacity: 800
+    unit: kVA
+    model_field: grid_connection.reference_transformer_blocks
+    use_in_model: "公共建筑采用两台800kVA及两路10kV电源的实际案例。"
+
+  - id: S3F056
+    source_id: S3_CAMPUS_GRID_EPC_2024
+    topic: grid_connection_cost
+    metric: bundled_epc_contract_value
+    value: 7434029.85
+    unit: yuan
+    model_field: grid_connection.reference_epc_cost_yuan
+    use_in_model: "完整接入工程口径，不应当作设备裸价。"
+
+  - id: S3F057
+    source_id: S3_CAMPUS_GRID_EPC_2024
+    topic: grid_connection_cost
+    metric: derived_bundled_cost_per_mva
+    value: 4646268.66
+    unit: yuan_per_MVA
+    model_field: grid_connection.reference_bundled_cost_yuan_per_mva
+    use_in_model: "由743.402985万元除以1.6MVA推算，仅用于敏感性上界。"
+
+  - id: S3F058
+    source_id: S3_WUHAN_VPP_2025
+    topic: demand_response
+    metric: event_load_reduction
+    value: 15
+    unit: MW
+    model_field: demand_response.reference_event_reduction_mw
+    use_in_model: "证明商业楼宇与能源站负荷具备现实调节价值。"
+
+  - id: S3F059
+    source_id: S3_WUHAN_VPP_2025
+    topic: demand_response
+    metric: event_duration
+    value: 1
+    unit: hour
+    model_field: demand_response.reference_event_duration_hours
+    use_in_model: "需求响应不应无期限持续。"
+
+  - id: S3F060
+    source_id: S3_WUHAN_VPP_2025
+    topic: demand_response
+    metric: event_reward
+    value: 3
+    unit: yuan_per_kWh
+    model_field: demand_response.reference_reward_yuan_per_kwh
+    use_in_model: "作为低概率事件收益而非固定年收入。"
+
+  - id: S3F061
+    source_id: S3_DEFROST_EXPERIMENT_2024
+    topic: heat_pump_defrost
+    metric: heating_capacity_before_after_frost
+    value: [9.87, 8.71]
+    unit: kW
+    model_field: heat_pump.defrost.capacity_calibration_kw
+    use_in_model: "对应约11.8%的结霜制热量损失。"
+
+  - id: S3F062
+    source_id: S3_DEFROST_EXPERIMENT_2024
+    topic: heat_pump_defrost
+    metric: cop_before_after_frost
+    value: [3.73, 3.36]
+    unit: W_per_W
+    model_field: heat_pump.defrost.cop_calibration
+    use_in_model: "对应约9.9%的COP下降。"
+
+  - id: S3F063
+    source_id: S3_DEFROST_EXPERIMENT_2024
+    topic: heat_pump_defrost
+    metric: observed_minimum_defrost_cop
+    value: 2.28
+    unit: W_per_W
+    model_field: heat_pump.defrost.stress_cop_floor
+    use_in_model: "仅用于极端低温高湿压力测试。"
+
+  - id: S3F064
+    source_id: S3_DEFROST_WEATHER_CONTROL_2025
+    topic: smart_defrost
+    metric: heating_capacity_improvement
+    value: 0.072
+    unit: fraction
+    model_field: technology.smart_defrost.capacity_improvement
+    use_in_model: "设置智能除霜候选技术相对常规方案的能力提升。"
+
+  - id: S3F065
+    source_id: S3_DEFROST_WEATHER_CONTROL_2025
+    topic: smart_defrost
+    metric: cop_improvement
+    value: 0.059
+    unit: fraction
+    model_field: technology.smart_defrost.cop_improvement
+    use_in_model: "作为技术敏感性，不应无成本直接计入基准机组。"
+
+  - id: S3F066
+    source_id: S3_DEFROST_WEATHER_CONTROL_2025
+    topic: smart_defrost
+    metric: defrost_time_reduction_range
+    value: [0.327, 0.417]
+    unit: fraction
+    model_field: technology.smart_defrost.defrost_time_reduction
+    use_in_model: "降低供热中断时间和备用容量需求。"
+
+  - id: S3F067
+    source_id: S3_DEFROST_WEATHER_CONTROL_2025
+    topic: smart_defrost
+    metric: indoor_temperature_drop_reduction_range
+    value: [0.225, 0.378]
+    unit: fraction
+    model_field: technology.smart_defrost.indoor_temperature_drop_reduction
+    use_in_model: "连接设备控制与高品质舒适度指标。"

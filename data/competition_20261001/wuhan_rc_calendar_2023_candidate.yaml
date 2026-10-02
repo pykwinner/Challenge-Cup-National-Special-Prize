@@ -1,0 +1,9 @@
+extends: wuhan_rc_candidate.yaml
+planning:
+  annual_scope:
+    start_inclusive: '2023-01-01T00:00:00Z'
+    end_exclusive: '2024-01-01T00:00:00Z'
+    timezone: UTC
+    expected_hours: 8760
+competition_data:
+  ground_balance_scope: full_8760_hour_UTC_calendar_year

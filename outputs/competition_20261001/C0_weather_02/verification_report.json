@@ -1,0 +1,1449 @@
+{
+  "complete": true,
+  "audit_scope": {
+    "registered_before_full_comparison": true,
+    "all_profiles_and_years_in_original_manifest": true,
+    "source_metadata_sha256": "4bb799637cba2ac833b6163f81f8721b7a2846b9faafcb7db9f92886e952b034",
+    "fields": {
+      "T2M": [
+        "outdoor_temp",
+        "C"
+      ],
+      "RH2M": [
+        "relative_humidity_pct",
+        "%"
+      ],
+      "WS10M": [
+        "wind_speed_10m_m_s",
+        "m/s"
+      ],
+      "ALLSKY_SFC_SW_DWN": [
+        "solar_irradiance_kwh_m2_hour",
+        "Wh/m^2"
+      ]
+    },
+    "no_original_mutation_or_field_replacement": true,
+    "comparison_tolerance": 1e-09,
+    "limitations": [
+      "Current API equality is not ground-station validation.",
+      "The old API version was not archived; do not backfill it.",
+      "Mismatches can reflect source revisions; retain them, do not silently replace inputs."
+    ]
+  },
+  "records": [
+    {
+      "profile": "scenario1_urumqi",
+      "year": 2020,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20200101&end=20201231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20200101&end=20201231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario1_urumqi_weather_2020.csv",
+      "archive_sha256_before": "275a22045cf42861973b8e98bd1f2f02a20cd153a8eeccc5107f15bc67dad56f",
+      "retrieved_at_utc": "2026-10-01T16:15:04.596276+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2020_lst.json",
+      "response_sha256": "f728d2b7287864f14bf14b45bdb45f9e476662c99128004db8d623a4e3ff03c8",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20200101",
+        "end": "20201231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8784,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "275a22045cf42861973b8e98bd1f2f02a20cd153a8eeccc5107f15bc67dad56f",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario2_guyuan",
+      "year": 2020,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20200101&end=20201231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20200101&end=20201231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario2_guyuan_weather_2020.csv",
+      "archive_sha256_before": "0164c9514a63462787d9573ec6ba104bffe0b328f85e87d480d249378ea0e487",
+      "retrieved_at_utc": "2026-10-01T16:15:08.981757+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2020_lst.json",
+      "response_sha256": "0554d46ed454b5113c03161b1507dda004eda8f38666122d7a9e9d911d1dc6e7",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20200101",
+        "end": "20201231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8784,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "0164c9514a63462787d9573ec6ba104bffe0b328f85e87d480d249378ea0e487",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario3_wuhan",
+      "year": 2020,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20200101&end=20201231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20200101&end=20201231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario3_wuhan_weather_2020.csv",
+      "archive_sha256_before": "74e1747670631f3876c2fa0422f859cacf813221a11525a1e2575118e93221ff",
+      "retrieved_at_utc": "2026-10-01T16:15:13.403870+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2020_lst.json",
+      "response_sha256": "3e4033c5e0c547a8605a272c4613ae4ad9d0dcc15fd02f3b78f899c20087fd60",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20200101",
+        "end": "20201231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8784,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "74e1747670631f3876c2fa0422f859cacf813221a11525a1e2575118e93221ff",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario1_urumqi",
+      "year": 2021,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20210101&end=20211231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20210101&end=20211231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario1_urumqi_weather_2021.csv",
+      "archive_sha256_before": "8f5996d5ef70a34fbc317b3f47fb949d822a1ec5985e75a3e249b6139c56ec5b",
+      "retrieved_at_utc": "2026-10-01T16:15:17.587476+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2021_lst.json",
+      "response_sha256": "1b4e9661a4365a28aeee15e7fdf074b025d55dadd440b2d65760b9fdf794e538",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20210101",
+        "end": "20211231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8760,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "8f5996d5ef70a34fbc317b3f47fb949d822a1ec5985e75a3e249b6139c56ec5b",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario2_guyuan",
+      "year": 2021,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20210101&end=20211231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20210101&end=20211231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario2_guyuan_weather_2021.csv",
+      "archive_sha256_before": "1c18f602160fd6012516f4ab48738643b5402b30953adbe2d662b1f949a4224d",
+      "retrieved_at_utc": "2026-10-01T16:15:21.761487+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2021_lst.json",
+      "response_sha256": "eb32c530afd30e82be408542aa25b0441f9f69d939dd40787b3207484d0dba2c",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20210101",
+        "end": "20211231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8760,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "1c18f602160fd6012516f4ab48738643b5402b30953adbe2d662b1f949a4224d",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario3_wuhan",
+      "year": 2021,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20210101&end=20211231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20210101&end=20211231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario3_wuhan_weather_2021.csv",
+      "archive_sha256_before": "8029bc843ee98f3ff0cf6ad7c70b93e04148bd0caafcf41e155ec5b7ed70900f",
+      "retrieved_at_utc": "2026-10-01T16:15:26.279877+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2021_lst.json",
+      "response_sha256": "17c01b584851f03712dffe716a04cb2f1a2ad94346d02e910936db81b10119e7",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20210101",
+        "end": "20211231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8760,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "8029bc843ee98f3ff0cf6ad7c70b93e04148bd0caafcf41e155ec5b7ed70900f",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario1_urumqi",
+      "year": 2022,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20220101&end=20221231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20220101&end=20221231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario1_urumqi_weather_2022.csv",
+      "archive_sha256_before": "614ce2db9ad81121ec63d181bc6935a8700362b1f2790ff3842d35dce98e197f",
+      "retrieved_at_utc": "2026-10-01T16:15:30.562270+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2022_lst.json",
+      "response_sha256": "04942d70d1f45662d34aceffc62fe92719391dca8acbb9385a3e8149fb04f65a",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20220101",
+        "end": "20221231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8760,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "614ce2db9ad81121ec63d181bc6935a8700362b1f2790ff3842d35dce98e197f",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario2_guyuan",
+      "year": 2022,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20220101&end=20221231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20220101&end=20221231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario2_guyuan_weather_2022.csv",
+      "archive_sha256_before": "1c4959ba5e062eaa614a711b48c7a04867f52b4254c323c137dee635f2ea9708",
+      "retrieved_at_utc": "2026-10-01T16:15:35.160416+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2022_lst.json",
+      "response_sha256": "444a242ef93999e030bb3aaa1c45a5ca0f241d64874aa49e44a3fcc0eae31372",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20220101",
+        "end": "20221231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8760,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "1c4959ba5e062eaa614a711b48c7a04867f52b4254c323c137dee635f2ea9708",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario3_wuhan",
+      "year": 2022,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20220101&end=20221231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20220101&end=20221231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario3_wuhan_weather_2022.csv",
+      "archive_sha256_before": "ccd00e8110f1b12ae7a251f17c21a56e71ec7304b16da1d94ba7d816c7273202",
+      "retrieved_at_utc": "2026-10-01T16:15:39.624657+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2022_lst.json",
+      "response_sha256": "1d15fa2245953794116c333f330644597664f3029abe6fd8f4f51f6a8d9891a0",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20220101",
+        "end": "20221231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8760,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "ccd00e8110f1b12ae7a251f17c21a56e71ec7304b16da1d94ba7d816c7273202",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario1_urumqi",
+      "year": 2023,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20230101&end=20231231&format=JSON&time-standard=LST",
+      "archived_request_record": "reused_existing_file:scenario1_urumqi_weather_2023.csv",
+      "request_identity": "new_verification_query_using_same_profile_2024_coordinates_and_target_year",
+      "archive": "data/public_sources/scenario1_urumqi_weather_2023.csv",
+      "archive_sha256_before": "2a9754d5d25b26664eaf18914162e2ea76ca4e81496e0c4423b54fe0766d39f0",
+      "retrieved_at_utc": "2026-10-01T16:17:18.948465+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2023_lst.json",
+      "response_sha256": "70831dc81161ccdf702e616b2c5d99028aa01384fab6464772032b44c7ccbcbc",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20230101",
+        "end": "20231231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8760,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "2a9754d5d25b26664eaf18914162e2ea76ca4e81496e0c4423b54fe0766d39f0",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario2_guyuan",
+      "year": 2023,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20230101&end=20231231&format=JSON&time-standard=LST",
+      "archived_request_record": "reused_existing_file:scenario2_guyuan_weather_2023.csv",
+      "request_identity": "new_verification_query_using_same_profile_2024_coordinates_and_target_year",
+      "archive": "data/public_sources/scenario2_guyuan_weather_2023.csv",
+      "archive_sha256_before": "61e9b5c74385f79831eea72dd8ae7d0b5d450b72e4f9b10d702817386498f8bf",
+      "retrieved_at_utc": "2026-10-01T16:17:21.713758+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2023_lst.json",
+      "response_sha256": "75647292550315ff19694a9e90202c545d52770aab67fd57a8679ed02f71c7bc",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20230101",
+        "end": "20231231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8760,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "61e9b5c74385f79831eea72dd8ae7d0b5d450b72e4f9b10d702817386498f8bf",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario3_wuhan",
+      "year": 2023,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20230101&end=20231231&format=JSON&time-standard=LST",
+      "archived_request_record": "reused_existing_file:scenario3_wuhan_weather_2023.csv",
+      "request_identity": "new_verification_query_using_same_profile_2024_coordinates_and_target_year",
+      "archive": "data/public_sources/scenario3_wuhan_weather_2023.csv",
+      "archive_sha256_before": "0cd24a06c3af43e8a3799a028ee78cfb255b80e3ebbfc81a4f12562442bd2dcd",
+      "retrieved_at_utc": "2026-10-01T16:17:24.556369+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2023_lst.json",
+      "response_sha256": "24fad89ad562199d115ef40ceedb05e3b759cc75770332ed904e4984f56da946",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20230101",
+        "end": "20231231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8760,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8760,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "0cd24a06c3af43e8a3799a028ee78cfb255b80e3ebbfc81a4f12562442bd2dcd",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario1_urumqi",
+      "year": 2024,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20240101&end=20241231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20240101&end=20241231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario1_urumqi_weather_2024.csv",
+      "archive_sha256_before": "bc4777f054c138b8136dcd72db1730f7ed69e1370e7882c7a78641e116458af3",
+      "retrieved_at_utc": "2026-10-01T16:17:29.212056+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2024_lst.json",
+      "response_sha256": "a87411288481b5d1d2ca80e206f68f443220ff5ff2827bccec901445835d3a42",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20240101",
+        "end": "20241231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8784,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "bc4777f054c138b8136dcd72db1730f7ed69e1370e7882c7a78641e116458af3",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario2_guyuan",
+      "year": 2024,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20240101&end=20241231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20240101&end=20241231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario2_guyuan_weather_2024.csv",
+      "archive_sha256_before": "6c288627d27b17170eb3434707ee78b6e35892ca74e32c960849b97b393f7fa1",
+      "retrieved_at_utc": "2026-10-01T16:17:51.207826+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2024_lst.json",
+      "response_sha256": "4dc91d6533a1696ab9cc38bf365d9f7f6ba2a8f5fb709f9a9e058a00a30b70f3",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20240101",
+        "end": "20241231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8784,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "6c288627d27b17170eb3434707ee78b6e35892ca74e32c960849b97b393f7fa1",
+      "original_unchanged": true
+    },
+    {
+      "profile": "scenario3_wuhan",
+      "year": 2024,
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20240101&end=20241231&format=JSON&time-standard=LST",
+      "archived_request_record": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20240101&end=20241231&format=JSON&time-standard=LST",
+      "request_identity": "original_archived_request_url",
+      "archive": "data/public_sources/scenario3_wuhan_weather_2024.csv",
+      "archive_sha256_before": "7dae12d1e64e072c9c77433bf8bb2c0cba84a4ebdbef2d68339cdfd32bad374c",
+      "retrieved_at_utc": "2026-10-01T16:19:53.593894+00:00",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2024_lst.json",
+      "response_sha256": "4d527f69973b0e13c33e835a55f9a6c774ff04b13578b702b5cac6740456fc1d",
+      "header": {
+        "title": "NASA/POWER Source Native Resolution Hourly Data",
+        "api": {
+          "version": "v2.10.2",
+          "name": "POWER Hourly API"
+        },
+        "sources": [
+          "SYN1DEG",
+          "MERRA2",
+          "POWER"
+        ],
+        "fill_value": -999.0,
+        "time_standard": "LST",
+        "start": "20240101",
+        "end": "20241231"
+      },
+      "official_parameter_metadata": {
+        "T2M": {
+          "units": "C",
+          "longname": "Temperature at 2 Meters"
+        },
+        "RH2M": {
+          "units": "%",
+          "longname": "Relative Humidity at 2 Meters"
+        },
+        "WS10M": {
+          "units": "m/s",
+          "longname": "Wind Speed at 10 Meters"
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "units": "Wh/m^2",
+          "longname": "All Sky Surface Shortwave Downward Irradiance"
+        }
+      },
+      "rows": 8784,
+      "fields": {
+        "T2M": {
+          "archive_column": "outdoor_temp",
+          "actual_unit": "C",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "RH2M": {
+          "archive_column": "relative_humidity_pct",
+          "actual_unit": "%",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "WS10M": {
+          "archive_column": "wind_speed_10m_m_s",
+          "actual_unit": "m/s",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        },
+        "ALLSKY_SFC_SW_DWN": {
+          "archive_column": "solar_irradiance_kwh_m2_hour",
+          "actual_unit": "Wh/m^2",
+          "rows": 8784,
+          "absolute_comparison_tolerance": 1e-09,
+          "maximum_absolute_difference": 0.0,
+          "mismatched_rows": 0,
+          "first_mismatches": [],
+          "all_values_match": true
+        }
+      },
+      "all_values_match": true,
+      "scope": "four original NASA product columns only; not derived demand, occupancy or buildings",
+      "status": "compared",
+      "archive_sha256_after": "7dae12d1e64e072c9c77433bf8bb2c0cba84a4ebdbef2d68339cdfd32bad374c",
+      "original_unchanged": true
+    }
+  ],
+  "compared_profiles": 15,
+  "total_hours_compared": 131544,
+  "all_archives_match": true,
+  "certifies_building_prices_or_local_measurement_accuracy": false
+}

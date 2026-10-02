@@ -1,0 +1,425 @@
+[
+  {
+    "id": "P01",
+    "parameter": "逐时时钟与供暖服务窗口",
+    "field": "timestamp；planning.time_step_hours；scope.start_inclusive/end_exclusive/timezone",
+    "unit": "h；带时区ISO时间",
+    "current_identity": "直接事实（API时钟）+假设（选定历史服务期）",
+    "source_ids": [
+      "D01",
+      "D02",
+      "D03",
+      "D04"
+    ],
+    "current_evidence": "weather_manifest.yaml为LST；heating_season.py要求准确半开时间窗。",
+    "preprocessing": "先用同点短段UTC/LST匹配确定偏移；NASA按15度经带，不按任意分钟转换；北京时对齐电价、占用；确定一段数据完整的跨年窗口。",
+    "cannot_claim": "不能把LST直接标为北京时；不能把一个项目服务期说成全市法定期，或平移年份后仍称该年真实日期。",
+    "necessity_24h": "P0：完整季前必须冻结",
+    "owner": "数据角色；验证角色复核",
+    "validation": "时间差独立计算应有行数；每预期小时唯一；跨日、跨年及闰日检查。",
+    "minimum_artifact": "time_basis.md + scope.json + chronology_audit.json"
+  },
+  {
+    "id": "P02",
+    "parameter": "气象温湿风与辐射输入",
+    "field": "outdoor_temp；relative_humidity；风/辐射列按当前CSV字典",
+    "unit": "°C；%或0–1明确；m/s；辐射按原参数单位",
+    "current_identity": "直接事实（公开气象产品）+派生",
+    "source_ids": [
+      "D01",
+      "D02",
+      "D03",
+      "D04"
+    ],
+    "current_evidence": "data/public_sources已有三地2020—2024；派生solar_heat_availability不等于实测设备可用率。",
+    "preprocessing": "保留原始响应、参数单位、产品版本、地点与哈希；检查湿度百分数转换、辐射小时平均/累计区别；缺失处理显式记录。",
+    "cannot_claim": "不能称为城市站点或热表实测；产品间一致不等于实际负荷预测准确。",
+    "necessity_24h": "P0：使用既有数据；其他天气源仅可选交叉核查",
+    "owner": "数据角色",
+    "validation": "逐列缺测/范围/连续性检查；保留低温极值；同源小样本逐值核对。",
+    "minimum_artifact": "weather_manifest.json + field_dictionary.csv"
+  },
+  {
+    "id": "P03",
+    "parameter": "服务建筑面积与聚合范围",
+    "field": "policy.served_floor_area_m2；拟新增building_id/area_m2映射",
+    "unit": "m²",
+    "current_identity": "假设/待确认；城市项目总面积属于直接事实但不能直接套原型",
+    "source_ids": [
+      "D07",
+      "D08B",
+      "D10"
+    ],
+    "current_evidence": "现有3节点为plant/district_a/district_b；已有总面积政策字段，不等于逐楼面积表。",
+    "preprocessing": "确定原型代表一个小区、典型楼栋还是建筑组；面积、户数、峰值负荷、层级映射同步；若采用典型面积须登记工程假设。",
+    "cannot_claim": "不能把异地或能源站全部服务面积压到三节点后声称真实逐栋计算；OSM footprint不直接等于供暖建筑面积。",
+    "necessity_24h": "P0：所有单位面积、室温和公平基准都依赖它",
+    "owner": "数据角色；建筑角色",
+    "validation": "各楼/组面积汇总等于服务面积；参数放大时负荷、热容、投资缩放合理；不能重复计楼层面积。",
+    "minimum_artifact": "building_register.csv + aggregation_map.csv"
+  },
+  {
+    "id": "P04",
+    "parameter": "建筑总传热系数H",
+    "field": "拟新增 building.H_kw_per_k；当前没有绝对室温RC的对应完整字段",
+    "unit": "kW/K",
+    "current_identity": "假设/派生/待确认",
+    "source_ids": [
+      "D06B"
+    ],
+    "current_evidence": "现有thermal_inertia.recovery_loss_per_hour不能直接证明H；公开标准公告只确认规范，未读取具体热工表。",
+    "preprocessing": "按围护结构U×面积及通风换热推导H，或用有说明的典型参数；区分整栋与单位面积；保留推导过程，勿由年能量随意拟合唯一H。",
+    "cannot_claim": "不能把标准上限当实际建筑值；不能凭峰值负荷同时识别H和C；不得称已实测标定。",
+    "necessity_24h": "P0：绝对室温核心；可用透明典型值，不等待外部数据",
+    "owner": "建筑物理角色",
+    "validation": "H>0；稳态供热与H×温差及得热平衡一致；不同保温组结果方向合理；设置明确探索区间。",
+    "minimum_artifact": "building_thermal_parameters.csv + H_derivation.md"
+  },
+  {
+    "id": "P05",
+    "parameter": "建筑有效热容C",
+    "field": "nodes.thermal_inertia.<grade>.thermal_capacity_kwh_per_c；拟新增RC有效热容",
+    "unit": "kWh/K",
+    "current_identity": "假设；旧虚拟状态参数不能直接当已标定RC参数",
+    "source_ids": [
+      "D06B"
+    ],
+    "current_evidence": "旧模型各温级设置thermal_capacity_kwh_per_c，以移时up/down驱动。",
+    "preprocessing": "审查旧参数对应服务面积与物理边界；建立一栋/一组的有效热容，避免把high和low两份虚拟热容重复加给同一建筑。",
+    "cannot_claim": "不能把旧热容数值直接贴到新RC模型就声称物理已验证；不能称典型热容为当地实测。",
+    "necessity_24h": "P0：绝对室温与初态所必需",
+    "owner": "建筑物理角色",
+    "validation": "C>0；τ=C/H单位为小时；无供热降温、恢复升温及增大C延缓响应；独立重算离散方程。",
+    "minimum_artifact": "C_assumption_register.csv + thermal_response_checks.csv"
+  },
+  {
+    "id": "P06",
+    "parameter": "占用时段与舒适温度上下限",
+    "field": "occupancy_a/b；拟新增T_min/T_max；旧max_temperature_deviation_c",
+    "unit": "0–1或布尔；°C",
+    "current_identity": "假设/派生；特定当地公示要求为直接事实",
+    "source_ids": [
+      "D08B",
+      "D06B"
+    ],
+    "current_evidence": "S3已有占用、setback及温差代理，尚非绝对室温；乌市公示不能代表武汉或所有建筑。",
+    "preprocessing": "区分有人/无人、居住/办公及服务合同假设；冻结绝对上下限与统计口径；旧代理约束迁移时防止舒适度双计。",
+    "cannot_claim": "不能以温差代理零违规证明实际室温达标；不能将某地居民要求套所有城市。",
+    "necessity_24h": "P0：比赛明确关注必要室温约束",
+    "owner": "建筑角色；案例角色",
+    "validation": "独立计算欠温/过温度时和最长连续违规；失供导致实际受热减少及温度响应；基准与方案相同标准。",
+    "minimum_artifact": "comfort_contract.yaml + comfort_audit.csv"
+  },
+  {
+    "id": "P07",
+    "parameter": "内部得热",
+    "field": "拟新增building.internal_gain_kw(t)",
+    "unit": "kW",
+    "current_identity": "假设/派生",
+    "source_ids": [
+      "D06B"
+    ],
+    "current_evidence": "尚未发现主案例独立逐楼人员/设备/照明实测时序。",
+    "preprocessing": "由占用与单位面积典型得热构造，列明散热进入空气或等效节点的边界；当日可使用声明的简化曲线或零得热下界情景。",
+    "cannot_claim": "不能将假设曲线标注实测；零内部得热并不自动证明所有经济结果保守。",
+    "necessity_24h": "P0：需明确模型是否计入；详细人群行为P1",
+    "owner": "建筑角色；数据角色",
+    "validation": "无供热时有得热不应降温更快；占用一致；对低/中/高透明假设进行至少方向性比较。",
+    "minimum_artifact": "internal_gain_assumptions.yaml"
+  },
+  {
+    "id": "P08",
+    "parameter": "太阳得热",
+    "field": "拟新增building.solar_gain_kw(t)；不得直接使用solar_heat_availability作为建筑得热",
+    "unit": "kW",
+    "current_identity": "派生/假设",
+    "source_ids": [
+      "D01",
+      "D06B",
+      "D10"
+    ],
+    "current_evidence": "现有solar_heat_availability按全年辐射分位数归一化，是设备可用率代理。",
+    "preprocessing": "从有单位的辐射、窗面积、方向/遮挡和太阳得热系数派生；无详细几何时采用明确简化系数及敏感性。",
+    "cannot_claim": "不能把0–1可用率直接当kW；OSM建筑轮廓不能证明窗墙比、遮挡或实测得热。",
+    "necessity_24h": "P0：得热边界需明确；完整遮阳几何P1",
+    "owner": "建筑角色；数据角色",
+    "validation": "夜间无太阳得热；单位换算、面积缩放正确；不得同时重复计入气象负荷代理和RC得热。",
+    "minimum_artifact": "solar_gain_derivation.md + gain_timeseries.csv"
+  },
+  {
+    "id": "P09",
+    "parameter": "热泵COP与除霜曲线",
+    "field": "sources.carnot_efficiency/cop_min/cop_max/source_temp_column；defrost_*",
+    "unit": "kW热/kW电；°C；无量纲系数",
+    "current_identity": "假设/派生，局部官方准入或项目参考",
+    "source_ids": [
+      "D06",
+      "D07",
+      "D01"
+    ],
+    "current_evidence": "当前按Carnot效率、温差、湿度和限幅预计算；没有已核厂家全工况曲线。",
+    "preprocessing": "保留供水温级与室外温度两个维度；区分名义COP、季节性能、除霜折减；用假设范围而非未核厂商数字。",
+    "cannot_claim": "不能以国家能效标准名称证明当前每小时COP准确；不得把季节系数当全部小时恒定COP。",
+    "necessity_24h": "P0：设备转换核心；厂家新曲线非当日阻塞",
+    "owner": "设备模型角色",
+    "validation": "逐时重算电输入=热输出/COP；冷段、除霜带、截断连续性检查；关键假设上下扰动。",
+    "minimum_artifact": "cop_parameter_register.csv + cop_checks.csv"
+  },
+  {
+    "id": "P10",
+    "parameter": "热源容量、低温降额与备用信用",
+    "field": "existing_capacity_kw/max_new_capacity_kw；low_temperature_derating；firm_capacity_*",
+    "unit": "kW；0–1",
+    "current_identity": "假设/直接事实参考/派生",
+    "source_ids": [
+      "D06",
+      "D07"
+    ],
+    "current_evidence": "三原型现有容量与候选量多为示例；S3原型零基建，项目批复不等于其已有资产。",
+    "preprocessing": "区分原型既有资产和候选建设；按同一低温条件处理出力和可靠容量；优先保证主案例热源上下限。",
+    "cannot_claim": "不能把设计名义容量当极寒实际容量；不能把候选能力说成已建，不能重复叠加柔性备用。",
+    "necessity_24h": "P0：必要出力和可靠性约束",
+    "owner": "设备模型角色；验证角色",
+    "validation": "零新增时既有容量可追溯；出力不越上限；极寒最差时段和备用组合独立检查。",
+    "minimum_artifact": "asset_register.csv + capacity_audit.csv"
+  },
+  {
+    "id": "P11",
+    "parameter": "分时电价与客户资格",
+    "field": "planning.electricity_price_column；resident_heating_electricity_price；electricity_tariff_scope",
+    "unit": "元/kWh",
+    "current_identity": "直接事实（限定用户/生效期）+情景假设",
+    "source_ids": [
+      "D08A"
+    ],
+    "current_evidence": "固原evidence配置选符合条件居民清洁供暖电价；普通总表应另案。",
+    "preprocessing": "按北京民用时钟生成峰谷；保存生效日期、用户类别、计量条件；历史天气与2026电价组合明确为规划情景。",
+    "cannot_claim": "不能声称2021实际电费；不能给所有商业/区域总表套居民优惠。",
+    "necessity_24h": "P0：调度与经济排序核心",
+    "owner": "数据经济角色",
+    "validation": "24h峰谷时数及跨午夜边界核验；电量×价逐时独立累加；同服务方案同价格类别。",
+    "minimum_artifact": "tariff_contract.yaml + tariff_hourly.csv"
+  },
+  {
+    "id": "P12",
+    "parameter": "电力排放因子",
+    "field": "grid_emission_factor；statistical_year/geographical_scope/accounting_scope元数据",
+    "unit": "kgCO₂/kWh",
+    "current_identity": "直接事实（年度统计因子）+情景假设",
+    "source_ids": [
+      "D05"
+    ],
+    "current_evidence": "本地已登记2023全国0.5306；省级因子本轮已核，但不代表已经入模。",
+    "preprocessing": "按案例核算边界选择全国或省级一套；保存统计年、发布日、地域；冷热碳目标与碳帽共用同一边界。",
+    "cannot_claim": "不能当逐时边际因子或任意未来年份实际值；不能与生命周期碳足迹因子混用或双扣绿电。",
+    "necessity_24h": "P0：多目标与减排结论必需",
+    "owner": "经济碳核算角色",
+    "validation": "逐时电量×因子重算，热/冷/总量一致；地域口径变更作敏感性，所有方案保持一致。",
+    "minimum_artifact": "emission_factor_register.csv + carbon_boundary.md"
+  },
+  {
+    "id": "P13",
+    "parameter": "热价、销售收入与服务分母",
+    "field": "heat tariff/finance revenue fields；served_floor_area_m2；served_heat",
+    "unit": "元/m²·采暖期；元/GJ；元/kWh；元/年",
+    "current_identity": "直接事实参考+假设/派生",
+    "source_ids": [
+      "D08B"
+    ],
+    "current_evidence": "现有财务和热价工具存在；不能将原型热成本等同销售收入。",
+    "preprocessing": "按客户类型分别执行面积制/两部制，GJ与kWh转换；S3若无当地合同热价就显式设收入情景，不借用乌市热价。",
+    "cannot_claim": "不能把转供价当终端收入；不能用不供暖零费用基准比较满足舒适度的新方案；无收入依据不可保证IRR。",
+    "necessity_24h": "P0：报告经济比较边界；详细融资收益可P1",
+    "owner": "经济核算角色",
+    "validation": "基准与方案同面积/舒适/服务时段；回算收入；无法定义IRR或无有效根则注明不适用。",
+    "minimum_artifact": "revenue_assumptions.yaml + service_denominator_audit.csv"
+  },
+  {
+    "id": "P14",
+    "parameter": "设备、储热、管网与配电资本开支",
+    "field": "capex_yuan_per_kw；capex_yuan_per_kwh；capex_total_yuan；grid capex",
+    "unit": "元/kW；元/kWh；元/项",
+    "current_identity": "假设/异地或特定项目参考",
+    "source_ids": [
+      "D07"
+    ],
+    "current_evidence": "现有候选单价是原型配置；武汉初设总投资含建筑、管网、外电等。",
+    "preprocessing": "建立设备/土建/管网/接入分项，选统一价格基期及含税边界；只将来源支持的分项作范围参照，不硬塞总项目单价。",
+    "cannot_claim": "不能将能源站总概算÷热泵容量当设备报价；不能声称异地单价是本项目采购价。",
+    "necessity_24h": "P0：规划决策和生命周期成本核心",
+    "owner": "经济核算角色；设备角色",
+    "validation": "所有选中投资均有价；kW/kWh/总价单位检查；分项加总；成本低/高档探索，不赋造假概率。",
+    "minimum_artifact": "capex_register.csv + investment_cost_audit.csv"
+  },
+  {
+    "id": "P15",
+    "parameter": "固定/变动运维、退役与经营费用",
+    "field": "fixed_om_yuan_per_kw_year；variable_om*；finance.fixed_om_method；decommissioning_cost_yuan_per_kw",
+    "unit": "元/kW·年；元/kWh；元",
+    "current_identity": "假设/待确认",
+    "source_ids": [
+      "D07"
+    ],
+    "current_evidence": "finance.py已有proxy_plus_model_adjustment与modeled_only；既有资产固定运维基线仍不完整。",
+    "preprocessing": "统一现金费用清单，避免比例运维与模型运维重复计；既有与新增、经营与退役分别记录；惩罚/CVaR不进入现金运维。",
+    "cannot_claim": "不能把优化惩罚当真实支出；不能将既有资产基线缺失当零成本的事实。",
+    "necessity_24h": "P0：经济/消融公平性必需",
+    "owner": "经济核算角色",
+    "validation": "逐时费用独立累加；两种运维方法有明示选择；退役收益和既有基准对照不重复计量。",
+    "minimum_artifact": "opex_register.csv + cash_component_audit.csv"
+  },
+  {
+    "id": "P16",
+    "parameter": "寿命、折现、年化与残值",
+    "field": "planning.discount_rate/asset_lifetime_years；finance.discount_rate；asset lifetimes/residual",
+    "unit": "年；年折现率；元",
+    "current_identity": "假设",
+    "source_ids": [],
+    "current_evidence": "example_city已有规划折现/寿命；finance.py另有默认折现值，需显式统一。 本轮核验来源没有提供本案例折现率与资产寿命的直接数值依据。",
+    "preprocessing": "明确私人/系统评价视角、评价期与投产时点，显式传财务折现避免默认值不一致；终端残值与营业期分开。",
+    "cannot_claim": "不能把案例假设称官方统一折现率；不能用尚未投产资产残值获得虚假收益；冬季不得直接冒充全年。",
+    "necessity_24h": "P0：成本口径统一；复杂融资P1",
+    "owner": "经济核算角色",
+    "validation": "手工复算CRF/NPV；经营期与终端行核验；周期与残值敏感性采用声明的情景。",
+    "minimum_artifact": "lifecycle_contract.yaml + financial_recalculation.csv"
+  },
+  {
+    "id": "P17",
+    "parameter": "生物质原料池与年度可采购量",
+    "field": "biomass_supply_chains.annual_supply_limit_kg/source_names",
+    "unit": "kg/年",
+    "current_identity": "假设；自治区统计为直接事实参考",
+    "source_ids": [
+      "D09A"
+    ],
+    "current_evidence": "S2供应链已有示例年度量；宁夏秸秆饲料化和木质成型燃料并非同一池。",
+    "preprocessing": "区分秸秆、木质原料、成型颗粒；扣除竞争用途的逻辑显式；项目量缺失采用有限情景，不等待主办方。",
+    "cannot_claim": "不能把自治区产生量/可收集量直接给项目；不能把两个统计池相加后都当新增可用资源。",
+    "necessity_24h": "P0（仅启用生物质主案例）；其他场景P1",
+    "owner": "数据案例角色；资源模型角色",
+    "validation": "年度采购与供热消耗守恒；上限低/中/高透明情景；库存和既有用途不重复。",
+    "minimum_artifact": "biomass_pool_register.csv + annual_supply_assumptions.yaml"
+  },
+  {
+    "id": "P18",
+    "parameter": "生物质热值与转换效率",
+    "field": "lower_heating_value_kwh_per_kg；conversion_efficiency",
+    "unit": "kWh/kg；0–1",
+    "current_identity": "假设/异地采购技术参考",
+    "source_ids": [
+      "D09B"
+    ],
+    "current_evidence": "当前S2有低位热值和效率输入；本溪公告同时含收到基低位与干燥基高位要求。",
+    "preprocessing": "统一收到基低位热值及含水率边界，将热值单位换算为kWh/kg；设备效率与燃料热值分开。",
+    "cannot_claim": "不能把干基高位热值替代收到基低位；采购门槛不是某供应批次实测值。",
+    "necessity_24h": "P0（启用生物质）；否则P1",
+    "owner": "设备资源角色",
+    "validation": "质量×LHV×效率与热量逐时重算；边界变化时没有凭空热量；分开扰动热值和效率。",
+    "minimum_artifact": "biomass_energy_basis.md + fuel_to_heat_audit.csv"
+  },
+  {
+    "id": "P19",
+    "parameter": "燃料采购价、运输及库存初值",
+    "field": "procurement_cost_yuan_per_kg；handling_cost*；transport_cost*；inventory fields",
+    "unit": "元/kg；元/(t·km)；km；kg",
+    "current_identity": "假设/异地参考",
+    "source_ids": [
+      "D09A",
+      "D09B"
+    ],
+    "current_evidence": "固原evidence配置采用到场颗粒参考并将金钱运输加成置零；本溪生物质限价1250元/t，煤包1000元/t。",
+    "preprocessing": "锁定燃料包组和到场/出厂边界；运输排放与货币运费可不同处理；库存初始能量和采购成本进入明确边界。",
+    "cannot_claim": "不能把煤价格串给颗粒；限价非成交价；含运到场价不能再叠加同一笔运费。",
+    "necessity_24h": "P0（启用生物质）；否则P1",
+    "owner": "经济核算角色；数据角色",
+    "validation": "元/t转元/kg；合同范围说明；成本独立分项；运输距离与可采购量联动不造假概率。",
+    "minimum_artifact": "fuel_price_register.csv + logistics_cost_audit.csv"
+  },
+  {
+    "id": "P20",
+    "parameter": "管网候选距离与地理坐标",
+    "field": "nodes.x/y；pipes.length_m及候选GIS映射（实际接入字段需核定）",
+    "unit": "m；坐标须注明CRS",
+    "current_identity": "当前原型假设；拟新增地图事实与派生距离",
+    "source_ids": [
+      "D10",
+      "D07"
+    ],
+    "current_evidence": "当前坐标用于绘图，不是已验证路网；项目批复总管长不能确定原型每条边。",
+    "preprocessing": "小范围导出有许可道路/建筑；用合适投影或测地距离计算候选长度；区分直线/道路绕行/施工假设。",
+    "cannot_claim": "不能用平面绘图坐标当真实公里；OSM道路不证明可开挖及地下热网现状。",
+    "necessity_24h": "P0：长度单位和当前假设必须清楚；真实GIS接入P1",
+    "owner": "空间网络角色；数据角色",
+    "validation": "距离非负、端点对应；抽查路径长度；成本随长度变化；保留来源、提取日期和署名。",
+    "minimum_artifact": "network_candidate_register.csv + geometry_provenance.md"
+  },
+  {
+    "id": "P21",
+    "parameter": "管网热损、输运迟滞与泵耗",
+    "field": "delivery_efficiency；heat_loss_w_per_mk；pumping_electricity_kwh_per_kwh_heat；拟新增delay_hours",
+    "unit": "0–1；W/(m·K)；kWh电/kWh热；h",
+    "current_identity": "假设/派生",
+    "source_ids": [
+      "D07"
+    ],
+    "current_evidence": "当前热损与后验水力已有基础；完整输运迟滞未实现。",
+    "preprocessing": "热损选定一种不重复的表达；如实现延迟，按长度/流量或声明固定迟滞生成并处理入网库存；泵耗明确计电。",
+    "cannot_claim": "不能把静态效率称作动态热水力模型；设定1h延迟不等于现场测得；不能仅做动画表示耦合。",
+    "necessity_24h": "P0：能量流损耗一致；新增完整迟滞模型P1",
+    "owner": "网络物理角色",
+    "validation": "热出≤热入，差额匹配损失；脉冲热输入的到达时刻正确；跨季起点库存无凭空来热；独立泵耗重算。",
+    "minimum_artifact": "network_physics_assumptions.yaml + network_energy_audit.csv"
+  },
+  {
+    "id": "P22",
+    "parameter": "供热温级与㶲环境基准",
+    "field": "grades.temperature_c；source.supply_temp_c；planning.ambient_reference_c",
+    "unit": "°C输入；K用于㶲公式",
+    "current_identity": "假设/项目设计参考/派生",
+    "source_ids": [
+      "D07"
+    ],
+    "current_evidence": "现有温级与固定环境温度驱动品质代理；完整燃料/电力/环境热边界仍需统一。",
+    "preprocessing": "Kelvin换算；说明T0采用固定还是逐时；区分有用热㶲与燃料化学㶲、电力、环境取热；无全边界则保留品质指标名称。",
+    "cannot_claim": "不能把温位匹配指标称完整系统㶲效率；不能重复计环境取热和电输入。",
+    "necessity_24h": "P0：已有指标需正确命名；全系统㶲扩展P1",
+    "owner": "品质能量核算角色",
+    "validation": "单设备和系统边界检查；同物理服务不同温级对比；任何效率>1先查边界，不直接截断掩盖。",
+    "minimum_artifact": "exergy_boundary.md + quality_metric_audit.csv"
+  },
+  {
+    "id": "P23",
+    "parameter": "季初状态与预热",
+    "field": "storages.initial_soc_fraction；拟新增building.T_initial、UC前状态、battery SOC、fuel inventory等",
+    "unit": "°C；0–1；kWh；kW；kg；布尔",
+    "current_identity": "假设/派生/待确认",
+    "source_ids": [
+      "D01"
+    ],
+    "current_evidence": "三配置储热未显式填初末比例；heating_season.py默认拒绝未支持建筑/UC/燃料/电池初态。 D01只能提供预运行天气，不能提供室温、库存等真实初值。",
+    "preprocessing": "为主案例实际启用模块逐项给初值或由有边界的预运行产生；预热能量/初库存成本说明；只实现需要的状态但不得删必要约束。",
+    "cannot_claim": "不能把循环假设开关当已实现现场初态；没有真实初温不等于不能做声明假设的案例。",
+    "necessity_24h": "P0：完整连续季必需",
+    "owner": "物理模型角色；验证角色",
+    "validation": "首时段守恒及无免费库存；单段与分段承接一致；断热恢复测试；数据缺初态在求解前报错。",
+    "minimum_artifact": "initial_state.json + preheat_accounting.csv + state_handoff_audit.csv"
+  },
+  {
+    "id": "P24",
+    "parameter": "季末状态、年度资源与冷热分摊",
+    "field": "storages.final_soc_min_fraction；deferred_annual_constraints；ground_source_annual_balance；heating_cost_allocation",
+    "unit": "0–1；kWh；kg/年；kgCO₂/年；元/年；比例",
+    "current_identity": "假设/模型定义/派生",
+    "source_ids": [
+      "D05",
+      "D07"
+    ],
+    "current_evidence": "季节入口已延后年度约束；S3联合有地源年度平衡；当前季节证书不等于年度证书。",
+    "preprocessing": "固定同一投资；明确终端储能价值与最低库存；必要全年用完整服务年检查，冷热共享资产选统一分摊并报告系统总成本。",
+    "cannot_claim": "不能冬季乘比例代全年；不能冬季单独证明地源冬夏平衡；不能靠末期清空储能或分摊口径创造收益。",
+    "necessity_24h": "P0：季末必需；启用年度约束或年经济声明时全年必需",
+    "owner": "验证角色；经济核算角色",
+    "validation": "期末条件逐资产核；年采购、碳、地源热量独立汇总；各服务分摊加总回系统总量；无年度结果则限制结论。",
+    "minimum_artifact": "terminal_requirements.json + annual_constraint_registry.csv + allocation_audit.csv"
+  }
+]

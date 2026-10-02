@@ -1,0 +1,77 @@
+extends: example_city.yaml
+
+planning:
+  region_profile: northern_existing_large_network_reconstruction
+  carbon_price_yuan_per_kg: 0.10
+  # 系统容量另保留25%裕度；管段N-1校核要求在设计峰值下保供，不重复叠加裕度。
+  n_minus_1_pipe_reserve_margin: 0.15
+  n_minus_1_source_names: [existing_chp, gas_peak_boiler]
+
+renewable_electricity:
+  availability_column: renewable_power_available_kw
+  price_yuan_per_kwh: 0.12
+  emission_kg_per_kwh: 0.02
+
+sources:
+  - name: existing_chp
+    node: plant
+    type: chp
+    resource_kind: fossil
+    supply_temp_c: 105
+    allowed_grades: [high, low]
+    existing_capacity_kw: 1100
+    max_new_capacity_kw: 0
+    max_retire_capacity_kw: 750
+    decommissioning_cost_yuan_per_kw: 110
+    fixed_om_yuan_per_kw_year: 28
+    variable_cost_yuan_per_kwh_heat: 0.29
+    emission_kg_per_kwh_heat: 0.190
+    electricity_to_heat_ratio: 0.35
+    electricity_to_heat_ratio_min: 0.20
+    electricity_to_heat_ratio_max: 0.45
+    electricity_export_price_multiplier: 0.85
+    minimum_electricity_output_column: chp_minimum_electricity_kw
+    unit_commitment: true
+    minimum_output_fraction: 0.15
+    ramp_up_fraction_per_hour: 0.35
+    ramp_down_fraction_per_hour: 0.40
+    startup_cost_yuan: 260
+    shutdown_cost_yuan: 60
+    firm_capacity_credit: 1.0
+
+  - name: gas_peak_boiler
+    max_retire_capacity_kw: 900
+    decommissioning_cost_yuan_per_kw: 65
+    fixed_om_yuan_per_kw_year: 16
+
+  - name: industrial_waste_heat
+    max_new_capacity_kw: 700
+    # N-1设备/管网事故与全厂余热中断分别校核，避免默认二者必然同时发生。
+    firm_capacity_availability: 0.65
+
+  - name: central_waste_source_hp
+    max_new_capacity_kw: 1200
+    firm_capacity_availability: 0.65
+
+  - name: distributed_air_hp_b
+    max_new_capacity_kw: 450
+
+pipes:
+  - name: trunk_a
+    retrofit:
+      capex_total_yuan: 680000
+      delivery_efficiency: 0.982
+      cold_loss_sensitivity_per_c: 0.00012
+      loss_reference_temperature_c: 0
+      minimum_delivery_efficiency: 0.955
+      pumping_electricity_kwh_per_kwh_heat: 0.005
+      heat_loss_w_per_mk: 0.16
+      asset_lifetime_years: 25
+
+storages:
+  - name: central_low_temp_tank
+    max_new_capacity_kwh: 3000
+    power_to_energy_ratio_per_hour: 0.25
+
+grid_connection:
+  max_new_capacity_kw: 2200

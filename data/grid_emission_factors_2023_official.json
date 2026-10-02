@@ -1,0 +1,17 @@
+{
+  "title": "2023年省级电力平均二氧化碳排放因子（正式重跑建议值）",
+  "unit": "kgCO2_per_kWh",
+  "source": {
+    "publisher": "生态环境部、国家统计局",
+    "document": "关于发布2023年电力二氧化碳排放因子的公告（公告2025年第47号）",
+    "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/t20251231_1139517.html",
+    "attachment": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/W020251231726284332528.pdf"
+  },
+  "profiles": {
+    "scenario1_urumqi": {"province": "新疆", "factor": 0.6021},
+    "scenario2_guyuan": {"province": "宁夏", "factor": 0.6187},
+    "scenario3_wuhan": {"province": "湖北", "factor": 0.4044}
+  },
+  "status": "prepared_for_rerun_not_applied_to_existing_certificates",
+  "warning": "现有逐时输入使用早期情景化排放因子曲线。替换为本文件数值后必须重新求解和生成证书，不得直接修改旧结果表。"
+}

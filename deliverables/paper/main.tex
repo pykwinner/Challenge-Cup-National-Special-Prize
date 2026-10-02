@@ -1,0 +1,328 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage[top=2.54cm,bottom=2.54cm,left=3.18cm,right=3.18cm,headheight=0pt,headsep=0pt,footskip=1.5cm]{geometry}
+\setmainfont{NotoSerifSC-Regular.ttf}[Path=build-fonts/,BoldFont=NotoSerifSC-Bold.ttf]
+\newfontfamily\headingfont{NotoSansSC-Regular.ttf}[Path=build-fonts/]
+\newcommand{\songti}{\normalfont}
+\newcommand{\heiti}{\headingfont}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage{amsmath,amssymb,mathtools,bm}
+\renewcommand{\theequation}{\arabic{equation}}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array,tabularx,calc}
+\usepackage{etoolbox}
+\usepackage{float}
+\usepackage{needspace}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{fvextra}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,fit,backgrounds,calc}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Bset}{\{0,1\}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\definecolor{paperGreen}{RGB}{132,168,60}
+\definecolor{paperGreenDark}{RGB}{79,96,48}
+\definecolor{paperGreenLight}{RGB}{212,224,192}
+\definecolor{paperCream}{RGB}{245,243,232}
+\tikzset{
+  startstop/.style={rectangle,rounded corners=8pt,minimum width=3.2cm,minimum height=0.9cm,align=center,draw=paperGreenDark,fill=paperGreen,text=white,thick},
+  process/.style={rectangle,minimum width=3.6cm,minimum height=0.9cm,align=center,draw=paperGreenDark,fill=paperCream,thick},
+  decision/.style={diamond,aspect=2.1,minimum width=3.0cm,align=center,draw=paperGreenDark,fill=paperGreenLight,thick,inner sep=1pt},
+  data/.style={trapezium,trapezium left angle=70,trapezium right angle=110,minimum width=3.2cm,minimum height=0.9cm,align=center,draw=paperGreenDark,fill=paperGreenLight!55,thick},
+  verify/.style={rectangle,minimum width=3.4cm,minimum height=0.9cm,align=center,draw=paperGreenDark,fill=paperGreenLight,thick},
+  layer/.style={rectangle,draw=paperGreenDark,dashed,inner sep=6pt},
+  arrow/.style={-{Stealth[length=2.4mm]},thick,draw=paperGreenDark},
+  lab/.style={font=\small,midway}
+}
+\newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}
+\newcommand{\xiaosan}{\fontsize{15pt}{18.75pt}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}
+% 正文参考文献编号采用右上角标注
+\newcommand{\supcite}[1]{\textsuperscript{[#1]}}
+
+\AtBeginDocument{%
+  \xiaosi\songti\setstretch{1.25}%
+  % 统一所有行间公式与上下正文之间的距离
+  \setlength{\abovedisplayskip}{7.5pt}%
+  \setlength{\belowdisplayskip}{7.5pt}%
+  \setlength{\abovedisplayshortskip}{7.5pt}%
+  \setlength{\belowdisplayshortskip}{7.5pt}%
+}
+\setstretch{1.25}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{7.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\xiaosi\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\xiaosi\thepage}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}}
+\newcommand{\ChineseNumber}[1]{%
+  \ifcase#1 零\or 一\or 二\or 三\or 四\or 五\or 六\or 七\or 八\or 九\or 十%
+  \or 十一\or 十二\or 十三\or 十四\or 十五\or 十六\or 十七\or 十八\or 十九\or 二十\else #1\fi}
+\renewcommand{\thesection}{\ChineseNumber{\value{section}}、}
+\renewcommand{\thesubsection}{（\ChineseNumber{\value{subsection}}）}
+\renewcommand{\thesubsubsection}{（\arabic{subsubsection}）}
+\renewcommand{\theparagraph}{（\arabic{paragraph}）}
+\renewcommand{\thesubparagraph}{\arabic{subparagraph}）}
+\titleformat{\section}{\centering\heiti\xiaosan}{\thesection}{0.5em}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titleformat{\subsection}{\raggedright\heiti\sihao}{\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{6pt}{0pt}
+\titleformat{\subsubsection}{\raggedright\songti\xiaosi\bfseries}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\subsubsection}{0pt}{6pt}{0pt}
+\titleformat{\paragraph}[runin]{\raggedright\songti\xiaosi}{\theparagraph}{0.5em}{}
+\titleformat{\subparagraph}[runin]{\raggedright\songti\xiaosi}{\thesubparagraph}{0.5em}{}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+% 目录按标题层级逐级缩进：一级顶格，二级和三级依次右移
+\cftsetindents{section}{0em}{4em}
+\cftsetindents{subsection}{0em}{4em}
+\cftsetindents{subsubsection}{0em}{4em}
+\makeatletter
+\let\paper@l@subsection\l@subsection
+\let\paper@l@subsubsection\l@subsubsection
+\renewcommand*{\l@subsection}[2]{\paper@l@subsection{\hspace*{2em}#1}{#2}}
+\renewcommand*{\l@subsubsection}[2]{\paper@l@subsubsection{\hspace*{4em}#1}{#2}}
+\makeatother
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\DeclareCaptionFont{captioncn}{\songti\xiaosi\setstretch{1.0}}
+\DeclareCaptionLabelSeparator{twospaces}{\hspace{2em}}
+\captionsetup{font=captioncn,labelsep=twospaces,justification=centering,singlelinecheck=true}
+\captionsetup[table]{position=top}
+\captionsetup[figure]{position=bottom}
+\renewcommand{\thefootnote}{\textcircled{\scriptsize\arabic{footnote}}}
+\graphicspath{{media/}}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.82\textheight 0.82\textheight\else\Gin@nat@height\fi}
+\def\fps@figure{htbp}
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\AtBeginEnvironment{tabular}{\songti\xiaosi\setstretch{1.0}}
+\AtBeginEnvironment{longtable}{\songti\xiaosi\setstretch{1.0}}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\urlstyle{same}
+\hypersetup{pdfauthor={},pdftitle={暖城向新·热力不息}}
+
+\newcommand{\EnableBodyBackground}{%
+  \AddToShipoutPictureBG{%
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{body-background.jpg}%
+    }%
+  }%
+}
+
+\newenvironment{refsectionflush}
+  {\par\sloppy\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}}
+  {\par\fussy}
+\newcommand{\refentry}[2]{%
+  \par\noindent\hangindent=2em\hangafter=1
+  [#1]\enspace #2\par}
+
+\begin{document}
+
+\AddToShipoutPictureBG*{%
+  \AtPageLowerLeft{\includegraphics[width=\paperwidth,height=\paperheight]{cover.jpg}}%
+}
+\thispagestyle{empty}
+\null
+\clearpage
+\EnableBodyBackground
+\pagestyle{empty}
+\begin{center}
+{\songti\sanhao\bfseries\setstretch{1.0} 暖城向新·热力不息\par}
+\vspace{18pt}
+{\heiti\sihao 摘\quad 要\par}
+\end{center}
+\vspace{3pt}
+\par\indent 城镇供热转型需要同时协调热源配置、管网输配、建筑用热、储热和配电能力。本文建立可按场景配置的源网荷储协同规划方法，保留既有集中供热重构、分散清洁供热和夏热冬冷地区新建系统的接口，以第三类场景原型组织完整冷热服务年及供暖季的软件验证。
+
+建筑负荷采用精确离散的1R1C热状态方程，由节点交付的供热、供冷与室温共同决定；容量、温位、冷热互斥、储热连续和可靠性约束共同限定投资与调度。成本与系统总碳采用统一台账，多目标方法包含带容差记录的两阶段词典序和碳上限约束；代表期规划后冻结投资，以完整时序检验方案。
+
+结果准入同时要求输入来源可核查、模型实际求解和独立数值审计。公开气象产品、观测数据、来源明确的工程参数与情景假设分别记录；无出处的建筑、价格或空间参数仅用于程序验证。气象来源复核、N2实测比较及原作者多目标例题复现形成三类证据：气象字段与官方响应一致，N2日块训练改善未转化为留出开环改善，五个数学采样点与解析界一致。上述证据分别限定适用范围，工程参数仍需真实资料闭合。
+
+\vspace{-4.5pt}
+\noindent{\heiti\xiaosi 关键词：}{\songti\xiaosi 城镇供热；源荷匹配；规划寻优；低碳转型；供热可靠性}
+\clearpage
+\thispagestyle{empty}
+\begin{center}{\heiti\sihao 目\quad 录}\end{center}
+\begingroup
+\setlength{\parskip}{0pt}
+\setlength{\cftbeforesecskip}{1pt}
+\makeatletter
+\@starttoc{toc}
+\makeatother
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+\section{赛题、场景与研究范围}
+
+供热转型的规划对象包括热源、网络、建筑末端、储热和电网接入。仅按设计负荷配置单项设备，难以反映温位适配、逐时电力峰值、储热持续供能和建筑热惯性之间的约束。赛事要求模型覆盖源、网、荷、储，采用逐时尺度完成完整供暖季仿真，并分析经济性、碳排放与运行调度\supcite{1}。
+
+三类场景共享守恒与资产接口。第一类侧重既有集中供热系统的资产保留、热源退役、余热接入及网络降温；第二类侧重分散设施、用户分配、燃料与微网边界；第三类侧重系统形态、冷热服务、建筑品质和配电容量。本稿以第三类场景原型组织软件验证，第一、二类保留适配范围。
+
+模型分为城市配置、区域能流和建筑状态三个尺度。城市层确定设备与容量，区域层连接热源、管段、储热和配电，建筑层将交付冷热量映射为热状态。空间节点与建筑原型的真实性由输入资料决定，聚合拓扑及合成原型不能称为真实GIS或实测城市网络。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small]
+\node[process,minimum width=3.6cm,text width=3.1cm] (city) at (0,0) {城市层\\容量与技术配置};
+\node[process,minimum width=3.6cm,text width=3.1cm] (region) at (4.5,0) {区域层\\冷热、电力与储热};
+\node[process,minimum width=3.6cm,text width=3.1cm] (building) at (9,0) {建筑层\\RC状态与服务边界};
+\draw[{Stealth[length=2mm]}-{Stealth[length=2mm]},thick,draw=paperGreenDark] (city) -- (region);
+\draw[{Stealth[length=2mm]}-{Stealth[length=2mm]},thick,draw=paperGreenDark] (region) -- (building);
+\end{tikzpicture}
+\caption{投资、能流与建筑状态的多尺度接口示意}
+\label{fig:compact-multiscale}
+\end{figure}
+
+工程验证需通过数据来源、物理和优化模型、实际求解、独立审计四层证据。程序验证检查方程与实现，未经来源核实的原型结果限于“程序验证/情景示例”。本稿的工程经济与碳评价保留方法和核实因子，缺乏真实建筑、设备报价及公平基准时不计算工程改善率。历史三场景记录单独归档。
+
+\clearpage
+\section{数据来源、假设与准入}
+
+\subsection{字段身份及追溯}
+
+每个输入字段记录名称、数值或时序、单位、来源主体、原始链接或文件、获取时间、适用区域、换算过程及SHA256。数据性质至少区分公开产品、原始观测、来源明确的工程参数和情景假设。可访问一个网站不等于核实了具体数值；来源记录须能定位实际字段、年份与处理步骤。
+
+\begin{table}[H]
+\centering
+\caption{输入字段与证据准入}
+\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}p{0.27\textwidth}X@{}}
+\toprule
+类别 & 用途 & 工程结果准入要求\\
+\midrule
+气象 & 温度、辐照及湿冷性能输入 & 记录公开产品、坐标、时区、原始时间范围与下载文件；格点产品不表述为地面站实测\\
+建筑 & 面积、热损、热容、得热、占用与舒适边界 & 定位设计资料或真实观测；无具体来源的原型参数只用于程序验证，不宣称已校准\\
+空间资产 & 节点、候选管段、资源与接入容量 & 核对实际位置、距离、既有资产及候选形成依据；合成坐标和拓扑单列\\
+设备价格 & 性能、投资、运维、电价与燃料 & 说明参数条件、报价或公开依据；未经核验的价格只作情景假设\\
+政策与碳 & 服务范围、排放因子、碳价和可靠性 & 区分适用标准、统计因子和假设碳价；保留原口径，避免换算重复计量\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+建筑参数的不确定区间不能替代参数来源。H/C、太阳及内部得热、占用日程、电价和空间字段需分别审查；即使某组数据已通过求解、RC残差和费用台账核验，来源未明确时仍不得晋级为真实工程案例。历史材料适用相同门槛，不因曾写入报告而豁免。
+
+气象采用NASA POWER逐时产品\supcite{9}。本次以API v2.10.2复核三城市2020--2024年共15份资料，131544小时的温度、相对湿度、10~m风速和短波辐射共526176个值与官方响应一致，原CSV未改。辐射实际为Wh/m$^2$，不能沿用旧字段名中的kWh解释；产品时钟为LST，转换须保留其定义。2023年旧记录没有原查询链接，本次重建查询单独留痕，不倒填旧获取日期或API版本。该复核仅认证四个产品字段，不认证生成负荷、建筑、价格或地面站测量精度。
+
+\subsection{时间轴与单位}
+
+原始时间戳保留UTC或供应商时区，转为项目本地时区后按左闭右开区间筛选。逐时输入检查唯一性、连续性、缺失和重复；完整服务年覆盖冷热服务，供暖季按服务合同单独筛选，不能只按论文中写出的天数推算结果时长。代表期的行数、小时权重和实际连续时长分别报告。
+
+运行功率采用kW，能量采用kWh，时间步长采用h，排放采用kg；汇总使用MW、MWh和t时明确换算。热损系数为kW/K，热容为kWh/K。摄氏与开尔文温差数值相同，火用或温度比值涉及的绝对温度需另作换算。预处理不改变原始观测身份，插补及代理字段须标记并说明用途。
+
+状态采样时刻与观测平均窗口分别登记。区间平均温度不能直接当作时段末温度，热状态和观测方程应按各自采样含义建立；时间序列验证还须检查残差与独立留出表现\supcite{3}。
+
+\subsection{外部观测与留出验证}
+
+外部RC观测记录许可、对象、测点、采样时刻和参数来源，参数辨识与留出评估使用分离的数据。误差由实际观测与模型输出对齐后计算；合成轨迹和模型自洽残差不能充当外部观测。本稿纳入N2首轮有限适用性诊断，来源审核完成的真实工程效果仍需独立资料。
+
+\clearpage
+\input{sections/model-derivation.tex}
+\clearpage
+\input{sections/algorithm-revision.tex}
+
+\clearpage
+\section{经济碳评价、边界与局限}
+
+\subsection{费用与排放解释}
+
+全年评价将规划资产的年化资本与全年运行费用核对，资本只计一次；冻结投资后，若资本已在年度模型目标中计入，后处理不得再加一遍。供暖季仅反映该期间运行，不能按小时比例外推全年费用，也不能与含全年冷热资本的目标直接比较。
+
+费用台账区分资本年化、能源、运维、假设碳价及惩罚项。惩罚项不是企业现金支付；假设碳价成本不据此表述为企业已实际缴纳的碳费。总目标、含假设碳价的情景费用和不含该项的费用分别展示，分项之和与求解目标交叉核对。
+
+系统总碳覆盖供热、供冷及共享电力的统一口径。若程序分别输出供热台账和供冷台账，应按其定义合成总量，不重复计算共享用电，也不能只取供热部分作为全年系统排放。单位冷热服务指标须使用对应交付热量和冷量作分母；只有两方案服务、输入和会计口径一致时才计算差值和改善比例。
+
+\subsection{能力与适用范围}
+
+精确1R1C是给定小时内输入保持条件下的状态方程离散，不等于建筑已经实测校准。独立RC审计认证时段末采样状态、边界和账本一致性，不据此声称房间级温度、实测误差或所有时段内连续舒适已经验证。
+
+代表期边界会影响冷热需求与容量。每天强制恢复同一温度可能产生额外的恢复冷热量，应结合完整时序及边界敏感性检查后评价规划结果。代表期投资方案的全年回放检验其运行可达性，不证明该方案是全年联合投资模型的全局最优。
+
+年度地源取排热账本只检验本年度能量比例，不证明多年地温稳定。聚合网络不替代真实GIS、连续水力、配电潮流或施工图。热湿、结露、声学、地质和多年动态需独立资料与模块支持；未启用或未通过专业复核的内容不列为成果。C\&CG、Benders分解、自动工程割和在线MPC亦不作为本稿已验证的求解方法。
+
+\clearpage
+\section{结论与复现}
+
+本稿建立三场景接口下的源网荷储、建筑RC、品质容量和成本碳台账，采用代表期规划、冻结投资完整时序运行和独立审计衔接方案生成与验证。方法将输入来源审核与数值验收分开：真实求解不证明输入真实，数值自洽不等于实测校准。
+
+气象来源复核认证四个产品字段，N2比较揭示条件单步与开环表现的差异，后续探索未改善留出开环表现。公开数学例题的两个端点、五个采样点和声明边界检验与解析解一致，支持数值层方法复现。三类证据分别提供来源追溯、模型适用性诊断和软件方法检查，工程经济改善仍需真实参数、报价及同条件基准。企业认可与鉴定依据另行提供。
+
+复现资料包含配置、逐时输入、预处理说明、求解日志、manifest、投资记录、运行轨迹及独立审计。每个结果表均应关联其实际运行目录和哈希；论文只展示必要公式与伪代码，完整程序保留在工程中。
+
+\clearpage
+\begin{center}{\heiti\sihao 参考资料}\end{center}
+\addcontentsline{toc}{section}{参考资料}
+\begin{refsectionflush}
+\refentry{1}{中国建筑科学研究院有限公司. 面向供热格局变革的城镇供热源荷匹配与规划寻优模型构建比赛方案{[}R{]}. 2026，第4页.}
+\refentry{2}{Bacher P, Madsen H. Identifying suitable models for the heat dynamics of buildings{[}J{]}. Energy and Buildings, 2011, 43(7): 1511--1522. DOI: \url{https://doi.org/10.1016/j.enbuild.2011.02.005}.}
+\refentry{3}{Madsen H, Bacher P, Bauwens G, et al. Thermal performance characterisation using time series data -- statistical guidelines{[}R{]}. IEA EBC Annex 58, Subtask 3, Part 2. KU Leuven, 2016. \url{https://iea-ebc.org/Data/publications/EBC_Annex_58_Final_Report_ST3b.pdf}.}
+\refentry{4}{Kotzur L, Markewitz P, Robinius M, Stolten D. Time series aggregation for energy system design: Modeling seasonal storage{[}EB/OL{]}. arXiv:1710.07593v2, 2018. \url{https://arxiv.org/abs/1710.07593}. DOI: 10.1016/j.apenergy.2018.01.023.}
+\refentry{5}{Mavrotas G. Effective implementation of the $\varepsilon$-constraint method in Multi-Objective Mathematical Programming problems{[}J{]}. Applied Mathematics and Computation, 2009, 213(2): 455--465. DOI: 10.1016/j.amc.2009.03.037. 作者配套方法报告：\url{https://www.gams.com/modlib/adddocs/epscm.pdf}.}
+\refentry{6}{SciPy developers. scipy.optimize.milp -- SciPy 1.15.3 Reference Manual{[}EB/OL{]}. [2026-10-02]. \url{https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.optimize.milp.html}.}
+\refentry{7}{HiGHS developers. List of options -- HiGHS Documentation{[}EB/OL{]}. 开发版文档，[2026-10-02]. \url{https://ergo-code.github.io/HiGHS/dev/options/definitions/}.}
+\refentry{8}{Kersken M, Strachan P. Twin House Experiment IEA EBC Annex 71 Validation of Building Energy Simulation Tools -- Specifications and dataset{[}DS{]}. Fraunhofer Fordatis, version 2, 2020-06-23. CC BY-SA 4.0. \url{https://doi.org/10.24406/fordatis/76.2}.}
+\refentry{9}{NASA POWER. Hourly API{[}EB/OL{]}. [2026-10-02]. \url{https://power.larc.nasa.gov/docs/services/api/temporal/hourly/}. 本次响应版本v2.10.2，原始响应、查询及逐字段比对记录随复现资料保存.}
+\end{refsectionflush}
+
+\input{sections/model-appendix.tex}
+
+\clearpage
+\section*{附录B\quad 求解与验证伪代码}\label{ux9644ux5f55-a-ux4e09ux573aux666fux63a8ux8350ux914dux7f6eux6a21ux677f}
+\addcontentsline{toc}{section}{\texorpdfstring{附录B\quad 求解与验证伪代码}{附录B 求解与验证伪代码}}
+
+\noindent\textbf{输入：}字段来源记录、配置、逐时数据、服务合同、投资候选、边界条件、求解时限与容差；启用多目标时另给定碳帽与词典序容差。\textbf{输出：}规划与运行记录、成本总碳台账、审计结果及证据身份。方法伪代码与已经执行的实验记录分别核验。
+
+\begingroup
+\small
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{@{}p{0.07\textwidth}@{\hspace{0.03\textwidth}}p{0.90\textwidth}@{}}
+\toprule
+步骤 & 规划、运行与证据准入\\
+\midrule
+\endfirsthead
+\toprule
+步骤 & 规划、运行与证据准入（续）\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+01 & 审核每个输入字段的来源、单位和时间轴；保存原始文件、变换规则及指纹。\\
+02 & \textbf{如果}工程字段来源未通过，结果身份限于程序验证/情景示例；不得输出真实工程绩效结论。\textbf{如果}时间轴或单位不合法，停止相应案例。\\
+03 & 生成候选和代表期，检查覆盖权重、建筑初末状态及储热状态；装配实际启用的源网荷储、RC与容量约束。\\
+04 & \textbf{如启用多目标}，用独立模型实例求两个词典序端点：先求主目标，再用显式容差约束主目标并求次目标；保存两阶段状态与上下界。\\
+05 & \textbf{对每个}启用的碳帽求成本最小解，核对系统总碳及数值可行性；单目标案例使用其已声明目标，不视为完成$\varepsilon$扫描。\\
+06 & \textbf{如果}无可行投资方案，保存状态并结束该案例；\textbf{否则}，保存全部投资和服务合同指纹并冻结投资。\\
+07 & \textbf{对完整服务年和独立供暖季}，在连续逐时输入上重求运行，按各自范围核对状态、总碳、资本与时钟。\\
+08 & \textbf{对每个建筑和时段}，独立复算RC状态；检查采样舒适、初末边界、冷热互斥和交付量，另核对储热及矩阵审计。\\
+09 & 年度逐源检查地源取排热账本；季节记录其约束启用范围。核对资本只计一次、费用分项及总碳口径。\\
+10 & \textbf{如有公平基准}，先核对同天气、建筑、舒适和服务条件，再计算差值；条件不一致时停止优越性比较。\\
+11 & \textbf{如果}来源、求解或审计未达到相应准入条件，保留问题与阶段身份；\textbf{否则}，输出该范围内可追溯的结果。\\
+12 & 遍历已配置案例后停止；时间受限解保留gap和上下界，不自动生成工程割，不把未执行的步骤写为实验成果。\\
+\end{longtable}
+\endgroup
+\end{document}

@@ -1,0 +1,1180 @@
+{
+  "reviewed_at_utc": "2026-10-02T03:00:17.296980+00:00",
+  "package_root": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002",
+  "review_mode": "read_only_limited_guyuan_review_no_network_no_package_code_execution",
+  "lineage": {
+    "package_code_root": "C:/Users/27895/Desktop/小挑/north_heat_challenge_heating_season_code_20260825",
+    "package_paper": "15.pdf",
+    "current_workspace": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge",
+    "current_paper_lineage": "V10/latest16 LaTeX, as current task context; not retargeted by package",
+    "historical_README_final_15pdf_statement_is_current_user_instruction": false,
+    "package_old_code_2R2C_absence_claim_applied_to_current_V10": false,
+    "package_passed_tests_or_entrypoint_claim_certifies_current_V10": false
+  },
+  "read_coverage": {
+    "readme_and_conclusion_read_fully": true,
+    "assumptions_files": {
+      "updated_input_field_provenance.csv": {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\assumptions\\updated_input_field_provenance.csv",
+        "headers": [
+          "profile",
+          "dataset",
+          "year",
+          "column",
+          "evidence_status",
+          "unit_hint",
+          "source",
+          "scope"
+        ],
+        "all_rows": 278,
+        "guyuan_rows": 86,
+        "all_guyuan_rows_parsed": true,
+        "evidence_status_counts": {
+          "calendar_or_model_structure": 16,
+          "inherited_tariff_reference_NOT_full_period_verified": 6,
+          "verified_national_2023_average_with_cross_year_reference_use": 6,
+          "verified_public_grid_proxy": 9,
+          "synthetic_load_proxy_NOT_measured": 24,
+          "derived_from_verified_weather": 13,
+          "inherited_scenario_assumption_NOT_measured": 12
+        },
+        "dataset_counts": {
+          "annual": 65,
+          "season": 21
+        },
+        "field_classifications": [
+          {
+            "column": "biomass_delivery_availability",
+            "evidence_status": "inherited_scenario_assumption_NOT_measured"
+          },
+          {
+            "column": "boundary_group",
+            "evidence_status": "calendar_or_model_structure"
+          },
+          {
+            "column": "demand_a_high",
+            "evidence_status": "synthetic_load_proxy_NOT_measured"
+          },
+          {
+            "column": "demand_a_low",
+            "evidence_status": "synthetic_load_proxy_NOT_measured"
+          },
+          {
+            "column": "demand_b_high",
+            "evidence_status": "synthetic_load_proxy_NOT_measured"
+          },
+          {
+            "column": "demand_b_low",
+            "evidence_status": "synthetic_load_proxy_NOT_measured"
+          },
+          {
+            "column": "electricity_price",
+            "evidence_status": "inherited_tariff_reference_NOT_full_period_verified"
+          },
+          {
+            "column": "grid_availability",
+            "evidence_status": "inherited_scenario_assumption_NOT_measured"
+          },
+          {
+            "column": "grid_emission_factor",
+            "evidence_status": "verified_national_2023_average_with_cross_year_reference_use"
+          },
+          {
+            "column": "heating_degree_c",
+            "evidence_status": "derived_from_verified_weather"
+          },
+          {
+            "column": "outdoor_temp",
+            "evidence_status": "verified_public_grid_proxy"
+          },
+          {
+            "column": "period_weight",
+            "evidence_status": "calendar_or_model_structure"
+          },
+          {
+            "column": "relative_humidity",
+            "evidence_status": "derived_from_verified_weather"
+          },
+          {
+            "column": "relative_humidity_pct",
+            "evidence_status": "verified_public_grid_proxy"
+          },
+          {
+            "column": "scenario",
+            "evidence_status": "calendar_or_model_structure"
+          },
+          {
+            "column": "scenario_probability",
+            "evidence_status": "calendar_or_model_structure"
+          },
+          {
+            "column": "solar_heat_availability",
+            "evidence_status": "derived_from_verified_weather"
+          },
+          {
+            "column": "solar_irradiation_wh_m2",
+            "evidence_status": "verified_public_grid_proxy"
+          },
+          {
+            "column": "time",
+            "evidence_status": "calendar_or_model_structure"
+          },
+          {
+            "column": "timestamp",
+            "evidence_status": "calendar_or_model_structure"
+          },
+          {
+            "column": "wind_speed_10m_m_s",
+            "evidence_status": "verified_public_grid_proxy"
+          }
+        ]
+      },
+      "config_parameter_register.csv": {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\assumptions\\config_parameter_register.csv",
+        "headers": [
+          "profile",
+          "config_kind",
+          "field_path",
+          "value",
+          "unit_hint",
+          "evidence_status",
+          "origin_config",
+          "action",
+          "paper_evidence_level",
+          "uncertainty_lower",
+          "uncertainty_upper",
+          "bounds_status"
+        ],
+        "all_rows": 1742,
+        "guyuan_rows": 581,
+        "all_guyuan_rows_parsed": true,
+        "evidence_status_counts": {
+          "inherited_model_setting_or_assumption_NOT_project_verified": 581
+        },
+        "config_kind_counts": {
+          "season": 292,
+          "annual": 289
+        },
+        "bounds_status_counts": {
+          "unknown_not_invented": 581
+        },
+        "nonempty_uncertainty_bounds_rows": 0,
+        "selected_examples_not_verified_project_values": [
+          {
+            "config_kind": "season",
+            "field_path": "nodes[district_a].thermal_inertia.high.thermal_capacity_kwh_per_c",
+            "value": "600",
+            "unit_hint": "kWh/K",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\heating_season_2024_2025\\config_overlays\\scenario2_guyuan.yaml"
+          },
+          {
+            "config_kind": "season",
+            "field_path": "sources[distributed_air_hp_b].cop_min",
+            "value": "1.45",
+            "unit_hint": "按字段名/代码定义；需复核",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\heating_season_2024_2025\\config_overlays\\scenario2_guyuan.yaml"
+          },
+          {
+            "config_kind": "season",
+            "field_path": "sources[distributed_air_hp_b].cop_max",
+            "value": "4.2",
+            "unit_hint": "按字段名/代码定义；需复核",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\heating_season_2024_2025\\config_overlays\\scenario2_guyuan.yaml"
+          },
+          {
+            "config_kind": "season",
+            "field_path": "biomass_supply_chains[county_residue_chain].lower_heating_value_kwh_per_kg",
+            "value": "4.15",
+            "unit_hint": "按字段名/代码定义；需复核",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\heating_season_2024_2025\\config_overlays\\scenario2_guyuan.yaml"
+          },
+          {
+            "config_kind": "season",
+            "field_path": "biomass_supply_chains[county_residue_chain].procurement_cost_yuan_per_kg",
+            "value": "1.0",
+            "unit_hint": "CNY/kg",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\heating_season_2024_2025\\config_overlays\\scenario2_guyuan.yaml"
+          },
+          {
+            "config_kind": "season",
+            "field_path": "biomass_supply_chains[county_residue_chain].annual_supply_limit_kg",
+            "value": "2100000",
+            "unit_hint": "按字段名/代码定义；需复核",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\heating_season_2024_2025\\config_overlays\\scenario2_guyuan.yaml"
+          },
+          {
+            "config_kind": "annual",
+            "field_path": "planning.electricity_tariff_scope",
+            "value": "\"prototype_business_tariff_unverified\"",
+            "unit_hint": "按字段名/代码定义；需复核",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\public_scenario_inputs\\scenario2_guyuan_evidence_public.yaml"
+          },
+          {
+            "config_kind": "annual",
+            "field_path": "nodes[district_a].thermal_inertia.high.thermal_capacity_kwh_per_c",
+            "value": "600",
+            "unit_hint": "kWh/K",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\public_scenario_inputs\\scenario2_guyuan_evidence_public.yaml"
+          },
+          {
+            "config_kind": "annual",
+            "field_path": "sources[distributed_air_hp_b].cop_min",
+            "value": "1.45",
+            "unit_hint": "按字段名/代码定义；需复核",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\public_scenario_inputs\\scenario2_guyuan_evidence_public.yaml"
+          },
+          {
+            "config_kind": "annual",
+            "field_path": "sources[distributed_air_hp_b].cop_max",
+            "value": "4.2",
+            "unit_hint": "按字段名/代码定义；需复核",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\public_scenario_inputs\\scenario2_guyuan_evidence_public.yaml"
+          },
+          {
+            "config_kind": "annual",
+            "field_path": "biomass_supply_chains[county_residue_chain].lower_heating_value_kwh_per_kg",
+            "value": "4.15",
+            "unit_hint": "按字段名/代码定义；需复核",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\public_scenario_inputs\\scenario2_guyuan_evidence_public.yaml"
+          },
+          {
+            "config_kind": "annual",
+            "field_path": "biomass_supply_chains[county_residue_chain].procurement_cost_yuan_per_kg",
+            "value": "1.0",
+            "unit_hint": "CNY/kg",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\public_scenario_inputs\\scenario2_guyuan_evidence_public.yaml"
+          },
+          {
+            "config_kind": "annual",
+            "field_path": "biomass_supply_chains[county_residue_chain].annual_supply_limit_kg",
+            "value": "2100000",
+            "unit_hint": "按字段名/代码定义；需复核",
+            "evidence_status": "inherited_model_setting_or_assumption_NOT_project_verified",
+            "origin_config": "C:\\Users\\27895\\Desktop\\小挑\\north_heat_challenge_heating_season_code_20260825\\data\\public_scenario_inputs\\scenario2_guyuan_evidence_public.yaml"
+          }
+        ]
+      },
+      "existing_code_source_leads_NOT_reverified.csv": {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\assumptions\\existing_code_source_leads_NOT_reverified.csv",
+        "headers": [
+          "source_id",
+          "scenario",
+          "category",
+          "publisher",
+          "title",
+          "url",
+          "data_year",
+          "authority",
+          "use_in_model",
+          "caveat",
+          "retrieved_at_utc"
+        ],
+        "all_rows": 67,
+        "guyuan_rows": 14,
+        "all_guyuan_rows_parsed": true,
+        "source_leads_NOT_reverified": [
+          {
+            "source_id": "S2_GUYUAN_PLAN",
+            "category": "分散清洁取暖规划",
+            "title": "固原市清洁取暖专项规划",
+            "url": "https://www.nxgy.gov.cn/zwgk/zcwj/qtwj/jgzn_35170/202208/W020220822623460812528.pdf",
+            "caveat": "部分项目技术名称需按现行国家能效标准重新校准"
+          },
+          {
+            "source_id": "S2_GUYUAN_STRAW_2024",
+            "category": "生物质资源量",
+            "title": "2024年度固原市固体废物污染环境防治信息",
+            "url": "https://www.nxgy.gov.cn/zwgk/zfxxgkml/jgzn_38938/hjbh/hbgs/202505/t20250530_4923067.html",
+            "caveat": "可收集量不等于可供供热量，必须扣除饲料化、肥料化等既有用途"
+          },
+          {
+            "source_id": "S2_DATONG_ASHP_2023",
+            "category": "农村煤改电工程",
+            "title": "大通县冬季清洁取暖热源侧煤改电项目合同",
+            "url": "https://www.qhdzzbfw.gov.cn/ggzy/fpgj/012005/20240513/8eb30e3d-cf77-46c1-82be-819f3aa2d3e6.html",
+            "caveat": "高海拔异地项目，设备容量与气候修正不可直接照搬固原"
+          },
+          {
+            "source_id": "S2_NX_BIOMASS_REPLY_2025",
+            "category": "生物质资源/竞争用途/颗粒市场",
+            "title": "关于自治区政协十三届三次会议第508号提案答复的函",
+            "url": "https://nynct.nx.gov.cn/zwgk/zfxxgkml/tajybljggk/202512/t20251223_5116803.html",
+            "caveat": "自治区总量不能直接当作固原项目可签约量；吴忠与固原合计产能也不能无分配依据地全部归入本项目"
+          },
+          {
+            "source_id": "S2_GUYUAN_STATS_2024",
+            "category": "农业统计/作物资源",
+            "title": "固原市2024年国民经济和社会发展统计公报",
+            "url": "https://www.nxgy.gov.cn/zwgk/zfxxgkml/tjxx/tjfx/202507/t20250701_4949688.html",
+            "caveat": "作物产量必须再乘草谷比、可收集系数并扣除饲料化和还田等竞争用途，不能直接作为燃料量"
+          },
+          {
+            "source_id": "S2_MOA_STRAW_LEDGER_2019",
+            "category": "秸秆资源核算方法",
+            "title": "农作物秸秆资源台账制度",
+            "url": "https://www.moa.gov.cn/nybgb/2019/201902/201905/P020190518382510679732.pdf",
+            "caveat": "推荐系数需要用宁夏或固原实测系数更新；该文件给出核算方法而非固原结果"
+          },
+          {
+            "source_id": "S2_GUYUAN_ASHP_PROCUREMENT_2024",
+            "category": "空气源热泵政府采购",
+            "title": "固原市城区散煤取暖用户热源清洁化改造工程项目四期十四标段采购需求",
+            "url": "https://www.ccgp-ningxia.gov.cn/public/NXGPPNEW/dynamic/contents/CGXQ/content.jsp?cid=2076&id=8b80b23e90c3fcf80190c48d6f6e52c1&sid=1",
+            "caveat": "采购技术下限不等于长期实测性能；户均预算还包括电辅热、电热毯、配电和安装内容"
+          },
+          {
+            "source_id": "S2_STRAW_LOGISTICS_RESEARCH_2016",
+            "category": "秸秆收储运优化",
+            "title": "华北平原地区玉米秸秆连续供应模型的建立及应用",
+            "url": "https://www.aeeisp.com/nygcxb/article/doi/10.11975/j.issn.1002-6819.2016.19.028",
+            "caveat": "山东肥城10万吨原秸秆案例且价格年份较早，只能用于模型结构与比例敏感性，不能替代固原成品颗粒价格"
+          },
+          {
+            "source_id": "S2_GUYUAN_HOUSEHOLD_CASE_2024",
+            "category": "农户运行费用/用户负担",
+            "title": "清洁能源让百姓过上干净暖冬",
+            "url": "https://www.nxgy.gov.cn/xwzx/gyyw/202411/t20241126_4738785.html",
+            "caveat": "单户受访案例未披露建筑面积、设定温度和逐日气象，只能作为账单校验点而非总体均值"
+          },
+          {
+            "source_id": "S2_YUANZHOU_SUBSIDY_2023",
+            "category": "清洁取暖补贴/资金分担",
+            "title": "原州区2023年度北方地区冬季清洁取暖项目实施方案",
+            "url": "https://www.yzh.gov.cn/zzb/zcwj_68006/202312/t20231208_4376786.html",
+            "caveat": "财政政策明确补建设不补运行；年度补贴标准不能自动外推至后续年份"
+          },
+          {
+            "source_id": "S2_GUYUAN_RURAL_INCOME_2025",
+            "category": "农村居民收入/能源负担",
+            "title": "固原市聚焦农民增收核心构建多元驱动体系推动农村居民收入稳步提升",
+            "url": "https://www.nxgy.gov.cn/zwgk/zfxxgkml/jzfp_1/xczxgzdt/202603/t20260316_5194210.html",
+            "caveat": "人均平均收入不能替代家庭人口、收入分位和脱贫监测户收入调查"
+          },
+          {
+            "source_id": "S2_GUYUAN_IMPLEMENTATION_2022",
+            "category": "清洁取暖投资/转型时序/能源保供",
+            "title": "固原市冬季清洁取暖项目实施方案",
+            "url": "https://www.nxgy.gov.cn/zwgk/zcwj/qtwj/jgzn_35170/202208/t20220819_3678909.html",
+            "caveat": "规划投资不等于项目最终结算；各子项目成本需进一步拆分"
+          },
+          {
+            "source_id": "S2_GUYUAN_GRID_ZHANGYI_2024",
+            "category": "农村电网扩容项目",
+            "title": "固原供电助力土豆豆变金豆豆",
+            "url": "https://www.nxgy.gov.cn/zzb/gyyw_67229/202411/t20241128_4741619.html",
+            "caveat": "页面未披露新增变电容量，不能用总投资反算通用元每千瓦造价"
+          },
+          {
+            "source_id": "S2_MIIT_BATTERY_RULE_2024",
+            "category": "储能电池寿命/安全质量",
+            "title": "锂离子电池行业规范条件（2024年本）",
+            "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20246/1b2c425b31524352a0ea0571b51f1d9b.pdf",
+            "caveat": "属行业引导性条件；实验循环寿命不等于固原低温环境下的日历寿命"
+          }
+        ]
+      }
+    },
+    "to_fill": [
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\building_2R2C_parameters_to_fill.csv",
+        "headers": [
+          "profile",
+          "node_id",
+          "grade",
+          "demand_column",
+          "building_id",
+          "floor_area_m2",
+          "building_volume_m3",
+          "building_use",
+          "terminal_type",
+          "Ca_kWh_per_K",
+          "Cm_kWh_per_K",
+          "R_air_mass_K_per_kW",
+          "UA_envelope_kW_per_K",
+          "ventilation_m3_per_h",
+          "infiltration_ACH",
+          "initial_air_temp_C",
+          "initial_mass_temp_C",
+          "internal_gain_kW_file",
+          "solar_gain_kW_file",
+          "measured_indoor_temp_C_file",
+          "calibration_period",
+          "heldout_validation_period",
+          "RC_topology_definition_file",
+          "data_status",
+          "source_url_or_file",
+          "evidence_date",
+          "uncertainty_lower",
+          "uncertainty_upper"
+        ],
+        "all_rows": 10,
+        "guyuan_rows": 4,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [
+          "missing_project_measurements; planned_2R2C_interface"
+        ],
+        "review_result": "固原实体标识/待填状态存在，测量、报价、证据字段全空"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\building_parameters_to_fill.csv",
+        "headers": [
+          "profile",
+          "node_id",
+          "grade",
+          "demand_column",
+          "building_id",
+          "floor_area_m2",
+          "building_use",
+          "H_W_per_K",
+          "C_J_per_K",
+          "indoor_initial_temperature_C",
+          "occupancy_measured_file",
+          "internal_gains_W_file",
+          "data_status",
+          "source_url_or_file"
+        ],
+        "all_rows": 10,
+        "guyuan_rows": 4,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [
+          "missing_measured_data"
+        ],
+        "review_result": "固原实体标识/待填状态存在，测量、报价、证据字段全空"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\building_services_hourly_to_fill.csv",
+        "headers": [
+          "timestamp_Asia_Shanghai",
+          "profile",
+          "node_id",
+          "building_id",
+          "heat_kW",
+          "cooling_kW",
+          "DHW_kW",
+          "occupancy_fraction",
+          "internal_gain_kW",
+          "solar_gain_kW",
+          "indoor_temp_C",
+          "indoor_RH_pct",
+          "ventilation_m3_per_h",
+          "terminal_supply_temp_C",
+          "terminal_return_temp_C",
+          "data_status",
+          "source_url_or_file",
+          "evidence_date",
+          "uncertainty_lower",
+          "uncertainty_upper"
+        ],
+        "all_rows": 0,
+        "guyuan_rows": 0,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [],
+        "review_result": "仅表头，无任何城市观测行"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\cost_lifetime_to_fill.csv",
+        "headers": [
+          "profile",
+          "asset_type",
+          "asset_id",
+          "capex_CNY",
+          "capex_unit_basis",
+          "fixed_opex_CNY_per_year",
+          "variable_opex_CNY_per_kWh",
+          "lifetime_years",
+          "residual_value_CNY",
+          "retirement_cost_CNY",
+          "logistics_CNY_per_t",
+          "warehouse_CNY_per_year",
+          "staff_CNY_per_year",
+          "noise_control_CNY",
+          "quote_valid_until",
+          "tax_included",
+          "data_status",
+          "source_url_or_file",
+          "evidence_date",
+          "uncertainty_lower",
+          "uncertainty_upper"
+        ],
+        "all_rows": 32,
+        "guyuan_rows": 10,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [
+          "missing_project_quote_or_design"
+        ],
+        "review_result": "固原实体标识/待填状态存在，测量、报价、证据字段全空"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\GIS_assets_to_fill.csv",
+        "headers": [
+          "profile",
+          "asset_type",
+          "asset_id",
+          "node_id",
+          "longitude",
+          "latitude",
+          "CRS",
+          "geometry_WKT",
+          "road_id",
+          "parcel_id",
+          "length_m",
+          "diameter_mm",
+          "commission_year",
+          "current_status",
+          "retirement_year",
+          "underground_constraint_file",
+          "noise_sensitive_site_file",
+          "data_status",
+          "source_url_or_file",
+          "evidence_date",
+          "uncertainty_lower",
+          "uncertainty_upper"
+        ],
+        "all_rows": 41,
+        "guyuan_rows": 13,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [
+          "missing_project_GIS; code_xy_not_georeferenced"
+        ],
+        "review_result": "固原实体标识/待填状态存在，测量、报价、证据字段全空"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\grid_carbon_reliability_hourly_to_fill.csv",
+        "headers": [
+          "timestamp_Asia_Shanghai",
+          "profile",
+          "node_id",
+          "electricity_price_CNY_per_kWh",
+          "marginal_carbon_kgCO2_per_kWh",
+          "marginal_factor_method",
+          "transformer_capacity_kVA",
+          "power_factor",
+          "available_grid_kW",
+          "grid_outage_flag",
+          "capacity_expansion_quote_file",
+          "data_status",
+          "source_url_or_file",
+          "evidence_date",
+          "uncertainty_lower",
+          "uncertainty_upper"
+        ],
+        "all_rows": 0,
+        "guyuan_rows": 0,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [],
+        "review_result": "仅表头，无任何城市观测行"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\measured_hourly_data_template.csv",
+        "headers": [
+          "timestamp_Asia_Shanghai",
+          "profile",
+          "building_id",
+          "node_id",
+          "indoor_temp_C",
+          "measured_heat_kW",
+          "measured_cooling_kW",
+          "occupancy_fraction",
+          "internal_gains_W",
+          "source_file"
+        ],
+        "all_rows": 0,
+        "guyuan_rows": 0,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [],
+        "review_result": "仅表头，无任何城市观测行"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\operation_5_to_60min_to_fill.csv",
+        "headers": [
+          "timestamp_Asia_Shanghai",
+          "interval_minutes",
+          "profile",
+          "asset_id",
+          "node_id",
+          "heat_power_kW",
+          "electric_power_kW",
+          "heat_energy_kWh_interval",
+          "volume_flow_m3_per_h",
+          "mass_flow_kg_per_s",
+          "pressure_supply_kPa",
+          "pressure_return_kPa",
+          "supply_temp_C",
+          "return_temp_C",
+          "indoor_temp_C",
+          "indoor_RH_pct",
+          "on_off",
+          "CHP_heat_kW",
+          "CHP_electric_kW",
+          "sensor_id",
+          "quality_flag",
+          "data_status",
+          "source_url_or_file",
+          "evidence_date",
+          "uncertainty_lower",
+          "uncertainty_upper"
+        ],
+        "all_rows": 0,
+        "guyuan_rows": 0,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [],
+        "review_result": "仅表头，无任何城市观测行"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\pipe_parameters_to_fill.csv",
+        "headers": [
+          "profile",
+          "pipe_id",
+          "from_node",
+          "to_node",
+          "length_verified_m",
+          "diameter_verified_mm",
+          "GIS_WKT",
+          "capacity_verified_kw",
+          "capex_quote_CNY_per_m",
+          "pump_curve_file",
+          "source_url_or_file",
+          "data_status"
+        ],
+        "all_rows": 6,
+        "guyuan_rows": 2,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [
+          "missing_project_evidence"
+        ],
+        "review_result": "固原实体标识/待填状态存在，测量、报价、证据字段全空"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\source_parameters_to_fill.csv",
+        "headers": [
+          "profile",
+          "source_id",
+          "node_id",
+          "capacity_verified_kw",
+          "available_heat_temperature_C_file",
+          "available_heat_kw_file",
+          "COP_curve_file",
+          "capex_quote_CNY_per_kW",
+          "opex_CNY_per_kWh",
+          "source_url_or_file",
+          "data_status"
+        ],
+        "all_rows": 20,
+        "guyuan_rows": 6,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [
+          "missing_project_evidence"
+        ],
+        "review_result": "固原实体标识/待填状态存在，测量、报价、证据字段全空"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\source_resource_hourly_to_fill.csv",
+        "headers": [
+          "timestamp_Asia_Shanghai",
+          "interval_minutes",
+          "profile",
+          "source_id",
+          "node_id",
+          "available_heat_kW",
+          "source_temp_C",
+          "availability_fraction",
+          "outage_flag",
+          "maintenance_flag",
+          "biomass_stock_kg",
+          "biomass_delivery_kg",
+          "biomass_LHV_kWh_per_kg",
+          "biomass_origin",
+          "water_ground_permit_file",
+          "data_status",
+          "source_url_or_file",
+          "evidence_date",
+          "uncertainty_lower",
+          "uncertainty_upper"
+        ],
+        "all_rows": 0,
+        "guyuan_rows": 0,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [],
+        "review_result": "仅表头，无任何城市观测行"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\storage_parameters_to_fill.csv",
+        "headers": [
+          "profile",
+          "storage_id",
+          "node_id",
+          "grade",
+          "verified_capacity_kWh",
+          "charge_power_kW",
+          "discharge_power_kW",
+          "efficiency_measured",
+          "soil_test_file",
+          "capex_quote_CNY_per_kWh",
+          "source_url_or_file",
+          "data_status"
+        ],
+        "all_rows": 6,
+        "guyuan_rows": 2,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [
+          "missing_project_evidence"
+        ],
+        "review_result": "固原实体标识/待填状态存在，测量、报价、证据字段全空"
+      },
+      {
+        "local_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\tariff_months_to_fill.csv",
+        "headers": [
+          "profile",
+          "year",
+          "month",
+          "user_class",
+          "voltage_class",
+          "sharp_CNY_per_kWh",
+          "peak_CNY_per_kWh",
+          "flat_CNY_per_kWh",
+          "valley_CNY_per_kWh",
+          "capacity_fee_CNY_per_kVA_month",
+          "demand_fee_CNY_per_kW_month",
+          "valid_from",
+          "valid_until",
+          "source_url",
+          "status"
+        ],
+        "all_rows": 21,
+        "guyuan_rows": 7,
+        "guyuan_payload_nonempty_cells": [],
+        "status_values": [
+          "missing_full_month_evidence"
+        ],
+        "review_result": "固原实体标识/待填状态存在，测量、报价、证据字段全空"
+      }
+    ],
+    "guyuan_and_ningxia_archived_policy_files": [
+      {
+        "source_id": "固原清洁取暖实施方案",
+        "source_url": "https://www.nxgy.gov.cn/zwgk/zcwj/qtwj/jgzn_35170/202208/t20220819_3678909.html",
+        "actual_title": "固原市人民政府办公室关于印发《固原市冬季清洁取暖项目实施方案》的通知",
+        "displayed_publication_date": "2022-07-28 15:15",
+        "issue_date": "2022-07-28",
+        "document_number": "固政办发〔2022〕35号",
+        "applicable_year_or_period": "2022—2024计划",
+        "is_draft": false,
+        "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原清洁取暖实施方案_原始网页.html",
+        "sha256": "70efa0e3687aced5a8178159caaeb2264ffe3b7eaf0a39d20414842b939f8298",
+        "text_extract_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原清洁取暖实施方案_网页文本.txt",
+        "table_extract_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原清洁取暖实施方案_表格.json",
+        "table_count": 4,
+        "package_claimed_retrieval_date": "2026-10-02 Asia/Shanghai",
+        "acquisition_method_this_review": "read provided local package cache; no new network download or recheck",
+        "independent_network_authentication_this_review": false,
+        "duplicates_current_source_intake_url": true,
+        "limitation": "已取得同URL新原件；包缓存不是独立第二来源"
+      },
+      {
+        "source_id": "固原三营镇清洁取暖招标",
+        "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+        "actual_title": "原州区三营镇人民政府2024年度北方地区冬季清洁取暖项目招标公告",
+        "displayed_publication_date": "2025-01-06 16:53",
+        "issue_date": "2025-01-06",
+        "document_number": "采购计划2025NCZ(GY)000004；项目SSGDZTB2024362",
+        "applicable_year_or_period": "2024年度项目，2025公告",
+        "is_draft": false,
+        "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+        "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+        "text_extract_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_网页文本.txt",
+        "table_extract_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_表格.json",
+        "table_count": 3,
+        "package_claimed_retrieval_date": "2026-10-02 Asia/Shanghai",
+        "acquisition_method_this_review": "read provided local package cache; no new network download or recheck",
+        "independent_network_authentication_this_review": false,
+        "duplicates_current_source_intake_url": false,
+        "limitation": "公开招标公告，未取得成交合同及所链接招标文件"
+      },
+      {
+        "source_id": "宁夏分时电价政策2023",
+        "source_url": "https://fzggw.nx.gov.cn/tzgg/202301/t20230104_3903225.html",
+        "actual_title": "自治区发展改革委关于优化峰谷分时电价机制的通知",
+        "displayed_publication_date": "2023-01-04 18:06",
+        "issue_date": "2023-01-04",
+        "document_number": "宁发改价格（管理）〔2023〕7号",
+        "applicable_year_or_period": "2023通知，部分表计设置自2023-04-01",
+        "is_draft": false,
+        "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏分时电价政策2023_原始网页.html",
+        "sha256": "145aeb5e0a49d93a1c8682e9937ca11a63f631eadd0775c8839b99ede9d673ac",
+        "text_extract_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏分时电价政策2023_网页文本.txt",
+        "table_extract_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏分时电价政策2023_表格.json",
+        "table_count": 0,
+        "package_claimed_retrieval_date": "2026-10-02 Asia/Shanghai",
+        "acquisition_method_this_review": "read provided local package cache; no new network download or recheck",
+        "independent_network_authentication_this_review": false,
+        "duplicates_current_source_intake_url": true,
+        "limitation": "本轮官方替代已取得同URL新原件；包缓存不构成独立证据"
+      },
+      {
+        "source_id": "宁夏中长期电力交易2024",
+        "source_url": "https://fzggw.nx.gov.cn/tzgg/202312/t20231208_4376776.html",
+        "actual_title": "自治区发展改革委关于做好2024年电力中长期交易有关事项的通知",
+        "displayed_publication_date": "2023-12-08 09:36",
+        "issue_date": "2023-12-07",
+        "document_number": "宁发改运行〔2023〕807号",
+        "applicable_year_or_period": "2024年交易规则",
+        "is_draft": false,
+        "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏中长期电力交易2024_原始网页.html",
+        "sha256": "534cac2cc1f75a6b39ddd42c0a3717ff946bcddc95f4f8479362f838b0211f9e",
+        "text_extract_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏中长期电力交易2024_网页文本.txt",
+        "table_extract_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏中长期电力交易2024_表格.json",
+        "table_count": 0,
+        "package_claimed_retrieval_date": "2026-10-02 Asia/Shanghai",
+        "acquisition_method_this_review": "read provided local package cache; no new network download or recheck",
+        "independent_network_authentication_this_review": false,
+        "duplicates_current_source_intake_url": false,
+        "limitation": "正式年度交易通知；未核查2025/2026修订与实际项目账单"
+      }
+    ],
+    "archived_policy_raw_HTML_and_text_and_all_tables_read": true,
+    "NASA_raw_values_or_full_package_hash_validation_performed": false,
+    "NASA_and_global_hash_validation_owner": "current main C0 task"
+  },
+  "guyuan_evidence_findings": {
+    "input_provenance": "气象为公共网格代理，湿度/太阳能可用性部分派生；热负荷为合成代理，生物质交付/电网可用性为假设，电价全期未核实，全国2023碳因子跨年参考。仅核实包内标签，未独立重算NASA。",
+    "configuration_register": "固原581条配置均标为未获项目证实；不确定性上下界全空。热容600/420/480/340等、COP1.45等、生物质2100000kg/年与1元/kg均为旧工程假设，不是来源核实量。",
+    "to_fill": "13张模板中8张有固原标识行，共48行；所有测量/报价/证据有效载荷字段空。另5张时序模板仅表头。",
+    "duplicate_policies": "2022实施方案与2023分时通知复用相同URL，不是新增独立来源；计划与补贴不补H/C。",
+    "procurement": "193台热泵/193万元预算；预算派生1万元/台。无额定容量与型号化COP工况，附件3个下载链接未取证；包内未包含相应招标文件PDF。",
+    "trade_2024": "50%/30%与正式2024通知存在对应申报价上下限依据；不是直接认证Word征求意见稿，不能写成固定到户倍率。",
+    "sharp_deep_80pct": "2024正文十一第1项明确另行制定；本包不能认证Word尖峰/深谷80%执行规则。",
+    "heating_period": "2024-10-15至2025-04-16的4392h是包模拟窗口，不替代2019供热服务公示11/01至04/15，不统一所有对象为183天。"
+  },
+  "additional_source_content_facts": [
+    {
+      "fact_id": "GY_PKG_001",
+      "indicator": "热泵需求数量",
+      "value": 193,
+      "unit": "台",
+      "region": "固原原州区三营镇",
+      "applicable_year_or_period": "2024年度项目，2025公告",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+      "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+      "original_location": "正文一、项目基本情况/采购需求；提取表2 一标段",
+      "fact_type": "采购公告需求数量/预算",
+      "equipment_and_operating_conditions": "未载设备型号化测试工况",
+      "mappable_model_fields": [
+        "项目采购范围/预算旁证；不能覆盖模型CAPEX"
+      ],
+      "missing_applicability_conditions": [
+        "预算/需求数量不是成交数量或实际设备CAPEX",
+        "缺招标文件、额定制热容量、具体型号、低温测试及成交合同"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_002",
+      "indicator": "热泵标段预算",
+      "value": 1930000,
+      "unit": "元",
+      "region": "固原原州区三营镇",
+      "applicable_year_or_period": "2024年度项目，2025公告",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+      "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+      "original_location": "正文一、项目基本情况/采购需求；提取表2 一标段",
+      "fact_type": "采购公告需求数量/预算",
+      "equipment_and_operating_conditions": "未载设备型号化测试工况",
+      "mappable_model_fields": [
+        "项目采购范围/预算旁证；不能覆盖模型CAPEX"
+      ],
+      "missing_applicability_conditions": [
+        "预算/需求数量不是成交数量或实际设备CAPEX",
+        "缺招标文件、额定制热容量、具体型号、低温测试及成交合同"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_003",
+      "indicator": "燃气壁挂炉需求数量",
+      "value": 548,
+      "unit": "台",
+      "region": "固原原州区三营镇",
+      "applicable_year_or_period": "2024年度项目，2025公告",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+      "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+      "original_location": "正文一、项目基本情况/采购需求；提取表2 二标段",
+      "fact_type": "采购公告需求数量/预算",
+      "equipment_and_operating_conditions": "未载设备型号化测试工况",
+      "mappable_model_fields": [
+        "项目采购范围/预算旁证；不能覆盖模型CAPEX"
+      ],
+      "missing_applicability_conditions": [
+        "预算/需求数量不是成交数量或实际设备CAPEX",
+        "缺招标文件、额定制热容量、具体型号、低温测试及成交合同"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_004",
+      "indicator": "燃气壁挂炉标段预算",
+      "value": 5096400,
+      "unit": "元",
+      "region": "固原原州区三营镇",
+      "applicable_year_or_period": "2024年度项目，2025公告",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+      "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+      "original_location": "正文一、项目基本情况/采购需求；提取表2 二标段",
+      "fact_type": "采购公告需求数量/预算",
+      "equipment_and_operating_conditions": "未载设备型号化测试工况",
+      "mappable_model_fields": [
+        "项目采购范围/预算旁证；不能覆盖模型CAPEX"
+      ],
+      "missing_applicability_conditions": [
+        "预算/需求数量不是成交数量或实际设备CAPEX",
+        "缺招标文件、额定制热容量、具体型号、低温测试及成交合同"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_005",
+      "indicator": "燃气壁挂炉需求数量",
+      "value": 800,
+      "unit": "台",
+      "region": "固原原州区三营镇",
+      "applicable_year_or_period": "2024年度项目，2025公告",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+      "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+      "original_location": "正文一、项目基本情况/采购需求；提取表2 三标段",
+      "fact_type": "采购公告需求数量/预算",
+      "equipment_and_operating_conditions": "未载设备型号化测试工况",
+      "mappable_model_fields": [
+        "项目采购范围/预算旁证；不能覆盖模型CAPEX"
+      ],
+      "missing_applicability_conditions": [
+        "预算/需求数量不是成交数量或实际设备CAPEX",
+        "缺招标文件、额定制热容量、具体型号、低温测试及成交合同"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_006",
+      "indicator": "燃气壁挂炉标段预算",
+      "value": 7440000,
+      "unit": "元",
+      "region": "固原原州区三营镇",
+      "applicable_year_or_period": "2024年度项目，2025公告",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+      "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+      "original_location": "正文一、项目基本情况/采购需求；提取表2 三标段",
+      "fact_type": "采购公告需求数量/预算",
+      "equipment_and_operating_conditions": "未载设备型号化测试工况",
+      "mappable_model_fields": [
+        "项目采购范围/预算旁证；不能覆盖模型CAPEX"
+      ],
+      "missing_applicability_conditions": [
+        "预算/需求数量不是成交数量或实际设备CAPEX",
+        "缺招标文件、额定制热容量、具体型号、低温测试及成交合同"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_007",
+      "indicator": "需求数量合计",
+      "value": 1541,
+      "unit": "台",
+      "region": "固原原州区三营镇",
+      "applicable_year_or_period": "2024年度项目，2025公告",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+      "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+      "original_location": "正文一、项目基本情况/采购需求；提取表2 合计",
+      "fact_type": "采购公告需求数量/预算",
+      "equipment_and_operating_conditions": "未载设备型号化测试工况",
+      "mappable_model_fields": [
+        "项目采购范围/预算旁证；不能覆盖模型CAPEX"
+      ],
+      "missing_applicability_conditions": [
+        "预算/需求数量不是成交数量或实际设备CAPEX",
+        "缺招标文件、额定制热容量、具体型号、低温测试及成交合同"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_008",
+      "indicator": "项目预算合计",
+      "value": 14466400,
+      "unit": "元",
+      "region": "固原原州区三营镇",
+      "applicable_year_or_period": "2024年度项目，2025公告",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+      "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+      "original_location": "正文一、项目基本情况/采购需求；提取表2 合计",
+      "fact_type": "采购公告需求数量/预算",
+      "equipment_and_operating_conditions": "未载设备型号化测试工况",
+      "mappable_model_fields": [
+        "项目采购范围/预算旁证；不能覆盖模型CAPEX"
+      ],
+      "missing_applicability_conditions": [
+        "预算/需求数量不是成交数量或实际设备CAPEX",
+        "缺招标文件、额定制热容量、具体型号、低温测试及成交合同"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_009",
+      "indicator": "热泵标段预算除以需求数量",
+      "value": 10000.0,
+      "unit": "元/台",
+      "region": "固原原州区三营镇",
+      "applicable_year_or_period": "2024年度项目，2025公告",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202501/t20250106_24023585.htm",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\固原三营镇清洁取暖招标_原始网页.html",
+      "sha256": "1f48966639a9d00cd9379c23046bcff7f87a154842f0a429ae795aa165c525e7",
+      "original_location": "表2一标段；本轮计算1930000÷193",
+      "fact_type": "预算算术派生量",
+      "equipment_and_operating_conditions": "未载设备型号化测试工况",
+      "mappable_model_fields": [
+        "仅预算参考"
+      ],
+      "missing_applicability_conditions": [
+        "预算/需求数量不是成交数量或实际设备CAPEX",
+        "缺招标文件、额定制热容量、具体型号、低温测试及成交合同",
+        "不是元/kW热价格，不得转换而不补额定制热容量"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_010",
+      "indicator": "煤电峰段申报价/平价下限",
+      "value": 150,
+      "unit": "%平段申报价",
+      "region": "宁夏相应电力市场主体",
+      "applicable_year_or_period": "2024年交易规则",
+      "source_url": "https://fzggw.nx.gov.cn/tzgg/202312/t20231208_4376776.html",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏中长期电力交易2024_原始网页.html",
+      "sha256": "534cac2cc1f75a6b39ddd42c0a3717ff946bcddc95f4f8479362f838b0211f9e",
+      "original_location": "六、价格机制（一）",
+      "fact_type": "正式年度交易申报价约束",
+      "equipment_and_operating_conditions": "用户与煤电交易",
+      "mappable_model_fields": [
+        "年度电力交易规则约束/来源注释；不是electricity_price直接数值"
+      ],
+      "missing_applicability_conditions": [
+        "交易申报约束不是固定执行倍率或到户绝对电价",
+        "需用户类别、接入电压、当年月度交易/代理购电价、费用构成与实际账单",
+        "仅2024规则，不外推2025/2026或居民清洁供暖"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_011",
+      "indicator": "煤电谷段申报价/平价上限",
+      "value": 50,
+      "unit": "%平段申报价",
+      "region": "宁夏相应电力市场主体",
+      "applicable_year_or_period": "2024年交易规则",
+      "source_url": "https://fzggw.nx.gov.cn/tzgg/202312/t20231208_4376776.html",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏中长期电力交易2024_原始网页.html",
+      "sha256": "534cac2cc1f75a6b39ddd42c0a3717ff946bcddc95f4f8479362f838b0211f9e",
+      "original_location": "六、价格机制（一）",
+      "fact_type": "正式年度交易申报价约束",
+      "equipment_and_operating_conditions": "用户与煤电交易",
+      "mappable_model_fields": [
+        "年度电力交易规则约束/来源注释；不是electricity_price直接数值"
+      ],
+      "missing_applicability_conditions": [
+        "交易申报约束不是固定执行倍率或到户绝对电价",
+        "需用户类别、接入电压、当年月度交易/代理购电价、费用构成与实际账单",
+        "仅2024规则，不外推2025/2026或居民清洁供暖"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_012",
+      "indicator": "新能源峰段申报价/平价下限",
+      "value": 130,
+      "unit": "%平段申报价",
+      "region": "宁夏相应电力市场主体",
+      "applicable_year_or_period": "2024年交易规则",
+      "source_url": "https://fzggw.nx.gov.cn/tzgg/202312/t20231208_4376776.html",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏中长期电力交易2024_原始网页.html",
+      "sha256": "534cac2cc1f75a6b39ddd42c0a3717ff946bcddc95f4f8479362f838b0211f9e",
+      "original_location": "六、价格机制（二）",
+      "fact_type": "正式年度交易申报价约束",
+      "equipment_and_operating_conditions": "用户与新能源交易",
+      "mappable_model_fields": [
+        "年度电力交易规则约束/来源注释；不是electricity_price直接数值"
+      ],
+      "missing_applicability_conditions": [
+        "交易申报约束不是固定执行倍率或到户绝对电价",
+        "需用户类别、接入电压、当年月度交易/代理购电价、费用构成与实际账单",
+        "仅2024规则，不外推2025/2026或居民清洁供暖"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    },
+    {
+      "fact_id": "GY_PKG_013",
+      "indicator": "新能源谷段申报价/平价上限",
+      "value": 70,
+      "unit": "%平段申报价",
+      "region": "宁夏相应电力市场主体",
+      "applicable_year_or_period": "2024年交易规则",
+      "source_url": "https://fzggw.nx.gov.cn/tzgg/202312/t20231208_4376776.html",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\宁夏中长期电力交易2024_原始网页.html",
+      "sha256": "534cac2cc1f75a6b39ddd42c0a3717ff946bcddc95f4f8479362f838b0211f9e",
+      "original_location": "六、价格机制（二）",
+      "fact_type": "正式年度交易申报价约束",
+      "equipment_and_operating_conditions": "用户与新能源交易",
+      "mappable_model_fields": [
+        "年度电力交易规则约束/来源注释；不是electricity_price直接数值"
+      ],
+      "missing_applicability_conditions": [
+        "交易申报约束不是固定执行倍率或到户绝对电价",
+        "需用户类别、接入电压、当年月度交易/代理购电价、费用构成与实际账单",
+        "仅2024规则，不外推2025/2026或居民清洁供暖"
+      ],
+      "verification_scope": "提供包中缓存官方网页内容核实；非本轮向发布机构新取证",
+      "historical_inputs_modified": false
+    }
+  ],
+  "gaps": {
+    "H_C": "仍缺建筑几何/材料/U值/换气/热容或可标定监测",
+    "heat_pump_performance": "仍缺设备型号、室外干湿球、供回水/流量、制热量/输入功率、除霜/辅热边界",
+    "biomass": "仍缺项目供应合同吨数/季节上限、含水/低位热值、到场含税含运价格",
+    "commercial_tariff": "2024规则可作年度规则参考；模拟全期及2026实际项目绝对价格/资格未闭合",
+    "residential_tariff": "本轮已取得2026官方单价/时段；包不能补项目居民资格或回填2024/2025",
+    "thermal_storage_and_CAPEX": "仍缺热储能容量/功率/损失/寿命及项目报价；预算和电池报价不能直接补",
+    "pipes_and_grid": "仍缺GIS/水力/变压器/接入证明"
+  },
+  "H_C_gap_filled": false,
+  "model_specific_low_temperature_COP_verified": false,
+  "project_biomass_quantity_or_delivered_price_verified": false,
+  "historical_inputs_modified": false,
+  "files_written_only_under": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\guyuan"
+}

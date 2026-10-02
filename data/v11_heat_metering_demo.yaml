@@ -1,0 +1,27 @@
+extends: example_city.yaml
+
+# Illustrative assumptions for demonstrating the demand-side module only.
+# Replace coverage, saving response, household count and tariff with locally
+# audited data before using the output for a real city or a competition claim.
+nodes:
+  - name: district_a
+    heat_metering:
+      existing_coverage_fraction: 0.25
+      max_new_coverage_fraction: 0.65
+      saving_fraction_at_full_coverage: 0.08
+      capex_yuan_per_coverage_fraction: 1200000
+  - name: district_b
+    heat_metering:
+      existing_coverage_fraction: 0.15
+      max_new_coverage_fraction: 0.75
+      saving_fraction_at_full_coverage: 0.10
+      capex_yuan_per_coverage_fraction: 950000
+
+heat_tariff:
+  variable_tariff_yuan_per_kwh: 0.18
+  fixed_charge_yuan_per_household_year: 180
+  household_count: 1800
+
+policy:
+  minimum_heat_metering_coverage_fraction: 0.60
+  maximum_average_household_heat_bill_yuan_per_year: 3500

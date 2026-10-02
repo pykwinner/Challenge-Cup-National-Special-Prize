@@ -1,0 +1,29 @@
+{
+  "status": "downloaded_and_semantically_reviewed_before_fitting",
+  "access_date_Asia_Shanghai": "2026-10-01",
+  "selected_dataset": {
+    "title": "Twin House Experiment IEA EBC Annex 71 Validation of Building Energy Simulation Tools - Specifications and dataset",
+    "creators": ["Matthias Kersken", "Paul Strachan"],
+    "institution": "Fraunhofer Institute for Building Physics (IBP), Holzkirchen, Germany",
+    "publisher": "Fordatis, Research Data Repository of Fraunhofer-Gesellschaft",
+    "doi": "10.24406/fordatis/76.2",
+    "landing_url": "https://fordatis.fraunhofer.de/handle/fordatis/161.2?locale=en",
+    "version": "2 / fordatis/161.2, 2020-06-23",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Kersken, Matthias; Strachan, Paul (2020). Twin House Experiment IEA EBC Annex 71 Validation of Building Energy Simulation Tools - Specifications and dataset, version 2. Fraunhofer IBP / Fordatis. https://doi.org/10.24406/fordatis/76.2 . CC BY-SA 4.0. Derived observations and analysis identify their changes and retain attribution.",
+    "download_log": "evidence/downloads.json",
+    "measured_channels": "ten room-centre air temperatures, room electrical heater inputs and internal-heat-source inputs; on-site ambient temperature and solar irradiance",
+    "field_units": {"*_110_AT": "degC", "*_heat_elP": "W", "*_IHS_elP": "W", "AmbientAirTemperature": "degC", "Radiation_*": "W/m2"},
+    "field_semantics_evidence": "specification sections 3.1, 3.9, 3.16, 5.1, 6.1 and 6.2; room/equipment naming and magnitudes cross-checked against the workbooks",
+    "time": "10-minute averages, fixed UTC+1. Specification section 5.1 describes 1-second acquisition / 1-minute means; section 3.16 specifies 10-minute/hourly weather averages. Published DATE grids matched exactly.",
+    "rawness": "Files are original downloaded publication files, not untouched raw sensor readings: short failures have publisher interpolation/zero-fill. No row quality flags supplied.",
+    "not_used": "O5 records, simulated heating refills, setpoint columns, calculated DHW demand, calculated heat-pump or water-flow powers"
+  },
+  "attempts": [
+    {"source": "PH02 Bacher and Madsen / DTU CTSM-R Building 2", "url": "https://ctsm.info/building2.zip", "outcome": "Downloaded author example with measured Ta, Ph, yTi and Ps and explanatory PDF. ZIP has no licence notice; tutorial text and plot disagree on Ps W versus kW unit. Retained as discovery evidence only; not fitted or presented as licensed selected benchmark."},
+    {"source": "IEA Annex 58 Experiment 2, University of Strathclyde", "url": "https://pureportal.strath.ac.uk/en/datasets/twin-houses-empirical-validation-dataset-experiment-2/", "doi": "10.15129/94559779-e781-4318-8842-80a2b1201668", "outcome": "Institution landing page identifies creator Paul Strachan and CC BY 4.0; specification/structure/data file URLs returned HTTP 403 in web and ordinary HTTPS retrieval. No credentials or bypass attempted; not downloaded for analysis."},
+    {"source": "IEA Annex 71 Fraunhofer", "url": "https://fordatis.fraunhofer.de/handle/fordatis/161.2?locale=en", "outcome": "Downloaded specification and 46,262,744-byte original main measurement ZIP. Confirmed CC BY-SA 4.0. Selected N2 only, with disclosed publisher processing."}
+  ],
+  "redistribution_note": "Selected original Fraunhofer and derived data use CC BY-SA 4.0. DTU downloaded files have unverified licence and are local discovery evidence; exclude them from a public delivery bundle pending licence confirmation. Existing research PDFs remain outside this independent data package and were only read."
+}

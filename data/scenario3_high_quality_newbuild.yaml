@@ -1,0 +1,215 @@
+extends: example_city.yaml
+
+planning:
+  region_profile: hot_summer_cold_winter_high_quality_newbuild
+  design_outdoor_temperature_c: -7
+  firm_capacity_reserve_margin: 0.12
+  critical_peak_duration_hours: 6
+  firm_building_flexibility:
+    enabled: true
+    duration_hours: 6
+    availability_factor: 1.0
+  n_minus_1_source_names: []
+  n_minus_1_pipe_names: []
+  ambient_reference_c: 5
+  carbon_price_yuan_per_kg: 0.12
+
+nodes:
+  - name: district_a
+    temperature_retrofit: null
+    intermittent_heating:
+      schedule_column: occupancy_a
+      setback_fraction: 0.22
+    user_behavior:
+      multiplier_column: behavior_a
+      scenario_multiplier_weight_column: occupancy_a
+      scenario_multipliers:
+        evening_rebound: 1.12
+        high_comfort_preference: 1.08
+    thermal_inertia:
+      low:
+        thermal_capacity_kwh_per_c: 520
+        max_temperature_deviation_c: 1.0
+        occupied_max_temperature_deviation_c: 0.50
+        unoccupied_max_temperature_deviation_c: 2.0
+        occupancy_column: occupancy_a
+        recovery_loss_per_hour: 0.025
+        comfort_penalty_yuan_per_degree_hour: 0.65
+        unoccupied_penalty_weight: 0.12
+  - name: district_b
+    temperature_retrofit: null
+    intermittent_heating:
+      schedule_column: occupancy_b
+      setback_fraction: 0.25
+    user_behavior:
+      multiplier_column: behavior_b
+      scenario_multiplier_weight_column: occupancy_b
+      scenario_multipliers:
+        evening_rebound: 1.15
+        high_comfort_preference: 1.10
+    thermal_inertia:
+      low:
+        thermal_capacity_kwh_per_c: 430
+        max_temperature_deviation_c: 1.0
+        occupied_max_temperature_deviation_c: 0.55
+        unoccupied_max_temperature_deviation_c: 2.2
+        occupancy_column: occupancy_b
+        recovery_loss_per_hour: 0.03
+        comfort_penalty_yuan_per_degree_hour: 0.72
+        unoccupied_penalty_weight: 0.10
+
+sources:
+  - name: industrial_waste_heat
+    _delete: true
+  - name: central_waste_source_hp
+    _delete: true
+  - name: gas_peak_boiler
+    _delete: true
+  - name: electric_backup_boiler
+    _delete: true
+  - name: distributed_air_hp_b
+    existing_capacity_kw: 0
+    max_new_capacity_kw: 900
+    source_temp_column: outdoor_temp
+    relative_humidity_column: relative_humidity
+    defrost_temperature_band_c: [-2, 7]
+    defrost_cop_multiplier: 0.86
+    frost_humidity_threshold: 0.72
+    humidity_defrost_loss_per_unit: 0.38
+    humidity_defrost_min_multiplier: 0.70
+    cutoff_temperature_c: -12
+    firm_capacity_credit: 0.50
+  - name: district_a_emergency_eb
+    existing_capacity_kw: 0
+    max_new_capacity_kw: 420
+    allowed_grades: [low]
+  - name: district_a_air_hp
+    node: district_a
+    type: heat_pump
+    resource_kind: renewable
+    allowed_grades: [low]
+    existing_capacity_kw: 0
+    max_new_capacity_kw: 950
+    capex_yuan_per_kw: 1700
+    variable_om_yuan_per_kwh_heat: 0.020
+    source_temp_column: outdoor_temp
+    relative_humidity_column: relative_humidity
+    carnot_efficiency: 0.44
+    cop_min: 1.55
+    cop_max: 4.8
+    cutoff_temperature_c: -12
+    defrost_temperature_band_c: [-2, 7]
+    defrost_cop_multiplier: 0.86
+    frost_humidity_threshold: 0.72
+    humidity_defrost_loss_per_unit: 0.38
+    humidity_defrost_min_multiplier: 0.70
+    firm_capacity_credit: 0.50
+  - name: district_a_ground_hp
+    node: district_a
+    type: heat_pump
+    resource_kind: renewable
+    allowed_grades: [low]
+    existing_capacity_kw: 0
+    max_new_capacity_kw: 700
+    capex_yuan_per_kw: 3100
+    variable_om_yuan_per_kwh_heat: 0.016
+    source_temp_c: 14
+    carnot_efficiency: 0.48
+    cop_min: 2.8
+    cop_max: 5.5
+    firm_capacity_credit: 0.90
+  - name: district_b_ground_hp
+    node: district_b
+    type: heat_pump
+    resource_kind: renewable
+    allowed_grades: [low]
+    existing_capacity_kw: 0
+    max_new_capacity_kw: 620
+    capex_yuan_per_kw: 3150
+    variable_om_yuan_per_kwh_heat: 0.016
+    source_temp_c: 14
+    carnot_efficiency: 0.48
+    cop_min: 2.8
+    cop_max: 5.5
+    firm_capacity_credit: 0.90
+  - name: district_a_solar_thermal
+    node: district_a
+    type: direct_heat
+    resource_kind: renewable
+    supply_temp_c: 52
+    allowed_grades: [low]
+    existing_capacity_kw: 0
+    max_new_capacity_kw: 500
+    capex_yuan_per_kw: 2300
+    variable_cost_yuan_per_kwh_heat: 0.008
+    emission_kg_per_kwh_heat: 0.005
+    availability_column: solar_heat_availability
+    firm_capacity_credit: 0.10
+  - name: district_b_solar_thermal
+    node: district_b
+    type: direct_heat
+    resource_kind: renewable
+    supply_temp_c: 52
+    allowed_grades: [low]
+    existing_capacity_kw: 0
+    max_new_capacity_kw: 420
+    capex_yuan_per_kw: 2300
+    variable_cost_yuan_per_kwh_heat: 0.008
+    emission_kg_per_kwh_heat: 0.005
+    availability_column: solar_heat_availability
+    firm_capacity_credit: 0.10
+
+pipes:
+  - name: trunk_a
+    _delete: true
+  - name: trunk_b
+    _delete: true
+  - name: interconnector_ab
+    existing_capacity_kw: 0
+    diameter_options:
+      - name: DN80
+        diameter_mm: 80
+        capacity_kw: 260
+        capex_total_yuan: 280000
+      - name: DN100
+        diameter_mm: 100
+        capacity_kw: 480
+        capex_total_yuan: 440000
+      - name: DN150
+        _delete: true
+
+storages:
+  - name: central_low_temp_tank
+    _delete: true
+  - name: district_a_pcm
+    grade: low
+    max_new_capacity_kwh: 900
+    capex_yuan_per_kwh: 390
+  - name: district_b_pcm
+    node: district_b
+    grade: low
+    existing_capacity_kwh: 0
+    max_new_capacity_kwh: 800
+    capex_yuan_per_kwh: 400
+    power_to_energy_ratio_per_hour: 0.45
+    charge_efficiency: 0.95
+    discharge_efficiency: 0.95
+    self_loss_per_hour: 0.0015
+    boundary_mode: cyclic
+    firm_capacity_credit: 0.82
+
+grid_connection:
+  existing_capacity_kw: 0
+  max_new_capacity_kw: 1500
+  reserve_margin: 0.10
+  firm_capacity_method: portfolio_dispatch
+
+demand_response:
+  max_shift_fraction: 0.16
+  response_window_hours: 4
+  penalty_yuan_per_kwh: 0.10
+
+policy:
+  minimum_clean_heat_share: 0.90
+  maximum_occupied_temperature_deviation_degree_hours: 950
+  maximum_levelized_heat_cost_yuan_per_kwh: 0.40

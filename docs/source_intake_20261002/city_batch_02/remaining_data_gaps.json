@@ -1,0 +1,44 @@
+{
+  "review_date": "2026-10-02",
+  "scope": "用户提供的16个入口、数据缺失三份DOCX、三城市数据包及当前V10工程",
+  "project_baseline": "北方供热三类场景公用总框架V10/north_heat_challenge",
+  "paper_baseline": "用户指定16/16_LaTeX源文件论文；包内15.pdf为历史背景",
+  "data_package_identity": "三城市论文核验数据包_20261002",
+  "source_intake_only": true,
+  "optimization_run": false,
+  "original_inputs_and_results_modified": false,
+  "overall_engineering_source_approval": false,
+  "confirmed_available": [
+    {"id": "A01", "category": "NASA UTC气象", "cities": ["乌鲁木齐", "固原", "武汉"], "status": "raw_to_csv_values_verified", "annual_hours": 131544, "season_hours": 11664, "raw_product_fields": 4, "numeric_cells_checked": 572832, "max_abs_difference": 0, "evidence": "common/package_independent_audit.json", "boundary": "NASA格点气象及辐射产品；非建筑现场观测，非生成负荷认证"},
+    {"id": "A02", "category": "CSWD", "cities": ["乌鲁木齐", "固原", "武汉"], "status": "raw_files_acquired_adapter_pending", "hours_per_city": 8760, "evidence": "../../../data/cswd_verified_20261002/manifest.json", "boundary": "典型气象年；Minute=0格式差异保留，时段导入需明确"},
+    {"id": "A03", "category": "GB50736设计参考温度", "status": "original_table_verified_reference_only", "values_heating_c": {"乌鲁木齐": -19.7, "固原": -13.2, "武汉": -0.3}, "evidence": "../../../data/design_parameters_gb50736_2012_verified.json", "boundary": "三城原表统计1971—2000；不能替代当前寒潮或建筑H/C"},
+    {"id": "A04", "category": "2023电力平均碳因子", "status": "official_pdf_tables_verified", "unit": "kgCO2/kWh", "values": {"全国": 0.5306, "新疆": 0.6021, "宁夏": 0.6187, "湖北": 0.4044}, "source": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/W020251231726284332528.pdf", "boundary": "年度平均；跨年使用属于参考情景；与逐时边际因子区别登记"},
+    {"id": "A05", "category": "八钢项目部分管网设计", "status": "public_design_facts_verified_not_operational_assets", "evidence": "urumqi/verified_facts.json", "boundary": "批前设计公示，未证明竣工、逐时余热能力、泵耗或现场保供"},
+    {"id": "A06", "category": "固原居民清洁供暖电价", "status": "official_2026_policy_verified_eligibility_pending", "valley": 0.2486, "peak": 0.4986, "unit": "CNY/kWh", "valid_from": "2026-01-01", "source": "https://fzggw.nx.gov.cn/tzgg/202512/t20251208_5101851.html", "boundary": "须核居民清洁供暖资格；不自动用于工商业与2024—2025历史实验"},
+    {"id": "A07", "category": "武汉建筑导则与月价", "status": "formal_2025_guide_and_four_scattered_month_tables_reviewed", "months": ["2024-03", "2025-08", "2026-01", "2026-03"], "evidence": ["wuhan/verified_facts.json", "wuhan/package_review.json"], "boundary": "住宅设计限值与条件；不是实际U/H/C，四个零散月份不是全期电价，2024-03复用包内原图非本轮下载"}
+  ],
+  "gaps": [
+    {"id": "G01", "priority": "P0", "category": "项目与服务边界", "status": "project_identity_and_asset_mapping_missing", "cities": ["乌鲁木齐", "固原", "武汉"], "fields": ["project_id", "service_area", "building_id", "node_id", "asset_id", "building_use", "service_calendar", "terminal_temperature"], "need": "具体案例与建筑/节点/资产对应、实际用途和采暖服务期，不能以城市总量替代", "rubric": ["模型架构20", "场景验证15", "多尺度10"]},
+    {"id": "G02", "priority": "P0", "category": "建筑几何与热工", "status": "missing_project_or_complete_public_archetype_evidence", "cities": ["乌鲁木齐", "固原", "武汉"], "fields": ["floor_area_m2", "volume_m3", "wall_roof_window_area_m2", "construction_layers", "U_W_m2_K", "ventilation_m3_h", "infiltration_ACH", "H_kW_K", "C_kWh_K"], "need": "建筑图纸、材料与通风依据或完整可查原型；如由观测辨识，则保留样本及独立验证。U限值不直接当实际U", "rubric": ["模型架构20", "动态仿真15", "场景验证15", "多尺度10"]},
+    {"id": "G03", "priority": "P0", "category": "负荷、室内观测与日程", "status": "proxy_load_available_local_measurements_missing", "cities": ["乌鲁木齐", "固原", "武汉"], "fields": ["timestamp", "measured_heat_kW_or_kWh", "measured_cooling_kW_or_kWh", "indoor_temperature_c", "occupancy", "internal_sensible_gain", "solar_gain", "meter_metadata", "calibration_period", "heldout_period"], "need": "同一对象与时间边界的计量/日程及独立验证。计算负荷保留计算身份", "rubric": ["动态仿真15", "场景验证15", "分析可视化15"]},
+    {"id": "G04", "priority": "P0", "category": "设备性能和运行约束", "status": "missing_model_specific_curves_and_tests", "cities": ["乌鲁木齐", "固原", "武汉"], "fields": ["model_number", "rated_heat_kW", "rated_electric_kW", "COP_curve", "EER_curve", "efficiency", "source_water_temperature", "supply_temperature", "part_load", "defrost", "auxiliary_power", "minimum_output", "ramp"], "need": "对应型号的检测/厂家资料与准确工况；CHP热电容量区分，ACOP/COP/EER区分", "rubric": ["模型架构20", "场景验证15", "多目标15"]},
+    {"id": "G05", "priority": "P0", "category": "乌鲁木齐余热可用量", "status": "public_design_context_available_hourly_resource_missing", "cities": ["乌鲁木齐"], "fields": ["source_medium", "source_temp_c", "flow", "available_heat_kW", "shutdown_calendar", "minimum_utilization_temperature", "heat_purchase_price", "connection_contract"], "need": "具体余热源设计/运行和停产边界。服务面积、标煤节约或管径不能单独推定实际可用MW", "rubric": ["模型架构20", "动态仿真15", "场景验证15"]},
+    {"id": "G06", "priority": "P0", "category": "固原燃料与配电", "status": "policy_available_project_supply_and_grid_limits_missing", "cities": ["固原"], "fields": ["contracted_biomass_t_year", "seasonal_delivery_t", "moisture", "LHV", "delivered_price", "storage_logistics", "transformer_available_kVA", "connection_cost"], "need": "可签约生物质供应与到场价格、台区可用容量及接入费用。区域资源或补贴不等于项目保障量/采购价", "rubric": ["模型架构20", "场景验证15", "多目标15", "分析可视化15"]},
+    {"id": "G07", "priority": "P0", "category": "武汉水源与地源", "status": "reported_project_values_available_raw_monitoring_and_site_parameters_missing", "cities": ["武汉"], "fields": ["hourly_water_flow", "source_inlet_outlet_temp", "allowed_delta_T", "pump_power", "access_contract", "borehole_geometry", "soil_conductivity", "soil_heat_capacity", "thermal_response_test", "groundwater_permissions"], "need": "选择污水源或地源技术后取得相应场址证据。报道均温/日量不构成每小时保底量", "rubric": ["模型架构20", "场景验证15", "分析可视化15"]},
+    {"id": "G08", "priority": "P0", "category": "管网与空间", "status": "urumqi_partial_design_available_project_network_incomplete", "cities": ["乌鲁木齐", "固原", "武汉"], "fields": ["CRS", "geometry", "from_to_asset_id", "length_m", "inner_diameter_mm", "material", "insulation", "heat_capacity_kW", "heat_loss", "pump_curve", "capex_boundary"], "need": "实际路线、节点、管段及能力/造价依据；若声称水力迟滞另补流量压力细步长资料", "rubric": ["模型架构20", "场景验证15", "多尺度10"]},
+    {"id": "G09", "priority": "P1", "category": "储热", "status": "missing_selected_storage_design_and_cost", "cities": ["乌鲁木齐", "固原", "武汉"], "fields": ["thermal_capacity_kWh", "temperature_bounds", "charge_power_kW", "discharge_power_kW", "efficiency", "standing_loss", "initial_final_state", "capex", "lifetime"], "need": "所选蓄热设备原件、可用温差与损失、安装报价；BTES另需地层证据。电池报价不替代蓄热", "rubric": ["模型架构20", "动态仿真15", "场景验证15"]},
+    {"id": "G10", "priority": "P0", "category": "全期费用与经济基准", "status": "partial_tariffs_and_subsidies_available_full_cost_boundary_missing", "cities": ["乌鲁木齐", "固原", "武汉"], "fields": ["billing_user_class", "voltage", "purchase_type", "monthly_energy_tariff", "demand_or_capacity_fee", "fuel_heat_prices", "equipment_installed_quote", "fixed_variable_opex", "lifetime", "baseline_consumption", "service_revenue"], "need": "实际年份全部月价/账单、对应型号和工程范围报价、同服务基准。补助分列；无需为没有收入的案例虚构IRR", "rubric": ["多目标15", "分析可视化15"]},
+    {"id": "G11", "priority": "P1", "category": "燃料碳边界及可靠性", "status": "electricity_average_factors_available_other_project_boundaries_missing", "cities": ["乌鲁木齐", "固原", "武汉"], "fields": ["fuel_factor_and_unit", "fuel_LHV", "accounting_boundary", "biomass_biogenic_fossil_boundary", "CHP_allocation", "outage_evidence", "maintenance", "stress_scenario_definition"], "need": "采用燃料和设备的因子/热值原件、核算边界及可靠性来源。逐时边际电碳不是所有基础案例的先决条件；年度平均可按声明口径使用", "rubric": ["场景验证15", "多目标15", "分析可视化15"]},
+    {"id": "G12", "priority": "P1", "category": "扩展舒适与2R2C", "status": "conditional_on_claimed_model_scope", "cities": ["乌鲁木齐", "固原", "武汉"], "fields": ["Ca", "Cm", "R_air_mass", "RC_topology", "indoor_RH", "latent_load", "fresh_air", "DHW", "5_to_60min_measurements"], "need": "扩展2R2C/湿度/DHW/小时内水力或舒适认证时补对应数据与模块；当前V10已有1R1C显热模型，不能沿旧包描述误报为仅虚拟储热", "rubric": ["模型架构20", "动态仿真15", "场景验证15"]},
+    {"id": "G13", "priority": "team_supplied", "category": "团队、企业与研发事实", "status": "left_blank_as_user_requested", "fields": ["nine_member_names_and_roles", "version_dates_and_work", "enterprise_cooperation", "recognition_or_appraisal"], "need": "由团队补真实记录；政府报道其他项目不构成本参赛模型的企业认可", "rubric": ["答辩材料事实"]}
+  ],
+  "engineering_work_pending_not_data_gaps": [
+    {"id": "W01", "work": "旧数据包验证脚本适配当前V10", "evidence": "common/package_native_validation_current_v10.txt"},
+    {"id": "W02", "work": "武汉两套季节输入明确用户行为与operating_scenario映射", "evidence": "common/package_preflight_current_v10.json"},
+    {"id": "W03", "work": "复核当前V10的33项代表日覆盖提示，必要时补充代表日/极端样本并做连续回放", "evidence": "common/package_preflight_current_v10.json"},
+    {"id": "W04", "work": "CSWD分钟字段和区间时钟导入规则，已核实设计参考与新案例接入"},
+    {"id": "W05", "work": "数据准入后重新运行案例、同服务基准、端点/ε扫描及连续回放；保存求解状态、界、gap和字段身份"},
+    {"id": "W06", "work": "基于新结果生成图表和更新16模板论文、逐页Markdown，保留真实证据范围"}
+  ],
+  "note": "优先级按当前用户三城真实依据目标排序；不是赛事得分预测，也不把所有扩展模板作为每个基础案例的统一必需项。"
+}

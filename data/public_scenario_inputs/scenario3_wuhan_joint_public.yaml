@@ -1,0 +1,100 @@
+extends: scenario3_wuhan_public.yaml
+
+planning:
+  region_profile: wuhan_public_weather_joint_heating_cooling
+
+multi_energy_services:
+  cooling:
+    enabled: true
+
+    # The joint-service time series is expected to provide these two columns.
+    # Keeping the mapping explicit prevents heating demand from being reused as
+    # a cooling proxy and makes district-level validation straightforward.
+    demand_columns:
+      district_a: cooling_demand_a
+      district_b: cooling_demand_b
+
+    unserved_penalty_yuan_per_kwh: 100.0
+    max_unserved_rate: 0.0
+    max_scenario_unserved_rate: 0.0
+    maximum_capacity_oversize_ratio: 1.10
+
+    # EER values are transparent planning assumptions, not manufacturer
+    # nameplate claims. Ground-source values sit inside the Wuhan draft
+    # standard's 4.0-5.8 annual-efficiency envelope. Air-source values are
+    # deliberately lower and derate above 35 C for Wuhan heat-wave conditions.
+    sources:
+      district_a_ground_hp:
+        node: district_a
+        technology: ground_source_heat_pump
+        shares_heating_capacity: true
+        eer: 5.10
+        eer_min: 4.30
+        eer_max: 5.80
+        reference_outdoor_temp_c: 35.0
+        eer_loss_per_c_above_reference: 0.0
+        variable_om_yuan_per_kwh_cooling: 0.012
+        ground_thermal_balance:
+          minimum_extraction_to_rejection_ratio: 0.80
+          maximum_extraction_to_rejection_ratio: 1.25
+
+      district_b_ground_hp:
+        node: district_b
+        technology: ground_source_heat_pump
+        shares_heating_capacity: true
+        eer: 5.10
+        eer_min: 4.30
+        eer_max: 5.80
+        reference_outdoor_temp_c: 35.0
+        eer_loss_per_c_above_reference: 0.0
+        variable_om_yuan_per_kwh_cooling: 0.012
+        ground_thermal_balance:
+          minimum_extraction_to_rejection_ratio: 0.80
+          maximum_extraction_to_rejection_ratio: 1.25
+
+      district_a_air_hp:
+        node: district_a
+        technology: reversible_air_source_heat_pump
+        shares_heating_capacity: true
+        eer: 3.60
+        eer_min: 2.70
+        eer_max: 4.20
+        reference_outdoor_temp_c: 35.0
+        eer_loss_per_c_above_reference: 0.08
+        variable_om_yuan_per_kwh_cooling: 0.018
+
+      distributed_air_hp_b:
+        node: district_b
+        technology: reversible_air_source_heat_pump
+        shares_heating_capacity: true
+        eer: 3.40
+        eer_min: 2.60
+        eer_max: 4.00
+        reference_outdoor_temp_c: 35.0
+        eer_loss_per_c_above_reference: 0.09
+        variable_om_yuan_per_kwh_cooling: 0.020
+
+    ground_source_annual_balance:
+      source_names:
+        - district_a_ground_hp
+        - district_b_ground_hp
+
+      # Ratio definition is aligned with the model constraints and KPI:
+      # annual heat extracted from ground / annual heat rejected to ground.
+      ratio_definition: annual_heat_extracted_from_ground_kwh_over_annual_heat_rejected_to_ground_kwh
+      minimum_ratio: 0.80
+      maximum_ratio: 1.25
+      analysis_horizon_years: 10
+      large_project_floor_area_threshold_m2: 50000
+
+policy:
+  # The inherited 0.60 yuan/kWh constraint was calibrated for heat-only cost
+  # accounting. In a joint heating-cooling model, shared heat-pump, borehole,
+  # storage and grid assets must first be allocated from actual service output.
+  # Because dictionary inheritance cannot delete one scalar policy key, 2.00 is
+  # retained only as a non-binding numerical guard, not an affordability claim.
+  maximum_levelized_heat_cost_yuan_per_kwh: 2.00
+
+  # This is an interpretation/reference KPI for later reporting and sensitivity
+  # analysis; it is intentionally not the hard feasibility constraint above.
+  joint_service_heat_affordability_reference_yuan_per_kwh: 0.40

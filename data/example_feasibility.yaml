@@ -1,0 +1,77 @@
+# Demonstration evidence register. Replace every evidence field with the real
+# survey, approval, contract or measured dataset before a project decision.
+gates:
+  heat_source:
+    checks:
+      - name: waste_heat_measured_for_heating_season
+        mandatory: true
+        passed: true
+        evidence: demo://waste-heat-hourly-metering
+        asset_refs:
+          - {category: source, asset: industrial_waste_heat}
+          - {category: source, asset: central_waste_source_hp}
+      - name: long_term_supply_contract
+        mandatory: true
+        passed: true
+        evidence: demo://minimum-temperature-flow-and-outage-clause
+        asset_refs:
+          - {category: source, asset: industrial_waste_heat}
+      - name: existing_chp_retirement_and_backup_plan
+        mandatory: true
+        passed: true
+        evidence: demo://chp-retirement-and-emergency-backup-plan
+        asset_refs:
+          - {category: source, asset: existing_chp}
+
+  heat_network:
+    checks:
+      - name: gis_and_pipe_condition_available
+        mandatory: true
+        passed: true
+        evidence: demo://pipe-gis-condition-survey
+        asset_refs:
+          - {category: pipe, asset: trunk_b}
+          - {category: pipe, asset: interconnector_ab}
+      - name: backbone_energy_efficiency_retrofit_survey
+        mandatory: true
+        passed: true
+        evidence: demo://trunk-a-insulation-pump-and-hydraulic-survey
+        asset_refs:
+          - {category: pipe, asset: trunk_a}
+
+  electric_grid:
+    checks:
+      - name: preliminary_grid_connection_opinion
+        mandatory: true
+        passed: true
+        evidence: demo://10kv-connection-opinion
+        asset_refs:
+          - {category: grid_connection, asset: system}
+          - {category: source, asset: distributed_air_hp_b}
+
+  customer_side:
+    checks:
+      - name: low_temperature_terminal_test
+        mandatory: true
+        passed: true
+        evidence: demo://substation-and-terminal-low-temperature-test
+        asset_refs:
+          - {category: terminal_retrofit, asset: district_a}
+          - {category: terminal_retrofit, asset: district_b}
+
+  finance:
+    checks:
+      - name: capex_quote_and_tariff_collection_audit
+        mandatory: true
+        passed: true
+        evidence: demo://supplier-quotes-and-collection-audit
+
+  construction_operation:
+    checks:
+      - name: land_road_window_and_maintenance_plan
+        mandatory: true
+        passed: true
+        evidence: demo://construction-window-and-om-plan
+        asset_refs:
+          - {category: storage, asset: central_low_temp_tank}
+          - {category: storage, asset: district_a_pcm}

@@ -1,0 +1,131 @@
+{
+  "status": "passed_independent_raw_reconstruction",
+  "rows": 11988,
+  "columns": {
+    "indoor_temperature_mean_c": {
+      "all_rows_reconstructed": true,
+      "maximum_absolute_error": 4.992983804186224e-11,
+      "source_field_evidence": {
+        "raw_columns": "ten n2_aroom_{room}_110_AT channels",
+        "unit": "degC",
+        "evidence": "Specification section 5.1 instrumentation; section 6.1 N2 measured room air temperatures @110 cm",
+        "transform": "floor-area-weighted mean of room-centre sensor temperatures",
+        "aggregation_identity": "derived observation aggregate; not a direct measured volume-mean state or period-end temperature"
+      }
+    },
+    "outdoor_temperature_mean_c": {
+      "all_rows_reconstructed": true,
+      "maximum_absolute_error": 0.0,
+      "source_field_evidence": {
+        "raw_column": "AmbientAirTemperature",
+        "unit": "degC",
+        "evidence": "Specification section 3.16: weather measured on site at minute intervals, provided 10-minute and hourly averages",
+        "transform": "no value modification"
+      }
+    },
+    "measured_room_heating_kw": {
+      "all_rows_reconstructed": true,
+      "maximum_absolute_error": 0.0,
+      "source_field_evidence": {
+        "raw_columns": "ten n2_aroom_{room}_heat_elP channels",
+        "source_unit": "W",
+        "output_unit": "kW",
+        "transform": "sum of room electrical heater channels divided by 1000",
+        "evidence": "Specification sections 3.9, 5.1 and 6.1 N2 electric heating; nominal 2 kW heater measured 1.80-1.93 kW; actual workbook maxima 1790-1880 W for ordinary heated rooms",
+        "limit": "Electricity input is measured. Unity conversion into room heat is model assumption; heater mass and radiative/convective dynamics are not independently represented."
+      }
+    },
+    "measured_internal_gain_kw": {
+      "all_rows_reconstructed": true,
+      "maximum_absolute_error": 0.0,
+      "source_field_evidence": {
+        "raw_columns": "available n2_aroom_{room}_IHS_elP channels only; no ventilation *_SUA_IHS_elP or calculated DHW",
+        "source_unit": "W",
+        "output_unit": "kW",
+        "transform": "sum divided by 1000",
+        "evidence": "Specification section 6.1 N2: measured heater+IHS total split in some rooms according to scheduled IHS; their combined sum is used in RC",
+        "limit": "The split between heating and IHS is publisher-calculated for single-heater rooms. Both parts are reunited in total_room_heat_input_kw, rather than claiming two independent meters."
+      }
+    },
+    "global_irradiance_w_m2": {
+      "all_rows_reconstructed": true,
+      "maximum_absolute_error": 0.0,
+      "source_field_evidence": {
+        "raw_column": "Radiation_Global",
+        "unit": "W/m2",
+        "evidence": "Specification sections 3.16 and 5.1 on-site solar radiation",
+        "transform": "no value modification"
+      }
+    },
+    "solar_reference_kw_m2": {
+      "all_rows_reconstructed": true,
+      "maximum_absolute_error": 2.220446049250313e-16,
+      "source_field_evidence": {
+        "raw_columns": [
+          "Radiation_Global",
+          "Radiation_South",
+          "Radiation_West",
+          "Radiation_East",
+          "Radiation_North"
+        ],
+        "unit": "kW/m2",
+        "transform": "maximum same-bin global and vertical facade irradiance divided by 1000",
+        "identity": "declared effective irradiance proxy for bounded window gain, not measured transmitted solar heat"
+      }
+    },
+    "total_room_heat_input_kw": {
+      "all_rows_reconstructed": true,
+      "maximum_absolute_error": 1.7763568394002505e-15,
+      "source_field_evidence": {
+        "raw_columns": "heater + IHS channels",
+        "unit": "kW",
+        "transform": "measured_room_heating_kw + measured_internal_gain_kw",
+        "omitted": "socket/fan heat, ventilation losses, attic/cellar storage and interroom exchange are not separately included"
+      }
+    }
+  },
+  "identity_columns": {
+    "source_time_cet": {
+      "unit": "timestamp in fixed CET (UTC+1)",
+      "transform": "original workbook DATE copied",
+      "evidence": "Original N2 and weather workbook DATE; specification weather/data description"
+    },
+    "time_utc": {
+      "unit": "UTC timestamp",
+      "transform": "original workbook DATE minus 1 hour; winter fixed CET",
+      "evidence": "Original workbook DATE and explicitly recorded CET-to-UTC mapping"
+    },
+    "dt_hours": {
+      "unit": "h",
+      "transform": "10 minutes / 60; all consecutive original timestamps checked",
+      "evidence": "Original workbook DATE intervals; specification 3.16 / 6.1 ten-minute averages"
+    },
+    "observation_identity": {
+      "unit": "dimensionless text identifier",
+      "transform": "declared observation-aggregation identity label",
+      "evidence": "field_evidence_map indoor-temperature aggregation and original room channels"
+    }
+  },
+  "original_archive_member_checks": {
+    "Twin_house_N2_exp1_full1_10min.xlsx": {
+      "member": "03_Data_Main_Experiment/Experiment1 - open/Twin_house_N2_exp1_full1_10min.xlsx",
+      "compression_method": 9,
+      "check_method": "original_ZIP_member_CRC32_and_size",
+      "crc32": 2036895893,
+      "bytes": 2986386,
+      "extracted_file_sha256": "4fb3b1ca819b7ec16d2a8495d276c9d658a1bb0592572f41a841237557b8c884"
+    },
+    "Twin_house_weather_exp1_10min_compensated.xlsx": {
+      "member": "03_Data_Main_Experiment/Weather Data/Twin_house_weather_exp1_10min_compensated.xlsx",
+      "compression_method": 9,
+      "check_method": "original_ZIP_member_CRC32_and_size",
+      "crc32": 3629085035,
+      "bytes": 1664634,
+      "extracted_file_sha256": "dca9a2e6977090b6c9cfd7b7b85d117870cd227ec5319060bd549648cb16dd3a"
+    }
+  },
+  "time_mapping_verified": true,
+  "source_id": "EXTERNAL_ANNEX71_N2",
+  "heat_unit_conversion_to_room_heat_is_a_model_assumption": true,
+  "fitted_H_C_not_source_certified_or_Wuhan_values": true
+}

@@ -1,0 +1,29 @@
+{
+  "complete": true,
+  "verified_utc": "2026-10-01T17:00:12.703820+00:00",
+  "release_kind": "research_delivery",
+  "approved_for_submission": false,
+  "archive": "deliverables/heatplan_11_12_0rc1_research_20261002.zip",
+  "archive_sha256": "551492b0a9f3f0c93084ff630c471a4fc8287a71298ce2503887da27cbf5e442",
+  "archive_bytes": 83223885,
+  "manifested_files_verified": 448,
+  "extracted_root": "D:\\competion\\xiaotiao\\_release_final01\\north_heat_challenge",
+  "main_markdown_local_links_checked": 157,
+  "broken_links": [],
+  "core_source_tests_reproduction_scripts_identical_to_tested_core_files": 137,
+  "source_difference_scope": [
+    "scripts/build_competition_deliverables.markdown.py",
+    "scripts/build_competition_deliverables.review.py"
+  ],
+  "source_difference_explanation": "Only Markdown generator and its publication QA script changed/were added after core portable tests; neither computes a model. Final generated MD verified by hashes and links. No numerical source or test changed.",
+  "frozen_PDF_sha256": "cb0feba158e0e3240e1e5cfdcc30f61a2a5b131c88cecdb50f8380d427bee335",
+  "slides": 25,
+  "prior_portable_tests": "55 passed, 2 explicitly deselected; C0/core_portable_verification_01.json",
+  "N2_same_protocol_refit": "Both parameter vectors and 144 scalar metrics identical in independently extracted core package",
+  "published_LP_actual_reproduction": "23 stages, 22 optimal and 1 expected infeasible; all checks passed in independently extracted core package; C0/portable_lp_summary.json",
+  "unapproved_engineering_input_directories_excluded": true,
+  "README_two_exclusions_and_short_path_fixed": true,
+  "credential_pattern_matches": 0,
+  "maximum_extracted_path_characters": 205,
+  "initial_review_assertion": "First source identity check flagged new publication QA script. Read its implementation and explicitly classified as publication-only; no numerical source exclusion."
+}

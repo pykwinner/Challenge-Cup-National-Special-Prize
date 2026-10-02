@@ -1,0 +1,383 @@
+{
+  "status": "completed_and_frozen_one_approved_exploratory_fit",
+  "verified_at_Asia_Shanghai": "2026-10-02T00:34:14.354074+08:00",
+  "model_manifest_sha256": "800ed55223f77e8121de8dbc074592d7891ab5a40b2ce774ed1f12a8483ef0ce",
+  "all_model_hashes_match": true,
+  "model_inputs_checked": 38,
+  "model_outputs_checked": 8,
+  "checks": [
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/README.md",
+      "sha256": "9983c7a2753f04bf2bf41b6c72087f376020edcd9bda7d9774eb4f51aeeec4de",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/analysis_plan.json",
+      "sha256": "c9f85c8c20c657790df0ee040ea5687c3e5ae3272105977a1562d4edcc32b78c",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/data_quality.json",
+      "sha256": "5aab685dd9d456e5110761944f0342602294a9a238d8cc09eb2786dcf50ec8a5",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/Twin_house_N2_exp1_full1_10min.xlsx",
+      "sha256": "4fb3b1ca819b7ec16d2a8495d276c9d658a1bb0592572f41a841237557b8c884",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/Twin_house_N2_exp1_full2_10min.xlsx",
+      "sha256": "3045e842379a868cd3a78fe6a9d67dfb86abc9eb3d08d79c54feaac49fb6af83",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/Twin_house_weather_exp1_10min_compensated.xlsx",
+      "sha256": "dca9a2e6977090b6c9cfd7b7b85d117870cd227ec5319060bd549648cb16dd3a",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_landing.html",
+      "sha256": "17512b2b262ddbbea33c87d55bb2913238585f93b1be4cf7ccafcea8337a240e",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_main_experiment.zip",
+      "sha256": "832754489e0c513c8cb09b7e43d61a9f5249ff5502a781a672cae6d588a876a1",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+      "sha256": "0cfdc5d5a0a73362b4195ed53c5ca95493c7b2a50c64d10a14403047f73d5180",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification_text.txt",
+      "sha256": "601d2285ede73cae0c7032402d246a6460168446cd14483b63dfdd6b5821204e",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/bacher2011_text.txt",
+      "sha256": "04b6707368877bf6f8f4a002850e9bed4b5b79a25948ddfb2cb14299d16c14bd",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/ctsm_building2.pdf",
+      "sha256": "078f242ded2f57296c348c2cd8dee967ae22d1b5dc82121f918cb83d33c006bb",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/ctsm_building2.zip",
+      "sha256": "003af4b26053b20959d6a7d28fe52a4d022e00013cb1c0522448c03ffb291843",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/ctsm_building2_text.txt",
+      "sha256": "bd9336d7c6859efc336e1889d28538a5bbb4523e65715331a65dea90529df86a",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/ctsm_documentation.html",
+      "sha256": "d062c8c85df3efd9c7d30fd5dfad10e577e6e0f0df36b593dcea43cf118fdcbf",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/downloads.json",
+      "sha256": "63cdb8464548dee68d08b7daf981f3aaa43949548253ebdaca8638ebd60736d3",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/ebc58_st3b_text.txt",
+      "sha256": "1a346161ad65a09c4657f4f615257338dddf57577a35ef0539ba1783765b7212",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/ebc58_st4a_text.txt",
+      "sha256": "db78e5dd9cf526e6f00384ffac0dd540e6115ee888314f8a40f14b50f6af844a",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/geometry_page_17.png",
+      "sha256": "7ea46dd423c5b854091f7c26f162bcb5a48a00cd0dc52d5ef15699dc5b91c7f2",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/geometry_page_18.png",
+      "sha256": "bd5d881c99e60cd699a126e1a293cf07f845d507889a1fee7838d8562fd527e0",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/extracted_members.json",
+      "sha256": "d12fcdd7f47e514579c14f0ecd4729a9d3bc6276476e8e56ad6afc9a71ac0baa",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/field_evidence_map.json",
+      "sha256": "645229040f30b62adcc846110191c49539cea066026f0e30ed5b18d051547f71",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/observations.csv",
+      "sha256": "8eb764f9b8f78a672cb79473a5c00458158e264d7c56a07b4315b3bd92fb46ed",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/source_provenance.json",
+      "sha256": "3b392e56524f1944ecc95dac984367166b1b3a4dd4a46de745a33c38462175e3",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "docs/execution_20261001/C1_external_followup_plan.md",
+      "sha256": "70fde589a11f60e8c9471fa3e833586b613a4b04e03e6aa7a869bb9c02361665",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "docs/execution_20261001/C1_external_validation.md",
+      "sha256": "a0218d70c892673654b410fd4a24ccb9610554b5a745bc78242c3e00d2cfb006",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C0/external_followup_approval_01.json",
+      "sha256": "0f17fa430ab82b7d2c96b7674cd5c0d4e392f2e48d6c957febc0a20198c4c4d4",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external/external_validation.png",
+      "sha256": "27d99db0154b29732f7c88113e84c0a83de1661142ad36ef2fd179701f2d5312",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external/final_verification.json",
+      "sha256": "7386b06a79e2a17e828da2b17921c3da48a0cffabcc8663f0483370c22ce19d8",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external/manifest.json",
+      "sha256": "180f79e8fc15ce4c2054501a475553a8702e135167606699dbcaa02d6487e130",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external/predictions_and_residuals.csv",
+      "sha256": "2e488d3ae078c5acad61f9baf3b5758fdfb68f6a10a5ab70d50525a23a9ae24a",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external/run_stdout.json",
+      "sha256": "da2839d034ed70ff8b2367bd64e5bf273d5a395927d9251fb74b3554bb71ea30",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external/test_result.txt",
+      "sha256": "37bf0e151a864d308dcd83dee948dc3ea43b319cf898c4ad83f3c01728fa1938",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external/validation_report.json",
+      "sha256": "f62a882813b9aa0715a2e6da708db62defc540ee160907b154a77a7804fe619d",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "scripts/validate_external_rc_benchmark.py",
+      "sha256": "2c4e234b86dc328df9e2b49bd30e72af25e1539e8903bc878c5cc77d61a94029",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "scripts/validate_external_rc_followup.py",
+      "sha256": "4eded63c70df8a314a9e131d26e6ca8c3700e48c2769b48912b0cec5f89e78d2",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "tests/test_external_rc_benchmark.py",
+      "sha256": "dc1576dce7080e8c533b3facf34eedb278780ffc58d660cb5a27b332836ae9c4",
+      "matches": true
+    },
+    {
+      "category": "inputs",
+      "file": "tests/test_external_rc_followup.py",
+      "sha256": "8c980b3e75648e056d790a6dbff0bcb2036a96978fa7d1b61df1d22c9af9f99e",
+      "matches": true
+    },
+    {
+      "category": "outputs",
+      "file": "exploratory_validation.png",
+      "sha256": "3ac9c9357da8cc45af8dd99d80df881ecdbc04e3d6af1134a663b1204973bfc1",
+      "matches": true
+    },
+    {
+      "category": "outputs",
+      "file": "first_round_before.json",
+      "sha256": "bfebd7427170d5ad4eb5472aaf4987af82475d3940713de63aa339145d941c4f",
+      "matches": true
+    },
+    {
+      "category": "outputs",
+      "file": "first_round_freeze_check.json",
+      "sha256": "1085a9fd48fa5af474b701da6442b15d2643b23d28d7baa457cde1cdf0e04175",
+      "matches": true
+    },
+    {
+      "category": "outputs",
+      "file": "first_vs_followup_metrics.csv",
+      "sha256": "2e8d8041a5fd21c4afa8bb3222ae250b7a6c8021d18e85fb27c39ed20e1e0df7",
+      "matches": true
+    },
+    {
+      "category": "outputs",
+      "file": "fit_result.json",
+      "sha256": "04e4529b7edd4a767308d2f940cfd1302effa32c80e45f1e19ca64695ccdff82",
+      "matches": true
+    },
+    {
+      "category": "outputs",
+      "file": "predictions_and_residuals.csv",
+      "sha256": "21492e7863344c75b331390a3fbed10047163fd1b27e9cbda96f925f680df8a1",
+      "matches": true
+    },
+    {
+      "category": "outputs",
+      "file": "run_summary.json",
+      "sha256": "072aef38615565d1511eeb107e892180f441ec49fd42e2e5cbf8031791ce35a4",
+      "matches": true
+    },
+    {
+      "category": "outputs",
+      "file": "validation_report.json",
+      "sha256": "ac2172070981a63128714e94914ed403ca2f4d3fa086b749246ebd293a1c90a1",
+      "matches": true
+    }
+  ],
+  "first_round_files_checked": 36,
+  "first_round_unchanged_after_tests_and_handoff": true,
+  "first_round_manifest_sha256": "180f79e8fc15ce4c2054501a475553a8702e135167606699dbcaa02d6487e130",
+  "tests": "13 passed in 1.24s; JUnit failures=0, errors=0, skipped=0",
+  "empirical_fit_execution_count": 1,
+  "empirical_least_squares_starts": 4,
+  "all_results_including_deterioration_retained": true,
+  "exploratory_after_first_test_inspection": true,
+  "fresh_independent_confirmation": false,
+  "review_limitations_inherited_via_addendum": true,
+  "C6_followup_read_only_review_still_pending": true,
+  "no_new_reproduction_wrapper_or_public_bundle_created": true,
+  "all_output_file_identities_except_this_closure": [
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/exploratory_validation.png",
+      "sha256": "3ac9c9357da8cc45af8dd99d80df881ecdbc04e3d6af1134a663b1204973bfc1",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/first_round_before.json",
+      "sha256": "bfebd7427170d5ad4eb5472aaf4987af82475d3940713de63aa339145d941c4f",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/first_round_freeze_check.json",
+      "sha256": "1085a9fd48fa5af474b701da6442b15d2643b23d28d7baa457cde1cdf0e04175",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/first_vs_followup_metrics.csv",
+      "sha256": "2e8d8041a5fd21c4afa8bb3222ae250b7a6c8021d18e85fb27c39ed20e1e0df7",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/fit_result.json",
+      "sha256": "04e4529b7edd4a767308d2f940cfd1302effa32c80e45f1e19ca64695ccdff82",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/handoff.md",
+      "sha256": "2942f29ad1ac3e30080fbb95d4de87df19cec0baf07e77a93eb2a255edfb6740",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/manifest.json",
+      "sha256": "800ed55223f77e8121de8dbc074592d7891ab5a40b2ce774ed1f12a8483ef0ce",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/matplotlib_runtime/fontlist-v390.json",
+      "sha256": "2a3b4b8243c2ae9cf8ab2934eb2a5fb5dc98eb89534458476ec407e2884840c1",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/predictions_and_residuals.csv",
+      "sha256": "21492e7863344c75b331390a3fbed10047163fd1b27e9cbda96f925f680df8a1",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/pytest_final/test_existing_output_or_file_i0/existing.json",
+      "sha256": "0682c5f2076f099c34cfdd15a9e063849ed437a49677e6fcc5b4198c76575be5",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/review_limitations_addendum.json",
+      "sha256": "a3339d352a5b45731b242e005dfb446d93ab4fb1b8fab0eb3f09b1dec39b8980",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/run_summary.json",
+      "sha256": "072aef38615565d1511eeb107e892180f441ec49fd42e2e5cbf8031791ce35a4",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/test_result.txt",
+      "sha256": "c5a2ff99cc6b0e64c483712ad028a311e603e02c534573226bb17237cc3a2790",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/test_result.xml",
+      "sha256": "1d9fd8c451f52367545983cffbe552a1bd056cb66876b79c1331a9696ac8e890",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/test_verification.json",
+      "sha256": "94cc4ad977b9cb1c5c227cd5e1215c72e316d16895a5e1fbdb08f0b563cca0a2",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/validation_report.json",
+      "sha256": "ac2172070981a63128714e94914ed403ca2f4d3fa086b749246ebd293a1c90a1",
+      "role": "Frozen output/supplemental file; public inclusion requires C0 derived-file selection"
+    }
+  ],
+  "no_Wuhan_parameter_transfer": true,
+  "no_engineering_MILP": true,
+  "freeze": "Do not overwrite this run, model manifest, first-round artifacts, or approved plan. No additional fit/loss/model/start search."
+}

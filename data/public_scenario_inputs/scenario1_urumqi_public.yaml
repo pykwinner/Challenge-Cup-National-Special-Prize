@@ -1,0 +1,44 @@
+extends: ../scenario1_existing_network.yaml
+
+planning:
+  region_profile: urumqi_public_weather_representative_days
+
+# Planning-scale representative-day solve: unit commitment/ramping is checked
+# later on the frozen investment plan.  The original competition configuration
+# keeps these binary constraints for the 24-hour operational model.
+sources:
+  - name: existing_chp
+    unit_commitment: false
+  - name: gas_peak_boiler
+    unit_commitment: false
+  - name: distributed_air_hp_b
+    # The all-scenario planning design includes temperatures below the cutoff,
+    # so this unit receives no firm-capacity credit.  Keeping the value explicit
+    # prevents a milder single-scenario replay from changing the frozen grid
+    # adequacy accounting.
+    firm_capacity_availability: 0.0
+
+# The 2023 public-weather stress set raises the trunk-a-outage transfer
+# requirement above the original DN200/1600 kW candidate.  DN250 is introduced
+# as a planning candidate, not asserted as an existing Urumqi asset.  Capacity
+# and capex must be replaced by a local hydraulic design and supplier quote.
+pipes:
+  - name: trunk_b
+    diameter_options:
+      - name: DN250
+        diameter_mm: 250
+        capacity_kw: 2400
+        capex_total_yuan: 1750000
+
+# Single-stage public-data validation uses the first-stage transition targets.
+# Emergency waste-heat-outage and long-duration-cold-wave scenarios remain
+# reliability tests and are not forced to satisfy normal-year clean shares.
+policy:
+  transition_target_scenarios:
+    [normal_winter, severe_cold, compound_cold_wave, low_waste_high_power_price]
+  minimum_clean_heat_share: 0.75
+  minimum_waste_heat_share: 0.35
+  maximum_fossil_heat_share: 0.25
+  emission_intensity_cap_kg_per_kwh: 0.085
+  minimum_renewable_electricity_absorption_rate: 0.25
+  minimum_pipe_retrofit_count: 1

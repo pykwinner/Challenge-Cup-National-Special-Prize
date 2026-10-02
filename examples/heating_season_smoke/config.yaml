@@ -1,0 +1,27 @@
+description: 人造四小时软件演示，不代表城市实测或真实供暖季验证
+planning:
+  discount_rate: 0.05
+  asset_lifetime_years: 20
+  time_step_hours: 1
+  representative_day_weight: 1
+  max_unserved_rate: 0
+  max_scenario_unserved_rate: 0
+grades:
+  - name: low
+    temperature_c: 45
+nodes:
+  - name: demo_node
+    demand_columns:
+      low: heat
+sources:
+  - name: demo_source
+    node: demo_node
+    type: direct_heat
+    resource_kind: fossil
+    supply_temp_c: 90
+    allowed_grades: [low]
+    existing_capacity_kw: 10
+    max_new_capacity_kw: 0
+    variable_cost_yuan_per_kwh_heat: 1
+pipes: []
+storages: []

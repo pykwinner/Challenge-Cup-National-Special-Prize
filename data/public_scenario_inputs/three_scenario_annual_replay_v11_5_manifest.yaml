@@ -1,0 +1,16 @@
+profiles:
+  - name: scenario1_urumqi
+    config: scenario1_urumqi_deterministic_public.yaml
+    representative_timeseries: ../../outputs/v11_4_representative_days/scenario1_urumqi/representative_days_calibrated.csv
+    annual_timeseries: scenario1_urumqi_full_year_2023.csv
+    timestamp_column: time
+  - name: scenario2_guyuan
+    config: scenario2_guyuan_evidence_public.yaml
+    representative_timeseries: ../../outputs/v11_4_representative_days/scenario2_guyuan/representative_days_calibrated.csv
+    annual_timeseries: scenario2_guyuan_full_year_2023.csv
+    timestamp_column: time
+  - name: scenario3_wuhan
+    config: scenario3_wuhan_joint_public.yaml
+    representative_timeseries: ../../outputs/v11_4_representative_days/scenario3_wuhan/representative_days_calibrated.csv
+    annual_timeseries: scenario3_wuhan_full_year_2023.csv
+    timestamp_column: time

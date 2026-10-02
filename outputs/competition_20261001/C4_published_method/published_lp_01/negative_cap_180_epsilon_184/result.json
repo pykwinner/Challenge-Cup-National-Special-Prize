@@ -1,0 +1,49 @@
+{
+  "stage_directory": "negative_cap_180_epsilon_184",
+  "started_utc": "2026-10-01T16:27:01.531307+00:00",
+  "finished_utc": "2026-10-01T16:27:01.532414+00:00",
+  "elapsed_seconds": 0.0006845999996585306,
+  "resource_cap": 180,
+  "objective_maximization": "f1",
+  "epsilon": 184,
+  "actual_primary_fix": null,
+  "solver_fields": {
+    "status": 2,
+    "success": false,
+    "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is Infeasible)",
+    "fun": null,
+    "mip_gap": null,
+    "mip_dual_bound": null,
+    "mip_node_count": null
+  },
+  "solver_fields_not_exposed": [
+    "fun",
+    "mip_gap",
+    "mip_dual_bound",
+    "mip_node_count"
+  ],
+  "solution_vector": null,
+  "objectives": null,
+  "independent_exact_oracle": {
+    "feasible": false,
+    "optimal_bound_maximization": null,
+    "exact_bound": null,
+    "maximizer_vertices_exact": [],
+    "bound_origin": "independent exact rational polygon; not a solver-exposed bound"
+  },
+  "matrix_audit": null,
+  "all_matrix_details": null,
+  "expected_infeasible": true,
+  "checks": {
+    "status_matches_expected": true,
+    "analytic_feasibility_matches_expected": true,
+    "no_solution_vector_claimed": true
+  },
+  "protocol_checks_passed": true,
+  "evidence_purpose": "published_mathematical_method_validation",
+  "empirical_validation": false,
+  "heating_engineering_validation": false,
+  "parameter_provenance_approved_for_heating_scenario": false,
+  "calls_HeatPlanningModel_solve_lexicographic": false,
+  "implements_full_AUGMECON": false
+}

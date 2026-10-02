@@ -1,0 +1,784 @@
+sources:
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    category: 生物质资源/竞争用途/颗粒市场
+    publisher: 宁夏回族自治区农业农村厅
+    title: 关于自治区政协十三届三次会议第508号提案答复的函
+    url: https://nynct.nx.gov.cn/zwgk/zfxxgkml/tajybljggk/202512/t20251223_5116803.html
+    data_year: 2024-2025
+    authority: 自治区农业主管部门
+    use_in_model: 校准秸秆可收集量与竞争用途、颗粒产能利用率、成品燃料价格和供应链原料分类
+    caveat: 自治区总量不能直接当作固原项目可签约量；吴忠与固原合计产能也不能无分配依据地全部归入本项目
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_GUYUAN_STATS_2024
+    scenario: scenario2_distributed_clean
+    category: 农业统计/作物资源
+    publisher: 固原市人民政府
+    title: 固原市2024年国民经济和社会发展统计公报
+    url: https://www.nxgy.gov.cn/zwgk/zfxxgkml/tjxx/tjfx/202507/t20250701_4949688.html
+    data_year: "2024"
+    authority: 地方政府统计公报
+    use_in_model: 校准作物产量、夏粮与秋粮季节性以及县域资源规模上界
+    caveat: 作物产量必须再乘草谷比、可收集系数并扣除饲料化和还田等竞争用途，不能直接作为燃料量
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_MOA_STRAW_LEDGER_2019
+    scenario: scenario2_distributed_clean
+    category: 秸秆资源核算方法
+    publisher: 中华人民共和国农业农村部
+    title: 农作物秸秆资源台账制度
+    url: https://www.moa.gov.cn/nybgb/2019/201902/201905/P020190518382510679732.pdf
+    data_year: "2019"
+    authority: 农业农村部技术制度
+    use_in_model: 规定草谷比、可收集系数和15%含水率统一口径，避免把粮食产量直接换成能源供应量
+    caveat: 推荐系数需要用宁夏或固原实测系数更新；该文件给出核算方法而非固原结果
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    category: 生物质炉/低温空气源热泵技术要求
+    publisher: 宁夏回族自治区住房和城乡建设厅
+    title: 宁夏回族自治区北方地区冬季清洁取暖技术指南
+    url: https://jst.nx.gov.cn/zwgk/zcwjk/gzwj/202309/P020230901584449827922.pdf
+    data_year: "2023"
+    authority: 自治区住建技术指南
+    use_in_model: 校准颗粒热值、最大供应半径、户式炉具效率和污染物、热泵截止温度及设计COP
+    caveat: 炉具指标主要适用于额定供热量小于50kW的户式设备，不能直接套用到1.45MW区域锅炉
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_GUYUAN_ASHP_PROCUREMENT_2024
+    scenario: scenario2_distributed_clean
+    category: 空气源热泵政府采购
+    publisher: 宁夏政府采购公共服务平台
+    title: 固原市城区散煤取暖用户热源清洁化改造工程项目四期十四标段采购需求
+    url: https://www.ccgp-ningxia.gov.cn/public/NXGPPNEW/dynamic/contents/CGXQ/content.jsp?cid=2076&id=8b80b23e90c3fcf80190c48d6f6e52c1&sid=1
+    data_year: "2024"
+    authority: 政府采购需求
+    use_in_model: 校准固原户式热风机投资、-12℃与-20℃COP、极寒容量和HSPF下限
+    caveat: 采购技术下限不等于长期实测性能；户均预算还包括电辅热、电热毯、配电和安装内容
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_STRAW_LOGISTICS_RESEARCH_2016
+    scenario: scenario2_distributed_clean
+    category: 秸秆收储运优化
+    publisher: 农业工程学报
+    title: 华北平原地区玉米秸秆连续供应模型的建立及应用
+    url: https://www.aeeisp.com/nygcxb/article/doi/10.11975/j.issn.1002-6819.2016.19.028
+    data_year: "2016"
+    authority: 同行评议原始研究
+    use_in_model: 支撑收储站选址、两级运输、成本分解、能耗和设施离散决策结构
+    caveat: 山东肥城10万吨原秸秆案例且价格年份较早，只能用于模型结构与比例敏感性，不能替代固原成品颗粒价格
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_GUYUAN_HOUSEHOLD_CASE_2024
+    scenario: scenario2_distributed_clean
+    category: 农户运行费用/用户负担
+    publisher: 固原市人民政府
+    title: 清洁能源让百姓过上干净暖冬
+    url: https://www.nxgy.gov.cn/xwzx/gyyw/202411/t20241126_4738785.html
+    data_year: "2024"
+    authority: 地方政府实地报道
+    use_in_model: 提供生物质颗粒季用量、燃料价格、原煤对照、设备补贴和农户自付的现实校验点
+    caveat: 单户受访案例未披露建筑面积、设定温度和逐日气象，只能作为账单校验点而非总体均值
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_YUANZHOU_SUBSIDY_2023
+    scenario: scenario2_distributed_clean
+    category: 清洁取暖补贴/资金分担
+    publisher: 固原市原州区人民政府
+    title: 原州区2023年度北方地区冬季清洁取暖项目实施方案
+    url: https://www.yzh.gov.cn/zzb/zcwj_68006/202312/t20231208_4376786.html
+    data_year: "2023"
+    authority: 区县政府实施方案
+    use_in_model: 校准各技术每户建设补贴、农房节能补贴、补助面积和居民自筹比例
+    caveat: 财政政策明确补建设不补运行；年度补贴标准不能自动外推至后续年份
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_NX_HEATING_TARIFF_2026
+    scenario: scenario2_distributed_clean
+    category: 居民清洁供暖分时电价
+    publisher: 宁夏回族自治区发展和改革委员会
+    title: 自治区发展改革委关于完善居民清洁供暖用电价格政策的通知
+    url: https://fzggw.nx.gov.cn/tzgg/202512/t20251208_5101851.html
+    data_year: "2026执行"
+    authority: 自治区价格主管部门
+    use_in_model: 替换合成电价曲线，驱动热泵、蓄热和电池的峰谷调度
+    caveat: 仅适用于符合条件的居民清洁供暖用电；区域微网总表或工商业接入点需另核电价资格
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_GUYUAN_RURAL_INCOME_2025
+    scenario: scenario2_distributed_clean
+    category: 农村居民收入/能源负担
+    publisher: 固原市农业农村局
+    title: 固原市聚焦农民增收核心构建多元驱动体系推动农村居民收入稳步提升
+    url: https://www.nxgy.gov.cn/zwgk/zfxxgkml/jzfp_1/xczxgzdt/202603/t20260316_5194210.html
+    data_year: "2025"
+    authority: 地方农业主管部门
+    use_in_model: 构造取暖账单占收入比例、低收入压力情景和用户可负担性指标
+    caveat: 人均平均收入不能替代家庭人口、收入分位和脱贫监测户收入调查
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_GUYUAN_IMPLEMENTATION_2022
+    scenario: scenario2_distributed_clean
+    category: 清洁取暖投资/转型时序/能源保供
+    publisher: 固原市人民政府
+    title: 固原市冬季清洁取暖项目实施方案
+    url: https://www.nxgy.gov.cn/zwgk/zcwj/qtwj/jgzn_35170/202208/t20220819_3678909.html
+    data_year: "2022-2024"
+    authority: 地方政府实施方案
+    use_in_model: 校准资金承担者、农村改造规模、配网改造项目和先立后破的多阶段约束
+    caveat: 规划投资不等于项目最终结算；各子项目成本需进一步拆分
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_GUYUAN_GRID_ZHANGYI_2024
+    scenario: scenario2_distributed_clean
+    category: 农村电网扩容项目
+    publisher: 固原市人民政府
+    title: 固原供电助力土豆豆变金豆豆
+    url: https://www.nxgy.gov.cn/zzb/gyyw_67229/202411/t20241128_4741619.html
+    data_year: "2023竣工/2024报道"
+    authority: 地方政府项目报道
+    use_in_model: 证明电网升级具有固定项目成本和离散线路扩建特征
+    caveat: 页面未披露新增变电容量，不能用总投资反算通用元每千瓦造价
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_NEA_STORAGE_REPORT_2025
+    scenario: scenario2_distributed_clean
+    category: 新型储能造价/利用率/技术路线
+    publisher: 国家能源局能源节约和科技装备司、电力规划设计总院
+    title: 中国新型储能发展报告2025
+    url: https://www.nea.gov.cn/20250731/1d40d09f75714280a9218d5bea178fbd/228ab8631dcc4b2293c84dc1f07e6e42.pdf
+    data_year: "2024"
+    authority: 国家能源主管部门报告
+    use_in_model: 校准储能时长、年度等效循环、技术路线和成本下降情景
+    caveat: 统计以大型电站为主；先进电芯循环上限不应直接作为农村小微电池系统保守寿命
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_MIIT_BATTERY_RULE_2024
+    scenario: scenario2_distributed_clean
+    category: 储能电池寿命/安全质量
+    publisher: 中华人民共和国工业和信息化部
+    title: 锂离子电池行业规范条件（2024年本）
+    url: https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20246/1b2c425b31524352a0ea0571b51f1d9b.pdf
+    data_year: "2024"
+    authority: 工业和信息化部规范条件
+    use_in_model: 设定电池组循环寿命、容量保持率和更换触发条件
+    caveat: 属行业引导性条件；实验循环寿命不等于固原低温环境下的日历寿命
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+  - source_id: S2_STORAGE_MARKET_2025
+    scenario: scenario2_distributed_clean
+    category: 储能系统/EPC市场价格
+    publisher: 新华财经、上海证券报（引CESA储能应用分会数据）
+    title: 野蛮生长后面临失速危机储能业破内卷需规范与创新双管齐下
+    url: https://finance.sina.cn/2025-08-06/detail-infiywak1185865.d.html
+    data_year: "2024-2025H1"
+    authority: 行业数据库与主流财经媒体
+    use_in_model: 为电池系统与EPC投资提供市场区间并设置小型微网安全集成溢价
+    caveat: 大型项目均价不包含农村小微项目全部EMS、消防、施工和运维溢价；报道提示部分低价已低于成本
+    retrieved_at_utc: "2026-07-12T09:10:30Z"
+
+facts:
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 主要农作物秸秆产生量
+    value: 401.99
+    unit: 万吨/年
+    model_mapping: biomass_resource.theoretical_quantity
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 主要农作物秸秆可收集量
+    value: 362.85
+    unit: 万吨/年
+    model_mapping: biomass_resource.collectable_quantity
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 主要农作物秸秆利用量
+    value: 334.39
+    unit: 万吨/年
+    model_mapping: biomass_resource.existing_use
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 秸秆综合利用率
+    value: 92.16
+    unit: "%"
+    model_mapping: biomass_resource.existing_use_share
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 秸秆饲料化利用占比
+    value: 85.64
+    unit: "%"
+    model_mapping: biomass_resource.competing_feed_share
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 秸秆肥料化利用占比
+    value: 12.11
+    unit: "%"
+    model_mapping: biomass_resource.competing_fertilizer_share
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 秸秆燃料化利用占比
+    value: 1.37
+    unit: "%"
+    model_mapping: biomass_resource.observed_fuel_share
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 生物质颗粒生产企业数量
+    value: 14
+    unit: 家
+    model_mapping: biomass_supply_chains.supplier_count
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 全区颗粒燃料设计产能
+    value: 30.3
+    unit: 万吨/年
+    model_mapping: biomass_supply_chains.nameplate_capacity
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 全区颗粒燃料实际生产能力
+    value: 16.7
+    unit: 万吨/年
+    model_mapping: biomass_supply_chains.available_capacity
+    value_type: 直接事实
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 颗粒燃料市场价格下限
+    value: 750
+    unit: 元/吨
+    model_mapping: biomass_supply_chains.procurement_cost_yuan_per_kg
+    value_type: 市场调查区间
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 颗粒燃料市场价格上限
+    value: 1200
+    unit: 元/吨
+    model_mapping: biomass_supply_chains.procurement_cost_yuan_per_kg
+    value_type: 市场调查区间
+  - source_id: S2_NX_BIOMASS_REPLY_2025
+    scenario: scenario2_distributed_clean
+    indicator: 吴忠与固原颗粒燃料实际生产能力
+    value: 13.16
+    unit: 万吨/年
+    model_mapping: biomass_supply_chains.regional_available_capacity
+    value_type: 直接事实
+
+  - source_id: S2_GUYUAN_STATS_2024
+    scenario: scenario2_distributed_clean
+    indicator: 固原粮食总产量
+    value: 85.64
+    unit: 万吨/年
+    model_mapping: biomass_resource.crop_output_basis
+    value_type: 统计公报
+  - source_id: S2_GUYUAN_STATS_2024
+    scenario: scenario2_distributed_clean
+    indicator: 固原小麦产量
+    value: 5.41
+    unit: 万吨/年
+    model_mapping: biomass_resource.wheat_output
+    value_type: 统计公报
+  - source_id: S2_GUYUAN_STATS_2024
+    scenario: scenario2_distributed_clean
+    indicator: 固原玉米产量
+    value: 50.73
+    unit: 万吨/年
+    model_mapping: biomass_resource.corn_output
+    value_type: 统计公报
+  - source_id: S2_GUYUAN_STATS_2024
+    scenario: scenario2_distributed_clean
+    indicator: 固原马铃薯产量
+    value: 23.69
+    unit: 万吨/年
+    model_mapping: biomass_resource.potato_output
+    value_type: 统计公报
+  - source_id: S2_GUYUAN_STATS_2024
+    scenario: scenario2_distributed_clean
+    indicator: 固原夏粮产量
+    value: 5.72
+    unit: 万吨/年
+    model_mapping: biomass_resource.summer_supply_window
+    value_type: 统计公报
+  - source_id: S2_GUYUAN_STATS_2024
+    scenario: scenario2_distributed_clean
+    indicator: 固原秋粮产量
+    value: 79.92
+    unit: 万吨/年
+    model_mapping: biomass_resource.autumn_supply_window
+    value_type: 统计公报
+
+  - source_id: S2_MOA_STRAW_LEDGER_2019
+    scenario: scenario2_distributed_clean
+    indicator: 秸秆资源台账统一含水率
+    value: 15
+    unit: "%"
+    model_mapping: biomass_supply_chains.reference_moisture_percent
+    value_type: 核算标准
+
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 生物质成型燃料热值下限
+    value: 3000
+    unit: kcal/kg
+    model_mapping: biomass_supply_chains.lower_heating_value_kwh_per_kg
+    value_type: 技术指南区间
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 生物质成型燃料热值上限
+    value: 4800
+    unit: kcal/kg
+    model_mapping: biomass_supply_chains.lower_heating_value_kwh_per_kg
+    value_type: 技术指南区间
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 农村燃料供应点推荐最大半径
+    value: 50
+    unit: km
+    model_mapping: biomass_supply_chains.transport_distance_km
+    value_type: 技术指南
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 一级户式生物质炉采暖热效率下限
+    value: 75
+    unit: "%"
+    model_mapping: biomass_supply_chains.conversion_efficiency
+    value_type: 技术下限
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 二级户式生物质炉采暖热效率下限
+    value: 65
+    unit: "%"
+    model_mapping: biomass_supply_chains.conversion_efficiency
+    value_type: 技术下限
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 一级户式生物质炉颗粒物排放上限
+    value: 30
+    unit: mg/m3
+    model_mapping: air_pollution.pm_limit_mg_per_m3
+    value_type: 技术上限
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 一级户式生物质炉氮氧化物排放上限
+    value: 150
+    unit: mg/m3
+    model_mapping: air_pollution.nox_limit_mg_per_m3
+    value_type: 技术上限
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 低环境温度空气源热泵连续运行温度下限
+    value: -25
+    unit: degC
+    model_mapping: sources.cutoff_temperature_c
+    value_type: 技术下限
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 设计工况热风机COP下限
+    value: 2.2
+    unit: COP
+    model_mapping: sources.cop_curve
+    value_type: 技术下限
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 设计工况热水机COP下限
+    value: 2.4
+    unit: COP
+    model_mapping: sources.cop_curve
+    value_type: 技术下限
+  - source_id: S2_NX_CLEAN_HEAT_GUIDE_2023
+    scenario: scenario2_distributed_clean
+    indicator: 连续制热周期融霜时间占比上限
+    value: 20
+    unit: "%"
+    model_mapping: sources.defrost_time_share_cap
+    value_type: 技术上限
+
+  - source_id: S2_GUYUAN_ASHP_PROCUREMENT_2024
+    scenario: scenario2_distributed_clean
+    indicator: 采购覆盖户数
+    value: 520
+    unit: 户
+    model_mapping: customer_nodes.household_count
+    value_type: 采购事实
+  - source_id: S2_GUYUAN_ASHP_PROCUREMENT_2024
+    scenario: scenario2_distributed_clean
+    indicator: 空气源热泵成套预算单价
+    value: 6700
+    unit: 元/户
+    model_mapping: sources.capex_yuan_per_household
+    value_type: 采购预算
+  - source_id: S2_GUYUAN_ASHP_PROCUREMENT_2024
+    scenario: scenario2_distributed_clean
+    indicator: 空气源热泵额定制热量下限
+    value: 4
+    unit: kW/户
+    model_mapping: sources.unit_capacity_kw
+    value_type: 采购技术下限
+  - source_id: S2_GUYUAN_ASHP_PROCUREMENT_2024
+    scenario: scenario2_distributed_clean
+    indicator: 零下12摄氏度COP下限
+    value: 2.2
+    unit: COP
+    model_mapping: sources.cop_curve_at_minus_12c
+    value_type: 采购技术下限
+  - source_id: S2_GUYUAN_ASHP_PROCUREMENT_2024
+    scenario: scenario2_distributed_clean
+    indicator: 零下20摄氏度COP下限
+    value: 1.8
+    unit: COP
+    model_mapping: sources.cop_curve_at_minus_20c
+    value_type: 采购技术下限
+  - source_id: S2_GUYUAN_ASHP_PROCUREMENT_2024
+    scenario: scenario2_distributed_clean
+    indicator: 零下20摄氏度制热量下限
+    value: 4
+    unit: kW/户
+    model_mapping: sources.low_temperature_capacity_availability
+    value_type: 采购技术下限
+  - source_id: S2_GUYUAN_ASHP_PROCUREMENT_2024
+    scenario: scenario2_distributed_clean
+    indicator: 热泵季节性能系数下限
+    value: 3.2
+    unit: HSPF
+    model_mapping: sources.seasonal_performance_floor
+    value_type: 采购技术下限
+
+  - source_id: S2_STRAW_LOGISTICS_RESEARCH_2016
+    scenario: scenario2_distributed_clean
+    indicator: 十万吨秸秆供应体系优化收储站数量
+    value: 10
+    unit: 座
+    model_mapping: biomass_supply_chains.depot_count
+    value_type: 研究案例
+  - source_id: S2_STRAW_LOGISTICS_RESEARCH_2016
+    scenario: scenario2_distributed_clean
+    indicator: 秸秆供应成本
+    value: 169.14
+    unit: 元/吨
+    model_mapping: biomass_supply_chains.raw_straw_logistics_cost
+    value_type: 研究测算
+  - source_id: S2_STRAW_LOGISTICS_RESEARCH_2016
+    scenario: scenario2_distributed_clean
+    indicator: 收集环节成本占比
+    value: 55
+    unit: "%"
+    model_mapping: biomass_supply_chains.collection_cost_share
+    value_type: 研究测算
+  - source_id: S2_STRAW_LOGISTICS_RESEARCH_2016
+    scenario: scenario2_distributed_clean
+    indicator: 运输环节成本占比
+    value: 23
+    unit: "%"
+    model_mapping: biomass_supply_chains.transport_cost_share
+    value_type: 研究测算
+  - source_id: S2_STRAW_LOGISTICS_RESEARCH_2016
+    scenario: scenario2_distributed_clean
+    indicator: 秸秆供应总能耗
+    value: 186
+    unit: MJ/吨
+    model_mapping: biomass_supply_chains.upstream_energy_mj_per_tonne
+    value_type: 研究测算
+
+  - source_id: S2_GUYUAN_HOUSEHOLD_CASE_2024
+    scenario: scenario2_distributed_clean
+    indicator: 受访农户采暖季颗粒用量
+    value: 2
+    unit: 吨/户季
+    model_mapping: affordability.household_biomass_quantity
+    value_type: 单户实测访谈
+  - source_id: S2_GUYUAN_HOUSEHOLD_CASE_2024
+    scenario: scenario2_distributed_clean
+    indicator: 受访农户颗粒燃料价格
+    value: 1000
+    unit: 元/吨
+    model_mapping: biomass_supply_chains.delivered_price
+    value_type: 单户实测访谈
+  - source_id: S2_GUYUAN_HOUSEHOLD_CASE_2024
+    scenario: scenario2_distributed_clean
+    indicator: 受访农户颗粒采暖季燃料费
+    value: 2000
+    unit: 元/户季
+    model_mapping: affordability.annual_energy_bill_yuan
+    value_type: 单户实测访谈
+  - source_id: S2_GUYUAN_HOUSEHOLD_CASE_2024
+    scenario: scenario2_distributed_clean
+    indicator: 改造前采暖季煤炭用量
+    value: 3
+    unit: 吨/户季
+    model_mapping: baseline_household.coal_quantity
+    value_type: 单户实测访谈
+  - source_id: S2_GUYUAN_HOUSEHOLD_CASE_2024
+    scenario: scenario2_distributed_clean
+    indicator: 改造前煤炭价格
+    value: 1500
+    unit: 元/吨
+    model_mapping: baseline_household.coal_price
+    value_type: 单户实测访谈
+  - source_id: S2_GUYUAN_HOUSEHOLD_CASE_2024
+    scenario: scenario2_distributed_clean
+    indicator: 生物质炉具农户自付
+    value: 1200
+    unit: 元/户
+    model_mapping: affordability.initial_out_of_pocket_yuan
+    value_type: 单户实测访谈
+
+  - source_id: S2_YUANZHOU_SUBSIDY_2023
+    scenario: scenario2_distributed_clean
+    indicator: 每户最大补助建筑面积
+    value: 60
+    unit: m2/户
+    model_mapping: customer_nodes.subsidized_floor_area_cap
+    value_type: 政策标准
+  - source_id: S2_YUANZHOU_SUBSIDY_2023
+    scenario: scenario2_distributed_clean
+    indicator: 太阳能利用取暖建设补贴
+    value: 7300
+    unit: 元/户
+    model_mapping: subsidies.solar_heating_capex
+    value_type: 政策标准
+  - source_id: S2_YUANZHOU_SUBSIDY_2023
+    scenario: scenario2_distributed_clean
+    indicator: 空气源热泵取暖建设补贴
+    value: 6700
+    unit: 元/户
+    model_mapping: subsidies.air_source_heat_pump_capex
+    value_type: 政策标准
+  - source_id: S2_YUANZHOU_SUBSIDY_2023
+    scenario: scenario2_distributed_clean
+    indicator: 生物质专用炉具建设补贴
+    value: 4500
+    unit: 元/户
+    model_mapping: subsidies.biomass_stove_capex
+    value_type: 政策标准
+  - source_id: S2_YUANZHOU_SUBSIDY_2023
+    scenario: scenario2_distributed_clean
+    indicator: 农村建筑节能改造补贴
+    value: 130
+    unit: 元/m2
+    model_mapping: subsidies.envelope_retrofit_capex
+    value_type: 政策标准
+  - source_id: S2_YUANZHOU_SUBSIDY_2023
+    scenario: scenario2_distributed_clean
+    indicator: 项目居民自筹资金
+    value: 4646.37
+    unit: 万元
+    model_mapping: finance.household_contribution
+    value_type: 实施方案
+
+  - source_id: S2_NX_HEATING_TARIFF_2026
+    scenario: scenario2_distributed_clean
+    indicator: 居民清洁供暖谷段电价
+    value: 0.2486
+    unit: 元/kWh
+    model_mapping: timeseries.electricity_price_off_peak
+    value_type: 执行电价
+  - source_id: S2_NX_HEATING_TARIFF_2026
+    scenario: scenario2_distributed_clean
+    indicator: 居民清洁供暖峰段电价
+    value: 0.4986
+    unit: 元/kWh
+    model_mapping: timeseries.electricity_price_peak
+    value_type: 执行电价
+  - source_id: S2_NX_HEATING_TARIFF_2026
+    scenario: scenario2_distributed_clean
+    indicator: 谷段时长
+    value: 16
+    unit: 小时/日
+    model_mapping: timeseries.off_peak_hours
+    value_type: 执行时段
+  - source_id: S2_NX_HEATING_TARIFF_2026
+    scenario: scenario2_distributed_clean
+    indicator: 峰段时长
+    value: 8
+    unit: 小时/日
+    model_mapping: timeseries.peak_hours
+    value_type: 执行时段
+
+  - source_id: S2_GUYUAN_RURAL_INCOME_2025
+    scenario: scenario2_distributed_clean
+    indicator: 农村居民人均可支配收入
+    value: 17675
+    unit: 元/人年
+    model_mapping: affordability.disposable_income_yuan_per_person_year
+    value_type: 直接事实
+  - source_id: S2_GUYUAN_RURAL_INCOME_2025
+    scenario: scenario2_distributed_clean
+    indicator: 农村居民人均可支配收入增速
+    value: 6.4
+    unit: "%"
+    model_mapping: affordability.income_growth_rate
+    value_type: 直接事实
+  - source_id: S2_GUYUAN_RURAL_INCOME_2025
+    scenario: scenario2_distributed_clean
+    indicator: 农村分布式光伏建成规模
+    value: 180.40
+    unit: MW
+    model_mapping: microgrid_islanding.regional_pv_context
+    value_type: 直接事实
+
+  - source_id: S2_GUYUAN_IMPLEMENTATION_2022
+    scenario: scenario2_distributed_clean
+    indicator: 固原清洁取暖项目计划总投资
+    value: 33.56
+    unit: 亿元
+    model_mapping: finance.total_investment_budget
+    value_type: 规划投资
+  - source_id: S2_GUYUAN_IMPLEMENTATION_2022
+    scenario: scenario2_distributed_clean
+    indicator: 中央财政资金
+    value: 9.00
+    unit: 亿元
+    model_mapping: finance.central_subsidy_budget
+    value_type: 规划投资
+  - source_id: S2_GUYUAN_IMPLEMENTATION_2022
+    scenario: scenario2_distributed_clean
+    indicator: 地方财政资金
+    value: 4.26
+    unit: 亿元
+    model_mapping: finance.local_subsidy_budget
+    value_type: 规划投资
+  - source_id: S2_GUYUAN_IMPLEMENTATION_2022
+    scenario: scenario2_distributed_clean
+    indicator: 企业自筹资金
+    value: 19.18
+    unit: 亿元
+    model_mapping: finance.enterprise_contribution
+    value_type: 规划投资
+  - source_id: S2_GUYUAN_IMPLEMENTATION_2022
+    scenario: scenario2_distributed_clean
+    indicator: 居民自筹资金
+    value: 1.11
+    unit: 亿元
+    model_mapping: finance.household_contribution
+    value_type: 规划投资
+  - source_id: S2_GUYUAN_IMPLEMENTATION_2022
+    scenario: scenario2_distributed_clean
+    indicator: 农村清洁取暖计划改造户数
+    value: 10.4
+    unit: 万户
+    model_mapping: customer_nodes.target_households
+    value_type: 规划任务
+
+  - source_id: S2_GUYUAN_GRID_ZHANGYI_2024
+    scenario: scenario2_distributed_clean
+    indicator: 张易110千伏输变电工程投资
+    value: 1.05
+    unit: 亿元
+    model_mapping: grid_connection.discrete_upgrade_fixed_cost
+    value_type: 项目投资
+  - source_id: S2_GUYUAN_GRID_ZHANGYI_2024
+    scenario: scenario2_distributed_clean
+    indicator: 改造前10千伏线路数量
+    value: 4
+    unit: 条
+    model_mapping: grid_connection.existing_feeders
+    value_type: 项目事实
+  - source_id: S2_GUYUAN_GRID_ZHANGYI_2024
+    scenario: scenario2_distributed_clean
+    indicator: 改造后10千伏线路数量
+    value: 7
+    unit: 条
+    model_mapping: grid_connection.post_upgrade_feeders
+    value_type: 项目事实
+
+  - source_id: S2_NEA_STORAGE_REPORT_2025
+    scenario: scenario2_distributed_clean
+    indicator: 全国新型储能累计功率
+    value: 7376
+    unit: 万kW
+    model_mapping: storage_market.installed_power
+    value_type: 行业统计
+  - source_id: S2_NEA_STORAGE_REPORT_2025
+    scenario: scenario2_distributed_clean
+    indicator: 全国新型储能累计能量
+    value: 1.68
+    unit: 亿kWh
+    model_mapping: storage_market.installed_energy
+    value_type: 行业统计
+  - source_id: S2_NEA_STORAGE_REPORT_2025
+    scenario: scenario2_distributed_clean
+    indicator: 全国新型储能平均时长
+    value: 2.3
+    unit: 小时
+    model_mapping: microgrid_islanding.benchmark_duration_hours
+    value_type: 行业统计
+  - source_id: S2_NEA_STORAGE_REPORT_2025
+    scenario: scenario2_distributed_clean
+    indicator: 锂离子电池储能技术占比
+    value: 96.4
+    unit: "%"
+    model_mapping: microgrid_islanding.battery_technology_share
+    value_type: 行业统计
+  - source_id: S2_NEA_STORAGE_REPORT_2025
+    scenario: scenario2_distributed_clean
+    indicator: 新型储能年均等效充放电次数
+    value: 221
+    unit: 次/年
+    model_mapping: microgrid_islanding.annual_equivalent_cycles
+    value_type: 行业统计
+  - source_id: S2_NEA_STORAGE_REPORT_2025
+    scenario: scenario2_distributed_clean
+    indicator: 锂电储能EPC中标价格同比降幅
+    value: 25
+    unit: "%"
+    model_mapping: microgrid_islanding.battery_capex_decline_scenario
+    value_type: 行业统计
+
+  - source_id: S2_MIIT_BATTERY_RULE_2024
+    scenario: scenario2_distributed_clean
+    indicator: 储能型单体电池循环寿命下限
+    value: 6000
+    unit: 次
+    model_mapping: microgrid_islanding.cell_cycle_life
+    value_type: 行业规范条件
+  - source_id: S2_MIIT_BATTERY_RULE_2024
+    scenario: scenario2_distributed_clean
+    indicator: 储能型电池组循环寿命下限
+    value: 5000
+    unit: 次
+    model_mapping: microgrid_islanding.battery_pack_cycle_life
+    value_type: 行业规范条件
+  - source_id: S2_MIIT_BATTERY_RULE_2024
+    scenario: scenario2_distributed_clean
+    indicator: 循环寿命终点容量保持率
+    value: 80
+    unit: "%"
+    model_mapping: microgrid_islanding.end_of_life_capacity_retention
+    value_type: 行业规范条件
+
+  - source_id: S2_STORAGE_MARKET_2025
+    scenario: scenario2_distributed_clean
+    indicator: 2024年锂电储能EPC中标均价
+    value: 1.175
+    unit: 元/Wh
+    model_mapping: microgrid_islanding.battery_epc_capex_yuan_per_kwh
+    value_type: 行业数据库
+  - source_id: S2_STORAGE_MARKET_2025
+    scenario: scenario2_distributed_clean
+    indicator: 2024年锂电储能系统中标均价
+    value: 0.574
+    unit: 元/Wh
+    model_mapping: microgrid_islanding.battery_system_capex_yuan_per_kwh
+    value_type: 行业数据库
+  - source_id: S2_STORAGE_MARKET_2025
+    scenario: scenario2_distributed_clean
+    indicator: 2025年上半年锂电储能EPC或PC中标均价
+    value: 0.9618
+    unit: 元/Wh
+    model_mapping: microgrid_islanding.battery_epc_capex_yuan_per_kwh
+    value_type: 行业数据库
+  - source_id: S2_STORAGE_MARKET_2025
+    scenario: scenario2_distributed_clean
+    indicator: 2025年上半年锂电储能系统中标均价
+    value: 0.4848
+    unit: 元/Wh
+    model_mapping: microgrid_islanding.battery_system_capex_yuan_per_kwh
+    value_type: 行业数据库

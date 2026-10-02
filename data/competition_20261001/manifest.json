@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "status": "data_prepared_not_solver_certified",
+  "date": "2026-10-01",
+  "baseline": "11.11.1",
+  "clock": {
+    "verified_lst_utc_offset_hours": 8,
+    "utc_lst_equal_comparisons": 160,
+    "archived_lst_equal_comparisons": 192,
+    "sample_start": "2023-01-01",
+    "sample_end_inclusive": "2023-01-02",
+    "api_version": "v2.10.2",
+    "radiation_api_unit": "Wh/m^2",
+    "scope": "Same Wuhan point only; clock/units check, not weather accuracy validation. Historical API version is not preserved in old CSVs."
+  },
+  "scope": {
+    "profile": "scenario3_wuhan_competition_rc",
+    "timezone": "Asia/Shanghai",
+    "date_identity": "project_assumed_service_period_not_city_statutory_schedule",
+    "start_inclusive": "2023-11-15T00:00:00+08:00",
+    "end_exclusive": "2024-03-16T00:00:00+08:00",
+    "expected_hours": 2928,
+    "annual_start_inclusive": "2023-07-01T00:00:00+08:00",
+    "annual_end_exclusive": "2024-07-01T00:00:00+08:00",
+    "annual_expected_hours": 8784,
+    "annual_identity": "continuous_July_to_June_service_year_not_calendar_year",
+    "utc_calendar_year_start_inclusive": "2023-01-01T00:00:00Z",
+    "utc_calendar_year_end_exclusive": "2024-01-01T00:00:00Z",
+    "utc_calendar_year_expected_hours": 8760,
+    "calendar_year_role": "legacy_UTC_calendar_audit_compatible; does_not_contain_whole_2023_2024_heating_season",
+    "selection_rule": "latest complete July-to-June service year in existing 2020-2024 archive; not selected by optimized performance"
+  },
+  "config": "wuhan_rc_candidate.yaml",
+  "annual_timeseries": "wuhan_service_year_2023_2024_utc.csv",
+  "utc_calendar_year_timeseries": "wuhan_calendar_year_2023_utc.csv",
+  "utc_calendar_year_config": "wuhan_rc_calendar_2023_candidate.yaml",
+  "heating_season_timeseries": "wuhan_heating_season_2023_2024_utc.csv",
+  "building_archetypes": "building_archetypes.csv",
+  "inputs": [
+    {
+      "file": "data/public_scenario_inputs/scenario3_wuhan_joint_public.yaml",
+      "sha256": "e4dc29f92cd3f52ac7837df90327bec5645086b0b573a546540c29881d738fce"
+    },
+    {
+      "file": "data/public_scenario_inputs/scenario3_wuhan_public.yaml",
+      "sha256": "5b4bb71d2ba5aaa01e2a4351525e2916b0ef6c80b7728e44afb3d7de8bffe8ce"
+    },
+    {
+      "file": "data/scenario3_high_quality_newbuild.yaml",
+      "sha256": "93fbf8dc3c7b71b51d247e8338eb702aaa43587c43e60efc5453344d6bbbaa9a"
+    },
+    {
+      "file": "data/example_city.yaml",
+      "sha256": "f9cff13710fc2ca3b7262db3d9c730ed5c276fb642ad6957dc3f4ab4a8e0e1f2"
+    },
+    {
+      "file": "data/scenario3_timeseries.csv",
+      "sha256": "01149dcdd2aed0181ac9f4928e388f8cfb009be18a4dec17336007c1ad42b27e"
+    },
+    {
+      "file": "data/competition_20261001/building_archetypes.csv",
+      "sha256": "23d04b08ef0e9eff639a4a5547e39e3d8fbda7181b460ab47037cece30df38b7"
+    },
+    {
+      "file": "data/public_sources/weather_manifest.yaml",
+      "sha256": "f1cd4bcd1771761c5fb9cc51f0b1701bd12e6e31701ca5e10864b8ec7a1394fc"
+    },
+    {
+      "file": "data/grid_emission_factors_2023_official.json",
+      "sha256": "fdb48010bcdbd4a3389a287e02a97b17bde0c294b46720d834c6e75d37b2805d"
+    },
+    {
+      "file": "scripts/prepare_competition_case.py",
+      "sha256": "7867edb94ccc6c24c06b04aa5809c6342d1dafc89f7562b0f36ac337141c5129"
+    },
+    {
+      "file": "tests/test_competition_data.py",
+      "sha256": "6776ed59c07798f8653cfbc13a0f6f3804957611a757e173ef882e1b08fc29e6"
+    },
+    {
+      "file": "data/competition_20261001/evidence/clock_requests.json",
+      "sha256": "90ef0323ed99f1bac93f6fb86dbcdef1898d739036870a04b49dd49859932e07"
+    },
+    {
+      "file": "data/competition_20261001/evidence/wuhan_clock_20230101_20230102_lst.json",
+      "sha256": "f0d363f295047264d22240e19fcea3c024165077b28ec09fc9e966506b5686f9"
+    },
+    {
+      "file": "data/competition_20261001/evidence/wuhan_clock_20230101_20230102_utc.json",
+      "sha256": "bd9a2e48ea7f8a512d5e485fa60f05ea51e2c83a4107a253d7d3546a35346837"
+    }
+  ],
+  "raw_weather_inputs": [
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2020.csv",
+      "sha256": "275a22045cf42861973b8e98bd1f2f02a20cd153a8eeccc5107f15bc67dad56f",
+      "profile": "scenario1_urumqi",
+      "year": 2020,
+      "rows": 8784,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2021.csv",
+      "sha256": "8f5996d5ef70a34fbc317b3f47fb949d822a1ec5985e75a3e249b6139c56ec5b",
+      "profile": "scenario1_urumqi",
+      "year": 2021,
+      "rows": 8760,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2022.csv",
+      "sha256": "614ce2db9ad81121ec63d181bc6935a8700362b1f2790ff3842d35dce98e197f",
+      "profile": "scenario1_urumqi",
+      "year": 2022,
+      "rows": 8760,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2023.csv",
+      "sha256": "2a9754d5d25b26664eaf18914162e2ea76ca4e81496e0c4423b54fe0766d39f0",
+      "profile": "scenario1_urumqi",
+      "year": 2023,
+      "rows": 8760,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2024.csv",
+      "sha256": "bc4777f054c138b8136dcd72db1730f7ed69e1370e7882c7a78641e116458af3",
+      "profile": "scenario1_urumqi",
+      "year": 2024,
+      "rows": 8784,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2020.csv",
+      "sha256": "0164c9514a63462787d9573ec6ba104bffe0b328f85e87d480d249378ea0e487",
+      "profile": "scenario2_guyuan",
+      "year": 2020,
+      "rows": 8784,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2021.csv",
+      "sha256": "1c18f602160fd6012516f4ab48738643b5402b30953adbe2d662b1f949a4224d",
+      "profile": "scenario2_guyuan",
+      "year": 2021,
+      "rows": 8760,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2022.csv",
+      "sha256": "1c4959ba5e062eaa614a711b48c7a04867f52b4254c323c137dee635f2ea9708",
+      "profile": "scenario2_guyuan",
+      "year": 2022,
+      "rows": 8760,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2023.csv",
+      "sha256": "61e9b5c74385f79831eea72dd8ae7d0b5d450b72e4f9b10d702817386498f8bf",
+      "profile": "scenario2_guyuan",
+      "year": 2023,
+      "rows": 8760,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2024.csv",
+      "sha256": "6c288627d27b17170eb3434707ee78b6e35892ca74e32c960849b97b393f7fa1",
+      "profile": "scenario2_guyuan",
+      "year": 2024,
+      "rows": 8784,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": false
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2020.csv",
+      "sha256": "74e1747670631f3876c2fa0422f859cacf813221a11525a1e2575118e93221ff",
+      "profile": "scenario3_wuhan",
+      "year": 2020,
+      "rows": 8784,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": true
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2021.csv",
+      "sha256": "8029bc843ee98f3ff0cf6ad7c70b93e04148bd0caafcf41e155ec5b7ed70900f",
+      "profile": "scenario3_wuhan",
+      "year": 2021,
+      "rows": 8760,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": true
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2022.csv",
+      "sha256": "ccd00e8110f1b12ae7a251f17c21a56e71ec7304b16da1d94ba7d816c7273202",
+      "profile": "scenario3_wuhan",
+      "year": 2022,
+      "rows": 8760,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": true
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2023.csv",
+      "sha256": "0cd24a06c3af43e8a3799a028ee78cfb255b80e3ebbfc81a4f12562442bd2dcd",
+      "profile": "scenario3_wuhan",
+      "year": 2023,
+      "rows": 8760,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": true
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2024.csv",
+      "sha256": "7dae12d1e64e072c9c77433bf8bb2c0cba84a4ebdbef2d68339cdfd32bad374c",
+      "profile": "scenario3_wuhan",
+      "year": 2024,
+      "rows": 8784,
+      "clock_identity": "NASA LST as documented by original weather_manifest.yaml",
+      "utc_conversion_in_this_package": true
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "building_archetypes.csv",
+      "sha256": "23d04b08ef0e9eff639a4a5547e39e3d8fbda7181b460ab47037cece30df38b7"
+    },
+    {
+      "file": "clock_verification.json",
+      "sha256": "8cb465344eb976581890d994bc8698a47616e57de23b4791d2a2add5bf55a5d0"
+    },
+    {
+      "file": "quality_report.json",
+      "sha256": "d5e5e95bb0d3daf2633ce231f13255f54b0eb45a36623148eca5589a637ba92e"
+    },
+    {
+      "file": "README.md",
+      "sha256": "3d8eb42ebc4a42e033079d3226efa7321df35ae3053514f8809aa51cf0ad4f19"
+    },
+    {
+      "file": "service_scope.json",
+      "sha256": "ed300d4879fdb06fd5c55b7ebf9820103638485592313eaf12cf9964ea8e4caf"
+    },
+    {
+      "file": "source_inventory.json",
+      "sha256": "2f3ca721efde59139ab16ecc88dbac4d528750c2a27306ac546e0aaa07ec1ca1"
+    },
+    {
+      "file": "test_result.txt",
+      "sha256": "a979b7b6357917682bac52858e3eb7ae36a91048bec832afbf6255987d8d503a"
+    },
+    {
+      "file": "validation_record.json",
+      "sha256": "295af5aaf6470c6c986df33fe958ee512c9b85833647a28b0eb6e49de975852e"
+    },
+    {
+      "file": "wuhan_calendar_year_2023_utc.csv",
+      "sha256": "7e304b9d35703ca06b9ca866407a53ce049bfecccec522c21ed04040e5ec486c"
+    },
+    {
+      "file": "wuhan_heating_season_2023_2024_utc.csv",
+      "sha256": "7abf01f92fb68174245b0a63bf8ef1796a53125dd2069c71eb0dc8cee5e3fec2"
+    },
+    {
+      "file": "wuhan_rc_calendar_2023_candidate.yaml",
+      "sha256": "fc6c186b3c7e2d1a062dce132fe6e57dd1a9f8a5c1b715569d36b92633d3be70"
+    },
+    {
+      "file": "wuhan_rc_candidate.yaml",
+      "sha256": "cc26ee2c7d8a7db56b9347012c7d1b122dd8e651096433061d8f2a0d94dd5d3b"
+    },
+    {
+      "file": "wuhan_service_year_2023_2024_utc.csv",
+      "sha256": "02f58ddef8d9a7df243aacc5a22b87f633660332d137d9c0f868ff5b01175fc1"
+    }
+  ],
+  "validation": {
+    "legacy_load_inputs_passed": true,
+    "data_quality_passed": true,
+    "full_season_solved": false,
+    "annual_solved": false,
+    "rc_integration_certified": false
+  },
+  "limitations": [
+    "Synthetic building parameters and schedules; no measured indoor temperature calibration.",
+    "Annual sensible heating/cooling only; humidity, latent cooling and DHW excluded.",
+    "Season requires a ground-balance scope decision or boundary ledger from annual run.",
+    "RC columns require core integration; successful legacy loading does not prove RC enforcement.",
+    "Price is legacy synthetic TOU shape, not verified Wuhan historical tariff; 2023 Hubei average carbon factor is a scenario constant for both weather years."
+  ]
+}

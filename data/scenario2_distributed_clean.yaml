@@ -1,0 +1,161 @@
+extends: example_city.yaml
+
+planning:
+  region_profile: dispersed_independent_clean_transition
+  firm_capacity_reserve_margin: 0.15
+  n_minus_1_source_names: []
+  n_minus_1_pipe_names: []
+  carbon_price_yuan_per_kg: 0.10
+
+nodes:
+  - name: district_a
+    temperature_retrofit: null
+  - name: district_b
+    temperature_retrofit: null
+
+sources:
+  - name: industrial_waste_heat
+    _delete: true
+  - name: central_waste_source_hp
+    _delete: true
+  - name: gas_peak_boiler
+    existing_capacity_kw: 350
+    max_new_capacity_kw: 0
+    max_retire_capacity_kw: 250
+    decommissioning_cost_yuan_per_kw: 45
+    fixed_om_yuan_per_kw_year: 14
+  - name: distributed_air_hp_b
+    existing_capacity_kw: 120
+    max_new_capacity_kw: 850
+    relative_humidity_column: relative_humidity
+    humidity_defrost_loss_per_unit: 0.28
+  - name: district_a_emergency_eb
+    existing_capacity_kw: 60
+    max_new_capacity_kw: 650
+  - name: electric_backup_boiler
+    existing_capacity_kw: 0
+    max_new_capacity_kw: 300
+  - name: district_a_air_hp
+    node: district_a
+    type: heat_pump
+    resource_kind: renewable
+    allowed_grades: [low]
+    existing_capacity_kw: 80
+    max_new_capacity_kw: 900
+    capex_yuan_per_kw: 1780
+    variable_om_yuan_per_kwh_heat: 0.020
+    source_temp_column: outdoor_temp
+    relative_humidity_column: relative_humidity
+    carnot_efficiency: 0.42
+    cop_min: 1.45
+    cop_max: 4.3
+    cutoff_temperature_c: -24
+    defrost_temperature_band_c: [-5, 6]
+    defrost_cop_multiplier: 0.88
+    humidity_defrost_loss_per_unit: 0.30
+    firm_capacity_credit: 0.55
+  - name: regional_biomass_boiler
+    node: plant
+    type: direct_heat
+    resource_kind: renewable
+    supply_temp_c: 90
+    allowed_grades: [high, low]
+    existing_capacity_kw: 0
+    max_new_capacity_kw: 1450
+    capex_yuan_per_kw: 1380
+    variable_cost_yuan_per_kwh_heat: 0.012
+    emission_kg_per_kwh_heat: 0.012
+    firm_capacity_credit: 0.85
+
+pipes:
+  - name: trunk_a
+    existing_capacity_kw: 0
+    diameter_options:
+      - name: DN125
+        diameter_mm: 125
+        capacity_kw: 750
+        capex_total_yuan: 520000
+      - name: DN150
+        diameter_mm: 150
+        capacity_kw: 1100
+        capex_total_yuan: 720000
+  - name: trunk_b
+    diameter_options:
+      - name: DN200
+        _delete: true
+      - name: DN125
+        diameter_mm: 125
+        capacity_kw: 750
+        capex_total_yuan: 610000
+      - name: DN150
+        diameter_mm: 150
+        capacity_kw: 1100
+        capex_total_yuan: 790000
+  - name: interconnector_ab
+    _delete: true
+
+storages:
+  - name: central_low_temp_tank
+    existing_capacity_kwh: 0
+    max_new_capacity_kwh: 1000
+    strict_charge_discharge_mode: false
+  - name: district_a_pcm
+    max_new_capacity_kwh: 500
+    strict_charge_discharge_mode: false
+
+grid_connection:
+  existing_capacity_kw: 220
+  max_new_capacity_kw: 1300
+  availability_column: grid_availability
+
+biomass_supply_chains:
+  - name: county_residue_chain
+    source_names: [regional_biomass_boiler]
+    lower_heating_value_kwh_per_kg: 4.15
+    conversion_efficiency: 0.86
+    procurement_cost_yuan_per_kg: 0.42
+    handling_cost_yuan_per_kg: 0.05
+    transport_distance_km: 42
+    transport_cost_yuan_per_tonne_km: 0.62
+    upstream_emission_kg_per_kg: 0.025
+    transport_emission_kg_per_tonne_km: 0.085
+    existing_inventory_capacity_kg: 22000
+    max_new_inventory_capacity_kg: 90000
+    inventory_capex_yuan_per_kg: 7.5
+    delivery_capacity_kg_per_hour: 520
+    delivery_availability_column: biomass_delivery_availability
+    annual_supply_limit_kg: 2100000
+
+microgrid_islanding:
+  critical_electric_load_fraction: 0.65
+  island_duration_hours: 12
+  renewable_firm_output_factor: 0.20
+  renewable_availability_column: solar_heat_availability
+  strict_battery_charge_discharge_mode: false
+  renewable_variable_cost_yuan_per_kwh: 0.02
+  renewable_emission_kg_per_kwh: 0.02
+  backup_variable_cost_yuan_per_kwh: 0.88
+  backup_emission_kg_per_kwh: 0.68
+  battery_charge_efficiency: 0.95
+  battery_discharge_efficiency: 0.95
+  battery_self_loss_per_hour: 0.0005
+  battery_throughput_cost_yuan_per_kwh: 0.02
+  existing_renewable_capacity_kw: 80
+  max_new_renewable_capacity_kw: 900
+  renewable_capex_yuan_per_kw: 2600
+  existing_battery_power_kw: 40
+  max_new_battery_power_kw: 600
+  battery_power_capex_yuan_per_kw: 620
+  existing_battery_energy_kwh: 480
+  max_new_battery_energy_kwh: 7200
+  battery_energy_capex_yuan_per_kwh: 980
+  existing_backup_capacity_kw: 80
+  max_new_backup_capacity_kw: 500
+  backup_capex_yuan_per_kw: 750
+
+policy:
+  minimum_clean_heat_share: 0.78
+  minimum_biomass_heat_share: 0.20
+  maximum_fossil_heat_share: 0.18
+  maximum_fossil_installed_capacity_kw: 350
+  minimum_fossil_backup_capacity_kw: 100

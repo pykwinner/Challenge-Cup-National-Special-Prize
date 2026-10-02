@@ -1,0 +1,198 @@
+{
+  "source_sha256": "964c7bef93a278a4bea264a1d6f8fb51faf328644f3034215e871343eea3730a",
+  "source_url": "https://www.gams.com/modlib/adddocs/epscm.pdf",
+  "model": {
+    "variable_names": [
+      "x1",
+      "x2"
+    ],
+    "lower_bounds": [
+      0,
+      0
+    ],
+    "upper_bounds": [
+      20,
+      40
+    ],
+    "objectives": {
+      "f1": [
+        1,
+        0
+      ],
+      "f2": [
+        3,
+        4
+      ]
+    },
+    "resource_coefficients": [
+      5,
+      4
+    ],
+    "resource_upper_bound": 200,
+    "sense": "maximize",
+    "variable_domain": "continuous"
+  },
+  "validation_reference": {
+    "table_2": {
+      "f1_then_f2": [
+        20,
+        160
+      ],
+      "f2_then_f1": [
+        8,
+        184
+      ]
+    },
+    "grid_interval_count": 4
+  },
+  "numeric_field_provenance": [
+    {
+      "field": "objectives.f1.x1",
+      "value": 1,
+      "physical_page": 6,
+      "zero_based_index": 5,
+      "location": "section 4.1 objective f1 = X1",
+      "provenance_class": "algebraic_encoding",
+      "note": "Unit coefficient and absent x2 term encode the printed expression."
+    },
+    {
+      "field": "objectives.f1.x2",
+      "value": 0,
+      "physical_page": 6,
+      "zero_based_index": 5,
+      "location": "section 4.1 objective f1 = X1",
+      "provenance_class": "algebraic_encoding",
+      "note": "Unit coefficient and absent x2 term encode the printed expression."
+    },
+    {
+      "field": "objectives.f2.x1",
+      "value": 3,
+      "physical_page": 6,
+      "zero_based_index": 5,
+      "location": "section 4.1 displayed model",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "objectives.f2.x2",
+      "value": 4,
+      "physical_page": 6,
+      "zero_based_index": 5,
+      "location": "section 4.1 displayed model",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "upper_bounds.x1",
+      "value": 20,
+      "physical_page": 6,
+      "zero_based_index": 5,
+      "location": "section 4.1 displayed model",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "upper_bounds.x2",
+      "value": 40,
+      "physical_page": 6,
+      "zero_based_index": 5,
+      "location": "section 4.1 displayed model",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "resource_coefficients.x1",
+      "value": 5,
+      "physical_page": 6,
+      "zero_based_index": 5,
+      "location": "section 4.1 displayed model",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "resource_coefficients.x2",
+      "value": 4,
+      "physical_page": 6,
+      "zero_based_index": 5,
+      "location": "section 4.1 displayed model",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "resource_upper_bound",
+      "value": 200,
+      "physical_page": 6,
+      "zero_based_index": 5,
+      "location": "section 4.1 displayed model",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "lower_bounds.x1",
+      "value": 0,
+      "physical_page": 7,
+      "zero_based_index": 6,
+      "location": "Figure 2 feasible polygon and axes",
+      "provenance_class": "graphical_domain_interpretation",
+      "note": "Nonnegative quadrant shown in Figure 2; lower bounds are not separately printed in the displayed inequalities. Explicitly recorded interpretation."
+    },
+    {
+      "field": "lower_bounds.x2",
+      "value": 0,
+      "physical_page": 7,
+      "zero_based_index": 6,
+      "location": "Figure 2 feasible polygon and axes",
+      "provenance_class": "graphical_domain_interpretation",
+      "note": "Nonnegative quadrant shown in Figure 2; lower bounds are not separately printed in the displayed inequalities. Explicitly recorded interpretation."
+    },
+    {
+      "field": "validation_reference.table_2.f1_then_f2.f1",
+      "value": 20,
+      "physical_page": 7,
+      "zero_based_index": 6,
+      "location": "Table 2 payoff table",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "validation_reference.table_2.f1_then_f2.f2",
+      "value": 160,
+      "physical_page": 7,
+      "zero_based_index": 6,
+      "location": "Table 2 payoff table",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "validation_reference.table_2.f2_then_f1.f1",
+      "value": 8,
+      "physical_page": 7,
+      "zero_based_index": 6,
+      "location": "Table 2 payoff table",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "validation_reference.table_2.f2_then_f1.f2",
+      "value": 184,
+      "physical_page": 7,
+      "zero_based_index": 6,
+      "location": "Table 2 payoff table",
+      "provenance_class": "explicit_source",
+      "note": ""
+    },
+    {
+      "field": "grid_interval_count",
+      "value": 4,
+      "physical_page": 8,
+      "zero_based_index": 7,
+      "location": "paragraph immediately before Figure 3",
+      "provenance_class": "explicit_source",
+      "note": ""
+    }
+  ],
+  "evidence_purpose": "published_mathematical_method_validation",
+  "empirical_validation": false,
+  "heating_engineering_validation": false,
+  "parameter_provenance_approved_for_heating_scenario": false
+}

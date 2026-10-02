@@ -1,0 +1,18 @@
+borehole_count: 800
+borehole_depth_m: 150
+borehole_spacing_m: 5.0
+simulation_years: 10
+volumetric_heat_capacity_mj_per_m3k: 2.2
+undisturbed_ground_temperature_c: 10
+initial_temperature_c: 20
+minimum_temperature_c: 9
+maximum_temperature_c: 55
+top_u_w_per_m2k: 0.12
+side_u_w_per_m2k: 0.06
+bottom_u_w_per_m2k: 0.04
+charge_efficiency: 0.95
+discharge_efficiency: 0.92
+monthly_charge_kwh: [0, 0, 0, 250000, 450000, 600000, 650000, 600000, 350000, 100000, 0, 0]
+monthly_discharge_demand_kwh: [650000, 550000, 300000, 50000, 0, 0, 0, 0, 0, 100000, 400000, 650000]
+minimum_final_recovery_efficiency: 0.70
+maximum_unmet_extraction_rate: 0.02

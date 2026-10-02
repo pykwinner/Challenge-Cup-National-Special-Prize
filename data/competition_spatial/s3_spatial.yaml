@@ -1,0 +1,45 @@
+schema_version: 1
+coordinate_system: local_cartesian_m
+provenance:
+  identity: synthetic_s3_spatial_prototype_v1_20261001
+  evidence_class: transparent_planning_assumption_not_surveyed_GIS
+  coordinate_basis: Existing example_city schematic x/y multiplied by an assumed 1000 m scale.
+  route_basis: Euclidean length times an assumed 1.08 routing factor; not a surveyed pipe alignment.
+  cost_basis: Synthetic all-in route construction rates per diameter option, including installation; not vendor quotes.
+  flow_boundary: Static kW heat transfer, no mass-flow, pressure, velocity or transport-delay model.
+systems:
+  - name: s3_wuhan_prototype
+districts:
+  - name: plant_site
+    system: s3_wuhan_prototype
+  - name: district_a
+    system: s3_wuhan_prototype
+  - name: district_b
+    system: s3_wuhan_prototype
+nodes:
+  - name: plant
+    district: plant_site
+    x_m: 0.0
+    y_m: 0.0
+  - name: district_a
+    district: district_a
+    x_m: 1200.0
+    y_m: 700.0
+  - name: district_b
+    district: district_b
+    x_m: 2100.0
+    y_m: -300.0
+candidate_rules:
+  - pipe: interconnector_ab
+    connection_allowed: true
+    allow_cross_system: false
+    route_factor: 1.08
+    max_route_length_m: 1600.0
+    cost_mode: per_m
+    option_costs:
+      - name: DN80
+        yuan_per_m: 200.0
+        fixed_yuan: 0.0
+      - name: DN100
+        yuan_per_m: 300.0
+        fixed_yuan: 5000.0

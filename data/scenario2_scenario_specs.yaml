@@ -1,0 +1,21 @@
+period_weight: 180
+risk:
+  cvar_alpha: 0.90
+  cvar_weight: 0.10
+scenarios:
+  - name: normal_operation
+    probability: 0.62
+  - name: cold_wave
+    probability: 0.16
+    temperature_offset_c: -7
+    demand_multiplier: 1.15
+    electricity_price_multiplier: 1.15
+  - name: biomass_logistics_disruption
+    probability: 0.12
+    demand_multiplier: 1.05
+    biomass_delivery_availability_multiplier: 0.20
+    electricity_price_multiplier: 1.10
+  - name: regional_grid_islanding
+    probability: 0.10
+    demand_multiplier: 1.08
+    grid_availability_multiplier: 0.00

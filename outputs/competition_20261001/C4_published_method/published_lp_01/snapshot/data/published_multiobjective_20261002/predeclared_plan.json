@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "declared_utc": "2026-10-01T16:15:38.392122+00:00",
+  "declared_before_any_experiment_solver_call": true,
+  "source_sha256": "964c7bef93a278a4bea264a1d6f8fb51faf328644f3034215e871343eea3730a",
+  "experiment": "Mavrotas section 4.1 LP, generic LinearMILP numerical layer with independent two-stage lexicographic wrapper",
+  "implementation_boundary": {
+    "solver": "heatplan.linear.LinearMILP.solve / scipy.optimize.milp (all integrality zero)",
+    "calls_HeatPlanningModel_solve_lexicographic": false,
+    "implements_full_AUGMECON_slack_weighting_and_early_exit": false
+  },
+  "source_and_protocol_distinction": {
+    "published_resource_cap": 200,
+    "mathematical_boundary_resource_caps": [
+      180,
+      220
+    ],
+    "boundary_caps_are_paper_or_field_data": false,
+    "nonnegative_domain_basis": "Figure 2 graphical domain; interpretation recorded per field",
+    "expected_endpoints_used_as_optimization_inputs": false
+  },
+  "endpoint_orders": [
+    [
+      "f1",
+      "f2"
+    ],
+    [
+      "f2",
+      "f1"
+    ]
+  ],
+  "epsilon_grid": {
+    "construct_from_actual_solved_endpoint_f2_range": true,
+    "interval_count": 4,
+    "predeclared_check_values": [
+      160,
+      166,
+      172,
+      178,
+      184
+    ],
+    "run_two_lexicographic_stages_for_each": true
+  },
+  "lexicographic_stage_2": {
+    "primary_fix": "exact equality to actual stage-1 optimum",
+    "primary_degradation_allowance": 0.0
+  },
+  "boundary_tests": {
+    "caps": [
+      180,
+      200,
+      220
+    ],
+    "tests": "both two-stage endpoints at each cap; cap 200 reused from published experiment",
+    "negative_case": {
+      "resource_cap": 180,
+      "epsilon": 184,
+      "expected_status": 2,
+      "second_stage_expected": "not attempted because stage 1 is analytically infeasible"
+    }
+  },
+  "numerical_protocol": {
+    "time_limit_seconds_per_stage": 10.0,
+    "mip_rel_gap_option": 0.0,
+    "audit_absolute_tolerance": 1e-07,
+    "audit_relative_tolerance": 1e-09,
+    "analytic_comparison_absolute_tolerance": 1e-07,
+    "analytic_comparison_relative_tolerance": 1e-09
+  },
+  "independent_validation": {
+    "oracle": "Exact rational enumeration of all pairwise intersections of source 2D halfspaces; no solver calls or solver matrix reused",
+    "stage_1_check": "optimal objective, feasibility, complete matrix audit; arbitrary secondary objective retained as observed",
+    "stage_2_check": "both objectives and unique lexicographic point against rational oracle",
+    "published_check": "final endpoint objective pairs compared with Table 2",
+    "negative_check": "rational feasible vertex set empty and solver status 2"
+  },
+  "logging": [
+    "all actual vectors and objectives",
+    "every stage status/message/success/elapsed wall time",
+    "solver-exposed objective and bound/gap/node fields; absent LP fields remain null",
+    "independent exact optimal bound separately labeled",
+    "full variable bounds/integrality/objective/constraint matrix and every row activity/slack",
+    "source/input/protocol/code SHA256 and dependency versions",
+    "stage CSV, point CSV, PNG/SVG chart, Markdown report, complete manifest last"
+  ],
+  "acceptance": "All 22 expected-optimal stages status 0 and pass full audits and rational checks; one negative stage status 2; 5 unique nondominated published epsilon points; source/code identities unchanged. Unexpected failures retain failure record and no complete manifest.",
+  "expected_solver_call_count": 23,
+  "evidence_purpose": "published_mathematical_method_validation",
+  "empirical_validation": false,
+  "heating_engineering_validation": false,
+  "parameter_provenance_approved_for_heating_scenario": false,
+  "immutable_output_policy": "exclusive run directory, exclusive file creation, no historical overwrites"
+}

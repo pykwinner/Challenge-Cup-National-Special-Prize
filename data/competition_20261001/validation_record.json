@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-01",
+  "test_command": "python -m pytest tests/test_competition_data.py -q --basetemp=outputs/competition_20261001/c1/pytest_20261001_c",
+  "result": "17 passed in 3.84s",
+  "exit_code": 0,
+  "tested": [
+    "8784-hour service year and exact 2928-hour seasonal subset, including leap day",
+    "8760-hour UTC calendar year, with eight real LST 2024 source hours at its end",
+    "Asia/Shanghai price mapping, weekday/weekend building occupancy and comfort schedules",
+    "Wuhan UTC/LST offset and archived value agreement, solar Wh-to-kWh correction",
+    "Original S3 joint heating/cooling equipment, network, grid and policy inheritance",
+    "Zero initial storage stock and zero unsupported building/storage firm credit",
+    "All 15 source weather files and artifact SHA256 identities",
+    "Rejected weather gaps, duplicates, fill values, NaN, invalid humidity and radiation",
+    "Rejected missing service boundary and area/H/C mismatch",
+    "C2 validate_building_thermal_inputs on the full 8784-hour four-building input without building or solving a MILP",
+    "Failed regeneration invalidates the previous completion manifest"
+  ],
+  "previous_failures": [
+    {
+      "result": "7 passed, 10 setup errors",
+      "reason": "Windows default pytest temp parent denied access (WinError 5)",
+      "resolution": "Use a role-specific workspace --basetemp; do not change system temp permissions"
+    },
+    {
+      "result": "7 passed, 10 setup errors",
+      "reason": "The selected basetemp parent directory had not yet been created (WinError 3)",
+      "resolution": "Create outputs/competition_20261001/c1 before running pytest"
+    },
+    {
+      "result": "16 passed, 1 failed",
+      "reason": "Seasonal CSV all-zero cooling column inferred int64 while annual column inferred float64; numerical values agreed",
+      "resolution": "Compare seasonal subset values and all labels with check_dtype=False, retaining numerical equality checks"
+    }
+  ],
+  "not_tested_or_claimed": [
+    "Full heating-season optimization",
+    "Full annual optimization",
+    "Integrated RC supply/cooling balances, economics or final reliability certification",
+    "Local measured building calibration or weather-station accuracy"
+  ]
+}

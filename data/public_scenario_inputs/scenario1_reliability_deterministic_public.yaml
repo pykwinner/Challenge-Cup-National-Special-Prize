@@ -1,0 +1,7 @@
+extends: scenario1_reliability_stress_public.yaml
+
+planning:
+  region_profile: urumqi_reality_reliability_deterministic_design
+
+policy:
+  transition_target_scenarios: [base]

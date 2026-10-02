@@ -1,0 +1,696 @@
+sources:
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    category: 正式供热规划与可靠性标准
+    publisher: 乌鲁木齐市人民政府、乌鲁木齐市城市管理局
+    title: 乌鲁木齐城市供热高质量发展规划（2025—2027年）
+    url: https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml
+    data_year: 2025-2027规划（2026年正式发布）
+    authority: 地方政府正式专项规划
+    use_in_model: 近期负荷、供回水温度、管网热损与失水、事故持续时间和规划成效校准
+    caveat: 规划需求范围不含甘泉堡工业园；规划目标不等同于逐时运行实测值
+
+  - source_id: S1_URUMQI_STATS_2024
+    scenario: scenario1_existing_network
+    category: 城市能源与供热实绩
+    publisher: 乌鲁木齐市统计局
+    title: 2024年乌鲁木齐市国民经济和社会发展统计公报
+    url: https://www.wlmq.gov.cn/wlmqs/c119359/202504/0e8ee60b2c264168af822ad14a49a7d1.shtml
+    data_year: 2024
+    authority: 地方政府统计公报
+    use_in_model: 全年供热量、天然气供给和地区用电量的城市尺度回标
+    caveat: 天然气总量包含非供暖用途；供热统计边界可能与规划计算口径不同
+
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    category: 工业余热与多能互补实测案例
+    publisher: 新疆维吾尔自治区住房和城乡建设厅
+    title: 新疆维吾尔自治区清洁能源供暖典型项目案例集
+    url: https://zjt.xinjiang.gov.cn/xjzjt/c113210/202412/caeaca67293043bfb869118e2b0e7a97/files/%E8%87%AA%E6%B2%BB%E5%8C%BA%E6%B8%85%E6%B4%81%E8%83%BD%E6%BA%90%E4%BE%9B%E6%9A%96%E5%85%B8%E5%9E%8B%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B%E9%9B%86.pdf
+    data_year: 2022-2024运行数据
+    authority: 自治区住建主管部门典型案例
+    use_in_model: 甘泉堡吸收式热泵容量、供热温度、投资、实际余热占比与工业停产备用逻辑
+    caveat: 甘泉堡当前服务面积与标称能力口径不同；单个供暖季不能代表全寿命运行
+
+  - source_id: S1_URUMQI_AIR_ALERT_EIA_2024
+    scenario: scenario1_existing_network
+    category: 工业共同原因限产
+    publisher: 乌鲁木齐市生态环境局公开平台
+    title: 乌鲁木齐华宇盛荣节能玻璃项目环境影响报告表（重污染天气响应条款）
+    url: https://www.urumqi.gov.cn/wlmqs/c119218/202404/853a2ff138c145e99fc347e84c230d66/files/%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90%E5%8D%8E%E5%AE%87%E7%9B%9B%E8%8D%A3%E8%8A%82%E8%83%BD%E7%8E%BB%E7%92%83%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E5%B9%B4%E4%BA%A720%E4%B8%87%E5%B9%B3%E6%96%B9%E7%B1%B3%E7%8E%BB%E7%92%83%E5%88%B6%E5%93%81%E9%A1%B9%E7%9B%AE.pdf
+    data_year: 2024
+    authority: 地方生态环境主管部门公开环评
+    use_in_model: 多家工业余热源同时降负荷的共同原因压力场景
+    caveat: 生产负荷控制比例不等于余热按同一比例线性下降；民生保供时可能有差异化执行
+
+  - source_id: S1_URUMQI_HEAT_ORDINANCE
+    scenario: scenario1_existing_network
+    category: 供热服务与事故约束
+    publisher: 乌鲁木齐市人民代表大会常务委员会、甘泉堡经开区政府公开平台
+    title: 乌鲁木齐市城市热力管理条例
+    url: https://www.gqp.gov.cn/gqbkfq/c120325/202309/0aeef70776d84591aa972294391b1d32.shtml
+    data_year: 2013施行（2023年官方公开）
+    authority: 地方性法规
+    use_in_model: 法定供热日历、最低室温、事故时长和退费可靠性约束
+    caveat: 法定服务阈值不是热源设备设计参数；异常低温时供热期可调整
+
+  - source_id: S1_NEA_SOLAR_CASES_2024
+    scenario: scenario1_existing_network
+    category: 跨季节水储热与水源热泵工程
+    publisher: 国家能源局、生态环境部、住房城乡建设部
+    title: 全国可再生能源供暖（制冷）典型案例汇编（2024）太阳能篇
+    url: https://www.nea.gov.cn/20250326/336b8c000bcc45879ed82d445b40f772/20250326336b8c000bcc45879ed82d445b40f772_3813d26b5ce3a84828bd876839dde44b27.pdf
+    data_year: 2021-2024运行数据（2025年发布）
+    authority: 国家部委联合发布典型案例
+    use_in_model: 季节储热体积、能量密度、投资、热泵COP、辅助热源与实测能耗校准
+    caveat: 西藏辐照、高海拔和建设条件与乌鲁木齐不同；项目投资含管网和建筑改造
+
+  - source_id: S1_SOLAR_PTES_GEOMETRY_2024
+    scenario: scenario1_existing_network
+    category: 跨季节储热热经济原始研究
+    publisher: 太阳能学报；中国科学院电工研究所等
+    title: 太阳能跨季节储热水体几何形状对系统含税热价的敏感性研究
+    url: https://www.tynxb.org.cn/CN/10.19912/j.0254-0096.tynxb.2023-0508
+    data_year: 2024
+    authority: 同行评议原始论文
+    use_in_model: PTES几何形状、热损和含税热价的非线性敏感性
+    caveat: TRNSYS模拟而非乌鲁木齐实测；热损周期口径需结合论文正文使用
+
+  - source_id: S1_CHIFENG_BTES_2020
+    scenario: scenario1_existing_network
+    category: 工业余热跨季节地埋管储热实测
+    publisher: Applied Energy；清华大学等
+    title: Large-scale living laboratory of seasonal borehole thermal energy storage system for urban district heating
+    url: https://doi.org/10.1016/j.apenergy.2020.114763
+    data_year: 2020
+    authority: 同行评议原始论文与现场监测
+    use_in_model: BTES体积、首次注热、土温演化和热影响半径
+    caveat: 只披露首个注热期，不能据此认定长期回收效率或经济性
+
+  - source_id: S1_NEA_ELECTRODE_BOILER_2021
+    scenario: scenario1_existing_network
+    category: 电极锅炉与水蓄热工程实测
+    publisher: 国家能源局
+    title: 全国可再生能源供暖典型案例汇编
+    url: https://www.nea.gov.cn/download/kzsnydxan2021.pdf
+    data_year: 2019-2021运行数据
+    authority: 国家能源主管部门典型案例
+    use_in_model: 电锅炉功率、调节范围、转换效率、水罐容量和系统综合效率
+    caveat: 小型公共建筑项目，辅机损耗与规模效应不可直接外推到城市级
+
+  - source_id: S1_NDRC_COAL_UPGRADE_2025
+    scenario: scenario1_existing_network
+    category: CHP灵活性与可靠性国家技术指标
+    publisher: 国家发展改革委、国家能源局
+    title: 新一代煤电升级专项行动实施方案（2025—2027年）
+    url: https://www.ndrc.gov.cn/xwdt/tzgg/202504/P020250414409116337687.pdf
+    data_year: 2025-2027
+    authority: 国家部委正式政策技术指标
+    use_in_model: CHP最小技术出力、低负荷持续时间、爬坡、煤耗惩罚与非计划停运
+    caveat: 国家目标不等于乌鲁木齐具体机组验收曲线；分钟爬坡需更细时间尺度回放
+
+  - source_id: S1_CHNENERGY_MOLTEN_SALT_2025
+    scenario: scenario1_existing_network
+    category: 火电热电解耦示范工程
+    publisher: 国家能源投资集团有限责任公司
+    title: 全国最大“火电+熔盐”储能项目主体完工
+    url: https://www.chnenergy.com.cn/gjnyjtww/chnjtyw/202503/e9a2bf48931d42339a89e7fc9097a65b.shtml
+    data_year: 2025
+    authority: 中央能源企业项目公告
+    use_in_model: 熔盐储热容量、温区、4至5小时解耦能力和新能源消纳效益
+    caveat: 项目服务工业蒸汽而非乌鲁木齐热水网，且未公开完整总投资
+
+  - source_id: S1_XINJIANG_RENEWABLE_2025
+    scenario: scenario1_existing_network
+    category: 新疆绿电可用背景
+    publisher: 国家能源局新疆监管办公室
+    title: 新疆能源监管办组织开展新能源消纳数据监测统计情况监管工作
+    url: https://xjb.nea.gov.cn/dtyw/jgdt/202602/t20260210_295722.html
+    data_year: 2025
+    authority: 国家能源局派出监管机构
+    use_in_model: 大规模绿电供热资源上限背景与消纳数据审计要求
+    caveat: 全疆装机不等于乌鲁木齐逐时可获得绿电；仍需节点和输电约束
+
+  - source_id: S1_XINJIANG_STORAGE_2024
+    scenario: scenario1_existing_network
+    category: 新疆电力储能与保供实绩
+    publisher: 新疆维吾尔自治区发展和改革委员会
+    title: 新型储能为电力保供添“底气”
+    url: https://xjdrc.xinjiang.gov.cn/xjfgw/c108386/202507/3e24dc9a03ad41e1a68ff43de2a5383a.shtml
+    data_year: 2024-2025
+    authority: 自治区能源主管部门
+    use_in_model: 电热耦合时电网侧储能时长、顶峰贡献和新能源消纳敏感性
+    caveat: 属电化学等电力储能而非供热储热；全疆结果不可直接作为乌鲁木齐节点能力
+
+facts:
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 2027年中心城区集中供热面积
+    value: 24875
+    unit: 万平方米
+    model_mapping: planning.city_heated_area_10k_m2
+    value_type: 正式规划目标
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 2025至2027年新增集中供热面积
+    value: 1500
+    unit: 万平方米
+    model_mapping: planning.demand_growth_area_10k_m2
+    value_type: 正式规划测算
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 一级网设计供水温度
+    value: 120
+    unit: 摄氏度
+    model_mapping: grades.high.temperature_c
+    value_type: 正式规划设计参数
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 一级网设计回水温度
+    value: 60
+    unit: 摄氏度
+    model_mapping: engineering_postcheck.primary_return_temperature_c
+    value_type: 正式规划设计参数
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 一级网每公里允许温降
+    value: 0.1
+    unit: 摄氏度/公里
+    model_mapping: pipes.maximum_temperature_drop_c_per_km
+    value_type: 正式规划上限
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 二级网每公里允许温降
+    value: 0.2
+    unit: 摄氏度/公里
+    model_mapping: metadata.secondary_network.maximum_temperature_drop_c_per_km
+    value_type: 正式规划上限
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 一级网失水率上限
+    value: 1
+    unit: 百分比
+    model_mapping: engineering_postcheck.primary_network_water_loss_percent
+    value_type: 正式规划上限
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 二级网失水率上限
+    value: 2
+    unit: 百分比
+    model_mapping: metadata.secondary_network.water_loss_percent
+    value_type: 正式规划上限
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 管网水力失调度上限
+    value: 10
+    unit: 百分比
+    model_mapping: engineering_postcheck.maximum_hydraulic_imbalance_percent
+    value_type: 正式规划上限
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 一般管网事故抢修时长上限
+    value: 8
+    unit: 小时
+    model_mapping: metadata.reliability.pipe_outage_duration_hours
+    value_type: 正式规划上限
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 规划方案年节约天然气
+    value: 1.01
+    unit: 亿标准立方米/年
+    model_mapping: policy.validation.annual_gas_saving_100m_nm3
+    value_type: 正式规划成效测算
+  - source_id: S1_URUMQI_FINAL_PLAN_2026
+    scenario: scenario1_existing_network
+    indicator: 规划方案年减少氮氧化物
+    value: 41
+    unit: 吨/年
+    model_mapping: policy.validation.annual_nox_reduction_t
+    value_type: 正式规划成效测算
+
+  - source_id: S1_URUMQI_STATS_2024
+    scenario: scenario1_existing_network
+    indicator: 全市供热总量
+    value: 8728.87
+    unit: 万GJ/年
+    model_mapping: planning.annual_heat_calibration_10k_gj
+    value_type: 官方年度统计
+  - source_id: S1_URUMQI_STATS_2024
+    scenario: scenario1_existing_network
+    indicator: 全市天然气供气总量
+    value: 34.71
+    unit: 亿立方米/年
+    model_mapping: planning.total_gas_supply_100m_m3
+    value_type: 官方年度统计
+  - source_id: S1_URUMQI_STATS_2024
+    scenario: scenario1_existing_network
+    indicator: 乌鲁木齐地区用电量
+    value: 491.25
+    unit: 亿kWh/年
+    model_mapping: planning.regional_electricity_scale_100m_kwh
+    value_type: 官方年度统计
+
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 甘泉堡吸收式热泵机组数量
+    value: 2
+    unit: 台
+    model_mapping: sources.central_waste_source_hp.reference_unit_count
+    value_type: 已投运项目配置
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 甘泉堡单台吸收式热泵容量
+    value: 35
+    unit: MW
+    model_mapping: sources.central_waste_source_hp.reference_unit_capacity_mw
+    value_type: 已投运项目配置
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 甘泉堡项目当前供暖面积
+    value: 150
+    unit: 万平方米
+    model_mapping: metadata.waste_heat_project.current_served_area_10k_m2
+    value_type: 项目运行现状
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 甘泉堡项目标称供热能力面积
+    value: 450
+    unit: 万平方米
+    model_mapping: metadata.waste_heat_project.design_area_10k_m2
+    value_type: 专家组项目能力口径
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 甘泉堡多能互补系统投资
+    value: 2.8
+    unit: 亿元
+    model_mapping: sources.central_waste_source_hp.reference_system_capex_100m_yuan
+    value_type: 项目投资
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 甘泉堡供暖季用户实际用热量
+    value: 82316
+    unit: GJ
+    model_mapping: metadata.waste_heat_project.measured_user_heat_gj
+    value_type: 供暖季实测
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 甘泉堡供暖季实际利用工业余热
+    value: 45730
+    unit: GJ
+    model_mapping: metadata.waste_heat_project.measured_waste_heat_gj
+    value_type: 供暖季实测
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 甘泉堡吸收式热泵SCOP
+    value: 1.8
+    unit: 无量纲
+    model_mapping: sources.central_waste_source_hp.reference_scop
+    value_type: 供暖季实测
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 吸收式热泵一级出水温度
+    value: 90
+    unit: 摄氏度
+    model_mapping: sources.central_waste_source_hp.supply_temp_c
+    value_type: 已投运项目参数
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 热网加热器最终出水温度
+    value: 130
+    unit: 摄氏度
+    model_mapping: metadata.waste_heat_project.final_supply_temp_c
+    value_type: 已投运项目参数
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 新疆工业冲渣水余热源温度
+    value: 70
+    unit: 摄氏度
+    model_mapping: scenarios.industrial_waste_heat_grade_reference_c
+    value_type: 自治区实证案例
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 新疆工业余热案例换热机组容量
+    value: 10
+    unit: MW
+    model_mapping: scenarios.industrial_waste_heat_reference_unit_mw
+    value_type: 自治区实证案例
+  - source_id: S1_XJ_CLEAN_HEAT_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 新疆工业余热案例储热罐总容积
+    value: 30000
+    unit: 立方米
+    model_mapping: storages.industrial_shutdown_buffer.reference_volume_m3
+    value_type: 自治区实证案例
+
+  - source_id: S1_URUMQI_AIR_ALERT_EIA_2024
+    scenario: scenario1_existing_network
+    indicator: 红色重污染响应相关企业生产负荷上限
+    value: 70
+    unit: 百分比
+    model_mapping: scenario_specs.common_industrial_curtailment.waste_heat_multiplier_percent
+    value_type: 应急监管约束
+
+  - source_id: S1_URUMQI_HEAT_ORDINANCE
+    scenario: scenario1_existing_network
+    indicator: 居民法定最低室温
+    value: 20
+    unit: 摄氏度
+    model_mapping: nodes.thermal_comfort.minimum_indoor_temperature_c
+    value_type: 法定下限
+  - source_id: S1_URUMQI_HEAT_ORDINANCE
+    scenario: scenario1_existing_network
+    indicator: 停止供热事故报告阈值
+    value: 8
+    unit: 小时
+    model_mapping: metadata.reliability.reportable_outage_duration_hours
+    value_type: 法定阈值
+  - source_id: S1_URUMQI_HEAT_ORDINANCE
+    scenario: scenario1_existing_network
+    indicator: 连续温度不达标退费阈值
+    value: 24
+    unit: 小时
+    model_mapping: finance.service_refund_trigger_hours
+    value_type: 法定阈值
+  - source_id: S1_URUMQI_HEAT_ORDINANCE
+    scenario: scenario1_existing_network
+    indicator: 法定采暖期长度
+    value: 183
+    unit: 天
+    model_mapping: planning.statutory_heating_days
+    value_type: 按10月10日至次年4月10日推算的非闰年日历长度
+
+  - source_id: S1_NEA_SOLAR_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 岗巴项目跨季节蓄热水池容积
+    value: 70000
+    unit: 立方米
+    model_mapping: storages.seasonal_water_pit.reference_volume_m3
+    value_type: 国家典型项目设计
+  - source_id: S1_NEA_SOLAR_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 岗巴项目供暖热负荷
+    value: 10.44
+    unit: MW
+    model_mapping: storages.seasonal_water_pit.reference_peak_load_mw
+    value_type: 国家典型项目设计
+  - source_id: S1_NEA_SOLAR_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 岗巴项目总投资
+    value: 1.43
+    unit: 亿元
+    model_mapping: storages.seasonal_water_pit.reference_system_capex_100m_yuan
+    value_type: 国家典型项目投资
+  - source_id: S1_NEA_SOLAR_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 岗巴水源热泵COP下限
+    value: 4.7
+    unit: 无量纲
+    model_mapping: sources.seasonal_storage_heat_pump.reference_cop_min
+    value_type: 国家典型项目设备参数
+  - source_id: S1_NEA_SOLAR_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 岗巴项目年平均供热量
+    value: 1228
+    unit: 万kWh/年
+    model_mapping: storages.seasonal_water_pit.reference_annual_heat_10k_kwh
+    value_type: 2021至2023年实测平均
+  - source_id: S1_NEA_SOLAR_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 岗巴项目年平均耗电量
+    value: 269
+    unit: 万kWh/年
+    model_mapping: storages.seasonal_water_pit.reference_annual_electricity_10k_kwh
+    value_type: 2021至2023年实测平均
+  - source_id: S1_NEA_SOLAR_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 岗巴跨季节蓄热保证率下限
+    value: 85
+    unit: 百分比
+    model_mapping: storages.seasonal_water_pit.reference_guarantee_rate_percent
+    value_type: 国家典型项目运行要求
+  - source_id: S1_NEA_SOLAR_CASES_2024
+    scenario: scenario1_existing_network
+    indicator: 仲巴钢罐单位体积标称储热量
+    value: 35
+    unit: kWh/立方米
+    model_mapping: storages.seasonal_water_tank.reference_energy_density_kwh_per_m3
+    value_type: 由15000立方米和525MWh直接换算
+
+  - source_id: S1_SOLAR_PTES_GEOMETRY_2024
+    scenario: scenario1_existing_network
+    indicator: 万立方米级储热水体最低模拟热损
+    value: 30.74
+    unit: kWh/立方米
+    model_mapping: storages.seasonal_water_pit.geometry_heat_loss_kwh_per_m3
+    value_type: 同行评议模拟结果
+  - source_id: S1_SOLAR_PTES_GEOMETRY_2024
+    scenario: scenario1_existing_network
+    indicator: 高径比1比2时含税热价
+    value: 0.470
+    unit: 元/kWh
+    model_mapping: storages.seasonal_water_pit.reference_tax_inclusive_lcoh_yuan_per_kwh
+    value_type: 同行评议模拟结果
+  - source_id: S1_SOLAR_PTES_GEOMETRY_2024
+    scenario: scenario1_existing_network
+    indicator: 最低热损对应高径比
+    value: 0.5
+    unit: 高度/直径
+    model_mapping: storages.seasonal_water_pit.reference_height_diameter_ratio
+    value_type: 同行评议优化结果
+  - source_id: S1_SOLAR_PTES_GEOMETRY_2024
+    scenario: scenario1_existing_network
+    indicator: 深度敏感性最优参考深度
+    value: 19
+    unit: 米
+    model_mapping: storages.seasonal_water_pit.reference_depth_m
+    value_type: 同行评议优化结果
+
+  - source_id: S1_CHIFENG_BTES_2020
+    scenario: scenario1_existing_network
+    indicator: 赤峰BTES储热体积
+    value: 500000
+    unit: 立方米
+    model_mapping: btes.storage_volume_m3
+    value_type: 现场实验规模
+  - source_id: S1_CHIFENG_BTES_2020
+    scenario: scenario1_existing_network
+    indicator: 首个注热期注入热量
+    value: 33458.6
+    unit: GJ
+    model_mapping: btes.first_year_charge_gj
+    value_type: 现场监测
+  - source_id: S1_CHIFENG_BTES_2020
+    scenario: scenario1_existing_network
+    indicator: 注热前平均土壤温度
+    value: 10.0
+    unit: 摄氏度
+    model_mapping: btes.undisturbed_ground_temperature_c
+    value_type: 现场监测
+  - source_id: S1_CHIFENG_BTES_2020
+    scenario: scenario1_existing_network
+    indicator: 首个注热期后平均土壤温度
+    value: 35.6
+    unit: 摄氏度
+    model_mapping: btes.first_charge_end_temperature_c
+    value_type: 现场监测
+  - source_id: S1_CHIFENG_BTES_2020
+    scenario: scenario1_existing_network
+    indicator: 首个注热期核心温度
+    value: 40.2
+    unit: 摄氏度
+    model_mapping: btes.first_charge_core_temperature_c
+    value_type: 现场监测
+
+  - source_id: S1_NEA_ELECTRODE_BOILER_2021
+    scenario: scenario1_existing_network
+    indicator: 电极锅炉额定功率
+    value: 3
+    unit: MW
+    model_mapping: sources.electric_backup_boiler.reference_unit_capacity_mw
+    value_type: 国家典型项目配置
+  - source_id: S1_NEA_ELECTRODE_BOILER_2021
+    scenario: scenario1_existing_network
+    indicator: 水蓄热罐容积
+    value: 450
+    unit: 立方米
+    model_mapping: storages.short_term_hot_water.reference_volume_m3
+    value_type: 国家典型项目配置
+  - source_id: S1_NEA_ELECTRODE_BOILER_2021
+    scenario: scenario1_existing_network
+    indicator: 水蓄热罐标称蓄热量下限
+    value: 14
+    unit: MWh
+    model_mapping: storages.short_term_hot_water.reference_capacity_mwh
+    value_type: 国家典型项目配置
+  - source_id: S1_NEA_ELECTRODE_BOILER_2021
+    scenario: scenario1_existing_network
+    indicator: 系统平均综合供热效率
+    value: 89.77
+    unit: 百分比
+    model_mapping: sources.electric_backup_boiler.reference_system_efficiency_percent
+    value_type: 项目实测
+  - source_id: S1_NEA_ELECTRODE_BOILER_2021
+    scenario: scenario1_existing_network
+    indicator: 电极锅炉最小调节负荷
+    value: 10
+    unit: 百分比
+    model_mapping: sources.electric_backup_boiler.minimum_output_fraction_percent
+    value_type: 案例技术参数
+  - source_id: S1_NEA_ELECTRODE_BOILER_2021
+    scenario: scenario1_existing_network
+    indicator: 电极锅炉本体转换效率
+    value: 98
+    unit: 百分比
+    model_mapping: sources.electric_backup_boiler.efficiency_percent
+    value_type: 案例技术参数
+
+  - source_id: S1_NDRC_COAL_UPGRADE_2025
+    scenario: scenario1_existing_network
+    indicator: 现役煤电机组最小出力目标下界
+    value: 25
+    unit: 百分比额定负荷
+    model_mapping: sources.existing_chp.flexibility_minimum_output_lower_percent
+    value_type: 国家技术目标
+  - source_id: S1_NDRC_COAL_UPGRADE_2025
+    scenario: scenario1_existing_network
+    indicator: 采暖供热深调最低出力
+    value: 40
+    unit: 百分比额定负荷
+    model_mapping: sources.existing_chp.heating_minimum_output_percent
+    value_type: 国家技术目标
+  - source_id: S1_NDRC_COAL_UPGRADE_2025
+    scenario: scenario1_existing_network
+    indicator: 单日达到采暖深调最低出力的时长
+    value: 6
+    unit: 小时/日
+    model_mapping: metadata.chp.daily_low_load_duration_hours
+    value_type: 国家技术目标
+  - source_id: S1_NDRC_COAL_UPGRADE_2025
+    scenario: scenario1_existing_network
+    indicator: 现役机组负荷变化速率下界
+    value: 0.8
+    unit: 百分比额定功率/分钟
+    model_mapping: sources.existing_chp.ramp_rate_lower_percent_per_min
+    value_type: 国家技术目标
+  - source_id: S1_NDRC_COAL_UPGRADE_2025
+    scenario: scenario1_existing_network
+    indicator: 现役机组负荷变化速率上界
+    value: 2.5
+    unit: 百分比额定功率/分钟
+    model_mapping: sources.existing_chp.ramp_rate_upper_percent_per_min
+    value_type: 国家技术目标
+  - source_id: S1_NDRC_COAL_UPGRADE_2025
+    scenario: scenario1_existing_network
+    indicator: 保供期申报出力达标率下限
+    value: 98
+    unit: 百分比
+    model_mapping: sources.existing_chp.firm_availability_percent
+    value_type: 国家技术目标
+  - source_id: S1_NDRC_COAL_UPGRADE_2025
+    scenario: scenario1_existing_network
+    indicator: 保供期非计划停运上限
+    value: 0.3
+    unit: 次/台年
+    model_mapping: sources.existing_chp.forced_outage_events_per_unit_year
+    value_type: 国家技术目标
+  - source_id: S1_NDRC_COAL_UPGRADE_2025
+    scenario: scenario1_existing_network
+    indicator: 30%负荷煤耗相对额定负荷增幅上限
+    value: 25
+    unit: 百分比
+    model_mapping: sources.existing_chp.low_load_fuel_penalty_percent
+    value_type: 国家技术目标
+
+  - source_id: S1_CHNENERGY_MOLTEN_SALT_2025
+    scenario: scenario1_existing_network
+    indicator: 火电耦合熔盐储热容量
+    value: 1000
+    unit: MWh
+    model_mapping: storages.chp_molten_salt.reference_capacity_mwh
+    value_type: 央企示范项目设计
+  - source_id: S1_CHNENERGY_MOLTEN_SALT_2025
+    scenario: scenario1_existing_network
+    indicator: 熔盐热罐温度
+    value: 390
+    unit: 摄氏度
+    model_mapping: storages.chp_molten_salt.hot_tank_temperature_c
+    value_type: 央企示范项目设计
+  - source_id: S1_CHNENERGY_MOLTEN_SALT_2025
+    scenario: scenario1_existing_network
+    indicator: 熔盐冷罐温度
+    value: 190
+    unit: 摄氏度
+    model_mapping: storages.chp_molten_salt.cold_tank_temperature_c
+    value_type: 央企示范项目设计
+  - source_id: S1_CHNENERGY_MOLTEN_SALT_2025
+    scenario: scenario1_existing_network
+    indicator: 最大供热条件下机组最低电负荷
+    value: 30
+    unit: 百分比额定负荷
+    model_mapping: sources.existing_chp.decoupled_minimum_output_percent
+    value_type: 央企示范项目目标
+  - source_id: S1_CHNENERGY_MOLTEN_SALT_2025
+    scenario: scenario1_existing_network
+    indicator: 满额发电时储热连续供汽时长
+    value: 4
+    unit: 小时
+    model_mapping: storages.chp_molten_salt.full_load_heat_support_hours
+    value_type: 央企示范项目目标
+  - source_id: S1_CHNENERGY_MOLTEN_SALT_2025
+    scenario: scenario1_existing_network
+    indicator: 低谷30%负荷连续供热时长
+    value: 5
+    unit: 小时
+    model_mapping: storages.chp_molten_salt.low_load_heat_support_hours
+    value_type: 央企示范项目目标
+  - source_id: S1_CHNENERGY_MOLTEN_SALT_2025
+    scenario: scenario1_existing_network
+    indicator: 预计年新增新能源消纳
+    value: 1.28
+    unit: 亿kWh/年
+    model_mapping: policy.validation.renewable_absorption_100m_kwh
+    value_type: 央企项目测算
+
+  - source_id: S1_XINJIANG_RENEWABLE_2025
+    scenario: scenario1_existing_network
+    indicator: 新疆新能源装机规模
+    value: 1.68
+    unit: 亿kW
+    model_mapping: renewable_electricity.regional_installed_capacity_100m_kw
+    value_type: 能源监管年度数据
+
+  - source_id: S1_XINJIANG_STORAGE_2024
+    scenario: scenario1_existing_network
+    indicator: 新疆新型储能功率
+    value: 858.7
+    unit: 万kW
+    model_mapping: metadata.power_system_storage.installed_power_10k_kw
+    value_type: 自治区能源主管部门统计
+  - source_id: S1_XINJIANG_STORAGE_2024
+    scenario: scenario1_existing_network
+    indicator: 新疆新型储能容量
+    value: 2874.33
+    unit: 万kWh
+    model_mapping: metadata.power_system_storage.installed_energy_10k_kwh
+    value_type: 自治区能源主管部门统计
+  - source_id: S1_XINJIANG_STORAGE_2024
+    scenario: scenario1_existing_network
+    indicator: 新疆新型储能利用小时
+    value: 1689
+    unit: 小时/年
+    model_mapping: metadata.power_system_storage.utilization_hours
+    value_type: 自治区能源主管部门统计
+  - source_id: S1_XINJIANG_STORAGE_2024
+    scenario: scenario1_existing_network
+    indicator: 新型储能提升新能源利用率
+    value: 3.6
+    unit: 百分点
+    model_mapping: renewable_electricity.storage_absorption_uplift_percentage_points
+    value_type: 自治区能源主管部门统计
+  - source_id: S1_XINJIANG_STORAGE_2024
+    scenario: scenario1_existing_network
+    indicator: 2025年春节储能最大连续放电时长
+    value: 6
+    unit: 小时
+    model_mapping: metadata.power_system_storage.maximum_observed_discharge_hours
+    value_type: 自治区运行实绩

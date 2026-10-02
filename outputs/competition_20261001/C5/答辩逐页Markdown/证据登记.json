@@ -1,0 +1,731 @@
+{
+  "schema": "C5_markdown_pages.v1",
+  "generated_utc": "2026-10-01T16:56:35.268764+00:00",
+  "requested_delivery": "page_by_page_markdown_only",
+  "page_count": 25,
+  "main_page_count": 24,
+  "external_validation_slot": "16A; first diagnostic and adverse exploratory followup approved; all three modes and matched baselines shown",
+  "edition_status": "current_admitted_data_and_mathematical_evidence_engineering_case_not_admitted",
+  "all_data_authenticity_requirements_satisfied": false,
+  "final_main_engineering_case_admitted": false,
+  "markdown_links": "relative to page directory; current linked files are listed in C5/final_current_files.json; historical references remain repository locators only",
+  "pptx_build_stopped": true,
+  "pdf_deferred": true,
+  "no_solver_invoked": true,
+  "selected_by": "C0",
+  "manifest_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_plan_01\\manifest.json",
+  "manifest_sha256": "6fe841e0d0ea941aaed3dd7bbd007b8550e8760207d87e4a4531cc088cf95a23",
+  "formal_scope": "representative",
+  "complete": true,
+  "full_annual_run_accepted_by_C0": true,
+  "manifest_external_certificate_field": "pending_C6",
+  "building_audit_passed": true,
+  "building_audit_annual_certification": false,
+  "building_audit_scope": "supplied_trusted_frame_only",
+  "building_audit_limitations": [
+    "No equipment/network source balance, investment or solver-optimality certification.",
+    "Comfort is sampled at interval ends; initial preheat provenance is external.",
+    "Keep original full frame/config and pre-solve identity outside mutable results."
+  ],
+  "selected_replays": [
+    {
+      "name": "optimized_annual_01",
+      "manifest_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_annual_01\\manifest.json",
+      "manifest_sha256": "1bb22e031d8e0c2d030d84798c2cb5803a13562c15ac9245100ceba0c314aea8",
+      "verified_result_files": {
+        "annual_scope_audit.json": "a786b12fe95a5ba02fcf3a30f128f57c134be0b3b4b9af7bce56809ce71779db",
+        "building_comfort.csv": "50788814b0b1dc9384242b415895d0299391753428e7862a410203881a3e9b67",
+        "building_trajectory.csv": "dccc357e5d71198acf2a814e0087084ed467eda407d04e7fd709c1a743685aac",
+        "c6_building_audit.json": "8198fc4de8f57b4d8eb9fe13e962a481b74188f6237ebacdf42891d1f9d7d513",
+        "corrected_cost.json": "4993713caaf27ab6fc28e85dff75da91b766d53c3d6b0da167643041ce9922c3",
+        "delivered_heat_hierarchy.csv": "2353c7ed8d95e8d14385b11fe733cefe045aa843c31586660d27fabb564b882a",
+        "dispatch.csv": "4bf6b78370a7aa08bb1bf6632705b257f5eebefa4ef2c0bb121d55c1a359be0b",
+        "independent_rc_audit.json": "76e7014a17fcb03a9fc0ea128fdc217d66f65f3d76f24413ec0c8874b152692a",
+        "investments.csv": "b016d5326b13c181b30b383fbffa01cca05c089b2b2209f15dce8ef649d32b57",
+        "model_config.json": "a7c8e0983b83698df8959c2e40587e90a25073f66c9145ac18e6f3ef13398fac",
+        "model_profile.json": "b9d150110f432bfc8509816cd8ad4f0d68dfaa78c041c961c1710c579d8652ce",
+        "model_timeseries.csv": "d7c034b77c76eed76adc9f66e6cfaff5e69c83c978a472af4a7b5d54dcf82b9c",
+        "run_record.json": "76a52522acda28630a3eee61cf435d1d59d15b6337704e5018d010632a8e2c44",
+        "solution.npz": "20f018f6cad40d18a234f2579a911ccc431e6035e8c8eb34478aee060ad7bd40",
+        "source_grades.json": "7c60f980a2bfcd8ee05f57e6fb81ac5dae3756ce6c033b746724a710f1ee4b62",
+        "spatial_candidates.json": "083dbe255b54b351d86c7a4a9567643ec36ab05b7b13d194c80229ad5c44e531",
+        "storage_postcheck.csv": "666e0f9d5f400e0cb4f120a98461e9266dbd36ca4483802f9c257abeef3c7c9d",
+        "summary.json": "a007377b391454e120f5d1a2b2c2c0b37899bbf17afe3c69d2237c0d5ba92c42",
+        "technology_changes.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "variables.csv.gz": "681ce3bf454fca225742bec7a6c9c8f3302faa39367e5bc920659e1257e98b54"
+      },
+      "review_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\optimized_annual_01_review.json",
+      "review_sha256": "83263dc288504123600dfef506d03429dc3980a9e0751dcf01f572ad712ab7f9",
+      "review_passed": true,
+      "review_checks": {
+        "same_investment": true,
+        "same_service_contract": true,
+        "same_code_epoch": true,
+        "frozen_code_bytes": true,
+        "source_bytes": true,
+        "presolve_anchor_bytes": true,
+        "strict_status_and_gap": true,
+        "original_runner_audits": true,
+        "original_independent_audit": true,
+        "fresh_serialized_rc_audit": true,
+        "continuous_hourly": true,
+        "unit_period_weights": true,
+        "declared_annual_clock": true,
+        "per_source_ground_balance": true,
+        "ground_summary_matches": true,
+        "capital_once": true,
+        "component_objective": true,
+        "combined_emission_ledger": true
+      },
+      "scope": "annual",
+      "hours": 8784,
+      "parent_investment_sha256": "74099da0470559c021f70c78d74d626276066d338349caf198afb8942922639b"
+    },
+    {
+      "name": "optimized_season_03",
+      "manifest_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_season_03\\manifest.json",
+      "manifest_sha256": "e045fdedb6258cf4cc03a077bdea3ea9b57d28b51b6362573c6fb4a9afbb4fa9",
+      "verified_result_files": {
+        "building_comfort.csv": "11eb523e003c4a93132c8ce9f386e5f017c78b80bd2c9df6bdeac3498f256080",
+        "building_trajectory.csv": "6a341ed6f5292e79b683844bab4875dc9d6283eb74f61b708cf65817a09d24df",
+        "c6_building_audit.json": "6c5f0e9ccacd5296a7e2c3e3bc018fe2c74ac17a51fa1feb482d85618007aeb7",
+        "corrected_cost.json": "31f19b8b52efa19c5e36de87e94e7d377fc423d4b15945ea9e123e3f1fece8c5",
+        "delivered_heat_hierarchy.csv": "526b4c43cb3d69207a86fa84502691bf3c1d5bdeb8197c39b712274804158cda",
+        "dispatch.csv": "1b3e316f4ea201c4bddd24efd57a2f9b0d933fb196992f966b3e89126ba3fc2b",
+        "independent_rc_audit.json": "25c67f46f94e22dd5e29f0534b5f8fffb4c9c25c970df7007267b93286a2b9f3",
+        "investments.csv": "b016d5326b13c181b30b383fbffa01cca05c089b2b2209f15dce8ef649d32b57",
+        "model_config.json": "0ba269a7c005eae2b74c30a4dca2ffcff2db07349138d0785872aa0f7cd64d2a",
+        "model_profile.json": "b3bcdd5bf7fcbd890a366bc3bdb96c48126e748471af1c2f803b996da6059c8e",
+        "model_timeseries.csv": "cccccda36c5f014e9234e71e94c2c1cee0eaddca56ca17a211fd4399a4bfdc42",
+        "run_record.json": "e7218c38db94534f97380a071ed5a36e32893024829a024372eb58772bc2f185",
+        "season_assumptions.json": "19b9e965caa4f9bfa0bfb70c1433c0eff05846b7a56b43e1a021ad137b49c700",
+        "season_scope_audit.json": "1d6a439def18128a76b10cf1f432b63754c276bd03d3c55e423225e37994ad0a",
+        "solution.npz": "31b31629446ab53bd2136afcc3ef7e9a31c9139d209229ada9f4af7fd605c6e7",
+        "source_grades.json": "7c60f980a2bfcd8ee05f57e6fb81ac5dae3756ce6c033b746724a710f1ee4b62",
+        "spatial_candidates.json": "083dbe255b54b351d86c7a4a9567643ec36ab05b7b13d194c80229ad5c44e531",
+        "storage_postcheck.csv": "11cab32a908f24b21dd8f02ffcf9cd8763dc7cf4cf1eca9c69b63346bbc9ea15",
+        "summary.json": "6939de1f7f047e518b09f6598d809e62c44cb36d11775e6d00886d4cfc841331",
+        "technology_changes.json": "7ed94ad9b5f0ca341df4b0ea96eb9019bae76af74b0b0f6753e0ef4fffbec09a",
+        "variables.csv.gz": "18f7a19a3bf80a5afcfef63a840d4bef7ab0dc1d6e257cc969a8d3e45bdc0807"
+      },
+      "review_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\optimized_season_03_review.json",
+      "review_sha256": "c82bdf3cb841ce13f3a9b93f8787bd6315283341f2077f00a719299e2ffe1596",
+      "review_passed": true,
+      "review_checks": {
+        "same_investment": true,
+        "same_service_contract": true,
+        "same_code_epoch": true,
+        "frozen_code_bytes": true,
+        "source_bytes": true,
+        "presolve_anchor_bytes": true,
+        "strict_status_and_gap": true,
+        "original_runner_audits": true,
+        "original_independent_audit": true,
+        "fresh_serialized_rc_audit": true,
+        "continuous_hourly": true,
+        "unit_period_weights": true,
+        "declared_season_clock": true,
+        "per_source_ground_balance": true,
+        "ground_summary_matches": true,
+        "capital_once": true,
+        "component_objective": true,
+        "combined_emission_ledger": true
+      },
+      "scope": "season",
+      "hours": 2928,
+      "parent_investment_sha256": "74099da0470559c021f70c78d74d626276066d338349caf198afb8942922639b"
+    }
+  ],
+  "engineering_test_records": [
+    {
+      "label": "最新整合全回归",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\regression_004.xml",
+      "sha256": "b06a76897cea93661fc3a216f06c4bf18660c2f730610965ee1b513a27bb4b64",
+      "counts": {
+        "tests": 628,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "xml_seconds": 67.551,
+      "scope": "current integration epoch; separate from historical C4 solver code hashes"
+    },
+    {
+      "label": "先前发布准入专项，单列",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\release_gate_003.xml",
+      "sha256": "3a019b2851db27e10cd4a289821d25f1ae8d699d83b4166e4be207fa4d6089ec",
+      "counts": {
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "xml_seconds": 0.161,
+      "scope": "current integration epoch; separate from historical C4 solver code hashes"
+    }
+  ],
+  "selected_core_portability": {
+    "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\core_portable_verification_01.json",
+    "sha256": "b5edd2e4406ee49d571b47cf984a5f47a178c32316e276db55dd48f9f91ae9be",
+    "passed": 55,
+    "deselected": 2,
+    "seconds": 8.02,
+    "excluded": [
+      "test_approval_and_first_round_entire_tree_unchanged",
+      "test_final_manifest_hashes_and_approved_identities"
+    ],
+    "scope": "Curated core package before final paper and slide documents; does not certify all original data or engineering performance.",
+    "full_original_regression_count": 628
+  },
+  "current_program_execution_extract": {
+    "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+    "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+    "verified_against_original_profiles_and_solver_fields": true,
+    "scope": "Actual original execution size/timing/state/residuals only; no empirical accuracy, device choice, engineering cost, savings or emissions approval. Original frozen source epoch is identified by the archived run manifests; not relabeled as current core.",
+    "engineering_data_approved": false
+  },
+  "final_source_audit": {
+    "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C3_data_truth\\manifest.json",
+    "sha256": "966aca174fa75241d436c65699fa76aa9e9a553c19d3149dc8eb255045e51ed3",
+    "baseline_records": 8051,
+    "unsubstantiated_records": 4935,
+    "records_are_unique_parameters": false,
+    "complete_inventory_does_not_certify_all_data": true,
+    "positive_project_input_field_records": 63,
+    "main_engineering_case_admitted": false
+  },
+  "published_mathematical_method": {
+    "approval_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\published_method_citation_approval_01.json",
+    "approval_sha256": "a102f510cf679ea66264e119d0f09ebccd834987443852fc0886b6aa1706d166",
+    "manifest_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4_published_method\\published_lp_01\\manifest.json",
+    "manifest_sha256": "5d9352ebadfc19482decaf1f0757c60e39f46c1171b7d9e750d57c67d33e5c9e",
+    "file_hashes_checked": 106,
+    "epsilon_points": [
+      {
+        "case": "published_epsilon_00",
+        "resource_cap": "200",
+        "epsilon": "160.0",
+        "order": "f1_then_f2",
+        "x1": "20.0",
+        "x2": "25.0",
+        "f1": "20.0",
+        "f2": "160.0",
+        "classification": "published_base"
+      },
+      {
+        "case": "published_epsilon_01",
+        "resource_cap": "200",
+        "epsilon": "166.0",
+        "order": "f1_then_f2",
+        "x1": "17.0",
+        "x2": "28.75",
+        "f1": "17.0",
+        "f2": "166.0",
+        "classification": "published_base"
+      },
+      {
+        "case": "published_epsilon_02",
+        "resource_cap": "200",
+        "epsilon": "172.0",
+        "order": "f1_then_f2",
+        "x1": "14.0",
+        "x2": "32.5",
+        "f1": "14.0",
+        "f2": "172.0",
+        "classification": "published_base"
+      },
+      {
+        "case": "published_epsilon_03",
+        "resource_cap": "200",
+        "epsilon": "178.0",
+        "order": "f1_then_f2",
+        "x1": "11.0",
+        "x2": "36.25",
+        "f1": "11.0",
+        "f2": "178.0",
+        "classification": "published_base"
+      },
+      {
+        "case": "published_epsilon_04",
+        "resource_cap": "200",
+        "epsilon": "184.0",
+        "order": "f1_then_f2",
+        "x1": "8.0",
+        "x2": "40.0",
+        "f1": "8.0",
+        "f2": "184.0",
+        "classification": "published_base"
+      }
+    ],
+    "points_csv_sha256": "3294c3dd62facabf66dafcb8e27ec0e7b49c3536005d00e7b76b6a48f3b61eb0",
+    "actual_lp_stages": 23,
+    "optimal": 22,
+    "expected_infeasible": 1,
+    "closed_form_final_points_checked": 11,
+    "figure_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4_published_method\\published_lp_01\\published_frontier.png",
+    "figure_sha256": "5c23d8836383bc1e53a1f84a09e7ec779fd8e87bc10709cad6defa13fd243b0b",
+    "visual_review": "passed; labels, axes, point values and legend readable",
+    "method_scope": "project LinearMILP numerical layer plus independent lexicographic wrapper; not full HeatPlanningModel endpoint or AUGMECON reproduction",
+    "source_url": "https://www.gams.com/modlib/adddocs/epscm.pdf",
+    "engineering_or_empirical_validation": false
+  },
+  "weather_source_evidence": {
+    "manifest_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0_weather_02\\manifest.json",
+    "manifest_sha256": "d0778e3fb018734c40d9b96b34c2465fe516541e78f37cc94857cb1bae962244",
+    "report_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0_weather_02\\verification_report.json",
+    "report_sha256": "aa48bebc74004715c8144854ab4e2e9db159ffa274276fbf9b83ba0739d2306a",
+    "annual_files": 15,
+    "hours": 131544,
+    "product_values": 526176,
+    "all_values_match": true,
+    "original_csv_unchanged": true,
+    "official_response_and_archive_hashes_checked": true,
+    "product_fields": {
+      "T2M": [
+        "outdoor_temp",
+        "C"
+      ],
+      "RH2M": [
+        "relative_humidity_pct",
+        "%"
+      ],
+      "WS10M": [
+        "wind_speed_10m_m_s",
+        "m/s"
+      ],
+      "ALLSKY_SFC_SW_DWN": [
+        "solar_irradiance_kwh_m2_hour",
+        "Wh/m^2"
+      ]
+    },
+    "current_api_version": "v2.10.2",
+    "old_api_version_backfilled": false,
+    "addendum_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\data\\verified_weather_20261002\\request_provenance_addendum.json",
+    "addendum_sha256": "0aba7b155dfa253d3070cbd81d92d23cad52e428d0dd27adf2e5655c85f9d825",
+    "certifies_generated_demand_building_prices_or_station_accuracy": false
+  },
+  "current_code_version_claim": {
+    "version": "11.12.0rc1",
+    "source": "CHANGELOG.md",
+    "sha256": "8323b8cbc3a0797727f7d38ff415400fd7cfd3ef9f6425c740a4eb6cab0eadd4",
+    "changes_historical_solver_epoch": false
+  },
+  "previous_edition_archive": {
+    "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\历史快照_20261002_主体收紧_01",
+    "manifest_sha256": "4e476407ffdeb3f239fa45325fc9dec9f7b475e9bb16323371057eb6a477fd95",
+    "old_C4_capacity_cost_and_energy_graphs_main_admitted": false
+  },
+  "external_measurement_citation": {
+    "approval_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\external_citation_approval_01.json",
+    "approval_sha256": "164f3ad0ef96186960560b0d9e1cfe32f355165d44b6881688c0913bf35115d3",
+    "manifest_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C1_external\\manifest.json",
+    "manifest_sha256": "180f79e8fc15ce4c2054501a475553a8702e135167606699dbcaa02d6487e130",
+    "review_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C6\\external_measurement_review.json",
+    "review_sha256": "ce5e433c307705975db105aa0ea6a9936585c46bc4b784b8a2fe46745e85388a",
+    "licence": "CC BY-SA 4.0",
+    "scope": "publisher-processed N2 measurements; derived room aggregate; recorded conditional inputs; all three prediction modes and matching persistence baselines",
+    "required_qualifications": [
+      "exact ten-minute indoor/power aggregation window not fully established",
+      "publisher interpolation/zero-fill lacks row flags, source-processing leakage cannot be excluded",
+      "solar area bound is declared proxy constraint, not certified whole-house solar gain upper bound",
+      "internal analysis plan is not independent proof of immutable preregistration",
+      "no Wuhan calibration, parameter transfer, general long-horizon accuracy or enterprise validation"
+    ],
+    "full_physical_or_Wuhan_validation": false,
+    "metrics": [
+      {
+        "pointer": "/metrics/test/rc_one_step/rmse_c",
+        "value": 0.0859793640252587,
+        "source_sha256": "f62a882813b9aa0715a2e6da708db62defc540ee160907b154a77a7804fe619d"
+      },
+      {
+        "pointer": "/metrics/test/persistence_one_step/rmse_c",
+        "value": 0.09196384555070156,
+        "source_sha256": "f62a882813b9aa0715a2e6da708db62defc540ee160907b154a77a7804fe619d"
+      },
+      {
+        "pointer": "/metrics/test/rc_continuous_open_loop/rmse_c",
+        "value": 1.885258883588685,
+        "source_sha256": "f62a882813b9aa0715a2e6da708db62defc540ee160907b154a77a7804fe619d"
+      },
+      {
+        "pointer": "/metrics/test/persistence_continuous_open_loop/rmse_c",
+        "value": 0.7901721810918396,
+        "source_sha256": "f62a882813b9aa0715a2e6da708db62defc540ee160907b154a77a7804fe619d"
+      },
+      {
+        "pointer": "/metrics/test/rc_segment_open_loop/rmse_c",
+        "value": 1.155135506724595,
+        "source_sha256": "f62a882813b9aa0715a2e6da708db62defc540ee160907b154a77a7804fe619d"
+      },
+      {
+        "pointer": "/metrics/test/persistence_segment_open_loop/rmse_c",
+        "value": 0.6262935027586854,
+        "source_sha256": "f62a882813b9aa0715a2e6da708db62defc540ee160907b154a77a7804fe619d"
+      }
+    ]
+  },
+  "external_exploratory_followup": {
+    "approval_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\external_followup_citation_approval_01.json",
+    "approval_sha256": "748f056a59952c916bdcfcef0b39e3a23ed51738732d2a5f4983cda56426b003",
+    "manifest_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C1_external_followup\\manifest.json",
+    "manifest_sha256": "800ed55223f77e8121de8dbc074592d7891ab5a40b2ce774ed1f12a8483ef0ce",
+    "fresh_independent_confirmation": false,
+    "report_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C1_external_followup\\validation_report.json",
+    "report_sha256": "ac2172070981a63128714e94914ed403ca2f4d3fa086b749246ebd293a1c90a1",
+    "all_adverse_results_retained": true,
+    "same_protocol_refit_report_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0_external_reproduction_01\\reproduction_report.json",
+    "same_protocol_refit_report_sha256": "eea8157e7fcc54a1606d7c5fff7a80f65658d099357afef050ad37f2f0de58a1",
+    "metrics": [
+      {
+        "pointer": "/metrics/test/rc_one_step/rmse_c",
+        "value": 0.09133435301271808
+      },
+      {
+        "pointer": "/metrics/test/rc_continuous_open_loop/rmse_c",
+        "value": 7.425829882529357
+      },
+      {
+        "pointer": "/metrics/test/rc_segment_open_loop/rmse_c",
+        "value": 6.17026036201433
+      }
+    ],
+    "public_release_note": "Only consumed licensed N2 inputs may be packaged; unused unlicensed CTSM discovery files are not copied by this publisher"
+  },
+  "verified_result_files": {
+    "building_comfort.csv": "77a33e1a0355136a7acb1c0a368b8cfc6601ea2e963ebd9bfa9fdcf95b353fe3",
+    "building_trajectory.csv": "2ce98266fa2b57336147dcfce4e7cd95b75ca7798b214dd9f40ce9bc4ee3b516",
+    "c6_building_audit.json": "cc3a64e4be36451de21839a57ec1c54b6358eaca8dba04ba3ddfaba5721bc17d",
+    "day_assignments.csv": "db607bc3bda761b855de23c94701b566a8111556e8a4782dae64b93a534e70e6",
+    "delivered_heat_hierarchy.csv": "d51f3878f496e8ea6aec27c5987f2e50cc9c62e984e84f2ad05a18a59370ff18",
+    "dispatch.csv": "c8ab0b8f8803e1238220751c76795edd7821c71abbbe1a768ae47e68e921d3af",
+    "fixed_plan.json": "9b8a3e5ba8d4f4b182231787e798bbe9dcef365179eae14138d0a42db6a09ca6",
+    "independent_rc_audit.json": "b84d38984c251bf1eff6632ae893c8fcc0351aaa86827ddead02891b8dd5c4ff",
+    "investment_freeze_audit.csv": "1902be87721a0edda3f1fdf985fc03ce6f5eb52e10f9d8a6b007b6fdbd434c6e",
+    "investments.csv": "537a445b7f004c61a0df007dbb47a531d2ce14120e04b2c8870e06eaefef2229",
+    "model_config.json": "ceadfdc6fce48a19c6f131c74cd7889fbd4aa6b1fdcba96df695b54bf789ebd6",
+    "model_profile.json": "49b4704ee6c6ffe123f34434eabd8d79155f9dcbf824c65c8bfc823d0a7e4057",
+    "model_timeseries.csv": "aa4dea352a9bdf6d8c4a1d79e3b74574e6968c3ad313313578cda4c5e7ff1093",
+    "representative_coverage.csv": "4d0bec94156f2601f801c61cd846c2ebe7fd9e8fa2c52a1b3b2f9d593b1cfea5",
+    "run_record.json": "d4c51ea749e7c72fcee13c58f9fb8e9ed1bcc09a5aea1f72d11fcc659b8a27af",
+    "solution.npz": "9f3cef3c5dd7213f8076ccab91606dc65a935bc0d8b7b8e110dc9724b65498c5",
+    "source_grades.json": "7c60f980a2bfcd8ee05f57e6fb81ac5dae3756ce6c033b746724a710f1ee4b62",
+    "spatial_candidates.json": "083dbe255b54b351d86c7a4a9567643ec36ab05b7b13d194c80229ad5c44e531",
+    "storage_postcheck.csv": "6e3078ffd76c6802761252c0557bc717a6132d62a364a2f9fbc397a9a3688bc0",
+    "summary.json": "4a7189bc15c4a63874d2a1309b8c2dc42335498477e9d8df0d85c17a723bed57",
+    "technology_changes.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "variables.csv.gz": "472087136bdb3de714c86ab291c9d95675918b7e9508bb17d9b026062507c5f1"
+  },
+  "spec_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\representative_evidence_spec.json",
+  "spec_sha256": "a7a83994c3f4301ef04edd505e4397743e005e8977a4907fab5d4417c9070181",
+  "page_files": [
+    {
+      "number": 1,
+      "title": "选题原因：把供热规划落到真实服务约束",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\01_选题原因：把供热规划落到真实服务约束.md",
+      "sha256": "7b13ed66224c531d4b588bb5d92bb73bb5bfbf83a406572813043747a58491ed"
+    },
+    {
+      "number": 2,
+      "title": "九位真实成员与实际分工",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\02_九位真实成员与实际分工.md",
+      "sha256": "4ce2e5263cf10d55b2aadad6e77819a08948bff791874582794453baf7657a56"
+    },
+    {
+      "number": 3,
+      "title": "7月实际进展",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\03_7月实际进展.md",
+      "sha256": "49423fa14ce6a8ac9ce45ec52b91e7bb8557ca7a5695ccc5773eb0a1200c3934"
+    },
+    {
+      "number": 4,
+      "title": "8月实际进展",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\04_8月实际进展.md",
+      "sha256": "898ed08f5de8a8d130e37fa95f8bd38c81625ad87ba0f2eda7b34b2975895d97"
+    },
+    {
+      "number": 5,
+      "title": "10月实际进展",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\05_10月实际进展.md",
+      "sha256": "e8d5c3e0d7bb89d95b4d70168960e2530acd892261a5c5a75f48d453838692e8"
+    },
+    {
+      "number": 6,
+      "title": "正式主要内容：任务、场景与验收边界",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\06_正式主要内容：任务、场景与验收边界.md",
+      "sha256": "0a4ebe4b5399264e0a4e6c0dde25decfb21978b562a7515bf3ff7ca9aaa126a3"
+    },
+    {
+      "number": 7,
+      "title": "真实数据与缺口：有出处的项才进入数据页",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\07_真实数据与缺口：有出处的项才进入数据页.md",
+      "sha256": "f01f424ab5f66ed71b76287c78679cab54326c10ded2a8966c17df4b290b7ee1"
+    },
+    {
+      "number": 8,
+      "title": "模型架构：源网荷储与冷热共同决策",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\08_模型架构：源网荷储与冷热共同决策.md",
+      "sha256": "271dc2382cb755c56643c56dd7e5f4689c92cb950a674f76780154f3bc89c2e1"
+    },
+    {
+      "number": 9,
+      "title": "负荷模型：实际供能驱动一阶RC室温",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\09_负荷模型：实际供能驱动一阶RC室温.md",
+      "sha256": "8e180182fcd1040071059c8ca4f348d66c76fdcf386a0417e49028aaa28b6242"
+    },
+    {
+      "number": 10,
+      "title": "多尺度耦合：保留每栋楼的差异",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\10_多尺度耦合：保留每栋楼的差异.md",
+      "sha256": "6f8f5ff946832b9b4a8891b5fe08e9aecbccca6a0d8e043a4789b44aade9288c"
+    },
+    {
+      "number": 11,
+      "title": "空间约束：候选接入改变可行域与投资",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\11_空间约束：候选接入改变可行域与投资.md",
+      "sha256": "7852589e83e11e0ae3775d921a16d5d0bd5b5d1bc2b6ce12ab4784f45d4ca304"
+    },
+    {
+      "number": 12,
+      "title": "供热品质：温级准入与提温代价",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\12_供热品质：温级准入与提温代价.md",
+      "sha256": "5fd9fd51fb0481a2361e3f80d394f46373b5ad5fba6d99e028781b819a7123a7"
+    },
+    {
+      "number": 13,
+      "title": "求解结构：稀疏MILP与程序验证计算记录",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\13_求解结构：稀疏MILP与程序验证计算记录.md",
+      "sha256": "39134d9002a49273d47f45948678664e1bc8c20fb2b426cc1ce31f2bdd1d63ae"
+    },
+    {
+      "number": 14,
+      "title": "多目标算法：词典序端点与ε采样",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\14_多目标算法：词典序端点与ε采样.md",
+      "sha256": "c330027433e29bc46d462d01afef341f2ec20c81f3b62d259d9abaae6a539c6b"
+    },
+    {
+      "number": 15,
+      "title": "规划反馈与一次冻结后的连续回放",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\15_规划反馈与一次冻结后的连续回放.md",
+      "sha256": "ea902d016e197d9f068c624c1a09751167c7c3b942bda200958d6140fb997081"
+    },
+    {
+      "number": 16,
+      "title": "验证层级：输入、专项、代表期与连续季年",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\16_验证层级：输入、专项、代表期与连续季年.md",
+      "sha256": "cc5f998489424d708dccf96476940007f6984f3eb77b00629d8a8b91fc5c301f"
+    },
+    {
+      "number": "16A",
+      "title": "外部实测序列：一步与长程表现",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\16A_外部实测序列：一步与长程表现.md",
+      "sha256": "a5a2e074f78630a59fbf245f215791df954037975ff18ed9a25b4b998d7b6799"
+    },
+    {
+      "number": 17,
+      "title": "源温级与容量选择逻辑",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\17_源温级与容量选择逻辑.md",
+      "sha256": "1c5c69e07cfed3cde5d84465744e686a2451f105f376501b2c747fa72b1a6438"
+    },
+    {
+      "number": 18,
+      "title": "经济与碳评价口径",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\18_经济与碳评价口径.md",
+      "sha256": "100b0aa77eb5fbf71c3e531acc6b0fe994d82b9744dd1f98faa95902e1bfd6b6"
+    },
+    {
+      "number": 19,
+      "title": "可核验的数据与算法图",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\19_可核验的数据与算法图.md",
+      "sha256": "a0c9998b237dbf393c081ac857aeb63c9f8312958f0289493510e0b6bc587e1e"
+    },
+    {
+      "number": 20,
+      "title": "逐项评分响应：亮点、证据与缺口",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\20_逐项评分响应：亮点、证据与缺口.md",
+      "sha256": "0fa6c03ff3000e5b6f2d6e87ccc17a181256a6cd6dd53b115d72ea567d31995b"
+    },
+    {
+      "number": 21,
+      "title": "企业联合精进",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\21_企业联合精进.md",
+      "sha256": "2469205cb5bb4208bddf5f6b1c7c582795c0c40f0bcafa51d89f3dc847c85fed"
+    },
+    {
+      "number": 22,
+      "title": "企业认可与鉴定",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\22_企业认可与鉴定.md",
+      "sha256": "f37dca71692334775e083c5e4dd12dc665aead60b2b84e395bd38fb48c1f5a0a"
+    },
+    {
+      "number": 23,
+      "title": "不足：模型假设与当前未完成证据",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\23_不足：模型假设与当前未完成证据.md",
+      "sha256": "2b889652e8fe2b7aca14c8c0de4cf40d9cb4f4811898ca1e863a276c65a5a5dc"
+    },
+    {
+      "number": 24,
+      "title": "展望：按证据成熟度推进",
+      "path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\24_展望：按证据成熟度推进.md",
+      "sha256": "84e9525746de262f7dbd3f7e3eb659eab817f1f34ab78f118cd4badc5b60b072"
+    }
+  ],
+  "overview_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C5\\答辩逐页Markdown\\00_逐页总览与完整稿.md",
+  "overview_sha256": "6da21964b67864c6ca87f8eefcad8febdbe63cd1c914f27ebe5fd1ba1f02687f",
+  "metrics": [
+    {
+      "page": 13,
+      "file": "model_profile.json",
+      "pointer": "/records/0/profile/variables",
+      "value": 37559,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "representative; any per-year metrics are weighted annual equivalents",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_plan_01\\model_profile.json",
+      "original_pointer": "/variables"
+    },
+    {
+      "page": 13,
+      "file": "model_profile.json",
+      "pointer": "/records/0/profile/constraints",
+      "value": 38584,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "representative; any per-year metrics are weighted annual equivalents",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_plan_01\\model_profile.json",
+      "original_pointer": "/constraints"
+    },
+    {
+      "page": 13,
+      "file": "model_profile.json",
+      "pointer": "/records/0/profile/matrix_nonzeros",
+      "value": 143718,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "representative; any per-year metrics are weighted annual equivalents",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_plan_01\\model_profile.json",
+      "original_pointer": "/matrix_nonzeros"
+    },
+    {
+      "page": 13,
+      "file": "model_profile.json",
+      "pointer": "/records/0/profile/solve_and_extract_seconds",
+      "value": 413.489597400001,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "representative; any per-year metrics are weighted annual equivalents",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_plan_01\\model_profile.json",
+      "original_pointer": "/solve_and_extract_seconds"
+    },
+    {
+      "page": 13,
+      "file": "model_profile.json",
+      "pointer": "/records/0/profile/wall_seconds",
+      "value": 416.2044380999996,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "representative; any per-year metrics are weighted annual equivalents",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_plan_01\\model_profile.json",
+      "original_pointer": "/wall_seconds"
+    },
+    {
+      "page": 13,
+      "file": "summary.json",
+      "pointer": "/records/0/numerical_summary/mip_gap",
+      "value": 0.0003437657284260793,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "representative; any per-year metrics are weighted annual equivalents",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_plan_01\\summary.json",
+      "original_pointer": "/mip_gap"
+    },
+    {
+      "page": 13,
+      "pointer": "/records/1/numerical_summary/solver_elapsed_seconds",
+      "value": 133.06504349999886,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "continuous 8784h service year, not representative equivalent",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_annual_01\\summary.json",
+      "original_pointer": "/solver_elapsed_seconds"
+    },
+    {
+      "page": 13,
+      "pointer": "/records/1/numerical_summary/mip_gap",
+      "value": 0.001343681434931504,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "continuous 8784h service year, not representative equivalent",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_annual_01\\summary.json",
+      "original_pointer": "/mip_gap"
+    },
+    {
+      "page": 13,
+      "pointer": "/records/1/profile/variables",
+      "value": 404076,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "continuous 8784h fixed-investment replay",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_annual_01\\model_profile.json",
+      "original_pointer": "/variables"
+    },
+    {
+      "page": 13,
+      "pointer": "/records/1/profile/constraints",
+      "value": 412881,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "continuous 8784h fixed-investment replay",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_annual_01\\model_profile.json",
+      "original_pointer": "/constraints"
+    },
+    {
+      "page": 13,
+      "pointer": "/records/1/profile/matrix_nonzeros",
+      "value": 1361548,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "continuous 8784h fixed-investment replay",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_annual_01\\model_profile.json",
+      "original_pointer": "/matrix_nonzeros"
+    },
+    {
+      "page": 13,
+      "pointer": "/records/1/profile/solve_and_extract_seconds",
+      "value": 139.22293209999953,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "continuous 8784h fixed-investment replay",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_annual_01\\model_profile.json",
+      "original_pointer": "/solve_and_extract_seconds"
+    },
+    {
+      "page": 13,
+      "pointer": "/records/1/profile/wall_seconds",
+      "value": 162.49981579999985,
+      "source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C0\\program_execution_receipt_01.json",
+      "sha256": "4ed040fa3f9def605ae2d233a58031a57354bf1e256938ac0aec8fe6d0e6718f",
+      "scope": "continuous 8784h fixed-investment replay",
+      "original_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_annual_01\\model_profile.json",
+      "original_pointer": "/wall_seconds"
+    }
+  ],
+  "investment_source_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\outputs\\competition_20261001\\C4\\optimized_plan_01\\investments.csv",
+  "investment_sha256": "537a445b7f004c61a0df007dbb47a531d2ce14120e04b2c8870e06eaefef2229",
+  "display_rounding": "counts exact; capacities 2 decimals; annual costs/energies 4 decimals; MIP gap percent 4/5 decimals; raw evidence unchanged",
+  "unconfirmed_fields_blank": [
+    "nine_member_names",
+    "actual_personal_division",
+    "July_progress",
+    "August_progress",
+    "October_progress",
+    "enterprise_name",
+    "enterprise_cooperation",
+    "enterprise_appraisal"
+  ],
+  "existing_representative_plots_visual_review": "historical only; excluded from current delivery",
+  "markdown_review": "passed",
+  "supersedes_delivery_scope_not_previous_raw_files": true,
+  "historical_plot_status": "archived research; not main-result admission",
+  "current_file_list": "outputs/competition_20261001/C5/final_current_files.json"
+}

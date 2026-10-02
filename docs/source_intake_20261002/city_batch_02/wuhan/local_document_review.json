@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-02T02:57:36.591744+00:00",
+  "document_path": "D:\\competion\\xiaotiao\\数据缺失\\武汉缺失数据补充检索.docx",
+  "document_sha256": "c7c27ded79066adc16c1cae329cb063bfb3672fc49b09b28eadd18a1b0cebaf1",
+  "read_scope": {
+    "paragraph_count": 44,
+    "table_count": 3,
+    "body_text_character_count_including_tables": 2700,
+    "embedded_images": 0,
+    "external_hyperlink_relationships": 0,
+    "hyperlink_field_codes": 0,
+    "unique_plain_text_URLs": 14,
+    "tracked_insertions": 0,
+    "tracked_deletions": 0,
+    "footnotes_endnotes": "存在部件但无文字",
+    "read_complete": true
+  },
+  "method": "bundled Python只读ZIP/OOXML，按正文块顺序读取全部段落、表格；读取全部rels与HYPERLINK域；所有14个去重网址各请求一次并留档，官方图表进一步读取。",
+  "render_limit": "工作区依赖无bundled LibreOffice路径，未使用桌面安装版；没有页面渲染，不能声称确认分页/视觉排版。无图片、域、修订或文字脚注遗漏。",
+  "extracted_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_docx_complete_extraction.json",
+  "categories": [
+    {
+      "category": "人员显热/潜热",
+      "status": "仍缺",
+      "doc_locations": [
+        "P4–P7",
+        "表1"
+      ],
+      "provided": "3种活动强度×4个室温的显热/潜热表；道客巴巴XLS入口",
+      "verified": "入口题名/个人上传身份可核实；网页没有可读数值原表，不能确认表1来自GB50736。",
+      "unverified_values": [
+        [
+          "活动强度",
+          "室温20℃ 显热/潜热(W)",
+          "室温22℃ 显热/潜热(W)",
+          "室温24℃ 显热/潜热(W)",
+          "室温26℃ 显热/潜热(W)"
+        ],
+        [
+          "极轻活动（办公、静坐）",
+          "84 / 25",
+          "78 / 30",
+          "70 / 38",
+          "67 / 41"
+        ],
+        [
+          "轻度活动",
+          "90 / 46",
+          "79 / 56",
+          "70 / 64",
+          "66 / 68"
+        ],
+        [
+          "中度活动",
+          "93 / 90",
+          "81 / 101",
+          "69 / 112",
+          "64 / 117"
+        ]
+      ],
+      "missing": [
+        "正式GB50736原文对应表页/条款或授权可靠手册原表",
+        "人员类型/活动强度/群集系数",
+        "人数、在室率及逐时日程",
+        "显热与潜热的分开边界"
+      ],
+      "key_material": "原规范完整表页＋实际建筑/各分区人员数量与逐时占用表",
+      "model_mapping": "internal_gain_kw/column只可接显热；潜热需湿度/除湿模型，不能混入单显热RC。",
+      "source_ids": [
+        "WHDOC01"
+      ]
+    },
+    {
+      "category": "围护结构和建筑原型",
+      "status": "条件可用",
+      "doc_locations": [
+        "P8–P15",
+        "表2"
+      ],
+      "provided": "公共建筑权衡判断前K限值二次笔记；另有已核实2025武汉住宅导则原件",
+      "verified": "博客内容为GB50189-2015第3.4.1基本要求（屋面0.70/外墙1.0），不是完整标准常规设计限值；2025住宅导则限值可作为相应住宅情景依据。",
+      "missing": [
+        "GB50189正式原件及有效修订/适用说明",
+        "项目各建筑用途、几何/朝向/窗墙面积",
+        "实际U、热桥、体积、通风渗透",
+        "材料热容或标定H/C",
+        "逐时人员照明设备日程与日射遮阳"
+      ],
+      "key_material": "每栋建筑竣工构造＋面积/体积/用途清单＋通风资料（优先于继续抄限值）",
+      "model_mapping": "heat_loss_kw_per_c需UA与通风分项汇总；thermal_capacity_kwh_per_c不能由U限值倒推。",
+      "source_ids": [
+        "WHDOC02",
+        "WHDOC03",
+        "WHDOC04",
+        "WH2025"
+      ]
+    },
+    {
+      "category": "供热管道造价",
+      "status": "仍缺",
+      "doc_locations": [
+        "P16–P19",
+        "表3"
+      ],
+      "provided": "Φ273–Φ920共10行，万元/km，材料/施工/合计；书库个人上传表",
+      "verified": "第三方预览前5行与Word相符，第6行合计截断，后4行未取得；上传2021不能代替价格年。",
+      "unverified_values": [
+        [
+          "管道规格(mm)",
+          "材料费(万元/km)",
+          "施工费(万元/km)",
+          "合计(万元/km)"
+        ],
+        [
+          "Φ920×12",
+          "430",
+          "240",
+          "670"
+        ],
+        [
+          "Φ820×10",
+          "330",
+          "220",
+          "560"
+        ],
+        [
+          "Φ720×10",
+          "290",
+          "200",
+          "490"
+        ],
+        [
+          "Φ620×9",
+          "225",
+          "185",
+          "410"
+        ],
+        [
+          "Φ529×7",
+          "180",
+          "177",
+          "357"
+        ],
+        [
+          "Φ478×7",
+          "165",
+          "165",
+          "330"
+        ],
+        [
+          "Φ426×7",
+          "150",
+          "160",
+          "310"
+        ],
+        [
+          "Φ377×7",
+          "125",
+          "150",
+          "275"
+        ],
+        [
+          "Φ325×7",
+          "120",
+          "140",
+          "260"
+        ],
+        [
+          "Φ273×6",
+          "95",
+          "100",
+          "195"
+        ]
+      ],
+      "missing": [
+        "原编制机构及原始报价/中标清单/计价依据",
+        "价格年、地区、税费、单管/供回双管、路由与管长口径",
+        "材质保温、土方路面井室等完整工程边界",
+        "当前DN80/DN100适用口径与施工条件"
+      ],
+      "key_material": "武汉同口径DN80/DN100供应商正式报价或已成交工程量清单",
+      "model_mapping": "管线资本成本仅作待证候选，不能从大口径价格线性缩放到现有小口径。",
+      "source_ids": [
+        "WHDOC05"
+      ]
+    },
+    {
+      "category": "月度代理购电电价",
+      "status": "条件可用",
+      "doc_locations": [
+        "P20–P35"
+      ],
+      "provided": "国网、襄阳等多个入口，文档未列各月原价",
+      "verified": "已取得官方原图三个月：2025-08、2026-01、2026-03，购电组成项、7档终端分时电度价和注释均目视核实。",
+      "sub_status": {
+        "这三个公告月的官方原价": "已补齐",
+        "2023/2024既有实验的匹配价格序列": "仍缺",
+        "其余供暖季各月": "仍缺"
+      },
+      "missing": [
+        "实际仿真年份供暖季全部月份官方原价（包括2023/2024）",
+        "电压、计费方式与购电资格",
+        "需量/容量基本电费与特殊用户规则",
+        "精确逐时分时对应和历史政策有效期"
+      ],
+      "key_material": "实际实验年份的逐月官方公告全集＋项目电费账单/购电身份",
+      "model_mapping": "选定终端电度价后才能形成electricity_price；购电基数不得当终端价，不能整体给固定税费乘峰谷倍率。",
+      "source_ids": [
+        "WHDOC06",
+        "WHDOC07",
+        "WHDOC08",
+        "WHDOC09",
+        "WHDOC10",
+        "WHDOC11",
+        "WHDOC12",
+        "WHTARIFF202508",
+        "WHTARIFF202601",
+        "WHTARIFF202603"
+      ]
+    },
+    {
+      "category": "2026市场化分时机制",
+      "status": "条件可用",
+      "doc_locations": [
+        "P36–P44"
+      ],
+      "provided": "湖北发改委转载入口/能源局转载第一财经文章及Word建模建议",
+      "verified": "能源局网页实际标来源第一财经微信公号，描述直接交易及湖北批发/零售；未取得1656号和湖北落地正式全文。2026-03官方代理购电表仍有固定分时栏及注2。",
+      "missing": [
+        "发改能源规〔2025〕1656号正式文件全文与具体条款",
+        "湖北落地正式文件、日期和过渡规则",
+        "项目直接交易/零售/电网代理购电身份",
+        "真实中长期合同曲线、现货与结算费用"
+      ],
+      "key_material": "正式政策全文＋项目购电合同与结算曲线",
+      "model_mapping": "不统一删峰谷、不用2026替换2023/2024；Word的1.8/1.49/1/0.48系数还需历史原件核对。",
+      "source_ids": [
+        "WHDOC13",
+        "WHDOC14",
+        "WHTARIFF202603"
+      ]
+    },
+    {
+      "category": "污水源现场运行与企业认可",
+      "status": "条件可用",
+      "doc_locations": [
+        "原供给政府报道链接（不在Word五类补充内）"
+      ],
+      "provided": "真实项目报道季节水温、日水量、园区面积和供冷/热量级",
+      "verified": "23/13°C、6万吨/日、37.4万㎡、1.44/1.52万kW确在报道；没有原始监测或对参赛成果的企业鉴定。",
+      "missing": [
+        "逐时源侧进出水温/流量、热泵耗电及供冷供热",
+        "测点仪表与时间范围",
+        "企业对本项目合作、改进、认可或鉴定原件"
+      ],
+      "key_material": "运营站导出的带时间戳计量表＋企业合作/鉴定书",
+      "model_mapping": "只作报道参考，不做现场校准或企业背书。",
+      "source_ids": [
+        "WHNEWS"
+      ]
+    }
+  ],
+  "most_critical_missing_materials": [
+    "原规范完整表页＋实际建筑/各分区人员数量与逐时占用表",
+    "每栋建筑竣工构造＋面积/体积/用途清单＋通风资料（优先于继续抄限值）",
+    "武汉同口径DN80/DN100供应商正式报价或已成交工程量清单",
+    "实际实验年份的逐月官方公告全集＋项目电费账单/购电身份",
+    "正式政策全文＋项目购电合同与结算曲线",
+    "运营站导出的带时间戳计量表＋企业合作/鉴定书"
+  ],
+  "usage_gate": "查得到网页不等于取得可用原始数据；只有已核对原件、单位、年份、场景、工况、计量边界的字段才可进入对应新实验。",
+  "source_links_reviewed": [
+    {
+      "source_id": "WHDOC01",
+      "source_url": "https://m.doc88.com/p-0048453677927.html",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_01.html",
+      "sha256": "41f32328f171b3e107263fa5acb609f82ba257ae5006271f2d82290b30bd79fe",
+      "error": null,
+      "assessment": "道客巴巴个人上传XLS入口，页面未给出可读人员散热原表或正式规范表号。未绕过积分下载。"
+    },
+    {
+      "source_id": "WHDOC02",
+      "source_url": "https://www.cnblogs.com/POTUS/p/14329463.html",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_02.html",
+      "sha256": "9eee83e5109b581f29637c116e469b8e7105e488bda63715002decf5f00f31ac",
+      "error": null,
+      "assessment": "第三方博客笔记显示GB50189-2015第3.4.1条权衡判断前基本要求，不是完整正文，更不是实际楼宇参数。"
+    },
+    {
+      "source_id": "WHDOC03",
+      "source_url": "https://www.bzmfxz.com/biaozhun/Soft/JGJZGYBZ/318033.html",
+      "http_status": null,
+      "local_evidence_file": null,
+      "sha256": null,
+      "error": "HTTP Error 403: Forbidden",
+      "assessment": "403，未取得所谓完整正版PDF，不作正式原件认证。"
+    },
+    {
+      "source_id": "WHDOC04",
+      "source_url": "https://m.jinchutou.com/shtml/f25a8a04a661c23767c3bfcb43a5b06e.html",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_04.html",
+      "sha256": "6ca8c3ae8dbb328ac55cddcd5d01d4b4b2e0a729eff2d4f9180139d569287aef",
+      "error": null,
+      "assessment": "实际为《暖通空调》课程设计计算书，涉及咸宁某办公楼并引用2005版，不是标准原件。"
+    },
+    {
+      "source_id": "WHDOC05",
+      "source_url": "https://m.book118.com/html/2021/1119/6013142112004053.shtm",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_05.html",
+      "sha256": "fb8d2bdc3a2a9ce315f357c22ad989367a5f7b672aee4bfb0386184c771b1033",
+      "error": null,
+      "assessment": "个人上传供热管道施工造价预览；前5行数值可读，与Word对应；第6行合计截断，其余行未取得。无原编制机构、价格年和单/双管边界。"
+    },
+    {
+      "source_id": "WHDOC06",
+      "source_url": "https://csc-static.sgcc.com.cn:28888/omg-static/99307282157000036898100235280215.html",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_06.html",
+      "sha256": "fa3aafb6cb8797c86841311bb8c7834fe99f237ab291b2d6653af073d35fdbd6",
+      "error": null,
+      "assessment": "国网湖北2025年8月正式月度公告；原图已下载并目视核对数值、表头及全部注释。"
+    },
+    {
+      "source_id": "WHDOC07",
+      "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202603/t20260304_3967262.shtml",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_07.html",
+      "sha256": "4569f29160bb648be36f76ca912590ebd1d4e2885697f859ceee51b81bdcc6b1",
+      "error": null,
+      "assessment": "襄阳市发改委转载2026年3月国网湖北表；原图已取得并核对，网页发布日期2026-03-04。"
+    },
+    {
+      "source_id": "WHDOC08",
+      "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202602/t20260210_3958677.shtml",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_08.html",
+      "sha256": "ef0b509530ea14c332a74df2e9617a356764a88ed827cc0f66565e674e334aec",
+      "error": null,
+      "assessment": "襄阳市发改委转载2026年1月国网湖北表；原图执行期是2026年1月，URL含202602不代表价格月份。网页显示2026-01-05。"
+    },
+    {
+      "source_id": "WHDOC09",
+      "source_url": "http://www.yingcheng.gov.cn/c/ycs/gdxx/424978.jhtml",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_09.html",
+      "sha256": "d2058489471dcfcd133ff4e59fa237ea9599fd77da690867f31453d48e6bda05",
+      "error": null,
+      "assessment": "虽返回200，仅144字节脚本，未取得电价正文或原图。"
+    },
+    {
+      "source_id": "WHDOC10",
+      "source_url": "https://www.baiinfo.com/news/22271/37625575/an",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_10.html",
+      "sha256": "00a45718e8866c151bfaae28380648ca4c273ea6d7d98ead8f59b8946b1c3f88",
+      "error": null,
+      "assessment": "取得百川盈孚页面，标题为2025年11月；非官方原件，本轮不采纳其数值，不登录或付费。"
+    },
+    {
+      "source_id": "WHDOC11",
+      "source_url": "https://www.sohu.com/a/1082402543_146940",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_11.html",
+      "sha256": "d272bf86f532810736aa895b3f3d32eedaf733604e27b453741e86bbe33f5f60",
+      "error": null,
+      "assessment": "搜狐转载各省2026年10月销售电价汇总；未将媒体汇总作为官方原价。"
+    },
+    {
+      "source_id": "WHDOC12",
+      "source_url": "https://www.sohu.com/a/940116025_131990",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_12.html",
+      "sha256": "f3425bd29a300da53d44c74fa91ec9f7427d87e13aae9cdb52be6140cf167a1a",
+      "error": null,
+      "assessment": "搜狐转载2025年10月峰谷价差分析；非具体月度原始公告，本轮不采纳数值。"
+    },
+    {
+      "source_id": "WHDOC13",
+      "source_url": "https://fgw.hubei.gov.cn/fbjd/xxgkml/jgzn/wgdw/nyj/nykjzbc/gzdt/202602/t20260211_5875585.shtml",
+      "http_status": null,
+      "local_evidence_file": null,
+      "sha256": null,
+      "error": "HTTP Error 412: Precondition Failed",
+      "assessment": "湖北省发改委链接返回412，未取得该转载正文。"
+    },
+    {
+      "source_id": "WHDOC14",
+      "source_url": "https://www.nea.gov.cn/20260206/185f3d029e514da89013bf63aa5516d3/c.html",
+      "http_status": 200,
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_doc_link_14.html",
+      "sha256": "32f535b9dc537196fb79c3e1c5a37bb243dafd98afdc6b6e0463eb201146e922",
+      "error": null,
+      "assessment": "国家能源局网页明确来源第一财经微信公号，2026-02-06；是政策报道，不是发改能源规〔2025〕1656号及湖北落地文件原文。"
+    }
+  ],
+  "source_document_unchanged": true,
+  "model_inputs_changed": false,
+  "optimization_run": false
+}

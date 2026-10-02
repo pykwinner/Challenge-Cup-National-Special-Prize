@@ -1,0 +1,170 @@
+{
+  "weather_provider": "NASA POWER Hourly API",
+  "time_standard": "local_solar_time",
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "profiles": {
+    "scenario1_urumqi": [
+      {
+        "year": 2020,
+        "rows": 8784,
+        "minimum_outdoor_temp_c": -14.62,
+        "maximum_outdoor_temp_c": 40.14,
+        "annual_heat_demand_proxy_kwh": 4602460.966965665,
+        "peak_heat_demand_proxy_kw": 1987.3620689655172,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      },
+      {
+        "year": 2021,
+        "rows": 8760,
+        "minimum_outdoor_temp_c": -20.51,
+        "maximum_outdoor_temp_c": 40.25,
+        "annual_heat_demand_proxy_kwh": 4523372.38854076,
+        "peak_heat_demand_proxy_kw": 2334.4684210526316,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      },
+      {
+        "year": 2022,
+        "rows": 8760,
+        "minimum_outdoor_temp_c": -18.54,
+        "maximum_outdoor_temp_c": 42.94,
+        "annual_heat_demand_proxy_kwh": 4498359.212087589,
+        "peak_heat_demand_proxy_kw": 2294.2315789473682,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      },
+      {
+        "year": 2023,
+        "rows": 8760,
+        "minimum_outdoor_temp_c": -19.85,
+        "maximum_outdoor_temp_c": 43.11,
+        "annual_heat_demand_proxy_kwh": 4411569.899904674,
+        "peak_heat_demand_proxy_kw": 2294.4655172413795,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      },
+      {
+        "year": 2024,
+        "rows": 8784,
+        "minimum_outdoor_temp_c": -20.65,
+        "maximum_outdoor_temp_c": 40.73,
+        "annual_heat_demand_proxy_kwh": 4578194.338397875,
+        "peak_heat_demand_proxy_kw": 2411.2842105263157,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      }
+    ],
+    "scenario2_guyuan": [
+      {
+        "year": 2020,
+        "rows": 8784,
+        "minimum_outdoor_temp_c": -18.92,
+        "maximum_outdoor_temp_c": 30.79,
+        "annual_heat_demand_proxy_kwh": 4620737.203567055,
+        "peak_heat_demand_proxy_kw": 1927.066666666667,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      },
+      {
+        "year": 2021,
+        "rows": 8760,
+        "minimum_outdoor_temp_c": -22.01,
+        "maximum_outdoor_temp_c": 34.16,
+        "annual_heat_demand_proxy_kwh": 4539362.765724619,
+        "peak_heat_demand_proxy_kw": 2073.315517241379,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      },
+      {
+        "year": 2022,
+        "rows": 8760,
+        "minimum_outdoor_temp_c": -19.55,
+        "maximum_outdoor_temp_c": 34.44,
+        "annual_heat_demand_proxy_kwh": 4416273.3189364355,
+        "peak_heat_demand_proxy_kw": 1891.196296296296,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      },
+      {
+        "year": 2023,
+        "rows": 8760,
+        "minimum_outdoor_temp_c": -21.34,
+        "maximum_outdoor_temp_c": 33.94,
+        "annual_heat_demand_proxy_kwh": 4362316.507261209,
+        "peak_heat_demand_proxy_kw": 1915.8051724137931,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      },
+      {
+        "year": 2024,
+        "rows": 8784,
+        "minimum_outdoor_temp_c": -21.21,
+        "maximum_outdoor_temp_c": 31.81,
+        "annual_heat_demand_proxy_kwh": 4290011.41004719,
+        "peak_heat_demand_proxy_kw": 1976.1814814814816,
+        "annual_cooling_demand_proxy_kwh": 0.0,
+        "peak_cooling_demand_proxy_kw": 0.0
+      }
+    ],
+    "scenario3_wuhan": [
+      {
+        "year": 2020,
+        "rows": 8784,
+        "minimum_outdoor_temp_c": -4.63,
+        "maximum_outdoor_temp_c": 35.18,
+        "annual_heat_demand_proxy_kwh": 1517024.9295853209,
+        "peak_heat_demand_proxy_kw": 1068.08,
+        "annual_cooling_demand_proxy_kwh": 517145.0907709091,
+        "peak_cooling_demand_proxy_kw": 790.5992727272728
+      },
+      {
+        "year": 2021,
+        "rows": 8760,
+        "minimum_outdoor_temp_c": -4.74,
+        "maximum_outdoor_temp_c": 36.22,
+        "annual_heat_demand_proxy_kwh": 1343352.3356451595,
+        "peak_heat_demand_proxy_kw": 1155.4399999999998,
+        "annual_cooling_demand_proxy_kwh": 649663.1384145455,
+        "peak_cooling_demand_proxy_kw": 862.7316363636362
+      },
+      {
+        "year": 2022,
+        "rows": 8760,
+        "minimum_outdoor_temp_c": -4.09,
+        "maximum_outdoor_temp_c": 39.34,
+        "annual_heat_demand_proxy_kwh": 1493034.0728668268,
+        "peak_heat_demand_proxy_kw": 975.55,
+        "annual_cooling_demand_proxy_kwh": 737988.9440072728,
+        "peak_cooling_demand_proxy_kw": 937.0065454545452
+      },
+      {
+        "year": 2023,
+        "rows": 8760,
+        "minimum_outdoor_temp_c": -6.25,
+        "maximum_outdoor_temp_c": 37.33,
+        "annual_heat_demand_proxy_kwh": 1386246.1464746404,
+        "peak_heat_demand_proxy_kw": 1112.7999999999997,
+        "annual_cooling_demand_proxy_kwh": 688725.5040727272,
+        "peak_cooling_demand_proxy_kw": 863.4458181818184
+      },
+      {
+        "year": 2024,
+        "rows": 8784,
+        "minimum_outdoor_temp_c": -8.12,
+        "maximum_outdoor_temp_c": 37.96,
+        "annual_heat_demand_proxy_kwh": 1482288.1501007979,
+        "peak_heat_demand_proxy_kw": 1150.8166666666666,
+        "annual_cooling_demand_proxy_kwh": 742837.1916727272,
+        "peak_cooling_demand_proxy_kw": 912.7243636363637
+      }
+    ]
+  },
+  "caveat": "格点/再分析气象与规则化负荷代理；正式项目需用CMA站点和热表实测校准"
+}

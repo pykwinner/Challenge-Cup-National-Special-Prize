@@ -1,0 +1,109 @@
+# First transformation scenario: preserve and retrofit the backbone network,
+# retire fossil CHP/boiler capacity gradually, and replace annual heat with
+# industrial waste heat, heat pumps, storage and renewable electricity.
+horizon_end_year: 2040
+finance:
+  discount_rate: 0.06
+  tariff_yuan_per_kwh: 0.18
+  tariff_search_upper_yuan_per_kwh: 1.50
+  collection_rate: 0.97
+  fixed_om_fraction_of_cumulative_capex: 0.012
+  income_tax_rate: 0.25
+  debt_fraction: 0.60
+  debt_interest_rate: 0.045
+  debt_term_years: 12
+
+stages:
+  - name: "2026"
+    demand_multiplier: 1.00
+    grid_emission_multiplier: 1.00
+    renewable_availability_multiplier: 1.00
+    chp_minimum_electricity_multiplier: 1.00
+    policy:
+      transition_target_scenarios: [normal_winter, severe_cold, compound_cold_wave, low_waste_high_power_price]
+      minimum_clean_heat_share: 0.75
+      minimum_waste_heat_share: 0.35
+      maximum_fossil_heat_share: 0.25
+      maximum_fossil_installed_capacity_kw: 2600
+      minimum_fossil_backup_capacity_kw: 1800
+      emission_intensity_cap_kg_per_kwh: 0.085
+      minimum_renewable_electricity_absorption_rate: 0.25
+      minimum_pipe_retrofit_count: 1
+      maximum_levelized_heat_cost_yuan_per_kwh: 0.28
+      annualized_investment_budget_yuan: 800000
+      capex_subsidy_fraction:
+        pipe_retrofit: 0.30
+
+  - name: "2030"
+    demand_multiplier: 0.95
+    grid_emission_multiplier: 0.80
+    renewable_availability_multiplier: 1.15
+    chp_minimum_electricity_multiplier: 0.45
+    additional_build_limits:
+      sources_kw:
+        industrial_waste_heat: 250
+        central_waste_source_hp: 400
+        electric_backup_boiler: 300
+      storages_kwh:
+        central_low_temp_tank: 1200
+        district_a_pcm: 300
+      grid_connection_kw: 700
+    policy:
+      transition_target_scenarios: [normal_winter, severe_cold, compound_cold_wave, low_waste_high_power_price]
+      minimum_clean_heat_share: 0.88
+      minimum_waste_heat_share: 0.50
+      maximum_fossil_heat_share: 0.12
+      maximum_fossil_installed_capacity_kw: 1800
+      minimum_fossil_backup_capacity_kw: 1200
+      emission_intensity_cap_kg_per_kwh: 0.055
+      minimum_renewable_electricity_absorption_rate: 0.22
+      minimum_retrofit_heat_share: 0.05
+      minimum_pipe_retrofit_count: 1
+      maximum_levelized_heat_cost_yuan_per_kwh: 0.25
+      annualized_investment_budget_yuan: 500000
+      public_subsidy_budget_yuan_per_year: 180000
+      capex_subsidy_fraction:
+        pipe_retrofit: 0.30
+        terminal_temperature_retrofit: 0.35
+        source_capacity:
+          central_waste_source_hp: 0.15
+          default: 0.0
+        storage_capacity: 0.20
+        grid_connection_capacity: 0.10
+
+  - name: "2035"
+    demand_multiplier: 0.88
+    grid_emission_multiplier: 0.55
+    renewable_availability_multiplier: 1.30
+    chp_minimum_electricity_multiplier: 0.10
+    additional_build_limits:
+      sources_kw:
+        industrial_waste_heat: 350
+        central_waste_source_hp: 500
+        electric_backup_boiler: 400
+      storages_kwh:
+        central_low_temp_tank: 1600
+        district_a_pcm: 400
+      grid_connection_kw: 900
+    policy:
+      transition_target_scenarios: [normal_winter, severe_cold, compound_cold_wave, low_waste_high_power_price]
+      minimum_clean_heat_share: 0.88
+      minimum_waste_heat_share: 0.60
+      maximum_fossil_heat_share: 0.12
+      maximum_fossil_installed_capacity_kw: 950
+      minimum_fossil_backup_capacity_kw: 800
+      emission_intensity_cap_kg_per_kwh: 0.035
+      minimum_renewable_electricity_absorption_rate: 0.18
+      minimum_retrofit_heat_share: 0.15
+      minimum_pipe_retrofit_count: 1
+      maximum_levelized_heat_cost_yuan_per_kwh: 0.23
+      annualized_investment_budget_yuan: 550000
+      public_subsidy_budget_yuan_per_year: 220000
+      capex_subsidy_fraction:
+        pipe_retrofit: 0.30
+        terminal_temperature_retrofit: 0.45
+        source_capacity:
+          central_waste_source_hp: 0.20
+          default: 0.0
+        storage_capacity: 0.25
+        grid_connection_capacity: 0.15

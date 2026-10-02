@@ -1,0 +1,61 @@
+{
+  "audit_date_local": "2026-10-01",
+  "review_scope": "Only these exact quantities/locations were independently reviewed; a source match does not authorize other parameters in the same file.",
+  "sources": [
+    {
+      "source_id": "COMMON_NASA_POWER",
+      "publisher": "NASA Langley Research Center POWER",
+      "url": "https://power.larc.nasa.gov/docs/services/api/temporal/hourly/",
+      "local_raw_material": "docs/execution_20261001/data_truth_audit/evidence/nasa_hourly_docs.html",
+      "review_status": "official_product_documentation_reviewed",
+      "specific_location": "Hourly API: Additional Data Specifications and Time Standards",
+      "time_scope": "Hourly products from 2001 onward; each request fixes its start/end and API metadata",
+      "geographic_scope": "Requested NASA grid point; not a local building or ground station",
+      "supports": ["hourly average product semantics", "UTC/LST request options", "LST can differ from legal local time"],
+      "does_not_support": ["C1 building area or H/C", "site indoor-temperature accuracy", "all-year archival values beyond supplied raw response or limited comparison"],
+      "exact_parameters": {}
+    },
+    {
+      "source_id": "COMMON_GRID_EF_2023",
+      "publisher": "生态环境部、国家统计局",
+      "url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/W020251231726284332528.pdf",
+      "announcement_url": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202512/t20251231_1139517.html",
+      "local_raw_material": "docs/execution_20261001/data_truth_audit/evidence/mee_2023_electricity_factors.pdf",
+      "review_status": "exact_official_table_values_verified",
+      "specific_location": "PDF page 2 / printed page 4 / Table 3: 湖北、宁夏、新疆 rows",
+      "unit": "kgCO2/kWh",
+      "time_scope": "statistical year 2023; publication 2025-12-31, announcement 2025 No.47",
+      "geographic_scope": "湖北、宁夏、新疆 province-level electricity-consumption average factors",
+      "applicability": "Indirect electricity CO2 accounting; not hourly marginal emissions or life-cycle CO2e. A 2023 factor applied to 2024 data needs an explicit scenario assumption or that year's factor.",
+      "exact_parameters": {"湖北": 0.4044, "宁夏": 0.6187, "新疆": 0.6021}
+    },
+    {
+      "source_id": "S3_WUHAN_LOW_ENERGY_DRAFT_2024",
+      "publisher": "武汉市原自然资源和规划主管部门公开附件；封面列武汉市市场监督管理局",
+      "url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgs/202410/P020241024763787490327.pdf",
+      "local_raw_material": "docs/execution_20261001/data_truth_audit/evidence/wuhan_low_energy_draft_2024.pdf",
+      "review_status": "exact_draft_clause_verified_not_effective_standard",
+      "specific_location": "PDF page 1 draft cover; pages 27-28 / printed pages21-22, table7.4.8; page28 clause7.4.10(2) and its explanation",
+      "time_scope": "2024 public-comment draft, DB4201/TXXX-202X; issue/effective dates not finalized on cover",
+      "geographic_scope": "New/altered/expanded Wuhan residential buildings, draft scope1",
+      "applicability": "May identify a documented design scenario; does not establish current mandatory law, site geology or actual equipment performance. Range0.8-1.25 is in explanatory text; reciprocal uses are numerically symmetric here but ledger must record ratio direction.",
+      "table_metric": "Table7.4.8 explicitly labels annual comprehensive performance ACOP (W/W); nominal cooling capacity CC is the size band, not the performance metric. It is not EER.",
+      "exact_parameters": {"large_ground_source_project_floor_area_threshold_m2": 50000, "minimum_analysis_horizon_years": 10, "ground_balance_ratio_lower": 0.8, "ground_balance_ratio_upper": 1.25, "ground_buried_or_surface_water_heat_pump_ACOP_CC_le260_kw": 4.7, "ground_buried_or_surface_water_heat_pump_ACOP_CC_gt260_kw": 5.1},
+      "does_not_support": ["generic annual or hourly EER envelope4.0-5.8 for one ground-source unit", "C1 effective H/C", "current mandatory status", "current site long-term balance"]
+    },
+    {
+      "source_id": "S3_HUBEI_TOU_2024",
+      "publisher": "湖北省发展和改革委员会；武汉市发展改革委官方绿色价格汇编转载原通知",
+      "url": "https://fgw.wuhan.gov.cn/zfxxgk/zfxxgk_1/qtzdgkwj/202501/P020250218332179233050.pdf",
+      "local_raw_material": "docs/execution_20261001/data_truth_audit/evidence/wuhan_2025_green_prices_compilation.pdf",
+      "review_status": "exact_official_policy_reprint_verified",
+      "specific_location": "PDF pages203-204 / printed191-192; 鄂发改价管〔2024〕77号, sectionsI-IV",
+      "time_scope": "issued2024-03-27, effective2024-05-01; 2025 official compilation is evidence of this version, not proof no subsequent changes",
+      "geographic_scope": "湖北电网 qualifying industrial/commercial customers; exclusions and separate rules apply",
+      "unit": "dimensionless ratios; h/day; kVA",
+      "applicability": "Requires verified customer category and monthly contracted/agency base energy rate and cost components. No absolute CNY/kWh rates are provided here; not a 2023 tariff.",
+      "exact_parameters": {"capacity_threshold_kva": 100, "period_hours": {"critical_peak": 2, "peak": 6, "flat": 8, "valley": 8}, "normal_multipliers": {"critical_peak": 1.8, "peak": 1.49, "flat": 1.0, "valley": 0.48}, "peak_month_multipliers": {"critical_peak": 2.0, "peak": 1.49, "flat": 1.0, "valley": 0.45}},
+      "does_not_support": ["template absolute0.30-1.12 CNY/kWh", "all customer classes", "tariff in2023"]
+    }
+  ]
+}

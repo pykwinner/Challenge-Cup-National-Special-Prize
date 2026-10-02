@@ -1,0 +1,2442 @@
+{
+  "scope": "configuration/header/sample inspection only; no optimization or input validation execution",
+  "configs": [
+    {
+      "path": "data/public_scenario_inputs/scenario1_urumqi_public.yaml",
+      "file_sha256": "7390ae642597e059011ba3de57573982d139f9e5063a883c72f686212624e60a",
+      "sections": [
+        "planning",
+        "grades",
+        "nodes",
+        "sources",
+        "pipes",
+        "storages",
+        "grid_connection",
+        "demand_response",
+        "engineering_postcheck",
+        "renewable_electricity",
+        "policy"
+      ],
+      "planning": {
+        "region_profile": "urumqi_public_weather_representative_days",
+        "design_outdoor_temperature_c": -26,
+        "discount_rate": 0.05,
+        "asset_lifetime_years": 20,
+        "time_step_hours": 1,
+        "representative_day_weight": 180,
+        "carbon_price_yuan_per_kg": 0.1,
+        "exergy_penalty_yuan_per_kwh": 0.3,
+        "unserved_heat_penalty_yuan_per_kwh": 100,
+        "max_unserved_rate": 0.0,
+        "firm_capacity_reserve_margin": 0.25,
+        "critical_peak_duration_hours": 12,
+        "n_minus_1_source_names": [
+          "existing_chp",
+          "gas_peak_boiler"
+        ],
+        "n_minus_1_pipe_names": [
+          "trunk_a"
+        ],
+        "ambient_reference_c": 0,
+        "mip_gap": 0.005,
+        "time_limit_seconds": 120,
+        "n_minus_1_pipe_reserve_margin": 0.15
+      },
+      "grades": [
+        {
+          "name": "high",
+          "temperature_c": 75
+        },
+        {
+          "name": "low",
+          "temperature_c": 45
+        }
+      ],
+      "nodes": [
+        {
+          "name": "plant",
+          "demand_columns": {},
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns"
+          ]
+        },
+        {
+          "name": "district_a",
+          "demand_columns": {
+            "high": "demand_a_high",
+            "low": "demand_a_low"
+          },
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns",
+            "temperature_retrofit",
+            "thermal_inertia"
+          ]
+        },
+        {
+          "name": "district_b",
+          "demand_columns": {
+            "high": "demand_b_high",
+            "low": "demand_b_low"
+          },
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns",
+            "temperature_retrofit",
+            "thermal_inertia"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "industrial_waste_heat",
+          "type": "direct_heat",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_cost_yuan_per_kwh_heat",
+            "emission_kg_per_kwh_heat",
+            "availability_column",
+            "firm_capacity_credit",
+            "firm_capacity_availability"
+          ]
+        },
+        {
+          "name": "central_waste_source_hp",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_column",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "firm_capacity_credit",
+            "firm_capacity_availability"
+          ]
+        },
+        {
+          "name": "gas_peak_boiler",
+          "type": "direct_heat",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "variable_cost_yuan_per_kwh_heat",
+            "emission_kg_per_kwh_heat",
+            "unit_commitment",
+            "minimum_output_fraction",
+            "ramp_up_fraction_per_hour",
+            "ramp_down_fraction_per_hour",
+            "startup_cost_yuan",
+            "shutdown_cost_yuan",
+            "firm_capacity_credit",
+            "max_retire_capacity_kw",
+            "decommissioning_cost_yuan_per_kw",
+            "fixed_om_yuan_per_kw_year"
+          ]
+        },
+        {
+          "name": "distributed_air_hp_b",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_column",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "cutoff_temperature_c",
+            "low_temperature_derating",
+            "defrost_temperature_band_c",
+            "defrost_cop_multiplier",
+            "firm_capacity_credit",
+            "firm_capacity_availability"
+          ]
+        },
+        {
+          "name": "electric_backup_boiler",
+          "type": "electric_boiler",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "efficiency",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_emergency_eb",
+          "type": "electric_boiler",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "efficiency",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "existing_chp",
+          "type": "chp",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "max_retire_capacity_kw",
+            "decommissioning_cost_yuan_per_kw",
+            "fixed_om_yuan_per_kw_year",
+            "variable_cost_yuan_per_kwh_heat",
+            "emission_kg_per_kwh_heat",
+            "electricity_to_heat_ratio",
+            "electricity_to_heat_ratio_min",
+            "electricity_to_heat_ratio_max",
+            "electricity_export_price_multiplier",
+            "minimum_electricity_output_column",
+            "unit_commitment",
+            "minimum_output_fraction",
+            "ramp_up_fraction_per_hour",
+            "ramp_down_fraction_per_hour",
+            "startup_cost_yuan",
+            "shutdown_cost_yuan",
+            "firm_capacity_credit"
+          ]
+        }
+      ],
+      "pipes": [
+        {
+          "name": "trunk_a",
+          "keys": [
+            "name",
+            "from",
+            "to",
+            "existing_capacity_kw",
+            "delivery_efficiency",
+            "cold_loss_sensitivity_per_c",
+            "loss_reference_temperature_c",
+            "minimum_delivery_efficiency",
+            "pumping_electricity_kwh_per_kwh_heat",
+            "length_m",
+            "roughness_mm",
+            "heat_loss_w_per_mk",
+            "existing_hydraulic",
+            "diameter_options",
+            "retrofit"
+          ],
+          "diameter_option_keys": []
+        },
+        {
+          "name": "trunk_b",
+          "keys": [
+            "name",
+            "from",
+            "to",
+            "existing_capacity_kw",
+            "delivery_efficiency",
+            "cold_loss_sensitivity_per_c",
+            "loss_reference_temperature_c",
+            "minimum_delivery_efficiency",
+            "pumping_electricity_kwh_per_kwh_heat",
+            "length_m",
+            "roughness_mm",
+            "heat_loss_w_per_mk",
+            "diameter_options"
+          ],
+          "diameter_option_keys": [
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ],
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ],
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ]
+          ]
+        },
+        {
+          "name": "interconnector_ab",
+          "keys": [
+            "name",
+            "from",
+            "to",
+            "existing_capacity_kw",
+            "delivery_efficiency",
+            "bidirectional",
+            "cold_loss_sensitivity_per_c",
+            "loss_reference_temperature_c",
+            "minimum_delivery_efficiency",
+            "pumping_electricity_kwh_per_kwh_heat",
+            "length_m",
+            "roughness_mm",
+            "heat_loss_w_per_mk",
+            "diameter_options"
+          ],
+          "diameter_option_keys": [
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ],
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ]
+          ]
+        }
+      ],
+      "storages": [
+        {
+          "name": "central_low_temp_tank",
+          "keys": [
+            "name",
+            "node",
+            "grade",
+            "existing_capacity_kwh",
+            "max_new_capacity_kwh",
+            "capex_yuan_per_kwh",
+            "power_to_energy_ratio_per_hour",
+            "charge_efficiency",
+            "discharge_efficiency",
+            "self_loss_per_hour",
+            "boundary_mode",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_pcm",
+          "keys": [
+            "name",
+            "node",
+            "grade",
+            "existing_capacity_kwh",
+            "max_new_capacity_kwh",
+            "capex_yuan_per_kwh",
+            "power_to_energy_ratio_per_hour",
+            "charge_efficiency",
+            "discharge_efficiency",
+            "self_loss_per_hour",
+            "boundary_mode",
+            "firm_capacity_credit"
+          ]
+        }
+      ],
+      "grid_connection": {
+        "existing_capacity_kw": 360,
+        "max_new_capacity_kw": 2200,
+        "capex_yuan_per_kw": 820,
+        "reserve_margin": 0.15,
+        "firm_simultaneity": 1.0
+      },
+      "biomass_supply_chains": null,
+      "multi_energy_services": null,
+      "building_thermal": null,
+      "competition_data": null
+    },
+    {
+      "path": "data/public_scenario_inputs/scenario2_guyuan_evidence_public.yaml",
+      "file_sha256": "a9fe492273e5759b71edf71348e0f3a4e10c0e4dc4d49feec36d81e7212c06f9",
+      "sections": [
+        "planning",
+        "grades",
+        "nodes",
+        "sources",
+        "pipes",
+        "storages",
+        "grid_connection",
+        "demand_response",
+        "engineering_postcheck",
+        "biomass_supply_chains",
+        "microgrid_islanding",
+        "policy"
+      ],
+      "planning": {
+        "region_profile": "guyuan_evidence_public_2026",
+        "design_outdoor_temperature_c": -26,
+        "discount_rate": 0.05,
+        "asset_lifetime_years": 20,
+        "time_step_hours": 1,
+        "representative_day_weight": 180,
+        "carbon_price_yuan_per_kg": 0.1,
+        "exergy_penalty_yuan_per_kwh": 0.3,
+        "unserved_heat_penalty_yuan_per_kwh": 100,
+        "max_unserved_rate": 0.0,
+        "firm_capacity_reserve_margin": 0.15,
+        "critical_peak_duration_hours": 12,
+        "n_minus_1_source_names": [],
+        "n_minus_1_pipe_names": [],
+        "ambient_reference_c": 0,
+        "mip_gap": 0.005,
+        "time_limit_seconds": 120,
+        "electricity_price_column": "resident_heating_electricity_price",
+        "electricity_tariff_scope": "eligible_residential_clean_heating_households"
+      },
+      "grades": [
+        {
+          "name": "high",
+          "temperature_c": 75
+        },
+        {
+          "name": "low",
+          "temperature_c": 45
+        }
+      ],
+      "nodes": [
+        {
+          "name": "plant",
+          "demand_columns": {},
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns"
+          ]
+        },
+        {
+          "name": "district_a",
+          "demand_columns": {
+            "high": "demand_a_high",
+            "low": "demand_a_low"
+          },
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns",
+            "temperature_retrofit",
+            "thermal_inertia"
+          ]
+        },
+        {
+          "name": "district_b",
+          "demand_columns": {
+            "high": "demand_b_high",
+            "low": "demand_b_low"
+          },
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns",
+            "temperature_retrofit",
+            "thermal_inertia"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "gas_peak_boiler",
+          "type": "direct_heat",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "variable_cost_yuan_per_kwh_heat",
+            "emission_kg_per_kwh_heat",
+            "unit_commitment",
+            "minimum_output_fraction",
+            "ramp_up_fraction_per_hour",
+            "ramp_down_fraction_per_hour",
+            "startup_cost_yuan",
+            "shutdown_cost_yuan",
+            "firm_capacity_credit",
+            "max_retire_capacity_kw",
+            "decommissioning_cost_yuan_per_kw",
+            "fixed_om_yuan_per_kw_year"
+          ]
+        },
+        {
+          "name": "distributed_air_hp_b",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_column",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "cutoff_temperature_c",
+            "low_temperature_derating",
+            "defrost_temperature_band_c",
+            "defrost_cop_multiplier",
+            "firm_capacity_credit",
+            "relative_humidity_column",
+            "humidity_defrost_loss_per_unit"
+          ]
+        },
+        {
+          "name": "electric_backup_boiler",
+          "type": "electric_boiler",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "efficiency",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_emergency_eb",
+          "type": "electric_boiler",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "efficiency",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_air_hp",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_column",
+            "relative_humidity_column",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "cutoff_temperature_c",
+            "defrost_temperature_band_c",
+            "defrost_cop_multiplier",
+            "humidity_defrost_loss_per_unit",
+            "firm_capacity_credit",
+            "low_temperature_derating"
+          ]
+        },
+        {
+          "name": "regional_biomass_boiler",
+          "type": "direct_heat",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_cost_yuan_per_kwh_heat",
+            "emission_kg_per_kwh_heat",
+            "firm_capacity_credit"
+          ]
+        }
+      ],
+      "pipes": [
+        {
+          "name": "trunk_a",
+          "keys": [
+            "name",
+            "from",
+            "to",
+            "existing_capacity_kw",
+            "delivery_efficiency",
+            "cold_loss_sensitivity_per_c",
+            "loss_reference_temperature_c",
+            "minimum_delivery_efficiency",
+            "pumping_electricity_kwh_per_kwh_heat",
+            "length_m",
+            "roughness_mm",
+            "heat_loss_w_per_mk",
+            "existing_hydraulic",
+            "diameter_options"
+          ],
+          "diameter_option_keys": [
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ],
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ]
+          ]
+        },
+        {
+          "name": "trunk_b",
+          "keys": [
+            "name",
+            "from",
+            "to",
+            "existing_capacity_kw",
+            "delivery_efficiency",
+            "cold_loss_sensitivity_per_c",
+            "loss_reference_temperature_c",
+            "minimum_delivery_efficiency",
+            "pumping_electricity_kwh_per_kwh_heat",
+            "length_m",
+            "roughness_mm",
+            "heat_loss_w_per_mk",
+            "diameter_options"
+          ],
+          "diameter_option_keys": [
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ],
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ]
+          ]
+        }
+      ],
+      "storages": [
+        {
+          "name": "central_low_temp_tank",
+          "keys": [
+            "name",
+            "node",
+            "grade",
+            "existing_capacity_kwh",
+            "max_new_capacity_kwh",
+            "capex_yuan_per_kwh",
+            "power_to_energy_ratio_per_hour",
+            "charge_efficiency",
+            "discharge_efficiency",
+            "self_loss_per_hour",
+            "boundary_mode",
+            "firm_capacity_credit",
+            "strict_charge_discharge_mode"
+          ]
+        },
+        {
+          "name": "district_a_pcm",
+          "keys": [
+            "name",
+            "node",
+            "grade",
+            "existing_capacity_kwh",
+            "max_new_capacity_kwh",
+            "capex_yuan_per_kwh",
+            "power_to_energy_ratio_per_hour",
+            "charge_efficiency",
+            "discharge_efficiency",
+            "self_loss_per_hour",
+            "boundary_mode",
+            "firm_capacity_credit",
+            "strict_charge_discharge_mode"
+          ]
+        }
+      ],
+      "grid_connection": {
+        "existing_capacity_kw": 220,
+        "max_new_capacity_kw": 1300,
+        "capex_yuan_per_kw": 820,
+        "reserve_margin": 0.15,
+        "firm_simultaneity": 1.0,
+        "availability_column": "grid_availability",
+        "firm_capacity_method": "portfolio_dispatch"
+      },
+      "biomass_supply_chains": [
+        {
+          "name": "county_residue_chain",
+          "source_names": [
+            "regional_biomass_boiler"
+          ],
+          "lower_heating_value_kwh_per_kg": 4.15,
+          "conversion_efficiency": 0.86,
+          "procurement_cost_yuan_per_kg": 1.0,
+          "handling_cost_yuan_per_kg": 0.0,
+          "transport_distance_km": 42,
+          "transport_cost_yuan_per_tonne_km": 0.0,
+          "upstream_emission_kg_per_kg": 0.025,
+          "transport_emission_kg_per_tonne_km": 0.085,
+          "existing_inventory_capacity_kg": 22000,
+          "max_new_inventory_capacity_kg": 90000,
+          "inventory_capex_yuan_per_kg": 7.5,
+          "delivery_capacity_kg_per_hour": 520,
+          "delivery_availability_column": "biomass_delivery_availability",
+          "annual_supply_limit_kg": 2100000
+        }
+      ],
+      "multi_energy_services": null,
+      "building_thermal": null,
+      "competition_data": null
+    },
+    {
+      "path": "data/public_scenario_inputs/scenario3_wuhan_joint_public.yaml",
+      "file_sha256": "e4dc29f92cd3f52ac7837df90327bec5645086b0b573a546540c29881d738fce",
+      "sections": [
+        "planning",
+        "grades",
+        "nodes",
+        "sources",
+        "pipes",
+        "storages",
+        "grid_connection",
+        "demand_response",
+        "engineering_postcheck",
+        "policy",
+        "multi_energy_services"
+      ],
+      "planning": {
+        "region_profile": "wuhan_public_weather_joint_heating_cooling",
+        "design_outdoor_temperature_c": -7,
+        "discount_rate": 0.05,
+        "asset_lifetime_years": 20,
+        "time_step_hours": 1,
+        "representative_day_weight": 180,
+        "carbon_price_yuan_per_kg": 0.12,
+        "exergy_penalty_yuan_per_kwh": 0.3,
+        "unserved_heat_penalty_yuan_per_kwh": 100,
+        "max_unserved_rate": 0.0,
+        "firm_capacity_reserve_margin": 0.12,
+        "critical_peak_duration_hours": 6,
+        "n_minus_1_source_names": [],
+        "n_minus_1_pipe_names": [],
+        "ambient_reference_c": 5,
+        "mip_gap": 0.005,
+        "time_limit_seconds": 120,
+        "firm_building_flexibility": {
+          "enabled": true,
+          "duration_hours": 6,
+          "availability_factor": 1.0
+        }
+      },
+      "grades": [
+        {
+          "name": "high",
+          "temperature_c": 75
+        },
+        {
+          "name": "low",
+          "temperature_c": 45
+        }
+      ],
+      "nodes": [
+        {
+          "name": "plant",
+          "demand_columns": {},
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns"
+          ]
+        },
+        {
+          "name": "district_a",
+          "demand_columns": {
+            "high": "demand_a_high",
+            "low": "demand_a_low"
+          },
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns",
+            "temperature_retrofit",
+            "thermal_inertia",
+            "intermittent_heating",
+            "user_behavior"
+          ]
+        },
+        {
+          "name": "district_b",
+          "demand_columns": {
+            "high": "demand_b_high",
+            "low": "demand_b_low"
+          },
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns",
+            "temperature_retrofit",
+            "thermal_inertia",
+            "intermittent_heating",
+            "user_behavior"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "distributed_air_hp_b",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_column",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "cutoff_temperature_c",
+            "low_temperature_derating",
+            "defrost_temperature_band_c",
+            "defrost_cop_multiplier",
+            "firm_capacity_credit",
+            "relative_humidity_column",
+            "frost_humidity_threshold",
+            "humidity_defrost_loss_per_unit",
+            "humidity_defrost_min_multiplier"
+          ]
+        },
+        {
+          "name": "district_a_emergency_eb",
+          "type": "electric_boiler",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "efficiency",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_air_hp",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_column",
+            "relative_humidity_column",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "cutoff_temperature_c",
+            "defrost_temperature_band_c",
+            "defrost_cop_multiplier",
+            "frost_humidity_threshold",
+            "humidity_defrost_loss_per_unit",
+            "humidity_defrost_min_multiplier",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_ground_hp",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_c",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_b_ground_hp",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_c",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_solar_thermal",
+          "type": "direct_heat",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_cost_yuan_per_kwh_heat",
+            "emission_kg_per_kwh_heat",
+            "availability_column",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_b_solar_thermal",
+          "type": "direct_heat",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_cost_yuan_per_kwh_heat",
+            "emission_kg_per_kwh_heat",
+            "availability_column",
+            "firm_capacity_credit"
+          ]
+        }
+      ],
+      "pipes": [
+        {
+          "name": "interconnector_ab",
+          "keys": [
+            "name",
+            "from",
+            "to",
+            "existing_capacity_kw",
+            "delivery_efficiency",
+            "bidirectional",
+            "cold_loss_sensitivity_per_c",
+            "loss_reference_temperature_c",
+            "minimum_delivery_efficiency",
+            "pumping_electricity_kwh_per_kwh_heat",
+            "length_m",
+            "roughness_mm",
+            "heat_loss_w_per_mk",
+            "diameter_options"
+          ],
+          "diameter_option_keys": [
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ],
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ]
+          ]
+        }
+      ],
+      "storages": [
+        {
+          "name": "district_a_pcm",
+          "keys": [
+            "name",
+            "node",
+            "grade",
+            "existing_capacity_kwh",
+            "max_new_capacity_kwh",
+            "capex_yuan_per_kwh",
+            "power_to_energy_ratio_per_hour",
+            "charge_efficiency",
+            "discharge_efficiency",
+            "self_loss_per_hour",
+            "boundary_mode",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_b_pcm",
+          "keys": [
+            "name",
+            "node",
+            "grade",
+            "existing_capacity_kwh",
+            "max_new_capacity_kwh",
+            "capex_yuan_per_kwh",
+            "power_to_energy_ratio_per_hour",
+            "charge_efficiency",
+            "discharge_efficiency",
+            "self_loss_per_hour",
+            "boundary_mode",
+            "firm_capacity_credit"
+          ]
+        }
+      ],
+      "grid_connection": {
+        "existing_capacity_kw": 0,
+        "max_new_capacity_kw": 1500,
+        "capex_yuan_per_kw": 820,
+        "reserve_margin": 0.1,
+        "firm_simultaneity": 1.0,
+        "firm_capacity_method": "portfolio_dispatch"
+      },
+      "biomass_supply_chains": null,
+      "multi_energy_services": {
+        "cooling": {
+          "enabled": true,
+          "demand_columns": {
+            "district_a": "cooling_demand_a",
+            "district_b": "cooling_demand_b"
+          },
+          "unserved_penalty_yuan_per_kwh": 100.0,
+          "max_unserved_rate": 0.0,
+          "max_scenario_unserved_rate": 0.0,
+          "maximum_capacity_oversize_ratio": 1.1,
+          "sources": {
+            "district_a_ground_hp": {
+              "node": "district_a",
+              "technology": "ground_source_heat_pump",
+              "shares_heating_capacity": true,
+              "eer": 5.1,
+              "eer_min": 4.3,
+              "eer_max": 5.8,
+              "reference_outdoor_temp_c": 35.0,
+              "eer_loss_per_c_above_reference": 0.0,
+              "variable_om_yuan_per_kwh_cooling": 0.012,
+              "ground_thermal_balance": {
+                "minimum_extraction_to_rejection_ratio": 0.8,
+                "maximum_extraction_to_rejection_ratio": 1.25
+              }
+            },
+            "district_b_ground_hp": {
+              "node": "district_b",
+              "technology": "ground_source_heat_pump",
+              "shares_heating_capacity": true,
+              "eer": 5.1,
+              "eer_min": 4.3,
+              "eer_max": 5.8,
+              "reference_outdoor_temp_c": 35.0,
+              "eer_loss_per_c_above_reference": 0.0,
+              "variable_om_yuan_per_kwh_cooling": 0.012,
+              "ground_thermal_balance": {
+                "minimum_extraction_to_rejection_ratio": 0.8,
+                "maximum_extraction_to_rejection_ratio": 1.25
+              }
+            },
+            "district_a_air_hp": {
+              "node": "district_a",
+              "technology": "reversible_air_source_heat_pump",
+              "shares_heating_capacity": true,
+              "eer": 3.6,
+              "eer_min": 2.7,
+              "eer_max": 4.2,
+              "reference_outdoor_temp_c": 35.0,
+              "eer_loss_per_c_above_reference": 0.08,
+              "variable_om_yuan_per_kwh_cooling": 0.018
+            },
+            "distributed_air_hp_b": {
+              "node": "district_b",
+              "technology": "reversible_air_source_heat_pump",
+              "shares_heating_capacity": true,
+              "eer": 3.4,
+              "eer_min": 2.6,
+              "eer_max": 4.0,
+              "reference_outdoor_temp_c": 35.0,
+              "eer_loss_per_c_above_reference": 0.09,
+              "variable_om_yuan_per_kwh_cooling": 0.02
+            }
+          },
+          "ground_source_annual_balance": {
+            "source_names": [
+              "district_a_ground_hp",
+              "district_b_ground_hp"
+            ],
+            "ratio_definition": "annual_heat_extracted_from_ground_kwh_over_annual_heat_rejected_to_ground_kwh",
+            "minimum_ratio": 0.8,
+            "maximum_ratio": 1.25,
+            "analysis_horizon_years": 10,
+            "large_project_floor_area_threshold_m2": 50000
+          }
+        }
+      },
+      "building_thermal": null,
+      "competition_data": null
+    },
+    {
+      "path": "data/competition_20261001/wuhan_rc_candidate.yaml",
+      "file_sha256": "cc26ee2c7d8a7db56b9347012c7d1b122dd8e651096433061d8f2a0d94dd5d3b",
+      "sections": [
+        "planning",
+        "grades",
+        "nodes",
+        "sources",
+        "pipes",
+        "storages",
+        "grid_connection",
+        "demand_response",
+        "engineering_postcheck",
+        "policy",
+        "multi_energy_services",
+        "building_thermal",
+        "competition_data"
+      ],
+      "planning": {
+        "region_profile": "wuhan_synthetic_rc_public_weather_candidate",
+        "design_outdoor_temperature_c": -7,
+        "discount_rate": 0.05,
+        "asset_lifetime_years": 20,
+        "time_step_hours": 1,
+        "representative_day_weight": 1,
+        "carbon_price_yuan_per_kg": 0.12,
+        "exergy_penalty_yuan_per_kwh": 0.3,
+        "unserved_heat_penalty_yuan_per_kwh": 100,
+        "max_unserved_rate": 0.0,
+        "firm_capacity_reserve_margin": 0.12,
+        "critical_peak_duration_hours": 6,
+        "n_minus_1_source_names": [],
+        "n_minus_1_pipe_names": [],
+        "ambient_reference_c": 5,
+        "mip_gap": 0.005,
+        "time_limit_seconds": 120,
+        "firm_building_flexibility": {
+          "enabled": false,
+          "duration_hours": 6,
+          "availability_factor": 0.0
+        },
+        "annual_scope": {
+          "start_inclusive": "2023-07-01T00:00:00+08:00",
+          "end_exclusive": "2024-07-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "expected_hours": 8784
+        }
+      },
+      "grades": [
+        {
+          "name": "high",
+          "temperature_c": 75
+        },
+        {
+          "name": "low",
+          "temperature_c": 45
+        }
+      ],
+      "nodes": [
+        {
+          "name": "plant",
+          "demand_columns": {},
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns"
+          ]
+        },
+        {
+          "name": "district_a",
+          "demand_columns": {
+            "high": "demand_a_high",
+            "low": "demand_a_low"
+          },
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns",
+            "temperature_retrofit",
+            "thermal_inertia",
+            "intermittent_heating",
+            "user_behavior"
+          ]
+        },
+        {
+          "name": "district_b",
+          "demand_columns": {
+            "high": "demand_b_high",
+            "low": "demand_b_low"
+          },
+          "keys": [
+            "name",
+            "x",
+            "y",
+            "demand_columns",
+            "temperature_retrofit",
+            "thermal_inertia",
+            "intermittent_heating",
+            "user_behavior"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "distributed_air_hp_b",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_column",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "cutoff_temperature_c",
+            "low_temperature_derating",
+            "defrost_temperature_band_c",
+            "defrost_cop_multiplier",
+            "firm_capacity_credit",
+            "relative_humidity_column",
+            "frost_humidity_threshold",
+            "humidity_defrost_loss_per_unit",
+            "humidity_defrost_min_multiplier"
+          ]
+        },
+        {
+          "name": "district_a_emergency_eb",
+          "type": "electric_boiler",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "efficiency",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_air_hp",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_column",
+            "relative_humidity_column",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "cutoff_temperature_c",
+            "defrost_temperature_band_c",
+            "defrost_cop_multiplier",
+            "frost_humidity_threshold",
+            "humidity_defrost_loss_per_unit",
+            "humidity_defrost_min_multiplier",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_ground_hp",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_c",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_b_ground_hp",
+          "type": "heat_pump",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_om_yuan_per_kwh_heat",
+            "source_temp_c",
+            "carnot_efficiency",
+            "cop_min",
+            "cop_max",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_a_solar_thermal",
+          "type": "direct_heat",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_cost_yuan_per_kwh_heat",
+            "emission_kg_per_kwh_heat",
+            "availability_column",
+            "firm_capacity_credit"
+          ]
+        },
+        {
+          "name": "district_b_solar_thermal",
+          "type": "direct_heat",
+          "keys": [
+            "name",
+            "node",
+            "type",
+            "resource_kind",
+            "supply_temp_c",
+            "allowed_grades",
+            "existing_capacity_kw",
+            "max_new_capacity_kw",
+            "capex_yuan_per_kw",
+            "variable_cost_yuan_per_kwh_heat",
+            "emission_kg_per_kwh_heat",
+            "availability_column",
+            "firm_capacity_credit"
+          ]
+        }
+      ],
+      "pipes": [
+        {
+          "name": "interconnector_ab",
+          "keys": [
+            "name",
+            "from",
+            "to",
+            "existing_capacity_kw",
+            "delivery_efficiency",
+            "bidirectional",
+            "cold_loss_sensitivity_per_c",
+            "loss_reference_temperature_c",
+            "minimum_delivery_efficiency",
+            "pumping_electricity_kwh_per_kwh_heat",
+            "length_m",
+            "roughness_mm",
+            "heat_loss_w_per_mk",
+            "diameter_options"
+          ],
+          "diameter_option_keys": [
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ],
+            [
+              "name",
+              "diameter_mm",
+              "capacity_kw",
+              "capex_total_yuan"
+            ]
+          ]
+        }
+      ],
+      "storages": [
+        {
+          "name": "district_a_pcm",
+          "keys": [
+            "name",
+            "node",
+            "grade",
+            "existing_capacity_kwh",
+            "max_new_capacity_kwh",
+            "capex_yuan_per_kwh",
+            "power_to_energy_ratio_per_hour",
+            "charge_efficiency",
+            "discharge_efficiency",
+            "self_loss_per_hour",
+            "boundary_mode",
+            "firm_capacity_credit",
+            "initial_soc_fraction",
+            "final_soc_min_fraction"
+          ]
+        },
+        {
+          "name": "district_b_pcm",
+          "keys": [
+            "name",
+            "node",
+            "grade",
+            "existing_capacity_kwh",
+            "max_new_capacity_kwh",
+            "capex_yuan_per_kwh",
+            "power_to_energy_ratio_per_hour",
+            "charge_efficiency",
+            "discharge_efficiency",
+            "self_loss_per_hour",
+            "boundary_mode",
+            "firm_capacity_credit",
+            "initial_soc_fraction",
+            "final_soc_min_fraction"
+          ]
+        }
+      ],
+      "grid_connection": {
+        "existing_capacity_kw": 0,
+        "max_new_capacity_kw": 1500,
+        "capex_yuan_per_kw": 820,
+        "reserve_margin": 0.1,
+        "firm_simultaneity": 1.0,
+        "firm_capacity_method": "portfolio_dispatch"
+      },
+      "biomass_supply_chains": null,
+      "multi_energy_services": {
+        "cooling": {
+          "enabled": true,
+          "demand_columns": {
+            "district_a": "cooling_demand_a",
+            "district_b": "cooling_demand_b"
+          },
+          "unserved_penalty_yuan_per_kwh": 100.0,
+          "max_unserved_rate": 0.0,
+          "max_scenario_unserved_rate": 0.0,
+          "maximum_capacity_oversize_ratio": 1.1,
+          "sources": {
+            "district_a_ground_hp": {
+              "node": "district_a",
+              "technology": "ground_source_heat_pump",
+              "shares_heating_capacity": true,
+              "eer": 5.1,
+              "eer_min": 4.3,
+              "eer_max": 5.8,
+              "reference_outdoor_temp_c": 35.0,
+              "eer_loss_per_c_above_reference": 0.0,
+              "variable_om_yuan_per_kwh_cooling": 0.012,
+              "ground_thermal_balance": {
+                "minimum_extraction_to_rejection_ratio": 0.8,
+                "maximum_extraction_to_rejection_ratio": 1.25
+              }
+            },
+            "district_b_ground_hp": {
+              "node": "district_b",
+              "technology": "ground_source_heat_pump",
+              "shares_heating_capacity": true,
+              "eer": 5.1,
+              "eer_min": 4.3,
+              "eer_max": 5.8,
+              "reference_outdoor_temp_c": 35.0,
+              "eer_loss_per_c_above_reference": 0.0,
+              "variable_om_yuan_per_kwh_cooling": 0.012,
+              "ground_thermal_balance": {
+                "minimum_extraction_to_rejection_ratio": 0.8,
+                "maximum_extraction_to_rejection_ratio": 1.25
+              }
+            },
+            "district_a_air_hp": {
+              "node": "district_a",
+              "technology": "reversible_air_source_heat_pump",
+              "shares_heating_capacity": true,
+              "eer": 3.6,
+              "eer_min": 2.7,
+              "eer_max": 4.2,
+              "reference_outdoor_temp_c": 35.0,
+              "eer_loss_per_c_above_reference": 0.08,
+              "variable_om_yuan_per_kwh_cooling": 0.018
+            },
+            "distributed_air_hp_b": {
+              "node": "district_b",
+              "technology": "reversible_air_source_heat_pump",
+              "shares_heating_capacity": true,
+              "eer": 3.4,
+              "eer_min": 2.6,
+              "eer_max": 4.0,
+              "reference_outdoor_temp_c": 35.0,
+              "eer_loss_per_c_above_reference": 0.09,
+              "variable_om_yuan_per_kwh_cooling": 0.02
+            }
+          },
+          "ground_source_annual_balance": {
+            "source_names": [
+              "district_a_ground_hp",
+              "district_b_ground_hp"
+            ],
+            "ratio_definition": "annual_heat_extracted_from_ground_kwh_over_annual_heat_rejected_to_ground_kwh",
+            "minimum_ratio": 0.8,
+            "maximum_ratio": 1.25,
+            "analysis_horizon_years": 10,
+            "large_project_floor_area_threshold_m2": 50000
+          }
+        }
+      },
+      "building_thermal": {
+        "enabled": true,
+        "outdoor_temperature_column": "outdoor_temp",
+        "boundary_mode": "fixed",
+        "buildings": [
+          {
+            "area_m2": 18000,
+            "heat_grade": "low",
+            "heat_loss_kw_per_c": 16.2,
+            "initial_temperature_c": 20,
+            "internal_gain_column": "internal_gain_apartments_a_kw",
+            "max_temperature_c": 28,
+            "max_temperature_column": "max_temperature_apartments_a_c",
+            "min_temperature_c": 18,
+            "min_temperature_column": "min_temperature_apartments_a_c",
+            "name": "apartments_a",
+            "node": "district_a",
+            "solar_gain_column": "solar_gain_apartments_a_kw",
+            "thermal_capacity_kwh_per_c": 1260,
+            "boundary_mode": "fixed",
+            "final_temperature_c": 20.0,
+            "parameter_identity": "synthetic_assumption_not_calibrated"
+          },
+          {
+            "area_m2": 7000,
+            "heat_grade": "low",
+            "heat_loss_kw_per_c": 7.7,
+            "initial_temperature_c": 20,
+            "internal_gain_column": "internal_gain_office_a_kw",
+            "max_temperature_c": 28,
+            "max_temperature_column": "max_temperature_office_a_c",
+            "min_temperature_c": 18,
+            "min_temperature_column": "min_temperature_office_a_c",
+            "name": "office_a",
+            "node": "district_a",
+            "solar_gain_column": "solar_gain_office_a_kw",
+            "thermal_capacity_kwh_per_c": 315,
+            "boundary_mode": "fixed",
+            "final_temperature_c": 20.0,
+            "parameter_identity": "synthetic_assumption_not_calibrated"
+          },
+          {
+            "area_m2": 14000,
+            "heat_grade": "low",
+            "heat_loss_kw_per_c": 14.0,
+            "initial_temperature_c": 20,
+            "internal_gain_column": "internal_gain_apartments_b_kw",
+            "max_temperature_c": 28,
+            "max_temperature_column": "max_temperature_apartments_b_c",
+            "min_temperature_c": 18,
+            "min_temperature_column": "min_temperature_apartments_b_c",
+            "name": "apartments_b",
+            "node": "district_b",
+            "solar_gain_column": "solar_gain_apartments_b_kw",
+            "thermal_capacity_kwh_per_c": 980,
+            "boundary_mode": "fixed",
+            "final_temperature_c": 20.0,
+            "parameter_identity": "synthetic_assumption_not_calibrated"
+          },
+          {
+            "area_m2": 5000,
+            "heat_grade": "low",
+            "heat_loss_kw_per_c": 6.0,
+            "initial_temperature_c": 20,
+            "internal_gain_column": "internal_gain_retail_b_kw",
+            "max_temperature_c": 28,
+            "max_temperature_column": "max_temperature_retail_b_c",
+            "min_temperature_c": 18,
+            "min_temperature_column": "min_temperature_retail_b_c",
+            "name": "retail_b",
+            "node": "district_b",
+            "solar_gain_column": "solar_gain_retail_b_kw",
+            "thermal_capacity_kwh_per_c": 175,
+            "boundary_mode": "fixed",
+            "final_temperature_c": 20.0,
+            "parameter_identity": "synthetic_assumption_not_calibrated"
+          }
+        ]
+      },
+      "competition_data": {
+        "status": "candidate_requires_integrated_rc_and_full_horizon_audit",
+        "input_timezone": "UTC",
+        "schedule_timezone": "Asia/Shanghai",
+        "heat_demand_columns_role": "legacy_reference_and_backup_capacity_scale_not_fixed_rc_service",
+        "cooling_demand_columns_role": "legacy_reference_and_cooling_module_activation_not_fixed_rc_service",
+        "heating_season_flag_role": "reporting_scope_only_not_year_round_rc_service_switch",
+        "dhw": "excluded; no domestic hot water load claimed",
+        "ground_balance_scope": "full_8784_hour_service_year; seasonal_slice_must_not_reimpose_annual_ratio",
+        "storage_initial_energy_source": "empty_at_window_start; all useful stored energy must be charged inside the window",
+        "storage_terminal_rule": "SOC >= 0; no terminal energy credit; positive leftover allowed and reported",
+        "temperature_initial_source": "fixed 20 C synthetic conditioned start; preconditioning energy outside comparison boundary",
+        "temperature_terminal_rule": "fixed 20 C requested; C2/C0 must enforce final_temperature_c"
+      }
+    }
+  ],
+  "code_files": [
+    {
+      "path": "src\\heatplan\\io.py",
+      "sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "definitions": [
+        {
+          "line": 13,
+          "signature": "def _deep_merge(base: Any, override: Any) -> Any:"
+        },
+        {
+          "line": 40,
+          "signature": "def load_config(config_path: str | Path) -> dict[str, Any]:"
+        },
+        {
+          "line": 51,
+          "signature": "def load_inputs(config_path: str | Path, timeseries_path: str | Path) -> tuple[dict[str, Any], pd.DataFrame]:"
+        },
+        {
+          "line": 60,
+          "signature": "def validate_electricity_module_compatibility(config: dict[str, Any]) -> None:"
+        },
+        {
+          "line": 70,
+          "signature": "def validate_inputs(config: dict[str, Any], frame: pd.DataFrame) -> None:"
+        }
+      ]
+    },
+    {
+      "path": "src\\heatplan\\building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "definitions": [
+        {
+          "line": 19,
+          "signature": "def _number(value: Any, label: str, *, positive: bool = False) -> float:"
+        },
+        {
+          "line": 31,
+          "signature": "def exact_rc_coefficients("
+        },
+        {
+          "line": 103,
+          "signature": "def building_heat_reference("
+        },
+        {
+          "line": 129,
+          "signature": "def _column(frame: pd.DataFrame, column: Any, label: str) -> np.ndarray:"
+        },
+        {
+          "line": 141,
+          "signature": "def _series(spec: Mapping[str, Any], key: str, frame: pd.DataFrame,"
+        },
+        {
+          "line": 149,
+          "signature": "def _boundary(spec: Mapping[str, Any], section: Mapping[str, Any], group: str) -> BoundaryCondition:"
+        },
+        {
+          "line": 184,
+          "signature": "def validate_building_thermal_inputs("
+        },
+        {
+          "line": 463,
+          "signature": "def add_building_thermal_constraints(model: Any) -> BuildingThermalBlock | None:"
+        }
+      ]
+    },
+    {
+      "path": "src\\heatplan\\spatial_quality.py",
+      "sha256": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+      "definitions": [
+        {
+          "line": 23,
+          "signature": "def _number(value: Any, label: str, *, minimum: float | None = None) -> float:"
+        },
+        {
+          "line": 35,
+          "signature": "def _named(rows: Sequence[Mapping[str, Any]], label: str, key: str = \"name\") -> dict:"
+        },
+        {
+          "line": 81,
+          "signature": "def _summary_add(groups: dict, key: tuple[str, str], name: str, building: dict) -> None:"
+        },
+        {
+          "line": 95,
+          "signature": "def build_hierarchy("
+        },
+        {
+          "line": 158,
+          "signature": "def aggregate_delivered_power("
+        },
+        {
+          "line": 203,
+          "signature": "def heat_pump_conversion("
+        },
+        {
+          "line": 256,
+          "signature": "def validate_conversion_dispatch("
+        },
+        {
+          "line": 275,
+          "signature": "def validate_source_grades(config: Mapping[str, Any], timeseries: Any = None) -> list[dict]:"
+        },
+        {
+          "line": 331,
+          "signature": "def preprocess_spatial_quality("
+        }
+      ]
+    },
+    {
+      "path": "src\\heatplan\\experiments.py",
+      "sha256": "b2b81a76066c5531f9520b9cad05e210a411e6810a1a641f14d92ef32b8cc7d1",
+      "definitions": [
+        {
+          "line": 13,
+          "signature": "def freeze_investment_plan("
+        },
+        {
+          "line": 152,
+          "signature": "def carry_forward_investments(config: dict, artifacts) -> dict:"
+        },
+        {
+          "line": 295,
+          "signature": "def carbon_price_scan(config_path: str | Path, timeseries_path: str | Path, prices: list[float]) -> pd.DataFrame:"
+        },
+        {
+          "line": 313,
+          "signature": "def nondominated_cost_emission_points("
+        },
+        {
+          "line": 351,
+          "signature": "def epsilon_constraint_pareto("
+        },
+        {
+          "line": 414,
+          "signature": "def ablation_study(config_path: str | Path, timeseries_path: str | Path) -> pd.DataFrame:"
+        },
+        {
+          "line": 437,
+          "signature": "def northern_cold_wave_stress_test("
+        },
+        {
+          "line": 477,
+          "signature": "def northern_resilience_stress_suite("
+        },
+        {
+          "line": 534,
+          "signature": "def frozen_plan_scenario_replay(config: dict, base_frame: pd.DataFrame, scenario_bundle: pd.DataFrame) -> pd.DataFrame:"
+        }
+      ]
+    },
+    {
+      "path": "src\\heatplan\\model.py",
+      "sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+      "definitions": [
+        {
+          "line": 282,
+          "signature": "def _compute_cop_uncached("
+        },
+        {
+          "line": 2248,
+          "signature": "def total_service_emissions_expression(self) -> tuple[dict[int, float], float]:"
+        },
+        {
+          "line": 2777,
+          "signature": "def solve_lexicographic("
+        }
+      ]
+    },
+    {
+      "path": "src\\heatplan\\chronology.py",
+      "sha256": "5c7a883c757e38522e488b14d102fcc298f568ceb55f67c847a0773c7272186d",
+      "definitions": [
+        {
+          "line": 67,
+          "signature": "def _canonical_config_fingerprint(config: dict[str, Any]) -> str:"
+        },
+        {
+          "line": 77,
+          "signature": "def _timeseries_fingerprint(timeseries: pd.DataFrame) -> str:"
+        },
+        {
+          "line": 96,
+          "signature": "def _file_sha256(path: Path) -> str:"
+        },
+        {
+          "line": 104,
+          "signature": "def _checkpoint_structures_equivalent(left: Any, right: Any) -> bool:"
+        },
+        {
+          "line": 136,
+          "signature": "def _checkpoint_digest_valid(value: Any) -> bool:"
+        },
+        {
+          "line": 140,
+          "signature": "def _checkpoint_require_finite(value: Any, label: str) -> None:"
+        },
+        {
+          "line": 152,
+          "signature": "def _checkpoint_json_text(value: Any, *, allow_lp_gap: bool = False) -> str:"
+        },
+        {
+          "line": 168,
+          "signature": "def _checkpoint_read_strict_json(path: Path) -> dict:"
+        },
+        {
+          "line": 177,
+          "signature": "def _checkpoint_check_comfort(comfort: pd.DataFrame, report: dict) -> None:"
+        },
+        {
+          "line": 210,
+          "signature": "def save_fixed_investment_plan_checkpoint("
+        },
+        {
+          "line": 282,
+          "signature": "def load_fixed_investment_plan_checkpoint("
+        },
+        {
+          "line": 428,
+          "signature": "def chronology_required_columns("
+        },
+        {
+          "line": 492,
+          "signature": "def chronology_quality_audit("
+        },
+        {
+          "line": 638,
+          "signature": "def _representative_row_weights("
+        },
+        {
+          "line": 667,
+          "signature": "def _maximum_grouped_ramp(frame: pd.DataFrame, column: str) -> float:"
+        },
+        {
+          "line": 688,
+          "signature": "def representative_period_coverage_audit("
+        },
+        {
+          "line": 854,
+          "signature": "def representative_coverage_recommendations("
+        },
+        {
+          "line": 929,
+          "signature": "def model_structure_profile("
+        },
+        {
+          "line": 988,
+          "signature": "def adapt_config_to_chronology_scenarios("
+        },
+        {
+          "line": 1054,
+          "signature": "def fixed_investment_readiness_audit("
+        },
+        {
+          "line": 1212,
+          "signature": "def estimate_annual_model_structure("
+        },
+        {
+          "line": 1328,
+          "signature": "def explicit_annual_scope_audit("
+        },
+        {
+          "line": 1370,
+          "signature": "def annual_replay_preflight("
+        },
+        {
+          "line": 1430,
+          "signature": "def prepare_full_year_timeseries("
+        },
+        {
+          "line": 1456,
+          "signature": "def expand_typical_day_to_chronological_year("
+        },
+        {
+          "line": 1485,
+          "signature": "def seasonal_storage_postcheck("
+        },
+        {
+          "line": 1683,
+          "signature": "def annual_replay_acceptance_audit("
+        },
+        {
+          "line": 1932,
+          "signature": "def _planned_value(artifacts: Any, category: str, asset: str) -> float:"
+        },
+        {
+          "line": 1940,
+          "signature": "def investment_freeze_audit("
+        },
+        {
+          "line": 2229,
+          "signature": "def annual_replay_kpi_comparison(planning: Any, replay: Any) -> pd.DataFrame:"
+        },
+        {
+          "line": 2275,
+          "signature": "def run_fixed_investment_annual_replay("
+        },
+        {
+          "line": 2315,
+          "signature": "def attach_independent_building_audit(model: Any, artifacts: Any, identity: dict, *, continuous: bool) -> dict:"
+        },
+        {
+          "line": 2330,
+          "signature": "def replay_prepared_fixed_investment_plan("
+        },
+        {
+          "line": 2417,
+          "signature": "def prepare_fixed_investment_plan("
+        }
+      ]
+    }
+  ],
+  "csv_header_overview": [
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\chilledwater_cleaned.csv",
+      "columns": 556,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\electricity_cleaned.csv",
+      "columns": 1579,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\gas_cleaned.csv",
+      "columns": 178,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\hotwater_cleaned.csv",
+      "columns": 186,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\irrigation_cleaned.csv",
+      "columns": 38,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\metadata.csv",
+      "columns": 32,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\solar_cleaned.csv",
+      "columns": 6,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\steam_cleaned.csv",
+      "columns": 371,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\water_cleaned.csv",
+      "columns": 147,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\BDG2\\weather.csv",
+      "columns": 10,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_boundary.csv",
+      "columns": 7,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_buildings.csv",
+      "columns": 12,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_landuse.csv",
+      "columns": 7,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "POLYGON((106.1064115 35.4960258,106.1076458 35.4939302,106.1081319 35.4931050,106.1089279 35.4934388,106.1091388 35.4934448,106.1094441 35.4933027,106.1095532 35.4932672,106.1096623 35.4932672,106.1097204 35.4933501,106.1097277 35.4936638,1"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_pois.csv",
+      "columns": 9,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "POINT(106.2440467 36.1842275)"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_power.csv",
+      "columns": 6,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "LINESTRING(106.4490332 35.4480546,106.4518591 35.4465764,106.4529291 35.4459650,106.4571959 35.4434890,106.4620475 35.4406818,106.4660463 35.4383158,106.4710823 35.4353770,106.4724306 35.4347854,106.4742494 35.4340294,106.4775357 35.4326634"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_railways.csv",
+      "columns": 6,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "LINESTRING(106.4438665 35.6456254,106.4444324 35.6456114,106.4451011 35.6455418,106.4457298 35.6454117,106.4465071 35.6452352,106.4477702 35.6449147,106.4483475 35.6448218,106.4488962 35.6447800,106.4494392 35.6448033,106.4502336 35.6448962"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_roads.csv",
+      "columns": 9,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "LINESTRING(106.2113351 35.6686898,106.1902983 35.6558510)"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\guyuan_water.csv",
+      "columns": 7,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "POLYGON((105.5763176 36.0701714,105.5767789 36.0702755,105.5773261 36.0706050,105.5775407 36.0708392,105.5780449 36.0710647,105.5782381 36.0711167,105.5784419 36.0712641,105.5786572 36.0714455,105.5788325 36.0716424,105.5791343 36.0718401,1"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_boundary.csv",
+      "columns": 7,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_buildings.csv",
+      "columns": 12,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_landuse.csv",
+      "columns": 7,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "POLYGON((87.5703374 43.7176452,87.5696634 43.7171085,87.5692873 43.7167040,87.5692955 43.7166285,87.5691946 43.7165087,87.5690602 43.7164111,87.5688271 43.7164353,87.5658184 43.7146927,87.5657924 43.7145706,87.5656021 43.7145196,87.5641829 "
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_pois.csv",
+      "columns": 9,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "POINT(87.5832322 43.7790904)"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_power.csv",
+      "columns": 6,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "LINESTRING(87.6233181 43.7242140,87.6243419 43.7252197,87.6269464 43.7277780,87.6272433 43.7280996,87.6268300 43.7290056,87.6292834 43.7311385,87.6307576 43.7303109,87.6312970 43.7293221,87.6316140 43.7285824,87.6314362 43.7278269,87.631141"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_railways.csv",
+      "columns": 6,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "LINESTRING(87.6383489 43.9987332,87.6387552 43.9991025,87.6391334 43.9993439,87.6398491 43.9997180,87.6403588 43.9999384,87.6416704 44.0004516,87.6424295 44.0007101,87.6430947 44.0009802,87.6438966 44.0013989,87.6447952 44.0020182,87.645546"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_roads.csv",
+      "columns": 9,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "LINESTRING(88.2820650 43.3619811,88.2785312 43.3632109,88.2764858 43.3639111,88.2665115 43.3672058,88.2576139 43.3694697,88.2549509 43.3701473)"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\urumqi_water.csv",
+      "columns": 7,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "POLYGON((87.9256396 43.4842719,87.9228930 43.4807844,87.9198031 43.4779195,87.9177432 43.4764247,87.9155116 43.4753036,87.9139667 43.4756773,87.9086452 43.4750544,87.9067569 43.4759264,87.9007487 43.4765492,87.8974872 43.4765492,87.8931956 "
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_boundary.csv",
+      "columns": 7,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_buildings.csv",
+      "columns": 12,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": null
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_landuse.csv",
+      "columns": 7,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "POLYGON((114.2779485 30.5578267,114.2784271 30.5578495,114.2787242 30.5576902,114.2787430 30.5577199,114.2788008 30.5578565,114.2788129 30.5579003,114.2788129 30.5579408,114.2788182 30.5581637,114.2788222 30.5583484,114.2788142 30.5584905,1"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_pois.csv",
+      "columns": 9,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "POINT(114.4372384 30.4550082)"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_power.csv",
+      "columns": 6,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "LINESTRING(114.4204467 30.4196759,114.4196313 30.4189589,114.4201999 30.4185148,114.4209777 30.4192549,114.4205759 30.4195735,114.4204467 30.4196759)"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_railways.csv",
+      "columns": 6,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "LINESTRING(114.2267460 30.5723386,114.2267336 30.5695570,114.2267572 30.5691902,114.2268029 30.5687740,114.2268770 30.5684111,114.2269786 30.5680511)"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_roads.csv",
+      "columns": 9,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "LINESTRING(114.3870271 30.5159643,114.3857518 30.5170357,114.3856576 30.5171294,114.3856070 30.5171884,114.3855688 30.5172571,114.3855252 30.5173239)"
+    },
+    {
+      "path": "D:\\competion\\xiaotiao\\datasets\\osm\\wuhan_water.csv",
+      "columns": 7,
+      "sample_container_keys": [
+        "path",
+        "bytes",
+        "header",
+        "sample_rows",
+        "sample_count",
+        "read_scope"
+      ],
+      "geometry_sample": "POLYGON((113.9985204 30.6136203,113.9998594 30.6152823,114.0014387 30.6141891,114.0035158 30.6128595,114.0040479 30.6125788,114.0042196 30.6125788,114.0051465 30.6121060,114.0058504 30.6118253,114.0063053 30.6117514,114.0066228 30.6115668,1"
+    }
+  ]
+}

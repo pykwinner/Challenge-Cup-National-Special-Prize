@@ -1,0 +1,1778 @@
+{
+  "schema_version": 1,
+  "review_date_local": "2026-10-02",
+  "facts": [
+    {
+      "fact_id": "UQ_001",
+      "source_id": "formal_plan",
+      "label": "2027集中供热面积",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.2.1节",
+      "value": 24875,
+      "unit": "万m²",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "≈",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "planning.city_heated_area_10k_m2"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_002",
+      "source_id": "formal_plan",
+      "label": "2025—2027预计新增面积",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.2.1节",
+      "value": 1500,
+      "unit": "万m²",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "≈",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "planning.demand_growth_area_10k_m2"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_003",
+      "source_id": "formal_plan",
+      "label": "一次网供水设计温度",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.4.1节",
+      "value": 120,
+      "unit": "°C",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "grades.high.temperature_c"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false,
+      "classification_note": "公布规划中的设计参数或服务要求；此分类不意味着强制性国家标准、设备验收或运行实测。"
+    },
+    {
+      "fact_id": "UQ_004",
+      "source_id": "formal_plan",
+      "label": "一次网回水设计温度",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.4.1节",
+      "value": 60,
+      "unit": "°C",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "engineering_postcheck.primary_return_temperature_c"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false,
+      "classification_note": "公布规划中的设计参数或服务要求；此分类不意味着强制性国家标准、设备验收或运行实测。"
+    },
+    {
+      "fact_id": "UQ_005",
+      "source_id": "formal_plan",
+      "label": "二级网供水设计温度",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.4.1节",
+      "value": 75,
+      "unit": "°C",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.secondary_network.supply_temperature_c"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false,
+      "classification_note": "公布规划中的设计参数或服务要求；此分类不意味着强制性国家标准、设备验收或运行实测。"
+    },
+    {
+      "fact_id": "UQ_006",
+      "source_id": "formal_plan",
+      "label": "二级网回水设计温度",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.4.1节",
+      "value": 50,
+      "unit": "°C",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.secondary_network.return_temperature_c"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false,
+      "classification_note": "公布规划中的设计参数或服务要求；此分类不意味着强制性国家标准、设备验收或运行实测。"
+    },
+    {
+      "fact_id": "UQ_007",
+      "source_id": "formal_plan",
+      "label": "地板采暖供水设计温度",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.4.1节",
+      "value": 45,
+      "unit": "°C",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.floor_heating.supply_temperature_c"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false,
+      "classification_note": "公布规划中的设计参数或服务要求；此分类不意味着强制性国家标准、设备验收或运行实测。"
+    },
+    {
+      "fact_id": "UQ_008",
+      "source_id": "formal_plan",
+      "label": "地板采暖回水设计温度",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.4.1节",
+      "value": 35,
+      "unit": "°C",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.floor_heating.return_temperature_c"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false,
+      "classification_note": "公布规划中的设计参数或服务要求；此分类不意味着强制性国家标准、设备验收或运行实测。"
+    },
+    {
+      "fact_id": "UQ_009",
+      "source_id": "formal_plan",
+      "label": "一级网每公里温降目标",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.7.1(2)节",
+      "value": 0.1,
+      "unit": "°C/km",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "<",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes.maximum_temperature_drop_c_per_km"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_010",
+      "source_id": "formal_plan",
+      "label": "二级网每公里温降目标",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.7.1(2)节",
+      "value": 0.2,
+      "unit": "°C/km",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "<",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.secondary_network.maximum_temperature_drop_c_per_km"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_011",
+      "source_id": "formal_plan",
+      "label": "一级网失水率控制目标",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.7.1(2)节",
+      "value": 1,
+      "unit": "%",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "within",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "engineering_postcheck.primary_network_water_loss_percent"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_012",
+      "source_id": "formal_plan",
+      "label": "二级网失水率控制目标",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.7.1(2)节",
+      "value": 2,
+      "unit": "%总循环水量",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "within",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.secondary_network.water_loss_percent"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_013",
+      "source_id": "formal_plan",
+      "label": "水力失调度控制目标",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第2.7.1(2)节",
+      "value": 10,
+      "unit": "%",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "within",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "engineering_postcheck.maximum_hydraulic_imbalance_percent"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_014",
+      "source_id": "formal_plan",
+      "label": "一般管网事故抢修时长要求",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第5.4节",
+      "value": 8,
+      "unit": "h",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "≤",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.reliability.pipe_outage_duration_hours"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false,
+      "classification_note": "公布规划中的设计参数或服务要求；此分类不意味着强制性国家标准、设备验收或运行实测。"
+    },
+    {
+      "fact_id": "UQ_015",
+      "source_id": "formal_plan",
+      "label": "预计全年节约天然气",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第4.1节",
+      "value": 1.01,
+      "unit": "亿Nm³/年",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "≈",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "policy.validation.annual_gas_saving_100m_nm3"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_016",
+      "source_id": "formal_plan",
+      "label": "预计全年氮氧化物减排",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c128188/202601/a5bed3c0c5e24011a254b71bf5d495f8.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/formal_plan.html",
+      "sha256": "731c4d05f909eea2307a944d4504965e97903451c01b71e833f8893092cb900b",
+      "original_table_clause_location": "规划网页第4.1节",
+      "value": 41,
+      "unit": "t/年",
+      "geography": "乌鲁木齐中心城区；规划明确排除达坂城区、乌鲁木齐县、甘泉堡工业园",
+      "year_or_period": "2025—2027规划；2024基准，2026公布",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "≈",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "policy.validation.annual_nox_reduction_t"
+      ],
+      "missing_applicability_conditions": [
+        "项目须位于对应规划范围",
+        "须按设计/目标身份使用，不能写成逐时实测",
+        "建筑台账、负荷与实际系统工况仍需原始数据"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_017",
+      "source_id": "bayi_pdf",
+      "label": "首站—12站分支",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第1行",
+      "value": {
+        "length": 303,
+        "nominal_diameter": 700
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_018",
+      "source_id": "bayi_pdf",
+      "label": "12站分支—四公司分支",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第2行",
+      "value": {
+        "length": 278,
+        "nominal_diameter": 700
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_019",
+      "source_id": "bayi_pdf",
+      "label": "12站分支—12站前",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第3行",
+      "value": {
+        "length": 39,
+        "nominal_diameter": 400
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_020",
+      "source_id": "bayi_pdf",
+      "label": "四公司分支—四公司地块红线",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第4行",
+      "value": {
+        "length": 395,
+        "nominal_diameter": 450
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_021",
+      "source_id": "bayi_pdf",
+      "label": "四公司分支—铁路套管南侧",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第5行",
+      "value": {
+        "length": 6580,
+        "nominal_diameter": 700
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_022",
+      "source_id": "bayi_pdf",
+      "label": "铁路套管南侧—铁路套管北侧",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第6行",
+      "value": {
+        "length": 110,
+        "nominal_diameter": 700
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_023",
+      "source_id": "bayi_pdf",
+      "label": "铁路套管北侧—1#中继泵站地块红线",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第7行",
+      "value": {
+        "length": 526,
+        "nominal_diameter": 700
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_024",
+      "source_id": "bayi_pdf",
+      "label": "1#中继泵站地块红线—连霍高速套管南侧",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第8行",
+      "value": {
+        "length": 1750,
+        "nominal_diameter": 700
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_025",
+      "source_id": "bayi_pdf",
+      "label": "连霍高速套管南侧—北侧",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第9行",
+      "value": {
+        "length": 80,
+        "nominal_diameter": 700
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_026",
+      "source_id": "bayi_pdf",
+      "label": "连霍高速套管北侧—2#中继泵站地块红线",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第10行",
+      "value": {
+        "length": 2165,
+        "nominal_diameter": 700
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_027",
+      "source_id": "bayi_pdf",
+      "label": "2#中继泵站地块红线—三公司分支",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第11行",
+      "value": {
+        "length": 1688,
+        "nominal_diameter": 700
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_028",
+      "source_id": "bayi_pdf",
+      "label": "三公司分支—三公司地块红线",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第12行",
+      "value": {
+        "length": 3082,
+        "nominal_diameter": 400
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_029",
+      "source_id": "bayi_pdf",
+      "label": "三公司分支—乌昌快速套管南侧",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第13行",
+      "value": {
+        "length": 2575,
+        "nominal_diameter": 600
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_030",
+      "source_id": "bayi_pdf",
+      "label": "乌昌快速套管南侧—北侧",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第14行",
+      "value": {
+        "length": 140,
+        "nominal_diameter": 600
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_031",
+      "source_id": "bayi_pdf",
+      "label": "乌昌快速套管北侧—五公司地块红线",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧四、建设工程设计方案主要经济技术指标表，第15行",
+      "value": {
+        "length": 2470,
+        "nominal_diameter": 600
+      },
+      "unit": {
+        "length": "m",
+        "nominal_diameter": "DN"
+      },
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "拟建低温余热一次网；表列长度边界，非供回水双管材料总长度",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "pipes[*].length_m",
+        "metadata.pipes[*].nominal_diameter_dn"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_032",
+      "source_id": "bayi_pdf",
+      "label": "设计供水温度",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页中上部工程说明第一段",
+      "value": 80,
+      "unit": "°C",
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "公示设计参数，不代表实测；主管19km与含分支全线约22km边界不同",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.bayi_primary_network.supply_temperature_c"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_033",
+      "source_id": "bayi_pdf",
+      "label": "设计回水温度",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页中上部工程说明第一段",
+      "value": 25,
+      "unit": "°C",
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "公示设计参数，不代表实测；主管19km与含分支全线约22km边界不同",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.bayi_primary_network.return_temperature_c"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_034",
+      "source_id": "bayi_pdf",
+      "label": "设计压力",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页中上部工程说明第一段",
+      "value": 2.5,
+      "unit": "MPa",
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "公示设计参数，不代表实测；主管19km与含分支全线约22km边界不同",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.bayi_primary_network.design_pressure_mpa"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_035",
+      "source_id": "bayi_pdf",
+      "label": "工程说明所述主管总长",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页中上部工程说明第一段",
+      "value": 19,
+      "unit": "km",
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "公示设计参数，不代表实测；主管19km与含分支全线约22km边界不同",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "≈",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.bayi_primary_network.main_route_length_km"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_036",
+      "source_id": "bayi_pdf",
+      "label": "表备注所述全线长度",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧指标表备注",
+      "value": 22,
+      "unit": "km",
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "公示设计参数，不代表实测；主管19km与含分支全线约22km边界不同",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "≈",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.bayi_primary_network.all_route_length_km"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_037",
+      "source_id": "bayi_pdf",
+      "label": "直埋供热管埋设深度要求",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页中上部工程说明第二段",
+      "value": 1.4,
+      "unit": "m",
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "公示设计参数，不代表实测；主管19km与含分支全线约22km边界不同",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "≥",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.bayi_primary_network.minimum_burial_depth_m"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_038",
+      "source_id": "bayi_pdf",
+      "label": "指标表备注管线埋深范围",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧指标表备注",
+      "value": [
+        1.5,
+        5.58
+      ],
+      "unit": "m",
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "公示设计参数，不代表实测；主管19km与含分支全线约22km边界不同",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "range",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.bayi_primary_network.burial_depth_range_m"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_039",
+      "source_id": "bayi_pdf",
+      "label": "管道材质",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧指标表材质列及工程说明第二段",
+      "value": "Q235B",
+      "unit": "牌号",
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "公示设计参数，不代表实测；主管19km与含分支全线约22km边界不同",
+      "fact_type": "规划目标",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.bayi_primary_network.material_grade"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_040",
+      "source_id": "bayi_pdf",
+      "label": "15行表列长度合计",
+      "source_url": "https://www.12s.gov.cn/wcm.files/upload/CMSses/202506/2025060505560157713.pdf",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/bayi_pdf.pdf",
+      "sha256": "8cda39b51cf4ed0ac3b0e2c5be91bb0a253a6c5797fdda2cdf55ab38fb2d1ab2",
+      "original_table_clause_location": "PDF第1页右侧指标表15行长度列",
+      "value": 22181,
+      "unit": "m",
+      "geography": "兵团第十二师五一农场、三坪农场、头屯河农场；八一钢铁低温余热清洁供热项目",
+      "year_or_period": "2025-06批前公示方案",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规划目标",
+      "value_method": "逐行人工视觉录入后求和",
+      "relation": "=",
+      "derivation_formula": "303+278+39+395+6580+110+526+1750+80+2165+1688+3082+2575+140+2470",
+      "candidate_model_fields": [
+        "metadata.bayi_primary_network.table_route_sum_m"
+      ],
+      "missing_applicability_conditions": [
+        "批前公示方案，不是竣工测绘",
+        "须取得批准图、施工变更、竣工及投运记录",
+        "DN是公称口径，不是已知内径；水力计算还缺壁厚、粗糙度、流量和泵曲线",
+        "不能替代其他城市/项目的合成管网"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_041",
+      "source_id": "nonresident_heat_price",
+      "label": "居民面积热价",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c119128/202406/ffbd0ca5045446b589e77ebd2534a204.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/nonresident_heat_price.html",
+      "sha256": "2ffe8066d30349efcf2f0b8e4e1613d961e32a8e3b05c38aba88df2baa83acc3",
+      "original_table_clause_location": "第三部分第二项",
+      "value": 22,
+      "unit": "CNY/(m²·采暖期)",
+      "geography": "乌鲁木齐集中供热用户",
+      "year_or_period": "2024政策解读；2026-03企业公开页再次列明",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.heat_revenue.residential_area_rate"
+      ],
+      "missing_applicability_conditions": [
+        "居民/非居民资格、收费面积、分户计量资格与合同须核实",
+        "政府指导上限不是每个合同实际收入",
+        "不同用户两部制价格不能互除反推实测能耗"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_042",
+      "source_id": "nonresident_heat_price",
+      "label": "非居民面积热价上限",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c119128/202406/ffbd0ca5045446b589e77ebd2534a204.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/nonresident_heat_price.html",
+      "sha256": "2ffe8066d30349efcf2f0b8e4e1613d961e32a8e3b05c38aba88df2baa83acc3",
+      "original_table_clause_location": "第三部分第二项",
+      "value": 31,
+      "unit": "CNY/(m²·采暖期)",
+      "geography": "乌鲁木齐集中供热用户",
+      "year_or_period": "2024政策解读；2026-03企业公开页再次列明",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.heat_revenue.nonresident_area_price_ceiling"
+      ],
+      "missing_applicability_conditions": [
+        "居民/非居民资格、收费面积、分户计量资格与合同须核实",
+        "政府指导上限不是每个合同实际收入",
+        "不同用户两部制价格不能互除反推实测能耗"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_043",
+      "source_id": "nonresident_heat_price",
+      "label": "非居民计量基本热价",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c119128/202406/ffbd0ca5045446b589e77ebd2534a204.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/nonresident_heat_price.html",
+      "sha256": "2ffe8066d30349efcf2f0b8e4e1613d961e32a8e3b05c38aba88df2baa83acc3",
+      "original_table_clause_location": "第三部分第三项",
+      "value": 9.3,
+      "unit": "CNY/(m²·采暖期)",
+      "geography": "乌鲁木齐集中供热用户",
+      "year_or_period": "2024政策解读；2026-03企业公开页再次列明",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.heat_revenue.nonresident_basic_rate"
+      ],
+      "missing_applicability_conditions": [
+        "居民/非居民资格、收费面积、分户计量资格与合同须核实",
+        "政府指导上限不是每个合同实际收入",
+        "不同用户两部制价格不能互除反推实测能耗"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_044",
+      "source_id": "nonresident_heat_price",
+      "label": "非居民计量热价",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c119128/202406/ffbd0ca5045446b589e77ebd2534a204.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/nonresident_heat_price.html",
+      "sha256": "2ffe8066d30349efcf2f0b8e4e1613d961e32a8e3b05c38aba88df2baa83acc3",
+      "original_table_clause_location": "第三部分第三项",
+      "value": 62,
+      "unit": "CNY/GJ",
+      "geography": "乌鲁木齐集中供热用户",
+      "year_or_period": "2024政策解读；2026-03企业公开页再次列明",
+      "equipment_conditions": "城市规划参考，不代表具体资产验收或运行工况",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.heat_revenue.nonresident_metered_rate"
+      ],
+      "missing_applicability_conditions": [
+        "居民/非居民资格、收费面积、分户计量资格与合同须核实",
+        "政府指导上限不是每个合同实际收入",
+        "不同用户两部制价格不能互除反推实测能耗"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_045",
+      "source_id": "heat_group_disclosure",
+      "label": "供热日期范围",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c121057/202603/d50be76b92204260a299d63b5d403612.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/heat_group_disclosure.html",
+      "sha256": "626433bda4e3cc5992da1acc9c314563272683732eba83f000dfd115e85a05be",
+      "original_table_clause_location": "三（一）；四（四）1",
+      "value": {
+        "start": "10-10",
+        "end": "04-10"
+      },
+      "unit": "月-日",
+      "geography": "乌鲁木齐",
+      "year_or_period": "2026-03公开页引用热力管理条例",
+      "equipment_conditions": "法定服务日历引用；不是实际供热日志",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "planning.heating_season_calendar"
+      ],
+      "missing_applicability_conditions": [
+        "具体供热年度、实际提前/延长决定及小时端点须确定",
+        "不能固定为每年183天/4392小时"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_046",
+      "source_id": "heat_group_disclosure",
+      "label": "居民室温服务承诺下限",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c121057/202603/d50be76b92204260a299d63b5d403612.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/heat_group_disclosure.html",
+      "sha256": "626433bda4e3cc5992da1acc9c314563272683732eba83f000dfd115e85a05be",
+      "original_table_clause_location": "四（四）2供热质量",
+      "value": 20,
+      "unit": "°C",
+      "geography": "乌鲁木齐热力集团服务范围",
+      "year_or_period": "2026-03公开服务承诺",
+      "equipment_conditions": "服务承诺，不是室温合格实绩",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "≥",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.service_commitment.residential_minimum_temperature_c"
+      ],
+      "missing_applicability_conditions": [
+        "只在用户系统和围护结构正常前提下，非居民按合同功能需要",
+        "这是企业公开服务承诺，未取得室温实测或同版法规全文，不迁移为已校准RC阈值"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_047",
+      "source_id": "xj_electric_heating_2024_6",
+      "label": "合格居民电采暖电价",
+      "source_url": "https://xjdrc.xinjiang.gov.cn/xjfgw/c108361/202409/5586d1e6ed8c49d59874a51429f78146.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/xj_electric_heating_2024_6.html",
+      "sha256": "ca7cdd816d1385942498a91f617193111c787d04cc8bc1671569d7d7d922dc7e",
+      "original_table_clause_location": "二（一）",
+      "value": 0.22,
+      "unit": "CNY/kWh",
+      "geography": "新疆符合条件的城乡居民家庭住宅",
+      "year_or_period": "2024-10-01起，有效期3年，政策调整按规定",
+      "equipment_conditions": "符合电力系统接入规范、分表计量等条件的电采暖用电",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.eligible_resident_electric_heating_rate"
+      ],
+      "missing_applicability_conditions": [
+        "电力接入、分表计量及居民/非居民用电类别须供电企业认定",
+        "集中供热企业不能套居民0.22元优惠",
+        "工业总电价还缺月度购电合同/代理购电价格、费用和计费方式"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_048",
+      "source_id": "xj_electric_heating_2024_6",
+      "label": "非居民电采暖低谷输配电价倍率",
+      "source_url": "https://xjdrc.xinjiang.gov.cn/xjfgw/c108361/202409/5586d1e6ed8c49d59874a51429f78146.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/xj_electric_heating_2024_6.html",
+      "sha256": "ca7cdd816d1385942498a91f617193111c787d04cc8bc1671569d7d7d922dc7e",
+      "original_table_clause_location": "二（二）",
+      "value": 0.5,
+      "unit": "倍平段输配电价",
+      "geography": "新疆进入电力市场的非居民电采暖用户",
+      "year_or_period": "2024-10-01起，有效期3年，政策调整按规定",
+      "equipment_conditions": "集中供热企业、宾馆、商场、车站等；只作用于输配部分，不是到户总价五折",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.nonresident_heating_valley_transmission_multiplier"
+      ],
+      "missing_applicability_conditions": [
+        "电力接入、分表计量及居民/非居民用电类别须供电企业认定",
+        "集中供热企业不能套居民0.22元优惠",
+        "工业总电价还缺月度购电合同/代理购电价格、费用和计费方式"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_049",
+      "source_id": "xj_electric_heating_2024_6",
+      "label": "电采暖优惠执行日期",
+      "source_url": "https://xjdrc.xinjiang.gov.cn/xjfgw/c108361/202409/5586d1e6ed8c49d59874a51429f78146.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/xj_electric_heating_2024_6.html",
+      "sha256": "ca7cdd816d1385942498a91f617193111c787d04cc8bc1671569d7d7d922dc7e",
+      "original_table_clause_location": "三（三）及实施段",
+      "value": {
+        "start": "10-01",
+        "end": "04-30"
+      },
+      "unit": "月-日",
+      "geography": "新疆",
+      "year_or_period": "2024-10-01起，有效期3年",
+      "equipment_conditions": "政策电价日期，不同于乌鲁木齐法定供热日期10/10—4/10",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.electric_heating_policy_calendar"
+      ],
+      "missing_applicability_conditions": [
+        "电力接入、分表计量及居民/非居民用电类别须供电企业认定",
+        "集中供热企业不能套居民0.22元优惠",
+        "工业总电价还缺月度购电合同/代理购电价格、费用和计费方式"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_050",
+      "source_id": "xj_electric_heating_2024_6",
+      "label": "直接市场交易鼓励电压门槛",
+      "source_url": "https://xjdrc.xinjiang.gov.cn/xjfgw/c108361/202409/5586d1e6ed8c49d59874a51429f78146.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/xj_electric_heating_2024_6.html",
+      "sha256": "ca7cdd816d1385942498a91f617193111c787d04cc8bc1671569d7d7d922dc7e",
+      "original_table_clause_location": "二（三）第二段",
+      "value": 10,
+      "unit": "kV",
+      "geography": "新疆非居民电采暖",
+      "year_or_period": "2024电采暖政策",
+      "equipment_conditions": "鼓励直接参与市场；暂无法参与者可代理购电，非强制免代理资格",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "≥",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.direct_market_voltage_reference_kv"
+      ],
+      "missing_applicability_conditions": [
+        "电力接入、分表计量及居民/非居民用电类别须供电企业认定",
+        "集中供热企业不能套居民0.22元优惠",
+        "工业总电价还缺月度购电合同/代理购电价格、费用和计费方式"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_051",
+      "source_id": "sayibak_transmission_tariff",
+      "label": "单一制 不满1kV输配电量电价",
+      "source_url": "https://www.sayibak.gov.cn/sybkq/c123286/202311/d20d6cca41a94105a80ede3c1156dcf4.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/transmission_page_6.png",
+      "sha256": "44e0dbd02cae1206c0e70db6fa5972a298731bd85601a2c2db49282fac80e677",
+      "original_table_clause_location": "转载原图第6张《新疆电网输配电价表》电量电价列",
+      "value": 0.163,
+      "unit": "CNY/kWh",
+      "geography": "新疆电网",
+      "year_or_period": "原文2023-05-19，附件2023-06-01执行",
+      "equipment_conditions": "单一制；不满1kV",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.transmission_energy_rate"
+      ],
+      "missing_applicability_conditions": [
+        "须匹配电压、容量、单一/两部制",
+        "电量电价不含政府基金及附加等，不能当到户总价",
+        "这是第三监管周期表，2026须核对应周期及实际账单"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_052",
+      "source_id": "sayibak_transmission_tariff",
+      "label": "单一制 1—10(20)kV输配电量电价",
+      "source_url": "https://www.sayibak.gov.cn/sybkq/c123286/202311/d20d6cca41a94105a80ede3c1156dcf4.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/transmission_page_6.png",
+      "sha256": "44e0dbd02cae1206c0e70db6fa5972a298731bd85601a2c2db49282fac80e677",
+      "original_table_clause_location": "转载原图第6张《新疆电网输配电价表》电量电价列",
+      "value": 0.1606,
+      "unit": "CNY/kWh",
+      "geography": "新疆电网",
+      "year_or_period": "原文2023-05-19，附件2023-06-01执行",
+      "equipment_conditions": "单一制；1—10(20)kV",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.transmission_energy_rate"
+      ],
+      "missing_applicability_conditions": [
+        "须匹配电压、容量、单一/两部制",
+        "电量电价不含政府基金及附加等，不能当到户总价",
+        "这是第三监管周期表，2026须核对应周期及实际账单"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_053",
+      "source_id": "sayibak_transmission_tariff",
+      "label": "单一制 35kV输配电量电价",
+      "source_url": "https://www.sayibak.gov.cn/sybkq/c123286/202311/d20d6cca41a94105a80ede3c1156dcf4.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/transmission_page_6.png",
+      "sha256": "44e0dbd02cae1206c0e70db6fa5972a298731bd85601a2c2db49282fac80e677",
+      "original_table_clause_location": "转载原图第6张《新疆电网输配电价表》电量电价列",
+      "value": 0.1566,
+      "unit": "CNY/kWh",
+      "geography": "新疆电网",
+      "year_or_period": "原文2023-05-19，附件2023-06-01执行",
+      "equipment_conditions": "单一制；35kV",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.transmission_energy_rate"
+      ],
+      "missing_applicability_conditions": [
+        "须匹配电压、容量、单一/两部制",
+        "电量电价不含政府基金及附加等，不能当到户总价",
+        "这是第三监管周期表，2026须核对应周期及实际账单"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_054",
+      "source_id": "sayibak_transmission_tariff",
+      "label": "两部制 1—10(20)kV输配电量电价",
+      "source_url": "https://www.sayibak.gov.cn/sybkq/c123286/202311/d20d6cca41a94105a80ede3c1156dcf4.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/transmission_page_6.png",
+      "sha256": "44e0dbd02cae1206c0e70db6fa5972a298731bd85601a2c2db49282fac80e677",
+      "original_table_clause_location": "转载原图第6张《新疆电网输配电价表》电量电价列",
+      "value": 0.1204,
+      "unit": "CNY/kWh",
+      "geography": "新疆电网",
+      "year_or_period": "原文2023-05-19，附件2023-06-01执行",
+      "equipment_conditions": "两部制；1—10(20)kV",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.transmission_energy_rate"
+      ],
+      "missing_applicability_conditions": [
+        "须匹配电压、容量、单一/两部制",
+        "电量电价不含政府基金及附加等，不能当到户总价",
+        "这是第三监管周期表，2026须核对应周期及实际账单"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_055",
+      "source_id": "sayibak_transmission_tariff",
+      "label": "两部制 35kV输配电量电价",
+      "source_url": "https://www.sayibak.gov.cn/sybkq/c123286/202311/d20d6cca41a94105a80ede3c1156dcf4.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/transmission_page_6.png",
+      "sha256": "44e0dbd02cae1206c0e70db6fa5972a298731bd85601a2c2db49282fac80e677",
+      "original_table_clause_location": "转载原图第6张《新疆电网输配电价表》电量电价列",
+      "value": 0.11,
+      "unit": "CNY/kWh",
+      "geography": "新疆电网",
+      "year_or_period": "原文2023-05-19，附件2023-06-01执行",
+      "equipment_conditions": "两部制；35kV",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.transmission_energy_rate"
+      ],
+      "missing_applicability_conditions": [
+        "须匹配电压、容量、单一/两部制",
+        "电量电价不含政府基金及附加等，不能当到户总价",
+        "这是第三监管周期表，2026须核对应周期及实际账单"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_056",
+      "source_id": "sayibak_transmission_tariff",
+      "label": "两部制 110kV输配电量电价",
+      "source_url": "https://www.sayibak.gov.cn/sybkq/c123286/202311/d20d6cca41a94105a80ede3c1156dcf4.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/transmission_page_6.png",
+      "sha256": "44e0dbd02cae1206c0e70db6fa5972a298731bd85601a2c2db49282fac80e677",
+      "original_table_clause_location": "转载原图第6张《新疆电网输配电价表》电量电价列",
+      "value": 0.0815,
+      "unit": "CNY/kWh",
+      "geography": "新疆电网",
+      "year_or_period": "原文2023-05-19，附件2023-06-01执行",
+      "equipment_conditions": "两部制；110kV",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.transmission_energy_rate"
+      ],
+      "missing_applicability_conditions": [
+        "须匹配电压、容量、单一/两部制",
+        "电量电价不含政府基金及附加等，不能当到户总价",
+        "这是第三监管周期表，2026须核对应周期及实际账单"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_057",
+      "source_id": "sayibak_transmission_tariff",
+      "label": "两部制 220kV及以上输配电量电价",
+      "source_url": "https://www.sayibak.gov.cn/sybkq/c123286/202311/d20d6cca41a94105a80ede3c1156dcf4.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/transmission_page_6.png",
+      "sha256": "44e0dbd02cae1206c0e70db6fa5972a298731bd85601a2c2db49282fac80e677",
+      "original_table_clause_location": "转载原图第6张《新疆电网输配电价表》电量电价列",
+      "value": 0.0486,
+      "unit": "CNY/kWh",
+      "geography": "新疆电网",
+      "year_or_period": "原文2023-05-19，附件2023-06-01执行",
+      "equipment_conditions": "两部制；220kV及以上",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.tariff.transmission_energy_rate"
+      ],
+      "missing_applicability_conditions": [
+        "须匹配电压、容量、单一/两部制",
+        "电量电价不含政府基金及附加等，不能当到户总价",
+        "这是第三监管周期表，2026须核对应周期及实际账单"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    },
+    {
+      "fact_id": "UQ_058",
+      "source_id": "xj_building_standard",
+      "label": "新标准实施日期",
+      "source_url": "https://zjt.xinjiang.gov.cn/xjzjt/c113537/202412/f02c550a291c4438bcf7c60c67d12f71.shtml",
+      "local_evidence_file": "docs/source_intake_20261002/city_batch_02/urumqi/evidence/xj_building_standard.html",
+      "sha256": "c161b8dfc863c83f7823a5fbdc950ae28a8ce0ce15f991d4e40e72f1da67e9ea",
+      "original_table_clause_location": "发布公告正文首段",
+      "value": "2024-11-01",
+      "unit": "日期",
+      "geography": "新疆自治区工程建设地方标准",
+      "year_or_period": "公告2024-07-16",
+      "equipment_conditions": "原XJJ001-2021同时废止；不能将网址202412当作成文日期",
+      "fact_type": "规范",
+      "value_method": "原文直接值",
+      "relation": "=",
+      "derivation_formula": null,
+      "candidate_model_fields": [
+        "metadata.building_standard.effective_date"
+      ],
+      "missing_applicability_conditions": [
+        "公告不是参数表；需同版标准正文、建筑用途/气候区与建成年份",
+        "标准最低设计限值不能证明具体H/C、得热或建筑面积"
+      ],
+      "allowed_direct_historical_input_overwrite": false,
+      "is_measured_project_operation": false
+    }
+  ],
+  "fact_type_counts": {
+    "规划目标": 33,
+    "规范": 25
+  },
+  "reported_measurement_or_site_observation_facts_verified": 0,
+  "no_asset_capacity_or_investment_inferred_from_area_or_pipe_size": true
+}

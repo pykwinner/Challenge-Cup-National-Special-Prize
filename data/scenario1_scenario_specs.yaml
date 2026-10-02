@@ -1,0 +1,49 @@
+period_weight: 180
+risk:
+  cvar_alpha: 0.90
+  cvar_weight: 0.12
+
+scenarios:
+  - name: normal_winter
+    probability: 0.48
+
+  - name: severe_cold
+    probability: 0.23
+    temperature_offset_c: -6
+    demand_multiplier: 1.12
+    waste_heat_multiplier: 0.90
+    electricity_price_multiplier: 1.10
+
+  - name: compound_cold_wave
+    probability: 0.14
+    temperature_offset_c: -10
+    waste_source_temp_offset_c: -3
+    demand_multiplier: 1.20
+    waste_heat_multiplier: 0.75
+    electricity_price_multiplier: 1.25
+    grid_emission_multiplier: 1.08
+
+  - name: low_waste_high_power_price
+    probability: 0.05
+    temperature_offset_c: -4
+    demand_multiplier: 1.08
+    waste_heat_multiplier: 0.50
+    electricity_price_multiplier: 1.50
+    grid_emission_multiplier: 1.12
+
+  - name: industrial_waste_heat_outage
+    probability: 0.04
+    temperature_offset_c: -6
+    demand_multiplier: 1.12
+    waste_heat_multiplier: 0.00
+    electricity_price_multiplier: 1.25
+    grid_emission_multiplier: 1.10
+
+  - name: long_duration_cold_wave
+    probability: 0.06
+    temperature_offset_c: -12
+    waste_source_temp_offset_c: -4
+    demand_multiplier: 1.25
+    waste_heat_multiplier: 0.65
+    electricity_price_multiplier: 1.30
+    grid_emission_multiplier: 1.12

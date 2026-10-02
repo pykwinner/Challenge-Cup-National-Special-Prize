@@ -1,0 +1,95 @@
+\section{源网荷储与建筑热状态模型}
+
+\subsection{变量、资产与多尺度接口}
+
+令$b,n,k,e,s,t$分别表示建筑、区域节点、设备、管段、储热装置和时段。投资变量确定设备新增及退役容量、候选网络、储热和接入容量；运行变量包括交付冷热量、设备出力、节点能流、电力及热状态。设备可用容量写为
+\begin{equation}
+K_k=K_k^{\mathrm{exist}}+K_k^{\mathrm{new}}-K_k^{\mathrm{ret}},\qquad
+0\leq Q_{k,t}\leq a_{k,t}K_k.
+\label{eq:capacity}
+\end{equation}
+启停、最小出力、爬坡及政策退役条件按实际启用设备加载。城市投资变量通过容量上界进入区域运行，建筑交付量按节点与温位聚合后进入能量守恒。该接口保留各层身份，不能将规划投资间隙与固定投资后的调度间隙混为一项。
+
+\subsection{建筑负荷与精确1R1C离散}
+
+热状态结构参考建筑RC灰箱建模及模型适用性检验原则\supcite{2}。本文采用单状态简化，具体H/C及得热仍须依据对应建筑资料辨识，方法文献不提供武汉参数。
+
+建筑以温度$\theta_b$为状态，热损系数$H_b>0$、热容$C_b>0$及得热$G_b$描述围护、换气与内部和太阳作用。在每小时内输入保持的条件下，热状态方程为
+\begin{equation}
+C_b\frac{\mathrm d\theta_b}{\mathrm dt}
+=H_b(T^{\mathrm{out}}-\theta_b)+Q_b^{\mathrm h}-Q_b^{\mathrm c}+G_b.
+\label{eq:rc-continuous}
+\end{equation}
+其中$Q_b^{\mathrm h},Q_b^{\mathrm c}$分别为交付供热及供冷功率，$G_b$为内部与太阳得热之和，采用kW；$C_b$采用kWh/K、$H_b$采用kW/K，时间采用h。取$\Delta t=1~\mathrm h$，定义
+\begin{equation}
+a_b=\exp\!\left(-\frac{H_b\Delta t}{C_b}\right),\qquad
+\beta_b=\frac{1-a_b}{H_b}.
+\label{eq:rc-coefficients}
+\end{equation}
+对式\eqref{eq:rc-continuous}积分得到
+\begin{equation}
+\theta_{b,t}=a_b\theta_{b,t-1}+(1-a_b)T_t^{\mathrm{out}}
++\beta_b\left(Q_{b,t}^{\mathrm h}-Q_{b,t}^{\mathrm c}+G_{b,t}\right).
+\label{eq:alg-building}
+\end{equation}
+程序使用稳定的指数差计算系数，拒绝非正热损、热容及时间步长。供热与供冷变量直接参与上述状态和节点能流，不再叠加一套虚拟建筑储热需求，避免重复计量。
+
+状态满足随占用及服务合同变化的边界，冷热互斥通过二元变量$m_{b,t}$限定：
+\begin{align}
+\underline\theta_{b,t}\leq\theta_{b,t}&\leq\overline\theta_{b,t},\\
+0\leq Q_{b,t}^{\mathrm h}&\leq M_{b,t}^{\mathrm h}m_{b,t},\\
+0\leq Q_{b,t}^{\mathrm c}&\leq M_{b,t}^{\mathrm c}(1-m_{b,t}).
+\label{eq:rc-exclusive}
+\end{align}
+$M$为经输入检查计算的有限上界；不具有两种服务能力的时段按对应边界处理。完整时序采用声明的初始及终端状态，代表期按其组边界使用固定或循环条件。逐日固定同一初末温度会改变冷热需求，须单独核验其影响，不能以权重覆盖完整年度代替状态连续性。
+
+\subsection{区域冷热平衡与温位}
+
+节点$n$、温位$g$的热量守恒为
+\begin{multline}
+\sum_kQ_{k,n,g,t}+\sum_{e\in\delta^-(n)}\eta_eF_{e,g,t}
++\sum_sQ_{s,n,g,t}^{\mathrm{dis}}\\
+=\sum_{b\in\mathcal B_{n,g}}Q_{b,t}^{\mathrm h}
++\sum_sQ_{s,n,g,t}^{\mathrm{ch}}+\sum_{e\in\delta^+(n)}F_{e,g,t}.
+\label{eq:node-heat-balance}
+\end{multline}
+供冷节点按交付冷量建立对应平衡；已启用生活热水或其他服务时，将其独立需求加入相应账本。禁止用全系统总量平衡掩盖局部输配不足，也不将未满足服务人为删除以降低碳排放。
+
+直接热源与用户温位的兼容要求为
+\begin{equation}
+T_k^{\mathrm{src,min}}\geq T_g^{\mathrm{sup}}+\Delta T^{\mathrm{hx}}.
+\label{eq:alg-grade}
+\end{equation}
+低温资源经热泵提升后按其供热侧温位接入；式\eqref{eq:alg-grade}不用于将低温热泵资源端误当作直接供热端。管段容量与候选状态限制热流，连续温度、水力和施工可行性另作专业复核。本稿不把候选聚合管段称为已认证的实际管网。
+
+\subsection{设备、储热与电力}
+
+锅炉、热泵及制冷设备的转换采用输入确定的效率系数：
+\begin{equation}
+Q_{k,t}^{\mathrm{boiler}}=\eta_kF_{k,t}^{\mathrm{fuel}},\qquad
+Q_{k,t}^{\mathrm{HP}}=COP_{k,t}P_{k,t}^{\mathrm{HP}},\qquad
+Q_{k,t}^{\mathrm{cool}}=EER_{k,t}P_{k,t}^{\mathrm{cool}}.
+\end{equation}
+系数的温度、湿冷和部分负荷适用条件需记录来源；外生性能修正不等于建立了室内热湿或声学动态模型。冷热共用设备同时受投资容量与运行模式限制。
+
+储热状态为
+\begin{equation}
+E_{s,t}=(1-\mu_s)E_{s,t-1}+\eta_s^{\mathrm{ch}}Q_{s,t}^{\mathrm{ch}}\Delta t
+-\frac{Q_{s,t}^{\mathrm{dis}}\Delta t}{\eta_s^{\mathrm{dis}}},
+\label{eq:storage-state}
+\end{equation}
+并满足能量容量、充放功率、互斥和初末边界。节点电力平衡将基础负荷、热泵、制冷、循环泵及已启用储电纳入同一接入限制；同一电量不得分别在供热与供冷台账重复计费或计碳。
+
+\subsection{品质、可靠容量与地源账本}
+
+舒适边界、设备和配电容量作为硬约束。可靠供热容量采用设备信用、可用率及储热持续供能条件，不能用储热额定kWh直接代替kW容量。储热在关键持续时间内能够提供的容量同时受功率和有效能量限制。建筑柔性只有在具有独立持续性依据的已启用模块下才能获得容量信用；未认证的RC调节量不自行抵扣设计峰值。
+
+零失供及关键故障要求按服务合同和已实际测试情景记录。品质模块的启用取决于参数与实现，温湿度、结露、噪声和地源多年动态不能因存在接口即宣称验证通过。
+
+地源热泵每个源分别核算地下取热$E_j^{\mathrm{ext}}$与排热$E_j^{\mathrm{rej}}$。供热取热扣除压缩机电耗，供冷排热包含制冷电耗；年度边界为
+\begin{equation}
+r_j^{\min}E_j^{\mathrm{rej}}\leq E_j^{\mathrm{ext}}
+\leq r_j^{\max}E_j^{\mathrm{rej}}.
+\label{eq:ground-ledger}
+\end{equation}
+该式按逐源和完整服务年检查。供暖季可能不启用年度比例约束，须标注其范围；年度比例通过也不证明多年地温稳定。

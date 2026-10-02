@@ -1,0 +1,122 @@
+{
+  "standard": "GB 50736-2012 民用建筑供暖通风与空气调节设计规范",
+  "source_kind": "规范设计参考表；不是逐时实测建筑负荷",
+  "source_url": "https://gf.cabr-fire.com/m/article-12078.htm",
+  "user_link": "http://m.jianbiaoku.com/webarbs/book/16582/1663708.shtml",
+  "user_link_role": "条文说明的附录A入口；正文表入口为1663640.shtml",
+  "verification": "人工逐列读取中国建筑科学研究院建筑防火研究所刊载的表A原图，保留原图SHA-256",
+  "applicability": "2012版设计参考；工程选用同时核对现行强制性通用规范及当地标准，尚未完成最新地方参数替代审核",
+  "definition_url": "https://gf.cabr-fire.com/m/article-11766.htm",
+  "heating_design_definition": "第4.1.2条：历年平均不保证5天的日平均温度；不是逐时最低温度",
+  "design_heating_dates_role": "设计计算用的气候统计供暖期；不是当地行政供暖日期或本项目运行边界",
+  "units": {
+    "temperature": "degC",
+    "pressure": "hPa",
+    "wind": "m/s",
+    "elevation": "m"
+  },
+  "profiles": {
+    "urumqi": {
+      "city_cn": "乌鲁木齐",
+      "station_id": "51463",
+      "station_name": "乌鲁木齐",
+      "latitude_deg": 43.78333333333333,
+      "longitude_deg": 87.61666666666666,
+      "elevation_m": 917.9,
+      "statistical_period": [
+        1971,
+        2000
+      ],
+      "heating_outdoor_design_c": -19.7,
+      "winter_ac_outdoor_design_c": -23.7,
+      "summer_ac_dry_bulb_design_c": 33.5,
+      "summer_ac_wet_bulb_design_c": 18.2,
+      "winter_mean_wind_m_s": 1.6,
+      "winter_pressure_hpa": 924.6,
+      "design_heating_days_at_5c": 158,
+      "design_heating_dates_at_5c": [
+        "10-24",
+        "03-30"
+      ],
+      "design_heating_days_at_8c": 180,
+      "design_heating_dates_at_8c": [
+        "10-14",
+        "04-11"
+      ],
+      "image": "appendix_a_37.jpg",
+      "image_url": "https://gf.cabr-fire.com/Web/uploads/allimg/221207/10-22120G05222U9.jpg",
+      "table_column": "新疆；乌鲁木齐；台站51463",
+      "base_config": "data/public_scenario_inputs/scenario1_urumqi_public.yaml",
+      "source_image_sha256": "4ddd0f92d6cebc9b68a3d231d1818f53c0900b3a1dbd12f4fc828960f56bc3f2",
+      "source_image_file": "docs/source_intake_20261002/evidence/appendix_a_37.jpg"
+    },
+    "guyuan": {
+      "city_cn": "固原",
+      "station_id": "53817",
+      "station_name": "固原",
+      "latitude_deg": 36.0,
+      "longitude_deg": 106.26666666666667,
+      "elevation_m": 1753.0,
+      "statistical_period": [
+        1971,
+        2000
+      ],
+      "heating_outdoor_design_c": -13.2,
+      "winter_ac_outdoor_design_c": -17.3,
+      "summer_ac_dry_bulb_design_c": 27.7,
+      "summer_ac_wet_bulb_design_c": 19.0,
+      "winter_mean_wind_m_s": 2.7,
+      "winter_pressure_hpa": 826.8,
+      "design_heating_days_at_5c": 166,
+      "design_heating_dates_at_5c": [
+        "10-21",
+        "04-04"
+      ],
+      "design_heating_days_at_8c": 189,
+      "design_heating_dates_at_8c": [
+        "10-10",
+        "04-16"
+      ],
+      "image": "appendix_a_36.jpg",
+      "image_url": "https://gf.cabr-fire.com/Web/uploads/allimg/221207/10-22120G0520L13.jpg",
+      "table_column": "宁夏；固原；台站53817",
+      "base_config": "data/public_scenario_inputs/scenario2_guyuan_evidence_public.yaml",
+      "source_image_sha256": "0327d4db5c34b69201279901db6a46c21916dd25774ff60f69aba4511dedfa39",
+      "source_image_file": "docs/source_intake_20261002/evidence/appendix_a_36.jpg"
+    },
+    "wuhan": {
+      "city_cn": "武汉",
+      "station_id": "57494",
+      "station_name": "武汉",
+      "latitude_deg": 30.616666666666667,
+      "longitude_deg": 114.13333333333334,
+      "elevation_m": 23.1,
+      "statistical_period": [
+        1971,
+        2000
+      ],
+      "heating_outdoor_design_c": -0.3,
+      "winter_ac_outdoor_design_c": -2.6,
+      "summer_ac_dry_bulb_design_c": 35.2,
+      "summer_ac_wet_bulb_design_c": 28.4,
+      "winter_mean_wind_m_s": 2.7,
+      "winter_pressure_hpa": 1023.5,
+      "design_heating_days_at_5c": 50,
+      "design_heating_dates_at_5c": [
+        "12-22",
+        "02-09"
+      ],
+      "design_heating_days_at_8c": 98,
+      "design_heating_dates_at_8c": [
+        "11-27",
+        "03-04"
+      ],
+      "image": "appendix_a_18.jpg",
+      "image_url": "https://gf.cabr-fire.com/Web/uploads/allimg/221207/10-22120G04114V5.jpg",
+      "table_column": "湖北；武汉；台站57494",
+      "base_config": "data/public_scenario_inputs/scenario3_wuhan_joint_public.yaml",
+      "source_image_sha256": "9fc359979b13622c9abc78d928a280eaea9f23a99227d22899fd70ef21c2ea87",
+      "source_image_file": "docs/source_intake_20261002/evidence/appendix_a_18.jpg"
+    }
+  }
+}

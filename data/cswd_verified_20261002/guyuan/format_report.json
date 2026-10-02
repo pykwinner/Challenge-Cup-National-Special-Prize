@@ -1,0 +1,77 @@
+{
+  "city": "guyuan",
+  "city_cn": "固原",
+  "source_url": "https://climate.onebuilding.org/WMO_Region_2_Asia/CHN_China/NX_Ningxia_Hui/CHN_NX_Guyuan.538170_CSWD.zip",
+  "final_url": "https://climate.onebuilding.org/WMO_Region_2_Asia/CHN_China/NX_Ningxia_Hui/CHN_NX_Guyuan.538170_CSWD.zip",
+  "retrieved_at_utc": "2026-10-02T01:28:18.530891+00:00",
+  "zip_file": "guyuan/CHN_NX_Guyuan.538170_CSWD.zip",
+  "zip_bytes": 334692,
+  "zip_sha256": "8318eaa902a3c9d199bead9057cab9ff6bb3172ec768cf76edcd855cb4602f29",
+  "epw_file": "guyuan/CHN_NX_Guyuan.538170_CSWD.epw",
+  "epw_sha256": "fe10ae61d8a74962e21017ddb40e488d5ef82c9a5fe461ba1a7de0bc177f4494",
+  "location_header": [
+    "LOCATION",
+    "Guyuan",
+    "Ningxia",
+    "CHN",
+    "CSWD",
+    "538170",
+    "36.00000",
+    "106.2667",
+    "8.0",
+    "1753.0"
+  ],
+  "records": 8760,
+  "source_year_labels": [
+    2005
+  ],
+  "dry_bulb_range_c": [
+    -20.3,
+    29.9
+  ],
+  "missing_counts": {
+    "dry_bulb_c": 0,
+    "dew_point_c": 0,
+    "relative_humidity_pct": 0,
+    "station_pressure_pa": 0,
+    "global_horizontal_radiation_wh_m2": 0,
+    "wind_direction_deg": 0,
+    "wind_speed_m_s": 0
+  },
+  "checks": {
+    "8760_records": true,
+    "unique_month_day_hour": true,
+    "first_interval": true,
+    "last_interval": true,
+    "hour_1_to_24": true,
+    "minute_60": false,
+    "no_missing_selected_fields": true,
+    "minimum_35_columns": true,
+    "source_cswd": true,
+    "month_day_hour_complete_and_ordered": true
+  },
+  "format_check_pass": false,
+  "data_periods_header": [
+    "DATA PERIODS",
+    "1",
+    "1",
+    "Data",
+    "Sunday",
+    " 1/ 1",
+    "12/31"
+  ],
+  "calendar_check_pass": true,
+  "raw_minute_values": [
+    0
+  ],
+  "time_format_note": "所有Minute均为0，与引用字典1..60不一致；保留源文件，逐时导入时显式声明按Hour=1..24解释区间，尚未转换模型输入",
+  "archive_and_extracted_epw_sha_match": true,
+  "norm_vs_epw_station_metadata": {
+    "standard_station_id": "53817",
+    "epw_station_id": "538170",
+    "standard_elevation_m": 1753.0,
+    "epw_elevation_m": 1753.0,
+    "elevation_difference_m": 0.0,
+    "interpretation": "分别保留规范与EPW原始台站信息；不自动合并坐标和海拔"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "file": "data/public_source_extensions/scenario1_reality_2026.yaml",
+  "sha256": "3b15ee2fb5ae01ff8618510c220cbaf9876d3aa7ce0909cb7c7ea8b71d8a72c9",
+  "registered_plan_fact_count": 12,
+  "reviewed_plan_fact_count": 16,
+  "findings": [
+    "原登记的12项规划数值可在公布正文找到，均保留规划/设计身份",
+    "0.1/0.2°C/km为严格小于目标，不是实测热损率",
+    "8h为一般事故抢修要求，不是故障概率/实际持续时间分布",
+    "城市面积和预计节气减排不得替代具体资产容量/实际收益"
+  ],
+  "registered_facts": [
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "2027年中心城区集中供热面积",
+      "value": 24875,
+      "unit": "万平方米",
+      "model_mapping": "planning.city_heated_area_10k_m2",
+      "value_type": "正式规划目标"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "2025至2027年新增集中供热面积",
+      "value": 1500,
+      "unit": "万平方米",
+      "model_mapping": "planning.demand_growth_area_10k_m2",
+      "value_type": "正式规划测算"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "一级网设计供水温度",
+      "value": 120,
+      "unit": "摄氏度",
+      "model_mapping": "grades.high.temperature_c",
+      "value_type": "正式规划设计参数"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "一级网设计回水温度",
+      "value": 60,
+      "unit": "摄氏度",
+      "model_mapping": "engineering_postcheck.primary_return_temperature_c",
+      "value_type": "正式规划设计参数"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "一级网每公里允许温降",
+      "value": 0.1,
+      "unit": "摄氏度/公里",
+      "model_mapping": "pipes.maximum_temperature_drop_c_per_km",
+      "value_type": "正式规划上限"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "二级网每公里允许温降",
+      "value": 0.2,
+      "unit": "摄氏度/公里",
+      "model_mapping": "metadata.secondary_network.maximum_temperature_drop_c_per_km",
+      "value_type": "正式规划上限"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "一级网失水率上限",
+      "value": 1,
+      "unit": "百分比",
+      "model_mapping": "engineering_postcheck.primary_network_water_loss_percent",
+      "value_type": "正式规划上限"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "二级网失水率上限",
+      "value": 2,
+      "unit": "百分比",
+      "model_mapping": "metadata.secondary_network.water_loss_percent",
+      "value_type": "正式规划上限"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "管网水力失调度上限",
+      "value": 10,
+      "unit": "百分比",
+      "model_mapping": "engineering_postcheck.maximum_hydraulic_imbalance_percent",
+      "value_type": "正式规划上限"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "一般管网事故抢修时长上限",
+      "value": 8,
+      "unit": "小时",
+      "model_mapping": "metadata.reliability.pipe_outage_duration_hours",
+      "value_type": "正式规划上限"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "规划方案年节约天然气",
+      "value": 1.01,
+      "unit": "亿标准立方米/年",
+      "model_mapping": "policy.validation.annual_gas_saving_100m_nm3",
+      "value_type": "正式规划成效测算"
+    },
+    {
+      "source_id": "S1_URUMQI_FINAL_PLAN_2026",
+      "scenario": "scenario1_existing_network",
+      "indicator": "规划方案年减少氮氧化物",
+      "value": 41,
+      "unit": "吨/年",
+      "model_mapping": "policy.validation.annual_nox_reduction_t",
+      "value_type": "正式规划成效测算"
+    }
+  ],
+  "frozen_ledger_modified": false
+}

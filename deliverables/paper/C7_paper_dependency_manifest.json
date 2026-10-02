@@ -1,0 +1,137 @@
+{
+  "reviewed_local_date": "2026-10-02",
+  "freeze_status": "current source/PDF hashes fixed; no further text changes",
+  "source_root": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件",
+  "main_file": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\main.tex",
+  "final_pdf": "D:\\competion\\xiaotiao\\16\\C7_compact_method_build_20261001\\C7_research_paper_20261002.pdf",
+  "final_pdf_sha256": "cb0feba158e0e3240e1e5cfdcc30f61a2a5b131c88cecdb50f8380d427bee335",
+  "pdf_pages": 19,
+  "extracted_han": 8156,
+  "raster_text_han": 178,
+  "total_han": 8334,
+  "count_rule": "All extractable text, including contents, tables, figure caption/native diagram, references and appendices; supplement 34 Han in raster cover and 8 Han per body-background page. This is an internal counting rule, not a claimed official contest algorithm.",
+  "non_whitespace_characters": 12541,
+  "english_word_count": 464,
+  "source_and_asset_files": [
+    {
+      "relative_path": "body-background.jpg",
+      "absolute_source_path": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\body-background.jpg",
+      "sha256": "93540a2af4166d81977ec5dbfeb4206fbafab2c780a4b898b799479c5e427f9b",
+      "bytes": 62724,
+      "dependency_evidence": "XeLaTeX recorder INPUT"
+    },
+    {
+      "relative_path": "cover.jpg",
+      "absolute_source_path": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\cover.jpg",
+      "sha256": "3e1bb1985ee542c9d019b0d0f7611fa3d140e1eaa2090c255c1e4b44dbcb4c8a",
+      "bytes": 186797,
+      "dependency_evidence": "XeLaTeX recorder INPUT"
+    },
+    {
+      "relative_path": "main.tex",
+      "absolute_source_path": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\main.tex",
+      "sha256": "7660509f90288ff314bf3d5ee5f96dd0a16ca77dbfa125330b330cd073131075",
+      "bytes": 23411,
+      "dependency_evidence": "XeLaTeX recorder INPUT"
+    },
+    {
+      "relative_path": "sections/algorithm-revision.tex",
+      "absolute_source_path": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\sections\\algorithm-revision.tex",
+      "sha256": "e045dbe4d2ba7a3ae637186c5dca30e231e3952a658633c8dd95e60c2708bc60",
+      "bytes": 11769,
+      "dependency_evidence": "XeLaTeX recorder INPUT"
+    },
+    {
+      "relative_path": "sections/model-appendix.tex",
+      "absolute_source_path": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\sections\\model-appendix.tex",
+      "sha256": "901ff7354c04f0b546eaba0c3a50a0725ef4b0dd7b5571ab51b6d6dfd865c61f",
+      "bytes": 1553,
+      "dependency_evidence": "XeLaTeX recorder INPUT"
+    },
+    {
+      "relative_path": "sections/model-derivation.tex",
+      "absolute_source_path": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\sections\\model-derivation.tex",
+      "sha256": "cf87eaa4c3c56ab822b3f4d5c3a934ab3888691218defbf757d20d9f3a577587",
+      "bytes": 6297,
+      "dependency_evidence": "XeLaTeX recorder INPUT"
+    },
+    {
+      "relative_path": "build-fonts/NotoSerifSC-Regular.ttf",
+      "absolute_source_path": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\build-fonts\\NotoSerifSC-Regular.ttf",
+      "sha256": "be369c4126abb10d76d58c2a9d8622e49e21f3e4227ba8b6590cd5cedf7a79bd",
+      "bytes": 3505096,
+      "dependency_evidence": "fontspec declared relative font path"
+    },
+    {
+      "relative_path": "build-fonts/NotoSerifSC-Bold.ttf",
+      "absolute_source_path": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\build-fonts\\NotoSerifSC-Bold.ttf",
+      "sha256": "a420f886ef0331c205a318e4d4aba75cbed4180e2b4ef3803125b4b1e3417725",
+      "bytes": 3504632,
+      "dependency_evidence": "fontspec declared relative font path"
+    },
+    {
+      "relative_path": "build-fonts/NotoSansSC-Regular.ttf",
+      "absolute_source_path": "D:\\competion\\xiaotiao\\16\\16_LaTeX源文件\\build-fonts\\NotoSansSC-Regular.ttf",
+      "sha256": "25628aac5ef8b03a013166472539318eafeee1d9004017549723f4e1aedf02a6",
+      "bytes": 2522504,
+      "dependency_evidence": "fontspec declared relative font path"
+    }
+  ],
+  "recorder_confirmed_source_and_image_inputs": [
+    "body-background.jpg",
+    "cover.jpg",
+    "main.tex",
+    "sections/algorithm-revision.tex",
+    "sections/model-appendix.tex",
+    "sections/model-derivation.tex"
+  ],
+  "fontspec_declared_relative_fonts": [
+    "build-fonts/NotoSerifSC-Regular.ttf",
+    "build-fonts/NotoSerifSC-Bold.ttf",
+    "build-fonts/NotoSansSC-Regular.ttf"
+  ],
+  "engine": "XeLaTeX / TeX Live 2026",
+  "engine_used": "D:\\app\\latex\\texlive\\2026\\bin\\windows\\xelatex.exe",
+  "packages": [
+    "fontspec",
+    "geometry",
+    "amsmath",
+    "amssymb",
+    "mathtools",
+    "bm",
+    "graphicx",
+    "longtable",
+    "booktabs",
+    "array",
+    "tabularx",
+    "calc",
+    "etoolbox",
+    "float",
+    "needspace",
+    "caption",
+    "setspace",
+    "fancyhdr",
+    "titlesec",
+    "tocloft",
+    "indentfirst",
+    "enumitem",
+    "fvextra",
+    "xcolor",
+    "xurl",
+    "hyperref",
+    "bookmark",
+    "eso-pic",
+    "tikz"
+  ],
+  "tikz_libraries": [
+    "positioning",
+    "arrows.meta",
+    "shapes.geometric",
+    "fit",
+    "backgrounds",
+    "calc"
+  ],
+  "external_result_figures_required": false,
+  "runtime_code_not_embedded_in_paper": true,
+  "engineering_empirical_submission_ready": false
+}

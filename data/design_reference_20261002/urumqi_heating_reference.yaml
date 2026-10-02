@@ -1,0 +1,12 @@
+# GB 50736-2012 Table A reference; independent cold-wave tests still required.
+extends: ../public_scenario_inputs/scenario1_urumqi_public.yaml
+planning:
+  design_outdoor_temperature_c: -19.7
+  design_parameter_basis:
+    standard: GB50736-2012
+    city: urumqi
+    station_id: '51463'
+    field: heating_outdoor_design_c
+    role: standard_reference_case_not_extreme_weather_or_observation
+    source_url: https://gf.cabr-fire.com/m/article-12078.htm
+    source_image_sha256: 4ddd0f92d6cebc9b68a3d231d1818f53c0900b3a1dbd12f4fc828960f56bc3f2

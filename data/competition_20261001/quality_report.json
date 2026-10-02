@@ -1,0 +1,125 @@
+{
+  "service_year": {
+    "passed": true,
+    "rows": 8784,
+    "hours": 8784,
+    "start_inclusive": "2023-07-01T00:00:00+08:00",
+    "end_exclusive": "2024-07-01T00:00:00+08:00",
+    "start_inclusive_local": "2023-07-01T00:00:00+08:00",
+    "end_exclusive_local": "2024-07-01T00:00:00+08:00",
+    "first_utc": "2023-06-30T16:00:00Z",
+    "last_utc": "2024-06-30T15:00:00Z",
+    "end_exclusive_utc": "2024-06-30T16:00:00Z",
+    "leap_day_hours_local": 24,
+    "missing_hours": 0,
+    "duplicate_hours": 0,
+    "nonfinite_numeric_values": 0,
+    "minimum_outdoor_temperature_c": -8.12,
+    "maximum_outdoor_temperature_c": 37.33,
+    "source_weather_files": [
+      "data/public_sources/scenario3_wuhan_weather_2023.csv",
+      "data/public_sources/scenario3_wuhan_weather_2024.csv"
+    ],
+    "legacy_reference_heat_kwh": 1541683.0637939554,
+    "legacy_reference_cooling_kwh": 664666.0205381819,
+    "district_scale": {
+      "district_a": {
+        "area_m2": 25000.0,
+        "heat_loss_kw_per_c": 23.9,
+        "thermal_capacity_kwh_per_c": 1575.0,
+        "design_heat_kw_at_18_indoor_minus7_outdoor_no_gains": 597.5,
+        "historical_max_heat_kw_at_18_indoor_no_gains": 624.2679999999999
+      },
+      "district_b": {
+        "area_m2": 19000.0,
+        "heat_loss_kw_per_c": 20.0,
+        "thermal_capacity_kwh_per_c": 1155.0,
+        "design_heat_kw_at_18_indoor_minus7_outdoor_no_gains": 500.0,
+        "historical_max_heat_kw_at_18_indoor_no_gains": 522.4
+      }
+    },
+    "meaning": "Data QA and static scale checks only; no dispatch, feasibility, economics or annual RC validation asserted."
+  },
+  "utc_calendar_year": {
+    "passed": true,
+    "rows": 8760,
+    "hours": 8760,
+    "start_inclusive": "2023-01-01T00:00:00Z",
+    "end_exclusive": "2024-01-01T00:00:00Z",
+    "start_inclusive_local": "2023-01-01T08:00:00+08:00",
+    "end_exclusive_local": "2024-01-01T08:00:00+08:00",
+    "first_utc": "2023-01-01T00:00:00Z",
+    "last_utc": "2023-12-31T23:00:00Z",
+    "end_exclusive_utc": "2024-01-01T00:00:00Z",
+    "leap_day_hours_local": 0,
+    "missing_hours": 0,
+    "duplicate_hours": 0,
+    "nonfinite_numeric_values": 0,
+    "minimum_outdoor_temperature_c": -6.25,
+    "maximum_outdoor_temperature_c": 37.33,
+    "source_weather_files": [
+      "data/public_sources/scenario3_wuhan_weather_2023.csv",
+      "data/public_sources/scenario3_wuhan_weather_2024.csv"
+    ],
+    "legacy_reference_heat_kwh": 1386752.068794902,
+    "legacy_reference_cooling_kwh": 688725.5040727273,
+    "district_scale": {
+      "district_a": {
+        "area_m2": 25000.0,
+        "heat_loss_kw_per_c": 23.9,
+        "thermal_capacity_kwh_per_c": 1575.0,
+        "design_heat_kw_at_18_indoor_minus7_outdoor_no_gains": 597.5,
+        "historical_max_heat_kw_at_18_indoor_no_gains": 579.5749999999999
+      },
+      "district_b": {
+        "area_m2": 19000.0,
+        "heat_loss_kw_per_c": 20.0,
+        "thermal_capacity_kwh_per_c": 1155.0,
+        "design_heat_kw_at_18_indoor_minus7_outdoor_no_gains": 500.0,
+        "historical_max_heat_kw_at_18_indoor_no_gains": 485.0
+      }
+    },
+    "meaning": "Data QA and static scale checks only; no dispatch, feasibility, economics or annual RC validation asserted."
+  },
+  "heating_season": {
+    "passed": true,
+    "rows": 2928,
+    "hours": 2928,
+    "start_inclusive": "2023-11-15T00:00:00+08:00",
+    "end_exclusive": "2024-03-16T00:00:00+08:00",
+    "start_inclusive_local": "2023-11-15T00:00:00+08:00",
+    "end_exclusive_local": "2024-03-16T00:00:00+08:00",
+    "first_utc": "2023-11-14T16:00:00Z",
+    "last_utc": "2024-03-15T15:00:00Z",
+    "end_exclusive_utc": "2024-03-15T16:00:00Z",
+    "leap_day_hours_local": 24,
+    "missing_hours": 0,
+    "duplicate_hours": 0,
+    "nonfinite_numeric_values": 0,
+    "minimum_outdoor_temperature_c": -8.12,
+    "maximum_outdoor_temperature_c": 24.12,
+    "source_weather_files": [
+      "data/public_sources/scenario3_wuhan_weather_2023.csv",
+      "data/public_sources/scenario3_wuhan_weather_2024.csv"
+    ],
+    "legacy_reference_heat_kwh": 1405297.3848160338,
+    "legacy_reference_cooling_kwh": 0.0,
+    "district_scale": {
+      "district_a": {
+        "area_m2": 25000.0,
+        "heat_loss_kw_per_c": 23.9,
+        "thermal_capacity_kwh_per_c": 1575.0,
+        "design_heat_kw_at_18_indoor_minus7_outdoor_no_gains": 597.5,
+        "historical_max_heat_kw_at_18_indoor_no_gains": 624.2679999999999
+      },
+      "district_b": {
+        "area_m2": 19000.0,
+        "heat_loss_kw_per_c": 20.0,
+        "thermal_capacity_kwh_per_c": 1155.0,
+        "design_heat_kw_at_18_indoor_minus7_outdoor_no_gains": 500.0,
+        "historical_max_heat_kw_at_18_indoor_no_gains": 522.4
+      }
+    },
+    "meaning": "Data QA and static scale checks only; no dispatch, feasibility, economics or annual RC validation asserted."
+  }
+}

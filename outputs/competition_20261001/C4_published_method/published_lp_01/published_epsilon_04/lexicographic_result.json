@@ -1,0 +1,305 @@
+{
+  "case": "published_epsilon_04",
+  "resource_cap": 200,
+  "order": [
+    "f1",
+    "f2"
+  ],
+  "epsilon": 184.0,
+  "solution_vector": [
+    8.0,
+    40.0
+  ],
+  "objectives": {
+    "f1": 8.0,
+    "f2": 184.0
+  },
+  "analytic_exact_vector": [
+    "8",
+    "40"
+  ],
+  "analytic_exact_objectives": {
+    "f1": "8",
+    "f2": "184"
+  },
+  "primary_degradation_allowance": 0.0,
+  "stage_1": {
+    "stage_directory": "stage_1",
+    "started_utc": "2026-10-01T16:27:01.525319+00:00",
+    "finished_utc": "2026-10-01T16:27:01.526310+00:00",
+    "elapsed_seconds": 0.000756499997805804,
+    "resource_cap": 200,
+    "objective_maximization": "f1",
+    "epsilon": 184.0,
+    "actual_primary_fix": null,
+    "solver_fields": {
+      "status": 0,
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "fun": -8.0,
+      "mip_gap": null,
+      "mip_dual_bound": null,
+      "mip_node_count": null
+    },
+    "solver_fields_not_exposed": [
+      "mip_gap",
+      "mip_dual_bound",
+      "mip_node_count"
+    ],
+    "solution_vector": [
+      8.0,
+      40.0
+    ],
+    "objectives": {
+      "f1": 8.0,
+      "f2": 184.0
+    },
+    "independent_exact_oracle": {
+      "feasible": true,
+      "optimal_bound_maximization": 8.0,
+      "exact_bound": "8",
+      "maximizer_vertices_exact": [
+        [
+          "8",
+          "40"
+        ]
+      ],
+      "bound_origin": "independent exact rational polygon; not a solver-exposed bound"
+    },
+    "matrix_audit": {
+      "numerical_audit_passed": true,
+      "numerical_audit_tolerance": {
+        "absolute": 1e-07,
+        "relative": 1e-09,
+        "scaled_violation_limit": 1.0
+      },
+      "numerical_solution_finite": true,
+      "numerical_constraint_max_violation": 0.0,
+      "numerical_constraint_max_scaled_violation": 0.0,
+      "numerical_constraint_worst_row": 0,
+      "numerical_bound_max_violation": 0.0,
+      "numerical_bound_max_scaled_violation": 0.0,
+      "numerical_bound_worst_variable": "x1",
+      "numerical_integrality_max_violation": 0.0,
+      "numerical_objective_recompute_error": 0.0,
+      "numerical_objective_checked": true
+    },
+    "all_matrix_details": {
+      "all_rows": [
+        {
+          "row_index": 0,
+          "coefficients": {
+            "0": 5.0,
+            "1": 4.0
+          },
+          "lower": "-Infinity",
+          "upper": 200.0,
+          "activity": 200.0,
+          "lower_slack": "Infinity",
+          "upper_slack": 0.0,
+          "violation": 0.0
+        },
+        {
+          "row_index": 1,
+          "coefficients": {
+            "0": 3.0,
+            "1": 4.0
+          },
+          "lower": 184.0,
+          "upper": "Infinity",
+          "activity": 184.0,
+          "lower_slack": 0.0,
+          "upper_slack": "Infinity",
+          "violation": 0.0
+        }
+      ],
+      "all_variables": [
+        {
+          "name": "x1",
+          "value": 8.0,
+          "lower": 0.0,
+          "upper": 20.0,
+          "integrality": 0,
+          "violation": 0.0
+        },
+        {
+          "name": "x2",
+          "value": 40.0,
+          "lower": 0.0,
+          "upper": 40.0,
+          "integrality": 0,
+          "violation": 0.0
+        }
+      ],
+      "objective_recomputed_minimization": -8.0
+    },
+    "expected_infeasible": false,
+    "checks": {
+      "status_matches_expected": true,
+      "analytic_feasibility_matches_expected": true,
+      "solver_success": true,
+      "full_matrix_audit_passed": true,
+      "optimal_objective_matches_independent_exact_bound": true
+    },
+    "protocol_checks_passed": true,
+    "evidence_purpose": "published_mathematical_method_validation",
+    "empirical_validation": false,
+    "heating_engineering_validation": false,
+    "parameter_provenance_approved_for_heating_scenario": false,
+    "calls_HeatPlanningModel_solve_lexicographic": false,
+    "implements_full_AUGMECON": false
+  },
+  "stage_2": {
+    "stage_directory": "stage_2",
+    "started_utc": "2026-10-01T16:27:01.528312+00:00",
+    "finished_utc": "2026-10-01T16:27:01.529311+00:00",
+    "elapsed_seconds": 0.0007035999988147523,
+    "resource_cap": 200,
+    "objective_maximization": "f2",
+    "epsilon": 184.0,
+    "actual_primary_fix": [
+      "f1",
+      8.0
+    ],
+    "solver_fields": {
+      "status": 0,
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "fun": -184.0,
+      "mip_gap": null,
+      "mip_dual_bound": null,
+      "mip_node_count": null
+    },
+    "solver_fields_not_exposed": [
+      "mip_gap",
+      "mip_dual_bound",
+      "mip_node_count"
+    ],
+    "solution_vector": [
+      8.0,
+      40.0
+    ],
+    "objectives": {
+      "f1": 8.0,
+      "f2": 184.0
+    },
+    "independent_exact_oracle": {
+      "feasible": true,
+      "optimal_bound_maximization": 184.0,
+      "exact_bound": "184",
+      "maximizer_vertices_exact": [
+        [
+          "8",
+          "40"
+        ]
+      ],
+      "bound_origin": "independent exact rational polygon; not a solver-exposed bound"
+    },
+    "matrix_audit": {
+      "numerical_audit_passed": true,
+      "numerical_audit_tolerance": {
+        "absolute": 1e-07,
+        "relative": 1e-09,
+        "scaled_violation_limit": 1.0
+      },
+      "numerical_solution_finite": true,
+      "numerical_constraint_max_violation": 0.0,
+      "numerical_constraint_max_scaled_violation": 0.0,
+      "numerical_constraint_worst_row": 0,
+      "numerical_bound_max_violation": 0.0,
+      "numerical_bound_max_scaled_violation": 0.0,
+      "numerical_bound_worst_variable": "x1",
+      "numerical_integrality_max_violation": 0.0,
+      "numerical_objective_recompute_error": 0.0,
+      "numerical_objective_checked": true
+    },
+    "all_matrix_details": {
+      "all_rows": [
+        {
+          "row_index": 0,
+          "coefficients": {
+            "0": 5.0,
+            "1": 4.0
+          },
+          "lower": "-Infinity",
+          "upper": 200.0,
+          "activity": 200.0,
+          "lower_slack": "Infinity",
+          "upper_slack": 0.0,
+          "violation": 0.0
+        },
+        {
+          "row_index": 1,
+          "coefficients": {
+            "0": 3.0,
+            "1": 4.0
+          },
+          "lower": 184.0,
+          "upper": "Infinity",
+          "activity": 184.0,
+          "lower_slack": 0.0,
+          "upper_slack": "Infinity",
+          "violation": 0.0
+        },
+        {
+          "row_index": 2,
+          "coefficients": {
+            "0": 1.0
+          },
+          "lower": 8.0,
+          "upper": 8.0,
+          "activity": 8.0,
+          "lower_slack": 0.0,
+          "upper_slack": 0.0,
+          "violation": 0.0
+        }
+      ],
+      "all_variables": [
+        {
+          "name": "x1",
+          "value": 8.0,
+          "lower": 0.0,
+          "upper": 20.0,
+          "integrality": 0,
+          "violation": 0.0
+        },
+        {
+          "name": "x2",
+          "value": 40.0,
+          "lower": 0.0,
+          "upper": 40.0,
+          "integrality": 0,
+          "violation": 0.0
+        }
+      ],
+      "objective_recomputed_minimization": -184.0
+    },
+    "expected_infeasible": false,
+    "checks": {
+      "status_matches_expected": true,
+      "analytic_feasibility_matches_expected": true,
+      "solver_success": true,
+      "full_matrix_audit_passed": true,
+      "optimal_objective_matches_independent_exact_bound": true
+    },
+    "protocol_checks_passed": true,
+    "evidence_purpose": "published_mathematical_method_validation",
+    "empirical_validation": false,
+    "heating_engineering_validation": false,
+    "parameter_provenance_approved_for_heating_scenario": false,
+    "calls_HeatPlanningModel_solve_lexicographic": false,
+    "implements_full_AUGMECON": false
+  },
+  "checks": {
+    "final_objectives_match_rational_oracle": true,
+    "final_vector_matches_rational_oracle": true,
+    "primary_value_preserved": true
+  },
+  "protocol_checks_passed": true,
+  "evidence_purpose": "published_mathematical_method_validation",
+  "empirical_validation": false,
+  "heating_engineering_validation": false,
+  "parameter_provenance_approved_for_heating_scenario": false,
+  "calls_HeatPlanningModel_solve_lexicographic": false,
+  "implements_full_AUGMECON": false
+}

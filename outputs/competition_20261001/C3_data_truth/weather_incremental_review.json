@@ -1,0 +1,559 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "reviewed_utc": "2026-10-01T16:25:59.028005+00:00",
+  "scope": "Independent incremental review only; frozen 8051-entry inventory is not rescanned",
+  "network_calls": 0,
+  "external_verifier_imported_or_executed": false,
+  "source_manifest": "outputs/competition_20261001/C0_weather_02/manifest.json",
+  "source_manifest_sha256": "d0778e3fb018734c40d9b96b34c2465fe516541e78f37cc94857cb1bae962244",
+  "source_report": "outputs/competition_20261001/C0_weather_02/verification_report.json",
+  "source_report_sha256": "aa48bebc74004715c8144854ab4e2e9db159ffa274276fbf9b83ba0739d2306a",
+  "archive_files": 15,
+  "unique_hours": 131544,
+  "numeric_values_independently_checked": 526176,
+  "field_count": 60,
+  "checks": [
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2020.csv",
+      "field": "outdoor_temp",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "275a22045cf42861973b8e98bd1f2f02a20cd153a8eeccc5107f15bc67dad56f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2020_lst.json",
+      "response_sha256": "f728d2b7287864f14bf14b45bdb45f9e476662c99128004db8d623a4e3ff03c8"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2020.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "275a22045cf42861973b8e98bd1f2f02a20cd153a8eeccc5107f15bc67dad56f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2020_lst.json",
+      "response_sha256": "f728d2b7287864f14bf14b45bdb45f9e476662c99128004db8d623a4e3ff03c8"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2020.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "275a22045cf42861973b8e98bd1f2f02a20cd153a8eeccc5107f15bc67dad56f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2020_lst.json",
+      "response_sha256": "f728d2b7287864f14bf14b45bdb45f9e476662c99128004db8d623a4e3ff03c8"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2020.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "275a22045cf42861973b8e98bd1f2f02a20cd153a8eeccc5107f15bc67dad56f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2020_lst.json",
+      "response_sha256": "f728d2b7287864f14bf14b45bdb45f9e476662c99128004db8d623a4e3ff03c8"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2020.csv",
+      "field": "outdoor_temp",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "0164c9514a63462787d9573ec6ba104bffe0b328f85e87d480d249378ea0e487",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2020_lst.json",
+      "response_sha256": "0554d46ed454b5113c03161b1507dda004eda8f38666122d7a9e9d911d1dc6e7"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2020.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "0164c9514a63462787d9573ec6ba104bffe0b328f85e87d480d249378ea0e487",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2020_lst.json",
+      "response_sha256": "0554d46ed454b5113c03161b1507dda004eda8f38666122d7a9e9d911d1dc6e7"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2020.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "0164c9514a63462787d9573ec6ba104bffe0b328f85e87d480d249378ea0e487",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2020_lst.json",
+      "response_sha256": "0554d46ed454b5113c03161b1507dda004eda8f38666122d7a9e9d911d1dc6e7"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2020.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "0164c9514a63462787d9573ec6ba104bffe0b328f85e87d480d249378ea0e487",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2020_lst.json",
+      "response_sha256": "0554d46ed454b5113c03161b1507dda004eda8f38666122d7a9e9d911d1dc6e7"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2020.csv",
+      "field": "outdoor_temp",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "74e1747670631f3876c2fa0422f859cacf813221a11525a1e2575118e93221ff",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2020_lst.json",
+      "response_sha256": "3e4033c5e0c547a8605a272c4613ae4ad9d0dcc15fd02f3b78f899c20087fd60"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2020.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "74e1747670631f3876c2fa0422f859cacf813221a11525a1e2575118e93221ff",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2020_lst.json",
+      "response_sha256": "3e4033c5e0c547a8605a272c4613ae4ad9d0dcc15fd02f3b78f899c20087fd60"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2020.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "74e1747670631f3876c2fa0422f859cacf813221a11525a1e2575118e93221ff",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2020_lst.json",
+      "response_sha256": "3e4033c5e0c547a8605a272c4613ae4ad9d0dcc15fd02f3b78f899c20087fd60"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2020.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "74e1747670631f3876c2fa0422f859cacf813221a11525a1e2575118e93221ff",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2020_lst.json",
+      "response_sha256": "3e4033c5e0c547a8605a272c4613ae4ad9d0dcc15fd02f3b78f899c20087fd60"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2021.csv",
+      "field": "outdoor_temp",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "8f5996d5ef70a34fbc317b3f47fb949d822a1ec5985e75a3e249b6139c56ec5b",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2021_lst.json",
+      "response_sha256": "1b4e9661a4365a28aeee15e7fdf074b025d55dadd440b2d65760b9fdf794e538"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2021.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "8f5996d5ef70a34fbc317b3f47fb949d822a1ec5985e75a3e249b6139c56ec5b",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2021_lst.json",
+      "response_sha256": "1b4e9661a4365a28aeee15e7fdf074b025d55dadd440b2d65760b9fdf794e538"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2021.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "8f5996d5ef70a34fbc317b3f47fb949d822a1ec5985e75a3e249b6139c56ec5b",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2021_lst.json",
+      "response_sha256": "1b4e9661a4365a28aeee15e7fdf074b025d55dadd440b2d65760b9fdf794e538"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2021.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "8f5996d5ef70a34fbc317b3f47fb949d822a1ec5985e75a3e249b6139c56ec5b",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2021_lst.json",
+      "response_sha256": "1b4e9661a4365a28aeee15e7fdf074b025d55dadd440b2d65760b9fdf794e538"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2021.csv",
+      "field": "outdoor_temp",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "1c18f602160fd6012516f4ab48738643b5402b30953adbe2d662b1f949a4224d",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2021_lst.json",
+      "response_sha256": "eb32c530afd30e82be408542aa25b0441f9f69d939dd40787b3207484d0dba2c"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2021.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "1c18f602160fd6012516f4ab48738643b5402b30953adbe2d662b1f949a4224d",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2021_lst.json",
+      "response_sha256": "eb32c530afd30e82be408542aa25b0441f9f69d939dd40787b3207484d0dba2c"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2021.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "1c18f602160fd6012516f4ab48738643b5402b30953adbe2d662b1f949a4224d",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2021_lst.json",
+      "response_sha256": "eb32c530afd30e82be408542aa25b0441f9f69d939dd40787b3207484d0dba2c"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2021.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "1c18f602160fd6012516f4ab48738643b5402b30953adbe2d662b1f949a4224d",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2021_lst.json",
+      "response_sha256": "eb32c530afd30e82be408542aa25b0441f9f69d939dd40787b3207484d0dba2c"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2021.csv",
+      "field": "outdoor_temp",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "8029bc843ee98f3ff0cf6ad7c70b93e04148bd0caafcf41e155ec5b7ed70900f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2021_lst.json",
+      "response_sha256": "17c01b584851f03712dffe716a04cb2f1a2ad94346d02e910936db81b10119e7"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2021.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "8029bc843ee98f3ff0cf6ad7c70b93e04148bd0caafcf41e155ec5b7ed70900f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2021_lst.json",
+      "response_sha256": "17c01b584851f03712dffe716a04cb2f1a2ad94346d02e910936db81b10119e7"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2021.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "8029bc843ee98f3ff0cf6ad7c70b93e04148bd0caafcf41e155ec5b7ed70900f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2021_lst.json",
+      "response_sha256": "17c01b584851f03712dffe716a04cb2f1a2ad94346d02e910936db81b10119e7"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2021.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "8029bc843ee98f3ff0cf6ad7c70b93e04148bd0caafcf41e155ec5b7ed70900f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2021_lst.json",
+      "response_sha256": "17c01b584851f03712dffe716a04cb2f1a2ad94346d02e910936db81b10119e7"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2022.csv",
+      "field": "outdoor_temp",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "614ce2db9ad81121ec63d181bc6935a8700362b1f2790ff3842d35dce98e197f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2022_lst.json",
+      "response_sha256": "04942d70d1f45662d34aceffc62fe92719391dca8acbb9385a3e8149fb04f65a"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2022.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "614ce2db9ad81121ec63d181bc6935a8700362b1f2790ff3842d35dce98e197f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2022_lst.json",
+      "response_sha256": "04942d70d1f45662d34aceffc62fe92719391dca8acbb9385a3e8149fb04f65a"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2022.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "614ce2db9ad81121ec63d181bc6935a8700362b1f2790ff3842d35dce98e197f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2022_lst.json",
+      "response_sha256": "04942d70d1f45662d34aceffc62fe92719391dca8acbb9385a3e8149fb04f65a"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2022.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "614ce2db9ad81121ec63d181bc6935a8700362b1f2790ff3842d35dce98e197f",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2022_lst.json",
+      "response_sha256": "04942d70d1f45662d34aceffc62fe92719391dca8acbb9385a3e8149fb04f65a"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2022.csv",
+      "field": "outdoor_temp",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "1c4959ba5e062eaa614a711b48c7a04867f52b4254c323c137dee635f2ea9708",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2022_lst.json",
+      "response_sha256": "444a242ef93999e030bb3aaa1c45a5ca0f241d64874aa49e44a3fcc0eae31372"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2022.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "1c4959ba5e062eaa614a711b48c7a04867f52b4254c323c137dee635f2ea9708",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2022_lst.json",
+      "response_sha256": "444a242ef93999e030bb3aaa1c45a5ca0f241d64874aa49e44a3fcc0eae31372"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2022.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "1c4959ba5e062eaa614a711b48c7a04867f52b4254c323c137dee635f2ea9708",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2022_lst.json",
+      "response_sha256": "444a242ef93999e030bb3aaa1c45a5ca0f241d64874aa49e44a3fcc0eae31372"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2022.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "1c4959ba5e062eaa614a711b48c7a04867f52b4254c323c137dee635f2ea9708",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2022_lst.json",
+      "response_sha256": "444a242ef93999e030bb3aaa1c45a5ca0f241d64874aa49e44a3fcc0eae31372"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2022.csv",
+      "field": "outdoor_temp",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "ccd00e8110f1b12ae7a251f17c21a56e71ec7304b16da1d94ba7d816c7273202",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2022_lst.json",
+      "response_sha256": "1d15fa2245953794116c333f330644597664f3029abe6fd8f4f51f6a8d9891a0"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2022.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "ccd00e8110f1b12ae7a251f17c21a56e71ec7304b16da1d94ba7d816c7273202",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2022_lst.json",
+      "response_sha256": "1d15fa2245953794116c333f330644597664f3029abe6fd8f4f51f6a8d9891a0"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2022.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "ccd00e8110f1b12ae7a251f17c21a56e71ec7304b16da1d94ba7d816c7273202",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2022_lst.json",
+      "response_sha256": "1d15fa2245953794116c333f330644597664f3029abe6fd8f4f51f6a8d9891a0"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2022.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "ccd00e8110f1b12ae7a251f17c21a56e71ec7304b16da1d94ba7d816c7273202",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2022_lst.json",
+      "response_sha256": "1d15fa2245953794116c333f330644597664f3029abe6fd8f4f51f6a8d9891a0"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2023.csv",
+      "field": "outdoor_temp",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "2a9754d5d25b26664eaf18914162e2ea76ca4e81496e0c4423b54fe0766d39f0",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2023_lst.json",
+      "response_sha256": "70831dc81161ccdf702e616b2c5d99028aa01384fab6464772032b44c7ccbcbc"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2023.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "2a9754d5d25b26664eaf18914162e2ea76ca4e81496e0c4423b54fe0766d39f0",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2023_lst.json",
+      "response_sha256": "70831dc81161ccdf702e616b2c5d99028aa01384fab6464772032b44c7ccbcbc"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2023.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "2a9754d5d25b26664eaf18914162e2ea76ca4e81496e0c4423b54fe0766d39f0",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2023_lst.json",
+      "response_sha256": "70831dc81161ccdf702e616b2c5d99028aa01384fab6464772032b44c7ccbcbc"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2023.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "2a9754d5d25b26664eaf18914162e2ea76ca4e81496e0c4423b54fe0766d39f0",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2023_lst.json",
+      "response_sha256": "70831dc81161ccdf702e616b2c5d99028aa01384fab6464772032b44c7ccbcbc"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2023.csv",
+      "field": "outdoor_temp",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "61e9b5c74385f79831eea72dd8ae7d0b5d450b72e4f9b10d702817386498f8bf",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2023_lst.json",
+      "response_sha256": "75647292550315ff19694a9e90202c545d52770aab67fd57a8679ed02f71c7bc"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2023.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "61e9b5c74385f79831eea72dd8ae7d0b5d450b72e4f9b10d702817386498f8bf",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2023_lst.json",
+      "response_sha256": "75647292550315ff19694a9e90202c545d52770aab67fd57a8679ed02f71c7bc"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2023.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "61e9b5c74385f79831eea72dd8ae7d0b5d450b72e4f9b10d702817386498f8bf",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2023_lst.json",
+      "response_sha256": "75647292550315ff19694a9e90202c545d52770aab67fd57a8679ed02f71c7bc"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2023.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "61e9b5c74385f79831eea72dd8ae7d0b5d450b72e4f9b10d702817386498f8bf",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2023_lst.json",
+      "response_sha256": "75647292550315ff19694a9e90202c545d52770aab67fd57a8679ed02f71c7bc"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2023.csv",
+      "field": "outdoor_temp",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "0cd24a06c3af43e8a3799a028ee78cfb255b80e3ebbfc81a4f12562442bd2dcd",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2023_lst.json",
+      "response_sha256": "24fad89ad562199d115ef40ceedb05e3b759cc75770332ed904e4984f56da946"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2023.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "0cd24a06c3af43e8a3799a028ee78cfb255b80e3ebbfc81a4f12562442bd2dcd",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2023_lst.json",
+      "response_sha256": "24fad89ad562199d115ef40ceedb05e3b759cc75770332ed904e4984f56da946"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2023.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "0cd24a06c3af43e8a3799a028ee78cfb255b80e3ebbfc81a4f12562442bd2dcd",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2023_lst.json",
+      "response_sha256": "24fad89ad562199d115ef40ceedb05e3b759cc75770332ed904e4984f56da946"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2023.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8760,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "0cd24a06c3af43e8a3799a028ee78cfb255b80e3ebbfc81a4f12562442bd2dcd",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2023_lst.json",
+      "response_sha256": "24fad89ad562199d115ef40ceedb05e3b759cc75770332ed904e4984f56da946"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2024.csv",
+      "field": "outdoor_temp",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "bc4777f054c138b8136dcd72db1730f7ed69e1370e7882c7a78641e116458af3",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2024_lst.json",
+      "response_sha256": "a87411288481b5d1d2ca80e206f68f443220ff5ff2827bccec901445835d3a42"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2024.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "bc4777f054c138b8136dcd72db1730f7ed69e1370e7882c7a78641e116458af3",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2024_lst.json",
+      "response_sha256": "a87411288481b5d1d2ca80e206f68f443220ff5ff2827bccec901445835d3a42"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2024.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "bc4777f054c138b8136dcd72db1730f7ed69e1370e7882c7a78641e116458af3",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2024_lst.json",
+      "response_sha256": "a87411288481b5d1d2ca80e206f68f443220ff5ff2827bccec901445835d3a42"
+    },
+    {
+      "file": "data/public_sources/scenario1_urumqi_weather_2024.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "bc4777f054c138b8136dcd72db1730f7ed69e1370e7882c7a78641e116458af3",
+      "response_file": "data/verified_weather_20261002/evidence/scenario1_urumqi_2024_lst.json",
+      "response_sha256": "a87411288481b5d1d2ca80e206f68f443220ff5ff2827bccec901445835d3a42"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2024.csv",
+      "field": "outdoor_temp",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "6c288627d27b17170eb3434707ee78b6e35892ca74e32c960849b97b393f7fa1",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2024_lst.json",
+      "response_sha256": "4dc91d6533a1696ab9cc38bf365d9f7f6ba2a8f5fb709f9a9e058a00a30b70f3"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2024.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "6c288627d27b17170eb3434707ee78b6e35892ca74e32c960849b97b393f7fa1",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2024_lst.json",
+      "response_sha256": "4dc91d6533a1696ab9cc38bf365d9f7f6ba2a8f5fb709f9a9e058a00a30b70f3"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2024.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "6c288627d27b17170eb3434707ee78b6e35892ca74e32c960849b97b393f7fa1",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2024_lst.json",
+      "response_sha256": "4dc91d6533a1696ab9cc38bf365d9f7f6ba2a8f5fb709f9a9e058a00a30b70f3"
+    },
+    {
+      "file": "data/public_sources/scenario2_guyuan_weather_2024.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "6c288627d27b17170eb3434707ee78b6e35892ca74e32c960849b97b393f7fa1",
+      "response_file": "data/verified_weather_20261002/evidence/scenario2_guyuan_2024_lst.json",
+      "response_sha256": "4dc91d6533a1696ab9cc38bf365d9f7f6ba2a8f5fb709f9a9e058a00a30b70f3"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2024.csv",
+      "field": "outdoor_temp",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "7dae12d1e64e072c9c77433bf8bb2c0cba84a4ebdbef2d68339cdfd32bad374c",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2024_lst.json",
+      "response_sha256": "4d527f69973b0e13c33e835a55f9a6c774ff04b13578b702b5cac6740456fc1d"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2024.csv",
+      "field": "relative_humidity_pct",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "7dae12d1e64e072c9c77433bf8bb2c0cba84a4ebdbef2d68339cdfd32bad374c",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2024_lst.json",
+      "response_sha256": "4d527f69973b0e13c33e835a55f9a6c774ff04b13578b702b5cac6740456fc1d"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2024.csv",
+      "field": "wind_speed_10m_m_s",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "7dae12d1e64e072c9c77433bf8bb2c0cba84a4ebdbef2d68339cdfd32bad374c",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2024_lst.json",
+      "response_sha256": "4d527f69973b0e13c33e835a55f9a6c774ff04b13578b702b5cac6740456fc1d"
+    },
+    {
+      "file": "data/public_sources/scenario3_wuhan_weather_2024.csv",
+      "field": "solar_irradiance_kwh_m2_hour",
+      "rows": 8784,
+      "maximum_absolute_error": 0.0,
+      "original_sha256": "7dae12d1e64e072c9c77433bf8bb2c0cba84a4ebdbef2d68339cdfd32bad374c",
+      "response_file": "data/verified_weather_20261002/evidence/scenario3_wuhan_2024_lst.json",
+      "response_sha256": "4d527f69973b0e13c33e835a55f9a6c774ff04b13578b702b5cac6740456fc1d"
+    }
+  ],
+  "certifies_derived_loads_buildings_prices_or_ground_station_accuracy": false
+}

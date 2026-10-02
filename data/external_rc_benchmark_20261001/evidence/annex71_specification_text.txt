@@ -1,0 +1,2160 @@
+PAGE 1
+ 
+  
+ 
+ 
+Empirical Whole Model Validation  
+ 
+Modelling Specification 
+ 
+ 
+Twin House Experiment 
+IEA EBC Annex 71 
+Validation of Building Energy Simulation Tools 
+ 
+ 
+ 
+Version 1.0 
+ 
+ 
+Matthias Kersken1 and Paul Strachan2 
+27.04.2020 
+ 
+ 
+ 
+ 
+1. Fraunhofer-Institut für Bauphysik IBP, Holzkirchen, 83626 Valley, Germany 
+matthias.kersken@ibp.fraunhofer.de 
+The contributions of the Fraunhofer Institute for Building Physics IBP were funded by the German Federal 
+Ministry of Energy and Economic Affairs BMWi under the registration number 03ET1509A. 
+ 
+2. Energy Systems Research Unit, University of Strathclyde, Glasgow, G1 1XJ, UK 
+paul@esru.strath.ac.uk 
+ 
+ 
+ 
+PAGE 2
+Versions 
+version changes date 
+1.0 - 27.04.2020 
+   
+   
+   
+   
+ 
+  
+PAGE 3
+TABLE OF CONTENTS 
+1. INTRODUCTION 6 
+1.1. OVERVIEW 6 
+1.2. IEA EBC ANNEX 58 7 
+1.3. CHANGES TO EXPERIMENTAL CONFIGURATION FOR ANNEX 71 EXPERIMENT 8 
+1.4. VALIDATION PROCEDURE 9 
+2. EXPERIMENTAL DESIGN 10 
+3. EXPERIMENT 11 
+3.1. CLIMATE AND LOCATION 11 
+3.2. BASELINE MEASUREMENT 11 
+3.2.1 Air tightness 11 
+3.2.2 Tracer Gas 13 
+3.2.3 Analysis of the coheating data 14 
+3.3. GEOMETRY 16 
+3.4. CONSTRUCTIONS 19 
+3.4.1 Internal doors 20 
+3.4.2 Trap door 20 
+3.5. GLAZING OPTICAL AND THERMAL PROPERTIES 21 
+3.6. ROLLER BLINDS 23 
+3.7. THERMAL BRIDGES 25 
+3.8. VENTILATION 29 
+3.9. HEATING / COOLING 31 
+3.10. ELECTRICAL HEATING (N2 HOUSE) 31 
+3.11. HEAT PUMP (O5 HOUSE) 33 
+3.12. DOMESTIC HOT WATER (O5 HOUSE) 34 
+3.13. UNDERFLOOR HEATING (O5) 34 
+3.14. HYDRONIC SCHEME 36 
+3.15. SYNTHETIC USER 36 
+3.15.1 Occupancy 37 
+3.15.2 Internal heat sources 37 
+3.15.3 Internal humidity sources 39 
+3.15.4 Internal CO2 sources 41 
+3.15.5 Set temperatures 41 
+3.15.6 External window and internal doors 42 
+3.15.7 Roller blinds 43 
+3.15.8 Domestic Hot Water 44 
+3.16. WEATHER 44 
+3.17. GROUND PROPERTIES 44 
+4. EXPERIMENTAL SCHEDULE 45 
+4.1. INITIALISATION PHASE(S) 48 
+4.2. COHEATING PHASE 48 
+4.3. USER-1 PHASE 48 
+4.4. USER-2 PHASE 48 
+4.5. FDD PHASE 49 
+4.6. USER-3 PHASE: INCLUDING MOISTURE RELEASE 49 
+4.7. FREE PRBS-PHASE 49 
+4.8. FREE-FLOAT PHASE 49 
+4.9. TRACER GAS AIR CHANGE RATE MEASUREMENT (O5 HOUSE ONLY) 50 
+5. INSTRUMENTATION 50 
+5.1. OVERVIEW 50 
+5.2. COHEATING CONCEPT 51 
+5.3. TRACER GAS CONCEPT 52 
+PAGE 4
+6. PRACTICAL ASPECTS OF MODELLING THE MEASURED DATA 53 
+6.1. OVERVIEW 53 
+6.2. MAIN EXPERIMENT: OPERATIONAL DETAILS 55 
+6.3. EXTENDED EXPERIMENT: OPERATIONAL DETAILS 57 
+7. ACKNOWLEDGEMENTS 59 
+8. REFERENCES 60 
+List of Figures 
+FIGURE 1: VIEWS OF TWIN HOUSES IN HOLZKIRCHEN, GERMANY. ......................................................... 6 
+FIGURE 2: LOCATION OF TWIN HOUSES IN HOLZKIRCHEN, GERMANY. ................................................... 7 
+FIGURE 3: MEASURED SF6 CONCENTRATION (LEFT) AND RESULTING AIR CHANGE RATE (RIGHT) DURING 
+THE INFILTRATION TRA CER GAS EXPERIMENT A FTER THE END OF THE EXTENDED EXPERIMENT 
+WITHOUT MECHANICAL VENTILATION. ........................................................................................ 14 
+FIGURE 4: REGRESSION ANALYSIS OF THE COHEATING DATA. LEFT FOR O5, RIGHT FOR N2. ............... 14 
+FIGURE 5: BASELINE M EASUREMENT CONDUCTED  DURING THE COHEATIN G TEST, CONDUCTED 
+BETWEEN 7TH DECEMBER 2018 18:00 AND 19TH DECEMBER 2018 09:00. .................................... 15 
+FIGURE 6: FLOOR PLAN GROUND FLOOR. .............................................................................................. 16 
+FIGURE 7: FLOOR PLAN ATTIC. ............................................................................................................... 16 
+FIGURE 8: TWIN HOUSE VIEWS: CLOCKWISE FROM TOP LEFT: SOUTH, NORTH, WEST, AND EAST. ...... 17 
+FIGURE 9:  OVERVIEW OF THE WINDOW TYPES. THE WINDOW TYPES ARE SHOWN AS RED N UMBERS.
+ ...................................................................................................................................................... 17 
+FIGURE 10: GEOMETRY OF THE GROUND FLOORS’ FOUR COLUMNS. ................................................... 18 
+FIGURE 11: INTERNAL DOOR. ................................................................................................................. 20 
+FIGURE 12: OPERATED EXTERNAL WINDOW IN TILTED POSITION. ........................................................ 22 
+FIGURE 13: DETAILS OF ROLLER BLINDS. ................................................................................................ 24 
+FIGURE 14: WALL – CEILING JOINT WITH 80 MM INSULATION. MODEL AND TEMPERATURES............. 25 
+FIGURE 15: WALL – WALL JOINT WITH 70 MM INSULATION. MODEL AND TEMPERATURES. ............... 26 
+FIGURE 16: WALL – FLOOR JOINT WITH 70 MM INSULATION. MODEL AND TEMPERATURES. ............. 27 
+FIGURE 17 : NAMING OF A ROOF’S COMPONENTS [13]. ....................................................................... 29 
+FIGURE 18: FLOOR PLAN GROUND FLOOR. ............................................................................................ 30 
+FIGURE 19: FLOOR PLAN ATTIC. ............................................................................................................. 31 
+FIGURE 20: ELECTRIC HEATER. ............................................................................................................... 32 
+FIGURE 21: HEATER SPECIFICATIONS. .................................................................................................... 32 
+FIGURE 22: HEATER LAYOUT. ................................................................................................................. 33 
+FIGURE 23: EXTERNAL INSTALLATION OF THE TWIN HOUSES VAILLANT “AROTHERM VWL 55/2 A” AIR 
+SOURCE HEAT PUMP, LEFT IN SUMMER, RIGHT IN WINTER. ....................................................... 33 
+FIGURE 24: SPIRAL PI PES OF THE DINING RO OM IN THE GROUND FLO ORS (LEFT) AND THE C HILD 2 
+ROOMS’ SERPENTINE PI PES IN THE ATTICS’ ( RIGHT) UNDERFLOOR HE ATING DURING 
+INSTALLATION. .............................................................................................................................. 35 
+FIGURE 25: HYDRONIC SCHEME OF THE TEST H OUSE O5’S HEAT AND D HW INSTALLATION INCLUDING 
+THE INSTRUMENTATION. .............................................................................................................. 36 
+FIGURE 26: TYPICAL OCCUPANCY PROFILES FOR TWO DAYS. ................................................................ 37 
+FIGURE 27: RESULTING INTERNAL HEAT GAINS FOR TWO EXAMPLE DAYS. .......................................... 38 
+FIGURE 28: OVERVIEW OF THE INTERNAL HEAT GAINS FOR THE ENTIRE BUILDING FOR THE COMPLETE 
+TEST PERIOD. THE BRIGHT, YELLOW SECTION IN APRIL/MAY IS THE PRBS. ................................. 38 
+FIGURE 29: REALISATION OF THE INTERNAL MOISTURE SOURCE THROUGH THE LIVING ROOM’S SUPPLY 
+AIR SYSTEM. .................................................................................................................................. 39 
+FIGURE 30: INTERNAL MOISTURE GAINS FOR THE ENTIRE BUILDING FOR THE COMPLETE PERIOD. .... 40 
+FIGURE 31: COMPARISO N BETWEEN THE INTERN AL HEAT AND MOISTURE  LOAD PROFILES OVER A 
+PERIOD OF EIGHT DAYS. ................................................................................................................ 41 
+FIGURE 32: RESULTING OCCUPANCY AND SET TEMPERATURES FOR TWO EXAMPLE DAYS. ................. 42 
+FIGURE 33: CO2 CYCLE OVER THE YEARS 2014 – 2019 IN HOLZKIRCHEN; 1 HOUR SAMPLING. ............. 43 
+FIGURE 34: DOMESTIC HOT WATER TAPPINGS DURING THE USER-1 PHASE. ........................................ 44 
+FIGURE 35: EXPERIMENTAL SCHEDULE .................................................................................................. 45 
+PAGE 5
+FIGURE 36: SETUP OF ELECTRICAL HEATERS AND FANS DURING THE COHEATING TEST IN THE GROUND 
+FLOOR AND THE ATTIC .................................................................................................................. 51 
+FIGURE 37: ILLUSTRAT ION OF THE T RACER GAS CONCEPT ON  THE GROUND FLOOR (L EFT) AND THE 
+ATTIC SPACE (RIGHT) ..................................................................................................................... 52 
+FIGURE 38: SELECTION  OF THE MAIN EXPERIM ENT’S MEASUREMENT DATA OF THE O5 HOU SE (RED) 
+AND THE N2 HOUSE (BLACK). ....................................................................................................... 57 
+FIGURE 39: SELECTION  OF THE EXTENDED EXP ERIMENT’S MEASUREMENT DATA OF THE O5 HOUSE 
+(RED) AND THE N2 HOUSE (BLACK). .............................................................................................. 59 
+ 
+List of Tables 
+TABLE 1: RESULTS OF THE BLOWER DOOR TEST CARRIED OUT ON NOVEMBER 29, 2018. ................... 13 
+TABLE 2: SPECIFICATION OF THE WINDOW TYPES’ PROPERTIES ........................................................... 18 
+TABLE 3: U-VALUES OF THE TWIN HOUSES CONSTRUCTIONS. .............................................................. 19 
+TABLE 4: GLAZING OPTICAL PROPERTIES: NFRC ..................................................................................... 21 
+TABLE 5: GLAZING OPTICAL PROPERTIES: EN410 ................................................................................... 21 
+TABLE 6: LINEAR THERMAL TRANSMITTANCE FOR WALL – CEILING JOINT IN W/MK. .......................... 25 
+TABLE 7: LINEAR THERMAL TRANSMITTANCES FOR WALL – CEILING JOINT IN W/MK. ......................... 26 
+TABLE 8: LINEAR THERMAL TRANSMITTANCE FOR WALL – WALL JOINT IN W/MK. .............................. 26 
+TABLE 9: LINEAR THERMAL TRANSMITTANCE FOR WALL – FLOOR JOINT IN W/MK. ............................ 27 
+TABLE 10: LINEAR THERMAL TRANSMITTANCES FOR WALL – FLOOR JOINT IN W/MK. ......................... 27 
+TABLE 11: THERMAL BRIDGES OF THE TWIN HOUSES. ........................................................................... 28 
+TABLE 12:  AIR BODIES OF THE EXPERIMENT (NOT CONSIDERING THE AIR SPACE IN THE DOOR FRAMES).
+ ...................................................................................................................................................... 30 
+TABLE 13: RESULTING AIR FLOWS. ......................................................................................................... 30 
+TABLE 14: TECHNICAL SPECIFICATIONS (COP) OF THE HE AT PUMP VAILLANT ARO THERM VWL 55/2 A
+ ...................................................................................................................................................... 34 
+TABLE 15: OVERVIEW OF THE GROUND FLOOR UNDERFLOOR HEATING. ............................................. 35 
+TABLE 16: OPERATION CYCLE OF THE OPERABLE EXTERNAL WINDOW AND INTERNAL DOOR. ............ 42 
+TABLE 17: EXPERIMENTAL CONFIGURATION OF ALL PHASES. ............................................................... 46 
+ 
+PAGE 6
+1. Introduction 
+1.1. Overview 
+This document sets out the specification for the empirical validation experiment 
+conducted on the Twin Houses at the Fraunhofer IBP test site in Holzkirchen, Germany 
+in the winter of 2018/19, as part of IEA EBC Annex 71. The details are also relevant for 
+the common exercises of Subtasks 2 and 3 in the Annex 71, where the focus is on using 
+the measured data to identify model parameters  and for automatic fault detection 
+research. 
+ 
+This document, tog ether with the additional information provided (images, thermal 
+bridge calculations, layout drawings, experimental details and experimental data) 
+constitutes a full specification of the experiment.  
+ 
+The focus of the experiments is the Twin Houses. Figure 1 and Figure 2 show the twin 
+houses. House O5 is on the right, in the top left photograph and on the left, in the top 
+right photograph of Figure 1. 
+ 
+Figure 1: Views of Twin Houses in Holzkirchen, Germany. 
+ 
+ 
+View of West 
+ 
+View of East 
+ 
+View of South 
+ 
+View of North 
+
+PAGE 7
+ 
+Figure 2: Location of Twin Houses in Holzkirchen, Germany. 
+ 
+All experimental data are publically available under: 
+http://dx.doi.org/10.24406/fordatis/75 [1] 
+ 
+1.2. IEA EBC Annex 58 
+In the previous Annex 58 [2], two Building Energy Simulation program empirical 
+validation experiments were undertaken [3]. The detailed specifications can be found 
+here: 
+ 
+Experiment 1: 
+http://dx.doi.org/10.15129/8a86bbbb-7be8-4a87-be76-0372985ea228 [4] 
+ 
+Experiment 2: 
+http://dx.doi.org/10.15129/94559779-e781-4318-8842-80a2b1201668 [5] 
+ 
+A journal publication of the first experiment can be found here: 
+https://doi.org/10.1080/19401493.2015.1064480 [6] 
+ 
+The first validation experiment was undertaken in August/September 2013 using both 
+Twin Houses . A second validation experiment was undertaken on one of the twin 
+houses (House O5) in cooler conditions (April/May 2014). The dataset collected in the 
+second experiment was also designed to be useful as a n Annex 58 common exercise 
+for identification analysis. 
+
+PAGE 8
+ 
+1.3. Changes to Experimental Configuration for Annex 71 Experiment 
+The Building Energy Simulation (BES) model validation study, conducted during Annex 
+58 ( [3], [6]) was designed to focus on the fabric-related functionality of BES programs 
+including transmission heat losses, thermal bridges, solar gains, internal heat gains, 
+window / blind models and internal and external air exchange. It did not consider 
+occupancy user behaviour or typical heating and cooling systems. The following were 
+deliberately not included in order to reduce complexity: 
+ No internal gains representative of occupants (heat, moisture and CO2) 
+ Constant set temperatures in constant temperature phases, no temperature 
+profile or night setback 
+ Constant operation of a simple mechanical ventilation 
+ No opening of windows 
+ No operation of internal doors 
+ No building service equipment, just electrical heating. 
+ 
+The empirical model validation study of Annex  71 described in this specification 
+increases the realism and complexity. Key aspects of the changes are as follows. 
+ Including building services equipment:  
+o One of the Twin Houses (House O5: the test house) has an underfloor 
+heating system supplied by an air source heat pump (Main Experiment 
+only). 
+o The other Twin House  (House N2, the reference house) , for 
+comparison, has electrical heating as for the Annex 58 experiments. 
+ Inclusion of attic space in the experimental configuration in addition to the 
+ground floor rooms that were the focus in Annex 58. The construction 
+properties of the walls of the buildings have also changed, although these 
+changes are small. 
+ Including synthetic occupancy profiles: it was considered too complex to 
+monitor real occupants, so a realistic synthetic occupancy profile was 
+developed for the various rooms in the house, including window and door 
+opening in part of the experiment. 
+ Including moisture injections for assessing moisture buffering effects  
+(Extended Experiment only). 
+ A “Main Experiment” consisting of a multi-stage operational schedule: a 
+constant temperature phase (for coheating test assessment), a simple user  1 
+phase with a temperature profile consistent across all rooms,  and a user  2 
+phase with a more complex user profile which varies from room to room and 
+includes window and door opening . A second experiment, the “Extended 
+Experiment”, included moisture injection of the synthetic usere. This Extended 
+Experiment consists of a user 3 phase, a phase with randomised heat injection 
+(PRBS) and a free-floating period (incl. synthetic users). 
+ 
+The experimental design took into account that a too complex validation scenario 
+would make it difficult for the modelling teams to identify the reason for deviations 
+from the measurement data.  
+PAGE 9
+ 
+The experiment was also designed to be used as common exercises by the Annex 71 
+participants working with simplified models and methods of system identification. The 
+datasets should be suitable for identification of building performance characteristics 
+(ST3) and development of reduced order models useful for fault detection and model 
+predictive control (ST2). These analyses may also provide useful information to explain 
+differences between measurements and predictions from detailed modelling tools. 
+1.4. Validation procedure 
+This dataset can be used for many different purposes such as education and training, 
+the development of simplified redu ced order models and other scientific research 
+requiring measurement data from well -specified real buildings. For these purposes 
+usually the full dataset, containing all the data collected during the experiment, should 
+be used . However when the focus is a BES model validation  (and/or model 
+development) it is recommended to follow the 2 -phase blind/open validation 
+approach (used in Annex 71), as described below , to separate user from program 
+errors. 
+ 
+The model validation team predicts the temperatures and heati ng inputs using the 
+program(s) under investigation . The validation methodology is a two phase blind 
+validation, as used in Annex 58 [3] and similar to other previous IEA empirical 
+validation studies. Ideally this procedure has different persons (or even organisations) 
+working collaboratively to improve model quality assurance and analysis techniques.  
+The required steps are as follows: 
+1. Blind validation (“blind phase”).  
+a. Modellers predict heatin g energy and indoor climate using the 
+experimental specification, measured climate data and operational 
+schedules but without knowledge of the measured heating energy 
+consumption (in the case of known indoor climate) or  indoor climate 
+(in the case of known heating energy consumption).  
+b. Modellers submit their simulation results and a modelling report with 
+details of the programs used and assumptions made. 
+2. Blind stage analysis. This compares predictions against experimental data for 
+indoor climate and heat fluxes. Inevitably at this stage, differences are due to 
+a mix of user / modelling error s and  program deviations (and potentially 
+measurement uncertainties).  
+3. Re-modelling (“open phase”). The measured data is disseminated. Modell ers 
+are encouraged to investigate differences between measurements and 
+predictions and resubmit predictions and up -dated the report. Only changes 
+which correct user modelling errors or alter a modelling assumption (with 
+documented rationale) are allowed. It is important to ensure that model input 
+parameters are not simply tuned to improve agreement with measurement. In 
+principle, this step identifies program errors by eliminating modeller errors. 
+4. The improved predictions are compared against the measurements to identify 
+remaining flaws  and identify areas where program improvements are 
+required. When complete, validation data sets and models are archived. 
+PAGE 10
+2. Experimental Design 
+Experimental design was undertaken to plan the test sequence that ensures the 
+experiments are fit for purpose , i.e. i n this case, they should provide a statistically 
+robust dataset suitable for empirical validation of Building Energy Simulation (BES) 
+programs. The aim is to test the ability of BES programs to predict the behaviour of 
+the overal l system based on the building and systems specification and measured 
+boundary conditions.  
+ 
+Experimental design theory usually is based on being able to randomise and replicate. 
+At the simplest level this involves altering each influencing factor one at a  time, or 
+changing a few factors in a defined scheme to  determine interactions. However, for 
+complex systems where there are multiple interactions between ma ny different 
+elements of the system, it is difficult (or perhaps impossible) to construct rigorous 
+design of experiment strategies. A report by the American Physical Society (Energy 
+Future: Think Efficiency [7], characterizes the design of energy efficient buildings as a 
+complex system. For example, inte rnal temperatures are affected by solar gains, 
+internal gains, radiant/convective split, wind-induced airflow, insulation levels, glazing 
+properties, shading, window opening etc. 
+ 
+A pragmatic approach was therefore taken with the following elements: 
+ Determine the main influencing factors on performance; vary them through 
+realistic range using the BES software EnergyPlus.  
+ Include random elements in the experiment which cover the range of 
+conditions expected in real conditions . Regarding the  weather, this means 
+covering an extended period . For occupancy , it means making sure the 
+magnitude and frequencies are realistic. A stochastic occupancy profile is used 
+( [8], [9]).  
+ Include the most important u ser influences on a building: i nternal heat and 
+moisture gains, operation of internal doors and external windows. 
+ Ensure the variable factors have a significant effect on the independent metric 
+used. This could be temperature (e.g. in a free float period) or heat input to 
+maintain a setpoint (e.g. in a discrete interval of constant temperature 
+periods). This is checked by running BES on models of the Twin Houses using 
+Test Reference Year climate data. 
+ Ensure all important influencing factors are measured to  a sufficient level of 
+accuracy. This was investigated through sensitivity analysis [10]. 
+ Reduce measurement error through calibration  of all instrumentation used 
+and data checking. 
+ Fully document experimental specification and measurement. 
+ Use side-by-side experiments to focus on one or more important influencing 
+factors ( the degree of similarity between both Twin Houses  and the 
+experiment reflects the precision that can be derived from this side -by-side 
+design; see baseline measurements in section 3.2). 
+ Use statistical measures of merit (power and confidence) to quantify 
+discrepancy between model predictions and experiment.  
+PAGE 11
+ Use statistical analysis (e.g. regression analysis and calibration procedures)  to 
+determine possible reasons for deviations between simulation and 
+experiment. 
+3. Experiment 
+3.1. Climate and location 
+The houses are situated in a flat location at Holzkirchen, Germany (near Munich). The 
+latitude of the buildings is 47.874 °N, the longitude is 11.728 °E. The elevation above 
+mean sea level (MSL) is 680 m. Time of all data provided is in Central European 
+(Winter) Time i.e. (UTC/GMT +1). 
+ 
+Information on the external shading can be found in the additional document under 
+02_Additional Documents.zip\Geometry\External Shading\ 
+ 
+Snow levels can provide additional shading especially on the living rooms’  glass door. 
+Data from the weather station’ s snow height sensor are included but note that 
+increased wind speeds usually reduce the snow heights, particularly on the south and 
+west facades. 
+3.2. Baseline measurement 
+3.2.1 Air tightness 
+To ensure comparable air tightness of both buildings a pressure difference test 
+(blower door test) was conducted prior to the experiment. The test results are 
+shown in   
+ 
+ 
+  
+PAGE 12
+Table 1. As can be expected, the under-pressure tests show a lower tightness than 
+the test conducted using overpressure. In particular, the operable window in the 
+child1 room can expected to be slightly pulled open by the under-pressure since it 
+can’t be locked fully (to allow the electric actuator to operate it). The overall 
+buildings’ mean air tightness values are 0.87 h-1 and 1.10 h-1 at 50 Pa pressure 
+difference and both fulfil the requirements of the German building energy code of 
+1.50 h-1. From the measured n50-values infiltration air change rates of 0.077 h-1 and 
+0.061 h-1 respectively can be estimated in accordance with DIN V 18599-2 (E) [11], 
+assuming 7 % of n50 as average infiltration. Together with the buildings’ internal air 
+volume of 337 m³ this means a difference of 5.4 m³/h. Combining the mechanical 
+ventilation of 200 m³/h and the estimated mean infiltration of 23.2 m³/h the 
+absolute difference 5.24 m³/h results in a relative difference in both buildings’ air 
+exchange of 2.4 %.  
+ 
+ 
+  
+PAGE 13
+Table 1: Results of the Blower door test carried out on November 29, 2018. 
+Mean of over- and under-pressure test n50 [h-1] 
+ Test house (O5) Reference house (N2) 
+entire building 1.10 0.87 
+ground floor 1.44 1.19 
+Result of overpressure test n50 [h-1] 
+ Test house (O5) Reference house (N2) 
+entire building 1.06 0.80 
+ground floor 1.43 1.13 
+Result of under-pressure test n50 [h-1] 
+ Test house (O5) Reference house (N2) 
+entire building 1.37 0.93 
+ground floor 1.45 1.26 
+ 
+ 
+3.2.2 Tracer Gas 
+After the end of the Extended Experiment in the O5 building the mechanical 
+ventilation was deactivated and the outside air inlets  and outlets  were sealed . All 
+doors and the trap door were opened and four air mixing fans were installed into the 
+ground floor and the attic to ensure  homogenous mixing of injected SF 6 within the 
+Twin House’s entire air volume.  
+ 
+On June 18th 7:00 and 19th 9:20 a SF6 injection was done and the resulting decay was 
+recorded until June 19 th 2019 17:00. The measured concentrations, r esampled to 
+10 minutes mean values, can be seen left in Figure 3. On the right side the resulting 
+Air Change Rates (ACR) for all five sampling points inside the Twin House can be seen. 
+This calculation was carried out according to DIN  EN ISO 12569 [12]. Only 10 minute 
+data with a decay in concentration between two data points were used.  
+ 
+The two seemingly high peaks of ACRs directly after the SF6 injection, occuring mostly 
+in the living and other ground floor rooms, are the result of the tracer gas dissipating 
+to the other room s of the Twin House.  Filtering these two peaks , an average ACR of 
+0.04 h-1 can be calculated for the entire O5 house. The ACR data can be found in 
+“04_Data_Extended_Experiment.zip\TracerEnd”; the associated climate period is 
+included in the weather data provided for the Extended Experiment. 
+PAGE 14
+ 
+Figure 3: Measured SF 6 concentration (left) and resulting Air Change Rate (right) 
+during the infiltration tracer gas experiment after the end of the Extended Experiment 
+without mechanical ventilation. 
+3.2.3 Analysis of the coheating data 
+An analysis of the co -heating dataset was done by Alex Marshall and Richard Fitton 
+from Salford University. The detailed report is included with the additional documents 
+provided with this specification . This analysis found a Heat Transfer Coefficient of 
+103 W/K for the O5  building and 10 7 W/K for the N2  house (see   
+Figure 4). 
+ 
+ 
+Figure 4: Regression analysis of the coheating data. Left for O5, right for N2. 
+ 
+To further investigate the difference between both houses the ir electric energy 
+consumption during the coheating test were compared over a period of 12 days as a 
+baseline measurement. Figure 5 shows the cumulat ive heating energy of both Twin 
+Houses (red and blue line) and the cumulative deviation (black line). As can be seen in 
+this figure after the 12 days the cumulative deviation between both Twin Houses has 
+stabilized at a value of -4.25 %. 
+18.06.2019 07:00
+18.06.2019 19:00
+19.06.2019 07:00
+19.06.2019 19:00
+20.06.2019 07:00
+0
+4
+8
+12
+16Concentration [ppm/Vol]
+ SF6_Kitchen
+ SF6_living_010
+ SF6_living_110
+ SF6_Child1
+ SF6_dining
+18.06.2019 07:00
+18.06.2019 19:00
+19.06.2019 07:00
+19.06.2019 19:00
+20.06.2019 07:00
+0.00
+0.25
+0.50
+0.75
+1.00
+0.04
+ SF6_Kitchen
+ SF6_living_010
+ SF6_living_110
+ SF6_Child1
+ SF6_dining
+Air Change Rate [1/h]
+
+PAGE 15
+ 
+Figure 5: Baseline measurement conducted during the coheating test, conducted 
+between 7th December 2018 18:00 and 19th December 2018 09:00.   
+75 150 2250 300
+0
+150
+300
+450
+600
+Duration [h]
+Cumulated energy [kWh]
+ Cumulated power O5
+ Cumulated power N2
+ Cumulated deviation
+-10
+-5
+0
+5
+10
+Cumulated deviation [%]
+PAGE 16
+3.3. Geometry 
+Detailed drawings with dimensions can be found among the additional documents: 
+ Plan attic.pdf 
+ Plan groundfloor.pdf 
+ section_TwinHouses.pdf 
+ 
+Figure 6 and Figure 7 show an overview of the Twin Houses’ geometry including the 
+ventilation and door elements . The connection between both floors is a stair t hat is 
+open in the living room on the ground floor and ends in  a staircase in the attic from 
+where doors lead to the childrens ’ rooms. This door can be sealed by a double trap 
+door to create two separate air spaces for the ground floor and the attic. 
+ 
+Figure 6: Floor plan ground floor. 
+ 
+ 
+Figure 7: Floor plan attic. 
+sealed door
+operable internal door
+supply air point
+extract air point
+trap door
+(sealed/open according to schedule)
+operable external window
+supply air point
+extract air point
+trap door
+(sealed/open according to schedule)
+PAGE 17
+ 
+Glazing configurations are shown in Figure 8.  
+ 
+Figure 8: Twin House views: clockwise from top left: south, north, west, and east. 
+ 
+Details of the windows and glazing areas are given in Figure 9 and Table 2. 
+ 
+ 
+Figure 9:  Overview of the window types. The window types are shown as red 
+numbers. 
+ 
+ 
+  
+1
+1
+1 1
+12 3
+5
+4
+1
+  
+  
+
+PAGE 18
+Table 2: Specification of the window types’ properties 
+ 
+Window 
+type 
+Overall dimensions 
+(including roller 
+blind housing) [m2] 
+Overall 
+dimensions 
+(excluding 
+roller blind) 
+[m2] 
+Glass area 
+without 
+sealing strip 
+[m2] 
+Glass edge 
+length [m] 
+Frame 
+area 
+[m2] 
+1 1.74*1.23 = 2.14 1.54*1.23 = 
+1.89  
+1.30*0.99 = 
+1.29  
+4.62 0.60 
+2 2.57*1.11 = 2.85 2.37*1.11 = 
+2.63  
+2.13*0.865 = 
+1.84 
+6.04 0.79 
+3 1.74*3.34 = 5.81 1.54*3.34 = 
+5.14  
+3 panes, each 
+1.385*0.99 = 
+4.11 (total)  
+14.4 1.03 
+4 - 1.20*1.24 = 
+1.49 
+0.93*0.97 = 
+0.90 
+3.8 0.59 
+5 2.67*1.23 = 3.28 2.44*1.23 = 
+3.00 
+2.20*0.99 = 
+2.18 
+6.38 0.82 
+ 
+The ground floors’ ceilings are supported by four concrete columns located in the 
+living room, the dining room, the bedroom and the kitchen. The ir geometry can be 
+taken from Figure 10. 
+ 
+ 
+Figure 10: Geometry of the ground floors’ four columns. 
+ 
+  
+
+PAGE 19
+3.4. Constructions 
+The U-values of the constructions can be found in Table 3. The detailed constructions 
+can be found in the additional documents in “01_Constructions_TwinHouses.xlsx”;  
+“Humidity propert ies.pdf” contains  an estimate for  the moisture properties of the 
+materials. 
+ 
+Table 3: U-values of the Twin Houses constructions. 
+Component U-value (W/m2K) 
+Exterior Wall West 0.24 
+ East 0.24 
+ South: 
+ground floor 
+railing main window 
+knee wall 2nd floor 
+ 
+0.21 
+0.25 
+0.28 
+ North 
+ground floor 
+knee wall 2nd floor 
+ 
+0.21 
+0.29 
+Ceiling Currently not insulated 0.51 
+Floor  0.29 
+Roof  0.22 
+Window  1.20 
+Front door  0.94 
+ 
+Absorptivity of the internal wall and ceiling surfaces was not measured before the 
+experiment. As in Annex  58 these surfaces were painted directly before the 
+experiment with the same colour and type of paint. The value measured in Annex 58 
+could be a good assumption. “ Absorptivity of the white painted internal plaster was 
+measured as 0.17.” [3]. During the same experiment the absorptivity of the external 
+walls was measured as 0.23. 
+ 
+  
+PAGE 20
+3.4.1 Internal doors 
+The internal doors ( Figure 11) have a height of 2.00 m and a width of 0.95 m. The 
+material is wooden honeycomb board with a thickness of 4 cm with a single pane 
+glazed area of 38.0 x 64.5 cm. The ventilation slots near the base of the doors are tape 
+sealed. The bottom gap is about 2 mm on average. As shown in section 3.3 all internal 
+doors are open except for the sleeping rooms’ doors (permanently closed; not sealed), 
+the kitchen door (acc. to section  4 operated in some phases) and the trap door 
+between ground floor and attic space (open/closed during some phases  as described 
+in section 4). 
+ 
+Figure 11: Internal door. 
+3.4.2 Trap door 
+The trap door between the ground floor and attic is 1.39 x 0.57 m. The door leaves are 
+massive wood with 4 cm for the upper and 2 cm for the lower leaf. Both have a 4-sided 
+rubber seal.  The horizontal air layer between the two lea ves is 34 .5 cm. For the 
+Extended Experiment the attic doors’ positions are added to the measurement data 
+as “n2_attic_door_pos” and “o5_attic_door_pos”. 
+  
+
+PAGE 21
+3.5. Glazing optical and thermal properties 
+The glazing is double glazing with low emissivity coating and argon fill. Layers are 
+(outside to inside): 
+Interpane Clear float 4mm 
+Gas fill 16mm (90% argon, 10% air) 
+Interpane Iplus E 4mm inner pane 
+ 
+The window U-value (following EN ISO  10077-1) is 1.2 W/m 2K for all windows in the 
+façade. The ψ -value of the glass edge is 0.05 W/mK. The glass U -value is 1.1 W/m 2K 
+and the frame U-value is 1.0 W/m2K.  
+ 
+Window 6.3 was used to obtain the optical properties of the glazing by selecting the 
+glazing panes from the International Glazing Database [13] and using EN 673 boundary 
+conditions. Table 4 and Table 5 give the angular dependent properties for both NFRC 
+and EN 410 spectra. 
+ 
+Table 4: Glazing optical properties: NFRC 
+Angle 0 10 20 30 40 50 60 70 80 90 Hemis 
+Visible 
+transmittance 
+0.803 0.807 0.796 0.782 0.762 0.722 0.632 0.459 0.214 0 0.671 
+Solar 
+transmittance 
+0.512 0.515 0.508 0.498 0.484 0.458 0.401 0.293 0.136 0 0.427 
+Reflectance 
+(front) 
+0.292 0.287 0.285 0.286 0.293 0.31 0.351 0.448 0.644 1 0.338 
+Reflectance 
+(back) 
+0.281 0.275 0.273 0.275 0.285 0.303 0.34 0.423 0.611 0.999 0.325 
+Absorptance 
+outer layer 
+0.112 0.112 0.114 0.117 0.122 0.127 0.133 0.137 0.132 0 0.123 
+Absorptance 
+inner layer 
+0.084 0.086 0.093 0.098 0.1 0.104 0.115 0.123 0.087 0 0.102 
+SHGC 0.571 0.575 0.572 0.566 0.554 0.531 0.481 0.378 0.197 0 0.497 
+ 
+Table 5: Glazing optical properties: EN410 
+Angle 0 10 20 30 40 50 60 70 80 90 Hemis 
+Visible 
+transmittance 
+0.803 0.808 0.797 0.782 0.762 0.722 0.632 0.459 0.214 0 0.671 
+Solar 
+transmittance 
+0.543 0.546 0.538 0.528 0.514 0.486 0.426 0.310 0.145 0 0.452 
+Reflectance 
+(front) 
+0.264 0.260 0.258 0.259 0.267 0.286 0.329 0.433 0.640 1 0.315 
+Reflectance 
+(back) 
+0.255 0.249 0.247 0.249 0.260 0.279 0.317 0.404 0.599 0.999 0.302 
+Absorptance 
+outer layer 
+0.107 0.108 0.109 0.112 0.116 0.121 0.126 0.130 0.124 0 0.118 
+Absorptance 
+inner layer 
+0.085 0.087 0.094 0.100 0.102 0.106 0.119 0.127 0.091 0 0.104 
+SHGC 0.602 0.606 0.604 0.598 0.585 0.560 0.508 0.398 0.208 0 0.525 
+ 
+The glazing supplier (Interpane) has quoted figures for the glazing normal incidence 
+properties that conform to those in Table 5 with the exception that they quote the 
+solar heat gain coefficient as 0.62. 
+  
+PAGE 22
+To prevent driving rain from being blown into the building during this automated 
+experiment the external windows (see Figure 12) can only tilt but not swing fully open. 
+The upper part of the window  is tilted inward for 14.3 cm while the bottom is not 
+moved, so the two side openings form a triangle, with a rectangular shape on the top. 
+ 
+  
+Figure 12: Operated external window in tilted position. 
+ 
+  
+
+PAGE 23
+3.6. Roller blinds 
+Details are shown in Figure 13. The roller blind absorptivity was measured by 
+Fraunhofer IBP as 0.32. The geometry of the roller blind slats can be found in the 
+supplementary file “Rollerblinds.zip". The air gap between the glazing and the blind is 
+59 mm (±2 mm) and 23 mm (±1 mm) for the three (not openable) glazings beside the 
+living room glass doors. The living rooms’ roller blinds on the west façades were closed 
+during the entire experiment; the kitchens’ roller blinds were closed at the start of the 
+user-2 phase. 
+ 
+ 
+ 
+ 
+  
+
+PAGE 24
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 13: Details of roller blinds. 
+ 
+  
+
+PAGE 25
+3.7. Thermal bridges 
+The following thermal bridge ψ –values were obtained with HEAT2. 
+ 
+Wall – Ceiling joint 
+The wall – ceiling joint is shown in Figure 14 (solution with 70 mm insulation). 
+ 
+ 
+  
+Figure 14: Wall – ceiling joint with 80 mm insulation. Model and temperatures. 
+ 
+Since there are three different temperatures in the calculation the linear thermal 
+transmittance will be dependent on temperature. In the following it is assumed that 
+the indoor temperature is 20  C, th e outdoor temperature is 0  C and the attic 
+temperature is 10 C. Table 6 presents the results. 
+ 
+Please note: This thermal bridge contains losses to the outside AND the attic. The 
+combined losses from ground floor and attic to the outside can be found in Table 11. 
+This detail models the gable wall joint to the ceiling on the east a nd west sides of the 
+Twin Houses. The knee walls’ joint to the ceiling on the north and south can be found 
+in Table 11 as “TM-06”. 
+ 
+Table 6: Linear thermal transmittance for wall – ceiling joint in W/mK. 
+ External 
+measurements 
+Internal 
+measurements 
+70 mm insulation  
+(east wall) 
+0,383 0,542 
+120 mm insulation 
+(north, south, west) 
+0,370 0,536 
+ 
+ 
+  
+PAGE 26
+Alternatively, the linear thermal transmittance is split in two, i.e. linear thermal 
+transmittance from room to outside and linear thermal transmittance from room to 
+attic as can be seen in Table 7. 
+ 
+Table 7: Linear thermal transmittances for wall – ceiling joint in W/mK. 
+ External 
+measurements 
+Internal 
+measurements 
+ io ia io ia 
+70 mm insulation  
+(east wall) 
+0.121 0.509 0.194 0.696 
+120 mm insulation  
+(north, south, west) 
+0.115 0.511 0.187 0.699 
+ 
+ 
+Wall – Wall joint 
+The wall – wall joint is shown in Figure 15 (solution with 70 mm insulation). 
+ 
+  
+ 
+ 
+Figure 15: Wall – wall joint with 70 mm insulation. Model and temperatures. 
+ 
+Table 8 presents the results. 
+ 
+ 
+Table 8: Linear thermal transmittance for wall – wall joint in W/mK. 
+ External 
+measurements 
+Internal 
+measurements 
+70 mm insulation 
+ South-east 
+ North-east 
+-0,095 0,095 
+120 mm insulation 
+ South-west 
+ North-west 
+-0,110 0,095 
+ 
+ 
+  
+PAGE 27
+Wall – Floor joint 
+The wall – floor joint is shown in Figure 16 (solution with 70 mm insulation). 
+ 
+ 
+  
+Figure 16: Wall – floor joint with 70 mm insulation. Model and temperatures. 
+ 
+As with the wall – ceiling joint there are three different temperatures in the 
+calculation. In the following it is assumed that the indoor temperature is 20  C, the 
+outdoor temperature is 0 C and the basement temperature is 10 C. Table 9 presents 
+the results. 
+ 
+Table 9: Linear thermal transmittance for wall – floor joint in W/mK. 
+ External 
+measurements 
+Internal 
+measurements 
+70 mm insulation  
+(east wall) 
+-0,036 0,108 
+120 mm insulation  
+(north, south, west) 
+-0,038 0,111 
+ 
+Again, the linear thermal transmittance is split in two, i.e. linear thermal transmittance 
+from room to outside and linear thermal transmittance from room to basement (see 
+Table 10). 
+ 
+ 
+Table 10: Linear thermal transmittances for wall – floor joint in W/mK. 
+ External 
+measurements 
+Internal 
+measurements 
+ io ib io ib 
+70 mm insulation  
+(east wall) 
+-0.064 0.045 0.020 0.177 
+120 mm insulation  
+(north, south, west) 
+-0.059 0.044 0.023 0.176 
+ 
+ 
+ 
+PAGE 28
+The external thermal bridge ψ –values shown in Table 11 have been obtained with TRISCO . For a better understanding Figure 17 gives an 
+overview of the names for roof components. 
+Table 11: Thermal bridges of the Twin Houses. 
+Model:   position Ue: Ψext: Ψint: χ: 
+TM-01 Ridge junction    -0.009 0,006  
+TM-02 Rake Junction- Mineral wool Junction between roof and external wall west  0.043 0.188  
+TM-03 Rake Junction- Polyurethane Junction between roof and external wall east  0.051 0.186  
+TM-04 Eaves Junction- Combined between roof / south and north knee walls  -0.015 0.165  
+TM-05 Eaves Junction, isolated    0.070 0,181  
+TM-06 Ceiling-wall junction (knee walls)   0.022  
+TM-07 Column - Floor      0.656 
+TM-08 Column - Ceiling      0.643 
+TM-10 Internal wall, thin - Ceiling   0.047  
+TM-11 Internal wall, thin - Floor   0.239  
+TM-12 Internal wall, thick - Ceiling   0.045  
+TM-13 Internal wall, thick - Floor   0.331  
+TM-14 Window Jamb - brick wall, Wood fibre insulation applies to windows in south and north walls  0,037  
+TM-15 Window Lintel - brick wall, Wood fibre insulation applies to windows in south and north walls  0,039  
+TM-16 Window Sill - brick wall, Wood fibre insulation applies to windows in south and north walls  0,034  
+TM-17 Window Jamb - brick wall, Mineral wool insulation applies to windows in west wall  0,038  
+TM-18 Window Lintel - brick wall, Mineral wool insulation applies to windows in west wall  0,040  
+TM-19 Window Sill - brick wall, Mineral wool insulation applies to windows in west wall  0,035  
+TM-20 Window Jamb - brick wall, Polyurethane insulation applies to windows in east wall  0,029  
+TM-21 Window Lintel - brick wall, Polyurethane insulation applies to windows in east wall  0,032  
+TM-22 Window Sill - brick wall, Polyurethane insulation applies to windows in east wall  0,027  
+TM-23 Trapdoor - Ceiling    0.054  
+PAGE 29
+ 
+ 
+Figure 17 : Naming of a roof’s components [14]. 
+ 
+3.8. Ventilation 
+As in Annex 58 this experiment mainly uses mechanical ventilation because the 
+resulting mass and energy flows can be measured much better than the air exchange 
+caused by an open external window. Despite this experimental difficulty, opening 
+windows are an essential part of user behaviour and will be included in part of the 
+experiment (see section  3.15.6). As typical for a residential situation the ventilation 
+system operates based on a target constant air change rate of 0.6 h-1. The total supply 
+and exhaust air volume for the entire building is measured and precisely PLC 
+controlled, separately for ground floor and attic . The instrumentation gives the 
+volume flow rate corrected to standard temperature and pressure (1013.25 hPa and 
+20 °C). To convert that signal into a mass flow rate, the air properties at sea level must 
+be used. The air density at sea level and at 20  °C is 1.204  kg/m³. To calculate the 
+ventilation mass flow rate (kg/s) the measured volume flow rate (m3/s) must be 
+multiplied by 1.204 kg/m³.  
+ 
+The rooms’ individual air volume share i s adjusted using disc valves once during the 
+experiment’s setup. So the room air volumes can vary caused by changes to the 
+pressure regime and are not controlled to be constant. The rooms’ individual 
+ventilation air flow rates and temperatures are mea sured. Since a multi -room tracer 
+gas measurement is part of this experiment the number of air bodies, separated by 
+(sealed) doors, was limited. As Figure 18 and Figure 19 show, the experiment has four 
+separate air bodies ( Table 12). Table 13 specifies the set volume flows of the 
+mechanical ventilation system. In some extreme winter conditions (e.g. morning of 1st 
+of January) the external ventilation inlets were cloaked by ice and cause reductions 
+from the set values until they were de-iced. However, the measured flow rates are 
+given as input data so this information can be included in the mode l. The supply air 
+duct to the living room runs through the kitchen, the bath exhaust air duct runs 
+through the dining room and all ducts concerning the childrens’ room run through the 
+stairs. These ducts are insulated with 20 mm aluminium laminated mineral wool.   
+
+PAGE 30
+Table 12:  
+Air bodies of the experiment (not considering the air space in the door frames). 
+Air body Rooms Floor Area 
+[m²] 
+Volume 
+[m³] 
+Ground living, corridor, bath, dining, doorway 63.06 164.00 
+Kitchen kitchen 7.44 19.34 
+Sleeping sleeping (north) 11.19 29.09 
+Attic child 1, child 2, staircase 84.06 151.72 
+Total all rooms 165.75 364.15 
+ 
+ 
+Table 13: Resulting air flows. 
+Location Type Flow [m³/h] 
+Living room Supply 100 
+Bathroom Exhaust 50 
+Dining Exhaust 50 
+Child1 and Child2 Supply and 
+Exhaust 
+50 
+ 
+ 
+Figure 18: Floor plan ground floor. 
+ 
+sealed (trap) door
+operable ext. window / int. door
+supply air point
+extract air point
+PAGE 31
+ 
+Figure 19: Floor plan attic. 
+ 
+3.9. Heating / cooling 
+Cooling is not part of this experiment. The Twin Houses were configured to have a 
+side-by-side measurement of two different heating systems during the Main 
+Experiment and to investigate the effects of moisture loads during the Extended 
+Experiment. 
+ 
+ Reference Building  (N2): Electrical 
+ Test Building   (O5): Underfloor heating with air source heat pump  
+(Main experiment) or  moisture loads  (Extended 
+experiment) 
+ 
+The corridor, doorway and stairs were unheated (after the coheating phase). 
+3.10. Electrical heating (N2 house) 
+The electric heaters were power controlled to keep the set temperatures in the rooms. 
+This wa s realized through a PI controller, integrated into the Twin House PLC. The 
+power consumption in every room wa s measured. The heaters used were 
+Dimplex AKO K 810/K 811 ( Figure 20). The manufacturer gives the radiative  / 
+convective spilt as 30  % / 70 %. The heaters we re lightweight with a fast response – 
+estimated as 1 or 2 minutes by Fraunhofer IBP.  Details of the heaters used are given 
+in Figure 21. In each room one heater is located as can be seen in Figure 22. The 
+kitchen and bathroom  of the N2 -house have a separate second electrical heater to 
+separate the relatively high internal heat sources (IHS) from the heating power.  
+ 
+These heaters’ power output is controlled by a PI controller  (implemented into the 
+Twin Houses’ PLC) with a proportional gain of 4 and an integration time of 5 Minutes. 
+The individual rooms’ air temperature sensors at 110 cm are used for control. 
+ 
+sealed (trap) door
+operable ext. window / int. door
+supply air point
+extract air point
+PAGE 32
+ 
+Figure 20: Electric heater. 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 21: Heater specifications. 
+ 
+ 
+ 
+
+PAGE 33
+ 
+Figure 22: Heater layout. 
+ 
+The temperature in all rooms is controlled by the shielded air temperature sensor at 
+the mid-height of the room (110 cm). 
+3.11. Heat pump (O5 house) 
+The air source heat pump is an “aroTHERM VWL 55/2 A” (see Figure 23 and Table 14) 
+from the manufacturer Vaillant. The heat pump ’s internal controls were used. The 
+electrical consumption and fluid temperatures and flow rate were measured on the 
+secondary side. This system comprises a 4.9 kW heat pump with a COP of 2.40 and an 
+additional 6 kW direct heating. The COP for domestic hot water is 1.80. The system 
+switches its compressor’s set point between heating- and DHW-mode. The underfloor 
+heating is designed for 35  °C supply temperature. In heating mode , the heat pump 
+feeds directly into the underfloor heating system; the 3 00 litre tank is for DHW 
+buffering only. 
+ 
+See “arotherm-vwl-55-85-115-155-2-datenblaetter-1115125.pdf” in the additional 
+documents. 
+ 
+  
+ 
+Figure 23: External installation of the Twin Houses Vaillant “aroTHERM VWL 55/2 A” 
+air source heat pump, left in summer, right in winter. 
+  
+elt. heater (incl. IHS)
+elt. heater IHS only
+elt. heater; 
+coheating only
+
+PAGE 34
+Table 14: Technical specifications (COP) of the heat pump Vaillant aroTHERM VWL 
+55/2 A 
+ 
+Outside air temperature 
+[°C] 
+Supply water temperature [°C] 
+35 45 55 
+-15 2.3 1.9 * 
+-7 2.4 2.3 1.8 
+2 3.1 (Δt = 5 K) 2.9 (Δt = 5 K) 3.0 (Δt = 8 K) 
+7 4.7 (Δt = 8 K) 3.4 (Δt = 8 K) 2.7 (Δt = 8 K) 
+10 5.0 3.8 3.0 
+12 3.0 4.0 3.2 
+* outside envelope of performance chart. 
+https://www.vaillant.de/heizung/produkte/luft-wasser-warmepumpe-arotherm-
+704.html 
+ 
+3.12. Domestic Hot Water (O5 house) 
+During the user  1 phase DHW is only of importance  for the O5 Twin House which is 
+heated by the heat pump. A 300 litre DHW buffer vessel is conn ected to the heat 
+pump. Attached to this buffer is a PLC controlled system that allows drawing defined 
+DHW amounts in terms of energy. The DHW valve is opened until the amount heat 
+defined by the current energy per draw is reached. 
+ 
+The drawn DHW was drained directly out of the building. The entire DHW installation 
+is located in the cellar and there is no DHW circulation. Therefore all internal heat and 
+moisture gains resulting from DHW are in the cellar and do not influence the ground 
+floor and attic space s which are the focus for the validation experiment . The heat 
+pump alternates between heating and DHW production while DHW has the priority 
+option. The air temperatures in the cellars are recorded  as boundary conditions . 
+Therefore the hot water draw will only be of interest to modelling teams who are 
+modelling the heat pump. The measured data include s the flow rates  and supply 
+temperature to the underfloor heating system - this can be used by modellers who are 
+not including a model of the heat pump. 
+3.13. Underfloor heating (O5) 
+The floors of the Twin Houses (both ground floor and attic floor) are equipped with a 
+hydronic underfloor heating system. These system s are supplied by the heat pump . 
+The room temperatures are controlled by the Twin Houses’ PLC via a 2-point (on/off) 
+controller with a 1  K hysteresis (±0.5 K) as is typical for a floor heating system.  The 
+individual rooms’ air temperature sensors at 110  cm are used for control.  The 
+underfloor heating is designed for 35  °C s upply temperature  but the real supply 
+temperature was set by the weather-compensated heating curve. 
+ 
+The underfloor heating was used in the O5 house only. 
+  
+PAGE 35
+In the ground floor the piping is installed in a counterflow system (spiral shape) with 
+spacing of 10 cm in a wet screed system . Logafix PE-RT 17 x 2.0 mm is used (nominal 
+internal diameter 17 mm and pipe thickness 2 mm). The attics’ piping of the dry screed 
+system has a spacing of 15 cm in a serpentine installation with heat transfer aluminium 
+profiles. The pipe material is a ROTO Alu -Laserflex 14  x 2.2 mm (nominal internal 
+diameter 14mm and pipe thickness 2.2 mm) . These installations can be seen in  
+Figure 24. 
+ 
+Table 15: Overview of the ground floor underfloor heating. 
+ 
+No. room ground floor 
+    [m²] piping [m] through 
+living [m] 
+through 
+corridor [m] [m/m²] 
+1 doorway 5,9 56 6 4 9,5 
+2 kitchen 7,5 59 11 3 7,9 
+3 living (3 circuits) 33,6 309 - 24 9,7 
+4 dining 11,1 97 - 10 8,8 
+5 bath 6,2 59 - 8 9,5 
+6 bed 12,2 110 - 4 9,1 
+7 
+corridor 
+(not circuit, just 
+pipes from other 
+rooms to the 
+distribution) 
+4,8 53 - (53) 11,1 
+  sum 81,2 743,0 17 53   
+No. room attic 
+    [m²] piping [m]   through 
+staircase [m] [m/m²] 
+2 child1 
+(3 circuits) 34,7 77+72+71  - 3 6,3 
+3 child2 
+(3 circuits) 36,8 81+81+84  - 3 6,7 
+  sum 71,5 466,0   6   
+ 
+ 
+  
+Figure 24: Spiral pipes of the dining room in the ground floors (left) and the child 2 
+rooms’ serpentine pipes in the attics’ (right) underfloor heating during installation.  
+  
+
+PAGE 36
+3.14. Hydronic Scheme 
+The hydronic scheme for the heat and DHW installation (including instrumentation) of 
+the Test House O5 is shown in Figure 25. A higher resolution diagram is included in the 
+additional documents. 
+ 
+ 
+Figure 25: Hydronic scheme of the Test House O5’s heat and DHW installation 
+including the instrumentation. 
+ 
+3.15. Synthetic user 
+The validation specification of Annex  71 also includes realistic occupancy profiles. 
+Occupying the Twin Houses with real humans would bring some disadvantages for the 
+experiment because there would large uncertainties regardin g their room -wise 
+occupancy and the magnitude of the occurring internal loads (heat, moisture and CO2) 
+caused by them. Also real users always bring internal humidity sources to the building 
+that should not be present during the first parts of the experimental schedule to keep 
+these parts of the validation simpler. To avoid this, “synthetic users” were used in this 
+validation experiment. This means that a typical room -wise usage profile was 
+developed. From this, occupancy profiles synchronized to the interna l load profiles 
+were derived. 
+ 
+These profiles are required for the following experimental phases (see section 4): 
+ User phase 
+ Free floating phase 
+ Controlled moisture phase 
+ Free moisture phase 
+ 
+
+PAGE 37
+3.15.1 Occupancy 
+The occupancy profiles used in this experiment are simulated profiles for a family with 
+two children. The simulation model used is based on time use survey data [8] [9]. This 
+means that the data have a stochastic element and are different for every day. Figure 
+26 shows two example days of this dataset. These occupancy data are provided as a 
+time series dataset. 
+ 
+ 
+Figure 26: Typical occupancy profiles for two days. 
+ 
+3.15.2 Internal heat sources 
+A profile for the internal heat loads, caused by the occupants, their usage of appliances 
+and artificial lighting has been derived from the occupancy profiles. The heat loads 
+were injected into the rooms by the same electri cal convectors as described in 
+Section 3.10. Figure 27 shows two example days of this dataset. These occupancy data 
+are provided as a time series dataset. Figure 28 gives an overview of the buildings’ 
+total heat gains during the entire test period.  
+ 
+In the case of electric heating, internal heat gains and additional heat ing inputs are 
+provided as separate inputs. For the kitchen and the bathroom, the internal heat gains 
+and additional heating inputs are measured separately and are provided by separate 
+convectors. For the living room, bedroom and the childrens’ rooms this is a calculated 
+split based on the internal heat gain scheduled values. The dining room has heating 
+only (no internal heat gains); the corridor has only internal heat gains; doorway and 
+stairs have no heat input after the coheating phase. The O5 corridor has an additional 
+constant heat input of 12x 2.4 W through the under floor heating’s flow meters. The 
+O5s' children rooms hold one flow meter each. 
+00:00 04:00 08:00 12:00 16:00 20:00 00:00 04:00 08:00 12:00 16:00 20:00 00:00
+Child_2
+Child_1
+Sleeping
+Bath
+Kitchen
+Dining
+Living
+weekday weekend
+Occupancy
+PAGE 38
+ 
+Figure 27: Resulting internal heat gains for two example days. 
+ 
+ 
+  
+Figure 28: Overview of the internal heat gains for the entire building for the 
+complete test period. The bright, yellow section in April/May is the PRBS. 
+ 
+  
+00:00 04:00 08:00 12:00 16:00 20:00 24:00
+18 Jun
+17 Mai
+15 Apr
+14 Mrz
+10 Feb
+9 Jan
+8 Dez
+Time
+0,000
+1200
+2400
+3600
+4800
+6000
+Internal Heat Sources (IHS) [W]
+PAGE 39
+3.15.3 Internal humidity sources 
+In the Extended Experiment, t he humidity source was injected through the living 
+room’s supply air to avoid the necessity to enter the houses during the experiment to 
+refill the evaporators  as shown in Figure 29. Figure 30 gives an overview of the 
+estimated building’s total moisture gains during the entire test period. A comparison 
+between the heat and moisture profile can be found in Figure 31. The fresh air 
+temperature “o5_ZVent_out_Tamb” was not part of the data provided for the Main 
+Experiment and was added for the Extende d Experiment at the end of the O 5 data 
+files to preserve the original file structure. 
+ 
+ 
+Figure 29: Realisation of the internal moisture source through the living room’s 
+supply air system. 
+ 
+This internal humidity source profile is calculated according to Equation (1), following 
+the course of the internal heat source profile. The average daily internal humidity 
+source is chosen to be about 8 kg/day, representing a 4 person family household [15]. 
+The minimum value is set to 0.2 kg/h and the maximum to 1.3 kg/h. 
+ 
+𝑤̇ 𝐼𝑀𝑆 = 𝑤̇ 𝐼𝑀𝑆,𝑚𝑖𝑛 +
+𝑄̇ 𝐼𝐻𝑆
+𝑄̇ 𝐼𝐻𝑆,𝑚𝑎𝑥
+(𝑤̇ 𝐼𝑀𝑆,𝑚𝑎𝑥 − 𝑤̇ 𝐼𝑀𝑆,𝑚𝑖𝑛)                    (1) 
+ 
+𝑤̇ IMS water vapour mass injection rate of the internal moisture 
+source 
+[kg/h] 
+𝑤̇ 𝐼𝑀𝑆,𝑚𝑖𝑛 minimum water vapour mass injection rate of the internal 
+moisture source 
+[kg/h] 
+𝑤̇ 𝐼𝑀𝑆,𝑚𝑎𝑥 maximum water vapour mass injection rate of the internal 
+moisture source 
+[kg/h] 
+𝑄̇ 𝐼𝐻𝑆 power of the internal heat source [W] 
+𝑄̇ 𝐼𝐻𝑆,𝑚𝑎𝑥 maximum power of the internal heat source [W] 
+ 
+  
+Outside
+O5_Vent_Tamb
+O5_Vent_out_rHamb
+-> [O5_Vent_out_absH_amb]
+O5_Vent_living_SUA_fan_elP
+O5_Vent_living_SUA_IHS_elP
+O5_Vent_afterIHS_AT
+[O5_Vent_absH_IMS]
+better
+O5_Vent_afterIMS_absH - O5_Vent_out_absH_amb
+O5_Vent_afterIMS_rH
+-> [O5_Vent_afterIMS_absH]
+kitchenliving
+O5_Vent_living_SAU_VFRO5_Vent_living_SUA_AT
+O5_living_XXX_AT
+O5_living_110_rH
+PAGE 40
+The provided absolute humi dities are calculated from the corresponding relative 
+humidity and air temperature according to Equation (2). To calculate the water vapour 
+saturation pressure the Magnus formula [16] was used. 
+ 
+𝐻𝑎𝑏𝑠 =
+610.78∗𝑒
+17.08085∗𝜃𝑎𝑖𝑟
+234.175+𝜃𝑎𝑖𝑟 ∗ 𝐻𝑟
+100%
+𝑅𝑊∗(273.1+𝜃𝑎𝑖𝑟)
+𝜌𝑎𝑖𝑟
+∗1000𝑔
+𝑘𝑔⁄
+          (2) 
+Habs absolute air humidity [g/kg] 
+air air temperature [°C] 
+Hr air relative humidity [%] 
+RW gas constant of air: 462 J/(kg*K) [J/(kg*K)] 
+air density of air (set to 1.2041 kg/m³) [kg/m³] 
+ 
+Due to the injected humidity source by the supply  air, design set points for 
+temperature and relative humidity of the ventilation device are necessary. They are 
+calculated considering the estimated climate data for the location. Outdoor air must 
+be heated to transport the humidity. This supply air set point temperature is kept 
+between 5 and 17 °C. According to the internal humidity source profile, the absolute 
+humidity of the estimated outdoor air condition and the supply air volume flow rate, 
+the relative humidity supply air set point is calculated. However, the relative humidity 
+is constrained between 30 and 90 %.  
+ 
+Due to the usage of estimated climate data in the figure, the provided internal 
+humidity source during the test may differ compared to the shown profiles. 
+ 
+  
+Figure 30: Internal moisture gains for the entire building for the complete period. 
+00:00 04:00 08:00 12:00 16:00 20:00 24:00
+18 Jun
+4 Jun
+21 Mai
+7 Mai
+23 Apr
+9 Apr
+26 Mrz
+Time
+0.0
+0.0
+0.1
+0.1
+0.2
+0.2
+Internal Moisture Sources (IMS) [kg/h]
+PAGE 41
+  
+Figure 31: Comparison between the internal heat and moisture load profiles over a 
+period of eight days. 
+ 
+3.15.4 Internal CO2 sources 
+This is not possible since CO2 is one of the tracer gases used to monitor intra-room air 
+exchange. 
+ 
+3.15.5 Set temperatures 
+A set temperature of 21  °C wa s chosen for occupied rooms, with 17  °C as the 
+(night-time) setback temperature. All set temperatures / profiles are realized through 
+room thermostats and not by the heat source / heat pump (e.g. setback of the supply 
+temperature) to avoid complicated interactions in the hydronic system. Figure 32 
+shows two example days of this dataset. These occupancy data are provided as a time 
+series dataset. It is assumed that the heating system will not be put on setback for an 
+absence period of 2 hours or shorter. 
+1
+2
+3
+4IHS [kW]
+27.03.201928.03.201929.03.201930.03.201931.03.201901.04.201902.04.201903.04.201926.03.2019
+0.00
+0.05
+0.10
+0.15
+0.20IMS [kg/h]
+PAGE 42
+ 
+Figure 32: Resulting occupancy and set temperatures for two example days. 
+ 
+3.15.6 External window and internal doors 
+The operable external window is located in the child1 room. The operable internal 
+door is located between the living room and the kitchen.  The four possible 
+configurations of both operable components defined in Table 16 were cycled through 
+the injections. Since the injection cycle is 12 hours, the total cycle of the four possible 
+configurations was 48 hours. 
+ 
+Table 16: Operation cycle of the operable external window and internal door. 
+No. external window internal door 
+1 closed closed 
+2 closed open 
+3 open closed 
+4 open open 
+ 
+The intra-room airflow wa s monitored with a two -gas tracer gas system  during the 
+Extended Experiment. The tracer gas setup is described in section 5.3. The gas monitor 
+(Innova PD 1412 PW) is specified with a detection dynamic of the factor 100000 for 
+the gases used in the experiment. The following ranges are applicable: 
+ 
+ SF6: 0.006 – 600 ppm  (filter: 988) 
+ CO2: 0.06 – 6000 ppm  (filter: 973) 
+ 
+The living room has a volume of 87 m³ and a mechanical ventilation rate of 100 m³/h 
+(1.14 h-1). To decay to 110 % of the atmospheric CO 2 concentration (700 ppm; see 
+Figure 33) takes 5 hours.  
+ 
+00:00 04:00 08:00 12:00 16:00 20:00 00:00 04:00 08:00 12:00 16:00 20:00 00:00
+Child_2
+Child_1
+Sleeping
+Bath
+Kitchen
+Dining
+Living
+weekday weekend
+Occupancy
+17
+21
+set temperature [°C]
+PAGE 43
+ 
+Figure 33: CO2 cycle over the years 2014 – 2019 in Holzkirchen; 1 hour sampling. 
+ 
+3.15.7 Roller blinds 
+The roller blinds and their influence on solar gains and transmission losses were 
+investigated in Annex 58. Therefore it was decided not to operate them in this 
+experiment. The blinds on the north, east and south facade are open permanently 
+while the blinds of the west facing windows of the ground floor are always closed. The 
+reason for this is a slightly different external shading of solar radiation on the two 
+houses in winter because of a new test facility on the site. The attics’ west façade roller 
+blind of the child 1 room remains open so the airflow through the operable window is 
+not obstructed. 
+  
+2014 2015 2016 2017 2018 2019
+0
+200
+400
+600
+800
+1000CO2 [ppm]
+year
+PAGE 44
+3.15.8 Domestic Hot Water 
+The domestic hot water demand during the user  1 phase is calculated by the 
+occupancy model (see Figure 34) and provided as a time series along with the other 
+measurement data. 
+  
+Figure 34: Domestic hot water tappings during the user-1 phase. 
+ 
+3.16. Weather 
+The weather data during the experiment is collected on site and provided to the 
+modelling teams. Site wind speed is measured at the standard 10 m above the ground. 
+The weather data is collected at 1 minute intervals and is provided as 10 minute and 
+hourly averages.  
+ 
+3.17. Ground properties 
+Shortwave ground reflectivity was measured previously over grass as 0.23 
+(measurement data of about 2 days). Additional measurements of ground reflectivity 
+have been made a bove asphalt (0.17) and gravel (0.45). During the experiment the 
+albedo in front of the south windows of both houses was measured continuously. 
+ 
+Measured ground temperatures are included at a num ber of depths ( 0 m, 0.05  m, 
+0.1 m and 0. 2 m). The sensor at 0 m is not exposed and is now covered by soil and 
+grass. 
+00:00 04:00 08:00 12:00 16:00 20:00 24:00
+20 Dez
+27 Dez
+3 Jan
+10 Jan
+18 Jan
+25 Jan
+1 Feb
+Time
+0
+4
+8
+12
+16
+20
+DHW tappings [kWh]
+PAGE 45
+4. Experimental schedule 
+ 
+Figure 35: Experimental schedule 
+temperature(heat) inputs
+heating system
+user loads (and other user influences)
+init
+coheat user 1 init
+humidity loads (only 1 building)
+user2
+Main Experiment
+ Extended Experiment
+Humid House
+humid user 3 humid 
+freefloat
+Dry House
+dry user 3
+ dry freefloat
+operation of ext. window & int. door
+trap door to attic open
+FDD
+intended faults of building services
+PRBS
+PRBS
+
+PAGE 46
+Table 17: Experimental configuration of all phases. 
+  coheating user1 user2 FDD reinit user3 
+(moisture) free PRBS free float tracer gas 
+Duration 
+[days] 
+7    start:  
+7.12.2018 
+18:00 
+35 30 14 7 25 ~8/8/8/8 20 1.5 
+End 19th Dec. 
+9:00 
+1st Feb. 
+10:30 
+1st March 
+00:00 
+16th March 
+13:30 
+22nd March 
+10:30 
+25th April 
+10:30 
+26th May 
+22:20 
+18th June 
+7:00 
+19th June 
+17:00 
+set 
+temperature constant 
+Night setback;  
+identical for all 
+rooms 
+room wise 
+profile, incl. 
+stochastic 
+deviations 
+room wise 
+profile, incl. 
+stochastic 
+deviations 
+constant 
+room wise 
+profile, incl. 
+stochastic 
+deviations 
+5°C 5°C 5°C 
+heating 
+power variable variable variable variable variable variable 0 0 0 
+heating 
+system N2 electrical electrical electrical electrical electrical electrical - - - 
+heating 
+system O5 electrical UFH UFH floor electrical electrical - - - 
+thermal user 
+profile   incl. stochastic 
+deviations 
+incl. stochastic 
+deviations 
+incl. stochastic 
+deviations - incl. stochastic 
+deviations PRBS incl. stochastic 
+deviations - 
+moisture 
+user profile - - - - - 
+O5 only; incl. 
+stochastic 
+deviations 
+O5 only;  
+2 large pulses 
+then 
+O5 only; incl. 
+stochastic 
+deviations 
+- 
+PAGE 47
+stochastic 
+deviations 
+internal 
+doors 
+kitchen - 
+living 
+open open 
+operated  
+(Closed: 00:00 - 
+6:00 
+Open: 6:00 - 
+24:00) 
+operated  
+(Closed: 00:00 - 
+6:<00 
+Open: 6:00 - 
+24:00) 
+open 
+operated 
+(Closed: 00:00 - 
+6:00 
+Open: 6:00 - 
+24:00) 
+open 
+operated (O5)  
+(Closed: 00:00 - 
+6:00 
+Open: 6:00 - 
+24:00) 
+open 
+doors 
+sleeping open open closed closed closed closed closed closed closed 
+roller blinds living west 
+closed 
+living west 
+closed 
+living west and 
+kitchen closed no change no change no change no change no change no change 
+operable 
+window 
+(Child1) 
+closed closed operated  
+(24 h cycle) 
+operated  
+(24 h cycle) closed operated  
+(24 h cycle) closed closed closed 
+mechanical  
+ventilation off - sealed on on on on on on on off - sealed 
+trap door  
+to attic open closed open open open open  open/open open  open 
+O5 is the house with underfloor heating during the main experiment and the “wet” house during the extended experiment. 
+ 
+ 
+ 
+PAGE 48
+4.1. Initialisation phase(s) 
+These periods were used to bring both buildings to ident ical initial conditions for the 
+experiment. All rooms of both buildings were set to the same constant set 
+temperature. The ventilation system was on and no occupancy profile was 
+implemented. 
+ 
+In the first initialisation phase all doors we re open since this was required for the 
+coheating test. Also both buildings were heated electrically as this is also required for 
+the coheating test. 
+ 
+In the 2nd re-initialisation phase, all doors were open or closed according to the chosen 
+setup (see section 3.3, Figure 6 and Figure 7). 
+4.2. Coheating phase 
+The coheating phase has two purposes. On the one hand the Heat Loss Coefficients of 
+both buildings are determined to be available as a baseline for all further analysis. On 
+the other hand it serves as a simple constant temperature phase to give the modelling 
+teams a possibility to have and check a model with basic functionalities only. To be 
+comparable both buildings are heated using electrical heaters. The ventilation system 
+is off and no occupancy profile is included. This coheating experiment is carried out in 
+compliance with the draft of “CEN/TC89/WG13 TG5 (Working Draft 12/01/17)”. In this 
+phase every room is equipped with a fan to break the air temperature stratification . 
+The electrical input of the supply fans is included in the measured data as separate 
+channels, as is the exhaust fans ’ consumption. The supply air temperatures are 
+measured after the fans, the exhaust air temperature before them . The fans are 
+switched off in other experimental phases (e.g. user-1 and user -2 phases ). The 
+constant set temperature for the coheating phase is 21 °C. 
+4.3. User-1 phase 
+In this phase the occupants’ influence wa s created through synt hetic user profi les 
+while the building wa s heated using electrical  (N2 house) or hydronic underfloor 
+heating (O5 house) . The user -1 phase  is a simple realistic phase with mechanical 
+ventilation and identical temperatures in all rooms including a night setback between 
+23:00 until 6:00. The purpose of this phase is to check if simulation programs are able 
+to reproduce more complex cases than the coheating phase or the Annex  58 
+experiment and can handle user interactions such as small room -wise occupancy 
+differences and some building service equipment (underfloor heating). 
+4.4. User-2 phase 
+In this phase the occupants’ influence is created through synthetic users while the 
+building is heated using electrical/hydronic underfloor heating. The user-2 phase is a 
+more complex realistic situation including operating internal doors and external 
+windows and different set temperature profiles in the individual rooms. 
+ 
+The purpose of this phase is to check if simulation programs are able to reproduce 
+more complex cases than the coheating phase or the annex  58 experiment and can 
+PAGE 49
+handle user interactions like changing air flows caused by operated windows and 
+doors, more significant room -wise occupancy differences and basic building service 
+equipment (underfloor heating and ventilation). 
+4.5. FDD phase 
+This part of the experiment was specified by Annex 71 Subtask 2 and is not part of the 
+validation experiment. This phase is identical to the phase user 2 but two errors in the 
+building service systems were introduced deliberately to provide data to test fault 
+detection abilities of various algorithms.  
+ 
+4.6. User-3 phase: including moisture release 
+The purpose of this phase wa s to check if simulation programs are handling the 
+thermal and energetic influences of moisture effects and how significant the influence 
+of the moisture is in general. It is similar to the user-1 phase  but with additional 
+moisture source in house O5. To ensure that both Twin Houses are identical except 
+for the presence of the moisture so urce in this phase both houses we re heated 
+electrically. The heat pump provided DHW only. The trap door to the attic space wa s 
+opened for this experiment. 
+ 
+4.7. Free PRBS-phase 
+In this phase there was no heating and instead of the synthetic users a Pseudo Random 
+Binary Sequence (PRBS) with heat pulses of 700  W was realized through the electric 
+convectors. In this sequence the ground floor and the attic were partially excited 
+synchronously, partially separately and with two different frequencies in both setups, 
+synchronously and partially. This phase wa s located a t the end of the experime ntal 
+schedule because as a free -float experiment it is not negatively impacted by higher 
+external temperatures that could occur during the start of the spring season. The 
+purpose of this free PRBS phase was to create a dataset that is optimized for statistical 
+identification tasks and could be realized in this design in a real building. 
+ 
+4.8. Free-float phase 
+There was no heating in this phase , but synthetic users were included. This phase is 
+located at the end of the experimental schedule because as a free-float experiment it 
+is not negatively impacted by higher external temperatures that could occur during 
+the start of the spring s eason. The purpose of this free -float phase wa s to test if 
+simulation programs are able to correctly predict performance with  heat inputs 
+dominated by solar gains under summer conditions . The purpose of the free -float in 
+the wet building (O5) was to check if simulation programs can include the thermal and 
+energetic influences of moisture effects and how s ignificant the influence of the 
+moisture is in general.  
+ 
+PAGE 50
+4.9. Tracer gas air change rate measurement (O5 house only) 
+For the last 1.5  days of the experiment the O5 houses infiltration was measured by 
+tracer gas. The mechanical ventilation was inactive and the inlets and outlets were 
+sealed on the outside. 
+5. Instrumentation 
+5.1. Overview  
+A detailed overview of all existing measurement channels, used instrumentation and 
+data loggers, calibration certificates and associated accuracies can be found in the 
+“Measurement Ch annel List.xlsx” among the additional documents provided.  All 
+instrumentation values are recorded with a frequency of 1  second and are stored as 
+1 minute means. The calculation of all hydronic and ventilation thermal powers is also 
+performed at 1 second intervals and stored as 1 minute mean values. 
+ 
+ external climate (full weather station): 
+ air temperature 
+ ground temperatures 
+ sky temperature 
+ solar radiation (global, diffuse, (direct is calculated), total 
+vertical in all 4 main orientations) 
+ wind speed and direction 
+ 2x South Albedo (downward-facing sensor ) 
+ CO2 
+ electric power consumption 
+ heaters, room wise 
+ internal heat sources, room-wise 
+ heat pump (compressor, controls, direct heating) 
+ supply and extract fans 
+ heat pump auxiliary heater (UFH) 
+ DHW storage auxiliary heater 
+ heat pump 
+ supply and return temperatures 
+ flow rates 
+ (thermal power is calculated; 1 second basis) 
+ domestic hot water 
+ hot water flowrate and temperature  
+ cold water supply temperature 
+ buffer vessel temperatures (1 or 3 positions) 
+ under floor heating (room wise) 
+ supply temperature 
+ return temperature 
+ flow rate 
+ thermal power is calculated 
+ 2x Heat flux sensors under child-1 and living room 
+ ventilation (central and point-wise) 
+ supply / exhaust air temperature  
+PAGE 51
+ supply air humidity (O5, wet house) 
+ air flow 
+ rooms (all) 
+ air temperature @4 heights 
+10 cm, 110 cm, 170 cm and 10 cm below ceiling 
+ globe temperatures @ 110 cm 
+ relative humidity 
+ air flows through tracer gas measurement; for all air bodies  
+(only in 1 house) 
+started at: March 11th 2019 
+ cellar air temperature (2x); 30 cm below ceiling; 
+located at the columns closest and furthest from cellar door 
+ constructions: 
+ 2x heat flow through west wall: location internal surface 
+centre of wall 
+ 2x internal west wall temperature between plastered brick 
+and thermal insulation composite system 
+ 2x internal and external surface temperature west wall 
+ internal solar irradiance behind the living room’s south window 
+(O5 house) 
+ draught through open doors 
+ investigated at the door between living and corridor 
+ air speed sensors inside the doorframe @~ 3 heights 
+10 cm, 110 cm, 170 cm. 
+1 measurement per minute; not 1 minute means. 
+ 
+5.2. Coheating concept 
+The coheating test was conducted with electrical heating only and fans we re used to 
+break the air stratification and to reach homogenous air temperatures. The required 
+devices’ locations are shown in Figure 36. Only in this phase every room was equipped 
+with a fan to break the air temperatures’ stratification. 
+   
+Figure 36: Setup of electrical heaters and fans during the coheating test in the 
+ground floor and the attic 
+  
+trap door
+fan incl. direction
+convector (electric)
+
+PAGE 52
+5.3. Tracer gas concept 
+The tracer gas measurement accompanying the Extended Experiment started on 
+March 11th 2019. Tracer gases SF 6 and CO2 were used. SF 6 is not part of the natural 
+atmosphere and therefore doesn’t require compensation concerning the outside and 
+supply air. CO 2 however is part of the exterior air. The current CO 2 concentration is 
+available from the weather data of the IBP’s weather station. The tracer gas 
+measurement is only available in the O5 house (underfloor heating). For all used gases 
+6 (identical) sampling points are available. One sampling point was installed into the 
+supply air to give an accurate measurement of the outside gas concentration. For the 
+CO2-injections a boolean signal (“O5_CO2_dosing_flow”) is available; for the SF 6 this 
+is not the case. This described setup can be found in Figure 37. SF6 is injected into the 
+living room and CO 2 into th e child 1 room.  These data  can be found in 
+“04_Data_Extended_Experiment.zip\TracerGas”. 
+ 
+ 
+ 
+Figure 37: Illustration of the tracer gas concept on the ground floor (left) and the 
+attic space (right) 
+ 
+  
+sealed (trap) door
+operable ext. window / int. door
+supply air point
+extract air point
+SF6 injection
+CO2 injection
+SF6 sampling
+CO2 sampling
+2 altitudes
+staircase
+PAGE 53
+6. Practical aspects of modelling the measured data 
+6.1. Overview 
+A key element of this validation study is that the focus is on testing the capability of 
+simulation programs to predict performance, given knowledge of boundary conditions 
+and internal heat gains. It  is not aimed at testing the ability of users to construct a 
+model (although the dataset can also be used for this training purpose). Therefore, 
+modelling teams are encouraged to undertake quality assurance of their models, 
+perhaps by another experienced modeller, in order to reduce t he likelihood of input 
+errors.  
+ 
+The remainder of this  section sets out the modelling instructions for participating 
+modelling teams in the Annex 71 validation experiment.  Modellers using the 
+experimental datasets subsequently can follow the same procedure , or adapt it to 
+their own requirements. 
+ 
+Coheating / Constant temperature period 
+ Both houses have electric heating controlled to a nominal constant setpoint 
+(21 °C). There are no internal gains apart from the fans and no mechanical 
+ventilation. 
+ Measured air temperatures are provided (there are occasions of overheating  
+due to solar radiation , so measured temperatures as well as the setpoint 
+temperature are provided). T he t emperatures provided are  the air 
+temperatures at mid-height in the room (110 cm). The measured fan power is 
+also provided as an integral for the entire buildings’ electrical sockets.  
+ Modellers are asked to predict heat input to electric heaters. Modellers only 
+need to model one house, as the constructions and operations are identical 
+(both have underfloor heating installed, but not operation al in this period ). 
+However, due to sensor uncertainty, the measured temperatures differ 
+slightly, so modellers should provide results for both houses.  
+The O5 houses corridor has constant heat gains of 12x 2.4 W due to the 
+installed flow meters. 
+ Initialisation period. The first three days of the coheating experiment can be 
+included in the results but will be excluded in the analysis to compensate for 
+initialisation effects. Internal preconditioning of th e building to a constant 
+21 °C can be assumed. 
+ 
+User-1 and User-2 periods 
+House O5: Underfloor heating (UFH) 
+ The house is much more dynamic in these periods - internal heat gains, plus 
+window/door openings in the user-2 period.  
+User-1 period: setpoint 21 °C with 17 °C night setback for all rooms  between 
+23:00 and 6:00. 
+User-2 period: setpoints (21/17 °C) vary between rooms. 
+ Measured internal heat gains are provided. 
+PAGE 54
+ Inputs provided are supply flow rates and temperatures to each UFH circuit. 
+After the blind  validation phase, the total thermal input to the UFH will be 
+provided. This is based on 1 second data to avoid averaging errors.     
+ Setpoint temperatures (for the air temperature in centre of rooms at 110  cm 
+height) are provided but they may not be achieved at all times. 
+ Modellers should predict the room air temperature for comparison with the 
+measured/calculated volume-averaged air temperature in the rooms and for 
+comparison with the measured air temperature at the centre of the room. (In 
+practice, most modellers are likely to  be assuming fully mixed spaces.) 
+Additional information on stratification should be provided by modellers, if 
+possible. The open phase measurement data provide information on the 
+stratification at four heights. 
+ Modellers should use the provided room -wise supply temperatures and 
+flowrate instead of the setpoint signal. 
+ Modellers should also predict the UFH’s return temperatures. 
+ For teams wishing to model the heat pump, data is provided on the 
+compressor’s power consumption and switching information on the direction 
+of heat flow for the defrosting cycle and on/off switching of the direct electric 
+auxiliary heater.  Note that during the user -1 period the heat pump is also 
+producing domestic hot water  on a priority option, meaning the hea ting’s 
+supply will stop during DHW production.    
+ 
+House N2: (reference) electric 
+ The schedule in the user-1 and user-2 periods (temperature setpoints, internal 
+heat gains, door and window operation) are the same as for house O5. 
+ Measured heat inputs into each room are provided, separated into the 
+scheduled (measured) internal heat gains and additional heat inputs that are 
+trying to maintain the setpoint.  
+ Heating setpoints are provided, but they may not be achieved at all times, and 
+may also be exceeded in  periods of high solar radiation. Air temperature in 
+centre of rooms (@110 cm). 
+ The measured heater capacity (nominally 2 kW) ranges from 1.80 to 1.93 kW. 
+However, this will not affect the modelling predictions because measured heat 
+inputs are provided. 
+ As mentioned above, internal heat gains and additional heater inputs are 
+provided as separate inputs. For the kitchen and the bathroom, the internal 
+heat gains and additional heater inputs are measured separately. For the living 
+room, bedroom, child 1 room and child 2 room, which only have 1 heater, this 
+is a calculated split based on the internal heat gain scheduled values. The 
+dining room has heating only (no internal heat gains); the corridor has only 
+internal heat gains; doorway and stairs have no heat input after the coheating 
+phase. 
+ Modellers should predict the room air temperature for comparison with the 
+measured/calculated volume-averaged air temperature in the rooms and for 
+comparison with the measured air temperature at the centre of the room. (In 
+practice, most modellers are likely to  be assuming fully mixed spaces.) 
+Additional information on stratification should be provided by modellers, if 
+PAGE 55
+possible. The open phase measurement data provide information on the 
+stratification at four heights. 
+ Modellers should use the provided room -wise heat inputs instead of the 
+setpoint signal. 
+ 
+ 
+Both houses 
+ The measured exhaust temperatures from the mechanical ventilation system 
+are not available in the blind validation phase, but will be available thereafter  
+in the open phase. 
+ The supply air fan power is provided in case modellers wish to model the 
+ductwork. The ductwork is insulated, but there will still be residual losses. The 
+supply air temperatures are measured after the supply fans’ heat input. The 
+exhaust fans are located after the exhaust air temperature sensors. 
+ 
+Modellers are also encouraged to provide more detailed data – e.g. temperature 
+distribution in rooms where this has been predicted, and air change rates through 
+internal doors and the operable external window.  
+ 
+Modellers are encouraged to undertake sensitivity studies and include results of these 
+in the modelling report. For those teams undertaking sensitivity analyses, it is 
+suggested that the following parameters could be investigated: 
+• radiative-convective split of the heating system 
+• uncertainty in the temperatures in the cellars of the two houses 
+• infiltration assumptions 
+• assumptions concerning the operable external window 
+• uncertainty in the measurement of the internal heat gains 
+• interaction between stratification and exhaust air temperature 
+ 
+6.2. Main Experiment: operational details  
+Figure 38 shows a series of central measurement data of both Twin Houses. Some gaps 
+of short measurement failures were filled by linear interpolation for temperatures and 
+set to zero for powers and flowrates. 
+ 
+In the top left, the measured air temperatures in all rooms at a height of 110  cm are 
+shown. 
+ 
+In the middle left the buildings’ set temperatures of all heated rooms are shown. In 
+first quarter of the dataset (24.12.2018 07:00 until 25.12.2018 11:00)  the set 
+temperatures of the O5 building drop to “0” in the provided data. Here the O5 
+building’s PLC did not properly reboot after a power failure of a few seconds. This also 
+affects the IHS (top right) the ventilation (middle right) and the underfloor he ating. 
+The O5 building is in free float during this period. 
+ 
+PAGE 56
+Thorough investigations showed that the O5 building went to electrical heating with a 
+constant setpoint of 21  °C. The heating power was simulated, and the missing data 
+filled for all ten “heat_elP” columns in this period. 
+ 
+The set temperatures (middle left also) also show a quite regular behaviour in the first 
+half of the non -coheating measurements during the user -1 phase and a more 
+complicated behaviour later in the main experiment during the user-2 phase. Also, 
+during the user -1 phase about 1.5  days (hour ~6500) a more complicated behavio ur 
+can be seen. Here the user -2 profile was started too early and was res et to user-1 as 
+soon as the deviation was discovered. This affects the set temperatures, the resulting 
+heating inputs and the IHS. 
+ 
+The O5 house shows some electrical heating pow er at the beginning of the user -1 
+phase (bottom left). These heat inputs occurred in reality due to an improper 
+configuration of the PLC. 
+ 
+The IHS (top right) and the ventilation flow rate (middle right) show some very short 
+peaks during the coheating phase. These occurred because of short (unsuccessful) 
+changes to the O5’s PLC. The same is true for the single peak in the N2’s supply air 
+temperature (bottom right). 
+ 
+In some extreme winter conditions (e.g. morning of 1 st of January) the external 
+ventilation inlets can be cloaked by ice and cause reductions from the set values until 
+they have been de-iced. However, the measured flow rates are given as input data so 
+this information can be included in the model. 
+ 
+
+PAGE 57
+ 
+ 
+Figure 38: Selection of the Main Experiment’s measurement data of the O5 house 
+(red) and the N2 house (black). 
+ 
+ 
+6.3. Extended Experiment: operational details 
+Figure 39 gives an overview of the data provided for the Extended Experiment. The 
+dining room's PRBS power signal wa s measured on the heating power channel since 
+the dining room has no separate IHS channel. This is the reason the PRBS can be seen 
+at the heating and the IHS. 
+ 
+In the N2 house, a decrease in the living room’s supply air ventilation rate (nominally 
+100 m³/h) can be seen towards the experiment’s end. To provide an uninterrupted 
+
+PAGE 58
+dataset the experiment was not stopped to fix the  fan. This drop is contained in the 
+measurement data and should be considered in the simulation model.  
+ 
+For the Extended Experiment the measured concentrations of the two tracer gases are 
+provided in the “CONCENTRATION_10/60Min.xlsx” files. 
+ 
+After the user-3 phase the air velocity sensors  between living and corridor  of the N2 
+house were needed in another experiment. 
+ 
+ 
+ 
+
+PAGE 59
+ 
+Figure 39: Selection of the Extended Experiment’s measurement data of the O5 
+house (red) and the N2 house (black). 
+ 
+ 
+7. Acknowledgements 
+The contributions of the Fraunhofer Institute for Building Physics IBP were funded by 
+the German Federal Ministry of Energy and Economic Affairs BMWi under the 
+registration number 03ET1509A. 
+ 
+The sensitivity analysis for the experimental design (section  2) was undertake n by 
+Eirini Mantesi and Kostas Mourkos from the School of Architecture, Building & Civil 
+Engineering, Loughborough University. 
+ 
+The thermal bridge analyses were undertaken by Jørgen Rose from the Danish Building 
+Research Institute, SBi, Aalborg University using HEAT2, and Felix Thomas from the 
+Leeds Sustainability Institute, School of Built Environment and Engineering, Leeds 
+Beckett University using TRISCO. 
+ 
+To aid the design of the Tra cer Gas Experiment a Contam s imulation was conducted 
+by Gabriel Rojas-Kopeinig from the University of Innsbruck. 
+ 
+The stochastic user profiles for the experiment  and the sensitivity analysis w ere 
+provided by Graeme Flett of the Energy Systems Research Unit, University of 
+Strathclyde, Glasgow, G1 1XJ, UK. 
+ 
+  
+
+PAGE 60
+8. References 
+ 
+[1]  M. Kersken and P. Strachan, IEA EBC Annex 71 - BES model Validation Data - 
+http://dx.doi.org/10.24406/fordatis/75.  
+[2]  KU Leuven, 17 04 2015. [Online]. Available: 
+http://www.kuleuven.be/bwf/projects/annex58. 
+[3]  P. Strachan, K. Svehla, M. Kersken and I. Heusler, “Reliable building energy 
+performance characterisation based on full scale dynamic measurements - 
+Report of Subtask 4a: Empirical validation of common building energy simulation 
+models based on in situ dynamic data,” Leuven (Belgien), 2016. 
+[4]  “Annex 58 - BES-Model Validation DATA: doi: 10.15129/8a86bbbb -7be8-4a87-
+be76-0372985ea228,” [Online]. Available: 
+https://pure.strath.ac.uk/portal/en/datasets/twin-houses-empirical-dataset-
+experiment-1%288a86bbbb-7be8-4a87-be76-0372985ea228%29.html. 
+[5]  “Annex 58 - BES-Model Validation DATAset 2: doi: 10.15129/94559779 -e781-
+4318-8842-80a2b1201668,” [Online]. Available: 
+https://pure.strath.ac.uk/portal/en/datasets/twin-houses-empirical-validation-
+dataset-experiment-2(94559779-e781-4318-8842-80a2b1201668).html. 
+[6]  P. Strachan, K. Svehla, I. Heusler and M. Kersken, “Whole model empirical 
+validation on a full -scale building,” Journal of Building Performance Simulation, 
+vol. 9, no. 4, pp. 331-350, 09 2015.  
+[7]  F. Schlachter, J. Scofield and J. Dawson, “ENERGY FUTURE: Think Efficiency - How 
+America can look within to achieve energy security and reduce global warming,” 
+http://www.aps.org/energyefficiencyreport/, 2008. 
+[8]  G. Flett and N. Kelly, “An occupant -differentiated, higher-order Markov Chain 
+method for prediction of domestic occupancy,” Energy and Buildings, no. 230, 
+pp. 219-230, 2016.  
+[9]  G. Flett and N. Kelly, “A disaggregated, probabilistic, high resolution method for 
+assessment of domestic occupancy and electrical demand,” Energy and 
+Buildings, no. 140, pp. 171-187, 2017.  
+[10]  E. Mantesi, K. Mourkos, C. Hopfe, R. McLeod, P. Vatougiou, M. Kersken and P. 
+Strachan, “Deploying Building Simulation to Enhance the Experimental Design of 
+a Full -scale Empirical Validation Project,” in Proceedings 
+BuildingSimulation2019, Rome, Italy, 2019.  
+[11]  DIN V 18599 (E):06-2016: Energy efficiency of buildings — Calculation of the net, 
+final and primary energy demand for heati ng, cooling, ventilation, domestic hot 
+water and lighting.  
+[12]  DIN EN ISO 12569:2018 -04: Thermal performance of buildings and materials - 
+Determination of specific airflow rate in buildings - Tracer gas dilution method 
+(German version EN ISO12569:2017).  
+[13]  International Glazing Data Base, Lawrence Berkely National Lab 
+(http://windows.lbl.gov/materials/IGDB/).  
+PAGE 61
+[14]  knarF.se, “Wikimedia Commons - File:Roof Diagram.svg,” 04 06 2014. [Online]. 
+Available: https://commons.wikimedia.org/wiki/File:Roof_ Diagram.svg. 
+[Accessed 05 06 2019]. 
+[15]  T. Hartmann, D. Reichel and W. Richter, “II/2: Feuchteabgabe in Wohnungen,” 
+in Wohnungslüftung und Raumklima, Stuttgart, Fraunhofer IRB; Helmut Künzel 
+(Hrsg.), 2009, pp. 109-124. 
+[16]  Deutscher Wetterdienst (DWD), Aspirations -Psychrometer-Tafeln, 
+Braunschwaig: Vieweg, 1997.  
+ 
+ 
+ 

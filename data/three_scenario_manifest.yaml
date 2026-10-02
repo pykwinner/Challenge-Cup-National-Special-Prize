@@ -1,0 +1,22 @@
+policy_profile: policy_profiles/national_15th_fyp_reference_2026.yaml
+
+profiles:
+  - name: scenario1_existing_network
+    archetype: 既有大型集中供热系统低碳化重构
+    config: scenario1_existing_network.yaml
+    timeseries: scenario1_existing_network_timeseries.csv
+    scenario_specs: scenario1_scenario_specs.yaml
+    policy_pathway: scenario1_policy_pathway.yaml
+    feasibility: example_feasibility.yaml
+
+  - name: scenario2_distributed_clean
+    archetype: 分散式独立供热系统清洁化转型
+    config: scenario2_distributed_clean.yaml
+    timeseries: scenario2_timeseries.csv
+    scenario_specs: scenario2_scenario_specs.yaml
+
+  - name: scenario3_high_quality_newbuild
+    archetype: 夏热冬冷地区高品质供热系统新建
+    config: scenario3_high_quality_newbuild.yaml
+    timeseries: scenario3_timeseries.csv
+    scenario_specs: scenario3_scenario_specs.yaml

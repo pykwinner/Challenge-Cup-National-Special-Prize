@@ -1,0 +1,804 @@
+{
+  "reviewed_at_utc": "2026-10-02T02:56:44.092755+00:00",
+  "package_root": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002",
+  "city": "武汉",
+  "summary": "真实补充了一个2024-03官方电价图及可追溯公开资料/字段登记；未补齐建筑、设备、资源、管网、储热或全期电价的项目证据。",
+  "read_scope": [
+    "README_先读我.txt全文",
+    "核验结论.txt全文",
+    "assumptions全部4文件中武汉及通用字段",
+    "to_fill填写规则及全部13模板的武汉行/空表列名",
+    "来源与适用范围.csv全文",
+    "论文数据与代码对应表.csv武汉相关行",
+    "verified_public/source_archive湖北2024年3月原图完整目视",
+    "官方碳因子CSV及BDG2元数据字段",
+    "historical_search_receipts下载来源及原图出处"
+  ],
+  "legacy_target_boundary": {
+    "package_paper": "15.pdf（包内历史资料说明，非本轮用户改稿指令）",
+    "package_code_root": "C:/Users/27895/Desktop/小挑/north_heat_challenge_heating_season_code_20260825",
+    "current_engineering_root": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge",
+    "current_paper_boundary": "保持16 LaTeX最新稿件/既有模型；未改论文、PPT或模型",
+    "compatibility": "未运行包内validate_package/rebuild脚本；不继承其旧机器pass结论",
+    "thermal_model": "包内对虚拟储热或2R2C实现的描述不用于判断当前V10实现；本次仅核查项目热工参数证据仍缺。"
+  },
+  "registration": {
+    "wuhan_config_rows": 558,
+    "status_counts": {
+      "inherited_model_setting_or_assumption_NOT_project_verified": 558
+    },
+    "wuhan_provenance_rows": 104,
+    "field_classifications": {
+      "annual/behavior_a": [
+        "inherited_scenario_assumption_NOT_measured"
+      ],
+      "annual/behavior_b": [
+        "inherited_scenario_assumption_NOT_measured"
+      ],
+      "annual/cooling_demand_a": [
+        "synthetic_load_proxy_NOT_measured"
+      ],
+      "annual/cooling_demand_b": [
+        "synthetic_load_proxy_NOT_measured"
+      ],
+      "annual/demand_a_high": [
+        "synthetic_load_proxy_NOT_measured"
+      ],
+      "annual/demand_a_low": [
+        "synthetic_load_proxy_NOT_measured"
+      ],
+      "annual/demand_b_high": [
+        "synthetic_load_proxy_NOT_measured"
+      ],
+      "annual/demand_b_low": [
+        "synthetic_load_proxy_NOT_measured"
+      ],
+      "annual/electricity_price": [
+        "inherited_tariff_reference_NOT_full_period_verified"
+      ],
+      "annual/grid_emission_factor": [
+        "verified_national_2023_average_with_cross_year_reference_use"
+      ],
+      "annual/occupancy_a": [
+        "inherited_scenario_assumption_NOT_measured"
+      ],
+      "annual/occupancy_b": [
+        "inherited_scenario_assumption_NOT_measured"
+      ],
+      "annual/outdoor_temp": [
+        "verified_public_grid_proxy"
+      ],
+      "annual/relative_humidity": [
+        "derived_from_verified_weather"
+      ],
+      "annual/solar_heat_availability": [
+        "derived_from_verified_weather"
+      ],
+      "annual/time": [
+        "calendar_or_model_structure"
+      ],
+      "annual/timestamp": [
+        "calendar_or_model_structure"
+      ],
+      "season/boundary_group": [
+        "calendar_or_model_structure"
+      ],
+      "season/demand_a_low": [
+        "synthetic_load_proxy_NOT_measured"
+      ],
+      "season/demand_b_low": [
+        "synthetic_load_proxy_NOT_measured"
+      ],
+      "season/electricity_price": [
+        "inherited_tariff_reference_NOT_full_period_verified"
+      ],
+      "season/grid_emission_factor": [
+        "verified_national_2023_average_with_cross_year_reference_use"
+      ],
+      "season/heating_degree_c": [
+        "derived_from_verified_weather"
+      ],
+      "season/occupancy_a": [
+        "inherited_scenario_assumption_NOT_measured"
+      ],
+      "season/occupancy_b": [
+        "inherited_scenario_assumption_NOT_measured"
+      ],
+      "season/outdoor_temp": [
+        "verified_public_grid_proxy"
+      ],
+      "season/period_weight": [
+        "calendar_or_model_structure"
+      ],
+      "season/relative_humidity": [
+        "derived_from_verified_weather"
+      ],
+      "season/relative_humidity_pct": [
+        "verified_public_grid_proxy"
+      ],
+      "season/scenario": [
+        "calendar_or_model_structure"
+      ],
+      "season/scenario_probability": [
+        "calendar_or_model_structure"
+      ],
+      "season/solar_heat_availability": [
+        "derived_from_verified_weather"
+      ],
+      "season/solar_irradiation_wh_m2": [
+        "verified_public_grid_proxy"
+      ],
+      "season/time": [
+        "calendar_or_model_structure"
+      ],
+      "season/timestamp": [
+        "calendar_or_model_structure"
+      ],
+      "season/wind_speed_10m_m_s": [
+        "verified_public_grid_proxy"
+      ]
+    },
+    "bounds": "558个配置字段均标未项目核实，未知上下限为空；有数值不代表得到新的实际项目证据"
+  },
+  "template_review": [
+    {
+      "file": "to_fill/building_2R2C_parameters_to_fill.csv",
+      "total_rows": 10,
+      "wuhan_rows": 2,
+      "columns": [
+        "profile",
+        "node_id",
+        "grade",
+        "demand_column",
+        "building_id",
+        "floor_area_m2",
+        "building_volume_m3",
+        "building_use",
+        "terminal_type",
+        "Ca_kWh_per_K",
+        "Cm_kWh_per_K",
+        "R_air_mass_K_per_kW",
+        "UA_envelope_kW_per_K",
+        "ventilation_m3_per_h",
+        "infiltration_ACH",
+        "initial_air_temp_C",
+        "initial_mass_temp_C",
+        "internal_gain_kW_file",
+        "solar_gain_kW_file",
+        "measured_indoor_temp_C_file",
+        "calibration_period",
+        "heldout_validation_period",
+        "RC_topology_definition_file",
+        "data_status",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "status_values": {
+        "data_status": [
+          "missing_project_measurements; planned_2R2C_interface"
+        ]
+      },
+      "populated_evidence_cells": 0,
+      "finding": "武汉行仍缺项目证明，空白不等于0"
+    },
+    {
+      "file": "to_fill/building_parameters_to_fill.csv",
+      "total_rows": 10,
+      "wuhan_rows": 2,
+      "columns": [
+        "profile",
+        "node_id",
+        "grade",
+        "demand_column",
+        "building_id",
+        "floor_area_m2",
+        "building_use",
+        "H_W_per_K",
+        "C_J_per_K",
+        "indoor_initial_temperature_C",
+        "occupancy_measured_file",
+        "internal_gains_W_file",
+        "data_status",
+        "source_url_or_file"
+      ],
+      "status_values": {
+        "data_status": [
+          "missing_measured_data"
+        ]
+      },
+      "populated_evidence_cells": 0,
+      "finding": "武汉行仍缺项目证明，空白不等于0"
+    },
+    {
+      "file": "to_fill/building_services_hourly_to_fill.csv",
+      "total_rows": 0,
+      "wuhan_rows": 0,
+      "columns": [
+        "timestamp_Asia_Shanghai",
+        "profile",
+        "node_id",
+        "building_id",
+        "heat_kW",
+        "cooling_kW",
+        "DHW_kW",
+        "occupancy_fraction",
+        "internal_gain_kW",
+        "solar_gain_kW",
+        "indoor_temp_C",
+        "indoor_RH_pct",
+        "ventilation_m3_per_h",
+        "terminal_supply_temp_C",
+        "terminal_return_temp_C",
+        "data_status",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "status_values": {
+        "data_status": []
+      },
+      "populated_evidence_cells": 0,
+      "finding": "无记录，仅字段模板"
+    },
+    {
+      "file": "to_fill/cost_lifetime_to_fill.csv",
+      "total_rows": 32,
+      "wuhan_rows": 10,
+      "columns": [
+        "profile",
+        "asset_type",
+        "asset_id",
+        "capex_CNY",
+        "capex_unit_basis",
+        "fixed_opex_CNY_per_year",
+        "variable_opex_CNY_per_kWh",
+        "lifetime_years",
+        "residual_value_CNY",
+        "retirement_cost_CNY",
+        "logistics_CNY_per_t",
+        "warehouse_CNY_per_year",
+        "staff_CNY_per_year",
+        "noise_control_CNY",
+        "quote_valid_until",
+        "tax_included",
+        "data_status",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "status_values": {
+        "data_status": [
+          "missing_project_quote_or_design"
+        ]
+      },
+      "populated_evidence_cells": 0,
+      "finding": "武汉行仍缺项目证明，空白不等于0"
+    },
+    {
+      "file": "to_fill/GIS_assets_to_fill.csv",
+      "total_rows": 41,
+      "wuhan_rows": 13,
+      "columns": [
+        "profile",
+        "asset_type",
+        "asset_id",
+        "node_id",
+        "longitude",
+        "latitude",
+        "CRS",
+        "geometry_WKT",
+        "road_id",
+        "parcel_id",
+        "length_m",
+        "diameter_mm",
+        "commission_year",
+        "current_status",
+        "retirement_year",
+        "underground_constraint_file",
+        "noise_sensitive_site_file",
+        "data_status",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "status_values": {
+        "current_status": [
+          ""
+        ],
+        "data_status": [
+          "missing_project_GIS; code_xy_not_georeferenced"
+        ]
+      },
+      "populated_evidence_cells": 0,
+      "finding": "武汉行仍缺项目证明，空白不等于0"
+    },
+    {
+      "file": "to_fill/grid_carbon_reliability_hourly_to_fill.csv",
+      "total_rows": 0,
+      "wuhan_rows": 0,
+      "columns": [
+        "timestamp_Asia_Shanghai",
+        "profile",
+        "node_id",
+        "electricity_price_CNY_per_kWh",
+        "marginal_carbon_kgCO2_per_kWh",
+        "marginal_factor_method",
+        "transformer_capacity_kVA",
+        "power_factor",
+        "available_grid_kW",
+        "grid_outage_flag",
+        "capacity_expansion_quote_file",
+        "data_status",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "status_values": {
+        "data_status": []
+      },
+      "populated_evidence_cells": 0,
+      "finding": "无记录，仅字段模板"
+    },
+    {
+      "file": "to_fill/measured_hourly_data_template.csv",
+      "total_rows": 0,
+      "wuhan_rows": 0,
+      "columns": [
+        "timestamp_Asia_Shanghai",
+        "profile",
+        "building_id",
+        "node_id",
+        "indoor_temp_C",
+        "measured_heat_kW",
+        "measured_cooling_kW",
+        "occupancy_fraction",
+        "internal_gains_W",
+        "source_file"
+      ],
+      "status_values": {},
+      "populated_evidence_cells": 0,
+      "finding": "无记录，仅字段模板"
+    },
+    {
+      "file": "to_fill/operation_5_to_60min_to_fill.csv",
+      "total_rows": 0,
+      "wuhan_rows": 0,
+      "columns": [
+        "timestamp_Asia_Shanghai",
+        "interval_minutes",
+        "profile",
+        "asset_id",
+        "node_id",
+        "heat_power_kW",
+        "electric_power_kW",
+        "heat_energy_kWh_interval",
+        "volume_flow_m3_per_h",
+        "mass_flow_kg_per_s",
+        "pressure_supply_kPa",
+        "pressure_return_kPa",
+        "supply_temp_C",
+        "return_temp_C",
+        "indoor_temp_C",
+        "indoor_RH_pct",
+        "on_off",
+        "CHP_heat_kW",
+        "CHP_electric_kW",
+        "sensor_id",
+        "quality_flag",
+        "data_status",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "status_values": {
+        "data_status": []
+      },
+      "populated_evidence_cells": 0,
+      "finding": "无记录，仅字段模板"
+    },
+    {
+      "file": "to_fill/pipe_parameters_to_fill.csv",
+      "total_rows": 6,
+      "wuhan_rows": 1,
+      "columns": [
+        "profile",
+        "pipe_id",
+        "from_node",
+        "to_node",
+        "length_verified_m",
+        "diameter_verified_mm",
+        "GIS_WKT",
+        "capacity_verified_kw",
+        "capex_quote_CNY_per_m",
+        "pump_curve_file",
+        "source_url_or_file",
+        "data_status"
+      ],
+      "status_values": {
+        "data_status": [
+          "missing_project_evidence"
+        ]
+      },
+      "populated_evidence_cells": 0,
+      "finding": "武汉行仍缺项目证明，空白不等于0"
+    },
+    {
+      "file": "to_fill/source_parameters_to_fill.csv",
+      "total_rows": 20,
+      "wuhan_rows": 7,
+      "columns": [
+        "profile",
+        "source_id",
+        "node_id",
+        "capacity_verified_kw",
+        "available_heat_temperature_C_file",
+        "available_heat_kw_file",
+        "COP_curve_file",
+        "capex_quote_CNY_per_kW",
+        "opex_CNY_per_kWh",
+        "source_url_or_file",
+        "data_status"
+      ],
+      "status_values": {
+        "data_status": [
+          "missing_project_evidence"
+        ]
+      },
+      "populated_evidence_cells": 0,
+      "finding": "武汉行仍缺项目证明，空白不等于0"
+    },
+    {
+      "file": "to_fill/source_resource_hourly_to_fill.csv",
+      "total_rows": 0,
+      "wuhan_rows": 0,
+      "columns": [
+        "timestamp_Asia_Shanghai",
+        "interval_minutes",
+        "profile",
+        "source_id",
+        "node_id",
+        "available_heat_kW",
+        "source_temp_C",
+        "availability_fraction",
+        "outage_flag",
+        "maintenance_flag",
+        "biomass_stock_kg",
+        "biomass_delivery_kg",
+        "biomass_LHV_kWh_per_kg",
+        "biomass_origin",
+        "water_ground_permit_file",
+        "data_status",
+        "source_url_or_file",
+        "evidence_date",
+        "uncertainty_lower",
+        "uncertainty_upper"
+      ],
+      "status_values": {
+        "data_status": []
+      },
+      "populated_evidence_cells": 0,
+      "finding": "无记录，仅字段模板"
+    },
+    {
+      "file": "to_fill/storage_parameters_to_fill.csv",
+      "total_rows": 6,
+      "wuhan_rows": 2,
+      "columns": [
+        "profile",
+        "storage_id",
+        "node_id",
+        "grade",
+        "verified_capacity_kWh",
+        "charge_power_kW",
+        "discharge_power_kW",
+        "efficiency_measured",
+        "soil_test_file",
+        "capex_quote_CNY_per_kWh",
+        "source_url_or_file",
+        "data_status"
+      ],
+      "status_values": {
+        "data_status": [
+          "missing_project_evidence"
+        ]
+      },
+      "populated_evidence_cells": 0,
+      "finding": "武汉行仍缺项目证明，空白不等于0"
+    },
+    {
+      "file": "to_fill/tariff_months_to_fill.csv",
+      "total_rows": 21,
+      "wuhan_rows": 7,
+      "columns": [
+        "profile",
+        "year",
+        "month",
+        "user_class",
+        "voltage_class",
+        "sharp_CNY_per_kWh",
+        "peak_CNY_per_kWh",
+        "flat_CNY_per_kWh",
+        "valley_CNY_per_kWh",
+        "capacity_fee_CNY_per_kVA_month",
+        "demand_fee_CNY_per_kW_month",
+        "valid_from",
+        "valid_until",
+        "source_url",
+        "status"
+      ],
+      "status_values": {
+        "status": [
+          "missing_full_month_evidence"
+        ]
+      },
+      "populated_evidence_cells": 0,
+      "finding": "武汉行仍缺项目证明，空白不等于0"
+    }
+  ],
+  "asset_status": [
+    {
+      "category": "建筑/热工/占用/冷热负荷",
+      "status": "仍缺",
+      "evidence": "building及2R2C模板武汉各2行，为节点级占位，不是九栋或四栋实际楼宇清单；人员/设备/照明/实测负荷时序为空。需求和占用provenance明确为代理/假设。",
+      "needed": "真实建筑清单、几何围护通风、H/C或RC辨识、占用与室温/热量监测"
+    },
+    {
+      "category": "设备/资源",
+      "status": "仍缺",
+      "evidence": "7个武汉热源参数行容量、COP曲线、源温/可用量和报价空白；逐时资源表没有记录。地源14°C、COP2.8–5.5和投资3100/3150元/kW是登记假设。",
+      "needed": "设备样本/认证工况及逐时源侧温度流量、许可和停机记录"
+    },
+    {
+      "category": "管网/GIS/水力",
+      "status": "仍缺",
+      "evidence": "1条互联管参数行、13个GIS资产行的来源空白；1450m和DN80/100容量/造价是旧登记，非实测管线。",
+      "needed": "竣工GIS、管长内径材料保温及泵/流量压力资料和同口径报价"
+    },
+    {
+      "category": "储热/寿命成本",
+      "status": "仍缺",
+      "evidence": "2个武汉PCM储热行、10条寿命成本行无证据；没有实际储热效率和容量测量。",
+      "needed": "设备规格、储热计量、损失与成本合同、寿命维修记录"
+    },
+    {
+      "category": "电价",
+      "status": "条件可用",
+      "evidence": "官方归档图仅2024年3月，值和旧时段已核对；to_fill武汉2024-10至2025-04七行均空。2025年1月0.7381等数值只在NOT_fully_verified假设JSON中，本包无对应原图。",
+      "needed": "目标实验年全部月价、用户电压/计费方式/市场身份及基本电费"
+    },
+    {
+      "category": "气象/碳因子/外部建筑样本",
+      "status": "条件可用",
+      "evidence": "NASA是公开格点资料；已知同源多天气年不新增当地现场观测。省级湖北0.4044和全国0.5306标为2023年平均参考，不是逐时边际。BDG2元数据包含面积和占用数等字段，无H/C和本地映射，未取得全部逐时表。",
+      "needed": "主对话完成NASA全量数值与哈希复核；按年份/范围使用，不能充作本地楼宇校准"
+    }
+  ],
+  "original_price_image": {
+    "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202402/W020240229326407495152.jpg",
+    "page_source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202402/t20240229_3570793.shtml",
+    "package_file": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\verified_public\\source_archive\\湖北2024年3月代理购电电价_原始图.jpg",
+    "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\package_hubei_202403_reused.jpg",
+    "sha256": "b68c37fe24cff6bed5110bd1586e53357e73dbac70e6ea7df3f141246e822c44",
+    "retrieval_mode": "reused_packaged_original_not_new_download",
+    "original_recorded_time": "仅包内记录2026-10-02 Asia/Shanghai，无精确UTC；不重构",
+    "live_website_retrieved_this_task": false,
+    "identity_basis": "本地原图表头、执行期和包内来源回执一致，本轮未新增网络请求"
+  },
+  "verified_local_original_facts": [
+    {
+      "claim": "2024年3月湖北代理购电价格",
+      "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202402/W020240229326407495152.jpg",
+      "parent_source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202402/t20240229_3570793.shtml",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\package_hubei_202403_reused.jpg",
+      "sha256": "b68c37fe24cff6bed5110bd1586e53357e73dbac70e6ea7df3f141246e822c44",
+      "original_location": "下半代理购电价格表第4项",
+      "value": 0.4561,
+      "unit": "元/kWh",
+      "conditions": "湖北；2024-03-01至2024-03-31；国网代理购电工商业及其他用电原图，按用户类型逐行",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "匹配2024-03的electricity_price前处理候选，不能填整季或全年"
+      ],
+      "missing_conditions": [
+        "实际用户类型与电压",
+        "匹配全年逐月原价"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false
+    },
+    {
+      "claim": "2024年3月表列终端电度价",
+      "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202402/W020240229326407495152.jpg",
+      "parent_source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202402/t20240229_3570793.shtml",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\package_hubei_202403_reused.jpg",
+      "sha256": "b68c37fe24cff6bed5110bd1586e53357e73dbac70e6ea7df3f141246e822c44",
+      "original_location": "上半电价表7行",
+      "value": {
+        "单一制不满1kV": 0.7562,
+        "单一制1–10kV": 0.7362,
+        "单一制35kV": 0.7162,
+        "两部制1–10kV": 0.6722,
+        "两部制35kV": 0.6524,
+        "两部制110kV": 0.6343,
+        "两部制220kV及以上": 0.6153
+      },
+      "unit": "元/kWh",
+      "conditions": "湖北；2024-03-01至2024-03-31；国网代理购电工商业及其他用电原图，按用户类型逐行",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "匹配2024-03的electricity_price前处理候选，不能填整季或全年"
+      ],
+      "missing_conditions": [
+        "该图未展开分时终端价",
+        "分时倍率须配套有效政策",
+        "基本电费及用户资格"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false
+    },
+    {
+      "claim": "2024年3月旧分时时段",
+      "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202402/W020240229326407495152.jpg",
+      "parent_source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202402/t20240229_3570793.shtml",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\package_hubei_202403_reused.jpg",
+      "sha256": "b68c37fe24cff6bed5110bd1586e53357e73dbac70e6ea7df3f141246e822c44",
+      "original_location": "上半表注2",
+      "value": {
+        "尖峰": "20:00–22:00",
+        "高峰": "09:00–15:00",
+        "平时段": [
+          "07:00–09:00",
+          "15:00–20:00",
+          "22:00–23:00"
+        ],
+        "低谷": "23:00–次日07:00",
+        "document": "鄂发改价管〔2022〕406号"
+      },
+      "unit": "时段/文件号",
+      "conditions": "湖北；2024-03-01至2024-03-31；国网代理购电工商业及其他用电原图，按用户类型逐行",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "匹配2024-03的electricity_price前处理候选，不能填整季或全年"
+      ],
+      "missing_conditions": [
+        "2024年5月新机制不能倒套该月份",
+        "对应正式政策全文尚未在本包取得"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false
+    }
+  ],
+  "policy_identity_findings": [
+    "2024-03原图注2为鄂发改价管〔2022〕406号旧时段；不是2024-05起新规则，更不是2026市场化全文。",
+    "假设JSON开头声称全部价格按官方推导，但文件名与字段provenance/README明确全期未核实，且缺各月原图，不能按序言升级为已核实全期数据。",
+    "包内22条武汉/场景3来源线索中2024低能耗稿与本轮同URL重复；原PDF已确认仍为征求意见稿。其他线索没有包内对应完整原件，不升级正式/现场证据。",
+    "包内2025产业能效指南线索与本轮2025超低能耗居住建筑导则是不同题名和URL。"
+  ],
+  "duplicate_findings": [
+    {
+      "source": "2024武汉低能耗征求意见稿",
+      "package_source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgs/202410/P020241024763787490327.pdf",
+      "relation": "同本轮WH2024重复URL，仅线索表，不是新增独立证据"
+    },
+    {
+      "source": "NASA POWER/2023碳因子",
+      "relation": "同一发布源、同年/坐标数据或年度因子，不因再封装获得独立性；NASA逐值与全部文件哈希由主对话负责"
+    },
+    {
+      "source": "湖北2024-03原价",
+      "relation": "相对本城市本轮2025-08/2026-01/2026-03核查，是新增一个公告月；相对包内历史回执是复用同图，不是新下载"
+    }
+  ],
+  "provenance_rows_and_read_files": [
+    {
+      "relative_path": "assumptions/config_parameter_register.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\assumptions\\config_parameter_register.csv",
+      "sha256": "a888ba911ae67dfe0909fa13b8a6fe659c7e11481fdb5c1cb03cafaef774702c"
+    },
+    {
+      "relative_path": "assumptions/existing_code_source_leads_NOT_reverified.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\assumptions\\existing_code_source_leads_NOT_reverified.csv",
+      "sha256": "34695ddb20ed507b7b60ed97396202e6dafdca68bba703ae97304fe6ef19e283"
+    },
+    {
+      "relative_path": "assumptions/tariff_reference_NOT_fully_verified.json",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\assumptions\\tariff_reference_NOT_fully_verified.json",
+      "sha256": "9e5ca854653e07e7fb64a3eeccaa70a10c5c630954c8643f918db397ebb0a30e"
+    },
+    {
+      "relative_path": "assumptions/updated_input_field_provenance.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\assumptions\\updated_input_field_provenance.csv",
+      "sha256": "d7b0cc218bdd3cb3f8cea0d0b95acf4f69eb2145d0fcfeb545d1fd2bebec7464"
+    },
+    {
+      "relative_path": "to_fill/building_2R2C_parameters_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\building_2R2C_parameters_to_fill.csv",
+      "sha256": "529880cab4bfeeb742f34f57d980a8b26dff432f371f86b150e0df734361bdbf"
+    },
+    {
+      "relative_path": "to_fill/building_parameters_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\building_parameters_to_fill.csv",
+      "sha256": "18fc727cdf3f0aaf19a0316c0a31136fd3f7e3a70007bb9dc72cd3657b26445a"
+    },
+    {
+      "relative_path": "to_fill/building_services_hourly_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\building_services_hourly_to_fill.csv",
+      "sha256": "0e25f2a3920bfa52bd0d5bd639bd8cb8bd9a1610e6b28bbb4e6a008e9f8e9fbf"
+    },
+    {
+      "relative_path": "to_fill/cost_lifetime_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\cost_lifetime_to_fill.csv",
+      "sha256": "808cc170b6f5620c231e59f7bea3db42742eb453deaa026893c730d9f543ed73"
+    },
+    {
+      "relative_path": "to_fill/GIS_assets_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\GIS_assets_to_fill.csv",
+      "sha256": "9de8ebf57fa8deda3e600a320a6f824d60172f6c9a50d10946147554acbefc83"
+    },
+    {
+      "relative_path": "to_fill/grid_carbon_reliability_hourly_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\grid_carbon_reliability_hourly_to_fill.csv",
+      "sha256": "89805f0f8b232f9ab48975141bfb28119d2a2fb642e5f38afb888f2e422e54df"
+    },
+    {
+      "relative_path": "to_fill/measured_hourly_data_template.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\measured_hourly_data_template.csv",
+      "sha256": "8596064eb959a9de2a58f6fd35dd6cd7a8796f344413bc0a24085dc923fb28b7"
+    },
+    {
+      "relative_path": "to_fill/operation_5_to_60min_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\operation_5_to_60min_to_fill.csv",
+      "sha256": "b5395182242553f9535597f75b07ce67639fab25bb812d35bbbbf811d26b4bc8"
+    },
+    {
+      "relative_path": "to_fill/pipe_parameters_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\pipe_parameters_to_fill.csv",
+      "sha256": "39bf9d2a9e67543a7e9938d304e6d04b188347e8d26c6e5e28c1f51dedf0c206"
+    },
+    {
+      "relative_path": "to_fill/source_parameters_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\source_parameters_to_fill.csv",
+      "sha256": "a9ed2ee6cdead438304c18ae1c4e5ae07d0fbcecfbd23c4e383557a4eb9a8843"
+    },
+    {
+      "relative_path": "to_fill/source_resource_hourly_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\source_resource_hourly_to_fill.csv",
+      "sha256": "f225237592415f9ed87c4cfff88787df546cb341094ed757278ee447054b3339"
+    },
+    {
+      "relative_path": "to_fill/storage_parameters_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\storage_parameters_to_fill.csv",
+      "sha256": "27019f2ef57577e5788fe1dd948d4cd54ff6df5823d77bd1506cc9104b37e379"
+    },
+    {
+      "relative_path": "to_fill/tariff_months_to_fill.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\tariff_months_to_fill.csv",
+      "sha256": "146c8820fa0326957bd02af2c87acccc5b172b054a812879dff88b5c714cca62"
+    },
+    {
+      "relative_path": "to_fill/填写规则.txt",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\to_fill\\填写规则.txt",
+      "sha256": "0a6e120faadc49b76fce55a506644e2a83b2baa35dbc36f5eb4ce30322ef2a57"
+    },
+    {
+      "relative_path": "来源与适用范围.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\来源与适用范围.csv",
+      "sha256": "dc2ab14b1412d403a81bf812c36a56faa87f65142af4f8200a50a9826f01919c"
+    },
+    {
+      "relative_path": "论文数据与代码对应表.csv",
+      "path": "D:\\competion\\xiaotiao\\三城市数据包\\三城市论文核验数据包_20261002\\论文数据与代码对应表.csv",
+      "sha256": "eca68d724b7e01452c052d6a1a6adf797d64364479bb3ea87d0b15a18833b799"
+    }
+  ],
+  "no_new_web_search": true,
+  "no_optimization_or_package_validation_run": true,
+  "original_package_modified": false
+}

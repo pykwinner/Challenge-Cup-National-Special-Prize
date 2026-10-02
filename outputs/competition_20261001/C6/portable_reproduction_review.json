@@ -1,0 +1,787 @@
+{
+  "status": "portable_numeric_reproduction_approved_with_explicit_test_scope_exclusions",
+  "reviewed_utc": "2026-10-01T16:46:56.285761+00:00",
+  "reviewer": "C6 read-only portability review",
+  "no_study_module_import": true,
+  "no_refit": true,
+  "no_engineering_solver": true,
+  "no_tests_executed": true,
+  "no_main_script_or_frozen_test_changes": true,
+  "numeric_reproduction_required_files": [
+    {
+      "file": "data/external_rc_benchmark_20261001/README.md",
+      "sha256": "9983c7a2753f04bf2bf41b6c72087f376020edcd9bda7d9774eb4f51aeeec4de",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/analysis_plan.json",
+      "sha256": "c9f85c8c20c657790df0ee040ea5687c3e5ae3272105977a1562d4edcc32b78c",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/data_quality.json",
+      "sha256": "5aab685dd9d456e5110761944f0342602294a9a238d8cc09eb2786dcf50ec8a5",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/Twin_house_N2_exp1_full1_10min.xlsx",
+      "sha256": "4fb3b1ca819b7ec16d2a8495d276c9d658a1bb0592572f41a841237557b8c884",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/Twin_house_weather_exp1_10min_compensated.xlsx",
+      "sha256": "dca9a2e6977090b6c9cfd7b7b85d117870cd227ec5319060bd549648cb16dd3a",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_landing.html",
+      "sha256": "17512b2b262ddbbea33c87d55bb2913238585f93b1be4cf7ccafcea8337a240e",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_main_experiment.zip",
+      "sha256": "832754489e0c513c8cb09b7e43d61a9f5249ff5502a781a672cae6d588a876a1",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+      "sha256": "0cfdc5d5a0a73362b4195ed53c5ca95493c7b2a50c64d10a14403047f73d5180",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/downloads.json",
+      "sha256": "63cdb8464548dee68d08b7daf981f3aaa43949548253ebdaca8638ebd60736d3",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/extracted_members.json",
+      "sha256": "d12fcdd7f47e514579c14f0ecd4729a9d3bc6276476e8e56ad6afc9a71ac0baa",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/field_evidence_map.json",
+      "sha256": "645229040f30b62adcc846110191c49539cea066026f0e30ed5b18d051547f71",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/observations.csv",
+      "sha256": "8eb764f9b8f78a672cb79473a5c00458158e264d7c56a07b4315b3bd92fb46ed",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/source_provenance.json",
+      "sha256": "3b392e56524f1944ecc95dac984367166b1b3a4dd4a46de745a33c38462175e3",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external/external_validation.png",
+      "sha256": "27d99db0154b29732f7c88113e84c0a83de1661142ad36ef2fd179701f2d5312",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external/manifest.json",
+      "sha256": "180f79e8fc15ce4c2054501a475553a8702e135167606699dbcaa02d6487e130",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external/predictions_and_residuals.csv",
+      "sha256": "2e488d3ae078c5acad61f9baf3b5758fdfb68f6a10a5ab70d50525a23a9ae24a",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external/validation_report.json",
+      "sha256": "f62a882813b9aa0715a2e6da708db62defc540ee160907b154a77a7804fe619d",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/exploratory_validation.png",
+      "sha256": "3ac9c9357da8cc45af8dd99d80df881ecdbc04e3d6af1134a663b1204973bfc1",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/first_round_before.json",
+      "sha256": "bfebd7427170d5ad4eb5472aaf4987af82475d3940713de63aa339145d941c4f",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/first_round_freeze_check.json",
+      "sha256": "1085a9fd48fa5af474b701da6442b15d2643b23d28d7baa457cde1cdf0e04175",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/first_vs_followup_metrics.csv",
+      "sha256": "2e8d8041a5fd21c4afa8bb3222ae250b7a6c8021d18e85fb27c39ed20e1e0df7",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/fit_result.json",
+      "sha256": "04e4529b7edd4a767308d2f940cfd1302effa32c80e45f1e19ca64695ccdff82",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/manifest.json",
+      "sha256": "800ed55223f77e8121de8dbc074592d7891ab5a40b2ce774ed1f12a8483ef0ce",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/predictions_and_residuals.csv",
+      "sha256": "21492e7863344c75b331390a3fbed10047163fd1b27e9cbda96f925f680df8a1",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/run_summary.json",
+      "sha256": "072aef38615565d1511eeb107e892180f441ec49fd42e2e5cbf8031791ce35a4",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/validation_report.json",
+      "sha256": "ac2172070981a63128714e94914ed403ca2f4d3fa086b749246ebd293a1c90a1",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "scripts/reproduce_external_measurement_studies.py",
+      "sha256": "f0fb53f61b81ad39608c1b802801d5c2250b358ca6f2ac40a40576e7bc0c8406",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "scripts/validate_external_rc_benchmark.py",
+      "sha256": "2c4e234b86dc328df9e2b49bd30e72af25e1539e8903bc878c5cc77d61a94029",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "scripts/validate_external_rc_followup.py",
+      "sha256": "4eded63c70df8a314a9e131d26e6ca8c3700e48c2769b48912b0cec5f89e78d2",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "tests/test_external_rc_benchmark.py",
+      "sha256": "dc1576dce7080e8c533b3facf34eedb278780ffc58d660cb5a27b332836ae9c4",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    },
+    {
+      "file": "tests/test_external_rc_followup.py",
+      "sha256": "8c980b3e75648e056d790a6dbff0bcb2036a96978fa7d1b61df1d22c9af9f99e",
+      "source_matches": true,
+      "in_extracted_package": true,
+      "extracted_package_matches": true
+    }
+  ],
+  "numeric_reproduction_required_count": 31,
+  "selected_input_closure_passed": true,
+  "c0_reproduction_manifest_checks": [
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/README.md",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/analysis_plan.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/data_quality.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/Twin_house_N2_exp1_full1_10min.xlsx",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/Twin_house_weather_exp1_10min_compensated.xlsx",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_landing.html",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_main_experiment.zip",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/evidence/downloads.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/extracted_members.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/field_evidence_map.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/observations.csv",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "data/external_rc_benchmark_20261001/source_provenance.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external/manifest.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external/validation_report.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external_followup/manifest.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "outputs/competition_20261001/C1_external_followup/validation_report.json",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "scripts/reproduce_external_measurement_studies.py",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "scripts/validate_external_rc_benchmark.py",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "scripts/validate_external_rc_followup.py",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "tests/test_external_rc_benchmark.py",
+      "passed": true
+    },
+    {
+      "category": "inputs",
+      "file": "tests/test_external_rc_followup.py",
+      "passed": true
+    },
+    {
+      "category": "files",
+      "file": "C1_external_followup_reproduced.csv",
+      "passed": true
+    },
+    {
+      "category": "files",
+      "file": "C1_external_reproduced.csv",
+      "passed": true
+    },
+    {
+      "category": "files",
+      "file": "reproduction_report.json",
+      "passed": true
+    }
+  ],
+  "c0_saved_refit_and_144_metrics": [
+    {
+      "study": "C1_external",
+      "saved_refit_parameters_match_exactly": true,
+      "reported_refit_executed": true,
+      "scalar_metrics_checked": 72,
+      "maximum_scalar_difference": 0.0,
+      "note": "Read saved C0 evidence only; C6 performed no fit or prediction evaluation."
+    },
+    {
+      "study": "C1_external_followup",
+      "saved_refit_parameters_match_exactly": true,
+      "reported_refit_executed": true,
+      "scalar_metrics_checked": 72,
+      "maximum_scalar_difference": 0.0,
+      "note": "Read saved C0 evidence only; C6 performed no fit or prediction evaluation."
+    }
+  ],
+  "extracted_package_root": "D:\\competion\\xiaotiao\\_release_check01\\north_heat_challenge",
+  "extracted_package_saved_refit": {
+    "C1_external": {
+      "reported_refit_executed": true,
+      "max_abs_parameter_difference": 0.0,
+      "max_abs_metric_difference": 0.0,
+      "scalar_metrics_checked": 72
+    },
+    "C1_external_followup": {
+      "reported_refit_executed": true,
+      "max_abs_parameter_difference": 0.0,
+      "max_abs_metric_difference": 0.0,
+      "scalar_metrics_checked": 72
+    }
+  },
+  "extracted_package_test_xml": [
+    {
+      "file": "D:\\competion\\xiaotiao\\_release_check01\\north_heat_challenge\\outputs\\portable_tests_01.xml",
+      "sha256": "3313855437756bc3579e7759c3c3c70e4babd0b74c78a4aa8f503d1d1627fdc1",
+      "suites": [
+        {
+          "name": "pytest",
+          "errors": "0",
+          "failures": "1",
+          "skipped": "0",
+          "tests": "56",
+          "time": "8.830",
+          "timestamp": "2026-10-02T00:39:56.879637",
+          "hostname": "LAPTOP-9T38KD8F"
+        }
+      ],
+      "execution_by": "C0; C6 only read XML"
+    },
+    {
+      "file": "D:\\competion\\xiaotiao\\_release_check01\\north_heat_challenge\\outputs\\portable_tests_02.xml",
+      "sha256": "11076a636743453e868c889593b7b01a082ee17db6f9f7ec747a02395e21bc18",
+      "suites": [
+        {
+          "name": "pytest",
+          "errors": "0",
+          "failures": "0",
+          "skipped": "0",
+          "tests": "55",
+          "time": "8.027",
+          "timestamp": "2026-10-02T00:40:45.248058",
+          "hostname": "LAPTOP-9T38KD8F"
+        }
+      ],
+      "execution_by": "C0; C6 only read XML"
+    }
+  ],
+  "selected_tests_extra_file_inventory": [
+    {
+      "file": "docs/execution_20261001/C1_external_followup_plan.md",
+      "sha256": "70fde589a11f60e8c9471fa3e833586b613a4b04e03e6aa7a869bb9c02361665",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C0/external_followup_approval_01.json",
+      "sha256": "0f17fa430ab82b7d2c96b7674cd5c0d4e392f2e48d6c957febc0a20198c4c4d4",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external/final_verification.json",
+      "sha256": "7386b06a79e2a17e828da2b17921c3da48a0cffabcc8663f0483370c22ce19d8",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external/test_result.txt",
+      "sha256": "37bf0e151a864d308dcd83dee948dc3ea43b319cf898c4ad83f3c01728fa1938",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "docs/execution_20261001/C1_external_validation.md",
+      "sha256": "a0218d70c892673654b410fd4a24ccb9610554b5a745bc78242c3e00d2cfb006",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "data/published_multiobjective_20261002/published_input.json",
+      "sha256": "d8f286a0c2fa1d3ed5f0b47f122d1e95bba2cf084cb0bfca249bf2fa84838d99",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "data/published_multiobjective_20261002/predeclared_plan.json",
+      "sha256": "69f0da3d5e3662557f6e4d34f3ec43a03dec9b5d308c4fb0182a941c67cd4ea0",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "data/published_multiobjective_20261002/source_manifest.json",
+      "sha256": "0894487dfbf7908c496b651b2eb7b9b5333c7fd9542b1b501776a2ab190f3bef",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "data/published_multiobjective_20261002/predeclared_review_identity.json",
+      "sha256": "fdbd0a04d2514b2eade9f34d7ad07d2c488a4435f2969080a838129516758627",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "data/published_multiobjective_20261002/epscm.pdf",
+      "sha256": "964c7bef93a278a4bea264a1d6f8fb51faf328644f3034215e871343eea3730a",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "src/heatplan/__init__.py",
+      "sha256": "c173069be5c055c4ec25a44b62a7fafa47dad5c761c32e910a8f0253734e0832",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "src/heatplan/accounting.py",
+      "sha256": "400749cc5432ef4271a3f960c6fcdef3620c8fc65a2c2cbd89a46966ceb17731",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "src/heatplan/building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "src/heatplan/io.py",
+      "sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "src/heatplan/linear.py",
+      "sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "src/heatplan/model.py",
+      "sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "src/heatplan/policy_alignment.py",
+      "sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "scripts/validate_published_multiobjective.py",
+      "sha256": "86a45367042b92e93f64f0685b7c5776672d832c360fba52b92cbcdd71a52168",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "tests/test_published_multiobjective.py",
+      "sha256": "b44e9b5419dc2209a0160ea2724dbd5709985fd0dc334d1963423216bbab4d84",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "scripts/verify_original_weather_archive.py",
+      "sha256": "e6e5639c62546be8c435e7b87d1276d060157f9180a6f18c8ccb6276137bd0de",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "tests/test_weather_archive_comparison.py",
+      "sha256": "a88b2ad92943770017e946fbca0d3359dc56ab37c8ed507fcdd786084b34a58c",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "scripts/package_competition_release.py",
+      "sha256": "7d6f612724d2a89aa09660e9f4b5baf3e7af4914b68224332bd43df627ff7fee",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    },
+    {
+      "file": "tests/test_release_provenance_gate.py",
+      "sha256": "ae675df327b2b8aeafb0e2dcf2d1963e87324238aee94459094b8f940523685d",
+      "in_extracted_package": true,
+      "extracted_matches": true
+    }
+  ],
+  "selected_test_dependency_inventory_complete": true,
+  "local_published_import_closure": [
+    "src/heatplan/__init__.py",
+    "src/heatplan/accounting.py",
+    "src/heatplan/building_thermal.py",
+    "src/heatplan/io.py",
+    "src/heatplan/linear.py",
+    "src/heatplan/model.py",
+    "src/heatplan/policy_alignment.py"
+  ],
+  "ctsm_not_needed_and_absent": [
+    "data/external_rc_benchmark_20261001/evidence/ctsm_building2.pdf",
+    "data/external_rc_benchmark_20261001/evidence/ctsm_building2.zip",
+    "data/external_rc_benchmark_20261001/evidence/ctsm_building2_text.txt",
+    "data/external_rc_benchmark_20261001/evidence/ctsm_documentation.html"
+  ],
+  "required_environment": {
+    "python": "Validated CPython 3.12.7; Python 3.10+ syntax is required.",
+    "direct_numeric": [
+      "numpy==1.26.4",
+      "pandas==2.2.2",
+      "scipy==1.15.3",
+      "openpyxl==3.1.5"
+    ],
+    "extra_for_selected_tests": [
+      "pytest==7.4.4",
+      "PyYAML==6.0.3"
+    ],
+    "optional_for_other_actions": [
+      "inflate64==1.0.4 only for missing-member extraction; selected XLSX already supplied",
+      "matplotlib==3.9.2 only if original plot creation is invoked; replay does not call it"
+    ],
+    "supplied_requirements": [
+      "requirements-validated.txt",
+      "requirements-external-validation.txt"
+    ],
+    "note": "No original Anaconda path, network, data discovery downloads, commercial solver, or matplotlib font cache is required by the replay."
+  },
+  "issues": [
+    {
+      "id": "P1",
+      "status": "requires_explicit_exclusion",
+      "topic": "两项原工作区范围测试",
+      "details": "test_approval_and_first_round_entire_tree_unchanged比较原36文件整树；test_final_manifest_hashes_and_approved_identities逐项读followup manifest全部38项输入，仍要求未选择full2/CTSM等。它们均不适用于精选计算包。原冻结测试保持不变。",
+      "mitigation": "-k \"not test_approval_and_first_round_entire_tree_unchanged and not test_final_manifest_hashes_and_approved_identities\""
+    },
+    {
+      "id": "P2",
+      "status": "extra_files_required_for_remaining_followup_test",
+      "topic": "现有输出拒绝测试提前验证审批",
+      "details": "test_existing_output_or_file_is_never_overwritten会调用followup.run；它在尝试mkdir之前先verify_approval和snapshot_first_round，因此还需五个补充文件。数值复现入口不调用这些函数。",
+      "necessary_files": [
+        "docs/execution_20261001/C1_external_followup_plan.md",
+        "outputs/competition_20261001/C0/external_followup_approval_01.json",
+        "outputs/competition_20261001/C1_external/final_verification.json",
+        "outputs/competition_20261001/C1_external/test_result.txt",
+        "docs/execution_20261001/C1_external_validation.md"
+      ],
+      "extracted_package_has_all": true
+    },
+    {
+      "id": "P3",
+      "status": "documented_scope_boundary",
+      "topic": "冻结followup清单不是精简计算依赖清单",
+      "details": "原followup manifest须作为冻结证据保留，但其全部inputs不应被解释为可分发依赖。package_competition_release.checked_manifest若直接验证该原清单，会要求全部旧树输入，精选包缺少它们必然拒绝；选定计算身份应使用独立reproduction manifest，不修改原清单。",
+      "missing_in_extracted_package": [
+        "data/external_rc_benchmark_20261001/evidence/Twin_house_N2_exp1_full2_10min.xlsx",
+        "data/external_rc_benchmark_20261001/evidence/annex71_specification_text.txt",
+        "data/external_rc_benchmark_20261001/evidence/bacher2011_text.txt",
+        "data/external_rc_benchmark_20261001/evidence/ctsm_building2.pdf",
+        "data/external_rc_benchmark_20261001/evidence/ctsm_building2.zip",
+        "data/external_rc_benchmark_20261001/evidence/ctsm_building2_text.txt",
+        "data/external_rc_benchmark_20261001/evidence/ctsm_documentation.html",
+        "data/external_rc_benchmark_20261001/evidence/ebc58_st3b_text.txt",
+        "data/external_rc_benchmark_20261001/evidence/ebc58_st4a_text.txt",
+        "data/external_rc_benchmark_20261001/evidence/geometry_page_17.png",
+        "data/external_rc_benchmark_20261001/evidence/geometry_page_18.png",
+        "outputs/competition_20261001/C1_external/run_stdout.json"
+      ]
+    },
+    {
+      "id": "P4",
+      "status": "no_byte_identity_claim_for_first_csv",
+      "topic": "首次复现CSV格式差异",
+      "details": {
+        "original_first_csv_sha256": "2e488d3ae078c5acad61f9baf3b5758fdfb68f6a10a5ab70d50525a23a9ae24a",
+        "reproduced_first_csv_sha256": "0f213dfc6625b95836702ebb6a3d835d2358ea362677e1ecf25e5f1e8eb243e7",
+        "added_columns": [
+          "training_24h_block_c",
+          "training_24h_block_residual_c"
+        ],
+        "first_initialization_persistence_original": "21.0937677225",
+        "first_initialization_persistence_reproduced": "",
+        "interpretation": "First CSV is a numerical replay, not a byte-for-byte duplicate: evaluate adds training-block columns and blanks the unscored initialization persistence row. Scored 144 scalar metrics match exactly."
+      }
+    },
+    {
+      "id": "P5",
+      "status": "new_directory_required",
+      "topic": "输出目录行为与Windows路径",
+      "details": "mkdir(exist_ok=False)先于输入验证，现有目录立即拒绝，失败时新空目录或部分文件保留且不会写complete manifest。--output-dir须选在冻结输入/结果树之外；代码未禁止将新子目录放进旧树。根目录依脚本位置定位，不绑定原D盘/conda。C0深路径解压触发260字符限制，短路径包已运行成功，交付需注明短根路径。"
+    },
+    {
+      "id": "P6",
+      "status": "readme_command_needs_update_at_review_time",
+      "topic": "包内说明仍只排除一个测试",
+      "details": "本次读取README_RESEARCH_RELEASE.md的pytest命令仍只有第一个排除项；应同步P1的两项排除和短路径要求。第二次XML记录55通过0失败，不能用只排除一项的旧命令复述该结果。"
+    }
+  ],
+  "tests": [
+    {
+      "test": "tests/test_external_rc_benchmark.py",
+      "scope": "first manifest全部15 inputs及3 outputs足够；verified_members只读取ZIP下载记录和两个已选XLSX，不遍历CTSM记录或下载全部探索文件。",
+      "caveat": "若移除已选XLSX，会触发Deflate64解码写回；本精选包须包含两份已选XLSX。测试中包含小型训练隔离拟合，C6未执行。"
+    },
+    {
+      "test": "tests/test_external_rc_followup.py",
+      "scope": "排除P1两项；其余测试需first/followup结果和P2五个补充文件；未发现第三项必须依赖CTSM旧文件的检查。"
+    },
+    {
+      "test": "tests/test_published_multiobjective.py",
+      "scope": "额外需要published脚本、五个来源文件及heatplan包导入闭包。failure测试在注入失败前仍校验原PDF与四个reviewed identity文件；不需原C4结果树。",
+      "files": [
+        "data/published_multiobjective_20261002/published_input.json",
+        "data/published_multiobjective_20261002/predeclared_plan.json",
+        "data/published_multiobjective_20261002/source_manifest.json",
+        "data/published_multiobjective_20261002/predeclared_review_identity.json",
+        "data/published_multiobjective_20261002/epscm.pdf",
+        "src/heatplan/__init__.py",
+        "src/heatplan/accounting.py",
+        "src/heatplan/building_thermal.py",
+        "src/heatplan/io.py",
+        "src/heatplan/linear.py",
+        "src/heatplan/model.py",
+        "src/heatplan/policy_alignment.py"
+      ],
+      "hidden_runtime_dependency": "heatplan.__init__导入model，间接导入io/policy_alignment的PyYAML；只拷贝linear.py不够。",
+      "caveat": "部分测试实际调用小LP求解器；本次仅审查依赖，未执行。"
+    },
+    {
+      "test": "tests/test_weather_archive_comparison.py",
+      "scope": "只需verify_original_weather_archive.py及numpy/pandas/pytest；使用解析fixture调用compare，不读取真实NASA缓存或联网。"
+    },
+    {
+      "test": "tests/test_release_provenance_gate.py",
+      "scope": "只需package_competition_release.py及pytest；数据/审批/结果都是tmp_path自建fixture，不依赖原C0审批或真实归档树。"
+    }
+  ],
+  "source_function_lines": {
+    "scripts/reproduce_external_measurement_studies.py": {
+      "digest": 24,
+      "load_module": 28,
+      "run": 35
+    },
+    "scripts/validate_external_rc_followup.py": {
+      "write_json_new": 35,
+      "write_csv_new": 41,
+      "verify_approval": 46,
+      "snapshot_first_round": 69,
+      "compare_snapshots": 77,
+      "blocks": 84,
+      "block_predictions": 91,
+      "training_residuals": 105,
+      "fit_training_only": 112,
+      "evaluate": 164,
+      "comparisons": 194,
+      "save_plot_new": 211,
+      "run": 249
+    },
+    "tests/test_external_rc_followup.py": {
+      "observations": 21,
+      "final_report": 26,
+      "test_approval_and_first_round_entire_tree_unchanged": 30,
+      "test_fixed_blocks_cover_each_training_target_once_including_tail": 41,
+      "test_block_interval_means_match_independent_continuous_integrals": 52,
+      "test_block_forecasts_read_only_anchors_not_future_temperatures": 70,
+      "test_training_residuals_ignore_all_holdout_fields": 85,
+      "test_solver_uses_four_fixed_starts_and_training_only_selection": 96,
+      "test_all_four_failures_retained_without_replacement_fit": 124,
+      "test_selected_training_objective_recomputed_from_saved_residuals": 138,
+      "test_every_metric_and_acf_recomputed_from_all_predictions": 154,
+      "test_comparison_keeps_all_metrics_and_unchanged_persistence_baselines": 177,
+      "test_exploratory_scope_and_fixed_model_are_explicit": 192,
+      "test_existing_output_or_file_is_never_overwritten": 206,
+      "test_final_manifest_hashes_and_approved_identities": 217
+    },
+    "scripts/package_competition_release.py": {
+      "digest": 17,
+      "inside": 25,
+      "checked_manifest": 33,
+      "main": 72
+    },
+    "scripts/validate_published_multiobjective.py": {
+      "utc_now": 41,
+      "sha256": 45,
+      "clean": 49,
+      "write_json": 61,
+      "rational": 67,
+      "source_halfspaces": 71,
+      "exact_vertices": 89,
+      "exact_optimum": 102,
+      "exact_lexicographic": 113,
+      "build_lp": 127,
+      "model_record": 141,
+      "detailed_audit": 149,
+      "close": 165,
+      "oracle_record": 171,
+      "solve_stage": 179,
+      "solve_lexicographic": 226,
+      "nondominated_count": 254,
+      "file_hashes": 265,
+      "write_csv": 269,
+      "plot_results": 276,
+      "run_experiment": 315,
+      "verify_run": 439,
+      "main": 453
+    }
+  },
+  "recommended_selected_test_command": "python -m pytest tests/test_external_rc_benchmark.py tests/test_external_rc_followup.py tests/test_published_multiobjective.py tests/test_weather_archive_comparison.py tests/test_release_provenance_gate.py -q -p no:cacheprovider -k \"not test_approval_and_first_round_entire_tree_unchanged and not test_final_manifest_hashes_and_approved_identities\" --basetemp outputs/portable_tests_new",
+  "portability_not_accuracy_approval": true
+}

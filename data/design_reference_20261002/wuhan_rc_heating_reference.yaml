@@ -1,0 +1,12 @@
+# GB 50736-2012 Table A reference; independent cold-wave tests still required.
+extends: ../competition_20261001/wuhan_rc_candidate.yaml
+planning:
+  design_outdoor_temperature_c: -0.3
+  design_parameter_basis:
+    standard: GB50736-2012
+    city: wuhan
+    station_id: '57494'
+    field: heating_outdoor_design_c
+    role: standard_reference_case_not_extreme_weather_or_observation
+    source_url: https://gf.cabr-fire.com/m/article-12078.htm
+    source_image_sha256: 9fc359979b13622c9abc78d928a280eaea9f23a99227d22899fd70ef21c2ea87

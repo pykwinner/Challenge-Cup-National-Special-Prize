@@ -1,0 +1,30 @@
+{
+  "registered_before_full_comparison": true,
+  "all_profiles_and_years_in_original_manifest": true,
+  "source_metadata_sha256": "4bb799637cba2ac833b6163f81f8721b7a2846b9faafcb7db9f92886e952b034",
+  "fields": {
+    "T2M": [
+      "outdoor_temp",
+      "C"
+    ],
+    "RH2M": [
+      "relative_humidity_pct",
+      "%"
+    ],
+    "WS10M": [
+      "wind_speed_10m_m_s",
+      "m/s"
+    ],
+    "ALLSKY_SFC_SW_DWN": [
+      "solar_irradiance_kwh_m2_hour",
+      "Wh/m^2"
+    ]
+  },
+  "no_original_mutation_or_field_replacement": true,
+  "comparison_tolerance": 1e-09,
+  "limitations": [
+    "Current API equality is not ground-station validation.",
+    "The old API version was not archived; do not backfill it.",
+    "Mismatches can reflect source revisions; retain them, do not silently replace inputs."
+  ]
+}

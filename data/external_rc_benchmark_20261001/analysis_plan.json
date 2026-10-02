@@ -1,0 +1,35 @@
+{
+  "registered_before_parameter_fitting": true,
+  "registered_on_Asia_Shanghai": "2026-10-01",
+  "dataset": "Fraunhofer Twin House N2, IEA EBC Annex 71 main experiment, version 161.2",
+  "doi": "10.24406/fordatis/76.2",
+  "source_role": "publisher_processed_experimental_measurements",
+  "period_selection": "All rows in N2 exp1 full1 10min; no selection by prediction error",
+  "split": {"train_fraction": 0.6, "validation_fraction": 0.2, "test_fraction": 0.2, "method": "ordered contiguous rows; floors applied to first two sizes; no shuffle"},
+  "fit_loss": "sum of squared training one-step errors of interval-mean temperature, in degC",
+  "model": "1R1C with positive H and C; actual resistive-heater input plus measured IHS; nonnegative bounded window-solar term; no fitted constant gains",
+  "observation": "floor-area-weighted mean of ten measured room-centre air-temperature channels; spatial aggregation is explicitly derived",
+  "sampling": "source values are 10-minute averages, not instantaneous temperatures; exact interval-mean observation equation is used",
+  "clock": "fixed Central European winter time UTC+1 throughout; equal DATE labels must join exactly",
+  "bin_label": "end-labelled intervals inferred from first timestamp 18:10 versus experimental start 18:00; exact averaging-window placement is not explicitly stated by publisher",
+  "heating_semantics": "room electric heater and IHS channels summed, W converted to kW; combined heater/IHS split is publisher-calculated in some rooms; their sum restores total measured input; electric-to-room heat conversion factor 1 is a declared model assumption",
+  "solar_reference": "maximum of measured global and four vertical facade irradiances, divided by 1000 to kW/m2; does not claim measured transmitted solar gain",
+  "parameter_bounds": {
+    "H_kw_per_c": [0.02, 1.0],
+    "C_kwh_per_c": [0.1, 100.0],
+    "effective_solar_area_m2": [0.0, 10.3974]
+  },
+  "solar_upper_bound_basis": "Specification Figure 9 and Table 2: six type-1 windows + one each type-2/3/4/5; glazing = 6*1.29+1.84+4.11+0.90+2.18 = 16.77 m2; normal-incidence SHGC upper assumption 0.62 from manufacturer figure in section 3.5; effective area <=16.77*0.62. Opaque solar absorption is omitted and remains model discrepancy.",
+  "H_C_bound_identity": "broad analyst positive bounds, not source measurements or Wuhan values",
+  "model_selection": "one declared structure; deterministic starts chosen only by training SSE; validation and test never used for parameter fitting or selection",
+  "predictions": ["one_step_using_previous_measured_interval_mean", "continuous_open_loop_initialized_once_at_first_observed_interval", "segment_open_loop_initialized_once_from_the_preceding_interval_at_each_holdout_start"],
+  "baseline": "temperature persistence with the same initialization/information pattern as the corresponding prediction mode",
+  "metrics": ["MAE", "RMSE", "mean_prediction_minus_observation_bias", "residual_ACF", "parameter_boundary_flags", "Jacobian_condition_number"],
+  "source_limitations": [
+    "Publisher filled unspecified short measurement failures by linear interpolation for temperatures and zero for powers/flows, without row-level quality flags; these cannot be removed or distinguished here.",
+    "O5 simulated December power refill is excluded by selecting N2 only.",
+    "N2 is a multiroom heavy building with ventilation, internal door/window changes, ground/attic effects and omitted fan heat; one time-invariant RC is an applicability test, not a complete physical reconstruction.",
+    "Recorded future weather and heat inputs are used: this is conditional prediction, not a deployable weather/control forecast.",
+    "No external parameter or fitted value will replace Wuhan synthetic parameters."
+  ]
+}

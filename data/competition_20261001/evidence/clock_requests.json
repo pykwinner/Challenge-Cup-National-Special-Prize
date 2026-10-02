@@ -1,0 +1,78 @@
+[
+  {
+    "clock": "UTC",
+    "url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20230101&end=20230102&format=JSON&time-standard=UTC",
+    "header": {
+      "title": "NASA/POWER Source Native Resolution Hourly Data",
+      "api": {
+        "version": "v2.10.2",
+        "name": "POWER Hourly API"
+      },
+      "sources": [
+        "SYN1DEG",
+        "MERRA2",
+        "POWER"
+      ],
+      "fill_value": -999.0,
+      "time_standard": "UTC",
+      "start": "20230101",
+      "end": "20230102"
+    },
+    "parameters": {
+      "T2M": {
+        "units": "C",
+        "longname": "Temperature at 2 Meters"
+      },
+      "RH2M": {
+        "units": "%",
+        "longname": "Relative Humidity at 2 Meters"
+      },
+      "WS10M": {
+        "units": "m/s",
+        "longname": "Wind Speed at 10 Meters"
+      },
+      "ALLSKY_SFC_SW_DWN": {
+        "units": "Wh/m^2",
+        "longname": "All Sky Surface Shortwave Downward Irradiance"
+      }
+    }
+  },
+  {
+    "clock": "LST",
+    "url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20230101&end=20230102&format=JSON&time-standard=LST",
+    "header": {
+      "title": "NASA/POWER Source Native Resolution Hourly Data",
+      "api": {
+        "version": "v2.10.2",
+        "name": "POWER Hourly API"
+      },
+      "sources": [
+        "SYN1DEG",
+        "MERRA2",
+        "POWER"
+      ],
+      "fill_value": -999.0,
+      "time_standard": "LST",
+      "start": "20230101",
+      "end": "20230102"
+    },
+    "parameters": {
+      "T2M": {
+        "units": "C",
+        "longname": "Temperature at 2 Meters"
+      },
+      "RH2M": {
+        "units": "%",
+        "longname": "Relative Humidity at 2 Meters"
+      },
+      "WS10M": {
+        "units": "m/s",
+        "longname": "Wind Speed at 10 Meters"
+      },
+      "ALLSKY_SFC_SW_DWN": {
+        "units": "Wh/m^2",
+        "longname": "All Sky Surface Shortwave Downward Irradiance"
+      }
+    }
+  }
+]

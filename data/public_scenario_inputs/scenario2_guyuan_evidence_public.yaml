@@ -1,0 +1,71 @@
+extends: ../scenario2_distributed_clean.yaml
+
+planning:
+  region_profile: guyuan_evidence_public_2026
+  # This evidence replay represents households eligible for Ningxia's 2026
+  # clean-heating tariff. A regional public/commercial total meter should keep
+  # the ordinary electricity_price column and be reported as a separate case.
+  electricity_price_column: resident_heating_electricity_price
+  electricity_tariff_scope: eligible_residential_clean_heating_households
+
+grid_connection:
+  # Biomass, gas, heat pumps and electric boilers are mutually substitutable
+  # firm-heat resources. Size the connection against a feasible peak portfolio
+  # (including the inherited 15% heat reserve) instead of assuming that every
+  # installed electric backup unit runs at full output simultaneously.
+  firm_capacity_method: portfolio_dispatch
+
+# Evidence calibration for the public Guyuan case.
+# The Ningxia agricultural authority reports that 85.64% of utilized crop
+# straw is used as feed and only 1.37% is fuel use.  It also reports that the
+# main pellet feedstocks are woody pruning residues, caragana and waste wood.
+# These are therefore two different physical resource pools.  This overlay
+# deliberately does not invent project-level quantities or add a second chain:
+# the inherited aggregate quantity cap must be replaced by a local supplier
+# contract and feedstock survey before a final competition submission.
+biomass_supply_chains:
+  - name: county_residue_chain
+    # The 1.00 yuan/kg value is the delivered finished-pellet benchmark.  Keep
+    # handling and monetary transport additions at zero so freight is not
+    # counted twice.  Distance remains inherited for logistics emissions and
+    # for checking the Ningxia guide's recommended 50 km supply radius.
+    procurement_cost_yuan_per_kg: 1.00
+    handling_cost_yuan_per_kg: 0.00
+    transport_cost_yuan_per_tonne_km: 0.00
+
+sources:
+  - name: distributed_air_hp_b
+    cutoff_temperature_c: -25
+    # A Carnot efficiency of 0.394 gives about COP 2.20 at -12 C and remains
+    # above the procurement floor of 1.80 at -20 C for the 45 C heat grade.
+    carnot_efficiency: 0.394
+    cop_min: 1.45
+    # The procurement requires full 4 kW heat output at -20 C.  Capacity below
+    # -20 C is a conservative stress extrapolation, not a claimed field test.
+    low_temperature_derating:
+      threshold_c: -20
+      slope_per_c: 0.05
+      minimum_factor: 0.75
+
+  - name: district_a_air_hp
+    cutoff_temperature_c: -25
+    carnot_efficiency: 0.394
+    cop_min: 1.45
+    low_temperature_derating:
+      threshold_c: -20
+      slope_per_c: 0.05
+      minimum_factor: 0.75
+
+microgrid_islanding:
+  # No public evidence was found for free existing PV, battery or dispatchable
+  # backup at the modeled site.  Candidate investments remain available.
+  existing_renewable_capacity_kw: 0
+  existing_battery_power_kw: 0
+  existing_battery_energy_kwh: 0
+  existing_backup_capacity_kw: 0
+
+policy:
+  # No Guyuan/Ningxia policy source sets a mandatory 20% biomass heat share.
+  # A zero lower bound removes the inherited hard target while preserving the
+  # current schema; 10% and 20% should be reported as sensitivity cases.
+  minimum_biomass_heat_share: 0.0

@@ -1,0 +1,104 @@
+{
+  "verified_at_utc": "2026-10-01T14:54:50.933678+00:00",
+  "case_count": 9,
+  "paper_count": 7,
+  "unique_publication_or_article_groups": 11,
+  "note": "6 cases share one NEA compilation; no full-paper replication; source dedup is exact URL/DOI substring only",
+  "existing_catalog_files_checked": [
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\data\\public_sources\\source_catalog.csv",
+    "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\research_sources_20261001.json"
+  ],
+  "exact_url_or_doi_matches": [],
+  "cache_checks": {
+    "nea_geo2": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\nea_geo2.pdf",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "yantai": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\yantai.html",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "zibo": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\zibo.html",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "lanzhou": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\lanzhou.html",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "heat_capacity": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\heat_capacity.html",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "heat_capacity_pdf": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\heat_capacity_pdf.pdf",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "heatpump_storage": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\heatpump_storage.html",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "heatpump_storage_pdf": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\heatpump_storage_pdf.pdf",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "building_virtual": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\building_virtual.html",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "building_virtual_pdf": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\building_virtual_pdf.pdf",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "building_uncertainty": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\building_uncertainty.html",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "network_chp": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\network_chp.html",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "network_chp_pdf": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\network_chp_pdf.pdf",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "btes_peak": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\btes_peak.html",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "btes_peak_pdf": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\btes_peak_pdf.pdf",
+      "sha256_matches": true,
+      "bytes_match": true
+    },
+    "arxiv_building": {
+      "file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\china_support_20261001_thread4\\raw\\arxiv_building.pdf",
+      "sha256_matches": true,
+      "bytes_match": true
+    }
+  },
+  "unit_recalculation": {
+    "source": "C4 PDF p145",
+    "coal_yuan": 653600,
+    "geothermal_yuan": 135662.6,
+    "difference_yuan": 517937.4,
+    "original_narrative_unit_inconsistent": true,
+    "full_season_cost_extrapolated_from_partial_season": true
+  },
+  "document_sha256": "3481a09f83db396b92d2f3af5d664468d5f655c833f0f89fbc3de53112129c1f",
+  "implementation_claim": "Research files only; no claim of code integration or model validation"
+}

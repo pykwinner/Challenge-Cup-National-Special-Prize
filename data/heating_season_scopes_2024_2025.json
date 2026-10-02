@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "resolution_hours": 1,
+  "interval_convention": "half_open",
+  "counting_note": "展示日期首尾均完整计入；程序使用[start_inclusive, end_exclusive)生成逐时时间戳。",
+  "scenarios": [
+    {
+      "profile": "scenario1_urumqi",
+      "scenario": "S1",
+      "city": "乌鲁木齐",
+      "start_inclusive": "2024-10-10T00:00:00+08:00",
+      "end_exclusive": "2025-04-11T00:00:00+08:00",
+      "display_period": "2024.10.10 — 2025.04.10",
+      "expected_hours": 4392,
+      "scope_label": "法定供热期",
+      "scenario_note": "大型集中供热低碳重构",
+      "source_kind": "乌鲁木齐市政府公开的城市热力管理条例口径",
+      "source_url": "https://www.wlmq.gov.cn/wlmqs/c121057/202603/d50be76b92204260a299d63b5d403612.shtml",
+      "caveat": "异常低温时市政府可以决定提前供热或延期停热。"
+    },
+    {
+      "profile": "scenario2_guyuan",
+      "scenario": "S2",
+      "city": "固原",
+      "start_inclusive": "2024-11-01T00:00:00+08:00",
+      "end_exclusive": "2025-04-16T00:00:00+08:00",
+      "display_period": "2024.11.01 — 2025.04.15",
+      "expected_hours": 3984,
+      "scope_label": "法定供热时间",
+      "scenario_note": "分散式清洁供热转型",
+      "source_kind": "固原市城市管理局2024—2025年度采暖费缴纳通知",
+      "source_url": "https://www.nxgy.gov.cn/zwgk/zfxxgkml/szfw/csgs/202409/t20240909_4651661.html",
+      "caveat": "通知明确2024年11月1日至2025年4月15日，共166天；本年度实际口径与2024年10月19日起施行的新管理办法常规日期不同。"
+    },
+    {
+      "profile": "scenario3_wuhan",
+      "scenario": "S3",
+      "city": "武汉",
+      "start_inclusive": "2024-11-16T00:00:00+08:00",
+      "end_exclusive": "2025-03-16T00:00:00+08:00",
+      "display_period": "2024.11.16 — 2025.03.15",
+      "expected_hours": 2880,
+      "scope_label": "项目服务周期",
+      "scenario_note": "夏热冬冷地区高品质新建",
+      "source_kind": "武汉市政府门户网站公开的武昌热电2024—2025供热季信息",
+      "source_url": "https://www.wuhan.gov.cn/sy/whyw/202411/t20241117_2485509.shtml",
+      "caveat": "武汉不属于国家强制集中供暖区；该时间窗是武昌热电项目服务周期，不能表述为全市法定供暖季。"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "source_document": "D:\\competion\\xiaotiao\\数据缺失\\固原分布式热源储能电价数据检索.docx",
+  "source_sha256": "0d721c1518cbff48f5a5cfc92f985728487a2fdb6bd787b9aba2eb5751ce2d93",
+  "source_unchanged": true,
+  "read_coverage": {
+    "body_blocks": 116,
+    "tables": 7,
+    "literal_urls": 24,
+    "hyperlink_relationships": 0,
+    "hyperlink_elements": 0,
+    "complex_and_simple_hyperlink_fields": 0,
+    "embedded_images": 0,
+    "tracked_insertions": 0,
+    "tracked_deletions": 0,
+    "comments": 0,
+    "footnotes_endnotes": "present but contain no substantive text"
+  },
+  "local_evidence_file": "docs/source_intake_20261002/city_batch_02/guyuan/evidence/local_docx_extraction.json",
+  "extraction_sha256": "062901794ced89eaa8124c1991e03f95b6fc933fd26df5f7c06353adb9dcccdf",
+  "render_status": "No bundled LibreOffice path was returned; source not edited, no desktop LibreOffice used, no page-number/layout certification claimed.",
+  "document_fact_identity": "检索笔记/二级汇编，不是原始统计、标准全文或现场观测",
+  "categories": [
+    {
+      "category": "建筑 H/C",
+      "status": "仍缺",
+      "needed": "逐栋/分类型面积、层高、屋面/外墙/门窗几何，材料层及厚度、导热率/U值、热桥、渗透/换气、热容量；或有时间戳的室内外温度与实供热量及运行记录",
+      "reason": "规划改造面积/户数与30%能效目标不能确定UA、通风热损失和热容"
+    },
+    {
+      "category": "居民电价",
+      "status": "条件可用",
+      "completed": "官方2026单价、时段和执行日期已核实",
+      "needed": "电网资格确认、表计类别/接入电压、实际账单与旧资格规定"
+    },
+    {
+      "category": "工商业电价",
+      "status": "仍缺",
+      "needed": "当前年度正式分时/交易规则、购电合同和完整费用账单",
+      "reason": "征求意见稿不能当执行规则；新能源机制电价是发电侧口径，不是用户购电价"
+    },
+    {
+      "category": "设备性能",
+      "status": "仍缺",
+      "needed": "实际厂家型号与检测报告：室外干湿球、进出水温、流量、输入功率、制热量、除霜/辅热边界、低温容量与COP曲线",
+      "reason": "-25℃运行范围不是COP≥2.0；引用报道并未给出该普遍下限，不能认证国标条款或本项目设备"
+    },
+    {
+      "category": "设备与储能造价",
+      "status": "仍缺",
+      "needed": "型号化带容量及报价边界的项目合同/报价；电池与水蓄热分别给元/kWh电、元/kWh热、功率成本、寿命和损失",
+      "reason": "补贴不是CAPEX；元/Wh电池统计与元/台商品标价不能直接赋值蓄热成本"
+    },
+    {
+      "category": "生物质供给",
+      "status": "仍缺",
+      "needed": "供应商位置、原料/竞争用途、可签约吨/年、季节交付上限、含水/低位热值、到场含税含运价格与合同",
+      "reason": "改造户数、全区产能或其他区域报价都不是本项目保障量"
+    },
+    {
+      "category": "管网和电网",
+      "status": "仍缺",
+      "needed": "项目GIS/管径长度材料厚度、温度流量/热损、泵参数；接入节点、馈线与可用变压器容量、增容报价",
+      "reason": "规划改造条目和补贴不能替代现场拓扑及可用容量"
+    },
+    {
+      "category": "采暖期与热价",
+      "status": "条件可用",
+      "completed": "2019六盘山服务公示月价和11/1—4/15区间核实",
+      "needed": "本项目当前年度通知/收费账单；全市办法与隆德执行原件",
+      "reason": "三个对象与年度不能统一套183天；面积月费不能推断GJ/m²季"
+    },
+    {
+      "category": "地方规划目标与补贴",
+      "status": "已补齐",
+      "completed": "本轮核实2022正式方案和2023自治区正式方案的指定字段",
+      "needed": "若用于实际项目仍需验收和具体补贴办法",
+      "reason": "已补齐原文依据；仅规划/政策层成立，未证明实际完成"
+    },
+    {
+      "category": "太阳能、风能、地热资源",
+      "status": "仍缺",
+      "needed": "原新能源规划及站点/高度/年份口径、逐时气象与场址资源；地热专项勘察",
+      "reason": "Word多为二级转述与规划，当前页面响应不提供完整原规划；资源总量不能确定项目可开发/可调度出力"
+    }
+  ],
+  "specific_claim_corrections": [
+    "2022方案补贴和改造目标不等于单户面积、设备实际造价或H/C",
+    "2023工商业征求意见稿不能标为执行中",
+    "采暖期对象/年份不同，183天和4392h不能统一填值",
+    "热价×月份不能无热量/计量热价就折算GJ/m²",
+    "-25℃COP≥2.0不是所引报道已证明的普遍国标条款",
+    "几乎全天谷价运行需热泵容量、热负荷和储能功率/容量验证，16h政策本身不能证明"
+  ],
+  "review_limit": "All local text/tables/actual-link structures reviewed. One bounded response acquisition pass retained candidate pages; only priority official content and selected claim comparisons examined. No exhaustive media follow-up or additional model runs."
+}

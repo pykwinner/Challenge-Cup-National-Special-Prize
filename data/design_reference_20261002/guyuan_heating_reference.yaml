@@ -1,0 +1,12 @@
+# GB 50736-2012 Table A reference; independent cold-wave tests still required.
+extends: ../public_scenario_inputs/scenario2_guyuan_evidence_public.yaml
+planning:
+  design_outdoor_temperature_c: -13.2
+  design_parameter_basis:
+    standard: GB50736-2012
+    city: guyuan
+    station_id: '53817'
+    field: heating_outdoor_design_c
+    role: standard_reference_case_not_extreme_weather_or_observation
+    source_url: https://gf.cabr-fire.com/m/article-12078.htm
+    source_image_sha256: 0327d4db5c34b69201279901db6a46c21916dd25774ff60f69aba4511dedfa39

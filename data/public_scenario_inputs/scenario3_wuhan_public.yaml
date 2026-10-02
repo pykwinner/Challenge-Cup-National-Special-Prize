@@ -1,0 +1,12 @@
+extends: ../scenario3_high_quality_newbuild.yaml
+
+planning:
+  region_profile: wuhan_public_weather_representative_days
+
+policy:
+  # After removing duplicated behavior multipliers and crediting conservative
+  # building thermal flexibility, the standalone-heating prototype is about
+  # 0.509 yuan/kWh with zero unserved heat.  The 0.40 target remains an
+  # affordability challenge for utilization, multi-energy cost allocation and
+  # subsidy sensitivity analysis, not a baseline feasibility constraint.
+  maximum_levelized_heat_cost_yuan_per_kwh: 0.60

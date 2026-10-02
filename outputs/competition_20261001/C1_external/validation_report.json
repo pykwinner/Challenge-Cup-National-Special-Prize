@@ -1,0 +1,460 @@
+{
+  "status": "external_applicability_diagnostic_on_processed_measurements",
+  "data_source_found": true,
+  "dataset_doi": "10.24406/fordatis/76.2",
+  "licence": "CC BY-SA 4.0",
+  "data_quality": {
+    "passed": true,
+    "rows": 11988,
+    "sample_minutes": 10,
+    "matched_time_rows": 11988,
+    "first_original_cet": "2018-12-07 18:10:00",
+    "last_original_cet": "2019-03-01 00:00:00",
+    "first_utc_label": "2018-12-07T17:10:00Z",
+    "last_utc_label": "2019-02-28T23:00:00Z",
+    "duplicate_rows": 0,
+    "missing_intervals": 0,
+    "nonfinite_selected_values": 0,
+    "temperature_columns": [
+      "n2_aroom_bath_110_AT",
+      "n2_aroom_bed_110_AT",
+      "n2_aroom_child1_110_AT",
+      "n2_aroom_child2_110_AT",
+      "n2_aroom_corridor_110_AT",
+      "n2_aroom_dining_110_AT",
+      "n2_aroom_doorway_110_AT",
+      "n2_aroom_kitchen_110_AT",
+      "n2_aroom_living_110_AT",
+      "n2_aroom_stairs_110_AT"
+    ],
+    "heater_columns": [
+      "n2_aroom_bath_heat_elP",
+      "n2_aroom_bed_heat_elP",
+      "n2_aroom_child1_heat_elP",
+      "n2_aroom_child2_heat_elP",
+      "n2_aroom_corridor_heat_elP",
+      "n2_aroom_dining_heat_elP",
+      "n2_aroom_doorway_heat_elP",
+      "n2_aroom_kitchen_heat_elP",
+      "n2_aroom_living_heat_elP",
+      "n2_aroom_stairs_heat_elP"
+    ],
+    "internal_gain_columns": [
+      "n2_aroom_bath_IHS_elP",
+      "n2_aroom_bed_IHS_elP",
+      "n2_aroom_child1_IHS_elP",
+      "n2_aroom_child2_IHS_elP",
+      "n2_aroom_corridor_IHS_elP",
+      "n2_aroom_kitchen_IHS_elP",
+      "n2_aroom_living_IHS_elP"
+    ],
+    "radiation_columns": [
+      "Radiation_Global",
+      "Radiation_South",
+      "Radiation_West",
+      "Radiation_East",
+      "Radiation_North"
+    ],
+    "room_floor_areas_m2": {
+      "bath": 6.92,
+      "bed": 11.19,
+      "child1": 34.6,
+      "child2": 36.56,
+      "corridor": 5.46,
+      "dining": 11.19,
+      "doorway": 5.84,
+      "kitchen": 7.44,
+      "living": 33.65,
+      "stairs": 12.9
+    },
+    "total_area_m2": 165.75,
+    "aggregation_basis": "Figure 9 room floor areas and Table 12 total 165.75 m2; area weighted sensor average, not measured volume-mean temperature",
+    "heat_quantity_basis": "measured electric heater and IHS input, converted to room sensible heat with unity model factor; omitted sockets/fan heat",
+    "publisher_processing": "Short temperature gaps interpolated and power/flow gaps set zero, without per-row flags. Their exact count cannot be independently recovered.",
+    "alignment": "DATE labels match exactly; source reports bin averages. Absolute within-bin label phase unconfirmed; averaged-observation equation used, no artificial power shift."
+  },
+  "fit": {
+    "parameters": {
+      "H_kw_per_c": {
+        "estimate": 0.13950173545919084,
+        "lower_bound": 0.02,
+        "upper_bound": 1.0,
+        "near_lower_bound": false,
+        "near_upper_bound": false
+      },
+      "C_kwh_per_c": {
+        "estimate": 5.773898946938264,
+        "lower_bound": 0.1,
+        "upper_bound": 100.0,
+        "near_lower_bound": false,
+        "near_upper_bound": false
+      },
+      "effective_solar_area_m2": {
+        "estimate": 1.781451734472319,
+        "lower_bound": 0.0,
+        "upper_bound": 10.3974,
+        "near_lower_bound": false,
+        "near_upper_bound": false
+      }
+    },
+    "thermal_time_constant_hours": 41.38944170072588,
+    "selected_start_index_by_training_sse_only": 1,
+    "all_starts": [
+      {
+        "initial_parameters": [
+          0.1,
+          2.0,
+          3.0
+        ],
+        "final_parameters": [
+          0.13950171673768388,
+          5.7738875193802945,
+          1.7814540911781764
+        ],
+        "success": true,
+        "status": 3,
+        "message": "`xtol` termination condition is satisfied.",
+        "nfev": 17,
+        "training_sse_c2": 114.42307788606531
+      },
+      {
+        "initial_parameters": [
+          0.1,
+          10.0,
+          3.0
+        ],
+        "final_parameters": [
+          0.13950173545919084,
+          5.773898946938264,
+          1.781451734472319
+        ],
+        "success": true,
+        "status": 2,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 6,
+        "training_sse_c2": 114.4230778859881
+      },
+      {
+        "initial_parameters": [
+          0.1,
+          30.0,
+          7.0
+        ],
+        "final_parameters": [
+          0.1395017232477772,
+          5.773897648446771,
+          1.7814514139543247
+        ],
+        "success": true,
+        "status": 2,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 7,
+        "training_sse_c2": 114.42307788598873
+      },
+      {
+        "initial_parameters": [
+          0.3,
+          10.0,
+          7.0
+        ],
+        "final_parameters": [
+          0.1395017247830775,
+          5.7739055756328455,
+          1.7814524576900677
+        ],
+        "success": true,
+        "status": 2,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 12,
+        "training_sse_c2": 114.4230778860148
+      }
+    ],
+    "training_rows": 7192,
+    "training_pairs": 7191,
+    "jacobian_condition_number": 129.20940805297715,
+    "warning": "H/C are equivalent parameters for a derived sensor aggregate; bounds are analyst constraints. No local-Wuhan calibration or statistical confidence guarantee."
+  },
+  "splits": {
+    "train": {
+      "target_row_start_inclusive": 1,
+      "target_row_stop_exclusive": 7192,
+      "first_utc": "2018-12-07T17:20:00Z",
+      "last_utc": "2019-01-26T15:40:00Z"
+    },
+    "validation": {
+      "target_row_start_inclusive": 7192,
+      "target_row_stop_exclusive": 9589,
+      "first_utc": "2019-01-26T15:50:00Z",
+      "last_utc": "2019-02-12T07:10:00Z"
+    },
+    "test": {
+      "target_row_start_inclusive": 9589,
+      "target_row_stop_exclusive": 11988,
+      "first_utc": "2019-02-12T07:20:00Z",
+      "last_utc": "2019-02-28T23:00:00Z"
+    }
+  },
+  "metrics": {
+    "train": {
+      "rc_one_step": {
+        "n": 7191,
+        "mae_c": 0.06343680992428591,
+        "rmse_c": 0.1261427133487917,
+        "bias_predicted_minus_observed_c": 0.0003291738741549533,
+        "max_abs_error_c": 1.1320189099786546,
+        "residual_acf": {
+          "1": 0.543763020748876,
+          "6": 0.24909000521415803,
+          "24": 0.17090850757192172,
+          "144": 0.5946915575844215
+        }
+      },
+      "persistence_one_step": {
+        "n": 7191,
+        "mae_c": 0.06019313818827924,
+        "rmse_c": 0.13671571373651642,
+        "bias_predicted_minus_observed_c": 2.08858358015394e-05,
+        "max_abs_error_c": 1.2510950226244333,
+        "residual_acf": {
+          "1": 0.564799056649359,
+          "6": 0.22699014828341701,
+          "24": 0.12628972137869532,
+          "144": 0.6064204845725223
+        }
+      },
+      "rc_continuous_open_loop": {
+        "n": 7191,
+        "mae_c": 3.983080561793603,
+        "rmse_c": 4.808255881618922,
+        "bias_predicted_minus_observed_c": -0.008536527515952099,
+        "max_abs_error_c": 11.132192667702016,
+        "residual_acf": {
+          "1": 0.9996418269540682,
+          "6": 0.9958032542864858,
+          "24": 0.9770603276511216,
+          "144": 0.9498836714822615
+        }
+      },
+      "persistence_continuous_open_loop": {
+        "n": 7191,
+        "mae_c": 0.6427212614729377,
+        "rmse_c": 1.174283483238262,
+        "bias_predicted_minus_observed_c": 0.5951309070979267,
+        "max_abs_error_c": 3.829966817496235,
+        "residual_acf": {
+          "1": 0.9908427564625619,
+          "6": 0.8802861444910285,
+          "24": 0.3408030960273074,
+          "144": 0.7847322642898704
+        }
+      },
+      "rc_segment_open_loop": {
+        "n": 7191,
+        "mae_c": 3.983080561793603,
+        "rmse_c": 4.808255881618922,
+        "bias_predicted_minus_observed_c": -0.008536527515952099,
+        "max_abs_error_c": 11.132192667702016,
+        "residual_acf": {
+          "1": 0.9996418269540682,
+          "6": 0.9958032542864858,
+          "24": 0.9770603276511216,
+          "144": 0.9498836714822615
+        }
+      },
+      "persistence_segment_open_loop": {
+        "n": 7191,
+        "mae_c": 0.6427212614729377,
+        "rmse_c": 1.174283483238262,
+        "bias_predicted_minus_observed_c": 0.5951309070979267,
+        "max_abs_error_c": 3.829966817496235,
+        "residual_acf": {
+          "1": 0.9908427564625619,
+          "6": 0.8802861444910285,
+          "24": 0.3408030960273074,
+          "144": 0.7847322642898704
+        }
+      }
+    },
+    "validation": {
+      "rc_one_step": {
+        "n": 2397,
+        "mae_c": 0.07266459198755407,
+        "rmse_c": 0.11764717126451053,
+        "bias_predicted_minus_observed_c": 0.01101275854780483,
+        "max_abs_error_c": 1.08233163324919,
+        "residual_acf": {
+          "1": 0.5293967660858769,
+          "6": 0.055593159994342604,
+          "24": 0.014293145459388168,
+          "144": 0.2397409096740544
+        }
+      },
+      "persistence_one_step": {
+        "n": 2397,
+        "mae_c": 0.07440844796568874,
+        "rmse_c": 0.12753070452484255,
+        "bias_predicted_minus_observed_c": 0.0001131504878836102,
+        "max_abs_error_c": 1.1908114630467566,
+        "residual_acf": {
+          "1": 0.5634696187260054,
+          "6": 0.05133065553630379,
+          "24": -0.01247726990850976,
+          "144": 0.28740717976051217
+        }
+      },
+      "rc_continuous_open_loop": {
+        "n": 2397,
+        "mae_c": 2.668929808675255,
+        "rmse_c": 3.0409555845736227,
+        "bias_predicted_minus_observed_c": 2.5558708106944397,
+        "max_abs_error_c": 6.162561347000931,
+        "residual_acf": {
+          "1": 0.9972079113328904,
+          "6": 0.963466503184569,
+          "24": 0.8086810966732938,
+          "144": 0.44873246381555965
+        }
+      },
+      "persistence_continuous_open_loop": {
+        "n": 2397,
+        "mae_c": 0.9261351324651058,
+        "rmse_c": 1.238142550050886,
+        "bias_predicted_minus_observed_c": 0.8877538577319212,
+        "max_abs_error_c": 3.457653092006037,
+        "residual_acf": {
+          "1": 0.9888583280454722,
+          "6": 0.8358578694779603,
+          "24": 0.18300962532043571,
+          "144": 0.6056892164008278
+        }
+      },
+      "rc_segment_open_loop": {
+        "n": 2397,
+        "mae_c": 2.4153250805422526,
+        "rmse_c": 2.84362683732392,
+        "bias_predicted_minus_observed_c": 2.2845467667917805,
+        "max_abs_error_c": 6.041522545355551,
+        "residual_acf": {
+          "1": 0.9969038705770569,
+          "6": 0.9628949479976918,
+          "24": 0.8109362326852801,
+          "144": 0.4496076547489892
+        }
+      },
+      "persistence_segment_open_loop": {
+        "n": 2397,
+        "mae_c": 0.8243057190014424,
+        "rmse_c": 1.1352931074454458,
+        "bias_predicted_minus_observed_c": 0.7375638124830514,
+        "max_abs_error_c": 3.3074630467571673,
+        "residual_acf": {
+          "1": 0.9888583280454722,
+          "6": 0.8358578694779603,
+          "24": 0.18300962532043571,
+          "144": 0.6056892164008278
+        }
+      }
+    },
+    "test": {
+      "rc_one_step": {
+        "n": 2399,
+        "mae_c": 0.05747557339271418,
+        "rmse_c": 0.0859793640252587,
+        "bias_predicted_minus_observed_c": 0.0044012409035589,
+        "max_abs_error_c": 0.6811816851271892,
+        "residual_acf": {
+          "1": 0.48528524936614126,
+          "6": 0.004536809035275053,
+          "24": -0.011863694643964601,
+          "144": 0.007393898909407325
+        }
+      },
+      "persistence_one_step": {
+        "n": 2399,
+        "mae_c": 0.058060986949690606,
+        "rmse_c": 0.09196384555070156,
+        "bias_predicted_minus_observed_c": -0.000315116215466851,
+        "max_abs_error_c": 0.6892488687782823,
+        "residual_acf": {
+          "1": 0.5090481060301143,
+          "6": -0.011711233668788276,
+          "24": -0.016666892897533606,
+          "144": 0.030965196176013225
+        }
+      },
+      "rc_continuous_open_loop": {
+        "n": 2399,
+        "mae_c": 1.3925740722062065,
+        "rmse_c": 1.885258883588685,
+        "bias_predicted_minus_observed_c": 1.2679553913924348,
+        "max_abs_error_c": 6.719117693539836,
+        "residual_acf": {
+          "1": 0.996816080725875,
+          "6": 0.9664853787219819,
+          "24": 0.8444229358198566,
+          "144": 0.3932014465060638
+        }
+      },
+      "persistence_continuous_open_loop": {
+        "n": 2399,
+        "mae_c": 0.5996698850765511,
+        "rmse_c": 0.7901721810918396,
+        "bias_predicted_minus_observed_c": 0.4861235897058691,
+        "max_abs_error_c": 2.8289653092006013,
+        "residual_acf": {
+          "1": 0.9887323545136363,
+          "6": 0.8554769673328089,
+          "24": 0.40467965150699076,
+          "144": 0.22407008884752358
+        }
+      },
+      "rc_segment_open_loop": {
+        "n": 2399,
+        "mae_c": 0.9492710482554679,
+        "rmse_c": 1.155135506724595,
+        "bias_predicted_minus_observed_c": 0.8125121529826925,
+        "max_abs_error_c": 3.2100543635663676,
+        "residual_acf": {
+          "1": 0.9931810175343417,
+          "6": 0.9229881877113758,
+          "24": 0.6753079863246094,
+          "144": 0.15230788481103122
+        }
+      },
+      "persistence_segment_open_loop": {
+        "n": 2399,
+        "mae_c": 0.4836898682646175,
+        "rmse_c": 0.6262935027586854,
+        "bias_predicted_minus_observed_c": 0.0647118249999857,
+        "max_abs_error_c": 2.407553544494718,
+        "residual_acf": {
+          "1": 0.9887323545136363,
+          "6": 0.8554769673328088,
+          "24": 0.40467965150699076,
+          "144": 0.22407008884752355
+        }
+      }
+    }
+  },
+  "predictions_definition": [
+    "one_step_using_previous_measured_interval_mean",
+    "continuous_open_loop_initialized_once_at_first_observed_interval",
+    "segment_open_loop_initialized_once_from_the_preceding_interval_at_each_holdout_start"
+  ],
+  "source_and_model_limitations": [
+    "Publisher filled unspecified short measurement failures by linear interpolation for temperatures and zero for powers/flows, without row-level quality flags; these cannot be removed or distinguished here.",
+    "O5 simulated December power refill is excluded by selecting N2 only.",
+    "N2 is a multiroom heavy building with ventilation, internal door/window changes, ground/attic effects and omitted fan heat; one time-invariant RC is an applicability test, not a complete physical reconstruction.",
+    "Recorded future weather and heat inputs are used: this is conditional prediction, not a deployable weather/control forecast.",
+    "No external parameter or fitted value will replace Wuhan synthetic parameters."
+  ],
+  "temperature_sampling": "exact interval-mean observation equation, not period-end measurement",
+  "runtime": {
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.15.3"
+  },
+  "no_Wuhan_parameter_transfer": true,
+  "no_random_split": true
+}

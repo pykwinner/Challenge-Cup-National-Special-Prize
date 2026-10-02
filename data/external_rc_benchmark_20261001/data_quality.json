@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "rows": 11988,
+  "sample_minutes": 10,
+  "matched_time_rows": 11988,
+  "first_original_cet": "2018-12-07 18:10:00",
+  "last_original_cet": "2019-03-01 00:00:00",
+  "first_utc_label": "2018-12-07T17:10:00Z",
+  "last_utc_label": "2019-02-28T23:00:00Z",
+  "duplicate_rows": 0,
+  "missing_intervals": 0,
+  "nonfinite_selected_values": 0,
+  "temperature_columns": [
+    "n2_aroom_bath_110_AT",
+    "n2_aroom_bed_110_AT",
+    "n2_aroom_child1_110_AT",
+    "n2_aroom_child2_110_AT",
+    "n2_aroom_corridor_110_AT",
+    "n2_aroom_dining_110_AT",
+    "n2_aroom_doorway_110_AT",
+    "n2_aroom_kitchen_110_AT",
+    "n2_aroom_living_110_AT",
+    "n2_aroom_stairs_110_AT"
+  ],
+  "heater_columns": [
+    "n2_aroom_bath_heat_elP",
+    "n2_aroom_bed_heat_elP",
+    "n2_aroom_child1_heat_elP",
+    "n2_aroom_child2_heat_elP",
+    "n2_aroom_corridor_heat_elP",
+    "n2_aroom_dining_heat_elP",
+    "n2_aroom_doorway_heat_elP",
+    "n2_aroom_kitchen_heat_elP",
+    "n2_aroom_living_heat_elP",
+    "n2_aroom_stairs_heat_elP"
+  ],
+  "internal_gain_columns": [
+    "n2_aroom_bath_IHS_elP",
+    "n2_aroom_bed_IHS_elP",
+    "n2_aroom_child1_IHS_elP",
+    "n2_aroom_child2_IHS_elP",
+    "n2_aroom_corridor_IHS_elP",
+    "n2_aroom_kitchen_IHS_elP",
+    "n2_aroom_living_IHS_elP"
+  ],
+  "radiation_columns": [
+    "Radiation_Global",
+    "Radiation_South",
+    "Radiation_West",
+    "Radiation_East",
+    "Radiation_North"
+  ],
+  "room_floor_areas_m2": {
+    "bath": 6.92,
+    "bed": 11.19,
+    "child1": 34.6,
+    "child2": 36.56,
+    "corridor": 5.46,
+    "dining": 11.19,
+    "doorway": 5.84,
+    "kitchen": 7.44,
+    "living": 33.65,
+    "stairs": 12.9
+  },
+  "total_area_m2": 165.75,
+  "aggregation_basis": "Figure 9 room floor areas and Table 12 total 165.75 m2; area weighted sensor average, not measured volume-mean temperature",
+  "heat_quantity_basis": "measured electric heater and IHS input, converted to room sensible heat with unity model factor; omitted sockets/fan heat",
+  "publisher_processing": "Short temperature gaps interpolated and power/flow gaps set zero, without per-row flags. Their exact count cannot be independently recovered.",
+  "alignment": "DATE labels match exactly; source reports bin averages. Absolute within-bin label phase unconfirmed; averaged-observation equation used, no artificial power shift."
+}

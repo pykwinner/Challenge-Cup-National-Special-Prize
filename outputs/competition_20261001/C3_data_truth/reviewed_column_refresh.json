@@ -1,0 +1,41 @@
+{
+  "completed": true,
+  "created_utc": "2026-10-01T16:19:51.441007+00:00",
+  "original_ledger_sha256": "ff1a59aa1d64e4f5548cd3c3e66805f6dd8221a8cbc5a98f79d831e47e2d215c",
+  "refreshed_ledger_sha256": "e5afb9009dacdc32a8d7ef7be121e0843b7ebfa70bf520e0a32a4f13000bab20",
+  "original_entry_count": 8051,
+  "refreshed_entry_count": 8051,
+  "refreshed_file": "data/external_rc_benchmark_20261001/observations.csv",
+  "changes": [
+    {
+      "id": "8a9418d827d77f192436",
+      "field": "column:source_time_cet",
+      "previous_category": "unsubstantiated_assumption",
+      "category": "explainable_design_or_solver_setting",
+      "verification_status": "original_time_mapping_or_declared_identity_independently_checked"
+    },
+    {
+      "id": "da6cbab4696986c5bdfd",
+      "field": "column:time_utc",
+      "previous_category": "unsubstantiated_assumption",
+      "category": "explainable_design_or_solver_setting",
+      "verification_status": "original_time_mapping_or_declared_identity_independently_checked"
+    },
+    {
+      "id": "f44c2580c996c03a4212",
+      "field": "column:dt_hours",
+      "previous_category": "unsubstantiated_assumption",
+      "category": "explainable_design_or_solver_setting",
+      "verification_status": "original_time_mapping_or_declared_identity_independently_checked"
+    },
+    {
+      "id": "89a1362ca7c86ad689e9",
+      "field": "column:observation_identity",
+      "previous_category": "unsubstantiated_assumption",
+      "category": "explainable_design_or_solver_setting",
+      "verification_status": "original_time_mapping_or_declared_identity_independently_checked"
+    }
+  ],
+  "read_only_source_hashes_equal": true,
+  "no_full_inventory_rescan": true
+}

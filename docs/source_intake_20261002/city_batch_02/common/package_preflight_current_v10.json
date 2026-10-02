@@ -1,0 +1,781 @@
+[
+  {
+    "kind": "paper_baseline_season",
+    "profile": "scenario1_urumqi",
+    "status": "pass",
+    "rows": 4392,
+    "scope_audit": {
+      "rows": 4392,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2024-10-09T16:00:00+00:00",
+      "end_timestamp": "2025-04-10T15:00:00+00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 4392.0,
+      "is_full_year_horizon": false,
+      "is_calendar_year_aligned": false,
+      "chronology_valid": true,
+      "issues": [],
+      "scope_id": "scenario1_urumqi",
+      "start_inclusive": "2024-10-09T16:00:00+00:00",
+      "end_exclusive": "2025-04-10T16:00:00+00:00",
+      "exact_scope_match": true,
+      "input_timezone": "Asia/Shanghai",
+      "scope_type": "heating_season",
+      "expected_rows": 4392,
+      "operating_scenario": "heating_season"
+    }
+  },
+  {
+    "kind": "paper_baseline_season",
+    "profile": "scenario2_guyuan",
+    "status": "pass",
+    "rows": 4392,
+    "scope_audit": {
+      "rows": 4392,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2024-10-14T16:00:00+00:00",
+      "end_timestamp": "2025-04-15T15:00:00+00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 4392.0,
+      "is_full_year_horizon": false,
+      "is_calendar_year_aligned": false,
+      "chronology_valid": true,
+      "issues": [],
+      "scope_id": "scenario2_guyuan",
+      "start_inclusive": "2024-10-14T16:00:00+00:00",
+      "end_exclusive": "2025-04-15T16:00:00+00:00",
+      "exact_scope_match": true,
+      "input_timezone": "Asia/Shanghai",
+      "scope_type": "heating_season",
+      "expected_rows": 4392,
+      "operating_scenario": "heating_season"
+    }
+  },
+  {
+    "kind": "paper_baseline_season",
+    "profile": "scenario3_wuhan",
+    "status": "fail",
+    "error_type": "ValueError",
+    "error": "operating_scenario must explicitly map user_behavior for node district_a; choose from ['evening_rebound', 'high_comfort_preference']"
+  },
+  {
+    "kind": "updated_utc_season",
+    "profile": "scenario1_urumqi",
+    "status": "pass",
+    "rows": 4392,
+    "scope_audit": {
+      "rows": 4392,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2024-10-09T16:00:00+00:00",
+      "end_timestamp": "2025-04-10T15:00:00+00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 4392.0,
+      "is_full_year_horizon": false,
+      "is_calendar_year_aligned": false,
+      "chronology_valid": true,
+      "issues": [],
+      "scope_id": "scenario1_urumqi",
+      "start_inclusive": "2024-10-09T16:00:00+00:00",
+      "end_exclusive": "2025-04-10T16:00:00+00:00",
+      "exact_scope_match": true,
+      "input_timezone": "Asia/Shanghai",
+      "scope_type": "heating_season",
+      "expected_rows": 4392,
+      "operating_scenario": "heating_season"
+    }
+  },
+  {
+    "kind": "updated_utc_season",
+    "profile": "scenario2_guyuan",
+    "status": "pass",
+    "rows": 4392,
+    "scope_audit": {
+      "rows": 4392,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2024-10-14T16:00:00+00:00",
+      "end_timestamp": "2025-04-15T15:00:00+00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 4392.0,
+      "is_full_year_horizon": false,
+      "is_calendar_year_aligned": false,
+      "chronology_valid": true,
+      "issues": [],
+      "scope_id": "scenario2_guyuan",
+      "start_inclusive": "2024-10-14T16:00:00+00:00",
+      "end_exclusive": "2025-04-15T16:00:00+00:00",
+      "exact_scope_match": true,
+      "input_timezone": "Asia/Shanghai",
+      "scope_type": "heating_season",
+      "expected_rows": 4392,
+      "operating_scenario": "heating_season"
+    }
+  },
+  {
+    "kind": "updated_utc_season",
+    "profile": "scenario3_wuhan",
+    "status": "fail",
+    "error_type": "ValueError",
+    "error": "operating_scenario must explicitly map user_behavior for node district_a; choose from ['evening_rebound', 'high_comfort_preference']"
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario1_urumqi",
+    "year": 2020,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8784,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2020-01-01T00:00:00",
+      "end_timestamp": "2020-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8784.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 0,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": [
+        "base"
+      ],
+      "effective_transition_target_scenarios": [
+        "full_year"
+      ],
+      "mapping_applied": true,
+      "mapping_rule": "single_realized_chronology_scenario",
+      "requires_review": false,
+      "unknown_configured_targets": [
+        "base"
+      ],
+      "rationale": "the fixed-investment replay has one realized chronology; planning scenario filters therefore apply to that full year"
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario1_urumqi",
+    "year": 2021,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8760,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2021-01-01T00:00:00",
+      "end_timestamp": "2021-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8760.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 2,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": [
+        "base"
+      ],
+      "effective_transition_target_scenarios": [
+        "full_year"
+      ],
+      "mapping_applied": true,
+      "mapping_rule": "single_realized_chronology_scenario",
+      "requires_review": false,
+      "unknown_configured_targets": [
+        "base"
+      ],
+      "rationale": "the fixed-investment replay has one realized chronology; planning scenario filters therefore apply to that full year"
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario1_urumqi",
+    "year": 2022,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8760,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2022-01-01T00:00:00",
+      "end_timestamp": "2022-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8760.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 0,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": [
+        "base"
+      ],
+      "effective_transition_target_scenarios": [
+        "full_year"
+      ],
+      "mapping_applied": true,
+      "mapping_rule": "single_realized_chronology_scenario",
+      "requires_review": false,
+      "unknown_configured_targets": [
+        "base"
+      ],
+      "rationale": "the fixed-investment replay has one realized chronology; planning scenario filters therefore apply to that full year"
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario1_urumqi",
+    "year": 2023,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8760,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2023-01-01T00:00:00",
+      "end_timestamp": "2023-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8760.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 0,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": [
+        "base"
+      ],
+      "effective_transition_target_scenarios": [
+        "full_year"
+      ],
+      "mapping_applied": true,
+      "mapping_rule": "single_realized_chronology_scenario",
+      "requires_review": false,
+      "unknown_configured_targets": [
+        "base"
+      ],
+      "rationale": "the fixed-investment replay has one realized chronology; planning scenario filters therefore apply to that full year"
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario1_urumqi",
+    "year": 2024,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8784,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2024-01-01T00:00:00",
+      "end_timestamp": "2024-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8784.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 4,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": [
+        "base"
+      ],
+      "effective_transition_target_scenarios": [
+        "full_year"
+      ],
+      "mapping_applied": true,
+      "mapping_rule": "single_realized_chronology_scenario",
+      "requires_review": false,
+      "unknown_configured_targets": [
+        "base"
+      ],
+      "rationale": "the fixed-investment replay has one realized chronology; planning scenario filters therefore apply to that full year"
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario2_guyuan",
+    "year": 2020,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8784,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2020-01-01T00:00:00",
+      "end_timestamp": "2020-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8784.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 0,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario2_guyuan",
+    "year": 2021,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8760,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2021-01-01T00:00:00",
+      "end_timestamp": "2021-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8760.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 5,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario2_guyuan",
+    "year": 2022,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8760,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2022-01-01T00:00:00",
+      "end_timestamp": "2022-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8760.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 0,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario2_guyuan",
+    "year": 2023,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8760,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2023-01-01T00:00:00",
+      "end_timestamp": "2023-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8760.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 0,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario2_guyuan",
+    "year": 2024,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8784,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 12,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2024-01-01T00:00:00",
+      "end_timestamp": "2024-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8784.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 4,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario3_wuhan",
+    "year": 2020,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8784,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 16,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2020-01-01T00:00:00",
+      "end_timestamp": "2020-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8784.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 4,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario3_wuhan",
+    "year": 2021,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8760,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 16,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2021-01-01T00:00:00",
+      "end_timestamp": "2021-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8760.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 4,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario3_wuhan",
+    "year": 2022,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8760,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 16,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2022-01-01T00:00:00",
+      "end_timestamp": "2022-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8760.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 5,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario3_wuhan",
+    "year": 2023,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8760,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 16,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2023-01-01T00:00:00",
+      "end_timestamp": "2023-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8760.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 0,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  },
+  {
+    "kind": "annual",
+    "profile": "scenario3_wuhan",
+    "year": 2024,
+    "status": "pass",
+    "chronology_audit": {
+      "rows": 8784,
+      "timestamp_column": "timestamp",
+      "expected_step_hours": 1.0,
+      "required_column_count": 16,
+      "missing_required_columns": [],
+      "invalid_timestamp_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "missing_required_value_count": 0,
+      "infinite_required_value_count": 0,
+      "negative_nonnegative_value_count": 0,
+      "start_timestamp": "2024-01-01T00:00:00",
+      "end_timestamp": "2024-12-31T23:00:00",
+      "observed_step_hours": 1.0,
+      "horizon_hours": 8784.0,
+      "is_full_year_horizon": true,
+      "is_calendar_year_aligned": true,
+      "chronology_valid": true,
+      "issues": [],
+      "is_explicit_service_year_aligned": false
+    },
+    "coverage_review_count": 5,
+    "scenario_scope_audit": {
+      "chronology_scenarios": [
+        "full_year"
+      ],
+      "configured_transition_target_scenarios": null,
+      "effective_transition_target_scenarios": null,
+      "mapping_applied": false,
+      "mapping_rule": "no_explicit_planning_scenario_filter",
+      "requires_review": false
+    }
+  }
+]

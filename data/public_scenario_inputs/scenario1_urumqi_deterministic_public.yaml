@@ -1,0 +1,32 @@
+extends: scenario1_urumqi_public.yaml
+
+planning:
+  region_profile: urumqi_public_weather_deterministic_design
+
+# The explicit CHP rejection path below removes the former incentive to use
+# storage losses as a heat sink. Storage modes can therefore be continuous, but
+# the annual certificate still rejects any non-zero simultaneous operation.
+storages:
+  - name: central_low_temp_tank
+    strict_charge_discharge_mode: false
+    # Proxy for pump wear, heat-exchanger cycling and storage degradation.
+    # Replace with plant O&M data before project-level use.
+    throughput_cost_yuan_per_kwh: 0.01
+  - name: district_a_pcm
+    # The robust plan installs zero PCM capacity, so a mode binary has no
+    # physical effect and only creates 8,784 symmetric integer decisions.
+    strict_charge_discharge_mode: false
+
+sources:
+  - name: existing_chp
+    # Explicit condenser/bypass capability replaces the non-physical storage
+    # cycling that otherwise appears when minimum power output exceeds useful
+    # heat demand. This is a conservative modelling allowance, not an asserted
+    # measured parameter; project use requires plant-specific verification.
+    heat_rejection_enabled: true
+    max_heat_rejection_kw: 180
+    heat_rejection_penalty_yuan_per_kwh: 0.02
+
+policy:
+  # The direct representative-year replay has one scenario named "base".
+  transition_target_scenarios: [base]

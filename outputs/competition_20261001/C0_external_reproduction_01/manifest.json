@@ -1,0 +1,100 @@
+{
+  "complete": true,
+  "purpose": "same_study_read_only_reproduction",
+  "inputs": [
+    {
+      "file": "data/external_rc_benchmark_20261001/README.md",
+      "sha256": "9983c7a2753f04bf2bf41b6c72087f376020edcd9bda7d9774eb4f51aeeec4de"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/analysis_plan.json",
+      "sha256": "c9f85c8c20c657790df0ee040ea5687c3e5ae3272105977a1562d4edcc32b78c"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/data_quality.json",
+      "sha256": "5aab685dd9d456e5110761944f0342602294a9a238d8cc09eb2786dcf50ec8a5"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/Twin_house_N2_exp1_full1_10min.xlsx",
+      "sha256": "4fb3b1ca819b7ec16d2a8495d276c9d658a1bb0592572f41a841237557b8c884"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/Twin_house_weather_exp1_10min_compensated.xlsx",
+      "sha256": "dca9a2e6977090b6c9cfd7b7b85d117870cd227ec5319060bd549648cb16dd3a"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_landing.html",
+      "sha256": "17512b2b262ddbbea33c87d55bb2913238585f93b1be4cf7ccafcea8337a240e"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_main_experiment.zip",
+      "sha256": "832754489e0c513c8cb09b7e43d61a9f5249ff5502a781a672cae6d588a876a1"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+      "sha256": "0cfdc5d5a0a73362b4195ed53c5ca95493c7b2a50c64d10a14403047f73d5180"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/evidence/downloads.json",
+      "sha256": "63cdb8464548dee68d08b7daf981f3aaa43949548253ebdaca8638ebd60736d3"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/extracted_members.json",
+      "sha256": "d12fcdd7f47e514579c14f0ecd4729a9d3bc6276476e8e56ad6afc9a71ac0baa"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/field_evidence_map.json",
+      "sha256": "645229040f30b62adcc846110191c49539cea066026f0e30ed5b18d051547f71"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/observations.csv",
+      "sha256": "8eb764f9b8f78a672cb79473a5c00458158e264d7c56a07b4315b3bd92fb46ed"
+    },
+    {
+      "file": "data/external_rc_benchmark_20261001/source_provenance.json",
+      "sha256": "3b392e56524f1944ecc95dac984367166b1b3a4dd4a46de745a33c38462175e3"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external/manifest.json",
+      "sha256": "180f79e8fc15ce4c2054501a475553a8702e135167606699dbcaa02d6487e130"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external/validation_report.json",
+      "sha256": "f62a882813b9aa0715a2e6da708db62defc540ee160907b154a77a7804fe619d"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/manifest.json",
+      "sha256": "800ed55223f77e8121de8dbc074592d7891ab5a40b2ce774ed1f12a8483ef0ce"
+    },
+    {
+      "file": "outputs/competition_20261001/C1_external_followup/validation_report.json",
+      "sha256": "ac2172070981a63128714e94914ed403ca2f4d3fa086b749246ebd293a1c90a1"
+    },
+    {
+      "file": "scripts/reproduce_external_measurement_studies.py",
+      "sha256": "f0fb53f61b81ad39608c1b802801d5c2250b358ca6f2ac40a40576e7bc0c8406"
+    },
+    {
+      "file": "scripts/validate_external_rc_benchmark.py",
+      "sha256": "2c4e234b86dc328df9e2b49bd30e72af25e1539e8903bc878c5cc77d61a94029"
+    },
+    {
+      "file": "scripts/validate_external_rc_followup.py",
+      "sha256": "4eded63c70df8a314a9e131d26e6ca8c3700e48c2769b48912b0cec5f89e78d2"
+    },
+    {
+      "file": "tests/test_external_rc_benchmark.py",
+      "sha256": "dc1576dce7080e8c533b3facf34eedb278780ffc58d660cb5a27b332836ae9c4"
+    },
+    {
+      "file": "tests/test_external_rc_followup.py",
+      "sha256": "8c980b3e75648e056d790a6dbff0bcb2036a96978fa7d1b61df1d22c9af9f99e"
+    }
+  ],
+  "files": {
+    "C1_external_followup_reproduced.csv": "21492e7863344c75b331390a3fbed10047163fd1b27e9cbda96f925f680df8a1",
+    "C1_external_reproduced.csv": "0f213dfc6625b95836702ebb6a3d835d2358ea362677e1ecf25e5f1e8eb243e7",
+    "reproduction_report.json": "eea8157e7fcc54a1606d7c5fff7a80f65658d099357afef050ad37f2f0de58a1"
+  },
+  "unused_protected_discovery_files_are_not_computation_dependencies": true
+}

@@ -1,0 +1,77 @@
+{
+  "city": "urumqi",
+  "city_cn": "乌鲁木齐",
+  "source_url": "https://climate.onebuilding.org/WMO_Region_2_Asia/CHN_China/XJ_Xinjiang_Uyghur/CHN_XJ_Urumqi.514630_CSWD.zip",
+  "final_url": "https://climate.onebuilding.org/WMO_Region_2_Asia/CHN_China/XJ_Xinjiang_Uyghur/CHN_XJ_Urumqi.514630_CSWD.zip",
+  "retrieved_at_utc": "2026-10-02T01:28:17.506607+00:00",
+  "zip_file": "urumqi/CHN_XJ_Urumqi.514630_CSWD.zip",
+  "zip_bytes": 386332,
+  "zip_sha256": "ee71b06e89adeb39fc678bb703403b94d671c788baa3fe983f12f9bf0520cef4",
+  "epw_file": "urumqi/CHN_XJ_Urumqi.514630_CSWD.epw",
+  "epw_sha256": "55b02ebd66670981026c4944596283fe505927663a19bd30e55abc3583551848",
+  "location_header": [
+    "LOCATION",
+    "Urumqi",
+    "Xinjiang",
+    "CHN",
+    "CSWD",
+    "514630",
+    "43.78333",
+    "87.65000",
+    "8.0",
+    "935.0"
+  ],
+  "records": 8760,
+  "source_year_labels": [
+    2005
+  ],
+  "dry_bulb_range_c": [
+    -25.0,
+    38.8
+  ],
+  "missing_counts": {
+    "dry_bulb_c": 0,
+    "dew_point_c": 0,
+    "relative_humidity_pct": 0,
+    "station_pressure_pa": 0,
+    "global_horizontal_radiation_wh_m2": 0,
+    "wind_direction_deg": 0,
+    "wind_speed_m_s": 0
+  },
+  "checks": {
+    "8760_records": true,
+    "unique_month_day_hour": true,
+    "first_interval": true,
+    "last_interval": true,
+    "hour_1_to_24": true,
+    "minute_60": false,
+    "no_missing_selected_fields": true,
+    "minimum_35_columns": true,
+    "source_cswd": true,
+    "month_day_hour_complete_and_ordered": true
+  },
+  "format_check_pass": false,
+  "data_periods_header": [
+    "DATA PERIODS",
+    "1",
+    "1",
+    "Data",
+    "Sunday",
+    " 1/ 1",
+    "12/31"
+  ],
+  "calendar_check_pass": true,
+  "raw_minute_values": [
+    0
+  ],
+  "time_format_note": "所有Minute均为0，与引用字典1..60不一致；保留源文件，逐时导入时显式声明按Hour=1..24解释区间，尚未转换模型输入",
+  "archive_and_extracted_epw_sha_match": true,
+  "norm_vs_epw_station_metadata": {
+    "standard_station_id": "51463",
+    "epw_station_id": "514630",
+    "standard_elevation_m": 917.9,
+    "epw_elevation_m": 935.0,
+    "elevation_difference_m": 17.100000000000023,
+    "interpretation": "分别保留规范与EPW原始台站信息；不自动合并坐标和海拔"
+  }
+}

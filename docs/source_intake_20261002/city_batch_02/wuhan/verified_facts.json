@@ -1,0 +1,1340 @@
+{
+  "schema_version": 1,
+  "assembled_at_utc": "2026-10-02T02:57:36.591744+00:00",
+  "classification_note": "报道实测仅表示报道引用运营方运行数值，未取得现场监测原始文件；本轮没有将任何来源认定为独立核验现场观测。规范类包括参照执行导则和公告价格，不表示法律强制效力认证。",
+  "facts": [
+    {
+      "fact_id": "WHF001",
+      "source_id": "WHNOTICE",
+      "claim": "2025导则正式印发身份",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/t20251113_2677269.shtml",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_issue_notice.html",
+      "sha256": "79a604f9475a6b9c98ccae367696a9a18f35413c2c1515d4136ead34c0c5d12e",
+      "original_location": {
+        "html": "正文第1段及落款/网页时间"
+      },
+      "value": {
+        "signed_date": "2025-11-05",
+        "posted_at": "2025-11-13 17:10",
+        "instruction": "现予以印发，请参照执行"
+      },
+      "unit": "日期/原文",
+      "conditions": "武汉市自然资源和城乡建设局",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "来源身份与设计依据记录"
+      ],
+      "missing_conditions": [
+        "单列施行日或强制地方标准施行文件未见",
+        "未证实替代或废止2024稿"
+      ],
+      "usage_status": "已补齐（身份）",
+      "applied_to_model": false
+    },
+    {
+      "fact_id": "WHF002",
+      "source_id": "WH2025",
+      "claim": "导则题名及适用范围",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 1,
+        "scope_physical_page": 5,
+        "printed_page": 1,
+        "clause": "1"
+      },
+      "value": {
+        "title": "武汉市超低能耗居住建筑节能设计导则",
+        "scope": "新建、改建、扩建超低能耗居住建筑"
+      },
+      "unit": "文本",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "building_thermal适用性筛选"
+      ],
+      "missing_conditions": [
+        "办公、酒店、商业混合园区不可未经论证套用"
+      ],
+      "usage_status": "已补齐（身份/范围）",
+      "applied_to_model": false
+    },
+    {
+      "fact_id": "WHF003",
+      "source_id": "WH2025",
+      "claim": "建筑本体节能率设计要求",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 7,
+        "printed_page": 3,
+        "clause": "4.3/3.12"
+      },
+      "value": 75,
+      "unit": "%",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "设计方案与基准建筑比较指标"
+      ],
+      "missing_conditions": [
+        "基准及设计全年计算",
+        "可再生能源电量口径"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "设定计算条件下的设计要求；不是现场节能率，也不是冷/热需求强度。"
+    },
+    {
+      "fact_id": "WHF004",
+      "source_id": "WH2025",
+      "claim": "室内热环境设计参数",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 8,
+        "printed_page": 4,
+        "clause": "4.6",
+        "table": "3"
+      },
+      "value": {
+        "cooling": 26,
+        "heating": 18
+      },
+      "unit": "°C",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测；卧室/起居室等设计工况",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "building_thermal.buildings[].min_temperature_c/max_temperature_c的设计情景依据"
+      ],
+      "missing_conditions": [
+        "实际使用功能与占用时序",
+        "舒适上下界及预热允许范围"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "不是全年逐时允许区间；不能用两个设计点证明舒适上下界。"
+    },
+    {
+      "fact_id": "WHF005",
+      "source_id": "WH2025",
+      "claim": "设计换气次数",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 8,
+        "printed_page": 4,
+        "clause": "4.6",
+        "table": "3，换气次数合并单元格"
+      },
+      "value": 1.0,
+      "unit": "次/h",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测；供暖/空调设计参数",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "heat_loss_kw_per_c通风分项计算线索"
+      ],
+      "missing_conditions": [
+        "实际体积",
+        "通风回收效率及渗透量",
+        "实际运行时序"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "预设设计值，非实测ACH。"
+    },
+    {
+      "fact_id": "WHF006",
+      "source_id": "WH2025",
+      "claim": "系统综合性能系数设计预设",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 8,
+        "printed_page": 4,
+        "clause": "4.6",
+        "table": "3"
+      },
+      "value": {
+        "cooling": 3.8,
+        "heating": 3.0
+      },
+      "unit": "无量纲",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "规范比较计算的系统参数"
+      ],
+      "missing_conditions": [
+        "实际设备型谱和运行工况"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "不能当作水源热泵实测COP曲线。"
+    },
+    {
+      "fact_id": "WHF007",
+      "source_id": "WH2025",
+      "claim": "体形系数限值",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 8,
+        "printed_page": 4,
+        "clause": "5.2.2",
+        "table": "4"
+      },
+      "value": [
+        {
+          "storeys": "≤3",
+          "S_max": 0.55
+        },
+        {
+          "storeys": "≥4",
+          "S_max": 0.4
+        }
+      ],
+      "unit": "无量纲",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "建筑几何约束/原型筛选"
+      ],
+      "missing_conditions": [
+        "真实几何模型、面积与体积"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false
+    },
+    {
+      "fact_id": "WHF008",
+      "source_id": "WH2025",
+      "claim": "平均窗墙面积比及天窗窗地比限值",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 9,
+        "printed_page": 5,
+        "clause": "5.2.3",
+        "table": "5"
+      },
+      "value": {
+        "south_max": 0.45,
+        "east_west_max": 0.3,
+        "north_max": 0.35,
+        "skylight_to_floor_max": 0.04
+      },
+      "unit": "无量纲",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "围护面积拆分、solar_gain_column计算前提"
+      ],
+      "missing_conditions": [
+        "实际各向窗墙面积及天窗面积"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "单个房间单一朝向窗墙比≤0.6；不计不设空调的公共楼梯间等，需按原条款计算。"
+    },
+    {
+      "fact_id": "WHF009",
+      "source_id": "WH2025",
+      "claim": "屋面U与热惰性限值",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 9,
+        "printed_page": 5,
+        "clause": "6.1.1",
+        "table": "6"
+      },
+      "value": [
+        {
+          "storeys": "≥4",
+          "K_max": 0.3,
+          "D_min": 3.0
+        },
+        {
+          "storeys": "≤3",
+          "K_max": 0.25,
+          "D_min": 2.5
+        }
+      ],
+      "unit": {
+        "K": "W/(m²·K)",
+        "D": "无量纲"
+      },
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "heat_loss_kw_per_c的UA分项依据"
+      ],
+      "missing_conditions": [
+        "实际建筑用途、建成年份及改造状态",
+        "各朝向围护面积与窗墙比",
+        "实际构造和热桥",
+        "体积、实际通风渗透",
+        "用于C的材料质量/比热或标定数据"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false
+    },
+    {
+      "fact_id": "WHF010",
+      "source_id": "WH2025",
+      "claim": "外墙平均U与热惰性限值",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 9,
+        "printed_page": 5,
+        "clause": "6.1.1",
+        "table": "6"
+      },
+      "value": [
+        {
+          "storeys": "≥4",
+          "building_orientation": "南北向",
+          "Kmi_max": 0.8,
+          "Dmi_min": 2.5
+        },
+        {
+          "storeys": "≥4",
+          "building_orientation": "东西向",
+          "Kmi_max": 0.6,
+          "Dmi_min": 2.5
+        },
+        {
+          "storeys": "≤3",
+          "building_orientation": "两向合并",
+          "Kmi_max": 0.35,
+          "Dmi_min": 2.5
+        }
+      ],
+      "unit": {
+        "Kmi": "W/(m²·K)",
+        "Dmi": "无量纲"
+      },
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "heat_loss_kw_per_c的墙体UA分项依据"
+      ],
+      "missing_conditions": [
+        "实际建筑用途、建成年份及改造状态",
+        "各朝向围护面积与窗墙比",
+        "实际构造和热桥",
+        "体积、实际通风渗透",
+        "用于C的材料质量/比热或标定数据"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "建筑朝向与墙面朝向不是同一字段；平均值计入热桥、各朝向面积加权。"
+    },
+    {
+      "fact_id": "WHF011",
+      "source_id": "WH2025",
+      "claim": "楼板和分隔墙U限值",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_pages": [
+          9,
+          10
+        ],
+        "printed_pages": [
+          5,
+          6
+        ],
+        "clause": "6.1.1",
+        "table": "6"
+      },
+      "value": {
+        "heated_unheated_partition_Kmi_max": 1.5,
+        "interstorey_floor_K_max": {
+          "≥4层": 1.8,
+          "≤3层": 1.5
+        },
+        "open_underside_floor_K_max": {
+          "≥4层": 1.0,
+          "≤3层": 0.5
+        }
+      },
+      "unit": "W/(m²·K)",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "heat_loss_kw_per_c分项边界"
+      ],
+      "missing_conditions": [
+        "实际建筑用途、建成年份及改造状态",
+        "各朝向围护面积与窗墙比",
+        "实际构造和热桥",
+        "体积、实际通风渗透",
+        "用于C的材料质量/比热或标定数据",
+        "邻区温差及开敞底面边界"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false
+    },
+    {
+      "fact_id": "WHF012",
+      "source_id": "WH2025",
+      "claim": "高吸收率屋面外墙U限值修正",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 10,
+        "printed_page": 6,
+        "clause": "6.1.1",
+        "table": "6 注"
+      },
+      "value": {
+        "solar_absorptance_trigger": ">0.70",
+        "K_limit_multiplier": 0.9
+      },
+      "unit": "无量纲",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "围护限值校核"
+      ],
+      "missing_conditions": [
+        "实际表面太阳吸收率",
+        "保温是否位于不住人坡屋顶阁楼下楼板（例外）"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false
+    },
+    {
+      "fact_id": "WHF013",
+      "source_id": "WH2025",
+      "claim": "外窗热工限值 r≤0.30",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 10,
+        "printed_page": 6,
+        "clause": "6.1.2",
+        "table": "7"
+      },
+      "value": {
+        "window_wall_ratio": "r≤0.30",
+        "K_max": 1.8,
+        "summer_SHGC": {
+          "south_max": 0.3,
+          "east_west_max": 0.25
+        },
+        "winter_south_SHGC_min": 0.5,
+        "visible_transmittance_min": 0.5
+      },
+      "unit": {
+        "K": "W/(m²·K)",
+        "SHGC/Tv": "无量纲"
+      },
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "heat_loss_kw_per_c窗UA分项",
+        "solar_gain_column计算依据"
+      ],
+      "missing_conditions": [
+        "实际建筑用途、建成年份及改造状态",
+        "各朝向围护面积与窗墙比",
+        "实际构造和热桥",
+        "体积、实际通风渗透",
+        "用于C的材料质量/比热或标定数据",
+        "外遮阳修正与玻璃类型"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "表中冬季东/西向未给数值；凸窗透明侧板K限值×0.80。Tv≥0.50为合并单元格。"
+    },
+    {
+      "fact_id": "WHF014",
+      "source_id": "WH2025",
+      "claim": "外窗热工限值 0.30<r≤0.40",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 10,
+        "printed_page": 6,
+        "clause": "6.1.2",
+        "table": "7"
+      },
+      "value": {
+        "window_wall_ratio": "0.30<r≤0.40",
+        "K_max": 1.6,
+        "summer_SHGC": {
+          "south_max": 0.25,
+          "east_west_max": 0.25
+        },
+        "winter_south_SHGC_min": 0.5,
+        "visible_transmittance_min": 0.5
+      },
+      "unit": {
+        "K": "W/(m²·K)",
+        "SHGC/Tv": "无量纲"
+      },
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "heat_loss_kw_per_c窗UA分项",
+        "solar_gain_column计算依据"
+      ],
+      "missing_conditions": [
+        "实际建筑用途、建成年份及改造状态",
+        "各朝向围护面积与窗墙比",
+        "实际构造和热桥",
+        "体积、实际通风渗透",
+        "用于C的材料质量/比热或标定数据",
+        "外遮阳修正与玻璃类型"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "表中冬季东/西向未给数值；凸窗透明侧板K限值×0.80。Tv≥0.50为合并单元格。"
+    },
+    {
+      "fact_id": "WHF015",
+      "source_id": "WH2025",
+      "claim": "外窗热工限值 0.40<r≤0.60",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 10,
+        "printed_page": 6,
+        "clause": "6.1.2",
+        "table": "7"
+      },
+      "value": {
+        "window_wall_ratio": "0.40<r≤0.60",
+        "K_max": 1.5,
+        "summer_SHGC": {
+          "south_max": 0.2,
+          "east_west_max": 0.2
+        },
+        "winter_south_SHGC_min": 0.5,
+        "visible_transmittance_min": 0.5
+      },
+      "unit": {
+        "K": "W/(m²·K)",
+        "SHGC/Tv": "无量纲"
+      },
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "heat_loss_kw_per_c窗UA分项",
+        "solar_gain_column计算依据"
+      ],
+      "missing_conditions": [
+        "实际建筑用途、建成年份及改造状态",
+        "各朝向围护面积与窗墙比",
+        "实际构造和热桥",
+        "体积、实际通风渗透",
+        "用于C的材料质量/比热或标定数据",
+        "外遮阳修正与玻璃类型"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "表中冬季东/西向未给数值；凸窗透明侧板K限值×0.80。Tv≥0.50为合并单元格。"
+    },
+    {
+      "fact_id": "WHF016",
+      "source_id": "WH2025",
+      "claim": "天窗热工限值",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 10,
+        "printed_page": 6,
+        "clause": "6.1.2",
+        "table": "7"
+      },
+      "value": {
+        "skylight_floor_ratio_max": 0.04,
+        "K_max": 1.2,
+        "summer_SHGC_max": 0.2,
+        "winter_SHGC_min": 0.5
+      },
+      "unit": {
+        "K": "W/(m²·K)",
+        "ratio/SHGC": "无量纲"
+      },
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "天窗UA与solar_gain_column前处理"
+      ],
+      "missing_conditions": [
+        "实际建筑用途、建成年份及改造状态",
+        "各朝向围护面积与窗墙比",
+        "实际构造和热桥",
+        "体积、实际通风渗透",
+        "用于C的材料质量/比热或标定数据"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false
+    },
+    {
+      "fact_id": "WHF017",
+      "source_id": "WH2025",
+      "claim": "动态权衡算法与参照建筑边界",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 24,
+        "printed_page": 20,
+        "clause": "附录A A.1–A.4"
+      },
+      "value": {
+        "method": "动态负荷；逐时计算；考虑蓄热和热桥",
+        "zones_original": "10个以上的建筑分区",
+        "criterion": "设计建筑全年供暖和空调总电耗≤参照建筑",
+        "reference_geometry": "形状、大小、朝向、内部分区和使用功能与设计建筑一致",
+        "weather_standard": "JGJ/T346",
+        "profile_reference": "GB55015附录C",
+        "rated_household_air_source_heat_pump_ratio": {
+          "cooling": 3.8,
+          "heating": 3.0
+        }
+      },
+      "unit": "计算规则/无量纲系数",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "逐时负荷前处理与规范比较边界记录"
+      ],
+      "missing_conditions": [
+        "设计几何原型",
+        "GB55015附录C完整数值与日程",
+        "材料构造",
+        "JGJ/T346气象",
+        "参照与设计全年结果"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "本导则没有发布完整可直接运行的建筑原型或独立年度冷热需求强度表；单区RC模型不能自动被称为通过该多区规范权衡。"
+    },
+    {
+      "fact_id": "WHF018",
+      "source_id": "WH2025",
+      "claim": "水（地）源机组表17性能指标身份",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 17,
+        "printed_page": 13,
+        "clause": "7.4.7",
+        "table": "17及注"
+      },
+      "value": {
+        "reversible_ground_or_surface_water_ACOP_min": [
+          {
+            "nominal_cooling_kW": "CC≤260",
+            "value": 4.7
+          },
+          {
+            "nominal_cooling_kW": "CC>260",
+            "value": 5.1
+          }
+        ],
+        "heating_only_ground_or_surface_water_COP_min": [
+          {
+            "nominal_heating_kW": "≤260",
+            "value": 4.3
+          },
+          {
+            "nominal_heating_kW": ">260",
+            "value": 4.5
+          }
+        ]
+      },
+      "unit": "W/W",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测；地埋管式/地表水式、名义工况和机组型别",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "设备选型指标约束；不直接写入cop_min/cop_max"
+      ],
+      "missing_conditions": [
+        "实际机组型谱",
+        "名义/部分负荷工况",
+        "源侧和负荷侧温度",
+        "实测电耗边界"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "可逆冷热型按名义制冷量和ACOP，单热型按名义制热量和COP；ACOP不是EER。"
+    },
+    {
+      "fact_id": "WHF019",
+      "source_id": "WH2025",
+      "claim": "ACOP的定义说明",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgg/202511/P020251113627141525127.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_2025_supplied.pdf",
+      "sha256": "62ceba969d61aa4f797f0cbd1f7729958928e4bb844ba79cde922a0f31a0b263",
+      "original_location": {
+        "physical_page": 26,
+        "printed_page": 22,
+        "clause": "条文说明3.10"
+      },
+      "value": {
+        "formula": "ACOP=0.56EER+0.44COP",
+        "EER_weight": 0.56,
+        "COP_weight": 0.44
+      },
+      "unit": "无量纲",
+      "conditions": "武汉；2025年11月导则；超低能耗住宅/宿舍设计，非现场实测；典型城市公共建筑冷/热名义满负荷加权解释",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "性能指标口径说明"
+      ],
+      "missing_conditions": [
+        "各名义EER/COP值",
+        "实际逐时与部分负荷性能"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "无法仅由ACOP反求EER或实际全年COP；加权系数不是武汉项目逐时权重。"
+    },
+    {
+      "fact_id": "WHF020",
+      "source_id": "WH2024",
+      "claim": "2024原件为征求意见稿",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgs/202410/P020241024763787490327.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_low_energy_draft_2024_reused.pdf",
+      "sha256": "c7add051e3f9dbf18830ea466be83fdb8a186ac150455d79075d82ad4b46b7c0",
+      "original_location": {
+        "physical_page": 1,
+        "location": "封面"
+      },
+      "value": {
+        "title": "武汉市低能耗居住建筑节能设计标准",
+        "draft_mark": "征求意见稿2024-××-××",
+        "code": "DB4201/TXXX-202X",
+        "effective_date": "202X—XX—XX占位"
+      },
+      "unit": "文本",
+      "conditions": "武汉；2024征求意见稿，非已生效标准",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "历史候选依据身份"
+      ],
+      "missing_conditions": [
+        "正式发布/施行文件"
+      ],
+      "usage_status": "已补齐（稿件身份）",
+      "applied_to_model": false
+    },
+    {
+      "fact_id": "WHF021",
+      "source_id": "WH2024",
+      "claim": "2024稿表7.4.8中4.70/5.10是ACOP",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgs/202410/P020241024763787490327.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_low_energy_draft_2024_reused.pdf",
+      "sha256": "c7add051e3f9dbf18830ea466be83fdb8a186ac150455d79075d82ad4b46b7c0",
+      "original_location": {
+        "physical_pages": [
+          27,
+          28
+        ],
+        "printed_pages": [
+          21,
+          22
+        ],
+        "clause": "7.4.8",
+        "table": "7.4.8"
+      },
+      "value": [
+        {
+          "type": "冷热型地埋管/地表水",
+          "nominal_cooling_kW": "CC≤260",
+          "ACOP_min": 4.7
+        },
+        {
+          "type": "冷热型地埋管/地表水",
+          "nominal_cooling_kW": "CC>260",
+          "ACOP_min": 5.1
+        }
+      ],
+      "unit": "W/W",
+      "conditions": "2024稿；水（地）源可逆冷热型机组名义工况",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "历史指标口径纠正"
+      ],
+      "missing_conditions": [
+        "正式标准状态",
+        "实际设备工况"
+      ],
+      "usage_status": "历史线索",
+      "applied_to_model": false,
+      "interpretation_note": "不可将表值写成EER区间或实测效率。"
+    },
+    {
+      "fact_id": "WHF022",
+      "source_id": "WH2024",
+      "claim": "2024稿地埋管计算周期与热平衡说明",
+      "source_url": "https://zrzyhgh.wuhan.gov.cn/gsggzx/qtgs/202410/P020241024763787490327.pdf",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_low_energy_draft_2024_reused.pdf",
+      "sha256": "c7add051e3f9dbf18830ea466be83fdb8a186ac150455d79075d82ad4b46b7c0",
+      "original_location": {
+        "physical_page": 28,
+        "printed_page": 22,
+        "clause": "7.4.10(2)及条文说明"
+      },
+      "value": {
+        "minimum_dynamic_calculation_period": "不小于1年",
+        "large_project_area_original": "50000㎡以上",
+        "large_project_ground_balance_period_original": "10年以上",
+        "annual_release_absorb_ratio_in_explanation": [
+          0.8,
+          1.25
+        ]
+      },
+      "unit": {
+        "period": "年",
+        "area": "m²",
+        "ratio": "无量纲"
+      },
+      "conditions": "2024稿；浅层地埋管地源热泵，非污水源站",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "历史地源平衡筛查线索"
+      ],
+      "missing_conditions": [
+        "正式依据",
+        "场地地质勘察",
+        "全年释热吸热与多年地源响应"
+      ],
+      "usage_status": "历史线索",
+      "applied_to_model": false,
+      "interpretation_note": "0.8–1.25位于条文说明；保留原文总释热/总吸热语序，应用时需声明比值方向。2025导则不能由此自动继承该旧稿条款。"
+    },
+    {
+      "fact_id": "WHF023",
+      "source_id": "WHNEWS",
+      "claim": "报道再生水季节平均水温",
+      "source_url": "https://www.wuhan.gov.cn/whyw/bmdt/202608/t20260817_2834501.shtml",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_reclaimed_water_20260817.html",
+      "sha256": "01397eef74a985b526a0da942a6b764351ea1ce1f71684cbc2dc4dbb4cfa2c99",
+      "original_location": {
+        "html": "正文第4段，站长廖友飞陈述"
+      },
+      "value": {
+        "summer_mean": 23,
+        "winter_mean": 13
+      },
+      "unit": "°C",
+      "conditions": "2026-08-17长江日报报道；武汉中建科技产业园综合能源站；豹澥污水处理厂达标再生水",
+      "fact_type": "报道实测",
+      "model_field_mapping": [
+        "sources[].source_temp_c或source_temp_column的情景参考；不能伪造逐时序列"
+      ],
+      "missing_conditions": [
+        "原始传感器/仪表记录",
+        "采样频率与起止日期",
+        "测点和设备计量边界",
+        "测量不确定度",
+        "逐时可用量、温差及停机记录"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "仅核实报道确实引用运营方数值；未取得独立现场观测原件或明确平均期。"
+    },
+    {
+      "fact_id": "WHF024",
+      "source_id": "WHNEWS",
+      "claim": "报道入夏以来日利用再生水量",
+      "source_url": "https://www.wuhan.gov.cn/whyw/bmdt/202608/t20260817_2834501.shtml",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_reclaimed_water_20260817.html",
+      "sha256": "01397eef74a985b526a0da942a6b764351ea1ce1f71684cbc2dc4dbb4cfa2c99",
+      "original_location": {
+        "html": "正文第1段"
+      },
+      "value": 60000,
+      "unit": "吨/日",
+      "conditions": "2026-08-17长江日报报道；武汉中建科技产业园综合能源站；豹澥污水处理厂达标再生水；入夏以来，具体起止未给",
+      "fact_type": "报道实测",
+      "model_field_mapping": [
+        "源侧可利用量情景线索"
+      ],
+      "missing_conditions": [
+        "原始传感器/仪表记录",
+        "采样频率与起止日期",
+        "测点和设备计量边界",
+        "测量不确定度",
+        "逐时可用量、温差及停机记录",
+        "质量到体积换算所需密度",
+        "逐时分布",
+        "实际进出水温差"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "不直接换成m³/h或设备可利用热功率；不是完整流量实测序列。"
+    },
+    {
+      "fact_id": "WHF025",
+      "source_id": "WHNEWS",
+      "claim": "报道供能面积",
+      "source_url": "https://www.wuhan.gov.cn/whyw/bmdt/202608/t20260817_2834501.shtml",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_reclaimed_water_20260817.html",
+      "sha256": "01397eef74a985b526a0da942a6b764351ea1ce1f71684cbc2dc4dbb4cfa2c99",
+      "original_location": {
+        "html": "正文第7段"
+      },
+      "value": 374000,
+      "unit": "m²",
+      "conditions": "2026-08-17长江日报报道；武汉中建科技产业园综合能源站；豹澥污水处理厂达标再生水；办公、酒店、科技馆、商业街混合业态",
+      "fact_type": "统计",
+      "model_field_mapping": [
+        "area_m2的总体规模参考"
+      ],
+      "missing_conditions": [
+        "建筑分区面积与功能清单",
+        "实际负荷与服务比例"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "37.4万㎡为整个园区，不是某个住宅RC建筑面积。"
+    },
+    {
+      "fact_id": "WHF026",
+      "source_id": "WHNEWS",
+      "claim": "报道制冷/制热功率数字",
+      "source_url": "https://www.wuhan.gov.cn/whyw/bmdt/202608/t20260817_2834501.shtml",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wuhan_reclaimed_water_20260817.html",
+      "sha256": "01397eef74a985b526a0da942a6b764351ea1ce1f71684cbc2dc4dbb4cfa2c99",
+      "original_location": {
+        "html": "正文第8段，站长介绍"
+      },
+      "value": {
+        "cooling_reported_kW": 14400,
+        "heating_reported_kW": 15200,
+        "cooling_original_metric": "日均制冷量可达1.44万千瓦"
+      },
+      "unit": "kW",
+      "conditions": "2026-08-17长江日报报道；武汉中建科技产业园综合能源站；豹澥污水处理厂达标再生水",
+      "fact_type": "统计",
+      "model_field_mapping": [
+        "规划设备量级外部对照；不直接写入installed_capacity"
+      ],
+      "missing_conditions": [
+        "原始传感器/仪表记录",
+        "采样频率与起止日期",
+        "测点和设备计量边界",
+        "测量不确定度",
+        "逐时可用量、温差及停机记录",
+        "日均/峰值/额定功率的实际统计口径",
+        "对应耗电与COP",
+        "持续时间"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "原文千瓦是功率，不能写成kWh/日；“可达”也不能等同额定容量。"
+    },
+    {
+      "fact_id": "WHF027",
+      "source_id": "WHTARIFF202508",
+      "claim": "湖北2025-08代理购电价格及电度价",
+      "source_url": "https://csc-static.sgcc.com.cn:28888/omg-static/99107282154202117185000019154264.jpg",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_tariff_06_99107282154202117185000019154264.jpg",
+      "sha256": "ffaf9a752cd422d96de02f7108a0a1e9a4052d6d0b2ee174e6a9085797ce700b",
+      "original_location": {
+        "image": "上半工商业用户电价表全部7行；下半代理购电价格表第4–8项"
+      },
+      "value": {
+        "month": "2025-08",
+        "purchase_components": {
+          "purchase": 0.4165,
+          "loss": 0.0223,
+          "government": 0.0452,
+          "system": 0.0408,
+          "mean_purchase": 0.4067,
+          "historical_deviation": 0.0098
+        },
+        "electricity_charge_rows": [
+          {
+            "category": "单一制，不满1kV",
+            "non_time_of_use": 0.7351,
+            "尖峰": 1.1739,
+            "高峰": 0.9501,
+            "平时段": 0.7351,
+            "低谷": 0.4938
+          },
+          {
+            "category": "单一制，1–10(20)kV",
+            "non_time_of_use": 0.7151,
+            "尖峰": 1.1539,
+            "高峰": 0.9301,
+            "平时段": 0.7151,
+            "低谷": 0.4738
+          },
+          {
+            "category": "单一制，35kV",
+            "non_time_of_use": 0.6951,
+            "尖峰": 1.1339,
+            "高峰": 0.9101,
+            "平时段": 0.6951,
+            "低谷": 0.4538
+          },
+          {
+            "category": "两部制，1–10(20)kV",
+            "non_time_of_use": 0.6511,
+            "尖峰": 1.0899,
+            "高峰": 0.8661,
+            "平时段": 0.6511,
+            "低谷": 0.4098
+          },
+          {
+            "category": "两部制，35kV",
+            "non_time_of_use": 0.6313,
+            "尖峰": 1.0701,
+            "高峰": 0.8463,
+            "平时段": 0.6313,
+            "低谷": 0.39
+          },
+          {
+            "category": "两部制，110kV",
+            "non_time_of_use": 0.6132,
+            "尖峰": 1.052,
+            "高峰": 0.8282,
+            "平时段": 0.6132,
+            "低谷": 0.3719
+          },
+          {
+            "category": "两部制，220kV及以上",
+            "non_time_of_use": 0.5942,
+            "尖峰": 1.033,
+            "高峰": 0.8092,
+            "平时段": 0.5942,
+            "低谷": 0.3529
+          }
+        ]
+      },
+      "unit": "元/kWh",
+      "conditions": "湖北；指定公告执行月；电网企业代理购电工商业用户，电压及计费方式逐行区分",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "planning.electricity_price_column / timeseries.electricity_price的同年月、同用户类型候选值"
+      ],
+      "missing_conditions": [
+        "仿真逐时年份与公告完整月序列",
+        "实际电压、单一制/两部制与市场身份",
+        "基本电费计费方式",
+        "适用税费及合同"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "购电价格不是终端电度价；分时价不能对含固定输配电价/基金的总价直接整体乘系数。不用于2023/2024历史实验。"
+    },
+    {
+      "fact_id": "WHF028",
+      "source_id": "WHTARIFF202601",
+      "claim": "湖北2026-01代理购电价格及电度价",
+      "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202602/W020260210566232069655.png",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_tariff_08_W020260210566232069655.png",
+      "sha256": "320cbfa3def76333566341b3fd23d435e41c5dfbc72156a93eb2bf2454e9819a",
+      "original_location": {
+        "image": "上半工商业用户电价表全部7行；下半代理购电价格表第4–8项"
+      },
+      "value": {
+        "month": "2026-01",
+        "purchase_components": {
+          "purchase": 0.38447,
+          "loss": 0.013643,
+          "government": 0.0452,
+          "system": 0.082273,
+          "mean_purchase": 0.38809,
+          "historical_deviation": -0.00362
+        },
+        "electricity_charge_rows": [
+          {
+            "category": "单一制，不满1kV",
+            "non_time_of_use": 0.735886,
+            "尖峰": 1.133999,
+            "高峰": 0.930961,
+            "平时段": 0.735886,
+            "低谷": 0.516924
+          },
+          {
+            "category": "单一制，1–10(20)kV",
+            "non_time_of_use": 0.715886,
+            "尖峰": 1.113999,
+            "高峰": 0.910961,
+            "平时段": 0.715886,
+            "低谷": 0.496924
+          },
+          {
+            "category": "单一制，35kV",
+            "non_time_of_use": 0.695886,
+            "尖峰": 1.093999,
+            "高峰": 0.890961,
+            "平时段": 0.695886,
+            "低谷": 0.476924
+          },
+          {
+            "category": "两部制，1–10(20)kV",
+            "non_time_of_use": 0.651886,
+            "尖峰": 1.049999,
+            "高峰": 0.846961,
+            "平时段": 0.651886,
+            "低谷": 0.432924
+          },
+          {
+            "category": "两部制，35kV",
+            "non_time_of_use": 0.632086,
+            "尖峰": 1.030199,
+            "高峰": 0.827161,
+            "平时段": 0.632086,
+            "低谷": 0.413124
+          },
+          {
+            "category": "两部制，110kV",
+            "non_time_of_use": 0.613986,
+            "尖峰": 1.012099,
+            "高峰": 0.809061,
+            "平时段": 0.613986,
+            "低谷": 0.395024
+          },
+          {
+            "category": "两部制，220kV及以上",
+            "non_time_of_use": 0.594986,
+            "尖峰": 0.993099,
+            "高峰": 0.790061,
+            "平时段": 0.594986,
+            "低谷": 0.376024
+          }
+        ]
+      },
+      "unit": "元/kWh",
+      "conditions": "湖北；指定公告执行月；电网企业代理购电工商业用户，电压及计费方式逐行区分",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "planning.electricity_price_column / timeseries.electricity_price的同年月、同用户类型候选值"
+      ],
+      "missing_conditions": [
+        "仿真逐时年份与公告完整月序列",
+        "实际电压、单一制/两部制与市场身份",
+        "基本电费计费方式",
+        "适用税费及合同"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "购电价格不是终端电度价；分时价不能对含固定输配电价/基金的总价直接整体乘系数。不用于2023/2024历史实验。"
+    },
+    {
+      "fact_id": "WHF029",
+      "source_id": "WHTARIFF202603",
+      "claim": "湖北2026-03代理购电价格及电度价",
+      "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202603/W020260304549748477827.png",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_tariff_07_W020260304549748477827.png",
+      "sha256": "10b4717acbe0778b18865a4b70c43ddfb960acf6dcb5b6aa5d807e0307711abd",
+      "original_location": {
+        "image": "上半工商业用户电价表全部7行；下半代理购电价格表第4–8项"
+      },
+      "value": {
+        "month": "2026-03",
+        "purchase_components": {
+          "purchase": 0.372957,
+          "loss": 0.01976,
+          "government": 0.0452,
+          "system": 0.063116,
+          "mean_purchase": 0.39006,
+          "historical_deviation": -0.017103
+        },
+        "electricity_charge_rows": [
+          {
+            "category": "单一制，不满1kV",
+            "non_time_of_use": 0.711333,
+            "尖峰": 1.025507,
+            "高峰": 0.903764,
+            "平时段": 0.711333,
+            "低谷": 0.50712
+          },
+          {
+            "category": "单一制，1–10(20)kV",
+            "non_time_of_use": 0.691333,
+            "尖峰": 1.005507,
+            "高峰": 0.883764,
+            "平时段": 0.691333,
+            "低谷": 0.48712
+          },
+          {
+            "category": "单一制，35kV",
+            "non_time_of_use": 0.671333,
+            "尖峰": 0.985507,
+            "高峰": 0.863764,
+            "平时段": 0.671333,
+            "低谷": 0.46712
+          },
+          {
+            "category": "两部制，1–10(20)kV",
+            "non_time_of_use": 0.627333,
+            "尖峰": 0.941507,
+            "高峰": 0.819764,
+            "平时段": 0.627333,
+            "低谷": 0.42312
+          },
+          {
+            "category": "两部制，35kV",
+            "non_time_of_use": 0.607533,
+            "尖峰": 0.921707,
+            "高峰": 0.799964,
+            "平时段": 0.607533,
+            "低谷": 0.40332
+          },
+          {
+            "category": "两部制，110kV",
+            "non_time_of_use": 0.589433,
+            "尖峰": 0.903607,
+            "高峰": 0.781864,
+            "平时段": 0.589433,
+            "低谷": 0.38522
+          },
+          {
+            "category": "两部制，220kV及以上",
+            "non_time_of_use": 0.570433,
+            "尖峰": 0.884607,
+            "高峰": 0.762864,
+            "平时段": 0.570433,
+            "低谷": 0.36622
+          }
+        ]
+      },
+      "unit": "元/kWh",
+      "conditions": "湖北；指定公告执行月；电网企业代理购电工商业用户，电压及计费方式逐行区分",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "planning.electricity_price_column / timeseries.electricity_price的同年月、同用户类型候选值"
+      ],
+      "missing_conditions": [
+        "仿真逐时年份与公告完整月序列",
+        "实际电压、单一制/两部制与市场身份",
+        "基本电费计费方式",
+        "适用税费及合同"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "购电价格不是终端电度价；分时价不能对含固定输配电价/基金的总价直接整体乘系数。不用于2023/2024历史实验。"
+    },
+    {
+      "fact_id": "WHF030",
+      "source_id": "WHTARIFF202603",
+      "claim": "2026年3月代理购电仍有固定分时价与时段",
+      "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202603/W020260304549748477827.png",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_tariff_07_W020260304549748477827.png",
+      "sha256": "10b4717acbe0778b18865a4b70c43ddfb960acf6dcb5b6aa5d807e0307711abd",
+      "original_location": {
+        "image": "上半表分时列与注2、注3"
+      },
+      "value": {
+        "normal_month": {
+          "尖峰": "18:00–20:00",
+          "高峰": [
+            "16:00–18:00",
+            "20:00–24:00"
+          ],
+          "平时段": [
+            "06:00–12:00",
+            "14:00–16:00"
+          ],
+          "低谷": [
+            "00:00–06:00",
+            "12:00–14:00"
+          ]
+        },
+        "July_August": {
+          "尖峰": "20:00–22:00",
+          "高峰": [
+            "16:00–20:00",
+            "22:00–24:00"
+          ]
+        },
+        "cited_document": "鄂发改价管〔2024〕77号"
+      },
+      "unit": "时段/文件号",
+      "conditions": "湖北；2026年3月电网代理购电表，非直接/零售入市合同",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "同月代理购电electricity_price逐时展开规则"
+      ],
+      "missing_conditions": [
+        "完整有效政策原文",
+        "实际用户资格与特殊1.5倍规则"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false,
+      "interpretation_note": "这一官方表足以否定“2026年3月所有用户均取消固定峰谷”的扩大解释，不能反推直接交易或零售用户合同曲线。"
+    },
+    {
+      "fact_id": "WHF031",
+      "source_id": "WHTARIFF202603",
+      "claim": "2026年3月两部制基本电价",
+      "source_url": "http://fgw.xiangyang.gov.cn/zwgk/xxgkml/tjsj/zhsj/202603/W020260304549748477827.png",
+      "local_evidence_file": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\source_intake_20261002\\city_batch_02\\wuhan\\evidence\\wh_tariff_07_W020260304549748477827.png",
+      "sha256": "10b4717acbe0778b18865a4b70c43ddfb960acf6dcb5b6aa5d807e0307711abd",
+      "original_location": {
+        "image": "上半表最后两列合并单元格"
+      },
+      "value": [
+        {
+          "voltage": "1–10(20)/35kV",
+          "maximum_demand": 42,
+          "transformer_capacity": 26.3
+        },
+        {
+          "voltage": "110/220kV及以上",
+          "maximum_demand": 39,
+          "transformer_capacity": 24.4
+        }
+      ],
+      "unit": {
+        "maximum_demand": "元/(kW·月)",
+        "transformer_capacity": "元/(kVA·月)"
+      },
+      "conditions": "湖北；2026年3月代理购电两部制",
+      "fact_type": "规范",
+      "model_field_mapping": [
+        "基本电费经济边界（不等同逐时electricity_price）"
+      ],
+      "missing_conditions": [
+        "项目容量/最大需量及计费选择",
+        "模型是否覆盖该固定成本"
+      ],
+      "usage_status": "条件可用",
+      "applied_to_model": false
+    }
+  ],
+  "negative_findings": [
+    {
+      "source_id": "WH2025",
+      "checked_scope": "全44页提取与相关表/附录目视复核",
+      "finding": "未提供完整数值建筑原型、H/C实测或材料质量；未发现独立年度冷热需求强度kWh/(m²·a)表。"
+    },
+    {
+      "source_id": "WHNEWS",
+      "checked_scope": "报道正文全部8段及附件区域",
+      "finding": "未附原始温度/流量监测表、采样窗口、COP/电耗序列、节能计量或企业对本参赛项目的鉴定证据。"
+    }
+  ],
+  "model_inputs_changed": false,
+  "optimization_run": false
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "city": "urumqi",
+    "base_config": "data/public_scenario_inputs/scenario1_urumqi_public.yaml",
+    "overlay": "data/design_reference_20261002/urumqi_heating_reference.yaml",
+    "base_design_c": -26,
+    "reference_design_c": -19.7,
+    "reference_field": "heating_outdoor_design_c",
+    "base_sha256": "7390ae642597e059011ba3de57573982d139f9e5063a883c72f686212624e60a",
+    "overlay_sha256": "7398345d17a0b9c80545b9def1baae57255f4a420fdb72dabbed9721a65a19e2",
+    "config_resolution_pass": true,
+    "new_optimization_run_performed": false,
+    "legacy_load_regeneration_performed": false,
+    "rc_reference_path_enabled": false
+  },
+  {
+    "city": "guyuan",
+    "base_config": "data/public_scenario_inputs/scenario2_guyuan_evidence_public.yaml",
+    "overlay": "data/design_reference_20261002/guyuan_heating_reference.yaml",
+    "base_design_c": -26,
+    "reference_design_c": -13.2,
+    "reference_field": "heating_outdoor_design_c",
+    "base_sha256": "a9fe492273e5759b71edf71348e0f3a4e10c0e4dc4d49feec36d81e7212c06f9",
+    "overlay_sha256": "7e1f652eed089efe536ec62a912045f2be635e774baf02b85106396bd4a95e47",
+    "config_resolution_pass": true,
+    "new_optimization_run_performed": false,
+    "legacy_load_regeneration_performed": false,
+    "rc_reference_path_enabled": false
+  },
+  {
+    "city": "wuhan",
+    "base_config": "data/public_scenario_inputs/scenario3_wuhan_joint_public.yaml",
+    "overlay": "data/design_reference_20261002/wuhan_heating_reference.yaml",
+    "base_design_c": -7,
+    "reference_design_c": -0.3,
+    "reference_field": "heating_outdoor_design_c",
+    "base_sha256": "e4dc29f92cd3f52ac7837df90327bec5645086b0b573a546540c29881d738fce",
+    "overlay_sha256": "7775abda2fd9693d542274a14e29c23b4455bd5828b58b23f125ff79adfbea4c",
+    "config_resolution_pass": true,
+    "new_optimization_run_performed": false,
+    "legacy_load_regeneration_performed": false,
+    "rc_reference_path_enabled": false
+  },
+  {
+    "city": "wuhan",
+    "base_config": "data/competition_20261001/wuhan_rc_candidate.yaml",
+    "overlay": "data/design_reference_20261002/wuhan_rc_heating_reference.yaml",
+    "base_design_c": -7,
+    "reference_design_c": -0.3,
+    "reference_field": "heating_outdoor_design_c",
+    "base_sha256": "cc26ee2c7d8a7db56b9347012c7d1b122dd8e651096433061d8f2a0d94dd5d3b",
+    "overlay_sha256": "b65372fe4217d29f68e84cc4890f9ee0f53b624ffb54a2a55dd8b1144b4e331b",
+    "config_resolution_pass": true,
+    "new_optimization_run_performed": false,
+    "legacy_load_regeneration_performed": false,
+    "rc_reference_path_enabled": true
+  },
+  {
+    "city": "wuhan",
+    "base_config": "data/competition_20261001/wuhan_rc_candidate.yaml",
+    "overlay": "data/design_reference_20261002/wuhan_rc_winter_ac_reference.yaml",
+    "base_design_c": -7,
+    "reference_design_c": -2.6,
+    "reference_field": "winter_ac_outdoor_design_c",
+    "base_sha256": "cc26ee2c7d8a7db56b9347012c7d1b122dd8e651096433061d8f2a0d94dd5d3b",
+    "overlay_sha256": "5a9ed680d2ada6791063ad047aa54fc1876392232f0e81fa79feced716173616",
+    "config_resolution_pass": true,
+    "new_optimization_run_performed": false,
+    "legacy_load_regeneration_performed": false,
+    "rc_reference_path_enabled": true
+  }
+]

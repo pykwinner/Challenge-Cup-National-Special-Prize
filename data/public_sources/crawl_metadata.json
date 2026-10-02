@@ -1,0 +1,291 @@
+{
+  "retrieved_at_utc": "2026-07-19T19:18:22.387883+00:00",
+  "weather_provider": "NASA POWER Hourly API",
+  "weather_profiles": {
+    "scenario1_urumqi_2020": {
+      "year": 2020,
+      "rows": 8784,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20200101&end=20201231&format=JSON&time-standard=LST",
+      "temperature_min_c": -14.62,
+      "temperature_max_c": 40.14,
+      "relative_humidity_mean_pct": 46.4130293715847
+    },
+    "scenario2_guyuan_2020": {
+      "year": 2020,
+      "rows": 8784,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20200101&end=20201231&format=JSON&time-standard=LST",
+      "temperature_min_c": -18.92,
+      "temperature_max_c": 30.79,
+      "relative_humidity_mean_pct": 67.42017190346084
+    },
+    "scenario3_wuhan_2020": {
+      "year": 2020,
+      "rows": 8784,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20200101&end=20201231&format=JSON&time-standard=LST",
+      "temperature_min_c": -4.63,
+      "temperature_max_c": 35.18,
+      "relative_humidity_mean_pct": 79.5236691712204
+    },
+    "scenario1_urumqi_2021": {
+      "year": 2021,
+      "rows": 8760,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20210101&end=20211231&format=JSON&time-standard=LST",
+      "temperature_min_c": -20.51,
+      "temperature_max_c": 40.25,
+      "relative_humidity_mean_pct": 45.31989383561643
+    },
+    "scenario2_guyuan_2021": {
+      "year": 2021,
+      "rows": 8760,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20210101&end=20211231&format=JSON&time-standard=LST",
+      "temperature_min_c": -22.01,
+      "temperature_max_c": 34.16,
+      "relative_humidity_mean_pct": 65.12914954337899
+    },
+    "scenario3_wuhan_2021": {
+      "year": 2021,
+      "rows": 8760,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20210101&end=20211231&format=JSON&time-standard=LST",
+      "temperature_min_c": -4.74,
+      "temperature_max_c": 36.22,
+      "relative_humidity_mean_pct": 76.48053424657535
+    },
+    "scenario1_urumqi_2022": {
+      "year": 2022,
+      "rows": 8760,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20220101&end=20221231&format=JSON&time-standard=LST",
+      "temperature_min_c": -18.54,
+      "temperature_max_c": 42.94,
+      "relative_humidity_mean_pct": 42.432485159817354
+    },
+    "scenario2_guyuan_2022": {
+      "year": 2022,
+      "rows": 8760,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20220101&end=20221231&format=JSON&time-standard=LST",
+      "temperature_min_c": -19.55,
+      "temperature_max_c": 34.44,
+      "relative_humidity_mean_pct": 64.35983219178082
+    },
+    "scenario3_wuhan_2022": {
+      "year": 2022,
+      "rows": 8760,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20220101&end=20221231&format=JSON&time-standard=LST",
+      "temperature_min_c": -4.09,
+      "temperature_max_c": 39.34,
+      "relative_humidity_mean_pct": 72.97816438356163
+    },
+    "scenario1_urumqi_2023": {
+      "year": 2023,
+      "rows": 8760,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "reused_existing_file:scenario1_urumqi_weather_2023.csv",
+      "temperature_min_c": -19.85,
+      "temperature_max_c": 43.11,
+      "relative_humidity_mean_pct": 45.587826484018265
+    },
+    "scenario2_guyuan_2023": {
+      "year": 2023,
+      "rows": 8760,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "reused_existing_file:scenario2_guyuan_weather_2023.csv",
+      "temperature_min_c": -21.34,
+      "temperature_max_c": 33.94,
+      "relative_humidity_mean_pct": 62.5527294520548
+    },
+    "scenario3_wuhan_2023": {
+      "year": 2023,
+      "rows": 8760,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "reused_existing_file:scenario3_wuhan_weather_2023.csv",
+      "temperature_min_c": -6.25,
+      "temperature_max_c": 37.33,
+      "relative_humidity_mean_pct": 73.01392123287671
+    },
+    "scenario1_urumqi_2024": {
+      "year": 2024,
+      "rows": 8784,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=87.6168&latitude=43.8256&start=20240101&end=20241231&format=JSON&time-standard=LST",
+      "temperature_min_c": -20.65,
+      "temperature_max_c": 40.73,
+      "relative_humidity_mean_pct": 50.16892190346084
+    },
+    "scenario2_guyuan_2024": {
+      "year": 2024,
+      "rows": 8784,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=106.2426&latitude=36.0159&start=20240101&end=20241231&format=JSON&time-standard=LST",
+      "temperature_min_c": -21.21,
+      "temperature_max_c": 31.81,
+      "relative_humidity_mean_pct": 66.93811020036429
+    },
+    "scenario3_wuhan_2024": {
+      "year": 2024,
+      "rows": 8784,
+      "missing_values": {
+        "time": 0,
+        "timestamp_local_solar": 0,
+        "outdoor_temp": 0,
+        "relative_humidity_pct": 0,
+        "wind_speed_10m_m_s": 0,
+        "solar_irradiance_kwh_m2_hour": 0,
+        "relative_humidity": 0,
+        "heating_degree_c": 0,
+        "solar_heat_availability": 0
+      },
+      "request_url": "https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=T2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN&community=RE&longitude=114.3055&latitude=30.5928&start=20240101&end=20241231&format=JSON&time-standard=LST",
+      "temperature_min_c": -8.12,
+      "temperature_max_c": 37.96,
+      "relative_humidity_mean_pct": 75.42037909836064
+    }
+  }
+}

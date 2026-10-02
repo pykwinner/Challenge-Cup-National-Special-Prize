@@ -1,0 +1,81 @@
+extends: scenario1_urumqi_public.yaml
+
+# This overlay is intentionally limited to reliability-pressure assumptions
+# supported by public evidence.  It does not claim that metadata-only events
+# are already enforced as chronological dispatch constraints.
+planning:
+  max_unserved_rate: 0.0
+  max_scenario_unserved_rate: 0.0
+  firm_capacity_reserve_margin: 0.15
+  n_minus_1_source_names: [existing_chp, gas_peak_boiler]
+  n_minus_1_pipe_names: [trunk_a]
+  n_minus_1_pipe_reserve_margin: 0.15
+  # The inherited 12-hour duration is deliberately retained: it envelopes the
+  # public 8-hour ordinary-pipe-repair target when calculating storage credit.
+  critical_peak_duration_hours: 12
+
+sources:
+  - name: industrial_waste_heat
+    # Industrial production and its waste heat have common-mode risk.  Direct
+    # waste heat therefore receives no firm N-1 capacity credit in this stress
+    # overlay, while remaining dispatchable when the time series says it exists.
+    firm_capacity_availability: 0.0
+
+  - name: central_waste_source_hp
+    # The heat pump depends on the same industrial parent process and long
+    # transfer chain, so it is not an independent firm source during that event.
+    firm_capacity_availability: 0.0
+
+  - name: existing_chp
+    # The formal 2025-2027 plan keeps CHP in the base-load layer.  Retirement is
+    # disabled only for this reliability stress solve, not for the base plan.
+    max_retire_capacity_kw: 0
+
+  - name: gas_peak_boiler
+    # The formal plan calls for integrated gas boiler rooms to be retained as
+    # the emergency layer.  Capacity may remain idle in normal dispatch.
+    max_retire_capacity_kw: 0
+
+metadata:
+  profile: urumqi_reality_reliability_stress_2026
+  evidence_file: ../public_source_extensions/scenario1_reality_2026.yaml
+  enforced_proxies:
+    - event: industrial_parent_process_common_mode_failure
+      implementation: industrial waste heat and its heat pump receive zero firm-capacity credit
+    - event: trunk_a_failure
+      implementation: inherited hard N-1 contingency-flow check
+    - event: emergency_source_retention
+      implementation: CHP and gas peak-boiler retirement disabled for this overlay
+    - event: ordinary_pipe_repair_duration
+      implementation: 12-hour inherited storage-credit duration conservatively covers the public 8-hour target
+
+  metadata_only_stress_events:
+    - name: common_industrial_curtailment_70pct
+      public_basis: Red heavy-pollution response caps relevant industrial production at 70 percent
+      waste_heat_multiplier: 0.70
+      correlation: common_mode_across_relevant_ganquanbao_sources
+      exact_model_status: requires copying the multiplier into a scenario specification or chronological time-series block
+
+    - name: trunk_a_eight_hour_outage
+      public_basis: The formal plan requires ordinary network accident repair within 8 hours
+      asset: trunk_a
+      outage_duration_hours: 8
+      exact_model_status: current hard N-1 check removes the pipe for capacity adequacy but does not create an eight-hour dispatch sequence
+
+    - name: industrial_planned_maintenance
+      public_basis: Xinjiang industrial-waste-heat projects retain a boiler when the parent plant shuts down for maintenance
+      waste_heat_multiplier: 0.0
+      backup_required: true
+      exact_model_status: use an explicit outage block in scenario specs; this overlay only preserves emergency capacity
+
+    - name: chp_heating_low_load_window
+      public_basis: National 2025-2027 target is 40 percent rated output for 6 hours per day during heating deep regulation
+      minimum_output_fraction: 0.40
+      duration_hours_per_day: 6
+      exact_model_status: inherited hourly unit commitment cannot express a daily six-hour capability window through configuration alone
+
+    - name: statutory_comfort_and_refund
+      minimum_indoor_temperature_c: 20
+      reportable_outage_duration_hours: 8
+      refund_trigger_duration_hours: 24
+      exact_model_status: zero unserved heat is enforced; indoor-temperature and refund-accounting constraints remain audit metadata

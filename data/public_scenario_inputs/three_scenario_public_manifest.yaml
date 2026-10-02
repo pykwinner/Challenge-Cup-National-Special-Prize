@@ -1,0 +1,20 @@
+profiles:
+- name: scenario1_urumqi
+  archetype: scenario1_existing_network
+  config: scenario1_urumqi_public.yaml
+  timeseries: scenario1_urumqi_representative_days_2023.csv
+  scenario_specs: ../scenario1_scenario_specs.yaml
+- name: scenario2_guyuan
+  archetype: scenario2_distributed_clean
+  config: ../scenario2_distributed_clean.yaml
+  timeseries: scenario2_guyuan_representative_days_2023.csv
+  scenario_specs: ../scenario2_scenario_specs.yaml
+  alternative_configs:
+  - scenario2_guyuan_evidence_public.yaml
+- name: scenario3_wuhan
+  archetype: scenario3_high_quality_newbuild
+  config: scenario3_wuhan_public.yaml
+  timeseries: scenario3_wuhan_representative_days_2023.csv
+  scenario_specs: ../scenario3_scenario_specs.yaml
+  alternative_configs:
+  - scenario3_wuhan_joint_public.yaml

@@ -1,0 +1,680 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fordatis - Forschungsdaten-Repositorium der Fraunhofer-Gesellschaft</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="Generator" content="DSpace 6.3" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/application.min.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/bootstrap/dspace-theme.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/jquery.modal.min.css" />
+        <link rel="stylesheet" href="/static/css/pdf_preview.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/person-lookup.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/fonts/roboto.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/fonts/roboto-mono.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/fonts/roboto-slab.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/fordatis.css" type="text/css" />
+
+        <link rel="search" type="application/opensearchdescription+xml" href="/open-search/description.xml" title="DSpace"/>
+
+
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.creator" content="Kersken, Matthias" />
+<meta name="DC.creator" content="Strachan, Paul" />
+<meta name="DCTERMS.dateAccepted" content="2020-07-28T09:30:05Z" scheme="DCTERMS.W3CDTF" />
+<meta name="DCTERMS.available" content="2020-05-20T09:00:07Z" scheme="DCTERMS.W3CDTF" />
+<meta name="DCTERMS.available" content="2020-07-28T09:30:05Z" scheme="DCTERMS.W3CDTF" />
+<meta name="DCTERMS.created" content="2019" scheme="DCTERMS.W3CDTF" />
+<meta name="DCTERMS.issued" content="2020-05-19" scheme="DCTERMS.W3CDTF" />
+<meta name="DC.identifier" content="https://fordatis.fraunhofer.de/handle/fordatis/161.2" scheme="DCTERMS.URI" />
+<meta name="DC.identifier" content="http://dx.doi.org/10.24406/fordatis/76.2" scheme="DCTERMS.URI" />
+<meta name="DCTERMS.abstract" content="This document and dataset sets out the specification for the empirical validation experiment conducted on the Twin Houses at the Fraunhofer IBP test site in Holzkirchen, Germany in the winter of 2018/19, as part of IEA EBC Annex 71. &#xD;&#xA;&#xD;&#xA;This document, together with the additional information provided (images, thermal bridge calculations, layout drawings, experimental details and experimental data) constitutes a full specification of the experiment, makeing it available for further validation and training purposes." xml:lang="en" />
+<meta name="DC.language" content="en" xml:lang="en" scheme="DCTERMS.RFC1766" />
+<meta name="DC.rights" content="https://creativecommons.org/licenses/by-sa/4.0/" xml:lang="en" scheme="DCTERMS.URI" />
+<meta name="DC.subject" content="simulation validation" xml:lang="en" />
+<meta name="DC.subject" content="synthetic users" xml:lang="en" />
+<meta name="DC.subject" content="DDC::600 Technik, Medizin, angewandte Wissenschaften::620 Ingenieurwissenschaften::621 Angewandte Physik" xml:lang="en" scheme="DCTERMS.DDC" />
+<meta name="DC.subject" content="DDC::600 Technik, Medizin, angewandte Wissenschaften::620 Ingenieurwissenschaften::629 Andere Fachrichtungen der Ingenieurwissenschaften" xml:lang="en" scheme="DCTERMS.DDC" />
+<meta name="DC.subject" content="DDC::600 Technik, Medizin, angewandte Wissenschaften::690 Hausbau, Bauhandwerk::697 Heizung-, Lüftungs-, Klimatechnik" xml:lang="en" scheme="DCTERMS.DDC" />
+<meta name="DC.title" content="Twin House Experiment IEA EBC Annex 71 Validation of Building Energy Simulation Tools - Specifications and dataset" xml:lang="en" />
+<meta name="DC.type" content="Tabular Data" xml:lang="en" />
+<meta name="DC.contributor" content="Bundesministerium fur Wirtschaft und Energie BMWi (Deutschland)" xml:lang="en" />
+<meta name="DC.description" content="&quot;01_Experimental specification BESmodVAL_annex71_final_v1_0.pdf&quot; is the central document describing the experiment and the meaning of the data. For many details this text refers to the &quot;additional documents&quot;. &quot;02_Additional Documents.zip&quot; contains various pictures, drawings and technical specifications as well as details of the instrumentation used. The other resources in compressed *.zip format contain the measurement data in MS Excel (*.xlsx format). &quot;00_File_Structure.pdf&quot; gives an overview of this contribution including the zip-files content." xml:lang="en" />
+
+<meta name="citation_keywords" content="simulation validation; synthetic users; Tabular Data" />
+<meta name="citation_title" content="Twin House Experiment IEA EBC Annex 71 Validation of Building Energy Simulation Tools - Specifications and dataset" />
+<meta name="citation_language" content="en" />
+<meta name="citation_author" content="Kersken, Matthias" />
+<meta name="citation_author" content="Strachan, Paul" />
+<meta name="citation_pdf_url" content="https://fordatis.fraunhofer.de/bitstream/fordatis/161.2/2/01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf" />
+<meta name="citation_date" content="2020-05-19" />
+<meta name="citation_abstract_html_url" content="https://fordatis.fraunhofer.de/handle/fordatis/161.2" />
+
+
+
+        <script type='text/javascript' src='/static/js/jquery/jquery-3.6.0.js'></script>
+<!--<script src="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>-->
+        <script type='text/javascript' src='/static/js/jquery/jquery-ui-1.10.3.custom.min.js'></script>
+        <script type='text/javascript' src='/static/js/bootstrap/bootstrap.min.js'></script>
+        <script type='text/javascript' src='/static/js/holder.js'></script>
+        <script type="text/javascript" src="/utils.js"></script>
+        <script type="text/javascript" src="/static/js/choice-support.js"> </script>
+        <script type="text/javascript" src="/static/js/jquery.modal.min.js"></script>
+
+        
+
+
+    
+    
+
+
+    
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="/static/js/html5shiv.js"></script>
+  <script src="/static/js/respond.min.js"></script>
+<![endif]-->
+    </head>
+
+    
+    
+    <body class="undernavigation">
+<a class="sr-only" href="#content">Skip navigation</a>
+<header>
+    <div class="container-fluid" id="brand">
+        <div class="row" id="fraunhofer-brand">
+            <img src="/static/images/logo-fraunhofer.gif" />
+        </div>
+        <div class="row" id="repository-brand">Fordatis&nbsp;- Research Data Repository of Fraunhofer-Gesellschaft</div>
+    </div>
+    <div class="navbar navbar-default">
+    
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+       </div>
+       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+         <ul class="nav navbar-nav navbar-right">
+           
+           
+           <li class="text-center ">
+           
+			<a href="/?locale=en" title="Home">
+							
+               <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+               <span>Home</span>
+             </a>
+           </li>
+    
+           
+           <li class="text-center ">
+               <a href="/mydspace" title="Submissions">
+                   <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
+                   <span>Submissions</span>
+               </a>
+           </li>
+           
+           
+
+           
+           <li class="text-center dropdown ">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Browse">
+                 <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                 <span>Browse</span>
+                 <b class="caret"></b>
+             </a>
+             <ul class="dropdown-menu">
+               
+               
+				
+               
+				
+				      			<li><a href="/browse?type=institute">Fraunhofer Institute</a></li>
+					
+				      			<li><a href="/browse?type=group">Fraunhofer Group</a></li>
+					
+				      			<li><a href="/browse?type=type">Submission Type</a></li>
+					
+				      			<li><a href="/browse?type=dateissued">Issue Date</a></li>
+					
+				      			<li><a href="/browse?type=author">Author</a></li>
+					
+				      			<li><a href="/browse?type=title">Title</a></li>
+					
+				
+             </ul>
+           </li>
+    
+             
+             <li class="text-center ">
+                 <a href="/simple-search" title="Search">
+                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                     <span>Search</span>
+                 </a>
+             </li>
+               
+               
+               
+               <li class="text-center dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Language">
+                       <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                       <span>Language</span>
+                       <b class="caret"></b>
+                   </a>
+                   <ul class="dropdown-menu">
+                       
+                       <li>
+                           <a onclick="javascript:document.repost.locale.value='de';
+                                   document.repost.submit();" href="https://fordatis.fraunhofer.de/handle/fordatis/161.2?locale=de">
+                               Deutsch
+                           </a>
+                       </li>
+                       
+                       <li>
+                           <a onclick="javascript:document.repost.locale.value='en';
+                                   document.repost.submit();" href="https://fordatis.fraunhofer.de/handle/fordatis/161.2?locale=en">
+                               English
+                           </a>
+                       </li>
+                       
+                   </ul>
+               </li>
+               
+    
+               
+               
+    
+               
+               
+               
+               
+             
+         </ul>
+           
+ 
+	
+    
+    </nav>
+
+
+    </div>
+</header>
+
+<main id="content" role="main">
+        <div id="fordatis-border">
+            <div id="fordatis-content">
+                
+                
+                    <div class="container">
+                        
+
+
+
+  
+
+
+
+                    </div>
+                
+            
+            
+                
+                <div class="container">
+                
+                    <div class="row">
+                    <div class="col-md-9">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+
+                
+
+                
+        
+    <!-- Sidebar -->
+    
+
+    <!-- Main metadata display, and bitstream table for small devices -->
+    <div class="container">
+
+        <!-- Important, formatted metadata like badges, title, authors -->
+        <div class="row">
+            <span class='badge'><span class='dc.date.issued_metadata_value'>19-May-2020</span></span>&nbsp;<span class='badge'><span class='dc.type_metadata_value'><a class="type"href="/simple-search?query=&sort_by=score&amp;order=desc&amp;rpp=10&amp;etal=0&amp;filtername=author&amp;filterquery=Tabular+Data&amp;filtertype=equals">Tabular&#x20;Data</a></span></span>&nbsp;<span class='badge'><span class='dc.identifier.uri_metadata_value'><a href="https://fordatis.fraunhofer.de/handle/fordatis/161.2">https:&#x2F;&#x2F;fordatis.fraunhofer.de&#x2F;handle&#x2F;fordatis&#x2F;161.2</a></span><span class='dc.identifier.uri_metadata_value'><br /><a href="http://dx.doi.org/10.24406/fordatis/76.2">http:&#x2F;&#x2F;dx.doi.org&#x2F;10.24406&#x2F;fordatis&#x2F;76.2</a></span></span><h1><span class='dc.title_metadata_value'>Twin&#x20;House&#x20;Experiment&#x20;IEA&#x20;EBC&#x20;Annex&#x20;71&#x20;Validation&#x20;of&#x20;Building&#x20;Energy&#x20;Simulation&#x20;Tools&#x20;-&#x20;Specifications&#x20;and&#x20;dataset</span></h1><span class='formatted_authors' style='display:inline;'><h4><script type='text/javascript' src='/static/js/embed.js'></script><div style='float:right;' data-badge-popover='right' data-badge-type='donut' data-doi='10.24406/fordatis/76.2' data-hide-no-mentions='true' class='altmetric-embed'></div><span class='dc.contributor.author_metadata_value'><a class="authority author"href="/simple-search?query=&sort_by=score&amp;order=desc&amp;rpp=10&amp;etal=0&amp;filtername=author&amp;filterquery=Kersken%2C+Matthias&amp;filtertype=equals">Kersken,&#x20;Matthias</a>&nbsp;<span class='author_affiliation'>&nbsp</span></span><span class='dc.contributor.author_metadata_value'>;&#32;<a class="authority author"href="/simple-search?query=&sort_by=score&amp;order=desc&amp;rpp=10&amp;etal=0&amp;filtername=author&amp;filterquery=Strachan%2C+Paul&amp;filtertype=equals">Strachan,&#x20;Paul</a>&nbsp;<span class='author_affiliation'>&nbsp</span></span></h4></span><h5 style='margin-top:30px;'><span class='fordatis.institute_metadata_value'><a class="institute"href="/simple-search?query=&sort_by=score&amp;order=desc&amp;rpp=10&amp;etal=0&amp;filtername=fhginstitute&amp;filterquery=IBP+Fraunhofer-Institut+f%C3%BCr+Bauphysik&amp;filtertype=equals">IBP&#x20;Fraunhofer-Institut&#x20;für&#x20;Bauphysik</a></span></h5><script>var truncate_authors = 3; var truncate_editors = 3; var truncate_authors_more = 'view all authors'; var truncate_authors_less = 'collapse list'; var truncate_editors_more = 'view all editors'; var truncate_editors_less = 'collapse list'; </script>
+        </div>
+
+        <hr/> <!-- we may have to place this conditionally -->
+
+        <!-- Full-width bitstream table for sm and xs device sizes -->
+        <div class="row visible-sm-block visible-xs-block">
+            <div class='panel panel-default bitstream-panel'><div class='panel-heading'>Files in This Item:</div><table class='table bitstream-table panel-body'><tr><th id='t1' class='standard'>File</th><th id='t2' class='standard'>Description</th><th id='t3' class='standard'>Size</th><th id='t4' class='standard'>Format</th><th>&nbsp;</th></tr><tr class='bitstream_table_row' id='bitstream_seq_1'><td headers="t1" class="standard break-all"><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/1/00_File_Structure.pdf" download="00_File_Structure.pdf">00_File_Structure.pdf</a></span></td></td><td headers="t2" class="standard break-all"><span class='bitstream_description'>File structure of this contribution incl. the content of the compressed resources</span></td><td headers="t3" class="standard break-all"><span class='bitstream_size'>39,73 kB</span></td><td headers="t4" class="standard break-all"><span class='bitstream_format'>Adobe PDF</span></td><td><a id="pdf_preview_file_1" class="btn btn-success pdf_preview" target="_blank" href="/static/pdfjs/web/viewer.html?file=/bitstream/fordatis/161.2/1/00_File_Structure.pdf">Preview</a><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/1/00_File_Structure.pdf" download="00_File_Structure.pdf">Download/Open</a></td></tr><tr class='bitstream_table_row' id='bitstream_seq_2'><td headers="t1" class="standard break-all"><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/2/01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf" download="01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf">01_Experimental specification BESmodVAL_annex71_final_v1_0.pdf</a></span></td></td><td headers="t2" class="standard break-all"><span class='bitstream_description'>Core document describing this contribution and the other files</span></td><td headers="t3" class="standard break-all"><span class='bitstream_size'>6,94 MB</span></td><td headers="t4" class="standard break-all"><span class='bitstream_format'>Adobe PDF</span></td><td><a id="pdf_preview_file_2" class="btn btn-success pdf_preview" target="_blank" href="/static/pdfjs/web/viewer.html?file=/bitstream/fordatis/161.2/2/01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf">Preview</a><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/2/01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf" download="01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf">Download/Open</a></td></tr><tr class='bitstream_table_row' id='bitstream_seq_3'><td headers="t1" class="standard break-all"><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/3/02_Additional%20Documents.zip" target="_blank">02_Additional Documents.zip</a></span></td></td><td headers="t2" class="standard break-all"><span class='bitstream_description'>Technical details and detail specification, referred to by the core document</span></td><td headers="t3" class="standard break-all"><span class='bitstream_size'>305,94 MB</span></td><td headers="t4" class="standard break-all"><span class='bitstream_format'>ZIP; compressed archive containing *.jpg, *.pdf and others</span></td><td><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/3/02_Additional%20Documents.zip" target="_blank">Download/Open</a></td></tr><tr class='bitstream_table_row' id='bitstream_seq_4'><td headers="t1" class="standard break-all"><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/4/03_Data_Main_Experiment.zip" target="_blank">03_Data_Main_Experiment.zip</a></span></td></td><td headers="t2" class="standard break-all"><span class='bitstream_description'>Data of the Main Experiment</span></td><td headers="t3" class="standard break-all"><span class='bitstream_size'>45,18 MB</span></td><td headers="t4" class="standard break-all"><span class='bitstream_format'>ZIP; compressed archive containing multiple *.XLSX (MS Excel)</span></td><td><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/4/03_Data_Main_Experiment.zip" target="_blank">Download/Open</a></td></tr><tr class='bitstream_table_row' id='bitstream_seq_5'><td headers="t1" class="standard break-all"><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/5/04_Data_Extended_Experiment.zip" target="_blank">04_Data_Extended_Experiment.zip</a></span></td></td><td headers="t2" class="standard break-all"><span class='bitstream_description'>Data of the Extended Experiment</span></td><td headers="t3" class="standard break-all"><span class='bitstream_size'>52,42 MB</span></td><td headers="t4" class="standard break-all"><span class='bitstream_format'>ZIP; compressed archive containing multiple *.XLSX (MS Excel)</span></td><td><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/5/04_Data_Extended_Experiment.zip" target="_blank">Download/Open</a></td></tr></table></div>
+        </div>
+
+        <div class="row">
+            <h3>Abstract</h3><div class='metadata_abstract'><span class='dc.description.abstract_metadata_value'>This&#x20;document&#x20;and&#x20;dataset&#x20;sets&#x20;out&#x20;the&#x20;specification&#x20;for&#x20;the&#x20;empirical&#x20;validation&#x20;experiment&#x20;conducted&#x20;on&#x20;the&#x20;Twin&#x20;Houses&#x20;at&#x20;the&#x20;Fraunhofer&#x20;IBP&#x20;test&#x20;site&#x20;in&#x20;Holzkirchen,&#x20;Germany&#x20;in&#x20;the&#x20;winter&#x20;of&#x20;2018&#x2F;19,&#x20;as&#x20;part&#x20;of&#x20;IEA&#x20;EBC&#x20;Annex&#x20;71.&#x20;&#x0D;&#x0A;&#x0D;&#x0A;This&#x20;document,&#x20;together&#x20;with&#x20;the&#x20;additional&#x20;information&#x20;provided&#x20;(images,&#x20;thermal&#x20;bridge&#x20;calculations,&#x20;layout&#x20;drawings,&#x20;experimental&#x20;details&#x20;and&#x20;experimental&#x20;data)&#x20;constitutes&#x20;a&#x20;full&#x20;specification&#x20;of&#x20;the&#x20;experiment,&#x20;makeing&#x20;it&#x20;available&#x20;for&#x20;further&#x20;validation&#x20;and&#x20;training&#x20;purposes.</span></div><h3>Technical Information</h3><div class='metadata_technical_information'><span class='dc.description.technicalinformation_metadata_value'>&quot;01_Experimental&#x20;specification&#x20;BESmodVAL_annex71_final_v1_0.pdf&quot;&#x20;is&#x20;the&#x20;central&#x20;document&#x20;describing&#x20;the&#x20;experiment&#x20;and&#x20;the&#x20;meaning&#x20;of&#x20;the&#x20;data.&#x20;For&#x20;many&#x20;details&#x20;this&#x20;text&#x20;refers&#x20;to&#x20;the&#x20;&quot;additional&#x20;documents&quot;.&#x20;&quot;02_Additional&#x20;Documents.zip&quot;&#x20;contains&#x20;various&#x20;pictures,&#x20;drawings&#x20;and&#x20;technical&#x20;specifications&#x20;as&#x20;well&#x20;as&#x20;details&#x20;of&#x20;the&#x20;instrumentation&#x20;used.&#x20;The&#x20;other&#x20;resources&#x20;in&#x20;compressed&#x20;*.zip&#x20;format&#x20;contain&#x20;the&#x20;measurement&#x20;data&#x20;in&#x20;MS&#x20;Excel&#x20;(*.xlsx&#x20;format).&#x20;&quot;00_File_Structure.pdf&quot;&#x20;gives&#x20;an&#x20;overview&#x20;of&#x20;this&#x20;contribution&#x20;including&#x20;the&#x20;zip-files&#x20;content.</span></div>
+        </div>
+
+        <!-- Bibliographic Citation metadata table -->
+        <div class="row">
+            
+        </div>
+
+        <!-- repeat sidebar elements here for display only when sidebar is collapsed -->
+        <div class="row visible-sm-block visible-xs-block">
+            <strong>Classification</strong><div class='sidebar_metadata_list'><span class='ddc_metadata'><span class='dc.subject.ddc_metadata_value'>621&#x20;Angewandte&#x20;Physik</span><span class='dc.subject.ddc_metadata_value'><br />629&#x20;Andere&#x20;Fachrichtungen&#x20;der&#x20;Ingenieurwissenschaften</span><span class='dc.subject.ddc_metadata_value'><br />697&#x20;Heizung-,&#x20;Lüftungs-,&#x20;Klimatechnik</span></span></div>
+            <strong>Keywords</strong><div class='sidebar_metadata_list'><span class='keywords_metadata'><span class='dc.subject_metadata_value'>simulation&#x20;validation</span><span class='dc.subject_metadata_value'><br />synthetic&#x20;users</span></span></div>
+            
+            <strong>Funder</strong><div class='sidebar_metadata_list'><span class='funder_metadata'><span class='dc.contributor.funder_metadata_value'>Bundesministerium&#x20;fur&#x20;Wirtschaft&#x20;und&#x20;Energie&#x20;BMWi&#x20;(Deutschland)</span></span></div>
+            <strong>Fraunhofer Group</strong><div class='sidebar_metadata_list'><span class='group_metadata'><span class='fordatis.group_metadata_value'><a class="group"href="/simple-search?query=&sort_by=score&amp;order=desc&amp;rpp=10&amp;etal=0&amp;filtername=author&amp;filterquery=Werkstoffe%2C+Bauteile+-+MATERIALS&amp;filtertype=equals">Werkstoffe,&#x20;Bauteile&#x20;-&#x20;MATERIALS</a></span></span></div>
+        </div>
+
+    </div>
+
+<div class="container row">
+
+
+							
+	<a class="btn btn-default" href="/handle/fordatis/161.2?mode=full&locale=en">
+        Show full item record
+    </a>
+							
+
+
+    
+
+</div>
+<br/>
+    
+
+	<div id="versionHistory" class="panel panel-default">
+	<div class="panel-heading">Version History</div>
+	
+	<table class="table panel-body">
+		<tr>
+			<th id="tt1" class="oddRowEvenCol">Version</th>
+			<th 			
+				id="tt2" class="oddRowOddCol">Item</th>
+            
+            
+			<th 
+				
+				id="tt4" class="oddRowOddCol">Date</th>
+			<th 
+				 id="tt5" class="oddRowEvenCol">Summary </th>
+		</tr>
+		
+			
+		<tr>			
+			<td headers="tt1" class="oddRowEvenCol">2</td>
+			<td headers="tt2" class="oddRowOddCol"><a href="https://fordatis.fraunhofer.de/handle/fordatis/161.2">fordatis/161.2</a><span class="glyphicon glyphicon-asterisk"></span></td>
+
+                        
+			<td headers="tt4" class="oddRowOddCol">2020-06-23 15:12:56.493</td>
+			<td headers="tt5" class="oddRowEvenCol">The data of the Extended Experiment can now also be released</td>
+		</tr>
+			
+		<tr>			
+			<td headers="tt1" class="oddRowEvenCol">1</td>
+			<td headers="tt2" class="oddRowOddCol"><a href="https://fordatis.fraunhofer.de/handle/fordatis/161">fordatis/161</a></td>
+
+                        
+			<td headers="tt4" class="oddRowOddCol">2020-05-20 11:00:07.0</td>
+			<td headers="tt5" class="oddRowEvenCol"></td>
+		</tr>
+		
+	</table>
+	<div class="panel-footer"><span class="glyphicon glyphicon-asterisk"></span> Selected version</div>
+	</div>
+
+<br/>
+    
+
+    <p class="submitFormHelp alert alert-info">This item is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons License</a>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="/image/cc-somerights.gif" border="0" alt="Creative Commons" style="margin-top: -5px;" class="pull-right"/></a>
+    </p>
+    <!--
+    null
+    -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+	</div>
+	<div class="col-md-3">
+                    
+        <!-- admin and version sidebar first -->
+        
+        
+
+        <!-- then custom sidebar, containing some metadata -->
+        <div class="custom-sidebar">
+            <div class='sidebar_bitstreams hidden-sm hidden-xs'>
+                <h4>Files in This Item:</h4><div class='sidebar_bitstream_row' id='bitstream_row_0'><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/1/00_File_Structure.pdf" download="00_File_Structure.pdf">00_File_Structure.pdf</a></span><br/><span class='bitstream_size'>39,73 kB</span>, <span class='bitstream_format'>Adobe PDF</span><br/><span class='bitstream_description'>File structure of this contribution incl. the content of the compressed resources</span><br/><a id="pdf_preview_file_1" class="btn btn-success pdf_preview" target="_blank" href="/static/pdfjs/web/viewer.html?file=/bitstream/fordatis/161.2/1/00_File_Structure.pdf">Preview</a><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/1/00_File_Structure.pdf" download="00_File_Structure.pdf">Download/Open</a><hr class='bitstream_list_seperator'/></div><div class='sidebar_bitstream_row' id='bitstream_row_1'><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/2/01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf" download="01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf">01_Experimental specification BESmodVAL_annex71_final_v1_0.pdf</a></span><br/><span class='bitstream_size'>6,94 MB</span>, <span class='bitstream_format'>Adobe PDF</span><br/><span class='bitstream_description'>Core document describing this contribution and the other files</span><br/><a id="pdf_preview_file_2" class="btn btn-success pdf_preview" target="_blank" href="/static/pdfjs/web/viewer.html?file=/bitstream/fordatis/161.2/2/01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf">Preview</a><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/2/01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf" download="01_Experimental%20specification%20BESmodVAL_annex71_final_v1_0.pdf">Download/Open</a><hr class='bitstream_list_seperator'/></div><div class='sidebar_bitstream_row' id='bitstream_row_2'><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/3/02_Additional%20Documents.zip" target="_blank">02_Additional Documents.zip</a></span><br/><span class='bitstream_size'>305,94 MB</span>, <span class='bitstream_format'>ZIP; compressed archive containing *.jpg, *.pdf and others</span><br/><span class='bitstream_description'>Technical details and detail specification, referred to by the core document</span><br/><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/3/02_Additional%20Documents.zip" target="_blank">Download/Open</a><hr class='bitstream_list_seperator'/></div><div class='sidebar_bitstream_row' id='bitstream_row_3'><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/4/03_Data_Main_Experiment.zip" target="_blank">03_Data_Main_Experiment.zip</a></span><br/><span class='bitstream_size'>45,18 MB</span>, <span class='bitstream_format'>ZIP; compressed archive containing multiple *.XLSX (MS Excel)</span><br/><span class='bitstream_description'>Data of the Main Experiment</span><br/><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/4/03_Data_Main_Experiment.zip" target="_blank">Download/Open</a><hr class='bitstream_list_seperator'/></div><div class='sidebar_bitstream_row' id='bitstream_row_4'><span class='bitstream_link'><a href="/bitstream/fordatis/161.2/5/04_Data_Extended_Experiment.zip" target="_blank">04_Data_Extended_Experiment.zip</a></span><br/><span class='bitstream_size'>52,42 MB</span>, <span class='bitstream_format'>ZIP; compressed archive containing multiple *.XLSX (MS Excel)</span><br/><span class='bitstream_description'>Data of the Extended Experiment</span><br/><a class='btn btn-primary bitstream_download' href="/bitstream/fordatis/161.2/5/04_Data_Extended_Experiment.zip" target="_blank">Download/Open</a><hr class='bitstream_list_seperator'/></div><script>var view_more_files_label = 'Show 2 more files';
+var view_less_files_label = 'Collapse list';</script>
+            </div>
+            <!-- sidebar metadata snippets. keywords and related items are a bit special
+            but the rest are standard lists/tables. see fordatis.cfg for keys->field order and style
+            -->
+            <div class="sidebar_metadata hidden-sm hidden-xs">
+                <strong>Classification</strong><div class='sidebar_metadata_list'><span class='ddc_metadata'><span class='dc.subject.ddc_metadata_value'>621&#x20;Angewandte&#x20;Physik</span><span class='dc.subject.ddc_metadata_value'><br />629&#x20;Andere&#x20;Fachrichtungen&#x20;der&#x20;Ingenieurwissenschaften</span><span class='dc.subject.ddc_metadata_value'><br />697&#x20;Heizung-,&#x20;Lüftungs-,&#x20;Klimatechnik</span></span></div>
+                <strong>Keywords</strong><div class='sidebar_metadata_list'><span class='keywords_metadata'><span class='dc.subject_metadata_value'>simulation&#x20;validation</span><span class='dc.subject_metadata_value'><br />synthetic&#x20;users</span></span></div>
+                
+                <strong>Funder</strong><div class='sidebar_metadata_list'><span class='funder_metadata'><span class='dc.contributor.funder_metadata_value'>Bundesministerium&#x20;fur&#x20;Wirtschaft&#x20;und&#x20;Energie&#x20;BMWi&#x20;(Deutschland)</span></span></div>
+                <strong>Fraunhofer Group</strong><div class='sidebar_metadata_list'><span class='group_metadata'><span class='fordatis.group_metadata_value'><a class="group"href="/simple-search?query=&sort_by=score&amp;order=desc&amp;rpp=10&amp;etal=0&amp;filtername=author&amp;filterquery=Werkstoffe%2C+Bauteile+-+MATERIALS&amp;filtertype=equals">Werkstoffe,&#x20;Bauteile&#x20;-&#x20;MATERIALS</a></span></span></div>
+            </div>
+        </div>
+    
+    </div>
+    </div>
+
+</div>
+</div>
+</div>
+</main>
+    
+     <footer class="navbar navbar-default navbar-fixed-bottom">
+         <div class="container text-muted">
+             <div class="pull-left hidden-xs">
+                 Fordatis is based on <a href="http://www.dspace.org">DSpace</a>.
+             </div>
+             <div class="pull-right">
+             
+             <a target="_blank" href="/about.jsp">About</a> &#9679; <a
+                     target="_blank" href="/feedback">Feedback</a> &#9679; <a
+                     target="_blank" href="/impressum.jsp">Editorial Notes</a> &#9679; <a
+                     target="_blank" href="/datenschutz.jsp">Data Protection Information</a> &#9679;
+                     <a target="_blank" href="/apidocu.jsp">API</a>
+             
+             </div>
+         </div>
+    </footer>
+    </body>
+</html>
+
+
+<!-- PDF Preview overlay -->
+<div id="pdf_overlay" class="modal" title="Previewing PDF..." style="width:100%;">
+</div>
+<script type="text/javascript" src="/static/js/jquery.expander.min.js"></script>
+<script>
+    //Truncate files and abstracts
+    $(function(){
+       var truncate_files = 3;
+       var num_files = $("div.sidebar_bitstream_row").length;
+       var files_hidden = false;
+       if(num_files > truncate_files && !files_hidden) {
+           $("div.sidebar_bitstream_row").each(function(idx, el) {
+               if(idx >= truncate_files) {
+                   $(this).hide();
+               }
+           });
+           // IDE will complain about the view_more_... vars but they'll be there when the tag prints them out...
+           $("div.sidebar_bitstreams").append("<a href='#' id='view_all_bitstreams'>"+view_more_files_label+"</a><br/><br/>");
+           files_hidden = true;
+           $("#view_all_bitstreams").click(function(event, ui){
+               event.preventDefault();
+               if(files_hidden) {
+                   // unhide files
+                   $("div.sidebar_bitstream_row").show();
+                   $("#view_all_bitstreams").text(view_less_files_label);
+                   files_hidden  = false;
+               }
+               else {
+                   // hide files
+                   $("div.sidebar_bitstream_row").each(function(idx, el) {
+                       if(idx >= truncate_files) {
+                           $(this).hide();
+                       }
+                   });
+                   $("#view_all_bitstreams").text(view_more_files_label);
+                   files_hidden = true;
+               }
+           });
+
+           // do the same for hte bitstream table...
+           $("tr.bitstream_table_row").each(function(idx, el) {
+               if(idx >= truncate_files) {
+                   $(this).hide();
+               }
+           });
+           // IDE will complain about the view_more_... vars but they'll be there when the tag prints them out...
+           $("div.bitstream-panel").append("<a href='#' class='btn btn-default' id='view_all_bitstream_rows'>"+view_more_files_label+"</a><br/><br/>");
+           files_hidden = true;
+           $("#view_all_bitstream_rows").click(function(event, ui){
+               event.preventDefault();
+               if(files_hidden) {
+                   // unhide files
+                   $("tr.bitstream_table_row").show();
+                   $("#view_all_bitstream_rows").text(view_less_files_label);
+                   files_hidden  = false;
+               }
+               else {
+                   // hide files
+                   $("tr.bitstream_table_row").each(function(idx, el) {
+                       if(idx >= truncate_files) {
+                           $(this).hide();
+                       }
+                   });
+                   $("#view_all_bitstream_rows").text(view_more_files_label);
+                   files_hidden = true;
+               }
+           });
+       }
+
+       var truncate_abstracts = 650;
+       var text_more_label = 'read more';
+       var text_less_label = 'read less';
+
+       if($("div.metadata_abstract span")) {
+           $("div.metadata_abstract span").expander({
+               slicePoint: truncate_abstracts,
+               expandText: text_more_label,
+               userCollapseText: text_less_label
+           });
+       }
+       if($("div.metadata_technical_information span")) {
+           $("div.metadata_technical_information span").expander({
+               slicePoint: truncate_abstracts,
+               expandText: text_more_label,
+               userCollapseText: text_less_label
+           });
+       }
+
+    });
+
+    /**
+     * truncate formatted names in primary metadata
+     * @param max
+     * @param key
+     * @param more
+     * @param less
+     */
+    function truncate_formatted_names(max, key, more, less) {
+        if(max && max > -1 && key) {
+            var hidden = false;
+            var container_class = ".formatted_"+ key;
+            var names = container_class + " span[class='dc.contributor.author_metadata_value']";
+            var button = "view_all_" + key;
+            var num_names = $(names).length;
+
+            if(num_names > max) {
+                $(names).hide();
+                var visible_names = $(names).slice(0,max);
+                $(visible_names).each(function(i, el) {
+                    $(el).show();
+                });
+                hidden = true;
+            }
+
+            if(hidden) {
+                $(container_class).append("<a id='"+button+"' href='#'>"+more+"</a>");
+                $("#"+button).click(function(event, ui){
+                    event.preventDefault();
+                    if(hidden) {
+                        $(names).show();
+                        hidden = false;
+                        $("#"+button).text(less);
+                    }
+                    else {
+                        $(names).hide();
+                        var visible_names = $(names).slice(0,max);
+                        $(visible_names).each(function(i, el) {
+                            $(el).show();
+                        });
+                        hidden = true;
+                        $("#"+button).text(more);
+                    }
+                });
+            }
+        }
+    }
+
+    // Author and editor name truncation
+    if(truncate_authors && truncate_authors > -1) {
+        truncate_formatted_names(truncate_authors,"authors",truncate_authors_more,truncate_authors_less);
+    }
+    if(truncate_editors && truncate_editors > -1) {
+        truncate_formatted_names(truncate_editors,"editors",truncate_editors_more,truncate_editors_less)
+    }
+
+    // PDF Preview functionality
+    // --
+    // Uses jquery-modal, a modal similar to bootstrap but a bit simpler and cleaner, and easier for large content.
+    // Bootstrap JS and CSS can interfere as the method and class names are the same, but the jquery-modal JS and CSS is loaded afterwards
+    // in an attempt to take priority in any conflict.
+    $(function(){
+        var viewport_width = $(window).width();
+        var viewport_height = $(window).height();
+        // if screen /window width below 800px, allow event propagation so viewer opens in new tab
+        if(viewport_width > 800) {
+            $(".pdf_preview").click(function (event, ui) {
+                event.preventDefault();
+                // Get dimensions with each click in case user resized window
+                var viewport_width = $(window).width();
+                var viewport_height = $(window).height();
+                // By default start with 80% width and height of viewport
+                var overlay_width = viewport_width * 0.8;
+                var overlay_height = viewport_height * 0.8;
+                var bitstream_url = $(this).attr('href');
+                $("#pdf_overlay").html('<iframe style="width:100%;height:100%" src="' + bitstream_url + '&showPreviousViewOnLoad=false"></iframe>');
+                $("#pdf_overlay").modal({fadeDuration:100});
+            });
+        }
+    });
+</script>

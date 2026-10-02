@@ -1,0 +1,99 @@
+{
+  "complete": true,
+  "executed_utc": "2026-10-01T16:31:48.685396+00:00",
+  "checks": [
+    {
+      "check": "unique_ledger_ids",
+      "passed": true,
+      "detail": 8051
+    },
+    {
+      "check": "four_entry_kind_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "category_counts_match_summary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all_239_frozen_input_and_result_hashes_still_match",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "every_audited_csv_header_has_one_column_record",
+      "passed": true,
+      "detail": {
+        "files": 129,
+        "failures": []
+      }
+    },
+    {
+      "check": "raw_structured_numeric_or_boolean_leaf_coverage",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "every_retained_reviewed_source_hash_matches",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "positive_whitelist_exact_63_records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "whitelisted_file_hashes_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no_approved_id_in_denied_list",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "weather_60_ids_supersede_baseline_records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "external_observation_public_study_has_11_columns",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "real_project_gate_remains_blocked",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "completed_result_artifacts_have_no_hash_failures",
+      "passed": true,
+      "detail": {
+        "no_completion_manifest_not_formal_evidence": 5,
+        "hash_consistent_completed_program_output": 14
+      }
+    },
+    {
+      "check": "script_self_test",
+      "passed": true,
+      "detail": {
+        "status": "passed",
+        "checks": 9,
+        "scope": "inheritance ownership, deletion, pointer escape, radiation unit distinction, numeric coverage, no broad-source endorsement, draft scope restriction"
+      }
+    }
+  ],
+  "frozen_baseline_files": 239,
+  "new_data_directories_outside_original_inventory": [
+    "data/verified_weather_20261002"
+  ],
+  "incremental_new_weather_reviewed": true,
+  "full_inventory_rescanned": false,
+  "no_original_inputs_edited": true,
+  "data_truth_gate_passed": false
+}

@@ -1,0 +1,130 @@
+extends: ../public_scenario_inputs/scenario3_wuhan_joint_public.yaml
+planning:
+  region_profile: wuhan_synthetic_rc_public_weather_candidate
+  time_step_hours: 1
+  representative_day_weight: 1
+  annual_scope:
+    start_inclusive: '2023-07-01T00:00:00+08:00'
+    end_exclusive: '2024-07-01T00:00:00+08:00'
+    timezone: Asia/Shanghai
+    expected_hours: 8784
+  firm_building_flexibility:
+    enabled: false
+    availability_factor: 0.0
+nodes:
+- name: district_a
+  thermal_inertia:
+    high: null
+    low: null
+  intermittent_heating:
+    setback_fraction: 1.0
+  user_behavior:
+    multiplier_column: null
+    scenario_multiplier_weight_column: null
+- name: district_b
+  thermal_inertia:
+    high: null
+    low: null
+  intermittent_heating:
+    setback_fraction: 1.0
+  user_behavior:
+    multiplier_column: null
+    scenario_multiplier_weight_column: null
+demand_response:
+  max_shift_fraction: 0.0
+storages:
+- name: district_a_pcm
+  boundary_mode: fixed
+  initial_soc_fraction: 0.0
+  final_soc_min_fraction: 0.0
+  firm_capacity_credit: 0.0
+- name: district_b_pcm
+  boundary_mode: fixed
+  initial_soc_fraction: 0.0
+  final_soc_min_fraction: 0.0
+  firm_capacity_credit: 0.0
+building_thermal:
+  enabled: true
+  outdoor_temperature_column: outdoor_temp
+  boundary_mode: fixed
+  buildings:
+  - area_m2: 18000
+    heat_grade: low
+    heat_loss_kw_per_c: 16.2
+    initial_temperature_c: 20
+    internal_gain_column: internal_gain_apartments_a_kw
+    max_temperature_c: 28
+    max_temperature_column: max_temperature_apartments_a_c
+    min_temperature_c: 18
+    min_temperature_column: min_temperature_apartments_a_c
+    name: apartments_a
+    node: district_a
+    solar_gain_column: solar_gain_apartments_a_kw
+    thermal_capacity_kwh_per_c: 1260
+    boundary_mode: fixed
+    final_temperature_c: 20.0
+    parameter_identity: synthetic_assumption_not_calibrated
+  - area_m2: 7000
+    heat_grade: low
+    heat_loss_kw_per_c: 7.7
+    initial_temperature_c: 20
+    internal_gain_column: internal_gain_office_a_kw
+    max_temperature_c: 28
+    max_temperature_column: max_temperature_office_a_c
+    min_temperature_c: 18
+    min_temperature_column: min_temperature_office_a_c
+    name: office_a
+    node: district_a
+    solar_gain_column: solar_gain_office_a_kw
+    thermal_capacity_kwh_per_c: 315
+    boundary_mode: fixed
+    final_temperature_c: 20.0
+    parameter_identity: synthetic_assumption_not_calibrated
+  - area_m2: 14000
+    heat_grade: low
+    heat_loss_kw_per_c: 14.0
+    initial_temperature_c: 20
+    internal_gain_column: internal_gain_apartments_b_kw
+    max_temperature_c: 28
+    max_temperature_column: max_temperature_apartments_b_c
+    min_temperature_c: 18
+    min_temperature_column: min_temperature_apartments_b_c
+    name: apartments_b
+    node: district_b
+    solar_gain_column: solar_gain_apartments_b_kw
+    thermal_capacity_kwh_per_c: 980
+    boundary_mode: fixed
+    final_temperature_c: 20.0
+    parameter_identity: synthetic_assumption_not_calibrated
+  - area_m2: 5000
+    heat_grade: low
+    heat_loss_kw_per_c: 6.0
+    initial_temperature_c: 20
+    internal_gain_column: internal_gain_retail_b_kw
+    max_temperature_c: 28
+    max_temperature_column: max_temperature_retail_b_c
+    min_temperature_c: 18
+    min_temperature_column: min_temperature_retail_b_c
+    name: retail_b
+    node: district_b
+    solar_gain_column: solar_gain_retail_b_kw
+    thermal_capacity_kwh_per_c: 175
+    boundary_mode: fixed
+    final_temperature_c: 20.0
+    parameter_identity: synthetic_assumption_not_calibrated
+competition_data:
+  status: candidate_requires_integrated_rc_and_full_horizon_audit
+  input_timezone: UTC
+  schedule_timezone: Asia/Shanghai
+  heat_demand_columns_role: legacy_reference_and_backup_capacity_scale_not_fixed_rc_service
+  cooling_demand_columns_role: legacy_reference_and_cooling_module_activation_not_fixed_rc_service
+  heating_season_flag_role: reporting_scope_only_not_year_round_rc_service_switch
+  dhw: excluded; no domestic hot water load claimed
+  ground_balance_scope: full_8784_hour_service_year; seasonal_slice_must_not_reimpose_annual_ratio
+  storage_initial_energy_source: empty_at_window_start; all useful stored energy must
+    be charged inside the window
+  storage_terminal_rule: SOC >= 0; no terminal energy credit; positive leftover allowed
+    and reported
+  temperature_initial_source: fixed 20 C synthetic conditioned start; preconditioning
+    energy outside comparison boundary
+  temperature_terminal_rule: fixed 20 C requested; C2/C0 must enforce final_temperature_c

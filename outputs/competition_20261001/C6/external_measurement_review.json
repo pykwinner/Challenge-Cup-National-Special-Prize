@@ -1,0 +1,808 @@
+{
+  "status": "approved_for_limited_method_applicability_citation_with_unresolved_source_conditions",
+  "reviewed_utc": "2026-10-01T16:23:36.989632+00:00",
+  "reviewer": "C6 independent read-only review",
+  "scope": {
+    "c1_output": "outputs/competition_20261001/C1_external",
+    "selected_dataset": "Fraunhofer Twin House N2, Annex 71 main experiment exp1, published version 2",
+    "doi": "10.24406/fordatis/76.2",
+    "source_role": "publisher_processed_experimental_measurements"
+  },
+  "decision": {
+    "numerical_reproducibility_passed": true,
+    "approved_for_limited_applicability_citation": true,
+    "general_accuracy_validated": false,
+    "full_physical_validation_approved": false,
+    "wuhan_empirical_calibration_approved": false,
+    "wuhan_parameter_transfer_approved": false,
+    "strict_preregistration_established": false,
+    "publisher_processing_leakage_ruled_out": false,
+    "exact_measurement_window_phase_established": false,
+    "certified_solar_gain_upper_bound": false,
+    "numerical_defect_found": false
+  },
+  "verification_summary": {
+    "manifest_hashes_total": 18,
+    "manifest_hashes_passed": 18,
+    "download_hashes_total": 6,
+    "download_hashes_passed": 6,
+    "archive_members_verified": 2,
+    "rows": 11988,
+    "scalar_metric_checks": 162,
+    "max_abs_metric_difference": 1.4210854715202004e-14,
+    "max_abs_observation_csv_difference": 4.992628532818344e-11,
+    "max_abs_prediction_or_residual_csv_difference": 4.999378688808065e-11,
+    "metric_tolerance": 1e-09,
+    "csv_tolerance": 1e-08,
+    "fit_sse_tolerance": 1e-09,
+    "jacobian_condition_relative_tolerance": 0.0001,
+    "protected_files_total": 25,
+    "all_protected_files_unchanged": true,
+    "passed": true
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "status": "pass_with_processing_limits",
+      "topic": "来源与数据身份",
+      "conclusion": "Fraunhofer Holzkirchen N2公开主实验测量，设计用户日程属于实验输入；所选温度、电功率、气象来自发布方数据，不是由RC生成的伪测量。",
+      "evidence": [
+        {
+          "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+          "pdf_pages": [
+            31,
+            44,
+            50,
+            54,
+            55,
+            56
+          ],
+          "printed_pages": [
+            30,
+            43,
+            49,
+            53,
+            54,
+            55
+          ],
+          "sections": [
+            "3.10",
+            "3.16",
+            "5.1",
+            "6.1",
+            "6.2"
+          ],
+          "checked_by": "independent pypdf extraction of original PDF"
+        },
+        {
+          "file": "data/external_rc_benchmark_20261001/evidence/annex71_landing.html",
+          "checked": "cached DC.identifier / DC.creator / DC.rights metadata",
+          "doi": "10.24406/fordatis/76.2",
+          "licence": "CC BY-SA 4.0"
+        }
+      ],
+      "limit": "哈希证明缓存文件与清单一致，不能独立证明下载时间或数字签名真实性；计量补值见U2/U3。"
+    },
+    {
+      "id": "F2",
+      "status": "pass_under_piecewise_constant_input_assumption",
+      "topic": "十分钟均值观测方程",
+      "conclusion": "区间均值与上一实测均值的递推代数正确，没有把均值直接冒充末端温度。",
+      "derivation": {
+        "ode": "dT/dt=(H/C)(E-T)",
+        "equilibrium": "E=Tout+(Q+A*I)/H",
+        "a": "exp(-H*dt/C)",
+        "f": "(1-a)/(H*dt/C)",
+        "interval_mean": "M=E+f*(T_start-E)",
+        "recovered_endpoint": "T_end=E+(a/f)*(M-E)",
+        "one_step": "Mhat_t=a*Mobs_(t-1)+(f-a)*E_(t-1)+(1-f)*E_t"
+      },
+      "limit": "精确性属于假设区间内输入常值的一阶ODE积分，不是对真实秒级输入或测量聚合规则的认证；见U1。"
+    },
+    {
+      "id": "F3",
+      "status": "pass_as_derived_sensor_aggregate",
+      "topic": "面积加权温度",
+      "conclusion": "十个110cm房间中心温度按原图面积加权，面积合计165.75m²。该聚合不是直接测得的全屋体积均温或围护结构温度。",
+      "evidence": [
+        {
+          "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+          "pdf_pages": [
+            17,
+            18
+          ],
+          "printed_pages": [
+            16,
+            17
+          ],
+          "sections": [
+            "Figure 9",
+            "Table 2"
+          ],
+          "checked_by": "independent Poppler renders inspected visually"
+        },
+        {
+          "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+          "pdf_pages": [
+            30,
+            51,
+            54
+          ],
+          "printed_pages": [
+            29,
+            50,
+            53
+          ],
+          "sections": [
+            "Table 12",
+            "5.1",
+            "6.1"
+          ],
+          "checked_by": "independent pypdf extraction of original PDF"
+        }
+      ],
+      "details": {
+        "room_areas_m2": {
+          "bath": 6.92,
+          "bed": 11.19,
+          "child1": 34.6,
+          "child2": 36.56,
+          "corridor": 5.46,
+          "dining": 11.19,
+          "doorway": 5.84,
+          "kitchen": 7.44,
+          "living": 33.65,
+          "stairs": 12.9
+        },
+        "total_area_m2": 165.75,
+        "volume_m3": 364.15
+      },
+      "limit": "阁楼与地面层面积/体积比不同；其他阶段存在垂直分层，拟合H/C只代表此聚合的等效参数。"
+    },
+    {
+      "id": "F4",
+      "status": "documented_partition_supported_no_selected_extended_double_count",
+      "topic": "电加热与IHS重复计热",
+      "conclusion": "主实验N2十列heat与七列房间IHS合并符合原说明的互补分量语义。厨房、浴室分表；living/bed/child1/child2由单加热器总量拆分。",
+      "evidence": [
+        {
+          "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+          "pdf_pages": [
+            54
+          ],
+          "printed_pages": [
+            53
+          ],
+          "sections": [
+            "6.1 N2"
+          ],
+          "checked_by": "independent pypdf extraction of original PDF"
+        },
+        {
+          "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+          "pdf_pages": [
+            57
+          ],
+          "printed_pages": [
+            56
+          ],
+          "sections": [
+            "6.3 Extended Experiment"
+          ],
+          "checked_by": "independent pypdf extraction of original PDF"
+        }
+      ],
+      "details": "所选exp1没有dining_IHS列；未选通风SUA_IHS、设定点、DHW或O5热泵推算值。扩展实验dining PRBS重复出现的警告不适用于所选exp1。",
+      "limit": "符合来源解释不等于用拆分前独立电表完成闭合；见U3。"
+    },
+    {
+      "id": "F5",
+      "status": "declared_model_assumption",
+      "topic": "电功率到房间热输入",
+      "conclusion": "W至kW转换及分量求和正确；电能按1倍计作室内热量是模型假设。",
+      "evidence": {
+        "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+        "pdf_pages": [
+          31,
+          51,
+          53,
+          54
+        ],
+        "printed_pages": [
+          30,
+          50,
+          52,
+          53
+        ],
+        "sections": [
+          "3.10",
+          "5.2",
+          "6.1"
+        ],
+        "checked_by": "independent pypdf extraction of original PDF"
+      },
+      "limit": "来源给出约30%辐射/70%对流、1–2分钟响应。未显式表示加热器储热、插座/混合风扇热、通风、地下室/阁楼及室间传热。"
+    },
+    {
+      "id": "F6",
+      "status": "pass_for_code_level_isolation",
+      "topic": "连续时间划分与拟合隔离",
+      "conclusion": "11988条记录按7192/2397/2399划分；训练预测对7191条。fit只传入前7192条，四起点选择只比较训练SSE；验证/测试未参与该拟合代码。",
+      "evidence": {
+        "files": [
+          "scripts/validate_external_rc_benchmark.py",
+          "data/external_rc_benchmark_20261001/analysis_plan.json"
+        ],
+        "reviewed_functions": [
+          "split_ranges",
+          "fit_training_only",
+          "run"
+        ]
+      },
+      "limit": "补值跨界与事前注册证据分别见U2/U4；没有重新拟合来核实优化器迭代日志或全局最优性。"
+    },
+    {
+      "id": "F7",
+      "status": "pass_for_matched_temperature_history_and_reset_rules",
+      "topic": "单步、开环与持续性公平性",
+      "conclusion": "单步各时段用上一实测温度；连续开环只在最初初始化；分段开环只在各段起点用前一实测区间初始化。对应持续性基线使用相同温度历史及复位次数。",
+      "evidence": {
+        "file": "scripts/validate_external_rc_benchmark.py",
+        "independently_checked": "all prediction and residual columns plus split labels"
+      },
+      "limit": "RC还使用记录中的天气和供热输入；持续性不利用这些外生变量。连续训练轨迹为拟合后重建，分段结果必须单独标注，不能冒称无复位连续开环。"
+    },
+    {
+      "id": "F8",
+      "status": "conditional_exogenous_inputs_only",
+      "topic": "预报用途",
+      "conclusion": "所报结果以当段实测天气、实测供热等外生输入已知为条件，可作RC适用性诊断。",
+      "limit": "不证明在未来天气、控制输入未知时可部署的预测性能，也不是闭环优化控制效果证明。"
+    },
+    {
+      "id": "F9",
+      "status": "numerical_pass_proxy_semantics_limited",
+      "topic": "太阳代理与约束",
+      "conclusion": "五个同段实测辐照通道取最大值并除以1000的计算可复现；16.77×0.62=10.3974的参数界限可追溯。",
+      "evidence": {
+        "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+        "pdf_pages": [
+          17,
+          18,
+          21,
+          44
+        ],
+        "printed_pages": [
+          16,
+          17,
+          20,
+          43
+        ],
+        "sections": [
+          "Figure 9",
+          "Table 2",
+          "3.5",
+          "3.16"
+        ],
+        "checked_by": "independent pypdf extraction of original PDF"
+      },
+      "limit": "它不是实测透窗太阳得热；严格物理上界声明未获批准，见U5。"
+    },
+    {
+      "id": "F10",
+      "status": "all_numerical_comparisons_passed",
+      "topic": "独立复算",
+      "conclusion": "从原XLSX重新生成观测，以保存参数独立恢复边界温度并积分；18组模式/划分共162个指标、四组已保存训练SSE、参数边界标志及时间常数一致。",
+      "evidence": {
+        "file": "outputs/competition_20261001/C6/external_measurement_review_support/independent_recomputation.json"
+      },
+      "details": {
+        "manifest_hashes_total": 18,
+        "manifest_hashes_passed": 18,
+        "download_hashes_total": 6,
+        "download_hashes_passed": 6,
+        "archive_members_verified": 2,
+        "rows": 11988,
+        "scalar_metric_checks": 162,
+        "max_abs_metric_difference": 1.4210854715202004e-14,
+        "max_abs_observation_csv_difference": 4.992628532818344e-11,
+        "max_abs_prediction_or_residual_csv_difference": 4.999378688808065e-11,
+        "metric_tolerance": 1e-09,
+        "csv_tolerance": 1e-08,
+        "fit_sse_tolerance": 1e-09,
+        "jacobian_condition_relative_tolerance": 0.0001,
+        "protected_files_total": 25,
+        "all_protected_files_unchanged": true,
+        "passed": true
+      },
+      "limit": "Jacobian条件数以独立有限差分近似复核，相对差1.37e-7；它依赖参数尺度，不是置信区间或物理可识别性证明。ACF采用全段均值中心化及全段平方和分母。"
+    },
+    {
+      "id": "F11",
+      "status": "limited_positive_short_step_negative_open_loop",
+      "topic": "实测结论",
+      "conclusion": "测试单步有小幅优势，但两种开环均劣于对应持续性基线，残差也并非独立白噪声。",
+      "details": {
+        "test_one_step_rmse_improvement_percent": 6.5074285330352755,
+        "test_continuous_rmse_ratio_rc_to_persistence": 2.3858836449844154,
+        "test_segment_rmse_ratio_rc_to_persistence": 1.8443996331376193,
+        "test_rc_one_step_lag1_acf": 0.4852852493661405
+      },
+      "limit": "温控条件下温度高度平稳，低单步RMSE本身不能证明模型热物理正确或长期泛化准确。"
+    },
+    {
+      "id": "F12",
+      "status": "pass_read_only_scope",
+      "topic": "审查操作边界",
+      "conclusion": "只写入C6审查及支持文件；25个受保护文件结束时哈希不变。未修改C1、拟合参数或武汉参数，未运行MILP或测试套件。",
+      "details": {
+        "c1_plot_visual_checked": true,
+        "original_pdf_geometry_pages_visually_checked": [
+          17,
+          18
+        ],
+        "no_parameter_refit": true,
+        "no_milp": true,
+        "no_test_execution": true,
+        "no_wuhan_transfer": true
+      }
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "U1",
+      "issue": "十分钟聚合窗口及时间标签相位未获完整计量说明",
+      "evidence": {
+        "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+        "pdf_pages": [
+          44,
+          50
+        ],
+        "printed_pages": [
+          43,
+          49
+        ],
+        "sections": [
+          "3.16",
+          "5.1"
+        ],
+        "checked_by": "independent pypdf extraction of original PDF"
+      },
+      "established": "气象明确为十分钟均值；仪器以一秒采集、存一分钟均值；工作簿名为10min且DATE每600秒一致。",
+      "not_established": "室内/功率从一分钟至十分钟的完整聚合规则、共同窗口边界及标签究竟对应起点/中心/终点。",
+      "impact": "精确均值公式只对分段常值输入的一阶模型成立；不证明真实秒级变化已被精确重建，也不支持人为平移功率时间。"
+    },
+    {
+      "id": "U2",
+      "issue": "发布方补值数量、位置及跨划分信息传播无法排除",
+      "evidence": {
+        "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+        "pdf_pages": [
+          55,
+          56
+        ],
+        "printed_pages": [
+          54,
+          55
+        ],
+        "sections": [
+          "6.2"
+        ],
+        "checked_by": "independent pypdf extraction of original PDF"
+      },
+      "established": "发布方说明温度短缺口线性插值、功率/流量置零；N2选择排除了O5的明确模拟补热。",
+      "not_established": "逐行补值标志、缺口范围、是否有插值使用划分边界之后的温度。",
+      "impact": "代码层面训练/验证/测试隔离通过，但不能据此声称发布方处理后的数据完全无信息泄漏；不得描述为未经处理的原始传感器值。"
+    },
+    {
+      "id": "U3",
+      "issue": "单通道校准、精度与拆分前电表闭合未独立验证",
+      "evidence": {
+        "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+        "pdf_pages": [
+          50,
+          54
+        ],
+        "printed_pages": [
+          49,
+          53
+        ],
+        "sections": [
+          "5.1",
+          "6.1 N2"
+        ],
+        "checked_by": "independent pypdf extraction of original PDF"
+      },
+      "established": "原说明支持电加热及IHS字段语义，部分房间用单加热器的总量按计划拆分。",
+      "not_established": "本次缓存未包含Additional Documents中的Measurement Channel List.xlsx、校准证书和拆分前独立电表记录。",
+      "impact": "总和符合发布方的主实验分量语义；不能认证每列都来自独立电表，也不能评估0.086°C误差相对于传感器不确定度的显著性。"
+    },
+    {
+      "id": "U4",
+      "issue": "拟合前注册的不可变时间证据不足",
+      "evidence": {
+        "files": [
+          "data/external_rc_benchmark_20261001/analysis_plan.json",
+          "outputs/competition_20261001/C1_external/manifest.json"
+        ]
+      },
+      "established": "最终计划与实现一致，所有样本按时间保留，参数选择代码只读取训练段SSE。",
+      "not_established": "registered_before_parameter_fitting布尔值及最终哈希本身不能证明不可变、外部见证的事前注册。",
+      "impact": "可称预先声明的分析方案；不批准无附加证据的严格预注册研究或完全排除分析选择偏差声明。"
+    },
+    {
+      "id": "U5",
+      "issue": "太阳有效面积上限不是已证明的全屋太阳得热物理上界",
+      "evidence": {
+        "file": "data/external_rc_benchmark_20261001/evidence/annex71_specification.pdf",
+        "pdf_pages": [
+          17,
+          18,
+          21
+        ],
+        "printed_pages": [
+          16,
+          17,
+          20
+        ],
+        "sections": [
+          "Figure 9",
+          "Table 2",
+          "3.5"
+        ],
+        "checked_by": "original PDF p17/p18 independently rendered and visually checked; p21 independently extracted"
+      },
+      "established": "窗型计数6/1/1/1/1，玻璃16.77m²；供应商给出正常入射SHGC=0.62；乘积10.3974m²算术正确。",
+      "not_established": "屋面天窗倾斜面辐照不由水平与四立面最大值逐面直接测得；入射角、遮阳和不透明围护得热未建模。",
+      "impact": "最大同段辐照量与面积界限可作为声明的代理及参数约束；field_evidence_map中“conservative aggregate window-gain limit”不能升级为经验证的严格物理上限。"
+    }
+  ],
+  "recomputed_splits": {
+    "train": {
+      "target_row_start_inclusive": 1,
+      "target_row_stop_exclusive": 7192,
+      "first_utc": "2018-12-07T17:20:00Z",
+      "last_utc": "2019-01-26T15:40:00Z"
+    },
+    "validation": {
+      "target_row_start_inclusive": 7192,
+      "target_row_stop_exclusive": 9589,
+      "first_utc": "2019-01-26T15:50:00Z",
+      "last_utc": "2019-02-12T07:10:00Z"
+    },
+    "test": {
+      "target_row_start_inclusive": 9589,
+      "target_row_stop_exclusive": 11988,
+      "first_utc": "2019-02-12T07:20:00Z",
+      "last_utc": "2019-02-28T23:00:00Z"
+    }
+  },
+  "recomputed_metrics": {
+    "train": {
+      "rc_one_step": {
+        "n": 7191,
+        "mae_c": 0.06343680992428585,
+        "rmse_c": 0.12614271334879168,
+        "bias_predicted_minus_observed_c": 0.00032917387415494346,
+        "max_abs_error_c": 1.1320189099786617,
+        "residual_acf": {
+          "1": 0.5437630207488761,
+          "6": 0.24909000521415708,
+          "24": 0.17090850757192053,
+          "144": 0.5946915575844218
+        }
+      },
+      "persistence_one_step": {
+        "n": 7191,
+        "mae_c": 0.06019313818827925,
+        "rmse_c": 0.13671571373651634,
+        "bias_predicted_minus_observed_c": 2.08858358015394e-05,
+        "max_abs_error_c": 1.2510950226244368,
+        "residual_acf": {
+          "1": 0.5647990566493588,
+          "6": 0.2269901482834166,
+          "24": 0.1262897213786948,
+          "144": 0.6064204845725225
+        }
+      },
+      "rc_continuous_open_loop": {
+        "n": 7191,
+        "mae_c": 3.9830805617936025,
+        "rmse_c": 4.808255881618923,
+        "bias_predicted_minus_observed_c": -0.008536527515950834,
+        "max_abs_error_c": 11.132192667702013,
+        "residual_acf": {
+          "1": 0.9996418269540678,
+          "6": 0.9958032542864854,
+          "24": 0.9770603276511204,
+          "144": 0.9498836714822615
+        }
+      },
+      "persistence_continuous_open_loop": {
+        "n": 7191,
+        "mae_c": 0.6427212614729386,
+        "rmse_c": 1.174283483238262,
+        "bias_predicted_minus_observed_c": 0.5951309070979277,
+        "max_abs_error_c": 3.8299668174962314,
+        "residual_acf": {
+          "1": 0.9908427564625623,
+          "6": 0.8802861444910284,
+          "24": 0.3408030960273072,
+          "144": 0.7847322642898705
+        }
+      },
+      "rc_segment_open_loop": {
+        "n": 7191,
+        "mae_c": 3.9830805617936025,
+        "rmse_c": 4.808255881618923,
+        "bias_predicted_minus_observed_c": -0.008536527515950834,
+        "max_abs_error_c": 11.132192667702013,
+        "residual_acf": {
+          "1": 0.9996418269540678,
+          "6": 0.9958032542864854,
+          "24": 0.9770603276511204,
+          "144": 0.9498836714822615
+        }
+      },
+      "persistence_segment_open_loop": {
+        "n": 7191,
+        "mae_c": 0.6427212614729386,
+        "rmse_c": 1.174283483238262,
+        "bias_predicted_minus_observed_c": 0.5951309070979277,
+        "max_abs_error_c": 3.8299668174962314,
+        "residual_acf": {
+          "1": 0.9908427564625623,
+          "6": 0.8802861444910284,
+          "24": 0.3408030960273072,
+          "144": 0.7847322642898705
+        }
+      }
+    },
+    "validation": {
+      "rc_one_step": {
+        "n": 2397,
+        "mae_c": 0.07266459198755391,
+        "rmse_c": 0.11764717126451042,
+        "bias_predicted_minus_observed_c": 0.011012758547804842,
+        "max_abs_error_c": 1.0823316332491935,
+        "residual_acf": {
+          "1": 0.5293967660858773,
+          "6": 0.055593159994342736,
+          "24": 0.014293145459386413,
+          "144": 0.23974090967405348
+        }
+      },
+      "persistence_one_step": {
+        "n": 2397,
+        "mae_c": 0.07440844796568863,
+        "rmse_c": 0.12753070452484241,
+        "bias_predicted_minus_observed_c": 0.0001131504878836117,
+        "max_abs_error_c": 1.190811463046753,
+        "residual_acf": {
+          "1": 0.5634696187260058,
+          "6": 0.05133065553630421,
+          "24": -0.012477269908511075,
+          "144": 0.28740717976051233
+        }
+      },
+      "rc_continuous_open_loop": {
+        "n": 2397,
+        "mae_c": 2.668929808675255,
+        "rmse_c": 3.0409555845736227,
+        "bias_predicted_minus_observed_c": 2.5558708106944397,
+        "max_abs_error_c": 6.162561347000928,
+        "residual_acf": {
+          "1": 0.997207911332891,
+          "6": 0.9634665031845693,
+          "24": 0.8086810966732945,
+          "144": 0.44873246381555987
+        }
+      },
+      "persistence_continuous_open_loop": {
+        "n": 2397,
+        "mae_c": 0.9261351324651058,
+        "rmse_c": 1.2381425500508856,
+        "bias_predicted_minus_observed_c": 0.8877538577319211,
+        "max_abs_error_c": 3.4576530920060335,
+        "residual_acf": {
+          "1": 0.988858328045472,
+          "6": 0.8358578694779606,
+          "24": 0.1830096253204357,
+          "144": 0.6056892164008278
+        }
+      },
+      "rc_segment_open_loop": {
+        "n": 2397,
+        "mae_c": 2.415325080542253,
+        "rmse_c": 2.843626837323919,
+        "bias_predicted_minus_observed_c": 2.2845467667917805,
+        "max_abs_error_c": 6.041522545355548,
+        "residual_acf": {
+          "1": 0.9969038705770572,
+          "6": 0.9628949479976917,
+          "24": 0.8109362326852803,
+          "144": 0.449607654748989
+        }
+      },
+      "persistence_segment_open_loop": {
+        "n": 2397,
+        "mae_c": 0.8243057190014423,
+        "rmse_c": 1.1352931074454455,
+        "bias_predicted_minus_observed_c": 0.7375638124830514,
+        "max_abs_error_c": 3.3074630467571637,
+        "residual_acf": {
+          "1": 0.9888583280454719,
+          "6": 0.8358578694779604,
+          "24": 0.18300962532043566,
+          "144": 0.6056892164008278
+        }
+      }
+    },
+    "test": {
+      "rc_one_step": {
+        "n": 2399,
+        "mae_c": 0.057475573392714197,
+        "rmse_c": 0.08597936402525873,
+        "bias_predicted_minus_observed_c": 0.0044012409035589905,
+        "max_abs_error_c": 0.6811816851271857,
+        "residual_acf": {
+          "1": 0.4852852493661405,
+          "6": 0.004536809035273833,
+          "24": -0.011863694643962357,
+          "144": 0.007393898909405482
+        }
+      },
+      "persistence_one_step": {
+        "n": 2399,
+        "mae_c": 0.058060986949690654,
+        "rmse_c": 0.09196384555070157,
+        "bias_predicted_minus_observed_c": -0.000315116215466854,
+        "max_abs_error_c": 0.6892488687782787,
+        "residual_acf": {
+          "1": 0.5090481060301131,
+          "6": -0.011711233668789057,
+          "24": -0.01666689289753293,
+          "144": 0.030965196176012556
+        }
+      },
+      "rc_continuous_open_loop": {
+        "n": 2399,
+        "mae_c": 1.3925740722062063,
+        "rmse_c": 1.8852588835886843,
+        "bias_predicted_minus_observed_c": 1.2679553913924346,
+        "max_abs_error_c": 6.719117693539843,
+        "residual_acf": {
+          "1": 0.9968160807258748,
+          "6": 0.9664853787219819,
+          "24": 0.8444229358198564,
+          "144": 0.39320144650606353
+        }
+      },
+      "persistence_continuous_open_loop": {
+        "n": 2399,
+        "mae_c": 0.5996698850765513,
+        "rmse_c": 0.7901721810918397,
+        "bias_predicted_minus_observed_c": 0.4861235897058692,
+        "max_abs_error_c": 2.828965309200605,
+        "residual_acf": {
+          "1": 0.9887323545136365,
+          "6": 0.8554769673328091,
+          "24": 0.40467965150699103,
+          "144": 0.22407008884752333
+        }
+      },
+      "rc_segment_open_loop": {
+        "n": 2399,
+        "mae_c": 0.9492710482554663,
+        "rmse_c": 1.1551355067245932,
+        "bias_predicted_minus_observed_c": 0.8125121529826909,
+        "max_abs_error_c": 3.2100543635663534,
+        "residual_acf": {
+          "1": 0.9931810175343417,
+          "6": 0.9229881877113754,
+          "24": 0.6753079863246086,
+          "144": 0.15230788481102916
+        }
+      },
+      "persistence_segment_open_loop": {
+        "n": 2399,
+        "mae_c": 0.4836898682646175,
+        "rmse_c": 0.626293502758685,
+        "bias_predicted_minus_observed_c": 0.0647118249999822,
+        "max_abs_error_c": 2.407553544494718,
+        "residual_acf": {
+          "1": 0.9887323545136363,
+          "6": 0.855476967332809,
+          "24": 0.4046796515069909,
+          "144": 0.22407008884752333
+        }
+      }
+    }
+  },
+  "parameter_recheck": {
+    "thermal_time_constant_hours": 41.38944170072588,
+    "parameter_flags": {
+      "H_kw_per_c": {
+        "near_lower_bound": false,
+        "near_upper_bound": false,
+        "within_bounds": true
+      },
+      "C_kwh_per_c": {
+        "near_lower_bound": false,
+        "near_upper_bound": false,
+        "within_bounds": true
+      },
+      "effective_solar_area_m2": {
+        "near_lower_bound": false,
+        "near_upper_bound": false,
+        "within_bounds": true
+      }
+    },
+    "jacobian_condition_check": {
+      "recomputed": 129.20942570249656,
+      "reported": 129.20940805297715,
+      "relative_difference": 1.3659624072902528e-07,
+      "method": "Forward finite differences of independent interval-mean prediction, sqrt(machine-epsilon) relative steps. Rounding differs from optimizer residual Jacobian."
+    },
+    "saved_start_training_sse": [
+      {
+        "index": 0,
+        "recomputed_training_sse_c2": 114.42307788606513,
+        "reported_training_sse_c2": 114.42307788606531,
+        "absolute_difference": 1.8474111129762605e-13
+      },
+      {
+        "index": 1,
+        "recomputed_training_sse_c2": 114.42307788598806,
+        "reported_training_sse_c2": 114.4230778859881,
+        "absolute_difference": 4.263256414560601e-14
+      },
+      {
+        "index": 2,
+        "recomputed_training_sse_c2": 114.42307788598833,
+        "reported_training_sse_c2": 114.42307788598873,
+        "absolute_difference": 3.979039320256561e-13
+      },
+      {
+        "index": 3,
+        "recomputed_training_sse_c2": 114.42307788601458,
+        "reported_training_sse_c2": 114.4230778860148,
+        "absolute_difference": 2.1316282072803006e-13
+      }
+    ]
+  },
+  "paper_citation": {
+    "approved_wording": "采用Fraunhofer IEA EBC Annex 71德国N2主实验发布方处理后的实测数据，对单一1R1C结构作外部适用性诊断。十个房间110cm温度按地板面积加权形成派生观测，供热与气象作为已知条件输入；全部11988条记录按时间连续划分，参数仅在训练段拟合。测试段单步RMSE为0.086°C，持续性基线为0.092°C（相对降低约6.5%）；连续开环与分段初始化开环RMSE分别为1.885°C与1.155°C，均高于对应基线0.790°C与0.626°C。结果支持有限的条件单步适用性，并揭示长期开环不足；不构成完整物理验证、武汉实测校准或一般准确率保证。来源补值无逐行标志、精确聚合窗口及计量不确定度未完全验证，太阳得热使用声明的代理。",
+    "mandatory_qualifications": [
+      "十分钟聚合窗口及时间标签相位未获完整计量说明",
+      "发布方补值数量、位置及跨划分信息传播无法排除",
+      "单通道校准、精度与拆分前电表闭合未独立验证",
+      "拟合前注册的不可变时间证据不足",
+      "太阳有效面积上限不是已证明的全屋太阳得热物理上界"
+    ],
+    "disallowed_claims": [
+      "未经处理的原始传感器验证",
+      "所有IHS列均为独立电表实测",
+      "秒级物理过程或时间窗口已获精确验证",
+      "太阳代理为认证物理上界",
+      "数据处理完全无泄漏或存在不可变事前注册凭证",
+      "完整物理验证/一般准确率保证/武汉实测校准或参数转移"
+    ],
+    "attribution": "Kersken, Matthias; Strachan, Paul (2020). Twin House Experiment IEA EBC Annex 71 Validation of Building Energy Simulation Tools - Specifications and dataset, version 2. Fraunhofer IBP / Fordatis. DOI 10.24406/fordatis/76.2. Cached source metadata identifies CC BY-SA 4.0."
+  },
+  "read_only_advice_to_c0": [
+    "论文把“exact interval-mean”限定为模型在分段常值输入假设下的精确积分，同时保留聚合窗口未证实。",
+    "把太阳最大值与面积界限称为代理和分析者约束，不沿用无条件“conservative physical upper bound”措辞。",
+    "把registered_before_parameter_fitting称为方案声明；严格预注册证明与发布方补值跨界问题保持未解决。",
+    "同段呈现单步、连续开环、分段开环及对应持续性指标，并写清已知实测外生输入。",
+    "保留德国实验与武汉模拟参数边界，不把拟合H/C用于替换武汉参数。"
+  ],
+  "support_files": {
+    "recomputation_script": "outputs/competition_20261001/C6/external_measurement_review_support/recompute_external_measurements.py",
+    "detailed_recomputation": "outputs/competition_20261001/C6/external_measurement_review_support/independent_recomputation.json",
+    "independent_original_pdf_renders": [
+      "outputs/competition_20261001/C6/external_measurement_review_support/source_geometry-17.png",
+      "outputs/competition_20261001/C6/external_measurement_review_support/source_geometry-18.png"
+    ]
+  }
+}
