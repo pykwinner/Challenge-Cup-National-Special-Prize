@@ -1,0 +1,9 @@
+{
+  "status": "publisher_file_location_assumption_corrected_no_product_change",
+  "initial_check_exit_code": 1,
+  "observed_error": "FileNotFoundError: optimization_01/input_bundle/guyuan_frozen_driver.csv",
+  "verified_actual_location": "optimization_01/inputs/guyuan_frozen_driver.csv",
+  "location_basis": "Frozen audit_optimization.py line98 uses input_sha256 parent out/inputs; reference manifest uses input_bundle",
+  "resolution": "Verify every same input manifest hash against correct native directory; no checks removed or source/tests altered",
+  "product_test_failures": 0
+}

@@ -1,0 +1,37 @@
+{
+  "tested_utc": "2026-10-02T14:57:27.277104+00:00",
+  "changes": "unit-weight guards,portable repository-local/source-dir admission,exact finite-box bound",
+  "runs": [
+    {
+      "command": "python -B -m pytest docs/final_optimization_20261002/heatpump/test_heatpump_reference.py -k 'nonunit_weighted or repository_local or implicit_cross or frozen_bundle_portability' -q -p no:cacheprovider --tb=short",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "deselected": 46,
+      "elapsed_seconds": 0.65
+    },
+    {
+      "command": "python -B -m pytest docs/final_optimization_20261002/heatpump/test_native_lp_bound.py -q -p no:cacheprovider --tb=short",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "elapsed_seconds": 2.15
+    }
+  ],
+  "final_code_sha256": {
+    "performance_map.py": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+    "run_reference.py": "6666c86addfff1e2e70a63409f64ae0f58e472fb5d3f0253a79d0ba7d30b1cc8",
+    "audit_reference.py": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+    "test_heatpump_reference.py": "cb5fcff256d6664ada2e192213bbb0a652b91390c5a2d5f278ab73fc222f1b42",
+    "optimize_reference.py": "513d2b36733b1e579e2e5c225fdc316a28f7a6008cde98dbfea7078d3977b726",
+    "audit_optimization.py": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+    "test_heatpump_optimization.py": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+    "certify_native_lp_bound.py": "87b9708e0f48ef475280f6b73ab020631c83e1c33833e3e790653608eac95139",
+    "test_native_lp_bound.py": "a56c8282b6cd84a83ecbc8967bceaf39d831d95b0178f9a43a1827817e6ac976",
+    "method_sources.json": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734"
+  },
+  "prior_full_suite": "test_results.json:65passed0failed0skipped before final portable/bound additions",
+  "final_expected_full_suite_count": 72,
+  "final_full_suite_in_this_environment_repeated": false,
+  "reason": "Parent publisher will run final72 tests and9/6 reproduced cases in separate clean release environment;no unnecessary full LP rerun here"
+}

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "D:\competion\xiaotiao\github_candidate_20261002_rc6\scripts\report_solution_evidence.py", line 322, in <module>
+    main()
+  File "D:\competion\xiaotiao\github_candidate_20261002_rc6\scripts\report_solution_evidence.py", line 313, in main
+    result = report(args.evidence_root, args.out)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\competion\xiaotiao\github_candidate_20261002_rc6\scripts\report_solution_evidence.py", line 211, in report
+    raise ValueError("report output must be outside the inspected release copy")
+ValueError: report output must be outside the inspected release copy

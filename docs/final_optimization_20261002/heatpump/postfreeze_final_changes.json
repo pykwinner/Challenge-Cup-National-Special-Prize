@@ -1,0 +1,41 @@
+{
+  "frozen_utc": "2026-10-02T14:57:27.282103+00:00",
+  "final_code_snapshot": "final_frozen_code",
+  "final_code_sha256": {
+    "performance_map.py": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+    "run_reference.py": "6666c86addfff1e2e70a63409f64ae0f58e472fb5d3f0253a79d0ba7d30b1cc8",
+    "audit_reference.py": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+    "test_heatpump_reference.py": "cb5fcff256d6664ada2e192213bbb0a652b91390c5a2d5f278ab73fc222f1b42",
+    "optimize_reference.py": "513d2b36733b1e579e2e5c225fdc316a28f7a6008cde98dbfea7078d3977b726",
+    "audit_optimization.py": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+    "test_heatpump_optimization.py": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+    "certify_native_lp_bound.py": "87b9708e0f48ef475280f6b73ab020631c83e1c33833e3e790653608eac95139",
+    "test_native_lp_bound.py": "a56c8282b6cd84a83ecbc8967bceaf39d831d95b0178f9a43a1827817e6ac976",
+    "method_sources.json": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734"
+  },
+  "historical_results_modified": false,
+  "changes": [
+    {
+      "file": "run_reference.py",
+      "description": "unit-weight input guards and repository-local supplement resolution;old candidate path requires explicit--supplement-dir;frozen--source-dir bypasses project source lookup"
+    },
+    {
+      "file": "optimize_reference.py",
+      "description": "future reproductions snapshot complete test/validator/exact-bound source dependency files;no numeric LP model change"
+    },
+    {
+      "file": "certify_native_lp_bound.py",
+      "description": "exact Fraction finite-box Lagrangian lower bound for encoded binary64 LP;retained legacy numerical dual estimate and numerical incumbent limitations"
+    }
+  ],
+  "prior_stage_metadata": "postfreeze_input_guard.json is the earlier65-test guard-stage snapshot,not the final current-code hash record",
+  "legacy_columns": [
+    "optimization_01/optimization_comparison.csv:energy_charge_dual_lower_bound_cny",
+    "optimization_01/*/solver.json:dual_objective_cny"
+  ],
+  "legacy_column_semantics": "tolerance-limited numeric dual estimates;strict bound available only in native_lp_bound_sidecar.json",
+  "test_reports": [
+    "test_results.json",
+    "final_delta_test_results.json"
+  ]
+}

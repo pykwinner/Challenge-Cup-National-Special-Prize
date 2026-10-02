@@ -1,0 +1,547 @@
+{
+  "schema_version": "multiscale_capacity_axis.v1",
+  "frozen_utc": "2026-10-02T15:09:54.561513+00:00",
+  "cases": [
+    "C1_unlimited",
+    "C4_unlimited",
+    "C1_shared",
+    "C4_shared"
+  ],
+  "hours_per_building": 2880,
+  "dt_hours": 1,
+  "start_inclusive": "2024-11-16T00:00:00+08:00",
+  "end_exclusive": "2025-03-16T00:00:00+08:00",
+  "unit_physical_weights": true,
+  "time_limit_seconds_per_case": 120.0,
+  "mip_gap_target": 0.0,
+  "capacity_kw": 6.479637500000002,
+  "capacity_rule": "2.5H_A*(20-min(full-windowTout)), chosen before solving and independent of C",
+  "factors": {
+    "H_A": 0.10430000000000002,
+    "H_B": 0.15645000000000003,
+    "C_A": 0.535576,
+    "C_B_multipliers": [
+      1.0,
+      4.0
+    ],
+    "shared_grid": [
+      false,
+      true
+    ]
+  },
+  "common_service": "Two48m2 design nodes,20..27C,initial/final20C,2880 continuous hours,exclusive heat/cooling",
+  "hypotheses": [
+    "Pure-C difference conditional on fixed H/equipment/weather/service, including zero or adverse outcomes",
+    "Shared-grid effect at each C and factorial bill interaction; no universal monotonic-C theorem"
+  ],
+  "metrics_predeclared": [
+    "120-day energy-charge bill",
+    "electricity and fixed-average-factor CO2",
+    "actual grid peak/binding/excess hours",
+    "per-building heat/temperature changes",
+    "analytic integrated envelope loss and sensible inventory"
+  ],
+  "cost_scope": "Conditional Wuhan energy charges only; no CAPEX/OM/ROI or marginal-emissions claim",
+  "equipment_scope": "Original existing1000kW ideal heat/cool equipment,efficiency=EER=1; no investment/storage/network; finite shared electricity cap is sole coupling",
+  "literature": [
+    {
+      "id": "Reynders2015",
+      "title": "A generic quantification method for the active demand response potential of structural storage in buildings",
+      "authors": "G. Reynders, J. Diriken, D. Saelens",
+      "year": 2015,
+      "url": "https://publications.ibpsa.org/proceedings/bs/2015/papers/bs2015_2475.pdf",
+      "access": "Original IBPSA proceedings full text, pp1986-1993, read2026-10-02",
+      "support": "Storage capacity, efficiency and power-duration are distinct. Design H and available mass, dynamic boundary conditions and emitter power matter.",
+      "implementation": "Hold H, gains, weather and service fixed; vary C alone; report bill, energy, CO2, inventory and true hourly shared-power constraints.",
+      "not_claimed": "This factorial experiment does not reproduce the paper's event-defined CADR or storage efficiency, or validate its detailed construction model."
+    },
+    {
+      "id": "KircherZhang2015",
+      "title": "On the lumped capacitance approximation accuracy in RC network building models",
+      "authors": "Kevin J. Kircher, K. Max Zhang",
+      "year": 2015,
+      "doi": "10.1016/j.enbuild.2015.09.053",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0378778815302930",
+      "access": "Publisher abstract/highlights from search2026-10-02; full text not obtained",
+      "support": "A lumped RC approximation can have appreciable envelope heat-flux error; its validity depends on dimensionless envelope conditions.",
+      "implementation": "Distinguish exact solution of registered1R1C equations from evidence that1R1C is an accurate actual building model.",
+      "not_claimed": "No Biot-number verification, calibrated envelope, or measured-site temperature prediction is supplied."
+    },
+    {
+      "id": "Guo2020",
+      "title": "Aggregation and Data Driven Identification of Building Thermal Dynamic Model and Unmeasured Disturbance",
+      "authors": "Zhong Guo, Austin R. Coffman, Jeffrey Munk, Piljae Im, Teja Kuruganti, Prabir Barooah",
+      "year": 2020,
+      "doi": "10.48550/arXiv.2001.09141",
+      "url": "https://arxiv.org/abs/2001.09141",
+      "access": "Authors' original arXiv abstract read2026-10-02; not a fresh full-text reproduction",
+      "support": "Aggregation is not generally a trivial average; unknown disturbances affect equivalent-model identification.",
+      "implementation": "Retain two individual temperature states and audit each, rather than claim an equivalent aggregate RC model.",
+      "not_claimed": "No aggregation-identification algorithm or aggregate-equivalence validation is implemented here."
+    },
+    {
+      "id": "Klatzer2025",
+      "title": "Towards Exact Temporal Aggregation of Time-Coupled Energy Storage Models via Active Constraint Set Identification and Machine Learning",
+      "authors": "Thomas Klatzer, David Cardona-Vasquez, Luca Santosuosso, Sonja Wogrin",
+      "year": 2025,
+      "url": "https://arxiv.org/html/2510.14451v1",
+      "status": "preprintv1,2025-10-16",
+      "access": "Original HTML sectionsIII-IV read2026-10-02",
+      "support": "Perfect-information construction uses prior active sets and duals. The adjacent-period aggregation observation has its formal proof left for future work.",
+      "implementation": "Keep the complete continuous2880h chronology; do not transfer an exact-TSA guarantee to this binary heat/cool model.",
+      "not_claimed": "No ML/ACS/dual TSA implementation, speedup or exact aggregation theorem here."
+    }
+  ],
+  "field_validation": false,
+  "three_city_claim": false,
+  "aggregation_equivalence_claim": false,
+  "new_theory": false,
+  "failure_policy": "Retain every attempted failure, limit and incumbent; no replacement/weather/capacity retuning",
+  "time_axis": {
+    "schema": "heatplan.time_axis.v1",
+    "axis_sha256": "3ef449e8e82cf3863e6ca202e0e9c0a382332c0641268b58d75c037733a53a7a",
+    "kind": "continuous",
+    "rows": 2880,
+    "physical_step_hours": 1.0,
+    "sampled_interval_hours": 2880.0,
+    "accounting_weighted_hours": 2880.0,
+    "calendar_envelope_hours": 2880.0,
+    "continuous_horizon_hours": 2880.0,
+    "start_utc": "2024-11-15T16:00:00+00:00",
+    "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+    "interval_convention": "[time,time+physical_step)",
+    "state_continuity": "single continuous block",
+    "full_year_claim": false,
+    "complete_local_heating_season_claim": false,
+    "blocks": [
+      {
+        "period": "continuous",
+        "rows": 2880,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+        "accounting_weight": 1.0
+      }
+    ]
+  },
+  "source_snapshot_scope": "All current heatplan.py modules except unused solution_evidence.py; selected runner/auditor/report scripts. Explicit import scan checked before run, not a dynamic dependency-completeness claim.",
+  "source_snapshots": {
+    "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml": {
+      "path": "frozen_code/configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": {
+      "path": "frozen_code/data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6"
+    },
+    "docs/implementation_20261002/data/admission_tou.json": {
+      "path": "frozen_code/docs/implementation_20261002/data/admission_tou.json",
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f"
+    },
+    "src/heatplan/__init__.py": {
+      "path": "frozen_code/src/heatplan/__init__.py",
+      "sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a"
+    },
+    "src/heatplan/accounting.py": {
+      "path": "frozen_code/src/heatplan/accounting.py",
+      "sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21"
+    },
+    "src/heatplan/annual_preflight_batch_cli.py": {
+      "path": "frozen_code/src/heatplan/annual_preflight_batch_cli.py",
+      "sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e"
+    },
+    "src/heatplan/annual_replay_batch_cli.py": {
+      "path": "frozen_code/src/heatplan/annual_replay_batch_cli.py",
+      "sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20"
+    },
+    "src/heatplan/annual_replay_certify_cli.py": {
+      "path": "frozen_code/src/heatplan/annual_replay_certify_cli.py",
+      "sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8"
+    },
+    "src/heatplan/annual_replay_cli.py": {
+      "path": "frozen_code/src/heatplan/annual_replay_cli.py",
+      "sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7"
+    },
+    "src/heatplan/btes.py": {
+      "path": "frozen_code/src/heatplan/btes.py",
+      "sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687"
+    },
+    "src/heatplan/building_audit.py": {
+      "path": "frozen_code/src/heatplan/building_audit.py",
+      "sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8"
+    },
+    "src/heatplan/building_thermal.py": {
+      "path": "frozen_code/src/heatplan/building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40"
+    },
+    "src/heatplan/chronology.py": {
+      "path": "frozen_code/src/heatplan/chronology.py",
+      "sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0"
+    },
+    "src/heatplan/chronology_cli.py": {
+      "path": "frozen_code/src/heatplan/chronology_cli.py",
+      "sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274"
+    },
+    "src/heatplan/cli.py": {
+      "path": "frozen_code/src/heatplan/cli.py",
+      "sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35"
+    },
+    "src/heatplan/competition_runner.py": {
+      "path": "frozen_code/src/heatplan/competition_runner.py",
+      "sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4"
+    },
+    "src/heatplan/decision_weight_calibration.py": {
+      "path": "frozen_code/src/heatplan/decision_weight_calibration.py",
+      "sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92"
+    },
+    "src/heatplan/experiment_cli.py": {
+      "path": "frozen_code/src/heatplan/experiment_cli.py",
+      "sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b"
+    },
+    "src/heatplan/experiments.py": {
+      "path": "frozen_code/src/heatplan/experiments.py",
+      "sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4"
+    },
+    "src/heatplan/feasibility.py": {
+      "path": "frozen_code/src/heatplan/feasibility.py",
+      "sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a"
+    },
+    "src/heatplan/finance.py": {
+      "path": "frozen_code/src/heatplan/finance.py",
+      "sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8"
+    },
+    "src/heatplan/hard_weight_calibration.py": {
+      "path": "frozen_code/src/heatplan/hard_weight_calibration.py",
+      "sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3"
+    },
+    "src/heatplan/heating_season.py": {
+      "path": "frozen_code/src/heatplan/heating_season.py",
+      "sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2"
+    },
+    "src/heatplan/heating_season_cli.py": {
+      "path": "frozen_code/src/heatplan/heating_season_cli.py",
+      "sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2"
+    },
+    "src/heatplan/hydraulics.py": {
+      "path": "frozen_code/src/heatplan/hydraulics.py",
+      "sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd"
+    },
+    "src/heatplan/io.py": {
+      "path": "frozen_code/src/heatplan/io.py",
+      "sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6"
+    },
+    "src/heatplan/linear.py": {
+      "path": "frozen_code/src/heatplan/linear.py",
+      "sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c"
+    },
+    "src/heatplan/model.py": {
+      "path": "frozen_code/src/heatplan/model.py",
+      "sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697"
+    },
+    "src/heatplan/mpc.py": {
+      "path": "frozen_code/src/heatplan/mpc.py",
+      "sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31"
+    },
+    "src/heatplan/multistage.py": {
+      "path": "frozen_code/src/heatplan/multistage.py",
+      "sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636"
+    },
+    "src/heatplan/multistage_cli.py": {
+      "path": "frozen_code/src/heatplan/multistage_cli.py",
+      "sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3"
+    },
+    "src/heatplan/multiyear.py": {
+      "path": "frozen_code/src/heatplan/multiyear.py",
+      "sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106"
+    },
+    "src/heatplan/multiyear_readiness_cli.py": {
+      "path": "frozen_code/src/heatplan/multiyear_readiness_cli.py",
+      "sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2"
+    },
+    "src/heatplan/multiyear_replay_cli.py": {
+      "path": "frozen_code/src/heatplan/multiyear_replay_cli.py",
+      "sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1"
+    },
+    "src/heatplan/network_feedback.py": {
+      "path": "frozen_code/src/heatplan/network_feedback.py",
+      "sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161"
+    },
+    "src/heatplan/operations_cli.py": {
+      "path": "frozen_code/src/heatplan/operations_cli.py",
+      "sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85"
+    },
+    "src/heatplan/osm_reference.py": {
+      "path": "frozen_code/src/heatplan/osm_reference.py",
+      "sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14"
+    },
+    "src/heatplan/physical_extensions.py": {
+      "path": "frozen_code/src/heatplan/physical_extensions.py",
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d"
+    },
+    "src/heatplan/policy_alignment.py": {
+      "path": "frozen_code/src/heatplan/policy_alignment.py",
+      "sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed"
+    },
+    "src/heatplan/policy_alignment_cli.py": {
+      "path": "frozen_code/src/heatplan/policy_alignment_cli.py",
+      "sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6"
+    },
+    "src/heatplan/policy_cli.py": {
+      "path": "frozen_code/src/heatplan/policy_cli.py",
+      "sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf"
+    },
+    "src/heatplan/provenance.py": {
+      "path": "frozen_code/src/heatplan/provenance.py",
+      "sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2"
+    },
+    "src/heatplan/reporting.py": {
+      "path": "frozen_code/src/heatplan/reporting.py",
+      "sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c"
+    },
+    "src/heatplan/representative.py": {
+      "path": "frozen_code/src/heatplan/representative.py",
+      "sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c"
+    },
+    "src/heatplan/representative_adoption.py": {
+      "path": "frozen_code/src/heatplan/representative_adoption.py",
+      "sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f"
+    },
+    "src/heatplan/risk_scan_cli.py": {
+      "path": "frozen_code/src/heatplan/risk_scan_cli.py",
+      "sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21"
+    },
+    "src/heatplan/scenario_cli.py": {
+      "path": "frozen_code/src/heatplan/scenario_cli.py",
+      "sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385"
+    },
+    "src/heatplan/scenarios.py": {
+      "path": "frozen_code/src/heatplan/scenarios.py",
+      "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131"
+    },
+    "src/heatplan/solution_quality.py": {
+      "path": "frozen_code/src/heatplan/solution_quality.py",
+      "sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f"
+    },
+    "src/heatplan/spatial_adapter.py": {
+      "path": "frozen_code/src/heatplan/spatial_adapter.py",
+      "sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7"
+    },
+    "src/heatplan/spatial_quality.py": {
+      "path": "frozen_code/src/heatplan/spatial_quality.py",
+      "sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347"
+    },
+    "src/heatplan/time_registry.py": {
+      "path": "frozen_code/src/heatplan/time_registry.py",
+      "sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f"
+    },
+    "src/heatplan/unified_cli.py": {
+      "path": "frozen_code/src/heatplan/unified_cli.py",
+      "sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e"
+    },
+    "src/heatplan/validation.py": {
+      "path": "frozen_code/src/heatplan/validation.py",
+      "sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9"
+    },
+    "scripts/run_multiscale_reference.py": {
+      "path": "frozen_code/scripts/run_multiscale_reference.py",
+      "sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b"
+    },
+    "scripts/audit_multiscale_reference.py": {
+      "path": "frozen_code/scripts/audit_multiscale_reference.py",
+      "sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164"
+    },
+    "scripts/run_multiscale_capacity_axis.py": {
+      "path": "frozen_code/scripts/run_multiscale_capacity_axis.py",
+      "sha256": "a4ea378c2c731f2846f762a2ca30cced08388791030b11577f2429640235375e"
+    },
+    "scripts/audit_multiscale_capacity_axis.py": {
+      "path": "frozen_code/scripts/audit_multiscale_capacity_axis.py",
+      "sha256": "7f5718ce84214cceb4126ddfd921489d07e85e95c1801f4da50e688fa0a850ee"
+    },
+    "scripts/report_multiscale_capacity_axis.py": {
+      "path": "frozen_code/scripts/report_multiscale_capacity_axis.py",
+      "sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3"
+    }
+  },
+  "reference_inputs": {
+    "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+    "docs/implementation_20261002/data/admission_tou.json": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f"
+  },
+  "old_frozen_files": {
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/analysis_manifest.json": "54a6444c8534e1d058171b0f3de47065835f9224bda463ab831d137ca9c27d2d",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/building_heat_cool_72h.png": "d0664f5b6d092303e28aed751c0da7ad9ad809dd0b54bc8db6cbf7cf1c5500ec",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/building_heat_cool_72h.svg": "e5295660cc335252f14067322f5fd6aa178a35015ecfc5020336bfb333822a24",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/full_tables.csv": "f7d8527cb45eb36f0e3a7ef7c2c2b5dbfe458696640c2714a5ba4988e81f15b0",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/hourly_building_changes.csv": "30b27fb3771face0fd6e3d20ac035db782a061c564ea9cab1120ccf5bef16fd6",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/hourly_system.csv": "3d60f7403b5366138ff6ca57e739875bcd98f1834de3f236ea48c856983f8353",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/representative_72h.png": "ac498d6bc51f145df08faf10bd4de6e2cd43d32c1e6e965f2da421a9091ac668",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/representative_72h.svg": "8c9707fd575743c190492362115e75e70db70117924f12fdb2671c77399f6b51",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/RESULTS.md": "4cf37caf75f6c44c129e3fcaa70084a2993087a2f9a688caa07b24e0ef8e5ae2",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/summary.json": "98c81120534ee3f8214416841c661ed03596dd4628ba0aff26f2442f54137964",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/system_bill_peak.png": "45757f554496fa2cc45842f020bb40a06cb68a715817558c0b5ce56e25392ca4",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/system_bill_peak.svg": "7b4bc24ca2714d6877bf1f5bcd0405ac38f4f0ea9b5e429d236f0d8459feb6fb",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/comparison.json": "c6f6aed5fccbcaf8046aa46288c6e14f327aa3da7b629ace86e0eefd6708170c",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/failures.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/docs/implementation_20261002/data/admission_tou.json": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/scripts/audit_multiscale_reference.py": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/scripts/run_multiscale_reference.py": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/__init__.py": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/accounting.py": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/annual_preflight_batch_cli.py": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/annual_replay_batch_cli.py": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/annual_replay_certify_cli.py": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/annual_replay_cli.py": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/btes.py": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/building_audit.py": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/chronology_cli.py": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/cli.py": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/competition_runner.py": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/decision_weight_calibration.py": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/experiment_cli.py": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/experiments.py": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/feasibility.py": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/finance.py": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/hard_weight_calibration.py": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/heating_season.py": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/heating_season_cli.py": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/hydraulics.py": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/io.py": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/linear.py": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/model.py": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/mpc.py": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multistage.py": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multistage_cli.py": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multiyear.py": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multiyear_readiness_cli.py": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multiyear_replay_cli.py": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/network_feedback.py": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/operations_cli.py": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/osm_reference.py": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/physical_extensions.py": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/policy_alignment.py": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/policy_alignment_cli.py": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/policy_cli.py": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/provenance.py": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/reporting.py": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/representative.py": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/representative_adoption.py": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/risk_scan_cli.py": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/scenario_cli.py": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/scenarios.py": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/solution_quality.py": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/spatial_adapter.py": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/spatial_quality.py": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/unified_cli.py": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/validation.py": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/independent_verification.json": "62b6f3a8e2216e815743182035b1e55cb59420671eb3d0a460a198a2a8fa7205",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_A_fixed20/config.yaml": "0d62da16eb6a131a88decafaa059eccebfb865410bab391c8d8ecdebb0c68c07",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_A_fixed20/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_all_fixed20/config.yaml": "e44b3f161ecdc8889390255ef7cbe5e07084543d5810a1b50a10d2a19d2ced0d",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_all_fixed20/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_B_fixed20/config.yaml": "d40d59d5201fa84b442b2be9c8ca6032ac5f2c58f2271e8760f7fbd751121b61",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_B_fixed20/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_flexible/config.yaml": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_flexible/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/independent_A/config.yaml": "950058fc157d8708fbcd7d6bada75f97622585064244261a072f21e75914cf3b",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/independent_A/input.csv": "c56b8955a15a39d9b18efcd7230ca779f5de00e8d188a5a715aae480bc50ca06",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/independent_B/config.yaml": "c0309d6df6d2ce28d7d92bd33f26ac4b415e3ed9c64594ffe1d5ca1cca2c1fe8",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/independent_B/input.csv": "7797f6a11c2a13e24ff915c1c3c091a307a6696ec56e5f66b48ead37c98744e8",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/joint_unlimited/config.yaml": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/joint_unlimited/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/manifest.json": "5ad0f216bc01db4075404cf206f3c9e660d11462aff9b58f97e077ff78d60fb7",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/protocol.json": "ece2976fb7d8e7a77d5477f7d8ed6a8a2ef55558d221ae8523b709cfe0e29b74",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/protocol_lock.json": "32e5b622093b50c01875bb8555c0ce432537a79b726a93ac8c46dc9931ada8fc",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/building_trajectory.csv": "3765bb48faeee65f43578965c0f285451fa0819cc0acd830efe72ef6cfb90b2c",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/config.yaml": "0d62da16eb6a131a88decafaa059eccebfb865410bab391c8d8ecdebb0c68c07",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/core_building_audit.json": "5922c13814673e24e215c9cc385581d79ef6eea84dcc2ed5c267be9603fee74a",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/dispatch.csv": "7cf47855e27462ee4ac1604785e3fa148d25cf3514b5d50e1bbddfb747f88778",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/independent_audit.json": "0bbd2ac68f66dfb8dbfb111ba8d964512f44986013d888c41b9b919af8f72fa2",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/input_identity.json": "4aa4d1a5769de7ad3a264c7858cc96a8e51d3e8d0f1891c043218c1908b191fa",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/numerical_audit.json": "23c451afe383f208f60e68abf15967610abecf2297849890963afbb0b0ac4de5",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/summary.json": "33831fabb29396364f8874340e63a1f1329a8a08f80e02326894d397f1e3bb43",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/building_trajectory.csv": "e8537c647e80c20a9614bfdc1faf91ad43fa955d79bc559781ce92d958be20cc",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/config.yaml": "e44b3f161ecdc8889390255ef7cbe5e07084543d5810a1b50a10d2a19d2ced0d",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/core_building_audit.json": "1a978810c957780af9cb5a1caea5f8163125cc974ccbdd9296e6e69137162b46",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/dispatch.csv": "756212203820ca73d5a37e3937f2fea9a5581035674c81e7bf7039e4026b8ba5",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/independent_audit.json": "0b5c3dbcf4274cd3be208f91f714244a5332f3001f92c9694d6521a5aac66299",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/input_identity.json": "6f4ad3c6e1d2a2e419761ed57e92015d7257a45f5519dc2074ae2fb7475131a1",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/numerical_audit.json": "d64ef2505d4d2f868ad402125c68d0b74a261ca4436f363b9c4c46739b5bd929",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/summary.json": "82ee466a4140795d11171aceb79940a87be3c53086fb47cb123d1ac2f892a9ad",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/building_trajectory.csv": "6d91e518595bae07c87a97bc76f095f10623d446bfbd0dd0d0845936932f33af",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/config.yaml": "d40d59d5201fa84b442b2be9c8ca6032ac5f2c58f2271e8760f7fbd751121b61",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/core_building_audit.json": "ba57164443b25f2ef2fc2a485822f15a85a77f37beb56ee225317d012e4409f9",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/dispatch.csv": "d6fb17b5b88564f82172a4a2b82c4e79a4964f9ab4e85ec995fd20bbd2e9eed1",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/independent_audit.json": "1beb2fd43388d361209ff71b365394107ce8ddbe0257f5de41673969db78484c",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/input_identity.json": "6e52b7362a2a1b411cb3d2f586049a61c3a0daa768364312e319413aaea31a7e",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/numerical_audit.json": "d1faee466853041b80b27b20e563f9449987ace12c6990ecceb3596dc6b527ed",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/summary.json": "4a80f40420d3ae8b0e9d31a571a2243ec93a3c75a9372d51970552d574f8984c",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/building_trajectory.csv": "647c939266dd41da687b7586d2337fb9af5c42de1737d97e72fc4f73276b6695",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/config.yaml": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/core_building_audit.json": "32391d9f0840cd4e385e6afb5f9bfe35de9da7622c9614f22f2e4c3cdbda8314",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/dispatch.csv": "fb9e71efeb67de6a83a201a227e79c695131dc1c53b80b6be41579b424801e94",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/independent_audit.json": "42d9f30fd2bc8a14383e5af8d665c3908c7d6863266f0666aa4df0259c7a901a",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/input_identity.json": "a01dd01431dad9732834dff631afb70149429fe0ffada1a66a18b1290121c80a",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/numerical_audit.json": "2679952ba40b20dea77ecc106e2268868cf25a0a8423f94107c36c2c809cf904",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/summary.json": "a18b14a1d3a6530de188b7205320f601a13d5b320306ca3f0aa6efce3a873f12",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/building_trajectory.csv": "08ae07223d53ef05fcf45c50e3ef288adb22f1d2cf926218ef120ea3531f6f2f",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/config.yaml": "950058fc157d8708fbcd7d6bada75f97622585064244261a072f21e75914cf3b",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/core_building_audit.json": "019107bea1a7a30e676ce1c2a38f34d46e96740963e10599ac30145b115c35fb",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/dispatch.csv": "a003698c75c7df9067b958aba75fddde188ad591c3beac6aa6933535779b1e7f",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/independent_audit.json": "3317da688ffa5be34cd5845c64b7c5497f77e30724853a5e607dafefbf73ae4e",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/input.csv": "c56b8955a15a39d9b18efcd7230ca779f5de00e8d188a5a715aae480bc50ca06",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/input_identity.json": "a43ba855329325eb83b509fe1526653eb2caaaf960d2aaf54eee470882d2f61f",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/numerical_audit.json": "b4fae43a358faed58be68e30cddad4309ec8d2481a04c406e21de6dc918c423d",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/summary.json": "2cf6d37b56b29b83d0994f8e1d3374f063303a8c6df94fa0131563934d87409b",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/building_trajectory.csv": "aaea1cfb0e4a14e341a44cdba577f643ffc8607a17cf45195edab5925ad6d177",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/config.yaml": "c0309d6df6d2ce28d7d92bd33f26ac4b415e3ed9c64594ffe1d5ca1cca2c1fe8",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/core_building_audit.json": "d310c7092ca664850d0d9bda842c4c3f83a9b130b310a548f0963314b2213122",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/dispatch.csv": "99afa570a3b44776a4491ca1bac08536e8561f7dca5413b22a7fd38d030d662c",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/independent_audit.json": "f6c8cc85551de8d428a1bf3d41689ad6b3b5872c84e0ab964e9faca1cb8d50a5",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/input.csv": "7797f6a11c2a13e24ff915c1c3c091a307a6696ec56e5f66b48ead37c98744e8",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/input_identity.json": "a93cf31363f5f2bba77ee6cf3552d097d0fea8d4e6b00bb0bb9449f060d02074",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/numerical_audit.json": "7dcd1f51c5e62a6a328ca48e6bbe1e9b5841c952d8ab95e6258edaf094d6818f",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/summary.json": "907ca96e76689f1d3e837c419da6bf8061e9e4a2fedc82b2b0b52f1f5971b1e2",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/building_trajectory.csv": "1c7ca6d86954c689024713fd0b1769f8d615ff6c8033979038126d4479cc843a",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/config.yaml": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/core_building_audit.json": "23559591bc659703df71e292222fd67c8b2f96ba18243e0435808363b4daa747",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/dispatch.csv": "b669458072839882b5c4eee9a839898e03e4c7f4f2bae775efa051cd765746c4",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/independent_audit.json": "85eade13921376e8a16179378187a94872ce02d7371a5abba695fdda888e2a9b",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/input_identity.json": "c28290207075cda37dca62cb3d1e79e4e70e45a0cd6a35d99aca41eeb1dfdbfe",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/numerical_audit.json": "d5e3036a5d640a3ba1d55f63d7f963647f4e2c9a59fb7e886b8cd470dcb94603",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/summary.json": "2eda50cbccbf0769700b7683007a53c6f2043e6cf793b58e047eb60cfcbf3344"
+  },
+  "case_files": {
+    "C1_unlimited": {
+      "input_cases/C1_unlimited/config.yaml": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "input_cases/C1_unlimited/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    "C4_unlimited": {
+      "input_cases/C4_unlimited/config.yaml": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "input_cases/C4_unlimited/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    "C1_shared": {
+      "input_cases/C1_shared/config.yaml": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "input_cases/C1_shared/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    "C4_shared": {
+      "input_cases/C4_shared/config.yaml": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "input_cases/C4_shared/input.csv": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    }
+  }
+}

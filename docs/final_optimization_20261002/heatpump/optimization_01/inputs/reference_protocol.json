@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "experiment_id": "TICA_exact_catalogue_conditional_operation_v1",
+  "frozen_utc": "2026-10-02T14:35:55.550683+00:00",
+  "window_start_inclusive": "2024-11-16T00:00:00+08:00",
+  "window_end_exclusive": "2025-03-16T00:00:00+08:00",
+  "hours_per_city": 2880,
+  "cities": [
+    "urumqi",
+    "guyuan",
+    "wuhan"
+  ],
+  "dt_hours": 1,
+  "physics": {
+    "H_kw_per_K": 2.0860000000000003,
+    "C_kwh_per_K": 10.71152,
+    "initial_c": 20.0,
+    "terminal_c": 20.0,
+    "min_c": 20.0,
+    "max_c": 27.0
+  },
+  "design": {
+    "prototype_copies": 20,
+    "floor_area_m2": 960,
+    "aggregation_status": "declared synthetic research scale: 20 identical public prototype copies, not20 real houses or a surveyed local building",
+    "module_candidates": [
+      {
+        "case_id": "resistance_only",
+        "model": null,
+        "units": 0
+      },
+      {
+        "case_id": "TCAV035BHE_n1",
+        "model": "TCAV035BHE",
+        "units": 1
+      },
+      {
+        "case_id": "TCAV065BHE_n1",
+        "model": "TCAV065BHE",
+        "units": 1
+      }
+    ],
+    "leaving_water_c": 45.0,
+    "resistance_heat_limit_kw": 90.0,
+    "cooling_limit_kw": 80.0,
+    "grid_limit_kw": 100.0,
+    "resistance_eta": 1.0,
+    "cooling_eer": 3.0,
+    "delivered_capacity_factor": 1.0,
+    "part_load": "hypothetical ideal hourly duty: heat=duty*catalogueQ, power=duty*catalogueP, 0<=duty<=1; no tested inverter/cycling curve",
+    "capacity_scope": "single whole module; unit count integer and fixed; rated-water-flow catalogue condition, ideal exchanger",
+    "cooling_scope": "separate hypothetical finite cooler, not a TICA cooling performance claim"
+  },
+  "controller": "continuous RC deadband thermostat: clip free next state to20..27; final step targets20; HP first then finite resistance; no daily reset",
+  "dynamics": "T[t+1]=a*T[t]+(1-a)*Tout[t]+b*(gain[t]+qhp[t]+qr[t]-qc[t]); a=exp(-H*dt/C), b=(1-a)/H",
+  "monetary_scope": "operating electricity energy charge only; sum(price_CNY_per_kWh*grid_kW*dt_h), no fixed/demand charge, tax adjustment, capex or maintenance",
+  "price_scope": "published Hubei low-voltage industrial/commercial monthly TOU conditionally applied to all cities as common methodological axis; Wuhan geography matches Hubei but account eligibility/connection is not verified in any city; no actual local bill prediction",
+  "emissions_scope": "same admitted Hubei2022 annual grid factor applied as common methodological axis; not hourly marginal carbon or other-city local factor",
+  "data_scope": "NASA POWER gridded weather/reanalysis and published prototype/tariff; not site measurements or fitted local H/C",
+  "catalogue_scope": "manufacturer-authored sample distributed by third-party; exact PDF SHA and all165 Q/P checked; grid wet bulb/flow detail/defrost integration unspecified",
+  "excluded": [
+    "TICA capital quotation",
+    "FT8 17800 CNY package price transfer",
+    "investment optimum",
+    "payback/annualization/repeated seasons",
+    "pump/fan standby beyond catalogue input boundary",
+    "pipe/exchanger losses",
+    "start-stop degradation",
+    "unprovided humidity/defrost corrections",
+    "hydraulic/latent load/network/field validation",
+    "procurement thresholds as performance"
+  ],
+  "claim": "conditional operating comparison under explicit catalogue and ideal-duty assumptions, not realized equipment savings or final investment recommendation"
+}

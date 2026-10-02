@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "commands": [
+    {
+      "name": "registry_build",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "scripts/build_time_registry.py",
+        "--root",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+        "--spec",
+        "docs/final_optimization_20261002/time_registry/spec_final.json",
+        "--out",
+        "docs/github_release_11.12.0rc6/reproduction/time_registry/run_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+      "started_at": "2026-10-02T23:09:55.193060+08:00",
+      "finished_at": "2026-10-02T23:09:56.403339+08:00",
+      "exit_code": 0
+    },
+    {
+      "name": "solution_evidence_report_02",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "scripts/report_solution_evidence.py",
+        "--evidence-root",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+        "--out",
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\solution_report_reproduction_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+      "started_at": "2026-10-02T23:12:07.236022+08:00",
+      "finished_at": "2026-10-02T23:12:13.417596+08:00",
+      "exit_code": 0
+    }
+  ],
+  "old_solver_reruns": 0,
+  "frozen_source_files_unchanged": 483,
+  "time_registry_out": "docs/github_release_11.12.0rc6/reproduction/time_registry/run_01",
+  "solution_report_out": "docs/github_release_11.12.0rc6/reproduction/solution_evidence/report_01",
+  "solution_external_output_required_by_frozen_CLI": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\solution_report_reproduction_01",
+  "external_input_used": false,
+  "published_solution_report_bytes_identical_to_generated_output": true,
+  "initial_output_contract_failure_retained": "solution_evidence_report.log/solution_evidence_report_command.json"
+}

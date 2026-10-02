@@ -1,0 +1,28 @@
+{
+  "tested_utc": "2026-10-02T14:46:57.478694+00:00",
+  "command": "python -B -m pytest docs/final_optimization_20261002/heatpump/test_heatpump_reference.py docs/final_optimization_20261002/heatpump/test_heatpump_optimization.py -q -p no:cacheprovider --tb=short",
+  "exit_code": 0,
+  "passed": 65,
+  "failed": 0,
+  "skipped": 0,
+  "elapsed_seconds": 9.3,
+  "test_scope": "only new heatpump component;includes165 original source cells,6LP certificates and9 thermostat clocks;not complete repository suite",
+  "code_sha256": {
+    "performance_map.py": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+    "run_reference.py": "3fff31e92fe1d9365efcdb38966c56fd67a85031f75cf02457e7fb0b02200b7a",
+    "audit_reference.py": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+    "test_heatpump_reference.py": "ae8d9ab974da638aa131196f7471bbab64fe21fd13f6da461afd4c47f5548e56",
+    "optimize_reference.py": "cfe576ce93b20fc28722debddf7aeaab12e8d5ca318ecae1bc650435f01838ca",
+    "audit_optimization.py": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+    "test_heatpump_optimization.py": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+    "method_sources.json": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734"
+  },
+  "versions": {
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.15.3",
+    "pymupdf": "1.27.2",
+    "pytest": "7.4.4"
+  }
+}

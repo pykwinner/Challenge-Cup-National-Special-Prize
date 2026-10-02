@@ -1,0 +1,537 @@
+{
+  "schema": "heatplan.time_registry.v1",
+  "passed": true,
+  "created_utc": "2026-10-02T15:09:56.349520+00:00",
+  "scope": "explicitly selected inputs only; not a claim that all historical entry points use one registry",
+  "entries": [
+    {
+      "id": "urumqi_common_120d",
+      "path": "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv",
+      "sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+      "role": "三城同原型气象对照",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "3ef449e8e82cf3863e6ca202e0e9c0a382332c0641268b58d75c037733a53a7a",
+        "kind": "continuous",
+        "rows": 2880,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 2880.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2880.0,
+        "continuous_horizon_hours": 2880.0,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "single continuous block",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "continuous",
+            "rows": 2880,
+            "start_utc": "2024-11-15T16:00:00+00:00",
+            "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "urumqi_representative_8d",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/urumqi_representative_hours.csv",
+      "sha256": "946c1eae9bd54d8fc6e4521c40d00136659276a08143e997ebe66a242c28a6bd",
+      "role": "代表日频次基线；其他方法的权重需另行登记",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "15d6e8d1a899a6c4ab774a3833af9198684f05fe40944ede9882d641491024b2",
+        "kind": "representative",
+        "rows": 192,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 192.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2040.0,
+        "continuous_horizon_hours": null,
+        "start_utc": "2024-12-03T16:00:00+00:00",
+        "end_exclusive_utc": "2025-02-26T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "not established between representative blocks",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "cluster_0",
+            "rows": 24,
+            "start_utc": "2025-02-14T16:00:00+00:00",
+            "end_exclusive_utc": "2025-02-15T16:00:00+00:00",
+            "accounting_weight": 14.0
+          },
+          {
+            "period": "cluster_1",
+            "rows": 24,
+            "start_utc": "2024-12-03T16:00:00+00:00",
+            "end_exclusive_utc": "2024-12-04T16:00:00+00:00",
+            "accounting_weight": 17.0
+          },
+          {
+            "period": "cluster_2",
+            "rows": 24,
+            "start_utc": "2024-12-17T16:00:00+00:00",
+            "end_exclusive_utc": "2024-12-18T16:00:00+00:00",
+            "accounting_weight": 22.0
+          },
+          {
+            "period": "cluster_3",
+            "rows": 24,
+            "start_utc": "2025-02-07T16:00:00+00:00",
+            "end_exclusive_utc": "2025-02-08T16:00:00+00:00",
+            "accounting_weight": 13.0
+          },
+          {
+            "period": "cluster_4",
+            "rows": 24,
+            "start_utc": "2025-01-21T16:00:00+00:00",
+            "end_exclusive_utc": "2025-01-22T16:00:00+00:00",
+            "accounting_weight": 24.0
+          },
+          {
+            "period": "cluster_5",
+            "rows": 24,
+            "start_utc": "2025-01-28T16:00:00+00:00",
+            "end_exclusive_utc": "2025-01-29T16:00:00+00:00",
+            "accounting_weight": 28.0
+          },
+          {
+            "period": "extreme_day_040",
+            "rows": 24,
+            "start_utc": "2024-12-25T16:00:00+00:00",
+            "end_exclusive_utc": "2024-12-26T16:00:00+00:00",
+            "accounting_weight": 1.0
+          },
+          {
+            "period": "extreme_day_102",
+            "rows": 24,
+            "start_utc": "2025-02-25T16:00:00+00:00",
+            "end_exclusive_utc": "2025-02-26T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "guyuan_common_120d",
+      "path": "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv",
+      "sha256": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+      "role": "三城同原型气象对照",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "3ef449e8e82cf3863e6ca202e0e9c0a382332c0641268b58d75c037733a53a7a",
+        "kind": "continuous",
+        "rows": 2880,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 2880.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2880.0,
+        "continuous_horizon_hours": 2880.0,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "single continuous block",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "continuous",
+            "rows": 2880,
+            "start_utc": "2024-11-15T16:00:00+00:00",
+            "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "guyuan_representative_8d",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/guyuan_representative_hours.csv",
+      "sha256": "ca47b95ec00ae4736fc5fffa80d326a97ebeabe7a87be746772a80d2d0f78a34",
+      "role": "代表日频次基线；其他方法的权重需另行登记",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "56c166d923f2319f3957235e3e5e0d34253cec47cf7303b7970fc5a6785025cb",
+        "kind": "representative",
+        "rows": 192,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 192.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2064.0,
+        "continuous_horizon_hours": null,
+        "start_utc": "2024-12-03T16:00:00+00:00",
+        "end_exclusive_utc": "2025-02-27T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "not established between representative blocks",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "cluster_0",
+            "rows": 24,
+            "start_utc": "2024-12-03T16:00:00+00:00",
+            "end_exclusive_utc": "2024-12-04T16:00:00+00:00",
+            "accounting_weight": 18.0
+          },
+          {
+            "period": "cluster_1",
+            "rows": 24,
+            "start_utc": "2025-02-04T16:00:00+00:00",
+            "end_exclusive_utc": "2025-02-05T16:00:00+00:00",
+            "accounting_weight": 11.0
+          },
+          {
+            "period": "cluster_2",
+            "rows": 24,
+            "start_utc": "2025-01-06T16:00:00+00:00",
+            "end_exclusive_utc": "2025-01-07T16:00:00+00:00",
+            "accounting_weight": 25.0
+          },
+          {
+            "period": "cluster_3",
+            "rows": 24,
+            "start_utc": "2025-02-20T16:00:00+00:00",
+            "end_exclusive_utc": "2025-02-21T16:00:00+00:00",
+            "accounting_weight": 18.0
+          },
+          {
+            "period": "cluster_4",
+            "rows": 24,
+            "start_utc": "2024-12-22T16:00:00+00:00",
+            "end_exclusive_utc": "2024-12-23T16:00:00+00:00",
+            "accounting_weight": 23.0
+          },
+          {
+            "period": "cluster_5",
+            "rows": 24,
+            "start_utc": "2025-01-20T16:00:00+00:00",
+            "end_exclusive_utc": "2025-01-21T16:00:00+00:00",
+            "accounting_weight": 23.0
+          },
+          {
+            "period": "extreme_day_071",
+            "rows": 24,
+            "start_utc": "2025-01-25T16:00:00+00:00",
+            "end_exclusive_utc": "2025-01-26T16:00:00+00:00",
+            "accounting_weight": 1.0
+          },
+          {
+            "period": "extreme_day_103",
+            "rows": 24,
+            "start_utc": "2025-02-26T16:00:00+00:00",
+            "end_exclusive_utc": "2025-02-27T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "wuhan_common_120d",
+      "path": "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv",
+      "sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+      "role": "三城同原型气象对照",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "3ef449e8e82cf3863e6ca202e0e9c0a382332c0641268b58d75c037733a53a7a",
+        "kind": "continuous",
+        "rows": 2880,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 2880.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2880.0,
+        "continuous_horizon_hours": 2880.0,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "single continuous block",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "continuous",
+            "rows": 2880,
+            "start_utc": "2024-11-15T16:00:00+00:00",
+            "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "wuhan_representative_8d",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/wuhan_representative_hours.csv",
+      "sha256": "0a398c4140539a085a47fb259bd39408f222f591899118ecb204cacfad8c62d0",
+      "role": "代表日频次基线；其他方法的权重需另行登记",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "0d4c967b5818051280be766bc1837c5a5121a258ff8ba3569e5d9b78d6256d81",
+        "kind": "representative",
+        "rows": 192,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 192.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2616.0,
+        "continuous_horizon_hours": null,
+        "start_utc": "2024-11-23T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-12T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "not established between representative blocks",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "cluster_0",
+            "rows": 24,
+            "start_utc": "2025-03-11T16:00:00+00:00",
+            "end_exclusive_utc": "2025-03-12T16:00:00+00:00",
+            "accounting_weight": 7.0
+          },
+          {
+            "period": "cluster_1",
+            "rows": 24,
+            "start_utc": "2025-01-10T16:00:00+00:00",
+            "end_exclusive_utc": "2025-01-11T16:00:00+00:00",
+            "accounting_weight": 22.0
+          },
+          {
+            "period": "cluster_2",
+            "rows": 24,
+            "start_utc": "2025-02-14T16:00:00+00:00",
+            "end_exclusive_utc": "2025-02-15T16:00:00+00:00",
+            "accounting_weight": 24.0
+          },
+          {
+            "period": "cluster_3",
+            "rows": 24,
+            "start_utc": "2025-01-20T16:00:00+00:00",
+            "end_exclusive_utc": "2025-01-21T16:00:00+00:00",
+            "accounting_weight": 23.0
+          },
+          {
+            "period": "cluster_4",
+            "rows": 24,
+            "start_utc": "2024-11-23T16:00:00+00:00",
+            "end_exclusive_utc": "2024-11-24T16:00:00+00:00",
+            "accounting_weight": 17.0
+          },
+          {
+            "period": "cluster_5",
+            "rows": 24,
+            "start_utc": "2024-12-28T16:00:00+00:00",
+            "end_exclusive_utc": "2024-12-29T16:00:00+00:00",
+            "accounting_weight": 25.0
+          },
+          {
+            "period": "extreme_day_012",
+            "rows": 24,
+            "start_utc": "2024-11-27T16:00:00+00:00",
+            "end_exclusive_utc": "2024-11-28T16:00:00+00:00",
+            "accounting_weight": 1.0
+          },
+          {
+            "period": "extreme_day_084",
+            "rows": 24,
+            "start_utc": "2025-02-07T16:00:00+00:00",
+            "end_exclusive_utc": "2025-02-08T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "wuhan_dynamic_120d",
+      "path": "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "role": "动态/多尺度/条件投资公共输入",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "3ef449e8e82cf3863e6ca202e0e9c0a382332c0641268b58d75c037733a53a7a",
+        "kind": "continuous",
+        "rows": 2880,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 2880.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2880.0,
+        "continuous_horizon_hours": 2880.0,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "single continuous block",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "continuous",
+            "rows": 2880,
+            "start_utc": "2024-11-15T16:00:00+00:00",
+            "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "urumqi_network_72h",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/hourly.csv",
+      "sha256": "c63e3a92f3518de8a94de2e9fc4d02595c8b79292eb793755030ba20dde31ae1",
+      "role": "有限模式温压反馈专用输入",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "532db7b74d499cdf676124c9c6a072920432272cab7d2ee1b0b5331e6f8184b0",
+        "kind": "continuous",
+        "rows": 72,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 72.0,
+        "accounting_weighted_hours": 72.0,
+        "calendar_envelope_hours": 72.0,
+        "continuous_horizon_hours": 72.0,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2024-11-18T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "single continuous block",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "continuous",
+            "rows": 72,
+            "start_utc": "2024-11-15T16:00:00+00:00",
+            "end_exclusive_utc": "2024-11-18T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "urumqi_heatpump_120d",
+      "path": "docs/final_optimization_20261002/heatpump/run_01/urumqi_frozen_driver.csv",
+      "sha256": "e232ddfba38f6165eb059e9707cb677898cf236d061edf831b9d488012d94739",
+      "role": "真实样本性能映射/固定设备温控及费用LP的公共气象驱动",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "3ef449e8e82cf3863e6ca202e0e9c0a382332c0641268b58d75c037733a53a7a",
+        "kind": "continuous",
+        "rows": 2880,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 2880.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2880.0,
+        "continuous_horizon_hours": 2880.0,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "single continuous block",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "continuous",
+            "rows": 2880,
+            "start_utc": "2024-11-15T16:00:00+00:00",
+            "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "guyuan_heatpump_120d",
+      "path": "docs/final_optimization_20261002/heatpump/run_01/guyuan_frozen_driver.csv",
+      "sha256": "7ee13a5709eca6db99b973929f73b4491e4af00559c6e92857c5d9f7282dd586",
+      "role": "真实样本性能映射/固定设备温控及费用LP的公共气象驱动",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "3ef449e8e82cf3863e6ca202e0e9c0a382332c0641268b58d75c037733a53a7a",
+        "kind": "continuous",
+        "rows": 2880,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 2880.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2880.0,
+        "continuous_horizon_hours": 2880.0,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "single continuous block",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "continuous",
+            "rows": 2880,
+            "start_utc": "2024-11-15T16:00:00+00:00",
+            "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "wuhan_heatpump_120d",
+      "path": "docs/final_optimization_20261002/heatpump/run_01/wuhan_frozen_driver.csv",
+      "sha256": "2978aae59814dc79a79f523ad4c1395cf58ccfed5bfb744f1df86d8892d8a579",
+      "role": "真实样本性能映射/固定设备温控及费用LP的公共气象驱动",
+      "axis": {
+        "schema": "heatplan.time_axis.v1",
+        "axis_sha256": "3ef449e8e82cf3863e6ca202e0e9c0a382332c0641268b58d75c037733a53a7a",
+        "kind": "continuous",
+        "rows": 2880,
+        "physical_step_hours": 1.0,
+        "sampled_interval_hours": 2880.0,
+        "accounting_weighted_hours": 2880.0,
+        "calendar_envelope_hours": 2880.0,
+        "continuous_horizon_hours": 2880.0,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+        "interval_convention": "[time,time+physical_step)",
+        "state_continuity": "single continuous block",
+        "full_year_claim": false,
+        "complete_local_heating_season_claim": false,
+        "blocks": [
+          {
+            "period": "continuous",
+            "rows": 2880,
+            "start_utc": "2024-11-15T16:00:00+00:00",
+            "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+            "accounting_weight": 1.0
+          }
+        ]
+      }
+    }
+  ],
+  "identical_time_axes": [
+    [
+      "urumqi_common_120d",
+      "guyuan_common_120d",
+      "wuhan_common_120d",
+      "wuhan_dynamic_120d",
+      "urumqi_heatpump_120d",
+      "guyuan_heatpump_120d",
+      "wuhan_heatpump_120d"
+    ],
+    [
+      "urumqi_representative_8d"
+    ],
+    [
+      "guyuan_representative_8d"
+    ],
+    [
+      "wuhan_representative_8d"
+    ],
+    [
+      "urumqi_network_72h"
+    ]
+  ],
+  "source_content_review_repeated": false,
+  "interpretation": "Time identity does not certify common data, weather, prices, assets, sources, or optimality.",
+  "spec_sha256": "0cab6cd621ef1040ab61b6488a9d2ea12694ada9efddf5a99308cb85ae12d383",
+  "implementation_sha256": {
+    "scripts/build_time_registry.py": "edecfae6c120fa70353aecc1c3768c4233a1ce74214c6ae3d62cb52affa943a6",
+    "src/heatplan/time_registry.py": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f"
+  }
+}

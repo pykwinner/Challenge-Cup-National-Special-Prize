@@ -1,0 +1,135 @@
+{
+  "schema": "rc6_multiscale_actual_commands.v1",
+  "started_utc": "2026-10-02T15:09:53.630744+00:00",
+  "candidate": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+  "working_directory": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+  "python_executable": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+  "python_version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "package_versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.15.3",
+    "PyYAML": "6.0.3",
+    "matplotlib": "3.11.2",
+    "PyMuPDF": "1.27.2"
+  },
+  "environment": {
+    "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONIOENCODING": "utf8",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LOKY_MAX_CPU_COUNT": "1"
+  },
+  "thread_scope": "Settings for this fresh reproduction only; no historical runtime/acceleration claim.",
+  "new_acceleration_or_relaxation": false,
+  "tests_executed_by_this_workflow": false,
+  "tests_xml_created_by_this_workflow": false,
+  "git_write_performed": false,
+  "requested_cases": 4,
+  "hours_per_building": 2880,
+  "buildings_per_case": 2,
+  "time_limit_seconds_per_case": 120,
+  "registered_mip_gap_target": 0,
+  "run": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\multiscale\\run_01",
+  "report_cli_output_limitation": "report CLI accepts --run only and creates run_01/analysis. Root directed preservation of this native output path; no relocation or code modification.",
+  "commands": [
+    {
+      "action": "freeze",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "scripts/run_multiscale_capacity_axis.py",
+        "freeze",
+        "--out",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\multiscale\\run_01",
+        "--time-limit",
+        "120"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+      "started_utc": "2026-10-02T15:09:53.641730+00:00",
+      "log_path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\multiscale_freeze_01.log",
+      "status": "completed",
+      "exit_code": 0,
+      "completed_utc": "2026-10-02T15:09:56.237960+00:00",
+      "wall_seconds": 2.595325700007379,
+      "log_sha256": "a0c5f29ea10d363745959e9779c181bdceebc6540cec7a6d3a8bf5155b7f9698"
+    },
+    {
+      "action": "run",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "scripts/run_multiscale_capacity_axis.py",
+        "run",
+        "--out",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\multiscale\\run_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+      "started_utc": "2026-10-02T15:09:56.247524+00:00",
+      "log_path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\multiscale_run_01.log",
+      "status": "completed",
+      "exit_code": 0,
+      "completed_utc": "2026-10-02T15:10:18.740339+00:00",
+      "wall_seconds": 22.49111710001307,
+      "log_sha256": "7ee431e46ec337c6876d11cb83d1e49e9683364b7044f5c49f0f6cf7c5ba8aa1"
+    },
+    {
+      "action": "audit",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "scripts/run_multiscale_capacity_axis.py",
+        "audit",
+        "--out",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\multiscale\\run_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+      "started_utc": "2026-10-02T15:10:18.752342+00:00",
+      "log_path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\multiscale_audit_01.log",
+      "status": "completed",
+      "exit_code": 0,
+      "completed_utc": "2026-10-02T15:10:24.439367+00:00",
+      "wall_seconds": 5.686550800004625,
+      "log_sha256": "a17d0681698fcfdf7f2244f3d454eccc4ae4700a01d82f11f3598ad21abad8f9"
+    },
+    {
+      "action": "report",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "scripts/report_multiscale_capacity_axis.py",
+        "--run",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\multiscale\\run_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+      "started_utc": "2026-10-02T15:10:24.449805+00:00",
+      "log_path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\multiscale_report_01.log",
+      "status": "completed",
+      "exit_code": 0,
+      "completed_utc": "2026-10-02T15:10:26.799982+00:00",
+      "wall_seconds": 2.3499778999976115,
+      "log_sha256": "824376c1e208476396f8fbb6c19b242812d5cfa04bb48a1da4a57b93d3b7701a"
+    },
+    {
+      "action": "compare_selected_run_03",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\compare_multiscale_rc6.py"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+      "started_utc": "2026-10-02T15:14:27.811609+00:00",
+      "log_path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\multiscale_comparison_01.log",
+      "status": "completed",
+      "exit_code": 0,
+      "completed_utc": "2026-10-02T15:14:31.506741+00:00",
+      "wall_seconds": 3.6948053000087384,
+      "log_sha256": "9e93ae5f942c77118d69c45edea5ecb69d495ffd7c017b50e334c4a167fccaef"
+    }
+  ],
+  "workflow_exit_code": 0,
+  "completed_utc": "2026-10-02T15:10:27.067628+00:00",
+  "source_identity_start_sha256": "da64f653a7e5aa54396771a03b581cae146953f8f50bed18228eb384b4c2d150",
+  "source_identity_end_sha256": "e259d163c634dd473b726e267ab10e5669f874e1d9eef8960f4dff5fde30e7fd",
+  "source_identity_end_passed": true,
+  "comparison_exit_code": 0,
+  "comparison_completed_utc": "2026-10-02T15:14:31.517661+00:00",
+  "comparison_receipt_sha256": "c570b3b8f65f84957e0e24da4eb1c6c794e523d11ee35c35bd27d56e1d82fcfe"
+}

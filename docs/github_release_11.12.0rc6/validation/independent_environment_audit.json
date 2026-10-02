@@ -1,0 +1,117 @@
+{
+  "schema": "rc6_independent_preparation_environment_audit_v1",
+  "recorded_utc": "2026-10-02T14:50:52.452595+00:00",
+  "status": "preparation_only_awaiting_frozen_manifest",
+  "passed": true,
+  "scope": "Independent environment metadata/freeze and existing identity checks only. No install/update, pip-check rerun, model or 373-test execution, or Git write.",
+  "new_environment": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv",
+  "new_python_executable": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+  "new_python_version": "3.12.7",
+  "new_lock_identity": {
+    "path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\requirements-release-rc6-lock.txt",
+    "sha256": "5f6fcb29a1da1add67a3a8695faa7c55e2d1e488710e5648e26cb922ced1bcb5"
+  },
+  "new_complete_freeze": {
+    "exit_code": 0,
+    "stdout": "certifi==2026.7.22\ncloudpickle==3.1.2\ncolorama==0.4.6\ncontourpy==1.3.3\ncycler==0.12.1\net_xmlfile==2.0.0\nfonttools==4.66.1\ninflate64==1.0.4\niniconfig==2.3.0\njoblib==1.6.0\nkiwisolver==1.5.1\nmatplotlib==3.11.2\nnetworkx==3.4.2\nnumpy==1.26.4\nopenpyxl==3.1.5\npackaging==26.3\npandas==2.2.2\npillow==12.3.0\npip==24.2\npluggy==1.6.0\npsutil==5.9.8\nPygments==2.21.0\nPyMuPDF==1.27.2\npyparsing==3.3.3\npyproj==3.8.0\npytest==9.1.1\npython-dateutil==2.9.0.post0\npytz==2026.4\nPyYAML==6.0.3\nscikit-learn==1.7.2\nscipy==1.15.3\nshapely==2.1.2\nsix==1.17.0\nthreadpoolctl==3.6.0\ntzdata==2026.4\n",
+    "stderr": "",
+    "stdout_utf8_sha256": "ee214f8a43bac9dd772d0e74bd358806da67b01deb49d88cfd7f51154f1b9905"
+  },
+  "new_installed_versions": {
+    "certifi": "2026.7.22",
+    "cloudpickle": "3.1.2",
+    "colorama": "0.4.6",
+    "contourpy": "1.3.3",
+    "cycler": "0.12.1",
+    "et-xmlfile": "2.0.0",
+    "fonttools": "4.66.1",
+    "inflate64": "1.0.4",
+    "iniconfig": "2.3.0",
+    "joblib": "1.6.0",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.11.2",
+    "networkx": "3.4.2",
+    "numpy": "1.26.4",
+    "openpyxl": "3.1.5",
+    "packaging": "26.3",
+    "pandas": "2.2.2",
+    "pillow": "12.3.0",
+    "pip": "24.2",
+    "pluggy": "1.6.0",
+    "psutil": "5.9.8",
+    "pygments": "2.21.0",
+    "pymupdf": "1.27.2",
+    "pyparsing": "3.3.3",
+    "pyproj": "3.8.0",
+    "pytest": "9.1.1",
+    "python-dateutil": "2.9.0.post0",
+    "pytz": "2026.4",
+    "pyyaml": "6.0.3",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3",
+    "shapely": "2.1.2",
+    "six": "1.17.0",
+    "threadpoolctl": "3.6.0",
+    "tzdata": "2026.4"
+  },
+  "new_environment_checks": {
+    "freeze_exit_zero": true,
+    "new_freeze_matches_new_lock": true,
+    "metadata_matches_new_lock": true,
+    "only_addition_is_PyMuPDF_1_27_2": true,
+    "new_package_count_35": true,
+    "old_package_count_34": true,
+    "saved_pip_check_log_reports_pass": true
+  },
+  "fitz_origin_and_version": {
+    "fitz_file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Lib\\site-packages\\fitz\\__init__.py",
+    "pymupdf_file": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Lib\\site-packages\\pymupdf\\__init__.py",
+    "PyMuPDF": "1.27.2",
+    "VersionBind": "1.27.2",
+    "VersionFitz": "1.27.2",
+    "requires_dist": null,
+    "checks": {
+      "python_executable_in_new_env": true,
+      "python_prefix_is_new_env": true,
+      "fitz_from_new_env": true,
+      "pymupdf_from_new_env": true,
+      "fitz_not_from_old_env": true,
+      "isolated_mode_user_site_disabled": true,
+      "PyMuPDF_version_expected": true,
+      "fitz_version_bind_matches_original": true,
+      "mupdf_version_matches_original": true
+    }
+  },
+  "existing_pip_check_log_identity": {
+    "path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\pip_check_independent_rc6.log",
+    "sha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+    "text": "No broken requirements found.\r\n",
+    "rerun": false
+  },
+  "old_before_identity": {
+    "path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\old_rc5_environment_before_new_setup.json",
+    "sha256": "0cbec9f5459e57eba3fc3d7d004002a10ae2dfd05a22f9e34478a8705a94350b"
+  },
+  "old_environment": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc5\\venv",
+  "old_complete_freeze_after_new_setup": {
+    "exit_code": 0,
+    "stdout": "certifi==2026.7.22\ncloudpickle==3.1.2\ncolorama==0.4.6\ncontourpy==1.3.3\ncycler==0.12.1\net_xmlfile==2.0.0\nfonttools==4.66.1\ninflate64==1.0.4\niniconfig==2.3.0\njoblib==1.6.0\nkiwisolver==1.5.1\nmatplotlib==3.11.2\nnetworkx==3.4.2\nnumpy==1.26.4\nopenpyxl==3.1.5\npackaging==26.3\npandas==2.2.2\npillow==12.3.0\npip==24.2\npluggy==1.6.0\npsutil==5.9.8\nPygments==2.21.0\npyparsing==3.3.3\npyproj==3.8.0\npytest==9.1.1\npython-dateutil==2.9.0.post0\npytz==2026.4\nPyYAML==6.0.3\nscikit-learn==1.7.2\nscipy==1.15.3\nshapely==2.1.2\nsix==1.17.0\nthreadpoolctl==3.6.0\ntzdata==2026.4\n",
+    "stderr": "",
+    "stdout_utf8_sha256": "aeabd3628e90fa34035db5fc36b7dbd81457d2eb790380303b86a3566979b35b"
+  },
+  "old_environment_unchanged_checks": {
+    "full_freeze_exact_same": true,
+    "full_freeze_packages_same": true,
+    "pyvenv_config_sha256_same": true,
+    "python_executable_sha256_same": true,
+    "rc5_lock_sha256_same": true
+  },
+  "old_current_identities": {
+    "pyvenv_config_sha256": "e5bf000070a366a7d757a03a767b40309c17b741682108cff97b44980c981b4e",
+    "python_executable_sha256": "1eaca0c6c6b306f084e46cd3ac96505cddae0004fb638ff0b69097f9e977d702",
+    "rc5_lock_sha256": "6edeab30a3a654d6458511d5049af7cbfccb4f41319a814cf39a49446c598c4f"
+  },
+  "old_environment_unchanged": true,
+  "checks_use_bytecode_disabled": true,
+  "new_model_or_experiment_certified": false
+}

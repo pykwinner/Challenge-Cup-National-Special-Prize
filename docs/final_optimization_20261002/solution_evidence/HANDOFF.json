@@ -1,0 +1,140 @@
+{
+  "schema": "solution_evidence_handoff.v1",
+  "created_utc": "2026-10-02T14:40:27.112206+00:00",
+  "status": "completed_additive_evidence_layer",
+  "files": [
+    {
+      "path": "src/heatplan/solution_evidence.py",
+      "sha256": "b0d0f7079410bdb0297838cba392761f3d6464e89299b198ad69f6ca44fd3abb"
+    },
+    {
+      "path": "scripts/report_solution_evidence.py",
+      "sha256": "f0bf9ff04bdc4281b06880fc39d219cb2ddd704703ea0f9f504348bdbb551236"
+    },
+    {
+      "path": "tests/test_solution_evidence.py",
+      "sha256": "1b3af8ab1ae99ff6d983fdacd9ed18942a3d527c2c86b2727803f7da9baa5ea4"
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/README.md",
+      "sha256": "908304562e13d293501c8f0eb0ccabca92d55d181fd3a47737822bc463942310"
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_final/evidence_table.json",
+      "sha256": "49e3f9ca524723aaa4f75aee1a1d88e0fcb9f7eb11f8141debe6168142d742f8"
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_final/README.md",
+      "sha256": "a2feb87dca4abb3793957ec41a8ca6498922afcb46cc24c43c264a77423e099f"
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_final.log",
+      "sha256": "656fc1484f7df2dea0096a208b926f6686780b92f2c62f8161e5042b0b6122c2"
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_final.log",
+      "sha256": "67630993693cbd51889bef27abc8cecafbad4946181c4c04336c18f0a7c6dcbc"
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_final.xml",
+      "sha256": "42c1ccba6362148ccb854912f5ae7c7af5b20df407f0440154af5101c92aab15"
+    }
+  ],
+  "inspected_release_root": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc5",
+  "inspected_release_commit": "7a4df3cbfc034d52a16a018eef6d6941858497f0",
+  "final_report": "docs/final_optimization_20261002/solution_evidence/report_final/evidence_table.json",
+  "records": 61,
+  "input_file_identities": 690,
+  "classification_counts": {
+    "optimal_declared_subproblem": 22,
+    "primary_full_problem_secondary_candidate_subproblem": 38,
+    "verified_method_reference": 1
+  },
+  "selected_input_inventory_passed": true,
+  "inputs_unchanged_after_scan": true,
+  "solver_runs_in_report": 0,
+  "frozen_experiment_reruns": 0,
+  "actual_tests": [
+    {
+      "command": "D:/app/anaconda3/python.exe -B -m pytest tests/test_solution_evidence.py tests/test_solution_quality.py -q --basetemp .test_tmp/solution_evidence_20261002_final --junitxml docs/final_optimization_20261002/solution_evidence/tests_final.xml",
+      "passed": 78,
+      "failed": 0,
+      "new_classifier_tests": 44,
+      "existing_quality_regression_tests": 34,
+      "elapsed_seconds": 1.06,
+      "contains_actual_small_analytic_MIP_solve": true,
+      "log": "docs/final_optimization_20261002/solution_evidence/tests_final.log"
+    }
+  ],
+  "environment": {
+    "python": "3.12.7",
+    "scipy": "1.15.3",
+    "pandas": "2.2.2",
+    "isolated_clean_environment_created": false
+  },
+  "sources": [
+    {
+      "title": "SciPy1.15.3 milp",
+      "url": "https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.optimize.milp.html",
+      "application": "Status0/1/2/3/4 semantics and same-linear-objective primal/dual/MIP gap."
+    },
+    {
+      "title": "HiGHS terminology",
+      "url": "https://ergo-code.github.io/HiGHS/stable/terminology/",
+      "application": "A feasible minimization incumbent is an upper bound; MIP dual is a lower bound for that model."
+    },
+    {
+      "title": "Mavrotas author report: epsilon constraint",
+      "url": "https://www.gams.com/modlib/adddocs/epscm.pdf",
+      "application": "Finite epsilon grids are samples; lexicographic payoff construction requires objective priority to be preserved."
+    }
+  ],
+  "unchanged_existing_files_compared_to_rc5": [
+    {
+      "path": "src/heatplan/model.py",
+      "sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "identical": true
+    },
+    {
+      "path": "src/heatplan/solution_quality.py",
+      "sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+      "identical": true
+    },
+    {
+      "path": "scripts/run_investment_reference.py",
+      "sha256": "919ba8f570219c28e638a58ddc94d41d7effab2300d66bc21ea3674fdd958826",
+      "identical": true
+    },
+    {
+      "path": "scripts/audit_investment_reference.py",
+      "sha256": "ec67e28dbc1f82c49e3ab99778eb45f041ca48b235c982d796f4dfda1c219121",
+      "identical": true
+    }
+  ],
+  "risks": [
+    "Solver/declared numerical tolerance evidence only; no independently verified dual vector or exact mathematical global guarantee.",
+    "Raw inverted bound pairs and positive freeze residuals are retained; numerical acceptance uses existing manifest-bound audit tolerances and never manufactures an ordered exact interval.",
+    "Full-problem investment enumeration certifies only the registered finite primary objective; secondary remains selected-candidate incumbent-frozen subproblem.",
+    "Finite epsilon scans and fixed policies do not certify a full Pareto set; objective gap is never propagated to simultaneous cash/carbon/CAPEX KPI intervals.",
+    "Representative rc5 saved evidence only; no field or equipment validation, no clean-environment rerun.",
+    "Adapter currently targets listed rc5 formats; new export formats require explicit objective/scope/audit adapters."
+  ],
+  "unrun": [
+    "No frozen dispatch/investment/multiscale/network/policy experiment rerun.",
+    "No full repository pytest suite in this subtask.",
+    "No new holdout study, heatpump optimization or literature transplantation.",
+    "No solver semantics/export changes, remote upload, commit, version update or Git tag."
+  ],
+  "development_evidence_retained": [
+    "report_01",
+    "report_02",
+    "report_03",
+    "tests_01",
+    "tests_02",
+    "tests_03"
+  ],
+  "final_evidence_only": [
+    "report_final",
+    "tests_final"
+  ]
+}

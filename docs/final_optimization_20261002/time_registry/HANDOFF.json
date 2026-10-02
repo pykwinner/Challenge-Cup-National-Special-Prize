@@ -1,0 +1,29 @@
+{
+  "schema": "final_time_registry_handoff.v1",
+  "completed": true,
+  "files": {
+    "src/heatplan/time_registry.py": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+    "scripts/build_time_registry.py": "edecfae6c120fa70353aecc1c3768c4233a1ce74214c6ae3d62cb52affa943a6",
+    "tests/test_time_registry.py": "7e0e5fa140c864f58e92bb642da8474c68510af1a74c4b97bd64e51373b6562b",
+    "docs/final_optimization_20261002/time_registry/spec_v1.json": "7eb08c0532e6f22bc84431e586ab04afe6d7ea3af7c8b3c4faa5ba8b34a403e8",
+    "docs/final_optimization_20261002/time_registry/run_02/registry.json": "b451044bbdc171e78585463ce58dfe28a16d12e4b18c4984347bb7d681ca08d1",
+    "docs/final_optimization_20261002/time_registry/run_02/README.md": "9f52e1ec093353db849bc1b5c4c1a6812d61a31c0e89d57da742e04715f2ac99",
+    "docs/final_optimization_20261002/time_registry/tests_final.xml": "d0cbf2487f5d73f75087090e7995ec062164d29975b21a52d81fe3230eb85abb",
+    "docs/final_optimization_20261002/time_registry/spec_final.json": "0cab6cd621ef1040ab61b6488a9d2ea12694ada9efddf5a99308cb85ae12d383",
+    "docs/final_optimization_20261002/time_registry/run_final/registry.json": "8d59e0b322d25c0674ce36bd6d07c8bb9f7bee680fec0bdc56cce3656b872885",
+    "docs/final_optimization_20261002/time_registry/run_final/README.md": "5eb4a5491a64c4abde5d4e40b23c4e27585b19d5432e8f83a2180a059c6bcc07"
+  },
+  "tests": {
+    "passed": 30,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "scope": "focused time-axis tests; no old solver reruns"
+  },
+  "registered_real_inputs": 11,
+  "distinct_time_axes": 5,
+  "audit_fix": "Independent reviewer found cross-block overlap in singleton representative intervals; fixed and regression-tested. Also validate interval_end and time_utc if present.",
+  "scope": "selected current reference and algorithm input files only; old frozen runners not changed; not global retrofit of every CLI",
+  "historical_run": "run_01 before overlap guards;run_02 covers8 historical inputs;run_final adds3 frozen heatpump input axes (11total),all history retained",
+  "final_registry": "docs/final_optimization_20261002/time_registry/run_final/registry.json"
+}

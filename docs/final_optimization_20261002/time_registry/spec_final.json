@@ -1,0 +1,110 @@
+{
+  "schema": "heatplan.time_registry_spec.v1",
+  "entries": [
+    {
+      "id": "urumqi_common_120d",
+      "path": "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv",
+      "sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+      "kind": "continuous",
+      "dt_hours": 1,
+      "role": "三城同原型气象对照",
+      "expected_start": "2024-11-16T00:00:00+08:00",
+      "expected_end": "2025-03-16T00:00:00+08:00"
+    },
+    {
+      "id": "urumqi_representative_8d",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/urumqi_representative_hours.csv",
+      "sha256": "946c1eae9bd54d8fc6e4521c40d00136659276a08143e997ebe66a242c28a6bd",
+      "kind": "representative",
+      "dt_hours": 1,
+      "role": "代表日频次基线；其他方法的权重需另行登记",
+      "period_column": "representative_day"
+    },
+    {
+      "id": "guyuan_common_120d",
+      "path": "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv",
+      "sha256": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+      "kind": "continuous",
+      "dt_hours": 1,
+      "role": "三城同原型气象对照",
+      "expected_start": "2024-11-16T00:00:00+08:00",
+      "expected_end": "2025-03-16T00:00:00+08:00"
+    },
+    {
+      "id": "guyuan_representative_8d",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/guyuan_representative_hours.csv",
+      "sha256": "ca47b95ec00ae4736fc5fffa80d326a97ebeabe7a87be746772a80d2d0f78a34",
+      "kind": "representative",
+      "dt_hours": 1,
+      "role": "代表日频次基线；其他方法的权重需另行登记",
+      "period_column": "representative_day"
+    },
+    {
+      "id": "wuhan_common_120d",
+      "path": "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv",
+      "sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+      "kind": "continuous",
+      "dt_hours": 1,
+      "role": "三城同原型气象对照",
+      "expected_start": "2024-11-16T00:00:00+08:00",
+      "expected_end": "2025-03-16T00:00:00+08:00"
+    },
+    {
+      "id": "wuhan_representative_8d",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/wuhan_representative_hours.csv",
+      "sha256": "0a398c4140539a085a47fb259bd39408f222f591899118ecb204cacfad8c62d0",
+      "kind": "representative",
+      "dt_hours": 1,
+      "role": "代表日频次基线；其他方法的权重需另行登记",
+      "period_column": "representative_day"
+    },
+    {
+      "id": "wuhan_dynamic_120d",
+      "path": "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "kind": "continuous",
+      "dt_hours": 1,
+      "role": "动态/多尺度/条件投资公共输入",
+      "expected_start": "2024-11-16T00:00:00+08:00",
+      "expected_end": "2025-03-16T00:00:00+08:00"
+    },
+    {
+      "id": "urumqi_network_72h",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/hourly.csv",
+      "sha256": "c63e3a92f3518de8a94de2e9fc4d02595c8b79292eb793755030ba20dde31ae1",
+      "kind": "continuous",
+      "dt_hours": 1,
+      "role": "有限模式温压反馈专用输入"
+    },
+    {
+      "id": "urumqi_heatpump_120d",
+      "path": "docs/final_optimization_20261002/heatpump/run_01/urumqi_frozen_driver.csv",
+      "sha256": "e232ddfba38f6165eb059e9707cb677898cf236d061edf831b9d488012d94739",
+      "kind": "continuous",
+      "dt_hours": 1,
+      "role": "真实样本性能映射/固定设备温控及费用LP的公共气象驱动",
+      "expected_start": "2024-11-16T00:00:00+08:00",
+      "expected_end": "2025-03-16T00:00:00+08:00"
+    },
+    {
+      "id": "guyuan_heatpump_120d",
+      "path": "docs/final_optimization_20261002/heatpump/run_01/guyuan_frozen_driver.csv",
+      "sha256": "7ee13a5709eca6db99b973929f73b4491e4af00559c6e92857c5d9f7282dd586",
+      "kind": "continuous",
+      "dt_hours": 1,
+      "role": "真实样本性能映射/固定设备温控及费用LP的公共气象驱动",
+      "expected_start": "2024-11-16T00:00:00+08:00",
+      "expected_end": "2025-03-16T00:00:00+08:00"
+    },
+    {
+      "id": "wuhan_heatpump_120d",
+      "path": "docs/final_optimization_20261002/heatpump/run_01/wuhan_frozen_driver.csv",
+      "sha256": "2978aae59814dc79a79f523ad4c1395cf58ccfed5bfb744f1df86d8892d8a579",
+      "kind": "continuous",
+      "dt_hours": 1,
+      "role": "真实样本性能映射/固定设备温控及费用LP的公共气象驱动",
+      "expected_start": "2024-11-16T00:00:00+08:00",
+      "expected_end": "2025-03-16T00:00:00+08:00"
+    }
+  ]
+}

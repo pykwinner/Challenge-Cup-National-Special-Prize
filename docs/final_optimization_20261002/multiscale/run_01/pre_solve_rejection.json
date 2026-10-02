@@ -1,0 +1,8 @@
+{
+  "status": "source_lock_pre_solve_rejected",
+  "solver_invoked": false,
+  "cases_attempted": 0,
+  "reason": "Concurrent root task changed unused src/heatplan/solution_evidence.py after freeze; verify_inputs rejected before creating results.",
+  "stdout_evidence": "Actual process exit1 and ValueError current source changed:src/heatplan/solution_evidence.py in task tool record.",
+  "replacement": "run_02 fresh protocol; explicit unused-module exclusion after import scan; no old experiment changed."
+}

@@ -1,0 +1,42 @@
+{
+  "read_date": "2026-10-02",
+  "sources": [
+    {
+      "id": "DOE_EnergyPlus_lookup_tables",
+      "title": "EnergyPlus Engineering Reference, Lookup Tables / Table:Lookup",
+      "url": "https://energyplus.readthedocs.io/en/latest/guides/engineering-reference/21.2-lookup-tables.html",
+      "publisher": "U.S. Department of Energy, EnergyPlus official documentation",
+      "primary": true,
+      "retrieval": "official documentation index opened and full relevant lookup/linear interpolation text retrieved from indexed official page; direct section fetch had cache miss",
+      "supports": "Linear interpolation independently along each table axis; independent variables and data format must match the component model. Extrapolation is a separately configurable choice with possible domain limits.",
+      "implementation": "Within adjacent printed coordinates interpolate Q and P separately by nonnegative product weights, then derive COP=Q/P.",
+      "our_conservative_policy_not_mandated_by_source": "No extrapolation; any missing required printed corner rejects lookup. No claim that DOE mandates this policy or that interpolation is field validation."
+    },
+    {
+      "id": "TICA_manufacturer_family_page",
+      "title": "Modular Inverter Air-Cooled Chiller (Heat Pump)",
+      "url": "https://global.tica.com/index/goods/pro/cid/23.html",
+      "publisher": "TICA official manufacturer website",
+      "primary": true,
+      "retrieval": "official page opened2026-10-02",
+      "supports": "Manufacturer product family and operating-envelope description only.",
+      "limitations": "Text namesTCAV035BE andTCAV065BHE. It does not authenticate the exact035BHE grid version, supply a performance map, or supply a same-model price. Do not replace catalogue model spelling using website family text."
+    },
+    {
+      "id": "TICA_24p_exact_catalogue_copy",
+      "title": "TICA V-FORCE Full DC Inverter Modular Chiller (Heat Pump), Performance Data and Heating Capacity Correction",
+      "url": "https://dec.com.pk/assets/images/products/tica/3-Inverter-modular-chiller.pdf",
+      "publisher": "manufacturer-authored TICA brochure, hosted by distributor DEC",
+      "primary_authorship": true,
+      "manufacturer_endpoint_verified": false,
+      "pdf_sha256": "5be3093936a6ec3bb7104372395f8f5c6b375563e40ded024331b0f77e3854a0",
+      "pdf_pages": [14,15],
+      "printed_pages": [12,13],
+      "retrieval": "existingrc5 source copy; local PDF read, pages rendered and visually inspected, all165 Q/P cells compared geometrically against user extraction",
+      "supports": "Exact single-module model names, heating Q/P in kW, ambient and leaving-water coordinates; separate nominal DB/WB conditions.",
+      "limitations": "Catalogue sample, not site test. Expanded grid does not specify wet bulb/humidity/defrost integration or tested part-load curve. Catalogue revision/publication date not established; all results limited to this frozen copy."
+    }
+  ],
+  "price_and_prototype_sources": "Existing admitted source snapshots are bundled without upgrading their claims. Tariff account eligibility/connection remains unverified;20-copy building aggregation is synthetic.",
+  "no_new_pdf_or_ppt_created": true
+}

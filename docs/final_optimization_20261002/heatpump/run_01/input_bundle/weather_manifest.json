@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "stage": "source_calendar_and_physical_driver_acceptance_only",
+  "input_sha256": {
+    "configs/evidence_case_20261002/wuhan_bestest600_steady.yaml": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3",
+    "configs/evidence_case_20261002/wuhan_bestest600_rc.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly.csv": "dcf861aed4914bc873086b27c9d0fe6b59e0bd77c49bd5350f0b1ed079e3b5b2",
+    "docs/implementation_20261002/data/field_provenance.csv": "d8bd5e88d3cc356dfe7d47ff1a4d667d1a7de0123d74ec00a0ae70b280aea7b7",
+    "docs/implementation_20261002/data/derivation.json": "7cc4dc53504f4a8cf2411c3527b4864f808acccd130c4d00707cf21270b46194",
+    "scripts/prepare_evidence_case_20261002.py": "66d5f805228d89b0948b4baa57458a05ceed5960bd16490a7a51916570ccd3b9",
+    "docs/implementation_20261002/data/evidence/bestest_6231.pdf": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+    "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+    "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+    "docs/implementation_20261002/data/evidence/wuhan_weather_receipt.json": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+    "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+    "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d",
+    "docs/implementation_20261002/data/admission.json": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb"
+  },
+  "code_sha256": {
+    "scripts/prepare_three_city_common_reference.py": "ee6910122077f2e875e9eb1f1d0e250febea0be8c2589c15c5526841a5e8b288"
+  },
+  "artifact_sha256": {
+    "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+    "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+    "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/source_inventory.json": "4cd73246052d6b12b40aee5b440abd94ab5ba15c6bd01f02b7914fe03c4ceea7",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/common_physical_reference.json": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/protocol.json": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/validation.json": "7c5ef590ebe51ac5379d34e480bfaa01efed20454a18a3e922ba67d2b6740c79",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/field_provenance.csv": "813abbf6a7504bd3aadb6cd8cf08983ffbb7068f0f6a334fce450810a38ba223",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/confirmation_candidates.csv": "cd0b1f5ed1f71e098fc7724194c82930fb0460b32158636c63fa4b004c915f7e",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario1_urumqi_UTC.json": "73eaee32e09fde57d63351b9446978cb24240425ce8fe66aa9c6d95105586b5d",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario1_urumqi_download.json": "e97c5321f2e642575190c9e7bde6bf2587d87a2c2108554807f707e99a3302a7",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario2_guyuan_UTC.json": "9751ff2bdf51261526a68f901660cb651b5e153b8ff6ce9dfb74d0114ee72600",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario2_guyuan_download.json": "b66358215130401c8a061b61e8993a84230868c38db53c37f8fa5939ada67bef",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario3_wuhan_UTC.json": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario3_wuhan_download.json": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_package_audit.json": "80549be1f26658d2b42797209626d8139db97a5e8da5d254411c2ef4c5b37731",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_lst_identity.md": "783ecdf3a39fbd065873f0f30cee644663ec0de95b5bc2e5cf5718798d87c54f",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/three_city_decisions.md": "6e2e569804eac570a684dfb61c21b7a8fece64858b4296454ce4aa5b05beefa1",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_wuhan_method_protocol.json": "403d0a9ba225b223276440dc2b2aaa138d31bf2bed0e36d56e184c718bc1c9d7"
+  },
+  "time_start_inclusive": "2024-11-16T00:00:00+08:00",
+  "time_end_exclusive": "2025-03-16T00:00:00+08:00",
+  "city_count": 3,
+  "hour_count_per_city": 2880,
+  "field_provenance_rows": 63,
+  "solver_run_performed": false,
+  "full_economics_admitted": false,
+  "confirmation_claim": "Proposed Urumqi/Guyuan holdouts awaiting parent/algorithm freeze; not yet certified"
+}

@@ -1,0 +1,64 @@
+{
+  "status": "admitted_exact_catalogue_copy_conditionally",
+  "source_id": "TICA_VForce_24p_sha5be309_p15_heating",
+  "source_url": "https://dec.com.pk/assets/images/products/tica/3-Inverter-modular-chiller.pdf",
+  "source_sha256": "5be3093936a6ec3bb7104372395f8f5c6b375563e40ded024331b0f77e3854a0",
+  "original_pdf_read_this_run": true,
+  "pdf_pages_visually_inspected_during_preparation": [
+    14,
+    15
+  ],
+  "all_q_p_points_checked": 165,
+  "complete_points_by_model": {
+    "TCAV035BHE": 83,
+    "TCAV065BHE": 82
+  },
+  "pdf_csv_mismatches": 0,
+  "manufacturer_endpoint_table_verified": false,
+  "primary_authorship": "TICA-branded manufacturer catalogue, distributed copy; not independent laboratory/field report",
+  "official_family_url": "https://global.tica.com/index/goods/pro/cid/23.html",
+  "official_family_page_scope": "product family only; site text names TCAV035BE and TCAV065BHE, not exact version authentication of TCAV035BHE table",
+  "conspicuous_model_correction": "READING CORRECTION: earlier task-summary wording concatenated model and point count as TCAV035BHE83/TCAV065BHE82. Original user CSV correctly names TCAV035BHE/TCAV065BHE, with83/82 grid points. This was our summary-reading ambiguity, not a user CSV model error. No suffix aliases accepted; original CSV not changed.",
+  "csv_nominal_missing_source_temperature": "Four p14 nominal CSV rows have empty source-temperature columns; source notes supply DB/WB. They are documented separately, not silently joined into p15 grid.",
+  "nominal_heating_conditions": [
+    {
+      "leaving_water_c": 41,
+      "dry_bulb_c": -12,
+      "wet_bulb_c": -14,
+      "q_kw": [
+        24,
+        48
+      ],
+      "p_kw": [
+        10.2,
+        20.5
+      ]
+    },
+    {
+      "leaving_water_c": 45,
+      "dry_bulb_c": 7,
+      "wet_bulb_c": 6,
+      "q_kw": [
+        34,
+        75
+      ],
+      "p_kw": [
+        10.5,
+        23.4
+      ]
+    }
+  ],
+  "p14_conditions": "nominal records at rated water flow; single-module data;035 rated water flow5.76m3/h,06511.2m3/h; controller accessory separately purchased",
+  "p15_conditions": "Heating Capacity Correction; water outlet temperature C, Ambient Temperature C, Capacity kW, Power kW; wet bulb/humidity/defrost integration and flow-versus-temperature details not stated",
+  "ambient_header48": "kept as printed48 C, not corrected to45 C; current weather below35 C",
+  "capacity_loss_note": "p14 says about6% installation-system loss should be considered; not a measured universal derate. Main axis uses explicit ideal delivered-capacity factor1.0.",
+  "rejection_policy": [
+    "different source/version/model/units",
+    "procurement thresholds",
+    "blank point or any required blank corner",
+    "outside printed axes",
+    "nominal humidity-specific point mixed into unspecified-humidity grid"
+  ],
+  "cop_kind": "computed Q/P from printed kW columns; not a new measured COP and not interpolation of COP",
+  "excluded_catalogue": "39-page marketing slides have no165-point Q/P grid; not merged"
+}

@@ -1,0 +1,255 @@
+{
+  "schema": "heatpump.actual_candidate_validation_receipt.v1",
+  "release_batch": "11.12.0rc6",
+  "candidate_root": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+  "working_directory": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump",
+  "python": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+  "started_utc": "2026-10-02T15:09:09.911449+00:00",
+  "environment": {
+    "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONIOENCODING": "utf8",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LOKY_MAX_CPU_COUNT": "1"
+  },
+  "source_freeze_sha256": "28825f3162a6a326ce53906f6d7918c67f5ac7974fdabd152813443c74873621",
+  "commands": [
+    {
+      "id": "pytest_root",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "test_heatpump_reference.py",
+        "test_heatpump_optimization.py",
+        "test_native_lp_bound.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml",
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_pytest_root.xml",
+        "--basetemp",
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\pytest_heatpump"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump",
+      "environment": {
+        "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf8",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "LOKY_MAX_CPU_COUNT": "1"
+      },
+      "log": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_pytest_root.log",
+      "started_utc": "2026-10-02T15:09:09.912449+00:00",
+      "status": "executed",
+      "exit_code": 0,
+      "duration_seconds": 18.07157990000269,
+      "ended_utc": "2026-10-02T15:09:27.985093+00:00",
+      "log_sha256": "3633c9ae7da41c81ea90cb152ae2c8fee8d71c6d8cd0285730f35b157d4ed205"
+    },
+    {
+      "id": "frozen_reference_audit",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "audit_reference.py",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump\\run_01",
+        "--audit-out",
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_frozen_reference_audit.json"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump",
+      "environment": {
+        "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf8",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "LOKY_MAX_CPU_COUNT": "1"
+      },
+      "log": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_frozen_reference_audit.log",
+      "started_utc": "2026-10-02T15:09:27.995020+00:00",
+      "status": "executed",
+      "exit_code": 0,
+      "duration_seconds": 3.743057999992743,
+      "ended_utc": "2026-10-02T15:09:31.738527+00:00",
+      "log_sha256": "5ce679083626905add6f5be4ddb4da6e351f4c41dd6d2835e95cd7147a2c925e"
+    },
+    {
+      "id": "frozen_optimization_audit",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "audit_optimization.py",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump\\optimization_01",
+        "--reference",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump\\run_01",
+        "--audit-out",
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_frozen_optimization_audit.json"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump",
+      "environment": {
+        "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf8",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "LOKY_MAX_CPU_COUNT": "1"
+      },
+      "log": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_frozen_optimization_audit.log",
+      "started_utc": "2026-10-02T15:09:31.750515+00:00",
+      "status": "executed",
+      "exit_code": 0,
+      "duration_seconds": 5.075648899990483,
+      "ended_utc": "2026-10-02T15:09:36.827182+00:00",
+      "log_sha256": "b7aa478bbb3d2b43ea3c21d8053693a17384467ed22c5ecc5e4a5b6a1e5f5980"
+    },
+    {
+      "id": "reproduce_reference",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "run_reference.py",
+        "--source-dir",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump\\run_01\\input_bundle",
+        "--out",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\heatpump\\reference_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump",
+      "environment": {
+        "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf8",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "LOKY_MAX_CPU_COUNT": "1"
+      },
+      "log": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_reproduce_reference.log",
+      "started_utc": "2026-10-02T15:09:36.837413+00:00",
+      "status": "executed",
+      "exit_code": 0,
+      "duration_seconds": 2.5508689999987837,
+      "ended_utc": "2026-10-02T15:09:39.387896+00:00",
+      "log_sha256": "5ac12ce0284683f141ac55191804ffa08aafec2075f428f821c37758e3576186"
+    },
+    {
+      "id": "reproduced_reference_audit",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "audit_reference.py",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\heatpump\\reference_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump",
+      "environment": {
+        "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf8",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "LOKY_MAX_CPU_COUNT": "1"
+      },
+      "log": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_reproduced_reference_audit.log",
+      "started_utc": "2026-10-02T15:09:39.395863+00:00",
+      "status": "executed",
+      "exit_code": 0,
+      "duration_seconds": 3.741619400010677,
+      "ended_utc": "2026-10-02T15:09:43.137832+00:00",
+      "log_sha256": "5ce679083626905add6f5be4ddb4da6e351f4c41dd6d2835e95cd7147a2c925e"
+    },
+    {
+      "id": "reproduce_optimization",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "optimize_reference.py",
+        "--reference",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\heatpump\\reference_01",
+        "--out",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\heatpump\\optimization_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump",
+      "environment": {
+        "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf8",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "LOKY_MAX_CPU_COUNT": "1"
+      },
+      "log": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_reproduce_optimization.log",
+      "started_utc": "2026-10-02T15:09:43.139839+00:00",
+      "status": "executed",
+      "exit_code": 0,
+      "duration_seconds": 2.5293100999988383,
+      "ended_utc": "2026-10-02T15:09:45.669163+00:00",
+      "log_sha256": "a5dee88ab2449e8352e27f01b408d0e2f69608552b25076546d0f7d30055ce4b"
+    },
+    {
+      "id": "reproduced_optimization_audit",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "audit_optimization.py",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\heatpump\\optimization_01",
+        "--reference",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\heatpump\\reference_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump",
+      "environment": {
+        "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf8",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "LOKY_MAX_CPU_COUNT": "1"
+      },
+      "log": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_reproduced_optimization_audit.log",
+      "started_utc": "2026-10-02T15:09:45.678619+00:00",
+      "status": "executed",
+      "exit_code": 0,
+      "duration_seconds": 5.128639899994596,
+      "ended_utc": "2026-10-02T15:09:50.808434+00:00",
+      "log_sha256": "b7aa478bbb3d2b43ea3c21d8053693a17384467ed22c5ecc5e4a5b6a1e5f5980"
+    },
+    {
+      "id": "reproduced_native_lp_bound",
+      "argv": [
+        "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\venv\\Scripts\\python.exe",
+        "-B",
+        "certify_native_lp_bound.py",
+        "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\github_release_11.12.0rc6\\reproduction\\heatpump\\optimization_01"
+      ],
+      "cwd": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\heatpump",
+      "environment": {
+        "PYTHONPATH": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\src",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONIOENCODING": "utf8",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "LOKY_MAX_CPU_COUNT": "1"
+      },
+      "log": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_release_20261002_rc6\\heatpump_reproduced_native_lp_bound.log",
+      "started_utc": "2026-10-02T15:09:50.810075+00:00",
+      "status": "executed",
+      "exit_code": 0,
+      "duration_seconds": 1.288978299999144,
+      "ended_utc": "2026-10-02T15:09:52.098998+00:00",
+      "log_sha256": "81cbf30aec125707acef833913125a0e91b1caff2a3526078495989c850fa393"
+    }
+  ],
+  "ended_utc": "2026-10-02T15:09:52.255123+00:00",
+  "all_executed_commands_exit_zero": true,
+  "source_scope_after_all_match": true
+}

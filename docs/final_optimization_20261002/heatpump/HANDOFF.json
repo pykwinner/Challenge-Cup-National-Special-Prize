@@ -1,0 +1,1001 @@
+{
+  "component": "heatpump_catalogue_and_fixed_asset_operating_reference",
+  "delivery_state": "ready_for_rc6_research_candidate_review_not_formal_release",
+  "created_utc": "2026-10-02T14:46:57.576677+00:00",
+  "owner": "/root/investment_independent_audit",
+  "white_list_root": "docs/final_optimization_20261002/heatpump",
+  "white_list": [
+    "performance_map.py",
+    "run_reference.py",
+    "audit_reference.py",
+    "test_heatpump_reference.py",
+    "optimize_reference.py",
+    "audit_optimization.py",
+    "test_heatpump_optimization.py",
+    "certify_native_lp_bound.py",
+    "test_native_lp_bound.py",
+    "method_sources.json",
+    "final_frozen_code/**",
+    "run_01/**",
+    "optimization_01/**",
+    "source_views/**",
+    "HANDOFF.json",
+    "test_results.json",
+    "final_delta_test_results.json",
+    "postfreeze_input_guard.json",
+    "postfreeze_final_changes.json",
+    "native_dual_tolerance_counterexample.json",
+    "RUN_INSTRUCTIONS.txt"
+  ],
+  "files": [
+    {
+      "path": "audit_optimization.py",
+      "sha256": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+      "bytes": 13361
+    },
+    {
+      "path": "audit_reference.py",
+      "sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "bytes": 12814
+    },
+    {
+      "path": "certify_native_lp_bound.py",
+      "sha256": "87b9708e0f48ef475280f6b73ab020631c83e1c33833e3e790653608eac95139",
+      "bytes": 6306
+    },
+    {
+      "path": "final_delta_test_results.json",
+      "sha256": "5e65e2a9a1317f82e700b3155c5d4408df014e35c136ded1fc4571cd7a8a32ce",
+      "bytes": 2172
+    },
+    {
+      "path": "final_frozen_code/audit_optimization.py",
+      "sha256": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+      "bytes": 13361
+    },
+    {
+      "path": "final_frozen_code/audit_reference.py",
+      "sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "bytes": 12814
+    },
+    {
+      "path": "final_frozen_code/certify_native_lp_bound.py",
+      "sha256": "87b9708e0f48ef475280f6b73ab020631c83e1c33833e3e790653608eac95139",
+      "bytes": 6306
+    },
+    {
+      "path": "final_frozen_code/method_sources.json",
+      "sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "bytes": 3230
+    },
+    {
+      "path": "final_frozen_code/optimize_reference.py",
+      "sha256": "513d2b36733b1e579e2e5c225fdc316a28f7a6008cde98dbfea7078d3977b726",
+      "bytes": 11719
+    },
+    {
+      "path": "final_frozen_code/performance_map.py",
+      "sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "bytes": 8038
+    },
+    {
+      "path": "final_frozen_code/run_reference.py",
+      "sha256": "6666c86addfff1e2e70a63409f64ae0f58e472fb5d3f0253a79d0ba7d30b1cc8",
+      "bytes": 19683
+    },
+    {
+      "path": "final_frozen_code/test_heatpump_optimization.py",
+      "sha256": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+      "bytes": 4621
+    },
+    {
+      "path": "final_frozen_code/test_heatpump_reference.py",
+      "sha256": "cb5fcff256d6664ada2e192213bbb0a652b91390c5a2d5f278ab73fc222f1b42",
+      "bytes": 9522
+    },
+    {
+      "path": "final_frozen_code/test_native_lp_bound.py",
+      "sha256": "a56c8282b6cd84a83ecbc8967bceaf39d831d95b0178f9a43a1827817e6ac976",
+      "bytes": 2845
+    },
+    {
+      "path": "method_sources.json",
+      "sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "bytes": 3230
+    },
+    {
+      "path": "native_dual_tolerance_counterexample.json",
+      "sha256": "fdadc99c4eb19a66aedc19a1f1c09f144bcd42408e5ac12ed3b8324edd2f338f",
+      "bytes": 615
+    },
+    {
+      "path": "optimization_01/failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "bytes": 4
+    },
+    {
+      "path": "optimization_01/frozen_code/audit_optimization.py",
+      "sha256": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+      "bytes": 13361
+    },
+    {
+      "path": "optimization_01/frozen_code/audit_reference.py",
+      "sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "bytes": 12814
+    },
+    {
+      "path": "optimization_01/frozen_code/method_sources.json",
+      "sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "bytes": 3230
+    },
+    {
+      "path": "optimization_01/frozen_code/optimize_reference.py",
+      "sha256": "cfe576ce93b20fc28722debddf7aeaab12e8d5ca318ecae1bc650435f01838ca",
+      "bytes": 11635
+    },
+    {
+      "path": "optimization_01/frozen_code/performance_map.py",
+      "sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "bytes": 8038
+    },
+    {
+      "path": "optimization_01/frozen_code/run_reference.py",
+      "sha256": "b6a8dfbe846224c00b68b862da67acd366daf4a01abfb0968c10f1942840fa15",
+      "bytes": 18794
+    },
+    {
+      "path": "optimization_01/frozen_code/test_heatpump_optimization.py",
+      "sha256": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+      "bytes": 4621
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "82d74e26c317113f199efff6b2cdf7b05a2e84ee2b4323d4186d2291df8d5d49",
+      "bytes": 1333109
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV035BHE_n1/dual_certificate.json",
+      "sha256": "6f2810274c120efc7abb230c035401c2ce916db56d6e44d7cd1a54a2dd6af2b4",
+      "bytes": 463925
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV035BHE_n1/solver.json",
+      "sha256": "fdbdadfc9dbaa38093cf44000ac1fda2db064fdf3ccd21d222ace99fbd457111",
+      "bytes": 419
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV035BHE_n1/summary.json",
+      "sha256": "ba91da4167b303562dbfa1b8112da7e6b8c56707b7fd4f9292510c7d3630e003",
+      "bytes": 605
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "9c4893a64ad6f144a2e017052d7888f1dc3d4c8aee9e133dce6d26e7ddbcca27",
+      "bytes": 1327650
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV065BHE_n1/dual_certificate.json",
+      "sha256": "ef2d07616b8af8d92dddbcbd15a6f545dbbda38084464cdb91389bc6fe96ada2",
+      "bytes": 466611
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV065BHE_n1/solver.json",
+      "sha256": "17b03f8da3adc0e547e041a980a468a355940654d5ee53e23de45cfe8279aa3d",
+      "bytes": 421
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV065BHE_n1/summary.json",
+      "sha256": "2999690e4e8e2cf6fb8c38254e311305fb3a0a5ded3f760ed5a9cf33fbf98103",
+      "bytes": 607
+    },
+    {
+      "path": "optimization_01/independent_optimization_audit.json",
+      "sha256": "5b04f1f18ac804dc8bcbc67aee570405272056ce53b6011a9e9f3ece5f63b4b3",
+      "bytes": 6658
+    },
+    {
+      "path": "optimization_01/inputs/guyuan__TCAV035BHE_n1__thermostat_summary.json",
+      "sha256": "118c9194ca9b3a5b5646bd5ab287c4520671d534160e917c0f0c9338e7707634",
+      "bytes": 716
+    },
+    {
+      "path": "optimization_01/inputs/guyuan__TCAV065BHE_n1__thermostat_summary.json",
+      "sha256": "250905f22824b3013c5efde7b5a81b47d514091b8feb2fac51b46393131bf337",
+      "bytes": 702
+    },
+    {
+      "path": "optimization_01/inputs/guyuan_frozen_driver.csv",
+      "sha256": "7ee13a5709eca6db99b973929f73b4491e4af00559c6e92857c5d9f7282dd586",
+      "bytes": 687255
+    },
+    {
+      "path": "optimization_01/inputs/reference_admitted_heating_points.csv",
+      "sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+      "bytes": 63120
+    },
+    {
+      "path": "optimization_01/inputs/reference_independent_numeric_audit.json",
+      "sha256": "517a67003a0fee0d1ca40217d2e2f3ec965591a1ba7d687778c8682d5fc014df",
+      "bytes": 25669
+    },
+    {
+      "path": "optimization_01/inputs/reference_manifest.json",
+      "sha256": "041be79a5a9ce0cf3a3f69e22aea4f5899c0ff7525e9fb3186faa7aec9397a2e",
+      "bytes": 5138
+    },
+    {
+      "path": "optimization_01/inputs/reference_protocol.json",
+      "sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "bytes": 3503
+    },
+    {
+      "path": "optimization_01/inputs/urumqi__TCAV035BHE_n1__thermostat_summary.json",
+      "sha256": "37a72fcb44cb59d10087fd727aca437c5276f5ffedbdd4755c7a9d751daac04b",
+      "bytes": 715
+    },
+    {
+      "path": "optimization_01/inputs/urumqi__TCAV065BHE_n1__thermostat_summary.json",
+      "sha256": "6520f62eed75c8ad3ee59a9d99a627a201a6c25877aa511ab984a95251f8d91b",
+      "bytes": 683
+    },
+    {
+      "path": "optimization_01/inputs/urumqi_frozen_driver.csv",
+      "sha256": "e232ddfba38f6165eb059e9707cb677898cf236d061edf831b9d488012d94739",
+      "bytes": 686974
+    },
+    {
+      "path": "optimization_01/inputs/wuhan__TCAV035BHE_n1__thermostat_summary.json",
+      "sha256": "31363824ee4b356cacb44b23cbd24ed58b71887aeab3394b9b6d99dcaba48c4c",
+      "bytes": 718
+    },
+    {
+      "path": "optimization_01/inputs/wuhan__TCAV065BHE_n1__thermostat_summary.json",
+      "sha256": "bbb53503f5899b295e34c587df6e8ab7bd2fccbf1a728ac96df069a72a10ea0a",
+      "bytes": 702
+    },
+    {
+      "path": "optimization_01/inputs/wuhan_frozen_driver.csv",
+      "sha256": "2978aae59814dc79a79f523ad4c1395cf58ccfed5bfb744f1df86d8892d8a579",
+      "bytes": 691464
+    },
+    {
+      "path": "optimization_01/manifest.json",
+      "sha256": "0c6760eb061229294b00c6ea9c4bfd258254a9212a730b3890035de17ff00480",
+      "bytes": 5289
+    },
+    {
+      "path": "optimization_01/native_lp_bound_sidecar.json",
+      "sha256": "158c0da1456eef3fd75b74a9541e0fbe8b46e55172e3982a7bddaaeab26bc110",
+      "bytes": 8258
+    },
+    {
+      "path": "optimization_01/optimization_comparison.csv",
+      "sha256": "9d530eb31bb6f4981a0dda913654f70c37ba1f74f43f385bbcab47a17408dfd3",
+      "bytes": 2359
+    },
+    {
+      "path": "optimization_01/protocol.json",
+      "sha256": "cc1783fecff21ef77346ea867d157572f406603644a1ced3f84e7e44b52a534d",
+      "bytes": 4337
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "55008b0fb000e54d3cc14c419ea8691ee1942ad151b862570120fe7a7cf4ac9d",
+      "bytes": 1334274
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV035BHE_n1/dual_certificate.json",
+      "sha256": "80e55aa34b0f6d02280224b3244bfe256a4fd10b548134d7b4abeb726edce4e1",
+      "bytes": 463868
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV035BHE_n1/solver.json",
+      "sha256": "5f62e12de411d522994f68e4c3847fc4bc7ca06677eb04aba2cc4759eb31e2b1",
+      "bytes": 420
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV035BHE_n1/summary.json",
+      "sha256": "0ff267a6035265d46699b9bf1aea975cf679fe81adec18e985aef7d98d8b6087",
+      "bytes": 606
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "4a503e59b659e4f4e9f7ac86543abbde871aa77859b1d2f7cfd5fd249a95ecf3",
+      "bytes": 1327618
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV065BHE_n1/dual_certificate.json",
+      "sha256": "dfe175ffb82613895da39cc863539c101f96b8a156871fb3652c36bd1d48f157",
+      "bytes": 466977
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV065BHE_n1/solver.json",
+      "sha256": "f49dc02e7abcc133ab22177aa83cff1686e59c526e80c4c372f9aacd85776583",
+      "bytes": 422
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV065BHE_n1/summary.json",
+      "sha256": "7b2b78e3625164171386938e9149eb282abf3673d44de84b955d19a4db264647",
+      "bytes": 604
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "1bcf50f6c9a11662e2d7a9d02d3e78f78a70f50a9a808ec2f35f78ae0849208c",
+      "bytes": 1301389
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV035BHE_n1/dual_certificate.json",
+      "sha256": "fd84fa91db16e8748da7be79aff7cbadb020c9ed67ba02e4ecd4132f253afdf6",
+      "bytes": 467471
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV035BHE_n1/solver.json",
+      "sha256": "d5606b29c688c345ee6bfddc2d53552ae9763d22caeda980b5547c7c0f4223f7",
+      "bytes": 421
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV035BHE_n1/summary.json",
+      "sha256": "15d1039c87fd2d4e74482a9f2da545a2355e743728e8ab9b4e6371478d0f2f70",
+      "bytes": 630
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "b18ef70afb6d39b3b94287736bbf4ed4ca1b99618e5d6d3a216d3fedcdf896f4",
+      "bytes": 1297640
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV065BHE_n1/dual_certificate.json",
+      "sha256": "a982b033ab33101b53f6c1947d679c4c7b3f955458193230d0608825b9805216",
+      "bytes": 467713
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV065BHE_n1/solver.json",
+      "sha256": "ee0aa36aa9bd7f2245f141c33a063b266354f2cbe5211130a9c7958c2e258bb8",
+      "bytes": 421
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV065BHE_n1/summary.json",
+      "sha256": "9e563ae72ae20e3e1d480dfd23cf7fd1fb6389764077385171bb5a0daddb6d0f",
+      "bytes": 590
+    },
+    {
+      "path": "optimize_reference.py",
+      "sha256": "513d2b36733b1e579e2e5c225fdc316a28f7a6008cde98dbfea7078d3977b726",
+      "bytes": 11719
+    },
+    {
+      "path": "performance_map.py",
+      "sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "bytes": 8038
+    },
+    {
+      "path": "postfreeze_final_changes.json",
+      "sha256": "d8dadd338fdda6b8ab07c67595b87334f7889c29a12266e792374280a4260cf8",
+      "bytes": 2395
+    },
+    {
+      "path": "postfreeze_input_guard.json",
+      "sha256": "5056465bca9108c6b22b3d1cc77bc95494615da2f1ef2a8fe5e2ec1606b3e774",
+      "bytes": 1002
+    },
+    {
+      "path": "run_01/admitted_heating_points.csv",
+      "sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+      "bytes": 63120
+    },
+    {
+      "path": "run_01/failures.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "bytes": 4
+    },
+    {
+      "path": "run_01/frozen_code/audit_reference.py",
+      "sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "bytes": 12814
+    },
+    {
+      "path": "run_01/frozen_code/method_sources.json",
+      "sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "bytes": 3230
+    },
+    {
+      "path": "run_01/frozen_code/performance_map.py",
+      "sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "bytes": 8038
+    },
+    {
+      "path": "run_01/frozen_code/run_reference.py",
+      "sha256": "b6a8dfbe846224c00b68b862da67acd366daf4a01abfb0968c10f1942840fa15",
+      "bytes": 18794
+    },
+    {
+      "path": "run_01/frozen_code/test_heatpump_reference.py",
+      "sha256": "9e0405ebf5d38ad2ca35c8dae7660ce53e029877e49a29c261176edee25e7f0a",
+      "bytes": 7929
+    },
+    {
+      "path": "run_01/guyuan__resistance_only/dispatch.csv",
+      "sha256": "3e9a859979e1e35f65e24a759811a31218f0015342ae4b5698cb0c5f15d510d9",
+      "bytes": 913293
+    },
+    {
+      "path": "run_01/guyuan__resistance_only/summary.json",
+      "sha256": "8b35fbe63a8edf60d9b50388671bbeb3b4635b03601fd2190bc184bb2325b331",
+      "bytes": 683
+    },
+    {
+      "path": "run_01/guyuan__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "5bb8e3c836ee0320d60fa0dc49677af01d520844759b489f19cd981e818a0e46",
+      "bytes": 1348315
+    },
+    {
+      "path": "run_01/guyuan__TCAV035BHE_n1/summary.json",
+      "sha256": "118c9194ca9b3a5b5646bd5ab287c4520671d534160e917c0f0c9338e7707634",
+      "bytes": 716
+    },
+    {
+      "path": "run_01/guyuan__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "015e5a4ba85807157766453d32a244eb9b116bd49eba3e4eb32d8bfcc6930cf1",
+      "bytes": 1345236
+    },
+    {
+      "path": "run_01/guyuan__TCAV065BHE_n1/summary.json",
+      "sha256": "250905f22824b3013c5efde7b5a81b47d514091b8feb2fac51b46393131bf337",
+      "bytes": 702
+    },
+    {
+      "path": "run_01/guyuan_frozen_driver.csv",
+      "sha256": "7ee13a5709eca6db99b973929f73b4491e4af00559c6e92857c5d9f7282dd586",
+      "bytes": 687255
+    },
+    {
+      "path": "run_01/independent_numeric_audit.json",
+      "sha256": "517a67003a0fee0d1ca40217d2e2f3ec965591a1ba7d687778c8682d5fc014df",
+      "bytes": 25669
+    },
+    {
+      "path": "run_01/input_bundle/guyuan_hourly.csv",
+      "sha256": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+      "bytes": 643130
+    },
+    {
+      "path": "run_01/input_bundle/monthly_tariff_verified.csv",
+      "sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "bytes": 1723
+    },
+    {
+      "path": "run_01/input_bundle/physical_reference.json",
+      "sha256": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+      "bytes": 2874
+    },
+    {
+      "path": "run_01/input_bundle/tariff_account_and_hours.json",
+      "sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "bytes": 3143
+    },
+    {
+      "path": "run_01/input_bundle/tariff_admission.json",
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "bytes": 15146
+    },
+    {
+      "path": "run_01/input_bundle/tica_24p_catalogue.pdf",
+      "sha256": "5be3093936a6ec3bb7104372395f8f5c6b375563e40ded024331b0f77e3854a0",
+      "bytes": 3105128
+    },
+    {
+      "path": "run_01/input_bundle/urumqi_hourly.csv",
+      "sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+      "bytes": 642999
+    },
+    {
+      "path": "run_01/input_bundle/user_heatpump_extraction_original.csv",
+      "sha256": "2e9a49b6c7f2ee9c445431e5657f913e5401b76d36e46faf51696dd883102778",
+      "bytes": 1769311
+    },
+    {
+      "path": "run_01/input_bundle/weather_manifest.json",
+      "sha256": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279",
+      "bytes": 5564
+    },
+    {
+      "path": "run_01/input_bundle/weather_protocol.json",
+      "sha256": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7",
+      "bytes": 6120
+    },
+    {
+      "path": "run_01/input_bundle/weather_provenance.csv",
+      "sha256": "813abbf6a7504bd3aadb6cd8cf08983ffbb7068f0f6a334fce450810a38ba223",
+      "bytes": 24643
+    },
+    {
+      "path": "run_01/input_bundle/wuhan_hourly.csv",
+      "sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+      "bytes": 635999
+    },
+    {
+      "path": "run_01/input_bundle/wuhan_tou_hourly.csv",
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "bytes": 503515
+    },
+    {
+      "path": "run_01/manifest.json",
+      "sha256": "041be79a5a9ce0cf3a3f69e22aea4f5899c0ff7525e9fb3186faa7aec9397a2e",
+      "bytes": 5138
+    },
+    {
+      "path": "run_01/operating_comparison.csv",
+      "sha256": "253e13f73444e80da11bf41f91d3a5bb56c737fdf73003c7faee6b197e3fc840",
+      "bytes": 2484
+    },
+    {
+      "path": "run_01/original_input_paths.json",
+      "sha256": "d163a17ffa858c63aa1a60157ac3544be89bc962935df7f968b1bed3259d3077",
+      "bytes": 2535
+    },
+    {
+      "path": "run_01/pdf_csv_point_check.csv",
+      "sha256": "f870a2fed1eeb7883eecd5f967fa947f2007f0de9efb18ec9d72be8d34b9c69d",
+      "bytes": 7643
+    },
+    {
+      "path": "run_01/protocol.json",
+      "sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "bytes": 3503
+    },
+    {
+      "path": "run_01/source_admission.json",
+      "sha256": "18938c7b53cdd7c406d699406c72b73f667c22d0d10da5d021fbeaf7cd98b910",
+      "bytes": 3099
+    },
+    {
+      "path": "run_01/urumqi__resistance_only/dispatch.csv",
+      "sha256": "98d31cfdeb7133fc080b651886fab64171584692377fcefa258db4438b6c301c",
+      "bytes": 914076
+    },
+    {
+      "path": "run_01/urumqi__resistance_only/summary.json",
+      "sha256": "f10d54bc5a2c85483d5fb653ed3631b33877e2373d1d3f6b723508ce8c20f441",
+      "bytes": 662
+    },
+    {
+      "path": "run_01/urumqi__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "e171a7f8e56c25689daad407a6d72b815bfd1a22bb67b7fd237b3c34b83ca87c",
+      "bytes": 1349610
+    },
+    {
+      "path": "run_01/urumqi__TCAV035BHE_n1/summary.json",
+      "sha256": "37a72fcb44cb59d10087fd727aca437c5276f5ffedbdd4755c7a9d751daac04b",
+      "bytes": 715
+    },
+    {
+      "path": "run_01/urumqi__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "46cf0090d02e10209200f585a83806efb47473f2ff1482cc735d6ae7eeeb2274",
+      "bytes": 1343464
+    },
+    {
+      "path": "run_01/urumqi__TCAV065BHE_n1/summary.json",
+      "sha256": "6520f62eed75c8ad3ee59a9d99a627a201a6c25877aa511ab984a95251f8d91b",
+      "bytes": 683
+    },
+    {
+      "path": "run_01/urumqi_frozen_driver.csv",
+      "sha256": "e232ddfba38f6165eb059e9707cb677898cf236d061edf831b9d488012d94739",
+      "bytes": 686974
+    },
+    {
+      "path": "run_01/wuhan__resistance_only/dispatch.csv",
+      "sha256": "d8ea836d95abb512908b15346fdc308a111c9a6c28207ae4d783fad1f93d3007",
+      "bytes": 902062
+    },
+    {
+      "path": "run_01/wuhan__resistance_only/summary.json",
+      "sha256": "547784e5c83c8e1e66514fa4eaeb68b610f97d6f75613420a4ca74b654803e17",
+      "bytes": 695
+    },
+    {
+      "path": "run_01/wuhan__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "dcc3a1cd10eb7799ca1fbc898afc2a3bf04866628dc43d061f1e93d6764dee1f",
+      "bytes": 1332258
+    },
+    {
+      "path": "run_01/wuhan__TCAV035BHE_n1/summary.json",
+      "sha256": "31363824ee4b356cacb44b23cbd24ed58b71887aeab3394b9b6d99dcaba48c4c",
+      "bytes": 718
+    },
+    {
+      "path": "run_01/wuhan__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "dcc40754099338bb195c0746ceac5c15854b14f3e5a635f3eb0d8552f12c5bb4",
+      "bytes": 1341334
+    },
+    {
+      "path": "run_01/wuhan__TCAV065BHE_n1/summary.json",
+      "sha256": "bbb53503f5899b295e34c587df6e8ab7bd2fccbf1a728ac96df069a72a10ea0a",
+      "bytes": 702
+    },
+    {
+      "path": "run_01/wuhan_frozen_driver.csv",
+      "sha256": "2978aae59814dc79a79f523ad4c1395cf58ccfed5bfb744f1df86d8892d8a579",
+      "bytes": 691464
+    },
+    {
+      "path": "RUN_INSTRUCTIONS.txt",
+      "sha256": "f124e56ddd02a6872c62b528e7e8b253505a13af11d4adebc9d8e55e6774c6f4",
+      "bytes": 3704
+    },
+    {
+      "path": "run_reference.py",
+      "sha256": "6666c86addfff1e2e70a63409f64ae0f58e472fb5d3f0253a79d0ba7d30b1cc8",
+      "bytes": 19683
+    },
+    {
+      "path": "source_views/24p_page_14.png",
+      "sha256": "0641ad8554a126e76e9c63b1316be189fe7f8ec34976156ba7ea6759b3227f2b",
+      "bytes": 133764
+    },
+    {
+      "path": "source_views/24p_page_15.png",
+      "sha256": "e86dbb2f6c0a525dc3b46ed1d029faa6751ee66e7825b0df905c39eb38f9f992",
+      "bytes": 117257
+    },
+    {
+      "path": "test_heatpump_optimization.py",
+      "sha256": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+      "bytes": 4621
+    },
+    {
+      "path": "test_heatpump_reference.py",
+      "sha256": "cb5fcff256d6664ada2e192213bbb0a652b91390c5a2d5f278ab73fc222f1b42",
+      "bytes": 9522
+    },
+    {
+      "path": "test_native_lp_bound.py",
+      "sha256": "a56c8282b6cd84a83ecbc8967bceaf39d831d95b0178f9a43a1827817e6ac976",
+      "bytes": 2845
+    },
+    {
+      "path": "test_results.json",
+      "sha256": "fc835a21344739a1bbbfde6a59abb10efcba502a305a4d0eca111278c7252275",
+      "bytes": 1585
+    }
+  ],
+  "files_count_excluding_handoff": 126,
+  "total_bytes_excluding_handoff": 33822852,
+  "tests": {
+    "prior_full_suite_passed": 65,
+    "prior_full_suite_failed": 0,
+    "prior_full_suite_skipped": 0,
+    "final_delta_executions_passed": 11,
+    "final_delta_failed": 0,
+    "final_delta_skipped": 0,
+    "reports": [
+      "test_results.json",
+      "final_delta_test_results.json"
+    ],
+    "final_expected_full_suite_count": 72,
+    "final_full_suite_repeated_here": false,
+    "publisher_clean_environment_full_suite_pending": true,
+    "full_repository_suite_run": false
+  },
+  "source_admission": {
+    "official_model_names": [
+      "TCAV035BHE",
+      "TCAV065BHE"
+    ],
+    "point_counts": [
+      83,
+      82
+    ],
+    "total_complete_q_p_cells": 165,
+    "all_pdf_csv_exact_match": true,
+    "cop": "derived Q/P, not new measurements",
+    "original_user_csv_not_modified": true,
+    "earlier_concatenated_model_point_count_reading_corrected": true,
+    "source_report": "run_01/source_admission.json",
+    "methods": "method_sources.json",
+    "manufacturer_endpoint_table_verified": false
+  },
+  "reference": {
+    "cases": 9,
+    "hours_per_case": 2880,
+    "total_case_hours": 25920,
+    "failures": 0,
+    "independent_numeric_audit_passed": true,
+    "audit": "run_01/independent_numeric_audit.json",
+    "results": "run_01/operating_comparison.csv",
+    "scope": "finite-assets HP-first deadband thermostat operating reference, not optimizer"
+  },
+  "optimization": {
+    "cases": 6,
+    "hours_per_case": 2880,
+    "total_case_hours": 17280,
+    "failures": 0,
+    "independent_primal_dual_audit_passed": true,
+    "audit": "optimization_01/independent_optimization_audit.json",
+    "results": "optimization_01/optimization_comparison.csv",
+    "scope": "fixed1 whole module,90kW resistance,80kW separate cooler,100kW grid; same20..27C/initial-terminal20C; perfect-foresight electricity energy-charge LP, no capital optimization",
+    "max_abs_primal_dual_gap_cny": 5.093170329928398e-11,
+    "max_rc_residual_c": 7.105427357601002e-15,
+    "bound_scope": "Legacy saved dual columns are numeric estimates only.Native_lp_bound_sidecar.json gives exact-rational finite-box weak-dual bound for encoded binary64 energy-charge LP only;incumbent remains tolerance-feasible/optimal",
+    "strict_native_bound_sidecar": "optimization_01/native_lp_bound_sidecar.json",
+    "strict_native_bound_cases": 6,
+    "max_numeric_incumbent_minus_strict_bound_abs_cny": 2.1827872842550278e-11,
+    "strict_bound_numbers": {
+      "urumqi__TCAV035BHE_n1": {
+        "strict_encoded_binary64_lp_lower_bound_cny": 59375.6179547081,
+        "legacy_dual_value_numeric_estimate_cny": 59375.61795470806
+      },
+      "urumqi__TCAV065BHE_n1": {
+        "strict_encoded_binary64_lp_lower_bound_cny": 42313.3374621109,
+        "legacy_dual_value_numeric_estimate_cny": 42313.337462110925
+      },
+      "guyuan__TCAV035BHE_n1": {
+        "strict_encoded_binary64_lp_lower_bound_cny": 61605.21207752148,
+        "legacy_dual_value_numeric_estimate_cny": 61605.21207752145
+      },
+      "guyuan__TCAV065BHE_n1": {
+        "strict_encoded_binary64_lp_lower_bound_cny": 44165.89122074755,
+        "legacy_dual_value_numeric_estimate_cny": 44165.891220747595
+      },
+      "wuhan__TCAV035BHE_n1": {
+        "strict_encoded_binary64_lp_lower_bound_cny": 15210.848179166665,
+        "legacy_dual_value_numeric_estimate_cny": 15210.848179166675
+      },
+      "wuhan__TCAV065BHE_n1": {
+        "strict_encoded_binary64_lp_lower_bound_cny": 14651.9896880446,
+        "legacy_dual_value_numeric_estimate_cny": 14651.9896880446
+      }
+    }
+  },
+  "weather_coverage": [
+    {
+      "city": "urumqi",
+      "hours": 2880,
+      "outdoor_min_c": -16.3,
+      "outdoor_max_c": 16.01,
+      "catalogue_45c_accepted_hours": 2880,
+      "rejected_hours": 0,
+      "relative_humidity_used_for_correction": false
+    },
+    {
+      "city": "guyuan",
+      "hours": 2880,
+      "outdoor_min_c": -19.25,
+      "outdoor_max_c": 15.81,
+      "catalogue_45c_accepted_hours": 2880,
+      "rejected_hours": 0,
+      "relative_humidity_used_for_correction": false
+    },
+    {
+      "city": "wuhan",
+      "hours": 2880,
+      "outdoor_min_c": -4.85,
+      "outdoor_max_c": 26.55,
+      "catalogue_45c_accepted_hours": 2880,
+      "rejected_hours": 0,
+      "relative_humidity_used_for_correction": false
+    }
+  ],
+  "optimization_numbers": [
+    {
+      "status": "optimal_fixed_asset_LP",
+      "model": "TCAV035BHE",
+      "units": 1,
+      "hours": 2880,
+      "electricity_kwh": 79659.35379183774,
+      "energy_charge_cny": 59375.61795470811,
+      "carbon_proxy_kg": 32214.242673419183,
+      "hp_heat_kwh": 85553.95551517302,
+      "resistance_heat_kwh": 46261.08689938798,
+      "cooling_kwh": 0.0,
+      "min_temperature_c": 20.0,
+      "max_temperature_c": 25.95476133332816,
+      "terminal_c": 20.0,
+      "max_resistance_heat_kw": 88.1588,
+      "max_cooling_kw": 0.0,
+      "max_grid_power_kw": 100.0,
+      "grid_rejected_hours": 0,
+      "city": "urumqi",
+      "case_id": "TCAV035BHE_n1",
+      "thermostat_energy_charge_cny": 60174.36808187286,
+      "optimized_energy_charge_saving_cny": 798.7501271647488,
+      "optimized_energy_charge_saving_pct": 1.3273926301610257,
+      "optimized_electricity_change_kwh": 1398.7985179688983,
+      "optimized_carbon_proxy_change_kg": 565.6741206666265,
+      "energy_charge_dual_lower_bound_cny": 59375.61795470806
+    },
+    {
+      "status": "optimal_fixed_asset_LP",
+      "model": "TCAV065BHE",
+      "units": 1,
+      "hours": 2880,
+      "electricity_kwh": 56422.53836040445,
+      "energy_charge_cny": 42313.33746211091,
+      "carbon_proxy_kg": 22817.27451294756,
+      "hp_heat_kwh": 126636.05613711177,
+      "resistance_heat_kwh": 5426.555374127,
+      "cooling_kwh": 0.0,
+      "min_temperature_c": 20.0,
+      "max_temperature_c": 25.83665243747116,
+      "terminal_c": 20.0,
+      "max_resistance_heat_kw": 78.2544,
+      "max_cooling_kw": 0.0,
+      "max_grid_power_kw": 100.0,
+      "grid_rejected_hours": 0,
+      "city": "urumqi",
+      "case_id": "TCAV065BHE_n1",
+      "thermostat_energy_charge_cny": 42787.77748749991,
+      "optimized_energy_charge_saving_cny": 474.4400253889981,
+      "optimized_energy_charge_saving_pct": 1.108821381357332,
+      "optimized_electricity_change_kwh": 753.5149467537631,
+      "optimized_carbon_proxy_change_kg": 304.72144446722086,
+      "energy_charge_dual_lower_bound_cny": 42313.337462110925
+    },
+    {
+      "status": "optimal_fixed_asset_LP",
+      "model": "TCAV035BHE",
+      "units": 1,
+      "hours": 2880,
+      "electricity_kwh": 83685.0122968043,
+      "energy_charge_cny": 61605.212077521486,
+      "carbon_proxy_kg": 33842.21897282766,
+      "hp_heat_kwh": 84765.8247240343,
+      "resistance_heat_kwh": 50227.42215258816,
+      "cooling_kwh": 0.0,
+      "min_temperature_c": 20.0,
+      "max_temperature_c": 26.32831178842636,
+      "terminal_c": 20.0,
+      "max_resistance_heat_kw": 88.3082,
+      "max_cooling_kw": 0.0,
+      "max_grid_power_kw": 100.0,
+      "grid_rejected_hours": 0,
+      "city": "guyuan",
+      "case_id": "TCAV035BHE_n1",
+      "thermostat_energy_charge_cny": 62513.27396723845,
+      "optimized_energy_charge_saving_cny": 908.0618897169624,
+      "optimized_energy_charge_saving_pct": 1.4525905173241345,
+      "optimized_electricity_change_kwh": 1548.6390973840316,
+      "optimized_carbon_proxy_change_kg": 626.2696509820962,
+      "energy_charge_dual_lower_bound_cny": 61605.21207752145
+    },
+    {
+      "status": "optimal_fixed_asset_LP",
+      "model": "TCAV065BHE",
+      "units": 1,
+      "hours": 2880,
+      "electricity_kwh": 59748.50285224787,
+      "energy_charge_cny": 44165.891220747566,
+      "carbon_proxy_kg": 24162.294553449035,
+      "hp_heat_kwh": 126963.5973234409,
+      "resistance_heat_kwh": 8024.99131241026,
+      "cooling_kwh": 0.0,
+      "min_temperature_c": 20.0,
+      "max_temperature_c": 25.88714980886941,
+      "terminal_c": 20.0,
+      "max_resistance_heat_kw": 78.3972,
+      "max_cooling_kw": 0.0,
+      "max_grid_power_kw": 100.0,
+      "grid_rejected_hours": 0,
+      "city": "guyuan",
+      "case_id": "TCAV065BHE_n1",
+      "thermostat_energy_charge_cny": 44657.69395344935,
+      "optimized_energy_charge_saving_cny": 491.8027327017844,
+      "optimized_energy_charge_saving_pct": 1.1012721194570274,
+      "optimized_electricity_change_kwh": 874.834970427517,
+      "optimized_carbon_proxy_change_kg": 353.7832620408881,
+      "energy_charge_dual_lower_bound_cny": 44165.8912207476
+    },
+    {
+      "status": "optimal_fixed_asset_LP",
+      "model": "TCAV035BHE",
+      "units": 1,
+      "hours": 2880,
+      "electricity_kwh": 20948.64174861545,
+      "energy_charge_cny": 15210.848179166667,
+      "carbon_proxy_kg": 8471.630723140088,
+      "hp_heat_kwh": 60295.85408107437,
+      "resistance_heat_kwh": 1854.775564874044,
+      "cooling_kwh": 0.0,
+      "min_temperature_c": 20.0,
+      "max_temperature_c": 26.025186877937152,
+      "terminal_c": 20.0,
+      "max_resistance_heat_kw": 52.432291741030575,
+      "max_cooling_kw": 0.0,
+      "max_grid_power_kw": 64.34289174103057,
+      "grid_rejected_hours": 0,
+      "city": "wuhan",
+      "case_id": "TCAV035BHE_n1",
+      "thermostat_energy_charge_cny": 15384.194087000982,
+      "optimized_energy_charge_saving_cny": 173.34590783431486,
+      "optimized_energy_charge_saving_pct": 1.1267792570348882,
+      "optimized_electricity_change_kwh": 364.9255718273271,
+      "optimized_carbon_proxy_change_kg": 147.57590124697344,
+      "energy_charge_dual_lower_bound_cny": 15210.848179166676
+    },
+    {
+      "status": "optimal_fixed_asset_LP",
+      "model": "TCAV065BHE",
+      "units": 1,
+      "hours": 2880,
+      "electricity_kwh": 20493.53823286424,
+      "energy_charge_cny": 14651.989688044603,
+      "carbon_proxy_kg": 8287.586861370297,
+      "hp_heat_kwh": 63244.279866130106,
+      "resistance_heat_kwh": 0.0,
+      "cooling_kwh": 0.0,
+      "min_temperature_c": 20.0,
+      "max_temperature_c": 26.06644785661312,
+      "terminal_c": 20.0,
+      "max_resistance_heat_kw": 0.0,
+      "max_cooling_kw": 0.0,
+      "max_grid_power_kw": 23.797,
+      "grid_rejected_hours": 0,
+      "city": "wuhan",
+      "case_id": "TCAV065BHE_n1",
+      "thermostat_energy_charge_cny": 14889.784152729557,
+      "optimized_energy_charge_saving_cny": 237.7944646849537,
+      "optimized_energy_charge_saving_pct": 1.597030972684462,
+      "optimized_electricity_change_kwh": 728.992191524274,
+      "optimized_carbon_proxy_change_kg": 294.80444225241627,
+      "energy_charge_dual_lower_bound_cny": 14651.9896880446
+    }
+  ],
+  "allowed_claims": [
+    "精确厂家样本副本的同型号Q/P性能映射已与原表165格逐格核验，COP为Q/P派生",
+    "9个连续2880h恒温器参考与6个固定设备运行费用LP完成独立账本/RC/容量审计，LP对偶证书通过",
+    "共同条件价格轴下固定同资产LP相对恒温器电量费用降低1.10%至1.60%，同时用电和共同因子碳量增加",
+    "新增有理数有限盒证书提供已编码binary64运行费用LP的弱对偶下界，保留旧数值估计；原解仍仅数值容差可行/最优"
+  ],
+  "forbidden_claims": [
+    "原CSV型号错误",
+    "厂家端点已证实本次相同版本",
+    "实测COP/化霜/部分负荷/实际节费率",
+    "20栋真实住宅",
+    "任何城市账户资格已核验",
+    "给TICA套用17800元FT8价格",
+    "资本或投资最优/回收期",
+    "同步节电减碳",
+    "费用solverbound也证明碳最优",
+    "整个仓库全部测试通过或正式发布",
+    "旧legacy数值对偶估计本身是严格数学下界",
+    "有严格下界即说明incumbent严格可行/exact最优/全局词典序最优",
+    "本环境已经单次跑完最终72项全部测试"
+  ],
+  "limitations": [
+    "exact third-party-distributed catalogue copy, revision date not established",
+    "expanded grid humidity/wet-bulb/defrost/part-load unspecified",
+    "ideal hourly duty, ideal delivered capacity;pipe/pump/cycling/standby losses not calibrated",
+    "synthetic20-copy public prototype/H/C approximation, not field building",
+    "NASA POWER gridded weather, not site measurements",
+    "common published conditional Hubei tariff/factor, account eligibility and other-city local price/factor not verified",
+    "perfect foresight LP;energy-only expense excluding basic/demand charges,capital/maintenance/tax changes",
+    "no new PPT or PDF authored;existing sourcePDF copied only"
+  ],
+  "postfreeze_guard": "postfreeze_input_guard.json",
+  "no_existing_core_or_old_investment_runner_modified": true,
+  "no_upload_or_git_tag_performed": true,
+  "frozen_utc": "2026-10-02T14:57:27.284103+00:00",
+  "component_frozen": true,
+  "final_code_sha256": {
+    "performance_map.py": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+    "run_reference.py": "6666c86addfff1e2e70a63409f64ae0f58e472fb5d3f0253a79d0ba7d30b1cc8",
+    "audit_reference.py": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+    "test_heatpump_reference.py": "cb5fcff256d6664ada2e192213bbb0a652b91390c5a2d5f278ab73fc222f1b42",
+    "optimize_reference.py": "513d2b36733b1e579e2e5c225fdc316a28f7a6008cde98dbfea7078d3977b726",
+    "audit_optimization.py": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+    "test_heatpump_optimization.py": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+    "certify_native_lp_bound.py": "87b9708e0f48ef475280f6b73ab020631c83e1c33833e3e790653608eac95139",
+    "test_native_lp_bound.py": "a56c8282b6cd84a83ecbc8967bceaf39d831d95b0178f9a43a1827817e6ac976",
+    "method_sources.json": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734"
+  },
+  "postfreeze_changes": "postfreeze_final_changes.json",
+  "final_code_snapshot": "final_frozen_code",
+  "counterexample": "native_dual_tolerance_counterexample.json",
+  "portable_reproduce_commands": [
+    "python -B run_reference.py --source-dir run_01/input_bundle --out reproduce_reference_01",
+    "python -B audit_reference.py reproduce_reference_01",
+    "python -B optimize_reference.py --reference reproduce_reference_01 --out reproduce_optimization_01",
+    "python -B audit_optimization.py reproduce_optimization_01 --reference reproduce_reference_01",
+    "python -B certify_native_lp_bound.py reproduce_optimization_01"
+  ]
+}

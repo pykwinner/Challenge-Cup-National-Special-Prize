@@ -1,0 +1,147 @@
+{
+  "schema": "root.readonly_rc6_candidate_check.v1",
+  "checked_utc": "2026-10-02T15:12:35.850949+00:00",
+  "candidate": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+  "actual_distinct_testcases": 252,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "test_evidence": [
+    {
+      "file": "root_tests.xml",
+      "sha256": "5d682323d237be0aa608f1120fc834997260d4c99e6147222c3bdbc41b0553bc",
+      "testcase_count": 180
+    },
+    {
+      "file": "heatpump_pytest_root.xml",
+      "sha256": "03ece8d463af386c3982294a38aa7542e56fd35b720f33fa3eb9857c58848386",
+      "testcase_count": 72
+    }
+  ],
+  "frozen_source_count": 482,
+  "frozen_source_mismatches": [],
+  "heatpump_identical_new_dispatch_and_summary_count": 30,
+  "heatpump_checks": [
+    {
+      "path": "reference_01/guyuan__resistance_only/dispatch.csv",
+      "sha256": "3e9a859979e1e35f65e24a759811a31218f0015342ae4b5698cb0c5f15d510d9"
+    },
+    {
+      "path": "reference_01/guyuan__resistance_only/summary.json",
+      "sha256": "8b35fbe63a8edf60d9b50388671bbeb3b4635b03601fd2190bc184bb2325b331"
+    },
+    {
+      "path": "reference_01/guyuan__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "5bb8e3c836ee0320d60fa0dc49677af01d520844759b489f19cd981e818a0e46"
+    },
+    {
+      "path": "reference_01/guyuan__TCAV035BHE_n1/summary.json",
+      "sha256": "118c9194ca9b3a5b5646bd5ab287c4520671d534160e917c0f0c9338e7707634"
+    },
+    {
+      "path": "reference_01/guyuan__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "015e5a4ba85807157766453d32a244eb9b116bd49eba3e4eb32d8bfcc6930cf1"
+    },
+    {
+      "path": "reference_01/guyuan__TCAV065BHE_n1/summary.json",
+      "sha256": "250905f22824b3013c5efde7b5a81b47d514091b8feb2fac51b46393131bf337"
+    },
+    {
+      "path": "reference_01/urumqi__resistance_only/dispatch.csv",
+      "sha256": "98d31cfdeb7133fc080b651886fab64171584692377fcefa258db4438b6c301c"
+    },
+    {
+      "path": "reference_01/urumqi__resistance_only/summary.json",
+      "sha256": "f10d54bc5a2c85483d5fb653ed3631b33877e2373d1d3f6b723508ce8c20f441"
+    },
+    {
+      "path": "reference_01/urumqi__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "e171a7f8e56c25689daad407a6d72b815bfd1a22bb67b7fd237b3c34b83ca87c"
+    },
+    {
+      "path": "reference_01/urumqi__TCAV035BHE_n1/summary.json",
+      "sha256": "37a72fcb44cb59d10087fd727aca437c5276f5ffedbdd4755c7a9d751daac04b"
+    },
+    {
+      "path": "reference_01/urumqi__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "46cf0090d02e10209200f585a83806efb47473f2ff1482cc735d6ae7eeeb2274"
+    },
+    {
+      "path": "reference_01/urumqi__TCAV065BHE_n1/summary.json",
+      "sha256": "6520f62eed75c8ad3ee59a9d99a627a201a6c25877aa511ab984a95251f8d91b"
+    },
+    {
+      "path": "reference_01/wuhan__resistance_only/dispatch.csv",
+      "sha256": "d8ea836d95abb512908b15346fdc308a111c9a6c28207ae4d783fad1f93d3007"
+    },
+    {
+      "path": "reference_01/wuhan__resistance_only/summary.json",
+      "sha256": "547784e5c83c8e1e66514fa4eaeb68b610f97d6f75613420a4ca74b654803e17"
+    },
+    {
+      "path": "reference_01/wuhan__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "dcc3a1cd10eb7799ca1fbc898afc2a3bf04866628dc43d061f1e93d6764dee1f"
+    },
+    {
+      "path": "reference_01/wuhan__TCAV035BHE_n1/summary.json",
+      "sha256": "31363824ee4b356cacb44b23cbd24ed58b71887aeab3394b9b6d99dcaba48c4c"
+    },
+    {
+      "path": "reference_01/wuhan__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "dcc40754099338bb195c0746ceac5c15854b14f3e5a635f3eb0d8552f12c5bb4"
+    },
+    {
+      "path": "reference_01/wuhan__TCAV065BHE_n1/summary.json",
+      "sha256": "bbb53503f5899b295e34c587df6e8ab7bd2fccbf1a728ac96df069a72a10ea0a"
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "82d74e26c317113f199efff6b2cdf7b05a2e84ee2b4323d4186d2291df8d5d49"
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV035BHE_n1/summary.json",
+      "sha256": "ba91da4167b303562dbfa1b8112da7e6b8c56707b7fd4f9292510c7d3630e003"
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "9c4893a64ad6f144a2e017052d7888f1dc3d4c8aee9e133dce6d26e7ddbcca27"
+    },
+    {
+      "path": "optimization_01/guyuan__TCAV065BHE_n1/summary.json",
+      "sha256": "2999690e4e8e2cf6fb8c38254e311305fb3a0a5ded3f760ed5a9cf33fbf98103"
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "55008b0fb000e54d3cc14c419ea8691ee1942ad151b862570120fe7a7cf4ac9d"
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV035BHE_n1/summary.json",
+      "sha256": "0ff267a6035265d46699b9bf1aea975cf679fe81adec18e985aef7d98d8b6087"
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "4a503e59b659e4f4e9f7ac86543abbde871aa77859b1d2f7cfd5fd249a95ecf3"
+    },
+    {
+      "path": "optimization_01/urumqi__TCAV065BHE_n1/summary.json",
+      "sha256": "7b2b78e3625164171386938e9149eb282abf3673d44de84b955d19a4db264647"
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV035BHE_n1/dispatch.csv",
+      "sha256": "1bcf50f6c9a11662e2d7a9d02d3e78f78a70f50a9a808ec2f35f78ae0849208c"
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV035BHE_n1/summary.json",
+      "sha256": "15d1039c87fd2d4e74482a9f2da545a2355e743728e8ab9b4e6371478d0f2f70"
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV065BHE_n1/dispatch.csv",
+      "sha256": "b18ef70afb6d39b3b94287736bbf4ed4ca1b99618e5d6d3a216d3fedcdf896f4"
+    },
+    {
+      "path": "optimization_01/wuhan__TCAV065BHE_n1/summary.json",
+      "sha256": "9e563ae72ae20e3e1d480dfd23cf7fd1fb6389764077385171bb5a0daddb6d0f"
+    }
+  ],
+  "scope": "Read-only verification, no repeated solves or tests. This check does not confirm final publication or other pending audits."
+}

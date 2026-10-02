@@ -1,0 +1,3835 @@
+{
+  "schema": "rc6_multiscale_source_identity.v1",
+  "stage": "after_comparison",
+  "recorded_utc": "2026-10-02T15:14:31.759355+00:00",
+  "candidate": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6",
+  "source_freeze_path": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc6\\docs\\final_optimization_20261002\\SOURCE_FREEZE.json",
+  "source_freeze_sha256": "28825f3162a6a326ce53906f6d7918c67f5ac7974fdabd152813443c74873621",
+  "frozen_entries_count": 482,
+  "frozen_entries": [
+    {
+      "path": "docs/final_optimization_20261002/heatpump/audit_optimization.py",
+      "expected_sha256": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+      "actual_sha256": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/audit_reference.py",
+      "expected_sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "actual_sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/certify_native_lp_bound.py",
+      "expected_sha256": "87b9708e0f48ef475280f6b73ab020631c83e1c33833e3e790653608eac95139",
+      "actual_sha256": "87b9708e0f48ef475280f6b73ab020631c83e1c33833e3e790653608eac95139",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_delta_test_results.json",
+      "expected_sha256": "5e65e2a9a1317f82e700b3155c5d4408df014e35c136ded1fc4571cd7a8a32ce",
+      "actual_sha256": "5e65e2a9a1317f82e700b3155c5d4408df014e35c136ded1fc4571cd7a8a32ce",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/audit_optimization.py",
+      "expected_sha256": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+      "actual_sha256": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/audit_reference.py",
+      "expected_sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "actual_sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/certify_native_lp_bound.py",
+      "expected_sha256": "87b9708e0f48ef475280f6b73ab020631c83e1c33833e3e790653608eac95139",
+      "actual_sha256": "87b9708e0f48ef475280f6b73ab020631c83e1c33833e3e790653608eac95139",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/method_sources.json",
+      "expected_sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "actual_sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/optimize_reference.py",
+      "expected_sha256": "513d2b36733b1e579e2e5c225fdc316a28f7a6008cde98dbfea7078d3977b726",
+      "actual_sha256": "513d2b36733b1e579e2e5c225fdc316a28f7a6008cde98dbfea7078d3977b726",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/performance_map.py",
+      "expected_sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "actual_sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/run_reference.py",
+      "expected_sha256": "6666c86addfff1e2e70a63409f64ae0f58e472fb5d3f0253a79d0ba7d30b1cc8",
+      "actual_sha256": "6666c86addfff1e2e70a63409f64ae0f58e472fb5d3f0253a79d0ba7d30b1cc8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/test_heatpump_optimization.py",
+      "expected_sha256": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+      "actual_sha256": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/test_heatpump_reference.py",
+      "expected_sha256": "cb5fcff256d6664ada2e192213bbb0a652b91390c5a2d5f278ab73fc222f1b42",
+      "actual_sha256": "cb5fcff256d6664ada2e192213bbb0a652b91390c5a2d5f278ab73fc222f1b42",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/final_frozen_code/test_native_lp_bound.py",
+      "expected_sha256": "a56c8282b6cd84a83ecbc8967bceaf39d831d95b0178f9a43a1827817e6ac976",
+      "actual_sha256": "a56c8282b6cd84a83ecbc8967bceaf39d831d95b0178f9a43a1827817e6ac976",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/HANDOFF.json",
+      "expected_sha256": "521e68667d481041ecf7c3ef6651a6cfe4065f6dd8b8aac56f677d2603890b56",
+      "actual_sha256": "521e68667d481041ecf7c3ef6651a6cfe4065f6dd8b8aac56f677d2603890b56",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/method_sources.json",
+      "expected_sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "actual_sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/native_dual_tolerance_counterexample.json",
+      "expected_sha256": "fdadc99c4eb19a66aedc19a1f1c09f144bcd42408e5ac12ed3b8324edd2f338f",
+      "actual_sha256": "fdadc99c4eb19a66aedc19a1f1c09f144bcd42408e5ac12ed3b8324edd2f338f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/failures.json",
+      "expected_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "actual_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/frozen_code/audit_optimization.py",
+      "expected_sha256": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+      "actual_sha256": "89e309e9b74d6b6569ecd32f330dbb0ffc134eb1ad7f3c1a42fc631db2c3ecdc",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/frozen_code/audit_reference.py",
+      "expected_sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "actual_sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/frozen_code/method_sources.json",
+      "expected_sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "actual_sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/frozen_code/optimize_reference.py",
+      "expected_sha256": "cfe576ce93b20fc28722debddf7aeaab12e8d5ca318ecae1bc650435f01838ca",
+      "actual_sha256": "cfe576ce93b20fc28722debddf7aeaab12e8d5ca318ecae1bc650435f01838ca",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/frozen_code/performance_map.py",
+      "expected_sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "actual_sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/frozen_code/run_reference.py",
+      "expected_sha256": "b6a8dfbe846224c00b68b862da67acd366daf4a01abfb0968c10f1942840fa15",
+      "actual_sha256": "b6a8dfbe846224c00b68b862da67acd366daf4a01abfb0968c10f1942840fa15",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/frozen_code/test_heatpump_optimization.py",
+      "expected_sha256": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+      "actual_sha256": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/guyuan__TCAV035BHE_n1/dispatch.csv",
+      "expected_sha256": "82d74e26c317113f199efff6b2cdf7b05a2e84ee2b4323d4186d2291df8d5d49",
+      "actual_sha256": "82d74e26c317113f199efff6b2cdf7b05a2e84ee2b4323d4186d2291df8d5d49",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/guyuan__TCAV035BHE_n1/dual_certificate.json",
+      "expected_sha256": "6f2810274c120efc7abb230c035401c2ce916db56d6e44d7cd1a54a2dd6af2b4",
+      "actual_sha256": "6f2810274c120efc7abb230c035401c2ce916db56d6e44d7cd1a54a2dd6af2b4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/guyuan__TCAV035BHE_n1/solver.json",
+      "expected_sha256": "fdbdadfc9dbaa38093cf44000ac1fda2db064fdf3ccd21d222ace99fbd457111",
+      "actual_sha256": "fdbdadfc9dbaa38093cf44000ac1fda2db064fdf3ccd21d222ace99fbd457111",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/guyuan__TCAV035BHE_n1/summary.json",
+      "expected_sha256": "ba91da4167b303562dbfa1b8112da7e6b8c56707b7fd4f9292510c7d3630e003",
+      "actual_sha256": "ba91da4167b303562dbfa1b8112da7e6b8c56707b7fd4f9292510c7d3630e003",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/guyuan__TCAV065BHE_n1/dispatch.csv",
+      "expected_sha256": "9c4893a64ad6f144a2e017052d7888f1dc3d4c8aee9e133dce6d26e7ddbcca27",
+      "actual_sha256": "9c4893a64ad6f144a2e017052d7888f1dc3d4c8aee9e133dce6d26e7ddbcca27",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/guyuan__TCAV065BHE_n1/dual_certificate.json",
+      "expected_sha256": "ef2d07616b8af8d92dddbcbd15a6f545dbbda38084464cdb91389bc6fe96ada2",
+      "actual_sha256": "ef2d07616b8af8d92dddbcbd15a6f545dbbda38084464cdb91389bc6fe96ada2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/guyuan__TCAV065BHE_n1/solver.json",
+      "expected_sha256": "17b03f8da3adc0e547e041a980a468a355940654d5ee53e23de45cfe8279aa3d",
+      "actual_sha256": "17b03f8da3adc0e547e041a980a468a355940654d5ee53e23de45cfe8279aa3d",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/guyuan__TCAV065BHE_n1/summary.json",
+      "expected_sha256": "2999690e4e8e2cf6fb8c38254e311305fb3a0a5ded3f760ed5a9cf33fbf98103",
+      "actual_sha256": "2999690e4e8e2cf6fb8c38254e311305fb3a0a5ded3f760ed5a9cf33fbf98103",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/independent_optimization_audit.json",
+      "expected_sha256": "5b04f1f18ac804dc8bcbc67aee570405272056ce53b6011a9e9f3ece5f63b4b3",
+      "actual_sha256": "5b04f1f18ac804dc8bcbc67aee570405272056ce53b6011a9e9f3ece5f63b4b3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/guyuan__TCAV035BHE_n1__thermostat_summary.json",
+      "expected_sha256": "118c9194ca9b3a5b5646bd5ab287c4520671d534160e917c0f0c9338e7707634",
+      "actual_sha256": "118c9194ca9b3a5b5646bd5ab287c4520671d534160e917c0f0c9338e7707634",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/guyuan__TCAV065BHE_n1__thermostat_summary.json",
+      "expected_sha256": "250905f22824b3013c5efde7b5a81b47d514091b8feb2fac51b46393131bf337",
+      "actual_sha256": "250905f22824b3013c5efde7b5a81b47d514091b8feb2fac51b46393131bf337",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/guyuan_frozen_driver.csv",
+      "expected_sha256": "7ee13a5709eca6db99b973929f73b4491e4af00559c6e92857c5d9f7282dd586",
+      "actual_sha256": "7ee13a5709eca6db99b973929f73b4491e4af00559c6e92857c5d9f7282dd586",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/reference_admitted_heating_points.csv",
+      "expected_sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+      "actual_sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/reference_independent_numeric_audit.json",
+      "expected_sha256": "517a67003a0fee0d1ca40217d2e2f3ec965591a1ba7d687778c8682d5fc014df",
+      "actual_sha256": "517a67003a0fee0d1ca40217d2e2f3ec965591a1ba7d687778c8682d5fc014df",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/reference_manifest.json",
+      "expected_sha256": "041be79a5a9ce0cf3a3f69e22aea4f5899c0ff7525e9fb3186faa7aec9397a2e",
+      "actual_sha256": "041be79a5a9ce0cf3a3f69e22aea4f5899c0ff7525e9fb3186faa7aec9397a2e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/reference_protocol.json",
+      "expected_sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "actual_sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/urumqi__TCAV035BHE_n1__thermostat_summary.json",
+      "expected_sha256": "37a72fcb44cb59d10087fd727aca437c5276f5ffedbdd4755c7a9d751daac04b",
+      "actual_sha256": "37a72fcb44cb59d10087fd727aca437c5276f5ffedbdd4755c7a9d751daac04b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/urumqi__TCAV065BHE_n1__thermostat_summary.json",
+      "expected_sha256": "6520f62eed75c8ad3ee59a9d99a627a201a6c25877aa511ab984a95251f8d91b",
+      "actual_sha256": "6520f62eed75c8ad3ee59a9d99a627a201a6c25877aa511ab984a95251f8d91b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/urumqi_frozen_driver.csv",
+      "expected_sha256": "e232ddfba38f6165eb059e9707cb677898cf236d061edf831b9d488012d94739",
+      "actual_sha256": "e232ddfba38f6165eb059e9707cb677898cf236d061edf831b9d488012d94739",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/wuhan__TCAV035BHE_n1__thermostat_summary.json",
+      "expected_sha256": "31363824ee4b356cacb44b23cbd24ed58b71887aeab3394b9b6d99dcaba48c4c",
+      "actual_sha256": "31363824ee4b356cacb44b23cbd24ed58b71887aeab3394b9b6d99dcaba48c4c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/wuhan__TCAV065BHE_n1__thermostat_summary.json",
+      "expected_sha256": "bbb53503f5899b295e34c587df6e8ab7bd2fccbf1a728ac96df069a72a10ea0a",
+      "actual_sha256": "bbb53503f5899b295e34c587df6e8ab7bd2fccbf1a728ac96df069a72a10ea0a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/inputs/wuhan_frozen_driver.csv",
+      "expected_sha256": "2978aae59814dc79a79f523ad4c1395cf58ccfed5bfb744f1df86d8892d8a579",
+      "actual_sha256": "2978aae59814dc79a79f523ad4c1395cf58ccfed5bfb744f1df86d8892d8a579",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/manifest.json",
+      "expected_sha256": "0c6760eb061229294b00c6ea9c4bfd258254a9212a730b3890035de17ff00480",
+      "actual_sha256": "0c6760eb061229294b00c6ea9c4bfd258254a9212a730b3890035de17ff00480",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/native_lp_bound_sidecar.json",
+      "expected_sha256": "158c0da1456eef3fd75b74a9541e0fbe8b46e55172e3982a7bddaaeab26bc110",
+      "actual_sha256": "158c0da1456eef3fd75b74a9541e0fbe8b46e55172e3982a7bddaaeab26bc110",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/optimization_comparison.csv",
+      "expected_sha256": "9d530eb31bb6f4981a0dda913654f70c37ba1f74f43f385bbcab47a17408dfd3",
+      "actual_sha256": "9d530eb31bb6f4981a0dda913654f70c37ba1f74f43f385bbcab47a17408dfd3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/protocol.json",
+      "expected_sha256": "cc1783fecff21ef77346ea867d157572f406603644a1ced3f84e7e44b52a534d",
+      "actual_sha256": "cc1783fecff21ef77346ea867d157572f406603644a1ced3f84e7e44b52a534d",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/urumqi__TCAV035BHE_n1/dispatch.csv",
+      "expected_sha256": "55008b0fb000e54d3cc14c419ea8691ee1942ad151b862570120fe7a7cf4ac9d",
+      "actual_sha256": "55008b0fb000e54d3cc14c419ea8691ee1942ad151b862570120fe7a7cf4ac9d",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/urumqi__TCAV035BHE_n1/dual_certificate.json",
+      "expected_sha256": "80e55aa34b0f6d02280224b3244bfe256a4fd10b548134d7b4abeb726edce4e1",
+      "actual_sha256": "80e55aa34b0f6d02280224b3244bfe256a4fd10b548134d7b4abeb726edce4e1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/urumqi__TCAV035BHE_n1/solver.json",
+      "expected_sha256": "5f62e12de411d522994f68e4c3847fc4bc7ca06677eb04aba2cc4759eb31e2b1",
+      "actual_sha256": "5f62e12de411d522994f68e4c3847fc4bc7ca06677eb04aba2cc4759eb31e2b1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/urumqi__TCAV035BHE_n1/summary.json",
+      "expected_sha256": "0ff267a6035265d46699b9bf1aea975cf679fe81adec18e985aef7d98d8b6087",
+      "actual_sha256": "0ff267a6035265d46699b9bf1aea975cf679fe81adec18e985aef7d98d8b6087",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/urumqi__TCAV065BHE_n1/dispatch.csv",
+      "expected_sha256": "4a503e59b659e4f4e9f7ac86543abbde871aa77859b1d2f7cfd5fd249a95ecf3",
+      "actual_sha256": "4a503e59b659e4f4e9f7ac86543abbde871aa77859b1d2f7cfd5fd249a95ecf3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/urumqi__TCAV065BHE_n1/dual_certificate.json",
+      "expected_sha256": "dfe175ffb82613895da39cc863539c101f96b8a156871fb3652c36bd1d48f157",
+      "actual_sha256": "dfe175ffb82613895da39cc863539c101f96b8a156871fb3652c36bd1d48f157",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/urumqi__TCAV065BHE_n1/solver.json",
+      "expected_sha256": "f49dc02e7abcc133ab22177aa83cff1686e59c526e80c4c372f9aacd85776583",
+      "actual_sha256": "f49dc02e7abcc133ab22177aa83cff1686e59c526e80c4c372f9aacd85776583",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/urumqi__TCAV065BHE_n1/summary.json",
+      "expected_sha256": "7b2b78e3625164171386938e9149eb282abf3673d44de84b955d19a4db264647",
+      "actual_sha256": "7b2b78e3625164171386938e9149eb282abf3673d44de84b955d19a4db264647",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/wuhan__TCAV035BHE_n1/dispatch.csv",
+      "expected_sha256": "1bcf50f6c9a11662e2d7a9d02d3e78f78a70f50a9a808ec2f35f78ae0849208c",
+      "actual_sha256": "1bcf50f6c9a11662e2d7a9d02d3e78f78a70f50a9a808ec2f35f78ae0849208c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/wuhan__TCAV035BHE_n1/dual_certificate.json",
+      "expected_sha256": "fd84fa91db16e8748da7be79aff7cbadb020c9ed67ba02e4ecd4132f253afdf6",
+      "actual_sha256": "fd84fa91db16e8748da7be79aff7cbadb020c9ed67ba02e4ecd4132f253afdf6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/wuhan__TCAV035BHE_n1/solver.json",
+      "expected_sha256": "d5606b29c688c345ee6bfddc2d53552ae9763d22caeda980b5547c7c0f4223f7",
+      "actual_sha256": "d5606b29c688c345ee6bfddc2d53552ae9763d22caeda980b5547c7c0f4223f7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/wuhan__TCAV035BHE_n1/summary.json",
+      "expected_sha256": "15d1039c87fd2d4e74482a9f2da545a2355e743728e8ab9b4e6371478d0f2f70",
+      "actual_sha256": "15d1039c87fd2d4e74482a9f2da545a2355e743728e8ab9b4e6371478d0f2f70",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/wuhan__TCAV065BHE_n1/dispatch.csv",
+      "expected_sha256": "b18ef70afb6d39b3b94287736bbf4ed4ca1b99618e5d6d3a216d3fedcdf896f4",
+      "actual_sha256": "b18ef70afb6d39b3b94287736bbf4ed4ca1b99618e5d6d3a216d3fedcdf896f4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/wuhan__TCAV065BHE_n1/dual_certificate.json",
+      "expected_sha256": "a982b033ab33101b53f6c1947d679c4c7b3f955458193230d0608825b9805216",
+      "actual_sha256": "a982b033ab33101b53f6c1947d679c4c7b3f955458193230d0608825b9805216",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/wuhan__TCAV065BHE_n1/solver.json",
+      "expected_sha256": "ee0aa36aa9bd7f2245f141c33a063b266354f2cbe5211130a9c7958c2e258bb8",
+      "actual_sha256": "ee0aa36aa9bd7f2245f141c33a063b266354f2cbe5211130a9c7958c2e258bb8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/wuhan__TCAV065BHE_n1/summary.json",
+      "expected_sha256": "9e563ae72ae20e3e1d480dfd23cf7fd1fb6389764077385171bb5a0daddb6d0f",
+      "actual_sha256": "9e563ae72ae20e3e1d480dfd23cf7fd1fb6389764077385171bb5a0daddb6d0f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimize_reference.py",
+      "expected_sha256": "513d2b36733b1e579e2e5c225fdc316a28f7a6008cde98dbfea7078d3977b726",
+      "actual_sha256": "513d2b36733b1e579e2e5c225fdc316a28f7a6008cde98dbfea7078d3977b726",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/performance_map.py",
+      "expected_sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "actual_sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/postfreeze_final_changes.json",
+      "expected_sha256": "d8dadd338fdda6b8ab07c67595b87334f7889c29a12266e792374280a4260cf8",
+      "actual_sha256": "d8dadd338fdda6b8ab07c67595b87334f7889c29a12266e792374280a4260cf8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/postfreeze_input_guard.json",
+      "expected_sha256": "5056465bca9108c6b22b3d1cc77bc95494615da2f1ef2a8fe5e2ec1606b3e774",
+      "actual_sha256": "5056465bca9108c6b22b3d1cc77bc95494615da2f1ef2a8fe5e2ec1606b3e774",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/admitted_heating_points.csv",
+      "expected_sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+      "actual_sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/failures.json",
+      "expected_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "actual_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/frozen_code/audit_reference.py",
+      "expected_sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "actual_sha256": "4c677cf009f51a44c93369ac57afe28aa9477c85ab57616365e5bf8c6c29ce36",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/frozen_code/method_sources.json",
+      "expected_sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "actual_sha256": "67000ae1ea1fe502976582aed949aa71931c40660aa85e520c5a28596cce9734",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/frozen_code/performance_map.py",
+      "expected_sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "actual_sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/frozen_code/run_reference.py",
+      "expected_sha256": "b6a8dfbe846224c00b68b862da67acd366daf4a01abfb0968c10f1942840fa15",
+      "actual_sha256": "b6a8dfbe846224c00b68b862da67acd366daf4a01abfb0968c10f1942840fa15",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/frozen_code/test_heatpump_reference.py",
+      "expected_sha256": "9e0405ebf5d38ad2ca35c8dae7660ce53e029877e49a29c261176edee25e7f0a",
+      "actual_sha256": "9e0405ebf5d38ad2ca35c8dae7660ce53e029877e49a29c261176edee25e7f0a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/guyuan__resistance_only/dispatch.csv",
+      "expected_sha256": "3e9a859979e1e35f65e24a759811a31218f0015342ae4b5698cb0c5f15d510d9",
+      "actual_sha256": "3e9a859979e1e35f65e24a759811a31218f0015342ae4b5698cb0c5f15d510d9",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/guyuan__resistance_only/summary.json",
+      "expected_sha256": "8b35fbe63a8edf60d9b50388671bbeb3b4635b03601fd2190bc184bb2325b331",
+      "actual_sha256": "8b35fbe63a8edf60d9b50388671bbeb3b4635b03601fd2190bc184bb2325b331",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/guyuan__TCAV035BHE_n1/dispatch.csv",
+      "expected_sha256": "5bb8e3c836ee0320d60fa0dc49677af01d520844759b489f19cd981e818a0e46",
+      "actual_sha256": "5bb8e3c836ee0320d60fa0dc49677af01d520844759b489f19cd981e818a0e46",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/guyuan__TCAV035BHE_n1/summary.json",
+      "expected_sha256": "118c9194ca9b3a5b5646bd5ab287c4520671d534160e917c0f0c9338e7707634",
+      "actual_sha256": "118c9194ca9b3a5b5646bd5ab287c4520671d534160e917c0f0c9338e7707634",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/guyuan__TCAV065BHE_n1/dispatch.csv",
+      "expected_sha256": "015e5a4ba85807157766453d32a244eb9b116bd49eba3e4eb32d8bfcc6930cf1",
+      "actual_sha256": "015e5a4ba85807157766453d32a244eb9b116bd49eba3e4eb32d8bfcc6930cf1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/guyuan__TCAV065BHE_n1/summary.json",
+      "expected_sha256": "250905f22824b3013c5efde7b5a81b47d514091b8feb2fac51b46393131bf337",
+      "actual_sha256": "250905f22824b3013c5efde7b5a81b47d514091b8feb2fac51b46393131bf337",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/guyuan_frozen_driver.csv",
+      "expected_sha256": "7ee13a5709eca6db99b973929f73b4491e4af00559c6e92857c5d9f7282dd586",
+      "actual_sha256": "7ee13a5709eca6db99b973929f73b4491e4af00559c6e92857c5d9f7282dd586",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/independent_numeric_audit.json",
+      "expected_sha256": "517a67003a0fee0d1ca40217d2e2f3ec965591a1ba7d687778c8682d5fc014df",
+      "actual_sha256": "517a67003a0fee0d1ca40217d2e2f3ec965591a1ba7d687778c8682d5fc014df",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/guyuan_hourly.csv",
+      "expected_sha256": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+      "actual_sha256": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/monthly_tariff_verified.csv",
+      "expected_sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "actual_sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/physical_reference.json",
+      "expected_sha256": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+      "actual_sha256": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/tariff_account_and_hours.json",
+      "expected_sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "actual_sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/tariff_admission.json",
+      "expected_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "actual_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/tica_24p_catalogue.pdf",
+      "expected_sha256": "5be3093936a6ec3bb7104372395f8f5c6b375563e40ded024331b0f77e3854a0",
+      "actual_sha256": "5be3093936a6ec3bb7104372395f8f5c6b375563e40ded024331b0f77e3854a0",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/urumqi_hourly.csv",
+      "expected_sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+      "actual_sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/user_heatpump_extraction_original.csv",
+      "expected_sha256": "2e9a49b6c7f2ee9c445431e5657f913e5401b76d36e46faf51696dd883102778",
+      "actual_sha256": "2e9a49b6c7f2ee9c445431e5657f913e5401b76d36e46faf51696dd883102778",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/weather_manifest.json",
+      "expected_sha256": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279",
+      "actual_sha256": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/weather_protocol.json",
+      "expected_sha256": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7",
+      "actual_sha256": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/weather_provenance.csv",
+      "expected_sha256": "813abbf6a7504bd3aadb6cd8cf08983ffbb7068f0f6a334fce450810a38ba223",
+      "actual_sha256": "813abbf6a7504bd3aadb6cd8cf08983ffbb7068f0f6a334fce450810a38ba223",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/wuhan_hourly.csv",
+      "expected_sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+      "actual_sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/input_bundle/wuhan_tou_hourly.csv",
+      "expected_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "actual_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/manifest.json",
+      "expected_sha256": "041be79a5a9ce0cf3a3f69e22aea4f5899c0ff7525e9fb3186faa7aec9397a2e",
+      "actual_sha256": "041be79a5a9ce0cf3a3f69e22aea4f5899c0ff7525e9fb3186faa7aec9397a2e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/operating_comparison.csv",
+      "expected_sha256": "253e13f73444e80da11bf41f91d3a5bb56c737fdf73003c7faee6b197e3fc840",
+      "actual_sha256": "253e13f73444e80da11bf41f91d3a5bb56c737fdf73003c7faee6b197e3fc840",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/original_input_paths.json",
+      "expected_sha256": "d163a17ffa858c63aa1a60157ac3544be89bc962935df7f968b1bed3259d3077",
+      "actual_sha256": "d163a17ffa858c63aa1a60157ac3544be89bc962935df7f968b1bed3259d3077",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/pdf_csv_point_check.csv",
+      "expected_sha256": "f870a2fed1eeb7883eecd5f967fa947f2007f0de9efb18ec9d72be8d34b9c69d",
+      "actual_sha256": "f870a2fed1eeb7883eecd5f967fa947f2007f0de9efb18ec9d72be8d34b9c69d",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/protocol.json",
+      "expected_sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "actual_sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/source_admission.json",
+      "expected_sha256": "18938c7b53cdd7c406d699406c72b73f667c22d0d10da5d021fbeaf7cd98b910",
+      "actual_sha256": "18938c7b53cdd7c406d699406c72b73f667c22d0d10da5d021fbeaf7cd98b910",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/urumqi__resistance_only/dispatch.csv",
+      "expected_sha256": "98d31cfdeb7133fc080b651886fab64171584692377fcefa258db4438b6c301c",
+      "actual_sha256": "98d31cfdeb7133fc080b651886fab64171584692377fcefa258db4438b6c301c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/urumqi__resistance_only/summary.json",
+      "expected_sha256": "f10d54bc5a2c85483d5fb653ed3631b33877e2373d1d3f6b723508ce8c20f441",
+      "actual_sha256": "f10d54bc5a2c85483d5fb653ed3631b33877e2373d1d3f6b723508ce8c20f441",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/urumqi__TCAV035BHE_n1/dispatch.csv",
+      "expected_sha256": "e171a7f8e56c25689daad407a6d72b815bfd1a22bb67b7fd237b3c34b83ca87c",
+      "actual_sha256": "e171a7f8e56c25689daad407a6d72b815bfd1a22bb67b7fd237b3c34b83ca87c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/urumqi__TCAV035BHE_n1/summary.json",
+      "expected_sha256": "37a72fcb44cb59d10087fd727aca437c5276f5ffedbdd4755c7a9d751daac04b",
+      "actual_sha256": "37a72fcb44cb59d10087fd727aca437c5276f5ffedbdd4755c7a9d751daac04b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/urumqi__TCAV065BHE_n1/dispatch.csv",
+      "expected_sha256": "46cf0090d02e10209200f585a83806efb47473f2ff1482cc735d6ae7eeeb2274",
+      "actual_sha256": "46cf0090d02e10209200f585a83806efb47473f2ff1482cc735d6ae7eeeb2274",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/urumqi__TCAV065BHE_n1/summary.json",
+      "expected_sha256": "6520f62eed75c8ad3ee59a9d99a627a201a6c25877aa511ab984a95251f8d91b",
+      "actual_sha256": "6520f62eed75c8ad3ee59a9d99a627a201a6c25877aa511ab984a95251f8d91b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/urumqi_frozen_driver.csv",
+      "expected_sha256": "e232ddfba38f6165eb059e9707cb677898cf236d061edf831b9d488012d94739",
+      "actual_sha256": "e232ddfba38f6165eb059e9707cb677898cf236d061edf831b9d488012d94739",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/wuhan__resistance_only/dispatch.csv",
+      "expected_sha256": "d8ea836d95abb512908b15346fdc308a111c9a6c28207ae4d783fad1f93d3007",
+      "actual_sha256": "d8ea836d95abb512908b15346fdc308a111c9a6c28207ae4d783fad1f93d3007",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/wuhan__resistance_only/summary.json",
+      "expected_sha256": "547784e5c83c8e1e66514fa4eaeb68b610f97d6f75613420a4ca74b654803e17",
+      "actual_sha256": "547784e5c83c8e1e66514fa4eaeb68b610f97d6f75613420a4ca74b654803e17",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/wuhan__TCAV035BHE_n1/dispatch.csv",
+      "expected_sha256": "dcc3a1cd10eb7799ca1fbc898afc2a3bf04866628dc43d061f1e93d6764dee1f",
+      "actual_sha256": "dcc3a1cd10eb7799ca1fbc898afc2a3bf04866628dc43d061f1e93d6764dee1f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/wuhan__TCAV035BHE_n1/summary.json",
+      "expected_sha256": "31363824ee4b356cacb44b23cbd24ed58b71887aeab3394b9b6d99dcaba48c4c",
+      "actual_sha256": "31363824ee4b356cacb44b23cbd24ed58b71887aeab3394b9b6d99dcaba48c4c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/wuhan__TCAV065BHE_n1/dispatch.csv",
+      "expected_sha256": "dcc40754099338bb195c0746ceac5c15854b14f3e5a635f3eb0d8552f12c5bb4",
+      "actual_sha256": "dcc40754099338bb195c0746ceac5c15854b14f3e5a635f3eb0d8552f12c5bb4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/wuhan__TCAV065BHE_n1/summary.json",
+      "expected_sha256": "bbb53503f5899b295e34c587df6e8ab7bd2fccbf1a728ac96df069a72a10ea0a",
+      "actual_sha256": "bbb53503f5899b295e34c587df6e8ab7bd2fccbf1a728ac96df069a72a10ea0a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/wuhan_frozen_driver.csv",
+      "expected_sha256": "2978aae59814dc79a79f523ad4c1395cf58ccfed5bfb744f1df86d8892d8a579",
+      "actual_sha256": "2978aae59814dc79a79f523ad4c1395cf58ccfed5bfb744f1df86d8892d8a579",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/RUN_INSTRUCTIONS.txt",
+      "expected_sha256": "f124e56ddd02a6872c62b528e7e8b253505a13af11d4adebc9d8e55e6774c6f4",
+      "actual_sha256": "f124e56ddd02a6872c62b528e7e8b253505a13af11d4adebc9d8e55e6774c6f4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_reference.py",
+      "expected_sha256": "6666c86addfff1e2e70a63409f64ae0f58e472fb5d3f0253a79d0ba7d30b1cc8",
+      "actual_sha256": "6666c86addfff1e2e70a63409f64ae0f58e472fb5d3f0253a79d0ba7d30b1cc8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/source_views/24p_page_14.png",
+      "expected_sha256": "0641ad8554a126e76e9c63b1316be189fe7f8ec34976156ba7ea6759b3227f2b",
+      "actual_sha256": "0641ad8554a126e76e9c63b1316be189fe7f8ec34976156ba7ea6759b3227f2b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/source_views/24p_page_15.png",
+      "expected_sha256": "e86dbb2f6c0a525dc3b46ed1d029faa6751ee66e7825b0df905c39eb38f9f992",
+      "actual_sha256": "e86dbb2f6c0a525dc3b46ed1d029faa6751ee66e7825b0df905c39eb38f9f992",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/test_heatpump_optimization.py",
+      "expected_sha256": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+      "actual_sha256": "256509d91d5515d34358e9a5b97fcda27861a6896ef585e472c1e686ab06bec7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/test_heatpump_reference.py",
+      "expected_sha256": "cb5fcff256d6664ada2e192213bbb0a652b91390c5a2d5f278ab73fc222f1b42",
+      "actual_sha256": "cb5fcff256d6664ada2e192213bbb0a652b91390c5a2d5f278ab73fc222f1b42",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/test_native_lp_bound.py",
+      "expected_sha256": "a56c8282b6cd84a83ecbc8967bceaf39d831d95b0178f9a43a1827817e6ac976",
+      "actual_sha256": "a56c8282b6cd84a83ecbc8967bceaf39d831d95b0178f9a43a1827817e6ac976",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/test_results.json",
+      "expected_sha256": "fc835a21344739a1bbbfde6a59abb10efcba502a305a4d0eca111278c7252275",
+      "actual_sha256": "fc835a21344739a1bbbfde6a59abb10efcba502a305a4d0eca111278c7252275",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/LITERATURE_AND_DESIGN_DECISIONS.md",
+      "expected_sha256": "b43a5bcf519d933eab89e6097b31a1f3831486ec3cff1cd5d57c89e986841a10",
+      "actual_sha256": "b43a5bcf519d933eab89e6097b31a1f3831486ec3cff1cd5d57c89e986841a10",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/HANDOFF.json",
+      "expected_sha256": "55966f3a5a5eb0fe63bdf6b563ef60b502d7b65714b9f6dbe726811e239bb617",
+      "actual_sha256": "55966f3a5a5eb0fe63bdf6b563ef60b502d7b65714b9f6dbe726811e239bb617",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/negative_controls_01.json",
+      "expected_sha256": "d10b17f6a8d314a50886da882f99e7e5a7ae9b89278e3df1f0bce88bd581c98e",
+      "actual_sha256": "d10b17f6a8d314a50886da882f99e7e5a7ae9b89278e3df1f0bce88bd581c98e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+      "expected_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "actual_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+      "expected_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "actual_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/docs/implementation_20261002/data/admission_tou.json",
+      "expected_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "actual_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/scripts/audit_multiscale_capacity_axis.py",
+      "expected_sha256": "ec0c010f5096a3841440045e62cd009045aeedbb69ab4b5de1b7037f4ae3e830",
+      "actual_sha256": "ec0c010f5096a3841440045e62cd009045aeedbb69ab4b5de1b7037f4ae3e830",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/scripts/audit_multiscale_reference.py",
+      "expected_sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164",
+      "actual_sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/scripts/report_multiscale_capacity_axis.py",
+      "expected_sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3",
+      "actual_sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/scripts/run_multiscale_capacity_axis.py",
+      "expected_sha256": "8d5239b5695817c7f34635ccce8f92e53d32a41b381e334b43ff45f8412ef56d",
+      "actual_sha256": "8d5239b5695817c7f34635ccce8f92e53d32a41b381e334b43ff45f8412ef56d",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/scripts/run_multiscale_reference.py",
+      "expected_sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b",
+      "actual_sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/__init__.py",
+      "expected_sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a",
+      "actual_sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/accounting.py",
+      "expected_sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "actual_sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/annual_preflight_batch_cli.py",
+      "expected_sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e",
+      "actual_sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/annual_replay_batch_cli.py",
+      "expected_sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20",
+      "actual_sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/annual_replay_certify_cli.py",
+      "expected_sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8",
+      "actual_sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/annual_replay_cli.py",
+      "expected_sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7",
+      "actual_sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/btes.py",
+      "expected_sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687",
+      "actual_sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/building_audit.py",
+      "expected_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "actual_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/building_thermal.py",
+      "expected_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "actual_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/chronology.py",
+      "expected_sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "actual_sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/chronology_cli.py",
+      "expected_sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+      "actual_sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/cli.py",
+      "expected_sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35",
+      "actual_sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/competition_runner.py",
+      "expected_sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4",
+      "actual_sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/decision_weight_calibration.py",
+      "expected_sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+      "actual_sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/experiment_cli.py",
+      "expected_sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b",
+      "actual_sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/experiments.py",
+      "expected_sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "actual_sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/feasibility.py",
+      "expected_sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a",
+      "actual_sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/finance.py",
+      "expected_sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8",
+      "actual_sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/hard_weight_calibration.py",
+      "expected_sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "actual_sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/heating_season.py",
+      "expected_sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+      "actual_sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/heating_season_cli.py",
+      "expected_sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2",
+      "actual_sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/hydraulics.py",
+      "expected_sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd",
+      "actual_sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/io.py",
+      "expected_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "actual_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/linear.py",
+      "expected_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "actual_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/model.py",
+      "expected_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "actual_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/mpc.py",
+      "expected_sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31",
+      "actual_sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/multistage.py",
+      "expected_sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636",
+      "actual_sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/multistage_cli.py",
+      "expected_sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3",
+      "actual_sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/multiyear.py",
+      "expected_sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106",
+      "actual_sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/multiyear_readiness_cli.py",
+      "expected_sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2",
+      "actual_sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/multiyear_replay_cli.py",
+      "expected_sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1",
+      "actual_sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/network_feedback.py",
+      "expected_sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+      "actual_sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/operations_cli.py",
+      "expected_sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85",
+      "actual_sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/osm_reference.py",
+      "expected_sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+      "actual_sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/physical_extensions.py",
+      "expected_sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "actual_sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/policy_alignment.py",
+      "expected_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "actual_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/policy_alignment_cli.py",
+      "expected_sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6",
+      "actual_sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/policy_cli.py",
+      "expected_sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf",
+      "actual_sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/provenance.py",
+      "expected_sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2",
+      "actual_sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/reporting.py",
+      "expected_sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c",
+      "actual_sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/representative.py",
+      "expected_sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+      "actual_sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/representative_adoption.py",
+      "expected_sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+      "actual_sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/risk_scan_cli.py",
+      "expected_sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21",
+      "actual_sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/scenario_cli.py",
+      "expected_sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385",
+      "actual_sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/scenarios.py",
+      "expected_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "actual_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/solution_evidence.py",
+      "expected_sha256": "6178e979c0e1236d6685b537fdf326af779e4ab53a8447550402cea1a745aa6e",
+      "actual_sha256": "6178e979c0e1236d6685b537fdf326af779e4ab53a8447550402cea1a745aa6e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/solution_quality.py",
+      "expected_sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+      "actual_sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/spatial_adapter.py",
+      "expected_sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+      "actual_sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/spatial_quality.py",
+      "expected_sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347",
+      "actual_sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/time_registry.py",
+      "expected_sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+      "actual_sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/unified_cli.py",
+      "expected_sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+      "actual_sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/frozen_code/src/heatplan/validation.py",
+      "expected_sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9",
+      "actual_sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/input_cases/C1_shared/config.yaml",
+      "expected_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "actual_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/input_cases/C1_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/input_cases/C1_unlimited/config.yaml",
+      "expected_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "actual_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/input_cases/C1_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/input_cases/C4_shared/config.yaml",
+      "expected_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "actual_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/input_cases/C4_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/input_cases/C4_unlimited/config.yaml",
+      "expected_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "actual_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/input_cases/C4_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/pre_solve_rejection.json",
+      "expected_sha256": "b27539846b25bd01654074e6bd7923cc36179b063de968e62d3a7bb15111f9d4",
+      "actual_sha256": "b27539846b25bd01654074e6bd7923cc36179b063de968e62d3a7bb15111f9d4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/protocol.json",
+      "expected_sha256": "d1c1e326e928a4c1f5418aea76cde4c1078bbb78d51119787ec262e97285c539",
+      "actual_sha256": "d1c1e326e928a4c1f5418aea76cde4c1078bbb78d51119787ec262e97285c539",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_01/protocol_lock.json",
+      "expected_sha256": "505b39eddf15a86a28e1c8910beff4d9344fa301feb69b3fca7e447abfe52354",
+      "actual_sha256": "505b39eddf15a86a28e1c8910beff4d9344fa301feb69b3fca7e447abfe52354",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/comparison.json",
+      "expected_sha256": "2e676ba1251f18df457cdb2aa74f3ca9714a1fef6d84f0718998a0f2ccf852f4",
+      "actual_sha256": "2e676ba1251f18df457cdb2aa74f3ca9714a1fef6d84f0718998a0f2ccf852f4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/failures.json",
+      "expected_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "actual_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+      "expected_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "actual_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+      "expected_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "actual_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/docs/implementation_20261002/data/admission_tou.json",
+      "expected_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "actual_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/scripts/audit_multiscale_capacity_axis.py",
+      "expected_sha256": "ec0c010f5096a3841440045e62cd009045aeedbb69ab4b5de1b7037f4ae3e830",
+      "actual_sha256": "ec0c010f5096a3841440045e62cd009045aeedbb69ab4b5de1b7037f4ae3e830",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/scripts/audit_multiscale_reference.py",
+      "expected_sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164",
+      "actual_sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/scripts/report_multiscale_capacity_axis.py",
+      "expected_sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3",
+      "actual_sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/scripts/run_multiscale_capacity_axis.py",
+      "expected_sha256": "a4ea378c2c731f2846f762a2ca30cced08388791030b11577f2429640235375e",
+      "actual_sha256": "a4ea378c2c731f2846f762a2ca30cced08388791030b11577f2429640235375e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/scripts/run_multiscale_reference.py",
+      "expected_sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b",
+      "actual_sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/__init__.py",
+      "expected_sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a",
+      "actual_sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/accounting.py",
+      "expected_sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "actual_sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/annual_preflight_batch_cli.py",
+      "expected_sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e",
+      "actual_sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/annual_replay_batch_cli.py",
+      "expected_sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20",
+      "actual_sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/annual_replay_certify_cli.py",
+      "expected_sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8",
+      "actual_sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/annual_replay_cli.py",
+      "expected_sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7",
+      "actual_sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/btes.py",
+      "expected_sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687",
+      "actual_sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/building_audit.py",
+      "expected_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "actual_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/building_thermal.py",
+      "expected_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "actual_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/chronology.py",
+      "expected_sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "actual_sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/chronology_cli.py",
+      "expected_sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+      "actual_sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/cli.py",
+      "expected_sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35",
+      "actual_sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/competition_runner.py",
+      "expected_sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4",
+      "actual_sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/decision_weight_calibration.py",
+      "expected_sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+      "actual_sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/experiment_cli.py",
+      "expected_sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b",
+      "actual_sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/experiments.py",
+      "expected_sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "actual_sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/feasibility.py",
+      "expected_sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a",
+      "actual_sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/finance.py",
+      "expected_sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8",
+      "actual_sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/hard_weight_calibration.py",
+      "expected_sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "actual_sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/heating_season.py",
+      "expected_sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+      "actual_sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/heating_season_cli.py",
+      "expected_sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2",
+      "actual_sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/hydraulics.py",
+      "expected_sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd",
+      "actual_sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/io.py",
+      "expected_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "actual_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/linear.py",
+      "expected_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "actual_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/model.py",
+      "expected_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "actual_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/mpc.py",
+      "expected_sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31",
+      "actual_sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/multistage.py",
+      "expected_sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636",
+      "actual_sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/multistage_cli.py",
+      "expected_sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3",
+      "actual_sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/multiyear.py",
+      "expected_sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106",
+      "actual_sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/multiyear_readiness_cli.py",
+      "expected_sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2",
+      "actual_sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/multiyear_replay_cli.py",
+      "expected_sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1",
+      "actual_sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/network_feedback.py",
+      "expected_sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+      "actual_sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/operations_cli.py",
+      "expected_sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85",
+      "actual_sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/osm_reference.py",
+      "expected_sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+      "actual_sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/physical_extensions.py",
+      "expected_sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "actual_sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/policy_alignment.py",
+      "expected_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "actual_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/policy_alignment_cli.py",
+      "expected_sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6",
+      "actual_sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/policy_cli.py",
+      "expected_sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf",
+      "actual_sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/provenance.py",
+      "expected_sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2",
+      "actual_sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/reporting.py",
+      "expected_sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c",
+      "actual_sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/representative.py",
+      "expected_sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+      "actual_sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/representative_adoption.py",
+      "expected_sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+      "actual_sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/risk_scan_cli.py",
+      "expected_sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21",
+      "actual_sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/scenario_cli.py",
+      "expected_sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385",
+      "actual_sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/scenarios.py",
+      "expected_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "actual_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/solution_quality.py",
+      "expected_sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+      "actual_sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/spatial_adapter.py",
+      "expected_sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+      "actual_sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/spatial_quality.py",
+      "expected_sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347",
+      "actual_sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/time_registry.py",
+      "expected_sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+      "actual_sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/unified_cli.py",
+      "expected_sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+      "actual_sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/frozen_code/src/heatplan/validation.py",
+      "expected_sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9",
+      "actual_sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/independent_verification.json",
+      "expected_sha256": "1c97abfffd1b3d5eb7a66b8428c54483b424b4bc5745d0e2f12aabc680b5d47c",
+      "actual_sha256": "1c97abfffd1b3d5eb7a66b8428c54483b424b4bc5745d0e2f12aabc680b5d47c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/input_cases/C1_shared/config.yaml",
+      "expected_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "actual_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/input_cases/C1_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/input_cases/C1_unlimited/config.yaml",
+      "expected_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "actual_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/input_cases/C1_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/input_cases/C4_shared/config.yaml",
+      "expected_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "actual_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/input_cases/C4_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/input_cases/C4_unlimited/config.yaml",
+      "expected_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "actual_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/input_cases/C4_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/manifest.json",
+      "expected_sha256": "b058cc2599ca64b965c9e5c53f610956fa6f61e3c370c151d9e1a097546fc479",
+      "actual_sha256": "b058cc2599ca64b965c9e5c53f610956fa6f61e3c370c151d9e1a097546fc479",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/protocol.json",
+      "expected_sha256": "cfbf0a9d7376ca3ff8ef53a477076012dfca4fb0c8a4d4012d257078cc13682c",
+      "actual_sha256": "cfbf0a9d7376ca3ff8ef53a477076012dfca4fb0c8a4d4012d257078cc13682c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/protocol_lock.json",
+      "expected_sha256": "25fe527a46f06e06202f1175450d1e1708904f6efb0ecb62178e7edae31079fe",
+      "actual_sha256": "25fe527a46f06e06202f1175450d1e1708904f6efb0ecb62178e7edae31079fe",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/building_trajectory.csv",
+      "expected_sha256": "dbb4cf396bcc509d980cc89f729d079e20231daf1c4491021701746a405fd092",
+      "actual_sha256": "dbb4cf396bcc509d980cc89f729d079e20231daf1c4491021701746a405fd092",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/config.yaml",
+      "expected_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "actual_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/dispatch.csv",
+      "expected_sha256": "623e7baa72849cc69fd275f97eff51671d762a273b788f351cdb466150865f54",
+      "actual_sha256": "623e7baa72849cc69fd275f97eff51671d762a273b788f351cdb466150865f54",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/independent_audit.json",
+      "expected_sha256": "d1da60af53235c2ec39604ebf45a3293d36a6752a50da93c8ef7d7cde1fe30ba",
+      "actual_sha256": "d1da60af53235c2ec39604ebf45a3293d36a6752a50da93c8ef7d7cde1fe30ba",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/investments.csv",
+      "expected_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "actual_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/solution_values.npy",
+      "expected_sha256": "f936f2afe3aef3fb0498a235e97c9ebc9ac7bdc4a1d0879594a20b874ad0d78b",
+      "actual_sha256": "f936f2afe3aef3fb0498a235e97c9ebc9ac7bdc4a1d0879594a20b874ad0d78b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/summary.json",
+      "expected_sha256": "28731f105f9487f34b0e64c2163b7bab0fac531fe001b67c82ad4316f3f122fd",
+      "actual_sha256": "28731f105f9487f34b0e64c2163b7bab0fac531fe001b67c82ad4316f3f122fd",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/thermal_ledger.json",
+      "expected_sha256": "b3f7b8703cbe8a8a14bd3cefbfdf214a5579fef581f9854168ffc21eb4b8bfae",
+      "actual_sha256": "b3f7b8703cbe8a8a14bd3cefbfdf214a5579fef581f9854168ffc21eb4b8bfae",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_shared/variable_names.json",
+      "expected_sha256": "0c9ef9dc101b4f8fc6f0f44386f8e116363dd3191091d80f2f6791b5e0f853da",
+      "actual_sha256": "0c9ef9dc101b4f8fc6f0f44386f8e116363dd3191091d80f2f6791b5e0f853da",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/building_trajectory.csv",
+      "expected_sha256": "7fcf10653aa11a96c4744865cce03e3adead3b7b077dd51e1c72f8ca5e4e3e36",
+      "actual_sha256": "7fcf10653aa11a96c4744865cce03e3adead3b7b077dd51e1c72f8ca5e4e3e36",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/config.yaml",
+      "expected_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "actual_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/dispatch.csv",
+      "expected_sha256": "7c69d232e15ccc68dba5facefb24c15abf49623ca93e764c8f65a405ea43d346",
+      "actual_sha256": "7c69d232e15ccc68dba5facefb24c15abf49623ca93e764c8f65a405ea43d346",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/independent_audit.json",
+      "expected_sha256": "4ca20d64f0033340d99dd992cfa8e0a0d2bd4ded113a241b5e18067b229bb13b",
+      "actual_sha256": "4ca20d64f0033340d99dd992cfa8e0a0d2bd4ded113a241b5e18067b229bb13b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/investments.csv",
+      "expected_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "actual_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/solution_values.npy",
+      "expected_sha256": "ddb142aae4dcc2ed02b3bb4d25b5e118e39daed9d038681555a0ff479654ac8e",
+      "actual_sha256": "ddb142aae4dcc2ed02b3bb4d25b5e118e39daed9d038681555a0ff479654ac8e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/summary.json",
+      "expected_sha256": "7ff99fa998da3c4cbfad884ad3cc2cdc0598fc96a8b63513855d377d7ca65b03",
+      "actual_sha256": "7ff99fa998da3c4cbfad884ad3cc2cdc0598fc96a8b63513855d377d7ca65b03",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/thermal_ledger.json",
+      "expected_sha256": "b9a13f0572378bd44395f07c5c53cd14beda1de8a8a326e625fc1d15b7cfadc3",
+      "actual_sha256": "b9a13f0572378bd44395f07c5c53cd14beda1de8a8a326e625fc1d15b7cfadc3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C1_unlimited/variable_names.json",
+      "expected_sha256": "cd63babf7ce3694d6305faef8146fd78366f9214d195d2caca5d032657d5ac0a",
+      "actual_sha256": "cd63babf7ce3694d6305faef8146fd78366f9214d195d2caca5d032657d5ac0a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/building_trajectory.csv",
+      "expected_sha256": "647c939266dd41da687b7586d2337fb9af5c42de1737d97e72fc4f73276b6695",
+      "actual_sha256": "647c939266dd41da687b7586d2337fb9af5c42de1737d97e72fc4f73276b6695",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/config.yaml",
+      "expected_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "actual_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/dispatch.csv",
+      "expected_sha256": "fb9e71efeb67de6a83a201a227e79c695131dc1c53b80b6be41579b424801e94",
+      "actual_sha256": "fb9e71efeb67de6a83a201a227e79c695131dc1c53b80b6be41579b424801e94",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/independent_audit.json",
+      "expected_sha256": "42d9f30fd2bc8a14383e5af8d665c3908c7d6863266f0666aa4df0259c7a901a",
+      "actual_sha256": "42d9f30fd2bc8a14383e5af8d665c3908c7d6863266f0666aa4df0259c7a901a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/investments.csv",
+      "expected_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "actual_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/solution_values.npy",
+      "expected_sha256": "4fb40187a7b3f50cb4b3a18014333154993aa7bcd23ea0d633fcbf3ff92058e1",
+      "actual_sha256": "4fb40187a7b3f50cb4b3a18014333154993aa7bcd23ea0d633fcbf3ff92058e1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/summary.json",
+      "expected_sha256": "2a34d839983efb8af6dbc2954f64c8c70fb840e694519eb37b386c3709ade121",
+      "actual_sha256": "2a34d839983efb8af6dbc2954f64c8c70fb840e694519eb37b386c3709ade121",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/thermal_ledger.json",
+      "expected_sha256": "f874e896a7adda032122e04f38f5a8f08cba01b13e5cc8e86f24ab5d56f671da",
+      "actual_sha256": "f874e896a7adda032122e04f38f5a8f08cba01b13e5cc8e86f24ab5d56f671da",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_shared/variable_names.json",
+      "expected_sha256": "f09ba7138334b59d3dfe28d12cb2dbe70bfc4999279cac42ed93a60b79ff378b",
+      "actual_sha256": "f09ba7138334b59d3dfe28d12cb2dbe70bfc4999279cac42ed93a60b79ff378b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/building_trajectory.csv",
+      "expected_sha256": "1c7ca6d86954c689024713fd0b1769f8d615ff6c8033979038126d4479cc843a",
+      "actual_sha256": "1c7ca6d86954c689024713fd0b1769f8d615ff6c8033979038126d4479cc843a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/config.yaml",
+      "expected_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "actual_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/dispatch.csv",
+      "expected_sha256": "b669458072839882b5c4eee9a839898e03e4c7f4f2bae775efa051cd765746c4",
+      "actual_sha256": "b669458072839882b5c4eee9a839898e03e4c7f4f2bae775efa051cd765746c4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/independent_audit.json",
+      "expected_sha256": "85eade13921376e8a16179378187a94872ce02d7371a5abba695fdda888e2a9b",
+      "actual_sha256": "85eade13921376e8a16179378187a94872ce02d7371a5abba695fdda888e2a9b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/investments.csv",
+      "expected_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "actual_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/solution_values.npy",
+      "expected_sha256": "bc9de9f63282b63b1122fbe1af553ca276fc01ef868a048df45bc74ebc29edcc",
+      "actual_sha256": "bc9de9f63282b63b1122fbe1af553ca276fc01ef868a048df45bc74ebc29edcc",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/summary.json",
+      "expected_sha256": "59f5d439ec818a313c901ea2dec97dce512993542e1c09a1f6ed2e9db9817cb6",
+      "actual_sha256": "59f5d439ec818a313c901ea2dec97dce512993542e1c09a1f6ed2e9db9817cb6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/thermal_ledger.json",
+      "expected_sha256": "64e8cccadd8eb6d0fcc327eb32dc06b9fd68db8527a2f13fded8ff9102c0e181",
+      "actual_sha256": "64e8cccadd8eb6d0fcc327eb32dc06b9fd68db8527a2f13fded8ff9102c0e181",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_02/results/C4_unlimited/variable_names.json",
+      "expected_sha256": "32707c31fc9bab726f2291beb888b2c90a3f706168a5d0b32f7659c381c58fe1",
+      "actual_sha256": "32707c31fc9bab726f2291beb888b2c90a3f706168a5d0b32f7659c381c58fe1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/capacity_grid_factorial.png",
+      "expected_sha256": "30530f7e21568e87f64c6d7a51dd3847d9a02b39846eefe1ea40bb5b32798b5a",
+      "actual_sha256": "30530f7e21568e87f64c6d7a51dd3847d9a02b39846eefe1ea40bb5b32798b5a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/capacity_grid_factorial.svg",
+      "expected_sha256": "851c95f39f46c050c3a29003c9a93f5d583d75deebd51a7ea28b813b519761b1",
+      "actual_sha256": "851c95f39f46c050c3a29003c9a93f5d583d75deebd51a7ea28b813b519761b1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/case_metrics.csv",
+      "expected_sha256": "f568567f6418ff9e555fa376397b3375dbaf65bd6eba6a7ac3c02778b55472e8",
+      "actual_sha256": "f568567f6418ff9e555fa376397b3375dbaf65bd6eba6a7ac3c02778b55472e8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/hourly.csv",
+      "expected_sha256": "f5c33160b00915ec75e5ea65010b411bf9faa26012f904c23694835d2fee5ca2",
+      "actual_sha256": "f5c33160b00915ec75e5ea65010b411bf9faa26012f904c23694835d2fee5ca2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/manifest.json",
+      "expected_sha256": "102d50bcca38f87ba600030366d87888613fe6ffdbfa6d9fcca5dba5c7e2471b",
+      "actual_sha256": "102d50bcca38f87ba600030366d87888613fe6ffdbfa6d9fcca5dba5c7e2471b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/RESULTS.md",
+      "expected_sha256": "1fd9b130e8926a77aeddb92d7710d89de5707f99fb28b62dcb311dc7d87ce4d2",
+      "actual_sha256": "1fd9b130e8926a77aeddb92d7710d89de5707f99fb28b62dcb311dc7d87ce4d2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/summary.json",
+      "expected_sha256": "4d161a501222938b45be4fe892e07eabc75c9fee623a1e16f806ed55d31f19ce",
+      "actual_sha256": "4d161a501222938b45be4fe892e07eabc75c9fee623a1e16f806ed55d31f19ce",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/comparison.json",
+      "expected_sha256": "643772df3f2d786dff4486aed7cf755308c332d6b8a46bfe13aa175c81c054b7",
+      "actual_sha256": "643772df3f2d786dff4486aed7cf755308c332d6b8a46bfe13aa175c81c054b7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/failures.json",
+      "expected_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "actual_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+      "expected_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "actual_sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+      "expected_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "actual_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/docs/implementation_20261002/data/admission_tou.json",
+      "expected_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "actual_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/scripts/audit_multiscale_capacity_axis.py",
+      "expected_sha256": "7f5718ce84214cceb4126ddfd921489d07e85e95c1801f4da50e688fa0a850ee",
+      "actual_sha256": "7f5718ce84214cceb4126ddfd921489d07e85e95c1801f4da50e688fa0a850ee",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/scripts/audit_multiscale_reference.py",
+      "expected_sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164",
+      "actual_sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/scripts/report_multiscale_capacity_axis.py",
+      "expected_sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3",
+      "actual_sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/scripts/run_multiscale_capacity_axis.py",
+      "expected_sha256": "a4ea378c2c731f2846f762a2ca30cced08388791030b11577f2429640235375e",
+      "actual_sha256": "a4ea378c2c731f2846f762a2ca30cced08388791030b11577f2429640235375e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/scripts/run_multiscale_reference.py",
+      "expected_sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b",
+      "actual_sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/__init__.py",
+      "expected_sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a",
+      "actual_sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/accounting.py",
+      "expected_sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "actual_sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/annual_preflight_batch_cli.py",
+      "expected_sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e",
+      "actual_sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/annual_replay_batch_cli.py",
+      "expected_sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20",
+      "actual_sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/annual_replay_certify_cli.py",
+      "expected_sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8",
+      "actual_sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/annual_replay_cli.py",
+      "expected_sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7",
+      "actual_sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/btes.py",
+      "expected_sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687",
+      "actual_sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/building_audit.py",
+      "expected_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "actual_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/building_thermal.py",
+      "expected_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "actual_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/chronology.py",
+      "expected_sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "actual_sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/chronology_cli.py",
+      "expected_sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+      "actual_sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/cli.py",
+      "expected_sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35",
+      "actual_sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/competition_runner.py",
+      "expected_sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4",
+      "actual_sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/decision_weight_calibration.py",
+      "expected_sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+      "actual_sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/experiment_cli.py",
+      "expected_sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b",
+      "actual_sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/experiments.py",
+      "expected_sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "actual_sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/feasibility.py",
+      "expected_sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a",
+      "actual_sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/finance.py",
+      "expected_sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8",
+      "actual_sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/hard_weight_calibration.py",
+      "expected_sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "actual_sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/heating_season.py",
+      "expected_sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+      "actual_sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/heating_season_cli.py",
+      "expected_sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2",
+      "actual_sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/hydraulics.py",
+      "expected_sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd",
+      "actual_sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/io.py",
+      "expected_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "actual_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/linear.py",
+      "expected_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "actual_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/model.py",
+      "expected_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "actual_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/mpc.py",
+      "expected_sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31",
+      "actual_sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/multistage.py",
+      "expected_sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636",
+      "actual_sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/multistage_cli.py",
+      "expected_sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3",
+      "actual_sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/multiyear.py",
+      "expected_sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106",
+      "actual_sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/multiyear_readiness_cli.py",
+      "expected_sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2",
+      "actual_sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/multiyear_replay_cli.py",
+      "expected_sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1",
+      "actual_sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/network_feedback.py",
+      "expected_sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+      "actual_sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/operations_cli.py",
+      "expected_sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85",
+      "actual_sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/osm_reference.py",
+      "expected_sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+      "actual_sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/physical_extensions.py",
+      "expected_sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "actual_sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/policy_alignment.py",
+      "expected_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "actual_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/policy_alignment_cli.py",
+      "expected_sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6",
+      "actual_sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/policy_cli.py",
+      "expected_sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf",
+      "actual_sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/provenance.py",
+      "expected_sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2",
+      "actual_sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/reporting.py",
+      "expected_sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c",
+      "actual_sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/representative.py",
+      "expected_sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+      "actual_sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/representative_adoption.py",
+      "expected_sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+      "actual_sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/risk_scan_cli.py",
+      "expected_sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21",
+      "actual_sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/scenario_cli.py",
+      "expected_sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385",
+      "actual_sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/scenarios.py",
+      "expected_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "actual_sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/solution_quality.py",
+      "expected_sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+      "actual_sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/spatial_adapter.py",
+      "expected_sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+      "actual_sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/spatial_quality.py",
+      "expected_sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347",
+      "actual_sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/time_registry.py",
+      "expected_sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+      "actual_sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/unified_cli.py",
+      "expected_sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+      "actual_sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/frozen_code/src/heatplan/validation.py",
+      "expected_sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9",
+      "actual_sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/independent_verification.json",
+      "expected_sha256": "a30ba2f4aa150340ddf38027a043dd133bd5c48e0757cd85b713f18a9845d354",
+      "actual_sha256": "a30ba2f4aa150340ddf38027a043dd133bd5c48e0757cd85b713f18a9845d354",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/input_cases/C1_shared/config.yaml",
+      "expected_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "actual_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/input_cases/C1_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/input_cases/C1_unlimited/config.yaml",
+      "expected_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "actual_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/input_cases/C1_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/input_cases/C4_shared/config.yaml",
+      "expected_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "actual_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/input_cases/C4_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/input_cases/C4_unlimited/config.yaml",
+      "expected_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "actual_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/input_cases/C4_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/manifest.json",
+      "expected_sha256": "8f54390dfb0c385c1b9baf79730b5184dd4ae6ccf1704a70fb6e040815c336d4",
+      "actual_sha256": "8f54390dfb0c385c1b9baf79730b5184dd4ae6ccf1704a70fb6e040815c336d4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/protocol.json",
+      "expected_sha256": "d476e7667029b676ecbde97f0733c7f247a76973631a80bc6593336f3027cb82",
+      "actual_sha256": "d476e7667029b676ecbde97f0733c7f247a76973631a80bc6593336f3027cb82",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/protocol_lock.json",
+      "expected_sha256": "38392d9d41dd2577144205d750f1182397bc223718540a8cfc157f161652fd88",
+      "actual_sha256": "38392d9d41dd2577144205d750f1182397bc223718540a8cfc157f161652fd88",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/building_trajectory.csv",
+      "expected_sha256": "dbb4cf396bcc509d980cc89f729d079e20231daf1c4491021701746a405fd092",
+      "actual_sha256": "dbb4cf396bcc509d980cc89f729d079e20231daf1c4491021701746a405fd092",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/config.yaml",
+      "expected_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "actual_sha256": "80b6cc7cbdecfbdaf3e66d10248861dafa58f4207448b3d438f297cea0f2e0f1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/dispatch.csv",
+      "expected_sha256": "623e7baa72849cc69fd275f97eff51671d762a273b788f351cdb466150865f54",
+      "actual_sha256": "623e7baa72849cc69fd275f97eff51671d762a273b788f351cdb466150865f54",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/independent_audit.json",
+      "expected_sha256": "d1da60af53235c2ec39604ebf45a3293d36a6752a50da93c8ef7d7cde1fe30ba",
+      "actual_sha256": "d1da60af53235c2ec39604ebf45a3293d36a6752a50da93c8ef7d7cde1fe30ba",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/investments.csv",
+      "expected_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "actual_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/solution_values.npy",
+      "expected_sha256": "f936f2afe3aef3fb0498a235e97c9ebc9ac7bdc4a1d0879594a20b874ad0d78b",
+      "actual_sha256": "f936f2afe3aef3fb0498a235e97c9ebc9ac7bdc4a1d0879594a20b874ad0d78b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/summary.json",
+      "expected_sha256": "77cd3b138b1785c38e006538b529d48ad8eb4c6fac3432f42ba544e0becdedd0",
+      "actual_sha256": "77cd3b138b1785c38e006538b529d48ad8eb4c6fac3432f42ba544e0becdedd0",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/thermal_ledger.json",
+      "expected_sha256": "b3f7b8703cbe8a8a14bd3cefbfdf214a5579fef581f9854168ffc21eb4b8bfae",
+      "actual_sha256": "b3f7b8703cbe8a8a14bd3cefbfdf214a5579fef581f9854168ffc21eb4b8bfae",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/variable_names.json",
+      "expected_sha256": "0c9ef9dc101b4f8fc6f0f44386f8e116363dd3191091d80f2f6791b5e0f853da",
+      "actual_sha256": "0c9ef9dc101b4f8fc6f0f44386f8e116363dd3191091d80f2f6791b5e0f853da",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/building_trajectory.csv",
+      "expected_sha256": "7fcf10653aa11a96c4744865cce03e3adead3b7b077dd51e1c72f8ca5e4e3e36",
+      "actual_sha256": "7fcf10653aa11a96c4744865cce03e3adead3b7b077dd51e1c72f8ca5e4e3e36",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/config.yaml",
+      "expected_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "actual_sha256": "08f046dcf27b0c0b88bcd2348f808b11c8cb86bc371eb4e76624aa2162312e05",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/dispatch.csv",
+      "expected_sha256": "7c69d232e15ccc68dba5facefb24c15abf49623ca93e764c8f65a405ea43d346",
+      "actual_sha256": "7c69d232e15ccc68dba5facefb24c15abf49623ca93e764c8f65a405ea43d346",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/independent_audit.json",
+      "expected_sha256": "4ca20d64f0033340d99dd992cfa8e0a0d2bd4ded113a241b5e18067b229bb13b",
+      "actual_sha256": "4ca20d64f0033340d99dd992cfa8e0a0d2bd4ded113a241b5e18067b229bb13b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/investments.csv",
+      "expected_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "actual_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/solution_values.npy",
+      "expected_sha256": "ddb142aae4dcc2ed02b3bb4d25b5e118e39daed9d038681555a0ff479654ac8e",
+      "actual_sha256": "ddb142aae4dcc2ed02b3bb4d25b5e118e39daed9d038681555a0ff479654ac8e",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/summary.json",
+      "expected_sha256": "7ec32565417e145f81acb08cfef145139ddd8d216bfdf7c2d4b00a13932bffae",
+      "actual_sha256": "7ec32565417e145f81acb08cfef145139ddd8d216bfdf7c2d4b00a13932bffae",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/thermal_ledger.json",
+      "expected_sha256": "b9a13f0572378bd44395f07c5c53cd14beda1de8a8a326e625fc1d15b7cfadc3",
+      "actual_sha256": "b9a13f0572378bd44395f07c5c53cd14beda1de8a8a326e625fc1d15b7cfadc3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/variable_names.json",
+      "expected_sha256": "cd63babf7ce3694d6305faef8146fd78366f9214d195d2caca5d032657d5ac0a",
+      "actual_sha256": "cd63babf7ce3694d6305faef8146fd78366f9214d195d2caca5d032657d5ac0a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/building_trajectory.csv",
+      "expected_sha256": "647c939266dd41da687b7586d2337fb9af5c42de1737d97e72fc4f73276b6695",
+      "actual_sha256": "647c939266dd41da687b7586d2337fb9af5c42de1737d97e72fc4f73276b6695",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/config.yaml",
+      "expected_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "actual_sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/dispatch.csv",
+      "expected_sha256": "fb9e71efeb67de6a83a201a227e79c695131dc1c53b80b6be41579b424801e94",
+      "actual_sha256": "fb9e71efeb67de6a83a201a227e79c695131dc1c53b80b6be41579b424801e94",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/independent_audit.json",
+      "expected_sha256": "42d9f30fd2bc8a14383e5af8d665c3908c7d6863266f0666aa4df0259c7a901a",
+      "actual_sha256": "42d9f30fd2bc8a14383e5af8d665c3908c7d6863266f0666aa4df0259c7a901a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/investments.csv",
+      "expected_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "actual_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/solution_values.npy",
+      "expected_sha256": "4fb40187a7b3f50cb4b3a18014333154993aa7bcd23ea0d633fcbf3ff92058e1",
+      "actual_sha256": "4fb40187a7b3f50cb4b3a18014333154993aa7bcd23ea0d633fcbf3ff92058e1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/summary.json",
+      "expected_sha256": "5b04b7b1a830ede3a39105f798b490df30c253f6eab4146ec7f3a6f5c6e45111",
+      "actual_sha256": "5b04b7b1a830ede3a39105f798b490df30c253f6eab4146ec7f3a6f5c6e45111",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/thermal_ledger.json",
+      "expected_sha256": "f874e896a7adda032122e04f38f5a8f08cba01b13e5cc8e86f24ab5d56f671da",
+      "actual_sha256": "f874e896a7adda032122e04f38f5a8f08cba01b13e5cc8e86f24ab5d56f671da",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/variable_names.json",
+      "expected_sha256": "f09ba7138334b59d3dfe28d12cb2dbe70bfc4999279cac42ed93a60b79ff378b",
+      "actual_sha256": "f09ba7138334b59d3dfe28d12cb2dbe70bfc4999279cac42ed93a60b79ff378b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/building_trajectory.csv",
+      "expected_sha256": "1c7ca6d86954c689024713fd0b1769f8d615ff6c8033979038126d4479cc843a",
+      "actual_sha256": "1c7ca6d86954c689024713fd0b1769f8d615ff6c8033979038126d4479cc843a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/config.yaml",
+      "expected_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "actual_sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/dispatch.csv",
+      "expected_sha256": "b669458072839882b5c4eee9a839898e03e4c7f4f2bae775efa051cd765746c4",
+      "actual_sha256": "b669458072839882b5c4eee9a839898e03e4c7f4f2bae775efa051cd765746c4",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/independent_audit.json",
+      "expected_sha256": "85eade13921376e8a16179378187a94872ce02d7371a5abba695fdda888e2a9b",
+      "actual_sha256": "85eade13921376e8a16179378187a94872ce02d7371a5abba695fdda888e2a9b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/input.csv",
+      "expected_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "actual_sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/investments.csv",
+      "expected_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "actual_sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/solution_values.npy",
+      "expected_sha256": "bc9de9f63282b63b1122fbe1af553ca276fc01ef868a048df45bc74ebc29edcc",
+      "actual_sha256": "bc9de9f63282b63b1122fbe1af553ca276fc01ef868a048df45bc74ebc29edcc",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/summary.json",
+      "expected_sha256": "b76dbd43c0289b1ef6a23d7501bdd39f588f6d62029ace09548f879a0fe51d50",
+      "actual_sha256": "b76dbd43c0289b1ef6a23d7501bdd39f588f6d62029ace09548f879a0fe51d50",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/thermal_ledger.json",
+      "expected_sha256": "64e8cccadd8eb6d0fcc327eb32dc06b9fd68db8527a2f13fded8ff9102c0e181",
+      "actual_sha256": "64e8cccadd8eb6d0fcc327eb32dc06b9fd68db8527a2f13fded8ff9102c0e181",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/variable_names.json",
+      "expected_sha256": "32707c31fc9bab726f2291beb888b2c90a3f706168a5d0b32f7659c381c58fe1",
+      "actual_sha256": "32707c31fc9bab726f2291beb888b2c90a3f706168a5d0b32f7659c381c58fe1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/tests_01.xml",
+      "expected_sha256": "9a05758149af61bcddc29291b7fd321c43cccabde220823dca8f0cb12598ee85",
+      "actual_sha256": "9a05758149af61bcddc29291b7fd321c43cccabde220823dca8f0cb12598ee85",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/tests_02.xml",
+      "expected_sha256": "b5b7f0b5c610235709c58e79805e3aad840ea3c293180dfba96e50043839f79a",
+      "actual_sha256": "b5b7f0b5c610235709c58e79805e3aad840ea3c293180dfba96e50043839f79a",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/tests_03.xml",
+      "expected_sha256": "168123032b9814a02d182d45b44f52fd9d5379086b3d24dd8c3d4b43e7cbfe23",
+      "actual_sha256": "168123032b9814a02d182d45b44f52fd9d5379086b3d24dd8c3d4b43e7cbfe23",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/README.md",
+      "expected_sha256": "cf35a5eb892059ed9ad451c61d4dc89f1055789fef911d745a37e213ed6ac4f0",
+      "actual_sha256": "cf35a5eb892059ed9ad451c61d4dc89f1055789fef911d745a37e213ed6ac4f0",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/HANDOFF.json",
+      "expected_sha256": "8356c4a5c83878d2e7396379fcd339072568bcefe4f172f79e2e57006e426e38",
+      "actual_sha256": "8356c4a5c83878d2e7396379fcd339072568bcefe4f172f79e2e57006e426e38",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/README.md",
+      "expected_sha256": "908304562e13d293501c8f0eb0ccabca92d55d181fd3a47737822bc463942310",
+      "actual_sha256": "908304562e13d293501c8f0eb0ccabca92d55d181fd3a47737822bc463942310",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_01/evidence_table.json",
+      "expected_sha256": "5c6209b63b10600748bc64a9341614ff9c163c89e0c8292ddec0e1bd3da74682",
+      "actual_sha256": "5c6209b63b10600748bc64a9341614ff9c163c89e0c8292ddec0e1bd3da74682",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_01/README.md",
+      "expected_sha256": "a407cf1af2213ec73a66b15532feb1d9a59e31ac3b2c142d1add340b3d4f796b",
+      "actual_sha256": "a407cf1af2213ec73a66b15532feb1d9a59e31ac3b2c142d1add340b3d4f796b",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_01.log",
+      "expected_sha256": "f2cfbdbff943e4ca91eb26911744a96ac3def9ade1a48f0e74fb8a7c91951067",
+      "actual_sha256": "f2cfbdbff943e4ca91eb26911744a96ac3def9ade1a48f0e74fb8a7c91951067",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_02/evidence_table.json",
+      "expected_sha256": "f09a2c81d268939ec289bcdec80487af8606898e56be0fbff0ece16c028d5980",
+      "actual_sha256": "f09a2c81d268939ec289bcdec80487af8606898e56be0fbff0ece16c028d5980",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_02/README.md",
+      "expected_sha256": "f87a1fb50b73e55904d9c188cd15a5bb70c8bf05daaaa222651ad499040870fe",
+      "actual_sha256": "f87a1fb50b73e55904d9c188cd15a5bb70c8bf05daaaa222651ad499040870fe",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_02.log",
+      "expected_sha256": "cc9f464837dfc4bf45545c3a8261584d0b330f3801ee73e1d77e0588728251ae",
+      "actual_sha256": "cc9f464837dfc4bf45545c3a8261584d0b330f3801ee73e1d77e0588728251ae",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_03/evidence_table.json",
+      "expected_sha256": "e26d815a25823ea3b026aee376351e98479b7de3cd284d72f533b68f276890a3",
+      "actual_sha256": "e26d815a25823ea3b026aee376351e98479b7de3cd284d72f533b68f276890a3",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_03/README.md",
+      "expected_sha256": "a2feb87dca4abb3793957ec41a8ca6498922afcb46cc24c43c264a77423e099f",
+      "actual_sha256": "a2feb87dca4abb3793957ec41a8ca6498922afcb46cc24c43c264a77423e099f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_03.log",
+      "expected_sha256": "656fc1484f7df2dea0096a208b926f6686780b92f2c62f8161e5042b0b6122c2",
+      "actual_sha256": "656fc1484f7df2dea0096a208b926f6686780b92f2c62f8161e5042b0b6122c2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_final/evidence_table.json",
+      "expected_sha256": "49e3f9ca524723aaa4f75aee1a1d88e0fcb9f7eb11f8141debe6168142d742f8",
+      "actual_sha256": "49e3f9ca524723aaa4f75aee1a1d88e0fcb9f7eb11f8141debe6168142d742f8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_final/README.md",
+      "expected_sha256": "a2feb87dca4abb3793957ec41a8ca6498922afcb46cc24c43c264a77423e099f",
+      "actual_sha256": "a2feb87dca4abb3793957ec41a8ca6498922afcb46cc24c43c264a77423e099f",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_final.log",
+      "expected_sha256": "656fc1484f7df2dea0096a208b926f6686780b92f2c62f8161e5042b0b6122c2",
+      "actual_sha256": "656fc1484f7df2dea0096a208b926f6686780b92f2c62f8161e5042b0b6122c2",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_01.log",
+      "expected_sha256": "e8989429741ab19d8ecf3585433bcbcfaf6b8b83d46124828c9502331c50b248",
+      "actual_sha256": "e8989429741ab19d8ecf3585433bcbcfaf6b8b83d46124828c9502331c50b248",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_01.xml",
+      "expected_sha256": "6c6ed0305ac9f35faaa78b936ae2e7142bdd9048253070f5ef5501c18fb59903",
+      "actual_sha256": "6c6ed0305ac9f35faaa78b936ae2e7142bdd9048253070f5ef5501c18fb59903",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_02.log",
+      "expected_sha256": "af8b209d0f4b7159986e8d79fef077e7030bb4c79116b09de54809b518095b62",
+      "actual_sha256": "af8b209d0f4b7159986e8d79fef077e7030bb4c79116b09de54809b518095b62",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_02.xml",
+      "expected_sha256": "9ee764f420cba89f005b334302c246d6b70361cd6fc859a0dca3480d89fe2870",
+      "actual_sha256": "9ee764f420cba89f005b334302c246d6b70361cd6fc859a0dca3480d89fe2870",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_03.log",
+      "expected_sha256": "7b7d10c6c02df7203b08b1f840cc2ba3caa66cd7d9c356d184d016377103daa0",
+      "actual_sha256": "7b7d10c6c02df7203b08b1f840cc2ba3caa66cd7d9c356d184d016377103daa0",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_03.xml",
+      "expected_sha256": "d4937266bacb1d5ae2f9cb5e5b04c81f95247dcac9fad0582d0027e2ee13d8bb",
+      "actual_sha256": "d4937266bacb1d5ae2f9cb5e5b04c81f95247dcac9fad0582d0027e2ee13d8bb",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_final.log",
+      "expected_sha256": "67630993693cbd51889bef27abc8cecafbad4946181c4c04336c18f0a7c6dcbc",
+      "actual_sha256": "67630993693cbd51889bef27abc8cecafbad4946181c4c04336c18f0a7c6dcbc",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/tests_final.xml",
+      "expected_sha256": "42c1ccba6362148ccb854912f5ae7c7af5b20df407f0440154af5101c92aab15",
+      "actual_sha256": "42c1ccba6362148ccb854912f5ae7c7af5b20df407f0440154af5101c92aab15",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/HANDOFF.json",
+      "expected_sha256": "51c46da3f6e2d0991f9cafe445af4701cfd821ce89fa464342d6ee7ffce5cf16",
+      "actual_sha256": "51c46da3f6e2d0991f9cafe445af4701cfd821ce89fa464342d6ee7ffce5cf16",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/run_01/README.md",
+      "expected_sha256": "9f52e1ec093353db849bc1b5c4c1a6812d61a31c0e89d57da742e04715f2ac99",
+      "actual_sha256": "9f52e1ec093353db849bc1b5c4c1a6812d61a31c0e89d57da742e04715f2ac99",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/run_01/registry.json",
+      "expected_sha256": "217030d9101d739d878d61c23e2f2466bdde880a667481b9940280c8713d5a64",
+      "actual_sha256": "217030d9101d739d878d61c23e2f2466bdde880a667481b9940280c8713d5a64",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/run_02/README.md",
+      "expected_sha256": "9f52e1ec093353db849bc1b5c4c1a6812d61a31c0e89d57da742e04715f2ac99",
+      "actual_sha256": "9f52e1ec093353db849bc1b5c4c1a6812d61a31c0e89d57da742e04715f2ac99",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/run_02/registry.json",
+      "expected_sha256": "b451044bbdc171e78585463ce58dfe28a16d12e4b18c4984347bb7d681ca08d1",
+      "actual_sha256": "b451044bbdc171e78585463ce58dfe28a16d12e4b18c4984347bb7d681ca08d1",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/run_final/README.md",
+      "expected_sha256": "5eb4a5491a64c4abde5d4e40b23c4e27585b19d5432e8f83a2180a059c6bcc07",
+      "actual_sha256": "5eb4a5491a64c4abde5d4e40b23c4e27585b19d5432e8f83a2180a059c6bcc07",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/run_final/registry.json",
+      "expected_sha256": "8d59e0b322d25c0674ce36bd6d07c8bb9f7bee680fec0bdc56cce3656b872885",
+      "actual_sha256": "8d59e0b322d25c0674ce36bd6d07c8bb9f7bee680fec0bdc56cce3656b872885",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/spec_final.json",
+      "expected_sha256": "0cab6cd621ef1040ab61b6488a9d2ea12694ada9efddf5a99308cb85ae12d383",
+      "actual_sha256": "0cab6cd621ef1040ab61b6488a9d2ea12694ada9efddf5a99308cb85ae12d383",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/spec_v1.json",
+      "expected_sha256": "7eb08c0532e6f22bc84431e586ab04afe6d7ea3af7c8b3c4faa5ba8b34a403e8",
+      "actual_sha256": "7eb08c0532e6f22bc84431e586ab04afe6d7ea3af7c8b3c4faa5ba8b34a403e8",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/tests.xml",
+      "expected_sha256": "df0a1fa1df3b6ac91443571b32fdf4a1043dc54f8c33a67ac96ef863d878a403",
+      "actual_sha256": "df0a1fa1df3b6ac91443571b32fdf4a1043dc54f8c33a67ac96ef863d878a403",
+      "matches": true
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/tests_final.xml",
+      "expected_sha256": "d0cbf2487f5d73f75087090e7995ec062164d29975b21a52d81fe3230eb85abb",
+      "actual_sha256": "d0cbf2487f5d73f75087090e7995ec062164d29975b21a52d81fe3230eb85abb",
+      "matches": true
+    },
+    {
+      "path": "docs/PROJECT_ACHIEVEMENTS_AND_HIGHLIGHTS_20261002.md",
+      "expected_sha256": "9225003a38bacf41921b9d140db864b16d456f0faff713e3358fb7953c0b9cc2",
+      "actual_sha256": "9225003a38bacf41921b9d140db864b16d456f0faff713e3358fb7953c0b9cc2",
+      "matches": true
+    },
+    {
+      "path": "scripts/audit_multiscale_capacity_axis.py",
+      "expected_sha256": "7f5718ce84214cceb4126ddfd921489d07e85e95c1801f4da50e688fa0a850ee",
+      "actual_sha256": "7f5718ce84214cceb4126ddfd921489d07e85e95c1801f4da50e688fa0a850ee",
+      "matches": true
+    },
+    {
+      "path": "scripts/build_time_registry.py",
+      "expected_sha256": "edecfae6c120fa70353aecc1c3768c4233a1ce74214c6ae3d62cb52affa943a6",
+      "actual_sha256": "edecfae6c120fa70353aecc1c3768c4233a1ce74214c6ae3d62cb52affa943a6",
+      "matches": true
+    },
+    {
+      "path": "scripts/report_multiscale_capacity_axis.py",
+      "expected_sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3",
+      "actual_sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3",
+      "matches": true
+    },
+    {
+      "path": "scripts/report_solution_evidence.py",
+      "expected_sha256": "f0bf9ff04bdc4281b06880fc39d219cb2ddd704703ea0f9f504348bdbb551236",
+      "actual_sha256": "f0bf9ff04bdc4281b06880fc39d219cb2ddd704703ea0f9f504348bdbb551236",
+      "matches": true
+    },
+    {
+      "path": "scripts/run_multiscale_capacity_axis.py",
+      "expected_sha256": "a4ea378c2c731f2846f762a2ca30cced08388791030b11577f2429640235375e",
+      "actual_sha256": "a4ea378c2c731f2846f762a2ca30cced08388791030b11577f2429640235375e",
+      "matches": true
+    },
+    {
+      "path": "src/heatplan/solution_evidence.py",
+      "expected_sha256": "b0d0f7079410bdb0297838cba392761f3d6464e89299b198ad69f6ca44fd3abb",
+      "actual_sha256": "b0d0f7079410bdb0297838cba392761f3d6464e89299b198ad69f6ca44fd3abb",
+      "matches": true
+    },
+    {
+      "path": "src/heatplan/time_registry.py",
+      "expected_sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+      "actual_sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+      "matches": true
+    },
+    {
+      "path": "tests/test_multiscale_capacity_axis.py",
+      "expected_sha256": "75cc56ca0c80c31447824c917cd096191c6b22037e381233944081d284c5f417",
+      "actual_sha256": "75cc56ca0c80c31447824c917cd096191c6b22037e381233944081d284c5f417",
+      "matches": true
+    },
+    {
+      "path": "tests/test_solution_evidence.py",
+      "expected_sha256": "1b3af8ab1ae99ff6d983fdacd9ed18942a3d527c2c86b2727803f7da9baa5ea4",
+      "actual_sha256": "1b3af8ab1ae99ff6d983fdacd9ed18942a3d527c2c86b2727803f7da9baa5ea4",
+      "matches": true
+    },
+    {
+      "path": "tests/test_time_registry.py",
+      "expected_sha256": "7e0e5fa140c864f58e92bb642da8474c68510af1a74c4b97bd64e51373b6562b",
+      "actual_sha256": "7e0e5fa140c864f58e92bb642da8474c68510af1a74c4b97bd64e51373b6562b",
+      "matches": true
+    }
+  ],
+  "code_config_test_scope_count": 231,
+  "code_config_test_scope": [
+    {
+      "path": "src/heatplan/__init__.py",
+      "sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a"
+    },
+    {
+      "path": "src/heatplan/accounting.py",
+      "sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21"
+    },
+    {
+      "path": "src/heatplan/annual_preflight_batch_cli.py",
+      "sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e"
+    },
+    {
+      "path": "src/heatplan/annual_replay_batch_cli.py",
+      "sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20"
+    },
+    {
+      "path": "src/heatplan/annual_replay_certify_cli.py",
+      "sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8"
+    },
+    {
+      "path": "src/heatplan/annual_replay_cli.py",
+      "sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7"
+    },
+    {
+      "path": "src/heatplan/btes.py",
+      "sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687"
+    },
+    {
+      "path": "src/heatplan/building_audit.py",
+      "sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8"
+    },
+    {
+      "path": "src/heatplan/building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40"
+    },
+    {
+      "path": "src/heatplan/chronology.py",
+      "sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0"
+    },
+    {
+      "path": "src/heatplan/chronology_cli.py",
+      "sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274"
+    },
+    {
+      "path": "src/heatplan/cli.py",
+      "sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35"
+    },
+    {
+      "path": "src/heatplan/competition_runner.py",
+      "sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4"
+    },
+    {
+      "path": "src/heatplan/decision_weight_calibration.py",
+      "sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92"
+    },
+    {
+      "path": "src/heatplan/experiment_cli.py",
+      "sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b"
+    },
+    {
+      "path": "src/heatplan/experiments.py",
+      "sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4"
+    },
+    {
+      "path": "src/heatplan/feasibility.py",
+      "sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a"
+    },
+    {
+      "path": "src/heatplan/finance.py",
+      "sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8"
+    },
+    {
+      "path": "src/heatplan/hard_weight_calibration.py",
+      "sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3"
+    },
+    {
+      "path": "src/heatplan/heating_season.py",
+      "sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2"
+    },
+    {
+      "path": "src/heatplan/heating_season_cli.py",
+      "sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2"
+    },
+    {
+      "path": "src/heatplan/hydraulics.py",
+      "sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd"
+    },
+    {
+      "path": "src/heatplan/io.py",
+      "sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6"
+    },
+    {
+      "path": "src/heatplan/linear.py",
+      "sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c"
+    },
+    {
+      "path": "src/heatplan/model.py",
+      "sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697"
+    },
+    {
+      "path": "src/heatplan/mpc.py",
+      "sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31"
+    },
+    {
+      "path": "src/heatplan/multistage.py",
+      "sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636"
+    },
+    {
+      "path": "src/heatplan/multistage_cli.py",
+      "sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3"
+    },
+    {
+      "path": "src/heatplan/multiyear.py",
+      "sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106"
+    },
+    {
+      "path": "src/heatplan/multiyear_readiness_cli.py",
+      "sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2"
+    },
+    {
+      "path": "src/heatplan/multiyear_replay_cli.py",
+      "sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1"
+    },
+    {
+      "path": "src/heatplan/network_feedback.py",
+      "sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161"
+    },
+    {
+      "path": "src/heatplan/operations_cli.py",
+      "sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85"
+    },
+    {
+      "path": "src/heatplan/osm_reference.py",
+      "sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14"
+    },
+    {
+      "path": "src/heatplan/physical_extensions.py",
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d"
+    },
+    {
+      "path": "src/heatplan/policy_alignment.py",
+      "sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed"
+    },
+    {
+      "path": "src/heatplan/policy_alignment_cli.py",
+      "sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6"
+    },
+    {
+      "path": "src/heatplan/policy_cli.py",
+      "sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf"
+    },
+    {
+      "path": "src/heatplan/provenance.py",
+      "sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2"
+    },
+    {
+      "path": "src/heatplan/reporting.py",
+      "sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c"
+    },
+    {
+      "path": "src/heatplan/representative.py",
+      "sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c"
+    },
+    {
+      "path": "src/heatplan/representative_adoption.py",
+      "sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f"
+    },
+    {
+      "path": "src/heatplan/risk_scan_cli.py",
+      "sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21"
+    },
+    {
+      "path": "src/heatplan/scenario_cli.py",
+      "sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385"
+    },
+    {
+      "path": "src/heatplan/scenarios.py",
+      "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131"
+    },
+    {
+      "path": "src/heatplan/solution_evidence.py",
+      "sha256": "b0d0f7079410bdb0297838cba392761f3d6464e89299b198ad69f6ca44fd3abb"
+    },
+    {
+      "path": "src/heatplan/solution_quality.py",
+      "sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f"
+    },
+    {
+      "path": "src/heatplan/spatial_adapter.py",
+      "sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7"
+    },
+    {
+      "path": "src/heatplan/spatial_quality.py",
+      "sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347"
+    },
+    {
+      "path": "src/heatplan/time_registry.py",
+      "sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f"
+    },
+    {
+      "path": "src/heatplan/unified_cli.py",
+      "sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e"
+    },
+    {
+      "path": "src/heatplan/validation.py",
+      "sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9"
+    },
+    {
+      "path": "configs/evidence_case_20261002/wuhan_bestest600_rc.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "configs/evidence_case_20261002/wuhan_bestest600_steady.yaml",
+      "sha256": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3"
+    },
+    {
+      "path": "scripts/analyze_multiscale_reference.py",
+      "sha256": "3ee01a4f2efdba892a48d0ec876ab7e399f727dd9578bffdbcdc44508f6a62be"
+    },
+    {
+      "path": "scripts/audit_data_provenance.py",
+      "sha256": "06ea53bf5089b765d63df2daaa6383a2988a342db2dfeeff66d358114be80829"
+    },
+    {
+      "path": "scripts/audit_implementation_evidence.py",
+      "sha256": "cc49ee26f22ec3894fea6e62898789328302a7a5eddec183595ff66227e31d0d"
+    },
+    {
+      "path": "scripts/audit_investment_reference.py",
+      "sha256": "ec67e28dbc1f82c49e3ab99778eb45f041ca48b235c982d796f4dfda1c219121"
+    },
+    {
+      "path": "scripts/audit_multiscale_capacity_axis.py",
+      "sha256": "7f5718ce84214cceb4126ddfd921489d07e85e95c1801f4da50e688fa0a850ee"
+    },
+    {
+      "path": "scripts/audit_multiscale_reference.py",
+      "sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164"
+    },
+    {
+      "path": "scripts/audit_solution_quality.py",
+      "sha256": "cacded2ed553f2e1b1dcaa35530e87f28a9b89f95db14341fa9b94f1707229b5"
+    },
+    {
+      "path": "scripts/bdg2_benchmark_diagnostics.py",
+      "sha256": "854f4da022fbfc45e9a5abf5c142ebdc49e908d962b1028b801351f8ff152e12"
+    },
+    {
+      "path": "scripts/bdg2_confirmation_benchmark.py",
+      "sha256": "bcf41c5d07909df07cc67a7d87fc844921ef4676ded99cc4b9cc1e8332b73fc1"
+    },
+    {
+      "path": "scripts/bdg2_external_benchmark.py",
+      "sha256": "09a8ce844f10d5e3f82aea3c9906a075bbda1632aa829aedb300ea43ccaa6bb1"
+    },
+    {
+      "path": "scripts/bdg2_hard_weight_confirmation.py",
+      "sha256": "21f37bf7b08a7feac4150cb66e486d33360f8dd724feaaae6e7377796a9d34bf"
+    },
+    {
+      "path": "scripts/benchmark_model_build.py",
+      "sha256": "ec76900508965689186dde6d07aae3489dbd3a0f44e179074a5bb5caff174dd2"
+    },
+    {
+      "path": "scripts/build_algorithm_report_v11_2.py",
+      "sha256": "9ef03b95d0908ba834a3215755437ff6e3d6998227f5a6b9d44a84bbe8974d8a"
+    },
+    {
+      "path": "scripts/build_algorithm_report_v11_3.py",
+      "sha256": "d0742a9a3aee50b746eff9feb31a71e635584be77ae48a1d846008c22b8186e1"
+    },
+    {
+      "path": "scripts/build_algorithm_report_v11_4.py",
+      "sha256": "bb36527ebfce78497a8d4201b5b728acb17041f261f92aa118680c103ab16e52"
+    },
+    {
+      "path": "scripts/build_algorithm_report_v11_5.py",
+      "sha256": "ced69d5d0d4b9ecb0f5947d57c62a72464d7a52405d2156ab62ab0099a601f50"
+    },
+    {
+      "path": "scripts/build_algorithm_section_4000.py",
+      "sha256": "bd990ec060e2646fba694d610106e1e5784c093b24b2823e3ffff02d84dc756a"
+    },
+    {
+      "path": "scripts/build_competition_deliverables.markdown.py",
+      "sha256": "27151864e5592a27a1f4a5f81c17c90ba85f4ca06021cd1264fb085ef38bd012"
+    },
+    {
+      "path": "scripts/build_competition_deliverables.mjs",
+      "sha256": "b8b9ccaadf2bbc8bbff6fd2f76dbad8eda1f2d5f45fd185bc1b7a46d3284a56f"
+    },
+    {
+      "path": "scripts/build_competition_deliverables.py",
+      "sha256": "2f66bc89f337fa10b530defea15589df98463b7bbe3f4f77937530eb95563fcb"
+    },
+    {
+      "path": "scripts/build_competition_deliverables.review.py",
+      "sha256": "940ad6b34dd19dec1a8a9c0b4ae0865d91ed9faa25ea2d7adf140ae904076912"
+    },
+    {
+      "path": "scripts/build_competition_report_20260827.py",
+      "sha256": "5b29e061433df8468e63ff8afb562eb0521ff8f93bba364ed048af7283d16cf1"
+    },
+    {
+      "path": "scripts/build_multiyear_public_scenario_inputs.py",
+      "sha256": "e20c8269be6a7eef9a41375724bd741a6b21e7ce5a11fbb777dd9efeeb18eba6"
+    },
+    {
+      "path": "scripts/build_northern_model_doc.py",
+      "sha256": "5e76cd0c9003ffcd7ebad7a58342990dbbc4e6d038ed9f719c8aaa16a9995a04"
+    },
+    {
+      "path": "scripts/build_osm_reference_cases.py",
+      "sha256": "163d2f4a85075756b6331815ed84fd50ff529ba6ecb5f316290d640ba6318438"
+    },
+    {
+      "path": "scripts/build_public_scenario_inputs.py",
+      "sha256": "e698cde57df1f85241ce03cb2441b383a71edafa7bd4a49135859b63e5106182"
+    },
+    {
+      "path": "scripts/build_shared_osm_candidates.py",
+      "sha256": "14052586b87c7e13d1b61249be6304ff2ce895058cf22426fc1fd3c86719fdcc"
+    },
+    {
+      "path": "scripts/build_time_registry.py",
+      "sha256": "edecfae6c120fa70353aecc1c3768c4233a1ce74214c6ae3d62cb52affa943a6"
+    },
+    {
+      "path": "scripts/build_v11_4_representative_days.py",
+      "sha256": "2ed72737d90f851a5fafa9bb693fa2ce7f4c41259a1dc87125bc0cf9017e4161"
+    },
+    {
+      "path": "scripts/build_v11_6_multiyear_representative_days.py",
+      "sha256": "ec84eae38fd0d17e9d04e42eb5b3d3aa8d0f8c56e346db3f6616b3e144dd6b57"
+    },
+    {
+      "path": "scripts/build_v11_8_multiyear_stochastic_bundle.py",
+      "sha256": "8d59d023c10927b6cbfad70254fb7a3823272cb221bd1be6e925381fb1b77296"
+    },
+    {
+      "path": "scripts/compare_reference_frontier.py",
+      "sha256": "524f6b3868257a89b4dfc581dd06a58f27213f09cd80bccfee994cb611a09f9d"
+    },
+    {
+      "path": "scripts/compare_v11_8_stochastic_planning.py",
+      "sha256": "6160897b1a19142d7112adb4bbbb767612915a4ac4b64c97f79620809eea81d9"
+    },
+    {
+      "path": "scripts/crawl_public_data.py",
+      "sha256": "f6a231395658108267a63bda38be67ac6aba77d97d3a5dc40a6bedb490bb4b3d"
+    },
+    {
+      "path": "scripts/export_verified_weather.py",
+      "sha256": "770298770913efec1263d60b29516e4237d661826ca4481c4f3e4c22ae2e902c"
+    },
+    {
+      "path": "scripts/fetch_published_method_source.py",
+      "sha256": "d65414d3ea63a19d8bd7463e7b830f1ca1d4b12da8a9a347a168b3efa986f2cd"
+    },
+    {
+      "path": "scripts/fetch_release_sources.py",
+      "sha256": "99643cd9cd9c734a8370533fd59136d8021cc0413b70bc4a7e969982d307f544"
+    },
+    {
+      "path": "scripts/format_math_appendix_doc.py",
+      "sha256": "b8487d4be5a3c14490e0df773a45c055852039927a6a568b87bd3e05291af697"
+    },
+    {
+      "path": "scripts/format_v4_report.py",
+      "sha256": "04614a3ec8f1d1dcb02f82f076b3f30f65d175758d1a0e9910054991bb03cfe5"
+    },
+    {
+      "path": "scripts/index_fixed_plan_checkpoints.py",
+      "sha256": "fed003c0551f4243f22191285951b95e6b43faafb1322a81a64a388817e01315"
+    },
+    {
+      "path": "scripts/make_northern_figures.py",
+      "sha256": "71ce2d634cbda7f4076e24e74fad8a308683a395f88f8ac7cc33e901e156e4c7"
+    },
+    {
+      "path": "scripts/make_reality_calibration_figures.py",
+      "sha256": "56943d0d94cdd963aa47b62c7a77f0bba9dfe5d8621f10c4246799dd250e0314"
+    },
+    {
+      "path": "scripts/make_scenario1_figures.py",
+      "sha256": "d1fdb8b502068565fb1c870f3953f5f7e73e70022811de4decb85144dcae5469"
+    },
+    {
+      "path": "scripts/make_stage_summary_figures.py",
+      "sha256": "db3792f58bd3f90d894140237b8e142df93b958181e6d5f6968e1a6001c2ef8e"
+    },
+    {
+      "path": "scripts/make_v11_1_metering_dashboard.py",
+      "sha256": "8c3704c26fae3e0b8b60b821c9159b068632962717187b44190089bafa9e1599"
+    },
+    {
+      "path": "scripts/make_v11_1_upgrade_figure.py",
+      "sha256": "942b65f7b9597bb435e5f2f2b9e1701ae0b7329f1c9c497a0c12ae9d3e273c6c"
+    },
+    {
+      "path": "scripts/make_v11_2_preflight_dashboard.py",
+      "sha256": "8075d75f88ff009b9f8e5ed1da0c958103d2f7aba9b6133aa3650fbf796372cc"
+    },
+    {
+      "path": "scripts/make_v11_3_model_profile_dashboard.py",
+      "sha256": "1f7b7882dd09956c73d28f8273a32bcbe6d19b713e60f8379932fc3080048a22"
+    },
+    {
+      "path": "scripts/make_v11_4_representative_replay_dashboard.py",
+      "sha256": "b8c43c89b86a5d60408c882fbc4a5ec48fa9465580858271c2fdff52fe2c358b"
+    },
+    {
+      "path": "scripts/make_v11_5_annual_replay_dashboard.py",
+      "sha256": "505ab7304de84bd223bd4863cb46424f462aff1db77dba59d71d6c4d3c496a7e"
+    },
+    {
+      "path": "scripts/make_v11_5_report_figures_hd.py",
+      "sha256": "6e86d7ae5596c14a1f9c62a861f579821b64c1bc96b1dd3304fefb567c16c2d8"
+    },
+    {
+      "path": "scripts/make_v11_6_multiyear_figures.py",
+      "sha256": "dbbbdd850fcc2507c4549f5ce10bfc787eca6ba052fb4d9ec2c148b598a12b2a"
+    },
+    {
+      "path": "scripts/make_v4_figures.py",
+      "sha256": "9a917df44766fe6ac646444a491ec52b52a66c02ac65b48c9120a298d58962b2"
+    },
+    {
+      "path": "scripts/make_v5_figures.py",
+      "sha256": "54179b2dc224acda2cedd80af221702ea112ac15dafc182096e468a2f89f60e6"
+    },
+    {
+      "path": "scripts/make_v6_figures.py",
+      "sha256": "3189016bc13622bf4c086d928fe2edcc07e55dda6fbe2e45f196cc8b35c6da26"
+    },
+    {
+      "path": "scripts/package_competition_release.py",
+      "sha256": "7d6f612724d2a89aa09660e9f4b5baf3e7af4914b68224332bd43df627ff7fee"
+    },
+    {
+      "path": "scripts/package_heating_season_delivery.ps1",
+      "sha256": "c2caa8da1740f09a3de0e71a6e15a3a19bcfe57f27ddba65f2a28cca93a71532"
+    },
+    {
+      "path": "scripts/plot_implementation_evidence.py",
+      "sha256": "13284460bafc52ace10c4cac4f10a9215708074a18ba677d4915683ab7ef12ad"
+    },
+    {
+      "path": "scripts/plot_v11_10_risk_scan.py",
+      "sha256": "271c1f5a0fd46c6e92ea7f2436110ce0600c8807cfb0bd63d5c06a849bce0aa9"
+    },
+    {
+      "path": "scripts/plot_v11_9_formal_replay.py",
+      "sha256": "63770c9291778f296b284aa226360417d7768331bd79e0805e3b394aae69864a"
+    },
+    {
+      "path": "scripts/prepare_competition_case.py",
+      "sha256": "3614ace2074bf40448261d5f8be99a42f19748c5d36d4ef0ee98bc0cd9e82275"
+    },
+    {
+      "path": "scripts/prepare_evidence_case_20261002.py",
+      "sha256": "66d5f805228d89b0948b4baa57458a05ceed5960bd16490a7a51916570ccd3b9"
+    },
+    {
+      "path": "scripts/prepare_three_city_common_reference.py",
+      "sha256": "ee6910122077f2e875e9eb1f1d0e250febea0be8c2589c15c5526841a5e8b288"
+    },
+    {
+      "path": "scripts/prepare_verified_design_references.py",
+      "sha256": "5dc64b2b15901ec9b83f8ccf69d7129e044f92774aef9e93ef6f2b0bf4d8edac"
+    },
+    {
+      "path": "scripts/refine_three_city_climate_dispatch.py",
+      "sha256": "bdcc0140db9d31cf0dd9f7bb489c0bf2020c1603c01728795ad189360b984d3f"
+    },
+    {
+      "path": "scripts/refresh_public_validation_summary.py",
+      "sha256": "652ec1d5e465762112db599b06d1d2c6b0b9df4a6b5c2aa761283db70bc539aa"
+    },
+    {
+      "path": "scripts/report_multiscale_capacity_axis.py",
+      "sha256": "53130d223838842bc48ced16ddddedc7f261e78fb560e8641d7fb042f9311ce3"
+    },
+    {
+      "path": "scripts/report_network_feedback_reference.py",
+      "sha256": "6cbdb474011e6f0117ecefaa39715a5b0bc1202bb051aac9d6d117c85fa4ec73"
+    },
+    {
+      "path": "scripts/report_representative_season_confirmation.py",
+      "sha256": "4f78d187a1169af424fb954a711a04dd3a756e425359a0cb7d4113131b8b30e0"
+    },
+    {
+      "path": "scripts/report_solution_evidence.py",
+      "sha256": "f0bf9ff04bdc4281b06880fc39d219cb2ddd704703ea0f9f504348bdbb551236"
+    },
+    {
+      "path": "scripts/report_three_city_climate_dispatch.py",
+      "sha256": "b016c6ad7abd65415f98319ab451decbd3c5a961b9727d172b4804298a54b9ee"
+    },
+    {
+      "path": "scripts/report_three_city_decision_weight_confirmation.py",
+      "sha256": "f71aa078604faf531330346a68bf53d19be94280d27dcfff5b63dfde6bffb8b4"
+    },
+    {
+      "path": "scripts/reproduce_admitted_reference.py",
+      "sha256": "6de45833472b05afb3b5f1501443f4c87cbc8cfdcf4affd69b35fc524786da97"
+    },
+    {
+      "path": "scripts/reproduce_external_measurement_studies.py",
+      "sha256": "9ef1a2f138d30410dc03880911083474e835c43a9c39f871e545dc93108a2002"
+    },
+    {
+      "path": "scripts/review_competition_evidence.py",
+      "sha256": "49d732aa15c43aeaef51c4ec4c1e6a9a8bd7d2b14a0d8d570c6f89c49ba4ac84"
+    },
+    {
+      "path": "scripts/run_competition_case.py",
+      "sha256": "33bf81b5d234e9eae07999a7bf2c74a62fcbe906f17cc06e757d3510f4123549"
+    },
+    {
+      "path": "scripts/run_competition_frontier.py",
+      "sha256": "584505b23e6bb87adba973d8dbea59c6e0efc88825f1627252ed3784fd582534"
+    },
+    {
+      "path": "scripts/run_evidence_case_experiments.py",
+      "sha256": "ccb81b5a8d0eb348bcd5aa1216d745614988fa3bedc926e1e2ba0cd93532a26c"
+    },
+    {
+      "path": "scripts/run_investment_reference.py",
+      "sha256": "919ba8f570219c28e638a58ddc94d41d7effab2300d66bc21ea3674fdd958826"
+    },
+    {
+      "path": "scripts/run_multiscale_capacity_axis.py",
+      "sha256": "a4ea378c2c731f2846f762a2ca30cced08388791030b11577f2429640235375e"
+    },
+    {
+      "path": "scripts/run_multiscale_reference.py",
+      "sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b"
+    },
+    {
+      "path": "scripts/run_network_feedback_reference.py",
+      "sha256": "f09ad29777e6ca5e738958540b79315555e90685579632e7eb2ff7b007b9518a"
+    },
+    {
+      "path": "scripts/run_reality_calibrations.py",
+      "sha256": "9ea32704fa9c262a9218b14388769d9556988288e3da9b5494d2eda416a57373"
+    },
+    {
+      "path": "scripts/run_representative_season_confirmation.py",
+      "sha256": "a7f69e704ca6decb708fefd693c6a76d7066475caa62e5c343680b49ff226828"
+    },
+    {
+      "path": "scripts/run_solution_quality_examples.py",
+      "sha256": "873b9ea4d4badb05d644cc3b85afc94063afff5b761039889d68c7f3e2174922"
+    },
+    {
+      "path": "scripts/run_stage_sensitivity.py",
+      "sha256": "179eed558d3324a1e0c396ebb58047ccec872547947f82eb8150c0625f2cd2f9"
+    },
+    {
+      "path": "scripts/run_three_city_climate_dispatch.py",
+      "sha256": "433fc8f42ebc591b747eca36cfa60bcc47de102319d19c55fd3b12f5e1efc27a"
+    },
+    {
+      "path": "scripts/run_three_city_climate_dispatch_resilient.py",
+      "sha256": "a30d94a922586eaa55519b470e8ea4489b6de8fb619b9271cfd6e2305429ee12"
+    },
+    {
+      "path": "scripts/run_three_city_decision_weight_confirmation.py",
+      "sha256": "f0d6e7510329f8e27963ee0fecaba9613065f1ee0f8ef84e8d1ebc38f3c580e3"
+    },
+    {
+      "path": "scripts/run_v11_4_investment_stability.py",
+      "sha256": "449d771c3c60d8ab2a883bd3d12d032b190577b78261f872bef4052544ea3d81"
+    },
+    {
+      "path": "scripts/run_v11_policy_alignment.py",
+      "sha256": "02974f48cf971edfb946e6486feca8d77e1ef0c71fb9cbd9ae595094448a139d"
+    },
+    {
+      "path": "scripts/summarize_v11_11_performance.py",
+      "sha256": "893eeda9fb96fa32524054d18dfc875f796a1c9eafc6312821029eaa6658ffbb"
+    },
+    {
+      "path": "scripts/upgrade_algorithm_report_v11_1.py",
+      "sha256": "8b9a9296d78d8d76427023f1ea6b6beadd8935fb691f9704eb5442c425338088"
+    },
+    {
+      "path": "scripts/upgrade_algorithm_report_v11_3.py",
+      "sha256": "c4a4bdc3f1aa8aa885a8f281c6eebc2abc5a6a0a4ff7419b9be75fc51c6be9f4"
+    },
+    {
+      "path": "scripts/upgrade_algorithm_report_v11_4.py",
+      "sha256": "ba4c62e101f798476bc8fb499461dc28f95671771ee8888b3a9dd1aa2e1eafb1"
+    },
+    {
+      "path": "scripts/upgrade_algorithm_report_v11_5.py",
+      "sha256": "2c8a6113c25f028c4114dc8736a430a56549a5cf6452a88ecf509a353f69844a"
+    },
+    {
+      "path": "scripts/upgrade_algorithm_report_v11_6.py",
+      "sha256": "659a2d6dbbe12ddaa0d08f2bf14ae55678abeb13396a32e2ba0673bd71604d0e"
+    },
+    {
+      "path": "scripts/upgrade_algorithm_report_v11_7.py",
+      "sha256": "d42feffdeaedc011b969cc73984f0cbb8b255a644d9e501cdf97e7deb71238ca"
+    },
+    {
+      "path": "scripts/validate_external_rc_benchmark.py",
+      "sha256": "c3cb4ab3fe4d131c22924ef77e351fec23765ead7062042d2145d89222dd540b"
+    },
+    {
+      "path": "scripts/validate_external_rc_followup.py",
+      "sha256": "93f696ee60b673a4328c17444ca1d52efb1e6696e5f3654669329cbbf2c4f4a8"
+    },
+    {
+      "path": "scripts/validate_published_multiobjective.py",
+      "sha256": "86a45367042b92e93f64f0685b7c5776672d832c360fba52b92cbcdd71a52168"
+    },
+    {
+      "path": "scripts/verify_bdg2_hard_confirmation.py",
+      "sha256": "ba5e261bddd9beed0b9f890d5efd719838cba3777580911b0e1a1c4bf758a57c"
+    },
+    {
+      "path": "scripts/verify_bdg2_soft_confirmation.py",
+      "sha256": "c4eca3747e77ca8be8a2c1b2128e4dd02f6522fa37bf4ee13aa8664cdd4e1ba7"
+    },
+    {
+      "path": "scripts/verify_network_feedback_reference.py",
+      "sha256": "11869616f74e6846139fda6b7e0eb32efc7d9004874f6d8e08bafa9a7fa88391"
+    },
+    {
+      "path": "scripts/verify_original_weather_archive.py",
+      "sha256": "e6e5639c62546be8c435e7b87d1276d060157f9180a6f18c8ccb6276137bd0de"
+    },
+    {
+      "path": "scripts/verify_reference_case_experiments.py",
+      "sha256": "5ad49ed143d0b44f57b7f99b5ae3372edc177752d66df4e45551c2cfa1fdc319"
+    },
+    {
+      "path": "scripts/verify_representative_season_confirmation.py",
+      "sha256": "2df0e44c51da68f7b475c6a1e42ed73d0c35d972a38a31617c458970f0f0701c"
+    },
+    {
+      "path": "scripts/verify_three_city_climate_dispatch.py",
+      "sha256": "489710c676e7fa544adf9ae39ef82795a10f30ea9373c20f407a2a9ce28847e9"
+    },
+    {
+      "path": "scripts/verify_three_city_decision_weight_confirmation.py",
+      "sha256": "b15639659eb57b5afedad562b62521304d0d8234ec771c638489e70eabb07e1a"
+    },
+    {
+      "path": "scripts/verify_three_city_decision_weight_native_precision.py",
+      "sha256": "570e3f25d2e4f18d25a1741ecdd9f2aab980eb1c14a8bc3e5c294b14d472d652"
+    },
+    {
+      "path": "tests/test_annual_replay_batch.py",
+      "sha256": "6d1b8032eaa70fbfd143ebaffd6ad55d298c9ae81011da20eafa89280a05277b"
+    },
+    {
+      "path": "tests/test_audit_and_heating_season.py",
+      "sha256": "0c72e68e123daafb7b3ec230ce47db46c7fb66c158684b19d7dca9d2f71bd6b1"
+    },
+    {
+      "path": "tests/test_bdg2_confirmation.py",
+      "sha256": "a51b56d95977487b10d361250a7f416c4f980e299c357e88499b6d6b10f02503"
+    },
+    {
+      "path": "tests/test_bdg2_external_benchmark.py",
+      "sha256": "6f6face544fde2932c10da93b745942ef943d648d70ffcf366a17fcf75fc5d06"
+    },
+    {
+      "path": "tests/test_building_audit.py",
+      "sha256": "e74df58b554af34bc245b6218cb4e0ac1948f3bf859bca02b2cbbd1c95606e1f"
+    },
+    {
+      "path": "tests/test_building_model_integration.py",
+      "sha256": "73abea6a53d5f8a7c81d51ef261ab2c10d34ab40f3ba99846d8b0b3c2d135616"
+    },
+    {
+      "path": "tests/test_building_thermal.py",
+      "sha256": "3dbe19c91d0b1e0790075b5bf4a810167a01bb6e8ca0b820dd0b603c7a785b7c"
+    },
+    {
+      "path": "tests/test_competition_data.py",
+      "sha256": "6776ed59c07798f8653cfbc13a0f6f3804957611a757e173ef882e1b08fc29e6"
+    },
+    {
+      "path": "tests/test_competition_runner.py",
+      "sha256": "2708564f0988cd1b986c2ea51f5600f7c9bb6479af7e96ddd5d6f29c23f1afae"
+    },
+    {
+      "path": "tests/test_core_correctness_regressions.py",
+      "sha256": "f967e59fefe660e1b9d05d38ae2e460b1bec6f304ea932e64d8e2a0af676f456"
+    },
+    {
+      "path": "tests/test_decision_weight_calibration.py",
+      "sha256": "be8c7798e00961b758cb998f65f451dffe94ef03cd7c4be0c44cc66067bec7f8"
+    },
+    {
+      "path": "tests/test_decision_weight_native_precision.py",
+      "sha256": "0afa60acfb0f0123ee027c4bf0ad9bd3619d75bc318759ec6a62ddfed3ad9d2d"
+    },
+    {
+      "path": "tests/test_evidence_case_20261002.py",
+      "sha256": "5c688143c78bf3f271e3bef4d8c73d2fed13d2db92e917eb4d2369f140695398"
+    },
+    {
+      "path": "tests/test_evidence_experiment_protocol.py",
+      "sha256": "fd500c0e3f04bf03bda5c6cc47b5275c78e99bc324a5ef2c9ed9810b7fecf125"
+    },
+    {
+      "path": "tests/test_external_rc_benchmark.py",
+      "sha256": "2281f9fca387b2783d8fb0a3bb08a00b002a8f4203be1d39899ccec8be45a092"
+    },
+    {
+      "path": "tests/test_external_rc_followup.py",
+      "sha256": "8c980b3e75648e056d790a6dbff0bcb2036a96978fa7d1b61df1d22c9af9f99e"
+    },
+    {
+      "path": "tests/test_finance_optimization.py",
+      "sha256": "7a20b9aa200f09c722f20945963fad556f802d4933d90d0d0d0446e3c5ad55a6"
+    },
+    {
+      "path": "tests/test_hard_weight_calibration.py",
+      "sha256": "82659e9a25f1473b9124c66ef1a3559fb1581961f05d42f6891b645a29ca5203"
+    },
+    {
+      "path": "tests/test_heat_metering_and_annual_replay.py",
+      "sha256": "621789a8a8f8cec6cf7e9572acadd5489a050e1933dde1c4870e05a1c4dc90f2"
+    },
+    {
+      "path": "tests/test_heat_reliability_constraints.py",
+      "sha256": "67c13bfa0a0b6fbc64557cbbe7932ed9ef1c98c1e545851423be784ed5f7fce3"
+    },
+    {
+      "path": "tests/test_investment_carry.py",
+      "sha256": "3a2282853698d364dcea678d07972f7a01bad9858efa4fe232aec6176f7fda36"
+    },
+    {
+      "path": "tests/test_investment_reference_audit.py",
+      "sha256": "d1087a79a7066a142f6c23bd641059a9f19850c26fcd33833c6f177b05c3c4f8"
+    },
+    {
+      "path": "tests/test_investment_reference_portable.py",
+      "sha256": "99d89cc9aa862022c60f74528e0da79b4d4c2be434e509b52ff4d1b39d8ccf35"
+    },
+    {
+      "path": "tests/test_investment_reference_solver.py",
+      "sha256": "1e9d878c9dba6dc93afb77afad7a070e5f369ffbc1a8b7c9689c13f677d45210"
+    },
+    {
+      "path": "tests/test_model_boundaries.py",
+      "sha256": "205764a1d5276e7adccabd4253860d16ca1d0e47655641b7a17bdcad55bd24a2"
+    },
+    {
+      "path": "tests/test_model_caching.py",
+      "sha256": "8e28a784b6a9ef2887cdbd5177bf84a81fadbf572e7dad435746ee74fc61adb4"
+    },
+    {
+      "path": "tests/test_mpc_regressions.py",
+      "sha256": "9c57154f2ce8479d6f35ab6ed3a0b9d45b05c02f128e9a41d48ef0f7b8dbc9b5"
+    },
+    {
+      "path": "tests/test_multiobjective_consistency.py",
+      "sha256": "f9b3573463269905aa6b7dc49a3e466c1d78243e9540533ae61cca3502006432"
+    },
+    {
+      "path": "tests/test_multiscale_capacity_axis.py",
+      "sha256": "75cc56ca0c80c31447824c917cd096191c6b22037e381233944081d284c5f417"
+    },
+    {
+      "path": "tests/test_multiscale_reference_audit.py",
+      "sha256": "f6ed0721aab94cab89f2cb5a50a3268f501203aacb80b26a673f9a5f0010d127"
+    },
+    {
+      "path": "tests/test_multiscale_reference_protocol.py",
+      "sha256": "32eb569d32f82925cc2e0d32828ac545037874b447436f37b5a9e7fb57f7b33b"
+    },
+    {
+      "path": "tests/test_multistage_accounting_regressions.py",
+      "sha256": "ab0638d2f8c09b6ab73aec21b13dd351c834a960b9ba2e3b55495ee0bb2bb963"
+    },
+    {
+      "path": "tests/test_multiyear.py",
+      "sha256": "f4ed682afcfad7c5a217ba5e0f0cd35f18b05f94eb7c4497bfc1a2ad93f84490"
+    },
+    {
+      "path": "tests/test_network_feedback.py",
+      "sha256": "b129e387d5b1eb77aeec582747369e68a6c963cb136000543c95add861486375"
+    },
+    {
+      "path": "tests/test_network_feedback_independent.py",
+      "sha256": "73cb65447e739e3ac1f4a1cc049680f527656674f21e9f9c88ce549e6d4c1c63"
+    },
+    {
+      "path": "tests/test_osm_reference.py",
+      "sha256": "f5fd8d2b71eaeabcf87fb6ec7f13958d80a6c524b2df03e2937b49f73883a18e"
+    },
+    {
+      "path": "tests/test_physical_extensions.py",
+      "sha256": "4db31219617df8d4401a36b73e089b4765eb2975c1d125accccece1e02cd19c8"
+    },
+    {
+      "path": "tests/test_physical_extensions_independent_review.py",
+      "sha256": "9bac656bde67e511c8e1f75344d495f2af5431fbbcba5146af22b42f05dd81fb"
+    },
+    {
+      "path": "tests/test_policy_alignment.py",
+      "sha256": "a8458e5d62b81d62b3eeac8f25b8ca188d213c984a2dfaaf6da63f4729706f30"
+    },
+    {
+      "path": "tests/test_portable_reference_reproduction.py",
+      "sha256": "86432bec30a2903041f81d5fa917acf6e264f3c2f3ef2ef15eedcc8991ee30c7"
+    },
+    {
+      "path": "tests/test_published_multiobjective.py",
+      "sha256": "b44e9b5419dc2209a0160ea2724dbd5709985fd0dc334d1963423216bbab4d84"
+    },
+    {
+      "path": "tests/test_rc_checkpoint_evidence.py",
+      "sha256": "a8c21f07649c5ea743729778d205e3df6f1527adee1824fe516efdfa5b4cc7f6"
+    },
+    {
+      "path": "tests/test_rc_experiment_entry_guards.py",
+      "sha256": "272f7f7ee47dc02b186dfe66f469dfcd2c0cb353e8f0b1306c5181178e571ef1"
+    },
+    {
+      "path": "tests/test_release_provenance_gate.py",
+      "sha256": "ae675df327b2b8aeafb0e2dcf2d1963e87324238aee94459094b8f940523685d"
+    },
+    {
+      "path": "tests/test_representative_adoption.py",
+      "sha256": "c11960bab05d683fb8b033dc3e3a38d3761ff1e51d342579747d7730c036f76e"
+    },
+    {
+      "path": "tests/test_representative_boundaries.py",
+      "sha256": "9f2fd0b22111c4871f87dc200dd8d33fa21ae67c63d459789172eb2b1ee4e655"
+    },
+    {
+      "path": "tests/test_representative_days.py",
+      "sha256": "cd0409636092a669cd4db8514b38a949f1c17de378cd09c400641ecdb5041517"
+    },
+    {
+      "path": "tests/test_representative_season_confirmation.py",
+      "sha256": "7abe1f3142e7356e1006db32e8e82f64112c5a77f76b46517d48acfafbf5b863"
+    },
+    {
+      "path": "tests/test_result_identity_regressions.py",
+      "sha256": "c5dcaea7e38118f1282898219a2b9c9609bda40e2056ab73fd1d6906872f39e2"
+    },
+    {
+      "path": "tests/test_runtime_optimizations.py",
+      "sha256": "01feccae406d45d0ad469c61f1f2ea02c79158b1755f1d92fc8ee947869eff4d"
+    },
+    {
+      "path": "tests/test_season_rc_entry_regressions.py",
+      "sha256": "4627a6484807282c9a3f5849001164a4a0bf52f40aa2f479aa9df1e7e5daa28a"
+    },
+    {
+      "path": "tests/test_service_scope_integration.py",
+      "sha256": "7076a22bdbe1fdad8f7656dbff70c3cb48cf6a2eb22c86e0b53a97c502c290ae"
+    },
+    {
+      "path": "tests/test_smoke.py",
+      "sha256": "866f27da113e03f1b6a9dd14bed294c7f2e9f4cdc13a199ecf7afea10c69f69d"
+    },
+    {
+      "path": "tests/test_solution_evidence.py",
+      "sha256": "1b3af8ab1ae99ff6d983fdacd9ed18942a3d527c2c86b2727803f7da9baa5ea4"
+    },
+    {
+      "path": "tests/test_solution_quality.py",
+      "sha256": "caa89115f756aefc52de650b4361d6a6e2a7027cd3b81ca3c351fc6289a17a4b"
+    },
+    {
+      "path": "tests/test_spatial_adapter.py",
+      "sha256": "b18c5e3b0a2822f714c8df3746a8c6838c87f857c15685cfec50d7e3a0f0510d"
+    },
+    {
+      "path": "tests/test_spatial_quality.py",
+      "sha256": "7f4fcc265ba98992062bc2d4e35065e4bac98e4bf3d7df1d37f1c02a985ceb66"
+    },
+    {
+      "path": "tests/test_three_city_climate_dispatch.py",
+      "sha256": "58c9497c964f3f10663f0aad383bfb202bb4239f64a60edab6da23107fbaba76"
+    },
+    {
+      "path": "tests/test_three_city_climate_dispatch_resilient.py",
+      "sha256": "a7574088670aeb15b0ee2c0a5962a196358ebe4522d5e7fea03215cbb7e5d082"
+    },
+    {
+      "path": "tests/test_three_city_common_reference.py",
+      "sha256": "9cb30ebb08cdd568aa8cb776412566bc05c4e563cc595d486cc7997ffaba253a"
+    },
+    {
+      "path": "tests/test_three_city_decision_weight_confirmation.py",
+      "sha256": "ae8e7dd6ed0deec2182cf9a5ddb8e09f5de51245261e4c2f00a24a3518e5f34f"
+    },
+    {
+      "path": "tests/test_time_registry.py",
+      "sha256": "7e0e5fa140c864f58e92bb642da8474c68510af1a74c4b97bd64e51373b6562b"
+    },
+    {
+      "path": "tests/test_timeseries_cache.py",
+      "sha256": "576a3e077bb43e5b23a9261836bb48202d6b90a9ec1c31cef2c7e3ad07272532"
+    },
+    {
+      "path": "tests/test_verify_three_city_decision_weight_confirmation.py",
+      "sha256": "a72a41d16e8ec5b3d08c5d43843ad38d9ba248dff50ebeaef30c4124db974d37"
+    },
+    {
+      "path": "tests/test_weather_archive_comparison.py",
+      "sha256": "a88b2ad92943770017e946fbca0d3359dc56ab37c8ed507fcdd786084b34a58c"
+    },
+    {
+      "path": "tests/test_weight_adoption_method_identity.py",
+      "sha256": "3e87649e33a28db511b8be20b78bf0c3de83d41b58d4bb9b69ca5ec64d292174"
+    }
+  ],
+  "all_declared_frozen_files_match": true,
+  "source_freeze_unchanged_since_start": true,
+  "declared_files_unchanged_since_start": true,
+  "code_config_test_scope_unchanged_since_start": true,
+  "passed": true
+}

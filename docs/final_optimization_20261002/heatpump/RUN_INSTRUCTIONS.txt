@@ -1,0 +1,34 @@
+TICA 热泵性能表与固定资产运行参考
+
+本目录是研究交付组件，未作上传、Git tag或正式版发布。原CSV型号本来正确，83/82是点数。此前任务文字连写造成的阅读歧义不是用户数据错误。
+
+来源准入与数值审计分开。run_01/source_admission.json 和 pdf_csv_point_check.csv 核对原PDF165个Q/P格。run_01/independent_numeric_audit.json 核对9个2880h恒温器账本。optimization_01/independent_optimization_audit.json 核对6个固定1台设备费用LP及对偶证书。
+
+从本目录运行（可使用项目环境python）：
+python -B -m pytest test_heatpump_reference.py test_heatpump_optimization.py test_native_lp_bound.py -q -p no:cacheprovider
+python -B audit_reference.py run_01 --audit-out audit_reference_new_environment.json
+python -B audit_optimization.py optimization_01 --audit-out audit_optimization_new_environment.json
+python -B certify_native_lp_bound.py optimization_01 --out native_bound_new_environment.json
+
+离线重算到新目录，绝不覆盖冻结目录：
+python -B run_reference.py --source-dir run_01/input_bundle --out reproduce_reference_01
+python -B audit_reference.py reproduce_reference_01
+python -B optimize_reference.py --reference reproduce_reference_01 --out reproduce_optimization_01
+python -B audit_optimization.py reproduce_optimization_01 --reference reproduce_reference_01
+python -B certify_native_lp_bound.py reproduce_optimization_01
+
+依赖：Python3.12环境实测，numpy、pandas、scipy、PyMuPDF、pytest。无需旧heatplan/投资runner、PDF编译器或SCADA。
+
+Q和P在同一原表、同一型号、相邻已印坐标分别线性插值，COP仅由Q/P派生。任何空角或域外拒绝，备用电阻有限。每小时假设理想启停占空比，不宣称真实变频部分负荷或化霜性能。厂家样本为经销商存档的精确PDF副本，不称本次已从厂家端点复验同版本。
+
+20份公共原型是合成研究规模，不是20栋真实住宅。三城使用真实NASA POWER格点气象，湖北公开TOU与2022年因子作为共同条件轴。包括武汉在内，账户资格和并网未核验。只算电量费用，没有TICA报价、资本、维护、投资最优或回收期。LP具有全窗口完全预知，仅是运行优化参考。
+
+固定同设备LP比恒温器费用低1.10%至1.60%，但六案例用电量和共同碳因子碳量均增加。允许说费用改善与能耗增加之间的取舍，不能说同步节费、节电、减碳或现场真实收益。
+
+当前producer在冻结后增加单位权重输入守卫，原冻结数据本来满足，结果不变。冻结代码哈希和当前代码哈希分别登记于postfreeze_input_guard.json，不覆盖旧证据。
+
+默认新runner只查当前仓库ROOT/补充数据_20261002/13_热泵机组样本。原工程无仓内补充时，应显式传--supplement-dir原数据路径，或按上面的--source-dir冻结bundle复现；不隐式跨仓搜索。
+
+旧optimization_comparison.csv的energy_charge_dual_lower_bound_cny与solver.json的dual_objective_cny仅为容差内数值对偶估计。optimization_01/native_lp_bound_sidecar.json才给已编码binary64有限LP的有理数弱对偶下界。原incumbent仍仅数值容差可行/最优，不升级为严格可行上界、exact最优或全局词典序。5e-9末态对偶扰动反例保留在native_dual_tolerance_counterexample.json和回归测试。
+
+最终源快照是final_frozen_code，旧run_01/optimization_01各自frozen_code仍保持原证据。65项基础整组检查通过后又完成11项增量小检查；本环境未重复执行最终72项整组，发布代理将用独立新环境执行。

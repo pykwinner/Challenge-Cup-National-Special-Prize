@@ -1,0 +1,11 @@
+{
+  "case": "optimization_01/wuhan__TCAV065BHE_n1",
+  "perturbation": "dual.lower_bounds[-1]+=5e-9;reporteddual+=20*5e-9;reportedgap updated",
+  "legacy_numeric_audit_passed": true,
+  "perturbed_dual_minus_numeric_incumbent_cny": 9.999894245993346e-08,
+  "max_stationarity_error": 4.999999969612645e-09,
+  "exact_finite_box_bound_unchanged": true,
+  "strict_encoded_binary64_bound_cny": 14651.9896880446,
+  "scope": "Counterexample to strict-lower-bound wording of legacy numeric dual estimate,not a failure of saved operating savings or source mapping",
+  "regression_test": "test_native_lp_bound.py"
+}

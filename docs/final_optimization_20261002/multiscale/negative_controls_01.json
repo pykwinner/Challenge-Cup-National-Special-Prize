@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "negative_control_count": 8,
+  "checks": [
+    {
+      "case": "C1_unlimited",
+      "mutation": "saved_temperature_vector_plus0.1C",
+      "rejected": true,
+      "numerical_audit_passed": false,
+      "reason": "full vector violates matrix/bounds/integrality",
+      "source_vector_sha256": "ddb142aae4dcc2ed02b3bb4d25b5e118e39daed9d038681555a0ff479654ac8e"
+    },
+    {
+      "case": "C1_unlimited",
+      "mutation": "exported_source_heat_plus0.1kW",
+      "rejected": true,
+      "failed_checks": [
+        "node_heat_balance",
+        "summary_accounting"
+      ],
+      "source_dispatch_sha256": "7c69d232e15ccc68dba5facefb24c15abf49623ca93e764c8f65a405ea43d346"
+    },
+    {
+      "case": "C4_unlimited",
+      "mutation": "saved_temperature_vector_plus0.1C",
+      "rejected": true,
+      "numerical_audit_passed": false,
+      "reason": "full vector violates matrix/bounds/integrality",
+      "source_vector_sha256": "bc9de9f63282b63b1122fbe1af553ca276fc01ef868a048df45bc74ebc29edcc"
+    },
+    {
+      "case": "C4_unlimited",
+      "mutation": "exported_source_heat_plus0.1kW",
+      "rejected": true,
+      "failed_checks": [
+        "node_heat_balance",
+        "summary_accounting"
+      ],
+      "source_dispatch_sha256": "b669458072839882b5c4eee9a839898e03e4c7f4f2bae775efa051cd765746c4"
+    },
+    {
+      "case": "C1_shared",
+      "mutation": "saved_temperature_vector_plus0.1C",
+      "rejected": true,
+      "numerical_audit_passed": false,
+      "reason": "full vector violates matrix/bounds/integrality",
+      "source_vector_sha256": "f936f2afe3aef3fb0498a235e97c9ebc9ac7bdc4a1d0879594a20b874ad0d78b"
+    },
+    {
+      "case": "C1_shared",
+      "mutation": "exported_source_heat_plus0.1kW",
+      "rejected": true,
+      "failed_checks": [
+        "node_heat_balance",
+        "summary_accounting"
+      ],
+      "source_dispatch_sha256": "623e7baa72849cc69fd275f97eff51671d762a273b788f351cdb466150865f54"
+    },
+    {
+      "case": "C4_shared",
+      "mutation": "saved_temperature_vector_plus0.1C",
+      "rejected": true,
+      "numerical_audit_passed": false,
+      "reason": "full vector violates matrix/bounds/integrality",
+      "source_vector_sha256": "4fb40187a7b3f50cb4b3a18014333154993aa7bcd23ea0d633fcbf3ff92058e1"
+    },
+    {
+      "case": "C4_shared",
+      "mutation": "exported_source_heat_plus0.1kW",
+      "rejected": true,
+      "failed_checks": [
+        "node_heat_balance",
+        "summary_accounting"
+      ],
+      "source_dispatch_sha256": "fb9e71efeb67de6a83a201a227e79c695131dc1c53b80b6be41579b424801e94"
+    }
+  ],
+  "scope": "in-memory mutations of actual4x2880h saved solutions; originals unchanged; no solver calls"
+}

@@ -1,0 +1,124 @@
+planning:
+  region_profile: two_BESTEST_derived_design_variants_Wuhan
+  time_step_hours: 1
+  representative_day_weight: 1
+  discount_rate: 1.0
+  asset_lifetime_years: 1
+  carbon_price_yuan_per_kg: 0.0
+  exergy_penalty_yuan_per_kwh: 0.0
+  ambient_reference_c: 0.0
+  max_unserved_rate: 0.0
+  max_scenario_unserved_rate: 0.0
+  unserved_heat_penalty_yuan_per_kwh: 0.0
+  firm_capacity_reserve_margin: 0.0
+  enforce_n_minus_one: false
+  design_outdoor_temperature_c: -4.85
+grades:
+- name: ideal_zone_service
+  temperature_c: 27.0
+nodes:
+- name: node_A
+  demand_columns:
+    ideal_zone_service: heat_reference_A_kw
+- name: node_B
+  demand_columns:
+    ideal_zone_service: heat_reference_B_kw
+sources:
+- name: ideal_A
+  type: electric_boiler
+  node: node_A
+  resource_kind: electric
+  allowed_grades:
+  - ideal_zone_service
+  supply_temp_c: 27.0
+  existing_capacity_kw: 1000.0
+  max_new_capacity_kw: 0.0
+  max_retire_capacity_kw: 0.0
+  efficiency: 1.0
+  variable_om_yuan_per_kwh_heat: 0.0
+  firm_capacity_credit: 1.0
+  firm_capacity_availability: 1.0
+- name: ideal_B
+  type: electric_boiler
+  node: node_B
+  resource_kind: electric
+  allowed_grades:
+  - ideal_zone_service
+  supply_temp_c: 27.0
+  existing_capacity_kw: 1000.0
+  max_new_capacity_kw: 0.0
+  max_retire_capacity_kw: 0.0
+  efficiency: 1.0
+  variable_om_yuan_per_kwh_heat: 0.0
+  firm_capacity_credit: 1.0
+  firm_capacity_availability: 1.0
+pipes: []
+storages: []
+demand_response:
+  max_shift_fraction: 0.0
+multi_energy_services:
+  cooling:
+    enabled: true
+    demand_columns:
+      node_A: steady_cooling_A_kw
+      node_B: steady_cooling_B_kw
+    max_unserved_rate: 0.0
+    max_scenario_unserved_rate: 0.0
+    unserved_penalty_yuan_per_kwh: 0.0
+    sources:
+      ideal_A:
+        eer: 1.0
+        eer_min: 1.0
+        eer_max: 1.0
+        eer_loss_per_c_above_reference: 0.0
+        capacity_equivalence: 1.0
+        variable_om_yuan_per_kwh_cooling: 0.0
+        direct_emission_kg_per_kwh_cooling: 0.0
+      ideal_B:
+        eer: 1.0
+        eer_min: 1.0
+        eer_max: 1.0
+        eer_loss_per_c_above_reference: 0.0
+        capacity_equivalence: 1.0
+        variable_om_yuan_per_kwh_cooling: 0.0
+        direct_emission_kg_per_kwh_cooling: 0.0
+building_thermal:
+  enabled: true
+  outdoor_temperature_column: outdoor_temp
+  simultaneous_mode: exclusive
+  boundary_mode: fixed
+  buildings:
+  - name: variant_A
+    node: node_A
+    heat_grade: ideal_zone_service
+    area_m2: 48.0
+    heat_loss_kw_per_c: 0.10430000000000002
+    thermal_capacity_kwh_per_c: 0.535576
+    min_temperature_c: 20.0
+    max_temperature_c: 27.0
+    initial_temperature_c: 20.0
+    final_temperature_c: 20.0
+    internal_gain_column: internal_gain_A_kw
+    solar_gain_column: solar_gain_A_kw
+    heating_service_column: heating_service
+    heating_enabled: true
+    cooling_enabled: true
+    max_heat_kw: 1000.0
+    max_cooling_kw: 1000.0
+  - name: variant_B
+    node: node_B
+    heat_grade: ideal_zone_service
+    area_m2: 48.0
+    heat_loss_kw_per_c: 0.15645000000000003
+    thermal_capacity_kwh_per_c: 0.535576
+    min_temperature_c: 20.0
+    max_temperature_c: 27.0
+    initial_temperature_c: 20.0
+    final_temperature_c: 20.0
+    internal_gain_column: internal_gain_B_kw
+    solar_gain_column: solar_gain_B_kw
+    heating_service_column: heating_service
+    heating_enabled: true
+    cooling_enabled: true
+    max_heat_kw: 1000.0
+    max_cooling_kw: 1000.0
