@@ -1,0 +1,860 @@
+
+===== PAGE 67 =====
+Chapter 5 - Investigation of boundary conditions and input data
+2. Energy supplied by solar;
+3. Energy stored in building thermal mass;
+4. Energy supplied by appliances and occupants.
+5.3
+Investigation of important parameters
+Investigation of important parameters comprises study of group of parameters, which according
+to SA are the most contributors to model uncertainty. Furthermore some parameters, for example
+thermal capacity calculation, are further compared and examined in order to use the most optimal
+one for all existing simpliﬁed models in comparison.
+5.3.1
+Ventilation
+Unlike the thermal capacity, ventilation rates are much more uncertain as they depend on many pa-
+rameters including occupants behaviour. It thus becomes a complex task to calculate the ventilation
+rates and the values recommended in SBi-anvisning 213 [2008, p.60], i.e. 0.9 l/sm2, represent only a
+particular dwelling in particular surroundings. Depending on the effective openings area in dwelling
+it is possible to proportionally increase ventilation rates by the ratio between effective openings area
+and 1.5%/4% of the gross dwelling area. For the single-sided ventilation 4% are used, whereas for
+cross ventilation 1.5% are used. In the following cases detailed tools for calculation of natural venti-
+lation, i.e. BSim and COMIS, are used in order to estimate the uncertainty of the guidance provided
+by SBi 213 comparing to the detailed calculation methods applied for real dwellings.
+In following investigation a comparison of ventilation rates via natural ventilation is shown be-
+tween different cases:
+1. Case 1. Simulation performed in BSim with recommended ventilation rates from SBi 213;
+2. Case 2. Simulation performed in BSim with single zone mode, natural ventilation is calcu-
+lated based on climatic and building conditions.
+3. Case 3. Simulation performed in COMISexcel with multizone mode, by utilising tempera-
+tures previously obtained in Case 2.
+BSim model of Eurodanhus was used in simulations, received from SBi. It contains 10 rooms, where
+the critical one is a living room, see ﬁgure 5.5.
+50
+
+===== PAGE 76 =====
+Chapter 5 - Investigation of boundary conditions and input data
+The error obtained for the reference building is crucial, as only the results obtained by BSim using
+Perez’ solar algorithm and EN ISO 13790 solar algorithm fulﬁlls the requirements regarding risk of
+overheating for each cardinal direction. The simpliﬁed hourly solar calculation algorithm utilised
+in EN ISO 13790 is chosen to be the most favourable one as it does only increase the complexity
+of the model calculation procedure and not the amount of input data while keeping precision at a
+reasonable level.
+Single parameter case study for solar energy
+Previous investigation will be supplemented with further investigations by using solar case studies,
+in order to enhance the results for different solar algorithms and to emphasise the strengths and
+weaknesses used in different types of dwellings. The cases are chosen based on the results of the
+sensitivity analysis and are described in table 5.15.
+Case
+Description
+Thermal
+Shading
+capacity
+factor
+Cm,
+Wh/◦C m2
+
+fc, [-]
+0
+Reference building
+120
+0.65
+1a
+Extra light construction
+38
+0.65
+1b
+Light construction
+69
+0.65
+1c
+Extra heavy construction
+161
+0.65
+2a
+Efﬁcient solar shading
+120
+0.40
+2b
+No solar shading devices
+120
+1.00
+Table 5.15: Description of conditions in single input parameter case study. Numbers
+marked with bold font are different in particular case from reference building (case 0).
+The described cases are executed for SBi simpliﬁed model by utilising SBi and EN ISO 13790
+simpliﬁed solar algorithm and BSim respectively, cf. ﬁgure 5.11. The results regarding excessive
+operative temperatures are illustrated in ﬁgure 5.13 for east-, south- and west facing windows. These
+three cardinal direction were determined to be critical according to ﬁgure 5.12. Results for window
+for critical room orientated towards north is excluded because this scenario rarely occurs in reality
+along with it limited deviation.
+59
+
+===== PAGE 79 =====
+Chapter 5 - Investigation of boundary conditions and input data
+As the annual solar heat gains vary signiﬁcantly for various shading factors, this deviation affects
+the hourly values. SBi solar algorithm distributes aggregated solar heat gains, cf. ﬁgure 5.16(a),
+and a difference will occur as BSim solely decreases the solar heat gains when these excess the
+solar shading set-point, cf. ﬁgure 5.16(b). This is illustrated in ﬁgure 5.16 for varying solar shading
+factors.
+150
+200
+250
+300
+pply [W/m²]
+0
+50
+100
+150
+200
+Solar heat supply 
+0
+50
+0
+6
+12
+18
+24
+Sol
+Hour
+fc = 0.4
+fc = 0.65
+fc = 1.0
+(a)
+150
+200
+250
+300
+pply [W/m²]
+0
+50
+100
+150
+200
+Solar heat supply [
+0
+50
+0
+6
+12
+18
+24
+Sola
+Hour
+fc = 0.4
+fc = 0.65
+fc = 1.0
+(b)
+Figure 5.16: Averaged daily proﬁles of solar heat gains during week 23 for the reference
+building (case 0) with windows orientated towards south by using SBi (a) and BSim (b)
+solar algorithm according to different applied shading factor.
+The investigation emphasises an additional disadvantage in using hourly distribution of monthly ag-
+gregated solar heat gains, as peaks which are sensitive to the shading factor are decreased and rather
+incorrect calculation of the hourly solar heat gains will be obtained.
+As a general conclusion, the determination of hourly solar heat gains utilised in SBi simpliﬁed model
+implies a substantial error to the ﬁnal output, as it possibly can affect whether or not the building
+requirements regarding the risk of overheating are fulﬁlled. The largest errors are experienced when
+efﬁcient solar shading is applied, because of the monthly aggregated implementation of its hourly
+affect on operative temperature is implemented.
+5.3.3
+Internal heat gains
+There are two approaches of accounting internal heat gains in the models, i.e. speciﬁed in SBi 213,
+[SBi-anvisning 213 2008], and recommended in standard EN ISO 13790 [2008]. SBi 213 speciﬁes
+internal heat gains by using average building values for people and appliances, i.e. 1.5 W/m2 and 3.5
+W/m2 respectively, with constant daily proﬁles. In contrary, the approach recommended in EN ISO
+13790 standard distinguishes two types of rooms with different purposes, i.e. living room/kitchen
+with great daily heat load and usage mainly during daytime-evening and other types of room with
+rather modest daily heat load and night time usage, cf. table 4.4. Furthermore weekly average
+values in both approaches vary signiﬁcantly. All above mentioned differences have a large impact
+62
+
+===== PAGE 80 =====
+Chapter 5 - Investigation of boundary conditions and input data
+on models output, see ﬁgure 5.17. Note, that in this case living room/kitchen is considered as a
+critical room and simulations were done for reference building, cf. section 5.1.
+0
+50
+100
+150
+200
+250
+Hours above 
+26°C
+Hours above 
+27°C
+Hours [h]
+EN ISO
+13790
+standard
+SBi 213
+Figure 5.17: Number of hours with operative temperature above 26◦C and 27◦C calculated
+by means of SBi simpliﬁed model. Internal heat gains daily proﬁles from EN ISO 13790
+and SBi 213 are utilised for living room/kitchen.
+It is therefore necessary to investigate what inﬂuence is of high importance, i.e. daily proﬁle or/and
+average weekly value, and choose the most realistic internal heat gains approach for usage in every
+model for further comparison of models in chapter 6.
+Inﬂuence of daily proﬁle
+In order to ﬁnd out how important is daily proﬁle for models output an investigation was done by
+using the same average magnitude of internal heat gains, i.e. 5 W/m2, with different proﬁles. One
+constant proﬁle is suggested by SBi 213 and two proﬁles are suggested by EN ISO 13790 standard -
+for living room/kitchen and other rooms. Results from two simpliﬁed models are reﬂected in ﬁgure
+5.18.
+202
+201
+195
+78
+83
+95
+0
+50
+100
+150
+200
+250
+Constant
+profile
+Living room
+profile
+Other room
+profile
+Number of hours above 26 
+°C
+SBi model
+EN ISO 13790 model
+(a)
+70
+68
+71
+43
+40
+38
+0
+20
+40
+60
+80
+Constant
+profile
+Living room
+profile
+Other room
+profile
+Number of hours above 27 
+°C
+SBi model
+EN ISO 13790 model
+(b)
+Figure 5.18: Output of models with the same magnitude of internal heat gains but different
+daily proﬁles regarding number of hours above: 26◦C (a) 27◦C (b).
+Results in ﬁgure 5.18 indicate about a negligible inﬂuence of the daily proﬁle on models output.
+Therefore the major contributor to diverse results obtained in ﬁgure 5.17 is the average magnitude
+of internal heat gains, which is investigated in next paragraph.
+63
+
+===== PAGE 81 =====
+Chapter 5 - Investigation of boundary conditions and input data
+Inﬂuence of internal heat gains magnitude
+In order to study the inﬂuence of internal heat gains magnitude on models output as well as to
+ﬁnd the optimal magnitude the following investigation is performed, see full description of inves-
+tigation in section N.4. By using statistical data covering all Danish detached houses an average
+number of residents was revealed - 2.62. Based on this number and other statistical references re-
+garding occupancy patterns in danish detached houses a weekly proﬁle was established. It was thus
+necessary to split occupancy proﬁle valid for entire dwelling into two types of rooms, i.e. living
+room/kitchen and other rooms. An assumption was then applied stating that 70% of all non-sleeping
+time occupants spend in living room/kitchen, whereas the rest in other rooms. An estimate of heat
+production of adult occupant was made depending on spaces occupied, based on common activities
+in dwelling described in ASHRAE [2009], resulted in 123.8 W for living room/kitchen and 76.9 W
+for other rooms. By use of average net ﬂoor areas 182 m2, 78 m2 and 103 m2 corresponding to entire
+dwelling, living room/kitchen and other rooms respectively the average magnitude of internal heat
+gains was calculated, see ﬁgure 5.19.
+0.81
+1.02
+0.87
+0.88
+1.26
+0.99
+0.76
+0.84
+0.78
+0.0
+0.5
+1.0
+1.5
+2.0
+Weekdays
+Weekend
+Weekly average
+Internal heat gains from           
+occupants, [W/m2]
+Entire building
+Living room/kitchen
+Other rooms
+SBi 213
+Figure 5.19: Average internal heat gains from occupants depending on the spaces occu-
+pied.
+Obtained internal heat gains from ﬁgure 5.19 are very close to ones used in SBi 213. Internal
+heat gains from appliances were found by using equation (N.3), which estimates annual electricity
+consumption in dwellings based on residents number and net dwelling area. The internal heat gains
+from appliances were calculated to 3.06 W/m2 for both weekdays and weekend, corresponding to
+2.62 residents and net dwelling area of 182 m2. This value is again close to one used in SBi 213,
+i.e. 3.5 W/m2, though as in case of internal heat gains from occupants is also slightly lower. The total
+calculated internal heat gains are reﬂected in ﬁgure 5.20. Obtained results for new proﬁle are rather
+close to SBi 213 values, whereas internal heat gains from EN ISO 13790 standard have around 100%
+higher magnitude compared to new proﬁle in case of living room/kitchen and approximately 50%
+lower magnitude in case of other rooms.
+64
+
+===== PAGE 82 =====
+Chapter 5 - Investigation of boundary conditions and input data
+9.00
+9.00
+9.00
+5.00
+5.00
+5.00
+4.02
+4.67
+4.10
+0
+2
+4
+6
+8
+10
+Weekdays
+Weekend
+Weekly
+Internal heat gains, [W/m2] 
+EN ISO 13790
+SBi
+New profile
+(a)
+2.67
+3.83
+3.00
+5.00
+5.00
+5.00
+3.98
+3.90
+3.92
+0
+2
+4
+6
+8
+10
+Weekdays
+Weekend
+Weekly
+Internal heat gains, [W/m2] 
+EN ISO 13790
+SBi
+New profile
+(b)
+Figure 5.20: Comparison of average values of internal heat gains for: living room/kitchen
+(a), for other rooms (b).
+To make a ﬁnal conclusion whether the EN ISO 13790 or SBi 213 internal heat gains calculation
+approach is more optimal, the result of their performance is compared with performance of the new
+proﬁle regarding the number of hours above 26◦C of operative temperature as this is the output of
+the reviewed simpliﬁed simpliﬁed models. For both SBi 213 and new proﬁle a constant daily proﬁle
+is utilised, whereas for EN ISO 13790 approach two different proﬁles are utilised, i.e. for living
+room/kitchen and other rooms. Figure 5.21 shows results of three simpliﬁed simpliﬁed models
+with respect to three internal heat gains proﬁles, i.e. EN ISO 13790, SBi 213 and the new proﬁle
+respectively.
+1318
+1332
+1515
+316
+646
+767
+237
+583
+684
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+EN ISO
+13790 model
+Bo Adamson
+model
+SBi model
+Number of hours above 
+26°C
+EN ISO 13790
+Sbi 213
+New profile
+(a)
+80
+376
+515
+316
+646
+767
+208
+545
+648
+0
+100
+200
+300
+400
+500
+600
+700
+800
+EN ISO
+13790 model
+Bo Adamson
+model
+SBi model
+Number of hours above 
+26°C
+EN ISO 13790
+Sbi 213
+New profile
+(b)
+Figure 5.21: Comparison of internal heat gains proﬁles regarding the number of hours
+above 26◦C of operative temperature for: living room/kitchen (a), other rooms (b).
+There is a strong correlation between ﬁgures N.9 and 5.21, which indicates that overheating in
+critical room is proportionally dependent on the magnitude of average internal heat gains, whereas
+daily proﬁle has negligible inﬂuence on overheating. Based on this the internal heat gains speciﬁed
+in SBi-anvisning 213 [2008] are evaluated to the most optimal ones and will be implemented in all
+simpliﬁed simpliﬁed models for further models comparison in chapter 6.
+65
+
+===== PAGE 83 =====
+Chapter 5 - Investigation of boundary conditions and input data
+5.3.4
+Thermal capacity
+It was expected that a thermal capacity is within the most important parameters inﬂuencing thermal
+comfort. However, according to results of SA, cf. section 5.2, it is noteworthy only in EN ISO
+13790 simpliﬁed model, whereas in others models it has rather modest importance. The fact that in
+EN ISO 13790 simpliﬁed model the thermal capacity is of higher importance than in other models
+can be explained by higher use of thermal mass temperature node as additional heat gains and heat
+loss by transmission are affecting this node, see ﬁgure F.3 in appendix.
+All three previously reviewed simpliﬁed models possess different thermal capacity calculation
+algorithms, i.e. in SBi simpliﬁed model an estimated thermal capacity should be typed in, whereas
+other models use embedded calculation algorithms. Both EN ISO 13790 and Bo Adamson simpli-
+ﬁed models utilise simpliﬁed methods, respectively simpliﬁed method from EN ISO 13786 [2007,
+Annex A] described in section ?? and method from Danvak ApS [1987] described in section G.1 in
+appendix.
+In order to proceed with models comparison in chapter 6 all models should have the same calcu-
+lated thermal capacity of the reference building, described in section 5.1, to avoid effect of varying
+thermal capacity in different models. Therefore a comparison and analysis of different simpliﬁed
+calculation approaches is made by utilising a detailed calculation approach, described in standard
+EN ISO 13786 [2007].
+Four cases intended for investigation of different building construction elements are established
+as described in table L.3 in appendix. They are made in accordance with description of different
+types of building constructions in table L.2 and can be categorised in four types, i.e. very light,
+light, heavy, very heavy. Results of thermal capacity calculation for these four types of building
+constructions are reﬂected in ﬁgure 5.22.
+0
+50
+100
+150
+200
+Very Light
+Light
+Heavy
+Very heavy
+Thermal capacity 
+[Wh/°C/m²]
+EN ISO 13786 (simplified method)
+Bo Adamson
+EN ISO 13786 (detailied method)
+Figure 5.22: Results of thermal capacity calculation for different types of building con-
+structions. Construction components are described in appendix L.3
+During this comparison some weaknesses of simpliﬁed methods were revealed, which resulted in
+deviation of calculated thermal mass from EN ISO 13786 detailed method for light, heavy and
+very heavy construction types, especially in case of EN ISO 13786 simpliﬁed method. Unlike the
+EN ISO 13786 detailed method, which utilises heat transfer matrix of a building component from
+surface to surface, simpliﬁed methods require material thermal properties of only an accumulation
+layer, which is determined by the position between internal surface and insulation layer. Approxi-
+66
+
+===== PAGE 90 =====
+Chapter 6 - Evaluation of models calculation procedures
+Case
+Description
+Thermal
+Shading
+Room
+Window thermal
+ventilation
+capacity
+factor
+height
+transmission
+rate
+Cm,
+Wh/◦C m2
+
+fc, [-]
+h, [m]
+Uw,
+W/m2 ◦C
+
+qve,
+l/sm2
+
+0
+Reference building
+120
+0.65
+2.7
+1.2
+2.4
+1a
+Extra light construction
+38
+0.65
+2.7
+1.2
+2.4
+1b
+Light construction
+69
+0.65
+2.7
+1.2
+2.4
+1c
+Extra heavy construction
+161
+0.65
+2.7
+1.2
+2.4
+2a
+Efﬁcient solar shading
+120
+0.40
+2.7
+1.2
+2.4
+2b
+No solar shading devices
+120
+1.00
+2.7
+1.2
+2.4
+3a
+Low room height
+120
+0.65
+2.3
+1.2
+2.4
+3b
+High room height
+120
+0.65
+3.1
+1.2
+2.4
+4a
+Low window thermal transmission
+120
+0.65
+2.7
+0.6
+2.4
+4b
+High window thermal transmission
+120
+0.65
+2.7
+1.8
+2.4
+5a
+Low ventilation rate
+120
+0.65
+2.7
+1.2
+2.0
+5b
+High ventilation rate
+120
+0.65
+2.7
+1.2
+2.8
+Table 6.1: Description of conditions in single input parameter case study. Numbers marked
+with bold font are different in particular case from case 0 (reference building, see descrip-
+tion in section 5.1).
+Results of simpliﬁed models are compared with BSim, which in the present thesis is assumed to give
+a reasonable approximation of reality. It was previously investigated that EN ISO 13790 simpliﬁed
+model predicts signiﬁcantly lower operative temperatures by employing Crank-Nicolson numeri-
+cal method comparing to Euler (forward) method, cf. chapter P, therefore both of them present in
+current comparison in order to check which shows better ﬁt with reality. There are different simpli-
+ﬁcations applied in simpliﬁed models, for example simpliﬁed treatment of shortwave and longwave
+radiation inside the thermal zone, cf. subsection 4.2.5, lumped capacitances, which are possible to
+implement in BSim by setting up more complex, physically realistic model. Furthermore, the tran-
+sient conduction in BSim building materials is utilised in another and more complex way, i.e. by
+using Finite Volume Method (FVM) and dividing building materials into various control volumes,
+[SBi 2004b]. In addition it is possible to vary number of time steps and thus increase the precision
+of the output. For presented cases 32 time steps per hour is sufﬁcient, according to analysis of the
+time steps inﬂuence executed in appendix I.1.
+The results of single case study are shown in ﬁgure 6.2. EN ISO 13790 model with Crank-Nicolson
+numerical method calculates operative temperatures systematically lower than BSim and therefore
+is not commented in this section.
+73
+
+===== PAGE 92 =====
+Chapter 6 - Evaluation of models calculation procedures
+among the other cases as well. For different building thermal capacities simpliﬁed models show
+diverse behaviour. SBi simpliﬁed model performs better for extreme building thermal capacity, i.e.
+very light and very heavy building constructions. Unlike Bo Adamson simpliﬁed model, which in
+case 1 is subjected to substantial variations, EN ISO 13790 Euler simpliﬁed model shows moderate
+deviations from BSim.
+Analysis of case 2 reveals the precision of simpliﬁed models with regards to varying solar shading
+factor. Results in ﬁgures 6.2(c) and 6.2(d) indicate following trends: as more efﬁcient is solar
+shading as better agreement of SBi simpliﬁed model and BSim, whereas opposite applies for Bo
+Adamson simpliﬁed model. Again, as in case 1, EN ISO 13790 model shows moderate deviations
+from BSim.
+Results regarding case 3, cf. ﬁgures 6.2(e) and 6.2(f), indicate that room height inﬂuences the
+output of models, though in a diverse way, since they utilise simpliﬁed coefﬁcients of calculating
+precise surface-to-ﬂoor ratio.
+Case 4 demonstrates low sensitivity of SBi simpliﬁed model to changes of the window thermal
+transmittance as well as very high underestimation, cf. ﬁgures 6.2(g) and 6.2(h). Such a low sen-
+sitivity can be explained by utilising heat ﬂow path by transmission between external environment
+and room air, which differs from how transmission heat ﬂow is treated in other simpliﬁed models.
+Case 5 emphasizes again high importance of ventilation rates and in this case all models, ex-
+cept EN ISO 13790 Euler simpliﬁed model in case 5b demonstrate proportional results regarding
+ventilation rate variation.
+Different thermal capacity allocation within thermal zone
+Another difference in model output can occur for buildings with the same building thermal capacity,
+but its different allocation within the thermal zone, e.g. dominating ﬂoor or walls thermal capacity.
+It is not taken into account in simpliﬁed models as they operate using lumped thermal capacity,
+whereas BSim possesses such a distinction, where the modeller is required to set up the materials of
+each building construction element with respective areal thermal capacity. Furthermore, there is a
+detailed modelling of solar incidence beam with respect to internal surfaces by means of XSun tool
+incorporated in BSim.
+In order to check how different BSim model performance is with respect to above mentioned
+issue case 6 is established. Both models have the same building thermal capacity, calculated via EN
+ISO 13786 detailed method, however different construction elements (only internal layers consid-
+ered):
+• Case 6a - ceiling, external and internal walls with light-weight concrete and ﬂoor with combi-
+nation of tiles and concrete;
+• Case 6b - ceiling with wood, external and internal walls with brick and ﬂoor with combination
+of tiles and concrete.
+Detailed description of building construction elements can be seen in table L.5 in appendix. Ac-
+cording to the above mentioned description model in case 6a has equal distribution of areal thermal
+capacity among walls and ceiling, whereas the model in case 6b has dominating areal thermal ca-
+pacity of external and internal walls. In both cases ﬂoor construction is kept the same to emphasize
+75
+
+===== PAGE 94 =====
+Chapter 6 - Evaluation of models calculation procedures
+though with some distinct trends. Comparing simpliﬁed models with limited input and BSim the
+same conclusion from single study applies here, i.e. in majority of cases Bo Adamson simpliﬁed
+model overestimates, SBi simpliﬁed model underestimates, whereas the result of EN ISO 13790
+Euler simpliﬁed model is in between above mentioned models. It seems that for SBi simpliﬁed
+model very light and very heavy buildings are more favourable, combination 5 and 3 respectively,
+as for the light and heavy building it does signiﬁcant underestimation, cf. combination 1, 2 and 4.
+A reason for underestimation of SBi simpliﬁed model result is partly speciﬁc heat transfer between
+internal surfaces and room air, which is higher that for other simpliﬁed models because of assuming
+presence of furniture inside the thermal zone, cf. ﬁgure 6.1(a).
+0
+20
+40
+60
+80
+100
+120
+140
+160
+Combination 1
+Combination 2
+Combination 3
+Combination 4
+Combination 5
+Hours above 26°C [h]
+EN ISO 13790
+(Euler-limited)
+EN ISO 13790
+(Euler-detailed)
+Bo Adamson
+(limited)
+Bo Adamson
+(detailed)
+SBi
+BSim
+(a)
+0
+10
+20
+30
+40
+50
+Combination 1
+Combination 2
+Combination 3
+Combination 4
+Combination 5
+Hours above 27°C [h]
+EN ISO 13790
+(Euler-limited)
+EN ISO 13790
+(Euler-detailed)
+Bo Adamson
+(limited)
+Bo Adamson
+(detailed)
+SBi
+BSim
+(b)
+Figure 6.4: Comparison of simpliﬁed models and BSim for combined input parameter case
+study. Output is expressed in hours with operative temperature above 26◦C (a) and 27◦C
+(b). Red dashed lines indicate requirement regarding overheating in dwellings.
+The complexity of input has different impact of different simpliﬁed models. The reason for this
+is that simpliﬁed heat transfer coefﬁcient between internal surfaces and thermal mass implemented
+in both EN ISO 13790 and Bo Adamson models was developed within EN ISO 13790 standard
+and it does a ﬁne approximation for the corresponding model and too coarse approximation for Bo
+Adamson model, cf. ﬁgure 6.1(b). The consequences of simplifying input in Bo Adamson model are
+larger for building with high thermal mass, combination 3, and lower for building with low thermal
+mass, combination 5.
+In this comparison simpliﬁed models intended for compliance with Danish BR2015 regarding
+the risk of overheating in dwellings are used. Therefore an important evaluation of simpliﬁed mod-
+els precision is whether they fulﬁll or do not fulﬁll the requirement, see table 6.3. Although EN ISO
+13790 Euler models with both simpliﬁed and detailed input showed better agreement with BSim re-
+sults in ﬁgure 6.4, according to table 6.3 it is both Bo Adamson models which have more fulﬁllments
+of Danish BR2015.
+77
+
+===== PAGE 101 =====
+Chapter 7 - Evaluation of aspects of compliance checking model
+Compliance
+checking model
+Unambiguity and
+reproducibility
+Transparency
+(internal)
+Accuracy
+Robustness
+Speed and
+convenience
+Figure 7.1: Aspects of the model intended for compliance with building regulations. Re-
+drawn from EN ISO 13790 [2008, p. 128].
+7.2
+Description of models
+For current evaluation three simpliﬁed models are selected, where the ﬁrst one represents original
+simpliﬁed model from SBi (v.1) and other models have increased complexity of model and/or input,
+cf. table 7.1.
+SBi v.1
+EN ISO 13790 v.3
+EN ISO 13790 v.4
+"limited input"
+"limited input"
+"detailed input"
+"simple model"
+"complex model"
+"complex model"
+RC scheme∗
+SBi
+EN ISO 13790
+EN ISO 13790
+Numerical method∗
+Euler forward
+Euler forward
+Euler forward
+Solar heat gains∗∗
+SBi + Be10
+EN ISO 13790
+EN ISO 13790
+Internal heat gains∗∗
+SBi 213
+SBi 213
+SBi 213
+Transmission heat losses∗∗
+SBi 213
+SBi 213
+EN ISO 13790
+Ventilation heat losses∗∗
+SBi 213
+SBi 213
+SBi 213
+Building thermal capacity∗∗
+SBi 213
+SBi 213
+EN ISO 13786 (detailed)
+Speciﬁc heat ﬂow between
+Integrated (simpliﬁed)
+EN ISO 13790 (simpliﬁed)
+EN ISO 13790 (detailed)
+internal surfaces and air∗∗∗
+Speciﬁc heat ﬂow between
+-
+EN ISO 13790 (simpliﬁed)
+EN ISO 13790 (detailed)
+internal surfaces and
+thermal mass∗∗∗
+Table 7.1: Speciﬁcations of simpliﬁed models used in evaluation.∗Described in section 4.2,
+∗∗described in section 5.3, ∗∗∗described in section 6.1.1.
+Second simpliﬁed model, i.e. EN ISO 13790 v.3, represents a model with the same input as SBi
+v.1 model, though a more complex calculation procedure. It was achieved by implementing hourly
+solar heat gains calculation algorithm from EN ISO 13790 standard. It proved to be signiﬁcantly
+84
+
+===== PAGE 109 =====
+Chapter 7 - Evaluation of aspects of compliance checking model
+Simplified
+model
+“Black
+box”
+Input
+Figure 7.8: Representation of concept of simpliﬁed model. User input parameters, which
+are available for the user, are subjected to models unambiguity and reproducibility evalu-
+ation.
+The difference in user input parameters between three simpliﬁed models is that ﬁrst two models re-
+quire building thermal capacity as an input, whereas the third model requires information regarding
+construction elements areas and material properties for calculation of thermal zone thermal capacity
+as well additional speciﬁc heat transfers. Building thermal capacity represents an important param-
+eter, cf. sensitivity analysis results in subsection 5.2.2 and accuracy evaluation above, which can
+signiﬁcantly inﬂuence the output. In case of ﬁrst and second models input regarding building ther-
+mal capacity is uncertain as it is based on experience and knowledge of particular person and/or
+modest guidance provided by SBi 213, cf. table L.2. Input of third model, by contrast, is fairly
+unambiguous as it requires information regarding areas and materials, which are available from
+building speciﬁcations or/and technical drawings.
+Table 7.4 shows the estimated and calculated thermal capacity values for ﬁve test houses. Note
+that estimations were done in accordance with guidance from SBi 213.
+Nr.12
+Nr.28
+Nr.37
+Nr.39
+Eurodan
+huse
+Estimated thermal capacity, Cm,
+Wh/◦C m2−ﬂoor
+
+120
+120
+100
+80
+80
+Calculated thermal capacity, Cm,
+Wh/◦C m2−ﬂoor
+
+62
+76
+50
+61
+46
+Table 7.4: Estimated and calculated thermal capacity applied in simpliﬁed models for ﬁve
+test houses. For comfort houses only the the number of house is stated. Calculation of
+thermal capacity was done by means of EN ISO 13786 detailed method.
+Figure 7.9 reﬂects the variation of results from simpliﬁed models, when estimated and calculated
+thermal capacity are used. Since the estimated thermal capacity is signiﬁcantly higher than calcu-
+lated, the result of predicted excessive temperatures is substantially lower, i.e. within the range of
+70% for SBi simpliﬁed model and 90% for EN ISO 13790 v.3 simpliﬁed model. Variation between
+simpliﬁed models occur due to different RC schemes incorporated and thus different treatment of
+thermal capacity.
+92

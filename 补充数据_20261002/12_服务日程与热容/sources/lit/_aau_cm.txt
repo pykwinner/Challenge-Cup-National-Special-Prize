@@ -1,0 +1,630 @@
+
+===== PAGE 48 =====
+Chapter 4 - Review of simpliﬁed models
+In contrast, by allocating all thermal loads in room air temperature node, the SBi simpliﬁed
+model looses the feature of distinct convective and radiative heat ﬂows. Such approach is explained
+by the fact that solar shading usage leads to utilisation of absorbed solar radiation by room air and
+subsequently to the increment of its temperature, [Mortensen 2012, p. 8].
+Numerical method
+Unlike the Bo Adamson and SBi simpliﬁed models, which employ forward (explicit) Euler method
+for treatment of thermal capacity of the thermal zone, EN ISO 13790 simpliﬁed model uses Crank-
+Nicolson method, which is based on central difference only in time. In every simpliﬁed model
+the heat balances for all temperature nodes are handled by using sequential approach in order to
+avoid simultaneous calculation and use of matrices. The time step of one hour is implemented in
+all simpliﬁed models as they are intended for simulation on hourly basis and there is no instructions
+provided for time step variation.
+Speciﬁc heat transfer between internal surfaces and room air
+Speciﬁc heat transfer between internal surfaces and room air is calculated by multiplying surface
+HTC with areas of surfaces exposed to the thermal zone.
+Surface HTC is predeﬁned in a different way among the simpliﬁed models, cf. subsection 4.2.4.
+In case of limited input in EN ISO 13790 and Bo Adamson simpliﬁed models a factor of 4.5 is used
+for converting speciﬁc heat transfer valid for internal surfaces area into one, which is valid for ﬂoor
+area, see table 4.3. Speciﬁc heat transfer in SBi simpliﬁed model was already adjusted to be valid
+for ﬂoor area only in order to minimise number of input data. However, it is noticeably higher than
+corresponding speciﬁc heat transfers in other simpliﬁed models as it was manually adjusted taking
+into account furniture presence in the thermal zone, [Aggerholm 2013].
+Limited input
+Detailed input
+EN ISO
+Bo
+SBi
+EN ISO
+Bo Adamson
+SBi
+13790
+Adamson
+13790
+Floor
+Ceiling
+Wall
+αtot,
+W/◦C m2
+
+3.45
+2.67∗
+4.44∗∗
+3.45
+2.5
+2.0
+3.0
+-∗∗∗
+Table 4.3: Comparison of predeﬁned values of surface HTC between internal surfaces and
+room air for limited and detailed input in simpliﬁed models.
+∗Established in table 4.1.
+∗∗Was converted from only ﬂoor to all internal surfaces application by means of fsi,f = 4.5.
+∗∗∗Is not developed for SBi simpliﬁed model.
+Taking into account the above mentioned differences among simpliﬁed models, it is decided to
+calculate speciﬁc heat transfer between internal surfaces and room air for different simpliﬁed models
+by means of two cases, namely case A, illustrated in ﬁgure 4.10(a), where the height of the room
+is constant while width and length are varying, and case B, illustrated in ﬁgure 4.10(b), where only
+height of the room is varying.
+31
+
+===== PAGE 54 =====
+Chapter 4 - Review of simpliﬁed models
+0
+5
+10
+15
+20
+0
+2
+4
+6
+8
+10 12 14 16 18 20 22 24
+Internal heat gains, [W/m2]
+Time, [h]
+EN ISO 13790
+SBi
+(a)
+0
+5
+10
+15
+20
+0
+2
+4
+6
+8 10 12 14 16 18 20 22 24
+Internal heat gains, [W/m2]
+Time, [h]
+EN ISO 13790 (1-5)
+EN ISO 13790 (6-7)
+SBi
+(b)
+Figure 4.14: Internal heat gains calculated by means of different models: for living
+room/kitchen (a) and other rooms (b). 1-5 represent weekdays, 6-7 weekend.
+Internal heat gains are dominating in SBi simpliﬁed model over EN ISO 13790 simpliﬁed model
+during period of low occupancy or even its absence in particular rooms, i.e. for living room during
+the night and for other rooms during the daytime. It means that there are additional unnecessary
+heat gains calculated by SBi model. On the other hand there are unexpected noticeable internal heat
+gains used in EN ISO 13790 simpliﬁed model for living room/kitchen during evening time, i.e. 20
+W/m2, which is investigated in section 5.3.3.
+4.3.4
+Speciﬁc heat transfer by ventilation
+Both mechanical and natural ventilation are applicable in present simpliﬁed model, however sup-
+ply air is always external air without preheating, [Mortensen 2012-2013]. Thus the supplied air is
+assumed bypassed a heat recovery unit in summer. For mechanical ventilation a basic ventilation
+rate is used, which is executed throughout the entire year and provides sufﬁcient air exchange for
+acceptable IAQ. For natural ventilation summer ventilation rate is utilised, which intends to over-
+come overheating, see ﬁgure user input in 4.13(a). The latter can have different ventilation rates
+during three daily time periods, namely daytime, evening and night. Furthermore the ventilation
+rate should be speciﬁed by user and it is executed no matter what the capacity of ventilation system
+is. However, for natural ventilation it is not always possible to achieve desirable ventilation rates
+because of varying driving forces and more detailed analysis of natural ventilation rates potential is
+not executed in current simpliﬁed model.
+For summer ventilation rate the control system implies proportional control, which depends on
+the control temperature, which, in turn, uses operative temperature for this purpose. The set-point
+for summer ventilation rate is set to a ﬁxed value of 23◦C and proportional band is set to a ﬁxed
+value of 1◦C.
+4.3.5
+Speciﬁc heat transfer by transmission
+The speciﬁc heat loss by transmission through both opaque constructions and windows/doors is pre-
+liminary calculated for the entire building by means of Be10 software, which utilises the calculation
+algorithm described in appendix M. Hence, for the critical room this value is calculated simply by
+the ratio between the critical room and the entire building ﬂoor area, as it is shown in equation (4.2).
+Thus, the speciﬁc heat loss for the critical room is determined solely by specifying the heated ﬂoor
+37
+
+===== PAGE 61 =====
+Chapter 5 - Investigation of boundary conditions and input data
+have different properties from those stated by manufacturer, once they are implemented in build-
+ing. In addition, such parameters as thermal capacity and shading factor require estimation from
+the engineer or any other person executing building simulation software, which can lead to the out-
+put uncertainty. The input parameter distributions related to the envelope thermal properties and
+window solar properties are reﬂected in tables 5.5 - 5.6, whereas their establishment is explained in
+appendices J.4.2 - J.4.3, respectively.
+No. Parameter
+Unit
+Type Mean
+Standard
+Variation
+Expected
+value
+deviation
+coefﬁcient
+interval
+µ
+σ
+δ
+min
+max
+9
+External ceiling thermal transmittance
+W/◦C m2
+
+N
+0.13
+0.010
+8.0%
+0.11 - 0.15
+10
+External wall thermal transmittance
+W/◦C m2
+
+N
+0.14
+0.009
+6.7%
+0.12 - 0.16
+11
+External ﬂoor thermal transmittance
+W/◦C m2
+
+N
+0.13
+0.006
+4.4%
+0.12 - 0.14
+12
+Windows thermal transmittance
+W/◦C m2
+
+N
+1.20
+0.060
+5.0%
+1.08 - 1.32
+13
+Foundation linear thermal transmittance
+W/◦C m
+
+N
+0.10
+0.004
+4.4%
+0.09 - 0.11
+14
+Window linear thermal transmittance
+W/◦C m
+
+N
+0.03
+0.005
+16.7%
+0.02 - 0.04
+15
+Building thermal capacity
+Wh/◦C m2
+
+U
+-
+-
+-
+80 - 120
+Table 5.5: Probability distributions of envelope thermal properties parameters. Following
+distribution type is used: N - normal, U - uniform.
+No.
+Parameter
+Unit
+Type
+Mean
+Standard
+Variation
+Expected
+value
+deviation
+coefﬁcient
+interval
+µ
+σ
+δ
+min
+max
+16
+Horizon angle
+[◦]
+U
+-
+-
+-
+0 - 30
+17
+Overhang angle
+[◦]
+N
+26.6
+1.00
+3.8%
+24.6 - 28.6
+18
+Right ﬁn angle
+[◦]
+N
+0
+1.00
+-
+0 - 2
+19
+Left ﬁn angle
+[◦]
+N
+0
+1.00
+-
+0 - 2
+20
+Wall cavity in percentage∗
+[%]
+N
+2.5
+0.25
+10.0%
+2 - 3
+21
+Solar energy transmittance
+[−]
+N
+0.60
+0.015
+2.5%
+0.57 - 0.63
+22
+Shading factor
+[−]
+N
+0.65
+0.075
+11.5%
+0.50 - 0.80
+Table 5.6: Probability distributions of window solar properties parameters. Following
+distribution types are used: N - normal, U - uniform. ∗Not applicable in EN ISO 13790
+and Bo Adamson simpliﬁed models.
+The most important parameters of energy simulation in dwellings are often related to occupants
+behaviour, cf. [Brohus et al.
+2010, p. 8], which are, in fact, very uncertain and very difﬁcult to
+determine. The input parameters related to occupants behaviour considered in the current SA are
+reﬂected in table 5.7, whereas their establishment is explained in appendix J.4.4. Note that solar
+shading set-point distribution is not implemented in SBi simpliﬁed model as it implies monthly so-
+lar calculations and uses predeﬁned tables for solar shading created by means of BSim tool. Another
+44
+
+===== PAGE 65 =====
+Chapter 5 - Investigation of boundary conditions and input data
+The result for SBi simpliﬁed model is illustrated in ﬁgure 5.4 and in table 5.10.
+12 34
+56
+7
+89
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20 21
+22
+23
+25
+26
+27
+28
+29
+30
+0
+100
+200
+300
+400
+500
+0
+50
+100
+150
+200
+250
+σ, [h]
+μ, [h]
+Building geometry
+Envelope thermal properties
+Windows solar properties
+Occupants behaviour parameters
+24
+1350
+1380
+(a)
+12 34
+56
+7
+8
+91011
+12
+13
+14
+1516
+17
+1819
+20 21
+22 23
+25
+26
+27
+28
+29
+30
+0
+50
+100
+150
+200
+0
+25
+50
+75
+100
+125
+150
+σ, [h]
+μ, [h]
+Building geometry
+Envelope thermal properties
+Windows solar properties
+Occupants behaviour parameters
+422
+458
+24
+(b)
+Figure 5.4: Results of sensitivity analysis for SBi simpliﬁed model expressed as number of
+hours with operative temperature above 26◦C (a) and 27◦C (b).
+Rank
+No.
+Factor
+Hours above 26◦C Hours above 27◦C
+µ,[h]
+σ,[h]
+µ,[h]
+σ,[h]
+1
+24
+Ventilation set-point temperature
+1350
+1380
+422
+458
+2
+27
+Daytime ventilation (9-16)
+203
+135
+112
+175
+3
+28
+Evening ventilation (17-24)
+195
+112
+97
+58
+4
+25
+Proportional band
+192
+151
+61
+39
+5
+26
+Basic ventilation rate
+192
+409
+54
+125
+6
+29
+Night ventilation (1-8)
+141
+119
+96
+84
+7
+14
+Building thermal capacity
+99
+45
+66
+34
+8
+21
+Shading factor
+78
+34
+38
+26
+9
+20
+Solar transmittance
+54
+29
+29
+19
+10
+23
+Internal heat gains from appliances
+53
+25
+27
+15
+Table 5.10: Ten most important parameters of SA for SBi simpliﬁed model according to the
+mean value of hours with operative temperature above 26◦C.
+There are different trends in result for SBi simpliﬁed model among the other simpliﬁed models,
+for instance daytime ventilation is of much higher importance, whereas shading factor is of lower
+importance. Nevertheless, 9 out of 10 input parameters are the same for SBi simpliﬁed model com-
+paring to other models.
+The comparison of the most important parameters among the three considered simpliﬁed models is
+shown in table 5.11 along with combined ranking. What is noticeable is that a coherence between the
+48
+
+===== PAGE 66 =====
+Chapter 5 - Investigation of boundary conditions and input data
+simpliﬁed models as they all obtain the same 10 most important parameters, though with different
+ranking. A table with models output regarding all 31 parameters is located in appendix J.5.
+Number
+Parameter
+Rank
+Average
+EN ISO 13790
+Bo Adamson
+SBi
+24
+Ventilation set-point temperature
+1
+1
+1
+1
+28
+Evening ventilation (17-24)
+2
+3
+2
+3
+30
+Solar shading set-point
+3
+4
+3
+-*
+26
+Basic ventilation rate
+4
+2
+5
+5
+25
+Proportional band
+5
+6
+6
+4
+21
+Shading factor
+6
+5
+4
+8
+27
+Daytime ventilation (9-16)
+7
+8
+8
+2
+29
+Night ventilation (1-8)
+8
+7
+7
+6
+14
+Building thermal capacity
+9
+9
+9
+7
+23
+Internal heat gains from appliances
+10
+10
+10
+10
+Table 5.11: Ten most important parameters of three simpliﬁed models according to SA cal-
+culated by weighted average. *This parameter is not included in the particular simpliﬁed
+model.
+5.2.3
+Discussion
+Set-point for ventilation is by a large margin the most important parameter in simpliﬁed models. It
+is therefore necessary to keep it inside the model without giving an opportunity for the user to vary
+it as the consequences in the output can be signiﬁcant. The same conclusion but with a smaller value
+is relevant for the solar shading set-point as it is the third important factor in the list. In general,
+parameters related to occupants behaviour are the most important, among which ventilation related
+parameters excel the most. The reason why daytime ventilation is of notably higher importance for
+SBi but not for other simpliﬁed models is that it possesses constant internal heat gains daily proﬁle
+and solar heat gains are distributed according to global solar incidence on horizontal surface, which
+in turn has often a peak around the noon. For other simpliﬁed models the internal heat gains have
+the peak during the evening, which explains why evening ventilation is of higher importance than
+daytime ventilation.
+Neither building geometry nor envelope thermal properties related parameters, except thermal
+capacity, are of signiﬁcant importance to the model output as their inﬂuence on model output is
+rather limited and their uncertainty is within relatively low range. Window properties parameters
+are neither signiﬁcantly uncertain, however shading factor is very sensitive to the the model output,
+especially regarding EN ISO 13790 and Bo Adamson simpliﬁed models. Although internal heat
+gains by occupants parameter is not included in the list of ten the most important parameters, it
+holds 11th place and should still be considered with high signiﬁcance, bearing in mind that daily
+ventilation was artiﬁcially split into daytime and evening ventilations. All in all the four groups of
+most important parameters are:
+1. Energy removed by ventilation;
+49
+
+===== PAGE 83 =====
+Chapter 5 - Investigation of boundary conditions and input data
+5.3.4
+Thermal capacity
+It was expected that a thermal capacity is within the most important parameters inﬂuencing thermal
+comfort. However, according to results of SA, cf. section 5.2, it is noteworthy only in EN ISO
+13790 simpliﬁed model, whereas in others models it has rather modest importance. The fact that in
+EN ISO 13790 simpliﬁed model the thermal capacity is of higher importance than in other models
+can be explained by higher use of thermal mass temperature node as additional heat gains and heat
+loss by transmission are affecting this node, see ﬁgure F.3 in appendix.
+All three previously reviewed simpliﬁed models possess different thermal capacity calculation
+algorithms, i.e. in SBi simpliﬁed model an estimated thermal capacity should be typed in, whereas
+other models use embedded calculation algorithms. Both EN ISO 13790 and Bo Adamson simpli-
+ﬁed models utilise simpliﬁed methods, respectively simpliﬁed method from EN ISO 13786 [2007,
+Annex A] described in section ?? and method from Danvak ApS [1987] described in section G.1 in
+appendix.
+In order to proceed with models comparison in chapter 6 all models should have the same calcu-
+lated thermal capacity of the reference building, described in section 5.1, to avoid effect of varying
+thermal capacity in different models. Therefore a comparison and analysis of different simpliﬁed
+calculation approaches is made by utilising a detailed calculation approach, described in standard
+EN ISO 13786 [2007].
+Four cases intended for investigation of different building construction elements are established
+as described in table L.3 in appendix. They are made in accordance with description of different
+types of building constructions in table L.2 and can be categorised in four types, i.e. very light,
+light, heavy, very heavy. Results of thermal capacity calculation for these four types of building
+constructions are reﬂected in ﬁgure 5.22.
+0
+50
+100
+150
+200
+Very Light
+Light
+Heavy
+Very heavy
+Thermal capacity 
+[Wh/°C/m²]
+EN ISO 13786 (simplified method)
+Bo Adamson
+EN ISO 13786 (detailied method)
+Figure 5.22: Results of thermal capacity calculation for different types of building con-
+structions. Construction components are described in appendix L.3
+During this comparison some weaknesses of simpliﬁed methods were revealed, which resulted in
+deviation of calculated thermal mass from EN ISO 13786 detailed method for light, heavy and
+very heavy construction types, especially in case of EN ISO 13786 simpliﬁed method. Unlike the
+EN ISO 13786 detailed method, which utilises heat transfer matrix of a building component from
+surface to surface, simpliﬁed methods require material thermal properties of only an accumulation
+layer, which is determined by the position between internal surface and insulation layer. Approxi-
+66

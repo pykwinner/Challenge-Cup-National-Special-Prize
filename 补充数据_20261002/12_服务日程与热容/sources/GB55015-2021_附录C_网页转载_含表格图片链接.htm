@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>附录C 建筑围护结构热工性能权衡判断 - 建筑节能与可再生能源利用通用规范 GB55015-2021 - 中国建筑科学研究院建筑防火研究所-消防规范网</title>
+
+    <meta name="keywords" content="附录,建筑,围护,结构,热工,性能,权衡,判断," />
+
+    <meta name="description" content="C.0.1进行权衡判断的设计建筑，其围护结构的热工性能应符合下列规定： 1围护结构传热系数基本要求不得低表C.0.1-1的规定。 2透光围护结构传热系数和太阳得热系数基本要求应符合下列规定： 1）当公共建筑单一立面的窗墙比大于或等于0.40时，透光围护结构的传" />
+
+    <link rel="canonical" href="https://gf.cabr-fire.com/m/article-40836.htm" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta name="MobileOptimized" content="320" />
+
+    <meta name="applicable-device" content="mobile">
+
+    <link rel="stylesheet" type="text/css" href="/templates/m/style/css/skin.css?202501" />
+
+
+
+    <link rel="stylesheet" href="/style/css/poplogin_m.css?v1.1">
+
+    <link rel="stylesheet" href="/public/css/addon-m.css?v=1.2"/>
+
+    <script src="/style/js/jquery.min.js?v3.7.1"></script>
+
+    <script src="/static/js/common.js"></script>
+
+    <script src="/static/js/al.js?1.02"></script>
+
+    <script src="/style/js/layer.js"></script>
+
+    <link rel="stylesheet" href="/templates/m/style/css/new-white-bg.css">
+
+    <!--[if IE]>
+
+    <style type="text/css">
+
+    .navibar .main li { float:left; width:24%; }
+
+    </style>
+
+    <![endif]-->
+
+
+
+    <style type="text/css">
+
+	.tips{clear:both;text-align: center;margin-bottom: 65px;}
+
+        #b_con .so_res {
+
+            color: red !important;
+
+            background-color: #FFFF00;
+
+        }
+
+
+
+        #b_con table td, #b_con table th {
+
+            border: 1px solid #cad9ea;
+
+            color: #666 !important;
+
+            padding: 5px;
+
+        }
+
+
+
+        #b_con table {
+
+            background: #fafbfb;
+
+        }
+
+
+
+        #b_con table td *, #b_con table th * {
+
+            color: #666 !important;
+
+        }
+
+
+
+        #b_con table thead th {
+
+            background-color: #CCE8EB;
+
+            width: 100px;
+
+        }
+
+
+
+        #b_con table tr:nth-child(odd) {
+
+            background: #fafbfb;
+
+        }
+
+
+
+        #b_con table tr:nth-child(even) {
+
+            background: #F5FAFA;
+
+        }
+
+        
+
+    
+
+        #b_con strong{}
+
+        DIV.yellow {
+
+            BORDER-BOTTOM: #ccc 1px solid;
+
+            BORDER-LEFT: #ccc 1px solid;
+
+            PADDING-BOTTOM: 2px;
+
+            COLOR: #000;
+
+            BORDER-TOP: #ccc 1px solid;
+
+            BORDER-RIGHT: #ccc 1px solid;
+
+            TEXT-DECORATION: none;
+
+            background-color: #ffffcc;
+
+            width: 400px;
+
+            margin-top: 0px;
+
+            left: 0;
+
+            right: 0;
+
+            margin: auto;
+
+            bottom: 80px;
+
+        }
+
+
+
+        .downs .saomiao {
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            color: #000;
+
+			text-align: center;
+
+        }
+
+
+
+        .downs img {
+
+            max-width: 100%;
+
+        }
+
+
+
+        .layui-m-layercont {
+
+            padding: 30px 30px 10px;
+
+        }
+
+
+
+        .layui-m-layerbtn span[yes] {
+
+            color: #40AFFE;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            font-size: 16px;
+
+        }
+
+
+
+        .backmu span {
+
+            width: 32.333%;
+
+            display: inline-block;
+
+            text-align: center;
+
+        }
+
+
+
+
+
+        .round_button {
+
+            border: 0px solid;
+
+            display: block;
+
+            text-decoration: none;
+
+            text-align: center;
+
+            line-height: 28px;
+
+            height: 28px;
+
+            margin: 6px 4px 6px 4px;
+
+            -webkit-border-radius: 4px;
+
+            -moz-border-radius: 4px;
+
+            /* Old Firefox */
+
+            border-radius: 4px;
+
+            -webkit-transition: all 0.15s ease;
+
+            -moz-transition: all 0.15s ease;
+
+            -o-transition: all 0.15s ease;
+
+            -ms-transition: all 0.15s ease;
+
+            transition: all 0.15s ease;
+
+            color: #fff;
+
+            background-color: #969696;
+
+            padding: 2px 8px 0 8px;
+
+        }
+
+		.layui-layer-dialog {
+
+			min-width: 260px;
+
+			max-width: 300px;
+
+			top: 0 !important;
+
+			bottom: 0 !important;
+
+			left: 0 !important;
+
+			right: 0 !important;
+
+			margin: auto;
+
+			height: 410px;
+
+		}
+
+		.new_msg {
+
+			height: 10px;
+
+			width: 10px;
+
+			border-radius: 10px;
+
+			display: inline-block;
+
+			background: #ff0000;
+
+			position: relative;
+
+			top: -8px;
+
+		}
+
+    </style>
+
+    <script type="text/javascript">
+
+    if ("" != "") {
+
+        window.location.href = "";
+
+    }
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+
+
+    <div data-role="content" class="content">
+
+        <div class="news">
+
+		 
+
+            <div class="t-h">
+
+                <div class="t-name">
+
+                    <span style="float:left;width:16.66%;"><a class="round_button" href="list-1418.htm">目录</a></span>
+
+                    <span style="float:left;width:16.66%;"><a class="round_button" href="article-40835.htm">上节</a></span>
+
+                    <span style="float:left;width:16.66%;"><a class="round_button" href="article-40836.htm">下节</a></span>
+
+                    <span style="float:left;width:16.66%;"><a class="round_button" href="javascript:void(0);" onclick="displaySearch();">查找</a></span>
+
+                    <span style="float:left;width:16.66%;"><a class="round_button" href="list-1418.htm">检索</a></span>
+
+                     
+
+ 
+
+                </div>
+
+
+
+            </div>
+
+			 
+
+            <div class="subpages" style="padding-bottom: 10px;">
+
+                <span class=""> <a class="type-title" href="list-1418.htm" style="border-bottom:none;color:#b3a365">建筑节能与可再生能源利用通用规范 GB55015-2021</a></span><br />
+
+                <div style="display:flex; justify-content: space-between;align-items: center;">
+
+                    <!--div class="round_button" style="display:inline;font-size:14px;" onclick="window.location.href = document.referrer;"> 返 回 </div-->
+
+					<div class="round_button" style="display:inline;font-size:14px;" onclick="window.history.go(-1);return false;"> 返 回 </div>
+
+					<div style="display:flex;">
+
+						<div class="round_button" id="btnSub" >字变小</div>
+
+						<div class="round_button" id="btnAdd">字变大</div>
+
+						<div class="round_button" style="display:inline; font-size:14px; cursor:pointer;" onclick="switchStyle();" id="changebackground"> 白底黑字 </div>
+
+                        <!--div class="round_button" style="display:inline; font-size:14px; cursor:pointer;" id="userlogin"></div-->
+
+					</div>
+
+                     
+
+                </div>
+
+                <div id="keywords_info" style="display:inline;"></div>
+
+                <p style="text-align:center; display:none; margin-top:40px;justify-content: center;align-items: center;" id="search_page">
+
+                    <input id="search" type="text" placeholder=" 搜索本页内容..." style="width:250px; height:31px; border:1px solid #ccc; border-radius:4px; text-indent: 5px;outline:none;border-top-right-radius: 0px; border-bottom-right-radius: 0px;;" />
+
+                    <button onclick="searchContent();" style="width:60px;-webkit-appearance: none;margin-left:-5px; height:33px; border: none;background: #f60;border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; color: #fff;letter-spacing: 2px;position:relative; ">搜索</button>
+
+                </p>
+
+                <div style="margin-top:20px;margin-bottom:20px;">
+
+                    <h3 class="c-title">附录C 建筑围护结构热工性能权衡判断</h3>
+
+                </div>
+
+                 
+
+                <div id="b_con"><div>
+
+	C.0.1 进行权衡判断的设计建筑，其围护结构的热工性能应符合下列规定：</div>
+
+<div>
+
+	&nbsp; &nbsp; 1 围护结构传热系数基本要求不得低表C.0.1-1的规定。
+
+	<div style="text-align: center;">
+
+		<img alt="表C.0.1-1 围护结构传热系数基本要求" src="/Web/uploads/allimg/220330/10-220330133U3F3.jpg" style="width: 700px; height: 790px;" /></div>
+
+	<div>
+
+		&nbsp; &nbsp; 2 透光围护结构传热系数和太阳得热系数基本要求应符合下列规定：</div>
+
+	<div>
+
+		&nbsp; &nbsp; &nbsp; &nbsp; 1）当公共建筑单一立面的窗墙比大于或等于0.40时，透光围护结构的传热系数和太阳得热系数的基本要求应符合表C.0.1-2的规定。
+
+		<div style="text-align: center;">
+
+			<img alt="表C.0.1-2 公共建筑透光围护结构传热系数和太阳得热 系数的基本要求" src="/Web/uploads/allimg/220330/10-220330133950X5.jpg" style="width: 700px; height: 565px;" /></div>
+
+		&nbsp; &nbsp; &nbsp; &nbsp; 2）居住建筑和工业建筑透光围护结构太阳得热系数的基本要求应符合表C.0.1-3的规定。
+
+		<div style="text-align: center;">
+
+			<img alt="表C.0.1-3 居住建筑和工业建筑透光围护结构太阳得 热系数基本要求" src="/Web/uploads/allimg/220330/10-22033013402I48.jpg" style="width: 700px; height: 257px;" /></div>
+
+		<div style="text-align: center;">
+
+			<img alt="续表C.0.1-3" src="/Web/uploads/allimg/220330/10-2203301341113P.jpg" style="width: 700px; height: 479px;" /></div>
+
+		<div>
+
+			&nbsp; &nbsp; 3 居住建筑窗墙面积比基本要求应符合下列规定：</div>
+
+		<div>
+
+			&nbsp; &nbsp; &nbsp; &nbsp; 1）严寒和寒冷地区居住建筑窗墙面积比的基本要求应符合表C.0.1-4的规定。</div>
+
+		<div style="text-align: center;">
+
+			<img alt="表C.0.1-4 严寒和寒冷地区居住建筑窗墙面积比基本要求" src="/Web/uploads/allimg/220330/10-22033013414bc.jpg" style="width: 700px; height: 378px;" /></div>
+
+	</div>
+
+</div>
+
+&nbsp; &nbsp; &nbsp; &nbsp; 2）夏热冬冷、夏热冬暖地区居住建筑窗墙面积比大于或等于0.6时，其外窗传热系数的基本要求应符合表C.0.1-5的规定。
+
+<div style="text-align: center;">
+
+	<img alt="表C.0.1-5 夏热冬冷和夏热冬暖地区窗墙面积比及对应 外窗传热系数基本要求" src="/Web/uploads/allimg/220330/10-220330134221O5.jpg" style="width: 700px; height: 570px;" /></div>
+
+C.0.2 建筑围护结构热工性能的权衡判断采用对比评定法，公共建筑和居往建筑判断指标为总耗电量，工业建筑判断指标为总耗煤量，并应符合下列规定：<br />
+
+<div>
+
+	&nbsp; &nbsp; 1 对公共建筑和居住建筑，总耗电量应为全年供暖和供冷总耗电量；对工业建筑，总耗煤量应为全年供暖耗热量和供冷耗冷量的折算标煤量；</div>
+
+<div>
+
+	&nbsp; &nbsp; 2 当设计建筑总耗电（煤）量不大于参照建筑时，应判定围护结构的热工性能符合本规范的要求；</div>
+
+<div>
+
+	&nbsp; &nbsp; 3 当设计建筑的总能耗大于参照建筑时，应调整围护结构的热工性能重新计算，直至设计建筑的总能耗不大于参照建筑。<br />
+
+	C.0.3 参照建筑的形状、大小、朝向、内部的空间划分、使用功能应与设计建筑完全一致。参照建筑围护结构应符合本规范第3.1.2条~第3.1.10条的规定；本规范未作规定时，参照建筑应与设计建筑一致。建筑功能区除设计文件明确为非空调区外，均应按设置供暖和空气调节系统计算。</div>
+
+<div>
+
+	C.0.4 建筑围护结构热工性能权衡判断计算应采用能按照本规范要求自动生成参照建筑计算模型的专用计算软件，软件应具有以下功能：<br />
+
+	<div>
+
+		&nbsp; &nbsp; 1 采用动态负荷计算方法；</div>
+
+	<div>
+
+		&nbsp; &nbsp; 2 能逐时设置人员数量、照明功率、设备功率、室内温度、供暖和空调系统运行时间；</div>
+
+	<div>
+
+		&nbsp; &nbsp; 3 能计入建筑围护结构蓄热性能的影响；</div>
+
+	<div>
+
+		&nbsp; &nbsp; 4 能计算建筑热桥对能耗的影响；</div>
+
+	<div>
+
+		&nbsp; &nbsp; 5 能计算10个以上建筑分区；<br />
+
+		&nbsp; &nbsp; 6 能直接生成建筑围护结构热工性能权衡判断计算报告。</div>
+
+	<div>
+
+		C.0.5 参照建筑与设计建筑的能耗计算应采用相同的软件和典型气象年数据。</div>
+
+	<div>
+
+		C.0.6 建筑的空气调节和供暖系统运行时间、室内温度、照明功率密度值及开关时间、房间人均占有的建筑面积及在室率、人员新风量及新风机组运行时间表、电器设备功率密度及使用率应符合表C.0.6-1个表C.0.6-13的规定。
+
+		<div style="text-align: center;">
+
+			<img alt="表C.0.6-1 空气调节和供暖系统的日运行时间" src="/Web/uploads/allimg/220330/10-22033013425B31.jpg" style="width: 700px; height: 457px;" /><br />
+
+			<img alt="表C.0.6-2 供暖空调区室内温度（℃）" src="/Web/uploads/allimg/220330/10-220330134330404.jpg" style="width: 700px; height: 443px;" /><br />
+
+			<img alt="续表C.0.6-2" src="/Web/uploads/allimg/220330/10-220330134403U5.jpg" style="width: 700px; height: 440px;" /><br />
+
+			<img alt="表C.0.6-3 照明功率密度值（W/m2）" src="/Web/uploads/allimg/220330/10-220330134434195.jpg" style="width: 700px; height: 236px;" /><br />
+
+			<img alt="表C.0.6-4 照明使用时间（%）" src="/Web/uploads/allimg/220330/10-220330134455Z6.jpg" style="width: 700px; height: 862px;" /><br />
+
+			<img alt="表C.0.6-5 不同类型房间人均占有的建筑面积（m2/人）" src="/Web/uploads/allimg/220330/10-220330134942360.jpg" style="width: 700px; height: 270px;" /><br />
+
+			<img alt="表C.0.6-6 房间人员逐时在室率（%）" src="/Web/uploads/allimg/220330/10-22033013495c28.jpg" style="width: 700px; height: 830px;" /><br />
+
+			<img alt="表C.0.6-7 公共建筑不同类型房间的人均新风量[m3/（h·人）]" src="/Web/uploads/allimg/220330/10-220330135024223.jpg" style="width: 700px; height: 196px;" /><br />
+
+			<img alt="表C.0.6-8 公共建筑新风运行情况" src="/Web/uploads/allimg/220330/10-22033013504b31.jpg" style="width: 700px; height: 571px;" /></div>
+
+		<div>
+
+			&nbsp; &nbsp; 注：1表示新风开启，0表示新风关闭。</div>
+
+		<div style="text-align: center;">
+
+			<img alt="表C.0.6-9 居住建筑的换气次数" src="/Web/uploads/allimg/220330/10-22033013513W48.jpg" style="width: 700px; height: 103px;" /><br />
+
+			<img alt="表C.0.6-10 工业建筑的换气次数" src="/Web/uploads/allimg/220330/10-22033013515cN.jpg" style="width: 700px; height: 153px;" /></div>
+
+		<div>
+
+			&nbsp; &nbsp; 注：当房间三面以上外墙有门、窗、暴露面时，表中数值应乘以系数1.15。</div>
+
+		<div style="text-align: center;">
+
+			<img alt="表C.0.6-11 不同类型房间电器设备功率密度（W/m2）" src="/Web/uploads/allimg/220330/10-22033013530K91.jpg" style="width: 700px; height: 265px;" /><br />
+
+			<img alt="表C.0.6-12 电器设备逐时使用率（%）" src="/Web/uploads/allimg/220330/10-220330135344K4.jpg" style="width: 700px; height: 828px;" /></div>
+
+		<div>
+
+			<img alt="表C.0.6-13 活动遮阳装置遮挡比例（%）" src="/Web/uploads/allimg/220401/10-2204010950392a.jpg" style="width: 700px; height: 159px;" /><br />
+
+			C.0.7 居住建筑和公共建筑的设计建筑和参照建筑全年供暖和供冷总耗电量计算应符合下列规定：</div>
+
+		<div>
+
+			<div>
+
+				&nbsp; &nbsp; 1 全年供暖和供冷总耗电量应按下式计算：</div>
+
+			<div style="text-align: center;">
+
+				<img alt="全年供暖和供冷总耗电量计算公式" src="/Web/uploads/allimg/220330/10-220330135453502.jpg" style="width: 500px; height: 42px;" /></div>
+
+			<div>
+
+				&nbsp; &nbsp; 式中：E&mdash;&mdash;全年供暖和供冷总耗电量（kWh/m&sup2;）；</div>
+
+			<div>
+
+				&nbsp; &nbsp;&nbsp;E<sub>C</sub>&mdash;&mdash;全年供冷耗电量（kWh/m&sup2;）；</div>
+
+			<div>
+
+				&nbsp; &nbsp;&nbsp;E<sub>H</sub>&mdash;&mdash;全年供暖耗电量（kWh/m&sup2;）。</div>
+
+			<div>
+
+				<div>
+
+					&nbsp; &nbsp; 2 全年供冷耗电量应按下式计算：</div>
+
+				<div style="text-align: center;">
+
+					<img alt="全年供冷耗电量计算公式" src="/Web/uploads/allimg/220330/10-220330135A0K1.jpg" style="width: 500px; height: 70px;" /></div>
+
+				<div>
+
+					&nbsp; &nbsp; 式中：Q<sub>c</sub>&mdash;&mdash;全年累计耗冷量（kWh），通过动态模拟软件计算得到；</div>
+
+				<div>
+
+					&nbsp; &nbsp; A&mdash;&mdash;总建筑面积（m&sup2;）；<br />
+
+					&nbsp; &nbsp;&nbsp;COP<sub>C</sub>&mdash;&mdash;公共建筑供冷系统综合性能系数，取3.50；寒冷B区、夏热冬冷、夏热冬暖地区居住建筑取3.60。</div>
+
+				<div>
+
+					&nbsp; &nbsp; 3 严寒地区和寒冷地区全年供暖耗电量应按下式计算：</div>
+
+				<div style="text-align: center;">
+
+					<img alt="严寒地区和寒冷地区全年供暖耗电量计算公式" src="/Web/uploads/allimg/220330/10-220330135H0P2.jpg" style="width: 500px; height: 77px;" /></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div>
+
+	&nbsp; &nbsp; 式中：Q<sub>H</sub>&mdash;&mdash;全年累计耗热量（kWh），通过动态模拟软件计算得到；</div>
+
+<div>
+
+	&nbsp; &nbsp;&nbsp;&eta;<sub style="font-family: Arial, sans-serif;">1</sub>&mdash;&mdash;热源为燃煤锅炉的供暖系统综合效率，取0.81；</div>
+
+<div>
+
+	&nbsp; &nbsp;&nbsp;q<sub style="font-family: Arial, sans-serif;">1</sub>&mdash;&mdash;标准煤热值，取8.14kWh/kgce；</div>
+
+<div>
+
+	&nbsp; &nbsp;&nbsp;q<sub style="font-family: Arial, sans-serif;">2</sub>&mdash;&mdash;综合发电煤耗（kgce/kWh）取0.330kgce/kWh。</div>
+
+<div>
+
+	<div>
+
+		&nbsp; &nbsp; 4 夏热冬暖A区、夏热冬冷、夏热冬暖和温和地区公共建筑全年供暖耗电量应按下式计算：</div>
+
+	<div style="text-align: center;">
+
+		<img alt="夏热冬暖A区、夏热冬冷、夏热冬暖和温和地区公共建筑全年供暖耗电量计算公式" src="/Web/uploads/allimg/220330/10-220330135PC03.jpg" style="width: 500px; height: 77px;" /></div>
+
+	<div>
+
+		&nbsp; &nbsp; 式中：&eta;<sub>2&mdash;&mdash;</sub>热源为燃气锅炉的供暖系统综合效率，取0.85；</div>
+
+	<div>
+
+		&nbsp; &nbsp;&nbsp;q<sub>3&mdash;&mdash;</sub>标准天然气热值，取9.87kWh/m&sup3;；</div>
+
+	<div>
+
+		&nbsp; &nbsp;&nbsp;&psi;&mdash;&mdash;天然气与标煤折算系数，取1.21 kgce /m&sup3;。</div>
+
+	<div>
+
+		<div>
+
+			&nbsp; &nbsp; 5 夏热冬暖A区、夏热冬冷和温和地区居住建筑全年供暖耗电量应按下式计算：</div>
+
+		<div style="text-align: center;">
+
+			<img alt="夏热冬暖A区、夏热冬冷和温和地区居住建筑全年供暖耗电量计算公式" src="/Web/uploads/allimg/220330/10-220330135S34L.jpg" style="width: 500px; height: 67px;" /></div>
+
+		<div>
+
+			&nbsp; &nbsp; 式中：Q<sub>H</sub>&mdash;&mdash;全年累计耗热量（kWh）：</div>
+
+		<div>
+
+			&nbsp; &nbsp; A&mdash;&mdash;总建筑面积（m&sup2;）</div>
+
+		<div>
+
+			&nbsp; &nbsp;&nbsp;COP<sub>H</sub>&mdash;&mdash;供暖系统综合性能系数，取2.6。</div>
+
+		<div>
+
+			&nbsp; &nbsp; 6 居住建筑应计入全年的供暖能耗；供冷能耗只计入日平均温度高于26℃时的能耗。严寒、寒冷A、温和A区只计入供暖能耗；寒冷B、夏热冬冷、夏热冬暖A区计入供暖和供冷能耗，夏热冬暖B区只计入供冷能耗。</div>
+
+		<div>
+
+			C.0.8 工业建筑的设计建筑和参照建筑全年供暖和供冷总耗煤量计算应符合下列规定：</div>
+
+		<div>
+
+			<div>
+
+				&nbsp; &nbsp; 1 全年供暖和供冷总耗煤量应按下式计算：</div>
+
+			<div style="text-align: center;">
+
+				<img alt="全年供暖和供冷总耗煤量计算公式" src="/Web/uploads/allimg/220330/10-220330135913M3.jpg" style="width: 500px; height: 43px;" /></div>
+
+			<div>
+
+				&nbsp; &nbsp; 式中：E&mdash;&mdash;全年供暖和供冷总耗煤量（kgce/m&sup2;）；<br />
+
+				&nbsp; &nbsp;&nbsp;E<sub>C</sub>&middot;<sub>C</sub>&mdash;&mdash;全年供冷耗煤量（kgce/m&sup2;）；<br />
+
+				&nbsp; &nbsp; E<sub>C</sub>&middot;<sub>H</sub>&mdash;&mdash;全年供暖耗煤量（kgce/m&sup2;）。</div>
+
+			<div>
+
+				&nbsp; &nbsp; 2 全年供冷耗煤量应按下式计算：</div>
+
+			<div style="text-align: center;">
+
+				<img alt="全年供冷耗煤量计算公式" src="/Web/uploads/allimg/220330/10-220330135941603.jpg" style="width: 500px; height: 69px;" /></div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div>
+
+	&nbsp; &nbsp; 式中：Q<sub>c</sub>&mdash;&mdash;全年累计耗冷量（kWh），通过动态模拟软件计算得到；<br />
+
+	&nbsp; &nbsp; A&mdash;&mdash;总建筑面积（m&sup2;）；<br />
+
+	&nbsp; &nbsp; COP<sub>C</sub>&mdash;&mdash;供冷系统综合性能系数，取3.60。<br />
+
+	&nbsp; &nbsp; 3 全年供暖耗煤量应按下式计算：</div>
+
+<div style="text-align: center;">
+
+	<img alt="全年供暖耗煤量计算公式" src="/Web/uploads/allimg/220330/10-220330140004M3.jpg" style="width: 500px; height: 77px;" /></div>
+
+<div>
+
+	&nbsp; &nbsp; 式中：Q<sub>H</sub>&mdash;&mdash;全年累计耗热量（kWh），通过动态模拟软件计算得到；<br />
+
+	&nbsp; &nbsp;&nbsp;&eta;<sub style="font-family: Arial, sans-serif;">1&mdash;&mdash;</sub>热源为燃煤锅炉的供暖系统综合效率，取0.81；<br />
+
+	&nbsp; &nbsp;&nbsp;q<sub>1&mdash;&mdash;</sub>标准煤热值，取8.14kWh/kgce。</div>
+
+<div class="twsm" style="display:block;">
+
+	<div style="text-align: center;padding-top:10px;">
+
+		<strong>条文说明</strong>
+
+	</div>
+
+    <div id="explain"><div>
+
+	C.0.1 对进行权衡判断的建筑，规定围护结构的基本要求，以避免出现围护结构热工性能过差的情况。</div>
+
+<div>
+
+	C.0.2、C.0.3 这两条规定了权衡判断的方法和判定指标，对不同的设计建筑进行权衡判断时采用相同的方法，保证权衡判断结果的可比性。</div>
+
+<div>
+
+	C.0.4 规范权衡判断计算软件功能，是保证权衡判断计算结果科学性和一致性的必要措施。</div>
+
+<div>
+
+	C.0.5 本规范对围护结构热工性能的权衡判断采用对比评定法，当设计建筑与参照建筑的能耗计算均采用同一软件时，采用不同软件的权衡判断结论可基本保持一致。</div>
+
+<div>
+
+	&nbsp; &nbsp; 建筑所在地的气候条件决定了建筑的供暖、空调能耗。权衡判断计算时，需要输入全年8760h的逐时气象参数。在计算设计建筑和参照建筑能耗时采用相同的气象参数，可以避免由于室外气候差异造成的能耗计算差异，保证权衡判断结果的正确性。</div>
+
+<div>
+
+	C.0.6 本条对权衡判断时所必需的计算参数作出了规定，以保证权衡判断结果的合理性。</div>
+
+<div>
+
+	C.0.7、C.0.8 规范对权衡判断时判定指标的计算方法作出了规定，以保证判定指标计算方法的统一。</div></div>
+
+
+
+</div>
+
+</div>
+
+ <input type="hidden" name="settid" id="settid" value="0" />  
+
+<div class="addon-line">
+
+  
+
+<span onclick="window.open('list-1418.htm','_self')"><i class="iconfont icon-zhankaimulu"></i> 目录</span>
+
+<span onclick="window.history.go(-1);return false;"><i class="iconfont icon-prev"></i> 返回</span>
+
+<span onclick="window.open('article-40835.htm','_self')"><i class="iconfont icon-jiantou_shangyiye_o" style="font-weight: bold;"></i> 上节</span>
+
+<span onclick="window.open('article-40836.htm','_self')">下节 <i class="iconfont icon-jiantou_xiayiye_o" style="font-weight: bold;"></i></span>
+
+	<!--span id="t1" onclick="loadcmn('c');"><i class="iconfont icon-shoucang"></i> 收藏</span>
+
+	<span id="t2" onclick="loadcmn('m');" style="display:none;"><i class="iconfont icon-shuqian1"></i> 书签</span>
+
+	<span id="t3" onclick="loadcmn('n');"><i class="iconfont icon-chuangzuo"></i> 笔记</span-->
+
+	
+
+<!---span id="t4" style="display:none;"><i class="iconfont icon-xiaoxi"></i>评论</span-->
+
+	<span id="t5" onclick="twclick();"><i class="iconfont icon-yanjing"></i>条文说明</span> 
+
+</div>
+
+	<script>
+
+		$(".fullview").click((function() {
+
+			setTimeout((function() {
+
+				$("body").addClass("simplify_hide")
+
+				 
+
+			}), 800),
+
+			setTimeout((function() {
+
+				$("#b_con").addClass("simplify_on")
+
+			}), 200)
+
+		})),
+
+		$(".goback").click((function() {
+
+			setTimeout((function() {
+
+				$("body").removeClass("simplify_hide")
+
+			}), 800),
+
+			setTimeout((function() {
+
+				$("#b_con").removeClass("simplify_on")
+
+				 
+
+			}), 200)
+
+		}))
+
+        function twclick() {
+
+			$("html, body").animate({ scrollTop: $(".twsm").offset().top - 50 + "px" }, 1000);
+
+			return false;//不要这句会有点卡顿
+
+             
+
+        }
+
+
+
+
+
+	$(function () {  
+
+        var ie6 = /msie 6/i.test(navigator.userAgent)  
+
+        , dv = $('.addon-line'), st, head = $('#b_con').offset().top;  
+
+        dv.attr('otop', dv.offset().top); //存储原来的距离顶部的距离  
+
+        $(window).scroll(function () {  
+
+            st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);  
+
+			 
+
+            if (st >= parseInt(head)) {  
+
+                if (ie6) {//IE6不支持fixed属性，所以只能靠设置position为absolute和top实现此效果
+
+				
+
+                    dv.css({ position: 'absolute', top: st });  
+
+                }  
+
+                else if (dv.css('position') != 'fixed'){
+
+				 dv.addClass("fixednav");  
+
+				 dv.css({ 'position': 'fixed', top: 0 ,left: 0 });  
+
+				}
+
+            } else if (dv.css('position') != 'static') {
+
+				 dv.removeClass("fixednav");
+
+				 dv.css({ 'position': 'static' });  
+
+			}
+
+        });  
+
+    }); 
+
+	</script>
+
+
+
+
+
+                <div class="context" style="margin-top:10px;">
+
+                    <ul>
+
+                        <li>上一节：<a href="article-40835.htm">附录B 建筑分类及参数计算</a> </li>
+
+                        <li>下一节：<a href="article-40836.htm">没有了</a> </li>
+
+						 
+
+                    </ul>
+
+                </div>
+
+				 
+
+               
+
+                <p class="backmu" style="text-align: center; margin-top: 40px; width:100%;float:left">
+
+                    <span><a href="list-1418.htm"><img src="/style/images/back.png" /></a></span>
+
+                    
+
+                    
+
+                </p>
+
+
+
+            </div>
+
+            <div class="tips"  > </div>
+
+
+
+        </div>
+
+        <div class="navibar">
+
+            <div class="top_bar" id="top_bar" style="-webkit-transform:translate3d(0,0,0)">
+
+                <nav>
+
+                    <ul id="top_menu" class="top_menu"></ul>
+
+                </nav>
+
+            </div>
+
+
+
+            <div id="plug-wrap" onClick="closeall()" style="display: none;"></div>
+
+            <div style="display: none;">
+
+                
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+<script>
+
+    function app_getCookie(name) {
+
+        var cookieArray = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+
+        if (cookieArray != null && cookieArray != '(null)') {
+
+            return cookieArray[2];
+
+        } else {
+
+            return null;
+
+        }
+
+    }
+
+
+
+    function app_getStyle() {
+
+        var get_size = "16";
+
+        if (app_getCookie("cur_size") != null) {
+
+             get_size = app_getCookie("cur_size");
+
+        }
+
+
+
+        var get_style = "black";
+
+        if (app_getCookie("cur_style") != null) {
+
+             get_style = app_getCookie("cur_style");
+
+        }
+
+        var style_string = ("size=" + get_size + "&style=" + get_style);
+
+        return style_string;
+
+    }
+
+
+
+    function app_setStyle(size, style) {
+
+        var old_size = "16";
+
+        if (app_getCookie("cur_size") != null) {
+
+             old_size = app_getCookie("cur_size");
+
+        }
+
+
+
+        var old_style = "black";
+
+        if (app_getCookie("cur_style") != null) {
+
+             old_style = app_getCookie("cur_style");
+
+        }
+
+
+
+        var expired = new Date();
+
+        expired.setTime(expired.getTime() + 365 * 24 * 60 * 60 * 1000);
+
+
+
+        if (size != old_size) {
+
+            document.cookie = "cur_size=" + size + ";expires=" + expired.toGMTString() + ";domain=cabr-fire.com;secure=true;path=/";
+
+        }
+
+
+
+        if (style != old_style) {
+
+            if (old_style == '' || old_style == 'black') {
+
+                document.getElementById("changebackground").innerHTML = "黑底白字";
+
+                document.body.id = 'whiteBg';
+
+                document.cookie = "cur_style=white;expires=" + expired.toGMTString() + ";domain=cabr-fire.com;secure=true;path=/";
+
+            }
+
+            else {
+
+                document.getElementById("changebackground").innerHTML = "白底黑字";
+
+                document.body.id = '';
+
+                document.cookie = "cur_style=black;expires=" + expired.toGMTString() + ";domain=cabr-fire.com;secure=true;path=/";
+
+            }
+
+        }
+
+    }
+
+
+
+
+
+    function getStyle() {
+
+        var styleArray = document.cookie.match(new RegExp("(^| )cur_style=([^;]*)(;|$)"));
+
+        if (styleArray != null) {
+
+            return unescape(styleArray[2]);
+
+        } else {
+
+            return '';
+
+        }
+
+    }
+
+
+
+    function switchStyle() {
+
+        var expired = new Date();
+
+        expired.setTime(expired.getTime() + 365 * 24 * 60 * 60 * 1000);
+
+        var tempStyle = getStyle();
+
+        if (tempStyle == '' || tempStyle == 'black') {
+
+            document.getElementById("changebackground").innerHTML = "黑底白字";
+
+            document.body.id = 'whiteBg';
+
+            document.cookie = "cur_style=white;expires=" + expired.toGMTString() + ";domain=cabr-fire.com;secure=true;path=/";
+
+        }
+
+        else {
+
+            document.getElementById("changebackground").innerHTML = "白底黑字";
+
+            document.body.id = '';
+
+            document.cookie = "cur_style=black;expires=" + expired.toGMTString() + ";domain=cabr-fire.com;secure=true;path=/";
+
+        }
+
+
+
+        //var style = app_getStyle();
+
+        document.getElementById("appstyle").src = "https://gf.cabr-fire.com/m/app_getstyle/?" + app_getStyle();
+
+
+
+        // window.location.reload();
+
+    }
+
+
+
+    var curStyle = getStyle();
+
+    if (curStyle == '' || curStyle == 'black') {
+
+        // document.write('<link rel="stylesheet" type="text/css" href="/templates/m/style/css/black-bg.css" />');
+
+        document.getElementById("changebackground").innerHTML = "白底黑字";
+
+        document.body.id = '';
+
+    }
+
+    else {
+
+        // document.write('<link rel="stylesheet" type="text/css" href="/templates/m/style/css/white-bg.css" />');
+
+        document.getElementById("changebackground").innerHTML = "黑底白字";
+
+        document.body.id = 'whiteBg';
+
+    }
+
+
+
+	var btnSub=document.getElementById("btnSub");
+
+	var btnAdd=document.getElementById("btnAdd");
+
+
+
+	var curSize = getFontSize();
+
+	if(curSize == '' || curSize == null){
+
+		curSize=15;
+
+	}
+
+    curSize = parseInt(curSize);
+
+
+
+	btnSub.onclick=function(){
+
+		if(curSize>15){
+
+			curSize-=2;
+
+			switchSize(curSize);
+
+			$("#b_con").attr("class",'addsize' + curSize);
+
+		}else{
+
+			alert('字号不能再小了');
+
+        }
+
+
+
+        //var style = app_getStyle();
+
+        document.getElementById("appstyle").src = "https://gf.cabr-fire.com/m/app_getstyle/?" + app_getStyle();
+
+	}
+
+
+
+    btnAdd.onclick = function () {
+
+        if (curSize <= 30) {//设置最大字体是30px
+
+            curSize += 2;//每次点击按钮字体增加2
+
+            switchSize(curSize);
+
+            $("#b_con").attr("class", 'addsize' + curSize);
+
+        } else {
+
+            alert('已经是最大字号了');
+
+        }
+
+
+
+        //var style = app_getStyle();
+
+        document.getElementById("appstyle").src = "https://gf.cabr-fire.com/m/app_getstyle/?" + app_getStyle();
+
+    }
+
+
+
+	// 字体大小
+
+	function getFontSize() {
+
+		var styleArray = document.cookie.match(new RegExp("(^| )cur_size=([^;]*)(;|$)"));
+
+		if (styleArray != null) {
+
+			return decodeURI(styleArray[2]);
+
+		} else {
+
+			return '';
+
+		}
+
+	}
+
+
+
+	function switchSize(str) {
+
+		var expired = new Date();
+
+		expired.setTime(expired.getTime() + 365 * 24 * 60 * 60 * 1000);
+
+		if (str != null || str != '') {
+
+			document.cookie = "cur_size="+ str +";expires=" + expired.toGMTString() + ";domain=cabr-fire.com;secure=true;path=/";
+
+		}else{
+
+			document.cookie = "cur_size=16;expires=" + expired.toGMTString() + ";domain=cabr-fire.com;secure=true;path=/";
+
+		}
+
+	   
+
+		//window.location.reload();
+
+	}
+
+	
+
+	if (curSize !== '' || curSize !== null) {
+
+		$("#b_con").addClass('addsize' + curSize);
+
+	}
+
+
+
+</script> 
+
+	<script src="/style/js/jweixin-1.6.0.js"></script>
+
+    <script type="text/javascript">
+
+        //{data:{}}
+
+        wx.miniProgram.postMessage({ data: { title: '$title - $typename', desc: '$description' } });
+
+
+
+    </script>
+
+	<script type="text/javascript">
+
+        var myua = navigator.userAgent.toLowerCase();
+
+        if (myua.match(/MicroMessenger/i) == "micromessenger") {
+
+            var url = encodeURIComponent(location.href.split("#")[0]);
+
+            $.ajax({
+
+                type: "get",
+
+                url: "/weixin_share/?link=" + url,
+
+                dataType: "json",
+
+                contentType: "application/json; charset=utf-8",
+
+                success: function (e) {
+
+                    var d = e.appid,
+
+                        i = e.timestamp,
+
+                        t = e.noncestr,
+
+                        n = e.signature;
+
+                    wx.config({
+
+                        debug: 0,
+
+                        appId: d,
+
+                        timestamp: i,
+
+                        nonceStr: t,
+
+                        signature: n,
+
+                        jsApiList: ["updateTimelineShareData", "updateAppMessageShareData"]
+
+                    }),
+
+                        wx.ready(function () {
+
+                            wx.updateTimelineShareData({
+
+                                title: "附录C 建筑围护结构热工性能权衡判断 _ 建筑节能与可再生能源利用通用规范 GB55015-2021-消防规范网",
+
+                                desc: "$description",
+
+                                link: "https://gf.cabr-fire.com/m/article-40836.htm",
+
+                                imgUrl: "https://gf.cabr-fire.com/cc.jpg"
+
+                            }),
+
+                                wx.updateAppMessageShareData({
+
+                                    title: "附录C 建筑围护结构热工性能权衡判断 _ 建筑节能与可再生能源利用通用规范 GB55015-2021-消防规范网",
+
+                                    desc: "$description",
+
+                                    link: "https://gf.cabr-fire.com/m/article-40836.htm",
+
+                                    imgUrl: "https://gf.cabr-fire.com/cc.jpg"
+
+                                })
+
+                        })
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+
+
+<!---公共背景-->
+
+<div class="backgroundfix" onclick="$('.modal-pub,.backgroundfix').hide();$('html').css({'overflow': 'auto' });"></div>
+
+<script src="/style/js/fly-zomm-img.min.js"></script>
+
+    <script>
+
+		 
+
+        $(function () {
+
+            $('#b_con').FlyZommImg({
+
+                rollSpeed: 200,//切换速度
+
+                miscellaneous: true,//是否显示底部辅助按钮
+
+                closeBtn: true,//是否打开右上角关闭按钮
+
+                hideClass: 'hide',//不需要显示预览的 class
+
+                imgQuality: 'thumb',//图片质量类型  thumb 缩略图  original 默认原图
+
+                slitherCallback: function (direction, DOM) {//左滑动回调 两个参数 第一个动向 'left,firstClick,close' 第二个 当前操作DOM
+
+                    //console.log(direction,DOM);
+
+					/*setTimeout(function(){
+
+						// 为了一开始居中显示
+
+						$('.fly-zoom-box-img').css('width','100%').css('height','auto').css('top',0).css('bottom',0).css('margin','auto');
+
+					},300)*/
+
+                }
+
+            });
+
+        });
+
+
+
+        function displaySearch() {
+
+            var sp = document.getElementById("search_page");
+
+            if (sp.style.display == "none") {
+
+                sp.style.display = "flex";
+
+            } else {
+
+                sp.style.display = "none";
+
+            }
+
+        }
+
+
+
+        var kw = '';
+
+        var url = window.location.href;
+
+        if (url.indexOf('keywords=') > -1) {
+
+            kw = url.split('keywords=')[1];
+
+        }
+
+
+
+        if (kw != '') {
+
+            searchKW(kw);
+
+        }
+
+
+
+        function searchKW(kw) {
+
+            var count = 0;
+
+            if (kw != '') {
+
+                kw = kw.replace("%5C", "%5c");
+
+                kw = kw.replace("%5c%5c", "%5c");
+
+                kw = kw.replace("  ", " ");
+
+
+
+                kw = kw.replace("\\", "+");
+
+                kw = kw.replace("%5c", "+");
+
+                kw = kw.replace(" ", "+");
+
+
+
+                kw = kw.replace("%2f", "/");
+
+
+
+                kw = decodeURI(kw);
+
+                //kw = kw.replace("／", "/");
+
+                //kw = kw.replace("\\", "/");
+
+
+
+                var html = document.getElementById("b_con").innerHTML
+
+
+
+                if (kw.indexOf("+") == -1) {
+
+                    var regex = new RegExp(kw, 'g');
+
+                    var result = html.match(regex);
+
+                    count = !result ? 0 : result.length;
+
+
+
+                    var val = html.replace(regex, "<span class='so_res' style='background:yellow;color:red;'>" + kw + "</span>");
+
+                    $('#keywords_info').html("关键字：<font color='red'><b>" + kw + " " + count + "</b></font>个。")
+
+
+
+                    val = val.replace(/<table/g, "<div style='overflow-x: scroll'><table");
+
+                    val = val.replace(/<\/table>/g, "</table></div>");
+
+
+
+                    document.getElementById('b_con').innerHTML = val;
+
+                } else {
+
+                    var kw_array = [];
+
+                    var keywords_info = '关键字：';
+
+
+
+                    if (kw.indexOf("+") > -1) {
+
+                        kw_array = kw.split("+");
+
+                    }
+
+
+
+                    if (kw_array.length > 0) {
+
+                        var count = 0;
+
+                        for (var i = 0; i < kw_array.length; i++) {
+
+                            if (kw_array[i].trim() != "") {
+
+                                var regex = new RegExp(kw_array[i].trim(), 'g');
+
+                                var result = html.match(regex);
+
+                                count = !result ? 0 : result.length;
+
+
+
+                                html = html.replace(regex, "<span class='so_res' style='background:yellow;color:red;'>" + kw_array[i].trim() + "</span>");
+
+                                keywords_info = keywords_info + "<font color='red'><b>" + kw_array[i].trim() + " " + count + "</b></font>个。";
+
+                            }
+
+                        }
+
+                    }
+
+
+
+                    $('#keywords_info').html(keywords_info);
+
+
+
+                    html = html.replace(/<table/g, "<div style='overflow-x: scroll'><table");
+
+                    html = html.replace(/<\/table>/g, "</table></div>");
+
+
+
+                    document.getElementById('b_con').innerHTML = html;
+
+                }
+
+            }
+
+            return count;
+
+        }
+
+
+
+        function searchContent() {
+
+            var searchText = $('#search').val();
+
+            if (searchText.length == 0 || searchText.trim()=="") {
+
+                return false;
+
+            } else {
+
+                var count = searchKW(searchText);
+
+                alert('搜索完成,共' + count + '个结果!');
+
+            }
+
+        }
+
+
+
+        $(function () {
+
+            $("#b_con table").wrap("<div style='overflow-x: scroll'></div>");
+
+            //$("html").css({ "width": $(window).width(), "overflow-x": "hidden" });
+
+        });
+
+
+
+    </script>
+
+
+
+    <style>
+
+        ::-webkit-input-placeholder {
+
+            color: #ababab;
+
+            opacity: 1;
+
+        }
+
+
+
+        ::-moz-placeholder {
+
+            color: #ababab;
+
+            opacity: 1;
+
+        }
+
+
+
+        :-ms-input-placeholder {
+
+            color: #ababab;
+
+            opacity: 1;
+
+        }
+
+    </style>
+
+    <div style="text-align:center;color:#333; "><a rel="nofollow" href="https://beian.miit.gov.cn/">京ICP备2021037427号-5</a> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11010502057363" rel="noreferrer" target="_blank" style="padding:0">京公网安备11010502057363号</a> </div>
+
+ <!--登录弹出-->
+
+<div class="madol" id="Login-pop">
+
+    <div id="content">
+
+    </div>
+
+    <p class="user-close"><a href="javascript:;" onclick="document.getElementById('Login-pop').style.display='none';">关闭</a></p>
+
+</div>
+
+<script>
+
+    function PP_logout() {
+
+        PP_delCookie("userid");
+
+        PP_delCookie("username");
+
+        PP_delCookie("pwd");
+
+
+
+        layer.msg('退出成功!', { icon: 1 });
+
+        setTimeout(function () {
+
+            location.reload();
+
+        }, 1000)
+
+    }
+
+
+
+    function PP_login() {
+
+        if (PP_getCookie("userid") != null && PP_getCookie("userid") != '(null)') {
+
+
+
+        } else {
+
+            //event.preventDefault();
+
+            $("#Login-pop").css("display", "block");
+
+            $("#content").load("/public/login.html?0.1");
+
+        }
+
+    }
+
+
+
+    //repeat submit
+
+    var commitStatus = false;
+
+    function dosubmit() {
+
+        if (commitStatus == false) {
+
+            commitStatus = true;
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
+
+    }
+
+
+
+    //reset submit
+
+    function resetSubmit() {
+
+        commitStatus = false;
+
+        document.getElementById("searchbutton1").value = "搜索";
+
+        document.getElementById("searchbutton2").value = "搜索";
+
+    }
+
+
+
+    //setTimeout(resetSubmit, 3000);
+
+    $('#searchbutton1').click(function () {
+
+        $(this).delay(3000).queue(function () {
+
+            $("#searchbutton1").val("搜索");
+
+            $(this).dequeue();
+
+        });
+
+    });
+
+
+
+    $('#searchbutton2').click(function () {
+
+        $(this).delay(3000).queue(function () {
+
+            $("#searchbutton2").val("搜索");
+
+            $(this).dequeue();
+
+        });
+
+    });
+
+
+
+
+
+    function app_del(name, domain) {
+
+        var exp = new Date();
+
+        exp.setTime(exp.getTime() - 1);
+
+        var cval = PP_getCookie(name);
+
+        if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString() + ";domain=" + domain + ";path=/";
+
+    }
+
+
+
+    var tabInvisible = false;
+
+    function app_sync(userid, pwd, username) {
+
+        tabInvisible = true;
+
+        //document.getElementById("top_bar").style.display = "none";
+
+
+
+        var host = window.location.hostname.split(".");
+
+        var domain = host[1] + "." + host[2];
+
+
+
+        if (/(^[1-9]\d*$)/.test(userid)) {
+
+            document.cookie = "userid=" + userid + ";domain=" + domain + ";path=/";
+
+            document.cookie = "username=" + escape(username) + ";domain=" + domain + ";path=/";
+
+            document.cookie = "pwd=" + pwd + ";domain=" + domain + ";path=/";
+
+        } else {
+
+            app_del("userid", domain);
+
+            app_del("username", domain);
+
+            app_del("pwd", domain);
+
+        }
+
+        return "1";
+
+    }
+
+
+
+    function app_info() {
+
+        if (PP_getCookie("userid") != null && PP_getCookie("userid") != '(null)') {
+
+            return "1";
+
+        } else {
+
+            return "0";
+
+        }
+
+    }
+
+
+
+
+
+   
+
+        document.getElementById("top_bar").style.display = "block";
+
+        document.write('<script type="text/javascript" src="/m/nav.js?t=' + new Date().getTime() + '"><\/script>');
+
+  
+
+     
+
+</script><iframe name="appstyle" id="appstyle" src="" frameborder="0" width="0" height="0"></iframe>
+
+</body>
+
+</html>
+

@@ -1,0 +1,71 @@
+
+===== PAGE 200 =====
+Appendix L - Thermal capacity
+L.2
+Calculation algorithm
+There are two mentioned approaches in this appendix for determination of the thermal capacity of
+the thermal zone. The ﬁrst approach is simply based on the predeﬁned values, listed in table L.2 for
+different guidances and European standards, depending on the type of building constructions. How-
+ever, there is no description provided for different building construction elements and subsequently
+the thermal capacity in EN ISO 13790 standard.
+Building class
+Description*
+Thermal capacity
+SBi 213
+EN ISO 13790
+Cm,
+Wh/◦C m2−ﬂoor
+
+Cm,
+Wh/◦C m2−ﬂoor
+
+Very light
+Only light materials (e.g. Wood)
+40
+22
+Middle Light
+Few heavy materials (e.g. concrete
+80
+31
+deck with wood/light-concrete walls)
+Medium
+-
+-
+46
+Middle Heavy
+Lot of heavy materials (e.g. concrete
+120
+72
+deck with tiles and brick walls)
+Very heavy
+Only heavy materials
+160
+103
+(e.g concrete, bricks and tiles)
+Table L.2: Guidance for determining thermal capacity SBi 213 and EN ISO 13790 stan-
+dard, [SBi-anvisning 213 2008, p. 33], [EN ISO 13790 2008, p. 68]. Description is valid
+for SBi 213.
+The second approach is based on calculation of the thermal capacity of a thermal zone by taking
+into account for material thermal properties of the internal building elements by using equation
+(L.2). *The thermal capacity of doors and windows are assumed negligible, [Danvak ApS 1987, p.
+102].
+Cm =
+n
+∑
+j=1
+Aj ·d ·ρ·cp
+(L.2)
+Cm
+Thermal capacity of a thermal zone,
+Wh/◦C
+
+Aj
+Area of the building element j,
+
+m2
+da
+Thickness of internal layer, [m]
+The models calculation procedure for determine the thermal capacity of the thermal zone differs
+from each other as different methods and assumptions for determination of the characteristics are
+applied.
+183
