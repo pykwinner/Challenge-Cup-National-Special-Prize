@@ -1,0 +1,2092 @@
+{
+  "recorded_utc": "2026-10-02T12:52:11.181873+00:00",
+  "status": "implementation follow-up; research candidate evidence only; no upload/tag performed",
+  "new_entry": {
+    "path": "scripts/run_three_city_climate_dispatch_resilient.py",
+    "sha256": "a30d94a922586eaa55519b470e8ea4489b6de8fb619b9271cfd6e2305429ee12"
+  },
+  "new_test": {
+    "path": "tests/test_three_city_climate_dispatch_resilient.py",
+    "sha256": "a7574088670aeb15b0ee2c0a5962a196358ebe4522d5e7fea03215cbb7e5d082"
+  },
+  "runtime_identity": {
+    "python": "3.12.7",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.15.3",
+    "PyYAML": "6.0.3"
+  },
+  "test_rounds": [
+    {
+      "round": "01",
+      "total": 32,
+      "passed": 19,
+      "failed": 13,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "results": "docs/implementation_20261002_followup/parallel_stage_03/reliability/tests_01.xml",
+      "results_sha256": "3680fa60d60c0db5b648fba26349d80b366835428d8b3a4cd09172d43146a671",
+      "failed_cases": [
+        "test_all_city_tasks_complete_and_checkpoint_every_transition",
+        "test_first_city_prepare_read_failure_does_not_stop_other_cities",
+        "test_first_city_baseline_rollout_failure_does_not_stop_other_cities",
+        "test_first_city_baseline_audit_failure_is_retained",
+        "test_middle_second_stage_failure_retains_summary_and_attempts_other_endpoint",
+        "test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[primary]",
+        "test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[returned]",
+        "test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[allowance]",
+        "test_identity_change_during_middle_solve_invalidates_prior_rows_and_stops",
+        "test_self_consistent_protocol_replacement_during_run_is_rejected",
+        "test_protocol_change_during_final_export_does_not_publish_success",
+        "test_manifest_accounting_tamper_is_rejected[all_requested_cases_passed-False]",
+        "test_concurrent_invocations_have_one_owner_and_cannot_overwrite"
+      ],
+      "classification": "functional fault injection; admitted real 2880h drivers and true feedback RC; optimization replaced by explicitly labelled test double"
+    },
+    {
+      "round": "02",
+      "total": 33,
+      "passed": 32,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "results": "docs/implementation_20261002_followup/parallel_stage_03/reliability/tests_02.xml",
+      "results_sha256": "31d8b73f1697c328f79e68f82d2c706eee53063e923da178032a4eb44dfef143",
+      "failed_cases": [
+        "test_deep_atomic_evidence_json_path_is_supported"
+      ],
+      "classification": "functional fault injection; admitted real 2880h drivers and true feedback RC; optimization replaced by explicitly labelled test double"
+    },
+    {
+      "round": "03",
+      "total": 33,
+      "passed": 33,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "results": "docs/implementation_20261002_followup/parallel_stage_03/reliability/tests_03.xml",
+      "results_sha256": "6da4d8f5051bdc61b833e67c66aef085fbf90193aa9f9125419e1f98207fe544",
+      "failed_cases": [],
+      "classification": "functional fault injection; admitted real 2880h drivers and true feedback RC; optimization replaced by explicitly labelled test double"
+    }
+  ],
+  "final_tests_passed": true,
+  "legacy_identity_verification": [
+    {
+      "run": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_run_01",
+      "verified": true,
+      "protocol_sha256": "5fb7cce5c54aba84cfc77e2c09bc6b729d3fe91dcc97f1588e09d2e7995d7c9a",
+      "manifest_sha256": "211df48fa8d356fa80575c88ba449aaa4b8371f0139a42ad405168077055e96b",
+      "frozen_input_identity_count": 10,
+      "frozen_code_identity_count": 14,
+      "result_file_identity_count": 101,
+      "rerun_in_this_stage": false,
+      "raw_bytes_preserved": true
+    },
+    {
+      "run": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02",
+      "verified": true,
+      "protocol_sha256": "16b98535cc35d8c087a1fb831db5980740f23cf84c19ade3ba6566ea95839d66",
+      "manifest_sha256": "01f2c7c4401088797f7972b444da2228ff8ef8a80799dbb4481398f93ac16bba",
+      "frozen_input_identity_count": 24,
+      "frozen_code_identity_count": 15,
+      "result_file_identity_count": 89,
+      "rerun_in_this_stage": false,
+      "raw_bytes_preserved": true
+    }
+  ],
+  "legacy_script_sha256": {
+    "run_three_city_climate_dispatch.py": "433fc8f42ebc591b747eca36cfa60bcc47de102319d19c55fd3b12f5e1efc27a",
+    "refine_three_city_climate_dispatch.py": "bdcc0140db9d31cf0dd9f7bb489c0bf2020c1603c01728795ad189360b984d3f"
+  },
+  "fresh_numeric_runs": [
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01",
+      "cities": [
+        "wuhan"
+      ],
+      "hours_per_city": 2880,
+      "new_feedback_baselines": 1,
+      "new_optimization_cases": 3,
+      "solver_stage_count": 5,
+      "accepted_rows": 4,
+      "failures": [],
+      "all_requested_cases_passed": true,
+      "baseline_rows_reused": 0,
+      "protocol_sha256": "b9a685bb2cae86c4708b9b78ee09439adfabdd9fc522629b181ab4db1a8d8f8a",
+      "manifest_sha256": "327b709955a2abbc17b50725efc22fbb9707444d3e808076852255220df5cc6c",
+      "time_limit_per_stage_seconds": 60.0,
+      "mip_gap_target": 0.0,
+      "acceleration_requested": false,
+      "input_sha256": {
+        "configs/evidence_case_20261002/wuhan_bestest600_steady.yaml": "036939b9b7da6450562facb5ff6a6bdd3e99eac6f62abbcdbf05e72c0ec2d6e3",
+        "configs/evidence_case_20261002/wuhan_bestest600_rc.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+        "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly.csv": "dcf861aed4914bc873086b27c9d0fe6b59e0bd77c49bd5350f0b1ed079e3b5b2",
+        "docs/implementation_20261002/data/field_provenance.csv": "d8bd5e88d3cc356dfe7d47ff1a4d667d1a7de0123d74ec00a0ae70b280aea7b7",
+        "docs/implementation_20261002/data/derivation.json": "7cc4dc53504f4a8cf2411c3527b4864f808acccd130c4d00707cf21270b46194",
+        "scripts/prepare_evidence_case_20261002.py": "66d5f805228d89b0948b4baa57458a05ceed5960bd16490a7a51916570ccd3b9",
+        "docs/implementation_20261002/data/evidence/bestest_6231.pdf": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+        "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+        "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+        "docs/implementation_20261002/data/evidence/wuhan_weather_receipt.json": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+        "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+        "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d",
+        "docs/implementation_20261002/data/admission.json": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+        "scripts/prepare_three_city_common_reference.py": "ee6910122077f2e875e9eb1f1d0e250febea0be8c2589c15c5526841a5e8b288",
+        "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+        "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+        "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/source_inventory.json": "4cd73246052d6b12b40aee5b440abd94ab5ba15c6bd01f02b7914fe03c4ceea7",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/common_physical_reference.json": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/protocol.json": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/validation.json": "7c5ef590ebe51ac5379d34e480bfaa01efed20454a18a3e922ba67d2b6740c79",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/field_provenance.csv": "813abbf6a7504bd3aadb6cd8cf08983ffbb7068f0f6a334fce450810a38ba223",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/confirmation_candidates.csv": "cd0b1f5ed1f71e098fc7724194c82930fb0460b32158636c63fa4b004c915f7e",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario1_urumqi_UTC.json": "73eaee32e09fde57d63351b9446978cb24240425ce8fe66aa9c6d95105586b5d",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario1_urumqi_download.json": "e97c5321f2e642575190c9e7bde6bf2587d87a2c2108554807f707e99a3302a7",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario2_guyuan_UTC.json": "9751ff2bdf51261526a68f901660cb651b5e153b8ff6ce9dfb74d0114ee72600",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario2_guyuan_download.json": "b66358215130401c8a061b61e8993a84230868c38db53c37f8fa5939ada67bef",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario3_wuhan_UTC.json": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/scenario3_wuhan_download.json": "35f728e1cd22531b01fee93498e3f5f0def55666bc84b0850890911e0f087d0b",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_package_audit.json": "80549be1f26658d2b42797209626d8139db97a5e8da5d254411c2ef4c5b37731",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_lst_identity.md": "783ecdf3a39fbd065873f0f30cee644663ec0de95b5bc2e5cf5718798d87c54f",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/three_city_decisions.md": "6e2e569804eac570a684dfb61c21b7a8fece64858b4296454ce4aa5b05beefa1",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/evidence/prior_wuhan_method_protocol.json": "403d0a9ba225b223276440dc2b2aaa138d31bf2bed0e36d56e184c718bc1c9d7",
+        "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+        "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+        "docs/implementation_20261002/data/field_provenance_tou.csv": "16f8f749f3c1c6354d22a9f2fbeece3da170a9c1d90ecfa9508ac38a4e108474",
+        "docs/implementation_20261002/data/monthly_tariff_verified.csv": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+        "docs/implementation_20261002/data/tou_account_and_hours.json": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+        "docs/implementation_20261002/data/prepare_tou.py": "bebafd08b4057a79c17e62ad07085acd6a091671cad622f9b960c43d8aee68c8",
+        "docs/implementation_20261002/data/tou_evidence/hubei_2024_11.pdf": "9fa81bc3be47c1917fbd0e0f6cac1bf1dfb5edc47559f155b9b82e97611f8b33",
+        "docs/implementation_20261002/data/tou_evidence/hubei_2024_12.pdf": "74161836e189120f1f86c33f38010fc01a4e6e7e3706dfc55b07a6bf5a48163a",
+        "docs/implementation_20261002/data/tou_evidence/hubei_2025_months.pdf": "efccc95604a44d0871a82d2315e3b30ff3c9f2aa4b7c2d5d29efd187294b632d",
+        "docs/implementation_20261002/data/tou_evidence/hubei_tou_policy_77_2024.pdf": "086aea2d5388ed5fb18cbfb8a7c2ef362c66896c43027681d8a6a8347856edc4",
+        "docs/implementation_20261002/data/tou_evidence/hubei_single_two_part_policy_163_2023.pdf": "40cf12a479b73eec03940773caf2fb7d8834481214075af1ada0a6f304f16182",
+        "docs/implementation_20261002/data/admission_tou.json": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+        "docs/implementation_20261002_followup/parallel_stage_02/data/manifest.json": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279"
+      },
+      "code_sha256": {
+        "src/heatplan/model.py": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+        "src/heatplan/physical_extensions.py": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+        "src/heatplan/solution_quality.py": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+        "src/heatplan/linear.py": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+        "src/heatplan/io.py": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+        "src/heatplan/policy_alignment.py": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+        "src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+        "src/heatplan/building_audit.py": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+        "src/heatplan/chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+        "src/heatplan/experiments.py": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+        "src/heatplan/accounting.py": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+        "scripts/run_evidence_case_experiments.py": "ccb81b5a8d0eb348bcd5aa1216d745614988fa3bedc926e1e2ba0cd93532a26c",
+        "scripts/run_three_city_climate_dispatch_resilient.py": "a30d94a922586eaa55519b470e8ea4489b6de8fb619b9271cfd6e2305429ee12",
+        "scripts/run_three_city_climate_dispatch.py": "433fc8f42ebc591b747eca36cfa60bcc47de102319d19c55fd3b12f5e1efc27a",
+        "scripts/refine_three_city_climate_dispatch.py": "bdcc0140db9d31cf0dd9f7bb489c0bf2020c1603c01728795ad189360b984d3f",
+        "scripts/run_representative_season_confirmation.py": "a7f69e704ca6decb708fefd693c6a76d7066475caa62e5c343680b49ff226828",
+        "src/heatplan/provenance.py": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2"
+      },
+      "wall_seconds": 25.58603740000399
+    }
+  ],
+  "independent_export_audit": {
+    "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_export_audit_01.json",
+    "sha256": "1f312ce97f5dce81a9c424f1a2b81f002d1f62353c4efa402de24d6c5ef053da",
+    "passed": true,
+    "checks": 90,
+    "source_zone_tamper_examples": 3,
+    "power_to_state_tamper_examples": 4
+  },
+  "retained_failure_control_snapshots": [
+    {
+      "test_directory": "test_atomic_checkpoint_replace0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_atomic_checkpoint_replace0/batch/checkpoint.json",
+      "checkpoint_sha256": "3c187cbbdfeace111875ae40689db1c4e1e18ec0482bb804c0f076a5e4a13a15",
+      "status": "running",
+      "retained_rows": 0,
+      "failures": [],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_concurrent_invocations_ha0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_concurrent_invocations_ha0/batch/checkpoint.json",
+      "checkpoint_sha256": "f3a040c6a079362a0e5ea9df910096fb7499bb7deb5fa77cac28ac244b747b2a",
+      "status": "completed",
+      "retained_rows": 12,
+      "failures": [],
+      "comparison_valid": true
+    },
+    {
+      "test_directory": "test_explicit_identity_failure0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_explicit_identity_failure0/batch/checkpoint.json",
+      "checkpoint_sha256": "dd2d24e14faad6ee4cbd9179b029c31107c75d4669ee57cf0ce0d70a0d7545a6",
+      "status": "aborted",
+      "retained_rows": 0,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "injected explicit identity detector",
+          "failed_utc": "2026-10-02T12:50:29.629659+00:00"
+        },
+        {
+          "city": "urumqi",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        }
+      ],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_first_city_baseline_audit0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_first_city_baseline_audit0/batch/checkpoint.json",
+      "checkpoint_sha256": "3918c20ac5d3274daa17689b6386cfcd9eee12e933eb06ca5408268c18030726",
+      "status": "completed",
+      "retained_rows": 8,
+      "failures": [
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "stage": "baseline_audit",
+          "status": "failed",
+          "type": "ValueError",
+          "reason": "baseline independent state/ledger audit failed",
+          "failed_utc": "2026-10-02T12:49:42.687757+00:00",
+          "wall_seconds": 0.19656080000277143
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "baseline failed; no audited known-feasible bound",
+          "depends_on": [
+            "baseline_delta0"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "baseline failed; no audited known-feasible bound",
+          "depends_on": [
+            "baseline_delta0"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "baseline failed; no audited known-feasible bound",
+          "depends_on": [
+            "baseline_delta0"
+          ]
+        }
+      ],
+      "comparison_valid": true
+    },
+    {
+      "test_directory": "test_first_city_baseline_rollo0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_first_city_baseline_rollo0/batch/checkpoint.json",
+      "checkpoint_sha256": "a363df5dd0034a8971cc04cc1b371ca551f4df94b0f2bd39a2b2b52c287d6fae",
+      "status": "completed",
+      "retained_rows": 8,
+      "failures": [
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "stage": "baseline_rollout",
+          "status": "failed",
+          "type": "RuntimeError",
+          "reason": "injected first-city baseline rollout failure",
+          "failed_utc": "2026-10-02T12:49:38.355175+00:00",
+          "wall_seconds": 0.08767520000401419
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "baseline failed; no audited known-feasible bound",
+          "depends_on": [
+            "baseline_delta0"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "baseline failed; no audited known-feasible bound",
+          "depends_on": [
+            "baseline_delta0"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "baseline failed; no audited known-feasible bound",
+          "depends_on": [
+            "baseline_delta0"
+          ]
+        }
+      ],
+      "comparison_valid": true
+    },
+    {
+      "test_directory": "test_first_city_prepare_read_f0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_first_city_prepare_read_f0/batch/checkpoint.json",
+      "checkpoint_sha256": "c25bc80b5b29014f0e7d9207033bac452e2ac320e9c1074d99998621e9ec6f36",
+      "status": "completed",
+      "retained_rows": 8,
+      "failures": [
+        {
+          "city": "urumqi",
+          "case": "prepare",
+          "stage": "climate_read",
+          "status": "failed",
+          "type": "OSError",
+          "reason": "injected first-city preparation read failure",
+          "failed_utc": "2026-10-02T12:49:34.016428+00:00",
+          "wall_seconds": 0.09246230000280775
+        },
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "city preparation failed; no validated city chronology",
+          "depends_on": [
+            "prepare"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "city preparation failed; no validated city chronology",
+          "depends_on": [
+            "prepare"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "city preparation failed; no validated city chronology",
+          "depends_on": [
+            "prepare"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "city preparation failed; no validated city chronology",
+          "depends_on": [
+            "prepare"
+          ]
+        }
+      ],
+      "comparison_valid": true
+    },
+    {
+      "test_directory": "test_global_identity_failures_0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_0/batch/checkpoint.json",
+      "checkpoint_sha256": "d79bd876b26c8674684377f3ca9d98c71288b1b3f4f30d7aaf38394ea7fae806",
+      "status": "aborted",
+      "retained_rows": 0,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "protocol lock mismatch",
+          "failed_utc": "2026-10-02T12:50:07.021329+00:00"
+        },
+        {
+          "city": "urumqi",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        }
+      ],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_global_identity_failures_1",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_1/batch/checkpoint.json",
+      "checkpoint_sha256": "d85ac7a680c61891bf3d6df0ce0ee0a4658c623f67099fb33884300052efba37",
+      "status": "aborted",
+      "retained_rows": 0,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "frozen input identity changed or incomplete",
+          "failed_utc": "2026-10-02T12:50:07.429684+00:00"
+        },
+        {
+          "city": "urumqi",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        }
+      ],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_global_identity_failures_2",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_2/batch/checkpoint.json",
+      "checkpoint_sha256": "db294c292ad2516b12fd3c869c077c66b03ddd9ec1d0e71e4d13f2822f0dca45",
+      "status": "aborted",
+      "retained_rows": 0,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "frozen code identity changed or incomplete",
+          "failed_utc": "2026-10-02T12:50:07.765799+00:00"
+        },
+        {
+          "city": "urumqi",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        }
+      ],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_global_identity_failures_3",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_3/batch/checkpoint.json",
+      "checkpoint_sha256": "f36368ba66eec7d289402118b2584cfcd19148e2eb02d465d7db603f71bcd659",
+      "status": "aborted",
+      "retained_rows": 0,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "frozen numerical runtime identity changed",
+          "failed_utc": "2026-10-02T12:50:08.107047+00:00"
+        },
+        {
+          "city": "urumqi",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        }
+      ],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_global_identity_failures_4",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_4/batch/checkpoint.json",
+      "checkpoint_sha256": "fb53dbbe3c73f9981da6ccdf49d12edda01f5fe6bcc9546f07c1a2a4c6a2ba95",
+      "status": "aborted",
+      "retained_rows": 0,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "frozen code identity changed or incomplete",
+          "failed_utc": "2026-10-02T12:50:08.452997+00:00"
+        },
+        {
+          "city": "urumqi",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        }
+      ],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_global_identity_failures_5",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_5/batch/checkpoint.json",
+      "checkpoint_sha256": "99135583f6f939a0d7d9c659f9ad73a4bfba927bde60766f71d9c73913237745",
+      "status": "aborted",
+      "retained_rows": 0,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "frozen input identity changed or incomplete",
+          "failed_utc": "2026-10-02T12:50:08.887828+00:00"
+        },
+        {
+          "city": "urumqi",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "urumqi",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        }
+      ],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_identity_change_during_mi0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_identity_change_during_mi0/batch/checkpoint.json",
+      "checkpoint_sha256": "f180dd61eb5f222c21746430dd41afa980bd2d471ee063dde24d7ed380f4f537",
+      "status": "aborted",
+      "retained_rows": 5,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "initial run identity changed: protocol.json",
+          "failed_utc": "2026-10-02T12:50:11.849687+00:00"
+        },
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        }
+      ],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_known_feasible_bound_gate0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_known_feasible_bound_gate0/batch/checkpoint.json",
+      "checkpoint_sha256": "75e9edc5468c8a1797b7e7fddc885e4f060873b2d3f4ba56cd239431f25ffa30",
+      "status": "completed",
+      "retained_rows": 10,
+      "failures": [
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "stage": "cost_endpoint_independent_audit",
+          "status": "failed",
+          "type": "ValueError",
+          "reason": "independent state/ledger/known feasible bound audit failed",
+          "failed_utc": "2026-10-02T12:49:54.278299+00:00",
+          "wall_seconds": 0.20680929999798536
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "missing accepted endpoint",
+          "depends_on": [
+            "cost_endpoint",
+            "carbon_endpoint"
+          ]
+        }
+      ],
+      "comparison_valid": true
+    },
+    {
+      "test_directory": "test_known_feasible_bound_gate1",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_known_feasible_bound_gate1/batch/checkpoint.json",
+      "checkpoint_sha256": "1432ac84de20a5f159b49fe0079ad913d87e42609ab453e514fa68377a1bc3d7",
+      "status": "completed",
+      "retained_rows": 10,
+      "failures": [
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "stage": "cost_endpoint_independent_audit",
+          "status": "failed",
+          "type": "ValueError",
+          "reason": "independent state/ledger/known feasible bound audit failed",
+          "failed_utc": "2026-10-02T12:49:59.705001+00:00",
+          "wall_seconds": 0.2796041999972658
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "missing accepted endpoint",
+          "depends_on": [
+            "cost_endpoint",
+            "carbon_endpoint"
+          ]
+        }
+      ],
+      "comparison_valid": true
+    },
+    {
+      "test_directory": "test_known_feasible_bound_gate2",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_known_feasible_bound_gate2/batch/checkpoint.json",
+      "checkpoint_sha256": "58878715a680869d044d202cd062501cd2650d1ea2b0dd1a893f5d24ea343295",
+      "status": "completed",
+      "retained_rows": 10,
+      "failures": [
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "stage": "cost_endpoint_independent_audit",
+          "status": "failed",
+          "type": "ValueError",
+          "reason": "independent state/ledger/known feasible bound audit failed",
+          "failed_utc": "2026-10-02T12:50:04.582803+00:00",
+          "wall_seconds": 0.18356170000333805
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "missing accepted endpoint",
+          "depends_on": [
+            "cost_endpoint",
+            "carbon_endpoint"
+          ]
+        }
+      ],
+      "comparison_valid": true
+    },
+    {
+      "test_directory": "test_middle_second_stage_failu0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_middle_second_stage_failu0/batch/checkpoint.json",
+      "checkpoint_sha256": "7d40dc4755bc4362105926e939d29a4f5ea8032227e44cd821a673b607fce562",
+      "status": "completed",
+      "retained_rows": 10,
+      "failures": [
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "stage": "cost_endpoint_solve",
+          "status": "failed",
+          "type": "InjectedSolverFailure",
+          "reason": "injected middle-city second-stage solve failure",
+          "failed_utc": "2026-10-02T12:49:48.868465+00:00",
+          "solver_evidence": {
+            "primary_solver_status": 0,
+            "solver_status": 1,
+            "solver_stages": [
+              {
+                "stage_id": "primary",
+                "mip_gap": 0.0
+              },
+              {
+                "stage_id": "secondary",
+                "mip_gap": 0.1
+              }
+            ]
+          },
+          "wall_seconds": 0.08524790000228677
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "missing accepted endpoint",
+          "depends_on": [
+            "cost_endpoint",
+            "carbon_endpoint"
+          ]
+        }
+      ],
+      "comparison_valid": true
+    },
+    {
+      "test_directory": "test_process_interrupt_is_not_0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_process_interrupt_is_not_0/batch/checkpoint.json",
+      "checkpoint_sha256": "8748dbbf4cb8e42030d8981359d689c0b797edf1f6e59617ceb1692919cab9a3",
+      "status": "running",
+      "retained_rows": 0,
+      "failures": [],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_process_interrupt_is_not_1",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_process_interrupt_is_not_1/batch/checkpoint.json",
+      "checkpoint_sha256": "131fa86cb5ba02c4e5d6b082c7d611bf42c628f55fef585170bc8ddec53ae5e1",
+      "status": "running",
+      "retained_rows": 0,
+      "failures": [],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_protocol_change_during_fi0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_protocol_change_during_fi0/batch/checkpoint.json",
+      "checkpoint_sha256": "05eedee0665c79c706155663f1073df1ed8086116662d24bfd28d9c10f05d4b8",
+      "status": "aborted",
+      "retained_rows": 12,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "initial run identity changed: protocol.json",
+          "failed_utc": "2026-10-02T12:50:37.328347+00:00"
+        }
+      ],
+      "comparison_valid": false
+    },
+    {
+      "test_directory": "test_self_consistent_protocol_0",
+      "checkpoint": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_self_consistent_protocol_0/batch/checkpoint.json",
+      "checkpoint_sha256": "c31e26573aeb6e76a900575e93f390d51c3f82aa0b4250cecba0dc44b9600b17",
+      "status": "aborted",
+      "retained_rows": 5,
+      "failures": [
+        {
+          "city": null,
+          "case": "batch",
+          "stage": "global_identity_or_execution",
+          "status": "failed",
+          "type": "IdentityFailure",
+          "reason": "initial run identity changed: protocol.json",
+          "failed_utc": "2026-10-02T12:50:32.395786+00:00"
+        },
+        {
+          "city": "guyuan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "guyuan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "prepare",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "baseline_delta0",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "cost_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "carbon_endpoint",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        },
+        {
+          "city": "wuhan",
+          "case": "midpoint_cap",
+          "status": "skipped",
+          "stage": "dependency_gate",
+          "type": "DependencyUnavailable",
+          "reason": "batch aborted; global identity/execution failed",
+          "depends_on": [
+            "global_identity"
+          ]
+        }
+      ],
+      "comparison_valid": false
+    }
+  ],
+  "not_run": [
+    {
+      "item": "new Urumqi/Guyuan2880h optimization",
+      "reason": "Wuhan verifies the new numerical entry; both other cities are exercised with fault-injection control doubles; rc4 numerical evidence is preserved separately and not counted anew"
+    },
+    {
+      "item": "entire previous882 regression suite",
+      "reason": "unchanged core/model; this follow-up runs the new reliability tests and actual newly affected entry"
+    }
+  ],
+  "limits": [
+    "same public prototype and common methodological tariff/EF",
+    "not local calibrated building/field savings",
+    "zero free investment variables",
+    "all historical/fault evidence retained; earlier failures not erased",
+    "initial protocol and lock pinned per run; atomic claim/checkpoint; interrupted run cannot resume/overwrite"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema": "three_city_climate_resilient_v1",
+  "status": "running",
+  "identity_verified": true,
+  "comparison_valid": false,
+  "cities": [
+    "urumqi",
+    "guyuan",
+    "wuhan"
+  ],
+  "revision": 2,
+  "rows": [],
+  "failures": [],
+  "global_failure": null,
+  "tasks": [
+    {
+      "city": "urumqi",
+      "case": "prepare",
+      "status": "running",
+      "stage": "city_prepare"
+    },
+    {
+      "city": "urumqi",
+      "case": "baseline_delta0",
+      "status": "pending"
+    },
+    {
+      "city": "urumqi",
+      "case": "cost_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "urumqi",
+      "case": "carbon_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "urumqi",
+      "case": "midpoint_cap",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "prepare",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "baseline_delta0",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "cost_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "carbon_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "midpoint_cap",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "prepare",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "baseline_delta0",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "cost_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "carbon_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "midpoint_cap",
+      "status": "pending"
+    }
+  ],
+  "frozen_run_sha256": {
+    "protocol.json": "5a011f034c2111f265401f80b350d4a2ad8a40229f579827e30fe7d30991e5e2",
+    "protocol_lock.json": "6bec8b6412c99f41bc7801c1fa10884e6dc99fbba536e5afe58717b7b92c4c28"
+  },
+  "updated_utc": "2026-10-02T12:50:12.575987+00:00"
+}

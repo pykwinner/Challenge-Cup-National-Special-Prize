@@ -1,0 +1,2385 @@
+{
+  "root": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc5",
+  "runs": [
+    "algorithm/confirmation_run_01",
+    "algorithm/release_compatibility_run_01",
+    "investment/run_03",
+    "investment/reproduce_02"
+  ],
+  "source_paths": [
+    "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+    "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+    "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv",
+    "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv",
+    "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv",
+    "docs/implementation_20261002/data/admission.json",
+    "docs/implementation_20261002/data/admission_tou.json",
+    "docs/implementation_20261002/data/field_provenance_tou.csv",
+    "docs/implementation_20261002/data/monthly_tariff_verified.csv",
+    "docs/implementation_20261002/data/tou_account_and_hours.json",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/common_physical_reference.json",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/field_provenance.csv",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/manifest.json",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/protocol.json",
+    "scripts/audit_investment_reference.py",
+    "scripts/report_three_city_decision_weight_confirmation.py",
+    "scripts/reproduce_admitted_reference.py",
+    "scripts/run_investment_reference.py",
+    "scripts/run_three_city_decision_weight_confirmation.py",
+    "scripts/verify_three_city_decision_weight_confirmation.py",
+    "scripts/verify_three_city_decision_weight_native_precision.py",
+    "src/heatplan/decision_weight_calibration.py",
+    "src/heatplan/hard_weight_calibration.py",
+    "src/heatplan/scenarios.py",
+    "tests/test_three_city_decision_weight_confirmation.py",
+    "tests/test_verify_three_city_decision_weight_confirmation.py"
+  ],
+  "files": {
+    "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml": {
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+      "bytes": 2364
+    },
+    "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": {
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "bytes": 503515
+    },
+    "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv": {
+      "sha256": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+      "bytes": 643130
+    },
+    "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv": {
+      "sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+      "bytes": 642999
+    },
+    "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv": {
+      "sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+      "bytes": 635999
+    },
+    "docs/implementation_20261002/data/admission.json": {
+      "sha256": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+      "bytes": 7764
+    },
+    "docs/implementation_20261002/data/admission_tou.json": {
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "bytes": 15146
+    },
+    "docs/implementation_20261002/data/field_provenance_tou.csv": {
+      "sha256": "16f8f749f3c1c6354d22a9f2fbeece3da170a9c1d90ecfa9508ac38a4e108474",
+      "bytes": 23677
+    },
+    "docs/implementation_20261002/data/monthly_tariff_verified.csv": {
+      "sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "bytes": 1723
+    },
+    "docs/implementation_20261002/data/tou_account_and_hours.json": {
+      "sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "bytes": 3143
+    },
+    "docs/implementation_20261002_followup/parallel_stage_02/data/common_physical_reference.json": {
+      "sha256": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+      "bytes": 2874
+    },
+    "docs/implementation_20261002_followup/parallel_stage_02/data/field_provenance.csv": {
+      "sha256": "813abbf6a7504bd3aadb6cd8cf08983ffbb7068f0f6a334fce450810a38ba223",
+      "bytes": 24643
+    },
+    "docs/implementation_20261002_followup/parallel_stage_02/data/manifest.json": {
+      "sha256": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279",
+      "bytes": 5564
+    },
+    "docs/implementation_20261002_followup/parallel_stage_02/data/protocol.json": {
+      "sha256": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7",
+      "bytes": 6120
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_frequency.json": {
+      "sha256": "076aee88e142fa0555e5ef2be145cf7c27bc99864487838a65f82ad3066c1daf",
+      "bytes": 4263
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_hard_W1_candidate_L1_cap.json": {
+      "sha256": "9636b33d0d1e78bf2c4980c82591d7d7889276ecada246fe886a8332198c7cfc",
+      "bytes": 5241
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_hard_W1_candidate_L1_cap.log": {
+      "sha256": "4985214477333a733c4abe4518ab8ede69f324f50c5dd308c366839382c846e6",
+      "bytes": 74
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_hard_energy_minimum_L1.json": {
+      "sha256": "6dbbeb6f5ddd3c0b38fd7bbaf8e82a5fbe7a43955ff1d224701a68ada95fb60d",
+      "bytes": 10347
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_hard_energy_minimum_L1.log": {
+      "sha256": "5dcf7e3a18165aa8928fa518507e68a0ce2c5998c9d5453c698c5fcd26aa41fb",
+      "bytes": 72
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_hard_energy_minimum_W1.json": {
+      "sha256": "878e65cf61474281b92eea8dffc9e1448f69a0fe52f98c88d4da1920c180a026",
+      "bytes": 5991
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_hard_energy_minimum_W1.log": {
+      "sha256": "26d06a3bbde4e82d5e4a8bb99f1bb40e397e1497950722ea5c5ed08dfa8d11ed",
+      "bytes": 72
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_price_paired_L1.json": {
+      "sha256": "076dd8544ded9ccf026c29f56454c8ca05973393d8b953539bafe0c2ffc1eac7",
+      "bytes": 13529
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_price_paired_L1.log": {
+      "sha256": "082e618e67786ecda0af47022c503f72260237d49fcce531753acb88c4adf9b0",
+      "bytes": 65
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_soft_energy.json": {
+      "sha256": "e73677fd05158d286c43be2569485545e7c106b48267180a4b3bfd9b67556f12",
+      "bytes": 5753
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/guyuan_soft_energy.log": {
+      "sha256": "6e6947d36715b5c27d5809006ad9ab9c0e5a616161beff999f9a223c1a05ccea",
+      "bytes": 61
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_frequency.json": {
+      "sha256": "2a3eb15644c4f13d1bf817715e86b524ab1badaa6d2ec78b3bd23c9031408047",
+      "bytes": 4272
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_hard_W1_candidate_L1_cap.json": {
+      "sha256": "aa30da81dac9d41bd0787cc6935e089c7baba00cf1d85a88532110a7119f0484",
+      "bytes": 5190
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_hard_W1_candidate_L1_cap.log": {
+      "sha256": "ec9bcf1dcb0e92da6b624b7f827699cefa908fe9ee05fb422a0f08270da1b270",
+      "bytes": 74
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_hard_energy_minimum_L1.json": {
+      "sha256": "2f0bffdbb13a1159862b70a5414a81dea53bbda0a4b224225df288da16b2e1e0",
+      "bytes": 10352
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_hard_energy_minimum_L1.log": {
+      "sha256": "fe0003fdc1ed07a370609b6a86e7801c9c69196c485dc6f7f116996fed6cec08",
+      "bytes": 72
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_hard_energy_minimum_W1.json": {
+      "sha256": "50f1572bc92abbb81c00e0fcd26e92937b052bf2dae1d740a5e25efff5d71b36",
+      "bytes": 5945
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_hard_energy_minimum_W1.log": {
+      "sha256": "88089741e2054b3140979befb19d4109fd76c6cf482fb57424a1d757eb89e291",
+      "bytes": 72
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_price_paired_L1.json": {
+      "sha256": "38df51b6fd5519535b78ffcea80fe080e6b656f1c3f0181663463380373d2d33",
+      "bytes": 13583
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_price_paired_L1.log": {
+      "sha256": "10fa3dcb20a517d24fe1ae5750f5624e0b4bc6edd83a0d1f2d1f4eedd8206e79",
+      "bytes": 65
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_soft_energy.json": {
+      "sha256": "2c5f144d8289d4973119731d89f4326bb2a5ad16c345416153a232154b87a070",
+      "bytes": 5722
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/urumqi_soft_energy.log": {
+      "sha256": "ed66b43dd05f3f5c69d6a17b83048524dbfe5756f7566975d31f27651e89784d",
+      "bytes": 61
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_frequency.json": {
+      "sha256": "a0990965177d9a2b5d21287cb676acc8a7a84abd25f1b9bc3295d3dfb65a4e61",
+      "bytes": 4285
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_hard_W1_candidate_L1_cap.json": {
+      "sha256": "84218380c4000b51e7617d6ee4235e8cf39a7e02a92d4d7d742a11b4b6c377a9",
+      "bytes": 5203
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_hard_W1_candidate_L1_cap.log": {
+      "sha256": "d9a2a349658ab30dda974ec6a40b6fc03a029112c4f29046dde45aff2623b16a",
+      "bytes": 73
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_hard_energy_minimum_L1.json": {
+      "sha256": "3025aea42a97648ad63e4f3c175850e8223dbb54b28ea63399fc8ca8039a1beb",
+      "bytes": 10472
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_hard_energy_minimum_L1.log": {
+      "sha256": "4dcd5c12f5f55a2ae32f545fb010a313414994fa3ac49d3b296f3d2920111088",
+      "bytes": 71
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_hard_energy_minimum_W1.json": {
+      "sha256": "9966e92c2b063bee9d1e6396c23ab523d3a4acd9fd67b61475d14101dbb401cc",
+      "bytes": 5925
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_hard_energy_minimum_W1.log": {
+      "sha256": "6ad267974eb3d265651c6d0fb8ac4fc61188347498300d0b712f51829c68328f",
+      "bytes": 71
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_price_paired_L1.json": {
+      "sha256": "2900ac711bcd1be2d4c5f11931a3357d697b84cb9db99ed498f31b0e7fe047ad",
+      "bytes": 13743
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_price_paired_L1.log": {
+      "sha256": "3dda0b38a44cad96c01331356bbdca3f63c477bc34ab8036f4a238d1deb8627e",
+      "bytes": 64
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_soft_energy.json": {
+      "sha256": "7c50666c081531dfc123c90220d54bf8727981a9c43989d961856e4626c9b175",
+      "bytes": 5762
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration/wuhan_soft_energy.log": {
+      "sha256": "64b340dba530507bd8616bdfc347e09e082382a7e70719ff4657e7425f3a19e7",
+      "bytes": 60
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/calibration_complete.json": {
+      "sha256": "a4befcd90d84650ac31109f785be30d47b82b7fa331959198fd84bf287311872",
+      "bytes": 2019
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/candidates.json": {
+      "sha256": "4ae3ab1afd9df20305736d3c05772b6614c5b7b1f8661a9262ab8e83a70a7bde",
+      "bytes": 638090
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/guyuan_policy_0.csv": {
+      "sha256": "72903eb4f45465f926ea8c37dd5e69dd2026bc9fb483b9e10f232c837a3a0696",
+      "bytes": 6800
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/guyuan_policy_1.csv": {
+      "sha256": "9def5a38351ade1c73c28b5ba4d587c16969e40d21d2d422491f52ee830ba1b3",
+      "bytes": 6147
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/guyuan_policy_2.csv": {
+      "sha256": "2f69154c6e013374dd82192055759193e81dbc5817fac09e3d622435e3c29ba9",
+      "bytes": 7174
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/guyuan_policy_3.csv": {
+      "sha256": "0591c09a84cdf936688dcc4139fa039f8d574700b19f23f76f97a4a94006b4ca",
+      "bytes": 6782
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/guyuan_policy_4.csv": {
+      "sha256": "cb9a0fbfa17e985def219b4d5e890de7cefa8896c001c60ff6d38642d65f1195",
+      "bytes": 6917
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/guyuan_policy_5.csv": {
+      "sha256": "ef81ed359831b9aedc83bffcb987873bb52819ef0ded30e0f21ff76cf469c58a",
+      "bytes": 6819
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/guyuan_policy_6.csv": {
+      "sha256": "a8df9ba7ceab12490f7a8309da21e3cad3ed9499016a79e8f86c584687ad79aa",
+      "bytes": 7030
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/guyuan_policy_7.csv": {
+      "sha256": "2639af13a6e719456c59d61353714a50677122a49d95d895205c06b2256a4347",
+      "bytes": 6671
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/guyuan_policy_8.csv": {
+      "sha256": "666ce420ed343542d48a6195a16e7a856dd07482def4055daf72a4aa4559f11a",
+      "bytes": 7077
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/urumqi_policy_0.csv": {
+      "sha256": "1d0fecc012041259bbc0199a14c631b2861493544d2772d19dc69d166d993ac8",
+      "bytes": 6824
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/urumqi_policy_1.csv": {
+      "sha256": "3f6bce82836977d04498ca74858063ff779d134f0e23c8a85f5269e8a055f148",
+      "bytes": 6192
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/urumqi_policy_2.csv": {
+      "sha256": "c43de48b220a592be29bcfa6bb1a1d33b8687ff6663c5e4080d721128ce48145",
+      "bytes": 7148
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/urumqi_policy_3.csv": {
+      "sha256": "9439ac0e296fa19a76c5cab527f3622a0bc56817b492c0a3a6fc602d3151c623",
+      "bytes": 6712
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/urumqi_policy_4.csv": {
+      "sha256": "9332669318a45573c9b003d09f0668a6a4bfc5ee695209a04fc1614ad60096dd",
+      "bytes": 6970
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/urumqi_policy_5.csv": {
+      "sha256": "76db286dc0e7b534db324785a7f285d5939976f0c25611e01df9bd869c23da6b",
+      "bytes": 6704
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/urumqi_policy_6.csv": {
+      "sha256": "e1d4d8f3e8a4bfde7ce08e352a74fd8b9cadcb67e8c42ee44704de622017d12c",
+      "bytes": 7088
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/urumqi_policy_7.csv": {
+      "sha256": "a23238ea4e6f37c61dc71edd0a3e6b718dedbe5232f3572301534121b751f961",
+      "bytes": 6668
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/urumqi_policy_8.csv": {
+      "sha256": "dd4d3c2a8a43fe899d4473e66a65b7e7b60d3b75ac1be27317fbbb4cbc0d783b",
+      "bytes": 7107
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/wuhan_policy_0.csv": {
+      "sha256": "a016086a4f5c36700441ec46e4cbb147e90f7d3c567454cb2b897c2bb7e5d837",
+      "bytes": 6566
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/wuhan_policy_1.csv": {
+      "sha256": "0a3d7aec5378cad6f13cb46ad2479ab11ec437caa33ef99cf63b869d4c7e2819",
+      "bytes": 7096
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/wuhan_policy_2.csv": {
+      "sha256": "49a587cffe959c8cd0c809ebedb093e33250ad98085ab9179a8aae98ee3a35f4",
+      "bytes": 7220
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/wuhan_policy_3.csv": {
+      "sha256": "400c93e4a76fa2ed92036bbb76d41f8fc0b6fcc505bc478a5ea7762eb09bccda",
+      "bytes": 6689
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/wuhan_policy_4.csv": {
+      "sha256": "2b82eae857612e97f6fbcb173f769ef5530c3efc389018ae15a268c4e85b297d",
+      "bytes": 6881
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/wuhan_policy_5.csv": {
+      "sha256": "774adf0944cb6fd9c509841de723ac69a1d724eff92878a57a8557f5f2a91849",
+      "bytes": 6849
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/wuhan_policy_6.csv": {
+      "sha256": "19503f5162188b6f7e8b87b0626be5983fefd5809e0c60efe5a37cd53fc810af",
+      "bytes": 7213
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/wuhan_policy_7.csv": {
+      "sha256": "71351f979f12553b5e54b0fe3ec5a3e56ca8d5773af1fa1b37a85d733eb9d860",
+      "bytes": 6864
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/daily/wuhan_policy_8.csv": {
+      "sha256": "186a3da584d64dddfc1d0baf5883a8bfcbc6978e296043cc14191163c1b9ee2f",
+      "bytes": 7205
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/failures.json": {
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "bytes": 4
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/config.json": {
+      "sha256": "61a3e92bec711ad0e78539dc311542b4511f4e4eccfc3304ac37c7f402cdcffd",
+      "bytes": 3052
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/guyuan_hourly.csv": {
+      "sha256": "8e162d33db5dac886a35f5a0e73a4ff7be937984c5b9940220df48664aebfdb0",
+      "bytes": 759267
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/guyuan_representative_hours.csv": {
+      "sha256": "ca47b95ec00ae4736fc5fffa80d326a97ebeabe7a87be746772a80d2d0f78a34",
+      "bytes": 64163
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/guyuan_selected_days.csv": {
+      "sha256": "0be0aebeafbe17303f2ebc3bfa9a8a8362f75e44fe1cfa83c334c22db05c9713",
+      "bytes": 719
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/urumqi_hourly.csv": {
+      "sha256": "41f27368c8e0a6788683f6b7f752dfc1a13c83b38477096e6972e30e3bc7a883",
+      "bytes": 758986
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/urumqi_representative_hours.csv": {
+      "sha256": "946c1eae9bd54d8fc6e4521c40d00136659276a08143e997ebe66a242c28a6bd",
+      "bytes": 64110
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/urumqi_selected_days.csv": {
+      "sha256": "f9b3ec4f958c7f17bee3a8e3c943f3d4b44d37d8330174029eaea325d6c58acb",
+      "bytes": 719
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/wuhan_hourly.csv": {
+      "sha256": "551e9d9d3746d4dd7606ee624843d168097b7f066624df79e47051484f7e48cb",
+      "bytes": 763476
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/wuhan_representative_hours.csv": {
+      "sha256": "0a398c4140539a085a47fb259bd39408f222f591899118ecb204cacfad8c62d0",
+      "bytes": 64352
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/inputs/wuhan_selected_days.csv": {
+      "sha256": "6746a787b6d39c5c546c65f7053037e49aa564432685eea639f2859734f1d659",
+      "bytes": 717
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/manifest.json": {
+      "sha256": "af2dbadccdd4e005ef11267502ee6f31cc993b4f7f42a356dfad21893cfc9463",
+      "bytes": 12172
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/predictions.json": {
+      "sha256": "d60541771bbbc82ea735ee2c1fc52add447626ae69992f64ba1281bb5bce6d6a",
+      "bytes": 130568
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/protocol.json": {
+      "sha256": "83543239833d0354692a9ef333235c736a855b014ba1b10409bd83599bbb03b6",
+      "bytes": 17379
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/protocol_lock.json": {
+      "sha256": "2df6fe8fa6a61f54ba0ea90ed091032d03f8351ecb234dfe0a72815a3f87f69b",
+      "bytes": 1230
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/rankings.json": {
+      "sha256": "a8aec7b9839b1ea4e5a2569836c64a0c27d599e06d8a03fbc8c8180407296249",
+      "bytes": 8120
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/run_started.json": {
+      "sha256": "32b3f7e00c2a913c6dc20e0f8bba3e5742c2549344681f3c7c9736bd16ca8ffd",
+      "bytes": 141
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/runtime.json": {
+      "sha256": "99d368e484ad0a45de0b7fbad65dcb644825ecc11d8d68b64f1e6b976d8f5bb3",
+      "bytes": 459
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/selections.json": {
+      "sha256": "e51d2b286d8bee5bddeaa0b1701e612a529402cfb47c9f10a2e61573d204a7c5",
+      "bytes": 39185
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/source_checks.json": {
+      "sha256": "3b642d152ecc612548410bcf2ab8927bf3672d2c287df8486d18d680272e6c87",
+      "bytes": 22525
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/summary.json": {
+      "sha256": "770e7e261bc5e44596e82979d7f56600b815e472f50b878153d6bd1d15fcff9b",
+      "bytes": 4365
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/guyuan_policy_0.csv": {
+      "sha256": "b33a81fda830c3b28b78e804335b8299787dfefcde8d67221994369279df00b6",
+      "bytes": 427534
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/guyuan_policy_1.csv": {
+      "sha256": "9ea3d9e87748ea9ab56ce82ab96b407188d8c65541f0f7392f3e37811375c909",
+      "bytes": 431995
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/guyuan_policy_2.csv": {
+      "sha256": "c4d4728da90fc1f7c74ac35fbe445de882ac8162283a754c83ec72e1eeb9412a",
+      "bytes": 433587
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/guyuan_policy_3.csv": {
+      "sha256": "cdb6e4e2f1037aa0a6fd0a3dc8f4def3699b62e898dc5d08b799bcf7ed567715",
+      "bytes": 429697
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/guyuan_policy_4.csv": {
+      "sha256": "380fd80859bf775c7f36cfe4a62a94b40cf69ee658e2a999b49ee7218e9b6967",
+      "bytes": 429593
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/guyuan_policy_5.csv": {
+      "sha256": "e9dd8918dd6ad6d578d15ba0dcad27beee71fb680c6638f89d9c5bb36b320c8f",
+      "bytes": 428174
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/guyuan_policy_6.csv": {
+      "sha256": "5048d4c686531bef71299209d71c01083795ddf94b27799e0805efa470381fca",
+      "bytes": 427023
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/guyuan_policy_7.csv": {
+      "sha256": "7ce17d76965bdbffa9636eb994d2b31cdd084ec6f49e3a08685624cc17f70ec3",
+      "bytes": 430337
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/guyuan_policy_8.csv": {
+      "sha256": "ac2e37f4c713cf10b2e4780e0f4a232a68a8af1822709f75f1977dee25c0c092",
+      "bytes": 429082
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/urumqi_policy_0.csv": {
+      "sha256": "15159b7146ae26a4785f18c941a00917a697779dc37d31e064939cc46c5d8a09",
+      "bytes": 427901
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/urumqi_policy_1.csv": {
+      "sha256": "12cfebbe48b98e8ae9afadc8ee12d0059a44413506c3f06160f0f92478146a77",
+      "bytes": 432402
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/urumqi_policy_2.csv": {
+      "sha256": "88cf220db1f018cb958d14dad10b4966f1e9c706d95eaddf8f3b02c72f2d2f0c",
+      "bytes": 434515
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/urumqi_policy_3.csv": {
+      "sha256": "9ad021375b629d179816b6ead8ec309dd76ea08958d7136b7c8de0eb86552b64",
+      "bytes": 429878
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/urumqi_policy_4.csv": {
+      "sha256": "7d97d31fe922d03d39aa3c288e3f481fdb49e575df455120df2811f4a3cf6179",
+      "bytes": 429794
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/urumqi_policy_5.csv": {
+      "sha256": "b450d90136c108b6ef950982229e3e4f8283eee746faacf3a67a5659c1600798",
+      "bytes": 428531
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/urumqi_policy_6.csv": {
+      "sha256": "0e376bb4c2cd6e5ff11a6f037fc52dafaa86d75ea42908a9756a59c4f2d7d972",
+      "bytes": 427676
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/urumqi_policy_7.csv": {
+      "sha256": "c3da24376941278259c49ed5bcc129825ddef87c17a2b40ccc295a906ba714ed",
+      "bytes": 430508
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/urumqi_policy_8.csv": {
+      "sha256": "f3e678fda4405bc0b774d860c43c716ecb158f727ec230631782ba5090c0cd48",
+      "bytes": 429569
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/wuhan_policy_0.csv": {
+      "sha256": "f49b31dfbef1deb07bd8608dc299e79faebd2eca5a6390935e082c44c37a5f83",
+      "bytes": 440115
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/wuhan_policy_1.csv": {
+      "sha256": "bd6c85eda2062c3db4412ff4355614fa6708e35c267c1940ec8e2ca88ad3a55f",
+      "bytes": 439822
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/wuhan_policy_2.csv": {
+      "sha256": "a1459623bc7fffcf0a2ad997fb040643ec543228c4a2ff7b77d393c5a197451f",
+      "bytes": 433671
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/wuhan_policy_3.csv": {
+      "sha256": "37cc7b8c1d52df92b5c844d2d3d2c48b5c5518352a7ef70a9a3be22ba82e0cae",
+      "bytes": 440854
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/wuhan_policy_4.csv": {
+      "sha256": "52392890e96351ef49978e93522d6813a4b2fe65c4e8e3e1f997490dc43d3953",
+      "bytes": 439268
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/wuhan_policy_5.csv": {
+      "sha256": "75b1d0549bcd39e5d4a35dea94983d8806d85baa41c43852a057514e99ae3e57",
+      "bytes": 438376
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/wuhan_policy_6.csv": {
+      "sha256": "826cbc08e38aa4da0f7dfd5925a829abc96fee8414b71d9e8ce9c9d21706b0e9",
+      "bytes": 433281
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/wuhan_policy_7.csv": {
+      "sha256": "c2937885f034f0d4d5bd8fb45f6a50260dcf406ec9e5d29c45f800bc78be5189",
+      "bytes": 439115
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/trajectories/wuhan_policy_8.csv": {
+      "sha256": "22f15441724636061de26b54916274f018d02b0376f0d4c409f8beb116c08890",
+      "bytes": 432434
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01/truth.json": {
+      "sha256": "94b8d71445e1f123b18b010b53c1416608166bb8499d0c888d05914d131afd0f",
+      "bytes": 7363
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_frequency.json": {
+      "sha256": "6d234c581ac76e4e99fb3e9276f2fcee013af06a35098ee9e5dca0c51e48ae5f",
+      "bytes": 4263
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_hard_W1_candidate_L1_cap.json": {
+      "sha256": "5f57c2fa7f2d2a1c54d647dfdcf4a878f8446109dcdac910b1463809c800ed45",
+      "bytes": 5241
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_hard_W1_candidate_L1_cap.log": {
+      "sha256": "4985214477333a733c4abe4518ab8ede69f324f50c5dd308c366839382c846e6",
+      "bytes": 74
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_hard_energy_minimum_L1.json": {
+      "sha256": "07d3e1a76a9cf7f0d6eb4f9a41646d821a1c02de8849424fdd641b35418f7b5b",
+      "bytes": 10347
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_hard_energy_minimum_L1.log": {
+      "sha256": "5dcf7e3a18165aa8928fa518507e68a0ce2c5998c9d5453c698c5fcd26aa41fb",
+      "bytes": 72
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_hard_energy_minimum_W1.json": {
+      "sha256": "e73ef8e5e913bbfd0b60278ade22988321a93b3f07fb16e154f458500422444f",
+      "bytes": 5991
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_hard_energy_minimum_W1.log": {
+      "sha256": "26d06a3bbde4e82d5e4a8bb99f1bb40e397e1497950722ea5c5ed08dfa8d11ed",
+      "bytes": 72
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_price_paired_L1.json": {
+      "sha256": "cd7e806fd3294d20a4b2ee6c1bb0abdf33d265373824db1dae3bf02a7c961c9c",
+      "bytes": 13529
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_price_paired_L1.log": {
+      "sha256": "082e618e67786ecda0af47022c503f72260237d49fcce531753acb88c4adf9b0",
+      "bytes": 65
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_soft_energy.json": {
+      "sha256": "ac20433dc85ff8c1601d08ac57b03045701402ba25a2ec01ba99df0c1ee4f051",
+      "bytes": 5753
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/guyuan_soft_energy.log": {
+      "sha256": "6e6947d36715b5c27d5809006ad9ab9c0e5a616161beff999f9a223c1a05ccea",
+      "bytes": 61
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_frequency.json": {
+      "sha256": "dd144d17562ea6f8842a2cb5f8426636927a7cd164091e7981368fd66862ef3e",
+      "bytes": 4271
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_hard_W1_candidate_L1_cap.json": {
+      "sha256": "7ae44c250de78b41034365770bd65da90a2f622e308177ab0772902d6a19d549",
+      "bytes": 5190
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_hard_W1_candidate_L1_cap.log": {
+      "sha256": "ec9bcf1dcb0e92da6b624b7f827699cefa908fe9ee05fb422a0f08270da1b270",
+      "bytes": 74
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_hard_energy_minimum_L1.json": {
+      "sha256": "906c163ac784ff43dec21af5b85090a360bec92b5fcaaf45db877d671bfbde40",
+      "bytes": 10352
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_hard_energy_minimum_L1.log": {
+      "sha256": "fe0003fdc1ed07a370609b6a86e7801c9c69196c485dc6f7f116996fed6cec08",
+      "bytes": 72
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_hard_energy_minimum_W1.json": {
+      "sha256": "89805beb3df49f5fed902b5ca4dd053ea3672a6e1869c73b12cbfdc2728a5ef0",
+      "bytes": 5946
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_hard_energy_minimum_W1.log": {
+      "sha256": "88089741e2054b3140979befb19d4109fd76c6cf482fb57424a1d757eb89e291",
+      "bytes": 72
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_price_paired_L1.json": {
+      "sha256": "2adc0a0028a8b521cb00e2c1718abe9dad65146958b5473d9d30b0a0be35844f",
+      "bytes": 13582
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_price_paired_L1.log": {
+      "sha256": "10fa3dcb20a517d24fe1ae5750f5624e0b4bc6edd83a0d1f2d1f4eedd8206e79",
+      "bytes": 65
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_soft_energy.json": {
+      "sha256": "6e5e7b58f0db2459c47901e7cb2ecd91e98eb4362f3c4748bf05145a11c011e8",
+      "bytes": 5722
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/urumqi_soft_energy.log": {
+      "sha256": "ed66b43dd05f3f5c69d6a17b83048524dbfe5756f7566975d31f27651e89784d",
+      "bytes": 61
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_frequency.json": {
+      "sha256": "55f049311c75211c9564a90081142ad9cc152083dfaa243b7214126b805eabcc",
+      "bytes": 4284
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_hard_W1_candidate_L1_cap.json": {
+      "sha256": "ae8ee3df840aadad291097965c5b2365283707157cdc666571bd3a98e561c3db",
+      "bytes": 5203
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_hard_W1_candidate_L1_cap.log": {
+      "sha256": "d9a2a349658ab30dda974ec6a40b6fc03a029112c4f29046dde45aff2623b16a",
+      "bytes": 73
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_hard_energy_minimum_L1.json": {
+      "sha256": "52ffff0c64b0aa369af9e8c9e0a631f2ddd9812d3995306c00c86997d3b0aa6f",
+      "bytes": 10472
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_hard_energy_minimum_L1.log": {
+      "sha256": "4dcd5c12f5f55a2ae32f545fb010a313414994fa3ac49d3b296f3d2920111088",
+      "bytes": 71
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_hard_energy_minimum_W1.json": {
+      "sha256": "a804782e63ea8e1f51d6b6201154101af2b96e7a52144a556e10ec18b955cbad",
+      "bytes": 5925
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_hard_energy_minimum_W1.log": {
+      "sha256": "6ad267974eb3d265651c6d0fb8ac4fc61188347498300d0b712f51829c68328f",
+      "bytes": 71
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_price_paired_L1.json": {
+      "sha256": "306053fbc39268a6fedf9663283b05d3678b7945eccd08ed2662ef33af23232b",
+      "bytes": 13744
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_price_paired_L1.log": {
+      "sha256": "3dda0b38a44cad96c01331356bbdca3f63c477bc34ab8036f4a238d1deb8627e",
+      "bytes": 64
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_soft_energy.json": {
+      "sha256": "ca8ad7d24f128cd453b7875b6cad07a13d90ef39e4891cdffe01a5fa31271d09",
+      "bytes": 5762
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration/wuhan_soft_energy.log": {
+      "sha256": "64b340dba530507bd8616bdfc347e09e082382a7e70719ff4657e7425f3a19e7",
+      "bytes": 60
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/calibration_complete.json": {
+      "sha256": "4f424c78e3559b2e3492ceae6537a4c3f9e8fca2f225b5a4f496e6419291c47a",
+      "bytes": 2019
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/candidates.json": {
+      "sha256": "4ae3ab1afd9df20305736d3c05772b6614c5b7b1f8661a9262ab8e83a70a7bde",
+      "bytes": 638090
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/guyuan_policy_0.csv": {
+      "sha256": "72903eb4f45465f926ea8c37dd5e69dd2026bc9fb483b9e10f232c837a3a0696",
+      "bytes": 6800
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/guyuan_policy_1.csv": {
+      "sha256": "9def5a38351ade1c73c28b5ba4d587c16969e40d21d2d422491f52ee830ba1b3",
+      "bytes": 6147
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/guyuan_policy_2.csv": {
+      "sha256": "2f69154c6e013374dd82192055759193e81dbc5817fac09e3d622435e3c29ba9",
+      "bytes": 7174
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/guyuan_policy_3.csv": {
+      "sha256": "0591c09a84cdf936688dcc4139fa039f8d574700b19f23f76f97a4a94006b4ca",
+      "bytes": 6782
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/guyuan_policy_4.csv": {
+      "sha256": "cb9a0fbfa17e985def219b4d5e890de7cefa8896c001c60ff6d38642d65f1195",
+      "bytes": 6917
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/guyuan_policy_5.csv": {
+      "sha256": "ef81ed359831b9aedc83bffcb987873bb52819ef0ded30e0f21ff76cf469c58a",
+      "bytes": 6819
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/guyuan_policy_6.csv": {
+      "sha256": "a8df9ba7ceab12490f7a8309da21e3cad3ed9499016a79e8f86c584687ad79aa",
+      "bytes": 7030
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/guyuan_policy_7.csv": {
+      "sha256": "2639af13a6e719456c59d61353714a50677122a49d95d895205c06b2256a4347",
+      "bytes": 6671
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/guyuan_policy_8.csv": {
+      "sha256": "666ce420ed343542d48a6195a16e7a856dd07482def4055daf72a4aa4559f11a",
+      "bytes": 7077
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/urumqi_policy_0.csv": {
+      "sha256": "1d0fecc012041259bbc0199a14c631b2861493544d2772d19dc69d166d993ac8",
+      "bytes": 6824
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/urumqi_policy_1.csv": {
+      "sha256": "3f6bce82836977d04498ca74858063ff779d134f0e23c8a85f5269e8a055f148",
+      "bytes": 6192
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/urumqi_policy_2.csv": {
+      "sha256": "c43de48b220a592be29bcfa6bb1a1d33b8687ff6663c5e4080d721128ce48145",
+      "bytes": 7148
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/urumqi_policy_3.csv": {
+      "sha256": "9439ac0e296fa19a76c5cab527f3622a0bc56817b492c0a3a6fc602d3151c623",
+      "bytes": 6712
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/urumqi_policy_4.csv": {
+      "sha256": "9332669318a45573c9b003d09f0668a6a4bfc5ee695209a04fc1614ad60096dd",
+      "bytes": 6970
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/urumqi_policy_5.csv": {
+      "sha256": "76db286dc0e7b534db324785a7f285d5939976f0c25611e01df9bd869c23da6b",
+      "bytes": 6704
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/urumqi_policy_6.csv": {
+      "sha256": "e1d4d8f3e8a4bfde7ce08e352a74fd8b9cadcb67e8c42ee44704de622017d12c",
+      "bytes": 7088
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/urumqi_policy_7.csv": {
+      "sha256": "a23238ea4e6f37c61dc71edd0a3e6b718dedbe5232f3572301534121b751f961",
+      "bytes": 6668
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/urumqi_policy_8.csv": {
+      "sha256": "dd4d3c2a8a43fe899d4473e66a65b7e7b60d3b75ac1be27317fbbb4cbc0d783b",
+      "bytes": 7107
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/wuhan_policy_0.csv": {
+      "sha256": "a016086a4f5c36700441ec46e4cbb147e90f7d3c567454cb2b897c2bb7e5d837",
+      "bytes": 6566
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/wuhan_policy_1.csv": {
+      "sha256": "0a3d7aec5378cad6f13cb46ad2479ab11ec437caa33ef99cf63b869d4c7e2819",
+      "bytes": 7096
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/wuhan_policy_2.csv": {
+      "sha256": "49a587cffe959c8cd0c809ebedb093e33250ad98085ab9179a8aae98ee3a35f4",
+      "bytes": 7220
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/wuhan_policy_3.csv": {
+      "sha256": "400c93e4a76fa2ed92036bbb76d41f8fc0b6fcc505bc478a5ea7762eb09bccda",
+      "bytes": 6689
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/wuhan_policy_4.csv": {
+      "sha256": "2b82eae857612e97f6fbcb173f769ef5530c3efc389018ae15a268c4e85b297d",
+      "bytes": 6881
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/wuhan_policy_5.csv": {
+      "sha256": "774adf0944cb6fd9c509841de723ac69a1d724eff92878a57a8557f5f2a91849",
+      "bytes": 6849
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/wuhan_policy_6.csv": {
+      "sha256": "19503f5162188b6f7e8b87b0626be5983fefd5809e0c60efe5a37cd53fc810af",
+      "bytes": 7213
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/wuhan_policy_7.csv": {
+      "sha256": "71351f979f12553b5e54b0fe3ec5a3e56ca8d5773af1fa1b37a85d733eb9d860",
+      "bytes": 6864
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/daily/wuhan_policy_8.csv": {
+      "sha256": "186a3da584d64dddfc1d0baf5883a8bfcbc6978e296043cc14191163c1b9ee2f",
+      "bytes": 7205
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/failures.json": {
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "bytes": 4
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/config.json": {
+      "sha256": "61a3e92bec711ad0e78539dc311542b4511f4e4eccfc3304ac37c7f402cdcffd",
+      "bytes": 3052
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/guyuan_hourly.csv": {
+      "sha256": "8e162d33db5dac886a35f5a0e73a4ff7be937984c5b9940220df48664aebfdb0",
+      "bytes": 759267
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/guyuan_representative_hours.csv": {
+      "sha256": "ca47b95ec00ae4736fc5fffa80d326a97ebeabe7a87be746772a80d2d0f78a34",
+      "bytes": 64163
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/guyuan_selected_days.csv": {
+      "sha256": "0be0aebeafbe17303f2ebc3bfa9a8a8362f75e44fe1cfa83c334c22db05c9713",
+      "bytes": 719
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/urumqi_hourly.csv": {
+      "sha256": "41f27368c8e0a6788683f6b7f752dfc1a13c83b38477096e6972e30e3bc7a883",
+      "bytes": 758986
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/urumqi_representative_hours.csv": {
+      "sha256": "946c1eae9bd54d8fc6e4521c40d00136659276a08143e997ebe66a242c28a6bd",
+      "bytes": 64110
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/urumqi_selected_days.csv": {
+      "sha256": "f9b3ec4f958c7f17bee3a8e3c943f3d4b44d37d8330174029eaea325d6c58acb",
+      "bytes": 719
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/wuhan_hourly.csv": {
+      "sha256": "551e9d9d3746d4dd7606ee624843d168097b7f066624df79e47051484f7e48cb",
+      "bytes": 763476
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/wuhan_representative_hours.csv": {
+      "sha256": "0a398c4140539a085a47fb259bd39408f222f591899118ecb204cacfad8c62d0",
+      "bytes": 64352
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/inputs/wuhan_selected_days.csv": {
+      "sha256": "6746a787b6d39c5c546c65f7053037e49aa564432685eea639f2859734f1d659",
+      "bytes": 717
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/manifest.json": {
+      "sha256": "c7731f08d855209b946af0253dae47d63f30f25bcde6fa77611f644a93b5601d",
+      "bytes": 12172
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/predictions.json": {
+      "sha256": "d60541771bbbc82ea735ee2c1fc52add447626ae69992f64ba1281bb5bce6d6a",
+      "bytes": 130568
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/protocol.json": {
+      "sha256": "0bbfca1de7ecc1545a128cac790407c1acc18cecf54853342c114d07902bf357",
+      "bytes": 17380
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/protocol_lock.json": {
+      "sha256": "0ad9de58cf9ae2b28b47491012a043e11c43b5167535250172d8a000cc0721f9",
+      "bytes": 1230
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/rankings.json": {
+      "sha256": "a8aec7b9839b1ea4e5a2569836c64a0c27d599e06d8a03fbc8c8180407296249",
+      "bytes": 8120
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/run_started.json": {
+      "sha256": "e8a14ee0e8900d977ce46434f01785270814b4c34f3a7d827b832ecca858224f",
+      "bytes": 141
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/runtime.json": {
+      "sha256": "bcf3d6bfc3e3e5d0cf9c68ccf7e6d1d2777989f91b87aa1e03d4039064994c84",
+      "bytes": 460
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/selections.json": {
+      "sha256": "e51d2b286d8bee5bddeaa0b1701e612a529402cfb47c9f10a2e61573d204a7c5",
+      "bytes": 39185
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/source_checks.json": {
+      "sha256": "41e5fa8cf0584022a743b3c54ac275370ede00e2e4fb8b56d9da40f8f56672d0",
+      "bytes": 22490
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/summary.json": {
+      "sha256": "0403e78dbb8a40e8943d749d968694ab2e3ae75a5550afc07bf012b376b67d00",
+      "bytes": 4364
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/guyuan_policy_0.csv": {
+      "sha256": "b33a81fda830c3b28b78e804335b8299787dfefcde8d67221994369279df00b6",
+      "bytes": 427534
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/guyuan_policy_1.csv": {
+      "sha256": "9ea3d9e87748ea9ab56ce82ab96b407188d8c65541f0f7392f3e37811375c909",
+      "bytes": 431995
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/guyuan_policy_2.csv": {
+      "sha256": "c4d4728da90fc1f7c74ac35fbe445de882ac8162283a754c83ec72e1eeb9412a",
+      "bytes": 433587
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/guyuan_policy_3.csv": {
+      "sha256": "cdb6e4e2f1037aa0a6fd0a3dc8f4def3699b62e898dc5d08b799bcf7ed567715",
+      "bytes": 429697
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/guyuan_policy_4.csv": {
+      "sha256": "380fd80859bf775c7f36cfe4a62a94b40cf69ee658e2a999b49ee7218e9b6967",
+      "bytes": 429593
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/guyuan_policy_5.csv": {
+      "sha256": "e9dd8918dd6ad6d578d15ba0dcad27beee71fb680c6638f89d9c5bb36b320c8f",
+      "bytes": 428174
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/guyuan_policy_6.csv": {
+      "sha256": "5048d4c686531bef71299209d71c01083795ddf94b27799e0805efa470381fca",
+      "bytes": 427023
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/guyuan_policy_7.csv": {
+      "sha256": "7ce17d76965bdbffa9636eb994d2b31cdd084ec6f49e3a08685624cc17f70ec3",
+      "bytes": 430337
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/guyuan_policy_8.csv": {
+      "sha256": "ac2e37f4c713cf10b2e4780e0f4a232a68a8af1822709f75f1977dee25c0c092",
+      "bytes": 429082
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/urumqi_policy_0.csv": {
+      "sha256": "15159b7146ae26a4785f18c941a00917a697779dc37d31e064939cc46c5d8a09",
+      "bytes": 427901
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/urumqi_policy_1.csv": {
+      "sha256": "12cfebbe48b98e8ae9afadc8ee12d0059a44413506c3f06160f0f92478146a77",
+      "bytes": 432402
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/urumqi_policy_2.csv": {
+      "sha256": "88cf220db1f018cb958d14dad10b4966f1e9c706d95eaddf8f3b02c72f2d2f0c",
+      "bytes": 434515
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/urumqi_policy_3.csv": {
+      "sha256": "9ad021375b629d179816b6ead8ec309dd76ea08958d7136b7c8de0eb86552b64",
+      "bytes": 429878
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/urumqi_policy_4.csv": {
+      "sha256": "7d97d31fe922d03d39aa3c288e3f481fdb49e575df455120df2811f4a3cf6179",
+      "bytes": 429794
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/urumqi_policy_5.csv": {
+      "sha256": "b450d90136c108b6ef950982229e3e4f8283eee746faacf3a67a5659c1600798",
+      "bytes": 428531
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/urumqi_policy_6.csv": {
+      "sha256": "0e376bb4c2cd6e5ff11a6f037fc52dafaa86d75ea42908a9756a59c4f2d7d972",
+      "bytes": 427676
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/urumqi_policy_7.csv": {
+      "sha256": "c3da24376941278259c49ed5bcc129825ddef87c17a2b40ccc295a906ba714ed",
+      "bytes": 430508
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/urumqi_policy_8.csv": {
+      "sha256": "f3e678fda4405bc0b774d860c43c716ecb158f727ec230631782ba5090c0cd48",
+      "bytes": 429569
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/wuhan_policy_0.csv": {
+      "sha256": "f49b31dfbef1deb07bd8608dc299e79faebd2eca5a6390935e082c44c37a5f83",
+      "bytes": 440115
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/wuhan_policy_1.csv": {
+      "sha256": "bd6c85eda2062c3db4412ff4355614fa6708e35c267c1940ec8e2ca88ad3a55f",
+      "bytes": 439822
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/wuhan_policy_2.csv": {
+      "sha256": "a1459623bc7fffcf0a2ad997fb040643ec543228c4a2ff7b77d393c5a197451f",
+      "bytes": 433671
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/wuhan_policy_3.csv": {
+      "sha256": "37cc7b8c1d52df92b5c844d2d3d2c48b5c5518352a7ef70a9a3be22ba82e0cae",
+      "bytes": 440854
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/wuhan_policy_4.csv": {
+      "sha256": "52392890e96351ef49978e93522d6813a4b2fe65c4e8e3e1f997490dc43d3953",
+      "bytes": 439268
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/wuhan_policy_5.csv": {
+      "sha256": "75b1d0549bcd39e5d4a35dea94983d8806d85baa41c43852a057514e99ae3e57",
+      "bytes": 438376
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/wuhan_policy_6.csv": {
+      "sha256": "826cbc08e38aa4da0f7dfd5925a829abc96fee8414b71d9e8ce9c9d21706b0e9",
+      "bytes": 433281
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/wuhan_policy_7.csv": {
+      "sha256": "c2937885f034f0d4d5bd8fb45f6a50260dcf406ec9e5d29c45f800bc78be5189",
+      "bytes": 439115
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/trajectories/wuhan_policy_8.csv": {
+      "sha256": "22f15441724636061de26b54916274f018d02b0376f0d4c409f8beb116c08890",
+      "bytes": 432434
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_compatibility_run_01/truth.json": {
+      "sha256": "94b8d71445e1f123b18b010b53c1416608166bb8499d0c888d05914d131afd0f",
+      "bytes": 7363
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/baseline/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/baseline/effective_protocol.json": {
+      "sha256": "77d7dc7bb5ab5f501a77a0cbc5d55b7a7f0ad345ad3fd9b4edf5f5c01baa1a91",
+      "bytes": 3035
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/baseline/enumeration.json": {
+      "sha256": "3a65fb1a1f19beaa7f820afa181ff14bb029287c95370350c284ff5b8da38964",
+      "bytes": 1885
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/baseline/independent_audit.json": {
+      "sha256": "db41c769f50297e6e9445c8af9e74f2e66fa3c7a3a5bfd9a79d7bae45903763d",
+      "bytes": 4514
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/baseline/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/baseline/summary.json": {
+      "sha256": "b1050aded90a411b6ddec0aaf76a317046df32811d012df854df58bc29e13984",
+      "bytes": 1918
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/carbon_endpoint/dispatch.csv": {
+      "sha256": "41ffe3524064be7d3fb6798e808e5056991e5d44e014e4227d6ca3e911d8eadf",
+      "bytes": 165884
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/carbon_endpoint/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/carbon_endpoint/enumeration.json": {
+      "sha256": "f44d529f4996c95b486cf0166b0f7daa70ed822bcc03c2263f1af6977795d6f7",
+      "bytes": 5656
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/carbon_endpoint/independent_audit.json": {
+      "sha256": "38c83f372d991e9b244acf4c11408a73d920eef2d6e2099801ede58f17bc10e9",
+      "bytes": 5127
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/carbon_endpoint/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/carbon_endpoint/summary.json": {
+      "sha256": "fb873ab24d1c7a75ac6ef4bf9b40f78acafaa3e3a2d5e197d4a366a8cf5fb2be",
+      "bytes": 1940
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/compromise/dispatch.csv": {
+      "sha256": "a4abfb204f7137705c15ef635167d801fbd54290c326399c3912859e5120d6ab",
+      "bytes": 163452
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/compromise/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/compromise/enumeration.json": {
+      "sha256": "0dbad575f3e068d2f74779bceb0ad80361e43a9996c930c2126c9e8029f270a8",
+      "bytes": 4330
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/compromise/independent_audit.json": {
+      "sha256": "b5a6d9555df108493f1958193e8b32039f53dc95a8f13c9bb09ffc750cf8a885",
+      "bytes": 5064
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/compromise/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/compromise/summary.json": {
+      "sha256": "45d0c1aee6bb8bba0b4a1d1ccac0202e179cbc506374697297fcd198432cd4e2",
+      "bytes": 1976
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/conditional_thresholds.csv": {
+      "sha256": "23cd3c6823ad822241dd468e67620f1089b354cd93110347c69db93d080d06d4",
+      "bytes": 789
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/cost_endpoint/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/cost_endpoint/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/cost_endpoint/enumeration.json": {
+      "sha256": "e7e0a417dd9b51c52aa5e198e103fb10b072058a472fa2026c86072a2ebd575d",
+      "bytes": 5614
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/cost_endpoint/independent_audit.json": {
+      "sha256": "87163f80d601a831656cd1d17626ea85a645f4667042892418b1284af1f11f9b",
+      "bytes": 5138
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/cost_endpoint/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/cost_endpoint/summary.json": {
+      "sha256": "4015a62855468d94808eb33123a62e247d043915bb9f73b514df90ab63c0a7f1",
+      "bytes": 1949
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/decision_table.csv": {
+      "sha256": "139d9d3afb8092118f3186a4fb88e74d3585577589f4437eb324ea72cc2a83cb",
+      "bytes": 616
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/hp_one/dispatch.csv": {
+      "sha256": "4d2b2d66a923ab39e36cce74273887d4cf0d969da730892fdb068ad6371755f9",
+      "bytes": 163290
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/hp_one/effective_protocol.json": {
+      "sha256": "04328c05865b01dc160f85eaee2daaa378451998f21059a4925d14a27089e96a",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/hp_one/enumeration.json": {
+      "sha256": "f56ca65d1dd30d748e9af288fb053e4db652de6cea4f4646842595defa60179a",
+      "bytes": 1874
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/hp_one/independent_audit.json": {
+      "sha256": "b9612edb9c33c877adeb49e8eb70a80c99f802177b13e224d0f36ca882c5bde7",
+      "bytes": 4535
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/hp_one/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/hp_one/summary.json": {
+      "sha256": "56c377589ea33e4bdd8a5177adbff06564ab13662c7ce21edb55a9399ae037ea",
+      "bytes": 1919
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/input.csv": {
+      "sha256": "19d749061532deb6ef4e8f4610f924434f635abeae1c8280f83fb8849c61d9f9",
+      "bytes": 549321
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/protocol.json": {
+      "sha256": "5bdc67ab2753dfd7296f51816977a1c28d3db280f5e23e0a852c6be1256d2633",
+      "bytes": 2919
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/resistance/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/resistance/effective_protocol.json": {
+      "sha256": "1ec4d3218c78d40cc89ada9cc56f45c64260895f64455b82b276f1d59c1a3322",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/resistance/enumeration.json": {
+      "sha256": "83033766c780e9914e743b5f07a19094ac52e3b6367a9e26ddcdafabd3c2e2eb",
+      "bytes": 1885
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/resistance/independent_audit.json": {
+      "sha256": "a3c86742218d31a5796e8fd2242a154486deb827cf1c5b8f99f9191d904e4b56",
+      "bytes": 4553
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/resistance/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_0/resistance/summary.json": {
+      "sha256": "f6cb2c1f69e356bcc10163b506d36bd7eb590eb245f6b579963ac23c630371ff",
+      "bytes": 1930
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/hp_one/dispatch.csv": {
+      "sha256": "97791ef353982ad1dddd1038df79fba11e4d44f0171409f19356d6e24152b4e1",
+      "bytes": 163640
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/hp_one/effective_protocol.json": {
+      "sha256": "0b663a7b5d9962daf68b01b5bb26ab68eeada0ede28fd658c3465f6b2229f055",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/hp_one/enumeration.json": {
+      "sha256": "1cc114cc2be0a19ff1f13813c0b8f1f4cd96f158187d4b40d42577b3b62f54f6",
+      "bytes": 1872
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/hp_one/independent_audit.json": {
+      "sha256": "d6aa722a156948cc8d310e0027f17e0edee8083f6bc03dd437528f706d2fc4d2",
+      "bytes": 4533
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/hp_one/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/hp_one/summary.json": {
+      "sha256": "e5974fa2580cc4bf22c5a6507bd7b3b11ef7f6214c39757deb5d5f9caad56b4d",
+      "bytes": 1917
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/input.csv": {
+      "sha256": "2ed5aacc2aae100bf7f65a8c5cf9fe6624d6b28386a40602f7929bc5d41e2a52",
+      "bytes": 549186
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/protocol.json": {
+      "sha256": "2d0f119a0db5be5d3f84156380a5907f1402bbc1499cba5850c25d06ebd44cef",
+      "bytes": 2919
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/resistance/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/resistance/effective_protocol.json": {
+      "sha256": "73910c64f683187f148cae08ffc364234ca444a3c0d3f46b0b8f58af7b6753df",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/resistance/enumeration.json": {
+      "sha256": "70744acec52b0317c7c6ea11858b4118287c9b1267b5b4a876b8b505f29cdaab",
+      "bytes": 1885
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/resistance/independent_audit.json": {
+      "sha256": "8c14e935c4b30ce615c0b7f957f8514c4b4e00bc5646d6f000fc23257260623a",
+      "bytes": 4553
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/resistance/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/design_sensitivity/theta_1/resistance/summary.json": {
+      "sha256": "090f174851752127104dd45c4518d4202e7313bb9bbfc4846c2c426d63a19455",
+      "bytes": 1930
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_0/dispatch.csv": {
+      "sha256": "2bb70c1e38ea8f99024c78654eb5d375fbcd1e309b72471a4cd86788907dc57b",
+      "bytes": 165883
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_0/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_0/enumeration.json": {
+      "sha256": "ca6d8686e199f1a47668d2e06f0a62ce2b3dfc8759d3a2a5b0e03354180df0d8",
+      "bytes": 4344
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_0/independent_audit.json": {
+      "sha256": "9954cc7be5135e26e12b8d35d3cd926cc0a632e3dfb87e833c948a6fa8b41d12",
+      "bytes": 5068
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_0/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_0/summary.json": {
+      "sha256": "86d339e2e81ad117d3e69c3abdb291de6f30266d07b327de4611034dadb3ec02",
+      "bytes": 1981
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_1/dispatch.csv": {
+      "sha256": "a4abfb204f7137705c15ef635167d801fbd54290c326399c3912859e5120d6ab",
+      "bytes": 163452
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_1/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_1/enumeration.json": {
+      "sha256": "aa5a35a84a700dc3c121743afaeeddb059b70361aaae2eb424b3f081c7d173a0",
+      "bytes": 4321
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_1/independent_audit.json": {
+      "sha256": "c4ed8b5b71b84b8015848d7c84630f4feb002a58a6204dfdc1ed1eaf9f18dc41",
+      "bytes": 5060
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_1/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_1/summary.json": {
+      "sha256": "512528089e139bb9f9b20daa379c2a3607eb427e05f9755243648cd3097b67de",
+      "bytes": 1973
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_2/dispatch.csv": {
+      "sha256": "a4abfb204f7137705c15ef635167d801fbd54290c326399c3912859e5120d6ab",
+      "bytes": 163452
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_2/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_2/enumeration.json": {
+      "sha256": "0dbad575f3e068d2f74779bceb0ad80361e43a9996c930c2126c9e8029f270a8",
+      "bytes": 4330
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_2/independent_audit.json": {
+      "sha256": "be854b8fc1cf73d7be587713ccb3d16d09ae687e0152c0830d15ab738971949c",
+      "bytes": 5063
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_2/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_2/summary.json": {
+      "sha256": "45d0c1aee6bb8bba0b4a1d1ccac0202e179cbc506374697297fcd198432cd4e2",
+      "bytes": 1976
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_3/dispatch.csv": {
+      "sha256": "a4abfb204f7137705c15ef635167d801fbd54290c326399c3912859e5120d6ab",
+      "bytes": 163452
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_3/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_3/enumeration.json": {
+      "sha256": "5219e759e569236ce90ef76b9987ad348497f55f89b67e680aa342a1d923a42c",
+      "bytes": 4337
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_3/independent_audit.json": {
+      "sha256": "2d2a2ad70db0ee3ab3dc154447716c03051e7447db677cfeb4f5e8f7686829d8",
+      "bytes": 5066
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_3/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_3/summary.json": {
+      "sha256": "f50510f2bba6ca6ae43fbfc18bdf3a4cde699128ff4315f9bc2900f175257f49",
+      "bytes": 1979
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_4/dispatch.csv": {
+      "sha256": "b30f7eb03908255d4b8ea8197c49dbdefdda572578d6396572b43da2225866b7",
+      "bytes": 166082
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_4/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_4/enumeration.json": {
+      "sha256": "d1165aa3f7d39386d6c406352e9b7482fcfc76d21cc13de1692cf17ed5c9ca70",
+      "bytes": 5738
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_4/independent_audit.json": {
+      "sha256": "7b1f29b4310578fa31988d56e2a1415b6a113cddf8cd0e2c1b67a5828d81b58e",
+      "bytes": 5168
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_4/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_4/summary.json": {
+      "sha256": "f9ce8d141e6f8b39c5f18cf1941385a1f37da8244b3012cb65c4bcf82c946957",
+      "bytes": 1988
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/epsilon_scan.csv": {
+      "sha256": "5beedae9b6a991671bad165e67adf3c4674553082c552f05ea70a45f7ce1766f",
+      "bytes": 1310
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/baseline/dispatch.csv": {
+      "sha256": "1967ef5b06a6fe06f2a156edbcf5b6d323207f0b65d53f99e9b3fdd7c3157307",
+      "bytes": 166083
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/baseline/effective_protocol.json": {
+      "sha256": "eb79093d7d51c87574933cc31fcb72365070bebbcacd24ef9edc115956bfdd89",
+      "bytes": 3165
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/baseline/enumeration.json": {
+      "sha256": "e1d2a272c3326b98c6a865d516f501f246585c948bf9c4a1bd517a4fd9b326c2",
+      "bytes": 1875
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/baseline/independent_audit.json": {
+      "sha256": "2c73178754ee6dbbfc69be8e404af11aa8ec475f939e7ebaca19a94bce6ed6a6",
+      "bytes": 4569
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/baseline/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/baseline/summary.json": {
+      "sha256": "732ecf9a1a20fc31a5a06d697ad4b396866e37e4f70af9219ae2fa14a311832d",
+      "bytes": 1920
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/compromise/dispatch.csv": {
+      "sha256": "a4abfb204f7137705c15ef635167d801fbd54290c326399c3912859e5120d6ab",
+      "bytes": 163452
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/compromise/effective_protocol.json": {
+      "sha256": "cce62104deb75195e20ea809e7437992cc3829298ace97fbf888ff83c574d4d6",
+      "bytes": 3155
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/compromise/enumeration.json": {
+      "sha256": "34f37ecb172d4acebc57c0daca60e2be910cc0d3170ea0e810d1ded8c7f4032d",
+      "bytes": 1901
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/compromise/independent_audit.json": {
+      "sha256": "90a72d5d41547e5e97ff46fb58268988c770cd69beb85bb2bb644010a7920763",
+      "bytes": 4592
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/compromise/investments.json": {
+      "sha256": "aa0e522105cf199be866f686ac95c6668391c695af3d8de730ee08c1e3aafb40",
+      "bytes": 89
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/compromise/summary.json": {
+      "sha256": "c013f94a1697aa41ef9a9d7661927d97cf2d20b8f68b422bfb8ddd76d3d73592",
+      "bytes": 1946
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_carbon/dispatch.csv": {
+      "sha256": "41ffe3524064be7d3fb6798e808e5056991e5d44e014e4227d6ca3e911d8eadf",
+      "bytes": 165884
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_carbon/effective_protocol.json": {
+      "sha256": "cce62104deb75195e20ea809e7437992cc3829298ace97fbf888ff83c574d4d6",
+      "bytes": 3155
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_carbon/enumeration.json": {
+      "sha256": "cc4f909b64df885198398d93fb1314bcdcf798f44dea41269e74a51d30554d06",
+      "bytes": 1865
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_carbon/independent_audit.json": {
+      "sha256": "0a6c34b55bdeeaed831af36db50d86855894538a8423ec58a2642f6dc4e3edc7",
+      "bytes": 4557
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_carbon/investments.json": {
+      "sha256": "aa0e522105cf199be866f686ac95c6668391c695af3d8de730ee08c1e3aafb40",
+      "bytes": 89
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_carbon/summary.json": {
+      "sha256": "56f4f42cd60cef2946bfdf3750d963ae41d220b02e8b34404a9ddfb041641b7a",
+      "bytes": 1910
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_cost/dispatch.csv": {
+      "sha256": "1967ef5b06a6fe06f2a156edbcf5b6d323207f0b65d53f99e9b3fdd7c3157307",
+      "bytes": 166083
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_cost/effective_protocol.json": {
+      "sha256": "eb79093d7d51c87574933cc31fcb72365070bebbcacd24ef9edc115956bfdd89",
+      "bytes": 3165
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_cost/enumeration.json": {
+      "sha256": "afebd5a7d81c35f1178ae53dac895a7da288f7a1ebadded7c72271901314e130",
+      "bytes": 1875
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_cost/independent_audit.json": {
+      "sha256": "dddc88e67774ca5a8d2d953326c712e3577328482ad7bc383ea07aa89865803c",
+      "bytes": 4569
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_cost/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay/low_cost/summary.json": {
+      "sha256": "f27a9b5471031001890b18cfa01862c699ca82f49c989dc67f810d0c5fc1b84b",
+      "bytes": 1920
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/fixed_replay_checks.json": {
+      "sha256": "abf804633e95ed69cb9b724b9577a921f6101b19b4e4ce1e49d156f5673ee75d",
+      "bytes": 565
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/frozen_code/audit_investment_reference.py": {
+      "sha256": "ec67e28dbc1f82c49e3ab99778eb45f041ca48b235c982d796f4dfda1c219121",
+      "bytes": 30948
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/frozen_code/run_investment_reference.py": {
+      "sha256": "919ba8f570219c28e638a58ddc94d41d7effab2300d66bc21ea3674fdd958826",
+      "bytes": 35985
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/independent_audits.json": {
+      "sha256": "ce8d9d35bbf5719f31f131f269ad4cd7c4b55697be81e216b2f79fccc0cb7b08",
+      "bytes": 123240
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/admission_tou.json": {
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "bytes": 15146
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/field_identity.csv": {
+      "sha256": "0535a448b87dedd5ce59bf1fa0bc1ebaa541cad1f6e05adc09050b5e8ed193e3",
+      "bytes": 4661
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/input.csv": {
+      "sha256": "39aad8ca3ba5f7ce127a86c38317b5e1b41d2c84e6f56d21fc86bf20c20bc9f9",
+      "bytes": 549293
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/input_manifest.json": {
+      "sha256": "d0f40288d6f82686f6899bf23e1774f8c3e871b1ea1ffbfb11f9e8d24c776da8",
+      "bytes": 1308
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/main_case_source_join.json": {
+      "sha256": "423b89e8599dd7b4b42de66921d8009a48ec7866d297ec4f5e2eb242e0ada33c",
+      "bytes": 47516
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/monthly_tariff_verified.csv": {
+      "sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "bytes": 1723
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/protocol.json": {
+      "sha256": "e85fb5e198f5fda724426b3df02de23359ef655be6f1f0b04441b8618c0d2d2b",
+      "bytes": 2919
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/source_registry.json": {
+      "sha256": "ddb5606ee84c7b854c05b3681b5de5f6e7c8367476532e755c271bdf19bcc659",
+      "bytes": 1114
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/tou_account_and_hours.json": {
+      "sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "bytes": 3143
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/input_bundle/wuhan_2024_2025_hourly_tou.csv": {
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "bytes": 503515
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/manifest.json": {
+      "sha256": "9229191e164852b90b1e00a4be6662ce7c2692da539c2d496f4819c46aa7cabb",
+      "bytes": 20065
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_decision_intervals.csv": {
+      "sha256": "fe962bf89cb18b60d4c490b24b6392d629776a7f0670ede6a1780ff3b35e765e",
+      "bytes": 837
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n0/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n0/effective_protocol.json": {
+      "sha256": "10bd7a108eb5092e992f3ebd210dd7cca7745172651e668e5ebc755cae3ba620",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n0/enumeration.json": {
+      "sha256": "0b4fc4f4ba93b58d1d08ee19e85b45ac426af63fde896606d03199b44d42b4c2",
+      "bytes": 1883
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n0/independent_audit.json": {
+      "sha256": "ec2d9348b15f563af63803229db0a64af8e166c8223e142c654275bd2acef6f4",
+      "bytes": 4547
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n0/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n0/summary.json": {
+      "sha256": "24a68924853712657099fab02f719ee9ee6626366708385652c54be49fc90872",
+      "bytes": 1928
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n1/dispatch.csv": {
+      "sha256": "a4abfb204f7137705c15ef635167d801fbd54290c326399c3912859e5120d6ab",
+      "bytes": 163452
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n1/effective_protocol.json": {
+      "sha256": "8ee207192851633f261149d9d0190c14a0013ee8b9096857219573c2cf211c08",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n1/enumeration.json": {
+      "sha256": "ea430d2b3cf17a7198fa2a17244b4f998a56bfdf0d3936ab51be5e3b96f07fd6",
+      "bytes": 1872
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n1/independent_audit.json": {
+      "sha256": "b9cd34444a950a88cf0dae92fadca96510cd3f79472acfd23bab8cd45c4fc897",
+      "bytes": 4530
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n1/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n1/summary.json": {
+      "sha256": "1af1dfd43cd3b10e6f41200730c4673a0b7bff698fe670aca5dd258101a74a3c",
+      "bytes": 1917
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n2/dispatch.csv": {
+      "sha256": "618c3df0d1934f5e7b0460074a618eb24fd894e1967099ab396efc5d5b5855f4",
+      "bytes": 163456
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n2/effective_protocol.json": {
+      "sha256": "41bac51e5d067cbdfb8a2100f282be470faed5d78c84c178f1520b9e8cf792b2",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n2/enumeration.json": {
+      "sha256": "cd9e1aa27fa18ad18e819b3386091b89d5fff305c4f392ba0680e39cf53aed85",
+      "bytes": 1869
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n2/independent_audit.json": {
+      "sha256": "f6f21853bb8bd4c374fdb7df0a390ee6f5db465641b4838e8f1b77078531c8bf",
+      "bytes": 4530
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n2/investments.json": {
+      "sha256": "e1f3373f5171a51de4ffb985336fbf324881835e65149a2004f396d76228c388",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/package_price_threshold_plans/n2/summary.json": {
+      "sha256": "7bd665d20f93fd02e9f9ae0264cedad3917f66eb0596b5fa74cb852f1d548c5e",
+      "bytes": 1914
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F1/dispatch.csv": {
+      "sha256": "377d94d331726c5003f4460ce7caf8c07f0363ff7ec885156e5b7230b1176a8b",
+      "bytes": 167248
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F1/effective_protocol.json": {
+      "sha256": "2711856881aa3eaf98245928d72b129661371d46a649ee45a93412cc0fc8dda8",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F1/enumeration.json": {
+      "sha256": "a30c9689b76f6d82375287bb278196d2b2f32044de7b4fe8215396b26b3076e3",
+      "bytes": 5622
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F1/independent_audit.json": {
+      "sha256": "de7ea48e08edf321a0ba42d360cdaf2e69c68b692fa2eb633e610865a5ec47a4",
+      "bytes": 5159
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F1/investments.json": {
+      "sha256": "4cc84fab9f43960123bba11cc8069cd3e6775df45f990d7ee61b6e36f057d884",
+      "bytes": 101
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F1/summary.json": {
+      "sha256": "55731b0b47df2291837b856efb263c2c02168c174b4a5b6b62fa5a84b62ede79",
+      "bytes": 1965
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F12/dispatch.csv": {
+      "sha256": "747ccf5bd73882b50a4cd004d8ae3d4bfada1d661b1180f4a455c85df4a453e6",
+      "bytes": 163451
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F12/effective_protocol.json": {
+      "sha256": "883ffa07651bb7bb099d4bc5993043c04b9dc7dd46e43ea760d1bacf0747aacb",
+      "bytes": 3088
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F12/enumeration.json": {
+      "sha256": "d73680b9cab1002112a7a5eb15e20a4fbe38418e80362b67ea2f70871567ef70",
+      "bytes": 5637
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F12/independent_audit.json": {
+      "sha256": "a607e53569653a9a214b392afbf28e9a05244468742573fb513cb9223d08a95a",
+      "bytes": 5127
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F12/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F12/summary.json": {
+      "sha256": "a655f53dbc11f7eca009657ba9b054480c17c87487286f042a34deacaa860930",
+      "bytes": 1934
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F20/dispatch.csv": {
+      "sha256": "70389ee6124e1ab8884404211290814b883af11ff178da0c5008b67f2b6e20db",
+      "bytes": 163452
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F20/effective_protocol.json": {
+      "sha256": "a38a82713924b299ec22eeb70e0208190921d134cee99f5656a15ce13a20f3e8",
+      "bytes": 3088
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F20/enumeration.json": {
+      "sha256": "5fc940adab8072486b2dff32d2ddec85365dbdc643971e1eb491bc548bf1e3da",
+      "bytes": 5640
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F20/independent_audit.json": {
+      "sha256": "023e4bab86b84745906eac14085682f46570d44aeb771207f6c5494fec087783",
+      "bytes": 5132
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F20/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F20/summary.json": {
+      "sha256": "14c507d3d40c24126cda82bdae11875b09489d889481784997771db490f2a329",
+      "bytes": 1933
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F5/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F5/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F5/enumeration.json": {
+      "sha256": "97a5b84cfe95bec33419d5ca0f4a0a0d2d2139b755022efb4622652518cf3ae1",
+      "bytes": 5616
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F5/independent_audit.json": {
+      "sha256": "e51ffc396e83eeaa4f9b0dad668d435aaaad9628cc923719d0fb940e3ba84018",
+      "bytes": 5149
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F5/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_checks/F5/summary.json": {
+      "sha256": "96560b7f5fadb3cd23c9e4e69acf1b1906d7459b15cfa6a0c406fe27c702f367",
+      "bytes": 1950
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/repeat_factor_decisions.csv": {
+      "sha256": "2dca3eec23384f5239cf0c4c8b436943908286d38de0c65686bbb4043c0a0fbf",
+      "bytes": 994
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/source_check.json": {
+      "sha256": "0fdcd5f7a4543b0b9d67cd73e8fe4323c3aa350aef5ed1da4a94dffe6722a3a7",
+      "bytes": 3756
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/baseline/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/baseline/effective_protocol.json": {
+      "sha256": "77d7dc7bb5ab5f501a77a0cbc5d55b7a7f0ad345ad3fd9b4edf5f5c01baa1a91",
+      "bytes": 3035
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/baseline/enumeration.json": {
+      "sha256": "a7fe080ec02c4ddaf6717397114f92cecce2e81967e2dc84a67079c66a8700d4",
+      "bytes": 1884
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/baseline/independent_audit.json": {
+      "sha256": "6b9b3fc6a3e9c6f55d8221170ca88e3d11d68e9c36561e9a20a10632516eb64c",
+      "bytes": 4508
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/baseline/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/baseline/summary.json": {
+      "sha256": "1584b9d81ec7c81319f83b98116623d0e21589c8f7f5d1e2e7bd8dc24c689b6a",
+      "bytes": 1917
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/carbon_endpoint/dispatch.csv": {
+      "sha256": "54e931ab5a6bb4c370f662548d6776a4ce34ab0b683d847ff6a8ea8e42521bd1",
+      "bytes": 165913
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/carbon_endpoint/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/carbon_endpoint/enumeration.json": {
+      "sha256": "627c0069bb2fea26be92734ec41214a94c35f87fc188095ea2c6196a427e7c66",
+      "bytes": 5647
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/carbon_endpoint/independent_audit.json": {
+      "sha256": "f6d1ad45a968d5e080e2adc9c2cdffc6960ebb81fc0ab6010c7b1cf9f279463d",
+      "bytes": 5115
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/carbon_endpoint/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/carbon_endpoint/summary.json": {
+      "sha256": "f25f563a94b59682e38027b58c3526e2c3e563208d7aea4e9122eaea8b3a94ee",
+      "bytes": 1935
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/compromise/dispatch.csv": {
+      "sha256": "701b2586f5867efa92e170fb19fc6f10079b5c435f7ea517b0550ab3ceb8474f",
+      "bytes": 163479
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/compromise/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/compromise/enumeration.json": {
+      "sha256": "a9e25c761fb537091656fb5269dbc20b88ab0c155391147a5109b2c895049e32",
+      "bytes": 4328
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/compromise/independent_audit.json": {
+      "sha256": "b8b014313e0775477601830e3ec5f0e8c7c67e964dda013a7681d3ce37e060fc",
+      "bytes": 5060
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/compromise/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/compromise/summary.json": {
+      "sha256": "9a220a814f109f72cae38e62f2753f6451a74e789900bdf62d8e11ee40c4d16b",
+      "bytes": 1975
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/conditional_thresholds.csv": {
+      "sha256": "0e48676c2fe008698c6b5ae116481932a4c623e46941a6a06696d80c098d3506",
+      "bytes": 788
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/cost_endpoint/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/cost_endpoint/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/cost_endpoint/enumeration.json": {
+      "sha256": "bf79f74e7c495cb31464c378f97f2c0978eb10d2ef300c6a0cc6fd46bedb9a04",
+      "bytes": 5612
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/cost_endpoint/independent_audit.json": {
+      "sha256": "548db047c2106629e8b0809acfd317525ada85ad4b285dbb2fd21e7744550452",
+      "bytes": 5131
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/cost_endpoint/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/cost_endpoint/summary.json": {
+      "sha256": "a3c7ac4f8bbad46427321c3fc156d23ade9193fc415c2365e2aad7fefa013678",
+      "bytes": 1949
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/decision_table.csv": {
+      "sha256": "62c409f635c35e14c90bd31814064893f8535bcbb4b7ccea28710d8a2c6a7485",
+      "bytes": 613
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/hp_one/dispatch.csv": {
+      "sha256": "4d2b2d66a923ab39e36cce74273887d4cf0d969da730892fdb068ad6371755f9",
+      "bytes": 163290
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/hp_one/effective_protocol.json": {
+      "sha256": "04328c05865b01dc160f85eaee2daaa378451998f21059a4925d14a27089e96a",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/hp_one/enumeration.json": {
+      "sha256": "78b33069a2b18c813dca7027f9fe592421cc2b6be14b1b5dede3a7780689dbfd",
+      "bytes": 1874
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/hp_one/independent_audit.json": {
+      "sha256": "3664b35a0e9cb09b059d8ee09e7c85f0c734954204d27446adaf5d73d46951cd",
+      "bytes": 4529
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/hp_one/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/hp_one/summary.json": {
+      "sha256": "9229dd4882fbc5d8658044dca157abfb4749db571a4c2ca0ee417ae267adbed3",
+      "bytes": 1919
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/input.csv": {
+      "sha256": "19d749061532deb6ef4e8f4610f924434f635abeae1c8280f83fb8849c61d9f9",
+      "bytes": 549321
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/protocol.json": {
+      "sha256": "5bdc67ab2753dfd7296f51816977a1c28d3db280f5e23e0a852c6be1256d2633",
+      "bytes": 2919
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/resistance/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/resistance/effective_protocol.json": {
+      "sha256": "1ec4d3218c78d40cc89ada9cc56f45c64260895f64455b82b276f1d59c1a3322",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/resistance/enumeration.json": {
+      "sha256": "b5f1cf9ce5df7368fc7368c4439285488f4343596e9dc451fb58b0f3a3880df8",
+      "bytes": 1882
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/resistance/independent_audit.json": {
+      "sha256": "1864a822651c7c7d4c82df7d24f71cfaaf49381b2e7f686e374f1bdf9c7f1ebf",
+      "bytes": 4547
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/resistance/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_0/resistance/summary.json": {
+      "sha256": "f536ef4d26b2101412fc748fbed23e7624e680ae1af052ca28120c14a287c698",
+      "bytes": 1927
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/hp_one/dispatch.csv": {
+      "sha256": "97791ef353982ad1dddd1038df79fba11e4d44f0171409f19356d6e24152b4e1",
+      "bytes": 163640
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/hp_one/effective_protocol.json": {
+      "sha256": "0b663a7b5d9962daf68b01b5bb26ab68eeada0ede28fd658c3465f6b2229f055",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/hp_one/enumeration.json": {
+      "sha256": "b12bb33b1224bd615f59928fbbccb5ff75f150f172990e3fc658f858a10b705b",
+      "bytes": 1872
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/hp_one/independent_audit.json": {
+      "sha256": "2e11736df5186f7b9e192ec1311af7d90fdb82bd619e319df8ea4304f7f3d2f7",
+      "bytes": 4527
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/hp_one/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/hp_one/summary.json": {
+      "sha256": "c6092fe63bd1305b15d36dff179e103ae78782cf315381b50e4a3d31cb7e88bd",
+      "bytes": 1917
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/input.csv": {
+      "sha256": "2ed5aacc2aae100bf7f65a8c5cf9fe6624d6b28386a40602f7929bc5d41e2a52",
+      "bytes": 549186
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/protocol.json": {
+      "sha256": "2d0f119a0db5be5d3f84156380a5907f1402bbc1499cba5850c25d06ebd44cef",
+      "bytes": 2919
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/resistance/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/resistance/effective_protocol.json": {
+      "sha256": "73910c64f683187f148cae08ffc364234ca444a3c0d3f46b0b8f58af7b6753df",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/resistance/enumeration.json": {
+      "sha256": "da3197a04e720d989a94146bfc506dae62c680c51dcb5db96a992882048dec1d",
+      "bytes": 1885
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/resistance/independent_audit.json": {
+      "sha256": "1217fc6a00675ef1b1e60795e0d431b3686c81a91734e891f949a9715ababaff",
+      "bytes": 4547
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/resistance/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/design_sensitivity/theta_1/resistance/summary.json": {
+      "sha256": "8d043f0d59f011fa7121b5ee4cf534134b7ff2c187a918c56c542cbd231ccbf2",
+      "bytes": 1930
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_0/dispatch.csv": {
+      "sha256": "3225c831a4c3fea1263a274888517e9df468431c697ef32aba89f3a239b7c711",
+      "bytes": 165914
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_0/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_0/enumeration.json": {
+      "sha256": "a7b7bb0f23aaa3f1c93b4a4be4b47995f2f9ca8af424b02c560b85b78f5a0425",
+      "bytes": 4317
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_0/independent_audit.json": {
+      "sha256": "2b086ebaa7a841f1c4d8a5fabf932296bdc905cddace887932c5f70578aca317",
+      "bytes": 5055
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_0/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_0/summary.json": {
+      "sha256": "2af77e53d9013ce268122ac1ea959baa0c62976a56d7386589226b5c41924520",
+      "bytes": 1969
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_1/dispatch.csv": {
+      "sha256": "701b2586f5867efa92e170fb19fc6f10079b5c435f7ea517b0550ab3ceb8474f",
+      "bytes": 163479
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_1/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_1/enumeration.json": {
+      "sha256": "4d7afba377294d1e6f3e2e303bcb9062c897f5cc7486481d314fda197f2f101f",
+      "bytes": 4328
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_1/independent_audit.json": {
+      "sha256": "6d46cf8dc474653fbbe6aef9febc9ca4d8090288de8de4e6bbce0514cd3a1f02",
+      "bytes": 5059
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_1/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_1/summary.json": {
+      "sha256": "db9a234d9404400a5769624a189a3e985e57c87df1c203b9e364963cb999bc30",
+      "bytes": 1975
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_2/dispatch.csv": {
+      "sha256": "701b2586f5867efa92e170fb19fc6f10079b5c435f7ea517b0550ab3ceb8474f",
+      "bytes": 163479
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_2/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_2/enumeration.json": {
+      "sha256": "a9e25c761fb537091656fb5269dbc20b88ab0c155391147a5109b2c895049e32",
+      "bytes": 4328
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_2/independent_audit.json": {
+      "sha256": "ea0b67d909541ffdd591aff8745505fd33e6793c69a54753169273398c5d618d",
+      "bytes": 5059
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_2/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_2/summary.json": {
+      "sha256": "9a220a814f109f72cae38e62f2753f6451a74e789900bdf62d8e11ee40c4d16b",
+      "bytes": 1975
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_3/dispatch.csv": {
+      "sha256": "701b2586f5867efa92e170fb19fc6f10079b5c435f7ea517b0550ab3ceb8474f",
+      "bytes": 163479
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_3/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_3/enumeration.json": {
+      "sha256": "c3c58953c7408c21a3c70ac10a333a81d0819f005eebb0caec3f08753883ae5f",
+      "bytes": 4336
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_3/independent_audit.json": {
+      "sha256": "4d2a6933a093f1b266775fa5ef1462adc79f3a94c33fcb44eaa32a388f1b2c69",
+      "bytes": 5062
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_3/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_3/summary.json": {
+      "sha256": "0bd13f1be67d9929c5f5cc00160e282a9073ae15a0663f6fea7a773beb02d4ee",
+      "bytes": 1978
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_4/dispatch.csv": {
+      "sha256": "b30f7eb03908255d4b8ea8197c49dbdefdda572578d6396572b43da2225866b7",
+      "bytes": 166082
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_4/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_4/enumeration.json": {
+      "sha256": "ebf761c3eaaa573530bd3a61acb944205addbe79cbd63cac0e7cd0d2178376a9",
+      "bytes": 5734
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_4/independent_audit.json": {
+      "sha256": "9f3fb243fedc37d6c09f54de342ecd3704a7b5fdac506b49aaefc514431260d8",
+      "bytes": 5161
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_4/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_4/summary.json": {
+      "sha256": "1ff7128de946cf612e6f94574d9aef75f92b0dfadb703a4c62fa6e576fd5bd8d",
+      "bytes": 1988
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_scan.csv": {
+      "sha256": "b4d697a0aa445f82b2a07af9e02d08c1173b314f0ef3cecf1455e735063f15f8",
+      "bytes": 1303
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/baseline/dispatch.csv": {
+      "sha256": "1967ef5b06a6fe06f2a156edbcf5b6d323207f0b65d53f99e9b3fdd7c3157307",
+      "bytes": 166083
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/baseline/effective_protocol.json": {
+      "sha256": "eb79093d7d51c87574933cc31fcb72365070bebbcacd24ef9edc115956bfdd89",
+      "bytes": 3165
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/baseline/enumeration.json": {
+      "sha256": "1150d7a2805d4567dd8f11a16ca95e7173d82f3821055a2ed29cb484f0e16754",
+      "bytes": 1875
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/baseline/independent_audit.json": {
+      "sha256": "6ea31880ab9546c7457bce1c259d3953f7a4e08e97979f2de99b71be875a800c",
+      "bytes": 4563
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/baseline/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/baseline/summary.json": {
+      "sha256": "8f769cecadf7334531c49738f6e485372a786b25f17717c646fc4d5443eb9d2e",
+      "bytes": 1920
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/compromise/dispatch.csv": {
+      "sha256": "701b2586f5867efa92e170fb19fc6f10079b5c435f7ea517b0550ab3ceb8474f",
+      "bytes": 163479
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/compromise/effective_protocol.json": {
+      "sha256": "cce62104deb75195e20ea809e7437992cc3829298ace97fbf888ff83c574d4d6",
+      "bytes": 3155
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/compromise/enumeration.json": {
+      "sha256": "a187648ebebcc7892a176086b03958ee9420db0402877646ac3ce5747d459478",
+      "bytes": 1900
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/compromise/independent_audit.json": {
+      "sha256": "1ceb0f5bd5a2c48f583207facefd8f26f9f0348a22ab14015f537cdf9de83c57",
+      "bytes": 4588
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/compromise/investments.json": {
+      "sha256": "aa0e522105cf199be866f686ac95c6668391c695af3d8de730ee08c1e3aafb40",
+      "bytes": 89
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/compromise/summary.json": {
+      "sha256": "484a54cacd07f20ddf302ed9d5b593f269aeacfde6d02a451c6576f8c40d0bd3",
+      "bytes": 1945
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_carbon/dispatch.csv": {
+      "sha256": "54e931ab5a6bb4c370f662548d6776a4ce34ab0b683d847ff6a8ea8e42521bd1",
+      "bytes": 165913
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_carbon/effective_protocol.json": {
+      "sha256": "cce62104deb75195e20ea809e7437992cc3829298ace97fbf888ff83c574d4d6",
+      "bytes": 3155
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_carbon/enumeration.json": {
+      "sha256": "992e81639eabffa4f3ffb75132fbfa4b5f45b9af5efab5751db232aee4cd4816",
+      "bytes": 1861
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_carbon/independent_audit.json": {
+      "sha256": "a1f7c6cebdd59efa45dc842b7e69e8575c9151acc661673579229a83b7fb82df",
+      "bytes": 4545
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_carbon/investments.json": {
+      "sha256": "aa0e522105cf199be866f686ac95c6668391c695af3d8de730ee08c1e3aafb40",
+      "bytes": 89
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_carbon/summary.json": {
+      "sha256": "fa35110494bd61c931310e0e0e224b7b22af8356580d5068cfe12d5b26b95057",
+      "bytes": 1906
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_cost/dispatch.csv": {
+      "sha256": "1967ef5b06a6fe06f2a156edbcf5b6d323207f0b65d53f99e9b3fdd7c3157307",
+      "bytes": 166083
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_cost/effective_protocol.json": {
+      "sha256": "eb79093d7d51c87574933cc31fcb72365070bebbcacd24ef9edc115956bfdd89",
+      "bytes": 3165
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_cost/enumeration.json": {
+      "sha256": "cbc09009372615543fe52c6a0336f9d9b0b5211f5acbd7a75d3e54875bd55b4c",
+      "bytes": 1875
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_cost/independent_audit.json": {
+      "sha256": "41dce2cea56005ae75a1970d65b6647be1e2f0e16304f487aad8a04b946315a5",
+      "bytes": 4563
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_cost/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay/low_cost/summary.json": {
+      "sha256": "fa4c2b8c57c3085c5ce75724dd3d795c09f2be9740b6c5899b6179fcebf8acee",
+      "bytes": 1920
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/fixed_replay_checks.json": {
+      "sha256": "abf804633e95ed69cb9b724b9577a921f6101b19b4e4ce1e49d156f5673ee75d",
+      "bytes": 565
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/frozen_code/audit_investment_reference.py": {
+      "sha256": "ec67e28dbc1f82c49e3ab99778eb45f041ca48b235c982d796f4dfda1c219121",
+      "bytes": 30948
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/frozen_code/run_investment_reference.py": {
+      "sha256": "919ba8f570219c28e638a58ddc94d41d7effab2300d66bc21ea3674fdd958826",
+      "bytes": 35985
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/independent_audits.json": {
+      "sha256": "00f2aa82277e95dd6e49db0a56bfb63269821066418a8e22bce40fbc26c5b2f7",
+      "bytes": 123098
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/admission_tou.json": {
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "bytes": 15146
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/field_identity.csv": {
+      "sha256": "0535a448b87dedd5ce59bf1fa0bc1ebaa541cad1f6e05adc09050b5e8ed193e3",
+      "bytes": 4661
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/input.csv": {
+      "sha256": "39aad8ca3ba5f7ce127a86c38317b5e1b41d2c84e6f56d21fc86bf20c20bc9f9",
+      "bytes": 549293
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/input_manifest.json": {
+      "sha256": "d0f40288d6f82686f6899bf23e1774f8c3e871b1ea1ffbfb11f9e8d24c776da8",
+      "bytes": 1308
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/main_case_source_join.json": {
+      "sha256": "423b89e8599dd7b4b42de66921d8009a48ec7866d297ec4f5e2eb242e0ada33c",
+      "bytes": 47516
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/monthly_tariff_verified.csv": {
+      "sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "bytes": 1723
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/protocol.json": {
+      "sha256": "e85fb5e198f5fda724426b3df02de23359ef655be6f1f0b04441b8618c0d2d2b",
+      "bytes": 2919
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/source_registry.json": {
+      "sha256": "ddb5606ee84c7b854c05b3681b5de5f6e7c8367476532e755c271bdf19bcc659",
+      "bytes": 1114
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/tou_account_and_hours.json": {
+      "sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "bytes": 3143
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/wuhan_2024_2025_hourly_tou.csv": {
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "bytes": 503515
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/manifest.json": {
+      "sha256": "16506fa76e49495ae9cf1b9baae48c5ce384e482a0ab50ee3a40a6c01b5ac8a9",
+      "bytes": 20065
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_decision_intervals.csv": {
+      "sha256": "46e447a13823f19c0c194d76de2e6d6f635df3b92496ae2f249776e42a5be609",
+      "bytes": 837
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n0/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n0/effective_protocol.json": {
+      "sha256": "10bd7a108eb5092e992f3ebd210dd7cca7745172651e668e5ebc755cae3ba620",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n0/enumeration.json": {
+      "sha256": "206a9d70f395372e800a03bf5876e5abbdc6200933f9210aa572b3bc0a21d115",
+      "bytes": 1884
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n0/independent_audit.json": {
+      "sha256": "16c7629ff3719eca824585da35914786835fa34f3cc29ae734ecae4d18cd4d47",
+      "bytes": 4541
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n0/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n0/summary.json": {
+      "sha256": "05931c3fb5dd3e933721c9e26105a1f3f78eb7fa584ced6c4b6f3cc40c76dbf9",
+      "bytes": 1929
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n1/dispatch.csv": {
+      "sha256": "701b2586f5867efa92e170fb19fc6f10079b5c435f7ea517b0550ab3ceb8474f",
+      "bytes": 163479
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n1/effective_protocol.json": {
+      "sha256": "8ee207192851633f261149d9d0190c14a0013ee8b9096857219573c2cf211c08",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n1/enumeration.json": {
+      "sha256": "53a03ddb23d4fdee2eec0f530820233b2da62f67588de0e7f6ef0ed14371c23d",
+      "bytes": 1871
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n1/independent_audit.json": {
+      "sha256": "d91295746f350e8eb0a01c516d13b50c21a904abad9c807c6b13c9ba46f27204",
+      "bytes": 4526
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n1/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n1/summary.json": {
+      "sha256": "4e6396516314b8c8ff9389f56aedcb4f5019fbfd7cdf48b3fe66b6b21633a4d1",
+      "bytes": 1916
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n2/dispatch.csv": {
+      "sha256": "4a5d1a011dbab968dfaf44c0604aff4a09d2301559f997fb0a2971382bee4d88",
+      "bytes": 163485
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n2/effective_protocol.json": {
+      "sha256": "41bac51e5d067cbdfb8a2100f282be470faed5d78c84c178f1520b9e8cf792b2",
+      "bytes": 3047
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n2/enumeration.json": {
+      "sha256": "d7dfe625b7991d05abc649862347d35da0c760333f9fc2f89ea54f22cc8b4cb7",
+      "bytes": 1867
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n2/independent_audit.json": {
+      "sha256": "ca9af2bdd6a1ab6366a36bcace986f5e09e4f5a03343f8355a08881f30537e90",
+      "bytes": 4525
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n2/investments.json": {
+      "sha256": "e1f3373f5171a51de4ffb985336fbf324881835e65149a2004f396d76228c388",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_threshold_plans/n2/summary.json": {
+      "sha256": "49459e1bb88282522c7347009d31c073f2dc78d530f681eba4b0858693100ee6",
+      "bytes": 1912
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F1/dispatch.csv": {
+      "sha256": "377d94d331726c5003f4460ce7caf8c07f0363ff7ec885156e5b7230b1176a8b",
+      "bytes": 167248
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F1/effective_protocol.json": {
+      "sha256": "2711856881aa3eaf98245928d72b129661371d46a649ee45a93412cc0fc8dda8",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F1/enumeration.json": {
+      "sha256": "6b25a7c01541d73cfd9600da03be908bc051f5f1968f2f09596c9d00cc09e8d9",
+      "bytes": 5623
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F1/independent_audit.json": {
+      "sha256": "780a2f052fc07cc4e1862d0aae78b0e4bc284601de8046660f0e5e9a8d170927",
+      "bytes": 5154
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F1/investments.json": {
+      "sha256": "4cc84fab9f43960123bba11cc8069cd3e6775df45f990d7ee61b6e36f057d884",
+      "bytes": 101
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F1/summary.json": {
+      "sha256": "29b7f1ec92b63a94392e69505939b8dcad4a8c385a1ab292996e0e9ab8ee4dc8",
+      "bytes": 1964
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F12/dispatch.csv": {
+      "sha256": "85b96180b369dab84b857d137bf62c9ae02831eec132a566dacb7665f04e1584",
+      "bytes": 163479
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F12/effective_protocol.json": {
+      "sha256": "883ffa07651bb7bb099d4bc5993043c04b9dc7dd46e43ea760d1bacf0747aacb",
+      "bytes": 3088
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F12/enumeration.json": {
+      "sha256": "d17aac2fd68695498fcf11386a85b28e9c7627313d55e5077374075badf0f621",
+      "bytes": 5635
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F12/independent_audit.json": {
+      "sha256": "37f6ebaeb36e97cbc907f512bed3e4c8bd69fb19e2342202d6c4f38eb3d1ec42",
+      "bytes": 5123
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F12/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F12/summary.json": {
+      "sha256": "1514052b277df0821ac381df617b9354c998f8fba2401d2eee4de7799651e7a8",
+      "bytes": 1932
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F20/dispatch.csv": {
+      "sha256": "384f129e23bcccefe2f19a648617d1162c43d90c82f006181563f679e214f74f",
+      "bytes": 163479
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F20/effective_protocol.json": {
+      "sha256": "a38a82713924b299ec22eeb70e0208190921d134cee99f5656a15ce13a20f3e8",
+      "bytes": 3088
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F20/enumeration.json": {
+      "sha256": "1c56c6e699d622de8bd1d04f333ec9377f3675f922f6abea136417e09a6f74a0",
+      "bytes": 5640
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F20/independent_audit.json": {
+      "sha256": "cda274012388ef21a55876dcd6c4a3f6a598482cf7ec7a79ec8c4bef5e62160c",
+      "bytes": 5131
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F20/investments.json": {
+      "sha256": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+      "bytes": 88
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F20/summary.json": {
+      "sha256": "178b304e91efaf8fadc3f77c80a7053f7804a1afababcd3bc362c75aee79eda5",
+      "bytes": 1934
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F5/dispatch.csv": {
+      "sha256": "2fa41d0f2b30ed5c39751e197f0a5ac38b452a724b6e38c8000f0d44feab0d98",
+      "bytes": 166056
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F5/effective_protocol.json": {
+      "sha256": "24e7db388ff571c36460f1802d8bd0b7a2ca23cd97833395f0bc577ad60d2f31",
+      "bytes": 3087
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F5/enumeration.json": {
+      "sha256": "e17ba695b8d53bb8ec1e378dbebf65f622c20b71243ddd9dad47fa24bb5a76bb",
+      "bytes": 5612
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F5/independent_audit.json": {
+      "sha256": "9bf7abacd58b377ca618881131ed4a74272115ae47b460151fb17ce6f77f15ef",
+      "bytes": 5142
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F5/investments.json": {
+      "sha256": "0a3f8789392179c3800167465809d0c5eb10447a65bf28d45e6d460221571bba",
+      "bytes": 93
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_checks/F5/summary.json": {
+      "sha256": "a14f9533ce7d06bc48e71b0ec380b6ebd28bea051af730dc18ffc0131a9a7b12",
+      "bytes": 1949
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/repeat_factor_decisions.csv": {
+      "sha256": "ce588c0d0507917b2323430a74447d738b61276218437086f6e10f87ec289389",
+      "bytes": 995
+    },
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/source_check.json": {
+      "sha256": "0fdcd5f7a4543b0b9d67cd73e8fe4323c3aa350aef5ed1da4a94dffe6722a3a7",
+      "bytes": 3756
+    },
+    "scripts/audit_investment_reference.py": {
+      "sha256": "ec67e28dbc1f82c49e3ab99778eb45f041ca48b235c982d796f4dfda1c219121",
+      "bytes": 30948
+    },
+    "scripts/report_three_city_decision_weight_confirmation.py": {
+      "sha256": "f71aa078604faf531330346a68bf53d19be94280d27dcfff5b63dfde6bffb8b4",
+      "bytes": 8352
+    },
+    "scripts/reproduce_admitted_reference.py": {
+      "sha256": "6de45833472b05afb3b5f1501443f4c87cbc8cfdcf4affd69b35fc524786da97",
+      "bytes": 23052
+    },
+    "scripts/run_investment_reference.py": {
+      "sha256": "919ba8f570219c28e638a58ddc94d41d7effab2300d66bc21ea3674fdd958826",
+      "bytes": 35985
+    },
+    "scripts/run_three_city_decision_weight_confirmation.py": {
+      "sha256": "f0d6e7510329f8e27963ee0fecaba9613065f1ee0f8ef84e8d1ebc38f3c580e3",
+      "bytes": 43809
+    },
+    "scripts/verify_three_city_decision_weight_confirmation.py": {
+      "sha256": "b15639659eb57b5afedad562b62521304d0d8234ec771c638489e70eabb07e1a",
+      "bytes": 34834
+    },
+    "scripts/verify_three_city_decision_weight_native_precision.py": {
+      "sha256": "570e3f25d2e4f18d25a1741ecdd9f2aab980eb1c14a8bc3e5c294b14d472d652",
+      "bytes": 5851
+    },
+    "src/heatplan/decision_weight_calibration.py": {
+      "sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+      "bytes": 18451
+    },
+    "src/heatplan/hard_weight_calibration.py": {
+      "sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "bytes": 6084
+    },
+    "src/heatplan/scenarios.py": {
+      "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "bytes": 26312
+    },
+    "tests/test_three_city_decision_weight_confirmation.py": {
+      "sha256": "ae8e7dd6ed0deec2182cf9a5ddb8e09f5de51245261e4c2f00a24a3518e5f34f",
+      "bytes": 10774
+    },
+    "tests/test_verify_three_city_decision_weight_confirmation.py": {
+      "sha256": "a72a41d16e8ec5b3d08c5d43843ad38d9ba248dff50ebeaef30c4124db974d37",
+      "bytes": 16927
+    }
+  },
+  "file_count": 586,
+  "total_bytes": 46967292
+}

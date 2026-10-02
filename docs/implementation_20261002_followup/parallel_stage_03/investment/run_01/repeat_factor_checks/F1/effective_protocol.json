@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "identity": "Public evidence + frozen hypothetical design axes; no exact FT device performance admission",
+  "window_start_inclusive": "2024-11-16T00:00:00+08:00",
+  "window_end_exclusive": "2025-03-16T00:00:00+08:00",
+  "physics": {
+    "H_kw_per_K": 0.1043,
+    "C_kwh_per_K": 0.535576,
+    "initial_c": 20.0,
+    "terminal_c": 20.0,
+    "min_c": 20.0,
+    "max_c": 27.0,
+    "dt_hours": 1.0
+  },
+  "design": {
+    "eta_resistance": 0.97,
+    "eer_cooling": 3.0,
+    "max_resistance_kw": 6.0,
+    "max_cooling_kw": 2.0,
+    "max_grid_kw": 4.0,
+    "resistance_capex_cny_per_kw": 400.0,
+    "cooling_package_capex_cny": 1500.0,
+    "hp_package_capex_cny": 17800.0,
+    "resistance_fixed_om_cny_per_kw_window": 10.0,
+    "hp_fixed_om_cny_per_unit_window": 80.0,
+    "cooling_fixed_om_cny_per_window": 20.0,
+    "repeat_window_factor": 1.0,
+    "hp_unit_candidates": [
+      0,
+      1,
+      2
+    ]
+  },
+  "performance_design": {
+    "carnot_fraction": 0.35,
+    "water_supply_reference_c": 35.0,
+    "package_available_fraction": 0.75,
+    "cop_formula": "theta*(273.15+35)/(35-Tout); theoretical design proxy only, not manufacturer table",
+    "capacity_formula": "8kW nominal label * hypothetical available fraction; no real derating curve claim"
+  },
+  "epsilon_points": 5,
+  "sensitivity_design_cases": [
+    {
+      "carnot_fraction": 0.25,
+      "repeat_window_factor": 5.0
+    },
+    {
+      "carnot_fraction": 0.45,
+      "repeat_window_factor": 5.0
+    }
+  ],
+  "repeat_factor_semantics": "Five repetitions of this exact 120-day operating window, no discount, escalation or new weather. A declared comparison weight, not physical life, five actual years, or full LCC.",
+  "interval_physics": "Constant hourly weather/gains/controls; exact exponential 1R1C. Both start/end states bounded; trajectory monotone within each interval, so endpoint comfort implies intra-hour comfort in this hourly forcing model.",
+  "service": "Complete heating/cooling with finite priced resistance and independent cooling design assets. Same comfort/gains/weather/electric limit/initial-terminal state; zero unmet heat/cold.",
+  "asset_boundary": "New design reference package and hypothetical indoor compatible service. Historical FT price ends before indoor main pipe; indoor terminal, grid upgrades, taxes outside published tariff, reactive charge and full actual OM unresolved.",
+  "unclaimed": [
+    "FT8 COP/derating/part-load/minimum modulation/defrost measurements",
+    "Actual Wuhan building/account/terminal/grid eligibility",
+    "Current local purchase quote",
+    "Reliability and N-1",
+    "Independent station weather validation",
+    "Full life-cycle economics/profit/IRR",
+    "Sub-hour weather disturbances and device ramping"
+  ],
+  "all_om_are_declared_scenario_values": true,
+  "no_unpriced_free_backup": true
+}

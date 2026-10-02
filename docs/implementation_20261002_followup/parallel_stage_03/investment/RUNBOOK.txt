@@ -1,0 +1,36 @@
+本轮完成的是条件投资规划实现及实验；FT8真实工程性能准入仍未完成，两个状态单列。
+最终选用：run_03（24方案/2880小时/5个ε/4次固定容量重放），90项回归测试通过。
+默认数值复算输入包不含任何PDF；沿用已审核来源身份，不声称本次核验缺失原件SHA或再次逐页审阅。
+
+结果入口：
+run_03/decision_table.csv、epsilon_scan.csv、package_price_decision_intervals.csv
+HANDOFF.json：真实锚定值、研究条件、费用边界、仍缺少的FT8工程资料
+run_03/source_check.json：本次实际检查、缺失原件URL/SHA、继承来源声明
+REPRODUCTION_CHECK_02.json：run_03与reproduce_02全部24方案的数值/资产/时序复现检查
+scope_counterexample_9000_01/result.json：完整2880小时的范围反例（9000元是假设压力价）
+strict_missing_original_01/manifest.json：严格模式缺少注册原件时拒绝，solver_runs=0
+脚本与证据校验总入口：DELIVERY_MANIFEST.json
+
+重新准备并运行（用新输出目录，不覆写旧证据）：
+D:/app/anaconda3/python.exe -B -X utf8 scripts/run_investment_reference.py --out docs/implementation_20261002_followup/parallel_stage_03/investment/new_run
+
+仅依赖冻结代码和处理后输入包的全量复算（不读取原工作工程输入，不要求PDF）：
+D:/app/anaconda3/python.exe -B -X utf8 docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/frozen_code/run_investment_reference.py --input-bundle docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle --out docs/implementation_20261002_followup/parallel_stage_03/investment/new_reproduction
+
+只做来源/输入检查，不运行优化：在上一条命令添加 --check-only。
+严格注册原件检查：再添加 --verify-original-sources；目前无PDF包会在求解前拒绝，列出缺失URL和SHA。
+如需严格模式通过，应另复制输入包到新目录并补齐对应SHA原件，保持最终冻结包不动。严格模式只覆盖已注册投资原件，不代表重审全部天气/建筑/电价来源。
+
+只读审计24个导出方案：
+D:/app/anaconda3/python.exe -B -X utf8 scripts/audit_investment_reference.py --root docs/implementation_20261002_followup/parallel_stage_03/investment/run_03
+
+90项测试：
+D:/app/anaconda3/python.exe -B -X utf8 -m pytest tests/test_investment_reference_solver.py tests/test_investment_reference_audit.py tests/test_investment_reference_portable.py -q
+
+范围与失败语义：baseline下界只属于[0]；固定重放下界只属于记录的k/R/C；自由投资下界属于实际登记并完全枚举的候选范围。
+只有primary status2可认定该候选不可行。primary0之后secondary失败会保留primary证据并返回未完成，不输出确定端点；未知primary状态使全局下界为null。
+
+研究COP/容量/EER/备用设备费用不是FT8真实性能范围；费用是CAPEX+同一120天窗的显式重复运行费用，不是年度账单或完整生命周期成本。
+真实户内末端、配电、完整实际OM等未知差额保留符号，不默认为0。
+旧run_01/run_02/reproduce_01和旧锁全部保留，但缺少当前scope证据，不能作为本轮验收输出。
+测试临时目录是局部篡改/失败样例，不作为正式实验交付；上传范围由主统筹确定。

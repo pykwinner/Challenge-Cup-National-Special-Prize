@@ -1,0 +1,263 @@
+{
+  "schema_version": 2,
+  "completion_date_local": "2026-10-02",
+  "deliverable_status": {
+    "parameterised_investment_reference_complete": true,
+    "exact_FT_engineering_performance_admission_complete": false,
+    "actual_field_project_validation_complete": false,
+    "full_life_cycle_economics_or_profit_complete": false
+  },
+  "identity": "公开来源锚定的条件投资决策参考，整数采购价真实，设备性能和未公开费用是明确研究轴。不是FT8工程性能准入或当地工程优化实证。",
+  "selected_primary_run": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03",
+  "primary_manifest_sha256": "16506fa76e49495ae9cf1b9baae48c5ce384e482a0ab50ee3a40a6c01b5ac8a9",
+  "source_registry": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/source_registry.json",
+  "field_identity": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/input_bundle/field_identity.csv",
+  "source_join_retained": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_source_join.json",
+  "engineering_join_not_overridden": true,
+  "code": [
+    {
+      "path": "scripts/run_investment_reference.py",
+      "sha256": "919ba8f570219c28e638a58ddc94d41d7effab2300d66bc21ea3674fdd958826"
+    },
+    {
+      "path": "scripts/audit_investment_reference.py",
+      "sha256": "ec67e28dbc1f82c49e3ab99778eb45f041ca48b235c982d796f4dfda1c219121"
+    },
+    {
+      "path": "tests/test_investment_reference_solver.py",
+      "sha256": "1e9d878c9dba6dc93afb77afad7a070e5f369ffbc1a8b7c9689c13f677d45210"
+    },
+    {
+      "path": "tests/test_investment_reference_audit.py",
+      "sha256": "d1087a79a7066a142f6c23bd641059a9f19850c26fcd33833c6f177b05c3c4f8"
+    },
+    {
+      "path": "tests/test_investment_reference_portable.py",
+      "sha256": "99d89cc9aa862022c60f74528e0da79b4d4c2be434e509b52ff4d1b39d8ccf35"
+    }
+  ],
+  "runtime": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.15.3",
+    "solver": "scipy.optimize.linprog(method=highs), complete enumeration of registered integer heat-pump package counts",
+    "core_heatplan_solver_used": false
+  },
+  "actual_known_inputs": [
+    "Public BESTEST prescribed prototype geometry/material-derived H/C with declared RC approximation",
+    "NASA gridded historical Wuhan weather and declared 120-day local interval",
+    "Published Hubei monthly industrial agent-purchase TOU energy-charge rows under explicitly conditional eligibility",
+    "2023 Hubei annual-average grid CO2 factor applied as fixed reference to 2024/25",
+    "FT-FDRS-8/380FWAW nominal8kW label, original2024 installed-package gross price17800 and contractual installation/warranty boundaries"
+  ],
+  "research_inputs_not_actual_equipment_ranges": [
+    "Fraction of reversible heating Carnot COP .25/.35/.45 at explicit35C water reference",
+    "Availability fraction .75 of nominal label; no actual ambient/defrost/part-load map",
+    "Resistance efficiency .97, finite6kW investment bound,400 CNY/kW assumed all-in budget and10 CNY/kW/window recurring budget",
+    "Independent finite2kW cooler with hypothetical EER3 and1500 CNY package/20 CNY/window recurring budget",
+    "HP recurring budget80 CNY/unit/window; not contract warranty OM=0",
+    "Shared4kW electrical design limit; not transformer/account capacity proof",
+    "Integer package candidates0/1/2; continuous resistance capacity; no free1000kW source",
+    "Repeated-window weights1/5/12/20 with no new calendar weather, discount or escalation; not physical life or real payback"
+  ],
+  "service_boundary": {
+    "hours": 2880,
+    "thermal_comfort_c": [
+      20,
+      27
+    ],
+    "initial_and_terminal_c": 20,
+    "same_weather_gains_and_service_all_plans": true,
+    "heating_and_cooling_complete": true,
+    "hourly_power_limits_and_equal_service_checked": true,
+    "intra_hour_check": "Under constant hourly forcing and controls, exact first-order RC trajectory is monotone between checked boundary states. This is not sub-hour disturbances/device ramp validation.",
+    "no_heat_cool_simultaneity": true,
+    "no_unpriced_infinite_backup": true,
+    "reliability_N_minus_one": "Not claimed; HP-only reference can be feasible without redundancy under the deterministic design availability assumptions."
+  },
+  "four_decisions": [
+    {
+      "decision": "baseline",
+      "capex_cny": 2406.678,
+      "window_energy_bill_cny": 2356.473203156348,
+      "window_fixed_om_cny": 42.66695,
+      "window_co2_kg": 1299.7819823881791,
+      "electricity_kwh": 3214.0998575375347,
+      "comparison_cost_cny": 14402.37876578174,
+      "hp_units": 0,
+      "resistance_capacity_kw": 2.266695,
+      "cooling_capacity_kw": 2.0
+    },
+    {
+      "decision": "low_cost",
+      "capex_cny": 2406.678,
+      "window_energy_bill_cny": 2356.473203156348,
+      "window_fixed_om_cny": 42.66695,
+      "window_co2_kg": 1299.7819823881791,
+      "electricity_kwh": 3214.0998575375347,
+      "comparison_cost_cny": 14402.37876578174,
+      "hp_units": 0,
+      "resistance_capacity_kw": 2.266695,
+      "cooling_capacity_kw": 2.0
+    },
+    {
+      "decision": "low_carbon",
+      "capex_cny": 19300.0,
+      "window_energy_bill_cny": 624.9236237817206,
+      "window_fixed_om_cny": 100.0,
+      "window_co2_kg": 336.666523243282,
+      "electricity_kwh": 832.5087122732,
+      "comparison_cost_cny": 22924.6181189086,
+      "hp_units": 1,
+      "resistance_capacity_kw": 0.0,
+      "cooling_capacity_kw": 2.0
+    },
+    {
+      "decision": "compromise",
+      "capex_cny": 19300.0,
+      "window_energy_bill_cny": 611.1790878785123,
+      "window_fixed_om_cny": 100.0,
+      "window_co2_kg": 355.30068417078746,
+      "electricity_kwh": 878.5872506696032,
+      "comparison_cost_cny": 22855.89543939256,
+      "hp_units": 1,
+      "resistance_capacity_kw": 0.0,
+      "cooling_capacity_kw": 2.0
+    }
+  ],
+  "comparison_cost_semantics": "CAPEX + F*(120-day electricity energy charges + explicitly assumed fixed window OM), F=5 at main four-row comparison; no annualisation. Values exclude unknown costs described below and must retain comparison label.",
+  "unpriced_boundaries_not_zero": {
+    "K_common_cny": null,
+    "delta_K_HP_minus_resistance_cny": null,
+    "delta_OM_HP_minus_resistance_cny_per_window": null,
+    "terms": [
+      "Actual compatible indoor distribution/terminal cost beyond contract connection boundary",
+      "Actual electrical connection/upgrades and account extras/reactive adjustment",
+      "Device auxiliaries, water, servicing and complete actual maintenance not demonstrated by quality warranty",
+      "Actual tax-credit/settlement treatment outside published gross prices",
+      "Replacement, disposal, residual value and physical life"
+    ],
+    "interpretation": "Common equal costs would cancel ranking but are not zero or known. Differential excluded costs must modify thresholds; they cannot be asserted equal for an actual project without evidence. Research-budget costs already included do not close real costs."
+  },
+  "thresholds": {
+    "package_price_maximum_for_HP1_cny_at_fixed_other_design": 9346.483316642709,
+    "price_axis_method": "For each n=0/1/2 compute exact LP optimum affine cost line C_n(P)=b_n+nP; the lower envelope gives all registered package-price decision intervals without fabricating a vendor price range. HP2 has no nonnegative winning price under this declared recurring-budget scenario.",
+    "real_historical_anchor_cny": 17800,
+    "correction_equation": "HP1 vs no-HP purchase condition: P <= 9346.483316642709 - delta_K - 5*delta_OM. delta terms are additional differential costs outside the declared comparison ledger, unknown for real project.",
+    "illustrative_corrections": [
+      {
+        "additional_HP_minus_resistance_out_of_boundary_capex_cny": 0,
+        "additional_HP_minus_resistance_out_of_boundary_OM_cny_per_window": 0,
+        "repeat_window_factor": 5.0,
+        "maximum_HP_package_price_cny": 9346.483316642709,
+        "identity": "Explicit illustrative design differences, not measurements or FT interval bounds; zero is a declared equal-extra-cost scenario, not missing values filled zero"
+      },
+      {
+        "additional_HP_minus_resistance_out_of_boundary_capex_cny": 2000,
+        "additional_HP_minus_resistance_out_of_boundary_OM_cny_per_window": 0,
+        "repeat_window_factor": 5.0,
+        "maximum_HP_package_price_cny": 7346.483316642709,
+        "identity": "Explicit illustrative design differences, not measurements or FT interval bounds; zero is a declared equal-extra-cost scenario, not missing values filled zero"
+      },
+      {
+        "additional_HP_minus_resistance_out_of_boundary_capex_cny": 0,
+        "additional_HP_minus_resistance_out_of_boundary_OM_cny_per_window": 50,
+        "repeat_window_factor": 5.0,
+        "maximum_HP_package_price_cny": 9096.483316642709,
+        "identity": "Explicit illustrative design differences, not measurements or FT interval bounds; zero is a declared equal-extra-cost scenario, not missing values filled zero"
+      },
+      {
+        "additional_HP_minus_resistance_out_of_boundary_capex_cny": 2000,
+        "additional_HP_minus_resistance_out_of_boundary_OM_cny_per_window": 50,
+        "repeat_window_factor": 5.0,
+        "maximum_HP_package_price_cny": 7096.483316642709,
+        "identity": "Explicit illustrative design differences, not measurements or FT interval bounds; zero is a declared equal-extra-cost scenario, not missing values filled zero"
+      },
+      {
+        "additional_HP_minus_resistance_out_of_boundary_capex_cny": -2000,
+        "additional_HP_minus_resistance_out_of_boundary_OM_cny_per_window": 0,
+        "repeat_window_factor": 5.0,
+        "maximum_HP_package_price_cny": 11346.483316642709,
+        "identity": "Explicit illustrative design differences, not measurements or FT interval bounds; zero is a declared equal-extra-cost scenario, not missing values filled zero"
+      }
+    ],
+    "fixed_plan_repeat_factor_crossing": 10.008123023394138,
+    "repeat_crossing_scope": "Equality of the two fixed F5-optimal plans only; globally reoptimised four-factor table shows HP0 at1/5 andHP1 at12/20. Not an exact universal lifetime/payback threshold."
+  },
+  "epsilon_result": {
+    "registered_samples": 5,
+    "distinct_observed_main_points": 3,
+    "complete_Pareto_frontier_claim": false,
+    "compromise_rule": "Predeclared middle cap among5 uniformly spaced endpoint CO2 caps; no claim of a normative recommendation or knee. Repeated feasible points are retained.",
+    "minimum_cost_and_baseline_coincide": true
+  },
+  "quality": {
+    "all_primary_plans_audited": 24,
+    "test_count": 90,
+    "tests_passed": true,
+    "maximum_reported_LP_primal_dual_gap": 1.2797158888133708e-09,
+    "maximum_enumerated_global_primary_gap": 1.2902155503979884e-05,
+    "maximum_independent_RC_residual_c": 9.106315701501444e-11,
+    "audit_scope": "Independent arithmetic/chronology/physical feasibility, actual candidate-scope/fixed asset snapshot/enumeration coverage/statuses, and lower bounds recomputed from reported primary duals. Dual vectors/LP optimality are not independently certified; no actual FT performance/field validity claim.",
+    "fixed_capacity_replay_complete": true,
+    "reproduction_check": "docs/implementation_20261002_followup/parallel_stage_03/investment/REPRODUCTION_CHECK_02.json",
+    "tests_evidence": "docs/implementation_20261002_followup/parallel_stage_03/investment/tests_02.xml",
+    "maximum_independent_electricity_balance_residual_kw": 9.896972130718495e-12,
+    "maximum_absolute_all_plan_summary_reproduction_difference": 3.994045982835814e-09,
+    "maximum_absolute_all_plan_dispatch_reproduction_difference": 1.2909999824728402e-07
+  },
+  "exact_engineering_admission_remaining": [
+    "FT8 same-model versioned actual/test capacity and electrical-input/COP table at ambient/water flow/inlet/outlet conditions, including defrost and minimum part-load/auxiliary measurement boundary",
+    "Compatible existing/new indoor terminal specification and its excluded cost",
+    "Actual account/connection/auxiliary and complete recurring/lifetime/financial inputs if engineering full-economic claims are intended"
+  ],
+  "completed_work_not_changed": [
+    "This investment work did not edit old E0/TOU/common-window admissions, heatplan core, frozen rc4, main README, PPT/PDF or Git/tag/upload state; main coordinator independently owns upload decisions."
+  ],
+  "how_to_use": "Use the conditional price/extra-cost/operating-window design map to decide which documented quotes/performance conditions would support a choice. Do not present scenario COP or price thresholds as actual FT engineering savings.",
+  "local_revision": 3,
+  "bound_scope_and_solver_failure_fixes": {
+    "baseline": "Only [0] is enumerated and its bound is scoped as baseline_no_HP; cannot be used as unrestricted [0,1,2] bound.",
+    "free_investment": "All and only registered effective candidates enumerated exactly once; protocol/summary/enum jointly checked.",
+    "fixed_replay": "Each actual HP count, resistance capacity and cooling capacity fixed and exported explicitly; bound applies only to that fixed snapshot.",
+    "primary_infeasible": "Only a sole primary stage status 2 is accepted as proven infeasible for that candidate.",
+    "secondary_failure": "Primary status 0 followed by any nonzero secondary status returns no definite endpoint and enumeration_complete=false; keeps primary metrics, solution SHA and valid primary lower bound.",
+    "unresolved_primary": "Timeout/error or unresolved primary status causes null global lower bound and incomplete enumeration.",
+    "full_window_9000_counterexample": "docs/implementation_20261002_followup/parallel_stage_03/investment/scope_counterexample_9000_01/result.json",
+    "counterexample_identity": "9000 CNY is a hypothetical stress price, not a newly verified FT8 quote. Full 2880h: scoped baseline lower bound14402.378752879542 exceeds feasible unrestricted HP1 cost14055.895439392752, demonstrating why scope must be explicit."
+  },
+  "portable_source_contract": {
+    "processed_bundle_pdf_count": 0,
+    "default_mode": "Numerical reproduction verifies all registered processed inputs and source records; absent original PDFs do not block the solver.",
+    "original_source_hashes_verified_this_run": false,
+    "original_content_review_repeated": false,
+    "source_identity_inherited": true,
+    "source_check": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/source_check.json",
+    "strict_mode": "--verify-original-sources checks only explicitly registered original files (this investment bundle: FT8 original contract), and fails before solver if missing or mismatched. It does not freshly audit all inherited building/weather/tariff raw sources.",
+    "strict_missing_original_actual_check": "docs/implementation_20261002_followup/parallel_stage_03/investment/strict_missing_original_01/manifest.json",
+    "strict_missing_original_solver_runs": 0,
+    "missing_original_url": "https://www.ccgp-neimenggu.gov.cn/ecms-econtract/model/aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d.pdf",
+    "missing_original_sha256": "aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d",
+    "old_source_locks_rewritten": false
+  },
+  "prior_export_status": {
+    "retained": [
+      "run_01",
+      "run_02",
+      "reproduce_01",
+      "tests_01.xml",
+      "REPRODUCTION_CHECK.json",
+      "HANDOFF_run_02_archived.json",
+      "RUNBOOK_run_02_archived.txt"
+    ],
+    "current_acceptance": "run_03 / reproduce_02 only",
+    "old_scope_issue": "Prior run_01/run_02/reproduce_01 do not have the corrected effective bound_scope records and are rejected by the current stricter auditor; preserve as earlier evidence, not current scope-certified outputs.",
+    "old_source_issue": "Old numerical manifests/locks are preserved unchanged even if publication excludes original PDFs. Do not rewrite them to claim absent PDFs were freshly verified.",
+    "temporary_test_dirs_not_deliverables": [
+      "test_tmp_02",
+      "investment_audit_review_02",
+      "other pytest temporary directories"
+    ]
+  }
+}

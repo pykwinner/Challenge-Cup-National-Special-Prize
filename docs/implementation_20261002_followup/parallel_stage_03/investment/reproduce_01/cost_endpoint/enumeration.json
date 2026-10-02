@@ -1,0 +1,137 @@
+[
+  {
+    "success": true,
+    "capex_cny": 2406.678,
+    "window_energy_bill_cny": 2356.473203156348,
+    "window_fixed_om_cny": 42.66695,
+    "window_co2_kg": 1299.7819823881791,
+    "electricity_kwh": 3214.0998575375347,
+    "comparison_cost_cny": 14402.37876578174,
+    "hp_units": 0,
+    "resistance_capacity_kw": 2.266695,
+    "cooling_capacity_kw": 2.0,
+    "solver_stages": [
+      {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mode": "cost",
+        "epsilon_co2_kg": null,
+        "seconds": 0.09796020000067074,
+        "iterations": 5444,
+        "primal_objective": 12802.37875287938,
+        "dual_objective": 12802.378752879542,
+        "primal_dual_gap": -1.6189005691558123e-10,
+        "constraint_max_violation": 2.6645352591003757e-15,
+        "objective_constant": 1600.0
+      },
+      {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mode": "carbon",
+        "epsilon_co2_kg": null,
+        "seconds": 0.11587789999612141,
+        "iterations": 6143,
+        "primal_objective": 1299.7819823881769,
+        "dual_objective": 1299.7819823882892,
+        "primal_dual_gap": -1.1232259566895664e-10,
+        "constraint_max_violation": 5.4569682106375694e-12,
+        "objective_constant": 0.0
+      }
+    ],
+    "primary_objective": 14402.37875287938,
+    "mode": "cost",
+    "requested_epsilon_co2_kg": null
+  },
+  {
+    "success": true,
+    "capex_cny": 19300.0,
+    "window_energy_bill_cny": 611.1790878785503,
+    "window_fixed_om_cny": 100.0,
+    "window_co2_kg": 355.30068416921415,
+    "electricity_kwh": 878.5872506657129,
+    "comparison_cost_cny": 22855.895439392752,
+    "hp_units": 1,
+    "resistance_capacity_kw": 0.0,
+    "cooling_capacity_kw": 2.0,
+    "solver_stages": [
+      {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mode": "cost",
+        "epsilon_co2_kg": null,
+        "seconds": 0.09269409999251366,
+        "iterations": 5166,
+        "primal_objective": 3055.8954362368568,
+        "dual_objective": 3055.8954362368518,
+        "primal_dual_gap": 5.002220859751105e-12,
+        "constraint_max_violation": 2.6645352591003757e-15,
+        "objective_constant": 19800.0
+      },
+      {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mode": "carbon",
+        "epsilon_co2_kg": null,
+        "seconds": 0.1046317000000272,
+        "iterations": 6100,
+        "primal_objective": 355.30068416921415,
+        "dual_objective": 355.300684167991,
+        "primal_dual_gap": 1.2231566870468669e-09,
+        "constraint_max_violation": 4.547473508864641e-13,
+        "objective_constant": 0.0
+      }
+    ],
+    "primary_objective": 22855.895436236857,
+    "mode": "cost",
+    "requested_epsilon_co2_kg": null
+  },
+  {
+    "success": true,
+    "capex_cny": 37100.0,
+    "window_energy_bill_cny": 611.1719150458737,
+    "window_fixed_om_cny": 180.0,
+    "window_co2_kg": 355.3660881930001,
+    "electricity_kwh": 878.748981683977,
+    "comparison_cost_cny": 41055.85957522937,
+    "hp_units": 2,
+    "resistance_capacity_kw": 0.0,
+    "cooling_capacity_kw": 2.0,
+    "solver_stages": [
+      {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mode": "cost",
+        "epsilon_co2_kg": null,
+        "seconds": 0.08614769999985583,
+        "iterations": 5123,
+        "primal_objective": 3055.8595720735098,
+        "dual_objective": 3055.859572073507,
+        "primal_dual_gap": 2.7284841053187847e-12,
+        "constraint_max_violation": 2.6645352591003757e-15,
+        "objective_constant": 38000.0
+      },
+      {
+        "success": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mode": "carbon",
+        "epsilon_co2_kg": null,
+        "seconds": 0.10781760000099894,
+        "iterations": 6099,
+        "primal_objective": 355.36608819300045,
+        "dual_objective": 355.3660881916751,
+        "primal_dual_gap": 1.3253611541585997e-09,
+        "constraint_max_violation": 4.547473508864641e-13,
+        "objective_constant": 0.0
+      }
+    ],
+    "primary_objective": 41055.85957207351,
+    "mode": "cost",
+    "requested_epsilon_co2_kg": null
+  }
+]

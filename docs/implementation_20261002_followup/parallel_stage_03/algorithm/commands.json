@@ -1,0 +1,21 @@
+{
+  "working_directory": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge",
+  "original_environment": "CPython3.12.7 Anaconda Windows; requirements_confirmation.txt (psutil5.9.0 Conda)",
+  "release_dependency_note": "release_dependency_note.json; GitHub group separately validates psutil5.9.8 and release test/render versions",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONUTF8": "1",
+    "PYTHONPATH": "src"
+  },
+  "frozen_command_history": [
+    "python -m pytest tests/test_three_city_decision_weight_confirmation.py tests/test_verify_three_city_decision_weight_confirmation.py tests/test_decision_weight_calibration.py tests/test_hard_weight_calibration.py tests/test_weight_adoption_method_identity.py -q -p no:cacheprovider --basetemp=docs/implementation_20261002_followup/parallel_stage_03/algorithm/test_tmp_final_02 --junitxml=docs/implementation_20261002_followup/parallel_stage_03/algorithm/tests_final_02.xml",
+    "python scripts/run_three_city_decision_weight_confirmation.py freeze --out docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01",
+    "python scripts/run_three_city_decision_weight_confirmation.py run --out docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01",
+    "python scripts/run_three_city_decision_weight_confirmation.py check --out docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01",
+    "python scripts/verify_three_city_decision_weight_confirmation.py --out docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01 --report docs/implementation_20261002_followup/parallel_stage_03/algorithm/verification_01/audit.json",
+    "python -m pytest tests/test_decision_weight_native_precision.py -q -p no:cacheprovider --junitxml=docs/implementation_20261002_followup/parallel_stage_03/algorithm/tests_precision_02.xml",
+    "python scripts/verify_three_city_decision_weight_native_precision.py --out docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01 --report docs/implementation_20261002_followup/parallel_stage_03/algorithm/verification_02/audit.json",
+    "python scripts/report_three_city_decision_weight_confirmation.py --run docs/implementation_20261002_followup/parallel_stage_03/algorithm/confirmation_run_01 --out docs/implementation_20261002_followup/parallel_stage_03/algorithm/analysis_01 --audit docs/implementation_20261002_followup/parallel_stage_03/algorithm/verification_02/audit.json"
+  ],
+  "reproduction": "Never reuse an existing run/report output path. For a new compatible environment, freeze a fresh new run identity, run sequentially, use native-precision audit, then compare full weights/scores/caps/selection metrics to original without changing its freeze."
+}

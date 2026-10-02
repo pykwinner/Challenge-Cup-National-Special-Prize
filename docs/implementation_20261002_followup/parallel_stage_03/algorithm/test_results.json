@@ -1,0 +1,30 @@
+{
+  "final_result": "passed",
+  "tests": 123,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 11.17,
+  "new_runner_tests": 26,
+  "new_independent_verifier_tests": 19,
+  "legacy_analytic_and_method_identity_tests": 78,
+  "no_actual_city_solver_used_by_tests": true,
+  "final_xml": "tests_final_02.xml",
+  "preserved_earlier_receipts": [
+    "tests_runner_01.xml",
+    "tests_runner_02.xml",
+    "tests_runner_03.xml",
+    "tests_runner_04.xml",
+    "tests_runner_05.xml",
+    "tests_final_01.xml"
+  ],
+  "earlier_failures": "Analytic fixture had impossible hard-energy target with positive floor; corrected synthetic fixture. First pytest base parent absent; second out-of-scope fixture accidentally inside owned temp root; corrected test. First combined call requested a nonexistent identity-test filename; corrected command. These occurred before protocol freeze and before new city outcomes. No hyperparameter changes.",
+  "supplement_precision_tests": {
+    "latest_xml": "tests_precision_02.xml",
+    "passed": 5,
+    "failed": 0,
+    "first_precision_xml_retained": "tests_precision_01.xml",
+    "scope": "after original run; additive audit-only precision correction, no original protocol/code change"
+  },
+  "total_distinct_tests_passed": 128
+}

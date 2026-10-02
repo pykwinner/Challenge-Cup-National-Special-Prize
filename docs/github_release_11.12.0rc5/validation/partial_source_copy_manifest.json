@@ -1,0 +1,1986 @@
+{
+  "status": "partial_actual_candidate_three_frozen_modules; no commit/tag/push",
+  "copied_at": "2026-10-02T21:16:41.230187+08:00",
+  "previous_release_commit": "9388556f8d4c1b46fd3640b05454fd992041ea7a",
+  "actual_remote_baseline_commit": "499c16749c399c19fdb49616c0d56d8fd5a44f85",
+  "source_root": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge",
+  "candidate_root": "D:\\competion\\xiaotiao\\github_candidate_20261002_rc5",
+  "source_files": [
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/COMPLETION.json",
+      "bytes": 6945,
+      "sha256": "da9bff8dd0279731c2d52e7f9808d6528f8b919cdc2a354203d8f2f67c4eec42"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/EXPERIMENT_SCOPE.md",
+      "bytes": 3895,
+      "sha256": "bf243d50d9b12d5005c05c99f62f977398ab35a178251af06b9927f5249c194f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/TEST_EVIDENCE.json",
+      "bytes": 3167,
+      "sha256": "0b7d29c1ab9d3760691bd8d879536575ddc438c392a2cc69ca206140d5499e8b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/RESULTS.md",
+      "bytes": 12495,
+      "sha256": "4cf37caf75f6c44c129e3fcaa70084a2993087a2f9a688caa07b24e0ef8e5ae2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/analysis_manifest.json",
+      "bytes": 18685,
+      "sha256": "54a6444c8534e1d058171b0f3de47065835f9224bda463ab831d137ca9c27d2d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/building_heat_cool_72h.png",
+      "bytes": 159410,
+      "sha256": "d0664f5b6d092303e28aed751c0da7ad9ad809dd0b54bc8db6cbf7cf1c5500ec"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/building_heat_cool_72h.svg",
+      "bytes": 63309,
+      "sha256": "e5295660cc335252f14067322f5fd6aa178a35015ecfc5020336bfb333822a24"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/full_tables.csv",
+      "bytes": 19440,
+      "sha256": "f7d8527cb45eb36f0e3a7ef7c2c2b5dbfe458696640c2714a5ba4988e81f15b0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/hourly_building_changes.csv",
+      "bytes": 6295488,
+      "sha256": "30b27fb3771face0fd6e3d20ac035db782a061c564ea9cab1120ccf5bef16fd6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/hourly_system.csv",
+      "bytes": 2718659,
+      "sha256": "3d60f7403b5366138ff6ca57e739875bcd98f1834de3f236ea48c856983f8353"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/representative_72h.png",
+      "bytes": 336139,
+      "sha256": "ac498d6bc51f145df08faf10bd4de6e2cd43d32c1e6e965f2da421a9091ac668"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/representative_72h.svg",
+      "bytes": 62088,
+      "sha256": "8c9707fd575743c190492362115e75e70db70117924f12fdb2671c77399f6b51"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/summary.json",
+      "bytes": 43899,
+      "sha256": "98c81120534ee3f8214416841c661ed03596dd4628ba0aff26f2442f54137964"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/system_bill_peak.png",
+      "bytes": 126048,
+      "sha256": "45757f554496fa2cc45842f020bb40a06cb68a715817558c0b5ce56e25392ca4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/system_bill_peak.svg",
+      "bytes": 28361,
+      "sha256": "7b4bc24ca2714d6877bf1f5bcd0405ac38f4f0ea9b5e429d236f0d8459feb6fb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/comparison.json",
+      "bytes": 60904,
+      "sha256": "c6f6aed5fccbcaf8046aa46288c6e14f327aa3da7b629ace86e0eefd6708170c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/failures.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv",
+      "bytes": 503515,
+      "sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/docs/implementation_20261002/data/admission_tou.json",
+      "bytes": 15146,
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/scripts/audit_multiscale_reference.py",
+      "bytes": 41167,
+      "sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/scripts/run_multiscale_reference.py",
+      "bytes": 16395,
+      "sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/__init__.py",
+      "bytes": 142,
+      "sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/accounting.py",
+      "bytes": 1215,
+      "sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/annual_preflight_batch_cli.py",
+      "bytes": 7963,
+      "sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/annual_replay_batch_cli.py",
+      "bytes": 21557,
+      "sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/annual_replay_certify_cli.py",
+      "bytes": 2886,
+      "sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/annual_replay_cli.py",
+      "bytes": 16696,
+      "sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/btes.py",
+      "bytes": 5600,
+      "sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/building_audit.py",
+      "bytes": 36644,
+      "sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/building_thermal.py",
+      "bytes": 31708,
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/chronology.py",
+      "bytes": 112902,
+      "sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/chronology_cli.py",
+      "bytes": 2231,
+      "sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/cli.py",
+      "bytes": 897,
+      "sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/competition_runner.py",
+      "bytes": 48860,
+      "sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/decision_weight_calibration.py",
+      "bytes": 18451,
+      "sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/experiment_cli.py",
+      "bytes": 2601,
+      "sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/experiments.py",
+      "bytes": 27716,
+      "sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/feasibility.py",
+      "bytes": 4647,
+      "sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/finance.py",
+      "bytes": 11284,
+      "sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/hard_weight_calibration.py",
+      "bytes": 6084,
+      "sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/heating_season.py",
+      "bytes": 15955,
+      "sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/heating_season_cli.py",
+      "bytes": 7196,
+      "sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/hydraulics.py",
+      "bytes": 5892,
+      "sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/io.py",
+      "bytes": 13113,
+      "sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/linear.py",
+      "bytes": 9858,
+      "sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/model.py",
+      "bytes": 188832,
+      "sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/mpc.py",
+      "bytes": 7887,
+      "sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multistage.py",
+      "bytes": 36730,
+      "sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multistage_cli.py",
+      "bytes": 2405,
+      "sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multiyear.py",
+      "bytes": 8173,
+      "sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multiyear_readiness_cli.py",
+      "bytes": 6650,
+      "sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/multiyear_replay_cli.py",
+      "bytes": 17629,
+      "sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/network_feedback.py",
+      "bytes": 29972,
+      "sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/operations_cli.py",
+      "bytes": 2673,
+      "sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/osm_reference.py",
+      "bytes": 14744,
+      "sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/physical_extensions.py",
+      "bytes": 19644,
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/policy_alignment.py",
+      "bytes": 21119,
+      "sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/policy_alignment_cli.py",
+      "bytes": 1060,
+      "sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/policy_cli.py",
+      "bytes": 5647,
+      "sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/provenance.py",
+      "bytes": 2456,
+      "sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/reporting.py",
+      "bytes": 6248,
+      "sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/representative.py",
+      "bytes": 15132,
+      "sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/representative_adoption.py",
+      "bytes": 10506,
+      "sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/risk_scan_cli.py",
+      "bytes": 43742,
+      "sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/scenario_cli.py",
+      "bytes": 2916,
+      "sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/scenarios.py",
+      "bytes": 26312,
+      "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/solution_quality.py",
+      "bytes": 11879,
+      "sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/spatial_adapter.py",
+      "bytes": 21535,
+      "sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/spatial_quality.py",
+      "bytes": 24580,
+      "sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/unified_cli.py",
+      "bytes": 6845,
+      "sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/frozen_code/src/heatplan/validation.py",
+      "bytes": 2510,
+      "sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/independent_verification.json",
+      "bytes": 39320,
+      "sha256": "62b6f3a8e2216e815743182035b1e55cb59420671eb3d0a460a198a2a8fa7205"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_A_fixed20/config.yaml",
+      "bytes": 3703,
+      "sha256": "0d62da16eb6a131a88decafaa059eccebfb865410bab391c8d8ecdebb0c68c07"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_A_fixed20/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_B_fixed20/config.yaml",
+      "bytes": 3703,
+      "sha256": "d40d59d5201fa84b442b2be9c8ca6032ac5f2c58f2271e8760f7fbd751121b61"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_B_fixed20/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_all_fixed20/config.yaml",
+      "bytes": 3703,
+      "sha256": "e44b3f161ecdc8889390255ef7cbe5e07084543d5810a1b50a10d2a19d2ced0d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_all_fixed20/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_flexible/config.yaml",
+      "bytes": 3703,
+      "sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/coupled_flexible/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/independent_A/config.yaml",
+      "bytes": 2248,
+      "sha256": "950058fc157d8708fbcd7d6bada75f97622585064244261a072f21e75914cf3b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/independent_A/input.csv",
+      "bytes": 604044,
+      "sha256": "c56b8955a15a39d9b18efcd7230ca779f5de00e8d188a5a715aae480bc50ca06"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/independent_B/config.yaml",
+      "bytes": 2248,
+      "sha256": "c0309d6df6d2ce28d7d92bd33f26ac4b415e3ed9c64594ffe1d5ca1cca2c1fe8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/independent_B/input.csv",
+      "bytes": 605909,
+      "sha256": "7797f6a11c2a13e24ff915c1c3c091a307a6696ec56e5f66b48ead37c98744e8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/joint_unlimited/config.yaml",
+      "bytes": 3521,
+      "sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/input_cases/joint_unlimited/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/manifest.json",
+      "bytes": 17083,
+      "sha256": "5ad0f216bc01db4075404cf206f3c9e660d11462aff9b58f97e077ff78d60fb7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/protocol.json",
+      "bytes": 15914,
+      "sha256": "ece2976fb7d8e7a77d5477f7d8ed6a8a2ef55558d221ae8523b709cfe0e29b74"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/protocol_lock.json",
+      "bytes": 93,
+      "sha256": "32e5b622093b50c01875bb8555c0ce432537a79b726a93ac8c46dc9931ada8fc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/building_trajectory.csv",
+      "bytes": 1824636,
+      "sha256": "3765bb48faeee65f43578965c0f285451fa0819cc0acd830efe72ef6cfb90b2c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/config.yaml",
+      "bytes": 3703,
+      "sha256": "0d62da16eb6a131a88decafaa059eccebfb865410bab391c8d8ecdebb0c68c07"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/core_building_audit.json",
+      "bytes": 7422,
+      "sha256": "5922c13814673e24e215c9cc385581d79ef6eea84dcc2ed5c267be9603fee74a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/dispatch.csv",
+      "bytes": 4183635,
+      "sha256": "7cf47855e27462ee4ac1604785e3fa148d25cf3514b5d50e1bbddfb747f88778"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/independent_audit.json",
+      "bytes": 4527,
+      "sha256": "0bbd2ac68f66dfb8dbfb111ba8d964512f44986013d888c41b9b919af8f72fa2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/input_identity.json",
+      "bytes": 180,
+      "sha256": "4aa4d1a5769de7ad3a264c7858cc96a8e51d3e8d0f1891c043218c1908b191fa"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/numerical_audit.json",
+      "bytes": 748,
+      "sha256": "23c451afe383f208f60e68abf15967610abecf2297849890963afbb0b0ac4de5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_A_fixed20/summary.json",
+      "bytes": 12885,
+      "sha256": "33831fabb29396364f8874340e63a1f1329a8a08f80e02326894d397f1e3bb43"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/building_trajectory.csv",
+      "bytes": 1808753,
+      "sha256": "6d91e518595bae07c87a97bc76f095f10623d446bfbd0dd0d0845936932f33af"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/config.yaml",
+      "bytes": 3703,
+      "sha256": "d40d59d5201fa84b442b2be9c8ca6032ac5f2c58f2271e8760f7fbd751121b61"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/core_building_audit.json",
+      "bytes": 7377,
+      "sha256": "ba57164443b25f2ef2fc2a485822f15a85a77f37beb56ee225317d012e4409f9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/dispatch.csv",
+      "bytes": 4186137,
+      "sha256": "d6fb17b5b88564f82172a4a2b82c4e79a4964f9ab4e85ec995fd20bbd2e9eed1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/independent_audit.json",
+      "bytes": 4567,
+      "sha256": "1beb2fd43388d361209ff71b365394107ce8ddbe0257f5de41673969db78484c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/input_identity.json",
+      "bytes": 180,
+      "sha256": "6e52b7362a2a1b411cb3d2f586049a61c3a0daa768364312e319413aaea31a7e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/numerical_audit.json",
+      "bytes": 751,
+      "sha256": "d1faee466853041b80b27b20e563f9449987ace12c6990ecceb3596dc6b527ed"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_B_fixed20/summary.json",
+      "bytes": 12927,
+      "sha256": "4a80f40420d3ae8b0e9d31a571a2243ec93a3c75a9372d51970552d574f8984c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/building_trajectory.csv",
+      "bytes": 1793028,
+      "sha256": "e8537c647e80c20a9614bfdc1faf91ad43fa955d79bc559781ce92d958be20cc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/config.yaml",
+      "bytes": 3703,
+      "sha256": "e44b3f161ecdc8889390255ef7cbe5e07084543d5810a1b50a10d2a19d2ced0d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/core_building_audit.json",
+      "bytes": 7535,
+      "sha256": "1a978810c957780af9cb5a1caea5f8163125cc974ccbdd9296e6e69137162b46"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/dispatch.csv",
+      "bytes": 4201819,
+      "sha256": "756212203820ca73d5a37e3937f2fea9a5581035674c81e7bf7039e4026b8ba5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/independent_audit.json",
+      "bytes": 4669,
+      "sha256": "0b5c3dbcf4274cd3be208f91f714244a5332f3001f92c9694d6521a5aac66299"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/input_identity.json",
+      "bytes": 180,
+      "sha256": "6f4ad3c6e1d2a2e419761ed57e92015d7257a45f5519dc2074ae2fb7475131a1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/numerical_audit.json",
+      "bytes": 729,
+      "sha256": "d64ef2505d4d2f868ad402125c68d0b74a261ca4436f363b9c4c46739b5bd929"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_all_fixed20/summary.json",
+      "bytes": 12853,
+      "sha256": "82ee466a4140795d11171aceb79940a87be3c53086fb47cb123d1ac2f892a9ad"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/building_trajectory.csv",
+      "bytes": 1880146,
+      "sha256": "647c939266dd41da687b7586d2337fb9af5c42de1737d97e72fc4f73276b6695"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/config.yaml",
+      "bytes": 3703,
+      "sha256": "587b8c1dcc6853f50e02556a6f7e08e90e0e08788b2e7f615595f6ce9f2a05eb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/core_building_audit.json",
+      "bytes": 7331,
+      "sha256": "32391d9f0840cd4e385e6afb5f9bfe35de9da7622c9614f22f2e4c3cdbda8314"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/dispatch.csv",
+      "bytes": 4183592,
+      "sha256": "fb9e71efeb67de6a83a201a227e79c695131dc1c53b80b6be41579b424801e94"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/independent_audit.json",
+      "bytes": 4581,
+      "sha256": "42d9f30fd2bc8a14383e5af8d665c3908c7d6863266f0666aa4df0259c7a901a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/input_identity.json",
+      "bytes": 180,
+      "sha256": "a01dd01431dad9732834dff631afb70149429fe0ffada1a66a18b1290121c80a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/numerical_audit.json",
+      "bytes": 747,
+      "sha256": "2679952ba40b20dea77ecc106e2268868cf25a0a8423f94107c36c2c809cf904"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/coupled_flexible/summary.json",
+      "bytes": 12782,
+      "sha256": "a18b14a1d3a6530de188b7205320f601a13d5b320306ca3f0aa6efce3a873f12"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/building_trajectory.csv",
+      "bytes": 931211,
+      "sha256": "08ae07223d53ef05fcf45c50e3ef288adb22f1d2cf926218ef120ea3531f6f2f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/config.yaml",
+      "bytes": 2248,
+      "sha256": "950058fc157d8708fbcd7d6bada75f97622585064244261a072f21e75914cf3b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/core_building_audit.json",
+      "bytes": 6681,
+      "sha256": "019107bea1a7a30e676ce1c2a38f34d46e96740963e10599ac30145b115c35fb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/dispatch.csv",
+      "bytes": 2090534,
+      "sha256": "a003698c75c7df9067b958aba75fddde188ad591c3beac6aa6933535779b1e7f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/independent_audit.json",
+      "bytes": 3670,
+      "sha256": "3317da688ffa5be34cd5845c64b7c5497f77e30724853a5e607dafefbf73ae4e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/input.csv",
+      "bytes": 604044,
+      "sha256": "c56b8955a15a39d9b18efcd7230ca779f5de00e8d188a5a715aae480bc50ca06"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/input_identity.json",
+      "bytes": 180,
+      "sha256": "a43ba855329325eb83b509fe1526653eb2caaaf960d2aaf54eee470882d2f61f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/numerical_audit.json",
+      "bytes": 750,
+      "sha256": "b4fae43a358faed58be68e30cddad4309ec8d2481a04c406e21de6dc918c423d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_A/summary.json",
+      "bytes": 12767,
+      "sha256": "2cf6d37b56b29b83d0994f8e1d3374f063303a8c6df94fa0131563934d87409b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/building_trajectory.csv",
+      "bytes": 934849,
+      "sha256": "aaea1cfb0e4a14e341a44cdba577f643ffc8607a17cf45195edab5925ad6d177"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/config.yaml",
+      "bytes": 2248,
+      "sha256": "c0309d6df6d2ce28d7d92bd33f26ac4b415e3ed9c64594ffe1d5ca1cca2c1fe8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/core_building_audit.json",
+      "bytes": 6672,
+      "sha256": "d310c7092ca664850d0d9bda842c4c3f83a9b130b310a548f0963314b2213122"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/dispatch.csv",
+      "bytes": 2075296,
+      "sha256": "99afa570a3b44776a4491ca1bac08536e8561f7dca5413b22a7fd38d030d662c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/independent_audit.json",
+      "bytes": 3681,
+      "sha256": "f6c8cc85551de8d428a1bf3d41689ad6b3b5872c84e0ab964e9faca1cb8d50a5"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/input.csv",
+      "bytes": 605909,
+      "sha256": "7797f6a11c2a13e24ff915c1c3c091a307a6696ec56e5f66b48ead37c98744e8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/input_identity.json",
+      "bytes": 180,
+      "sha256": "a93cf31363f5f2bba77ee6cf3552d097d0fea8d4e6b00bb0bb9449f060d02074"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/numerical_audit.json",
+      "bytes": 750,
+      "sha256": "7dcd1f51c5e62a6a328ca48e6bbe1e9b5841c952d8ab95e6258edaf094d6818f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/independent_B/summary.json",
+      "bytes": 12740,
+      "sha256": "907ca96e76689f1d3e837c419da6bf8061e9e4a2fedc82b2b0b52f1f5971b1e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/building_trajectory.csv",
+      "bytes": 1867462,
+      "sha256": "1c7ca6d86954c689024713fd0b1769f8d615ff6c8033979038126d4479cc843a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/config.yaml",
+      "bytes": 3521,
+      "sha256": "1ca3de47c4e843e0235e0e24449fc73870114451d5c170d378fdbb584efa88ba"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/core_building_audit.json",
+      "bytes": 7368,
+      "sha256": "23559591bc659703df71e292222fd67c8b2f96ba18243e0435808363b4daa747"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/dispatch.csv",
+      "bytes": 4165325,
+      "sha256": "b669458072839882b5c4eee9a839898e03e4c7f4f2bae775efa051cd765746c4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/independent_audit.json",
+      "bytes": 4492,
+      "sha256": "85eade13921376e8a16179378187a94872ce02d7371a5abba695fdda888e2a9b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/input.csv",
+      "bytes": 691332,
+      "sha256": "1da443ff477e5e69b6e9b573c5e0fef2ade0cf0346dc7a9036cbbc73ccb3e960"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/input_identity.json",
+      "bytes": 180,
+      "sha256": "c28290207075cda37dca62cb3d1e79e4e70e45a0cd6a35d99aca41eeb1dfdbfe"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/numerical_audit.json",
+      "bytes": 751,
+      "sha256": "d5e3036a5d640a3ba1d55f63d7f963647f4e2c9a59fb7e886b8cd470dcb94603"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/results/joint_unlimited/summary.json",
+      "bytes": 12767,
+      "sha256": "2eda50cbccbf0769700b7683007a53c6f2043e6cf793b58e047eb60cfcbf3344"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/README.md",
+      "bytes": 5421,
+      "sha256": "b2e1e345d46217bf38418d95dce71bbb0e5c59936ab65031dbd3a3f38dca6927"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/manifest.json",
+      "bytes": 439,
+      "sha256": "8386725108f6d0f33f15bc3ad535e49b6a35451a4a75dfbbafccd32e35ed76f9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/mechanisms.json",
+      "bytes": 365,
+      "sha256": "59397c76450a26bed5a13139e4701b05edc26f3b97845ec93e573d6d8f86962e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/network_feedback.png",
+      "bytes": 116676,
+      "sha256": "313cb68d6f2859a7e771c61400ccf8bb6fff7f8151bc013ce7575fccf4ba6b9c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/network_feedback.svg",
+      "bytes": 72048,
+      "sha256": "d70c6a48c4ec5879004839cefc0d96632d16637743c78574e51c2c7fcb91cc7b"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/code_snapshot_run_01/network_feedback.py",
+      "bytes": 29244,
+      "sha256": "2c55f0ee044e94f7e15c9fd8aac18c1e1553ed62a0b069f90164d08dd4004577"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/code_snapshot_run_01/run_network_feedback_reference.py",
+      "bytes": 11311,
+      "sha256": "f09ad29777e6ca5e738958540b79315555e90685579632e7eb2ff7b007b9518a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/export_audit_01.json",
+      "bytes": 2740,
+      "sha256": "62de72ba0147ea4c423817a52f4d485a7fb27088b7ae039bb3908038129d6992"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/export_audit_02.json",
+      "bytes": 2740,
+      "sha256": "06f66d73bd61add32b1080d793a734246375b32ff04567596ff0d78c5a4fab86"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/independent_review.json",
+      "bytes": 4586,
+      "sha256": "7baf3373facc3dc978d5d02acc87c356c1bb14354c27ebac48de03326d564940"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/independent_tests_final_20261002.txt",
+      "bytes": 182,
+      "sha256": "073b1bf91ae3bed8c4e8dab90b9d6704fdd3d9ca82ab7ad25b0af9411a9344ec"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/network_tests_pre_run.xml",
+      "bytes": 10506,
+      "sha256": "bff14141bf0b73dc456040618f7976964e31b65f55b39ad2a25d4298993142a9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/comparison.json",
+      "bytes": 3135,
+      "sha256": "66e685f0ee8925c9309c6e0742629ddf2115d7146f3161fce8a41da6c55e89c8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/config.yaml",
+      "bytes": 3546,
+      "sha256": "aa9df3d63b8b24aeeae1bc4d51af0284e0da3e2c9646b794a7cfff54b3cd4f6d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/failures.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/hourly.csv",
+      "bytes": 5824,
+      "sha256": "c63e3a92f3518de8a94de2e9fc4d02595c8b79292eb793755030ba20dde31ae1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/manifest.json",
+      "bytes": 9553,
+      "sha256": "f5059f8e5f6660fd4f3b9c2aec25335df4b1ffea309b1b0c8e972bdfb2bbb609"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/protocol.json",
+      "bytes": 4370,
+      "sha256": "03aceeb44f4a0adf1f917e4294d8016ff07586fdbba4c6bf078edb10e68632e9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/protocol_lock.json",
+      "bytes": 264,
+      "sha256": "b97f15eb5a8f04e3cbe8179c23de5a457118a80e5d49f2809ed33272b0a9a774"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/audit.json",
+      "bytes": 1286,
+      "sha256": "bd3d9257aad1f3d9817b3062dbc575b2bf2067b47743394bc05a1d578358f8d9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/catalog.json",
+      "bytes": 9308,
+      "sha256": "2dedd79756d031a3d98dd85c8bf6c3ec730aa14451537adaff49c2a4b7b1863e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/config.yaml",
+      "bytes": 3546,
+      "sha256": "71284f518af0c944a2c9b07add3989042d7addc4db9dab68bb264aec74ef2faf"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/core_dispatch.csv",
+      "bytes": 98337,
+      "sha256": "ba5565d1e34404d1f31586311ad25306378a83e002510e65446745fa91a9e0d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/history.json",
+      "bytes": 15848,
+      "sha256": "cbbf982ec2835f17db071eaac37667a94f6f52fbfe7198c4a17677a3fb7683ff"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_00/core_dispatch.csv",
+      "bytes": 98346,
+      "sha256": "618ea3e0a97e0c2d3175a0538076579560a1e95ccb690c63f4a55016582c34c0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_00/mode_dispatch.csv",
+      "bytes": 143306,
+      "sha256": "c3b5f28397e879e8f42c498c5e2ab7ed3d05e0af6bb98ef7762b5a2384bcdfeb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_00/record.json",
+      "bytes": 5004,
+      "sha256": "c5f69e72c61203d1184af2b19609aac947713e94fba24c7f75ef8708a575d8af"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_00/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "de0766c712995336a5bfd623ea94bf00ea432f34dd747abbef1fbca0f9897afc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_00/summary.json",
+      "bytes": 12015,
+      "sha256": "a17131a63d0d3d0ae13b4e3c3f3fc1a6d77e13b78f148e5461bae1fc8e6fe15e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_01/core_dispatch.csv",
+      "bytes": 98371,
+      "sha256": "beb9196d75a70207d6834461dd61d0c9cf3a5df8756dfbc0b84040fbbc866f6e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_01/mode_dispatch.csv",
+      "bytes": 142122,
+      "sha256": "48dc20e14546cb8372ef476208c25e48e516a3d7a16152a7982e7fde62ac4391"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_01/record.json",
+      "bytes": 5048,
+      "sha256": "bdf93bf35590877a95f0c44342c9ff6be037cdb78b22085e0b9a502526c33296"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_01/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "708dc22b9607d0877db4aed858628b4614e87d65facb65bd01eeb82db22914de"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_01/summary.json",
+      "bytes": 11951,
+      "sha256": "4072a3b95f15261160ccd6de46cb8bb4167ee78f0179db3c1494843fc5ad1475"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_02/core_dispatch.csv",
+      "bytes": 98337,
+      "sha256": "ba5565d1e34404d1f31586311ad25306378a83e002510e65446745fa91a9e0d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_02/mode_dispatch.csv",
+      "bytes": 138329,
+      "sha256": "61feb2ca9bab846b71b3c9036c299268be6e602aeb89639f846225be0a4a4753"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_02/record.json",
+      "bytes": 5014,
+      "sha256": "bd71ee84f0ce26a8e734308d23086693784528a40797203ec9a132465424410c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_02/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "fd2c4a0e360a330dc50cdb6329d10a944e21bd8879bb39409d5fc6237f050fb8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/iteration_02/summary.json",
+      "bytes": 12049,
+      "sha256": "954063135d37b113ce46be3a38c47831ab0dc75d80f958c6cb04e12a62eaa90c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/mode_dispatch.csv",
+      "bytes": 138329,
+      "sha256": "61feb2ca9bab846b71b3c9036c299268be6e602aeb89639f846225be0a4a4753"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "fd2c4a0e360a330dc50cdb6329d10a944e21bd8879bb39409d5fc6237f050fb8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/summary.json",
+      "bytes": 13852,
+      "sha256": "e9e4b5d92c6bb1e1a3a418367a7e5aec7889d1e95b2de6eb49839f81de23a842"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_off/variable_names.json",
+      "bytes": 79479,
+      "sha256": "e6067138e959daa1c8925c77e1a8a88695e64f45869996c829716d47d5080993"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/audit.json",
+      "bytes": 1301,
+      "sha256": "6dd3f096be6bc1faaedcf1ed34adb7a13e19f9d6a94931ea34d613a482f6d8c8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/catalog.json",
+      "bytes": 9428,
+      "sha256": "5040457f3aef4dcb4bd73c5a4b75a89d649ab7e9a6c4331023b1f827171ad611"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/config.yaml",
+      "bytes": 3546,
+      "sha256": "aa9df3d63b8b24aeeae1bc4d51af0284e0da3e2c9646b794a7cfff54b3cd4f6d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/core_dispatch.csv",
+      "bytes": 98337,
+      "sha256": "ba5565d1e34404d1f31586311ad25306378a83e002510e65446745fa91a9e0d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/history.json",
+      "bytes": 15864,
+      "sha256": "bfc83c444d45619dcfb799a8a52e2bf4e46516cb8c62df5f568242db58171c28"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_00/core_dispatch.csv",
+      "bytes": 98346,
+      "sha256": "618ea3e0a97e0c2d3175a0538076579560a1e95ccb690c63f4a55016582c34c0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_00/mode_dispatch.csv",
+      "bytes": 145707,
+      "sha256": "1c5e03606bfeca07b234ea7e3ad61f08d029391b4568fb19a5a64048ef8dc87e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_00/record.json",
+      "bytes": 5018,
+      "sha256": "51031c20664c52a1e6ca4f38ebb0780d3d69ab2eff31937ed25f2273135908cb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_00/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "de0766c712995336a5bfd623ea94bf00ea432f34dd747abbef1fbca0f9897afc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_00/summary.json",
+      "bytes": 12029,
+      "sha256": "2b92558ef57896bd6644a57392163d18b2e2043fe2d312963c405ce421540cc8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_01/core_dispatch.csv",
+      "bytes": 98371,
+      "sha256": "beb9196d75a70207d6834461dd61d0c9cf3a5df8756dfbc0b84040fbbc866f6e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_01/mode_dispatch.csv",
+      "bytes": 143298,
+      "sha256": "50e13bd1a6f3c305cf04f317f1ed1e154f7be559b261d462c50ef5790b07e738"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_01/record.json",
+      "bytes": 5063,
+      "sha256": "b066973be13e26f2e1025b6d90bead3962c7bf0f5c645d27a44f9f7f5d5fe852"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_01/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "708dc22b9607d0877db4aed858628b4614e87d65facb65bd01eeb82db22914de"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_01/summary.json",
+      "bytes": 11966,
+      "sha256": "183ca2fd9b68956a2e9bc27d2a0f53b4291ff06bf35b52777bb6d974e4260a2f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_02/core_dispatch.csv",
+      "bytes": 98337,
+      "sha256": "ba5565d1e34404d1f31586311ad25306378a83e002510e65446745fa91a9e0d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_02/mode_dispatch.csv",
+      "bytes": 140633,
+      "sha256": "c06a799cef8698e758f124b6e37dc3473c9111f1ca7ee1731ded0dca3a354827"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_02/record.json",
+      "bytes": 5003,
+      "sha256": "e75aadf301200c96232df96f8c4dd29161a078a4f051f8c73602105b9c913f00"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_02/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "fd2c4a0e360a330dc50cdb6329d10a944e21bd8879bb39409d5fc6237f050fb8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/iteration_02/summary.json",
+      "bytes": 11978,
+      "sha256": "769e4b4f9aa1b30f9685061f18d065434fc24547c3d55df7203e0e8d3f08c595"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/mode_dispatch.csv",
+      "bytes": 140633,
+      "sha256": "c06a799cef8698e758f124b6e37dc3473c9111f1ca7ee1731ded0dca3a354827"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "fd2c4a0e360a330dc50cdb6329d10a944e21bd8879bb39409d5fc6237f050fb8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/summary.json",
+      "bytes": 13796,
+      "sha256": "b0ff27dda45b624fa8003add2e71fa4c927822d68fdd84586a187a6a404d4348"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_01/results/soft_on/variable_names.json",
+      "bytes": 79479,
+      "sha256": "e6067138e959daa1c8925c77e1a8a88695e64f45869996c829716d47d5080993"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/comparison.json",
+      "bytes": 3135,
+      "sha256": "66e685f0ee8925c9309c6e0742629ddf2115d7146f3161fce8a41da6c55e89c8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/config.yaml",
+      "bytes": 3546,
+      "sha256": "aa9df3d63b8b24aeeae1bc4d51af0284e0da3e2c9646b794a7cfff54b3cd4f6d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/failures.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/hourly.csv",
+      "bytes": 5824,
+      "sha256": "c63e3a92f3518de8a94de2e9fc4d02595c8b79292eb793755030ba20dde31ae1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/manifest.json",
+      "bytes": 9553,
+      "sha256": "98f77ee74a8250f180d4cc8d797daef6a420d5cc81f77a4bfcd18f69adcf01b1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/protocol.json",
+      "bytes": 4370,
+      "sha256": "2384dc2e011a215b308c798e4ac9ecb6d0f90092e7ddbefa649738f83808dc46"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/protocol_lock.json",
+      "bytes": 264,
+      "sha256": "be2db6b5bb75792d66d3964535b4268fbea1aad253c890d565147e67e0406a35"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/audit.json",
+      "bytes": 1286,
+      "sha256": "bd3d9257aad1f3d9817b3062dbc575b2bf2067b47743394bc05a1d578358f8d9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/catalog.json",
+      "bytes": 9308,
+      "sha256": "2dedd79756d031a3d98dd85c8bf6c3ec730aa14451537adaff49c2a4b7b1863e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/config.yaml",
+      "bytes": 3546,
+      "sha256": "71284f518af0c944a2c9b07add3989042d7addc4db9dab68bb264aec74ef2faf"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/core_dispatch.csv",
+      "bytes": 98337,
+      "sha256": "ba5565d1e34404d1f31586311ad25306378a83e002510e65446745fa91a9e0d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/history.json",
+      "bytes": 15846,
+      "sha256": "4d7ec73d652e334a925cc670d90f299a95e39f27b712c86ebc4a0c3b79ffa387"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_00/core_dispatch.csv",
+      "bytes": 98346,
+      "sha256": "618ea3e0a97e0c2d3175a0538076579560a1e95ccb690c63f4a55016582c34c0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_00/mode_dispatch.csv",
+      "bytes": 143306,
+      "sha256": "c3b5f28397e879e8f42c498c5e2ab7ed3d05e0af6bb98ef7762b5a2384bcdfeb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_00/record.json",
+      "bytes": 5003,
+      "sha256": "ac1320b2fef8945a18e193aad399aa98a7dafb33145c80b53e1b4924d874a0a9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_00/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "de0766c712995336a5bfd623ea94bf00ea432f34dd747abbef1fbca0f9897afc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_00/summary.json",
+      "bytes": 12012,
+      "sha256": "bca4d057d50699ae6d2dfa406bbfb031b122223da5b61fd242e7e6e74da1eed4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_01/core_dispatch.csv",
+      "bytes": 98371,
+      "sha256": "beb9196d75a70207d6834461dd61d0c9cf3a5df8756dfbc0b84040fbbc866f6e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_01/mode_dispatch.csv",
+      "bytes": 142122,
+      "sha256": "48dc20e14546cb8372ef476208c25e48e516a3d7a16152a7982e7fde62ac4391"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_01/record.json",
+      "bytes": 5048,
+      "sha256": "d06d757ab966430fb85a0d3bed87a971a18f2fccf864f5169beccbefe133eeaf"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_01/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "708dc22b9607d0877db4aed858628b4614e87d65facb65bd01eeb82db22914de"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_01/summary.json",
+      "bytes": 11953,
+      "sha256": "58bd9aebe21754c1197b9c3d24232c68ea3218c721487184c9cb37a064b062f0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_02/core_dispatch.csv",
+      "bytes": 98337,
+      "sha256": "ba5565d1e34404d1f31586311ad25306378a83e002510e65446745fa91a9e0d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_02/mode_dispatch.csv",
+      "bytes": 138329,
+      "sha256": "61feb2ca9bab846b71b3c9036c299268be6e602aeb89639f846225be0a4a4753"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_02/record.json",
+      "bytes": 5013,
+      "sha256": "69f0f45b90f137dfcd454e0c465c8e5a676cdb376d2521af077a92d30270f33a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_02/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "fd2c4a0e360a330dc50cdb6329d10a944e21bd8879bb39409d5fc6237f050fb8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_02/summary.json",
+      "bytes": 12046,
+      "sha256": "3525826fc5fbb379c1b7e01d207f0e80255a857c31d41f29f9f65b722a34a682"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/mode_dispatch.csv",
+      "bytes": 138329,
+      "sha256": "61feb2ca9bab846b71b3c9036c299268be6e602aeb89639f846225be0a4a4753"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "fd2c4a0e360a330dc50cdb6329d10a944e21bd8879bb39409d5fc6237f050fb8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/summary.json",
+      "bytes": 13849,
+      "sha256": "31f12852bcc8e3344956b63a5901b7b5c607cca1c19a5f4a605e2e6e873c6944"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/variable_names.json",
+      "bytes": 79479,
+      "sha256": "e6067138e959daa1c8925c77e1a8a88695e64f45869996c829716d47d5080993"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/audit.json",
+      "bytes": 1301,
+      "sha256": "6dd3f096be6bc1faaedcf1ed34adb7a13e19f9d6a94931ea34d613a482f6d8c8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/catalog.json",
+      "bytes": 9428,
+      "sha256": "5040457f3aef4dcb4bd73c5a4b75a89d649ab7e9a6c4331023b1f827171ad611"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/config.yaml",
+      "bytes": 3546,
+      "sha256": "aa9df3d63b8b24aeeae1bc4d51af0284e0da3e2c9646b794a7cfff54b3cd4f6d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/core_dispatch.csv",
+      "bytes": 98337,
+      "sha256": "ba5565d1e34404d1f31586311ad25306378a83e002510e65446745fa91a9e0d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/history.json",
+      "bytes": 15864,
+      "sha256": "94ab8609459db957f8a81891387fbe6503af747abac47846008d0d6514f1f5ff"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_00/core_dispatch.csv",
+      "bytes": 98346,
+      "sha256": "618ea3e0a97e0c2d3175a0538076579560a1e95ccb690c63f4a55016582c34c0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_00/mode_dispatch.csv",
+      "bytes": 145707,
+      "sha256": "1c5e03606bfeca07b234ea7e3ad61f08d029391b4568fb19a5a64048ef8dc87e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_00/record.json",
+      "bytes": 5019,
+      "sha256": "1abb7f9048d48b7c09ca9683937621aba2e6cce5c0e5f5b7bdb45977b8e070c0"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_00/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "de0766c712995336a5bfd623ea94bf00ea432f34dd747abbef1fbca0f9897afc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_00/summary.json",
+      "bytes": 12030,
+      "sha256": "b00d2301b337e346c33241f2cd3e14ecf9e898f18e75e56820c2331c68c71e69"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_01/core_dispatch.csv",
+      "bytes": 98371,
+      "sha256": "beb9196d75a70207d6834461dd61d0c9cf3a5df8756dfbc0b84040fbbc866f6e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_01/mode_dispatch.csv",
+      "bytes": 143298,
+      "sha256": "50e13bd1a6f3c305cf04f317f1ed1e154f7be559b261d462c50ef5790b07e738"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_01/record.json",
+      "bytes": 5064,
+      "sha256": "aae23867c4294f825d3094d3b5cc25e0ee7a65bfaab3d3a3fd40572f28cd4c92"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_01/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "708dc22b9607d0877db4aed858628b4614e87d65facb65bd01eeb82db22914de"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_01/summary.json",
+      "bytes": 11969,
+      "sha256": "99f6fed3328801c2123d8791f0bbf0f3a9a8aa50b5954a89caf0c18ff9c908f1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_02/core_dispatch.csv",
+      "bytes": 98337,
+      "sha256": "ba5565d1e34404d1f31586311ad25306378a83e002510e65446745fa91a9e0d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_02/mode_dispatch.csv",
+      "bytes": 140633,
+      "sha256": "c06a799cef8698e758f124b6e37dc3473c9111f1ca7ee1731ded0dca3a354827"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_02/record.json",
+      "bytes": 5001,
+      "sha256": "0c8263b4b50bb9914fa0338c0e7cecf1c2d39741f7cc743090401f5f83292534"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_02/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "fd2c4a0e360a330dc50cdb6329d10a944e21bd8879bb39409d5fc6237f050fb8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/iteration_02/summary.json",
+      "bytes": 11972,
+      "sha256": "a549b4893f52d3506c40ad3aabc6dffdae1b98fea869961d2632276c419c4e6f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/mode_dispatch.csv",
+      "bytes": 140633,
+      "sha256": "c06a799cef8698e758f124b6e37dc3473c9111f1ca7ee1731ded0dca3a354827"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/solution_values.npy",
+      "bytes": 13376,
+      "sha256": "fd2c4a0e360a330dc50cdb6329d10a944e21bd8879bb39409d5fc6237f050fb8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/summary.json",
+      "bytes": 13790,
+      "sha256": "466a8bc44d773e8acef0c1a1b98f7c9f6a1d2b82efb31c2cb8d8b7ac3d903879"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/variable_names.json",
+      "bytes": 79479,
+      "sha256": "e6067138e959daa1c8925c77e1a8a88695e64f45869996c829716d47d5080993"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/README.md",
+      "bytes": 7573,
+      "sha256": "e3572db2dca1d64353fd77495a20b45d508985682a43cbb2f67bd37b2295c3fa"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/build_validation_manifest.py",
+      "bytes": 6827,
+      "sha256": "786587fb18ed388f77c1671537bd084a20bd285329e3bc9d7e0e26d30e64fe95"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_atomic_checkpoint_replace0/batch/checkpoint.json",
+      "bytes": 2038,
+      "sha256": "3c187cbbdfeace111875ae40689db1c4e1e18ec0482bb804c0f076a5e4a13a15"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_concurrent_invocations_ha0/batch/checkpoint.json",
+      "bytes": 17023,
+      "sha256": "f3a040c6a079362a0e5ea9df910096fb7499bb7deb5fa77cac28ac244b747b2a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_explicit_identity_failure0/batch/checkpoint.json",
+      "bytes": 10139,
+      "sha256": "dd2d24e14faad6ee4cbd9179b029c31107c75d4669ee57cf0ce0d70a0d7545a6"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_first_city_baseline_audit0/batch/checkpoint.json",
+      "bytes": 14141,
+      "sha256": "3918c20ac5d3274daa17689b6386cfcd9eee12e933eb06ca5408268c18030726"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_first_city_baseline_rollo0/batch/checkpoint.json",
+      "bytes": 14142,
+      "sha256": "a363df5dd0034a8971cc04cc1b371ca551f4df94b0f2bd39a2b2b52c287d6fae"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_first_city_prepare_read_f0/batch/checkpoint.json",
+      "bytes": 14524,
+      "sha256": "c25bc80b5b29014f0e7d9207033bac452e2ac320e9c1074d99998621e9ec6f36"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_0/batch/checkpoint.json",
+      "bytes": 10113,
+      "sha256": "d79bd876b26c8674684377f3ca9d98c71288b1b3f4f30d7aaf38394ea7fae806"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_1/batch/checkpoint.json",
+      "bytes": 10155,
+      "sha256": "d85ac7a680c61891bf3d6df0ce0ee0a4658c623f67099fb33884300052efba37"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_2/batch/checkpoint.json",
+      "bytes": 10153,
+      "sha256": "db294c292ad2516b12fd3c869c077c66b03ddd9ec1d0e71e4d13f2822f0dca45"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_3/batch/checkpoint.json",
+      "bytes": 10151,
+      "sha256": "f36368ba66eec7d289402118b2584cfcd19148e2eb02d465d7db603f71bcd659"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_4/batch/checkpoint.json",
+      "bytes": 10153,
+      "sha256": "fb53dbbe3c73f9981da6ccdf49d12edda01f5fe6bcc9546f07c1a2a4c6a2ba95"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_5/batch/checkpoint.json",
+      "bytes": 10155,
+      "sha256": "99135583f6f939a0d7d9c659f9ad73a4bfba927bde60766f71d9c73913237745"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_identity_change_during_mi0/batch/checkpoint.json",
+      "bytes": 12622,
+      "sha256": "f180dd61eb5f222c21746430dd41afa980bd2d471ee063dde24d7ed380f4f537"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_known_feasible_bound_gate0/batch/checkpoint.json",
+      "bytes": 15492,
+      "sha256": "75e9edc5468c8a1797b7e7fddc885e4f060873b2d3f4ba56cd239431f25ffa30"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_known_feasible_bound_gate1/batch/checkpoint.json",
+      "bytes": 15496,
+      "sha256": "1432ac84de20a5f159b49fe0079ad913d87e42609ab453e514fa68377a1bc3d7"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_known_feasible_bound_gate2/batch/checkpoint.json",
+      "bytes": 15494,
+      "sha256": "58878715a680869d044d202cd062501cd2650d1ea2b0dd1a893f5d24ea343295"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_middle_second_stage_failu0/batch/checkpoint.json",
+      "bytes": 15794,
+      "sha256": "7d40dc4755bc4362105926e939d29a4f5ea8032227e44cd821a673b607fce562"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_process_interrupt_is_not_0/batch/checkpoint.json",
+      "bytes": 2070,
+      "sha256": "8748dbbf4cb8e42030d8981359d689c0b797edf1f6e59617ceb1692919cab9a3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_process_interrupt_is_not_1/batch/checkpoint.json",
+      "bytes": 2070,
+      "sha256": "131fa86cb5ba02c4e5d6b082c7d611bf42c628f55fef585170bc8ddec53ae5e1"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_protocol_change_during_fi0/batch/checkpoint.json",
+      "bytes": 17574,
+      "sha256": "05eedee0665c79c706155663f1073df1ed8086116662d24bfd28d9c10f05d4b8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_self_consistent_protocol_0/batch/checkpoint.json",
+      "bytes": 12621,
+      "sha256": "c31e26573aeb6e76a900575e93f390d51c3f82aa0b4250cecba0dc44b9600b17"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/tests_01.log",
+      "bytes": 44941,
+      "sha256": "b29c9f8ce337d673896aee761c8f1ef0ab27d0264162c27679e75fc73c137865"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/tests_01.xml",
+      "bytes": 29737,
+      "sha256": "3680fa60d60c0db5b648fba26349d80b366835428d8b3a4cd09172d43146a671"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/tests_02.log",
+      "bytes": 2923,
+      "sha256": "9bd213c3b7fb99eac2e8b29fa6ce77b5e6746278960acd0d98b261fb3e67af8f"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/tests_02.xml",
+      "bytes": 8081,
+      "sha256": "31d8b73f1697c328f79e68f82d2c706eee53063e923da178032a4eb44dfef143"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/tests_03.log",
+      "bytes": 331,
+      "sha256": "555743d9c3143d097b57be3fabf7d079ffa7185e8196bccc05ff70ceba1c97ce"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/tests_03.xml",
+      "bytes": 5435,
+      "sha256": "6da4d8f5051bdc61b833e67c66aef085fbf90193aa9f9125419e1f98207fe544"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/validation_manifest.json",
+      "bytes": 78563,
+      "sha256": "551207acb9909c73558e7754e3f833b1100b2ba4851987feafefa2dad594feac"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/validation_manifest_build.log",
+      "bytes": 540,
+      "sha256": "83784933875bd83700ae0126c868ea44fc89ab0e9f3082493b732b78d29787a3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/verify_resilient_exports.py",
+      "bytes": 7984,
+      "sha256": "39275f1eb9672e670e699ecd21cd190bc6c30ef50485339d6585585e8dd616fa"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/checkpoint.json",
+      "bytes": 20457,
+      "sha256": "2ed85dac56c5cebde438ec244294179a5e29974488f61fe58994cb5b9f784df3"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/comparison.csv",
+      "bytes": 11744,
+      "sha256": "2efea05765116b3d8afa02fbce1e324a126e64cd0316e70c4a6e04e3210a2785"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/comparison.json",
+      "bytes": 18169,
+      "sha256": "a6e00ed0af709e31fd110a39766fa9f46b4ab478a1a8fed698ecc257223de934"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/failures.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/manifest.json",
+      "bytes": 6318,
+      "sha256": "327b709955a2abbc17b50725efc22fbb9707444d3e808076852255220df5cc6c"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/protocol.json",
+      "bytes": 10920,
+      "sha256": "b9a685bb2cae86c4708b9b78ee09439adfabdd9fc522629b181ab4db1a8d8f8a"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/protocol_lock.json",
+      "bytes": 91,
+      "sha256": "9dcc89b13aef60fe094342338a1bebdd05351dc129602201db8fc8e2b8b54178"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/baseline_audit.json",
+      "bytes": 654,
+      "sha256": "65082b7bfbda2f040a865eb17ca7fcbea177d85055f95b06b3ba6b0df2754db9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/baseline_delta0.csv",
+      "bytes": 497454,
+      "sha256": "7857b527ef54b679d31c8a362f3491f53b1dc670db377126d5b2a54484391674"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/carbon_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "cb70bfb58b2b71d6f32eb5eb96825db78629afd57050877a6b84108b25c511e9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/carbon_endpoint/building_trajectory.csv",
+      "bytes": 1076732,
+      "sha256": "293a5ac20b28291bccb1f865a959f8149590c83f901bf897a4487c5970a7d5cc"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/carbon_endpoint/dispatch.csv",
+      "bytes": 2795244,
+      "sha256": "e3466ad9980f25417265eaeb1871a9431e0c42ae3fecc77e7e51782f0566697d"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/carbon_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/carbon_endpoint/independent_building_audit.json",
+      "bytes": 6706,
+      "sha256": "52c6a94e61829f73aa82c74e906c1eff9d9ee0c21aa35b659bb8b4da9e0e67d8"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/carbon_endpoint/independent_ledger_audit.json",
+      "bytes": 842,
+      "sha256": "d25a961b5030735ba9044e279d1426a54ab83eb4975a8d45867bea2d94629c51"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/carbon_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "09d315cddafe900f9e84a133034b89114025ba2421069894fadcc425e7cb50e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/carbon_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/carbon_endpoint/summary.json",
+      "bytes": 16712,
+      "sha256": "4c0878eefa3427a67df4e3d52d38e1020d4df6f4142dd5cc30a444ae751e5098"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/chronology.csv",
+      "bytes": 763476,
+      "sha256": "551e9d9d3746d4dd7606ee624843d168097b7f066624df79e47051484f7e48cb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/common_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/cost_endpoint/audit.json",
+      "bytes": 274,
+      "sha256": "d4df030a1893056f21a4f4a0a0d954dc1861a483cc2c9f702c2038893274eeac"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/cost_endpoint/building_trajectory.csv",
+      "bytes": 1081161,
+      "sha256": "1cd9525a97795c58865fd7f7a12c8d526f3ebafab400514106a97a39204c5201"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/cost_endpoint/dispatch.csv",
+      "bytes": 2787511,
+      "sha256": "f085b957454803f4cc2182a6ad5b9803f2afde9cc5caafaea95e7323cf8ede85"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/cost_endpoint/effective_config.yaml",
+      "bytes": 2364,
+      "sha256": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/cost_endpoint/independent_building_audit.json",
+      "bytes": 6742,
+      "sha256": "016a9cbe87e1c03f96e6209fc640dd62c2081a709ff06c2b7c645523762637e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/cost_endpoint/independent_ledger_audit.json",
+      "bytes": 845,
+      "sha256": "bed024782a7ca0a1446f8ee3be6bf86ea367d5eaeaf3cfbe989c39dfe5930c30"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/cost_endpoint/input_identity.json",
+      "bytes": 180,
+      "sha256": "09d315cddafe900f9e84a133034b89114025ba2421069894fadcc425e7cb50e2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/cost_endpoint/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/cost_endpoint/summary.json",
+      "bytes": 16749,
+      "sha256": "de9f7e3391045417714b1139900bf686c88c5182d0803251e2cc64319c6f3ea2"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap/audit.json",
+      "bytes": 196,
+      "sha256": "90f69b22aed6fa79dd2e5b3a209addfaf03fdad16151527a2913143ccbcc338e"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap/building_trajectory.csv",
+      "bytes": 1080080,
+      "sha256": "2504891bfa9cfe013bf219612bfc55353de52ee89d5833e835e98a617d7bbbeb"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap/dispatch.csv",
+      "bytes": 2789536,
+      "sha256": "5d78cb27cc9c49451e55981942dcd4be0628d0b523b805c57570806d55b739d4"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap/effective_config.yaml",
+      "bytes": 2412,
+      "sha256": "dc6a977e5832f1fe73f3ba3d7cf997c9b2e5f865a6acd8ff664a8ac150610138"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap/independent_building_audit.json",
+      "bytes": 6752,
+      "sha256": "45ffa72fe63de16ee80e0e34cfc8c56e59f112a3c1bb000de440917c41cc5d18"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap/independent_ledger_audit.json",
+      "bytes": 725,
+      "sha256": "19a21b284c87d62aea71f245a1d213ea26e5c38ffc0a34c5aae90b63f9ddb8b9"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap/input_identity.json",
+      "bytes": 180,
+      "sha256": "c75c9b5b4df4855617934c13f1eb9fa08eb42afa45ffde1f28694bba7a89ab61"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap/investments.csv",
+      "bytes": 34,
+      "sha256": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap/summary.json",
+      "bytes": 12797,
+      "sha256": "eece3e6f53ba919de9326e3de5223adb83949cc0f894d998e159a9ef1d43f6ae"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/results/wuhan/midpoint_cap_rule.json",
+      "bytes": 86,
+      "sha256": "13cbb055f368df357068687618fead1d90f2df98539d55f03169f1b2a03ca613"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_2880h_01/run_claim/claim.json",
+      "bytes": 137,
+      "sha256": "99be00935248e45f8fac5286c4392dd8e7199daf693545e44e738cc1ba3dddfe"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_export_audit_01.json",
+      "bytes": 10208,
+      "sha256": "1f312ce97f5dce81a9c424f1a2b81f002d1f62353c4efa402de24d6c5ef053da"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_export_audit_01.log",
+      "bytes": 58,
+      "sha256": "51652607e97c0b6438a39c1fd8798f6ab731b9ddaf91c48c20cdfa91009ac618"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_freeze_01.log",
+      "bytes": 126,
+      "sha256": "eede335362dcbd4926759b053fe596b3b9ce9e0553e20f0345cb0ff21b3f5a24"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_run_01.log",
+      "bytes": 584,
+      "sha256": "b415d8cfe40cd0f7e93c651fa0141b08d441e3977fd11949ca7b52ec18bd9f13"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/wuhan_verify_01.log",
+      "bytes": 36,
+      "sha256": "25e981a26ec7419e980b0ddce45b7c53859d67692d9469185f5c53b4e7f3824d"
+    },
+    {
+      "path": "scripts/analyze_multiscale_reference.py",
+      "bytes": 56196,
+      "sha256": "3ee01a4f2efdba892a48d0ec876ab7e399f727dd9578bffdbcdc44508f6a62be"
+    },
+    {
+      "path": "scripts/audit_multiscale_reference.py",
+      "bytes": 41167,
+      "sha256": "d741c3dc36a976ed20c5ccb3cc52df192210d1b2533c8784f5ea10e4e9e54164"
+    },
+    {
+      "path": "scripts/report_network_feedback_reference.py",
+      "bytes": 3567,
+      "sha256": "6cbdb474011e6f0117ecefaa39715a5b0bc1202bb051aac9d6d117c85fa4ec73"
+    },
+    {
+      "path": "scripts/run_multiscale_reference.py",
+      "bytes": 16395,
+      "sha256": "a5bff312dbe059a301083ce60fb25240a16cd5205267187d945d76c44daab51b"
+    },
+    {
+      "path": "scripts/run_network_feedback_reference.py",
+      "bytes": 11311,
+      "sha256": "f09ad29777e6ca5e738958540b79315555e90685579632e7eb2ff7b007b9518a"
+    },
+    {
+      "path": "scripts/run_three_city_climate_dispatch_resilient.py",
+      "bytes": 26530,
+      "sha256": "a30d94a922586eaa55519b470e8ea4489b6de8fb619b9271cfd6e2305429ee12"
+    },
+    {
+      "path": "scripts/verify_network_feedback_reference.py",
+      "bytes": 5318,
+      "sha256": "11869616f74e6846139fda6b7e0eb32efc7d9004874f6d8e08bafa9a7fa88391"
+    },
+    {
+      "path": "src/heatplan/network_feedback.py",
+      "bytes": 29972,
+      "sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161"
+    },
+    {
+      "path": "tests/test_multiscale_reference_audit.py",
+      "bytes": 17186,
+      "sha256": "f6ed0721aab94cab89f2cb5a50a3268f501203aacb80b26a673f9a5f0010d127"
+    },
+    {
+      "path": "tests/test_multiscale_reference_protocol.py",
+      "bytes": 2305,
+      "sha256": "32eb569d32f82925cc2e0d32828ac545037874b447436f37b5a9e7fb57f7b33b"
+    },
+    {
+      "path": "tests/test_network_feedback.py",
+      "bytes": 4785,
+      "sha256": "b129e387d5b1eb77aeec582747369e68a6c963cb136000543c95add861486375"
+    },
+    {
+      "path": "tests/test_network_feedback_independent.py",
+      "bytes": 19937,
+      "sha256": "73cb65447e739e3ac1f4a1cc049680f527656674f21e9f9c88ce549e6d4c1c63"
+    },
+    {
+      "path": "tests/test_three_city_climate_dispatch_resilient.py",
+      "bytes": 19630,
+      "sha256": "a7574088670aeb15b0ee2c0a5962a196358ebe4522d5e7fea03215cbb7e5d082"
+    }
+  ],
+  "source_bytes": 76021747,
+  "excluded_paths": [
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/matplotlib_cache",
+      "reason": "temporary sandbox/cache; only manifest-required failure JSON reselected below"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01",
+      "reason": "temporary sandbox/cache; only manifest-required failure JSON reselected below"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_02",
+      "reason": "temporary sandbox/cache; only manifest-required failure JSON reselected below"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03",
+      "reason": "temporary sandbox/cache; only manifest-required failure JSON reselected below"
+    }
+  ],
+  "explicitly_retained_failure_checkpoint_paths": [
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_atomic_checkpoint_replace0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_concurrent_invocations_ha0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_explicit_identity_failure0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_first_city_baseline_audit0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_first_city_baseline_rollo0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_first_city_prepare_read_f0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_1/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_2/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_3/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_4/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_global_identity_failures_5/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_identity_change_during_mi0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_known_feasible_bound_gate0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_known_feasible_bound_gate1/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_known_feasible_bound_gate2/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_middle_second_stage_failu0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_process_interrupt_is_not_0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_process_interrupt_is_not_1/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_protocol_change_during_fi0/batch/checkpoint.json",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_03/test_self_consistent_protocol_0/batch/checkpoint.json"
+  ],
+  "reused_ignored_reference_sources": [
+    {
+      "path": "docs/implementation_20261002/data/evidence/bestest_6231.pdf",
+      "sha256": "935ff9744c68ee27b83a41dbb508af59ce54cf37a77e513a66018384a40b0aff",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/grid_factor_2023.pdf",
+      "sha256": "d43b60a3eaad9f3fe59ca37c204d3d0e1b6ea52742a092f0d856971a3f018e5a",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/hubei_sales_price_2021.pdf",
+      "sha256": "939063dfc09bb1f00cbe413bcc9c28e977a9edceb5b152a40cc4bd38c121ac43",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_heating_window_2024.html",
+      "sha256": "f39bb14a34bb1ab697e821f3e1ac3f41b15ed1e4cec844aa6f097d3ded446c8d",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    },
+    {
+      "path": "docs/implementation_20261002/data/evidence/wuhan_nasa_power_utc.json",
+      "sha256": "008d00e509ec288d76fb6f01df1dcbb85d5090783786cfc9feb63a919044fa70",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_11.pdf",
+      "sha256": "9fa81bc3be47c1917fbd0e0f6cac1bf1dfb5edc47559f155b9b82e97611f8b33",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2024_12.pdf",
+      "sha256": "74161836e189120f1f86c33f38010fc01a4e6e7e3706dfc55b07a6bf5a48163a",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_2025_months.pdf",
+      "sha256": "efccc95604a44d0871a82d2315e3b30ff3c9f2aa4b7c2d5d29efd187294b632d",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_single_two_part_policy_163_2023.pdf",
+      "sha256": "40cf12a479b73eec03940773caf2fb7d8834481214075af1ada0a6f304f16182",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    },
+    {
+      "path": "docs/implementation_20261002/data/tou_evidence/hubei_tou_policy_77_2024.pdf",
+      "sha256": "086aea2d5388ed5fb18cbfb8a7c2ef362c66896c43027681d8a6a8347856edc4",
+      "distributed": false,
+      "reason": "Strict local check reuses identical archived original"
+    }
+  ],
+  "requirements_release_rc5": {
+    "path": "requirements-release-rc5.txt",
+    "sha256": "9c56eabc796eba258a472bdf23096445edea7ac41b0715cfbe932b423268afe1",
+    "psutil": "5.9.8",
+    "original_confirmation_psutil": "5.9.0, unchanged"
+  },
+  "not_copied_yet": [
+    "algorithm",
+    "investment",
+    "stage03 master README"
+  ],
+  "root_version_and_release_metadata_not_final": true
+}

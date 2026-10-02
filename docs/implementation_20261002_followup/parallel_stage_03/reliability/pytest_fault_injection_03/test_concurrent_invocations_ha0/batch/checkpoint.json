@@ -1,0 +1,542 @@
+{
+  "schema": "three_city_climate_resilient_v1",
+  "status": "completed",
+  "identity_verified": true,
+  "comparison_valid": true,
+  "cities": [
+    "urumqi",
+    "guyuan",
+    "wuhan"
+  ],
+  "revision": 32,
+  "rows": [
+    {
+      "city": "urumqi",
+      "case": "baseline_delta0",
+      "origin": "new_feedback_rollout",
+      "result_attribute": "predeclared_feasible_feedback_policy",
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15,
+      "bill_yuan": 4984.733688284301,
+      "energy_kwh": 6472.400002000002,
+      "carbon_kg": 2617.4385608088,
+      "heating_kwh": 6472.400002000002,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.5860900000000004,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "urumqi",
+      "case": "cost_endpoint",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true,
+        "known_feasible_primary_bound": true,
+        "known_feasible_returned_bound": true,
+        "declared_primary_allowance": true
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15,
+      "bill_yuan": 4984.733688284301,
+      "energy_kwh": 6472.400002000002,
+      "carbon_kg": 2617.4385608088,
+      "heating_kwh": 6472.400002000002,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.5860900000000004,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "urumqi",
+      "case": "carbon_endpoint",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true,
+        "known_feasible_primary_bound": true,
+        "known_feasible_returned_bound": true,
+        "declared_primary_allowance": true
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15,
+      "bill_yuan": 4984.733688284301,
+      "energy_kwh": 6472.400002000002,
+      "carbon_kg": 2617.4385608088,
+      "heating_kwh": 6472.400002000002,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.5860900000000004,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "urumqi",
+      "case": "midpoint_cap",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15,
+      "bill_yuan": 4984.733688284301,
+      "energy_kwh": 6472.400002000002,
+      "carbon_kg": 2617.4385608088,
+      "heating_kwh": 6472.400002000002,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.5860900000000004,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "guyuan",
+      "case": "baseline_delta0",
+      "origin": "new_feedback_rollout",
+      "result_attribute": "predeclared_feasible_feedback_policy",
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "bill_yuan": 5075.855416556001,
+      "energy_kwh": 6615.493344000001,
+      "carbon_kg": 2675.3055083135996,
+      "heating_kwh": 6615.493344000001,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.893775000000001,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "guyuan",
+      "case": "cost_endpoint",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true,
+        "known_feasible_primary_bound": true,
+        "known_feasible_returned_bound": true,
+        "declared_primary_allowance": true
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "bill_yuan": 5075.855416556001,
+      "energy_kwh": 6615.493344000001,
+      "carbon_kg": 2675.3055083135996,
+      "heating_kwh": 6615.493344000001,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.893775000000001,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "guyuan",
+      "case": "carbon_endpoint",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true,
+        "known_feasible_primary_bound": true,
+        "known_feasible_returned_bound": true,
+        "declared_primary_allowance": true
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "bill_yuan": 5075.855416556001,
+      "energy_kwh": 6615.493344000001,
+      "carbon_kg": 2675.3055083135996,
+      "heating_kwh": 6615.493344000001,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.893775000000001,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "guyuan",
+      "case": "midpoint_cap",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "bill_yuan": 5075.855416556001,
+      "energy_kwh": 6615.493344000001,
+      "carbon_kg": 2675.3055083135996,
+      "heating_kwh": 6615.493344000001,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.893775000000001,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "wuhan",
+      "case": "baseline_delta0",
+      "origin": "new_feedback_rollout",
+      "result_attribute": "predeclared_feasible_feedback_policy",
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "bill_yuan": 2305.8219675989194,
+      "energy_kwh": 3043.010076702301,
+      "carbon_kg": 1230.5932750184106,
+      "heating_kwh": 3043.010076702301,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 2.391855000000001,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 26.025186877937156,
+      "warm_degree_hours_above_20": 182.34318985905776
+    },
+    {
+      "city": "wuhan",
+      "case": "cost_endpoint",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true,
+        "known_feasible_primary_bound": true,
+        "known_feasible_returned_bound": true,
+        "declared_primary_allowance": true
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "bill_yuan": 2305.8219675989194,
+      "energy_kwh": 3043.010076702301,
+      "carbon_kg": 1230.5932750184106,
+      "heating_kwh": 3043.010076702301,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 2.391855000000001,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 26.025186877937156,
+      "warm_degree_hours_above_20": 182.34318985905776
+    },
+    {
+      "city": "wuhan",
+      "case": "carbon_endpoint",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true,
+        "known_feasible_primary_bound": true,
+        "known_feasible_returned_bound": true,
+        "declared_primary_allowance": true
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "bill_yuan": 2305.8219675989194,
+      "energy_kwh": 3043.010076702301,
+      "carbon_kg": 1230.5932750184106,
+      "heating_kwh": 3043.010076702301,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 2.391855000000001,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 26.025186877937156,
+      "warm_degree_hours_above_20": 182.34318985905776
+    },
+    {
+      "city": "wuhan",
+      "case": "midpoint_cap",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "bill_yuan": 2305.8219675989194,
+      "energy_kwh": 3043.010076702301,
+      "carbon_kg": 1230.5932750184106,
+      "heating_kwh": 3043.010076702301,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 2.391855000000001,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 26.025186877937156,
+      "warm_degree_hours_above_20": 182.34318985905776
+    }
+  ],
+  "failures": [],
+  "global_failure": null,
+  "tasks": [
+    {
+      "city": "urumqi",
+      "case": "prepare",
+      "status": "completed",
+      "stage": "city_prepare",
+      "wall_seconds": 0.16554659999383148
+    },
+    {
+      "city": "urumqi",
+      "case": "baseline_delta0",
+      "status": "accepted",
+      "stage": "baseline_rollout",
+      "wall_seconds": 0.17414440000720788
+    },
+    {
+      "city": "urumqi",
+      "case": "cost_endpoint",
+      "status": "accepted",
+      "stage": "cost_endpoint_solve",
+      "wall_seconds": 0.18338410000433214
+    },
+    {
+      "city": "urumqi",
+      "case": "carbon_endpoint",
+      "status": "accepted",
+      "stage": "carbon_endpoint_solve",
+      "wall_seconds": 0.1809685000043828
+    },
+    {
+      "city": "urumqi",
+      "case": "midpoint_cap",
+      "status": "accepted",
+      "stage": "midpoint_cap_solve",
+      "wall_seconds": 0.18344819999765605
+    },
+    {
+      "city": "guyuan",
+      "case": "prepare",
+      "status": "completed",
+      "stage": "city_prepare",
+      "wall_seconds": 0.17202919999544974
+    },
+    {
+      "city": "guyuan",
+      "case": "baseline_delta0",
+      "status": "accepted",
+      "stage": "baseline_rollout",
+      "wall_seconds": 0.18065829999977723
+    },
+    {
+      "city": "guyuan",
+      "case": "cost_endpoint",
+      "status": "accepted",
+      "stage": "cost_endpoint_solve",
+      "wall_seconds": 0.23439860000507906
+    },
+    {
+      "city": "guyuan",
+      "case": "carbon_endpoint",
+      "status": "accepted",
+      "stage": "carbon_endpoint_solve",
+      "wall_seconds": 0.23339530000521336
+    },
+    {
+      "city": "guyuan",
+      "case": "midpoint_cap",
+      "status": "accepted",
+      "stage": "midpoint_cap_solve",
+      "wall_seconds": 0.18569209999986924
+    },
+    {
+      "city": "wuhan",
+      "case": "prepare",
+      "status": "completed",
+      "stage": "city_prepare",
+      "wall_seconds": 0.1793686000019079
+    },
+    {
+      "city": "wuhan",
+      "case": "baseline_delta0",
+      "status": "accepted",
+      "stage": "baseline_rollout",
+      "wall_seconds": 0.1734089999954449
+    },
+    {
+      "city": "wuhan",
+      "case": "cost_endpoint",
+      "status": "accepted",
+      "stage": "cost_endpoint_solve",
+      "wall_seconds": 0.1861137000087183
+    },
+    {
+      "city": "wuhan",
+      "case": "carbon_endpoint",
+      "status": "accepted",
+      "stage": "carbon_endpoint_solve",
+      "wall_seconds": 0.19147059999522753
+    },
+    {
+      "city": "wuhan",
+      "case": "midpoint_cap",
+      "status": "accepted",
+      "stage": "midpoint_cap_solve",
+      "wall_seconds": 0.18562109999766108
+    }
+  ],
+  "frozen_run_sha256": {
+    "protocol.json": "aacab24a70ca03ec154e2ac7b28917f5990955ae9e3c869696b6c4179f956f36",
+    "protocol_lock.json": "ae2e2ecd2f541fc3ed4fc19224af1a0ae487b2be003817149ffbfe5c982dbbb2"
+  },
+  "updated_utc": "2026-10-02T12:51:07.932335+00:00"
+}

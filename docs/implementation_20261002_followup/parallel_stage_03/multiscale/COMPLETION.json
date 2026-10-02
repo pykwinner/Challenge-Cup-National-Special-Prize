@@ -1,0 +1,125 @@
+{
+  "schema_version": "multiscale_completion.v1",
+  "version": "multiscale-reference-20261002-v1",
+  "status": "completed_experimental_reference",
+  "completed_utc": "2026-10-02T12:57:55.407432+00:00",
+  "project_location_unchanged": true,
+  "core_solver_modified": false,
+  "ppt_pdf_written": false,
+  "git_upload_performed": false,
+  "cases": 7,
+  "hours_per_building": 2880,
+  "source_snapshots": 55,
+  "independent_verification_passed": true,
+  "distinct_necessary_tests_passed": 48,
+  "shared_capacity_kw": 6.479637500000002,
+  "building_to_system": {
+    "independent_sum_grid_exceedance_hours": 229,
+    "independent_sum_max_excess_kw": 18.853875246068235,
+    "independent_sum_excess_energy_kwh": 2487.02159797195,
+    "coupled_actual_binding_hours": 530,
+    "coupled_grid_exceedance_hours": 0,
+    "all_fixed20_is_feasible": true,
+    "flexible_bill_yuan": 5660.964848086876,
+    "all_fixed20_bill_yuan": 6033.452112027854,
+    "flexibility_bill_reduction_yuan_vs_all_fixed20": 372.48726394097775,
+    "flexibility_bill_reduction_percent_denominator_all_fixed20": 6.173700512156449,
+    "flexibility_energy_change_percent_vs_all_fixed20": 5.432297168562877,
+    "strict_bill_advantage_supported_by_solver_bounds": true
+  },
+  "system_to_building": [
+    {
+      "name": "coupled_flexible",
+      "building": "variant_A",
+      "reference": "joint_unlimited",
+      "mean_temperature_delta_c": -0.28702154560342563,
+      "max_absolute_temperature_delta_c": 7.0000000000000036,
+      "temperature_changed_hours": 276,
+      "heat_delta_kwh": -86.21667995453936,
+      "cooling_delta_kwh": 0.0,
+      "electricity_delta_kwh": -86.21667995453936,
+      "bill_delta_cny": 22.18834406555223,
+      "heat_changed_hours": 418,
+      "cooling_changed_hours": 0,
+      "absolute_heat_reallocation_kwh": 622.2940340094083,
+      "absolute_cooling_reallocation_kwh": 0.0,
+      "system_binding_hours": 530,
+      "common_K_binding_hour_symmetric_difference_vs_unlimited": 530,
+      "binding_hours_also_independent_counterfactual_excess": 229,
+      "mean_electric_delta_at_actual_binding_kw": -0.6220737124595971,
+      "mean_electric_delta_at_independent_excess_kw": -1.491138032570333
+    },
+    {
+      "name": "coupled_flexible",
+      "building": "variant_B",
+      "reference": "joint_unlimited",
+      "mean_temperature_delta_c": -0.5618500986596173,
+      "max_absolute_temperature_delta_c": 6.2412201313579345,
+      "temperature_changed_hours": 1715,
+      "heat_delta_kwh": -253.15617005365692,
+      "cooling_delta_kwh": 0.0,
+      "electricity_delta_kwh": -253.15617005365675,
+      "bill_delta_cny": 147.83759864021476,
+      "heat_changed_hours": 1111,
+      "cooling_changed_hours": 0,
+      "absolute_heat_reallocation_kwh": 4043.117587216153,
+      "absolute_cooling_reallocation_kwh": 0.0,
+      "system_binding_hours": 530,
+      "common_K_binding_hour_symmetric_difference_vs_unlimited": 530,
+      "binding_hours_also_independent_counterfactual_excess": 229,
+      "mean_electric_delta_at_actual_binding_kw": -2.3378177378139973,
+      "mean_electric_delta_at_independent_excess_kw": -9.369218290451284
+    }
+  ],
+  "shared_limit_counterfactual_effect": {
+    "unlimited_peak_kw": 25.333512746068237,
+    "coupled_peak_kw": 6.479637500000003,
+    "coupled_minus_unlimited_bill_yuan": 170.02594270577447,
+    "coupled_minus_unlimited_bill_percent": 3.0964821433206917,
+    "note": "unlimited and independent sum violate shared capacity; not implementable comparators under the same grid."
+  },
+  "negative_results_retained": [
+    "All fixed20 ablations are feasible; no ablation infeasibility observed.",
+    "Preserving flexibility reduces reference energy charge but increases energy and fixed-average-factor CO2 relative to all fixed20.",
+    "Independent lower bill is physically invalid under the common shared grid."
+  ],
+  "allowed_claims": [
+    "Actual hourly grid constraint binds530h and invalidates independent stitched decisions229h.",
+    "Two distinct declared thermal design variants react to the shared system limit; A/B heat changes418/1111h relative to unlimited.",
+    "Within the same shared grid, less restrictive comfort operation has a solver-bound-supported reference energy-bill advantage over stricter fixed20 controls."
+  ],
+  "claim_limits": [
+    "Public prototype and explicit design variant, not measured buildings or BESTEST900 certification.",
+    "Conditional methodological Wuhan account energy price and fixed average EF; not local account verification or marginal emissions.",
+    "Existing ideal equipment and no free investment; no CAPEX/O&M/ROI or engineering total-cost claim.",
+    "Fixed20 ablations impose stricter control sets within20..27C service, not algorithm comparisons on identical feasible sets.",
+    "72h view selection is postsolve analysis, not preregistered confirmation; all metrics use full2880h."
+  ],
+  "main_artifacts": {
+    "report": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/RESULTS.md",
+    "machine_summary": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/summary.json",
+    "system_building_tables": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/full_tables.csv",
+    "full_hourly_changes": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/hourly_building_changes.csv",
+    "independent_audit": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/independent_verification.json",
+    "protocol": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/protocol.json",
+    "raw_manifest": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/manifest.json",
+    "analysis_manifest": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/analysis_manifest.json",
+    "test_evidence": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/TEST_EVIDENCE.json",
+    "scope_and_reproduction": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/EXPERIMENT_SCOPE.md"
+  },
+  "scripts": [
+    "scripts/run_multiscale_reference.py",
+    "scripts/audit_multiscale_reference.py",
+    "scripts/analyze_multiscale_reference.py"
+  ],
+  "tests": [
+    "tests/test_multiscale_reference_protocol.py",
+    "tests/test_multiscale_reference_audit.py"
+  ],
+  "verified_hashes": {
+    "protocol.json": "ece2976fb7d8e7a77d5477f7d8ed6a8a2ef55558d221ae8523b709cfe0e29b74",
+    "manifest.json": "5ad0f216bc01db4075404cf206f3c9e660d11462aff9b58f97e077ff78d60fb7",
+    "independent_verification.json": "62b6f3a8e2216e815743182035b1e55cb59420671eb3d0a460a198a2a8fa7205",
+    "analysis/analysis_manifest.json": "54a6444c8534e1d058171b0f3de47065835f9224bda463ab831d137ca9c27d2d"
+  }
+}

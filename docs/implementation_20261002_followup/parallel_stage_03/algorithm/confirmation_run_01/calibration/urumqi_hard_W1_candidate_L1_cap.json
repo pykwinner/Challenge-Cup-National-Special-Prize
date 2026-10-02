@@ -1,0 +1,161 @@
+{
+  "city": "urumqi",
+  "method_id": "hard_W1_candidate_L1_cap",
+  "worker_cpu_affinity": {
+    "supported": true,
+    "effective_logical_CPUs": [
+      0
+    ]
+  },
+  "status": "ok",
+  "weights": [
+    18.584892360736347,
+    17.0,
+    19.437500000000053,
+    22.738636363636324,
+    19.023886175617303,
+    11.615085100009999,
+    3.9999999999999787,
+    7.6000000000000005
+  ],
+  "solver_status": 0,
+  "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "l1_cap_days": 47.847057448745296,
+  "normalized_W1": 0.014036690643051167,
+  "native_residuals": {
+    "energy": 0.0,
+    "days": 0.0,
+    "floor_violation": 0.0,
+    "l1_cap_violation": 0.0,
+    "objective_residual": 4.683753385137379e-17
+  },
+  "candidate_displacement_days": 47.8470562487453,
+  "paired_diagnostics": {
+    "input_identity": {
+      "selected_day_indices": [
+        91,
+        18,
+        32,
+        84,
+        67,
+        74,
+        40,
+        102
+      ],
+      "selected_day_ids": [
+        "2025-02-15",
+        "2024-12-04",
+        "2024-12-18",
+        "2025-02-08",
+        "2025-01-22",
+        "2025-01-29",
+        "2024-12-26",
+        "2025-02-26"
+      ],
+      "calendar_day_ids_sha256": "fc5978d6ec0fd8adddff51fa57c1a7a04b1849bce0b60e0b5d34a6310d2d8182",
+      "reference_power_sha256": "27c531eb64a2836fa3e13b23d09b1070e068273f425f203756be328c89278d77",
+      "paired_prices_sha256": "bc09cfcd2517251e5430649a79264ebec36e8b01eb7950db4e0f69d5eda671dd",
+      "selected_reference_power_sha256": "3e3e283da91a6d899f75c6570008eb326dde8a48e20a16314b6b13ad76021345",
+      "selected_paired_prices_sha256": "d2d7fca4f356024ead2880281c19f14cb96e751377051902aef25738a41ad93b",
+      "operation_window_sha256": {
+        "morning_end": "a11168630c74f3dcabcf5ca8f26b22e7bb4930c0df2fba75ccece989cae807ec",
+        "midday_end": "f49dcedce095b304cb4a21c9caea8728912d3a0066f41b77ba81e03aadd5928a"
+      }
+    },
+    "passes": false,
+    "reference_energy": {
+      "unit": "kWh_th",
+      "target": 7048.400002,
+      "estimate": 7048.400002,
+      "signed_residual": 0.0,
+      "relative_residual": 0.0,
+      "absolute_error_bound": 0.0,
+      "bound_violation": 0.0,
+      "numerical_acceptance_allowance": 9.48750348e-05,
+      "passes_with_declared_numerical_tolerance": true
+    },
+    "moments": {
+      "price_product": {
+        "unit": "currency*kWh_th/kWh_e",
+        "target": 5429.1688482843,
+        "estimate": 5430.493939454426,
+        "signed_residual": 1.325091170126143,
+        "relative_residual": 0.00024406888184089025,
+        "absolute_error_bound": 27.1458442414215,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 7.544221083336001e-05,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:morning_end": {
+        "unit": "kWh_th",
+        "target": 320.452363,
+        "estimate": 322.6921310214501,
+        "signed_residual": 2.239768021450118,
+        "relative_residual": 0.006989394618538413,
+        "absolute_error_bound": 3.20452363,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 4.3155168e-06,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:midday_end": {
+        "unit": "kWh_th",
+        "target": 236.79541899999998,
+        "estimate": 227.6544395729829,
+        "signed_residual": -9.140979427017072,
+        "relative_residual": -0.038602855855995565,
+        "absolute_error_bound": 2.36795419,
+        "bound_violation": 6.773025237017072,
+        "numerical_acceptance_allowance": 3.2904564e-06,
+        "passes_with_declared_numerical_tolerance": false
+      }
+    },
+    "day_conservation_signed_residual": 0.0,
+    "day_numerical_acceptance_allowance": 1.2e-06,
+    "maximum_lower_bound_violation_days": 0.0,
+    "lower_bound_numerical_acceptance_allowance_days": 1e-08,
+    "objective_weight_L1_over_days": 0.3987254787395441,
+    "objective_unit": "dimensionless (sum absolute weight displacement in days / calendar days)",
+    "operation_window_active_hours": {
+      "morning_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "midday_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "normalized_reference_W1": 0.014036690643051167,
+  "weight_L1_displacement_days": 47.847057448745296,
+  "resources": {
+    "wall_seconds": 1.8501089999917895,
+    "sampled_peak_RSS_bytes": 173658112,
+    "return_code": 0,
+    "termination": null,
+    "limit_seconds": 60.0,
+    "limit_RSS_bytes": 1073741824,
+    "numerical_threads": 1,
+    "startup_and_verification_included": true,
+    "dependency_candidate_wall_seconds": 1.8092427999945357,
+    "own_plus_dependency_wall_seconds": 3.659351799986325
+  }
+}

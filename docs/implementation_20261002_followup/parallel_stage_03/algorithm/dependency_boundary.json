@@ -1,0 +1,28 @@
+{
+  "existing_base": "requirements-release-rc2.txt",
+  "increment_file": "docs/implementation_20261002_followup/parallel_stage_03/algorithm/requirements_increment.txt",
+  "psutil": {
+    "version": "5.9.0",
+    "required": true,
+    "reason": "sample worker RSS, resource-limit enforcement, child-tree inspection and CPU affinity; absence prevents running, no fabricated resource claim"
+  },
+  "threadpoolctl": {
+    "version": "3.6.0",
+    "required": true,
+    "already_declared_in_existing_base": true
+  },
+  "source_frozen": false,
+  "new_city_outcomes_run": 0,
+  "scope": "parent GitHub group can add exact increment; no edits to parent-owned requirements",
+  "local_full_test_render_versions": {
+    "pytest": "7.4.4",
+    "matplotlib": "3.9.2",
+    "PyYAML": "6.0.3"
+  },
+  "release_candidate_environment_tested": false,
+  "local_vs_release_base_differences": {
+    "matplotlib": "local3.9.2/base3.11.2",
+    "pytest": "local7.4.4/base9.1.1"
+  },
+  "exact_confirmation_environment_file": "docs/implementation_20261002_followup/parallel_stage_03/algorithm/requirements_confirmation.txt"
+}

@@ -1,0 +1,370 @@
+{
+  "schema": "three_city_climate_resilient_v1",
+  "status": "aborted",
+  "identity_verified": false,
+  "comparison_valid": false,
+  "cities": [
+    "urumqi",
+    "guyuan",
+    "wuhan"
+  ],
+  "revision": 16,
+  "rows": [],
+  "failures": [
+    {
+      "city": null,
+      "case": "batch",
+      "stage": "global_identity_or_execution",
+      "status": "failed",
+      "type": "IdentityFailure",
+      "reason": "frozen numerical runtime identity changed",
+      "failed_utc": "2026-10-02T12:50:08.107047+00:00"
+    },
+    {
+      "city": "urumqi",
+      "case": "prepare",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "urumqi",
+      "case": "baseline_delta0",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "urumqi",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "urumqi",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "urumqi",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "prepare",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "baseline_delta0",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "prepare",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "baseline_delta0",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    }
+  ],
+  "global_failure": {
+    "city": null,
+    "case": "batch",
+    "stage": "global_identity_or_execution",
+    "status": "failed",
+    "type": "IdentityFailure",
+    "reason": "frozen numerical runtime identity changed",
+    "failed_utc": "2026-10-02T12:50:08.107047+00:00"
+  },
+  "tasks": [
+    {
+      "city": "urumqi",
+      "case": "prepare",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "urumqi",
+      "case": "baseline_delta0",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "urumqi",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "urumqi",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "urumqi",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "prepare",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "baseline_delta0",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "prepare",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "baseline_delta0",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    }
+  ],
+  "frozen_run_sha256": {
+    "protocol.json": "4e7d1eafd65444e64584b953260c7bba868fadfe0b5408b3a0f6cc188ceaf2ad",
+    "protocol_lock.json": "c9b3e89338550ef13b24401efbc724a77ee8afedd535fed93f5b3dfb0c82da0c"
+  },
+  "updated_utc": "2026-10-02T12:50:08.160236+00:00"
+}

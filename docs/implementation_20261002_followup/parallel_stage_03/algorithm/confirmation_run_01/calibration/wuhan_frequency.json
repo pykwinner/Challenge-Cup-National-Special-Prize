@@ -1,0 +1,136 @@
+{
+  "city": "wuhan",
+  "method_id": "frequency",
+  "status": "ok",
+  "weights": [
+    7.0,
+    22.0,
+    24.0,
+    23.0,
+    17.0,
+    25.0,
+    1.0,
+    1.0
+  ],
+  "paired_diagnostics": {
+    "input_identity": {
+      "selected_day_indices": [
+        116,
+        56,
+        91,
+        66,
+        8,
+        43,
+        12,
+        84
+      ],
+      "selected_day_ids": [
+        "2025-03-12",
+        "2025-01-11",
+        "2025-02-15",
+        "2025-01-21",
+        "2024-11-24",
+        "2024-12-29",
+        "2024-11-28",
+        "2025-02-08"
+      ],
+      "calendar_day_ids_sha256": "fc5978d6ec0fd8adddff51fa57c1a7a04b1849bce0b60e0b5d34a6310d2d8182",
+      "reference_power_sha256": "a5558e695c5416f2dbfc18296717782c0e96969db3e7d13ad4438355a8055916",
+      "paired_prices_sha256": "bc09cfcd2517251e5430649a79264ebec36e8b01eb7950db4e0f69d5eda671dd",
+      "selected_reference_power_sha256": "8098edde129a75fbf805f1e4985cfc727149fd09e0962effc2f9b7fb875a7633",
+      "selected_paired_prices_sha256": "4c2b5fc2253093f85997b4be3cfaaf3cb4c2be7481dd6893973fd5ca7e29ca3f",
+      "operation_window_sha256": {
+        "morning_end": "a11168630c74f3dcabcf5ca8f26b22e7bb4930c0df2fba75ccece989cae807ec",
+        "midday_end": "f49dcedce095b304cb4a21c9caea8728912d3a0066f41b77ba81e03aadd5928a"
+      }
+    },
+    "passes": false,
+    "reference_energy": {
+      "unit": "kWh_th",
+      "target": 3612.19061,
+      "estimate": 3598.882973,
+      "signed_residual": -13.307636999999886,
+      "relative_residual": -0.0036840904694118246,
+      "absolute_error_bound": 0.0,
+      "bound_violation": 13.307636999999886,
+      "numerical_acceptance_allowance": 6.09817068e-05,
+      "passes_with_declared_numerical_tolerance": false
+    },
+    "moments": {
+      "price_product": {
+        "unit": "currency*kWh_th/kWh_e",
+        "target": 2746.6749010365,
+        "estimate": 2731.3444590936,
+        "signed_residual": -15.330441942900052,
+        "relative_residual": -0.005581454848229353,
+        "absolute_error_bound": 13.733374505182502,
+        "bound_violation": 1.5970674377175502,
+        "numerical_acceptance_allowance": 4.469396752044e-05,
+        "passes_with_declared_numerical_tolerance": false
+      },
+      "window_energy:morning_end": {
+        "unit": "kWh_th",
+        "target": 200.926649,
+        "estimate": 199.705296,
+        "signed_residual": -1.2213529999999935,
+        "relative_residual": -0.006078601350684914,
+        "absolute_error_bound": 2.00926649,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 3.1102259999999998e-06,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:midday_end": {
+        "unit": "kWh_th",
+        "target": 87.103016,
+        "estimate": 82.853834,
+        "signed_residual": -4.2491819999999905,
+        "relative_residual": -0.04878340837244936,
+        "absolute_error_bound": 0.87103016,
+        "bound_violation": 3.3781518399999904,
+        "numerical_acceptance_allowance": 1.8936708000000001e-06,
+        "passes_with_declared_numerical_tolerance": false
+      }
+    },
+    "day_conservation_signed_residual": 0.0,
+    "day_numerical_acceptance_allowance": 1.2e-06,
+    "maximum_lower_bound_violation_days": 0.0,
+    "lower_bound_numerical_acceptance_allowance_days": 1e-08,
+    "objective_weight_L1_over_days": 0.0,
+    "objective_unit": "dimensionless (sum absolute weight displacement in days / calendar days)",
+    "operation_window_active_hours": {
+      "morning_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "midday_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "normalized_reference_W1": 0.03414258778553217,
+  "weight_L1_displacement_days": 0.0,
+  "resources": {
+    "wall_seconds": 0.022354000000632368,
+    "sampled_peak_RSS_bytes": null,
+    "no_solver": true
+  }
+}

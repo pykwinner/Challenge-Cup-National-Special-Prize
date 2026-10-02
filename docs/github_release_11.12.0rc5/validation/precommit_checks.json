@@ -1,0 +1,104 @@
+{
+  "baseline": "499c16749c399c19fdb49616c0d56d8fd5a44f85",
+  "checked_at": "2026-10-02T21:50:52.134259+08:00",
+  "source_copy_files_verified": 1390,
+  "source_copy_bytes": 126878309,
+  "algorithm_whitelist_paths": 150,
+  "investment_whitelist_hashed_paths": 379,
+  "publisher_algorithm_compatibility_files": 111,
+  "publisher_metadata_before_this_receipt": 46,
+  "configs_and_data_unchanged_against_latest_remote_baseline": true,
+  "new_src_only": "src/heatplan/network_feedback.py",
+  "tests": {
+    "partial_tests": {
+      "passed": 155,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "warnings": 0
+    },
+    "ab_tests_02": {
+      "passed": 218,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "warnings": 0
+    }
+  },
+  "distinct_final_testcases": 373,
+  "first_AB_test_errors_retained": 5,
+  "network": {
+    "checks": 30,
+    "tamper_rejections": 4
+  },
+  "multiscale": {
+    "cases": 7,
+    "global_checks": 11,
+    "case_checks": 137
+  },
+  "reliability": {
+    "checks": 90,
+    "tamper_rejections": 7
+  },
+  "investment": {
+    "investment_primary_audit_candidate": {
+      "plans": 24,
+      "checks": 1122,
+      "passed": true
+    },
+    "investment_reproduction_audit_candidate": {
+      "plans": 24,
+      "checks": 1122,
+      "passed": true
+    }
+  },
+  "algorithm": {
+    "new_environment_native_audit_checks": 42225,
+    "full_calibrations": 18,
+    "full_policy_2880h_runs": 27,
+    "scientific_or_identity_comparison_checks": 21566,
+    "maximum_scientific_numeric_difference": 0,
+    "original_environment_mismatch_preserved": [
+      "version:psutil"
+    ],
+    "old_environment_modified": false,
+    "fresh_holdout": false
+  },
+  "saved_output_audits_mutated_files": 0,
+  "excluded_historical_contract_originals": [
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_01/input_bundle/qipanjing_original_contract.pdf",
+      "sha256": "aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d",
+      "bytes": 607866,
+      "reason": "historical third-party contract original; source URL/SHA retained in frozen source registry/join; strict acquisition needed, no PDF shipped"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle/qipanjing_original_contract.pdf",
+      "sha256": "aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d",
+      "bytes": 607866,
+      "reason": "historical third-party contract original; source URL/SHA retained in frozen source registry/join; strict acquisition needed, no PDF shipped"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_01/input_bundle/qipanjing_original_contract.pdf",
+      "sha256": "aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d",
+      "bytes": 607866,
+      "reason": "historical third-party contract original; source URL/SHA retained in frozen source registry/join; strict acquisition needed, no PDF shipped"
+    }
+  ],
+  "reused_ignored_reference_sources": 10,
+  "explicitly_retained_failure_checkpoints": 21,
+  "network_source_downloads_this_batch": 0,
+  "credential_pattern_matches": 0,
+  "oversized_files": 0,
+  "cache_files": 0,
+  "index_bytes_match_validated_worktree": true,
+  "baseline_deletions": 0,
+  "delta_files_before_manifest_and_this_receipt": 1547,
+  "metadata_relative_link_review": {
+    "checked_links": 44,
+    "missing": 0,
+    "reviewer": "rc5_final_metadata_review read-only"
+  }
+}

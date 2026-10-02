@@ -1,0 +1,389 @@
+[
+  {
+    "iteration": 0,
+    "status": "rejected",
+    "objective_yuan": 178.6426792936767,
+    "solver_status": 0,
+    "mip_gap": 0.0,
+    "solution_quality": {
+      "schema_version": "heatplan.solution_quality.v1",
+      "quality": "solver_proven_optimal_within_registered_tolerance",
+      "scope": {
+        "investment_scope": "existing_assets_dispatch",
+        "free_investment_variables": 0,
+        "investment_variables_including_fixed": 0,
+        "fixed_plan_marker_present": false,
+        "scope_evidence": "actual_built_investment_variable_bounds",
+        "joint_investment_decisions_present": false
+      },
+      "feasible_incumbent_audited": true,
+      "fixed_or_existing_assets_feasible_operation": true,
+      "optimality_scope": "existing_assets_dispatch",
+      "model_scope": "supplied finite LP/MILP and registered solver tolerances only",
+      "solver_stages": [
+        {
+          "solver_status": 0.0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_mode": "total_cost",
+          "objective_value": 178.64267929367662,
+          "mip_dual_bound": 178.64267929367662,
+          "mip_gap": 0.0,
+          "mip_node_count": 1.0,
+          "solver_elapsed_seconds": 0.020796700002392754,
+          "solver_requested_mip_gap": 0.0,
+          "solver_time_limit_seconds": 60.0,
+          "solver_integer_variables": 720.0,
+          "solver_objective_constant": 0.0,
+          "numerical_audit_passed": true,
+          "numerical_objective_checked": true,
+          "numerical_solution_finite": true,
+          "stage_id": "single",
+          "quality": "solver_proven_optimal_within_registered_tolerance",
+          "feasible_incumbent_audited": true,
+          "optimality_proven_within_solver_tolerance": true,
+          "objective_unit": "yuan_model_objective",
+          "objective_sense": "minimize",
+          "reasons": [
+            "solver optimal termination and reported relative gap within recorded target or closed reported gap"
+          ],
+          "objective_interval": {
+            "lower": 178.64267929367662,
+            "upper": 178.64267929367662,
+            "unit": "yuan_model_objective",
+            "objective_mode": "total_cost",
+            "expression": "this stage's solver linear objective, excluding separately reported constant",
+            "status": "solver_bound_and_feasible_incumbent",
+            "solver_tolerance_limited": true,
+            "not_a_KPI_perturbation_interval": true
+          }
+        }
+      ],
+      "lexicographic_claim": "not_applicable",
+      "strict_global_lexicographic_optimum_claimed": false,
+      "primary_incumbent_anchor": null,
+      "primary_objective_allowance": null,
+      "cash_cost_KPI_interval": {
+        "status": "not_separately_solved",
+        "lower": null,
+        "upper": null
+      },
+      "carbon_KPI_interval": {
+        "status": "not_separately_solved",
+        "lower": null,
+        "upper": null
+      },
+      "KPI_gap_scaling_performed": false,
+      "engineering_or_empirical_validation_claimed": false,
+      "limitations": [
+        "A solver certificate covers this stage objective and feasible region only.",
+        "Fixed-investment dispatch optimality does not prove the joint investment plan optimal.",
+        "Relative MIP gap cannot be multiplied by cash cost, carbon, CAPEX or another KPI to invent an interval.",
+        "Two-stage incumbent allowances and solver tolerances are not a strict exact global lexicographic proof."
+      ]
+    },
+    "audit": {
+      "passed": false,
+      "checks": {
+        "engineering_modes": false,
+        "duty_bounds": true,
+        "model_contract_identity": true,
+        "one_mode_per_branch_hour": true,
+        "source_heat_ledger": true,
+        "branch_service_ledgers": true,
+        "electricity_including_pumps": true,
+        "solver_numerical": true,
+        "export_matches_values": true,
+        "duty_linked_to_on_mode": true,
+        "simultaneous_source_capacity": true,
+        "simultaneous_electric_connection": true,
+        "soft_penalty_ledger": true,
+        "objective_summary_matches_values": true,
+        "carbon_cap": true
+      },
+      "branch_service": {
+        "near": true,
+        "far": true
+      },
+      "invalid_modes": [
+        "feedback_mode_4",
+        "feedback_mode_9"
+      ],
+      "source_heat_kwh": 227.2493237595544,
+      "delivered_heat_kwh": 191.54748000000004,
+      "heat_loss_kwh": 35.70184375955435,
+      "pump_kwh": 0.7100845478656905,
+      "electricity_kwh": 227.95940830742006,
+      "delta_t_excess_degree_on_hours": 15.559315740765864,
+      "soft_penalty_yuan": 0.0,
+      "minimum_active_far_supply_c": 61.51668757096316,
+      "maximum_active_pressure_drop_pa_per_m": 1081.4156428165693,
+      "field_validation": false,
+      "rc_comfort_certified": false,
+      "scope": "finite steady on-modes, independent star pumps, average hourly heat, conservative simultaneous source/connection capacities"
+    },
+    "added_mode_cuts": [
+      "feedback_mode_4",
+      "feedback_mode_9"
+    ],
+    "previous_cuts": []
+  },
+  {
+    "iteration": 1,
+    "status": "rejected",
+    "objective_yuan": 195.0120026186843,
+    "solver_status": 0,
+    "mip_gap": 0.0,
+    "solution_quality": {
+      "schema_version": "heatplan.solution_quality.v1",
+      "quality": "solver_proven_optimal_within_registered_tolerance",
+      "scope": {
+        "investment_scope": "existing_assets_dispatch",
+        "free_investment_variables": 0,
+        "investment_variables_including_fixed": 0,
+        "fixed_plan_marker_present": false,
+        "scope_evidence": "actual_built_investment_variable_bounds",
+        "joint_investment_decisions_present": false
+      },
+      "feasible_incumbent_audited": true,
+      "fixed_or_existing_assets_feasible_operation": true,
+      "optimality_scope": "existing_assets_dispatch",
+      "model_scope": "supplied finite LP/MILP and registered solver tolerances only",
+      "solver_stages": [
+        {
+          "solver_status": 0.0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_mode": "total_cost",
+          "objective_value": 195.0120026186845,
+          "mip_dual_bound": 195.0120026186843,
+          "mip_gap": 0.0,
+          "mip_node_count": 0.0,
+          "solver_elapsed_seconds": 0.012156400000094436,
+          "solver_requested_mip_gap": 0.0,
+          "solver_time_limit_seconds": 60.0,
+          "solver_integer_variables": 720.0,
+          "solver_objective_constant": 0.0,
+          "numerical_audit_passed": true,
+          "numerical_objective_checked": true,
+          "numerical_solution_finite": true,
+          "stage_id": "single",
+          "quality": "solver_proven_optimal_within_registered_tolerance",
+          "feasible_incumbent_audited": true,
+          "optimality_proven_within_solver_tolerance": true,
+          "objective_unit": "yuan_model_objective",
+          "objective_sense": "minimize",
+          "reasons": [
+            "solver optimal termination and reported relative gap within recorded target or closed reported gap"
+          ],
+          "objective_interval": {
+            "lower": 195.0120026186843,
+            "upper": 195.0120026186845,
+            "unit": "yuan_model_objective",
+            "objective_mode": "total_cost",
+            "expression": "this stage's solver linear objective, excluding separately reported constant",
+            "status": "solver_bound_and_feasible_incumbent",
+            "solver_tolerance_limited": true,
+            "not_a_KPI_perturbation_interval": true
+          }
+        }
+      ],
+      "lexicographic_claim": "not_applicable",
+      "strict_global_lexicographic_optimum_claimed": false,
+      "primary_incumbent_anchor": null,
+      "primary_objective_allowance": null,
+      "cash_cost_KPI_interval": {
+        "status": "not_separately_solved",
+        "lower": null,
+        "upper": null
+      },
+      "carbon_KPI_interval": {
+        "status": "not_separately_solved",
+        "lower": null,
+        "upper": null
+      },
+      "KPI_gap_scaling_performed": false,
+      "engineering_or_empirical_validation_claimed": false,
+      "limitations": [
+        "A solver certificate covers this stage objective and feasible region only.",
+        "Fixed-investment dispatch optimality does not prove the joint investment plan optimal.",
+        "Relative MIP gap cannot be multiplied by cash cost, carbon, CAPEX or another KPI to invent an interval.",
+        "Two-stage incumbent allowances and solver tolerances are not a strict exact global lexicographic proof."
+      ]
+    },
+    "audit": {
+      "passed": false,
+      "checks": {
+        "engineering_modes": false,
+        "duty_bounds": true,
+        "model_contract_identity": true,
+        "one_mode_per_branch_hour": true,
+        "source_heat_ledger": true,
+        "branch_service_ledgers": true,
+        "electricity_including_pumps": true,
+        "solver_numerical": true,
+        "export_matches_values": true,
+        "duty_linked_to_on_mode": true,
+        "simultaneous_source_capacity": true,
+        "simultaneous_electric_connection": true,
+        "soft_penalty_ledger": true,
+        "objective_summary_matches_values": true,
+        "carbon_cap": true
+      },
+      "branch_service": {
+        "near": true,
+        "far": true
+      },
+      "invalid_modes": [
+        "feedback_mode_3",
+        "feedback_mode_8"
+      ],
+      "source_heat_kwh": 248.4907260442097,
+      "delivered_heat_kwh": 191.54748000000004,
+      "heat_loss_kwh": 56.9432460442097,
+      "pump_kwh": 0.3569788019520458,
+      "electricity_kwh": 248.84770484616175,
+      "delta_t_excess_degree_on_hours": 15.59978100926772,
+      "soft_penalty_yuan": 0.0,
+      "minimum_active_far_supply_c": 59.85161573150256,
+      "maximum_active_pressure_drop_pa_per_m": 504.3336379674246,
+      "field_validation": false,
+      "rc_comfort_certified": false,
+      "scope": "finite steady on-modes, independent star pumps, average hourly heat, conservative simultaneous source/connection capacities"
+    },
+    "added_mode_cuts": [
+      "feedback_mode_3",
+      "feedback_mode_8"
+    ],
+    "previous_cuts": [
+      "feedback_mode_4",
+      "feedback_mode_9"
+    ]
+  },
+  {
+    "iteration": 2,
+    "status": "accepted",
+    "objective_yuan": 224.26259246266036,
+    "solver_status": 0,
+    "mip_gap": 0.0,
+    "solution_quality": {
+      "schema_version": "heatplan.solution_quality.v1",
+      "quality": "missing_evidence",
+      "scope": {
+        "investment_scope": "existing_assets_dispatch",
+        "free_investment_variables": 0,
+        "investment_variables_including_fixed": 0,
+        "fixed_plan_marker_present": false,
+        "scope_evidence": "actual_built_investment_variable_bounds",
+        "joint_investment_decisions_present": false
+      },
+      "feasible_incumbent_audited": true,
+      "fixed_or_existing_assets_feasible_operation": true,
+      "optimality_scope": "existing_assets_dispatch",
+      "model_scope": "supplied finite LP/MILP and registered solver tolerances only",
+      "solver_stages": [
+        {
+          "solver_status": 0.0,
+          "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "objective_mode": "total_cost",
+          "objective_value": 224.26259246266028,
+          "mip_dual_bound": 224.26259246266034,
+          "mip_gap": 0.0,
+          "mip_node_count": 0.0,
+          "solver_elapsed_seconds": 0.011582799997995608,
+          "solver_requested_mip_gap": 0.0,
+          "solver_time_limit_seconds": 60.0,
+          "solver_integer_variables": 720.0,
+          "solver_objective_constant": 0.0,
+          "numerical_audit_passed": true,
+          "numerical_objective_checked": true,
+          "numerical_solution_finite": true,
+          "stage_id": "single",
+          "quality": "missing_evidence",
+          "feasible_incumbent_audited": true,
+          "optimality_proven_within_solver_tolerance": false,
+          "objective_unit": "yuan_model_objective",
+          "objective_sense": "minimize",
+          "reasons": [
+            "solver optimal termination and reported relative gap within recorded target or closed reported gap",
+            "raw lower bound exceeds incumbent; invalid interval retained as missing lower bound"
+          ],
+          "objective_interval": {
+            "lower": null,
+            "upper": 224.26259246266028,
+            "unit": "yuan_model_objective",
+            "objective_mode": "total_cost",
+            "expression": "this stage's solver linear objective, excluding separately reported constant",
+            "status": "feasible_upper_only_lower_not_reported",
+            "solver_tolerance_limited": true,
+            "not_a_KPI_perturbation_interval": true
+          }
+        }
+      ],
+      "lexicographic_claim": "not_applicable",
+      "strict_global_lexicographic_optimum_claimed": false,
+      "primary_incumbent_anchor": null,
+      "primary_objective_allowance": null,
+      "cash_cost_KPI_interval": {
+        "status": "not_separately_solved",
+        "lower": null,
+        "upper": null
+      },
+      "carbon_KPI_interval": {
+        "status": "not_separately_solved",
+        "lower": null,
+        "upper": null
+      },
+      "KPI_gap_scaling_performed": false,
+      "engineering_or_empirical_validation_claimed": false,
+      "limitations": [
+        "A solver certificate covers this stage objective and feasible region only.",
+        "Fixed-investment dispatch optimality does not prove the joint investment plan optimal.",
+        "Relative MIP gap cannot be multiplied by cash cost, carbon, CAPEX or another KPI to invent an interval.",
+        "Two-stage incumbent allowances and solver tolerances are not a strict exact global lexicographic proof."
+      ]
+    },
+    "audit": {
+      "passed": true,
+      "checks": {
+        "engineering_modes": true,
+        "duty_bounds": true,
+        "model_contract_identity": true,
+        "one_mode_per_branch_hour": true,
+        "source_heat_ledger": true,
+        "branch_service_ledgers": true,
+        "electricity_including_pumps": true,
+        "solver_numerical": true,
+        "export_matches_values": true,
+        "duty_linked_to_on_mode": true,
+        "simultaneous_source_capacity": true,
+        "simultaneous_electric_connection": true,
+        "soft_penalty_ledger": true,
+        "objective_summary_matches_values": true,
+        "carbon_cap": true
+      },
+      "branch_service": {
+        "near": true,
+        "far": true
+      },
+      "invalid_modes": [],
+      "source_heat_kwh": 285.9831986094435,
+      "delivered_heat_kwh": 191.54748000000004,
+      "heat_loss_kwh": 94.43571860944344,
+      "pump_kwh": 0.1901172264308279,
+      "electricity_kwh": 286.1733158358743,
+      "delta_t_excess_degree_on_hours": 53.65869973321574,
+      "soft_penalty_yuan": 0.0,
+      "minimum_active_far_supply_c": 57.44553404061442,
+      "maximum_active_pressure_drop_pa_per_m": 237.96381852449548,
+      "field_validation": false,
+      "rc_comfort_certified": false,
+      "scope": "finite steady on-modes, independent star pumps, average hourly heat, conservative simultaneous source/connection capacities"
+    },
+    "added_mode_cuts": [],
+    "previous_cuts": [
+      "feedback_mode_3",
+      "feedback_mode_4",
+      "feedback_mode_8",
+      "feedback_mode_9"
+    ]
+  }
+]

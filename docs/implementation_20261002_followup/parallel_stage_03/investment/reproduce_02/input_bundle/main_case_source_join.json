@@ -1,0 +1,896 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-02",
+  "case_id": "Wuhan_public_prototype_FT8_historical_package_retrofit_join_candidate",
+  "status": "planning_reference_source_join_candidate_not_solver_admitted",
+  "selected_case": "武汉公开标准原型供热改造规划参考：最小新增设备为一款8kW空气源热泵成套包，采用棋盘井2024原合同历史安装价作明示参考。不是武汉当地实测工程或当前报价。",
+  "selection_reason": "Of the three prior candidates, FT8 alone has a primary nominal kW label plus matched published unit price and now a signed original installed-package contract with explicit boundary. Nulite/Vanward have certificate/rating links but performance and installation attachment remain open. Minimum new equipment reduces unclosed joins; selection is not an optimisation/availability result.",
+  "admission": {
+    "price_identity_join_admitted": true,
+    "historical_installation_scope_admitted": true,
+    "physical_device_performance_admitted": false,
+    "compatible_indoor_terminal_admitted": false,
+    "full_economics_admitted": false,
+    "actual_local_project_validation": false,
+    "ready_to_run_investment_planning": false,
+    "ready_to_claim_profit": false
+  },
+  "sources": {
+    "equipment_price_table": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/equipment_price_extracted.csv",
+      "sha256": "24888b9b520440d532be5d2251dbd258f81af6b459d9b626b748c54ecaf07ca5",
+      "original_path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_delta_20261002_93b9644\\补充数据_20261002\\04_设备价格与生物质\\tables\\equipment_price_extracted.csv",
+      "identity": "Read-only snapshot of existing audit/extraction, not newly verified primary original for all rows"
+    },
+    "performance_table": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/equipment_performance_extracted.csv",
+      "sha256": "6e17cc6e84c42159d245b872b1488e638547dd2952eec93e2ba20adc0023d544",
+      "original_path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_delta_20261002_93b9644\\补充数据_20261002\\10_设备性能与运维\\tables\\equipment_performance_extracted.csv",
+      "identity": "Read-only snapshot of existing audit/extraction, not newly verified primary original for all rows"
+    },
+    "om_table": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/om_cost_extracted.csv",
+      "sha256": "7ae05c9412eacde07f4d21e9ba3de894d4bd54e15ab71b1ad52ccd223bfed117",
+      "original_path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_delta_20261002_93b9644\\补充数据_20261002\\10_设备性能与运维\\tables\\om_cost_extracted.csv",
+      "identity": "Read-only snapshot of existing audit/extraction, not newly verified primary original for all rows"
+    },
+    "economic_table": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/economic_boundary_extracted.csv",
+      "sha256": "f45a6eba568b8af71175d7d5a38f64e81a276c95ba12a0f2a8852dbbe1f1997b",
+      "original_path": "D:\\competion\\xiaotiao\\.algorithm_doc_work\\github_delta_20261002_93b9644\\补充数据_20261002\\11_经济边界\\tables\\economic_boundary_extracted.csv",
+      "identity": "Read-only snapshot of existing audit/extraction, not newly verified primary original for all rows"
+    },
+    "prior_equipment_audit": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/equipment_extension_audit.json",
+      "sha256": "5ce995efa9267f046284327e85d5bba8650900cf1d46eced9ac8cf35940e9624",
+      "original_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\implementation_20261002\\data\\equipment_extension_audit.json",
+      "identity": "Read-only snapshot of existing audit/extraction, not newly verified primary original for all rows"
+    },
+    "prior_source_index": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/DATA_SOURCE_INDEX.csv",
+      "sha256": "e33bcd4e712d14649b5bea3c43cd5023db96275d930526167b3f5b27b555ed76",
+      "original_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\implementation_20261002_followup\\DATA_SOURCE_INDEX.csv",
+      "identity": "Read-only snapshot of existing audit/extraction, not newly verified primary original for all rows"
+    },
+    "qipanjing_award_2024.pdf": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_award_2024.pdf",
+      "sha256": "64efab2faf550fded7e3712af2d48cdd95523e9d229e816ab524d911f5f3a7e5",
+      "url": "https://www.ccgp-neimenggu.gov.cn/gpx-bid-file/ZF_JGBM_000001/150624/2024/10/14/402881e290866d3b0192796a65294467/gpx-bidconfirm/402881ef92fee5770192ff2a4bc91b89.pdf?accessCode=3a0630a0b3f8ba77b31da4d0e0cb8ffc",
+      "identity": "Previously archived primary original, current model/price/certificate join rechecked"
+    },
+    "lingwu_award_2024.html": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/lingwu_award_2024.html",
+      "sha256": "f44eb172bd7c7ed84d40ed133e240433c6d4cf1ed2ed19550f0cac87eb937969",
+      "url": "https://ggzyjy.fzggw.nx.gov.cn/dzjy/001001/001001002/001001002003/20240822/fd0b56c8-16cb-46db-af49-a404c469088c.html",
+      "identity": "Previously archived primary original, current model/price/certificate join rechecked"
+    },
+    "cqc_nulite_2024.pdf": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/cqc_nulite_2024.pdf",
+      "sha256": "4a004cac98146d70609eaa643b27791c7f996591e620ce614425a7d25b9b29b2",
+      "url": "https://www.cqc.com.cn/www/upload/files/upload/resources/file/2024/04/02/60353.pdf",
+      "identity": "Previously archived primary original, current model/price/certificate join rechecked"
+    },
+    "cqc_vanward_2023.pdf": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/cqc_vanward_2023.pdf",
+      "sha256": "8200906c55f2d7b6406419da6f5548c5f0ace4987dd8b2ed186b8688bfb1fc97",
+      "url": "https://www.cqc.com.cn/www/upload/files/upload/resources/file/2023/05/22/43536.pdf",
+      "identity": "Previously archived primary original, current model/price/certificate join rechecked"
+    },
+    "original_contract": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_original_contract.pdf",
+      "sha256": "aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d",
+      "url": "https://www.ccgp-neimenggu.gov.cn/ecms-econtract/model/aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d.pdf",
+      "identity": "Official published procurement contract; selected page facts visually verified locally",
+      "download_receipt": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_original_contract_receipt.json"
+    },
+    "later_electronic_contract": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_contract_20251223.pdf",
+      "sha256": "154af6c9b088f6e0dae71b79f7b25a357b36e2e254f43f5c9c2d0238815816cb",
+      "url": "https://www.ccgp-neimenggu.gov.cn/ecms-econtract/contract/signing/2025/12/23/4704eaebfb7b43d2b0f4649fdf6ece6bdfdd8db4fac74eac9c4b212c276d1888.pdf",
+      "identity": "Official published procurement contract; selected page facts visually verified locally",
+      "download_receipt": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/qipanjing_contract_receipt.json"
+    },
+    "economic_185_screen": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/main_case_evidence/economic_185_applicability_review.json",
+      "sha256": "1efbebb3a49d55d50e258765a89eb53e4132c2ef96183fc6030bfcf919385685",
+      "identity": "Field-level applicability screen of all existing 185 rows; no selected-case numerical admission"
+    }
+  },
+  "prior_frozen_references": {
+    "common_window_manifest": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/manifest.json",
+      "sha256": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279",
+      "reference_only": true,
+      "old_frozen_input_not_modified": true
+    },
+    "common_physics": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/common_physical_reference.json",
+      "sha256": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+      "reference_only": true,
+      "old_frozen_input_not_modified": true
+    },
+    "common_protocol": {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/data/protocol.json",
+      "sha256": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7",
+      "reference_only": true,
+      "old_frozen_input_not_modified": true
+    },
+    "wuhan_common_window": {
+      "path": "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv",
+      "sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+      "reference_only": true,
+      "old_frozen_input_not_modified": true
+    },
+    "e0_admission": {
+      "path": "docs/implementation_20261002/data/admission.json",
+      "sha256": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+      "reference_only": true,
+      "old_frozen_input_not_modified": true
+    },
+    "wuhan_tou_admission": {
+      "path": "docs/implementation_20261002/data/admission_tou.json",
+      "sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "reference_only": true,
+      "old_frozen_input_not_modified": true
+    },
+    "wuhan_monthly_tariff": {
+      "path": "docs/implementation_20261002/data/monthly_tariff_verified.csv",
+      "sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "reference_only": true,
+      "old_frozen_input_not_modified": true
+    },
+    "wuhan_tou_rules": {
+      "path": "docs/implementation_20261002/data/tou_account_and_hours.json",
+      "sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "reference_only": true,
+      "old_frozen_input_not_modified": true
+    }
+  },
+  "source_screen": {
+    "existing_price_rows": 89,
+    "existing_performance_rows": 71,
+    "existing_om_rows": 17,
+    "existing_economic_rows": 185,
+    "existing_performance_exact_three_model_rows": 0,
+    "performance_natures": {
+      "标准限值": 13,
+      "招标技术要求": 39,
+      "标准（新疆地方规程）": 8,
+      "招标技术要求（原件已下架，经检索摘要核验）": 1,
+      "标准（新疆地方规程附录）": 2,
+      "标准（测试方法；原件为扫描件，正文经检索摘要核验）": 1,
+      "地方指南（征求意见稿）": 4,
+      "国家标准（征求意见稿）": 1,
+      "标准（设计取值）": 1,
+      "标准（新疆地方规程表3.8.4）": 1
+    },
+    "economic_categories": {
+      "计费身份": 6,
+      "项目规模": 13,
+      "项目能耗": 5,
+      "供热制度": 1,
+      "许可排放量": 4,
+      "负荷特性": 1,
+      "经济边界（债券口径）": 3,
+      "经济边界（可研口径）": 4,
+      "运营成本（可研口径）": 9,
+      "收入结构（可研口径）": 1,
+      "燃料-煤": 11,
+      "工业余热": 7,
+      "趸售/转供": 6,
+      "成本监审": 19,
+      "补贴": 2,
+      "规划": 1,
+      "价格": 7,
+      "企业财务": 9,
+      "清洁取暖": 10,
+      "清洁取暖绩效": 3,
+      "制度口径": 4,
+      "现状": 2,
+      "D1-中央财政补助": 32,
+      "D2-地方配套与补贴": 13,
+      "D3-电价政策": 8,
+      "D4-武汉专项": 4
+    },
+    "economic_source_natures": {
+      "环评设计值": 12,
+      "行政许可": 5,
+      "报道": 34,
+      "招标": 15,
+      "专项债披露（预测）": 7,
+      "公示转载": 1,
+      "报道/案例汇编（可研引用）": 15,
+      "价格文件": 13,
+      "监审": 23,
+      "规划": 37,
+      "年报": 3,
+      "绩效评价": 3,
+      "名单": 1,
+      "政策文件": 13,
+      "公示": 3
+    },
+    "economic_numerical_rows_admitted_to_case": 0,
+    "screen_scope": "All extraction rows/source identities considered for applicability; not all original papers re-audited; only selected award/contract/CQC joins rechecked. Quantity of files does not establish model performance/economics."
+  },
+  "three_prior_candidates": [
+    {
+      "model": "FT-FDRS-8/380FWAW",
+      "brand": "非圖",
+      "manufacturer_in_award": "鄂托克旗一公里科技发展有限责任公司",
+      "price_yuan_per_unit": 17800,
+      "nominal_heat_capacity_kw": 8,
+      "price_date_on_original": "2024-11-06",
+      "price_scope": "Inner Mongolia Qipanjing award ESZCEQS-G-H-240131, goods item1-1, PDF p1; 303 units; published nominal heating capacity, not full weather capacity",
+      "curve_admitted": false,
+      "missing": [
+        "Nominal rating ambient/water conditions",
+        "Model-specific COP/capacity/defrost curves at applicable zone delivery conditions",
+        "Quote installation/terminal/OM/lifetime boundary"
+      ],
+      "selected_for_minimal_join": true,
+      "installation_gap_update": "Now partially closed by newly verified original signed contract pp2,4,6,7; exact terminal/auxiliary performance, routine OM and lifetime remain open."
+    },
+    {
+      "model": "NE-C4AZ-B2D/N-H",
+      "brand": "纽恩泰",
+      "price_yuan_per_unit": 6950,
+      "price_scope": "Lingwu award ZCJY20240708, lot1, 712 units; amount settled per actual installed count, 2024-08-22",
+      "certificate_id": "CQC24701423643",
+      "join": "Award names exact certificate CQC24701423643; CQC April2024 list p32 maps it to exact model",
+      "rated_water_outlet_c": 41,
+      "catalog_certificate_start": "2024-03-07",
+      "catalog_certificate_end": "2029-03-06",
+      "curve_admitted": false,
+      "missing": [
+        "Model-specific actual/test COP and heating-capacity table under ambient/return/outlet temperature and load",
+        "Quote installation/OM/lifetime boundary"
+      ],
+      "not_used": "Secondary ZOL 12.2kW marketing parameter and retail price are not primary sources and not admitted",
+      "selected_for_minimal_join": false,
+      "quote_model_link_precision": "Award HTML names brand/lot/certificate and says exact specifications are in attachment; exact model obtained indirectly through CQC same certificate p32; quotation attachment not downloaded. 41C is certificate rating outlet only."
+    },
+    {
+      "model": "WDK12/AN1-BpQHLN",
+      "brand": "万和",
+      "price_yuan_per_unit": 6950,
+      "price_scope": "Lingwu award ZCJY20240708, lot2, 350 units; 2024-08-22",
+      "certificate_id": "CQC23701388136",
+      "join": "Award certificate CQC23701388136; CQC May2023 list p32 maps exact model",
+      "rated_water_outlet_c": 41,
+      "catalog_certificate_start": "2023-05-15",
+      "catalog_certificate_end": "2028-05-14",
+      "curve_admitted": false,
+      "missing": [
+        "Model-specific COP/capacity/defrost table at matched rating conditions",
+        "Quote installation/OM/lifetime boundary"
+      ],
+      "selected_for_minimal_join": false,
+      "quote_model_link_precision": "Award HTML names brand/lot/certificate and says exact specifications are in attachment; exact model obtained indirectly through CQC same certificate p32; quotation attachment not downloaded. 41C is certificate rating outlet only."
+    }
+  ],
+  "minimum_free_investment_proposal": {
+    "identity": "Predeclared research candidate set requiring a new main protocol; not an observed site layout or approved runnable configuration",
+    "new_technology_count": 1,
+    "new_asset": "FT-FDRS-8/380FWAW installed air-source package",
+    "integer_count_candidate": [
+      0,
+      1,
+      2
+    ],
+    "count_upper_bound_status": "Research search-space proposal; no demand/availability feasibility guarantee. May narrow to 1/2 for new-build once capacity map is available.",
+    "capital_term": "17800 * n_FT8 CNY gross historical installed-package reference, plus only separately documented out-of-package costs; never add pump/buffer/installation again",
+    "zero_investment_baseline": "n=0 only if a separate finite existing source and service/electric boundary is admitted; old 1000kW ideal adapter is not such proof. Otherwise report n=0 infeasible, do not change comfort or insert free backup.",
+    "additional_source_or_backup": {
+      "status": "not_yet_admitted",
+      "capacity_kw": null,
+      "performance": null,
+      "price": null,
+      "reason": "Minimum equipment path has no documented existing boiler/source for prototype; baseline/backup must be an explicitly sourced reference or separately declared physics benchmark. No arbitrary 30kW, free ideal backup, or actual-existing claim."
+    },
+    "operation_knobs": [
+      "Finite rated/per-condition available heating output once sourced",
+      "Comfort-respecting thermal dispatch through the declared RC prototype",
+      "Matched account electricity limit once predeclared"
+    ],
+    "excluded_initial_extensions": [
+      "Separate optimisable thermal store/SOC from the unspecified included hydraulic buffer",
+      "PV/source-network-load-storage ALT-2T-16 bundle without component/performance breakdown",
+      "Large district tanks/electrode boiler EPC scaled to this household package",
+      "All technologies/all three cities simultaneously"
+    ],
+    "optional_same_project_size_after_minimum_closes": {
+      "model": "FT-FDRS-10/380FWAW",
+      "nominal_label_kw": 11,
+      "unit_price_cny": 20600,
+      "source": "original_contract p6 row2; later electronic contract p3 row2; award p1",
+      "status": "Not initial candidate; own performance table also required; model name10 does not mean nominal10kW"
+    },
+    "no_forced_frontier_claim": "Four named objectives may return the same investment/control plan or a dominated extra unit. Report coincidences and infeasibility; no parameter tuning solely to manufacture different rows."
+  },
+  "field_level_join": [
+    {
+      "field": "selected_model",
+      "value": "FT-FDRS-8/380FWAW",
+      "unit": null,
+      "status": "primary_identity_verified",
+      "sources": [
+        "qipanjing_award_2024.pdf",
+        "original_contract"
+      ],
+      "locator": "Award PDF p1 item1-1; original contract PDF p6 row1",
+      "pricing_or_physical_boundary": "Exact model string; do not infer power, voltage or rating conditions from characters.",
+      "remaining_gap": null
+    },
+    {
+      "field": "manufacturer_at_2024_award",
+      "value": "鄂托克旗一公里科技发展有限责任公司",
+      "unit": null,
+      "status": "primary_identity_verified",
+      "sources": [
+        "qipanjing_award_2024.pdf",
+        "original_contract"
+      ],
+      "locator": "Award PDF p1; contract p9 signed/stamped party",
+      "pricing_or_physical_boundary": "Original 2024 award/contract counterparty; 2025 electronic document names a different legal entity; no corporate succession assumed.",
+      "remaining_gap": null
+    },
+    {
+      "field": "nominal_heat_capacity_kw",
+      "value": 8,
+      "unit": "kW",
+      "status": "nominal_label_only",
+      "sources": [
+        "qipanjing_award_2024.pdf",
+        "original_contract"
+      ],
+      "locator": "Award p1; original contract p6 row1",
+      "pricing_or_physical_boundary": "Published nominal heating label; not continuous available capacity or low-ambient capacity.",
+      "remaining_gap": "Same-model rated ambient/wet-bulb/return/outlet conditions and actual tested capacity map."
+    },
+    {
+      "field": "historical_installed_package_price",
+      "value": 17800,
+      "unit": "CNY/unit",
+      "status": "historical_reference_price_verified",
+      "sources": [
+        "qipanjing_award_2024.pdf",
+        "original_contract"
+      ],
+      "locator": "Award p1; original contract p6 row1 and note",
+      "pricing_or_physical_boundary": "Fixed unit price of Qipanjing public procurement package in original contract; not Wuhan retail or 2026 live quote; no inflation/local adjustment silently applied.",
+      "remaining_gap": null
+    },
+    {
+      "field": "award_date",
+      "value": "2024-11-06",
+      "unit": null,
+      "status": "primary_date_verified",
+      "sources": [
+        "qipanjing_award_2024.pdf"
+      ],
+      "locator": "Award PDF p1",
+      "pricing_or_physical_boundary": "Date printed on award; distinct from original signed contract and later electronic publication.",
+      "remaining_gap": null
+    },
+    {
+      "field": "original_signed_date",
+      "value": "2024-11-29",
+      "unit": null,
+      "status": "visually_verified",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "PDF p9 handwritten date and two party stamps",
+      "pricing_or_physical_boundary": "Read visually; extraction omitted/misread handwritten digits. Do not replace with web crawl/publication timestamp.",
+      "remaining_gap": null
+    },
+    {
+      "field": "vat_included",
+      "value": true,
+      "unit": null,
+      "status": "primary_scope_verified",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "PDF p5 contract amount paragraph; p6 note",
+      "pricing_or_physical_boundary": "Package includes tax. VAT rate and recoverability unknown; keep gross cash price, do not combine with net-of-tax economic forecasts.",
+      "remaining_gap": "VAT rate/recoverability if an enterprise accounting claim is needed."
+    },
+    {
+      "field": "package_components",
+      "value": [
+        "heat-pump unit",
+        "circulation pump",
+        "buffer tank",
+        "mounting frame",
+        "5m electrical cable from unit to leakage-protection breaker",
+        "leakage-protection breaker",
+        "entry pipe to user main heating pipe",
+        "full accessories"
+      ],
+      "unit": null,
+      "status": "primary_scope_verified",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "PDF p2 household air-source system paragraph",
+      "pricing_or_physical_boundary": "Package list verified; pump power and buffer volume/insulation/usable SOC not provided.",
+      "remaining_gap": "Pump nameplate/auxiliary power and tank hydraulic/thermal data in same-model technical attachment."
+    },
+    {
+      "field": "included_implementation_costs",
+      "value": [
+        "main equipment",
+        "standard accessories",
+        "spares",
+        "construction",
+        "services",
+        "special tools",
+        "installation",
+        "commissioning",
+        "inspection",
+        "training",
+        "transport",
+        "insurance",
+        "tax"
+      ],
+      "unit": null,
+      "status": "primary_scope_verified",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "PDF p6 note under price table; p4 transport clause",
+      "pricing_or_physical_boundary": "These items belong to 17800 package; avoid adding a separate generic installation percentage or separately purchased duplicate buffer/pump.",
+      "remaining_gap": null
+    },
+    {
+      "field": "installation_boundary",
+      "value": "Before the connection to user main heating pipe; indoor heating-pipe alterations excluded",
+      "unit": null,
+      "status": "primary_scope_verified",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "PDF p4 clause6.2",
+      "pricing_or_physical_boundary": "Suitable for an explicitly declared retrofit to compatible existing indoor system; not full new-building turnkey heat service.",
+      "remaining_gap": "Compatible terminal heating output vs water/room temperature and any excluded indoor modification cost."
+    },
+    {
+      "field": "warranty_years",
+      "value": 5,
+      "unit": "year",
+      "status": "primary_scope_verified",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "PDF p7 clause10",
+      "pricing_or_physical_boundary": "Non-user-caused quality defect repair/replacement free with material/labour/transport during warranty. Not total routine OM=0 and not service life.",
+      "remaining_gap": null
+    },
+    {
+      "field": "after_sales_service_years",
+      "value": 10,
+      "unit": "year",
+      "status": "primary_scope_verified",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "PDF p7 clause10",
+      "pricing_or_physical_boundary": "Service availability; after warranty damaged spares charged at actual market price to users. Not guaranteed physical life or fixed annual OM.",
+      "remaining_gap": null
+    },
+    {
+      "field": "response_time_hours",
+      "value": 24,
+      "unit": "hour",
+      "status": "contract_service_level_only",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "PDF p7 clause10",
+      "pricing_or_physical_boundary": "Response or visit stated by contract; no zero downtime/availability probability inferred.",
+      "remaining_gap": null
+    },
+    {
+      "field": "repair_time_days",
+      "value": 3,
+      "unit": "day",
+      "status": "contract_service_level_only",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "PDF p7 clause10",
+      "pricing_or_physical_boundary": "Repair-handling target; do not turn into a tested reliability/guaranteed heat service coefficient.",
+      "remaining_gap": null
+    },
+    {
+      "field": "cop_capacity_defrost_map",
+      "value": null,
+      "unit": null,
+      "status": "missing_blocking",
+      "sources": [
+        "original_contract",
+        "performance_table"
+      ],
+      "locator": "Contract p3 technical proof requirements; all 71 existing extracted performance rows screened, 0 exact-model matches",
+      "pricing_or_physical_boundary": "Need actual tested/manufacturer-rated points with ambient dry/wet bulb, water in/out, flow, load and auxiliary-power measurement boundary; standard and procurement minima are not curves.",
+      "remaining_gap": "FT-FDRS-8/380FWAW manufacturer technical manual or model-specific test report supplied with this procurement response/acceptance."
+    },
+    {
+      "field": "supply_return_temperature_c",
+      "value": null,
+      "unit": "degC",
+      "status": "missing_blocking",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "No numerical delivery temperatures in 9-page original contract",
+      "pricing_or_physical_boundary": "Do not borrow 41C from Nulite/Vanward certificates or use room-comfort 27C as actual water outlet.",
+      "remaining_gap": "Same manual plus compatible terminal data; then predeclare selected operating temperatures."
+    },
+    {
+      "field": "part_load_minimum_modulation",
+      "value": null,
+      "unit": null,
+      "status": "missing_blocking",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "No actual operating-envelope table supplied",
+      "pricing_or_physical_boundary": "A 48m2 prototype may be substantially below an 8kW nameplate; cycling/minimum output must be considered, not ideal continuous 0..8kW.",
+      "remaining_gap": "Same model manual: minimum output, cycling/part-load input, standby/defrost controls."
+    },
+    {
+      "field": "circulation_and_auxiliary_power",
+      "value": null,
+      "unit": "kW",
+      "status": "missing_blocking",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "p2 pump included, no power/nameplate",
+      "pricing_or_physical_boundary": "Electrical account includes compressor/fan/pump/defrost/standby as applicable; quote price inclusion is not power inclusion in reported COP.",
+      "remaining_gap": "Same package technical list and test boundary."
+    },
+    {
+      "field": "buffer_storage_energy_and_losses",
+      "value": null,
+      "unit": null,
+      "status": "not_admitted_as_optimisable_storage",
+      "sources": [
+        "original_contract"
+      ],
+      "locator": "p2 buffer tank named, no volume/loss/rating data",
+      "pricing_or_physical_boundary": "Keep as package hydraulic buffer; cannot claim free investment or hourly heat-shifting SOC capacity from this name alone.",
+      "remaining_gap": "Only needed for later thermal-storage modelling: volume, usable water temperatures, losses, ports/controls."
+    },
+    {
+      "field": "physical_building_reference",
+      "value": {
+        "area_m2": 48,
+        "H_kw_per_K": 0.1043,
+        "C_kwh_per_K": 0.535576,
+        "comfort_c": [
+          20,
+          27
+        ],
+        "internal_gain_kw": 0.2
+      },
+      "unit": null,
+      "status": "prior_public_prototype_reference_only",
+      "sources": [
+        "common_physics",
+        "e0_admission"
+      ],
+      "locator": "BESTEST-derived geometry/material lump recorded in frozen admission and common physics",
+      "pricing_or_physical_boundary": "Standard prototype and declared concentrated-material RC approximation; not a Wuhan measured building or compatible hydronic terminal proof.",
+      "remaining_gap": null
+    },
+    {
+      "field": "weather_time_window",
+      "value": {
+        "city": "Wuhan",
+        "start": "2024-11-16T00:00:00+08:00",
+        "end_exclusive": "2025-03-16T00:00:00+08:00",
+        "hours": 2880,
+        "min_ambient_c": -4.85,
+        "max_ambient_c": 26.55
+      },
+      "unit": null,
+      "status": "prior_development_input_only",
+      "sources": [
+        "wuhan_common_window",
+        "common_protocol"
+      ],
+      "locator": "NASA UTC raw -> Asia/Shanghai 2880h locked source map",
+      "pricing_or_physical_boundary": "Wuhan development window only; no Urumqi/Guyuan policy/load/errors used in candidate selection. Weather envelope summarised to specify required performance coverage; not solver dispatch.",
+      "remaining_gap": null
+    },
+    {
+      "field": "cooling_or_heat_rejection_service",
+      "value": null,
+      "unit": null,
+      "status": "missing_blocking",
+      "sources": [
+        "wuhan_common_window",
+        "common_physics"
+      ],
+      "locator": "5 rows have positive steady cooling proxy under original 20..27C comfort/gains; not RC dispatch",
+      "pricing_or_physical_boundary": "Heating contract proves no reversible cooling performance. Retain service equivalence; do not silently delete upper comfort, set gains zero or keep an unpriced ideal cooler.",
+      "remaining_gap": "Same model cooling capability/curve or explicitly sourced ventilation/cooling path; if changing to heating-only service, record a new protocol and comparison boundary first."
+    },
+    {
+      "field": "published_tou_energy_tariff",
+      "value": {
+        "2024-11": [
+          1.1724,
+          1.0188,
+          0.7762,
+          0.5187
+        ],
+        "2024-12": [
+          1.2908,
+          1.0368,
+          0.7927,
+          0.5187
+        ],
+        "2025-01": [
+          1.1995,
+          0.9744,
+          0.7581,
+          0.5153
+        ],
+        "2025-02": [
+          1.0553,
+          0.9313,
+          0.7353,
+          0.5273
+        ],
+        "2025-03": [
+          1.1144,
+          0.9726,
+          0.7484,
+          0.5105
+        ]
+      },
+      "unit": "CNY/kWh; sharp/peak/flat/valley",
+      "status": "conditional_historical_tariff_only",
+      "sources": [
+        "wuhan_monthly_tariff",
+        "wuhan_tou_rules",
+        "wuhan_tou_admission"
+      ],
+      "locator": "Exact original pages and class/hour eligibility in existing locked TOU admission",
+      "pricing_or_physical_boundary": "Ordinary industrial agent-purchase account <1kV, selected single-part pricing at 100<=S<315kVA, policy eligible; prototype is not proof of account identity. Do not multiply final prices by time coefficients twice.",
+      "remaining_gap": "Actual account not required for a conditional planning reference, but assumptions must be accepted/frozen in new protocol. Actual-account or grid-feasibility claim requires appropriate evidence."
+    },
+    {
+      "field": "capacity_demand_fee_treatment",
+      "value": null,
+      "unit": null,
+      "status": "conditional_boundary_pending",
+      "sources": [
+        "wuhan_tou_rules"
+      ],
+      "locator": "Existing eligibility conditions and 12-month selection rule",
+      "pricing_or_physical_boundary": "Only zero because a valid declared single-part tariff excludes basic fee; never zero because fee data are missing. Package 380 string / ideal 1000kW cannot prove transformer/PF/customer class.",
+      "remaining_gap": "Predeclare conditional single-part account vs two-part account and explicit shared electric-connection limit; two-part alternative needs exact rates/maximum demand/allocation."
+    },
+    {
+      "field": "routine_fixed_variable_om",
+      "value": null,
+      "unit": "CNY/year or CNY/kWh",
+      "status": "missing_for_full_economics",
+      "sources": [
+        "original_contract",
+        "om_table",
+        "economic_185_screen"
+      ],
+      "locator": "Original p7 warranty/post-warranty distinctions; existing 17 OM rows and 185 rows are other scopes",
+      "pricing_or_physical_boundary": "Quality warranty covers a limited defect category; pump maintenance, cleaning, water, labour, standby and user damage not all priced. Unknown residual OM remains null.",
+      "remaining_gap": "Same-package maintenance price schedule or explicit bounded sensitivity/threshold protocol with no claim of measured annual OM."
+    },
+    {
+      "field": "physical_lifetime_discount_residual",
+      "value": {
+        "lifetime_years": null,
+        "discount_rate": null,
+        "residual_value": null
+      },
+      "unit": null,
+      "status": "missing_for_lcc",
+      "sources": [
+        "original_contract",
+        "economic_185_screen"
+      ],
+      "locator": "5y warranty and 10y aftersales are not lifetime; other project finance/depreciation rules not matching",
+      "pricing_or_physical_boundary": "No constructor r=1/n=1 reuse; no regulated depreciation life equated with physical life; no fabricated annuity/payback.",
+      "remaining_gap": "Manufacturer design life and an explicit planning financial scenario, or restrict output to upfront CAPEX + one-window operating-cost ledger/thresholds."
+    },
+    {
+      "field": "local_price_adjustment_and_subsidy",
+      "value": {
+        "local_price_adjustment": null,
+        "applicable_subsidy": null
+      },
+      "unit": null,
+      "status": "not_admitted",
+      "sources": [
+        "original_contract",
+        "economic_185_screen"
+      ],
+      "locator": "Qipanjing historical package; 185-row applicability screen",
+      "pricing_or_physical_boundary": "17800 can be a declared constant historical reference across comparisons. No Wuhan current quote, subsidy entitlement or inflation conversion claimed. Gross resource-cost comparison does not deduct financing/subsidies; user net cost remains separate.",
+      "remaining_gap": null
+    },
+    {
+      "field": "revenue_profit_payback",
+      "value": null,
+      "unit": null,
+      "status": "not_admitted",
+      "sources": [
+        "economic_185_screen"
+      ],
+      "locator": "No matching heat sales/service contract or customer revenue",
+      "pricing_or_physical_boundary": "Report cost differences or a break-even boundary when inputs close, not actual profit/IRR/payback. Other municipal heat tariffs and river-source forecast returns excluded.",
+      "remaining_gap": null
+    }
+  ],
+  "accounting_boundary": {
+    "recommended_initial_reporting": "Separate upfront gross CAPEX from exact 120-day operating electric charges; keep missing out-of-package and recurring costs visible. No 120-day sum called annual cost or whole-life optimum.",
+    "cash_capex_not_annualised": true,
+    "annuity_inputs": {
+      "r": null,
+      "n": null
+    },
+    "energy_charges": "Sum separately metered compressor+fan+pump/defrost/standby energy under exact dated applicable tariff after performance boundary is verified; cooling/heat rejection treatment explicit.",
+    "package_boundary": "Source package to connection before user indoor main heating pipes, not site grid upgrade or indoor terminal retrofit.",
+    "existing_assets": "Need finite source/service identity; sunk asset charge only excluded by explicit retrofit protocol, not assumed to be absent/free.",
+    "same_service": "Same physical prototype, climate, comfort, gains, start/end temperature, electric boundary and operating service across all plans.",
+    "no_complete_scalar_objective_yet": "An optimiser minimising CAPEX + 120-day bill can be a new explicitly declared short-horizon purchasing scenario once technical/cost inputs close, but is not a life-cycle economic claim. Before that only separate ledgers/threshold equations are admissible.",
+    "possible_financial_followup": "A five-year analysis horizon may be a declared research convention within the warranty interval; it is not evidence of physical life and still needs recurring OM and weather/tariff repeat/escalation/discount assumptions. Do not reuse 5y warranty as life automatically.",
+    "unpriced_terms_remain_null": [
+      "Compatible indoor terminal/piping modifications",
+      "Routine O&M and water/consumables",
+      "Site electrical capacity/wiring beyond included 5m",
+      "Package auxiliary energy not covered in measured COP",
+      "Post-warranty actual spare/labour cost",
+      "Replacement/disposal/residual"
+    ],
+    "double_counting_controls": [
+      "No duplicate CAPEX for the included pump/buffer/installation",
+      "No duplicate generic repair fee for warranty-covered defects",
+      "No application of time-of-use multipliers to published final bucket prices",
+      "No additional VAT on tax-included package without accounting evidence",
+      "No blending project forecasts with observed costs or gross package with net-of-tax forecasts"
+    ]
+  },
+  "document_differences_and_visual_checks": {
+    "original_contract": {
+      "signed_date": "2024-11-29",
+      "supplier": "鄂托克旗一公里科技发展有限责任公司",
+      "pages_reviewed_visually": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "total_price_table": 49002690,
+      "quality_notes": "OCR text missed digits in 11kW, unit counts, total, payment batch (actual 200 sets) and 40%/55%/5%; read page image. Do not use these OCR errors as source contradictions."
+    },
+    "later_electronic_contract": {
+      "signing_date_printed": "2025-12-23",
+      "performance_dates_printed": [
+        "2025-12-23",
+        "2025-12-31"
+      ],
+      "effective_date_printed": "2024-11-29",
+      "supplier": "内蒙古非图新能源科技有限责任公司",
+      "price_table_matches_original": true,
+      "pages_reviewed_visually": [
+        3
+      ],
+      "status": "Cross-check price only. Printed date/supplier differences un-reconciled; no legal successor/migration claim. Generic special clauses saying no do not erase original specific warranty boundary."
+    },
+    "original_contract_party_not_inferred_from_url": "Official URL segment model was not treated as a blank template; signed/stamped p9 and populated contract/price/boundary pages visually established document identity."
+  },
+  "highest_priority_missing_public_document": {
+    "title": "FT-FDRS-8/380FWAW原厂技术手册或该型号检测报告（本采购项目投标/验收技术附件）",
+    "required_fields": [
+      "Model and test/report/manual version",
+      "Ambient dry/wet bulb or relative humidity",
+      "Water return/outlet and flow",
+      "Actual heating capacity and electrical input/COP at multiple ambient points covering selected weather envelope",
+      "Lowest allowed ambient and output derating",
+      "Defrost-average treatment and parasitic/auxiliary power boundary",
+      "Minimum part load/cycling/standby behaviour",
+      "Compatible supply/return and terminal operating assumptions",
+      "Cooling capability or explicit separate heat-rejection service if full common comfort window retained"
+    ],
+    "what_it_closes": "Main technical join from an installed-price package to finite dispatch at matched water/ambient/load conditions; allows capacity and energy checks. Does not by itself establish local project measurements, routine OM, actual account or profit.",
+    "public_retrieval_route": "Original contract p3 requires quality/test materials and binds procurement/response documents; search exact model and project ESZCEQS-G-H-240131 for published procurement response/acceptance annex. Searches found contracts, not an admitted actual performance map. No claim that all public sources lack it.",
+    "not_a_user_SCADA_requirement": true
+  },
+  "remaining_admission_actions": [
+    "Obtain and verify the named exact-model performance/manual attachment; do not interpolate from a different brand/certificate/standard floor",
+    "Predeclare finite baseline/backup and full service/indoor terminal compatibility; do not retain free ideal source/cooler",
+    "Freeze new conditional account and electrical-connection assumptions without claiming an actual household account",
+    "Choose explicit partial cash-ledger boundary or supply complete routine/out-of-package/lifetime/finance inputs before full-economics admission",
+    "Write new case manifest with primary evidence hashes and exact configuration/inputs; retain original climate/E0/TOU manifests unchanged",
+    "Then main coordinator can author planning config, run same-service investment/control comparisons and independent audit"
+  ],
+  "work_not_run": [
+    "No investment solver or profit calculation",
+    "No use of Urumqi/Guyuan policy/load/error results to tune candidates",
+    "No alteration of old synthetic examples, E0, TOU, common climate locks or Git/upload"
+  ],
+  "scope_after_user_decision": "Unavailable enterprise/three-city SCADA is not mandatory. Public standard prototype, gridded weather, historical contract and conditional policy form a planning reference; actual local measured validation is a separate optional identity.",
+  "electrical_resistance_fallback_screen": {
+    "scope": "Existing 89 price rows plus 71 performance rows only; no broad new equipment library search",
+    "price_hits": [
+      {
+        "csv_line": 27,
+        "item": {
+          "设备类型": "电极式锅炉及附属设备",
+          "规格/型号": "供热季供热保障及储能调峰一体化改造项目，容量未披露",
+          "价格类型": "中标候选人报价（第一名）",
+          "价格": "10987320",
+          "单位": "元/项",
+          "年份": "2025",
+          "地区": "山西·晋中",
+          "采购人": "山西瑞光热电有限责任公司",
+          "来源文件": "山西瑞光热电_电极式锅炉及附属设备采购_中标候选人公示.html",
+          "source_url": "http://www.sxxindian.com/xmxx/001001/001001005/001001005002/20251110/71e5d39e-e131-4b34-9b6e-9e88313439e8.html"
+        },
+        "matched_efficiency_admitted": false,
+        "reason": "No small finite prototype-scale unit price/technical package match. Large procurement/EPC or undisclosed-capacity item cannot be divided by MW/area into a household price; secondary reporting and source-specific scope retained."
+      },
+      {
+        "csv_line": 28,
+        "item": {
+          "设备类型": "电极蒸汽锅炉",
+          "规格/型号": "3×60MW 半浸没式电极蒸汽锅炉（额定60MW/最大63MW/台）及一次侧系统设备",
+          "价格类型": "中标候选人报价（第一名）",
+          "价格": "34376900",
+          "单位": "元/项",
+          "年份": "2026",
+          "地区": "内蒙古·金山热电",
+          "采购人": "内蒙古能源发电金山热电有限公司",
+          "来源文件": "江苏双良预中标内蒙古能源金山热电3x60MW电极蒸汽锅炉.html",
+          "source_url": "https://www.esplaza.com.cn/article-12005-1.html"
+        },
+        "matched_efficiency_admitted": false,
+        "reason": "No small finite prototype-scale unit price/technical package match. Large procurement/EPC or undisclosed-capacity item cannot be divided by MW/area into a household price; secondary reporting and source-specific scope retained."
+      },
+      {
+        "csv_line": 29,
+        "item": {
+          "设备类型": "电锅炉EPC",
+          "规格/型号": "2×50MW电极锅炉+1座15000m³常压蓄热水罐，EPC总承包（含设计/采购/施工/调试/220kV配电扩建）",
+          "价格类型": "中标候选人报价（第一名）",
+          "价格": "70410000",
+          "单位": "元/项",
+          "年份": "2026",
+          "地区": "内蒙古·乌拉特前旗",
+          "采购人": "北方联合电力有限责任公司乌拉特发电厂",
+          "来源文件": "龙源技术预中标乌拉特发电厂电锅炉蓄热调峰EPC_7041万.html",
+          "source_url": "https://esplaza.com.cn/article-13008-1.html"
+        },
+        "matched_efficiency_admitted": false,
+        "reason": "No small finite prototype-scale unit price/technical package match. Large procurement/EPC or undisclosed-capacity item cannot be divided by MW/area into a household price; secondary reporting and source-specific scope retained."
+      }
+    ],
+    "small_matched_package_found": false,
+    "design_efficiency_reference": {
+      "value": 0.97,
+      "identity": "XJJ090-2018 power-sizing design value quoted in prior performance table CSV line56",
+      "source_url": "https://zjt.xinjiang.gov.cn/xjzjt/uploads/202212021617222opr5wkdw5l.pdf",
+      "admitted_to_selected_case": false,
+      "reason": "Province/type-specific design convention, not measured efficiency of the 3x60MW steam package or unnamed Wuhan small boiler; original and applicability require matching before use."
+    },
+    "other_efficiency_minima": "XJJ092 references >95%, >=99.9%, >=99%, and Yuxian >=99.5% are standard/tender requirements with different boiler classes; do not make a universal model curve.",
+    "conclusion": "Current extracted materials do not close a smaller real-package investment case. A finite electric-resistance planning benchmark would require a named matched small unit/installation quote and declared design-efficiency identity; do not rename the old 1000kW ideal source or borrow arbitrary CAPEX."
+  }
+}

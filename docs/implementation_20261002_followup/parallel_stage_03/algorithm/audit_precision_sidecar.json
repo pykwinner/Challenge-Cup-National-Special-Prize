@@ -1,0 +1,156 @@
+{
+  "first_audit": "verification_01/audit.json",
+  "first_audit_passed": false,
+  "first_error_count": 6,
+  "supplement_audit": "verification_02/audit.json",
+  "supplement_passed": true,
+  "original_run_or_frozen_code_changed": false,
+  "raw_native_ordinal_ranks_unchanged": true,
+  "near_tie_reconstruction_order_diff_retained": [
+    {
+      "city": "urumqi",
+      "method_id": "price_paired_L1",
+      "native_rank": {
+        "actual_order": [
+          8,
+          4,
+          6,
+          7,
+          3,
+          5,
+          0,
+          1,
+          2
+        ],
+        "estimated_order": [
+          8,
+          4,
+          6,
+          7,
+          3,
+          5,
+          0,
+          1,
+          2
+        ],
+        "strict_actual_pairs": 36,
+        "strict_inversions": 0,
+        "false_estimated_ties": 1,
+        "mean_absolute_rank_error": 0.0
+      },
+      "rounded_csv_reconstructed_rank": {
+        "actual_order": [
+          8,
+          4,
+          6,
+          7,
+          3,
+          5,
+          0,
+          1,
+          2
+        ],
+        "estimated_order": [
+          8,
+          4,
+          6,
+          7,
+          5,
+          3,
+          0,
+          1,
+          2
+        ],
+        "strict_actual_pairs": 36,
+        "strict_inversions": 0,
+        "false_estimated_ties": 1,
+        "mean_absolute_rank_error": 0.2222222222222222
+      },
+      "order_sensitive_pairs": [
+        {
+          "metric": "estimated_bill_yuan",
+          "policy_ids": [
+            3,
+            5
+          ],
+          "native_bill_difference_yuan": 0.0,
+          "reconstructed_bill_difference_yuan": 9.094947017729282e-13,
+          "below_declared_bill_tie_tolerance": true
+        }
+      ]
+    },
+    {
+      "city": "urumqi",
+      "method_id": "hard_W1_candidate_L1_cap",
+      "native_rank": {
+        "actual_order": [
+          8,
+          4,
+          6,
+          7,
+          3,
+          5,
+          0,
+          1,
+          2
+        ],
+        "estimated_order": [
+          8,
+          4,
+          6,
+          7,
+          3,
+          5,
+          0,
+          1,
+          2
+        ],
+        "strict_actual_pairs": 36,
+        "strict_inversions": 0,
+        "false_estimated_ties": 1,
+        "mean_absolute_rank_error": 0.0
+      },
+      "rounded_csv_reconstructed_rank": {
+        "actual_order": [
+          8,
+          4,
+          6,
+          7,
+          3,
+          5,
+          0,
+          1,
+          2
+        ],
+        "estimated_order": [
+          8,
+          4,
+          6,
+          7,
+          5,
+          3,
+          0,
+          1,
+          2
+        ],
+        "strict_actual_pairs": 36,
+        "strict_inversions": 0,
+        "false_estimated_ties": 1,
+        "mean_absolute_rank_error": 0.2222222222222222
+      },
+      "order_sensitive_pairs": [
+        {
+          "metric": "estimated_bill_yuan",
+          "policy_ids": [
+            3,
+            5
+          ],
+          "native_bill_difference_yuan": 0.0,
+          "reconstructed_bill_difference_yuan": 9.094947017729282e-13,
+          "below_declared_bill_tie_tolerance": true
+        }
+      ]
+    }
+  ],
+  "interpretation": "Original strict exact score ordering is fragile at1ULP round-trip. Supplement verifies all native ordinal ranks only after independent ledger check, requires any relative-order change to remain inside frozen1e-8 bill tie tolerance, and independently recomputes all strict rank/cap/selection/regret metrics. No protocol/algorithm/result tuning or error suppression."
+}

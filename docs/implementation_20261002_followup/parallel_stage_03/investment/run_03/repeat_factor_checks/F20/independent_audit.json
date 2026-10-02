@@ -1,0 +1,144 @@
+{
+  "audit_schema_version": 1,
+  "passed": true,
+  "plan_dir": "docs\\implementation_20261002_followup\\parallel_stage_03\\investment\\run_03\\repeat_factor_checks\\F20",
+  "scope": "declared RC/design feasibility and arithmetic; not real equipment or account certification",
+  "field_or_device_validation": false,
+  "real_source_closure_asserted": false,
+  "errors": [],
+  "checks": {
+    "declared_parameters": true,
+    "integer_candidate": true,
+    "investment_capacity": true,
+    "fixed_cooling_investment": true,
+    "input_registered_chronology": true,
+    "dispatch_registered_chronology": true,
+    "nonnegative_power": true,
+    "hourly_capacity": true,
+    "heat_cooling_exclusive": true,
+    "rc_dynamics": true,
+    "comfort": true,
+    "terminal": true,
+    "electricity_balance": true,
+    "grid_capacity": true,
+    "ledger_capex_cny": true,
+    "ledger_window_energy_bill_cny": true,
+    "ledger_window_fixed_om_cny": true,
+    "ledger_window_co2_kg": true,
+    "ledger_electricity_kwh": true,
+    "ledger_comparison_cost_cny": true,
+    "bound_scope_matches_protocol": true,
+    "scope_candidates_match_design": true,
+    "free_scope": true,
+    "enumeration_exact_scope": true,
+    "selected_primary_mode": true,
+    "enum_0_primary_mode": true,
+    "enum_0_primary_constant": true,
+    "enum_0_primary_certificate": true,
+    "enum_0_complete": true,
+    "enum_1_primary_mode": true,
+    "enum_1_primary_constant": true,
+    "enum_1_primary_certificate": true,
+    "enum_1_complete": true,
+    "enum_2_primary_mode": true,
+    "enum_2_primary_constant": true,
+    "enum_2_primary_certificate": true,
+    "enum_2_complete": true,
+    "integer_enumeration_complete": true,
+    "selected_enumeration_record": true,
+    "global_primary_lower_bound": true,
+    "global_primary_gap": true,
+    "global_bound_below_selected": true,
+    "carbon_epsilon": true,
+    "solver_stage_0_constant": true,
+    "solver_stage_0": true,
+    "solver_stage_0_epsilon": true,
+    "primary_lexicographic_bound": true,
+    "solver_stage_1_constant": true,
+    "solver_stage_1": true,
+    "solver_stage_1_epsilon": true,
+    "final_stage_objective": true
+  },
+  "recomputed": {
+    "electricity_kwh": 878.5872735542911,
+    "window_energy_bill_cny": 611.1790878635878,
+    "window_co2_kg": 355.3006934253545,
+    "heat_resistance_kwh": 0.0,
+    "heat_hp_kwh": 3257.4531498699653,
+    "cooling_kwh": 0.0,
+    "capex_cny": 19300.0,
+    "window_fixed_om_cny": 100.0,
+    "comparison_cost_cny": 33523.58175727176,
+    "rows": 2880,
+    "window_hours": 2880.0,
+    "hp_units": 1,
+    "resistance_capacity_kw": 0.0,
+    "cooling_capacity_kw": 2.0,
+    "max_rc_residual_c": 8.752820690460794e-11,
+    "max_electricity_balance_residual_kw": 7.454037387333301e-12,
+    "peak_electricity_kw": 2.1267935374726563,
+    "requested_epsilon_co2_kg": null,
+    "lp_cost_constant_cny": 21300.0,
+    "lp_variable_cost_objective": 12223.581757271757
+  },
+  "input_sha256": {
+    "protocol": "a38a82713924b299ec22eeb70e0208190921d134cee99f5656a15ce13a20f3e8",
+    "input": "39aad8ca3ba5f7ce127a86c38317b5e1b41d2c84e6f56d21fc86bf20c20bc9f9",
+    "dispatch": "384f129e23bcccefe2f19a648617d1162c43d90c82f006181563f679e214f74f",
+    "investments": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+    "enumeration": "1c56c6e699d622de8bd1d04f333ec9377f3675f922f6abea136417e09a6f74a0",
+    "summary": "178b304e91efaf8fadc3f77c80a7053f7804a1afababcd3bc362c75aee79eda5"
+  },
+  "bound_evidence": {
+    "bound_scope": {
+      "kind": "free_registered_candidates",
+      "hp_unit_candidates": [
+        0,
+        1,
+        2
+      ],
+      "fixed_resistance_kw": null
+    },
+    "enumeration_records": [
+      {
+        "hp_units": 0,
+        "primary_status": 0,
+        "complete": true,
+        "primary_lower_bound": 50359.664031986955
+      },
+      {
+        "hp_units": 1,
+        "primary_status": 0,
+        "complete": true,
+        "primary_lower_bound": 33523.581744946714
+      },
+      {
+        "hp_units": 2,
+        "primary_status": 0,
+        "complete": true,
+        "primary_lower_bound": 52923.43828829332
+      }
+    ],
+    "all_primary_statuses_resolved": true,
+    "integer_enumeration_records_complete": true,
+    "global_primary_lower_bound": 33523.581744946714,
+    "global_primary_gap": 1.2325042916927487e-05
+  },
+  "solver_stage_records": [
+    {
+      "mode": "cost",
+      "success": true,
+      "epsilon_co2_kg": null,
+      "primal_minus_dual": -2.000888343900442e-11,
+      "reported_gap": -2.000888343900442e-11
+    },
+    {
+      "mode": "carbon",
+      "success": true,
+      "epsilon_co2_kg": null,
+      "primal_minus_dual": -1.1731344784493558e-09,
+      "reported_gap": -1.1731344784493558e-09
+    }
+  ],
+  "solver_optimality_scope": "checks actual-scope enumeration coverage/statuses and recomputes its lower bound from reported primary duals; final objective is independently recomputed, but LP dual vectors/optimality are not independently certified"
+}

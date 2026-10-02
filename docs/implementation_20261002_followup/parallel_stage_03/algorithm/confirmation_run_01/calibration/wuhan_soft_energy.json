@@ -1,0 +1,170 @@
+{
+  "city": "wuhan",
+  "method_id": "soft_energy",
+  "worker_cpu_affinity": {
+    "supported": true,
+    "effective_logical_CPUs": [
+      0
+    ]
+  },
+  "status": "ok",
+  "weights": [
+    6.6351928917772245,
+    22.27197144548706,
+    24.067531956390795,
+    22.97900622090803,
+    16.781656992866754,
+    25.260292965976312,
+    1.0,
+    1.0043475265938204
+  ],
+  "soft_summary": {
+    "application_mode": "explicit_function_call_only",
+    "source_files_modified": false,
+    "solver": "SLSQP_constrained_least_squares",
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully",
+    "energy_matching": "soft_regularized_least_squares",
+    "weight_conservation_residual": 1.4210854715202004e-14,
+    "maximum_bound_violation": 0.0,
+    "objective_value": 3.973946290195573e-08,
+    "matched_columns": [
+      "heat_reference_no_gain_kw"
+    ],
+    "representative_days": 8,
+    "original_weight_sum_days": 120.0,
+    "calibrated_weight_sum_days": 119.99999999999999,
+    "minimum_calibrated_weight": 1.0,
+    "minimum_extreme_calibrated_weight": 1.0,
+    "maximum_absolute_original_bias": 0.0036840904694118246,
+    "maximum_absolute_calibrated_bias": 1.0786877275094857e-05,
+    "regularization": 0.0001,
+    "caveat": "candidate weights only; rerun coverage, investment stability and fixed-investment chronological replay before adoption"
+  },
+  "paired_diagnostics": {
+    "input_identity": {
+      "selected_day_indices": [
+        116,
+        56,
+        91,
+        66,
+        8,
+        43,
+        12,
+        84
+      ],
+      "selected_day_ids": [
+        "2025-03-12",
+        "2025-01-11",
+        "2025-02-15",
+        "2025-01-21",
+        "2024-11-24",
+        "2024-12-29",
+        "2024-11-28",
+        "2025-02-08"
+      ],
+      "calendar_day_ids_sha256": "fc5978d6ec0fd8adddff51fa57c1a7a04b1849bce0b60e0b5d34a6310d2d8182",
+      "reference_power_sha256": "a5558e695c5416f2dbfc18296717782c0e96969db3e7d13ad4438355a8055916",
+      "paired_prices_sha256": "bc09cfcd2517251e5430649a79264ebec36e8b01eb7950db4e0f69d5eda671dd",
+      "selected_reference_power_sha256": "8098edde129a75fbf805f1e4985cfc727149fd09e0962effc2f9b7fb875a7633",
+      "selected_paired_prices_sha256": "4c2b5fc2253093f85997b4be3cfaaf3cb4c2be7481dd6893973fd5ca7e29ca3f",
+      "operation_window_sha256": {
+        "morning_end": "a11168630c74f3dcabcf5ca8f26b22e7bb4930c0df2fba75ccece989cae807ec",
+        "midday_end": "f49dcedce095b304cb4a21c9caea8728912d3a0066f41b77ba81e03aadd5928a"
+      }
+    },
+    "passes": false,
+    "reference_energy": {
+      "unit": "kWh_th",
+      "target": 3612.19061,
+      "estimate": 3612.151645743196,
+      "signed_residual": -0.03896425680432003,
+      "relative_residual": -1.0786877275094857e-05,
+      "absolute_error_bound": 0.0,
+      "bound_violation": 0.03896425680432003,
+      "numerical_acceptance_allowance": 6.09817068e-05,
+      "passes_with_declared_numerical_tolerance": false
+    },
+    "moments": {
+      "price_product": {
+        "unit": "currency*kWh_th/kWh_e",
+        "target": 2746.6749010365,
+        "estimate": 2741.790222906616,
+        "signed_residual": -4.884678129884378,
+        "relative_residual": -0.0017783969002087103,
+        "absolute_error_bound": 13.733374505182502,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 4.469396752044e-05,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:morning_end": {
+        "unit": "kWh_th",
+        "target": 200.926649,
+        "estimate": 200.31955671763686,
+        "signed_residual": -0.6070922823631406,
+        "relative_residual": -0.003021462237013372,
+        "absolute_error_bound": 2.00926649,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 3.1102259999999998e-06,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:midday_end": {
+        "unit": "kWh_th",
+        "target": 87.103016,
+        "estimate": 83.25080704331567,
+        "signed_residual": -3.852208956684322,
+        "relative_residual": -0.04422589634191682,
+        "absolute_error_bound": 0.87103016,
+        "bound_violation": 2.981178796684322,
+        "numerical_acceptance_allowance": 1.8936708000000001e-06,
+        "passes_with_declared_numerical_tolerance": false
+      }
+    },
+    "day_conservation_signed_residual": -1.4210854715202004e-14,
+    "day_numerical_acceptance_allowance": 1.2e-06,
+    "maximum_lower_bound_violation_days": 0.0,
+    "lower_bound_numerical_acceptance_allowance_days": 1e-08,
+    "objective_weight_L1_over_days": 0.010069064907466502,
+    "objective_unit": "dimensionless (sum absolute weight displacement in days / calendar days)",
+    "operation_window_active_hours": {
+      "morning_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "midday_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "normalized_reference_W1": 0.03401824469944437,
+  "weight_L1_displacement_days": 1.2082877888959802,
+  "resources": {
+    "wall_seconds": 1.6871577999991132,
+    "sampled_peak_RSS_bytes": 164847616,
+    "return_code": 0,
+    "termination": null,
+    "limit_seconds": 60.0,
+    "limit_RSS_bytes": 1073741824,
+    "numerical_threads": 1,
+    "startup_and_verification_included": true
+  }
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="2" failures="1" skipped="0" tests="24" time="2.090" timestamp="2026-10-02T20:50:44.532790" hostname="LAPTOP-9T38KD8F"><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_l1_cap_lp_exact_two_day_solution_matches_distribution" time="0.007" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_l1_cap_cannot_hide_hard_energy_infeasibility[0.0]" time="0.004" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_l1_cap_cannot_hide_hard_energy_infeasibility[1.0]" time="0.004" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_l1_cap_cannot_hide_hard_energy_infeasibility[1.999]" time="0.004" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_l1_control_relaxes_to_original_w1_optimum_with_large_cap" time="0.006"><failure message="AssertionError: assert 'infeasible' == 'ok'&#10;  - ok&#10;  + infeasible">def test_l1_control_relaxes_to_original_w1_optimum_with_large_cap():
+        profiles = np.array([np.tile([0., 4.], 12), np.full(24, 2.), np.full(24, 3.)])
+        observed = np.r_[profiles[0], profiles[1], profiles[2], np.full(24, 1.)]
+        original, lower = np.array([1., 2., 1.]), np.array([0.1, 0.1, 0.1])
+        baseline = module.minimum_w1_energy_weights(observed, profiles, original, lower)
+        control = module.minimum_w1_with_l1_cap(observed, profiles, original, lower, 8.)
+&gt;       assert baseline["status"] == control["status"] == "ok"
+E       AssertionError: assert 'infeasible' == 'ok'
+E         - ok
+E         + infeasible
+
+tests\test_three_city_decision_weight_confirmation.py:45: AssertionError</failure></testcase><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_w1_control_rejects_invalid_scope[negative_values]" time="0.001" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_w1_control_rejects_invalid_scope[negative_cap]" time="0.000" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_w1_control_rejects_invalid_scope[nan_cap]" time="0.000" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_w1_control_rejects_invalid_scope[weight_days]" time="0.000" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_vacuous_price_band_covers_entire_floor_simplex_and_records_units" time="0.000" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_hour_mask_and_continuous_state_and_terminal_cooling_are_accounted" time="0.011" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_hour_mask_does_not_preheat_in_non_valley_bucket" time="0.007" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_controller_rejects_boundary_or_scope_violation[naive]" time="0.006" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_controller_rejects_boundary_or_scope_violation[missing_hour]" time="0.006" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_controller_rejects_boundary_or_scope_violation[service_gap]" time="0.007" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_controller_rejects_boundary_or_scope_violation[investment]" time="0.006" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_controller_rejects_boundary_or_scope_violation[capacity]" time="0.006" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_forecast_choice_actual_cap_failure_has_no_regret" time="0.000" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_no_forecast_feasible_policy_keeps_actual_oracle_and_null_choice" time="0.000" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_service_failure_excludes_oracle_and_gates_selected_regret" time="0.000" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_bill_tie_rule_is_fixed_id_and_qualified_regret_uses_actual_bill" time="0.000" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_all_policy_rank_metrics_detect_inversions_and_false_ties" time="0.000" /><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_protocol_lock_prevents_post_freeze_mutation" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\implementation_20261002_followup\\parallel_stage_03\\algorithm\\test_tmp_01'&quot;">self = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/algorithm/test_tmp_01')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\implementation_20261002_followup\\parallel_stage_03\\algorithm\\test_tmp_01'
+
+D:\app\anaconda3\Lib\pathlib.py:1311: FileNotFoundError</error></testcase><testcase classname="tests.test_three_city_decision_weight_confirmation" name="test_output_cannot_write_outside_owned_stage03" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\implementation_20261002_followup\\parallel_stage_03\\algorithm\\test_tmp_01'&quot;">self = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/algorithm/test_tmp_01')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\implementation_20261002_followup\\parallel_stage_03\\algorithm\\test_tmp_01'
+
+D:\app\anaconda3\Lib\pathlib.py:1311: FileNotFoundError</error></testcase></testsuite></testsuites>

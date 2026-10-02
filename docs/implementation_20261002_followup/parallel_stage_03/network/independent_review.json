@@ -1,0 +1,104 @@
+{
+  "reviewed_utc": "2026-10-02T12:49:35.461650+00:00",
+  "reviewer_task": "thermal_feedback_review",
+  "status": "approved_for_bounded_mechanism_freeze",
+  "approved_scope": "finite fixed-geometry, independent-pump, single-source single-grade star branch steady duty model; hourly average energy and conservative simultaneous on-state source/electric capacity",
+  "not_claimed": [
+    "real Bayi or city pipe measurements",
+    "continuous nonlinear network global optimum",
+    "shared-pump pressure balance",
+    "mesh or N-1 network",
+    "pipe transport/cold-start dynamics",
+    "RC pulse comfort certification",
+    "free pipe investment optimization"
+  ],
+  "test_command": [
+    "D:\\app\\anaconda3\\python.exe",
+    "-m",
+    "pytest",
+    "tests/test_network_feedback.py",
+    "tests/test_network_feedback_independent.py",
+    "-q",
+    "--tb=short",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "test_returncode": 0,
+  "test_log": "independent_tests_final_20261002.txt",
+  "passed_tests": 74,
+  "pytest_elapsed_seconds": 1.85,
+  "independent_cases": 61,
+  "baseline_cases": 13,
+  "identities_before": {
+    "src/heatplan/network_feedback.py": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+    "tests/test_network_feedback_independent.py": "73cb65447e739e3ac1f4a1cc049680f527656674f21e9f9c88ce549e6d4c1c63",
+    "tests/test_network_feedback.py": "b129e387d5b1eb77aeec582747369e68a6c963cb136000543c95add861486375",
+    "src/heatplan/model.py": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+    "src/heatplan/hydraulics.py": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd"
+  },
+  "identities_after": {
+    "src/heatplan/network_feedback.py": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+    "tests/test_network_feedback_independent.py": "73cb65447e739e3ac1f4a1cc049680f527656674f21e9f9c88ce549e6d4c1c63",
+    "tests/test_network_feedback.py": "b129e387d5b1eb77aeec582747369e68a6c963cb136000543c95add861486375",
+    "src/heatplan/model.py": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+    "src/heatplan/hydraulics.py": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd"
+  },
+  "source_and_tests_unchanged_during_test": true,
+  "frozen_model_and_hydraulics_unchanged": true,
+  "prior_review_rounds": [
+    {
+      "test_count": 43,
+      "passed": 19,
+      "failed": 24,
+      "pytest_seconds": 1.58,
+      "observed_evidence": "tool result retained in conversation; no standalone raw log was captured",
+      "issues": [
+        "hidden core feature bypass",
+        "chronology and nonfinite inputs",
+        "trusted numerical summary",
+        "missing instantaneous recheck",
+        "catalog soft penalty trust"
+      ]
+    },
+    {
+      "test_count": 55,
+      "passed": 47,
+      "failed": 8,
+      "pytest_seconds": 4.31,
+      "observed_evidence": "tool result retained in conversation; no standalone raw log was captured",
+      "issues": [
+        "export metadata identity",
+        "invalid audit tolerance"
+      ]
+    },
+    {
+      "test_count": 61,
+      "passed": 59,
+      "failed": 2,
+      "pytest_seconds": 1.73,
+      "observed_evidence": "tool result retained in conversation; no standalone raw log was captured",
+      "issues": [
+        "catalog branch-index rebinding can bypass strict hard limits",
+        "service grade below absolute zero"
+      ]
+    }
+  ],
+  "mathematical_checks": [
+    "independent Colebrook root and two-leg enthalpy conservation",
+    "zero-UA laminar analytical limit",
+    "two-branch exhaustive finite-mode objective comparison with price variation and soft penalty",
+    "low-flow temperature repair through exact invalid-mode cuts",
+    "small duty cannot hide instantaneous hydraulic overload",
+    "average-feasible pulse packing counterexample rejected by simultaneous cap"
+  ],
+  "certificate_checks": [
+    "full solution vector re-audit",
+    "complete exports including zero flows and metadata",
+    "original contract identity",
+    "on-state source/electric recheck",
+    "soft penalty recomputed from original physical contract",
+    "catalog identity prevents branch-limit rebinding"
+  ],
+  "experiment_review": "this review approves the final source and mechanism tests; a fresh frozen run_02 is required before using real-weather experiment results as final evidence",
+  "historical_run_01": "retain as superseded because its frozen source preceded the catalog identity repair"
+}

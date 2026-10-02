@@ -1,0 +1,78 @@
+{
+  "audit_schema_version": 1,
+  "passed": true,
+  "plan_dir": "docs\\implementation_20261002_followup\\parallel_stage_03\\investment\\run_01\\carbon_endpoint",
+  "scope": "declared RC/design feasibility and arithmetic; not real equipment or account certification",
+  "field_or_device_validation": false,
+  "real_source_closure_asserted": false,
+  "errors": [],
+  "checks": {
+    "declared_parameters": true,
+    "integer_candidate": true,
+    "investment_capacity": true,
+    "fixed_cooling_investment": true,
+    "input_registered_chronology": true,
+    "dispatch_registered_chronology": true,
+    "nonnegative_power": true,
+    "hourly_capacity": true,
+    "heat_cooling_exclusive": true,
+    "rc_dynamics": true,
+    "comfort": true,
+    "terminal": true,
+    "electricity_balance": true,
+    "grid_capacity": true,
+    "ledger_capex_cny": true,
+    "ledger_window_energy_bill_cny": true,
+    "ledger_window_fixed_om_cny": true,
+    "ledger_window_co2_kg": true,
+    "ledger_electricity_kwh": true,
+    "ledger_comparison_cost_cny": true,
+    "carbon_epsilon": true,
+    "solver_stage_0": true,
+    "solver_stage_1": true
+  },
+  "recomputed": {
+    "electricity_kwh": 832.5087122732247,
+    "window_energy_bill_cny": 624.9236237817345,
+    "window_co2_kg": 336.66652324329107,
+    "heat_resistance_kwh": 0.0,
+    "heat_hp_kwh": 3043.472699720944,
+    "cooling_kwh": 0.0,
+    "capex_cny": 19300.0,
+    "window_fixed_om_cny": 100.0,
+    "comparison_cost_cny": 22924.61811890867,
+    "rows": 2880,
+    "window_hours": 2880.0,
+    "hp_units": 1,
+    "resistance_capacity_kw": 0.0,
+    "cooling_capacity_kw": 2.0,
+    "max_rc_residual_c": 8.387601724280103e-11,
+    "max_electricity_balance_residual_kw": 1.5675238884682585e-12,
+    "peak_electricity_kw": 0.8837571845818052,
+    "requested_epsilon_co2_kg": null
+  },
+  "input_sha256": {
+    "protocol": "e85fb5e198f5fda724426b3df02de23359ef655be6f1f0b04441b8618c0d2d2b",
+    "input": "39aad8ca3ba5f7ce127a86c38317b5e1b41d2c84e6f56d21fc86bf20c20bc9f9",
+    "dispatch": "54e931ab5a6bb4c370f662548d6776a4ce34ab0b683d847ff6a8ea8e42521bd1",
+    "investments": "2ae22e82feb363045407aa8a661908ea9693b0c7f6fa6e1a568f1a5313e1f629",
+    "summary": "97f84df6b139cce42479381a52c2cd3bb5cc974c9b7695d5ed406335dbabbbd4"
+  },
+  "solver_stage_records": [
+    {
+      "mode": "carbon",
+      "success": true,
+      "epsilon_co2_kg": null,
+      "primal_minus_dual": -2.1600499167107046e-12,
+      "reported_gap": -2.1600499167107046e-12
+    },
+    {
+      "mode": "cost",
+      "success": true,
+      "epsilon_co2_kg": null,
+      "primal_minus_dual": 7.321432349272072e-11,
+      "reported_gap": 7.321432349272072e-11
+    }
+  ],
+  "solver_optimality_scope": "checks reported primal/dual scalar consistency; dual vectors and complete integer enumeration are not independently certified"
+}

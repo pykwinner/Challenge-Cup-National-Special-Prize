@@ -1,0 +1,93 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "path": "admission_tou.json",
+      "expected_sha256": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+      "required_for_numerical_reproduction": true,
+      "checked_this_run": true,
+      "status": "sha256_match",
+      "passed": true
+    },
+    {
+      "path": "field_identity.csv",
+      "expected_sha256": "0535a448b87dedd5ce59bf1fa0bc1ebaa541cad1f6e05adc09050b5e8ed193e3",
+      "required_for_numerical_reproduction": true,
+      "checked_this_run": true,
+      "status": "sha256_match",
+      "passed": true
+    },
+    {
+      "path": "input.csv",
+      "expected_sha256": "39aad8ca3ba5f7ce127a86c38317b5e1b41d2c84e6f56d21fc86bf20c20bc9f9",
+      "required_for_numerical_reproduction": true,
+      "checked_this_run": true,
+      "status": "sha256_match",
+      "passed": true
+    },
+    {
+      "path": "main_case_source_join.json",
+      "expected_sha256": "423b89e8599dd7b4b42de66921d8009a48ec7866d297ec4f5e2eb242e0ada33c",
+      "required_for_numerical_reproduction": true,
+      "checked_this_run": true,
+      "status": "sha256_match",
+      "passed": true
+    },
+    {
+      "path": "monthly_tariff_verified.csv",
+      "expected_sha256": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+      "required_for_numerical_reproduction": true,
+      "checked_this_run": true,
+      "status": "sha256_match",
+      "passed": true
+    },
+    {
+      "path": "protocol.json",
+      "expected_sha256": "e85fb5e198f5fda724426b3df02de23359ef655be6f1f0b04441b8618c0d2d2b",
+      "required_for_numerical_reproduction": true,
+      "checked_this_run": true,
+      "status": "sha256_match",
+      "passed": true
+    },
+    {
+      "path": "source_registry.json",
+      "expected_sha256": "ddb5606ee84c7b854c05b3681b5de5f6e7c8367476532e755c271bdf19bcc659",
+      "required_for_numerical_reproduction": true,
+      "checked_this_run": true,
+      "status": "sha256_match",
+      "passed": true
+    },
+    {
+      "path": "tou_account_and_hours.json",
+      "expected_sha256": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb",
+      "required_for_numerical_reproduction": true,
+      "checked_this_run": true,
+      "status": "sha256_match",
+      "passed": true
+    },
+    {
+      "path": "wuhan_2024_2025_hourly_tou.csv",
+      "expected_sha256": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+      "required_for_numerical_reproduction": true,
+      "checked_this_run": true,
+      "status": "sha256_match",
+      "passed": true
+    },
+    {
+      "path": "qipanjing_original_contract.pdf",
+      "expected_sha256": "aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d",
+      "acquisition_url": "https://www.ccgp-neimenggu.gov.cn/ecms-econtract/model/aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d.pdf",
+      "required_for_numerical_reproduction": false,
+      "required_in_strict_mode": true,
+      "checked_this_run": false,
+      "status": "missing_original_required",
+      "passed": false
+    }
+  ],
+  "strict_original_sources": true,
+  "strict_original_scope": "Only original files explicitly registered in this investment bundle (FT8 procurement contract); inherited raw building/weather/tariff sources are not all re-audited by this mode.",
+  "original_source_hashes_verified_this_run": false,
+  "original_content_review_repeated": false,
+  "inherited_source_identity_not_current_content_verification": true,
+  "source_statement": "原始来源身份沿用既有审核；本次未重新逐页审核原件。默认数值复算允许缺少原PDF，严格来源模式则要求其SHA匹配。"
+}

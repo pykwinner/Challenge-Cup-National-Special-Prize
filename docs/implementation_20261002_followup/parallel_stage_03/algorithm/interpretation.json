@@ -1,0 +1,49 @@
+{
+  "protocol_sha256": "83543239833d0354692a9ef333235c736a855b014ba1b10409bd83599bbb03b6",
+  "frozen_recommendation_preserved": "price_paired_L1",
+  "recommendation_reason": "all hard variants tie on12 qualified/12 oracle choices/0regret; frozen rule then gives energy_max_APE priority over billMAPE",
+  "candidate_vs_L1_control_energy_max_APE_advantage_percentage_points": 0.0004891007527368409,
+  "candidate_bill_MAPE_over_hard_W1": 3.4571087881002964,
+  "decision_improvement_over_hard_W1_observed": false,
+  "practical_use_by_purpose": {
+    "cost_estimation_reference": "hard_energy_minimum_W1, lowest pooled27-policy billMAPE; city-specific variation retained",
+    "strict_frozen_energy_error_coverage_rule": "price_paired_L1 by tiny energy_max_APE difference; not proof of robustness or general superiority",
+    "main_algorithm_default_changed": false
+  },
+  "per_city_bill_MAPE": {
+    "urumqi": {
+      "frequency": 0.00772160378656511,
+      "soft_energy": 0.006988337718937086,
+      "hard_energy_minimum_W1": 0.0001852946530958735,
+      "hard_energy_minimum_L1": 0.006960758225494141,
+      "price_paired_L1": 0.005238365126304771,
+      "hard_W1_candidate_L1_cap": 0.0007542617167616006
+    },
+    "guyuan": {
+      "frequency": 0.0009422428346865858,
+      "soft_energy": 0.0028891991268459446,
+      "hard_energy_minimum_W1": 0.003416657806131801,
+      "hard_energy_minimum_L1": 0.0030043669673065444,
+      "price_paired_L1": 0.0030043669673065444,
+      "hard_W1_candidate_L1_cap": 0.003004367147636026
+    },
+    "wuhan": {
+      "frequency": 0.00804346985388489,
+      "soft_energy": 0.0035719326222815565,
+      "hard_energy_minimum_W1": 0.0006140886561755088,
+      "hard_energy_minimum_L1": 0.0038538958778169085,
+      "price_paired_L1": 0.006332580697441204,
+      "hard_W1_candidate_L1_cap": 0.0061205575438863695
+    }
+  },
+  "independent_audit": {
+    "passed": true,
+    "checks": 42225,
+    "precision_sensitive_cases": 2,
+    "old_audit_fail_retained": true,
+    "maximum_RC_residual_c": 1.4210854715202004e-14
+  },
+  "new_holdout_generalization_claim": false,
+  "investment_improvement_claim": false,
+  "simulation_speedup_claim": false
+}

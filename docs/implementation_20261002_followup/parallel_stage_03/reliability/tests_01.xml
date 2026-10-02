@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="13" skipped="0" tests="32" time="83.932" timestamp="2026-10-02T20:43:32.184503" hostname="LAPTOP-9T38KD8F"><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_all_city_tasks_complete_and_checkpoint_every_transition" time="4.162"><failure message="assert False is True">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9834220&gt;)
+
+    def test_all_city_tasks_complete_and_checkpoint_every_transition(batch):
+        out, calls, _, _ = batch
+        m.run(out)
+&gt;       manifest = _assert_final(out, True, 12)
+
+tests\test_three_city_climate_dispatch_resilient.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_all_city_tasks_complete_a0/batch')
+passed = True, rows = 12
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+&gt;       assert manifest["all_requested_cases_passed"] is passed
+E       assert False is True
+
+tests\test_three_city_climate_dispatch_resilient.py:64: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_first_city_prepare_read_failure_does_not_stop_other_cities" time="3.195"><failure message="assert 2 == 8">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9837740&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9805850&gt;
+
+    def test_first_city_prepare_read_failure_does_not_stop_other_cities(batch, monkeypatch):
+        out, calls, _, _ = batch
+        reader = m.pd.read_csv
+    
+        def fail_first(path, *args, **kwargs):
+            if str(path).endswith("urumqi_hourly.csv"):
+                raise OSError("injected first-city preparation read failure")
+            return reader(path, *args, **kwargs)
+    
+        monkeypatch.setattr(m.pd, "read_csv", fail_first)
+        m.run(out)
+&gt;       manifest = _assert_final(out, False, 8)
+
+tests\test_three_city_climate_dispatch_resilient.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_first_city_prepare_read_f0/batch')
+passed = False, rows = 8
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+&gt;       assert manifest["accepted_rows"] == rows
+E       assert 2 == 8
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_first_city_baseline_rollout_failure_does_not_stop_other_cities" time="3.446"><failure message="assert 2 == 8">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9834220&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B940DEE0&gt;
+
+    def test_first_city_baseline_rollout_failure_does_not_stop_other_cities(batch, monkeypatch):
+        out, calls, original, _ = batch
+    
+        def fail_first(config, frame, delta):
+            if frame.scenario.iloc[0].startswith("urumqi"):
+                raise RuntimeError("injected first-city baseline rollout failure")
+            return original(config, frame, delta)
+    
+        monkeypatch.setattr(m.base, "rollout", fail_first)
+        m.run(out)
+&gt;       manifest = _assert_final(out, False, 8)
+
+tests\test_three_city_climate_dispatch_resilient.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_first_city_baseline_rollo0/batch')
+passed = False, rows = 8
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+&gt;       assert manifest["accepted_rows"] == rows
+E       assert 2 == 8
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_first_city_baseline_audit_failure_is_retained" time="3.730"><failure message="assert 2 == 8">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9836520&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B98078C0&gt;
+
+    def test_first_city_baseline_audit_failure_is_retained(batch, monkeypatch):
+        out, _, original, _ = batch
+    
+        def corrupt_first(config, frame, delta):
+            trajectory = original(config, frame, delta)
+            if frame.scenario.iloc[0].startswith("urumqi"):
+                trajectory.loc[1, "heat_kw"] += .1
+            return trajectory
+    
+        monkeypatch.setattr(m.base, "rollout", corrupt_first)
+        m.run(out)
+&gt;       manifest = _assert_final(out, False, 8)
+
+tests\test_three_city_climate_dispatch_resilient.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_first_city_baseline_audit0/batch')
+passed = False, rows = 8
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+&gt;       assert manifest["accepted_rows"] == rows
+E       assert 2 == 8
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_middle_second_stage_failure_retains_summary_and_attempts_other_endpoint" time="3.873"><failure message="assert 3 == 10">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B97EA5C0&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B99FEC30&gt;
+
+    def test_middle_second_stage_failure_retains_summary_and_attempts_other_endpoint(batch, monkeypatch):
+        out, calls, _, double = batch
+    
+        def fail_middle(name, config, frame, folder, budget, gap, *, primary=None):
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                (folder / name).mkdir()
+                raise InjectedSolverFailure()
+            return double(name, config, frame, folder, budget, gap, primary=primary)
+    
+        monkeypatch.setattr(m.base, "run_one", fail_middle)
+        m.run(out)
+&gt;       manifest = _assert_final(out, False, 10)
+
+tests\test_three_city_climate_dispatch_resilient.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_middle_second_stage_failu0/batch')
+passed = False, rows = 10
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+&gt;       assert manifest["accepted_rows"] == rows
+E       assert 3 == 10
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[primary]" time="3.968"><failure message="assert 3 == 10">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9837BA0&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9804830&gt;
+gate = 'primary'
+
+    @pytest.mark.parametrize("gate", ["primary", "returned", "allowance"])
+    def test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint(batch, monkeypatch, gate):
+        out, _, original, double = batch
+    
+        def wrong_bound(name, config, frame, folder, budget, gap, *, primary=None):
+            result, audit = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                if gate == "primary":
+                    result.summary["primary_incumbent_value"] += 1.
+                    result.summary["primary_objective_allowance"] = 1e-7 + 1e-8 * abs(result.summary["primary_incumbent_value"])
+                elif gate == "returned":
+                    # A feasible all-hour warmer policy costs more than the known
+                    # baseline, while the claimed primary anchor remains valid.
+                    result.building_trajectory = original(config, frame.assign(tariff_bucket="valley"), 1)
+                    metrics = m.base.independent_metrics(config, frame, result.building_trajectory)
+                    result.summary["objective_yuan_per_year"] = metrics["bill_yuan"]
+                    result.summary["total_service_emissions_kg_per_year"] = metrics["carbon_kg"]
+                else:
+                    result.summary["primary_objective_allowance"] = 1000.
+            return result, audit
+    
+        monkeypatch.setattr(m.base, "run_one", wrong_bound)
+        m.run(out)
+&gt;       manifest = _assert_final(out, False, 10)
+
+tests\test_three_city_climate_dispatch_resilient.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_known_feasible_bound_gate0/batch')
+passed = False, rows = 10
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+&gt;       assert manifest["accepted_rows"] == rows
+E       assert 3 == 10
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[returned]" time="3.969"><failure message="assert 3 == 10">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9A319E0&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9990890&gt;
+gate = 'returned'
+
+    @pytest.mark.parametrize("gate", ["primary", "returned", "allowance"])
+    def test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint(batch, monkeypatch, gate):
+        out, _, original, double = batch
+    
+        def wrong_bound(name, config, frame, folder, budget, gap, *, primary=None):
+            result, audit = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                if gate == "primary":
+                    result.summary["primary_incumbent_value"] += 1.
+                    result.summary["primary_objective_allowance"] = 1e-7 + 1e-8 * abs(result.summary["primary_incumbent_value"])
+                elif gate == "returned":
+                    # A feasible all-hour warmer policy costs more than the known
+                    # baseline, while the claimed primary anchor remains valid.
+                    result.building_trajectory = original(config, frame.assign(tariff_bucket="valley"), 1)
+                    metrics = m.base.independent_metrics(config, frame, result.building_trajectory)
+                    result.summary["objective_yuan_per_year"] = metrics["bill_yuan"]
+                    result.summary["total_service_emissions_kg_per_year"] = metrics["carbon_kg"]
+                else:
+                    result.summary["primary_objective_allowance"] = 1000.
+            return result, audit
+    
+        monkeypatch.setattr(m.base, "run_one", wrong_bound)
+        m.run(out)
+&gt;       manifest = _assert_final(out, False, 10)
+
+tests\test_three_city_climate_dispatch_resilient.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_known_feasible_bound_gate1/batch')
+passed = False, rows = 10
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+&gt;       assert manifest["accepted_rows"] == rows
+E       assert 3 == 10
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[allowance]" time="4.165"><failure message="assert 3 == 10">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9A33880&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B99FD010&gt;
+gate = 'allowance'
+
+    @pytest.mark.parametrize("gate", ["primary", "returned", "allowance"])
+    def test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint(batch, monkeypatch, gate):
+        out, _, original, double = batch
+    
+        def wrong_bound(name, config, frame, folder, budget, gap, *, primary=None):
+            result, audit = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                if gate == "primary":
+                    result.summary["primary_incumbent_value"] += 1.
+                    result.summary["primary_objective_allowance"] = 1e-7 + 1e-8 * abs(result.summary["primary_incumbent_value"])
+                elif gate == "returned":
+                    # A feasible all-hour warmer policy costs more than the known
+                    # baseline, while the claimed primary anchor remains valid.
+                    result.building_trajectory = original(config, frame.assign(tariff_bucket="valley"), 1)
+                    metrics = m.base.independent_metrics(config, frame, result.building_trajectory)
+                    result.summary["objective_yuan_per_year"] = metrics["bill_yuan"]
+                    result.summary["total_service_emissions_kg_per_year"] = metrics["carbon_kg"]
+                else:
+                    result.summary["primary_objective_allowance"] = 1000.
+            return result, audit
+    
+        monkeypatch.setattr(m.base, "run_one", wrong_bound)
+        m.run(out)
+&gt;       manifest = _assert_final(out, False, 10)
+
+tests\test_three_city_climate_dispatch_resilient.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_known_feasible_bound_gate2/batch')
+passed = False, rows = 10
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+&gt;       assert manifest["accepted_rows"] == rows
+E       assert 3 == 10
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_global_identity_failures_abort_before_any_city[protocol]" time="0.416" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_global_identity_failures_abort_before_any_city[source]" time="0.395" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_global_identity_failures_abort_before_any_city[code]" time="0.326" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_global_identity_failures_abort_before_any_city[runtime]" time="0.328" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_global_identity_failures_abort_before_any_city[missing_code]" time="0.347" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_global_identity_failures_abort_before_any_city[missing_input]" time="0.512" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_identity_change_during_middle_solve_invalidates_prior_rows_and_stops" time="2.380"><failure message="assert 2 == 5">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...tal_cost')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9A32F20&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9804FE0&gt;
+
+    def test_identity_change_during_middle_solve_invalidates_prior_rows_and_stops(batch, monkeypatch):
+        out, calls, _, double = batch
+    
+        def corrupt_after_solve(name, config, frame, folder, budget, gap, *, primary=None):
+            result = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                (out / "protocol.json").write_text("{}", encoding="utf-8")
+            return result
+    
+        monkeypatch.setattr(m.base, "run_one", corrupt_after_solve)
+        with pytest.raises(m.IdentityFailure):
+            m.run(out)
+        manifest = _read(out, "manifest.json")
+&gt;       assert manifest["accepted_rows"] == 5  # Retained only, explicitly invalidated.
+E       assert 2 == 5
+
+tests\test_three_city_climate_dispatch_resilient.py:243: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_process_interrupt_is_not_swallowed[KeyboardInterrupt]" time="0.668" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_process_interrupt_is_not_swallowed[SystemExit]" time="0.674" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_atomic_checkpoint_replace_failure_keeps_complete_prior_json" time="0.565" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_existing_run_and_existing_freeze_refuse_overwrite" time="4.025" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_final_output_tamper_and_extra_file_rejected" time="4.125" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_empty_duplicate_unknown_city_selection_rejected" time="0.003" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_freeze_single_city_is_prospectively_registered" time="0.284" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_solver_double_results_carry_unambiguous_test_scope" time="4.277" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_explicit_identity_failure_cannot_be_downgraded_to_city_failure" time="0.639" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_self_consistent_protocol_replacement_during_run_is_rejected" time="2.459"><failure message="assert (2 == 5)">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...tal_cost')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9A31A80&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B990B080&gt;
+
+    def test_self_consistent_protocol_replacement_during_run_is_rejected(batch, monkeypatch):
+        out, _, _, double = batch
+    
+        def replace_protocol(name, config, frame, folder, budget, gap, *, primary=None):
+            result = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                protocol = _read(out, "protocol.json")
+                protocol["cities"] = ["wuhan"]
+                m._write(out / "protocol.json", protocol)
+                m._write(out / "protocol_lock.json", {"protocol.json": m.base.sha(out / "protocol.json")})
+            return result
+    
+        monkeypatch.setattr(m.base, "run_one", replace_protocol)
+        with pytest.raises(m.IdentityFailure, match="initial run identity changed"):
+            m.run(out)
+        manifest = _read(out, "manifest.json")
+&gt;       assert manifest["accepted_rows"] == 5 and manifest["comparison_valid"] is False
+E       assert (2 == 5)
+
+tests\test_three_city_climate_dispatch_resilient.py:363: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_protocol_change_during_final_export_does_not_publish_success" time="3.956"><failure message="assert 3 == 12">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9A30900&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9A03770&gt;
+
+    def test_protocol_change_during_final_export_does_not_publish_success(batch, monkeypatch):
+        out, _, _, _ = batch
+        writer = m.pd.DataFrame.to_csv
+    
+        def change_on_export(frame, path, *args, **kwargs):
+            result = writer(frame, path, *args, **kwargs)
+            if Path(path) == out / "comparison.csv":
+                protocol = _read(out, "protocol.json")
+                protocol["cities"] = ["wuhan"]
+                m._write(out / "protocol.json", protocol)
+                m._write(out / "protocol_lock.json", {"protocol.json": m.base.sha(out / "protocol.json")})
+            return result
+    
+        monkeypatch.setattr(m.pd.DataFrame, "to_csv", change_on_export)
+        with pytest.raises(m.IdentityFailure, match="initial run identity changed"):
+            m.run(out)
+        manifest = _read(out, "manifest.json")
+&gt;       assert manifest["accepted_rows"] == 12
+E       assert 3 == 12
+
+tests\test_three_city_climate_dispatch_resilient.py:383: AssertionError</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_nested_manifest_addition_is_not_excluded_from_inventory" time="4.251" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_manifest_accounting_tamper_is_rejected[accepted_rows-99]" time="4.286" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_manifest_accounting_tamper_is_rejected[all_requested_cases_passed-False]" time="4.316"><failure message="Failed: DID NOT RAISE &lt;class 'resilient_climate.IdentityFailure'&gt;">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187B9A08C20&gt;)
+key = 'all_requested_cases_passed', value = False
+
+    @pytest.mark.parametrize("key,value", [("accepted_rows", 99), ("all_requested_cases_passed", False),
+                                           ("failures", [{"reason": "invented"}]), ("protocol_sha256", "0" * 64)])
+    def test_manifest_accounting_tamper_is_rejected(batch, key, value):
+        out, _, _, _ = batch
+        m.run(out)
+        manifest = _read(out, "manifest.json")
+        manifest[key] = value
+        m._write(out / "manifest.json", manifest)
+&gt;       with pytest.raises(m.IdentityFailure, match="accounting mismatch"):
+E       Failed: DID NOT RAISE &lt;class 'resilient_climate.IdentityFailure'&gt;
+
+tests\test_three_city_climate_dispatch_resilient.py:404: Failed</failure></testcase><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_manifest_accounting_tamper_is_rejected[failures-value2]" time="4.170" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_manifest_accounting_tamper_is_rejected[protocol_sha256-0000000000000000000000000000000000000000000000000000000000000000]" time="4.190" /><testcase classname="tests.test_three_city_climate_dispatch_resilient" name="test_concurrent_invocations_have_one_owner_and_cannot_overwrite" time="3.942"><failure message="assert False is True">batch = (WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], &lt;function rollout at 0x00000187B97D6160&gt;, &lt;function batch.&lt;locals&gt;.feedback_double at 0x00000187BA0842C0&gt;)
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9993530&gt;
+
+    def test_concurrent_invocations_have_one_owner_and_cannot_overwrite(batch, monkeypatch):
+        from concurrent.futures import ThreadPoolExecutor
+        from threading import Barrier
+        out, _, _, _ = batch
+        iterator = Path.iterdir
+        barrier = Barrier(2)
+    
+        def simultaneous_inspection(path):
+            if path == out:
+                entries = list(iterator(path))
+                barrier.wait(timeout=30)
+                return iter(entries)
+            return iterator(path)
+    
+        monkeypatch.setattr(Path, "iterdir", simultaneous_inspection)
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            futures = [executor.submit(m.run, out) for _ in range(2)]
+            results, errors = [], []
+            for future in futures:
+                try:
+                    results.append(future.result(timeout=90))
+                except Exception as error:
+                    errors.append(error)
+        assert len(results) == len(errors) == 1
+        assert isinstance(errors[0], FileExistsError)
+&gt;       _assert_final(out, True, 12)
+
+tests\test_three_city_climate_dispatch_resilient.py:433: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_concurrent_invocations_ha0/batch')
+passed = True, rows = 12
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+&gt;       assert manifest["all_requested_cases_passed"] is passed
+E       assert False is True
+
+tests\test_three_city_climate_dispatch_resilient.py:64: AssertionError</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,665 @@
+{
+  "passed": true,
+  "method": "Actual full invocation of run_03 frozen scripts with its hash-locked processed input bundle containing zero PDFs; no preparation reads of original engineering data required.",
+  "primary": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03",
+  "reproduction": "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02",
+  "primary_manifest_checks": [
+    {
+      "directory": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03",
+      "manifest_sha256": "16506fa76e49495ae9cf1b9baae48c5ce384e482a0ab50ee3a40a6c01b5ac8a9",
+      "verified_files": 168,
+      "all_hashes_passed": true,
+      "no_unregistered_files": true,
+      "input_bundle_pdf_count": 0,
+      "original_source_hashes_verified_this_run": false
+    },
+    {
+      "directory": "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02",
+      "manifest_sha256": "9229191e164852b90b1e00a4be6662ce7c2692da539c2d496f4819c46aa7cabb",
+      "verified_files": 168,
+      "all_hashes_passed": true,
+      "no_unregistered_files": true,
+      "input_bundle_pdf_count": 0,
+      "original_source_hashes_verified_this_run": false
+    }
+  ],
+  "numeric_fields": [
+    "capex_cny",
+    "window_energy_bill_cny",
+    "window_fixed_om_cny",
+    "window_co2_kg",
+    "electricity_kwh",
+    "comparison_cost_cny",
+    "hp_units",
+    "resistance_capacity_kw",
+    "cooling_capacity_kw"
+  ],
+  "maximum_absolute_decision_difference": 3.8903635868337005e-09,
+  "maximum_absolute_all_plan_summary_difference": 3.994045982835814e-09,
+  "maximum_absolute_all_plan_dispatch_difference": 1.2909999824728402e-07,
+  "absolute_tolerance": 1e-05,
+  "hours_per_full_plan": 2880,
+  "independent_audits_per_run": 24,
+  "plans": [
+    {
+      "plan": "baseline",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "carbon_endpoint",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 2.546585164964199e-11,
+      "maximum_absolute_dispatch_difference": 8.000000661922968e-10,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 1.3642420526593924e-12,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.0345502232667059e-11,
+        "electricity_kwh": 2.546585164964199e-11,
+        "comparison_cost_cny": 3.637978807091713e-12,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 4.97724999995279e-10,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 7.563770000140833e-11,
+        "temperature_end_c": 8.000000661922968e-10
+      }
+    },
+    {
+      "plan": "compromise",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 3.8903635868337005e-09,
+      "maximum_absolute_dispatch_difference": 1.2570000151868044e-07,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 3.7971403799019754e-11,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.5733121472294442e-09,
+        "electricity_kwh": 3.8903635868337005e-09,
+        "comparison_cost_cny": 1.9281287677586079e-10,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 7.410999991463996e-08,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 1.679399996845632e-08,
+        "temperature_end_c": 1.2570000151868044e-07
+      }
+    },
+    {
+      "plan": "cost_endpoint",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "design_sensitivity/theta_0/hp_one",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "design_sensitivity/theta_0/resistance",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "design_sensitivity/theta_1/hp_one",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "design_sensitivity/theta_1/resistance",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "epsilon_0",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 2.5352164811920375e-11,
+      "maximum_absolute_dispatch_difference": 8.000000661922968e-10,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 7.958078640513122e-13,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.028865881380625e-11,
+        "electricity_kwh": 2.5352164811920375e-11,
+        "comparison_cost_cny": 3.637978807091713e-12,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 4.794790000152774e-10,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 7.286489999965094e-11,
+        "temperature_end_c": 8.000000661922968e-10
+      }
+    },
+    {
+      "plan": "epsilon_1",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 3.8903635868337005e-09,
+      "maximum_absolute_dispatch_difference": 1.2570000151868044e-07,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 3.7971403799019754e-11,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.5733121472294442e-09,
+        "electricity_kwh": 3.8903635868337005e-09,
+        "comparison_cost_cny": 1.9281287677586079e-10,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 7.410999991463996e-08,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 1.679399996845632e-08,
+        "temperature_end_c": 1.2570000151868044e-07
+      }
+    },
+    {
+      "plan": "epsilon_2",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 3.8903635868337005e-09,
+      "maximum_absolute_dispatch_difference": 1.2570000151868044e-07,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 3.7971403799019754e-11,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.5733121472294442e-09,
+        "electricity_kwh": 3.8903635868337005e-09,
+        "comparison_cost_cny": 1.9281287677586079e-10,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 7.410999991463996e-08,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 1.679399996845632e-08,
+        "temperature_end_c": 1.2570000151868044e-07
+      }
+    },
+    {
+      "plan": "epsilon_3",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 3.8903635868337005e-09,
+      "maximum_absolute_dispatch_difference": 1.2570000151868044e-07,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 3.7971403799019754e-11,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.5733121472294442e-09,
+        "electricity_kwh": 3.8903635868337005e-09,
+        "comparison_cost_cny": 1.9281287677586079e-10,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 7.410999991463996e-08,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 1.679399996845632e-08,
+        "temperature_end_c": 1.2570000151868044e-07
+      }
+    },
+    {
+      "plan": "epsilon_4",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "fixed_replay/baseline",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "fixed_replay/compromise",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 3.8903635868337005e-09,
+      "maximum_absolute_dispatch_difference": 1.2570000151868044e-07,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 3.7971403799019754e-11,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.5733121472294442e-09,
+        "electricity_kwh": 3.8903635868337005e-09,
+        "comparison_cost_cny": 1.9281287677586079e-10,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 7.410999991463996e-08,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 1.679399996845632e-08,
+        "temperature_end_c": 1.2570000151868044e-07
+      }
+    },
+    {
+      "plan": "fixed_replay/low_carbon",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 2.546585164964199e-11,
+      "maximum_absolute_dispatch_difference": 8.000000661922968e-10,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 1.3642420526593924e-12,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.0345502232667059e-11,
+        "electricity_kwh": 2.546585164964199e-11,
+        "comparison_cost_cny": 3.637978807091713e-12,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 4.97724999995279e-10,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 7.563770000140833e-11,
+        "temperature_end_c": 8.000000661922968e-10
+      }
+    },
+    {
+      "plan": "fixed_replay/low_cost",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "package_price_threshold_plans/n0",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "package_price_threshold_plans/n1",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 3.8903635868337005e-09,
+      "maximum_absolute_dispatch_difference": 1.2570000151868044e-07,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 3.7971403799019754e-11,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.5733121472294442e-09,
+        "electricity_kwh": 3.8903635868337005e-09,
+        "comparison_cost_cny": 1.9281287677586079e-10,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 7.410999991463996e-08,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 1.679399996845632e-08,
+        "temperature_end_c": 1.2570000151868044e-07
+      }
+    },
+    {
+      "plan": "package_price_threshold_plans/n2",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 3.994045982835814e-09,
+      "maximum_absolute_dispatch_difference": 1.2909999824728402e-07,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 3.808509063674137e-11,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.6152625903487206e-09,
+        "electricity_kwh": 3.994045982835814e-09,
+        "comparison_cost_cny": 1.8917489796876907e-10,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 7.607000007681108e-08,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 1.7237000049519224e-08,
+        "temperature_end_c": 1.2909999824728402e-07
+      }
+    },
+    {
+      "plan": "repeat_factor_checks/F1",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    },
+    {
+      "plan": "repeat_factor_checks/F12",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 2.168462742702104e-09,
+      "maximum_absolute_dispatch_difference": 7.099999876913898e-08,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 3.6834535421803594e-11,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 8.769234227656852e-10,
+        "electricity_kwh": 2.168462742702104e-09,
+        "comparison_cost_cny": 4.43833414465189e-10,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 4.1819999907488636e-08,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 9.475999984687178e-09,
+        "temperature_end_c": 7.099999876913898e-08
+      }
+    },
+    {
+      "plan": "repeat_factor_checks/F20",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 3.890136213158257e-09,
+      "maximum_absolute_dispatch_difference": 1.2579999975059764e-07,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 3.7971403799019754e-11,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 1.5731984603917226e-09,
+        "electricity_kwh": 3.890136213158257e-09,
+        "comparison_cost_cny": 7.566995918750763e-10,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 7.410999991463996e-08,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 1.679299999057804e-08,
+        "temperature_end_c": 1.2579999975059764e-07
+      }
+    },
+    {
+      "plan": "repeat_factor_checks/F5",
+      "scope_identical": true,
+      "fixed_assets_exactly_identical": true,
+      "maximum_absolute_summary_difference": 0.0,
+      "maximum_absolute_dispatch_difference": 0.0,
+      "summary_field_differences": {
+        "capex_cny": 0.0,
+        "window_energy_bill_cny": 0.0,
+        "window_fixed_om_cny": 0.0,
+        "window_co2_kg": 0.0,
+        "electricity_kwh": 0.0,
+        "comparison_cost_cny": 0.0,
+        "hp_units": 0,
+        "resistance_capacity_kw": 0.0,
+        "cooling_capacity_kw": 0.0
+      },
+      "dispatch_field_differences": {
+        "q_resistance_kw": 0.0,
+        "q_hp_kw": 0.0,
+        "q_cooling_kw": 0.0,
+        "electricity_kw": 0.0,
+        "temperature_end_c": 0.0
+      }
+    }
+  ],
+  "strict_missing_original_result": {
+    "expected_rejection": true,
+    "solver_runs": 0,
+    "missing_original_files": [
+      {
+        "path": "qipanjing_original_contract.pdf",
+        "expected_sha256": "aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d",
+        "acquisition_url": "https://www.ccgp-neimenggu.gov.cn/ecms-econtract/model/aa9f565530afe3e4f72b5df478b34f1e603ec1c7f883a90d6d329426b05acb8d.pdf",
+        "required_for_numerical_reproduction": false,
+        "required_in_strict_mode": true,
+        "checked_this_run": false,
+        "status": "missing_original_required",
+        "passed": false
+      }
+    ],
+    "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/strict_missing_original_01/manifest.json"
+  },
+  "old_manifests_rewritten": false,
+  "source_identity": "Inherited documented identity; this run does not claim fresh original-content review or missing-original SHA verification",
+  "engineering_FT_performance_admission": false
+}

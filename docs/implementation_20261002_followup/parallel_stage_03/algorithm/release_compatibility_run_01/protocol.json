@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "frozen_utc": "2026-10-02T13:27:21.291669+00:00",
+  "experiment_identity": "seen-development_three-city_finite-policy_weight_confirmation_v1",
+  "cities": [
+    "urumqi",
+    "guyuan",
+    "wuhan"
+  ],
+  "methods": [
+    "frequency",
+    "soft_energy",
+    "hard_energy_minimum_W1",
+    "hard_energy_minimum_L1",
+    "price_paired_L1",
+    "hard_W1_candidate_L1_cap"
+  ],
+  "policies": [
+    {
+      "policy_id": 0,
+      "name": "zero",
+      "delta_c": 0,
+      "local_hours": []
+    },
+    {
+      "policy_id": 1,
+      "name": "all_valley_1",
+      "delta_c": 1,
+      "local_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13
+      ]
+    },
+    {
+      "policy_id": 2,
+      "name": "all_valley_3",
+      "delta_c": 3,
+      "local_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13
+      ]
+    },
+    {
+      "policy_id": 3,
+      "name": "morning_end_1",
+      "delta_c": 1,
+      "local_hours": [
+        5
+      ]
+    },
+    {
+      "policy_id": 4,
+      "name": "morning_end_3",
+      "delta_c": 3,
+      "local_hours": [
+        5
+      ]
+    },
+    {
+      "policy_id": 5,
+      "name": "midday_end_1",
+      "delta_c": 1,
+      "local_hours": [
+        13
+      ]
+    },
+    {
+      "policy_id": 6,
+      "name": "midday_end_3",
+      "delta_c": 3,
+      "local_hours": [
+        13
+      ]
+    },
+    {
+      "policy_id": 7,
+      "name": "both_ends_1",
+      "delta_c": 1,
+      "local_hours": [
+        5,
+        13
+      ]
+    },
+    {
+      "policy_id": 8,
+      "name": "both_ends_3",
+      "delta_c": 3,
+      "local_hours": [
+        5,
+        13
+      ]
+    }
+  ],
+  "budget_multipliers": [
+    1.0,
+    1.02,
+    1.05,
+    1.1
+  ],
+  "source_sha256": {
+    "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+    "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+    "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/protocol.json": "5b3253f9bf5c4d8dc2f25515a559b20c2d0c4ee602c69345c0b2a8fb62d487f7",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/common_physical_reference.json": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/field_provenance.csv": "813abbf6a7504bd3aadb6cd8cf08983ffbb7068f0f6a334fce450810a38ba223",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/manifest.json": "0d5f73b172d67d270a4b5596fd78b051f28ce0e85bbd27f16f794b317b104279",
+    "docs/implementation_20261002/data/admission_tou.json": "1fef22f34d8cd931cbaebbaedc2c1524dc5f899a958f229e34bdf05e2bf3028f",
+    "docs/implementation_20261002/data/admission.json": "bb85ea2f260dd4aa439f5b7fc84d44e535398d291673fe06009f35a155a218eb",
+    "configs/evidence_case_20261002/wuhan_bestest600_rc_tou.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+    "docs/implementation_20261002/data/field_provenance_tou.csv": "16f8f749f3c1c6354d22a9f2fbeece3da170a9c1d90ecfa9508ac38a4e108474",
+    "docs/implementation_20261002/data/monthly_tariff_verified.csv": "fd6f388b970707aef2002e7aee487d2a9407932fa65229b929979b226b5d0a6f",
+    "docs/implementation_20261002/data/tou_account_and_hours.json": "19d08fd9c05edbfb722ba598cf8dcf3569aee5bde5eca83c4527454b4b3bb2bb"
+  },
+  "code_sha256": {
+    "scripts/run_three_city_decision_weight_confirmation.py": "f0d6e7510329f8e27963ee0fecaba9613065f1ee0f8ef84e8d1ebc38f3c580e3",
+    "scripts/verify_three_city_decision_weight_confirmation.py": "b15639659eb57b5afedad562b62521304d0d8234ec771c638489e70eabb07e1a",
+    "scripts/report_three_city_decision_weight_confirmation.py": "f71aa078604faf531330346a68bf53d19be94280d27dcfff5b63dfde6bffb8b4",
+    "tests/test_three_city_decision_weight_confirmation.py": "ae8e7dd6ed0deec2182cf9a5ddb8e09f5de51245261e4c2f00a24a3518e5f34f",
+    "tests/test_verify_three_city_decision_weight_confirmation.py": "a72a41d16e8ec5b3d08c5d43843ad38d9ba248dff50ebeaef30c4124db974d37",
+    "src/heatplan/scenarios.py": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+    "src/heatplan/hard_weight_calibration.py": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+    "src/heatplan/decision_weight_calibration.py": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+    "scripts/reproduce_admitted_reference.py": "6de45833472b05afb3b5f1501443f4c87cbc8cfdcf4affd69b35fc524786da97"
+  },
+  "versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "psutil": "5.9.8",
+    "threadpoolctl": "3.6.0"
+  },
+  "test_and_render_versions": {
+    "pytest": "9.1.1",
+    "matplotlib": "3.11.2",
+    "PyYAML": "6.0.3"
+  },
+  "python_version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hours_per_city": 2880,
+  "days_per_city": 120,
+  "reference_column": "heat_reference_no_gain_kw",
+  "reference_kind": "thermal",
+  "calibration_information": "exogenous no-gain reference heat, paired common hourly price, local05/13 binary masks only; no actual policy bills/electricity/oracle",
+  "selected_actual_days": {
+    "urumqi": [
+      {
+        "representative_day": "cluster_0",
+        "original_day_index": 91,
+        "original_time": "2025-02-15T00:00:00+08:00",
+        "period_weight": 14.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_1",
+        "original_day_index": 18,
+        "original_time": "2024-12-04T00:00:00+08:00",
+        "period_weight": 17.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_2",
+        "original_day_index": 32,
+        "original_time": "2024-12-18T00:00:00+08:00",
+        "period_weight": 22.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_3",
+        "original_day_index": 84,
+        "original_time": "2025-02-08T00:00:00+08:00",
+        "period_weight": 13.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_4",
+        "original_day_index": 67,
+        "original_time": "2025-01-22T00:00:00+08:00",
+        "period_weight": 24.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_5",
+        "original_day_index": 74,
+        "original_time": "2025-01-29T00:00:00+08:00",
+        "period_weight": 28.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "extreme_day_040",
+        "original_day_index": 40,
+        "original_time": "2024-12-26T00:00:00+08:00",
+        "period_weight": 1.0,
+        "is_extreme_day": true,
+        "extreme_reasons": "maximum_system_demand;maximum_peak::heat_reference_no_gain_kw;minimum_temperature",
+        "lower_bound": 1.0
+      },
+      {
+        "representative_day": "extreme_day_102",
+        "original_day_index": 102,
+        "original_time": "2025-02-26T00:00:00+08:00",
+        "period_weight": 1.0,
+        "is_extreme_day": true,
+        "extreme_reasons": "maximum_system_ramp;maximum_ramp::heat_reference_no_gain_kw",
+        "lower_bound": 1.0
+      }
+    ],
+    "guyuan": [
+      {
+        "representative_day": "cluster_0",
+        "original_day_index": 18,
+        "original_time": "2024-12-04T00:00:00+08:00",
+        "period_weight": 18.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_1",
+        "original_day_index": 81,
+        "original_time": "2025-02-05T00:00:00+08:00",
+        "period_weight": 11.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_2",
+        "original_day_index": 52,
+        "original_time": "2025-01-07T00:00:00+08:00",
+        "period_weight": 25.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_3",
+        "original_day_index": 97,
+        "original_time": "2025-02-21T00:00:00+08:00",
+        "period_weight": 18.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_4",
+        "original_day_index": 37,
+        "original_time": "2024-12-23T00:00:00+08:00",
+        "period_weight": 23.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_5",
+        "original_day_index": 66,
+        "original_time": "2025-01-21T00:00:00+08:00",
+        "period_weight": 23.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "extreme_day_071",
+        "original_day_index": 71,
+        "original_time": "2025-01-26T00:00:00+08:00",
+        "period_weight": 1.0,
+        "is_extreme_day": true,
+        "extreme_reasons": "maximum_system_demand;maximum_peak::heat_reference_no_gain_kw;minimum_temperature",
+        "lower_bound": 1.0
+      },
+      {
+        "representative_day": "extreme_day_103",
+        "original_day_index": 103,
+        "original_time": "2025-02-27T00:00:00+08:00",
+        "period_weight": 1.0,
+        "is_extreme_day": true,
+        "extreme_reasons": "maximum_system_ramp;maximum_ramp::heat_reference_no_gain_kw",
+        "lower_bound": 1.0
+      }
+    ],
+    "wuhan": [
+      {
+        "representative_day": "cluster_0",
+        "original_day_index": 116,
+        "original_time": "2025-03-12T00:00:00+08:00",
+        "period_weight": 7.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_1",
+        "original_day_index": 56,
+        "original_time": "2025-01-11T00:00:00+08:00",
+        "period_weight": 22.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_2",
+        "original_day_index": 91,
+        "original_time": "2025-02-15T00:00:00+08:00",
+        "period_weight": 24.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_3",
+        "original_day_index": 66,
+        "original_time": "2025-01-21T00:00:00+08:00",
+        "period_weight": 23.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_4",
+        "original_day_index": 8,
+        "original_time": "2024-11-24T00:00:00+08:00",
+        "period_weight": 17.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "cluster_5",
+        "original_day_index": 43,
+        "original_time": "2024-12-29T00:00:00+08:00",
+        "period_weight": 25.0,
+        "is_extreme_day": false,
+        "extreme_reasons": "",
+        "lower_bound": 1e-06
+      },
+      {
+        "representative_day": "extreme_day_012",
+        "original_day_index": 12,
+        "original_time": "2024-11-28T00:00:00+08:00",
+        "period_weight": 1.0,
+        "is_extreme_day": true,
+        "extreme_reasons": "maximum_system_ramp;maximum_ramp::heat_reference_no_gain_kw",
+        "lower_bound": 1.0
+      },
+      {
+        "representative_day": "extreme_day_084",
+        "original_day_index": 84,
+        "original_time": "2025-02-08T00:00:00+08:00",
+        "period_weight": 1.0,
+        "is_extreme_day": true,
+        "extreme_reasons": "maximum_system_demand;maximum_peak::heat_reference_no_gain_kw;minimum_temperature",
+        "lower_bound": 1.0
+      }
+    ]
+  },
+  "selection": {
+    "initial_cluster_count": 6,
+    "seed": 42,
+    "features": [
+      "heat_reference_no_gain_kw",
+      "outdoor_temp",
+      "electricity_price"
+    ],
+    "extreme_floor_days": 1.0,
+    "ordinary_floor_days": 1e-06,
+    "all_methods_same_actual_hours": true
+  },
+  "calibration": {
+    "price_product_relative_band": 0.005,
+    "window_energy_relative_band": 0.01,
+    "windows": {
+      "morning_end": [
+        5
+      ],
+      "midday_end": [
+        13
+      ]
+    },
+    "relative_band_conversion": "fraction times absolute full exogenous moment; zero target has zero band",
+    "minimum_L1_control": "same day/floor/reference-energy equalities; price band is max absolute deviation from full target at two attainable price-moment envelope endpoints under day/floor simplex; no windows; save endpoints and band in original units",
+    "candidate_L1_cap_control": "hard energy minimum W1; raw sum abs(w-w_frequency) <= successful price candidate displacement + 1e-8*120; no price/windows; skip explicitly if candidate failed",
+    "soft_energy": "existing SLSQP soft reference-energy error plus 1e-4 regularization; ftol1e-12/maxiter2000; not W1",
+    "numerical_tolerance": 1e-08,
+    "LP_time_limit_seconds": 30.0,
+    "legacy_hard_W1_internal_time_limit": null,
+    "tie_policy": "retain first native HiGHS optimal vertex with frozen inputs, row/day order, SciPy version; save exact returned weights; multiple optimal weights possible; no outcome-driven tie resolution"
+  },
+  "policy_operation": "20..27C exclusive ideal heat/cool, 20C initial/final, 1000kW shared capacity, 1h exact RC; target20+delta only registered local hour AND valley bucket; natural drift, continuous states, last hour restore20 and bill any cooling",
+  "economic_scope": "same admitted Hubei conditional TOU method price applied to every climate; not three local bills or eligibility; fixed grid factor carbon; no equipment investment/full finance",
+  "budget_baseline": "actual full-season zero-policy energy times each fixed multiplier, carbon multiplied by fixed factor; shared across methods; oracle labels created after weights frozen",
+  "cap_absolute_tolerance": 1e-07,
+  "cap_relative_tolerance": 1e-09,
+  "bill_tie_absolute_tolerance": 1e-08,
+  "choice_rule": "minimum estimated bill among estimated energy/carbon feasible, ties within1e-8 then lowest policy_id; independently evaluate selected actual service/caps",
+  "oracle_rule": "minimum actual bill within same nine-policy library satisfying actual service/caps, same tie; not unconstrained optimized dispatch",
+  "rank_rule": "ordinal sorted bill then policy_id; strict pair inversions use1e-8; also count forecast false ties",
+  "regret_rule": "(selected actual bill - same-library oracle actual bill) only when selected actual feasible and service passes; relative denominator oracle bill; otherwise null, report cap excess and failures",
+  "development_recommendation_rule": "max qualified choices/12, then min worst qualified relative regret, mean qualified relative regret, max all-policy energy APE, mean all-policy bill APE, fixed methods order; not external validation",
+  "resources": {
+    "sequential_workers": true,
+    "numerical_threads": 1,
+    "per_method_city_wall_seconds": 60.0,
+    "shared_input_check_selection_snapshot_wall_seconds": 0.5807172000058927,
+    "per_worker_RSS_limit_bytes": 1073741824,
+    "monitor_interval_seconds": 0.05,
+    "worker_cpu_affinity": "restrict to first allowed logical CPU when supported; failure recorded, not silently claimed",
+    "timing_includes_process_startup_and_verification": true,
+    "memory_monitor_is_sampled_not_hard_OS_limit": true,
+    "dependency_cost": "W1 L1-cap method additionally requires successful price candidate; record own plus candidate wall separately; shared truth and freeze cost remain common"
+  },
+  "outcome_use": {
+    "three_cities_already_seen_development": true,
+    "fresh_holdout": false,
+    "adaptive_tuning": false,
+    "simulation_speedup_claimed": false,
+    "investment_improvement_claimed": false,
+    "all_full_simulation_cost_included": true,
+    "caps_redundant": true,
+    "failure_fallback_or_constraint_relaxation": false
+  }
+}

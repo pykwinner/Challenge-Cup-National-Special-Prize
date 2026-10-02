@@ -1,0 +1,97 @@
+{
+  "schema": "three_city_climate_resilient_v1",
+  "status": "running",
+  "identity_verified": true,
+  "comparison_valid": false,
+  "cities": [
+    "urumqi",
+    "guyuan",
+    "wuhan"
+  ],
+  "revision": 1,
+  "rows": [],
+  "failures": [],
+  "global_failure": null,
+  "tasks": [
+    {
+      "city": "urumqi",
+      "case": "prepare",
+      "status": "pending"
+    },
+    {
+      "city": "urumqi",
+      "case": "baseline_delta0",
+      "status": "pending"
+    },
+    {
+      "city": "urumqi",
+      "case": "cost_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "urumqi",
+      "case": "carbon_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "urumqi",
+      "case": "midpoint_cap",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "prepare",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "baseline_delta0",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "cost_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "carbon_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "guyuan",
+      "case": "midpoint_cap",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "prepare",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "baseline_delta0",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "cost_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "carbon_endpoint",
+      "status": "pending"
+    },
+    {
+      "city": "wuhan",
+      "case": "midpoint_cap",
+      "status": "pending"
+    }
+  ],
+  "frozen_run_sha256": {
+    "protocol.json": "84ae6e31dd4751cfcecd71677e5fad1d075b6ab53870164523941ca906b19fdf",
+    "protocol_lock.json": "6260b6e8a3c2f91bf722257450cf4e97064a4e0153b37cd247729ae8a7741d5f"
+  },
+  "updated_utc": "2026-10-02T12:50:13.820990+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "hours": 2880,
+  "identity": "Scope regression on full 2880-hour public reference input; 9000 CNY is hypothetical price stress, not a real FT quote",
+  "historical_anchor_cny": 17800.0,
+  "price_stress_cny": 9000.0,
+  "baseline_scope": {
+    "kind": "baseline_no_HP",
+    "hp_unit_candidates": [
+      0
+    ],
+    "fixed_resistance_kw": null
+  },
+  "free_scope": {
+    "kind": "free_registered_candidates",
+    "hp_unit_candidates": [
+      0,
+      1,
+      2
+    ],
+    "fixed_resistance_kw": null
+  },
+  "baseline_cost_cny": 14402.37876578174,
+  "baseline_scoped_lower_bound_cny": 14402.378752879542,
+  "free_cost_cny": 14055.895439392752,
+  "free_scoped_lower_bound_cny": 14055.895436236851,
+  "free_hp_units": 1,
+  "counterexample": "A feasible free-scope investment costs less than the baseline-only lower bound; a restricted bound cannot be labeled as free-scope global.",
+  "old_runs_and_source_locks_edited": false,
+  "runner_sha256": "919ba8f570219c28e638a58ddc94d41d7effab2300d66bc21ea3674fdd958826"
+}

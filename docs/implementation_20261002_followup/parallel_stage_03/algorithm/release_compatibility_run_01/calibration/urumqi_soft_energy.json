@@ -1,0 +1,170 @@
+{
+  "city": "urumqi",
+  "method_id": "soft_energy",
+  "worker_cpu_affinity": {
+    "supported": true,
+    "effective_logical_CPUs": [
+      0
+    ]
+  },
+  "status": "ok",
+  "weights": [
+    14.062913368017131,
+    17.00763611262285,
+    21.839722131193444,
+    12.941094546574215,
+    24.143028921122625,
+    28.005080472388837,
+    1.0,
+    1.0005244480808966
+  ],
+  "soft_summary": {
+    "application_mode": "explicit_function_call_only",
+    "source_files_modified": false,
+    "solver": "SLSQP_constrained_least_squares",
+    "solver_success": true,
+    "solver_message": "Optimization terminated successfully",
+    "energy_matching": "soft_regularized_least_squares",
+    "weight_conservation_residual": 0.0,
+    "maximum_bound_violation": 0.0,
+    "objective_value": 1.6297099424481358e-09,
+    "matched_columns": [
+      "heat_reference_no_gain_kw"
+    ],
+    "representative_days": 8,
+    "original_weight_sum_days": 120.0,
+    "calibrated_weight_sum_days": 120.0,
+    "minimum_calibrated_weight": 1.0,
+    "minimum_extreme_calibrated_weight": 1.0,
+    "maximum_absolute_original_bias": 0.0006223906132959347,
+    "maximum_absolute_calibrated_bias": 2.6184680924539126e-06,
+    "regularization": 0.0001,
+    "caveat": "candidate weights only; rerun coverage, investment stability and fixed-investment chronological replay before adoption"
+  },
+  "paired_diagnostics": {
+    "input_identity": {
+      "selected_day_indices": [
+        91,
+        18,
+        32,
+        84,
+        67,
+        74,
+        40,
+        102
+      ],
+      "selected_day_ids": [
+        "2025-02-15",
+        "2024-12-04",
+        "2024-12-18",
+        "2025-02-08",
+        "2025-01-22",
+        "2025-01-29",
+        "2024-12-26",
+        "2025-02-26"
+      ],
+      "calendar_day_ids_sha256": "fc5978d6ec0fd8adddff51fa57c1a7a04b1849bce0b60e0b5d34a6310d2d8182",
+      "reference_power_sha256": "27c531eb64a2836fa3e13b23d09b1070e068273f425f203756be328c89278d77",
+      "paired_prices_sha256": "bc09cfcd2517251e5430649a79264ebec36e8b01eb7950db4e0f69d5eda671dd",
+      "selected_reference_power_sha256": "3e3e283da91a6d899f75c6570008eb326dde8a48e20a16314b6b13ad76021345",
+      "selected_paired_prices_sha256": "d2d7fca4f356024ead2880281c19f14cb96e751377051902aef25738a41ad93b",
+      "operation_window_sha256": {
+        "morning_end": "a11168630c74f3dcabcf5ca8f26b22e7bb4930c0df2fba75ccece989cae807ec",
+        "midday_end": "f49dcedce095b304cb4a21c9caea8728912d3a0066f41b77ba81e03aadd5928a"
+      }
+    },
+    "passes": false,
+    "reference_energy": {
+      "unit": "kWh_th",
+      "target": 7048.400002,
+      "estimate": 7048.418458010508,
+      "signed_residual": 0.018456010508089093,
+      "relative_residual": 2.6184680924539126e-06,
+      "absolute_error_bound": 0.0,
+      "bound_violation": 0.018456010508089093,
+      "numerical_acceptance_allowance": 9.48750348e-05,
+      "passes_with_declared_numerical_tolerance": false
+    },
+    "moments": {
+      "price_product": {
+        "unit": "currency*kWh_th/kWh_e",
+        "target": 5429.1688482843,
+        "estimate": 5465.266441374041,
+        "signed_residual": 36.09759308974117,
+        "relative_residual": 0.0066488249119657705,
+        "absolute_error_bound": 27.1458442414215,
+        "bound_violation": 8.951748848319667,
+        "numerical_acceptance_allowance": 7.544221083336001e-05,
+        "passes_with_declared_numerical_tolerance": false
+      },
+      "window_energy:morning_end": {
+        "unit": "kWh_th",
+        "target": 320.452363,
+        "estimate": 320.0954703016711,
+        "signed_residual": -0.3568926983288634,
+        "relative_residual": -0.0011137152960512368,
+        "absolute_error_bound": 3.20452363,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 4.3155168e-06,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:midday_end": {
+        "unit": "kWh_th",
+        "target": 236.79541899999998,
+        "estimate": 229.1354491980471,
+        "signed_residual": -7.659969801952883,
+        "relative_residual": -0.032348471242819456,
+        "absolute_error_bound": 2.36795419,
+        "bound_violation": 5.292015611952883,
+        "numerical_acceptance_allowance": 3.2904564e-06,
+        "passes_with_declared_numerical_tolerance": false
+      }
+    },
+    "day_conservation_signed_residual": 0.0,
+    "day_numerical_acceptance_allowance": 1.2e-06,
+    "maximum_lower_bound_violation_days": 0.0,
+    "lower_bound_numerical_acceptance_allowance_days": 1e-08,
+    "objective_weight_L1_over_days": 0.0036530553705390175,
+    "objective_unit": "dimensionless (sum absolute weight displacement in days / calendar days)",
+    "operation_window_active_hours": {
+      "morning_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "midday_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "normalized_reference_W1": 0.02349779705564635,
+  "weight_L1_displacement_days": 0.4383666444646821,
+  "resources": {
+    "wall_seconds": 1.5733653999923263,
+    "sampled_peak_RSS_bytes": 155295744,
+    "return_code": 0,
+    "termination": null,
+    "limit_seconds": 60.0,
+    "limit_RSS_bytes": 1073741824,
+    "numerical_threads": 1,
+    "startup_and_verification_included": true
+  }
+}

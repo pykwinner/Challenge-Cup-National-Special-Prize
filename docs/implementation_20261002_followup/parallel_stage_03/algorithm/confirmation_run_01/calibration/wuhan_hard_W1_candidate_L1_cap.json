@@ -1,0 +1,161 @@
+{
+  "city": "wuhan",
+  "method_id": "hard_W1_candidate_L1_cap",
+  "worker_cpu_affinity": {
+    "supported": true,
+    "effective_logical_CPUs": [
+      0
+    ]
+  },
+  "status": "ok",
+  "weights": [
+    7.0,
+    15.597352687915013,
+    24.0,
+    28.263641624205352,
+    15.139005687879656,
+    25.0,
+    1.0,
+    3.999999999999985
+  ],
+  "solver_status": 0,
+  "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "l1_cap_days": 16.52728324841067,
+  "normalized_W1": 0.02933471116158651,
+  "native_residuals": {
+    "energy": -4.547473508864641e-13,
+    "days": 1.4210854715202004e-14,
+    "floor_violation": 0.0,
+    "l1_cap_violation": 0.0,
+    "objective_residual": 5.898059818321144e-17
+  },
+  "candidate_displacement_days": 16.52728204841067,
+  "paired_diagnostics": {
+    "input_identity": {
+      "selected_day_indices": [
+        116,
+        56,
+        91,
+        66,
+        8,
+        43,
+        12,
+        84
+      ],
+      "selected_day_ids": [
+        "2025-03-12",
+        "2025-01-11",
+        "2025-02-15",
+        "2025-01-21",
+        "2024-11-24",
+        "2024-12-29",
+        "2024-11-28",
+        "2025-02-08"
+      ],
+      "calendar_day_ids_sha256": "fc5978d6ec0fd8adddff51fa57c1a7a04b1849bce0b60e0b5d34a6310d2d8182",
+      "reference_power_sha256": "a5558e695c5416f2dbfc18296717782c0e96969db3e7d13ad4438355a8055916",
+      "paired_prices_sha256": "bc09cfcd2517251e5430649a79264ebec36e8b01eb7950db4e0f69d5eda671dd",
+      "selected_reference_power_sha256": "8098edde129a75fbf805f1e4985cfc727149fd09e0962effc2f9b7fb875a7633",
+      "selected_paired_prices_sha256": "4c2b5fc2253093f85997b4be3cfaaf3cb4c2be7481dd6893973fd5ca7e29ca3f",
+      "operation_window_sha256": {
+        "morning_end": "a11168630c74f3dcabcf5ca8f26b22e7bb4930c0df2fba75ccece989cae807ec",
+        "midday_end": "f49dcedce095b304cb4a21c9caea8728912d3a0066f41b77ba81e03aadd5928a"
+      }
+    },
+    "passes": false,
+    "reference_energy": {
+      "unit": "kWh_th",
+      "target": 3612.19061,
+      "estimate": 3612.19061,
+      "signed_residual": 0.0,
+      "relative_residual": 0.0,
+      "absolute_error_bound": 0.0,
+      "bound_violation": 0.0,
+      "numerical_acceptance_allowance": 6.09817068e-05,
+      "passes_with_declared_numerical_tolerance": true
+    },
+    "moments": {
+      "price_product": {
+        "unit": "currency*kWh_th/kWh_e",
+        "target": 2746.6749010365,
+        "estimate": 2734.8405541211077,
+        "signed_residual": -11.834346915392416,
+        "relative_residual": -0.004308608532785057,
+        "absolute_error_bound": 13.733374505182502,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 4.469396752044e-05,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:morning_end": {
+        "unit": "kWh_th",
+        "target": 200.926649,
+        "estimate": 202.2364102737075,
+        "signed_residual": 1.309761273707494,
+        "relative_residual": 0.006518604078782472,
+        "absolute_error_bound": 2.00926649,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 3.1102259999999998e-06,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:midday_end": {
+        "unit": "kWh_th",
+        "target": 87.103016,
+        "estimate": 82.54628043979233,
+        "signed_residual": -4.55673556020767,
+        "relative_residual": -0.052314325834683734,
+        "absolute_error_bound": 0.87103016,
+        "bound_violation": 3.68570540020767,
+        "numerical_acceptance_allowance": 1.8936708000000001e-06,
+        "passes_with_declared_numerical_tolerance": false
+      }
+    },
+    "day_conservation_signed_residual": 1.4210854715202004e-14,
+    "day_numerical_acceptance_allowance": 1.2e-06,
+    "maximum_lower_bound_violation_days": 0.0,
+    "lower_bound_numerical_acceptance_allowance_days": 1e-08,
+    "objective_weight_L1_over_days": 0.13772736040342223,
+    "objective_unit": "dimensionless (sum absolute weight displacement in days / calendar days)",
+    "operation_window_active_hours": {
+      "morning_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "midday_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "normalized_reference_W1": 0.02933471116158651,
+  "weight_L1_displacement_days": 16.52728324841067,
+  "resources": {
+    "wall_seconds": 1.8207800999953179,
+    "sampled_peak_RSS_bytes": 173178880,
+    "return_code": 0,
+    "termination": null,
+    "limit_seconds": 60.0,
+    "limit_RSS_bytes": 1073741824,
+    "numerical_threads": 1,
+    "startup_and_verification_included": true,
+    "dependency_candidate_wall_seconds": 1.677862800002913,
+    "own_plus_dependency_wall_seconds": 3.498642899998231
+  }
+}

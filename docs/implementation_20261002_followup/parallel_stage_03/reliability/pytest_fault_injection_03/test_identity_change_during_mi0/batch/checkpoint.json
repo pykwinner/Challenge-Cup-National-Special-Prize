@@ -1,0 +1,431 @@
+{
+  "schema": "three_city_climate_resilient_v1",
+  "status": "aborted",
+  "identity_verified": false,
+  "comparison_valid": false,
+  "cities": [
+    "urumqi",
+    "guyuan",
+    "wuhan"
+  ],
+  "revision": 25,
+  "rows": [
+    {
+      "city": "urumqi",
+      "case": "baseline_delta0",
+      "origin": "new_feedback_rollout",
+      "result_attribute": "predeclared_feasible_feedback_policy",
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15,
+      "bill_yuan": 4984.733688284301,
+      "energy_kwh": 6472.400002000002,
+      "carbon_kg": 2617.4385608088,
+      "heating_kwh": 6472.400002000002,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.5860900000000004,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "urumqi",
+      "case": "cost_endpoint",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true,
+        "known_feasible_primary_bound": true,
+        "known_feasible_returned_bound": true,
+        "declared_primary_allowance": true
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15,
+      "bill_yuan": 4984.733688284301,
+      "energy_kwh": 6472.400002000002,
+      "carbon_kg": 2617.4385608088,
+      "heating_kwh": 6472.400002000002,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.5860900000000004,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "urumqi",
+      "case": "carbon_endpoint",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true,
+        "known_feasible_primary_bound": true,
+        "known_feasible_returned_bound": true,
+        "declared_primary_allowance": true
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15,
+      "bill_yuan": 4984.733688284301,
+      "energy_kwh": 6472.400002000002,
+      "carbon_kg": 2617.4385608088,
+      "heating_kwh": 6472.400002000002,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.5860900000000004,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "urumqi",
+      "case": "midpoint_cap",
+      "origin": "new_optimization",
+      "result_attribute": "fixed_existing_assets_optimized_dispatch",
+      "solution_quality": {
+        "scope": "fault_injection_feedback_test_double"
+      },
+      "solver_status": 0,
+      "mip_gap": 0.0,
+      "wall_seconds": 0.0,
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true,
+        "objective_ledger": true,
+        "emission_ledger": true
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15,
+      "bill_yuan": 4984.733688284301,
+      "energy_kwh": 6472.400002000002,
+      "carbon_kg": 2617.4385608088,
+      "heating_kwh": 6472.400002000002,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.5860900000000004,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    },
+    {
+      "city": "guyuan",
+      "case": "baseline_delta0",
+      "origin": "new_feedback_rollout",
+      "result_attribute": "predeclared_feasible_feedback_policy",
+      "passed": true,
+      "checks": {
+        "continuous_RC": true,
+        "state_continuity": true,
+        "comfort": true,
+        "terminal": true,
+        "nonnegative": true,
+        "exclusive": true,
+        "ideal_capacity": true,
+        "carbon_cap": true
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14,
+      "bill_yuan": 5075.855416556001,
+      "energy_kwh": 6615.493344000001,
+      "carbon_kg": 2675.3055083135996,
+      "heating_kwh": 6615.493344000001,
+      "cooling_kwh": 0.0,
+      "peak_import_kw": 3.893775000000001,
+      "minimum_temperature_c": 20.0,
+      "maximum_temperature_c": 20.0,
+      "warm_degree_hours_above_20": 0.0
+    }
+  ],
+  "failures": [
+    {
+      "city": null,
+      "case": "batch",
+      "stage": "global_identity_or_execution",
+      "status": "failed",
+      "type": "IdentityFailure",
+      "reason": "initial run identity changed: protocol.json",
+      "failed_utc": "2026-10-02T12:50:11.849687+00:00"
+    },
+    {
+      "city": "guyuan",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "prepare",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "baseline_delta0",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    }
+  ],
+  "global_failure": {
+    "city": null,
+    "case": "batch",
+    "stage": "global_identity_or_execution",
+    "status": "failed",
+    "type": "IdentityFailure",
+    "reason": "initial run identity changed: protocol.json",
+    "failed_utc": "2026-10-02T12:50:11.849687+00:00"
+  },
+  "tasks": [
+    {
+      "city": "urumqi",
+      "case": "prepare",
+      "status": "completed",
+      "stage": "city_prepare",
+      "wall_seconds": 0.18232029999489896
+    },
+    {
+      "city": "urumqi",
+      "case": "baseline_delta0",
+      "status": "accepted",
+      "stage": "baseline_rollout",
+      "wall_seconds": 0.1871787999989465
+    },
+    {
+      "city": "urumqi",
+      "case": "cost_endpoint",
+      "status": "accepted",
+      "stage": "cost_endpoint_solve",
+      "wall_seconds": 0.23239430000830907
+    },
+    {
+      "city": "urumqi",
+      "case": "carbon_endpoint",
+      "status": "accepted",
+      "stage": "carbon_endpoint_solve",
+      "wall_seconds": 0.20241890000761487
+    },
+    {
+      "city": "urumqi",
+      "case": "midpoint_cap",
+      "status": "accepted",
+      "stage": "midpoint_cap_solve",
+      "wall_seconds": 0.20037960000627209
+    },
+    {
+      "city": "guyuan",
+      "case": "prepare",
+      "status": "completed",
+      "stage": "city_prepare",
+      "wall_seconds": 0.20376039999246132
+    },
+    {
+      "city": "guyuan",
+      "case": "baseline_delta0",
+      "status": "accepted",
+      "stage": "baseline_rollout",
+      "wall_seconds": 0.20366360001207795
+    },
+    {
+      "city": "guyuan",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "guyuan",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "prepare",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "baseline_delta0",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "cost_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "carbon_endpoint",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    },
+    {
+      "city": "wuhan",
+      "case": "midpoint_cap",
+      "status": "skipped",
+      "stage": "dependency_gate",
+      "type": "DependencyUnavailable",
+      "reason": "batch aborted; global identity/execution failed",
+      "depends_on": [
+        "global_identity"
+      ]
+    }
+  ],
+  "frozen_run_sha256": {
+    "protocol.json": "c484550755daa8b7a636741db2a8e54ca2282489434bbeec6b51717acfe334ed",
+    "protocol_lock.json": "a1398a1f7d53314086691e1caea3e51c9362bf7fe121acc53f3bcdc6e364e102"
+  },
+  "updated_utc": "2026-10-02T12:50:11.883584+00:00"
+}

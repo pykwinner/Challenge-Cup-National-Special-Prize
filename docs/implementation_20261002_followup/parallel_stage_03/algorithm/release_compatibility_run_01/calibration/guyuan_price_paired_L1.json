@@ -1,0 +1,425 @@
+{
+  "city": "guyuan",
+  "method_id": "price_paired_L1",
+  "worker_cpu_affinity": {
+    "supported": true,
+    "effective_logical_CPUs": [
+      0
+    ]
+  },
+  "method": "standard_LP_bounded_price_operation_moments_minimum_weight_L1",
+  "status": "ok",
+  "weights": [
+    18.0,
+    11.0,
+    25.0,
+    18.0,
+    23.0,
+    22.612823351200152,
+    1.3871766487998416,
+    1.0
+  ],
+  "input_identity": {
+    "selected_day_indices": [
+      18,
+      81,
+      52,
+      97,
+      37,
+      66,
+      71,
+      103
+    ],
+    "selected_day_ids": [
+      "2024-12-04",
+      "2025-02-05",
+      "2025-01-07",
+      "2025-02-21",
+      "2024-12-23",
+      "2025-01-21",
+      "2025-01-26",
+      "2025-02-27"
+    ],
+    "calendar_day_ids_sha256": "fc5978d6ec0fd8adddff51fa57c1a7a04b1849bce0b60e0b5d34a6310d2d8182",
+    "reference_power_sha256": "381fa6f86b7e23b06210f386e563aeb933724b20827dc8d90a355ae36484a580",
+    "paired_prices_sha256": "bc09cfcd2517251e5430649a79264ebec36e8b01eb7950db4e0f69d5eda671dd",
+    "selected_reference_power_sha256": "e4847719d00a5d10ea6da2f4449934f3d26b015738f93ffa849b3d34791a8863",
+    "selected_paired_prices_sha256": "c0dd101958f9ec41c96ffb69b1548e1d45c274b70677b5c82821d15bbfd1896c",
+    "operation_window_sha256": {
+      "morning_end": "a11168630c74f3dcabcf5ca8f26b22e7bb4930c0df2fba75ccece989cae807ec",
+      "midday_end": "f49dcedce095b304cb4a21c9caea8728912d3a0066f41b77ba81e03aadd5928a"
+    }
+  },
+  "original_weights": [
+    18.0,
+    11.0,
+    25.0,
+    18.0,
+    23.0,
+    23.0,
+    1.0,
+    1.0
+  ],
+  "lower_bounds": [
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06,
+    1.0,
+    1.0
+  ],
+  "total_weight_days": 120,
+  "reference_kind": "thermal",
+  "time_step_hours": 1.0,
+  "source_data_modified": false,
+  "selected_profiles_modified": false,
+  "price_product_is_actual_policy_bill": false,
+  "engineering_operation_validated": false,
+  "out_of_sample_validated": false,
+  "moment_absolute_tolerances": {
+    "price_product": 27.60145288278,
+    "window_energy:morning_end": 3.48362,
+    "window_energy:midday_end": 2.2448280400000002
+  },
+  "numerical_tolerance": 1e-08,
+  "solver_time_limit_seconds": 30.0,
+  "baseline_diagnostics": {
+    "passes": false,
+    "reference_energy": {
+      "unit": "kWh_th",
+      "target": 7191.493344,
+      "estimate": 7177.630831,
+      "signed_residual": -13.862513000000035,
+      "relative_residual": -0.001927626479911268,
+      "absolute_error_bound": 0.0,
+      "bound_violation": 13.862513000000035,
+      "numerical_acceptance_allowance": 0.000100453416,
+      "passes_with_declared_numerical_tolerance": false
+    },
+    "moments": {
+      "price_product": {
+        "unit": "currency*kWh_th/kWh_e",
+        "target": 5520.290576556,
+        "estimate": 5526.5411554024,
+        "signed_residual": 6.250578846400458,
+        "relative_residual": 0.0011322916356877849,
+        "absolute_error_bound": 27.60145288278,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 7.690187106000001e-05,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:morning_end": {
+        "unit": "kWh_th",
+        "target": 348.362,
+        "estimate": 347.23555999999996,
+        "signed_residual": -1.1264400000000592,
+        "relative_residual": -0.0032335329341319063,
+        "absolute_error_bound": 3.48362,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 4.8149052e-06,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:midday_end": {
+        "unit": "kWh_th",
+        "target": 224.48280400000002,
+        "estimate": 223.135248,
+        "signed_residual": -1.3475560000000257,
+        "relative_residual": -0.006002936420911892,
+        "absolute_error_bound": 2.2448280400000002,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 3.2829468000000003e-06,
+        "passes_with_declared_numerical_tolerance": true
+      }
+    },
+    "day_conservation_signed_residual": 0.0,
+    "day_numerical_acceptance_allowance": 1.2e-06,
+    "maximum_lower_bound_violation_days": 0.0,
+    "lower_bound_numerical_acceptance_allowance_days": 1e-08,
+    "objective_weight_L1_over_days": 0.0,
+    "objective_unit": "dimensionless (sum absolute weight displacement in days / calendar days)",
+    "operation_window_active_hours": {
+      "morning_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "midday_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "objective": "minimum sum absolute weight displacement / calendar day count",
+  "objective_unit": "dimensionless",
+  "multiple_optima_possible": true,
+  "linear_program_size": {
+    "variables": 16,
+    "equalities": 2,
+    "inequalities": 22
+  },
+  "individual_moment_envelopes": {
+    "reference_energy": {
+      "attainable_lower": 5453.38504379258,
+      "attainable_upper": 10006.753590265354,
+      "target": 7191.493344,
+      "absolute_error_bound": 0.0,
+      "excludes_target_band": false
+    },
+    "price_product": {
+      "attainable_lower": 4063.1982450761893,
+      "attainable_upper": 7659.708101522198,
+      "target": 5520.290576556001,
+      "absolute_error_bound": 27.60145288278,
+      "excludes_target_band": false
+    },
+    "window_energy:morning_end": {
+      "attainable_lower": 274.25059602389405,
+      "attainable_upper": 479.784165573034,
+      "target": 348.362,
+      "absolute_error_bound": 3.48362,
+      "excludes_target_band": false
+    },
+    "window_energy:midday_end": {
+      "attainable_lower": 110.593467922154,
+      "attainable_upper": 326.465252945622,
+      "target": 224.482804,
+      "absolute_error_bound": 2.2448280400000002,
+      "excludes_target_band": false
+    }
+  },
+  "individual_envelopes_are_only_necessary": true,
+  "solver_status": 0,
+  "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "solver_iterations": 12,
+  "reason": "independently_recomputed_constraints_and_objective",
+  "diagnostics": {
+    "passes": true,
+    "reference_energy": {
+      "unit": "kWh_th",
+      "target": 7191.493344,
+      "estimate": 7191.493344,
+      "signed_residual": 0.0,
+      "relative_residual": 0.0,
+      "absolute_error_bound": 0.0,
+      "bound_violation": 0.0,
+      "numerical_acceptance_allowance": 0.000100453416,
+      "passes_with_declared_numerical_tolerance": true
+    },
+    "moments": {
+      "price_product": {
+        "unit": "currency*kWh_th/kWh_e",
+        "target": 5520.290576556,
+        "estimate": 5537.00882869867,
+        "signed_residual": 16.71825214267028,
+        "relative_residual": 0.00302850944362796,
+        "absolute_error_bound": 27.60145288278,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 7.690187106000001e-05,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:morning_end": {
+        "unit": "kWh_th",
+        "target": 348.362,
+        "estimate": 347.90994815864605,
+        "signed_residual": -0.4520518413539776,
+        "relative_residual": -0.0012976496901326137,
+        "absolute_error_bound": 3.48362,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 4.8149052e-06,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:midday_end": {
+        "unit": "kWh_th",
+        "target": 224.48280400000002,
+        "estimate": 223.68848858523657,
+        "signed_residual": -0.7943154147634459,
+        "relative_residual": -0.0035384243274306473,
+        "absolute_error_bound": 2.2448280400000002,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 3.2829468000000003e-06,
+        "passes_with_declared_numerical_tolerance": true
+      }
+    },
+    "day_conservation_signed_residual": 0.0,
+    "day_numerical_acceptance_allowance": 1.2e-06,
+    "maximum_lower_bound_violation_days": 0.0,
+    "lower_bound_numerical_acceptance_allowance_days": 1e-08,
+    "objective_weight_L1_over_days": 0.006452944146664078,
+    "objective_unit": "dimensionless (sum absolute weight displacement in days / calendar days)",
+    "operation_window_active_hours": {
+      "morning_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "midday_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "solver_objective": 0.006452944146664079,
+  "solver_objective_residual": 8.673617379884035e-19,
+  "paired_diagnostics": {
+    "input_identity": {
+      "selected_day_indices": [
+        18,
+        81,
+        52,
+        97,
+        37,
+        66,
+        71,
+        103
+      ],
+      "selected_day_ids": [
+        "2024-12-04",
+        "2025-02-05",
+        "2025-01-07",
+        "2025-02-21",
+        "2024-12-23",
+        "2025-01-21",
+        "2025-01-26",
+        "2025-02-27"
+      ],
+      "calendar_day_ids_sha256": "fc5978d6ec0fd8adddff51fa57c1a7a04b1849bce0b60e0b5d34a6310d2d8182",
+      "reference_power_sha256": "381fa6f86b7e23b06210f386e563aeb933724b20827dc8d90a355ae36484a580",
+      "paired_prices_sha256": "bc09cfcd2517251e5430649a79264ebec36e8b01eb7950db4e0f69d5eda671dd",
+      "selected_reference_power_sha256": "e4847719d00a5d10ea6da2f4449934f3d26b015738f93ffa849b3d34791a8863",
+      "selected_paired_prices_sha256": "c0dd101958f9ec41c96ffb69b1548e1d45c274b70677b5c82821d15bbfd1896c",
+      "operation_window_sha256": {
+        "morning_end": "a11168630c74f3dcabcf5ca8f26b22e7bb4930c0df2fba75ccece989cae807ec",
+        "midday_end": "f49dcedce095b304cb4a21c9caea8728912d3a0066f41b77ba81e03aadd5928a"
+      }
+    },
+    "passes": true,
+    "reference_energy": {
+      "unit": "kWh_th",
+      "target": 7191.493344,
+      "estimate": 7191.493344,
+      "signed_residual": 0.0,
+      "relative_residual": 0.0,
+      "absolute_error_bound": 0.0,
+      "bound_violation": 0.0,
+      "numerical_acceptance_allowance": 0.000100453416,
+      "passes_with_declared_numerical_tolerance": true
+    },
+    "moments": {
+      "price_product": {
+        "unit": "currency*kWh_th/kWh_e",
+        "target": 5520.290576556,
+        "estimate": 5537.00882869867,
+        "signed_residual": 16.71825214267028,
+        "relative_residual": 0.00302850944362796,
+        "absolute_error_bound": 27.60145288278,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 7.690187106000001e-05,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:morning_end": {
+        "unit": "kWh_th",
+        "target": 348.362,
+        "estimate": 347.90994815864605,
+        "signed_residual": -0.4520518413539776,
+        "relative_residual": -0.0012976496901326137,
+        "absolute_error_bound": 3.48362,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 4.8149052e-06,
+        "passes_with_declared_numerical_tolerance": true
+      },
+      "window_energy:midday_end": {
+        "unit": "kWh_th",
+        "target": 224.48280400000002,
+        "estimate": 223.68848858523657,
+        "signed_residual": -0.7943154147634459,
+        "relative_residual": -0.0035384243274306473,
+        "absolute_error_bound": 2.2448280400000002,
+        "bound_violation": 0.0,
+        "numerical_acceptance_allowance": 3.2829468000000003e-06,
+        "passes_with_declared_numerical_tolerance": true
+      }
+    },
+    "day_conservation_signed_residual": 0.0,
+    "day_numerical_acceptance_allowance": 1.2e-06,
+    "maximum_lower_bound_violation_days": 0.0,
+    "lower_bound_numerical_acceptance_allowance_days": 1e-08,
+    "objective_weight_L1_over_days": 0.006452944146664078,
+    "objective_unit": "dimensionless (sum absolute weight displacement in days / calendar days)",
+    "operation_window_active_hours": {
+      "morning_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "midday_end": {
+        "full_calendar": 120.0,
+        "per_selected_day": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "normalized_reference_W1": 0.019213044882701636,
+  "weight_L1_displacement_days": 0.7743532975996894,
+  "resources": {
+    "wall_seconds": 1.4064112000050955,
+    "sampled_peak_RSS_bytes": 155516928,
+    "return_code": 0,
+    "termination": null,
+    "limit_seconds": 60.0,
+    "limit_RSS_bytes": 1073741824,
+    "numerical_threads": 1,
+    "startup_and_verification_included": true
+  }
+}

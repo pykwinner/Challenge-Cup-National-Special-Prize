@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "soft_off",
+      "iteration": 0,
+      "checks": {
+        "numerical_and_all_ledgers": true,
+        "saved_mode_export": true,
+        "engineering_status": true,
+        "valid_cut_identity": true
+      }
+    },
+    {
+      "case": "soft_off",
+      "iteration": 1,
+      "checks": {
+        "numerical_and_all_ledgers": true,
+        "saved_mode_export": true,
+        "engineering_status": true,
+        "valid_cut_identity": true
+      }
+    },
+    {
+      "case": "soft_off",
+      "iteration": 2,
+      "checks": {
+        "numerical_and_all_ledgers": true,
+        "saved_mode_export": true,
+        "engineering_status": true,
+        "valid_cut_identity": true
+      }
+    },
+    {
+      "case": "soft_off",
+      "iteration": "final",
+      "checks": {
+        "full_variable_identity": true,
+        "final_mode_export": true,
+        "final_values_match_accepted_iteration": true
+      }
+    },
+    {
+      "case": "soft_on",
+      "iteration": 0,
+      "checks": {
+        "numerical_and_all_ledgers": true,
+        "saved_mode_export": true,
+        "engineering_status": true,
+        "valid_cut_identity": true
+      }
+    },
+    {
+      "case": "soft_on",
+      "iteration": 1,
+      "checks": {
+        "numerical_and_all_ledgers": true,
+        "saved_mode_export": true,
+        "engineering_status": true,
+        "valid_cut_identity": true
+      }
+    },
+    {
+      "case": "soft_on",
+      "iteration": 2,
+      "checks": {
+        "numerical_and_all_ledgers": true,
+        "saved_mode_export": true,
+        "engineering_status": true,
+        "valid_cut_identity": true
+      }
+    },
+    {
+      "case": "soft_on",
+      "iteration": "final",
+      "checks": {
+        "full_variable_identity": true,
+        "final_mode_export": true,
+        "final_values_match_accepted_iteration": true
+      }
+    }
+  ],
+  "check_count": 30,
+  "negative_controls": [
+    {
+      "case": "soft_off",
+      "mutation": "source_vector_plus_0.1kW",
+      "rejected": true
+    },
+    {
+      "case": "soft_off",
+      "mutation": "exported_pump_plus_0.1kW",
+      "rejected": true
+    },
+    {
+      "case": "soft_on",
+      "mutation": "source_vector_plus_0.1kW",
+      "rejected": true
+    },
+    {
+      "case": "soft_on",
+      "mutation": "exported_pump_plus_0.1kW",
+      "rejected": true
+    }
+  ],
+  "negative_control_count": 4,
+  "source_manifest_sha256": "98f77ee74a8250f180d4cc8d797daef6a420d5cc81f77a4bfcd18f69adcf01b1",
+  "evidence_scope": "saved-vector/export physical and numerical reconstruction; no fresh solver optimality or field validation"
+}

@@ -1,0 +1,38 @@
+field,identity,source_or_formula,actual_FT8_performance
+time,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+outdoor_temp,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+relative_humidity_pct,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+wind_speed_10m_m_s,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+solar_irradiation_wh_m2,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+scenario,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+boundary_group,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+scenario_probability,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+period_weight,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+electricity_price,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+grid_emission_factor,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+internal_gain_kw,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+solar_gain_kw,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+heating_service,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+heat_reference_no_gain_kw,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+steady_heat_demand_kw,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+steady_cooling_demand_kw,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+steady_temperature_c,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+tariff_month,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+tariff_bucket,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+tariff_source_id,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+tariff_pdf_page,inherited_public_reference_or_declared_derived_protocol,Prior exact-hash TOU admission/field provenance; not field measurements,False
+cop_hp,hypothetical_performance_design,"theta*(273.15+35)/(35-Tout); theoretical design proxy only, not manufacturer table",False
+capacity_hp_per_unit_kw,hypothetical_performance_design,8kW nominal label * hypothetical available fraction; no real derating curve claim,False
+design.eta_resistance,declared_research_condition,0.97,False
+design.eer_cooling,declared_research_condition,3.0,False
+design.max_resistance_kw,declared_research_condition,6.0,False
+design.max_cooling_kw,declared_research_condition,2.0,False
+design.max_grid_kw,declared_research_condition,4.0,False
+design.resistance_capex_cny_per_kw,declared_research_condition,400.0,False
+design.cooling_package_capex_cny,declared_research_condition,1500.0,False
+design.hp_package_capex_cny,historical_primary_package_price,Original contract PDF p6 row1: 17800 CNY per integer installed package,False
+design.resistance_fixed_om_cny_per_kw_window,declared_research_condition,10.0,False
+design.hp_fixed_om_cny_per_unit_window,declared_research_condition,80.0,False
+design.cooling_fixed_om_cny_per_window,declared_research_condition,20.0,False
+design.repeat_window_factor,declared_research_condition,5.0,False
+design.hp_unit_candidates,declared_research_condition,"[0, 1, 2]",False

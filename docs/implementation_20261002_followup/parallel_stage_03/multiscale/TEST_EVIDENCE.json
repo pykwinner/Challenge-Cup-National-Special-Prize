@@ -1,0 +1,60 @@
+{
+  "schema_version": "multiscale_test_evidence.v1",
+  "date_local": "2026-10-02",
+  "timezone": "Asia/Shanghai",
+  "test_results": [
+    {
+      "test_file": "tests/test_multiscale_reference_protocol.py",
+      "invocation": "D:/app/anaconda3/python.exe -B -m pytest tests/test_multiscale_reference_protocol.py -q -p no:cacheprovider",
+      "passed": 3,
+      "seconds": 1.02,
+      "pytest_exit_code": 0,
+      "scope": "two-node design declarations; shared-limit-only counterfactual; single-building lock; full-window fixed20 heat/cooling capacity witness",
+      "evidence": "root execution tool output in current conversation; no JUnit/log artifact was requested"
+    },
+    {
+      "test_file": "tests/test_multiscale_reference_audit.py",
+      "invocation": "python -m pytest tests/test_multiscale_reference_audit.py -q -p no:cacheprovider --basetemp .test_tmp/multiscale_audit_7b67e05061754f9d9b1fcd8d2a2afc9a",
+      "passed": 45,
+      "seconds": 16.55,
+      "pytest_exit_code": 0,
+      "reported_by": "/root/multiscale_independent_audit",
+      "scope": "analytical independent RC audit and deliberate physics/ledger/time/grid/manifest tampering; complete seven-case disk verifier fixture",
+      "evidence": "completed agent tool output and final report in current conversation; no JUnit/log artifact was generated",
+      "not_field_experiment": true
+    },
+    {
+      "test_file": "tests/test_multiscale_reference_protocol.py",
+      "invocation": "python -m pytest tests/test_multiscale_reference_protocol.py -q -p no:cacheprovider",
+      "passed": 3,
+      "seconds": 1.40,
+      "pytest_exit_code": 0,
+      "reported_by": "/root/multiscale_independent_audit",
+      "composite_shell_exit_code": 1,
+      "composite_exit_reason": "A subsequent git status reported that this engineering directory is not a Git repository; pytest itself passed. No Git change was attempted."
+    }
+  ],
+  "retained_initial_test_failure": {
+    "passed": 38,
+    "fixture_errors": 7,
+    "assertion_failures": 0,
+    "seconds": 1.47,
+    "reason": "All seven disk fixtures could not access C:/Users/Lenovo/AppData/Local/Temp/pytest-of-Lenovo (WinError5). They were rerun with an explicit workspace temporary directory, yielding45 passed.",
+    "reported_by": "/root/multiscale_independent_audit"
+  },
+  "distinct_final_test_cases_passed": 48,
+  "complete_real_reference_output_verification": {
+    "invocation": "D:/app/anaconda3/python.exe -B scripts/audit_multiscale_reference.py --run docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01",
+    "exit_code": 0,
+    "passed": true,
+    "cases_checked": 7,
+    "artifact": "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/independent_verification.json",
+    "hours_per_building": 2880,
+    "field_validation": false
+  },
+  "not_run": [
+    "Full unrelated repository regression: not needed for isolated new scripts and tests with no core modifications.",
+    "Private SCADA or calibrated field validation: input scope is a public climate/prototype reference and declared design variant.",
+    "Paper/PPT/PDF or Git upload: outside this line's authorized scope."
+  ]
+}

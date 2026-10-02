@@ -1,0 +1,102 @@
+{
+  "schema": "stage03_parent_acceptance_v1",
+  "recorded_utc": "2026-10-02T13:20:07.447148+00:00",
+  "status": "local_research_implementation_and_reference_experiments_accepted",
+  "release_status": "actual_candidate_dependency_tests_reproduction_and_remote_verification_recorded_separately_by_release_owner",
+  "core_version": "11.12.0rc2",
+  "intended_delivery_batch": "11.12.0rc5_research_candidate",
+  "ppt_pdf_produced": false,
+  "module_test_records": {
+    "algorithm": 128,
+    "investment": 90,
+    "multiscale": 48,
+    "network": 74,
+    "reliability": 33
+  },
+  "test_count_semantics": "Per-group reported distinct final passing cases; not aggregated with previous releases and not substituted for actual release-copy tests. Parent hash checks below are fresh read-only checks, not test re-execution.",
+  "parent_fresh_delivery_identity_checks": [
+    {
+      "group": "algorithm",
+      "checked_files": 149,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "group": "investment",
+      "checked_files": 379,
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "selected_runs": {
+    "algorithm": "algorithm/confirmation_run_01 with verification_02 plus retained verification_01 failure",
+    "investment": "investment/run_03 and reproduce_02; prior run_01/run_02/reproduce_01 are historical and not current scope-certified outputs",
+    "multiscale": "multiscale/run_01",
+    "network": "network/run_02 with export_audit_02 and analysis_02",
+    "reliability": "reliability/wuhan_2880h_01"
+  },
+  "parent_cross_review": {
+    "investment": "Independent reviewer verified corrected baseline/free/fixed bound scopes, rejected scope mutation and primary-success/secondary-failure false-completion, retained primary lower bound, and checked zero-PDF admission semantics.",
+    "multiscale": "Second reader independently reconstructed hourly ledger/RC/grid and tested temperature/power tamper rejection; seven cases passed; no complete integer-vector certificate claimed.",
+    "network": "Independent reviewer added 61 adversarial/analytical tests; combined 74 passed; finite catalog identity, branch heat/water/pressure/duty and instantaneous capacity scope checked.",
+    "algorithm": "Independent reviewer recomputed all27 complete trajectories and eight budget choices affected by two near-tie methods; five precision tests passed; raw6-error first audit preserved. No frozen protocol/code/result changes."
+  },
+  "algorithm_precision": {
+    "first_audit_passed": false,
+    "first_error_count": 6,
+    "supplement_passed": true,
+    "supplement_check_count": 42225,
+    "changed_order_cases": 2,
+    "bill_order_difference_cny": 9.094947017729282e-13,
+    "frozen_bill_tie_absolute_tolerance": 1e-08,
+    "budget_absolute_tolerance": 1e-07,
+    "budget_relative_tolerance": 1e-09,
+    "claim": "Saved native ordinal scores verified after independent ledger checks; strict rankings, budget feasibility, selections and regret retain original reconstruction rules. Exact ordinal order is not CSV-roundtrip stable."
+  },
+  "source_and_claim_limits": {
+    "three_city_field_project_validation_complete": false,
+    "exact_FT_equipment_performance_admitted": false,
+    "investment_reference_complete": true,
+    "full_lifecycle_profit_complete": false,
+    "network_scope": "independent-pump star branches; bounded fixed steady mode catalog with duty-average hours and simultaneous on-mode capacity guards; not general dynamic network or intra-hour RC comfort proof",
+    "multiscale_scope": "public prototype plus declared H/C design variant under conditional common methodological price; no real-site bill claim",
+    "weight_confirmation_scope": "already-seen three-city development data and finite nine-policy library; not new holdout, investment validation or general simulation speedup",
+    "remaining_external_evidence": [
+      "exact-model performance at specified ambient/water/defrost/auxiliary boundaries",
+      "compatible terminal and electrical connection incremental costs",
+      "applicable real account/contract and complete economic inputs for engineering ROI claims"
+    ],
+    "private_SCADA_required_to_continue_reference_work": false
+  },
+  "preserved_history": [
+    "original first-failure audits and near-tie ordering",
+    "old scope-bug runs and frozen source locks",
+    "failed psutil5.9.0 install logs and original Conda environment distinct from release5.9.8",
+    "negative or unchanged effects and repeated epsilon outcomes"
+  ],
+  "evidence_sha256": {
+    "docs/implementation_20261002_followup/parallel_stage_03/README.md": "575a24f8781813df3a5112441ee3f7d0e2e6140184a28bae2307d0731632ff18",
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/handoff.json": "c6f300bb882d9d9be6ff08f1c392cd3b41796c6e49728b75f0e89e0200f8f3bc",
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/interpretation.json": "6dfc0d533e3ff32c36290af80fa7a34d9320a417b2c5bee745e14d1f0cec8268",
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/delivery_whitelist.json": "5457665584174baf688cd3b77b507238e9dc5b25515596cdf523fcc9da296eab",
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/audit_precision_sidecar.json": "85827ec3563d756a659a1f866d79784a8139cdb1deac84bb76196ae969621a79",
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/verification_01/audit.json": "4a3c50ff2661dc6eb61bf65e4392dfae5517f3d84e999717b1e250224117e551",
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/verification_02/audit.json": "ccbaa21d934d21199d4104d0b5859ffa89ce7b75ab47e118773aeef8292e792f",
+    "docs/implementation_20261002_followup/parallel_stage_03/algorithm/release_dependency_note.json": "aed7aacb72b76a638f469287b54d8311c27c315dfa28023517083a08d6354ccd",
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/HANDOFF.json": "12459b0f300b9bf8014aee45b16acbea62cc09659d6822631ff6a972d9648674",
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/DELIVERY_MANIFEST.json": "69d402c9d9d8049e07a371723e94714017f7877f22130c7d9889c667e3252f54",
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/REPRODUCTION_CHECK_02.json": "d8257eeb1f0c7db2032d96bf2278bdef05be4dfff8a070149723efb7914396b4",
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/manifest.json": "16506fa76e49495ae9cf1b9baae48c5ce384e482a0ab50ee3a40a6c01b5ac8a9",
+    "docs/implementation_20261002_followup/parallel_stage_03/investment/reproduce_02/manifest.json": "9229191e164852b90b1e00a4be6662ce7c2692da539c2d496f4819c46aa7cabb",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/COMPLETION.json": "da9bff8dd0279731c2d52e7f9808d6528f8b919cdc2a354203d8f2f67c4eec42",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/TEST_EVIDENCE.json": "0b7d29c1ab9d3760691bd8d879536575ddc438c392a2cc69ca206140d5499e8b",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/manifest.json": "5ad0f216bc01db4075404cf206f3c9e660d11462aff9b58f97e077ff78d60fb7",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/independent_verification.json": "62b6f3a8e2216e815743182035b1e55cb59420671eb3d0a460a198a2a8fa7205",
+    "docs/implementation_20261002_followup/parallel_stage_03/multiscale/run_01/analysis/analysis_manifest.json": "54a6444c8534e1d058171b0f3de47065835f9224bda463ab831d137ca9c27d2d",
+    "docs/implementation_20261002_followup/parallel_stage_03/network/independent_review.json": "7baf3373facc3dc978d5d02acc87c356c1bb14354c27ebac48de03326d564940",
+    "docs/implementation_20261002_followup/parallel_stage_03/network/export_audit_02.json": "06f66d73bd61add32b1080d793a734246375b32ff04567596ff0d78c5a4fab86",
+    "docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/manifest.json": "8386725108f6d0f33f15bc3ad535e49b6a35451a4a75dfbbafccd32e35ed76f9",
+    "docs/implementation_20261002_followup/parallel_stage_03/reliability/validation_manifest.json": "551207acb9909c73558e7754e3f833b1100b2ba4851987feafefa2dad594feac",
+    "docs/source_intake_20261002/planning_user_update/THREE_CITY_DECISIONS.md": "83a08f79814318b98c1489e8164096b645bd5bcfe359881a3f21962c4412a4ca"
+  }
+}

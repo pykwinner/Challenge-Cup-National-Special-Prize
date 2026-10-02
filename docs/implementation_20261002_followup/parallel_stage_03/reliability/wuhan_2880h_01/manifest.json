@@ -1,0 +1,104 @@
+{
+  "schema": "three_city_climate_resilient_v1",
+  "all_requested_cases_passed": true,
+  "comparison_valid": true,
+  "identity_verified": true,
+  "status": "completed",
+  "accepted_rows": 4,
+  "expected_rows": 4,
+  "cities": [
+    "wuhan"
+  ],
+  "tasks": [
+    {
+      "city": "wuhan",
+      "case": "prepare",
+      "status": "completed",
+      "stage": "city_prepare",
+      "wall_seconds": 0.18621499999426305
+    },
+    {
+      "city": "wuhan",
+      "case": "baseline_delta0",
+      "status": "accepted",
+      "stage": "baseline_rollout",
+      "wall_seconds": 0.1861746999929892
+    },
+    {
+      "city": "wuhan",
+      "case": "cost_endpoint",
+      "status": "accepted",
+      "stage": "cost_endpoint_solve",
+      "wall_seconds": 6.924707300000591
+    },
+    {
+      "city": "wuhan",
+      "case": "carbon_endpoint",
+      "status": "accepted",
+      "stage": "carbon_endpoint_solve",
+      "wall_seconds": 4.191453099992941
+    },
+    {
+      "city": "wuhan",
+      "case": "midpoint_cap",
+      "status": "accepted",
+      "stage": "midpoint_cap_solve",
+      "wall_seconds": 12.9017959000048
+    }
+  ],
+  "failures": [],
+  "global_failure": null,
+  "new_baseline_rows": 1,
+  "baseline_rows_reused": 0,
+  "new_optimization_cases": 3,
+  "free_investment_variables": 0,
+  "field_validation": false,
+  "acceleration_requested": false,
+  "wall_seconds": 25.58603740000399,
+  "protocol_sha256": "b9a685bb2cae86c4708b9b78ee09439adfabdd9fc522629b181ab4db1a8d8f8a",
+  "frozen_run_sha256": {
+    "protocol.json": "b9a685bb2cae86c4708b9b78ee09439adfabdd9fc522629b181ab4db1a8d8f8a",
+    "protocol_lock.json": "9dcc89b13aef60fe094342338a1bebdd05351dc129602201db8fc8e2b8b54178"
+  },
+  "files": {
+    "checkpoint.json": "2ed85dac56c5cebde438ec244294179a5e29974488f61fe58994cb5b9f784df3",
+    "comparison.csv": "2efea05765116b3d8afa02fbce1e324a126e64cd0316e70c4a6e04e3210a2785",
+    "comparison.json": "a6e00ed0af709e31fd110a39766fa9f46b4ab478a1a8fed698ecc257223de934",
+    "failures.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "protocol.json": "b9a685bb2cae86c4708b9b78ee09439adfabdd9fc522629b181ab4db1a8d8f8a",
+    "protocol_lock.json": "9dcc89b13aef60fe094342338a1bebdd05351dc129602201db8fc8e2b8b54178",
+    "results/wuhan/baseline_audit.json": "65082b7bfbda2f040a865eb17ca7fcbea177d85055f95b06b3ba6b0df2754db9",
+    "results/wuhan/baseline_delta0.csv": "7857b527ef54b679d31c8a362f3491f53b1dc670db377126d5b2a54484391674",
+    "results/wuhan/carbon_endpoint/audit.json": "cb70bfb58b2b71d6f32eb5eb96825db78629afd57050877a6b84108b25c511e9",
+    "results/wuhan/carbon_endpoint/building_trajectory.csv": "293a5ac20b28291bccb1f865a959f8149590c83f901bf897a4487c5970a7d5cc",
+    "results/wuhan/carbon_endpoint/dispatch.csv": "e3466ad9980f25417265eaeb1871a9431e0c42ae3fecc77e7e51782f0566697d",
+    "results/wuhan/carbon_endpoint/effective_config.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "results/wuhan/carbon_endpoint/independent_building_audit.json": "52c6a94e61829f73aa82c74e906c1eff9d9ee0c21aa35b659bb8b4da9e0e67d8",
+    "results/wuhan/carbon_endpoint/independent_ledger_audit.json": "d25a961b5030735ba9044e279d1426a54ab83eb4975a8d45867bea2d94629c51",
+    "results/wuhan/carbon_endpoint/input_identity.json": "09d315cddafe900f9e84a133034b89114025ba2421069894fadcc425e7cb50e2",
+    "results/wuhan/carbon_endpoint/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "results/wuhan/carbon_endpoint/summary.json": "4c0878eefa3427a67df4e3d52d38e1020d4df6f4142dd5cc30a444ae751e5098",
+    "results/wuhan/chronology.csv": "551e9d9d3746d4dd7606ee624843d168097b7f066624df79e47051484f7e48cb",
+    "results/wuhan/common_config.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "results/wuhan/cost_endpoint/audit.json": "d4df030a1893056f21a4f4a0a0d954dc1861a483cc2c9f702c2038893274eeac",
+    "results/wuhan/cost_endpoint/building_trajectory.csv": "1cd9525a97795c58865fd7f7a12c8d526f3ebafab400514106a97a39204c5201",
+    "results/wuhan/cost_endpoint/dispatch.csv": "f085b957454803f4cc2182a6ad5b9803f2afde9cc5caafaea95e7323cf8ede85",
+    "results/wuhan/cost_endpoint/effective_config.yaml": "b7550a29d187b3ccc2c4e99c8e7414b39dc655c7c6f6123b59b13b02370e0936",
+    "results/wuhan/cost_endpoint/independent_building_audit.json": "016a9cbe87e1c03f96e6209fc640dd62c2081a709ff06c2b7c645523762637e2",
+    "results/wuhan/cost_endpoint/independent_ledger_audit.json": "bed024782a7ca0a1446f8ee3be6bf86ea367d5eaeaf3cfbe989c39dfe5930c30",
+    "results/wuhan/cost_endpoint/input_identity.json": "09d315cddafe900f9e84a133034b89114025ba2421069894fadcc425e7cb50e2",
+    "results/wuhan/cost_endpoint/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "results/wuhan/cost_endpoint/summary.json": "de9f7e3391045417714b1139900bf686c88c5182d0803251e2cc64319c6f3ea2",
+    "results/wuhan/midpoint_cap/audit.json": "90f69b22aed6fa79dd2e5b3a209addfaf03fdad16151527a2913143ccbcc338e",
+    "results/wuhan/midpoint_cap/building_trajectory.csv": "2504891bfa9cfe013bf219612bfc55353de52ee89d5833e835e98a617d7bbbeb",
+    "results/wuhan/midpoint_cap/dispatch.csv": "5d78cb27cc9c49451e55981942dcd4be0628d0b523b805c57570806d55b739d4",
+    "results/wuhan/midpoint_cap/effective_config.yaml": "dc6a977e5832f1fe73f3ba3d7cf997c9b2e5f865a6acd8ff664a8ac150610138",
+    "results/wuhan/midpoint_cap/independent_building_audit.json": "45ffa72fe63de16ee80e0e34cfc8c56e59f112a3c1bb000de440917c41cc5d18",
+    "results/wuhan/midpoint_cap/independent_ledger_audit.json": "19a21b284c87d62aea71f245a1d213ea26e5c38ffc0a34c5aae90b63f9ddb8b9",
+    "results/wuhan/midpoint_cap/input_identity.json": "c75c9b5b4df4855617934c13f1eb9fa08eb42afa45ffde1f28694bba7a89ab61",
+    "results/wuhan/midpoint_cap/investments.csv": "8c6a1f8d68eafb8576c16a2803d2c67dfe1f20ee17912fb5f9ffc7da1e50c585",
+    "results/wuhan/midpoint_cap/summary.json": "eece3e6f53ba919de9326e3de5223adb83949cc0f894d998e159a9ef1d43f6ae",
+    "results/wuhan/midpoint_cap_rule.json": "13cbb055f368df357068687618fead1d90f2df98539d55f03169f1b2a03ca613",
+    "run_claim/claim.json": "99be00935248e45f8fac5286c4392dd8e7199daf693545e44e738cc1ba3dddfe"
+  }
+}

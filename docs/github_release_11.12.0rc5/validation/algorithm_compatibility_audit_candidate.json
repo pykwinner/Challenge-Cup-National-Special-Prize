@@ -1,0 +1,557 @@
+{
+  "passed": true,
+  "errors": [],
+  "check_count": 42225,
+  "hashes_checked": true,
+  "audit_utc": "2026-10-02T13:36:01.090903+00:00",
+  "scope": "independent saved-output development diagnostic; no optimizer/global optimum/new holdout claim",
+  "trajectory_reports": {
+    "urumqi:0": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6472.400002,
+        "bill_yuan": 4984.733688284299,
+        "carbon_kg": 2617.4385608087996
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15
+    },
+    "urumqi:1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6572.554901034033,
+        "bill_yuan": 5008.296149327483,
+        "carbon_kg": 2657.9412019781626
+      },
+      "maximum_temperature_residual_c": 1.4210854715202004e-14
+    },
+    "urumqi:2": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6775.090918514252,
+        "bill_yuan": 5056.91188653149,
+        "carbon_kg": 2739.846767447163
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15
+    },
+    "urumqi:3": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6484.916002,
+        "bill_yuan": 4977.024825627357,
+        "carbon_kg": 2622.5000312087996
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "urumqi:4": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6509.948001999999,
+        "bill_yuan": 4961.607100313471,
+        "carbon_kg": 2632.6229720087995
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15
+    },
+    "urumqi:5": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6484.942901034032,
+        "bill_yuan": 4977.044956864425,
+        "carbon_kg": 2622.5109091781624
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "urumqi:6": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6512.2549185142525,
+        "bill_yuan": 4963.15830914232,
+        "carbon_kg": 2633.555889047164
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "urumqi:7": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6497.458901034031,
+        "bill_yuan": 4969.336094207483,
+        "carbon_kg": 2627.5723795781623
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "urumqi:8": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6549.802918514252,
+        "bill_yuan": 4940.031721171491,
+        "carbon_kg": 2648.7403002471638
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "guyuan:0": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6615.4933439999995,
+        "bill_yuan": 5075.855416556,
+        "carbon_kg": 2675.3055083135996
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "guyuan:1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6715.66524647462,
+        "bill_yuan": 5099.430602974118,
+        "carbon_kg": 2715.815025674336
+      },
+      "maximum_temperature_residual_c": 1.4210854715202004e-14
+    },
+    "guyuan:2": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6918.405352171838,
+        "bill_yuan": 5148.2545824104445,
+        "carbon_kg": 2797.803124418291
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15
+    },
+    "guyuan:3": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6628.009344,
+        "bill_yuan": 5068.146553899056,
+        "carbon_kg": 2680.3669787135996
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "guyuan:4": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6653.041343999999,
+        "bill_yuan": 5052.72882858517,
+        "carbon_kg": 2690.4899195136
+      },
+      "maximum_temperature_residual_c": 7.105427357601002e-15
+    },
+    "guyuan:5": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6628.053246474619,
+        "bill_yuan": 5068.179410511062,
+        "carbon_kg": 2680.384732874336
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "guyuan:6": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6655.5693521718395,
+        "bill_yuan": 5054.501005021274,
+        "carbon_kg": 2691.512246018292
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "guyuan:7": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6640.569246474619,
+        "bill_yuan": 5060.470547854118,
+        "carbon_kg": 2685.446203274336
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "guyuan:8": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 6693.117352171839,
+        "bill_yuan": 5031.374417050445,
+        "carbon_kg": 2706.696657218292
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "wuhan:0": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 3043.0100767022996,
+        "bill_yuan": 2305.8219675989185,
+        "carbon_kg": 1230.59327501841
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "wuhan:1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 3145.365203930458,
+        "bill_yuan": 2331.4482918514746,
+        "carbon_kg": 1271.985688469477
+      },
+      "maximum_temperature_residual_c": 1.4210854715202004e-14
+    },
+    "wuhan:2": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 3376.547694953618,
+        "bill_yuan": 2397.0949043124992,
+        "carbon_kg": 1365.475887839243
+      },
+      "maximum_temperature_residual_c": 1.4210854715202004e-14
+    },
+    "wuhan:3": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 3055.6816738460716,
+        "bill_yuan": 2298.3777352232537,
+        "carbon_kg": 1235.7176689033513
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "wuhan:4": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 3086.126590856655,
+        "bill_yuan": 2287.0987551042117,
+        "carbon_kg": 1248.0295933424313
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "wuhan:5": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 3058.61099204093,
+        "bill_yuan": 2300.4833232319024,
+        "carbon_kg": 1236.902285181352
+      },
+      "maximum_temperature_residual_c": 1.4210854715202004e-14
+    },
+    "wuhan:6": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 3110.0737836981307,
+        "bill_yuan": 2299.947937747311,
+        "carbon_kg": 1257.713838127524
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    },
+    "wuhan:7": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 3071.2825891847015,
+        "bill_yuan": 2293.0390908562376,
+        "carbon_kg": 1242.0266790662934
+      },
+      "maximum_temperature_residual_c": 1.4210854715202004e-14
+    },
+    "wuhan:8": {
+      "passed": true,
+      "errors": [],
+      "check_count": 28,
+      "totals": {
+        "energy_kwh": 3153.1902978524868,
+        "bill_yuan": 2281.224725252605,
+        "carbon_kg": 1275.1501564515454
+      },
+      "maximum_temperature_residual_c": 1.0658141036401503e-14
+    }
+  },
+  "calibration_reports": {
+    "urumqi:frequency": {
+      "passed": true,
+      "errors": [],
+      "check_count": 100
+    },
+    "urumqi:soft_energy": {
+      "passed": true,
+      "errors": [],
+      "check_count": 99
+    },
+    "urumqi:hard_energy_minimum_W1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 101
+    },
+    "urumqi:hard_energy_minimum_L1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 112
+    },
+    "urumqi:price_paired_L1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 103
+    },
+    "urumqi:hard_W1_candidate_L1_cap": {
+      "passed": true,
+      "errors": [],
+      "check_count": 105
+    },
+    "guyuan:frequency": {
+      "passed": true,
+      "errors": [],
+      "check_count": 100
+    },
+    "guyuan:soft_energy": {
+      "passed": true,
+      "errors": [],
+      "check_count": 99
+    },
+    "guyuan:hard_energy_minimum_W1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 101
+    },
+    "guyuan:hard_energy_minimum_L1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 112
+    },
+    "guyuan:price_paired_L1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 103
+    },
+    "guyuan:hard_W1_candidate_L1_cap": {
+      "passed": true,
+      "errors": [],
+      "check_count": 105
+    },
+    "wuhan:frequency": {
+      "passed": true,
+      "errors": [],
+      "check_count": 100
+    },
+    "wuhan:soft_energy": {
+      "passed": true,
+      "errors": [],
+      "check_count": 99
+    },
+    "wuhan:hard_energy_minimum_W1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 101
+    },
+    "wuhan:hard_energy_minimum_L1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 112
+    },
+    "wuhan:price_paired_L1": {
+      "passed": true,
+      "errors": [],
+      "check_count": 103
+    },
+    "wuhan:hard_W1_candidate_L1_cap": {
+      "passed": true,
+      "errors": [],
+      "check_count": 105
+    }
+  },
+  "precision_repair": {
+    "identity": "additive_saved_native_bill_ordinal_audit_v1",
+    "experimental_code_or_results_changed": false,
+    "ledger_tolerance_changed": false,
+    "strict_pair_cap_regret_rules_changed": false,
+    "rank_rule": "exact frozen ordinal order on saved native bills, independently ledger-verified at original tolerance; any changed-order pair must stay within original1e-8 bill tie tolerance; strict pairs/inversions/false ties use independent reconstructed ledger scores; reconstructed CSV near-tie ordinal order separately disclosed",
+    "original_audit_failure_must_be_retained": true,
+    "order_sensitive_cases": [
+      {
+        "city": "urumqi",
+        "method_id": "price_paired_L1",
+        "native_rank": {
+          "actual_order": [
+            8,
+            4,
+            6,
+            7,
+            3,
+            5,
+            0,
+            1,
+            2
+          ],
+          "estimated_order": [
+            8,
+            4,
+            6,
+            7,
+            3,
+            5,
+            0,
+            1,
+            2
+          ],
+          "strict_actual_pairs": 36,
+          "strict_inversions": 0,
+          "false_estimated_ties": 1,
+          "mean_absolute_rank_error": 0.0
+        },
+        "rounded_csv_reconstructed_rank": {
+          "actual_order": [
+            8,
+            4,
+            6,
+            7,
+            3,
+            5,
+            0,
+            1,
+            2
+          ],
+          "estimated_order": [
+            8,
+            4,
+            6,
+            7,
+            5,
+            3,
+            0,
+            1,
+            2
+          ],
+          "strict_actual_pairs": 36,
+          "strict_inversions": 0,
+          "false_estimated_ties": 1,
+          "mean_absolute_rank_error": 0.2222222222222222
+        },
+        "order_sensitive_pairs": [
+          {
+            "metric": "estimated_bill_yuan",
+            "policy_ids": [
+              3,
+              5
+            ],
+            "native_bill_difference_yuan": 0.0,
+            "reconstructed_bill_difference_yuan": 9.094947017729282e-13,
+            "below_declared_bill_tie_tolerance": true
+          }
+        ]
+      },
+      {
+        "city": "urumqi",
+        "method_id": "hard_W1_candidate_L1_cap",
+        "native_rank": {
+          "actual_order": [
+            8,
+            4,
+            6,
+            7,
+            3,
+            5,
+            0,
+            1,
+            2
+          ],
+          "estimated_order": [
+            8,
+            4,
+            6,
+            7,
+            3,
+            5,
+            0,
+            1,
+            2
+          ],
+          "strict_actual_pairs": 36,
+          "strict_inversions": 0,
+          "false_estimated_ties": 1,
+          "mean_absolute_rank_error": 0.0
+        },
+        "rounded_csv_reconstructed_rank": {
+          "actual_order": [
+            8,
+            4,
+            6,
+            7,
+            3,
+            5,
+            0,
+            1,
+            2
+          ],
+          "estimated_order": [
+            8,
+            4,
+            6,
+            7,
+            5,
+            3,
+            0,
+            1,
+            2
+          ],
+          "strict_actual_pairs": 36,
+          "strict_inversions": 0,
+          "false_estimated_ties": 1,
+          "mean_absolute_rank_error": 0.2222222222222222
+        },
+        "order_sensitive_pairs": [
+          {
+            "metric": "estimated_bill_yuan",
+            "policy_ids": [
+              3,
+              5
+            ],
+            "native_bill_difference_yuan": 0.0,
+            "reconstructed_bill_difference_yuan": 9.094947017729282e-13,
+            "below_declared_bill_tie_tolerance": true
+          }
+        ]
+      }
+    ],
+    "source_sha256": {
+      "scripts/verify_three_city_decision_weight_confirmation.py": "b15639659eb57b5afedad562b62521304d0d8234ec771c638489e70eabb07e1a",
+      "scripts/verify_three_city_decision_weight_native_precision.py": "570e3f25d2e4f18d25a1741ecdd9f2aab980eb1c14a8bc3e5c294b14d472d652"
+    }
+  }
+}

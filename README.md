@@ -1,6 +1,6 @@
 # CP-202611 城镇供热源荷匹配与规划寻优
 
-**交付批次：11.12.0rc4（研究候选）；核心版本：11.12.0rc2。** 三城气候控制、便携数值复现与新权重候选的实际交付验收见 [rc4发布记录](docs/github_release_11.12.0rc4/README.md)；[rc3](docs/github_release_11.12.0rc3/README.md)和[rc2](docs/github_release_11.12.0rc2/README.md)历史记录保留。
+**交付批次：11.12.0rc5（研究候选）；核心版本：11.12.0rc2。** 五组新增范围见[第三阶段总说明](docs/implementation_20261002_followup/parallel_stage_03/README.md)，实际副本373测试、保存输出审核及5.9.8兼容复算见[rc5发布验收](docs/github_release_11.12.0rc5/README.md)；旧版本证据保留。
 
 本轮在原 11.11.1 工程上完善源网荷储规划，接入实际送达热量/冷量驱动的建筑室温模型、统一冷热碳核算、固定投资连续回放与独立证据复核。优化使用 SciPy/HiGHS，不依赖商业求解器。
 

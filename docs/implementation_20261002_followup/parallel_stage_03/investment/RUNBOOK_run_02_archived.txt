@@ -1,0 +1,24 @@
+本实验已完成：参数化投资规划实现、完整连续时序运行与独立复核。
+FT8真实工程性能资料准入仍未完成；这两个状态分别记录，不能合并。
+
+主结果：run_02/manifest.json、decision_table.csv、epsilon_scan.csv
+条件采购价图：run_02/package_price_decision_intervals.csv
+未知费用差额的阈值修正：illustrative_boundary_threshold_corrections.csv
+字段身份：run_02/input_bundle/field_identity.csv
+来源、费用边界与可声称范围：HANDOFF.json
+独立目录复算：reproduce_01/manifest.json、REPRODUCTION_CHECK.json
+数学与篡改测试：tests_01.xml（76通过）
+
+原工程目录下重新准备并运行（必须新输出目录，不覆写旧证据）：
+D:/app/anaconda3/python.exe -B -X utf8 scripts/run_investment_reference.py --out docs/implementation_20261002_followup/parallel_stage_03/investment/new_run
+
+无需再读取原工程数据的冻结包复算（仅需Python/numpy/pandas/scipy，指定新目录）：
+D:/app/anaconda3/python.exe -B -X utf8 docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/frozen_code/run_investment_reference.py --input-bundle docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle --out docs/implementation_20261002_followup/parallel_stage_03/investment/new_reproduction
+
+只读独立核验全部导出方案：
+D:/app/anaconda3/python.exe -B -X utf8 scripts/audit_investment_reference.py --root docs/implementation_20261002_followup/parallel_stage_03/investment/run_02
+
+冻结的研究性能条件仅是情景；没有把它们解释成FT8性能范围。
+费用标签是CAPEX+同一120天窗的显式重复运行费用，不是年度账单或完整生命周期成本。
+真实户内末端、配电、完整实际OM等未知差额保留符号，不默认为0。
+run_01保留作为早期证据；最终交付以run_02及其冻结代码和input_bundle为准。

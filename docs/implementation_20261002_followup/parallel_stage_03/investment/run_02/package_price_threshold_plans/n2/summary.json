@@ -1,0 +1,46 @@
+{
+  "success": true,
+  "capex_cny": 37100.0,
+  "window_energy_bill_cny": 611.1719150458356,
+  "window_fixed_om_cny": 180.0,
+  "window_co2_kg": 355.3660881946154,
+  "electricity_kwh": 878.7489816879711,
+  "comparison_cost_cny": 41055.85957522918,
+  "hp_units": 2,
+  "resistance_capacity_kw": 0.0,
+  "cooling_capacity_kw": 2.0,
+  "solver_stages": [
+    {
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "mode": "cost",
+      "epsilon_co2_kg": null,
+      "seconds": 0.08588810000219382,
+      "iterations": 5123,
+      "primal_objective": 3055.859572073324,
+      "dual_objective": 3055.85957207333,
+      "primal_dual_gap": -5.9117155615240335e-12,
+      "constraint_max_violation": 2.6645352591003757e-15,
+      "objective_constant": 38000.0
+    },
+    {
+      "success": true,
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "mode": "carbon",
+      "epsilon_co2_kg": null,
+      "seconds": 0.1027367999922717,
+      "iterations": 6099,
+      "primal_objective": 355.366088194615,
+      "dual_objective": 355.3660881958947,
+      "primal_dual_gap": -1.2797158888133708e-09,
+      "constraint_max_violation": 5.329070518200751e-15,
+      "objective_constant": 0.0
+    }
+  ],
+  "primary_objective": 41055.85957207332,
+  "mode": "cost",
+  "requested_epsilon_co2_kg": null,
+  "identity": "Conditional design simulation; FT8 performance not source-admitted; comparison cost is explicit repeated-window ledger, not full LCC or profit"
+}

@@ -1,0 +1,36 @@
+................................F                                        [100%]
+================================== FAILURES ===================================
+______________ test_deep_atomic_evidence_json_path_is_supported _______________
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_02/test_deep_atomic_evidence_json0')
+
+    def test_deep_atomic_evidence_json_path_is_supported(tmp_path):
+        path = tmp_path / ("a" * 70) / ("b" * 70) / "independent_ledger_audit.json"
+        m._write(path, {"complete": True})
+>       assert json.loads(path.read_text(encoding="utf-8")) == {"complete": True}
+
+tests\test_three_city_climate_dispatch_resilient.py:439: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+D:\app\anaconda3\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/paralle...aaaaaaaaaaaaaaaa/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb/independent_ledger_audit.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\competion\\xiaotiao\\�����������ೡ�������ܿ��V10\\north_heat_challenge\\docs\\implementation_20261002_followup\\parallel_stage_03\\reliability\\pytest_fault_injection_02\\test_deep_atomic_evidence_json0\\aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\\independent_ledger_audit.json'
+
+D:\app\anaconda3\Lib\pathlib.py:1013: FileNotFoundError
+- generated xml file: D:\competion\xiaotiao\�����������ೡ�������ܿ��V10\north_heat_challenge\docs\implementation_20261002_followup\parallel_stage_03\reliability\tests_02.xml -
+=========================== short test summary info ===========================
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_deep_atomic_evidence_json_path_is_supported
+1 failed, 32 passed in 100.89s (0:01:40)

@@ -1,0 +1,121 @@
+planning:
+  discount_rate: 0.05
+  asset_lifetime_years: 20
+  time_step_hours: 1
+  representative_day_weight: 1
+  max_unserved_rate: 0
+  max_scenario_unserved_rate: 0
+  firm_capacity_reserve_margin: 0
+  carbon_price_yuan_per_kg: 0.0
+  exergy_penalty_yuan_per_kwh: 0.0
+grades:
+- name: customer_min55
+  temperature_c: 55.0
+nodes:
+- name: plant
+  demand_columns: {}
+- name: near
+  demand_columns:
+    customer_min55: near_heat_kw
+- name: far
+  demand_columns:
+    customer_min55: far_heat_kw
+sources:
+- name: ideal_fixed_resistance_reference
+  node: plant
+  type: electric_boiler
+  supply_temp_c: 65.0
+  existing_capacity_kw: 40.0
+  max_new_capacity_kw: 0.0
+  max_retire_capacity_kw: 0.0
+  efficiency: 1.0
+  allowed_grades:
+  - customer_min55
+pipes: []
+storages: []
+network_feedback:
+  mode: independent_star_steady_duty
+  independent_branch_pumps: true
+  steady_on_state_duty_approximation_acknowledged: true
+  maximum_simultaneous_electricity_kw: 50.0
+  water:
+    density_kg_per_m3: 985.0
+    cp_kj_per_kgk: 4.18
+    viscosity_pa_s: 0.00055
+  branches:
+  - name: near
+    from: plant
+    to: near
+    one_way_length_m: 30.0
+    inner_diameter_m: 0.015
+    roughness_m: 5.0e-05
+    heat_loss_w_per_mk_per_leg: 0.3
+    supply_temperature_c: 65.0
+    ground_temperature_c: 5.0
+    pump_efficiency: 0.72
+    pair_local_loss_coefficient: 2.0
+    minimum_far_supply_c: 55.0
+    maximum_customer_return_c: 45.0
+    maximum_plant_return_c: 45.0
+    maximum_velocity_m_per_s: 3.0
+    maximum_pressure_drop_pa_per_m: 300.0
+    maximum_pair_pressure_drop_pa: 120000.0
+    maximum_pump_power_kw: 0.25
+    maximum_instantaneous_heat_input_kw: 30.0
+    target_customer_delta_t_c: 20.0
+    delta_t_soft_band_c: 1.0
+    delta_t_penalty_yuan_per_c_on_hour: 0.2
+    operating_modes:
+    - name: m0.03_r40
+      mass_flow_kg_per_s: 0.03
+      customer_return_temperature_c: 40.0
+    - name: m0.06_r40
+      mass_flow_kg_per_s: 0.06
+      customer_return_temperature_c: 40.0
+    - name: m0.08_r40
+      mass_flow_kg_per_s: 0.08
+      customer_return_temperature_c: 40.0
+    - name: m0.12_r40
+      mass_flow_kg_per_s: 0.12
+      customer_return_temperature_c: 40.0
+    - name: m0.18_r40
+      mass_flow_kg_per_s: 0.18
+      customer_return_temperature_c: 40.0
+  - name: far
+    from: plant
+    to: far
+    one_way_length_m: 150.0
+    inner_diameter_m: 0.015
+    roughness_m: 5.0e-05
+    heat_loss_w_per_mk_per_leg: 0.3
+    supply_temperature_c: 65.0
+    ground_temperature_c: 5.0
+    pump_efficiency: 0.72
+    pair_local_loss_coefficient: 2.0
+    minimum_far_supply_c: 55.0
+    maximum_customer_return_c: 45.0
+    maximum_plant_return_c: 45.0
+    maximum_velocity_m_per_s: 3.0
+    maximum_pressure_drop_pa_per_m: 300.0
+    maximum_pair_pressure_drop_pa: 120000.0
+    maximum_pump_power_kw: 0.25
+    maximum_instantaneous_heat_input_kw: 30.0
+    target_customer_delta_t_c: 20.0
+    delta_t_soft_band_c: 1.0
+    delta_t_penalty_yuan_per_c_on_hour: 0.2
+    operating_modes:
+    - name: m0.03_r40
+      mass_flow_kg_per_s: 0.03
+      customer_return_temperature_c: 40.0
+    - name: m0.06_r40
+      mass_flow_kg_per_s: 0.06
+      customer_return_temperature_c: 40.0
+    - name: m0.08_r40
+      mass_flow_kg_per_s: 0.08
+      customer_return_temperature_c: 40.0
+    - name: m0.12_r40
+      mass_flow_kg_per_s: 0.12
+      customer_return_temperature_c: 40.0
+    - name: m0.18_r40
+      mass_flow_kg_per_s: 0.18
+      customer_return_temperature_c: 40.0

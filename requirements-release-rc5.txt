@@ -1,0 +1,5 @@
+# rc5 independent release environment; core baseline remains rc2.
+# Parent-authorized mandatory resource-monitoring increment; actual checkout tests pending.
+-r requirements-release-rc2.txt
+# Release monitoring compatibility pin; original confirmation keeps conda5.9.0.
+psutil==5.9.8

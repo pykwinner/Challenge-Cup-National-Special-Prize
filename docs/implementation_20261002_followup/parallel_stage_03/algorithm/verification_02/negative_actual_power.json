@@ -1,0 +1,26 @@
+{
+  "negative_control": "in-memory copy of actual saved Wuhan zero-policy trajectory; heat at original hour0 increased0.1kW, states and ledger untouched",
+  "original_input_sha256": "f49b31dfbef1deb07bd8608dc299e79faebd2eca5a6390935e082c44c37a5f83",
+  "original_heat_kw": 0.0,
+  "mutated_heat_kw": 0.1,
+  "audit": {
+    "passed": false,
+    "errors": [
+      "continuous_RC_convolution",
+      "state_continuity",
+      "frozen_controller",
+      "hourly_ledger:energy_kwh",
+      "hourly_ledger:bill_yuan",
+      "hourly_ledger:carbon_kg"
+    ],
+    "check_count": 28,
+    "totals": {
+      "energy_kwh": 3043.1100767023,
+      "bill_yuan": 2305.8738375989183,
+      "carbon_kg": 1230.63371501841
+    },
+    "maximum_temperature_residual_c": 0.1696590054457765
+  },
+  "original_file_unchanged": true,
+  "expected_rejection": true
+}

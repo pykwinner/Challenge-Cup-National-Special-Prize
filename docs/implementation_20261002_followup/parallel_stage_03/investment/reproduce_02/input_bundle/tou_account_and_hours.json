@@ -1,0 +1,77 @@
+{
+  "identity": "Conditional public tariff-class experiment; no actual billing account observation",
+  "selected_class": "Ordinary State Grid Hubei industrial/commercial agent-purchase, single-part, billing supply voltage <1kV",
+  "account_eligibility_verified": false,
+  "conditional_policy_requirements": [
+    "Industrial/commercial account in the Hubei grid with registered supply capacity >=100kVA and <315kVA; single-part selected for a period of at least 12 months",
+    "Not railway traction, commercial electricity, government/military/school/hospital/public-lighting or another non-residential-lighting exclusion; no separate special-policy exception is assumed",
+    "Ordinary agent-purchase category; not unjustified return from direct market trading, coal captive-plant users or temporarily ineligible high-energy-consuming users subject to 1.5x agent generation price",
+    "<1kV is the electricity-billing supply voltage, not an appliance secondary-side 380V label"
+  ],
+  "capacity_identity": "The policy capacity interval is only a conditional account criterion, not a claimed transformer rating, added model parameter or grid capacity constraint. The model's 1000kW is an ideal BESTEST numerical upper bound, not contracted power. Actual connection and power factor remain unverified.",
+  "storage_exception": "No eligibility inferred from the core electric_boiler adapter: it represents an ideal air benchmark, not an actual electric storage boiler. No heat pump or tank is added.",
+  "time_zone": "Asia/Shanghai",
+  "interval_convention": "Each hourly timestamp labels [timestamp,timestamp+1h); local half-open intervals, no DST",
+  "admitted_months": [
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03"
+  ],
+  "hours_non_july_august": {
+    "sharp": [
+      18,
+      19
+    ],
+    "peak": [
+      16,
+      17,
+      20,
+      21,
+      22,
+      23
+    ],
+    "flat": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14,
+      15
+    ],
+    "valley": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      12,
+      13
+    ]
+  },
+  "coefficient_context_only": {
+    "ordinary_months": {
+      "sharp": 1.8,
+      "peak": 1.49,
+      "flat": 1,
+      "valley": 0.48
+    },
+    "december_january": {
+      "sharp": 2,
+      "peak": 1.49,
+      "flat": 1,
+      "valley": 0.45
+    },
+    "rule": "Published complete rates used directly; these multipliers are NOT applied again to energy-charge columns"
+  },
+  "billing_scope": "Published monthly energy charges including published line-loss, transmission/distribution, government-fund and system-operation components. Single-part selected row has no capacity/demand basic-charge column. Power-factor adjustment, other reactive penalties, actual settlement corrections, taxes outside published columns, contract fees and other services are outside the experiment.",
+  "policy_sources": {
+    "hours_and_scope": "POLICY77 PDF p2/p3",
+    "single_part_scope": "POLICY163 PDF p2 clause4",
+    "ordinary_agent_category": "all monthly PDF footnote3"
+  }
+}

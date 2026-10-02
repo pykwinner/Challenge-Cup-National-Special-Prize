@@ -1,0 +1,613 @@
+FFFFFFFF......F.........FF..F..F                                         [100%]
+================================== FAILURES ===================================
+________ test_all_city_tasks_complete_and_checkpoint_every_transition _________
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9834220>)
+
+    def test_all_city_tasks_complete_and_checkpoint_every_transition(batch):
+        out, calls, _, _ = batch
+        m.run(out)
+>       manifest = _assert_final(out, True, 12)
+
+tests\test_three_city_climate_dispatch_resilient.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_all_city_tasks_complete_a0/batch')
+passed = True, rows = 12
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+>       assert manifest["all_requested_cases_passed"] is passed
+E       assert False is True
+
+tests\test_three_city_climate_dispatch_resilient.py:64: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "3dca67bf25b5cbbd04d00bd0ebb474fb123280b850650cccb7fc84aaa833a032"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 4}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 5}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 2, "failures": 6}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 3, "failures": 6}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 3, "failures": 7}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 3, "failures": 8}
+_______ test_first_city_prepare_read_failure_does_not_stop_other_cities _______
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9837740>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9805850>
+
+    def test_first_city_prepare_read_failure_does_not_stop_other_cities(batch, monkeypatch):
+        out, calls, _, _ = batch
+        reader = m.pd.read_csv
+    
+        def fail_first(path, *args, **kwargs):
+            if str(path).endswith("urumqi_hourly.csv"):
+                raise OSError("injected first-city preparation read failure")
+            return reader(path, *args, **kwargs)
+    
+        monkeypatch.setattr(m.pd, "read_csv", fail_first)
+        m.run(out)
+>       manifest = _assert_final(out, False, 8)
+
+tests\test_three_city_climate_dispatch_resilient.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_first_city_prepare_read_f0/batch')
+passed = False, rows = 8
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+>       assert manifest["accepted_rows"] == rows
+E       assert 2 == 8
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "7815d03724b935805571c75e33ef4de6acdc27de9dc5964b593af88fb98fd957"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "failed", "accepted_rows": 0, "failures": 1}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 5}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 5}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 6}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 7}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 8}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 8}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 9}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 10}
+_____ test_first_city_baseline_rollout_failure_does_not_stop_other_cities _____
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9834220>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B940DEE0>
+
+    def test_first_city_baseline_rollout_failure_does_not_stop_other_cities(batch, monkeypatch):
+        out, calls, original, _ = batch
+    
+        def fail_first(config, frame, delta):
+            if frame.scenario.iloc[0].startswith("urumqi"):
+                raise RuntimeError("injected first-city baseline rollout failure")
+            return original(config, frame, delta)
+    
+        monkeypatch.setattr(m.base, "rollout", fail_first)
+        m.run(out)
+>       manifest = _assert_final(out, False, 8)
+
+tests\test_three_city_climate_dispatch_resilient.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_first_city_baseline_rollo0/batch')
+passed = False, rows = 8
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+>       assert manifest["accepted_rows"] == rows
+E       assert 2 == 8
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "11c6c6b678fec63e5e387a3bbe9dc4a0bcae19f4b2e71ad761907b88ed2b431c"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "failed", "accepted_rows": 0, "failures": 1}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 4}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 4}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 5}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 6}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 7}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 7}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 8}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 9}
+_____________ test_first_city_baseline_audit_failure_is_retained ______________
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9836520>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B98078C0>
+
+    def test_first_city_baseline_audit_failure_is_retained(batch, monkeypatch):
+        out, _, original, _ = batch
+    
+        def corrupt_first(config, frame, delta):
+            trajectory = original(config, frame, delta)
+            if frame.scenario.iloc[0].startswith("urumqi"):
+                trajectory.loc[1, "heat_kw"] += .1
+            return trajectory
+    
+        monkeypatch.setattr(m.base, "rollout", corrupt_first)
+        m.run(out)
+>       manifest = _assert_final(out, False, 8)
+
+tests\test_three_city_climate_dispatch_resilient.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_first_city_baseline_audit0/batch')
+passed = False, rows = 8
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+>       assert manifest["accepted_rows"] == rows
+E       assert 2 == 8
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "614e101757f6bdf689df10306dbbcd073e64cef306d2c2f4b8634a402762c970"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "failed", "accepted_rows": 0, "failures": 1}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 4}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 4}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 5}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 6}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 7}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 7}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 8}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 9}
+_ test_middle_second_stage_failure_retains_summary_and_attempts_other_endpoint _
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B97EA5C0>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B99FEC30>
+
+    def test_middle_second_stage_failure_retains_summary_and_attempts_other_endpoint(batch, monkeypatch):
+        out, calls, _, double = batch
+    
+        def fail_middle(name, config, frame, folder, budget, gap, *, primary=None):
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                (folder / name).mkdir()
+                raise InjectedSolverFailure()
+            return double(name, config, frame, folder, budget, gap, primary=primary)
+    
+        monkeypatch.setattr(m.base, "run_one", fail_middle)
+        m.run(out)
+>       manifest = _assert_final(out, False, 10)
+
+tests\test_three_city_climate_dispatch_resilient.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_middle_second_stage_failu0/batch')
+passed = False, rows = 10
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+>       assert manifest["accepted_rows"] == rows
+E       assert 3 == 10
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "2e52c3ba6611e7c0383a46bfd28a35905eeee160dc58817799b4341c53aef794"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 4}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 5}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 2, "failures": 6}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 3, "failures": 6}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 3, "failures": 7}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 3, "failures": 8}
+_ test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[primary] __
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9837BA0>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9804830>
+gate = 'primary'
+
+    @pytest.mark.parametrize("gate", ["primary", "returned", "allowance"])
+    def test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint(batch, monkeypatch, gate):
+        out, _, original, double = batch
+    
+        def wrong_bound(name, config, frame, folder, budget, gap, *, primary=None):
+            result, audit = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                if gate == "primary":
+                    result.summary["primary_incumbent_value"] += 1.
+                    result.summary["primary_objective_allowance"] = 1e-7 + 1e-8 * abs(result.summary["primary_incumbent_value"])
+                elif gate == "returned":
+                    # A feasible all-hour warmer policy costs more than the known
+                    # baseline, while the claimed primary anchor remains valid.
+                    result.building_trajectory = original(config, frame.assign(tariff_bucket="valley"), 1)
+                    metrics = m.base.independent_metrics(config, frame, result.building_trajectory)
+                    result.summary["objective_yuan_per_year"] = metrics["bill_yuan"]
+                    result.summary["total_service_emissions_kg_per_year"] = metrics["carbon_kg"]
+                else:
+                    result.summary["primary_objective_allowance"] = 1000.
+            return result, audit
+    
+        monkeypatch.setattr(m.base, "run_one", wrong_bound)
+        m.run(out)
+>       manifest = _assert_final(out, False, 10)
+
+tests\test_three_city_climate_dispatch_resilient.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_known_feasible_bound_gate0/batch')
+passed = False, rows = 10
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+>       assert manifest["accepted_rows"] == rows
+E       assert 3 == 10
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "185f3bef1971d22ecf8e9b531c92e9f0b9893c1853ad9a36405a1bfbc34f1c77"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 4}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 5}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 2, "failures": 6}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 3, "failures": 6}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 3, "failures": 7}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 3, "failures": 8}
+_ test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[returned] _
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9A319E0>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9990890>
+gate = 'returned'
+
+    @pytest.mark.parametrize("gate", ["primary", "returned", "allowance"])
+    def test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint(batch, monkeypatch, gate):
+        out, _, original, double = batch
+    
+        def wrong_bound(name, config, frame, folder, budget, gap, *, primary=None):
+            result, audit = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                if gate == "primary":
+                    result.summary["primary_incumbent_value"] += 1.
+                    result.summary["primary_objective_allowance"] = 1e-7 + 1e-8 * abs(result.summary["primary_incumbent_value"])
+                elif gate == "returned":
+                    # A feasible all-hour warmer policy costs more than the known
+                    # baseline, while the claimed primary anchor remains valid.
+                    result.building_trajectory = original(config, frame.assign(tariff_bucket="valley"), 1)
+                    metrics = m.base.independent_metrics(config, frame, result.building_trajectory)
+                    result.summary["objective_yuan_per_year"] = metrics["bill_yuan"]
+                    result.summary["total_service_emissions_kg_per_year"] = metrics["carbon_kg"]
+                else:
+                    result.summary["primary_objective_allowance"] = 1000.
+            return result, audit
+    
+        monkeypatch.setattr(m.base, "run_one", wrong_bound)
+        m.run(out)
+>       manifest = _assert_final(out, False, 10)
+
+tests\test_three_city_climate_dispatch_resilient.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_known_feasible_bound_gate1/batch')
+passed = False, rows = 10
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+>       assert manifest["accepted_rows"] == rows
+E       assert 3 == 10
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "b4235649f3c1fa8bdf4b40e345efed9c5cedabbd185d07d7f2b1bcadc82f56f4"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 4}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 5}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 2, "failures": 6}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 3, "failures": 6}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 3, "failures": 7}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 3, "failures": 8}
+_ test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[allowance] _
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9A33880>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B99FD010>
+gate = 'allowance'
+
+    @pytest.mark.parametrize("gate", ["primary", "returned", "allowance"])
+    def test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint(batch, monkeypatch, gate):
+        out, _, original, double = batch
+    
+        def wrong_bound(name, config, frame, folder, budget, gap, *, primary=None):
+            result, audit = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                if gate == "primary":
+                    result.summary["primary_incumbent_value"] += 1.
+                    result.summary["primary_objective_allowance"] = 1e-7 + 1e-8 * abs(result.summary["primary_incumbent_value"])
+                elif gate == "returned":
+                    # A feasible all-hour warmer policy costs more than the known
+                    # baseline, while the claimed primary anchor remains valid.
+                    result.building_trajectory = original(config, frame.assign(tariff_bucket="valley"), 1)
+                    metrics = m.base.independent_metrics(config, frame, result.building_trajectory)
+                    result.summary["objective_yuan_per_year"] = metrics["bill_yuan"]
+                    result.summary["total_service_emissions_kg_per_year"] = metrics["carbon_kg"]
+                else:
+                    result.summary["primary_objective_allowance"] = 1000.
+            return result, audit
+    
+        monkeypatch.setattr(m.base, "run_one", wrong_bound)
+        m.run(out)
+>       manifest = _assert_final(out, False, 10)
+
+tests\test_three_city_climate_dispatch_resilient.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_known_feasible_bound_gate2/batch')
+passed = False, rows = 10
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+        assert manifest["all_requested_cases_passed"] is passed
+>       assert manifest["accepted_rows"] == rows
+E       assert 3 == 10
+
+tests\test_three_city_climate_dispatch_resilient.py:65: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "508437b6c48a297a7e9ce77053178ebeda480fb4bebb475245ff3a1fc0f1a0a0"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 4}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 5}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 2, "failures": 6}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 3, "failures": 6}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 3, "failures": 7}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 3, "failures": 8}
+__ test_identity_change_during_middle_solve_invalidates_prior_rows_and_stops __
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...tal_cost')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9A32F20>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9804FE0>
+
+    def test_identity_change_during_middle_solve_invalidates_prior_rows_and_stops(batch, monkeypatch):
+        out, calls, _, double = batch
+    
+        def corrupt_after_solve(name, config, frame, folder, budget, gap, *, primary=None):
+            result = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                (out / "protocol.json").write_text("{}", encoding="utf-8")
+            return result
+    
+        monkeypatch.setattr(m.base, "run_one", corrupt_after_solve)
+        with pytest.raises(m.IdentityFailure):
+            m.run(out)
+        manifest = _read(out, "manifest.json")
+>       assert manifest["accepted_rows"] == 5  # Retained only, explicitly invalidated.
+E       assert 2 == 5
+
+tests\test_three_city_climate_dispatch_resilient.py:243: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "2356286e6431a5287cf1183171a4cbaa52453d0aa103fcf0f40c762726dcd8b2"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+______ test_self_consistent_protocol_replacement_during_run_is_rejected _______
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...tal_cost')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9A31A80>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B990B080>
+
+    def test_self_consistent_protocol_replacement_during_run_is_rejected(batch, monkeypatch):
+        out, _, _, double = batch
+    
+        def replace_protocol(name, config, frame, folder, budget, gap, *, primary=None):
+            result = double(name, config, frame, folder, budget, gap, primary=primary)
+            if folder.name == "guyuan" and name == "cost_endpoint":
+                protocol = _read(out, "protocol.json")
+                protocol["cities"] = ["wuhan"]
+                m._write(out / "protocol.json", protocol)
+                m._write(out / "protocol_lock.json", {"protocol.json": m.base.sha(out / "protocol.json")})
+            return result
+    
+        monkeypatch.setattr(m.base, "run_one", replace_protocol)
+        with pytest.raises(m.IdentityFailure, match="initial run identity changed"):
+            m.run(out)
+        manifest = _read(out, "manifest.json")
+>       assert manifest["accepted_rows"] == 5 and manifest["comparison_valid"] is False
+E       assert (2 == 5)
+
+tests\test_three_city_climate_dispatch_resilient.py:363: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "a510f5705c8552aeaf41b559c780812dfb1135946d8007ac14aa5348d4633f70"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+______ test_protocol_change_during_final_export_does_not_publish_success ______
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9A30900>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9A03770>
+
+    def test_protocol_change_during_final_export_does_not_publish_success(batch, monkeypatch):
+        out, _, _, _ = batch
+        writer = m.pd.DataFrame.to_csv
+    
+        def change_on_export(frame, path, *args, **kwargs):
+            result = writer(frame, path, *args, **kwargs)
+            if Path(path) == out / "comparison.csv":
+                protocol = _read(out, "protocol.json")
+                protocol["cities"] = ["wuhan"]
+                m._write(out / "protocol.json", protocol)
+                m._write(out / "protocol_lock.json", {"protocol.json": m.base.sha(out / "protocol.json")})
+            return result
+    
+        monkeypatch.setattr(m.pd.DataFrame, "to_csv", change_on_export)
+        with pytest.raises(m.IdentityFailure, match="initial run identity changed"):
+            m.run(out)
+        manifest = _read(out, "manifest.json")
+>       assert manifest["accepted_rows"] == 12
+E       assert 3 == 12
+
+tests\test_three_city_climate_dispatch_resilient.py:383: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "85fb05fd4bb396f5681297dba7b4766cc293675e08323e3298ca0e269a7dfbb1"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 4}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 5}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 2, "failures": 6}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 3, "failures": 6}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 3, "failures": 7}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 3, "failures": 8}
+_ test_manifest_accounting_tamper_is_rejected[all_requested_cases_passed-False] _
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187B9A08C20>)
+key = 'all_requested_cases_passed', value = False
+
+    @pytest.mark.parametrize("key,value", [("accepted_rows", 99), ("all_requested_cases_passed", False),
+                                           ("failures", [{"reason": "invented"}]), ("protocol_sha256", "0" * 64)])
+    def test_manifest_accounting_tamper_is_rejected(batch, key, value):
+        out, _, _, _ = batch
+        m.run(out)
+        manifest = _read(out, "manifest.json")
+        manifest[key] = value
+        m._write(out / "manifest.json", manifest)
+>       with pytest.raises(m.IdentityFailure, match="accounting mismatch"):
+E       Failed: DID NOT RAISE <class 'resilient_climate.IdentityFailure'>
+
+tests\test_three_city_climate_dispatch_resilient.py:404: Failed
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "064261f1683889468022100c9b770e08c2184bac865eb9e6c77251201fea95e5"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 4}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 5}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 2, "failures": 6}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 3, "failures": 6}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 3, "failures": 7}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 3, "failures": 8}
+_______ test_concurrent_invocations_have_one_owner_and_cannot_overwrite _______
+
+batch = (WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parall...missions')], <function rollout at 0x00000187B97D6160>, <function batch.<locals>.feedback_double at 0x00000187BA0842C0>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000187B9993530>
+
+    def test_concurrent_invocations_have_one_owner_and_cannot_overwrite(batch, monkeypatch):
+        from concurrent.futures import ThreadPoolExecutor
+        from threading import Barrier
+        out, _, _, _ = batch
+        iterator = Path.iterdir
+        barrier = Barrier(2)
+    
+        def simultaneous_inspection(path):
+            if path == out:
+                entries = list(iterator(path))
+                barrier.wait(timeout=30)
+                return iter(entries)
+            return iterator(path)
+    
+        monkeypatch.setattr(Path, "iterdir", simultaneous_inspection)
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            futures = [executor.submit(m.run, out) for _ in range(2)]
+            results, errors = [], []
+            for future in futures:
+                try:
+                    results.append(future.result(timeout=90))
+                except Exception as error:
+                    errors.append(error)
+        assert len(results) == len(errors) == 1
+        assert isinstance(errors[0], FileExistsError)
+>       _assert_final(out, True, 12)
+
+tests\test_three_city_climate_dispatch_resilient.py:433: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+out = WindowsPath('D:/competion/xiaotiao/�����������ೡ�������ܿ��V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/reliability/pytest_fault_injection_01/test_concurrent_invocations_ha0/batch')
+passed = True, rows = 12
+
+    def _assert_final(out, passed, rows):
+        manifest = _read(out, "manifest.json")
+        checkpoint = _read(out, "checkpoint.json")
+>       assert manifest["all_requested_cases_passed"] is passed
+E       assert False is True
+
+tests\test_three_city_climate_dispatch_resilient.py:64: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+{"frozen": true, "cities": ["urumqi", "guyuan", "wuhan"], "protocol_sha256": "a77a4c9823ae9c2808c23cfbfee0cf7e3dd985a3f2e2793037d7e0f9fea30672"}
+---------------------------- Captured stdout call -----------------------------
+{"city": "urumqi", "case": "prepare", "status": "completed", "accepted_rows": 0, "failures": 0}
+{"city": "urumqi", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 1, "failures": 0}
+{"city": "urumqi", "case": "cost_endpoint", "status": "failed", "accepted_rows": 1, "failures": 1}
+{"city": "urumqi", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 1, "failures": 2}
+{"city": "guyuan", "case": "prepare", "status": "completed", "accepted_rows": 1, "failures": 3}
+{"city": "guyuan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 2, "failures": 3}
+{"city": "guyuan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 2, "failures": 4}
+{"city": "guyuan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 2, "failures": 5}
+{"city": "wuhan", "case": "prepare", "status": "completed", "accepted_rows": 2, "failures": 6}
+{"city": "wuhan", "case": "baseline_delta0", "status": "accepted", "accepted_rows": 3, "failures": 6}
+{"city": "wuhan", "case": "cost_endpoint", "status": "failed", "accepted_rows": 3, "failures": 7}
+{"city": "wuhan", "case": "carbon_endpoint", "status": "failed", "accepted_rows": 3, "failures": 8}
+- generated xml file: D:\competion\xiaotiao\�����������ೡ�������ܿ��V10\north_heat_challenge\docs\implementation_20261002_followup\parallel_stage_03\reliability\tests_01.xml -
+=========================== short test summary info ===========================
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_all_city_tasks_complete_and_checkpoint_every_transition
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_first_city_prepare_read_failure_does_not_stop_other_cities
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_first_city_baseline_rollout_failure_does_not_stop_other_cities
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_first_city_baseline_audit_failure_is_retained
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_middle_second_stage_failure_retains_summary_and_attempts_other_endpoint
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[primary]
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[returned]
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_known_feasible_bound_gates_reject_endpoint_and_skip_midpoint[allowance]
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_identity_change_during_middle_solve_invalidates_prior_rows_and_stops
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_self_consistent_protocol_replacement_during_run_is_rejected
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_protocol_change_during_final_export_does_not_publish_success
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_manifest_accounting_tamper_is_rejected[all_requested_cases_passed-False]
+FAILED tests/test_three_city_climate_dispatch_resilient.py::test_concurrent_invocations_have_one_owner_and_cannot_overwrite
+13 failed, 19 passed in 83.93s (0:01:23)

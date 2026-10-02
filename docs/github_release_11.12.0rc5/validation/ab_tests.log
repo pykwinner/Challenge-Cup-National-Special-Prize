@@ -1,0 +1,150 @@
+........................................................................ [ 51%]
+...............................................................EEEEE     [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_missing_old_manifest_pdf_is_optional_without_changing_old_lock _
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/.algorithm_doc_work/github_release_20261002_rc5/pytest_ab/test_missing_old_manifest_pdf_0')
+
+    @pytest.fixture
+    def no_pdf_bundle(tmp_path):
+        source = ROOT / 'docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle'
+        destination = tmp_path / 'processed'
+        destination.mkdir()
+>       for path in source.iterdir():
+                    ^^^^^^^^^^^^^^^^
+
+tests\test_investment_reference_portable.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc5/docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle')
+
+    def iterdir(self):
+        """Yield path objects of the directory contents.
+    
+        The children are yielded in arbitrary order, and the
+        special entries '.' and '..' are not included.
+        """
+>       for name in os.listdir(self):
+                    ^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc5\\docs\\implementation_20261002_followup\\parallel_stage_03\\investment\\run_02\\input_bundle'
+
+D:\app\anaconda3\Lib\pathlib.py:1056: FileNotFoundError
+____ ERROR at setup of test_strict_mode_reports_exact_original_url_and_sha ____
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/.algorithm_doc_work/github_release_20261002_rc5/pytest_ab/test_strict_mode_reports_exact0')
+
+    @pytest.fixture
+    def no_pdf_bundle(tmp_path):
+        source = ROOT / 'docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle'
+        destination = tmp_path / 'processed'
+        destination.mkdir()
+>       for path in source.iterdir():
+                    ^^^^^^^^^^^^^^^^
+
+tests\test_investment_reference_portable.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc5/docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle')
+
+    def iterdir(self):
+        """Yield path objects of the directory contents.
+    
+        The children are yielded in arbitrary order, and the
+        special entries '.' and '..' are not included.
+        """
+>       for name in os.listdir(self):
+                    ^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc5\\docs\\implementation_20261002_followup\\parallel_stage_03\\investment\\run_02\\input_bundle'
+
+D:\app\anaconda3\Lib\pathlib.py:1056: FileNotFoundError
+_____ ERROR at setup of test_processed_numeric_tampering_is_not_optional ______
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/.algorithm_doc_work/github_release_20261002_rc5/pytest_ab/test_processed_numeric_tamperi0')
+
+    @pytest.fixture
+    def no_pdf_bundle(tmp_path):
+        source = ROOT / 'docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle'
+        destination = tmp_path / 'processed'
+        destination.mkdir()
+>       for path in source.iterdir():
+                    ^^^^^^^^^^^^^^^^
+
+tests\test_investment_reference_portable.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc5/docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle')
+
+    def iterdir(self):
+        """Yield path objects of the directory contents.
+    
+        The children are yielded in arbitrary order, and the
+        special entries '.' and '..' are not included.
+        """
+>       for name in os.listdir(self):
+                    ^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc5\\docs\\implementation_20261002_followup\\parallel_stage_03\\investment\\run_02\\input_bundle'
+
+D:\app\anaconda3\Lib\pathlib.py:1056: FileNotFoundError
+_ ERROR at setup of test_real_cli_check_only_stops_before_solver_with_exact_source_status[False] _
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/.algorithm_doc_work/github_release_20261002_rc5/pytest_ab/test_real_cli_check_only_stops0')
+
+    @pytest.fixture
+    def no_pdf_bundle(tmp_path):
+        source = ROOT / 'docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle'
+        destination = tmp_path / 'processed'
+        destination.mkdir()
+>       for path in source.iterdir():
+                    ^^^^^^^^^^^^^^^^
+
+tests\test_investment_reference_portable.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc5/docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle')
+
+    def iterdir(self):
+        """Yield path objects of the directory contents.
+    
+        The children are yielded in arbitrary order, and the
+        special entries '.' and '..' are not included.
+        """
+>       for name in os.listdir(self):
+                    ^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc5\\docs\\implementation_20261002_followup\\parallel_stage_03\\investment\\run_02\\input_bundle'
+
+D:\app\anaconda3\Lib\pathlib.py:1056: FileNotFoundError
+_ ERROR at setup of test_real_cli_check_only_stops_before_solver_with_exact_source_status[True] _
+
+tmp_path = WindowsPath('D:/competion/xiaotiao/.algorithm_doc_work/github_release_20261002_rc5/pytest_ab/test_real_cli_check_only_stops1')
+
+    @pytest.fixture
+    def no_pdf_bundle(tmp_path):
+        source = ROOT / 'docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle'
+        destination = tmp_path / 'processed'
+        destination.mkdir()
+>       for path in source.iterdir():
+                    ^^^^^^^^^^^^^^^^
+
+tests\test_investment_reference_portable.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/competion/xiaotiao/github_candidate_20261002_rc5/docs/implementation_20261002_followup/parallel_stage_03/investment/run_02/input_bundle')
+
+    def iterdir(self):
+        """Yield path objects of the directory contents.
+    
+        The children are yielded in arbitrary order, and the
+        special entries '.' and '..' are not included.
+        """
+>       for name in os.listdir(self):
+                    ^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'D:\\competion\\xiaotiao\\github_candidate_20261002_rc5\\docs\\implementation_20261002_followup\\parallel_stage_03\\investment\\run_02\\input_bundle'
+
+D:\app\anaconda3\Lib\pathlib.py:1056: FileNotFoundError
+=========================== short test summary info ===========================
+ERROR tests/test_investment_reference_portable.py::test_missing_old_manifest_pdf_is_optional_without_changing_old_lock
+ERROR tests/test_investment_reference_portable.py::test_strict_mode_reports_exact_original_url_and_sha
+ERROR tests/test_investment_reference_portable.py::test_processed_numeric_tampering_is_not_optional
+ERROR tests/test_investment_reference_portable.py::test_real_cli_check_only_stops_before_solver_with_exact_source_status[False]
+ERROR tests/test_investment_reference_portable.py::test_real_cli_check_only_stops_before_solver_with_exact_source_status[True]
+135 passed, 5 errors in 12.87s
