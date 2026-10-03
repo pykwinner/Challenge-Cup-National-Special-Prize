@@ -245,8 +245,12 @@
 
 **本页只留两条口径**（费用、F=5、价格边界、方案对比全部移到第13页）：
 
-1. **本案例不含储热、不含管网、不含多栋共享容量**——那些是独立专项，**没有拼进这一次求解**，不能说成同一个投运方案。
+1. **本案例（条件投资 run_03）不含储热、不含管网**——那部分由**独立的一体化模型联合案例**回答（见下方"联合案例"栏）。**两套模型不可混称。**
 2. **热泵 COP 是设计代理**，与第6页 TICA 真实样本性能**不是同一台设备口径**，两页不可混称。
+
+**联合案例（本页可放一小块，或移到备份页）：** 用仓库自带的一体化源网荷储 MILP，把**源（锅炉）—网（管径候选）—荷（RC 室温）—储（容量候选）放进同一次求解**，`mip_gap = 0.0`：**选中 dn50 管径、不选 dn80、储热容量选 0**。造价压到 5 元/kWh 时储热会选 13.4 kWh——**证明容量为零是经济性选择，不是模块没进模型**。图见 [joint_selection.png](../outputs/figures/joint_selection.png)。
+
+> 讲法："**我们不是没考虑储热，是算了之后它不划算。** 建筑本体的热容已经提供约 3.75 kWh 的移峰能力，加罐在 30 元/kWh 时只多要 3.28 kWh，在 260 元/kWh 时干脆不要。"
 
 **稳健性已补（本页右下角小图，主动亮出）：** [robustness_summary.png](../outputs/figures/robustness_summary.png)
 
@@ -515,7 +519,8 @@ docs/               来源、协议、结果和复现说明
 | 储热和建筑热惯性是否重复计量？ | 两类状态独立；建筑由实际交付驱动，储热由充放和损失更新 | 模型状态与平衡式 |
 | 已经证明全局最优了吗？ | 对登记问题按求解器状态、原始界和容差描述；**不单凭三次运行证明任意规模稳定收敛** | solver 记录、solution evidence |
 | 没有投资回收期，怎样服务规划？ | 已能比较运行侧选择与可行条件；工程投资评价需同型号报价与年度服务账本 | 第12页经济条件 |
-| **这些结果是一个完整案例吗？** | **第7页就是一个完整闭环**：武汉 2880 h 全服务周期，一台热泵、电网上限 4.0 kW、零舒适违约零容量违约、RC 残差 8.75e-11 ℃、49 项独立审计。储热、管网、多栋共享是**独立专项**，未拼进同一次求解，我们不说成同一个投运方案 | [主案例总表](主案例总表_武汉.md)、第7页 |
+| **这些结果是一个完整案例吗？** | 两层回答：**① 主案例**是完整闭环——武汉 2880 h 全服务周期、一台热泵、电网上限 4.0 kW、零违约、RC 残差 8.75e-11 ℃、49 项独立审计。**② 若问"模块有没有接起来"**：另用一体化模型把**源—网—荷—储放进同一次求解**（mip_gap=0.0），选中 dn50 管径、储热容量选 0。**两套模型不混称** | [主案例总表](主案例总表_武汉.md)第四、十一节 |
+| **储热为什么不配？** | **不是没考虑，是算了不划算**：建筑本体可用蓄热 C×ΔT ≈ 3.75 kWh；造价降到 5 元/kWh 时会选 13.4 kWh，260 元/kWh 时选 0 | [joint_selection.png](../outputs/figures/joint_selection.png)、总表第十一节 |
 | 室温为什么有时顶着 27 ℃？ | 折中方案整季 **93 h 顶在上限**，是把用电挪到谷电时段的机理。**已做敏感性**：上限收到 24 ℃ 后省费仍为 74.00%（原 74.06%），**收益不依赖高室温** | [robustness_summary.png](../outputs/figures/robustness_summary.png)、[主案例总表](主案例总表_武汉.md) 第七节 |
 | 结论是不是调参调出来的？ | H ±20% 下省费全距 0.45 个百分点（73.92%–74.37%），最优结构与零违约五档一致 | [robustness_summary.png](../outputs/figures/robustness_summary.png)、总表第八节 |
 | 按实际作息供热还成立吗？ | **已做**：服务 06—09／17—23、空置下限 12 ℃，省费比例 74.53%，折中电费 −19.0%。**但低碳方案需 2 台热泵、投资近翻倍**——间歇省运行费不省设备投资 | [intermittent_service.png](../outputs/figures/intermittent_service.png)、总表第九节 |
@@ -532,7 +537,7 @@ docs/               来源、协议、结果和复现说明
 | 4 | [图28](../outputs/figures/新图/图28.png) ＋ [time_axis_three_meanings.png](../outputs/figures/time_axis_three_meanings.png) | 可用 |
 | 5 | [图4](../outputs/figures/新图/图4.png) | 可用 |
 | 6 | [heatpump_envelope_and_backup.png](../outputs/figures/heatpump_envelope_and_backup.png) ＋ 六案对照表 | 可用 |
-| 7 | [**main_case_season.png**](../outputs/figures/main_case_season.png)（主图）<br>＋ [**robustness_summary.png**](../outputs/figures/robustness_summary.png)（稳健性小图，右下角）<br>＋ [**intermittent_service.png**](../outputs/figures/intermittent_service.png)（间歇对照，可放备份或第二屏）<br>＋ [主案例总表](主案例总表_武汉.md) | ✅ **三张图均已生成** |
+| 7 | [**main_case_season.png**](../outputs/figures/main_case_season.png)（主图）<br>＋ [**robustness_summary.png**](../outputs/figures/robustness_summary.png)（稳健性小图）<br>＋ [**joint_selection.png**](../outputs/figures/joint_selection.png)（联合案例，小图或备份）<br>＋ [**intermittent_service.png**](../outputs/figures/intermittent_service.png)（间歇对照，备份）<br>＋ [主案例总表](主案例总表_武汉.md) | ✅ **四张图均已生成** |
 | 8 | [weight_confirmation.png](../docs/implementation_20261002/figures/weight_confirmation.png) | 可用（左右两图同页） |
 | 9 | [cost_carbon_tradeoff.png](../docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/cost_carbon_tradeoff.png) | **须中文化** |
 | 10 | [feasible_map.png](../outputs/figures/feasible_map.png) ＋ [cost_energy_scissors.png](../outputs/figures/cost_energy_scissors.png) | 前者**须改标题** |
@@ -575,11 +580,23 @@ docs/               来源、协议、结果和复现说明
 | 附带的可移植性证据 | rc6 冻结脚本在 **pandas 3.x** 下第一步即失败（`asi8` 单位变更）；锁文件钉的 `numpy==1.26.4` **无 Python 3.13 轮子**。→ 对"代码质量与可移植性 10 分"是**直接可用的诚实素材** |
 | 派生做法 | 冻结脚本一字未动；派生副本逐处标注改动，新增键 `service_schedule`（**曾误用 `service` 覆盖原字段，被连续对照组暴露并已修**） |
 
-**B 类 · 仍剩（新算，非改配置）**
+**B 类 · ✅ 源网荷储联合案例已完成（2026-10-03）**
+
+| 事项 | 成果 |
+|---|---|
+| **四层候选同一次求解** | 用一体化模型 `src/heatplan/model.py` 跑武汉 2880 h：源（锅炉）—网（管径候选）—荷（RC 室温）—储（容量候选），**`mip_gap = 0.0` 证明最优** |
+| 选择结果 | **选中 dn50**（20 kW/3.0 万元）、未选 dn80（60 kW/4.5 万元）、**储热容量 0 kWh** |
+| "容量为零"有解释 | 建筑本体可用蓄热 ＝ C×ΔT ≈ **3.75 kWh**；30 元/kWh 时优化器只多要 3.28 kWh，同量级 |
+| 变量确实是活的 | 造价 5 元/kWh → 选 **13.4—13.6 kWh**（阈值约 30—35 元/kWh） |
+| 交叉验证 | 一体化模型对偶界 `2265.4287150142513` 与条件投资实验费用端点界 **逐位相同** |
+| 图 | [joint_selection.png](../outputs/figures/joint_selection.png)，详见[主案例总表](主案例总表_武汉.md)第十一节 |
+| ⚠️ 口径 | **与主案例是两套不同实现，数字不可互比**；该配置声明资产寿命 1 年，投资全额计入单年目标，**非真实经济评价** |
+
+**B 类 · 仍剩**
 
 | 事项 | 现状 | 怎么做 |
 |---|---|---|
-| 统一案例的全季联合验证 | 各专项仍未接成一条链；主案例只含单栋 + 热泵 + 电阻 + 电网上限 | 把储热或共享容量并入同一案例再跑一次。**当前做法是如实声明"未拼进同一次求解"，不冒充** |
+| 多栋建筑 + 共享容量的联合投资 | 联合案例为**单栋单干线**；多栋共享容量在另一个专项（两栋 + 共享上限）里单独验证 | 把多栋并入一体化模型再跑一次 |
 
 **C 类 · 当前数据条件下做不了，只能降级或明确放弃**
 
