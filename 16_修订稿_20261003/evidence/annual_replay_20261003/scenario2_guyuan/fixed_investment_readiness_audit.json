@@ -1,0 +1,97 @@
+{
+  "readiness_pass": true,
+  "heat_firm_capacity_audit_applicable": true,
+  "heat_firm_capacity_pass": true,
+  "grid_firm_capacity_pass": true,
+  "peak_effective_heat_demand_kw": 1915.8051724137931,
+  "firm_capacity_reserve_margin": 0.15,
+  "building_flex_firm_capacity_kw": 0.0,
+  "required_firm_heat_capacity_kw": 2203.175948275862,
+  "available_firm_heat_capacity_kw": 2203.175948275862,
+  "firm_heat_capacity_gap_kw": 0.0,
+  "grid": {
+    "applicable": true,
+    "firm_capacity_method": "portfolio_dispatch",
+    "installed_grid_capacity_kw": 311.7847954752747,
+    "firm_local_electric_capacity_kw": 561.4540848526038,
+    "minimum_firm_electric_requirement_kw": 873.2388803278785,
+    "firm_electric_capacity_gap_kw": 0.0,
+    "pass": true,
+    "firm_simultaneity": 1.0
+  },
+  "sources": [
+    {
+      "source": "gas_peak_boiler",
+      "installed_capacity_kw": 350.0,
+      "minimum_chronology_availability": 1.0,
+      "firm_capacity_credit": 1.0,
+      "firm_capacity_availability": 1.0,
+      "firm_heat_capacity_kw": 350.0,
+      "worst_electricity_per_firm_heat": 0.0,
+      "firm_electric_requirement_kw": 0.0
+    },
+    {
+      "source": "distributed_air_hp_b",
+      "installed_capacity_kw": 250.7586206896552,
+      "minimum_chronology_availability": 0.933,
+      "firm_capacity_credit": 0.55,
+      "firm_capacity_availability": 0.933,
+      "firm_heat_capacity_kw": 128.6767862068966,
+      "worst_electricity_per_firm_heat": 0.5292334889761637,
+      "firm_electric_requirement_kw": 68.1000645145158
+    },
+    {
+      "source": "electric_backup_boiler",
+      "installed_capacity_kw": 300.0,
+      "minimum_chronology_availability": 1.0,
+      "firm_capacity_credit": 0.95,
+      "firm_capacity_availability": 1.0,
+      "firm_heat_capacity_kw": 285.0,
+      "worst_electricity_per_firm_heat": 1.0204081632653061,
+      "firm_electric_requirement_kw": 290.81632653061223
+    },
+    {
+      "source": "district_a_emergency_eb",
+      "installed_capacity_kw": 449.66375179147684,
+      "minimum_chronology_availability": 1.0,
+      "firm_capacity_credit": 0.95,
+      "firm_capacity_availability": 1.0,
+      "firm_heat_capacity_kw": 427.180564201903,
+      "worst_electricity_per_firm_heat": 1.0204081632653061,
+      "firm_electric_requirement_kw": 435.89853489990105
+    },
+    {
+      "source": "district_a_air_hp",
+      "installed_capacity_kw": 288.7733333333333,
+      "minimum_chronology_availability": 0.933,
+      "firm_capacity_credit": 0.55,
+      "firm_capacity_availability": 0.933,
+      "firm_heat_capacity_kw": 148.18403600000002,
+      "worst_electricity_per_firm_heat": 0.5292334889761637,
+      "firm_electric_requirement_kw": 78.42395438284946
+    },
+    {
+      "source": "regional_biomass_boiler",
+      "installed_capacity_kw": 974.9622296475244,
+      "minimum_chronology_availability": 1.0,
+      "firm_capacity_credit": 0.85,
+      "firm_capacity_availability": 1.0,
+      "firm_heat_capacity_kw": 828.7178952003957,
+      "worst_electricity_per_firm_heat": 0.0,
+      "firm_electric_requirement_kw": 0.0
+    }
+  ],
+  "storages": [
+    {
+      "storage": "central_low_temp_tank",
+      "installed_energy_kwh": 0.0,
+      "firm_heat_capacity_kw": 0.0
+    },
+    {
+      "storage": "district_a_pcm",
+      "installed_energy_kwh": 500.0,
+      "firm_heat_capacity_kw": 35.416666666666664
+    }
+  ],
+  "caveat": "pre-build adequacy screen; hourly dispatch, storage chronology, ground balance and policy constraints still require annual MILP replay"
+}

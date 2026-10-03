@@ -1,0 +1,154 @@
+{
+  "certification_pass": true,
+  "gate_count": 16,
+  "passed_gate_count": 16,
+  "failed_gate_count": 0,
+  "failed_gates": [],
+  "gates": [
+    {
+      "gate": "continuous_full_calendar_year",
+      "passed": true,
+      "observed": {
+        "chronology_valid": true,
+        "is_full_year_horizon": true,
+        "is_calendar_year_aligned": true,
+        "is_explicit_service_year_aligned": false,
+        "annual_scope": null
+      },
+      "requirement": "连续完整的8760/8784小时，按公历年或经逐时核验的明确一年服务区间对齐"
+    },
+    {
+      "gate": "representative_period_coverage",
+      "passed": true,
+      "observed": 0,
+      "requirement": "代表时段覆盖审计无 review 项"
+    },
+    {
+      "gate": "representative_planning_optimal",
+      "passed": true,
+      "observed": 0,
+      "requirement": "代表时段规划求解器状态为最优（0）"
+    },
+    {
+      "gate": "annual_replay_optimal",
+      "passed": true,
+      "observed": 0,
+      "requirement": "全年固定投资回放求解器状态为最优（0）"
+    },
+    {
+      "gate": "planning_numerical_feasibility",
+      "passed": true,
+      "observed": {
+        "numerical_audit_passed": true,
+        "numerical_audit_tolerance": {
+          "absolute": 1e-06,
+          "relative": 1e-08,
+          "scaled_violation_limit": 1.0
+        },
+        "numerical_solution_finite": true,
+        "numerical_constraint_max_violation": 6.252776074688882e-13,
+        "numerical_constraint_max_scaled_violation": 1.7090056895057632e-07,
+        "numerical_constraint_worst_row": 4141,
+        "numerical_bound_max_violation": 1.6587106271719599e-13,
+        "numerical_bound_max_scaled_violation": 1.642287749675208e-07,
+        "numerical_bound_worst_variable": "storage_soc[central_low_temp_tank,154]",
+        "numerical_integrality_max_violation": 6.661338147750939e-16,
+        "numerical_objective_recompute_error": 2.3283064365386963e-10,
+        "numerical_objective_checked": true
+      },
+      "requirement": "完整解的约束、变量界、整数性及实际求解目标重算均通过明确容差"
+    },
+    {
+      "gate": "replay_numerical_feasibility",
+      "passed": true,
+      "observed": {
+        "numerical_audit_passed": true,
+        "numerical_audit_tolerance": {
+          "absolute": 1e-06,
+          "relative": 1e-08,
+          "scaled_violation_limit": 1.0
+        },
+        "numerical_solution_finite": true,
+        "numerical_constraint_max_violation": 9.997401473273566e-07,
+        "numerical_constraint_max_scaled_violation": 0.9898417300270859,
+        "numerical_constraint_worst_row": 272696,
+        "numerical_bound_max_violation": 1.2595702838506518e-08,
+        "numerical_bound_max_scaled_violation": 0.012470992909412396,
+        "numerical_bound_worst_variable": "building_thermal_state_abs[district_b,low,3331]",
+        "numerical_integrality_max_violation": 0.0,
+        "numerical_objective_recompute_error": 0.0,
+        "numerical_objective_checked": true
+      },
+      "requirement": "完整解的约束、变量界、整数性及实际求解目标重算均通过明确容差"
+    },
+    {
+      "gate": "unit_commitment_transition_audit",
+      "passed": true,
+      "observed": {
+        "unit_commitment_max_transition_residual": 0.0,
+        "unit_commitment_max_indicator_fractionality": 0.0
+      },
+      "requirement": "机组状态转移残差与启停指示量整数偏差不超过1e-6"
+    },
+    {
+      "gate": "all_investments_frozen",
+      "passed": true,
+      "observed": 16,
+      "requirement": "全部投资变量转化为固定既有容量，且无剩余扩建权限"
+    },
+    {
+      "gate": "prebuild_firm_capacity_readiness",
+      "passed": true,
+      "observed": {
+        "firm_heat_capacity_gap_kw": 0.0,
+        "firm_electric_capacity_gap_kw": 0.0
+      },
+      "requirement": "固定热源与配电容量缺口均不小于 0"
+    },
+    {
+      "gate": "annual_heat_reliability",
+      "passed": true,
+      "observed": 0.0,
+      "requirement": "全年热失供率不高于 0"
+    },
+    {
+      "gate": "worst_scenario_heat_reliability",
+      "passed": true,
+      "observed": 0.0,
+      "requirement": "最差场景热失供率不高于 0"
+    },
+    {
+      "gate": "storage_evidence_complete",
+      "passed": true,
+      "observed": [
+        "central_low_temp_tank",
+        "district_a_pcm"
+      ],
+      "requirement": "每个启用储热资产的全部时段均有完整且不重复的状态/充热/放热证据"
+    },
+    {
+      "gate": "storage_boundary_conditions",
+      "passed": true,
+      "observed": 2,
+      "requirement": "每个储热边界组均满足状态方程闭合及期末库存要求"
+    },
+    {
+      "gate": "storage_all_period_state_equations",
+      "passed": true,
+      "observed": 5.684341886080801e-13,
+      "requirement": "所有小时储热状态转移、SOC界和功率界均独立重算通过"
+    },
+    {
+      "gate": "storage_charge_discharge_complementarity",
+      "passed": true,
+      "observed": 0.0,
+      "requirement": "storage charge and discharge are not simultaneous beyond tolerance"
+    },
+    {
+      "gate": "minimum_clean_heat_share",
+      "passed": true,
+      "observed": 0.9193514480744467,
+      "requirement": "清洁热占比不低于 0.78"
+    }
+  ]
+}

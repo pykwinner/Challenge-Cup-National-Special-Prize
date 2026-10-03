@@ -1,0 +1,6 @@
+series_kind,column,findings,suggested_energy_weight_multiplier,recommended_actions,automatic_application_allowed,caveat
+demand,demand_a_low,maximum_ramp_under_captured,1.066446788356137,add_or_force_maximum_ramp_day,False,"diagnostic_only; preserve total represented days, scenario probabilities and extreme anchors when recalibrating"
+demand,demand_b_low,maximum_ramp_under_captured,1.0673935639834622,add_or_force_maximum_ramp_day,False,"diagnostic_only; preserve total represented days, scenario probabilities and extreme anchors when recalibrating"
+demand,cooling_demand_b,demand_peak_under_captured,1.0407171013028982,add_or_force_maximum_demand_day,False,"diagnostic_only; preserve total represented days, scenario probabilities and extreme anchors when recalibrating"
+demand,cooling_demand_a,demand_peak_under_captured,1.0429332004813103,add_or_force_maximum_demand_day,False,"diagnostic_only; preserve total represented days, scenario probabilities and extreme anchors when recalibrating"
+temperature,outdoor_temp,hot_extreme_under_captured,,add_or_force_maximum_temperature_day,False,"diagnostic_only; preserve total represented days, scenario probabilities and extreme anchors when recalibrating"

@@ -1,0 +1,6 @@
+profiles:
+  - name: scenario3_wuhan_defrost
+    config: ../../../data/public_scenario_inputs/scenario3_wuhan_joint_public.yaml
+    representative_timeseries: scenario3_wuhan_representative_days_2023_defrost.csv
+    annual_timeseries: ../../../data/public_scenario_inputs/scenario3_wuhan_full_year_2023.csv
+    timestamp_column: time

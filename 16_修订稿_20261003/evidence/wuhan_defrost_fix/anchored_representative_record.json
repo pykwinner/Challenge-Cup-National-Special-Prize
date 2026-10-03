@@ -1,0 +1,73 @@
+{
+  "change": "武汉代表时段补充锚点日（供冷峰值 + 除霜最不利）",
+  "generator": {
+    "module": "heatplan.scenarios.extreme_aware_typical_days",
+    "clustering": "heatplan.scenarios.cluster_typical_days",
+    "n_clusters": 6,
+    "random_state": 42
+  },
+  "inputs": {
+    "annual": {
+      "path": "data\\public_scenario_inputs\\scenario3_wuhan_full_year_2023.csv",
+      "sha256": "1413621fb40154673a859396e2229754d5106bcccf3dc61ecf3189696c326b66"
+    },
+    "original_representative": {
+      "path": "data\\public_scenario_inputs\\scenario3_wuhan_representative_days_2023.csv",
+      "sha256": "c27bff9ad585cdaca479b9fb778af674528be97bf6f728b9b0d811ccba386bfc"
+    },
+    "config": {
+      "path": "data\\public_scenario_inputs\\scenario3_wuhan_joint_public.yaml",
+      "sha256": "e4dc29f92cd3f52ac7837df90327bec5645086b0b573a546540c29881d738fce"
+    }
+  },
+  "anchors_applied": [
+    {
+      "anchor_day": "2023-08-17",
+      "label": "cooling_peak_anchor",
+      "why": "供冷峰值日（当前生成器的 maximum_peak::cooling_demand_* 锚点）",
+      "host_cluster": "cluster_1",
+      "host_medoid_day": "2023-07-24",
+      "host_weight": {
+        "before": 62.0,
+        "after": 61.0
+      }
+    },
+    {
+      "anchor_day": "2023-01-31",
+      "label": "heating_ramp_anchor",
+      "why": "采暖负荷最大爬坡日（当前生成器的 maximum_ramp::demand_* 锚点）",
+      "host_cluster": "cluster_3",
+      "host_medoid_day": "2023-03-03",
+      "host_weight": {
+        "before": 63.0,
+        "after": 62.0
+      }
+    },
+    {
+      "anchor_day": "2023-12-19",
+      "label": "defrost_anchor",
+      "why": "除霜最不利日（生成器无此规则，需额外锚点列）",
+      "host_cluster": "cluster_2",
+      "host_medoid_day": "2023-12-24",
+      "host_weight": {
+        "before": 28.0,
+        "after": 27.0
+      }
+    }
+  ],
+  "anchors_not_applied": [
+    {
+      "anchor_day": "2023-11-05",
+      "reason": "minimum_availability::solar_heat_availability；两台太阳能集热容量均为 0，该锚点不产生约束"
+    }
+  ],
+  "total_weight": {
+    "before": 8760.0,
+    "after": 8760.0
+  },
+  "days_before": 9,
+  "days_after": 12,
+  "original_file_untouched": "C:\\Users\\13349\\Desktop\\小挑\\data\\public_scenario_inputs\\scenario3_wuhan_representative_days_2023.csv",
+  "output": "C:\\Users\\13349\\Desktop\\小挑\\16_修订稿_20261003\\evidence\\wuhan_defrost_fix\\scenario3_wuhan_representative_days_2023_anchored.csv",
+  "output_sha256": "ac303b0914f58a656515546784eee5184fc958046a6ea9d02c69274ee1ac4369"
+}

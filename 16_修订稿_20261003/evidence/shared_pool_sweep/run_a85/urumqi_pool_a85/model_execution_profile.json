@@ -1,0 +1,35 @@
+{
+  "planning": {
+    "time_steps": 216,
+    "variables": 11411,
+    "continuous_variables": 11187,
+    "integer_variables": 224,
+    "constraints": 11844,
+    "matrix_nonzeros": 62154,
+    "matrix_density": 0.00045988260141456854,
+    "estimated_csr_and_vector_memory_mb": 1.241912841796875,
+    "conservative_python_build_memory_proxy_mb": 9.222366333007812,
+    "memory_scope": "matrix/vector and Python-build proxies only; excludes solver presolve, branch-and-bound tree, cuts and operating-system overhead",
+    "build_seconds": 0.07158260000869632,
+    "solve_seconds": 0.9802357999142259,
+    "matrix_compile_seconds": 0.0065535001922398806,
+    "matrix_compile_cache_hit": false
+  },
+  "fixed_investment_replay": {
+    "time_steps": 8760,
+    "variables": 449357,
+    "continuous_variables": 440594,
+    "integer_variables": 8763,
+    "constraints": 477314,
+    "matrix_nonzeros": 2308550,
+    "matrix_density": 1.0763254292002154e-05,
+    "estimated_csr_and_vector_memory_mb": 47.522430419921875,
+    "conservative_python_build_memory_proxy_mb": 355.6206512451172,
+    "memory_scope": "matrix/vector and Python-build proxies only; excludes solver presolve, branch-and-bound tree, cuts and operating-system overhead",
+    "build_seconds": 2.9165847001131624,
+    "solve_seconds": 34.20877630007453,
+    "matrix_compile_seconds": 0.2857985000591725,
+    "matrix_compile_cache_hit": false
+  },
+  "pilot_estimate": null
+}

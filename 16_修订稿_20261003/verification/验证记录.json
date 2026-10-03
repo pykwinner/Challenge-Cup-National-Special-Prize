@@ -1,0 +1,104 @@
+{
+  "engine": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)",
+  "compilation_passes": 2,
+  "main_report": {
+    "path": "build\\main.pdf",
+    "pages": 53,
+    "cjk_chars": 18652,
+    "literal_double_question": 0,
+    "sha256": "2cc78b6549b25523c05a1c82396042d3ef82d7bb65b3f3bb10e940aaeb4b1df9"
+  },
+  "main_report_log": {
+    "overfull_boxes": 0,
+    "overfull_max_pt": 0.0,
+    "errors": 0,
+    "undefined_references": 0
+  },
+  "data_tables": {
+    "path": "数据表\\build\\仿真结果数据表.pdf",
+    "pages": 9,
+    "cjk_chars": 3446,
+    "literal_double_question": 0,
+    "sha256": "f56d33aaf1b76ea376f130e0e720c00873ae12666b76d9377900e82fb0d0c76f"
+  },
+  "data_tables_log": {
+    "overfull_boxes": 0,
+    "overfull_max_pt": 0.0,
+    "errors": 0,
+    "undefined_references": 0
+  },
+  "figure_audit": {
+    "referenced": 40,
+    "missing": [],
+    "passed": true
+  },
+  "forbidden_words": {
+    "口径": [],
+    "台账": [],
+    "耦合": [
+      "main.tex:160",
+      "main.tex:205",
+      "main.tex:588",
+      "sections/algorithm-revision.tex:3",
+      "sections/algorithm-revision.tex:37",
+      "sections/algorithm-revision.tex:42",
+      "sections/algorithm-revision.tex:244",
+      "sections/model-appendix.tex:237"
+    ]
+  },
+  "structure_counts": {
+    "main.tex": {
+      "sections": 4,
+      "subsections": 21,
+      "figures": 14,
+      "tables": 1,
+      "equations": 0,
+      "cjk_chars": 8727
+    },
+    "sections/model-derivation.tex": {
+      "sections": 1,
+      "subsections": 7,
+      "figures": 17,
+      "tables": 1,
+      "equations": 17,
+      "cjk_chars": 2988
+    },
+    "sections/algorithm-revision.tex": {
+      "sections": 1,
+      "subsections": 8,
+      "figures": 9,
+      "tables": 4,
+      "equations": 6,
+      "cjk_chars": 5125
+    },
+    "sections/model-appendix.tex": {
+      "sections": 0,
+      "subsections": 0,
+      "figures": 0,
+      "tables": 0,
+      "equations": 29,
+      "cjk_chars": 1569
+    }
+  },
+  "dropped_experiments": [
+    {
+      "experiment": "工业余热共同预算额度扫描 · 峰值 55% 档（594.84 kW）",
+      "reason": "同批重复运行并发写入同一结果文件，覆盖了该档的结果存档；该档首次完成时的数值（可行值 681023.12 元、验收未通过）此后无法复现，故不报告"
+    },
+    {
+      "experiment": "工业余热共同预算额度扫描 · 峰值 40% 档（432.61 kW）",
+      "reason": "触发外部墙钟上限（2280 s）被终止，未取得结果"
+    },
+    {
+      "experiment": "图 24 重出",
+      "reason": "全仓无该图生成脚本、底表不可得；本轮仅未处理，未凭图形估造底表"
+    }
+  ],
+  "acceptance": {
+    "overfull_within_2pt": true,
+    "no_latex_error": true,
+    "no_undefined_reference": true,
+    "no_literal_double_question": true,
+    "all_figures_present": true
+  }
+}

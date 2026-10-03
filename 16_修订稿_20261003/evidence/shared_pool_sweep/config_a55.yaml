@@ -1,0 +1,8 @@
+extends: C:/Users/13349/Desktop/小挑/data/public_scenario_inputs/scenario1_urumqi_deterministic_public.yaml
+shared_heat_resources:
+- name: plant_industrial_waste_stream
+  source_names:
+  - industrial_waste_heat
+  - central_waste_source_hp
+  transfer_efficiency: 1.0
+  available_heat_kw: 594.8421155487011

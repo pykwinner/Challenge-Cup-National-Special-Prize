@@ -1,0 +1,226 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage[top=2.54cm,bottom=2.54cm,left=3.18cm,right=3.18cm]{geometry}
+\setmainfont{NotoSerifSC-Regular.ttf}[Path=../build-fonts/,BoldFont=NotoSerifSC-Bold.ttf]
+\newfontfamily\headingfont{NotoSansSC-Regular.ttf}[Path=../build-fonts/]
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array,tabularx,calc}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\DeclareCaptionFont{captioncn}{\setstretch{1.0}}
+\DeclareCaptionLabelSeparator{twospaces}{\hspace{2em}}
+\captionsetup{font=captioncn,labelsep=twospaces,justification=centering,singlelinecheck=true}
+\captionsetup[table]{position=top}
+\AtBeginEnvironment{tabular}{\xiaosi\setstretch{1.0}}
+\AtBeginEnvironment{tabularx}{\xiaosi\setstretch{1.0}}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{7.5pt}
+\setstretch{1.25}
+\titleformat{\section}{\raggedright\headingfont\sihao}{}{0em}{}
+\titleformat{\subsection}{\raggedright\headingfont\xiaosi}{}{0em}{}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\begin{document}
+\begin{center}
+{\headingfont\sanhao 暖城向新·热力不息\quad 仿真结果数据表\par}
+\vspace{6pt}
+{\xiaosi 中国建筑科学研究院 CP-202611\quad 城镇供热源荷匹配与规划寻优\par}
+\vspace{4pt}
+{\xiaosi 本册为研究报告的配套材料，登记本次补充验证的全部实验与结果\par}
+\end{center}
+\vspace{6pt}
+
+\section*{总说明}
+
+本册登记本次修订实际执行并留存的实验。所列为可回查记录：每个场景的输入、配置、求解状态、上下界、间隙、耗时与逐时验收，均可按登记的文件路径逐项回查。初赛稿中原始日志未随本稿留存的数值，研究报告正文已标为历史报告值，不列入本册。
+
+\section*{甲\quad 表A：三场景实验登记}
+
+\begin{table}[H]
+\centering
+\caption{三场景输入与实验登记（本次补充验证）}
+\label{tab:alg-annex-a}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.09\textwidth}p{0.11\textwidth}p{0.07\textwidth}p{0.16\textwidth}p{0.13\textwidth}X@{}}
+\toprule
+编号 & 城市与服务对象 & 节点/热源/管段 & 时间窗口（左闭右开） & 有效小时 & 主要配置\\ \midrule
+S1 & 乌鲁木齐：既有大型集中供热低碳重构 & 3 / 7 / 3 & 2023-01-01 00:00 --- 2024-01-01 00:00 & 8760 & 温位 75/45~$^{\circ}$C；等效热容 600、420、480、340~kWh/K；恢复损失率 0.025/0.03；移峰比例上限 0.08；可靠容量裕度 0.25；折现率 5\%，寿命 20~a；碳价 0.10 元/kg\\ \addlinespace
+S2 & 固原：分散式独立供热清洁化转型 & 3 / 6 / 2 & 2023-01-01 00:00 --- 2024-01-01 00:00 & 8760 & 温位与等效热状态同 S1；移峰比例上限 0.08；可靠容量裕度 0.25；并网既有 220~kW、可扩 1300~kW；生物质与微网可再生可投\\ \addlinespace
+S3 & 武汉：夏热冬冷地区高品质新建 & 3 / 7 / 1 & 2023-01-01 00:00 --- 2024-01-01 00:00 & 8760 & 温位 75/45~$^{\circ}$C；等效热容 600、520、480、430~kWh/K；移峰比例上限 0.16；可靠容量裕度 0.10；并网无既有容量、可扩 1500~kW；清洁热占比下限 0.90；单位供热成本上限 2.0 元/kWh；含供冷服务\\ \bottomrule
+\end{tabularx}
+\end{table}
+
+三个场景均为代表性多节点系统，缩比系数只用于规模换算，不代表对城市地理系统的完整复刻。三个场景的供暖季窗口与法定属性登记为：乌鲁木齐[2024-10-10, 2025-04-11)的法定供热期 4392~h，固原[2024-10-15, 2025-04-16)的法定供热期 4392~h（依据《固原市城市供热管理办法》，固原市人民政府令第 3 号，2024 年 10 月 19 日施行，第十三条；该市 2024---2025 年度采暖费缴纳通知另按当年实际计费期 166 天即 3984~h 执行，两者分列，本册只把前者用作模拟窗口），武汉[2024-11-16, 2025-03-16)的项目服务周期 2880~h；三者均附政府公开来源。武汉不属于国家强制集中供暖区，其窗口只表述为项目服务周期。本册登记的补充验证在 2023 日日历年 8760~h 上执行，与上述供暖季窗口分属两个时间范围。
+
+\section*{乙\quad 表B：逐方案求解、逐时状态与连续验收登记}
+
+\begin{table}[H]
+\centering
+\caption{逐方案求解与连续验收登记（记录文件为相对于输出根目录的完整相对路径）}
+\label{tab:alg-annex-b}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.10\textwidth}p{0.06\textwidth}p{0.07\textwidth}p{0.13\textwidth}p{0.09\textwidth}p{0.06\textwidth}X@{}}
+\toprule
+方案 & 阶段 & 终止状态 & 可行值 / 下界（万元） & 相对间隙 & 失供率 & 记录文件\\ \midrule
+S1 乌鲁木齐 & 规划 & 0 & 65.788 / 65.661 & $1.93\times10^{-3}$ & 0 & \path{representative_planning/summary.json}\\ \addlinespace
+S1 乌鲁木齐 & 回放 & 0 & 66.065 / 66.012 & $8.13\times10^{-4}$ & 0 & \path{fixed_investment_annual_replay/summary.json}\\ \addlinespace
+S1 乌鲁木齐 & 验收 & 15/15 项 & --- & --- & --- & \path{annual_replay_acceptance_certificate.json}\\ \addlinespace
+S2 固原 & 规划 & 0 & 135.774 / 135.770 & $3.17\times10^{-5}$ & 0 & \path{representative_planning/summary.json}\\ \addlinespace
+S2 固原 & 回放 & 0 & 138.057 / 137.410 & $4.69\times10^{-3}$ & 0 & \path{fixed_investment_annual_replay/summary.json}\\ \addlinespace
+S2 固原 & 验收 & 16/16 项 & --- & --- & --- & \path{annual_replay_acceptance_certificate.json}\\ \addlinespace
+S3 武汉 & 规划 & 0 & 54.603 / 54.603 & 0 & 0 & \path{representative_planning/summary.json}\\ \addlinespace
+S3 武汉 & 回放 & 0 & 56.029 / 56.029 & 0 & 0 & \path{fixed_investment_annual_replay/summary.json}\\ \addlinespace
+S3 武汉 & 验收 & 17/17 项 & --- & --- & --- & \path{annual_replay_acceptance_certificate.json}\\ \bottomrule
+\end{tabularx}
+\end{table}
+
+表\ref{tab:alg-annex-b}的记录文件为相对各场景目录的路径，场景目录分别为 \path{scenario1_urumqi}、\path{scenario2_guyuan} 与 \path{scenario3_wuhan_anchored}。S1、S2 的输出根目录为 \texttt{evidence/annual\_replay\_20261003/}，S3 为 \texttt{evidence/wuhan\_defrost\_fix/run\_anchored/}；同一场景目录另有 \texttt{batch\_run\_configuration.json}（登记该批命令、输入路径与逐文件 SHA-256）、\texttt{dispatch.csv}、\texttt{chronology\_quality\_audit.json} 与 \texttt{batch.stdout.log}。表\ref{tab:alg-annex-b}中的“相对间隙”为求解器返回的可行值与对偶界之差除以可行值；上下界取自同一模型、同一阶段与同一目标，不含跨阶段折算。“终止状态”列的 0 表示按登记的绝对容差 $10^{-6}$、相对容差 $10^{-8}$ 与相对间隙阈值判定最优；相对间隙非零的行，其最优性在该登记容差内成立。验收项逐项覆盖完整日历年、代表时段覆盖、规划与回放最优性、数值可行性、投资冻结、构模前可靠容量、供热与供冷可靠性、储热证据与状态方程、地源年度平衡与清洁热占比。S3 的分母为 17 项，S1、S2 分别为 15、16 项，条目数差别来自各自启用模块不同。
+
+\begin{table}[H]
+\centering
+\caption{逐时状态初末值与残差登记（单位 kWh）}
+\label{tab:alg-annex-b2}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}p{0.07\textwidth}p{0.14\textwidth}p{0.06\textwidth}p{0.09\textwidth}p{0.09\textwidth}p{0.09\textwidth}p{0.09\textwidth}X@{}}
+\toprule
+场景 & 状态量 & 单元 & 初值 & 末值 & 全年最小 & 全年最大 & 状态方程最大残差\\ \midrule
+S1 & 低温储热罐 SOC & A 区 &99.601 & 99.601 & 0 & 100 & $1.208\times10^{-13}$\\ \addlinespace
+S1 & 相变储热 SOC & A 区 &0 & 0 & 0 & 0 & 同上\\ \addlinespace
+S1 & 等效热状态 $E$（高） & A 区 &0.00910 & 0.00934 & $-59.989$ & 12.761 & 无登记\\ \addlinespace
+S1 & 等效热状态 $E$（低） & A 区 &0.00086 & 0.00088 & $-38.234$ & 29.894 & 无登记\\ \addlinespace
+S1 & 等效热状态 $E$（高） & B 区 &0.00069 & 0.00071 & $-69.585$ & 45.187 & 无登记\\ \addlinespace
+S1 & 等效热状态 $E$（低） & B 区 &0 & 0 & $-47.150$ & 31.447 & 无登记\\ \addlinespace
+S2 & 低温储热罐 SOC & A 区 &0 & 0 & 0 & 0 & $5.684\times10^{-13}$\\ \addlinespace
+S2 & 相变储热 SOC & A 区 &0 & 0 & 0 & 500 & 同上\\ \addlinespace
+S2 & 等效热状态 $E$（高） & A 区 &0.00419 & 0.00429 & $-86.390$ & 78.034 & 无登记\\ \addlinespace
+S2 & 等效热状态 $E$（低） & A 区 &3.32110 & 3.40625 & $-55.262$ & 48.327 & 无登记\\ \addlinespace
+S2 & 等效热状态 $E$（高） & B 区 &0.00025 & 0.00026 & $-70.555$ & 50.036 & 无登记\\ \addlinespace
+S2 & 等效热状态 $E$（低） & B 区 &3.37182 & 3.47611 & $-63.096$ & 43.006 & 无登记\\ \addlinespace
+S3 & 相变储热 SOC & A 区 &0 & 0 & 0 & 900 & $3.961\times10^{-13}$\\ \addlinespace
+S3 & 相变储热 SOC & B 区 &0 & 0 & 0 & 800 & 同上\\ \addlinespace
+S3 & 等效热状态 $E$（低） & A 区 &0.04256 & 0.04365 & $-61.113$ & 7.322 & 无登记\\ \addlinespace
+S3 & 等效热状态 $E$（低） & B 区 &0.00418 & 0.00431 & $-59.179$ & 31.334 & 无登记\\ \bottomrule
+\end{tabularx}
+\end{table}
+
+表\ref{tab:alg-annex-b2}中「单元」列的 A 区、B 区分别指 \texttt{district\_a} 与 \texttt{district\_b}。储热部分取自各场景的 \texttt{seasonal\_storage\_postcheck.csv}，状态与残差同表；等效热状态部分取自各场景回放目录的 \texttt{dispatch.csv} 中 \texttt{building\_thermal\_state} 类别，首末值按全年首末小时读取，最小与最大为全年逐时极值。储热状态方程最大残差为验收证书中 \texttt{storage\_all\_period\_state\_equations} 项的观测值，S1、S2、S3 依次为 $1.208\times10^{-13}$、$5.684\times10^{-13}$、$3.961\times10^{-13}$；各场景储热的边界模式均为 cyclic（周期闭合），各装置初末值之差为零。等效热状态 $E$ 是相对基准轨迹的调节裕度，用于记录移峰量与舒适偏差，本册登记其初末值与全年极值。舒适侧的同批记录为温度偏差度时，S1、S2、S3 依次为 57.34、179.04、6.96，其中占用时段分别为 57.34、179.04、4.29。
+
+\section*{丙\quad 表C：共享容量向下传递的单因素对照}
+
+\begin{table}[H]
+\centering
+\caption{上层共享接入容量收紧对下层运行的单因素对照（原型尺度）}
+\label{tab:alg-annex-c}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.14\textwidth}p{0.10\textwidth}p{0.14\textwidth}p{0.12\textwidth}p{0.12\textwidth}X@{}}
+\toprule
+共享接入上限/kW & 求解状态 & 电费/元 & 购电量/kWh & 碳排放/kg & 相对最宽松档的变化\\ \midrule
+无限 & 0（最优，gap 0） & 4298.54 & 6988.61 & 2826.19 & ---\\ \addlinespace
+6.4796 & 0（最优，gap 0） & 4405.67 & 6805.33 & 2752.08 & 电费 $+2.49\%$，电量 $-2.62\%$\\ \addlinespace
+6.0 & 0（最优，gap 0） & 4424.40 & 6774.40 & 2739.57 & 电费 $+2.93\%$，电量 $-3.06\%$\\ \addlinespace
+5.5 & 0（最优，gap 0） & 4447.07 & 6734.81 & 2723.56 & 电费 $+3.46\%$，电量 $-3.63\%$\\ \addlinespace
+5.2 & 0（最优，gap 0） & 4462.40 & 6710.27 & 2713.63 & 电费 $+3.81\%$，电量 $-3.98\%$\\ \bottomrule
+\end{tabularx}
+\end{table}
+
+表\ref{tab:alg-annex-c}的对照只改变上层共享接入容量一处，负荷、气象、电价、舒适要求、初末状态与设备候选均保持不变；五档均取得已证最优解。收紧上层接入后电费上升、购电量与碳排放下降，方向相反，说明上层容量限制确实传递到了下层运行，而不是只改变了账面上的接入规模。
+
+该表的碳因子与主场景分属不同登记值：本实验的碳排放由逐时输入列 \texttt{grid\_emission\_factor} 给出，全窗口取常数 $0.4044$~kgCO$_2$/kWh（湖北省年度平均因子），因此表内碳排与购电量之比恒为该常数；三个主场景的全年回放使用同一列的分省逐时值，范围为 $0.43$---$0.69$~kgCO$_2$/kWh。
+
+传递的逐时形态可以进一步定位：收紧共享接入后，与最宽松档相比发生变化的时段由 1120 小时增至 1467 小时，最大逐时功率差由 12.12~kW 增至 13.39~kW；减少的供热量主要集中在 B 栋（合计 $-110.75$ 至 $-186.01$~kWh），A 栋减少较少（$-65.62$ 至 $-81.84$~kWh），即上层配电约束先压缩负荷较大一侧的出力，再带动另一侧。该原型的设备构成为一台电制热源（效率 1.0）、两条区域干线和无储热配置，因此这一响应是配电约束直接改写逐时出力与两楼分配的结果，不涉及设备效率切换或储热充放。
+
+该对照的对象为两栋 48~m$^2$ 原型建筑、两条区域干线、2880~h 公共参考窗口，属于原型尺度的跨层机制证据；三城规模的同类收紧对照留待后续。
+
+\section*{丁\quad 表D：工业余热共同预算额度扫描}
+
+\begin{table}[H]
+\centering
+\caption{乌鲁木齐工业余热共同预算额度的单因素扫描（2023 年 8760~h 冻结投资回放）}
+\label{tab:alg-annex-pool}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.11\textwidth}p{0.10\textwidth}p{0.14\textwidth}p{0.14\textwidth}p{0.08\textwidth}p{0.045\textwidth}p{0.125\textwidth}X@{}}
+\toprule
+资源侧额度/kW & 上游取热峰值/kW & 回放可行值/元 & 回放对偶界/元 & 相对间隙 & 终止 & 碳排放/kg & 验收\\ \midrule
+无约束（$10^6$） & 1081.53 & 660657.56 & 660117.35 & $8.18\times10^{-4}$ & 0 & 285020.65 & 通过\\ \addlinespace
+1081.53（峰值 100\%） & 1076.93 & 660700.21 & 659989.02 & $1.08\times10^{-3}$ & 0 & 285448.08 & 通过\\ \addlinespace
+919.30（85\%） & 919.30 & 664400.96 & 663547.68 & $1.28\times10^{-3}$ & 0 & 284069.48 & 通过\\ \addlinespace
+757.07（70\%） & 757.07 & 669762.35 & 668428.45 & $1.99\times10^{-3}$ & 0 & 283575.47 & 通过\\ \addlinespace
+650.00（补充定位档） & 650.00 & 675220.41 & 673009.02 & $3.28\times10^{-3}$ & 0 & 285105.98 & 通过\\ \addlinespace
+594.84（55\%） & 594.84 & 681023.12 & 675223.22 & $8.52\times10^{-3}$ & 1 & 288979.89 & \textbf{未通过}\\ \addlinespace
+432.61（40\%） & --- & --- & --- & --- & 未完成 & --- & 未取得\\ \bottomrule
+\end{tabularx}
+\end{table}
+
+扫描只改变资源池额度一处，其余配置保持不变。额度以无共同预算解的上游取热峰值$1081.53$~kW为基准分档；资源池按上游取热合计式计热，传热效率取 $1.0$（无损）。该取值使约束最弱，因此在此取值下已经出现的变化不是效率假设造成的。终止列为求解器返回状态：0 表示按登记容差判定最优，1 表示在 1800~s 回放时限内未取得最优性证明；两列上下界取自同一模型、同一阶段与同一目标。
+
+逐档对偶界给出了费用上升的可证范围。以额度收紧档的对偶界与无约束档的可行值比较：85\% 档的对偶界（663547.68 元）已高于无约束档的可行值（660657.56 元），费用上升在此档及以下各档已被证明，对应区间为 $+0.44\%$ 至 $+0.57\%$；70\% 档为 $+1.18\%$ 至 $+1.38\%$；650~kW 档为 $+1.87\%$ 至 $+2.20\%$。峰值 100\% 档的可行值比无约束档高 42.65 元（$+0.006\%$），其对偶界仍低于无约束档的可行值，差异小于基准回放自身的相对间隙（$8.18\times10^{-4}$，折合约 540 元），因此该档说明额度收到观测峰值时不产生可分辨的费用变化。
+
+碳排放不单调：峰值档附近先小幅上升（$+0.150\%$），中段两档转为下降（$-0.334\%$、$-0.507\%$），650~kW 档回到 $+0.030\%$，最紧档回升至 $+1.389\%$。费用方向一致而排放方向不一致，说明原推荐解建立在两条余热路径并行取用之上；资源侧可用热量低于该峰值后，方案要在费用与排放之间重新权衡，而该权衡的具体形式需要重新规划才能给出，本册只登记冻结投资下的运行响应。
+
+55\% 档的验收未通过：其终止状态为时限内未取得最优性证明，可行值 681023.12 元与对偶界 675223.22 元之间的相对间隙为 $8.52\times10^{-3}$，费用上升的可证区间为 $+2.20\%$ 至 $+3.08\%$，其值只作为该档区间的上端使用。40\% 档触发外部墙钟上限被终止，本册不报告其数值。该额度是研究设计参数，不是已核验的城市资源量。
+
+\section*{戊\quad 表E：武汉代表时段锚点修正登记}
+
+\begin{table}[H]
+\centering
+\caption{武汉代表时段锚点补充与新旧容量对照}
+\label{tab:alg-annex-e}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.13\textwidth}p{0.20\textwidth}p{0.13\textwidth}p{0.13\textwidth}X@{}}
+\toprule
+锚点日 & 锚定理由 & 原属簇 & 簇权重 & 影响\\ \midrule
+2023-08-17 & 供冷负荷峰值（逐列峰值锚点） & cluster\_1 & 62$\rightarrow$61 & 全年供冷峰值日原不在代表时段，冻结容量低于全年需求，全年回放不可行\\ \addlinespace
+2023-01-31 & 采暖负荷最大爬坡（逐列爬坡锚点） & cluster\_3 & 63$\rightarrow$62 & 爬坡捕获率由 0.86 恢复；否则代表时段覆盖审计不通过\\ \addlinespace
+2023-12-19 & 除霜最不利小时所在日（需额外锚点列） & cluster\_2 & 28$\rightarrow$27 & 并网接入容量原比全年可靠电力需求低 0.1058~kW，构模前可靠容量审计拒绝放行\\ \bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{武汉冻结投资容量对照（单位：kW；储热为 kWh）}
+\label{tab:alg-annex-e2}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.32\textwidth}p{0.15\textwidth}p{0.15\textwidth}X@{}}
+\toprule
+资产 & 原代表时段 & 补锚点后 & 说明\\ \midrule
+并网接入容量 & 543.4 & 575.0 & 原值低于全年可靠电力需求\\ \addlinespace
+A\,区地源热泵 & 387.8 & 305.5 & 热泵容量由地源向空气源转移\\ \addlinespace
+B\,区地源热泵 & 346.8 & 280.5 & 同上\\ \addlinespace
+A\,区空气源热泵 & 6.15 & 178.1 & 承担供冷峰值\\ \addlinespace
+B\,区分散空气源热泵 & 3.73 & 99.37 & 同上\\ \addlinespace
+A\,区应急电锅炉 & 420 & 420 & 不变\\ \addlinespace
+A\,区相变储热 & 900 & 900 & 单位 kWh；不变\\ \addlinespace
+B\,区相变储热 & 800 & 800 & 单位 kWh；不变\\ \addlinespace
+热泵容量合计 & 744.5 & 863.5 & 全年供冷峰值合计为 863.45~kW\\ \bottomrule
+\end{tabularx}
+\end{table}
+
+代表时段的锚点补入按生成器的锚点语义执行：每个新增锚点日从\textbf{它自己所属簇}的普通日里扣掉一次出现，代表时段总权重保持 8760~h 不变，避免同一天既作为独立锚点又被原簇权重重复计入。三个新增锚点的理由分别列于表\ref{tab:alg-annex-e}。另有 2023-11-05 为太阳得热可用率最低日的锚点，因两台太阳能集热容量均为 0 而不产生约束，本次未补入。
+
+该修正属于涉及结果的实质修订：武汉的推荐容量、目标值与排放均随重新规划改变，原值与新值分列表\ref{tab:alg-annex-e2}，不视为纯文字勘误。乌鲁木齐与固原未重生成代表时段，其代表时段对各自负荷序列的全年峰值覆盖率为 100\%，全年回放分别通过 15/15 与 16/16 项；两城与武汉的差别在于旧锚点规则只锚定集中供热负荷列，而武汉的供冷列挂在多能服务下，未被旧规则覆盖。
+
+\section*{己\quad 复现入口}
+
+上述实验的统一入口为：设置\texttt{PYTHONPATH=src}后，用当前解释器执行\texttt{python -m heatplan.annual\_replay\_batch\_cli}，并用\texttt{--manifest}传入场景清单、用\texttt{--output}指定输出目录；清单逐项给出场景配置、代表时段输入与全年时序输入，\texttt{--preflight-only}可在建模前核对时序完整性。以固原回放为例，本批实际执行的命令为\texttt{python -m heatplan.annual\_replay\_cli}，参数依次为\path{--config scenario2_guyuan_evidence_public.yaml}、\path{--representative-timeseries scenario2_guyuan_representative_days_2023.csv}、\path{--annual-timeseries scenario2_guyuan_full_year_2023.csv}、\path{--timestamp-column time}、\path{--planning-time-limit 180.0}、\path{--replay-time-limit 1800.0}。三个输入文件的绝对路径、逐文件 SHA-256 与完整命令行登记于该场景输出目录的\texttt{batch\_run\_configuration.json}，可据此确认所评的是哪一份输入；结果文件的相对路径定位见表\ref{tab:alg-annex-b}，输出根目录见其表下说明。
+
+依赖与运行环境分两套登记，二者不同。修订工作区本批运行于 CPython 3.13.15，依赖为 numpy 2.5.2、pandas 3.0.5、scipy 1.16.3、PyYAML 6.0.3、scikit-learn 1.9.0、matplotlib 3.11.1；发布的冻结批次登记于 CPython 3.12.7，依赖为 numpy 1.26.4、pandas 2.2.2、scipy 1.15.3、PyYAML 6.0.3、scikit-learn 1.7.2、matplotlib 3.9.2。锁文件为仓库根目录的\texttt{requirements-validated.txt}、\texttt{requirements-release-rc6.txt}与\texttt{docs/github\_release\_11.12.0rc6/requirements-release-rc6-lock.txt}。两套环境的主版本不同，本册不宣称本批结果可在冻结环境上逐位复现。
+
+测试规模按冻结批次登记，不按当前工作树重新计数：仓库\texttt{tests/}下共 66 个测试文件；最近一次全量运行为 882 项通过、2 项按条件排除、26 项子测试通过，用时 82.74~s，记录为\texttt{docs/implementation\_20261002\_followup/final\_tests\_02.log}；发布批次的两次运行按用例去重后共 252 项通过，无失败、错误或跳过项。
+
+\end{document}

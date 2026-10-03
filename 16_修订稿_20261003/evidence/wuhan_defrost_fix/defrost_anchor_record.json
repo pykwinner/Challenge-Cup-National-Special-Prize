@@ -1,0 +1,20 @@
+{
+  "change": "武汉代表时段新增除霜最不利日锚点",
+  "anchor_day": "2023-12-19",
+  "host_cluster": "cluster_2",
+  "host_cluster_weight": {
+    "before": 28.0,
+    "after": 27.0
+  },
+  "total_weight": {
+    "before": 8760.0,
+    "after": 8760.0
+  },
+  "days_before": 9,
+  "days_after": 10,
+  "rows_before": 216,
+  "rows_after": 240,
+  "original_file_untouched": "C:\\Users\\13349\\Desktop\\小挑\\data\\public_scenario_inputs\\scenario3_wuhan_representative_days_2023.csv",
+  "output": "C:\\Users\\13349\\Desktop\\小挑\\16_修订稿_20261003\\evidence\\wuhan_defrost_fix\\scenario3_wuhan_representative_days_2023_defrost.csv",
+  "why_this_day": "全年 1/COP 最大在 2023-12-19 23:00（T=-1.78 ℃、RH=0.977，位于除霜带 [-2,7] ℃ 内且湿度接近饱和）；该小时未被原代表时段覆盖，导致规划期并网容量比全年可靠电力需求低 0.1058 kW。"
+}

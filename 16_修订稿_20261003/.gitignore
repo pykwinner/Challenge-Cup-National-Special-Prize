@@ -1,0 +1,11 @@
+# 本工作区入库范围：修订源、图件、交付件与 evidence 下的记录类文件。
+# 编译产物与逐时中间产物可重跑复得，不入库。
+
+build/
+数据表/build/
+__pycache__/
+
+# 逐时调度中间产物（单份约 40 MB），记录类 summary/审计/证书已在同一目录入库
+**/dispatch.csv
+**/dispatch.png
+.batch_history/

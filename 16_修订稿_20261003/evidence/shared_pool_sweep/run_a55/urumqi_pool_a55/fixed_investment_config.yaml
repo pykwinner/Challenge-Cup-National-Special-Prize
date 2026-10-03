@@ -1,0 +1,352 @@
+planning:
+  region_profile: urumqi_public_weather_deterministic_design
+  design_outdoor_temperature_c: -26
+  discount_rate: 0.05
+  asset_lifetime_years: 20
+  time_step_hours: 1
+  representative_day_weight: 180
+  carbon_price_yuan_per_kg: 0.1
+  exergy_penalty_yuan_per_kwh: 0.3
+  unserved_heat_penalty_yuan_per_kwh: 100
+  max_unserved_rate: 0.0
+  firm_capacity_reserve_margin: 0.25
+  critical_peak_duration_hours: 12
+  n_minus_1_source_names:
+  - existing_chp
+  - gas_peak_boiler
+  n_minus_1_pipe_names:
+  - trunk_a
+  ambient_reference_c: 0
+  mip_gap: 0.005
+  time_limit_seconds: 120
+  n_minus_1_pipe_reserve_margin: 0.15
+grades:
+- name: high
+  temperature_c: 75
+- name: low
+  temperature_c: 45
+nodes:
+- name: plant
+  x: 0.0
+  y: 0.0
+  demand_columns: {}
+- name: district_a
+  x: 1.2
+  y: 0.7
+  demand_columns:
+    high: demand_a_high
+    low: demand_a_low
+  temperature_retrofit:
+    source_grade: high
+    target_grade: low
+    eligible_fraction: 0.45
+    capex_total_yuan: 0.0
+    fixed_value: 0.0
+  thermal_inertia:
+    high:
+      thermal_capacity_kwh_per_c: 600
+      max_temperature_deviation_c: 1.0
+      recovery_loss_per_hour: 0.025
+      comfort_penalty_yuan_per_degree_hour: 0.22
+    low:
+      thermal_capacity_kwh_per_c: 420
+      max_temperature_deviation_c: 1.0
+      recovery_loss_per_hour: 0.025
+      comfort_penalty_yuan_per_degree_hour: 0.22
+- name: district_b
+  x: 2.1
+  y: -0.3
+  demand_columns:
+    high: demand_b_high
+    low: demand_b_low
+  temperature_retrofit:
+    source_grade: high
+    target_grade: low
+    eligible_fraction: 0.35
+    capex_total_yuan: 0.0
+    fixed_value: 0.0
+  thermal_inertia:
+    high:
+      thermal_capacity_kwh_per_c: 480
+      max_temperature_deviation_c: 1.0
+      recovery_loss_per_hour: 0.03
+      comfort_penalty_yuan_per_degree_hour: 0.25
+    low:
+      thermal_capacity_kwh_per_c: 340
+      max_temperature_deviation_c: 1.0
+      recovery_loss_per_hour: 0.03
+      comfort_penalty_yuan_per_degree_hour: 0.25
+sources:
+- name: industrial_waste_heat
+  node: plant
+  type: direct_heat
+  resource_kind: waste_heat
+  supply_temp_c: 92
+  allowed_grades:
+  - high
+  - low
+  existing_capacity_kw: 650.0
+  max_new_capacity_kw: 0.0
+  capex_yuan_per_kw: 1550
+  variable_cost_yuan_per_kwh_heat: 0.045
+  emission_kg_per_kwh_heat: 0.015
+  availability_column: waste_heat_availability
+  firm_capacity_credit: 0.8
+  firm_capacity_availability: 0.65
+  max_retire_capacity_kw: 0.0
+- name: central_waste_source_hp
+  node: plant
+  type: heat_pump
+  resource_kind: waste_heat
+  allowed_grades:
+  - high
+  - low
+  existing_capacity_kw: 466.3790936769602
+  max_new_capacity_kw: 0.0
+  capex_yuan_per_kw: 2100
+  variable_om_yuan_per_kwh_heat: 0.018
+  source_temp_column: waste_source_temp
+  carnot_efficiency: 0.48
+  cop_min: 1.8
+  cop_max: 5.5
+  firm_capacity_credit: 0.85
+  firm_capacity_availability: 0.65
+  max_retire_capacity_kw: 0.0
+- name: gas_peak_boiler
+  node: plant
+  type: direct_heat
+  resource_kind: fossil
+  supply_temp_c: 110
+  allowed_grades:
+  - high
+  - low
+  existing_capacity_kw: 1100.0000000000002
+  max_new_capacity_kw: 0.0
+  variable_cost_yuan_per_kwh_heat: 0.36
+  emission_kg_per_kwh_heat: 0.205
+  unit_commitment: false
+  minimum_output_fraction: 0.12
+  ramp_up_fraction_per_hour: 0.45
+  ramp_down_fraction_per_hour: 0.55
+  startup_cost_yuan: 180
+  shutdown_cost_yuan: 40
+  firm_capacity_credit: 1.0
+  max_retire_capacity_kw: 0.0
+  decommissioning_cost_yuan_per_kw: 65
+  fixed_om_yuan_per_kw_year: 16
+- name: distributed_air_hp_b
+  node: district_b
+  type: heat_pump
+  resource_kind: renewable
+  allowed_grades:
+  - low
+  existing_capacity_kw: 282.1772192827749
+  max_new_capacity_kw: 0.0
+  capex_yuan_per_kw: 1850
+  variable_om_yuan_per_kwh_heat: 0.022
+  source_temp_column: outdoor_temp
+  carnot_efficiency: 0.42
+  cop_min: 1.5
+  cop_max: 4.2
+  cutoff_temperature_c: -25
+  low_temperature_derating:
+    threshold_c: -7
+    slope_per_c: 0.025
+    minimum_factor: 0.55
+  defrost_temperature_band_c:
+  - -5
+  - 5
+  defrost_cop_multiplier: 0.88
+  firm_capacity_credit: 0.55
+  firm_capacity_availability: 0.0
+  max_retire_capacity_kw: 0.0
+- name: electric_backup_boiler
+  node: plant
+  type: electric_boiler
+  resource_kind: electric
+  supply_temp_c: 100
+  allowed_grades:
+  - high
+  - low
+  existing_capacity_kw: 32.17622704077694
+  max_new_capacity_kw: 0.0
+  capex_yuan_per_kw: 560
+  variable_om_yuan_per_kwh_heat: 0.012
+  efficiency: 0.98
+  firm_capacity_credit: 0.95
+  max_retire_capacity_kw: 0.0
+- name: district_a_emergency_eb
+  node: district_a
+  type: electric_boiler
+  resource_kind: electric
+  supply_temp_c: 100
+  allowed_grades:
+  - high
+  - low
+  existing_capacity_kw: 1194.0421385331222
+  max_new_capacity_kw: 0.0
+  capex_yuan_per_kw: 650
+  variable_om_yuan_per_kwh_heat: 0.015
+  efficiency: 0.98
+  firm_capacity_credit: 0.95
+  max_retire_capacity_kw: 0.0
+- name: existing_chp
+  node: plant
+  type: chp
+  resource_kind: fossil
+  supply_temp_c: 105
+  allowed_grades:
+  - high
+  - low
+  existing_capacity_kw: 1100.0
+  max_new_capacity_kw: 0.0
+  max_retire_capacity_kw: 0.0
+  decommissioning_cost_yuan_per_kw: 110
+  fixed_om_yuan_per_kw_year: 28
+  variable_cost_yuan_per_kwh_heat: 0.29
+  emission_kg_per_kwh_heat: 0.19
+  electricity_to_heat_ratio: 0.35
+  electricity_to_heat_ratio_min: 0.2
+  electricity_to_heat_ratio_max: 0.45
+  electricity_export_price_multiplier: 0.85
+  minimum_electricity_output_column: chp_minimum_electricity_kw
+  unit_commitment: false
+  minimum_output_fraction: 0.15
+  ramp_up_fraction_per_hour: 0.35
+  ramp_down_fraction_per_hour: 0.4
+  startup_cost_yuan: 260
+  shutdown_cost_yuan: 60
+  firm_capacity_credit: 1.0
+  heat_rejection_enabled: true
+  max_heat_rejection_kw: 180
+  heat_rejection_penalty_yuan_per_kwh: 0.02
+pipes:
+- name: trunk_a
+  from: plant
+  to: district_a
+  existing_capacity_kw: 1900
+  delivery_efficiency: 0.965
+  cold_loss_sensitivity_per_c: 0.0003
+  loss_reference_temperature_c: 0
+  minimum_delivery_efficiency: 0.92
+  pumping_electricity_kwh_per_kwh_heat: 0.008
+  length_m: 2400
+  roughness_mm: 0.1
+  heat_loss_w_per_mk: 0.24
+  existing_hydraulic:
+    diameter_mm: 200
+  diameter_options: []
+  retrofit:
+    capex_total_yuan: 0.0
+    delivery_efficiency: 0.982
+    cold_loss_sensitivity_per_c: 0.00012
+    loss_reference_temperature_c: 0
+    minimum_delivery_efficiency: 0.955
+    pumping_electricity_kwh_per_kwh_heat: 0.005
+    heat_loss_w_per_mk: 0.16
+    asset_lifetime_years: 25
+    fixed_value: 1.0
+- name: trunk_b
+  from: plant
+  to: district_b
+  existing_capacity_kw: 1600.0
+  delivery_efficiency: 0.955
+  cold_loss_sensitivity_per_c: 0.00035
+  loss_reference_temperature_c: 0
+  minimum_delivery_efficiency: 0.9
+  pumping_electricity_kwh_per_kwh_heat: 0.01
+  length_m: 3100
+  roughness_mm: 0.1
+  heat_loss_w_per_mk: 0.23
+  diameter_options: []
+- name: interconnector_ab
+  from: district_a
+  to: district_b
+  existing_capacity_kw: 500.0
+  delivery_efficiency: 0.972
+  bidirectional: true
+  cold_loss_sensitivity_per_c: 0.00025
+  loss_reference_temperature_c: 0
+  minimum_delivery_efficiency: 0.93
+  pumping_electricity_kwh_per_kwh_heat: 0.006
+  length_m: 1450
+  roughness_mm: 0.1
+  heat_loss_w_per_mk: 0.22
+  diameter_options: []
+storages:
+- name: central_low_temp_tank
+  node: plant
+  grade: low
+  existing_capacity_kwh: 100.0
+  max_new_capacity_kwh: 0.0
+  capex_yuan_per_kwh: 260
+  power_to_energy_ratio_per_hour: 0.25
+  charge_efficiency: 0.96
+  discharge_efficiency: 0.96
+  self_loss_per_hour: 0.001
+  boundary_mode: cyclic
+  firm_capacity_credit: 0.9
+  strict_charge_discharge_mode: false
+  throughput_cost_yuan_per_kwh: 0.01
+- name: district_a_pcm
+  node: district_a
+  grade: high
+  existing_capacity_kwh: 0.0
+  max_new_capacity_kwh: 0.0
+  capex_yuan_per_kwh: 430
+  power_to_energy_ratio_per_hour: 0.4
+  charge_efficiency: 0.94
+  discharge_efficiency: 0.94
+  self_loss_per_hour: 0.0015
+  boundary_mode: cyclic
+  firm_capacity_credit: 0.85
+  strict_charge_discharge_mode: false
+grid_connection:
+  existing_capacity_kw: 1247.2742820329527
+  max_new_capacity_kw: 0.0
+  capex_yuan_per_kw: 820
+  reserve_margin: 0.15
+  firm_simultaneity: 1.0
+demand_response:
+  max_shift_fraction: 0.08
+  response_window_hours: 6
+  penalty_yuan_per_kwh: 0.06
+engineering_postcheck:
+  design_delta_t_c: 25
+  water_density_kg_per_m3: 985
+  water_cp_kj_per_kgk: 4.18
+  dynamic_viscosity_pa_s: 0.00055
+  pump_efficiency: 0.72
+  max_velocity_m_per_s: 3.0
+  max_pressure_drop_pa_per_m: 300
+  max_thermal_loss_share: 0.08
+renewable_electricity:
+  availability_column: renewable_power_available_kw
+  price_yuan_per_kwh: 0.12
+  emission_kg_per_kwh: 0.02
+policy:
+  transition_target_scenarios:
+  - full_year
+  minimum_clean_heat_share: 0.75
+  minimum_waste_heat_share: 0.35
+  maximum_fossil_heat_share: 0.25
+  emission_intensity_cap_kg_per_kwh: 0.085
+  minimum_renewable_electricity_absorption_rate: 0.25
+  minimum_pipe_retrofit_count: 1
+shared_heat_resources:
+- name: plant_industrial_waste_stream
+  source_names:
+  - industrial_waste_heat
+  - central_waste_source_hp
+  transfer_efficiency: 1.0
+  available_heat_kw: 594.8421155487011
+replay_service_policy: original_service_requirements
+fixed_investment_accounting:
+  scope: annual_selected_plan_charges
+  components:
+    annualized_capex: 389107.1332906749
+    fixed_om_cost: -6399.999999999996
+  metrics:
+    regulated_annualized_capex_yuan_per_year: 389107.1332906749
+    shared_non_heating_capex_yuan_per_year: 0.0
+    public_subsidy_yuan_per_year: 0.0

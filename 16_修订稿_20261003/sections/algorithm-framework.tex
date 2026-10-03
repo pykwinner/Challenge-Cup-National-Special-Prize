@@ -1,0 +1,1159 @@
+\section{规划寻优算法设计框架}
+
+\subsection{优化问题模型建立}
+% ======================================================================
+
+本节按“决策变量定义—目标函数设置—约束条件分析—模型汇总”四个小节，
+给出源荷匹配与规划寻优问题的完整数学化描述。模型在“公用模型内核
+$+$ 场景适配器”结构下组织：公用内核覆盖全部三类场景共用的资产演化、
+能量守恒、运行与成本核算逻辑；场景适配器（C1 既有大型集中供热低碳重构、
+C2 分散式清洁转型、C3 夏热冬冷高品质新建）通过配置向量
+$\bm{\varphi}_c$ 启停专用变量与约束块。
+
+联合优化的输入、模型、决策和验收四层衔接关系如图~\ref{fig:joint-architecture}
+所示。场景配置与逐时数据进入同一规划内核，投资决策和运行调度共同求解，
+最终通过连续回放与工程验收形成可追溯的输出结果。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.93\textwidth,height=0.44\textheight,keepaspectratio]{algorithm-update/fig02_joint_optimization_architecture.png}
+\caption{源—网—荷—储完整联合优化架构}
+\label{fig:joint-architecture}
+\end{figure}
+
+\subsubsection{决策变量定义}
+
+决策变量按求解层级分为\textbf{规划层（第一阶段）变量}与\textbf{运行层
+（第二阶段）变量}两类。规划层变量在投资冻结后的压力测试与全年回放中
+保持不变；运行层变量随情景 $\omega$、年份 $y$、时段 $t$ 逐点取值。
+
+\paragraph{规划层决策变量}
+
+\begin{table}[H]
+  \centering
+  \caption{规划层决策变量}
+  \label{tab:plan-vars}
+  \small
+  \begin{tabularx}{\textwidth}{llXl}
+    \toprule
+    变量 & 类型 & 含义 & 单位/取值 \\
+    \midrule
+    $K^{\mathrm{new}}_{kny}$ & 连续 & 设备 $k$ 在节点 $n$、年份 $y$ 的新增容量 & $\R_+$/MW \\
+    $K^{\mathrm{ret}}_{kny}$ & 连续 & 设备 $k$ 在节点 $n$、年份 $y$ 的退役容量 & $\R_+$/MW \\
+    $z^{\mathrm{build}}_{kny}$ & 二元 & 是否于 $y$ 年启动建设（触发固定投资） & $\Bset$ \\
+    $z^{\mathrm{ret}}_{kny}$ & 二元 & 是否于 $y$ 年启动退役 & $\Bset$ \\
+    $z^{\mathrm{on}}_{kny}$ & 二元 & 资产在 $y$ 年是否处于可用状态 & $\Bset$ \\
+    $z^{\mathrm{mode}}_{egy}$ & 二元 & 候选管网弧 $e$ 是否选用温位模式 $g$（管网三态：保留/改造/新建） & $\Bset$ \\
+    $z^{\mathrm{size}}_{ed}$ & 二元 & 候选管网弧 $e$ 是否选用管径 $d$ & $\Bset$ \\
+    $K^{\mathrm{TES}}_{sn}$ & 连续 & 储热设施 $s$ 在节点 $n$ 的容量 & $\R_+$/MWh \\
+    $K^{\mathrm{grid}}_{n}$ & 连续 & 节点 $n$ 配电接入增容容量 & $\R_+$/MW \\
+    $z^{\mathrm{retro}}_{by}$ & 二元 & 建筑 $b$ 是否于 $y$ 年完成末端/围护改造 & $\Bset$ \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\paragraph{运行层决策变量}
+
+\begin{table}[H]
+  \centering
+  \caption{运行层决策变量（下标 $(k,n,g,y,t,\omega)$ 按需取用）}
+  \label{tab:op-vars}
+  \small
+  \begin{tabularx}{\textwidth}{llXl}
+    \toprule
+    变量 & 类型 & 含义 & 单位/取值 \\
+    \midrule
+    $Q_{kngyt\omega}$ & 连续 & 设备出力（含余热直供、热泵、锅炉、CHP 供热侧） & $\R_+$/MW \\
+    $u_{knyt\omega},\,v_{knyt\omega}$ & 连续/二元 & 开机状态与启动辅助量（精确状态转移凸包） & $\Bset,\R_+$ \\
+    $\dot m_{egyt\omega}$ & 连续 & 管网弧 $e$ 温位模式 $g$ 下的质量流量 & $\R_+$/kg$\cdot$s$^{-1}$ \\
+    $Q^{\mathrm{ch}}_{sngyt\omega},\,Q^{\mathrm{dis}}_{sngyt\omega}$ & 连续 & 储热充/放热功率 & $\R_+$/MW \\
+    $SOC_{sngyt\omega}$ & 连续 & 储热状态（荷能量） & $\R_+$/MWh \\
+    $\theta_{bnt\omega}$ & 连续 & 建筑 $b$ 室内温度轨迹 & $\R$/K \\
+    $Q^{\mathrm{DR}}_{ngt\omega}$ & 连续 & 可平移/可削减需求响应量 & $\R$/MW \\
+    $P^{\mathrm{imp}}_{y t\omega}$ & 连续 & 逐时购电功率（热泵、电锅炉与泵共用） & $\R_+$/MW \\
+    $Q^{\mathrm{un}}_{ngt\omega}$ & 连续 & 失供功率（仅诊断与韧性评价，高罚值） & $\R_+$/MW \\
+    $\xi_\omega,\,\zeta$ & 连续 & CVaR 超额变量与 VaR 辅助量 & $\R_+,\R$/元 \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsubsection{目标函数设置}
+
+模型以\textbf{生命周期净成本}为主目标。业主口径下，净成本由投资、固定
+运维、运行、退役与融资支出，扣除供热收入、售电收入、合规碳资产收益与
+残值后得到：
+
+\begin{equation}
+\label{eq:obj}
+\min\; F_{\mathrm{cost}}^{\mathrm{net}}
+=\sum_{y\in\mathcal Y}\delta_y\Big(
+C_y^{\mathrm{inv}}+C_y^{\mathrm{fix}}+C_y^{\mathrm{op}}
++C_y^{\mathrm{ret}}-R_y^{\mathrm{heat}}-R_y^{\mathrm{el,sale}}
+-R_y^{\mathrm{carbon}}-C_y^{\mathrm{salv}}\Big),
+\end{equation}
+
+其中 $\delta_y=(1+r)^{-(y-y_0)}$ 为折现因子。各项展开为决策变量的
+线性函数：
+
+{\small
+\begin{align}
+C_y^{\mathrm{inv}} &=\sum_{k,n}\Big(
+c_{kn}^{\mathrm{build}}z^{\mathrm{build}}_{kny}
++c_{kn}^{\mathrm{cap}}K^{\mathrm{new}}_{kny}\Big)
++\sum_{e,d}c_{ed}^{\mathrm{pipe}}z^{\mathrm{size}}_{ed}
++\sum_{s,n}c_{sn}^{\mathrm{TES}}K^{\mathrm{TES}}_{sn}
++\sum_{b}c_{b}^{\mathrm{retro}}z^{\mathrm{retro}}_{by},
+\label{eq:cinv}\\[2pt]
+C_y^{\mathrm{op}} &=\sum_{\omega\in\Omega}\pi_\omega\sum_{t\in\mathcal T_y}\Delta t\Big(
+\underbrace{\sum_{f\in\mathcal F}p^{\mathrm{fuel}}_{fyt}F_{fyt\omega}}_{\text{燃料}}
++\underbrace{p^{\mathrm{el}}_{yt}P^{\mathrm{imp}}_{yt\omega}}_{\text{购电}}\\
+&\quad +\underbrace{\sum_{k,n}c^{\mathrm{su}}_{kn}v_{knyt\omega}}_{\text{启停}}
++\underbrace{\lambda^{\mathrm{un}}\sum_{n,g}Q^{\mathrm{un}}_{ngt\omega}}_{\text{失供罚}}
++\underbrace{\lambda^{\mathrm{ex}}\sum_{n,g}\phi^{\mathrm{ex}}_{ngt\omega}}_{\text{温位失配火用损罚}}
+\Big).
+\label{eq:cop}
+\end{align}
+}
+
+式\eqref{eq:cop}中 $\pi_\omega$ 为情景概率；失供罚
+$\lambda^{\mathrm{un}}$ 仅用于诊断与韧性评价，不得通过高罚值掩盖长期
+失供；火用损罚 $\lambda^{\mathrm{ex}}$ 惩罚高品位热源向低品位需求直接降级
+供热的温位失配行为，引导梯级利用。
+
+若终端热需求固定且各方案执行同一热价，则 $R^{\mathrm{heat}}$ 为方案无关
+常数，应从寻优目标中剔除，仅用于现金流与回收期核算。
+
+\textbf{多目标与风险扩展：}模型不采用量纲混杂的加权单目标，而以
+$\varepsilon$-约束法生成成本—碳排 Pareto 前沿，即在式\eqref{eq:obj}下
+附加 $F^{\mathrm{acct}}_{\mathrm{CO_2}}\le\varepsilon_C$、
+$EENS\le\varepsilon_R$ 等边界逐步收紧扫描；启用风险厌恶扩展时，将
+$C_y^{\mathrm{op}}$ 替换为期望运行成本与 CVaR 尾部成本的凸组合
+$\mathbb E[C]+\rho\cdot\mathrm{CVaR}_{\alpha}(C)$，其中风险权重
+$\rho\in[0,0.10]$ 分档扫描。
+
+\subsubsection{约束条件分析}
+
+以下约束块构成可行域 $\mathcal F_c=\mathcal F_{\mathrm{core}}\cap
+\mathcal F_c^{\mathrm{adapter}}$，全部约束均为线性（含 SOS2 分段线性），
+保证 MILP 可证最优性间隙。
+
+% ------------------------------------------------------------------
+\paragraph{资产演化与状态转移约束}
+
+\textbf{容量账本约束}：设备可用容量由既有容量、历年投产与不可逆退役
+共同决定，建设与退役置于同一容量账本，杜绝“先退役、后凭空恢复”：
+\begin{equation}
+\label{eq:cap-ledger}
+K_{kny}=K^{\mathrm{exist}}_{kn}
++\sum_{\tau\le y}K^{\mathrm{new}}_{kn\tau}
+-\sum_{\tau\le y}K^{\mathrm{ret}}_{kn\tau},
+\qquad \forall k,n,y.
+\end{equation}
+
+\textbf{状态转移互斥约束}：同一资产同一阶段不得同时建设与退役，存在
+状态单调、可审计；寿命到期的资产强制退出：
+\begin{equation}
+\label{eq:state-trans}
+z^{\mathrm{on}}_{kny}=z^{\mathrm{on}}_{kn,y-1}
++z^{\mathrm{build}}_{kny}-z^{\mathrm{ret}}_{kny},\quad
+z^{\mathrm{build}}_{kny}+z^{\mathrm{ret}}_{kny}\le 1,\quad
+z^{\mathrm{on}}_{kny}=0\;\; (y\ge y^{\mathrm{life,end}}_{kn}).
+\end{equation}
+
+\textbf{年度投资预算约束}：分年度建设与改造支出不超过预算通道，体现
+施工能力与资金约束：
+\begin{equation}
+\label{eq:budget}
+\sum_{k,n}c_{kn}^{\mathrm{build}}z^{\mathrm{build}}_{kny}
++\sum_{e}c_{e}^{\mathrm{retro}}z^{\mathrm{retro}}_{ey}
+\le B_y^{\mathrm{annual}},\qquad \forall y.
+\end{equation}
+
+% ------------------------------------------------------------------
+\paragraph{能量平衡类约束}
+
+\textbf{带温位节点能量守恒约束}：对每个节点、温位、年份、时段与情景，
+热源出力、入网流量（经单次输热效率折算）、储热放能与诊断性失供之和，
+等于需求、储热充能与出网流量之和：
+\begin{equation}
+\label{eq:balance}
+\begin{aligned}
+&\sum_{k\in\mathcal K_n} Q_{kngyt\omega}
++\sum_{e\in\delta^-(n)}\eta^{\mathrm{MILP}}_{egyt}Q_{egyt\omega}
++\sum_{s}Q^{\mathrm{dis}}_{sngyt\omega}+Q^{\mathrm{un}}_{ngt\omega}
+\\[-2pt]
+&\qquad =D_{ngt\omega}
++\sum_{s}Q^{\mathrm{ch}}_{sngyt\omega}
++\sum_{e\in\delta^+(n)}Q_{egyt\omega}.
+\end{aligned}
+\end{equation}
+
+\textbf{温位兼容（能质匹配）约束}：热源向温位 $g$ 直供的前提是源温下
+置信界满足换热端差要求，由预计算兼容矩阵
+$A^{\mathrm{grade}}_{kg}\in\Bset$ 控制；温度不足必须经热泵/增温器提温
+并计入容量与电耗，禁止“账面平衡但终端温度不足”的虚假可行：
+\begin{equation}
+\label{eq:grade}
+0\le Q^{\mathrm{direct}}_{kngyt\omega}
+\le A^{\mathrm{grade}}_{kg}\,a_{kt\omega}K_{kny},
+\qquad
+A^{\mathrm{grade}}_{kg}=1\iff
+T^{\mathrm{src,min}}_{k}\ge T^{\mathrm{sup}}_{g}
++\Delta T^{\mathrm{min}}_{\mathrm{hx}}.
+\end{equation}
+
+% ------------------------------------------------------------------
+\paragraph{设备运行类约束}
+
+\textbf{出力上下限与可用率约束}：出力不超过“容量 $\times$ 逐时可用率
+$\times$ 开机状态”，严寒工况下空气源热泵可用容量与 COP 随室外温度下降，
+并计入低温停机与除霜折减：
+\begin{equation}
+\label{eq:output}
+\underline{q}_{k}\,u_{knyt\omega}K_{kny}
+\le Q_{kngyt\omega}
+\le a_{kt\omega}\,u_{knyt\omega}K_{kny},
+\qquad
+Q^{\mathrm{HP}}_{knyt\omega}
+=\mathrm{COP}_{k}(T^{\mathrm{out}}_{t\omega})\cdot
+P^{\mathrm{HP}}_{knyt\omega}.
+\end{equation}
+
+\textbf{启停状态转移与爬坡约束}：以“开机状态二元变量 $+$ 启停连续
+辅助量 $+$ 三行精确转移凸包”刻画启停，既消除虚假启停放松爬坡的可能，
+又将整数变量规模压缩约三分之二：
+\begin{equation}
+\label{eq:uc}
+v_{knyt\omega}\ge u_{knyt\omega}-u_{kn,y,t-1,\omega},\quad
+v_{knyt\omega}\le u_{knyt\omega},\quad
+v_{knyt\omega}\le 1-u_{kn,y,t-1,\omega},
+\end{equation}
+\begin{equation}
+\label{eq:ramp}
+-\mathrm{RU}^{\mathrm{down}}_{k}\le
+Q_{kngyt\omega}-Q_{kng,y,t-1,\omega}
+\le \mathrm{RU}^{\mathrm{up}}_{k}
++\bigl(1-u_{knyt\omega}\bigr)M.
+\end{equation}
+
+% ------------------------------------------------------------------
+\paragraph{网络与储热类约束}
+
+\textbf{管网温位模式线性化约束}：通过离散温位模式固定温差
+$\Delta T_g=T^{\mathrm{sup}}_g-T^{\mathrm{ret}}_g$，仅优化模式流量，
+消除 $\dot m\Delta T$ 双线性项，使网络约束严格线性；候选环网同一时段
+双向流动互斥，流量受所选管径能力约束：
+\begin{equation}
+\label{eq:pipe}
+Q_{egyt\omega}=c_p\Delta T_g\,\dot m_{egyt\omega},\quad
+0\le\dot m_{egyt\omega}\le\bar m_{egd}\,z^{\mathrm{size}}_{ed},
+\end{equation}
+\noindent 其中双向流动互斥以方向二元变量线性表达。
+
+\textbf{储热递推与边界约束}：SOC 逐时递推并计入自损，充放互斥，供暖季
+首末状态按“循环”或“固定季节边界”闭合；储热按“功率—能量—寒潮持续
+时间”折算可靠容量：
+\begin{equation}
+\label{eq:storage}
+\begin{aligned}
+SOC_{s,t}&=SOC_{s,t-1}(1-\ell_s)\\[-2pt]
+&\quad+\bigl(\eta^{\mathrm{ch}}_s Q^{\mathrm{ch}}_{sngt\omega}
+-\tfrac{1}{\eta^{\mathrm{dis}}_s}Q^{\mathrm{dis}}_{sngt\omega}\bigr)\Delta t,
+\\[-2pt]
+SOC_{s,0}=SOC_{s,|\mathcal T|}\ \text{（循环边界）},
+\end{aligned}
+\end{equation}
+\begin{equation*}
+\begin{aligned}
+Q^{\mathrm{ch}}_{sngt\omega}\cdot Q^{\mathrm{dis}}_{sngt\omega}&=0
+\quad\text{（互斥二元线性化）},\\[-2pt]
+\kappa^{\mathrm{rel}}_{s}
+&=\min\!\Big\{\bar Q^{\mathrm{dis}}_s,\,
+\tfrac{K^{\mathrm{TES}}_{sn}}{h^{\mathrm{snap}}}\Big\}.
+\end{aligned}
+\end{equation*}
+
+% ------------------------------------------------------------------
+\paragraph{负荷侧与舒适类约束}
+
+\textbf{建筑热状态与室内舒适约束}：以 RC 集总参数方程递推室内温度，将
+建筑热惯性作为虚拟储热纳入调度；占用期室温不得低于舒适带下限，温度
+偏差度时不超过韧性边界：
+\begin{equation}
+\label{eq:building}
+C^{\mathrm{th}}_{b}\frac{\theta_{b,t}-\theta_{b,t-1}}{\Delta t}
+=H^{\mathrm{env}}_{b}\bigl(T^{\mathrm{out}}_{t\omega}-\theta_{b,t}\bigr)
++Q^{\mathrm{in}}_{bnt\omega},\qquad
+\theta_{bnt\omega}\ge\theta^{\mathrm{min}}_{bt},
+\end{equation}
+\begin{equation}
+\label{eq:degree-hour}
+\sum_{t\in\mathcal T_y}\max\bigl\{0,\,
+\theta^{\mathrm{min}}_{bt}-\theta_{bnt\omega}\bigr\}\Delta t
+\le \Xi^{\mathrm{tol}}_{b}.
+\end{equation}
+
+\textbf{可执行需求响应约束}：可平移负荷在响应窗口内总量守恒，可削减
+量受参与率与响应上限约束，防止模型虚构无限柔性：
+\begin{equation}
+\label{eq:dr}
+\sum_{t\in\mathcal W}Q^{\mathrm{DR,shift}}_{ngt\omega}=0,\qquad
+|Q^{\mathrm{DR}}_{ngt\omega}|
+\le r^{\mathrm{part}}_{n}\,\bar q^{\mathrm{DR}}_{n}\,D_{ngt\omega}.
+\end{equation}
+
+% ------------------------------------------------------------------
+\paragraph{电力、碳与政策类约束}
+
+\textbf{配电接入容量约束}：热泵、电锅炉与循环泵共享配电接入容量，逐时
+用电不超过既有容量与增容投资之和：
+\begin{equation}
+\label{eq:grid}
+\sum_{k\in\mathcal K^{\mathrm{el}}}P_{knyt\omega}
++P^{\mathrm{pump}}_{nyt\omega}
+\le K^{\mathrm{grid,exist}}_{n}+K^{\mathrm{grid}}_{n},
+\qquad \forall n,y,t,\omega.
+\end{equation}
+
+\textbf{碳排放账本约束}：按燃料直接排放、逐时边际购电排放与运输排放
+核算化石碳账，生物源排放单列披露，减排归属遵循合同边界、禁止重复
+申领：
+\begin{equation}
+\label{eq:carbon}
+F^{\mathrm{acct}}_{\mathrm{CO_2}}
+=\sum_{y,\omega,t}\pi_\omega\Delta t\Big(
+\sum_{f\in\mathcal F_{\mathrm{fossil}}}
+\gamma^{\mathrm{comb}}_{f}F_{fyt\omega}
++\gamma^{\mathrm{marg}}_{\mathrm{grid},yt\omega}
+P^{\mathrm{imp}}_{yt\omega}\Big)
++E^{\mathrm{trans}}-C^{\mathrm{bounded}}_{\mathrm{credit}}
+\le\varepsilon_C.
+\end{equation}
+
+\textbf{政策指标约束}：清洁供热份额、碳强度与燃煤退役红线按项目所在地
+有效政策文件输入，作为硬边界逐年校核：
+\begin{equation}
+\label{eq:policy}
+R^{\mathrm{clean}}_{y}\ge R^{\mathrm{policy}}_{\mathrm{clean},y},\qquad
+F^{\mathrm{fuel}}_{\mathrm{coal},y}=0\ \ (y\ge y^{\mathrm{coal,deadline}}).
+\end{equation}
+
+% ------------------------------------------------------------------
+\paragraph{可靠性与风险类约束}
+
+\textbf{设计温度可靠容量裕度约束}：按室外设计温度校核，可用容量（计入
+容量信用与最不利可用率）覆盖峰值需求并保留裕度；关键热源与关键管线
+执行 N$-$1 校核：
+\begin{equation}
+\label{eq:reliability}
+\begin{aligned}
+&\sum_{k,n}\kappa^{\mathrm{credit}}_{k}\,a^{\mathrm{worst}}_{k}
+K_{kny}\ \ge\
+(1+\mu^{\mathrm{res}})\,D^{\mathrm{peak}}_{gy},
+\\[-2pt]
+&\sum_{k\ne k'}\kappa^{\mathrm{credit}}_{k}a^{\mathrm{worst}}_{k}K_{kny}
+\ge D^{\mathrm{peak}}_{gy}\ \ \forall k'\in\mathcal K^{\mathrm{crit}}.
+\end{aligned}
+\end{equation}
+
+\textbf{情景失供率上限约束}：参与规划的代表情景逐场景失供率不得越限；
+寒潮、余热中断、故障等测试情景仅用于投资冻结后的压力重调度：
+\begin{equation}
+\label{eq:eens}
+EENS_{\omega y}=\sum_{t}\Delta t\sum_{n,g}Q^{\mathrm{un}}_{ngt\omega}
+\le\varepsilon_R,\qquad \forall\omega\in\Omega^{\mathrm{plan}}.
+\end{equation}
+
+\textbf{CVaR 尾部风险约束}：以 Rockafellar--Uryasev 线性形式控制高成本
+尾部情景：
+\begin{equation}
+\label{eq:cvar}
+\mathrm{CVaR}_{\alpha}=\zeta+\frac{1}{1-\alpha}\sum_{\omega}\pi_\omega\xi_\omega,
+\qquad
+\xi_\omega\ge C_\omega-\zeta,\ \ \xi_\omega\ge 0.
+\end{equation}
+
+\subsubsection{模型汇总}
+
+综合式\eqref{eq:obj}--\eqref{eq:cvar}，供热源荷匹配与规划寻优模型可
+汇总为如下混合整数线性规划：
+
+{\scriptsize
+\begin{equation}
+\label{eq:full}
+\begin{dcases}
+\displaystyle
+\min_{\bm{x},\bm{q}}\ 
+F^{\mathrm{net}}_{\mathrm{cost}}(\bm{x},\bm{q})
+\ \ \text{（生命周期净成本，按式\eqref{eq:obj}展开）} \\[6pt]
+\ \ \text{s.t.}\quad
+\textbf{规划层约束：}\ 
+\begin{cases}
+\text{式}\eqref{eq:cap-ledger}\ \text{容量账本};\ 
+\text{式}\eqref{eq:state-trans}\ \text{状态转移互斥};\\
+\text{式}\eqref{eq:budget}\ \text{年度预算};\ 
+z^{\mathrm{size}}_{ed},z^{\mathrm{mode}}_{egy}\in\Bset
+\ \text{管径与温位模式选择};
+\end{cases}\\[14pt]
+\phantom{\ \ \text{s.t.}\quad}
+\textbf{能量与运行约束：}\ 
+\begin{cases}
+\text{式}\eqref{eq:balance}\ \text{带温位节点能量守恒};\ 
+\text{式}\eqref{eq:grade}\ \text{温位兼容};\\
+\text{式}\eqref{eq:output}\ \text{出力上下限与可用率};\ 
+\text{式}\eqref{eq:uc}\text{--}\eqref{eq:ramp}\ \text{启停与爬坡};
+\end{cases}\\[12pt]
+\phantom{\ \ \text{s.t.}\quad}
+\textbf{网络与储热约束：}\ 
+\begin{cases}
+\text{式}\eqref{eq:pipe}\ \text{管网温位模式线性化与方向互斥};\\
+\text{式}\eqref{eq:storage}\ \text{储热递推、充放互斥与季节边界};
+\end{cases}\\[12pt]
+\phantom{\ \ \text{s.t.}\quad}
+\textbf{负荷与舒适约束：}\ 
+\begin{cases}
+\text{式}\eqref{eq:building}\text{--}\eqref{eq:degree-hour}
+\ \text{建筑热状态、舒适带与度时上限};\\
+\text{式}\eqref{eq:dr}\ \text{可执行需求响应};
+\end{cases}\\[12pt]
+\phantom{\ \ \text{s.t.}\quad}
+\textbf{电力碳排与可靠性约束：}\ 
+\begin{cases}
+\text{式}\eqref{eq:grid}\ \text{配电接入容量};\ 
+\text{式}\eqref{eq:carbon}\ \text{碳账本};\ 
+\text{式}\eqref{eq:policy}\ \text{政策硬边界};\\
+\text{式}\eqref{eq:reliability}\ \text{可靠容量裕度与 N}-1;\ 
+\text{式}\eqref{eq:eens}\ \text{失供率上限};\ 
+\text{式}\eqref{eq:cvar}\ \text{CVaR 风险};
+\end{cases}\\[14pt]
+\phantom{\ \ \text{s.t.}\quad}
+\textbf{场景适配约束：}\ 
+\bm{\varphi}_c\text{ 按 }c\in\{\mathrm{C1,C2,C3}\}\text{ 启用专用约束块};\\[6pt]
+\phantom{\ \ \text{s.t.}\quad}
+\bm{x}\in\R_+^{n_c}\times\Bset^{n_b}\times\mathbb Z_+^{n_z},\quad
+\bm{q}=(Q,\dot m,SOC,u,v,\theta,\dots)\ \text{逐情景独立}.
+\end{dcases}
+\end{equation}
+}
+
+模型\eqref{eq:full}的规划层变量 $\bm{x}$ 跨情景共享、运行层变量
+$\bm{q}$ 按情景独立，构成两阶段结构；全部约束保持线性（含 SOS2），
+规模由“代表时段数 $\times$ 节点数 $\times$ 设备数 $\times$ 情景数”
+决定，可通过代表时段压缩与候选预筛控制在可解范围（三场景实测
+$31$--$45$ 万变量、$2.6$ 万整数变量，Gap 均满足 $0.5\%$ 上限）。
+
+% ======================================================================
+\subsection{模型求解}
+% ======================================================================
+
+\subsubsection{求解框架总体结构}
+
+模型\eqref{eq:full}包含建设/退役/选址/启停等二元变量与逐时能流连续
+变量，直接求解完整 MINLP 将面临连续温差、指数热损与非线性水力带来的
+非凸性。本文采用“\textbf{严格 MILP 主求解 $+$ $\varepsilon$-约束
+Pareto 扫描 $+$ 压力情景重调度 $+$ 分层工程校核}”的混合求解框架：
+连续温度、指数温降、Darcy--Weisbach 水力和最不利房间等非线性机理
+在投资冻结后的工程校核层计算，主模型采用线性约束并报告最优性间隙；
+校核发现越界时依据物理边界更新相应约束。总体结构如
+图~\ref{fig:framework} 所示。
+
+\begin{figure}[H]
+\centering
+\resizebox{0.98\textwidth}{!}{%
+\begin{tikzpicture}[font=\small, node distance=6mm and 8mm]
+  % ---- 第一行：数据层 ----
+  \node[data, minimum width=4.0cm] (cfg) {场景配置向量 $\bm{\varphi}_c$\\（C1/C2/C3）};
+  \node[data, right=6mm of cfg, minimum width=4.0cm] (ts) {逐时负荷/气象/价格\\ 资源/碳因子（1\,h）};
+  \node[data, right=6mm of ts, minimum width=4.0cm] (eng) {设备/网络/建筑/\\ 配电工程参数};
+  \node[layer, fit=(cfg)(ts)(eng), label={[font=\small\bfseries]above:数据层}] (datain) {};
+
+  % ---- 第二行：模型装配层 ----
+  \node[process, below=16mm of cfg, minimum width=4.2cm, minimum height=1.3cm,
+    font=\footnotesize, text width=3.9cm] (adp1)
+    {\centering C1 适配器\\ 管网三态/内生退役/CHP 域};
+  \node[process, below=16mm of ts, minimum width=4.2cm, minimum height=1.3cm,
+    font=\footnotesize, text width=3.9cm] (adp2)
+    {\centering C2 适配器\\ 选址分配/生物质链/微网};
+  \node[process, below=16mm of eng, minimum width=4.2cm, minimum height=1.3cm,
+    font=\footnotesize, text width=3.9cm] (adp3)
+    {\centering C3 适配器\\ 形态竞争/热湿舒适/除霜};
+  \node[process, below=5mm of adp2, minimum width=13.8cm, minimum height=1.2cm,
+    font=\footnotesize] (core)
+    {\textbf{公用模型内核：}资产演化 $\cdot$ 带温位能量守恒 $\cdot$ 设备运行 $\cdot$ 管网储热 $\cdot$ 建筑舒适 $\cdot$ 电力碳排 $\cdot$ 可靠性};
+  \node[layer, fit=(adp1)(adp2)(adp3)(core),
+    label={[font=\small\bfseries, anchor=south west]north west:模型装配层}] (asm) {};
+
+  % ---- 第三行：验证层 ----
+  \node[verify, minimum width=4.2cm, minimum height=1.6cm, anchor=north,
+    font=\footnotesize, text width=3.9cm]
+    (solve) at ($(core.south -| adp1)+(0,-26mm)$)
+    {\centering \textbf{MILP 主求解}（HiGHS）\\ $\varepsilon$-约束 Pareto 扫描\\ 两阶段 CVaR 风险扩展};
+  \node[verify, minimum width=4.2cm, minimum height=1.6cm, anchor=north,
+    font=\footnotesize, text width=3.9cm]
+    (stress) at ($(core.south -| adp2)+(0,-26mm)$)
+    {\centering \textbf{压力测试}\\ 寒潮/余热中断/故障/\\ 价格剧变与 DR 退出};
+  \node[verify, minimum width=4.2cm, minimum height=1.6cm, anchor=north,
+    font=\footnotesize, text width=3.9cm]
+    (check) at ($(core.south -| adp3)+(0,-26mm)$)
+    {\centering \textbf{工程校核}\\ 连续温度/非线性水力/\\ 最不利房间/配电峰值};
+  \node[layer, fit=(solve)(stress)(check),
+    label={[font=\small\bfseries, anchor=south west]north west:验证层}] (ver) {};
+
+  % ---- 第四行：输出 ----
+  \node[startstop, below=9mm of stress, minimum width=7.2cm] (out)
+    {规划方案与指标体系：分年投资/容量/调度/成本/碳排/可靠性};
+
+  \draw[arrow] (datain.south -| ts) -- (asm.north -| ts);
+  \draw[arrow] (asm.south -| ts) -- (ver.north -| ts);
+  \draw[arrow] (ver.south -| stress) -- (out.north);
+  \draw[arrow] (solve.east) -- (stress.west);
+  \draw[arrow] (stress.east) -- (check.west);
+  \draw[arrow, dashed] ([xshift=-18mm]check.north) --
+    ([xshift=-18mm]check.north |- asm.south)
+    node[midway, rotate=90, anchor=south, font=\footnotesize]{工程校核结果};
+\end{tikzpicture}
+}
+\caption{“公用内核 $+$ 场景适配器 $+$ 三层验证”求解框架总体结构}
+\label{fig:framework}
+\end{figure}
+
+\subsubsection{分步算法描述}
+
+求解过程按“数据审计—候选链预筛—代表时段构造—模型装配—规划求解—
+压力测试—工程校核—约束更新”组织，具体分为以下八个步骤。
+
+\begin{description}[leftmargin=2.6em,style=nextline,itemsep=4pt]
+\item[\textbf{Step 1：数据审计与准入门。}]
+对负荷、气象、设备性能、资源、价格与碳因子执行单位统一、时间戳连续
+性、缺失/越界与引用完整性检查；余热、电网可用率截断于 $[0,1]$，热泵
+性能超过卡诺效率 $0.45$ 倍上界时回退至设备性能图分段值；连续缺失
+$\le 3$\,h 线性插值，$>3$\,h 以同星期类型、同气象分箱的同类日均值
+替换并标记低置信段。必要字段缺失时直接终止，杜绝带病入模。
+
+\item[\textbf{Step 2：候选能源链预筛。}]
+依据源温、输送距离、场地、配电接入、施工能力与法规条件，删除
+\textbf{确定不可行}的设备—节点—温位组合，并为每项删除保存理由证据；
+预筛只剔除物理/政策必然不可行项，不按主观偏好压缩最优解空间。
+
+\item[\textbf{Step 3：代表时段构造与极端保留。}]
+对逐时气象—负荷序列执行 $k$-medoids 聚类生成代表日/周并计算权重；
+\textbf{最低温日、最大热负荷日、最低余热可用率日与最大爬坡日强制保留}，
+不参与概率舍弃，防止时序压缩掩盖峰值容量与极端保供问题；对代表时段与
+连续年度执行年能量、峰值、最低温与最大爬坡的逐列偏差审计。
+
+\item[\textbf{Step 4：参数预计算与紧界生成。}]
+预计算温位兼容矩阵 $A^{\mathrm{grade}}_{kg}$、热泵工况 SOS2 分段点、
+单次输热效率 $\eta^{\mathrm{MILP}}_{egyt}$ 与变量紧上下界，将与规划
+决策无关的计算全部前移，保证主模型严格线性并压缩分支定界搜索空间。
+
+\item[\textbf{Step 5：模型程序化装配。}]
+按固定顺序装配：先建多年资产演化变量与容量账本，再建热源/网络/储热/
+建筑/电力运行变量，随后依次挂载能量守恒、温位兼容、设备运行、储热
+递推、建筑舒适、电力碳排、可靠性与政策约束，最后按 $\bm{\varphi}_c$
+加载场景专用模块并构造目标与 $\varepsilon$ 边界。装配阶段执行四项
+自动检查：投资变量不带情景索引、功率仅在乘时段长后入能量账、管网
+热损不重复扣减、储热充放互斥与边界闭合。
+
+\item[\textbf{Step 6：MILP 主求解与 $\varepsilon$ 扫描。}]
+调用 HiGHS（经 SciPy 接口）求解名义主问题：线性松弛定界、分支定界
+处理整数变量、割平面与启发式加速收敛；停止准则为相对 Gap
+$\le 0.5\%$、可行性容差 $10^{-6}$，随机种子固定并写入日志。随后逐步
+收紧碳排上限 $\varepsilon_C$ 重复求解，生成成本—碳排 Pareto 候选集。
+
+\item[\textbf{Step 7：投资冻结与压力情景重调度。}]
+冻结规划解 $\bm{x}^\star$（容量、退役、管径、储能、配电、改造投资
+全部无剩余扩建权限），对每个测试情景 $\omega$ 重优化运行层：
+\begin{equation}
+\label{eq:redis}
+\bm{q}^\star_\omega=\argmin_{\bm{q}\in\mathcal Q_c(\bm{x}^\star,\omega)}
+C^{\mathrm{op}}(\bm{q},\omega),
+\end{equation}
+检查复合寒潮、余热完全中断、CHP/骨干管段故障、价格剧变与需求响应
+退出下的失供率、室温偏差度时、回水温度与容量越界。测试情景不反向
+参与名义规划，避免样本内偏差。
+
+\item[\textbf{Step 8：工程校核与约束更新。}]
+恢复连续温差—流量关系、指数温降与非线性水力，复核主模型代理断面：
+节点温位、压降泵能、最不利房间升温、回水温差、配电峰值与 BTES 多年
+平衡。若越界，按失败物理原因收紧管段能力、最低温位或末端改造边界，
+返回 Step 5 重新装配求解；全部通过后进入供暖季
+连续回放与机器验收，输出方案、指标、日志与复现信息。
+\end{description}
+
+\subsubsection{求解算法伪代码}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.94\textwidth}
+\hrule\vspace{5pt}
+\noindent\textbf{算法1　供热源荷匹配与规划寻优主算法}\par
+\noindent\textbf{输入：}场景配置 $\bm{\varphi}_c$；原始数据集 $\mathcal D$；求解参数（Gap、容差、时限、种子）。\par
+\noindent\textbf{输出：}规划方案 $\bm{x}^\star$、逐时调度 $\{\bm{q}^\star_\omega\}$、指标体系、校核与验收证据。\par
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1pt,topsep=3pt]
+\item 读取配置与数据，执行 Step 1 数据审计，形成数据字典；
+\item 按 Step 2 预筛候选能源链，登记删除理由；
+\item 按 Step 3 构造代表时段并强制保留极端时段，执行偏差审计；
+\item 按 Step 4 预计算 $A^{\mathrm{grade}}$、SOS2 分段点、$\eta^{\mathrm{MILP}}$ 与紧变量界；
+\item 按 Step 5 创建共享投资变量与分情景运行变量，装配可行域 $\mathcal F_c$；
+\item 求解名义主问题\eqref{eq:full}，得到 $(\bm{x}^\star,\bm{q}^\star)$ 与最优性 Gap；
+\item 对每个 $\varepsilon_C$ 扫描档位收紧碳排边界，重解主问题并记录 Pareto 候选点；
+\item 冻结 $\bm{x}^\star$，按式\eqref{eq:redis} 对各测试情景重调度；
+\item 执行连续温度、水力、最不利房间、配电与 BTES 校核；存在越界时按失败原因收紧边界并返回第5步；
+\item 全部工程校核通过后，执行供暖季连续逐时回放与机器验收，输出方案、指标、日志与复现信息。
+\end{enumerate}
+\vspace{3pt}\hrule
+\end{minipage}
+\label{alg:main}
+\end{figure}
+
+\subsubsection{总体求解流程图}
+
+\begin{figure}[H]
+\centering
+% 修改 1.00 即可按比例单独调整这张 TikZ 流程图的大小。
+\scalebox{1.00}{%
+\begin{tikzpicture}[font=\footnotesize, node distance=4mm and 7mm,
+    process/.append style={minimum height=0.72cm},
+    verify/.append style={minimum height=0.72cm},
+    startstop/.append style={minimum height=0.72cm},
+    decision/.append style={aspect=2.4}]
+  \node[startstop] (start) {开始：读取配置 $\bm{\varphi}_c$ 与数据};
+  \node[process, below=of start] (audit) {Step 1 数据审计与准入门};
+  \node[process, below=of audit] (screen) {Step 2 候选能源链预筛};
+  \node[process, below=of screen] (rep) {Step 3 代表时段构造\\ 极端日强制保留};
+  \node[process, below=of rep] (pre) {Step 4 参数预计算\\ 兼容矩阵/SOS2/紧界};
+  \node[process, below=of pre] (asm) {Step 5 模型装配\\ （内核$+$场景适配器）};
+  \node[verify, below=of asm] (milp) {Step 6 MILP 主求解\\ $\varepsilon$-约束 Pareto 扫描};
+  \node[decision, below=6mm of milp] (gap) {Gap $\le$ 上限\\ 且可行？};
+  \node[verify, below=7mm of gap] (freeze) {Step 7 冻结投资\\ 压力情景重调度};
+  \node[decision, below=6mm of freeze] (chk) {Step 8 工程校核\\ 全部通过？};
+  \node[verify, right=18mm of chk, minimum width=3.9cm] (fix) {按失败原因收紧边界\\ （管段/温位/末端改造）};
+  \node[process, below=7mm of chk, minimum width=4.6cm] (replay) {供暖季连续逐时回放\\ $+$ 机器验收证书};
+  \node[startstop, below=of replay] (end) {输出方案/指标/日志};
+
+  \draw[arrow] (start) -- (audit);
+  \draw[arrow] (audit) -- (screen);
+  \draw[arrow] (screen) -- (rep);
+  \draw[arrow] (rep) -- (pre);
+  \draw[arrow] (pre) -- (asm);
+  \draw[arrow] (asm) -- (milp);
+  \draw[arrow] (milp) -- (gap);
+  \draw[arrow] (gap) -- node[lab, right]{是} (freeze);
+  \draw[arrow] (freeze) -- (chk);
+  \draw[arrow] (chk) -- node[lab, above]{否} (fix);
+  \draw[arrow] (fix.east) -- ++(5mm,0) |- (asm.east);
+  \draw[arrow] (chk) -- node[lab, right]{是} (replay);
+  \draw[arrow] (replay) -- (end);
+  % 不可行分支
+  \node[verify, right=18mm of gap, minimum width=3.9cm] (infeas) {冲突定位：数据/容量/\\ 温位/极端段/政策};
+  \draw[arrow] (gap) -- node[lab, above]{否} (infeas);
+  \draw[arrow] (infeas.south) -- (fix.north);
+\end{tikzpicture}
+}
+\caption{规划寻优与工程校核流程}
+\label{fig:flowchart}
+\end{figure}
+
+图~\ref{fig:flowchart} 中，MILP求解满足给定的最优性间隙与可行性容差；
+工程校核检查连续温度、水力与建筑状态，越界结果用于更新相应物理边界。
+两部分的衔接关系如图~\ref{fig:loop} 所示。
+
+\begin{figure}[H]
+\centering
+\resizebox{0.98\textwidth}{!}{%
+\begin{tikzpicture}[font=\small, node distance=7mm and 10mm]
+  \node[process, minimum width=4.4cm, minimum height=1.2cm] (inner)
+    {\textbf{MILP 求解}\\ 线性松弛定界 $\to$ 分支定界\\ $\to$ 割平面/启发式 $\to$ Gap 判定};
+  \node[process, right=10mm of inner, minimum width=4.4cm, minimum height=1.2cm] (outer)
+    {\textbf{工程校核}\\ 冻结 $\bm{x}^\star$ $\to$ 压力重调度\\ $\to$ 精细校核 $\to$ 约束更新};
+  \node[startstop, right=10mm of outer, minimum width=3.4cm, minimum height=1.2cm] (cert)
+    {三级验证证据链\\ 代表时段 216\,h\\ 供暖季 2880--4392\,h\\ 全年 8760\,h};
+  \draw[arrow, bend left=22] (inner.north) to node[lab, above]{候选方案 $(\bm{x}^\star,\bm{q}^\star)$} (outer.north);
+  \draw[arrow, bend left=22] (outer.south) to node[lab, below]{越界处理：更新物理边界} (inner.south);
+  \draw[arrow] (outer) -- node[lab, above]{通过} (cert);
+\end{tikzpicture}
+}
+\caption{求解内外循环衔接与三级验证证据链}
+\label{fig:loop}
+\end{figure}
+
+\subsubsection{求解器参数、收敛判据与可复现性}
+
+主模型为含 SOS2 的混合整数线性规划，调用开源 HiGHS 求解器（经
+SciPy 的 \texttt{milp} 接口，Python 3.11 环境），不依赖商业许可证，
+便于第三方复现。求解器以线性松弛提供下界，通过分支定界处理建设、
+选址、启停与模式切换等整数变量，并结合预处理、割平面与可行解启发式
+收缩搜索空间；本文不引入改变可行域的自定义经验割，保证最优性间隙
+由求解器直接出具。关键参数设置与实测规模见表~\ref{tab:solver}。
+
+\begin{table}[H]
+  \centering
+  \caption{求解器参数设置与三场景实测规模}
+  \label{tab:solver}
+  \small
+  \begin{tabularx}{\textwidth}{lX}
+    \toprule
+    项目 & 设置与说明 \\
+    \midrule
+    求解器与接口 & HiGHS（开源），经 SciPy \texttt{milp} 接口调用；版本与调用参数写入运行日志 \\
+    相对 Gap 上限 & 规划级 $0.5\%$；回放级 $0.5\%\sim1\%$；达到上限时同时报告当前可行解、最优界与 Gap \\
+    可行性容差 & $10^{-6}$，用于能量守恒、状态方程与约束残差核查 \\
+    随机种子 & 固定并写入日志，重复运行结果可追溯 \\
+    中断与异常处理 & 不可行时依次定位数据准入、容量上界、温位兼容、极端时段与政策约束的冲突，不放松约束换取伪可行解 \\
+    断点续跑 & 规划层检查点保存并经 SHA-256 与配置指纹校验，跨进程复用，避免回放前重复求解 \\
+    多同等最优处理 & 以容量更小、资产变动更少的方案作为次级选择标准 \\
+    \midrule
+    实测规模（S1 乌鲁木齐，4392\,h） & 启停二元变量 8784、转移辅助量 17568；装配 $1.59$\,s，连续供暖季求解 $513.5$\,s，Gap $=2.0\times10^{-4}$（目标 $5\times10^{-3}$） \\
+    实测规模（S2 固原，4392\,h） & 启停二元变量 4392、转移辅助量 8784；连续供暖季求解 $64.0$\,s，Gap $=1.8\times10^{-3}$ \\
+    实测规模（S3 武汉，2880\,h） & 无启停整数变量；求解状态 0（已证最优），Gap $=0$ \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\textbf{计算记录与测试：}输入配置、时序数据、工程参数和求解设置均记录
+在运行文件中；约束矩阵编译为稀疏 CSR/CSC 格式。程序设置87项自动化测试，
+覆盖能量守恒、启停转移、储热边界、财务与政策约束。
+
+\subsubsection{结果验证与正确性检查}
+
+模型验证采用“\textbf{回代核查—独立回放—机器验收}”三层结构：
+
+\begin{enumerate}[label=（\arabic*）,leftmargin=2.6em,itemsep=3pt]
+  \item \textbf{输出回代与守恒核查}：将最优解回代全部约束，逐节点、
+        逐时段检查能量守恒残差（供暖季实测最大绝对残差
+        $5.7\times10^{-14}$\,kW，远低于容差）；储热 SOC 状态方程误差
+        为 0、首末季节边界全部满足；启停整数分数性不超过
+        $3.6\times10^{-15}$，启停/爬坡零违规；失供量、室温偏差、
+        回水温度与配电峰值按设计边界出具越界清单。
+  \item \textbf{独立时序回放}：规划层仅使用 216\,h 代表时段，验证则
+        在\textbf{不参与规划}的连续时序上进行——先经 2880--4392\,h
+        完整供暖季回放（逐时权重恒为 1，无代表日压缩），再经
+        8760\,h 全年回放，投资变量全程冻结，以独立数据检验供需匹配
+        精度，三场景推荐方案热/冷失供率均为 0。
+  \item \textbf{机器验收证书}：每次回放输出机器可读验收证书，覆盖
+        连续时序、求解状态、Gap、逐时热平衡、储热边界、启停合规、
+        舒适边界、配电容量、失供报告、无压缩与基准冻结共 11 道
+        验收项，三场景全部 $11/11$ 通过，并以输入文件 SHA-256 指纹
+        与配置路径留痕，供第三方核验。
+\end{enumerate}
+
+此外，模型内设两类\textbf{理论极限自检}：热泵 COP 不得超过卡诺效率
+系数 $0.45$ 对应的热力学上界，超限输入自动回退至设备性能图分段值；
+主模型的单次输热效率代理与工程校核的连续温度—指数温降模型互斥启用
+（\texttt{loss\_model} 开关），禁止在同一能量账本中重复扣损。
+
+\subsubsection{敏感性、稳健性与不确定性分析}
+
+围绕“参数扰动—方案稳定性—结论稳健性”组织四层分析，避免挑选无关
+扰动制造稳健假象：
+
+\begin{table}[H]
+  \centering
+  \caption{敏感性、稳健性与不确定性分析设计}
+  \label{tab:sens}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{llX}
+    \toprule
+    扰动维度 & 扰动范围 & 观测指标与主要发现 \\
+    \midrule
+    碳排边界 $\varepsilon_C$ & 逐档收紧、每档全季重解 & Pareto 前沿关键点：S1 膝点 10.6\,t/100\%；S2 排放最优 170.4\,t/82.7\%；S3 75.7\,t/99.3\% \\
+    运行电价 & 高/低档重解 & 等年值成本：S1 $+7.5\%/{-0.0}\%$；S2 $+2.4\%/{-3.6}\%$；S3 $+16.9\%/{-14.6}\%$（最敏感） \\
+    热负荷水平 & 高/低档重解 & 等年值成本：S1 $+19.1\%/{-17.9}\%$；S2 $+15.5\%$；S3 $+16.8\%/{-13.7}\%$，第一敏感参数 \\
+    碳价 & 高/低档重解 & 等年值成本：S1 约 $\pm2.0\%$；S2 $+5.2\%/{-4.0}\%$；S3 $-5.9\%$ \\
+    余热可用率 & 高/低档重解 & S1 余热下降时成本 $+12.9\%$，备用与热泵补位 \\
+    生物质到货 & 高/低档重解 & S2 成本变化为 0，物流库存链缓冲有效 \\
+    风险权重 $\rho$ & $\{0,0.02,0.05,0.10\}$ & CVaR（$\alpha=0.8$）；以 1\,kW/kWh 与 $0.1\%$ 阈值识别实质投资转折 \\
+    气象年 & 2020--2024 五年 & 逐年聚类与能量校准；极端年回放零失供并取证 \\
+    复合寒潮与故障 & 降温$+$负荷增长$+$余热衰减；N$-1$ & 失供率与室温偏差度时，定位末端与网络薄弱环节 \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+消融实验按“关闭单一模块、保持其余配置不变”组织（如关闭储热、关闭
+需求响应、关闭温位约束、以单一热源替代多能互补），量化各模块对成本、
+碳排与可靠性的边际贡献，防止模型堆砌；全部敏感性结果均可由配置文件
+一键复算，扰动范围与样本量在报告中留痕。
+
+\subsubsection{多目标与不确定性求解结构}
+
+\textbf{$\varepsilon$-约束 Pareto 扫描：}以生命周期净成本为主目标，
+从松到紧设置碳排边界序列
+$\varepsilon_C^{(1)}>\varepsilon_C^{(2)}>\cdots>\varepsilon_C^{(m)}$，
+逐点求解式\eqref{eq:full}，相邻解的边际减排成本
+$\Delta F^{\mathrm{net}}/\Delta F_{\mathrm{CO_2}}$ 用于识别拐点，为
+“成本—碳排”决策提供可比较的前沿候选集，而非先验加权的单一得分。
+
+\textbf{两阶段随机与 CVaR 扩展：}多气象年条件下，投资变量
+$\bm{x}$ 跨气象年共享（第一阶段），运行变量按年独立（第二阶段）；
+目标扩展为
+$\min\ \mathbb E[C]+\rho\,\mathrm{CVaR}_\alpha(C)$，显式惩罚最昂贵
+气象年；风险权重 $\rho\in\{0,0.02,0.05,0.10\}$ 分档扫描，并以断点
+续跑与检查点复用避免重复求解规划层。求解结构如图~\ref{fig:cvar}
+所示。
+
+\begin{figure}[H]
+\centering
+\resizebox{0.96\textwidth}{!}{%
+\begin{tikzpicture}[font=\small, node distance=6mm and 10mm]
+  \node[data] (years) {多气象年时序\\ （2020--2024 逐年聚类）};
+  \node[process, right=12mm of years, minimum width=4.4cm] (stage1)
+    {第一阶段（共享）\\ 投资/退役/管网/储能 $\bm{x}$};
+  \node[process, below=7mm of stage1, minimum width=4.4cm] (stage2)
+    {第二阶段（按年独立）\\ 逐时运行 $\bm{q}_\omega$、成本 $C_\omega$};
+  \node[verify, right=12mm of stage1, minimum width=4.2cm] (obj)
+    {风险厌恶目标\\ $\mathbb E[C]+\rho\,\mathrm{CVaR}_\alpha$\\ $\rho$ 分档扫描};
+  \node[verify, below=7mm of obj, minimum width=4.2cm] (replay)
+    {极端年正式回放\\ 检查点复用 $\bm{x}^\star$\\ 逐时认证零失供};
+  \draw[arrow] (years) -- (stage1);
+  \draw[arrow] (years) |- (stage2);
+  \draw[arrow] (stage1) -- (stage2);
+  \draw[arrow] (stage1) -- (obj);
+  \draw[arrow] (stage2.east) -- ++(4mm,0) |- (obj.west);
+  \draw[arrow] (obj) -- node[lab, right]{定稿方案} (replay);
+\end{tikzpicture}
+}
+\caption{多气象年两阶段 CVaR 规划与极端年回放结构}
+\label{fig:cvar}
+\end{figure}
+
+\subsubsection{终止条件与收敛性}
+
+算法在以下四类条件同时满足时终止：
+\begin{enumerate}[label=（\arabic*）,leftmargin=2.6em,itemsep=2pt]
+  \item \textbf{最优性}：主问题相对 Gap $\le 0.5\%$（规划级）或达到
+        时间上限并同时报告当前可行解、最优界与 Gap；
+  \item \textbf{可行性}：全部能量守恒与状态方程残差以 $10^{-6}$ 容差
+        闭合，启停转移与爬坡残差为零；
+  \item \textbf{工程真实性}：连续温度、水力、最不利房间、配电与 BTES
+        校核全部通过，外循环无新增越界断面；
+  \item \textbf{韧性}：压力情景与供暖季/全年回放失供率为零、储热首末
+        边界闭合，机器验收证书签发。
+\end{enumerate}
+三场景供暖季（4392/4392/2880\,h）实测主问题 Gap 分别为
+$2.0\times10^{-4}$、$1.8\times10^{-3}$ 与 $0$，均满足 $5\times10^{-3}$
+的目标上限；连续供暖季求解耗时 $64$--$514$\,s，三个场景均通过 11 项验收。
+
+\textbf{计算复杂度分析：}主模型规模由“代表时段数 $\times$ 节点数
+$\times$ 设备数 $\times$ 情景数”决定。三项机制将规模控制在可解范围：
+其一，代表时段压缩将规划层时段由 8760\,h 降至 216\,h，并以强制保留
+极端日控制压缩偏差；其二，候选链预筛按物理与政策边界删除必然不可行
+组合，直接缩减变量与约束基数；其三，启停建模由“三类整数变量”收紧为
+“开机状态二元 $+$ 启停连续辅助量”，机组组合整数变量减少约 $2/3$。
+配合稀疏矩阵编译缓存（装配仅 $1.6$\,s 量级），全部实验在个人计算机
+上即可完成，无需集群算力。
+
+% ======================================================================
+\subsection{供暖季仿真结果与分析}
+% ======================================================================
+
+本节给出三类场景在 2024--2025 完整供暖季连续时序上的仿真结果。全部
+结果由统一工程流水线产出，每张图、每项指标均可追溯至输入文件
+SHA-256 指纹、配置文件与求解日志。
+
+\subsubsection{仿真口径与数据准入}
+
+三场景统一采用 1\,h 分辨率、逐时权重恒为 1 的连续供暖季时序
+（禁止以代表日权重冒充连续时序），口径如表~\ref{tab:scope} 所示。
+三城市供暖季窗口及其数据来源分层关系如图~\ref{fig:season-scope}所示，
+对应连续时长分别为 4392\,h、4392\,h 和 2880\,h。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth,height=0.36\textheight,keepaspectratio]{algorithm-update/fig01_heating_season_scope.png}
+\caption{三城市供暖季范围与数据来源分层}
+\label{fig:season-scope}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{2024--2025 供暖季仿真口径与负荷特征}
+  \label{tab:scope}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{@{}lXXX@{}}
+    \toprule
+    指标 & S1 乌鲁木齐 & S2 固原 & S3 武汉 \\
+    \midrule
+    场景定位 & 大型集中供热低碳重构 & 分散式系统清洁转型 & 夏热冬冷高品质新建 \\
+    供暖季展示日期 & 2024-10-10—2025-04-10 & 2024-10-15—2025-04-15 & 2024-11-16—2025-03-15 \\
+    连续小时数（h） & 4392 & 4392 & 2880 \\
+    峰值热负荷（kW） & 1317 & 1246 & 598 \\
+    P95 热负荷（kW） & 996 & 900 & 441 \\
+    平均热负荷（kW） & 588 & 544 & 237 \\
+    等效满负荷小时（h） & 约 1962 & 约 1919 & 约 1140 \\
+    \bottomrule
+  \end{tabularx}
+
+  \vspace{2pt}
+  \footnotesize 注：程序时间边界为左闭右开区间，如固原为 $[\,$2024-10-15 00:00, 2025-04-16 00:00$)$，日期首尾完整计入。
+\end{table}
+
+各类气象、政策、负荷代理与情景假设的来源、年份、单位、模型字段及
+敏感性处理方式如图~\ref{fig:data-provenance}所示。该矩阵用于区分公开
+观测、公开事实、派生代理和情景假设，并为计算结果提供完整追溯依据。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth,height=0.35\textheight,keepaspectratio]{algorithm-update/fig20_data_provenance_matrix.png}
+\caption{供暖季数据来源与假设可信度矩阵}
+\label{fig:data-provenance}
+\end{figure}
+
+三城市负荷形态差异显著（图~\ref{fig:ldc}）：乌鲁木齐与固原呈典型
+严寒持续型负荷，等效满负荷小时分别约 1962\,h 与 1919\,h；武汉负荷
+低且间歇性强，等效满负荷小时仅约 1140\,h，决定了其“按需响应、
+多能互补”的系统形态选择。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.40\textheight,keepaspectratio]{algorithm-update/fig03_load_duration_curve.png}
+\caption{三城市供暖季负荷持续曲线（4392/4392/2880\,h 窗口）}
+\label{fig:ldc}
+\end{figure}
+
+\subsubsection{基准方案与推荐方案 KPI 对比}
+
+基准方案为“现状延续、禁止一切低碳新增投资”的对照组（仅允许现状
+源能力延续与必要的配套扩容），推荐方案为投资与逐时运行联合优化的
+寻优解。三场景供暖季 KPI 对比如表~\ref{tab:kpi} 与
+图~\ref{fig:kpi} 所示。
+
+\begin{table}[H]
+  \centering
+  \caption{基准方案 $\to$ 推荐方案供暖季 KPI 对比}
+  \label{tab:kpi}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{lXXX}
+    \toprule
+    指标 & S1 乌鲁木齐 & S2 固原 & S3 武汉 \\
+    \midrule
+    碳排放（tCO$_2$/季） & $55.7\to27.3$（$-50.9\%$） & $567.4\to364.2$（$-35.8\%$） & $170.3\to76.6$（$-55.0\%$） \\
+    清洁热占比 & $93.9\%\to98.0\%$ & $31.3\%\to88.2\%$ & $0\to99.5\%$ \\
+    化石热占比 & $6.1\%\to{\approx}\,0$ & $62.6\%\to0.36\%$ & $100\%\to0$ \\
+    工业余热占比 & $85.4\%\to89.4\%$ & --- & --- \\
+    非化石热占比 & --- & $18.6\%\to69.4\%$ & $0\to79.2\%$ \\
+    失供率 & $0\to0$ & $0.071\%\to0$ & $0\to0$ \\
+    现金运行成本（万元/季） & $14.3\to9.1$（$-36.6\%$） & $76.2\to54.2$（$-28.9\%$） & $22.5\to12.0$（$-46.7\%$） \\
+    平准供热成本（元/kWh） & $0.084\to0.101$ & $0.357\to0.227$（$-36.4\%$） & $0.330\to0.176$（$-46.7\%$） \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+结果表明：推荐方案在三场景均实现\textbf{零失供}，碳排放下降
+$35.8\%$--$55.0\%$，现金运行成本下降 $28.9\%$--$46.7\%$。其中
+乌鲁木齐以工业余热梯级利用为主（余热占比升至 89.4\%），新增投资的
+年化费用使平准成本小幅上升、换取碳排减半，体现 Pareto 权衡；
+固原通过“分布式热泵$+$生物质$+$区域微网”将化石占比由 62.6\%
+压至 0.36\%，平准成本同步下降 36.4\%；武汉在零基建条件下以可再生
+电力驱动热泵为主，清洁热占比由 0 升至 99.5\%，平准成本近乎减半。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.40\textheight,keepaspectratio]{algorithm-update/fig10_kpi_comparison.png}
+\caption{基准方案与推荐方案 KPI 分组对比}
+\label{fig:kpi}
+\end{figure}
+
+为便于同时比较三座城市的年化成本、单位供热成本、碳排放、清洁热占比、
+失供率和关键新增投资，推荐方案综合决策看板如图~\ref{fig:decision-dashboard}
+所示。看板各项指标与前述表格及原始优化输出保持一一对应。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.37\textheight,keepaspectratio]{algorithm-update/fig12_decision_dashboard.png}
+\caption{三城市推荐方案综合决策看板}
+\label{fig:decision-dashboard}
+\end{figure}
+
+\subsubsection{投资配置、容量演化与成本构成}
+
+推荐方案的关键新增投资及空间配置如图~\ref{fig:investment-topology}所示。
+三类场景分别围绕既有供热系统改造、分布式清洁转型和新建系统供热品质，
+形成与各自资源条件和配套约束相适应的投资组合。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.29\textheight,keepaspectratio]{algorithm-update/fig09_investment_topology.png}
+\caption{三城市推荐方案投资配置与系统拓扑}
+\label{fig:investment-topology}
+\end{figure}
+
+既有容量、保留容量、退役容量和新增容量的变化关系如图~\ref{fig:capacity-evolution}
+所示。该结果将规划层建设与退役决策落实到具体设备和资源类别，便于核对
+不同场景的系统能力调整路径。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.28\textheight,keepaspectratio]{algorithm-update/fig17_capacity_evolution.png}
+\caption{三城市供热系统容量演化与投资决策}
+\label{fig:capacity-evolution}
+\end{figure}
+
+基准方案与推荐方案的成本变化及各组成项目贡献如图~\ref{fig:cost-waterfall}
+所示。成本瀑布图用于区分投资年化、能源费用、运维支出与其他项目对总成本
+变化的影响，避免仅根据单一费用指标判断方案优劣。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.29\textheight,keepaspectratio]{algorithm-update/fig19_cost_waterfall.png}
+\caption{三城市供暖季方案成本变化瀑布图}
+\label{fig:cost-waterfall}
+\end{figure}
+
+\subsubsection{源荷匹配与能量流分析}
+
+图~\ref{fig:heatmap} 给出三城市完整供暖季逐时源荷匹配率热力图。
+在 99.5\% 分位口径下，除个别尖峰时段依靠储热净放与需求响应平抑外，
+匹配率始终围绕 100\% 波动：乌鲁木齐在最冷日（12-26）前后通过储热
+跨日调节保持平衡；固原在 1 月下旬最冷窗口内匹配率短时下沉至
+90\%--100\% 区间后由生物质与微网补足；武汉的间歇性负荷与热泵出力
+逐时跟随，验证了按需响应形态的有效性。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.40\textheight,keepaspectratio]{algorithm-update/fig04_source_load_heatmap.png}
+\caption{三城市完整供暖季源荷匹配热力图}
+\label{fig:heatmap}
+\end{figure}
+
+季节能量流（图~\ref{fig:sankey}）进一步显示三类场景的能源结构
+差异：乌鲁木齐季节供给 2638\,MWh 以工业余热为绝对主体；固原
+2438\,MWh 中可再生与生物质占 2150\,MWh；武汉 695\,MWh 几乎全部
+由可再生电力驱动热泵供给，直接化石排放降为零。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.40\textheight,keepaspectratio]{algorithm-update/fig05_energy_sankey.png}
+\caption{三城市场景季节能量流（按资源类别汇总）}
+\label{fig:sankey}
+\end{figure}
+
+与能量账本相对应的供暖季碳排放来源及资源结构如图~\ref{fig:carbon-sankey}
+所示。碳流分析将不同能源类别的供给变化与排放变化建立对应关系，可用于
+识别三类场景中实际形成减排效果的关键环节。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.28\textheight,keepaspectratio]{algorithm-update/fig13_carbon_sankey.png}
+\caption{三城市场景供暖季碳排放来源与碳流分解}
+\label{fig:carbon-sankey}
+\end{figure}
+
+\subsubsection{极寒调度、储热状态与室温偏差}
+
+三城市最冷连续 168\,h 内的热源出力、储热状态与运行响应如
+图~\ref{fig:coldest-dispatch}所示。该结果直接展示极寒窗口内的供需平衡
+方式，并检验规划方案是否仍具备可执行的逐时调度能力。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.38\textheight,keepaspectratio]{algorithm-update/fig06_coldest_168h_dispatch.png}
+\caption{三城市最冷连续168小时热源调度与储热运行}
+\label{fig:coldest-dispatch}
+\end{figure}
+
+完整供暖季储热荷能状态的逐时分布如图~\ref{fig:storage-soc}所示。储热
+状态热力图用于检查充放热过程、状态递推及边界闭合情况，并反映储热在
+不同城市负荷波动中的调节作用。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.25\textheight,keepaspectratio]{algorithm-update/fig07_storage_soc_heatmap.png}
+\caption{三城市完整供暖季储热状态热力图}
+\label{fig:storage-soc}
+\end{figure}
+
+建筑等效室温与目标舒适温度之间的逐时偏差如图~\ref{fig:temperature-deviation}
+所示。该图将系统热量平衡与用户侧舒适度校核连接起来，用于判断最不利
+工况下是否存在室温偏离或供热服务不足。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.25\textheight,keepaspectratio]{algorithm-update/fig08_temperature_deviation_heatmap.png}
+\caption{三城市完整供暖季建筑室温偏差热力图}
+\label{fig:temperature-deviation}
+\end{figure}
+
+\subsubsection{成本—碳排 Pareto 前沿}
+
+按 $\varepsilon$-约束逐档收紧碳排边界，每一档均完整重解 4392/2880\,h
+供暖季 MILP（非代表日近似），得到成本—碳排 Pareto 前沿
+（图~\ref{fig:pareto}）与关键前沿点（表~\ref{tab:pareto}）。
+
+\begin{table}[H]
+  \centering
+  \caption{成本—碳排 Pareto 前沿关键点（每点完整供暖季重解）}
+  \label{tab:pareto}
+  \small
+  \begin{tabularx}{\textwidth}{lXX}
+    \toprule
+    场景 & 成本最优点（碳排/清洁热占比） & 低碳端前沿点（碳排/清洁热占比） \\
+    \midrule
+    S1 乌鲁木齐 & 27.3\,t / 98.0\% & 膝点 10.6\,t / 100\%（边际减排成本拐点） \\
+    S2 固原 & 530.1\,t / 78.0\% & 排放最优 170.4\,t / 82.7\% \\
+    S3 武汉 & 77.3\,t / 99.2\% & 排放最优 75.7\,t / 99.3\% \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.40\textheight,keepaspectratio]{algorithm-update/fig11_cost_emission_pareto.png}
+\caption{完整供暖季成本—碳排 Pareto 气泡图（气泡大小为年化新增投资）}
+\label{fig:pareto}
+\end{figure}
+
+\subsubsection{敏感性结果}
+
+关键参数高/低档扰动均完整重解供暖季模型，龙卷风图见
+图~\ref{fig:tornado}。热负荷水平是三场景共同的第一敏感参数
+（成本弹性 $15\%$--$19\%$）；乌鲁木齐对余热可用率次敏感
+（余热下降 $+12.9\%$）；武汉对电价高度敏感（$+16.9\%$/$-14.6\%$），
+与其电热强耦合形态一致；固原对生物质到货波动不敏感（$0.0\%$），
+验证了“采购—运输—库存—消耗”物理链的缓冲设计。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.40\textheight,keepaspectratio]{algorithm-update/fig16_sensitivity_tornado.png}
+\caption{关键参数敏感性龙卷风图（每档重解完整供暖季）}
+\label{fig:tornado}
+\end{figure}
+
+\subsubsection{极端工况韧性与热平衡审计}
+
+三城市最不利连续 72\,h 内的供热能力、负荷变化与保供响应如
+图~\ref{fig:resilience-72h}所示。通过固定规划投资后重新调度极端窗口，
+能够检验寒潮和系统压力叠加时的供热韧性。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.30\textheight,keepaspectratio]{algorithm-update/fig14_worst_72h_resilience.png}
+\caption{三城市最不利连续72小时供热韧性校核}
+\label{fig:resilience-72h}
+\end{figure}
+
+逐时热平衡残差及供暖季失供情况的审计结果如图~\ref{fig:heat-balance-audit}
+所示。该图用于检查能量守恒误差是否满足数值容差，并与零失供结论及后续
+机器验收结果相互印证。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.96\textwidth,height=0.33\textheight,keepaspectratio]{algorithm-update/fig15_heat_balance_audit.png}
+\caption{三城市逐时热平衡残差与供热失供审计}
+\label{fig:heat-balance-audit}
+\end{figure}
+
+\subsubsection{验收结果}
+
+三场景推荐方案全部通过 11 项机器验收（$11/11$）：连续时序
+（4392/4392/2880\,h、步长 1\,h、权重 1）、求解状态 0、实测 Gap
+严于目标、逐时热平衡残差 $\le 5.7\times10^{-14}$\,kW、储热状态
+方程误差 0、启停/爬坡零违规、等效温度偏差不超过舒适度边界、
+配电容量约束成立、失供率完整报告、无代表日压缩、基准冻结审计
+通过，验收矩阵如图~\ref{fig:matrix} 所示。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.00\textwidth,height=0.40\textheight,keepaspectratio]{algorithm-update/fig18_acceptance_matrix.png}
+\caption{三城市完整供暖季验收矩阵}
+\label{fig:matrix}
+\end{figure}

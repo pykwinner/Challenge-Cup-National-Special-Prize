@@ -1,0 +1,6 @@
+profiles:
+- name: urumqi_pool_a40
+  config: config_a40.yaml
+  representative_timeseries: ../../../data/public_scenario_inputs/scenario1_urumqi_representative_days_2023.csv
+  annual_timeseries: ../../../data/public_scenario_inputs/scenario1_urumqi_full_year_2023.csv
+  timestamp_column: time
