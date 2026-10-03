@@ -1,0 +1,39 @@
+[
+  {
+    "scope_adapter": [
+      {
+        "node": "district_a",
+        "field": "user_behavior.scenario_multipliers.base",
+        "before": "implicit core default 1",
+        "after": 1.0
+      },
+      {
+        "node": "district_a",
+        "field": "thermal_inertia",
+        "removed_null_keys": [
+          "high",
+          "low"
+        ],
+        "reason": "null entries create no model states; selector treats keys as active"
+      },
+      {
+        "node": "district_b",
+        "field": "user_behavior.scenario_multipliers.base",
+        "before": "implicit core default 1",
+        "after": 1.0
+      },
+      {
+        "node": "district_b",
+        "field": "thermal_inertia",
+        "removed_null_keys": [
+          "high",
+          "low"
+        ],
+        "reason": "null entries create no model states; selector treats keys as active"
+      }
+    ],
+    "exact_mathematical_equivalence_proof": "outputs\\competition_20261001\\C4\\input_adapter_proofs\\optimized_season_03.json",
+    "proof_sha256": "e10f8aa966876fa0f5b3cbf220a3572421a03806e9336da32e9d003acd2ec09c",
+    "policy_relaxation": false
+  }
+]

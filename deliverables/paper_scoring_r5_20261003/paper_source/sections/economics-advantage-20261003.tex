@@ -1,0 +1,32 @@
+% !TeX root = ../main.tex
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\section{经济评价与方案选择}
+\subsection{同口径费用与碳排比较}
+
+表\ref{tab:heatpump}比较相同设备与供热服务下的运行节费，表\ref{tab:tradeoff}比较碳帽下保留的节费额。改变设备配置时，还须判断运行节费能否抵消新增采购和配套费用。
+
+设同等服务下的增量投资为$\Delta I$，年度能源费用节约、新增维护及更新费用分别为$\Delta B_y$、$\Delta M_y$、$\Delta R_y$，期末残值差为$\Delta V_Y$，净现值为
+\begin{equation}
+\mathrm{NPV}=-\Delta I+\sum_{y=1}^{Y}\frac{\Delta B_y-\Delta M_y-\Delta R_y}{(1+r)^y}+\frac{\Delta V_Y}{(1+r)^Y},
+\label{eq:npv}
+\end{equation}
+其中$r$为折现率，$y$为年度编号，$Y$为评价期年数。该式将未来费用与残值折算到初始时点。下文采用不折现重复窗口比较，求解采购价格阈值。
+
+\subsection{采购价格阈值与方案敏感性}
+
+在相同2880小时服务及固定性能假设下，比较0、1、2台热泵候选，五档碳帽产生三个不同方案。比较费用为采购预算加$F=5$个120日窗口的能源费及假设维护预算，即将同一窗口的运行费用重复计入五次，不折现；$F$不表示五年寿命或回收期。设备价格与性能假设独立于TICA厂家实验。
+
+采购价格对照另不施加碳帽。令$p\geq0$为每台候选设备的采购预算，固定其他条件后，各台数下的最小比较费用可以写成
+\begin{equation}
+B_0(p)\approx14402.3788,\quad
+B_1(p)\approx p+5055.8954,\quad
+B_2(p)\approx2p+5455.8596.
+\label{eq:price-lines}
+\end{equation}
+金额均为元，截距来自固定台数下的运行最优解，包含其他采购及重复运行费用。仅改变$p$时，$B_2-B_1\approx p+399.9641>0$，即任一非负价格下两台都比一台更贵。按未截断原值计算一台与零台方案的交点：
+\begin{equation}
+p^*=B_0(0)-B_1(0)\approx9346.4833\ \text{元}.
+\label{eq:price-threshold}
+\end{equation}
+其余条件固定时，$p<p^*$选择一台，$p>p^*$选择零台，交点处费用相同。阈值表示一台方案除采购价$p$外的费用优势，即最高可支付预算。若一台方案相对零台新增配套投资$\Delta K$、每窗口维护$\Delta M$，其优势条件为\mbox{$p+\Delta K+5\Delta M\leq p^*$}：新增配套和维护费用会占用这份预算。施加碳帽或改变性能、其他费用后需重算费用下包络，即在每个价格处取可行候选费用的最小值。

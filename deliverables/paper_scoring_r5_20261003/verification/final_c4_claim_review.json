@@ -1,0 +1,839 @@
+{
+  "review_id": "paper-scoring-20261003-r5-final-c4-claim-review",
+  "review_date": "2026-10-03",
+  "scope": "只读核查C4新增论文段、表、数据范围、摘要及结论；既有年/季输出CSV的时序覆盖与13关键冻结源码身份。",
+  "reviewed_pdf": {
+    "path": "16/C7_score_release_20261003_r5/build/C7_scoring_paper_20261003_r5.pdf",
+    "sha256": "79d741630300aba93dad7b1cc21faa518ba44af1cb52653ffeaed9a0cc88c68e",
+    "reviewed_pages_1_based": [
+      2,
+      6,
+      15,
+      24,
+      27
+    ],
+    "precision_amendments_present": true,
+    "stage_note": "修正后的两处精确措辞已出现在构建PDF。"
+  },
+  "reviewed_sources": {
+    "16/16_LaTeX源文件/sections/problem-data-scoring-20261003.tex": "dcd98648815228d179361344c012f79644086b180093e2fec365b81c0f8c7c9b",
+    "16/16_LaTeX源文件/sections/experiments-scoring-20261003.tex": "87e184f3c573fd09c2e567dd77a5ddb5f87a5fa1688106f4dc2cded0bbc3e378",
+    "16/16_LaTeX源文件/sections/conclusion-advantage-20261003.tex": "44335f203e553ba9d68e50d1220b3f64d8e69a0f03300f6c0a9a2a8ec30fe092"
+  },
+  "verdict": "C4源文数值、时间范围与证据身份复核通过；两处措辞修正均已在当前源文核实。",
+  "all_numeric_and_temporal_claims_checked": true,
+  "wording_findings": [
+    {
+      "id": "C4_heat_source_sharing",
+      "severity": "minor_precision",
+      "original": "四楼通过两区域共享热源与配电接入",
+      "suggested": "四楼分别连接两区域热源，并共用系统配电接入",
+      "reason": "联络管选定容量为0；各楼共享所属区域热源，两区域共同受系统配电容量限制，不能暗示区域间实际输热。",
+      "resolved_in_current_source": true,
+      "resolution_status": "已核验源文修正"
+    },
+    {
+      "id": "C4_comfort_sampling",
+      "severity": "required_precision",
+      "original": "室温、末态及互斥违约",
+      "suggested_table_header": "建筑检查违约数",
+      "suggested_explanation": "室温检查取每小时末采样，表中0表示舒适越界、末态违约及同小时冷热互斥违约均未检出。",
+      "reason": "独立建筑审计按temperature_end_c比较逐时舒适上下界，不认证所有连续时刻的舒适；应保留温度容差语义。",
+      "resolved_in_current_source": true,
+      "resolution_status": "已核验源文修正"
+    }
+  ],
+  "scope_claims": {
+    "8784_hours": "北京时间2023-07-01起至2024-07-01不含终点，July-to-June声明服务年，含闰日；不是公历年。",
+    "2928_hours": "北京时间2023-11-15起至2024-03-16不含终点，为完整项目声明冬季，不代表武汉法定供暖期。",
+    "building_scope": "四栋合成参数建筑、两个区域、一个原型系统；未扩大为武汉全城资产。",
+    "initial_and_final_temperature": "四案各楼初始与末温20℃；年与冬季为独立fixed边界回放，不宣称冬季初态承接年度轨迹。",
+    "paper_table_cases": "表中两行对应optimized_annual_01与optimized_season_03，gap为0.1344%与0.4755%，并非所有基准案也用此gap。",
+    "independent_comfort_scope": "仅每小时末室温采样；末态温度另检，冷热互斥按同小时出力检查。",
+    "feasibility_evidence_scope": "保存数值和建筑审计支持合成参数下的编码模型运行可行性；独立建筑审计的annual_certification=false，不签发设备/网络/投资/最优性全系统证书。",
+    "inactive_modules": "优化年/季方案独立储热和区域联络管容量与运行均为0，正文已明确，不归因收益。",
+    "empirical_scope": "历史数学场景验证；合成H/C、得热、条件价格，不升级现场/厂家实证。"
+  },
+  "case_reviews": [
+    {
+      "case": "optimized_annual_01",
+      "rows": 8784,
+      "expected_rows": 8784,
+      "unique_timestamps": 8784,
+      "all_intervals_1h": true,
+      "start_utc": "2023-06-30T16:00:00+00:00",
+      "end_exclusive_utc": "2024-06-30T16:00:00+00:00",
+      "all_input_step_1h": true,
+      "all_input_weights_1": true,
+      "building_groups": [
+        {
+          "building": "apartments_a",
+          "node": "district_a",
+          "rows": 8784,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "office_a",
+          "node": "district_a",
+          "rows": 8784,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "apartments_b",
+          "node": "district_b",
+          "rows": 8784,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "retail_b",
+          "node": "district_b",
+          "rows": 8784,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        }
+      ],
+      "building_row_count": 35136,
+      "building_names_match": true,
+      "two_regions": [
+        "district_a",
+        "district_b"
+      ],
+      "solver_status": 0,
+      "mip_gap_fraction": 0.001343681434931504,
+      "mip_gap_percent_rounded_4dp": "0.1344",
+      "building_audit_passed": true,
+      "building_audit_metrics": {
+        "max_rc_residual_c": 1.1013412404281553e-13,
+        "max_under_temperature_c": 0.0,
+        "max_over_temperature_c": 0.0,
+        "max_terminal_violation_c": 0.0,
+        "under_degree_hours_end_sample": 0.0,
+        "over_degree_hours_end_sample": 0.0,
+        "simultaneous_rows": 0,
+        "heat_kwh": 958337.8243988818,
+        "cooling_kwh": 1327093.4728981843,
+        "expected_weighted_heat_kwh": 958337.8243989118,
+        "expected_weighted_cooling_kwh": 1327093.4728981792
+      },
+      "building_audit_scope": "supplied_trusted_frame_only",
+      "annual_certification": false,
+      "audit_limitations": [
+        "No equipment/network source balance, investment or solver-optimality certification.",
+        "Comfort is sampled at interval ends; initial preheat provenance is external.",
+        "Keep original full frame/config and pre-solve identity outside mutable results."
+      ],
+      "raw_sha256": {
+        "model_timeseries.csv": "d7c034b77c76eed76adc9f66e6cfaff5e69c83c978a472af4a7b5d54dcf82b9c",
+        "building_trajectory.csv": "dccc357e5d71198acf2a814e0087084ed467eda407d04e7fd709c1a743685aac",
+        "run_record.json": "76a52522acda28630a3eee61cf435d1d59d15b6337704e5018d010632a8e2c44",
+        "summary.json": "a007377b391454e120f5d1a2b2c2c0b37899bbf17afe3c69d2237c0d5ba92c42",
+        "c6_building_audit.json": "8198fc4de8f57b4d8eb9fe13e962a481b74188f6237ebacdf42891d1f9d7d513"
+      }
+    },
+    {
+      "case": "baseline_annual_01",
+      "rows": 8784,
+      "expected_rows": 8784,
+      "unique_timestamps": 8784,
+      "all_intervals_1h": true,
+      "start_utc": "2023-06-30T16:00:00+00:00",
+      "end_exclusive_utc": "2024-06-30T16:00:00+00:00",
+      "all_input_step_1h": true,
+      "all_input_weights_1": true,
+      "building_groups": [
+        {
+          "building": "apartments_a",
+          "node": "district_a",
+          "rows": 8784,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "office_a",
+          "node": "district_a",
+          "rows": 8784,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "apartments_b",
+          "node": "district_b",
+          "rows": 8784,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "retail_b",
+          "node": "district_b",
+          "rows": 8784,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        }
+      ],
+      "building_row_count": 35136,
+      "building_names_match": true,
+      "two_regions": [
+        "district_a",
+        "district_b"
+      ],
+      "solver_status": 0,
+      "mip_gap_fraction": 0.0006730254715873585,
+      "mip_gap_percent_rounded_4dp": "0.0673",
+      "building_audit_passed": true,
+      "building_audit_metrics": {
+        "max_rc_residual_c": 7.105427357601002e-15,
+        "max_under_temperature_c": 0.0,
+        "max_over_temperature_c": 0.0,
+        "max_terminal_violation_c": 0.0,
+        "under_degree_hours_end_sample": 0.0,
+        "over_degree_hours_end_sample": 0.0,
+        "simultaneous_rows": 0,
+        "heat_kwh": 987464.7766177113,
+        "cooling_kwh": 1373125.4038027397,
+        "expected_weighted_heat_kwh": 987464.7766177172,
+        "expected_weighted_cooling_kwh": 1373125.4038027332
+      },
+      "building_audit_scope": "supplied_trusted_frame_only",
+      "annual_certification": false,
+      "audit_limitations": [
+        "No equipment/network source balance, investment or solver-optimality certification.",
+        "Comfort is sampled at interval ends; initial preheat provenance is external.",
+        "Keep original full frame/config and pre-solve identity outside mutable results."
+      ],
+      "raw_sha256": {
+        "model_timeseries.csv": "d7c034b77c76eed76adc9f66e6cfaff5e69c83c978a472af4a7b5d54dcf82b9c",
+        "building_trajectory.csv": "1db163936db6c0649357c12f79db218b0d482b417f8078aa19a659216f594699",
+        "run_record.json": "c51c55aecac81ee70dc9f548d8f42c1a236b70dce2dc18aad7d2431ab19abe26",
+        "summary.json": "ffe511c3a6ca803441ce32ba80d0f9ce64a5a3f647d0e85a4a8dcc74e54387f2",
+        "c6_building_audit.json": "cad2ea470b6248f63b3acf79457701146fb922db17a871df3fbe4c896d83b5d9"
+      }
+    },
+    {
+      "case": "optimized_season_03",
+      "rows": 2928,
+      "expected_rows": 2928,
+      "unique_timestamps": 2928,
+      "all_intervals_1h": true,
+      "start_utc": "2023-11-14T16:00:00+00:00",
+      "end_exclusive_utc": "2024-03-15T16:00:00+00:00",
+      "all_input_step_1h": true,
+      "all_input_weights_1": true,
+      "building_groups": [
+        {
+          "building": "apartments_a",
+          "node": "district_a",
+          "rows": 2928,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "office_a",
+          "node": "district_a",
+          "rows": 2928,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "apartments_b",
+          "node": "district_b",
+          "rows": 2928,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "retail_b",
+          "node": "district_b",
+          "rows": 2928,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        }
+      ],
+      "building_row_count": 11712,
+      "building_names_match": true,
+      "two_regions": [
+        "district_a",
+        "district_b"
+      ],
+      "solver_status": 0,
+      "mip_gap_fraction": 0.004755373126158383,
+      "mip_gap_percent_rounded_4dp": "0.4755",
+      "building_audit_passed": true,
+      "building_audit_metrics": {
+        "max_rc_residual_c": 6.750155989720952e-14,
+        "max_under_temperature_c": 0.0,
+        "max_over_temperature_c": 0.0,
+        "max_terminal_violation_c": 0.0,
+        "under_degree_hours_end_sample": 0.0,
+        "over_degree_hours_end_sample": 0.0,
+        "simultaneous_rows": 0,
+        "heat_kwh": 930728.4757930283,
+        "cooling_kwh": 711.2177536503784,
+        "expected_weighted_heat_kwh": 930728.4757930532,
+        "expected_weighted_cooling_kwh": 711.2177536503783
+      },
+      "building_audit_scope": "supplied_trusted_frame_only",
+      "annual_certification": false,
+      "audit_limitations": [
+        "No equipment/network source balance, investment or solver-optimality certification.",
+        "Comfort is sampled at interval ends; initial preheat provenance is external.",
+        "Keep original full frame/config and pre-solve identity outside mutable results."
+      ],
+      "raw_sha256": {
+        "model_timeseries.csv": "cccccda36c5f014e9234e71e94c2c1cee0eaddca56ca17a211fd4399a4bfdc42",
+        "building_trajectory.csv": "6a341ed6f5292e79b683844bab4875dc9d6283eb74f61b708cf65817a09d24df",
+        "run_record.json": "e7218c38db94534f97380a071ed5a36e32893024829a024372eb58772bc2f185",
+        "summary.json": "6939de1f7f047e518b09f6598d809e62c44cb36d11775e6d00886d4cfc841331",
+        "c6_building_audit.json": "6c5f0e9ccacd5296a7e2c3e3bc018fe2c74ac17a51fa1feb482d85618007aeb7"
+      }
+    },
+    {
+      "case": "baseline_season_01",
+      "rows": 2928,
+      "expected_rows": 2928,
+      "unique_timestamps": 2928,
+      "all_intervals_1h": true,
+      "start_utc": "2023-11-14T16:00:00+00:00",
+      "end_exclusive_utc": "2024-03-15T16:00:00+00:00",
+      "all_input_step_1h": true,
+      "all_input_weights_1": true,
+      "building_groups": [
+        {
+          "building": "apartments_a",
+          "node": "district_a",
+          "rows": 2928,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "office_a",
+          "node": "district_a",
+          "rows": 2928,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "apartments_b",
+          "node": "district_b",
+          "rows": 2928,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        },
+        {
+          "building": "retail_b",
+          "node": "district_b",
+          "rows": 2928,
+          "time_indices_exact_0_to_T_minus_1": true,
+          "timestamps_exactly_match_frame": true,
+          "initial_start_c": 20.0,
+          "final_end_c": 20.0,
+          "all_dt_1h": true,
+          "all_weight_1": true,
+          "all_fixed_boundary": true
+        }
+      ],
+      "building_row_count": 11712,
+      "building_names_match": true,
+      "two_regions": [
+        "district_a",
+        "district_b"
+      ],
+      "solver_status": 0,
+      "mip_gap_fraction": 0.0007198762952338358,
+      "mip_gap_percent_rounded_4dp": "0.0720",
+      "building_audit_passed": true,
+      "building_audit_metrics": {
+        "max_rc_residual_c": 5.684341886080802e-14,
+        "max_under_temperature_c": 1.4210854715202004e-14,
+        "max_over_temperature_c": 0.0,
+        "max_terminal_violation_c": 0.0,
+        "under_degree_hours_end_sample": 1.7763568394002505e-13,
+        "over_degree_hours_end_sample": 0.0,
+        "simultaneous_rows": 0,
+        "heat_kwh": 960922.1047606795,
+        "cooling_kwh": 706.2696455165757,
+        "expected_weighted_heat_kwh": 960922.104760684,
+        "expected_weighted_cooling_kwh": 706.2696455165757
+      },
+      "building_audit_scope": "supplied_trusted_frame_only",
+      "annual_certification": false,
+      "audit_limitations": [
+        "No equipment/network source balance, investment or solver-optimality certification.",
+        "Comfort is sampled at interval ends; initial preheat provenance is external.",
+        "Keep original full frame/config and pre-solve identity outside mutable results."
+      ],
+      "raw_sha256": {
+        "model_timeseries.csv": "cccccda36c5f014e9234e71e94c2c1cee0eaddca56ca17a211fd4399a4bfdc42",
+        "building_trajectory.csv": "13368a31c6cf0bd75b973f4d4d5e0a8cbff70409a3c6a57eeb785a50f6454e84",
+        "run_record.json": "4aac24e9830ff0080eba036c1db931553407ab33a022b5dbf167b66cc6b69055",
+        "summary.json": "b091f7e7921ffea748e7e89b02f8f3725005833824440fea005b6dd7fe3815ae",
+        "c6_building_audit.json": "ec983889af9863e9900fac8aa6df78ca6c66d1c3998ff610b237249e927d03fb"
+      }
+    }
+  ],
+  "source_sha_checks": {
+    "unique_key_file_count": 13,
+    "case_count": 4,
+    "comparisons": 52,
+    "all_match": true,
+    "frozen_root": "北方供热三类场景公用总框架V10/north_heat_challenge/outputs/competition_20261001/C4/frozen_source_epoch_01",
+    "details": [
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/competition_runner.py",
+        "expected_sha256": "7d47b0ba8500d852b20360c9ab6569e0175b34caaf27887f5d0465265a211923",
+        "frozen_sha256": "7d47b0ba8500d852b20360c9ab6569e0175b34caaf27887f5d0465265a211923",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/model.py",
+        "expected_sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+        "frozen_sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/io.py",
+        "expected_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+        "frozen_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/linear.py",
+        "expected_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+        "frozen_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/chronology.py",
+        "expected_sha256": "af080b4dad4797b42bcae8f192d54127ca27e5d9ee7338d331f73c84ab3b2858",
+        "frozen_sha256": "af080b4dad4797b42bcae8f192d54127ca27e5d9ee7338d331f73c84ab3b2858",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/heating_season.py",
+        "expected_sha256": "b20cafacffedd2eacf052f662ed6a8e9bc5bf4190795f0c25678d89bf33082bf",
+        "frozen_sha256": "b20cafacffedd2eacf052f662ed6a8e9bc5bf4190795f0c25678d89bf33082bf",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/building_thermal.py",
+        "expected_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+        "frozen_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/building_audit.py",
+        "expected_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+        "frozen_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/spatial_quality.py",
+        "expected_sha256": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+        "frozen_sha256": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/experiments.py",
+        "expected_sha256": "b2b81a76066c5531f9520b9cad05e210a411e6810a1a641f14d92ef32b8cc7d1",
+        "frozen_sha256": "b2b81a76066c5531f9520b9cad05e210a411e6810a1a641f14d92ef32b8cc7d1",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/accounting.py",
+        "expected_sha256": "400749cc5432ef4271a3f960c6fcdef3620c8fc65a2c2cbd89a46966ceb17731",
+        "frozen_sha256": "400749cc5432ef4271a3f960c6fcdef3620c8fc65a2c2cbd89a46966ceb17731",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "src/heatplan/policy_alignment.py",
+        "expected_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+        "frozen_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+        "match": true
+      },
+      {
+        "case": "optimized_annual_01",
+        "path": "scripts/run_competition_case.py",
+        "expected_sha256": "33bf81b5d234e9eae07999a7bf2c74a62fcbe906f17cc06e757d3510f4123549",
+        "frozen_sha256": "33bf81b5d234e9eae07999a7bf2c74a62fcbe906f17cc06e757d3510f4123549",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/competition_runner.py",
+        "expected_sha256": "7d47b0ba8500d852b20360c9ab6569e0175b34caaf27887f5d0465265a211923",
+        "frozen_sha256": "7d47b0ba8500d852b20360c9ab6569e0175b34caaf27887f5d0465265a211923",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/model.py",
+        "expected_sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+        "frozen_sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/io.py",
+        "expected_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+        "frozen_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/linear.py",
+        "expected_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+        "frozen_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/chronology.py",
+        "expected_sha256": "af080b4dad4797b42bcae8f192d54127ca27e5d9ee7338d331f73c84ab3b2858",
+        "frozen_sha256": "af080b4dad4797b42bcae8f192d54127ca27e5d9ee7338d331f73c84ab3b2858",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/heating_season.py",
+        "expected_sha256": "b20cafacffedd2eacf052f662ed6a8e9bc5bf4190795f0c25678d89bf33082bf",
+        "frozen_sha256": "b20cafacffedd2eacf052f662ed6a8e9bc5bf4190795f0c25678d89bf33082bf",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/building_thermal.py",
+        "expected_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+        "frozen_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/building_audit.py",
+        "expected_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+        "frozen_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/spatial_quality.py",
+        "expected_sha256": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+        "frozen_sha256": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/experiments.py",
+        "expected_sha256": "b2b81a76066c5531f9520b9cad05e210a411e6810a1a641f14d92ef32b8cc7d1",
+        "frozen_sha256": "b2b81a76066c5531f9520b9cad05e210a411e6810a1a641f14d92ef32b8cc7d1",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/accounting.py",
+        "expected_sha256": "400749cc5432ef4271a3f960c6fcdef3620c8fc65a2c2cbd89a46966ceb17731",
+        "frozen_sha256": "400749cc5432ef4271a3f960c6fcdef3620c8fc65a2c2cbd89a46966ceb17731",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "src/heatplan/policy_alignment.py",
+        "expected_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+        "frozen_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+        "match": true
+      },
+      {
+        "case": "baseline_annual_01",
+        "path": "scripts/run_competition_case.py",
+        "expected_sha256": "33bf81b5d234e9eae07999a7bf2c74a62fcbe906f17cc06e757d3510f4123549",
+        "frozen_sha256": "33bf81b5d234e9eae07999a7bf2c74a62fcbe906f17cc06e757d3510f4123549",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/competition_runner.py",
+        "expected_sha256": "7d47b0ba8500d852b20360c9ab6569e0175b34caaf27887f5d0465265a211923",
+        "frozen_sha256": "7d47b0ba8500d852b20360c9ab6569e0175b34caaf27887f5d0465265a211923",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/model.py",
+        "expected_sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+        "frozen_sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/io.py",
+        "expected_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+        "frozen_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/linear.py",
+        "expected_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+        "frozen_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/chronology.py",
+        "expected_sha256": "af080b4dad4797b42bcae8f192d54127ca27e5d9ee7338d331f73c84ab3b2858",
+        "frozen_sha256": "af080b4dad4797b42bcae8f192d54127ca27e5d9ee7338d331f73c84ab3b2858",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/heating_season.py",
+        "expected_sha256": "b20cafacffedd2eacf052f662ed6a8e9bc5bf4190795f0c25678d89bf33082bf",
+        "frozen_sha256": "b20cafacffedd2eacf052f662ed6a8e9bc5bf4190795f0c25678d89bf33082bf",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/building_thermal.py",
+        "expected_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+        "frozen_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/building_audit.py",
+        "expected_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+        "frozen_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/spatial_quality.py",
+        "expected_sha256": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+        "frozen_sha256": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/experiments.py",
+        "expected_sha256": "b2b81a76066c5531f9520b9cad05e210a411e6810a1a641f14d92ef32b8cc7d1",
+        "frozen_sha256": "b2b81a76066c5531f9520b9cad05e210a411e6810a1a641f14d92ef32b8cc7d1",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/accounting.py",
+        "expected_sha256": "400749cc5432ef4271a3f960c6fcdef3620c8fc65a2c2cbd89a46966ceb17731",
+        "frozen_sha256": "400749cc5432ef4271a3f960c6fcdef3620c8fc65a2c2cbd89a46966ceb17731",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "src/heatplan/policy_alignment.py",
+        "expected_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+        "frozen_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+        "match": true
+      },
+      {
+        "case": "optimized_season_03",
+        "path": "scripts/run_competition_case.py",
+        "expected_sha256": "33bf81b5d234e9eae07999a7bf2c74a62fcbe906f17cc06e757d3510f4123549",
+        "frozen_sha256": "33bf81b5d234e9eae07999a7bf2c74a62fcbe906f17cc06e757d3510f4123549",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/competition_runner.py",
+        "expected_sha256": "7d47b0ba8500d852b20360c9ab6569e0175b34caaf27887f5d0465265a211923",
+        "frozen_sha256": "7d47b0ba8500d852b20360c9ab6569e0175b34caaf27887f5d0465265a211923",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/model.py",
+        "expected_sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+        "frozen_sha256": "c1cf15ce2a3bc9b7e8f40362eed9d935f665151cf7b08145b1468fa66f0fe1e5",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/io.py",
+        "expected_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+        "frozen_sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/linear.py",
+        "expected_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+        "frozen_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/chronology.py",
+        "expected_sha256": "af080b4dad4797b42bcae8f192d54127ca27e5d9ee7338d331f73c84ab3b2858",
+        "frozen_sha256": "af080b4dad4797b42bcae8f192d54127ca27e5d9ee7338d331f73c84ab3b2858",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/heating_season.py",
+        "expected_sha256": "b20cafacffedd2eacf052f662ed6a8e9bc5bf4190795f0c25678d89bf33082bf",
+        "frozen_sha256": "b20cafacffedd2eacf052f662ed6a8e9bc5bf4190795f0c25678d89bf33082bf",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/building_thermal.py",
+        "expected_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+        "frozen_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/building_audit.py",
+        "expected_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+        "frozen_sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/spatial_quality.py",
+        "expected_sha256": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+        "frozen_sha256": "3127169238c928449bf6a37a76a3813324990c60ba6694c2a060a1096e0f1b35",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/experiments.py",
+        "expected_sha256": "b2b81a76066c5531f9520b9cad05e210a411e6810a1a641f14d92ef32b8cc7d1",
+        "frozen_sha256": "b2b81a76066c5531f9520b9cad05e210a411e6810a1a641f14d92ef32b8cc7d1",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/accounting.py",
+        "expected_sha256": "400749cc5432ef4271a3f960c6fcdef3620c8fc65a2c2cbd89a46966ceb17731",
+        "frozen_sha256": "400749cc5432ef4271a3f960c6fcdef3620c8fc65a2c2cbd89a46966ceb17731",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "src/heatplan/policy_alignment.py",
+        "expected_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+        "frozen_sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+        "match": true
+      },
+      {
+        "case": "baseline_season_01",
+        "path": "scripts/run_competition_case.py",
+        "expected_sha256": "33bf81b5d234e9eae07999a7bf2c74a62fcbe906f17cc06e757d3510f4123549",
+        "frozen_sha256": "33bf81b5d234e9eae07999a7bf2c74a62fcbe906f17cc06e757d3510f4123549",
+        "match": true
+      }
+    ]
+  },
+  "distribution_requirements": {
+    "gzip_role": "原CSV字节的无损压缩；不修改内容、行序、编码、换行或时间字段。",
+    "identity": "清单应同时记录压缩文件SHA和解压后原CSV SHA，解压字节与本报告raw_sha256一致。",
+    "existing_compressed_files": "variables.csv.gz已是原结果的gzip；如分发可保持其原字节和原SHA，不重新压缩。",
+    "frozen_code": "按历史run_record绑定frozen_source_epoch_01；不能用后续最新核心代码替代历史身份。",
+    "not_yet_verified": "本报告核原结果与冻结源码；尚未核对实际分发副本的gzip解压身份，也未运行复算。"
+  },
+  "not_performed": [
+    "未求解模型或运行仿真。",
+    "未重跑pytest、建筑RC审计函数或优化。",
+    "未签发全系统年季独立证书。",
+    "未修改论文、代码、CSV或Git。"
+  ],
+  "only_new_file": "16/C7_score_release_20261003_r5/final_c4_claim_review.json",
+  "paper_source_precision_passed": true
+}

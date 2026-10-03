@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0-rc1",
+  "paper_revision": "paper-scoring-20261003-r5",
+  "status": "document candidate; not formal engineering certification",
+  "tag": "paper-scoring-v1.1.0-rc1-20261003",
+  "repository": "https://github.com/pykwinner/xiaotiao",
+  "local_branch": "docs/paper-scoring-r5-20261003",
+  "target_branch": "main",
+  "previous_upload_commit": "88e9e4f4d8135cb65a478a3b00f5c297f5cca044",
+  "previous_tag": "paper-advantages-v1.0.0-rc1-20261003",
+  "prepared_at": "2026-10-03T16:33:20.776127+08:00",
+  "commit_identity": "The enclosing Git commit and peeled annotated tag are authoritative. Final full SHA and remote verification are recorded after push in the workspace handoff, because a commit cannot contain its own SHA.",
+  "core_version_unchanged": "11.12.0rc2",
+  "historical_research_batch_unchanged": "v11.12.0rc6",
+  "included": [
+    "New delivery directory with R5 PDF, editable LaTeX and four existing PDF figures",
+    "R5 scoring review and four pseudocode/source mappings",
+    "E01-E09 source hashes and selected lossless historical C4 output/config/code archive",
+    "Font licenses and candidate-copy validation",
+    "Root README link"
+  ],
+  "changes": "See CHANGELOG.md. R3/R4 readability revisions and R5 score evidence additions are consolidated; no active engine/config or existing research output modified.",
+  "actual_validation": {
+    "result": "passed",
+    "details": "VALIDATION.json",
+    "candidate_compile_passes": 2,
+    "pages": 27,
+    "prior_display_math_blocks_unchanged": 19,
+    "prior_experimental_tables_numeric_unchanged": 5,
+    "readonly_delivery_check_categories": 10,
+    "archive_original_byte_checks": 89,
+    "evidence_index_file_hash_checks": 102,
+    "candidate_vs_reviewed_pdf_pages_equal": 27,
+    "new_optimization_runs": 0,
+    "new_full_core_regression_tests": 0
+  },
+  "excluded": [
+    {
+      "item": "unloaded LaTeX chapters, unused figures, legacy local ZIPs and reference-paper images",
+      "reason": "not dependencies of current document"
+    },
+    {
+      "item": "third-party source PDFs, full BDG2/OSM downloads and other external source archives",
+      "reason": "not needed for this bounded paper update; use existing acquisition records"
+    },
+    {
+      "item": "build intermediates, page render PNGs, environments, credentials and conversation contents",
+      "reason": "temporary, unrelated, or private material"
+    },
+    {
+      "item": "new PPT and images",
+      "reason": "no new generation in this paper audit"
+    },
+    {
+      "item": "new model experiments and full regression",
+      "reason": "no current engine changes; published historical experiment identities retained"
+    }
+  ],
+  "known_scope": "Research scenario evidence; synthetic C4 and shared conditional tariff are explicit. No new field calibration, real-project ROI, complete frontier or unrestricted global optimum claimed.",
+  "upload_status_at_commit_preparation": "not yet pushed; local post-push handoff will record actual remote confirmation"
+}

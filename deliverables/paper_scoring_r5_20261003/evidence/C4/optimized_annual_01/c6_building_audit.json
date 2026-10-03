@@ -1,0 +1,304 @@
+{
+  "schema_version": "building_audit.v1",
+  "passed": true,
+  "building_physics_passed": true,
+  "checks": {
+    "input_identity": {
+      "passed": true,
+      "evaluations": 1,
+      "failures": 0,
+      "examples": []
+    },
+    "input_valid": {
+      "passed": true,
+      "evaluations": 1,
+      "failures": 0,
+      "examples": []
+    },
+    "continuous_fixed": {
+      "passed": true,
+      "evaluations": 1,
+      "failures": 0,
+      "examples": []
+    },
+    "trajectory_complete": {
+      "passed": true,
+      "evaluations": 1,
+      "failures": 0,
+      "examples": []
+    },
+    "time_and_assignment": {
+      "passed": true,
+      "evaluations": 35136,
+      "failures": 0,
+      "examples": []
+    },
+    "input_metadata": {
+      "passed": true,
+      "evaluations": 456768,
+      "failures": 0,
+      "examples": []
+    },
+    "boundary_metadata": {
+      "passed": true,
+      "evaluations": 70272,
+      "failures": 0,
+      "examples": []
+    },
+    "power_bound_metadata": {
+      "passed": true,
+      "evaluations": 70272,
+      "failures": 0,
+      "examples": []
+    },
+    "state_continuity": {
+      "passed": true,
+      "evaluations": 35136,
+      "failures": 0,
+      "examples": []
+    },
+    "exact_rc": {
+      "passed": true,
+      "evaluations": 35136,
+      "failures": 0,
+      "examples": []
+    },
+    "comfort_bounds": {
+      "passed": true,
+      "evaluations": 35136,
+      "failures": 0,
+      "examples": []
+    },
+    "delivered_power_bounds": {
+      "passed": true,
+      "evaluations": 35136,
+      "failures": 0,
+      "examples": []
+    },
+    "no_simultaneous_heat_cooling": {
+      "passed": true,
+      "evaluations": 35136,
+      "failures": 0,
+      "examples": []
+    },
+    "reported_diagnostics": {
+      "passed": true,
+      "evaluations": 175680,
+      "failures": 0,
+      "examples": []
+    },
+    "terminal_state": {
+      "passed": true,
+      "evaluations": 4,
+      "failures": 0,
+      "examples": []
+    },
+    "finite_recalculation": {
+      "passed": true,
+      "evaluations": 1,
+      "failures": 0,
+      "examples": []
+    },
+    "dispatch_complete": {
+      "passed": true,
+      "evaluations": 3,
+      "failures": 0,
+      "examples": []
+    },
+    "dispatch_metadata": {
+      "passed": true,
+      "evaluations": 105408,
+      "failures": 0,
+      "examples": []
+    },
+    "dispatch_values": {
+      "passed": true,
+      "evaluations": 105408,
+      "failures": 0,
+      "examples": []
+    },
+    "dispatch_node_aggregation": {
+      "passed": true,
+      "evaluations": 2,
+      "failures": 0,
+      "examples": []
+    },
+    "summary_actual_service_available": {
+      "passed": true,
+      "evaluations": 2,
+      "failures": 0,
+      "examples": []
+    },
+    "summary_actual_service_energy": {
+      "passed": true,
+      "evaluations": 3,
+      "failures": 0,
+      "examples": []
+    },
+    "summary_rc_no_unserved": {
+      "passed": true,
+      "evaluations": 1,
+      "failures": 0,
+      "examples": []
+    },
+    "summary_building_count": {
+      "passed": true,
+      "evaluations": 1,
+      "failures": 0,
+      "examples": []
+    },
+    "summary_building_diagnostics": {
+      "passed": true,
+      "evaluations": 3,
+      "failures": 0,
+      "examples": []
+    },
+    "summary_physics_flags": {
+      "passed": true,
+      "evaluations": 2,
+      "failures": 0,
+      "examples": []
+    }
+  },
+  "metrics": {
+    "max_rc_residual_c": 1.1013412404281553e-13,
+    "max_under_temperature_c": 0.0,
+    "max_over_temperature_c": 0.0,
+    "max_terminal_violation_c": 0.0,
+    "under_degree_hours_end_sample": 0.0,
+    "over_degree_hours_end_sample": 0.0,
+    "simultaneous_rows": 0,
+    "heat_kwh": 958337.8243988818,
+    "cooling_kwh": 1327093.4728981843,
+    "expected_weighted_heat_kwh": 958337.8243989118,
+    "expected_weighted_cooling_kwh": 1327093.4728981792
+  },
+  "input_identity": {
+    "config_sha256": "5cdf07e156d519a6dec7f599c4c2948a3cd19f16a0c683c17fa9f513363e96c3",
+    "frame_sha256": "e1a7588d66819820de5ad2771f109ef83a2a2b572190850270603d9c3e52b4ee"
+  },
+  "input_identity_anchored": true,
+  "dispatch_checked": true,
+  "summary_checked": true,
+  "dispatch_check_scope": "building_rows_and_optional_node_aliases_only",
+  "summary_check_scope": "actual_RC_delivery_and_present_building_diagnostics_only",
+  "scope": "supplied_trusted_frame_only",
+  "annual_certification": false,
+  "limitations": [
+    "No equipment/network source balance, investment or solver-optimality certification.",
+    "Comfort is sampled at interval ends; initial preheat provenance is external.",
+    "Keep original full frame/config and pre-solve identity outside mutable results."
+  ],
+  "tolerances": {
+    "temperature_c": 1e-06,
+    "power_kw": 1e-06,
+    "energy_kwh": 1e-05,
+    "metadata_absolute": 1e-08,
+    "energy_relative": 1e-09
+  },
+  "expected_rows": 35136,
+  "observed_rows": 35136,
+  "frame_rows": 8784,
+  "boundary_groups": [
+    {
+      "boundary_group": "service_year_2023_2024",
+      "scenario": "base",
+      "rows": 8784,
+      "start_utc": "2023-06-30T16:00:00+00:00",
+      "end_exclusive_utc": "2024-06-30T16:00:00+00:00"
+    }
+  ],
+  "building_groups": [
+    {
+      "building": "apartments_a",
+      "boundary_group": "service_year_2023_2024",
+      "mode": "fixed",
+      "initial_start_c": 20.0,
+      "final_end_c": 20.0,
+      "inventory_change_kwh": 0.0,
+      "trajectory_hours": 8784.0,
+      "heat_kwh": 359973.3885901925,
+      "cooling_kwh": 501775.7927133594
+    },
+    {
+      "building": "office_a",
+      "boundary_group": "service_year_2023_2024",
+      "mode": "fixed",
+      "initial_start_c": 20.0,
+      "final_end_c": 20.0,
+      "inventory_change_kwh": 0.0,
+      "trajectory_hours": 8784.0,
+      "heat_kwh": 161271.72721993845,
+      "cooling_kwh": 201426.5263140014
+    },
+    {
+      "building": "apartments_b",
+      "boundary_group": "service_year_2023_2024",
+      "mode": "fixed",
+      "initial_start_c": 20.0,
+      "final_end_c": 20.0,
+      "inventory_change_kwh": 0.0,
+      "trajectory_hours": 8784.0,
+      "heat_kwh": 330623.422046031,
+      "cooling_kwh": 399823.339850423
+    },
+    {
+      "building": "retail_b",
+      "boundary_group": "service_year_2023_2024",
+      "mode": "fixed",
+      "initial_start_c": 20.0,
+      "final_end_c": 20.0,
+      "inventory_change_kwh": 0.0,
+      "trajectory_hours": 8784.0,
+      "heat_kwh": 106469.2865427198,
+      "cooling_kwh": 224067.81402040052
+    }
+  ],
+  "node_service_energy": [
+    {
+      "node": "district_a",
+      "grade": "low",
+      "service": "heat",
+      "kwh": 521245.1158101276,
+      "expected_weighted_kwh": 521245.1158101276
+    },
+    {
+      "node": "district_b",
+      "grade": "low",
+      "service": "heat",
+      "kwh": 437092.70858874323,
+      "expected_weighted_kwh": 437092.70858874323
+    },
+    {
+      "node": "district_a",
+      "grade": "cooling",
+      "service": "cooling",
+      "kwh": 703202.3190273514,
+      "expected_weighted_kwh": 703202.3190273514
+    },
+    {
+      "node": "district_b",
+      "grade": "cooling",
+      "service": "cooling",
+      "kwh": 623891.1538708295,
+      "expected_weighted_kwh": 623891.1538708295
+    }
+  ],
+  "summary_comparisons": [
+    {
+      "field": "building_heat_delivered_kwh_per_year",
+      "reported_kwh": 958337.8243989447,
+      "recomputed_kwh": 958337.8243989118
+    },
+    {
+      "field": "building_cooling_delivered_kwh_per_year",
+      "reported_kwh": 1327093.4728981897,
+      "recomputed_kwh": 1327093.4728981792
+    },
+    {
+      "field": "cooling_demand_kwh_per_year",
+      "reported_kwh": 1327093.4728981897,
+      "recomputed_kwh": 1327093.4728981792
+    }
+  ]
+}

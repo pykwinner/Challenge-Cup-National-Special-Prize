@@ -1,0 +1,116 @@
+{
+  "schema": "paper.final_scoring_text_review.r5.v1",
+  "review_date": "2026-10-03",
+  "mode": "只读终审；不改论文或算法说明，不重跑模型",
+  "target_pdf": "16/C7_score_release_20261003_r5/build/C7_scoring_paper_20261003_r5.pdf",
+  "target_pdf_sha256": "79d741630300aba93dad7b1cc21faa518ba44af1cb52653ffeaed9a0cc88c68e",
+  "pages": 27,
+  "target_supplement": "16/16_LaTeX源文件/supplement/ALGORITHM_DETAILS.md",
+  "judgement": "八章顺读清楚，新增完整服务年/声明冬季、27固定策略开发确认、九记录终止与耗时均有明确比较范围。没有发现新增数字错误或把固定库选择、数学场景、固定资产调度升级为真实城市或库外全局最优的错义。需修正文与算法说明的源码对照衔接，并微调净供热功率的量纲措辞；随附证据索引及评分复核文件仍须在交付前落盘核对。",
+  "word_count": {
+    "automatic_boundary_method": "逐页提取后去空白识别页首：一、研究问题与技术贡献；参考资料；附录；摘要和目录独立识别。没有沿用R4页数。",
+    "boundaries_physical_pages": {
+      "abstract": [2],
+      "toc": [3],
+      "body": [4, 24],
+      "references": [25, 26],
+      "appendix": [27]
+    },
+    "count_definition": {
+      "CJK": "Unicode U+4E00至U+9FFF字符数；包含提取到的标题、正文、表格、图中文字和图注。",
+      "nonwhitespace_unicode_characters": "去除所有Unicode空白后的字元数；同时计入汉字、字母、数字、标点和公式字符，不等同中文词数。",
+      "abstract_plus_body": "摘要物理第2页+正文物理第4—24页；排除目录、参考资料、附录及空封面。",
+      "body": "第一章至第八章结论结束；物理第4—24页。",
+      "whole_pdf": "PDF全部27页，包括目录、参考资料、附录和页码。"
+    },
+    "primary_method": "PyMuPDF get_text",
+    "independent_cross_check": "pdftotext -layout",
+    "same_snapshot_both_methods_agree": true,
+    "pdf_hash_stable_during_final_count": true,
+    "counts": {
+      "abstract_plus_body": {"CJK": 9793, "nonwhitespace_unicode_characters": 14480},
+      "body": {"CJK": 9302, "nonwhitespace_unicode_characters": 13888},
+      "whole_pdf": {"CJK": 10725, "nonwhitespace_unicode_characters": 18437},
+      "abstract": {"CJK": 491, "nonwhitespace_unicode_characters": 592},
+      "toc": {"CJK": 376, "nonwhitespace_unicode_characters": 885},
+      "references": {"CJK": 244, "nonwhitespace_unicode_characters": 2600},
+      "appendix": {"CJK": 312, "nonwhitespace_unicode_characters": 472}
+    },
+    "interpretation": "按摘要+正文的中文字符口径为9793；含目录、参考和附录的全文中文字符为10725。题面未细定计字规则，不能不说明口径便宣称整稿少于1万字；非空白字元也不能冒充中文词数。",
+    "snapshot_change_note": "审查过程中PDF由d2dd60441501615c19af78a95f31ef2b43f42185dc079887f7510c4dfb992059重新编译为当前79d741…；前一快照正文9279、摘要+正文9770、全文10702。23个CJK差异来自版本变化，已以同次哈希稳定的当前快照重计，两提取器没有差异。"
+  },
+  "new_claim_checks": [
+    {
+      "claim": "27条固定策略开发确认",
+      "paper_location": "第五章第二节，物理第17页；第八章（1）",
+      "status": "通过",
+      "checked_values": {"cities": 3, "strategies_per_city": 9, "continuous_trajectories": 27, "total_hours": 77760, "weight_methods": 6, "budgets": 4, "hard_W1_bill_MAPE_percent_rounded": 0.1405, "frequency_bill_MAPE_percent_rounded": 0.5569, "qualified_choices_frequency": "9/12", "qualified_choices_hard_W1": "12/12"},
+      "source": ["docs/implementation_20261002_followup/parallel_stage_03/algorithm/claims_reviewed.txt", "docs/implementation_20261002_followup/parallel_stage_03/algorithm/interpretation.json"],
+      "scope_check": "已见三城、固定九策略库、开发确认均明确；说明其他三种硬方法同样12/12，并排除库外全局最优。费用MAPE与六楼分布W1分开，未声称新留出泛化、投资改善或加速。"
+    },
+    {
+      "claim": "三城九个优化记录、gap与单记录耗时",
+      "paper_location": "第五章第六节，物理第21页",
+      "status": "通过",
+      "checked_saved_values": {"optimized_records": 9, "all_solver_status": 0, "all_saved_checks_passed": true, "max_gap": 2.6278621753184612e-15, "min_wall_seconds": 3.255333900000551, "max_wall_seconds": 15.267582999993465},
+      "paper_rounding": {"max_gap": "2.63×10^-15", "wall_seconds": "3.26—15.27"},
+      "source": ["docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/comparison.csv"],
+      "scope_check": "正常终止、原运行环境、单记录总耗时和固定资产容差内最优均准确。耗时用wall_seconds，不误用单求解阶段耗时；端点包含两阶段。上下界定义仍限定同模型/同阶段/同目标，不用gap乘其他KPI制造区间。"
+    },
+    {
+      "claim": "8784小时服务年与2928小时声明冬季",
+      "paper_location": "第二章第三类场景说明；第五章第一节，物理第15页；摘要及结论",
+      "status": "文本范围清楚",
+      "scope_check": "日期含起点不含终点，冬季为项目服务假定；案例称历史数学场景且参数合成，独立储热与联络管容量为零。最新PDF补清四楼分别接入两区域热源、系统配电共用，并明确建筑检查为小时末舒适、末态及同小时冷热互斥。没有借此声称三地完整实际供暖季或现场效果。",
+      "review_limit": "本子任务检查新增表述与既有证据边界；四楼原始账本、gap及残差数值的独立逐项确认由模型评分审查及总控负责，本次不重跑。"
+    }
+  ],
+  "chapter_checks": [
+    {"chapter": 1, "name": "研究问题与技术贡献", "status": "清楚", "note": "四项贡献围绕热量计量、代表日、物理反馈与受控对照，未宣称已有方法首次提出。"},
+    {"chapter": 2, "name": "数据基础与三城实验设计", "status": "清楚", "note": "三城共同窗口、外部表计、厂家原型、历史数学年季和不同实验资产分开说明，控制变量表可定位验证任务。"},
+    {"chapter": 3, "name": "统一模型", "status": "主体清楚，存在一处量纲措辞小修", "note": "资源池、Q/P设备域、节点热平衡、1R1C、独立储热、电力及费用碳账衔接完整；新增年度地源比例公式的量和参数有定义。"},
+    {"chapter": 4, "name": "多目标规划与物理反馈求解", "status": "清楚", "note": "压缩后仍保留端点容差、支配定义、W1构造、失败回退另检查、连续回放、平均/瞬时区分、有限模式排除以及证书范围。"},
+    {"chapter": 5, "name": "对照实验与机制分析", "status": "清楚", "note": "六组实验分别讲固定条件、所改因素、结果及机制；新27策略与9记录质量段对应实际证据，没有混入厂家设备比较。"},
+    {"chapter": 6, "name": "经济评价与方案选择", "status": "清楚", "note": "NPV接口与实算采购阈值分开；F=5明确五次窗口非五年，无碳帽价格曲线与有碳帽候选分开。"},
+    {"chapter": 7, "name": "软件组织与可复现性", "status": "清楚，但随附源码对照尚缺", "note": "短章保留模块分离、配置复用、依赖和历史252/19复算身份，伪代码转移合理。"},
+    {"chapter": 8, "name": "结论", "status": "清楚", "note": "数值与正文一致，三城固定策略库和四楼历史数学场景身份保留；没有新增未验证的最优性、节能或工程收益。"}
+  ],
+  "supplement_check": {
+    "status": "四算法逻辑清楚；源码对照衔接需补",
+    "algorithms": 4,
+    "preserved_logic": ["批量场景参数及实际应用规则", "候选失败回退且回退另验收", "端点新建模型、状态/界/gap/失败保留", "碳帽容差、有限采样去重支配筛选", "网络按开启瞬时校核、全时段排除及预算停止"],
+    "history_identity": "252唯一测试及19案例仍明确为2026-10-02 v11.12.0rc6既有记录，未写成本次重跑。"
+  },
+  "final_issues_at_read_time": [
+    {
+      "id": "R5-TEXT-01",
+      "priority": "P2",
+      "status": "open_at_read_time",
+      "location": "第七章/物理第23页；supplement/ALGORITHM_DETAILS.md导言",
+      "issue": "正文称完整伪代码和源文件对应关系见算法说明，但算法说明没有源码对照表，仍称源文件位置见附录；当前论文附录已改证据编号，也没有算法1—4源码表。",
+      "minimal_fix": "在算法说明补原四行源码对应表；将源文件位置见附录改为见下表。",
+      "expected_mapping": [
+        {"algorithm": 1, "files": ["src/heatplan/unified_cli.py", "src/heatplan/io.py", "src/heatplan/reporting.py"]},
+        {"algorithm": 2, "files": ["src/heatplan/hard_weight_calibration.py", "src/heatplan/representative_adoption.py", "scripts/bdg2_hard_weight_confirmation.py"]},
+        {"algorithm": 3, "files": ["src/heatplan/model.py", "src/heatplan/experiments.py", "scripts/run_competition_frontier.py"]},
+        {"algorithm": 4, "files": ["src/heatplan/network_feedback.py", "scripts/run_network_feedback_reference.py"]}
+      ]
+    },
+    {
+      "id": "R5-TEXT-02",
+      "priority": "P3",
+      "status": "open_at_read_time",
+      "location": "第三章RC段，物理第10页；sections/model-scoring-20261003.tex新增负荷推导句",
+      "issue": "递推式反解的是Qh-Qc（kW），新增句称净供热量，容易与kWh混淆。",
+      "minimal_fix": "改为反解所需净供热功率；同句供热量可相应改供热功率。"
+    }
+  ],
+  "delivery_pending_checks": [
+    {"item": "EVIDENCE_INDEX.json", "location": "论文附录引用的随附文件", "exists_in_source_directory_at_read_time": false, "note": "总控正在构建材料；交付前须落盘且SHA/路径与实际分发一致，不是新增科学结果错误。"},
+    {"item": "R5_REVIEW.md", "location": "论文附录引用的随附文件", "exists_in_source_directory_at_read_time": false, "note": "交付前须生成评分映射复核记录。"}
+  ],
+  "no_high_priority_new_factual_issue_found": true,
+  "compile_information_read": {"pages": 27, "overfull_count": 0, "undefined_references": false, "missing_glyphs": 0},
+  "visual_review_limit": "本记录是文本与计字终审，不代替最终PDF整页图表视觉验收。",
+  "files_modified_by_this_subtask": ["16/C7_score_release_20261003_r5/final_scoring_text_review.json"]
+}

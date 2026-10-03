@@ -1,0 +1,46 @@
+{
+  "cyclic_state_assumptions": [],
+  "thermal_storage_boundary": "explicit_fixed_initial_and_final",
+  "deferred_annual_constraints": {
+    "fixed_investment_accounting": {
+      "scope": "annual_selected_plan_charges",
+      "components": {
+        "annualized_capex": 301782.8654282073,
+        "fixed_om_cost": 0.0
+      },
+      "metrics": {
+        "regulated_annualized_capex_yuan_per_year": 301782.8654282073,
+        "shared_non_heating_capex_yuan_per_year": 0.0,
+        "public_subsidy_yuan_per_year": 0.0
+      }
+    },
+    "planning.annual_scope": {
+      "start_inclusive": "2023-07-01T00:00:00+08:00",
+      "end_exclusive": "2024-07-01T00:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "expected_hours": 8784
+    },
+    "policy.maximum_levelized_heat_cost_yuan_per_kwh": 2.0,
+    "cooling.ground_source_annual_balance": {
+      "source_names": [
+        "district_a_ground_hp",
+        "district_b_ground_hp"
+      ],
+      "ratio_definition": "annual_heat_extracted_from_ground_kwh_over_annual_heat_rejected_to_ground_kwh",
+      "minimum_ratio": 0.8,
+      "maximum_ratio": 1.25,
+      "analysis_horizon_years": 10,
+      "large_project_floor_area_threshold_m2": 50000
+    },
+    "cooling.sources.district_a_ground_hp.ground_thermal_balance": {
+      "minimum_extraction_to_rejection_ratio": 0.8,
+      "maximum_extraction_to_rejection_ratio": 1.25
+    },
+    "cooling.sources.district_b_ground_hp.ground_thermal_balance": {
+      "minimum_extraction_to_rejection_ratio": 0.8,
+      "maximum_extraction_to_rejection_ratio": 1.25
+    }
+  },
+  "annual_supplement_required": true,
+  "scope_note": "Service-period operating feasibility only; annual economics/resource balance require separate annual replay."
+}

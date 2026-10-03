@@ -1,0 +1,63 @@
+[
+  {
+    "source": "distributed_air_hp_b",
+    "grade": "low",
+    "mode": "heat_pump",
+    "checked_steps": 8784,
+    "cop_min": 2.188306611287356,
+    "cop_max": 4.2,
+    "electricity_kwh_per_kwh_heat_min": 0.23809523809523808,
+    "electricity_kwh_per_kwh_heat_max": 0.45697435397853653
+  },
+  {
+    "source": "district_a_emergency_eb",
+    "grade": "low",
+    "mode": "direct",
+    "supply_temp_c": 100.0,
+    "required_temp_c": 45.0
+  },
+  {
+    "source": "district_a_air_hp",
+    "grade": "low",
+    "mode": "heat_pump",
+    "checked_steps": 8784,
+    "cop_min": 2.292511688015326,
+    "cop_max": 4.8,
+    "electricity_kwh_per_kwh_heat_min": 0.20833333333333334,
+    "electricity_kwh_per_kwh_heat_max": 0.4362027924340575
+  },
+  {
+    "source": "district_a_ground_hp",
+    "grade": "low",
+    "mode": "heat_pump",
+    "checked_steps": 1,
+    "cop_min": 4.926193548387096,
+    "cop_max": 4.926193548387096,
+    "electricity_kwh_per_kwh_heat_min": 0.20299649012520302,
+    "electricity_kwh_per_kwh_heat_max": 0.20299649012520302
+  },
+  {
+    "source": "district_b_ground_hp",
+    "grade": "low",
+    "mode": "heat_pump",
+    "checked_steps": 1,
+    "cop_min": 4.926193548387096,
+    "cop_max": 4.926193548387096,
+    "electricity_kwh_per_kwh_heat_min": 0.20299649012520302,
+    "electricity_kwh_per_kwh_heat_max": 0.20299649012520302
+  },
+  {
+    "source": "district_a_solar_thermal",
+    "grade": "low",
+    "mode": "direct",
+    "supply_temp_c": 52.0,
+    "required_temp_c": 45.0
+  },
+  {
+    "source": "district_b_solar_thermal",
+    "grade": "low",
+    "mode": "direct",
+    "supply_temp_c": 52.0,
+    "required_temp_c": 45.0
+  }
+]

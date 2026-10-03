@@ -1,0 +1,17 @@
+{
+  "profile": "scenario3_wuhan_competition_rc",
+  "timezone": "Asia/Shanghai",
+  "date_identity": "project_assumed_service_period_not_city_statutory_schedule",
+  "start_inclusive": "2023-11-15T00:00:00+08:00",
+  "end_exclusive": "2024-03-16T00:00:00+08:00",
+  "expected_hours": 2928,
+  "annual_start_inclusive": "2023-07-01T00:00:00+08:00",
+  "annual_end_exclusive": "2024-07-01T00:00:00+08:00",
+  "annual_expected_hours": 8784,
+  "annual_identity": "continuous_July_to_June_service_year_not_calendar_year",
+  "utc_calendar_year_start_inclusive": "2023-01-01T00:00:00Z",
+  "utc_calendar_year_end_exclusive": "2024-01-01T00:00:00Z",
+  "utc_calendar_year_expected_hours": 8760,
+  "calendar_year_role": "legacy_UTC_calendar_audit_compatible; does_not_contain_whole_2023_2024_heating_season",
+  "selection_rule": "latest complete July-to-June service year in existing 2020-2024 archive; not selected by optimized performance"
+}

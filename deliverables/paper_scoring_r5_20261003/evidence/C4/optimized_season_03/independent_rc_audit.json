@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "building": "apartments_a",
+      "boundary_group": "base",
+      "max_rc_residual_c": 1.0658141036401503e-14,
+      "max_comfort_violation_c": 0.0,
+      "terminal_violation_c": 0.0,
+      "simultaneous_hours": 0,
+      "negative_power_kw": 0.0,
+      "passed": true
+    },
+    {
+      "building": "office_a",
+      "boundary_group": "base",
+      "max_rc_residual_c": 7.105427357601002e-15,
+      "max_comfort_violation_c": 0.0,
+      "terminal_violation_c": 0.0,
+      "simultaneous_hours": 0,
+      "negative_power_kw": 0.0,
+      "passed": true
+    },
+    {
+      "building": "apartments_b",
+      "boundary_group": "base",
+      "max_rc_residual_c": 2.1316282072803006e-14,
+      "max_comfort_violation_c": 0.0,
+      "terminal_violation_c": 0.0,
+      "simultaneous_hours": 0,
+      "negative_power_kw": 0.0,
+      "passed": true
+    },
+    {
+      "building": "retail_b",
+      "boundary_group": "base",
+      "max_rc_residual_c": 6.750155989720952e-14,
+      "max_comfort_violation_c": 0.0,
+      "terminal_violation_c": 0.0,
+      "simultaneous_hours": 0,
+      "negative_power_kw": 1.8041104096989608e-12,
+      "passed": true
+    }
+  ],
+  "temperature_tolerance_c": 1e-06,
+  "power_tolerance_kw": 1e-06,
+  "scope": "independent_1R1C_recompute_and_end_sample_comfort_not_local_measurement_validation"
+}
