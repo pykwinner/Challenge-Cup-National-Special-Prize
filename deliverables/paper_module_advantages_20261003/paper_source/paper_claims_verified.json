@@ -1,0 +1,2955 @@
+{
+  "schema": "paper_claims_verified.v1",
+  "created_utc": "2026-10-03T02:46:40.900034+00:00",
+  "source_root": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge",
+  "audit_type": "read_only_saved_results_and_hashes; no solver, no new tests, no figure generation",
+  "original_sources_or_results_modified": false,
+  "scope": "independent claim checks for paper editing on 2026-10-03",
+  "claims": [
+    {
+      "id": "bdg2_hard_W1_and_adoption",
+      "recommended_paper_wording_zh": "同一代表日集合上，六栋外部建筑的归一化W1误差中位数由12.3150%降至4.47753%，完整研究准入由3/6增至4/6；两栋原始峰值不足的建筑仍拒绝。",
+      "values": {
+        "unit": "percent_of_mean_load",
+        "metric": "100 * load-duration-curve Wasserstein-1 distance / mean load",
+        "soft_median": 12.315005340730362,
+        "hard_median": 4.477527539045215,
+        "uncalibrated_extreme_aware_median": 15.444991320526965,
+        "complete_gate_pass_count_soft": 3,
+        "complete_gate_pass_count_hard": 4,
+        "denominator": 6,
+        "gate_policy": {
+          "maximum_absolute_relative_energy_error": 0.001,
+          "maximum_w1_degradation": 0.0,
+          "minimum_peak_retention": 1.0,
+          "minimum_ramp_retention": 1.0,
+          "minimum_original_observed_peak_retention": 1.0,
+          "numerical_tolerance": 1e-08,
+          "metric_tolerance": 1e-12
+        },
+        "gate_energy_limit_percent": 0.1,
+        "paired_cases": [
+          {
+            "building_label": "建筑一",
+            "building_id": "Bobcat_education_Alissa",
+            "load_category": "hotwater",
+            "year": 2017,
+            "soft_W1_percent": 18.00430996227447,
+            "hard_W1_percent": 4.809729503725973,
+            "soft_gate_pass": true,
+            "hard_gate_pass": true,
+            "retained_complete_days": 320,
+            "representative_days": 8,
+            "original_peak_retention_percent": 100.0,
+            "rejection_reasons": []
+          },
+          {
+            "building_label": "建筑二",
+            "building_id": "Eagle_assembly_Ian",
+            "load_category": "hotwater",
+            "year": 2017,
+            "soft_W1_percent": 10.03631589641419,
+            "hard_W1_percent": 4.946300441128311,
+            "soft_gate_pass": false,
+            "hard_gate_pass": false,
+            "retained_complete_days": 345,
+            "representative_days": 10,
+            "original_peak_retention_percent": 97.90055240848051,
+            "rejection_reasons": [
+              "original_observed_peak_retention_failed"
+            ]
+          },
+          {
+            "building_label": "建筑三",
+            "building_id": "Bull_assembly_Brandon",
+            "load_category": "steam",
+            "year": 2017,
+            "soft_W1_percent": 20.90903069173285,
+            "hard_W1_percent": 4.145325574364456,
+            "soft_gate_pass": false,
+            "hard_gate_pass": true,
+            "retained_complete_days": 304,
+            "representative_days": 9,
+            "original_peak_retention_percent": 100.0,
+            "rejection_reasons": []
+          },
+          {
+            "building_label": "建筑四",
+            "building_id": "Cockatoo_assembly_Genoveva",
+            "load_category": "steam",
+            "year": 2017,
+            "soft_W1_percent": 8.251891422609352,
+            "hard_W1_percent": 3.8919619433679054,
+            "soft_gate_pass": true,
+            "hard_gate_pass": true,
+            "retained_complete_days": 276,
+            "representative_days": 9,
+            "original_peak_retention_percent": 100.0,
+            "rejection_reasons": []
+          },
+          {
+            "building_label": "建筑五",
+            "building_id": "Bobcat_education_Angela",
+            "load_category": "chilledwater",
+            "year": 2017,
+            "soft_W1_percent": 14.593694785046536,
+            "hard_W1_percent": 5.4303505182164304,
+            "soft_gate_pass": false,
+            "hard_gate_pass": false,
+            "retained_complete_days": 338,
+            "representative_days": 9,
+            "original_peak_retention_percent": 99.96821101484699,
+            "rejection_reasons": [
+              "original_observed_peak_retention_failed"
+            ]
+          },
+          {
+            "building_label": "建筑六",
+            "building_id": "Bull_assembly_Dorethea",
+            "load_category": "chilledwater",
+            "year": 2017,
+            "soft_W1_percent": 2.788452541385649,
+            "hard_W1_percent": 2.0064519622463526,
+            "soft_gate_pass": true,
+            "hard_gate_pass": true,
+            "retained_complete_days": 338,
+            "representative_days": 9,
+            "original_peak_retention_percent": 100.0,
+            "rejection_reasons": []
+          }
+        ]
+      },
+      "sample": {
+        "buildings": 6,
+        "categories": [
+          "hotwater",
+          "steam",
+          "chilledwater"
+        ],
+        "year": 2017,
+        "retained_complete_days_by_case": [
+          320,
+          345,
+          304,
+          276,
+          338,
+          338
+        ],
+        "unseen_buildings": true,
+        "unseen_sites": false
+      },
+      "comparison": {
+        "before": "extreme_calibrated (soft energy calibration)",
+        "after": "hard_energy_minimum_W1",
+        "same_selected_day_set": true
+      },
+      "boundaries": [
+        "W1不是MAPE；仅有限6例的描述中位数，不作总体统计推断。",
+        "通过数取adoption_soft/hard完整规则；候选summary中的candidate_adopted_cases=0不可替代。",
+        "原有效小时峰完整性、峰/爬坡保留、能量与守恒共同构成准入。",
+        "选择的是保留完整日范围内的压缩；不是未来预测、独立年度或三城现场运行。",
+        "R6的频次权重不是这里的软校正或硬W1权重。",
+        "旧adoption.selected_method存在命名勘误，方法身份应取candidate_method。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/implementation_20261002/algorithm_hard_weights/results.json",
+          "sha256": "f9c2006e32ff952b4d65d8780f4cf54b1be951cd7dc42b037b2067534cb2a757",
+          "bytes": 192324,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002/algorithm_hard_weights/summary.json",
+          "sha256": "1eee2848ae9f7c78b6cfbadb13203a012cd075c0ae60f20dfbfd3753cfe85f16",
+          "bytes": 2131,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002/algorithm_hard_weights/README.md",
+          "sha256": "beb31c5a5ae3c425cf58ec995dc4918f4a441a0478bae407634bc3c51d2831f3",
+          "bytes": 10682,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/publication_redesign_20261003/algorithm_evidence/building_comparison.csv",
+          "sha256": "f3d48e5917957f6e7bf11776a1979c7830cf174eee45a924cb122adb83dcad56",
+          "bytes": 2034,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "多目标协同与收敛性15分：支持代表期数据处理，不能单独证明工程多目标收敛"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "three_city_continuous_window",
+      "recommended_paper_wording_zh": "三城采用相同48平方米公开原型与2024年11月16日至2025年3月16日的连续2880小时共同研究窗口，逐时状态连续递推。",
+      "values": {
+        "unit": "hour",
+        "cities": 3,
+        "continuous_hours_per_city": 2880,
+        "days": 120,
+        "step_h": 1,
+        "start_inclusive": "2024-11-16T00:00:00+08:00",
+        "end_exclusive": "2025-03-16T00:00:00+08:00",
+        "time_zone": "Asia/Shanghai",
+        "prototype_floor_area_m2": 48,
+        "registered_complete_local_season": false
+      },
+      "sample": {
+        "cities": [
+          "urumqi",
+          "guyuan",
+          "wuhan"
+        ],
+        "window_count": 3
+      },
+      "comparison": {
+        "same_public_prototype": "BESTEST600",
+        "same_calendar_window": true
+      },
+      "boundaries": [
+        "真实格点天气与公开建筑原型计算负荷，不是三城实楼测量。",
+        "2880h共同窗口没有获核定为三地完整法定或实际供暖季；动态15分的该项验收缺口仍存在。",
+        "与旧C3的8784h软件年/2928h软件季不同；不得将不同来源拼接成长时窗。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/final_optimization_20261002/time_registry/run_final/registry.json",
+          "sha256": "8d59e0b322d25c0674ce36bd6d07c8bb9f7bee680fec0bdc56cce3656b872885",
+          "bytes": 21120,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/time_registry/run_final/README.md",
+          "sha256": "5eb4a5491a64c4abde5d4e40b23c4e27585b19d5432e8f83a2180a059c6bcc07",
+          "bytes": 1958,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/publication_redesign_20261003/PAPER_FIGURE_PLAN.md",
+          "sha256": "ca07021f7f2e279e0f6ee8056b5a92b5a9676fbae57cfa78988dbde5888dc08d",
+          "bytes": 14377,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv",
+          "sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+          "bytes": 642999,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv",
+          "sha256": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+          "bytes": 643130,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv",
+          "sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+          "bytes": 635999,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "动态仿真能力15分",
+        "场景验证完整度15分"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "R6_frequency_weight_scope",
+      "recommended_paper_wording_zh": "频次基线用8个实际日、192个采样小时，以120日频数权重核算2880小时；该权重不建立日块间状态连续性。",
+      "values": {
+        "unit": "hour",
+        "sampled_hours_per_city": 192,
+        "selected_days_per_city": 8,
+        "frequency_weight_sum_days": 120,
+        "accounting_hours_per_city": 2880,
+        "continuous_horizon_hours": null,
+        "registry_entries": [
+          {
+            "id": "urumqi_representative_8d",
+            "axis": {
+              "schema": "heatplan.time_axis.v1",
+              "axis_sha256": "15d6e8d1a899a6c4ab774a3833af9198684f05fe40944ede9882d641491024b2",
+              "kind": "representative",
+              "rows": 192,
+              "physical_step_hours": 1.0,
+              "sampled_interval_hours": 192.0,
+              "accounting_weighted_hours": 2880.0,
+              "calendar_envelope_hours": 2040.0,
+              "continuous_horizon_hours": null,
+              "start_utc": "2024-12-03T16:00:00+00:00",
+              "end_exclusive_utc": "2025-02-26T16:00:00+00:00",
+              "interval_convention": "[time,time+physical_step)",
+              "state_continuity": "not established between representative blocks",
+              "full_year_claim": false,
+              "complete_local_heating_season_claim": false,
+              "blocks": [
+                {
+                  "period": "cluster_0",
+                  "rows": 24,
+                  "start_utc": "2025-02-14T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-02-15T16:00:00+00:00",
+                  "accounting_weight": 14.0
+                },
+                {
+                  "period": "cluster_1",
+                  "rows": 24,
+                  "start_utc": "2024-12-03T16:00:00+00:00",
+                  "end_exclusive_utc": "2024-12-04T16:00:00+00:00",
+                  "accounting_weight": 17.0
+                },
+                {
+                  "period": "cluster_2",
+                  "rows": 24,
+                  "start_utc": "2024-12-17T16:00:00+00:00",
+                  "end_exclusive_utc": "2024-12-18T16:00:00+00:00",
+                  "accounting_weight": 22.0
+                },
+                {
+                  "period": "cluster_3",
+                  "rows": 24,
+                  "start_utc": "2025-02-07T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-02-08T16:00:00+00:00",
+                  "accounting_weight": 13.0
+                },
+                {
+                  "period": "cluster_4",
+                  "rows": 24,
+                  "start_utc": "2025-01-21T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-01-22T16:00:00+00:00",
+                  "accounting_weight": 24.0
+                },
+                {
+                  "period": "cluster_5",
+                  "rows": 24,
+                  "start_utc": "2025-01-28T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-01-29T16:00:00+00:00",
+                  "accounting_weight": 28.0
+                },
+                {
+                  "period": "extreme_day_040",
+                  "rows": 24,
+                  "start_utc": "2024-12-25T16:00:00+00:00",
+                  "end_exclusive_utc": "2024-12-26T16:00:00+00:00",
+                  "accounting_weight": 1.0
+                },
+                {
+                  "period": "extreme_day_102",
+                  "rows": 24,
+                  "start_utc": "2025-02-25T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-02-26T16:00:00+00:00",
+                  "accounting_weight": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "id": "guyuan_representative_8d",
+            "axis": {
+              "schema": "heatplan.time_axis.v1",
+              "axis_sha256": "56c166d923f2319f3957235e3e5e0d34253cec47cf7303b7970fc5a6785025cb",
+              "kind": "representative",
+              "rows": 192,
+              "physical_step_hours": 1.0,
+              "sampled_interval_hours": 192.0,
+              "accounting_weighted_hours": 2880.0,
+              "calendar_envelope_hours": 2064.0,
+              "continuous_horizon_hours": null,
+              "start_utc": "2024-12-03T16:00:00+00:00",
+              "end_exclusive_utc": "2025-02-27T16:00:00+00:00",
+              "interval_convention": "[time,time+physical_step)",
+              "state_continuity": "not established between representative blocks",
+              "full_year_claim": false,
+              "complete_local_heating_season_claim": false,
+              "blocks": [
+                {
+                  "period": "cluster_0",
+                  "rows": 24,
+                  "start_utc": "2024-12-03T16:00:00+00:00",
+                  "end_exclusive_utc": "2024-12-04T16:00:00+00:00",
+                  "accounting_weight": 18.0
+                },
+                {
+                  "period": "cluster_1",
+                  "rows": 24,
+                  "start_utc": "2025-02-04T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-02-05T16:00:00+00:00",
+                  "accounting_weight": 11.0
+                },
+                {
+                  "period": "cluster_2",
+                  "rows": 24,
+                  "start_utc": "2025-01-06T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-01-07T16:00:00+00:00",
+                  "accounting_weight": 25.0
+                },
+                {
+                  "period": "cluster_3",
+                  "rows": 24,
+                  "start_utc": "2025-02-20T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-02-21T16:00:00+00:00",
+                  "accounting_weight": 18.0
+                },
+                {
+                  "period": "cluster_4",
+                  "rows": 24,
+                  "start_utc": "2024-12-22T16:00:00+00:00",
+                  "end_exclusive_utc": "2024-12-23T16:00:00+00:00",
+                  "accounting_weight": 23.0
+                },
+                {
+                  "period": "cluster_5",
+                  "rows": 24,
+                  "start_utc": "2025-01-20T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-01-21T16:00:00+00:00",
+                  "accounting_weight": 23.0
+                },
+                {
+                  "period": "extreme_day_071",
+                  "rows": 24,
+                  "start_utc": "2025-01-25T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-01-26T16:00:00+00:00",
+                  "accounting_weight": 1.0
+                },
+                {
+                  "period": "extreme_day_103",
+                  "rows": 24,
+                  "start_utc": "2025-02-26T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-02-27T16:00:00+00:00",
+                  "accounting_weight": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "id": "wuhan_representative_8d",
+            "axis": {
+              "schema": "heatplan.time_axis.v1",
+              "axis_sha256": "0d4c967b5818051280be766bc1837c5a5121a258ff8ba3569e5d9b78d6256d81",
+              "kind": "representative",
+              "rows": 192,
+              "physical_step_hours": 1.0,
+              "sampled_interval_hours": 192.0,
+              "accounting_weighted_hours": 2880.0,
+              "calendar_envelope_hours": 2616.0,
+              "continuous_horizon_hours": null,
+              "start_utc": "2024-11-23T16:00:00+00:00",
+              "end_exclusive_utc": "2025-03-12T16:00:00+00:00",
+              "interval_convention": "[time,time+physical_step)",
+              "state_continuity": "not established between representative blocks",
+              "full_year_claim": false,
+              "complete_local_heating_season_claim": false,
+              "blocks": [
+                {
+                  "period": "cluster_0",
+                  "rows": 24,
+                  "start_utc": "2025-03-11T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-03-12T16:00:00+00:00",
+                  "accounting_weight": 7.0
+                },
+                {
+                  "period": "cluster_1",
+                  "rows": 24,
+                  "start_utc": "2025-01-10T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-01-11T16:00:00+00:00",
+                  "accounting_weight": 22.0
+                },
+                {
+                  "period": "cluster_2",
+                  "rows": 24,
+                  "start_utc": "2025-02-14T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-02-15T16:00:00+00:00",
+                  "accounting_weight": 24.0
+                },
+                {
+                  "period": "cluster_3",
+                  "rows": 24,
+                  "start_utc": "2025-01-20T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-01-21T16:00:00+00:00",
+                  "accounting_weight": 23.0
+                },
+                {
+                  "period": "cluster_4",
+                  "rows": 24,
+                  "start_utc": "2024-11-23T16:00:00+00:00",
+                  "end_exclusive_utc": "2024-11-24T16:00:00+00:00",
+                  "accounting_weight": 17.0
+                },
+                {
+                  "period": "cluster_5",
+                  "rows": 24,
+                  "start_utc": "2024-12-28T16:00:00+00:00",
+                  "end_exclusive_utc": "2024-12-29T16:00:00+00:00",
+                  "accounting_weight": 25.0
+                },
+                {
+                  "period": "extreme_day_012",
+                  "rows": 24,
+                  "start_utc": "2024-11-27T16:00:00+00:00",
+                  "end_exclusive_utc": "2024-11-28T16:00:00+00:00",
+                  "accounting_weight": 1.0
+                },
+                {
+                  "period": "extreme_day_084",
+                  "rows": 24,
+                  "start_utc": "2025-02-07T16:00:00+00:00",
+                  "end_exclusive_utc": "2025-02-08T16:00:00+00:00",
+                  "accounting_weight": 1.0
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "sample": {
+        "city_axes": 3
+      },
+      "comparison": {
+        "basis": "frequency weighting; not hard W1 weights"
+      },
+      "boundaries": [
+        "加权核算时长不能写成真实连续运行时长。",
+        "R6是选日/压缩示例，不能作为硬W1优越性或城市新增权重准入的结果。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/final_optimization_20261002/time_registry/run_final/registry.json",
+          "sha256": "8d59e0b322d25c0674ce36bd6d07c8bb9f7bee680fec0bdc56cce3656b872885",
+          "bytes": 21120,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/publication_redesign_20261003/scientific_panels/R6_chronology_zh.json",
+          "sha256": "0fa6a1e2a62b74503cc8816bdece486cd643e0ace37064fb9ccb96ff8a826b3b",
+          "bytes": 1205,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/publication_redesign_20261003/scientific_panels/R6_selected_hours.csv",
+          "sha256": "13ed08e530d429ef4bf8024dd88996e29c87a529b1695e3191bcd9b549b745b2",
+          "bytes": 7101,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "动态仿真能力15分：时间身份辨析",
+        "多目标协同与收敛性15分：代表期入口"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "heatpump_catalogue_map",
+      "recommended_paper_wording_zh": "TCAV035BHE和TCAV065BHE分别有83、82对厂家供热量/输入功率样本，165对实值全部保留，180格展示中15格缺失继续拒绝；Q与P分别插值，COP由Q/P派生。",
+      "values": {
+        "Q_unit": "kW",
+        "P_unit": "kW",
+        "COP_unit": "dimensionless",
+        "models": {
+          "TCAV035BHE": 83,
+          "TCAV065BHE": 82
+        },
+        "Q_P_pairs": 165,
+        "full_display_cells": 180,
+        "missing_cells": 15,
+        "missing_by_model": {
+          "TCAV035BHE": 7,
+          "TCAV065BHE": 8
+        },
+        "source_pdf_sha256": "5be3093936a6ec3bb7104372395f8f5c6b375563e40ded024331b0f77e3854a0",
+        "historical_pdf_csv_mismatches": 0
+      },
+      "sample": {
+        "model_count": 2,
+        "map_grid": "2 models x 6 leaving-water temperatures x 15 ambient temperatures"
+      },
+      "comparison": {
+        "basis": "same-source/model/condition paired Q and P"
+      },
+      "boundaries": [
+        "83/82是点数，不是型号后缀；原用户CSV型号没有错误。",
+        "经销商归档厂家样本精确副本；尚未认证厂家端点同版，不是现场或独立实验室测量。",
+        "缺角/空白、越界、跨型号均拒绝；湿度、化霜、启停和部分负荷没有测量验证。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/final_optimization_20261002/heatpump/run_01/source_admission.json",
+          "sha256": "18938c7b53cdd7c406d699406c72b73f667c22d0d10da5d021fbeaf7cd98b910",
+          "bytes": 3099,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/heatpump/run_01/admitted_heating_points.csv",
+          "sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+          "bytes": 63120,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/publication_figures_20261002/equipment/data/fig01_performance_grid.csv",
+          "sha256": "2c960774519e7338c163125baf47c88f96197130e597587105b14da335662545",
+          "bytes": 12050,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/heatpump/performance_map.py",
+          "sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+          "bytes": 8038,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "模型架构20分",
+        "场景验证完整度15分"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "heatpump_same_asset_dispatch",
+      "recommended_paper_wording_zh": "六组固定同设备费用LP相对各自普通温控降参考电量费1.10127%至1.59703%，但六组用电和共同因子碳量均增加。",
+      "values": {
+        "cost_unit": "CNY/window",
+        "electricity_unit": "kWh/window",
+        "carbon_unit": "kg_CO2_proxy/window",
+        "saving_percent_min": 1.1012721194570274,
+        "saving_percent_max": 1.597030972684462,
+        "six_cases": [
+          {
+            "status": "optimal_fixed_asset_LP",
+            "model": "TCAV035BHE",
+            "units": 1.0,
+            "hours": 2880.0,
+            "electricity_kwh": 79659.35379183774,
+            "energy_charge_cny": 59375.61795470811,
+            "carbon_proxy_kg": 32214.242673419183,
+            "hp_heat_kwh": 85553.95551517302,
+            "resistance_heat_kwh": 46261.08689938798,
+            "cooling_kwh": 0.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 25.95476133332816,
+            "terminal_c": 20.0,
+            "max_resistance_heat_kw": 88.1588,
+            "max_cooling_kw": 0.0,
+            "max_grid_power_kw": 100.0,
+            "grid_rejected_hours": 0.0,
+            "city": "urumqi",
+            "case_id": "TCAV035BHE_n1",
+            "thermostat_energy_charge_cny": 60174.36808187286,
+            "optimized_energy_charge_saving_cny": 798.7501271647488,
+            "optimized_energy_charge_saving_pct": 1.3273926301610255,
+            "optimized_electricity_change_kwh": 1398.7985179688985,
+            "optimized_carbon_proxy_change_kg": 565.6741206666265,
+            "energy_charge_dual_lower_bound_cny": 59375.61795470806
+          },
+          {
+            "status": "optimal_fixed_asset_LP",
+            "model": "TCAV065BHE",
+            "units": 1.0,
+            "hours": 2880.0,
+            "electricity_kwh": 56422.53836040445,
+            "energy_charge_cny": 42313.33746211091,
+            "carbon_proxy_kg": 22817.27451294756,
+            "hp_heat_kwh": 126636.05613711177,
+            "resistance_heat_kwh": 5426.555374127,
+            "cooling_kwh": 0.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 25.836652437471162,
+            "terminal_c": 20.0,
+            "max_resistance_heat_kw": 78.2544,
+            "max_cooling_kw": 0.0,
+            "max_grid_power_kw": 100.0,
+            "grid_rejected_hours": 0.0,
+            "city": "urumqi",
+            "case_id": "TCAV065BHE_n1",
+            "thermostat_energy_charge_cny": 42787.77748749991,
+            "optimized_energy_charge_saving_cny": 474.44002538899804,
+            "optimized_energy_charge_saving_pct": 1.108821381357332,
+            "optimized_electricity_change_kwh": 753.5149467537631,
+            "optimized_carbon_proxy_change_kg": 304.72144446722086,
+            "energy_charge_dual_lower_bound_cny": 42313.337462110925
+          },
+          {
+            "status": "optimal_fixed_asset_LP",
+            "model": "TCAV035BHE",
+            "units": 1.0,
+            "hours": 2880.0,
+            "electricity_kwh": 83685.0122968043,
+            "energy_charge_cny": 61605.212077521486,
+            "carbon_proxy_kg": 33842.21897282766,
+            "hp_heat_kwh": 84765.8247240343,
+            "resistance_heat_kwh": 50227.42215258816,
+            "cooling_kwh": 0.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 26.328311788426358,
+            "terminal_c": 20.0,
+            "max_resistance_heat_kw": 88.3082,
+            "max_cooling_kw": 0.0,
+            "max_grid_power_kw": 100.0,
+            "grid_rejected_hours": 0.0,
+            "city": "guyuan",
+            "case_id": "TCAV035BHE_n1",
+            "thermostat_energy_charge_cny": 62513.27396723845,
+            "optimized_energy_charge_saving_cny": 908.0618897169625,
+            "optimized_energy_charge_saving_pct": 1.4525905173241345,
+            "optimized_electricity_change_kwh": 1548.6390973840316,
+            "optimized_carbon_proxy_change_kg": 626.2696509820962,
+            "energy_charge_dual_lower_bound_cny": 61605.21207752145
+          },
+          {
+            "status": "optimal_fixed_asset_LP",
+            "model": "TCAV065BHE",
+            "units": 1.0,
+            "hours": 2880.0,
+            "electricity_kwh": 59748.50285224787,
+            "energy_charge_cny": 44165.891220747566,
+            "carbon_proxy_kg": 24162.294553449035,
+            "hp_heat_kwh": 126963.5973234409,
+            "resistance_heat_kwh": 8024.99131241026,
+            "cooling_kwh": 0.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 25.887149808869406,
+            "terminal_c": 20.0,
+            "max_resistance_heat_kw": 78.3972,
+            "max_cooling_kw": 0.0,
+            "max_grid_power_kw": 100.0,
+            "grid_rejected_hours": 0.0,
+            "city": "guyuan",
+            "case_id": "TCAV065BHE_n1",
+            "thermostat_energy_charge_cny": 44657.69395344935,
+            "optimized_energy_charge_saving_cny": 491.8027327017844,
+            "optimized_energy_charge_saving_pct": 1.1012721194570274,
+            "optimized_electricity_change_kwh": 874.834970427517,
+            "optimized_carbon_proxy_change_kg": 353.7832620408881,
+            "energy_charge_dual_lower_bound_cny": 44165.891220747595
+          },
+          {
+            "status": "optimal_fixed_asset_LP",
+            "model": "TCAV035BHE",
+            "units": 1.0,
+            "hours": 2880.0,
+            "electricity_kwh": 20948.641748615446,
+            "energy_charge_cny": 15210.848179166667,
+            "carbon_proxy_kg": 8471.630723140088,
+            "hp_heat_kwh": 60295.85408107437,
+            "resistance_heat_kwh": 1854.775564874044,
+            "cooling_kwh": 0.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 26.025186877937152,
+            "terminal_c": 20.0,
+            "max_resistance_heat_kw": 52.432291741030575,
+            "max_cooling_kw": 0.0,
+            "max_grid_power_kw": 64.34289174103057,
+            "grid_rejected_hours": 0.0,
+            "city": "wuhan",
+            "case_id": "TCAV035BHE_n1",
+            "thermostat_energy_charge_cny": 15384.194087000982,
+            "optimized_energy_charge_saving_cny": 173.34590783431486,
+            "optimized_energy_charge_saving_pct": 1.1267792570348882,
+            "optimized_electricity_change_kwh": 364.9255718273271,
+            "optimized_carbon_proxy_change_kg": 147.57590124697344,
+            "energy_charge_dual_lower_bound_cny": 15210.848179166675
+          },
+          {
+            "status": "optimal_fixed_asset_LP",
+            "model": "TCAV065BHE",
+            "units": 1.0,
+            "hours": 2880.0,
+            "electricity_kwh": 20493.538232864237,
+            "energy_charge_cny": 14651.989688044603,
+            "carbon_proxy_kg": 8287.586861370297,
+            "hp_heat_kwh": 63244.279866130106,
+            "resistance_heat_kwh": 0.0,
+            "cooling_kwh": 0.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 26.06644785661312,
+            "terminal_c": 20.0,
+            "max_resistance_heat_kw": 0.0,
+            "max_cooling_kw": 0.0,
+            "max_grid_power_kw": 23.797,
+            "grid_rejected_hours": 0.0,
+            "city": "wuhan",
+            "case_id": "TCAV065BHE_n1",
+            "thermostat_energy_charge_cny": 14889.784152729557,
+            "optimized_energy_charge_saving_cny": 237.7944646849537,
+            "optimized_energy_charge_saving_pct": 1.597030972684462,
+            "optimized_electricity_change_kwh": 728.992191524274,
+            "optimized_carbon_proxy_change_kg": 294.80444225241627,
+            "energy_charge_dual_lower_bound_cny": 14651.9896880446
+          }
+        ]
+      },
+      "sample": {
+        "cities": 3,
+        "fixed_module_models": 2,
+        "LP_cases": 6,
+        "thermostat_reference_cases": 9,
+        "hours_each": 2880,
+        "prototype_copies": 20,
+        "aggregate_floor_area_m2": 960,
+        "comfort_C": [
+          20,
+          27
+        ],
+        "initial_and_terminal_C": 20
+      },
+      "comparison": {
+        "before": "own same-asset deadband thermostat",
+        "after": "fixed-module perfect-foresight electricity-energy-charge LP",
+        "price_scope": "published Hubei low-voltage industrial/commercial monthly TOU conditionally applied to all cities as common methodological axis; Wuhan geography matches Hubei but account eligibility/connection is not verified in any city; no actual local bill prediction",
+        "emissions_scope": "same admitted Hubei2022 annual grid factor applied as common methodological axis; not hourly marginal carbon or other-city local factor"
+      },
+      "boundaries": [
+        "服务边界与初末状态相同，轨迹可在20–27℃范围内变化。",
+        "20份48m²原型是合成研究规模，不是20栋实楼。",
+        "只计电量费，排除资本、维护、需量/基本电费和未核验实际账户结算。",
+        "厂家表与理想占空比假设不证明化霜/现场部分负荷性能。",
+        "无TICA报价，不用17800元FT8套餐价格替代，不推断投资回收期。",
+        "原始对偶估计是数值量；有理数弱对偶下界仅对编码binary64有限LP，incumbent仍为容差可行。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/final_optimization_20261002/heatpump/optimization_01/optimization_comparison.csv",
+          "sha256": "9d530eb31bb6f4981a0dda913654f70c37ba1f74f43f385bbcab47a17408dfd3",
+          "bytes": 2359,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/heatpump/run_01/operating_comparison.csv",
+          "sha256": "253e13f73444e80da11bf41f91d3a5bb56c737fdf73003c7faee6b197e3fc840",
+          "bytes": 2484,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/heatpump/optimization_01/protocol.json",
+          "sha256": "cc1783fecff21ef77346ea867d157572f406603644a1ced3f84e7e44b52a534d",
+          "bytes": 4337,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/heatpump/optimization_01/independent_optimization_audit.json",
+          "sha256": "5b04f1f18ac804dc8bcbc67aee570405272056ce53b6011a9e9f3ece5f63b4b3",
+          "bytes": 6658,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/heatpump/optimization_01/native_lp_bound_sidecar.json",
+          "sha256": "158c0da1456eef3fd75b74a9541e0fbe8b46e55172e3982a7bddaaeab26bc110",
+          "bytes": 8258,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/heatpump/HANDOFF.json",
+          "sha256": "521e68667d481041ecf7c3ef6651a6cfe4065f6dd8b8aac56f677d2603890b56",
+          "bytes": 38738,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "动态仿真能力15分",
+        "多目标协同与收敛性15分：费用子问题",
+        "结果可视化与分析深度15分"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "pure_C_shared_resource",
+      "recommended_paper_wording_zh": "固定H等条件，仅把B楼热容改为4倍时，共享6.4796375kW上限下参考费降4.659735%，用电增4.166888%，共享约束绑定由125小时增至530小时。",
+      "values": {
+        "cost_unit": "CNY/window",
+        "electricity_unit": "kWh/window",
+        "grid_capacity_unit": "kW",
+        "binding_unit": "hour",
+        "cost_C1": 5937.643314232109,
+        "cost_C4": 5660.964848086876,
+        "cost_reduction_percent": 4.65973537821065,
+        "electricity_C1": 8050.60755741449,
+        "electricity_C4": 8386.067388668092,
+        "electricity_change_kWh": 335.4598312536027,
+        "electricity_increase_percent": 4.166888385270366,
+        "grid_capacity": 6.479637500000002,
+        "binding_C1": 125,
+        "binding_C4": 530,
+        "all_four_effects": {
+          "pure_C_unlimited": {
+            "comparison": "C4_unlimited-C1_unlimited",
+            "only_design_C_changes": true,
+            "reference_energy_charge_yuan_difference": -427.20166009741206,
+            "electricity_kwh_difference": 570.3316438979391,
+            "reference_average_factor_co2_kg_difference": 230.6421167923263,
+            "grid_peak_kw_difference": 11.227138858629397,
+            "variant_B_envelope_heat_loss_kwh_difference": 570.3316438979318,
+            "variant_B_mean_temperature_continuous_c_difference": 1.2657834502901402,
+            "bill_reduction_percent_denominator_C1": 7.2185115471800305,
+            "bill_difference_solver_interval": {
+              "lower": -427.20166009741297,
+              "upper": -427.20166009741297
+            }
+          },
+          "pure_C_shared": {
+            "comparison": "C4_shared-C1_shared",
+            "only_design_C_changes": true,
+            "reference_energy_charge_yuan_difference": -276.67846614523296,
+            "electricity_kwh_difference": 335.4598312536027,
+            "reference_average_factor_co2_kg_difference": 135.65995575895568,
+            "grid_peak_kw_difference": -1.7763568394002505e-15,
+            "variant_B_envelope_heat_loss_kwh_difference": 389.4025381736428,
+            "variant_B_mean_temperature_continuous_c_difference": 0.864232755791793,
+            "bill_reduction_percent_denominator_C1": 4.65973537821065,
+            "bill_difference_solver_interval": {
+              "lower": -276.67846614524024,
+              "upper": -276.67846614524024
+            }
+          },
+          "grid_at_C1": {
+            "only_shared_resource_changes": true,
+            "bill_increase_yuan": 19.50274875359537,
+            "unlimited_exceeds_reference_cap_hours": 121,
+            "unlimited_max_excess_reference_cap_kw": 7.6267363874388385,
+            "shared_binding_hours": 125
+          },
+          "grid_at_C4": {
+            "only_shared_resource_changes": true,
+            "bill_increase_yuan": 170.02594270577447,
+            "unlimited_exceeds_reference_cap_hours": 229,
+            "unlimited_max_excess_reference_cap_kw": 18.853875246068235,
+            "shared_binding_hours": 530
+          },
+          "bill_C_by_grid_interaction_yuan": 150.5231939521791
+        }
+      },
+      "sample": {
+        "cases": 4,
+        "hours_per_case": 2880,
+        "buildings_per_case": 2,
+        "total_building_hours": 23040,
+        "C_B_multiplier": [
+          1,
+          4
+        ],
+        "axes": [
+          "C_B only",
+          "shared grid on/off"
+        ]
+      },
+      "comparison": {
+        "main_pair": "C4_shared - C1_shared",
+        "same_H_weather_assets_gains_comfort_endpoints": true
+      },
+      "boundaries": [
+        "条件数值对照，不是实际材料改造节能证明。",
+        "同服务范围内预热与散热增加，不能改写成同步节电减碳。",
+        "去掉上限后的反事实按相同容量复查分别121/229h越限，不是同一可行域替代方案。",
+        "求解器status0/gap0限有限MILP数值声明；独立RC/账本不独立证明整数全局最优。",
+        "两楼共享系统说明耦合机制，尚不等于实际城市—区域—用户全层级投资最优验收。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/summary.json",
+          "sha256": "4d161a501222938b45be4fe892e07eabc75c9fee623a1e16f806ed55d31f19ce",
+          "bytes": 17392,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/multiscale/run_03/protocol.json",
+          "sha256": "d476e7667029b676ecbde97f0733c7f247a76973631a80bc6593336f3027cb82",
+          "bytes": 50078,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/multiscale/run_03/independent_verification.json",
+          "sha256": "a30ba2f4aa150340ddf38027a043dd133bd5c48e0757cd85b713f18a9845d354",
+          "bytes": 35275,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/multiscale/HANDOFF.json",
+          "sha256": "55966f3a5a5eb0fe63bdf6b563ef60b502d7b65714b9f6dbe726811e239bb617",
+          "bytes": 27884,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "多尺度耦合特性10分",
+        "结果可视化与分析深度15分"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "network_feedback_feasibility",
+      "recommended_paper_wording_zh": "72小时有限模式反馈先后拒绝两轮压降不合格模式，第三轮最大单位长度压降237.9638Pa/m低于300Pa/m，最小远端供水57.4455℃高于55℃；相同交付下参考费增加25.537%。",
+      "values": {
+        "pressure_unit": "Pa/m",
+        "temperature_unit": "degC",
+        "cost_unit": "CNY/window",
+        "delivered_heat_unit": "kWh/window",
+        "pressure_initial": 1081.4156428165693,
+        "pressure_final": 237.96381852449548,
+        "pressure_limit": 300,
+        "final_min_far_supply": 57.44553404061442,
+        "far_supply_limit": 55,
+        "cost_initial": 178.6426792936767,
+        "cost_final": 224.26259246266036,
+        "cost_increase_percent": 25.536962023496933,
+        "delivered_heat": 191.54748000000004,
+        "status_sequence": [
+          "rejected",
+          "rejected",
+          "accepted"
+        ],
+        "soft_penalty_changed_schedule": false
+      },
+      "sample": {
+        "hours": 72,
+        "iterations": 3,
+        "branches": [
+          "near",
+          "far"
+        ],
+        "soft_penalty_cases": 2
+      },
+      "comparison": {
+        "before": "iteration_00 before finite hydraulic rejection",
+        "after": "iteration_02 accepted finite modes",
+        "same_delivered_heat_all_rounds": true
+      },
+      "boundaries": [
+        "优势是排除已知不可行模式并展示代价，不能写成降费。",
+        "软罚开关只改变目标台账，没有改变保存调度，不宣称软罚改善调度。",
+        "稳态on-mode、独立支路泵与小时平均duty有限模式，不是现场全工况/连续水力认证。",
+        "该网络试验未认证建筑RC舒适，且storages为空；72h不替代2880h或完整季。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/mechanisms.json",
+          "sha256": "59397c76450a26bed5a13139e4701b05edc26f3b97845ec93e573d6d8f86962e",
+          "bytes": 365,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/comparison.json",
+          "sha256": "66e685f0ee8925c9309c6e0742629ddf2115d7146f3161fce8a41da6c55e89c8",
+          "bytes": 3135,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/config.yaml",
+          "sha256": "aa9df3d63b8b24aeeae1bc4d51af0284e0da3e2c9646b794a7cfff54b3cd4f6d",
+          "bytes": 3546,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/protocol.json",
+          "sha256": "2384dc2e011a215b308c798e4ac9ecb6d0f90092e7ddbefa649738f83808dc46",
+          "bytes": 4370,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/history.json",
+          "sha256": "4d7ec73d652e334a925cc670d90f299a95e39f27b712c86ebc4a0c3b79ffa387",
+          "bytes": 15846,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "模型架构20分",
+        "场景验证完整度15分",
+        "多尺度耦合特性10分"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "three_city_finite_cost_carbon",
+      "recommended_paper_wording_zh": "固定同资产、同2880小时服务条件下，三城中点碳帽把额外排放空间减半，分别保留81.8%、80.9%、89.4%的最大参考费用降幅。",
+      "values": {
+        "charge_unit": "CNY/window",
+        "carbon_unit": "kg_CO2_proxy/window",
+        "electricity_unit": "kWh/window",
+        "power_unit": "kW",
+        "finite_actual_points": [
+          {
+            "city": "urumqi",
+            "case": "baseline_delta0",
+            "bill_yuan": 4984.733688284301,
+            "energy_kwh": 6472.400002000002,
+            "carbon_kg": 2617.4385608088,
+            "peak_import_kw": 3.5860900000000004,
+            "cost_saving_percent": 0.0,
+            "carbon_increase_percent": 0.0,
+            "peak_ratio_to_baseline": 1.0,
+            "result_attribute": "predeclared_feasible_feedback_policy",
+            "solver_quality": "feasible feedback; not solver optimum",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "urumqi",
+            "case": "cost_endpoint",
+            "bill_yuan": 4899.935495679051,
+            "energy_kwh": 6701.730014424747,
+            "carbon_kg": 2710.179617833368,
+            "peak_import_kw": 7.678637042875044,
+            "cost_saving_percent": 1.7011579335632798,
+            "carbon_increase_percent": 3.5431990042933625,
+            "peak_ratio_to_baseline": 2.141228201990202,
+            "result_attribute": "fixed_existing_assets_optimized_dispatch",
+            "solver_quality": "solver_proven_optimal_within_registered_tolerance",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "urumqi",
+            "case": "carbon_endpoint",
+            "bill_yuan": 4984.733639184067,
+            "energy_kwh": 6472.400066971285,
+            "carbon_kg": 2617.4385870831875,
+            "peak_import_kw": 3.58609,
+            "cost_saving_percent": 9.850121718280036e-07,
+            "carbon_increase_percent": 1.0038206044171716e-06,
+            "peak_ratio_to_baseline": 0.9999999999999999,
+            "result_attribute": "fixed_existing_assets_optimized_dispatch",
+            "solver_quality": "solver_proven_optimal_within_registered_tolerance",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "urumqi",
+            "case": "midpoint_cap",
+            "bill_yuan": 4915.36659440499,
+            "energy_kwh": 6587.06510681594,
+            "carbon_kg": 2663.809129196367,
+            "peak_import_kw": 7.678637042875044,
+            "cost_saving_percent": 1.3915907692791274,
+            "carbon_increase_percent": 1.771601025593439,
+            "peak_ratio_to_baseline": 2.141228201990202,
+            "result_attribute": "fixed_existing_assets_optimized_dispatch",
+            "solver_quality": "solver_proven_optimal_within_registered_tolerance",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "guyuan",
+            "case": "baseline_delta0",
+            "bill_yuan": 5075.855416556001,
+            "energy_kwh": 6615.493344000001,
+            "carbon_kg": 2675.3055083135996,
+            "peak_import_kw": 3.893775000000001,
+            "cost_saving_percent": 0.0,
+            "carbon_increase_percent": 0.0,
+            "peak_ratio_to_baseline": 1.0,
+            "result_attribute": "predeclared_feasible_feedback_policy",
+            "solver_quality": "feasible feedback; not solver optimum",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "guyuan",
+            "case": "cost_endpoint",
+            "bill_yuan": 4988.712110500293,
+            "energy_kwh": 6846.623236143683,
+            "carbon_kg": 2768.774436696505,
+            "peak_import_kw": 7.938344042875044,
+            "cost_saving_percent": 1.7168201003415207,
+            "carbon_increase_percent": 3.493766528437492,
+            "peak_ratio_to_baseline": 2.0387269533743066,
+            "result_attribute": "fixed_existing_assets_optimized_dispatch",
+            "solver_quality": "solver_proven_optimal_within_registered_tolerance",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "guyuan",
+            "case": "carbon_endpoint",
+            "bill_yuan": 5075.855366374369,
+            "energy_kwh": 6615.493410402232,
+            "carbon_kg": 2675.3055351666617,
+            "peak_import_kw": 3.893775,
+            "cost_saving_percent": 9.88633996890087e-07,
+            "carbon_increase_percent": 1.003738159255363e-06,
+            "peak_ratio_to_baseline": 0.9999999999999998,
+            "result_attribute": "fixed_existing_assets_optimized_dispatch",
+            "solver_quality": "solver_proven_optimal_within_registered_tolerance",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "guyuan",
+            "case": "midpoint_cap",
+            "bill_yuan": 5005.341083478673,
+            "energy_kwh": 6731.058390830831,
+            "carbon_kg": 2722.040013251987,
+            "peak_import_kw": 7.938344042875044,
+            "cost_saving_percent": 1.3892108283330984,
+            "carbon_increase_percent": 1.7468847872947002,
+            "peak_ratio_to_baseline": 2.0387269533743066,
+            "result_attribute": "fixed_existing_assets_optimized_dispatch",
+            "solver_quality": "solver_proven_optimal_within_registered_tolerance",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "wuhan",
+            "case": "baseline_delta0",
+            "bill_yuan": 2305.8219675989194,
+            "energy_kwh": 3043.010076702301,
+            "carbon_kg": 1230.5932750184106,
+            "peak_import_kw": 2.391855000000001,
+            "cost_saving_percent": 0.0,
+            "carbon_increase_percent": 0.0,
+            "peak_ratio_to_baseline": 1.0,
+            "result_attribute": "predeclared_feasible_feedback_policy",
+            "solver_quality": "feasible feedback; not solver optimum",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "wuhan",
+            "case": "cost_endpoint",
+            "bill_yuan": 2265.4287377685378,
+            "energy_kwh": 3176.9200610837297,
+            "carbon_kg": 1284.7464727022602,
+            "peak_import_kw": 6.348812042875044,
+            "cost_saving_percent": 1.7517930871499,
+            "carbon_increase_percent": 4.4005764360316,
+            "peak_ratio_to_baseline": 2.654346539767269,
+            "result_attribute": "fixed_existing_assets_optimized_dispatch",
+            "solver_quality": "solver_proven_optimal_within_registered_tolerance",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "wuhan",
+            "case": "carbon_endpoint",
+            "bill_yuan": 2305.8219444153565,
+            "energy_kwh": 3043.010107379664,
+            "carbon_kg": 1230.5932874243363,
+            "peak_import_kw": 2.3918549999999996,
+            "cost_saving_percent": 1.0054359456113104e-06,
+            "carbon_increase_percent": 1.0081255830129976e-06,
+            "peak_ratio_to_baseline": 0.9999999999999994,
+            "result_attribute": "fixed_existing_assets_optimized_dispatch",
+            "solver_quality": "solver_proven_optimal_within_registered_tolerance",
+            "physical_and_ledger_passed": "True"
+          },
+          {
+            "city": "wuhan",
+            "case": "midpoint_cap",
+            "bill_yuan": 2269.693275076232,
+            "energy_kwh": 3109.965115578631,
+            "carbon_kg": 1257.669892739998,
+            "peak_import_kw": 5.292888470943296,
+            "cost_saving_percent": 1.5668465749031135,
+            "carbon_increase_percent": 2.200289752207718,
+            "peak_ratio_to_baseline": 2.2128801582634794,
+            "result_attribute": "fixed_existing_assets_optimized_dispatch",
+            "solver_quality": "solver_proven_optimal_within_registered_tolerance",
+            "physical_and_ledger_passed": "True"
+          }
+        ],
+        "midpoint_retention": [
+          {
+            "city": "urumqi",
+            "cost_saving_retained_percent": 81.8025617624034,
+            "cost_endpoint_saving_percent": 1.7011579335632798,
+            "midpoint_cost_saving_percent": 1.3915907692791274,
+            "midpoint_carbon_increase_percent": 1.771601025593439
+          },
+          {
+            "city": "guyuan",
+            "cost_saving_retained_percent": 80.91767029386176,
+            "cost_endpoint_saving_percent": 1.7168201003415207,
+            "midpoint_cost_saving_percent": 1.3892108283330984,
+            "midpoint_carbon_increase_percent": 1.7468847872947002
+          },
+          {
+            "city": "wuhan",
+            "cost_saving_retained_percent": 89.44244536621119,
+            "cost_endpoint_saving_percent": 1.7517930871499,
+            "midpoint_cost_saving_percent": 1.5668465749031135,
+            "midpoint_carbon_increase_percent": 2.200289752207718
+          }
+        ]
+      },
+      "sample": {
+        "cities": 3,
+        "rows": 12,
+        "per_city": [
+          "feedback_baseline",
+          "cost_endpoint",
+          "carbon_endpoint",
+          "midpoint_cap"
+        ],
+        "hours_each": 2880,
+        "public_prototype_floor_area_m2": 48
+      },
+      "comparison": {
+        "denominator": "same-city baseline-relative cost-endpoint saving",
+        "before": "baseline_delta0 feasible feedback",
+        "after": "finite fixed-existing-assets endpoints/cap dispatch"
+      },
+      "boundaries": [
+        "只绘已运行实际点；不连成完整Pareto前沿、不制造置信区间。",
+        "费用改善的基准反馈是可行策略，不是求解器最优；端点的最优性限登记模型/容差。",
+        "共同方法学电价与固定排放因子轴，不是三地真实账户或小时边际碳。",
+        "降费可伴随增电/增碳和更大峰值，所有指标一并呈现。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/decision_table.csv",
+          "sha256": "0384adbe64633b64d85090528c59846207ee941dfc32935a6feb9855b7c7c64c",
+          "bytes": 2966,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/mechanisms.json",
+          "sha256": "f2be477e1f7ea0b955414d298b66d804ea29b1c362e4777ad45c77fc872ee53a",
+          "bytes": 741,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/report_manifest.json",
+          "sha256": "0f42400b3a3389dfea8eaa645af206b567144f33afe62f0cd1c3e08536339806",
+          "bytes": 901,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/comparison.csv",
+          "sha256": "518e2880f07618e3276b0aa90a8001e602c505af73cdaf55d3cd6288fc88f75c",
+          "bytes": 31688,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+          "sha256": "60833724668cc462827c95f5b9af8ae75c227126457bfdb31db067be7fd53f55",
+          "bytes": 2820,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "多目标协同与收敛性15分",
+        "结果可视化与分析深度15分"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "conditional_investment_scope",
+      "recommended_paper_wording_zh": "条件投资参考以公开采购整包价为锚、假设性能轴作有限整数候选比较；5档ε碳帽得到3个不同实际点，低费用方案与基准相同。",
+      "values": {
+        "comparison_cost_unit": "CNY repeated-window comparison",
+        "carbon_unit": "kg_CO2/window",
+        "epsilon_sample_count": 5,
+        "distinct_points": 3,
+        "main_repeated_window_factor": 5,
+        "cost_formula": "CAPEX + F*(120-day electricity charges + declared window fixed OM)",
+        "decisions": [
+          {
+            "decision": "baseline",
+            "capex_cny": 2406.678,
+            "window_energy_bill_cny": 2356.473203156348,
+            "window_fixed_om_cny": 42.66695,
+            "window_co2_kg": 1299.7819823881791,
+            "electricity_kwh": 3214.0998575375347,
+            "comparison_cost_cny": 14402.37876578174,
+            "hp_units": 0,
+            "resistance_capacity_kw": 2.266695,
+            "cooling_capacity_kw": 2.0
+          },
+          {
+            "decision": "low_cost",
+            "capex_cny": 2406.678,
+            "window_energy_bill_cny": 2356.473203156348,
+            "window_fixed_om_cny": 42.66695,
+            "window_co2_kg": 1299.7819823881791,
+            "electricity_kwh": 3214.0998575375347,
+            "comparison_cost_cny": 14402.37876578174,
+            "hp_units": 0,
+            "resistance_capacity_kw": 2.266695,
+            "cooling_capacity_kw": 2.0
+          },
+          {
+            "decision": "low_carbon",
+            "capex_cny": 19300.0,
+            "window_energy_bill_cny": 624.9236237817206,
+            "window_fixed_om_cny": 100.0,
+            "window_co2_kg": 336.666523243282,
+            "electricity_kwh": 832.5087122732,
+            "comparison_cost_cny": 22924.6181189086,
+            "hp_units": 1,
+            "resistance_capacity_kw": 0.0,
+            "cooling_capacity_kw": 2.0
+          },
+          {
+            "decision": "compromise",
+            "capex_cny": 19300.0,
+            "window_energy_bill_cny": 611.1790878785123,
+            "window_fixed_om_cny": 100.0,
+            "window_co2_kg": 355.30068417078746,
+            "electricity_kwh": 878.5872506696032,
+            "comparison_cost_cny": 22855.89543939256,
+            "hp_units": 1,
+            "resistance_capacity_kw": 0.0,
+            "cooling_capacity_kw": 2.0
+          }
+        ],
+        "epsilon_rows_preserved": [
+          {
+            "plan": "baseline",
+            "capex_cny": 2406.678,
+            "window_energy_bill_cny": 2356.473203156348,
+            "window_fixed_om_cny": 42.66695,
+            "window_co2_kg": 1299.7819823881791,
+            "electricity_kwh": 3214.0998575375347,
+            "comparison_cost_cny": 14402.37876578174,
+            "hp_units": 0.0,
+            "resistance_capacity_kw": 2.266695,
+            "cooling_capacity_kw": 2.0,
+            "requested_epsilon_co2_kg": null
+          },
+          {
+            "plan": "cost_endpoint",
+            "capex_cny": 2406.678,
+            "window_energy_bill_cny": 2356.473203156348,
+            "window_fixed_om_cny": 42.66695,
+            "window_co2_kg": 1299.7819823881791,
+            "electricity_kwh": 3214.0998575375347,
+            "comparison_cost_cny": 14402.37876578174,
+            "hp_units": 0.0,
+            "resistance_capacity_kw": 2.266695,
+            "cooling_capacity_kw": 2.0,
+            "requested_epsilon_co2_kg": null
+          },
+          {
+            "plan": "carbon_endpoint",
+            "capex_cny": 19300.0,
+            "window_energy_bill_cny": 624.9236237817206,
+            "window_fixed_om_cny": 100.0,
+            "window_co2_kg": 336.666523243282,
+            "electricity_kwh": 832.5087122732,
+            "comparison_cost_cny": 22924.618118908602,
+            "hp_units": 1.0,
+            "resistance_capacity_kw": 0.0,
+            "cooling_capacity_kw": 2.0,
+            "requested_epsilon_co2_kg": null
+          },
+          {
+            "plan": "epsilon_0",
+            "capex_cny": 19300.0,
+            "window_energy_bill_cny": 624.923623013265,
+            "window_fixed_om_cny": 100.0,
+            "window_co2_kg": 336.666523297652,
+            "electricity_kwh": 832.5087124076462,
+            "comparison_cost_cny": 22924.618115066325,
+            "hp_units": 1.0,
+            "resistance_capacity_kw": 0.0,
+            "cooling_capacity_kw": 2.0,
+            "requested_epsilon_co2_kg": 336.666523243282
+          },
+          {
+            "plan": "epsilon_1",
+            "capex_cny": 19300.0,
+            "window_energy_bill_cny": 611.1790878785123,
+            "window_fixed_om_cny": 100.0,
+            "window_co2_kg": 355.30068417078746,
+            "electricity_kwh": 878.5872506696032,
+            "comparison_cost_cny": 22855.89543939256,
+            "hp_units": 1.0,
+            "resistance_capacity_kw": 0.0,
+            "cooling_capacity_kw": 2.0,
+            "requested_epsilon_co2_kg": 577.4453880295063
+          },
+          {
+            "plan": "epsilon_2",
+            "capex_cny": 19300.0,
+            "window_energy_bill_cny": 611.1790878785123,
+            "window_fixed_om_cny": 100.0,
+            "window_co2_kg": 355.30068417078746,
+            "electricity_kwh": 878.5872506696032,
+            "comparison_cost_cny": 22855.89543939256,
+            "hp_units": 1.0,
+            "resistance_capacity_kw": 0.0,
+            "cooling_capacity_kw": 2.0,
+            "requested_epsilon_co2_kg": 818.2242528157306
+          },
+          {
+            "plan": "epsilon_3",
+            "capex_cny": 19300.0,
+            "window_energy_bill_cny": 611.1790878785123,
+            "window_fixed_om_cny": 100.0,
+            "window_co2_kg": 355.30068417078746,
+            "electricity_kwh": 878.5872506696032,
+            "comparison_cost_cny": 22855.89543939256,
+            "hp_units": 1.0,
+            "resistance_capacity_kw": 0.0,
+            "cooling_capacity_kw": 2.0,
+            "requested_epsilon_co2_kg": 1059.0031176019547
+          },
+          {
+            "plan": "epsilon_4",
+            "capex_cny": 2406.678,
+            "window_energy_bill_cny": 2356.473205731382,
+            "window_fixed_om_cny": 42.66695,
+            "window_co2_kg": 1299.781935081004,
+            "electricity_kwh": 3214.0997405563885,
+            "comparison_cost_cny": 14402.37877865691,
+            "hp_units": 0.0,
+            "resistance_capacity_kw": 2.266695,
+            "cooling_capacity_kw": 2.0,
+            "requested_epsilon_co2_kg": 1299.7819823881791
+          },
+          {
+            "plan": "compromise",
+            "capex_cny": 19300.0,
+            "window_energy_bill_cny": 611.1790878785123,
+            "window_fixed_om_cny": 100.0,
+            "window_co2_kg": 355.30068417078746,
+            "electricity_kwh": 878.5872506696032,
+            "comparison_cost_cny": 22855.89543939256,
+            "hp_units": 1.0,
+            "resistance_capacity_kw": 0.0,
+            "cooling_capacity_kw": 2.0,
+            "requested_epsilon_co2_kg": 818.2242528157306
+          }
+        ],
+        "threshold_package_price_CNY": 9346.483316642709,
+        "real_historical_FT8_package_anchor_CNY": 17800,
+        "fixed_F5_plan_repeat_crossing": 10.008123023394138,
+        "threshold_correction_equation": "HP1 vs no-HP purchase condition: P <= 9346.483316642709 - delta_K - 5*delta_OM. delta terms are additional differential costs outside the declared comparison ledger, unknown for real project."
+      },
+      "sample": {
+        "city": "wuhan",
+        "hours": 2880,
+        "integer_HP_packages": [
+          0,
+          1,
+          2
+        ],
+        "finite_candidate_comparison": true,
+        "hypothetical_COP_Carnot_fractions": [
+          0.25,
+          0.35,
+          0.45
+        ]
+      },
+      "comparison": {
+        "same_weather_gains_service_all_plans": true,
+        "main_comparison": "low-cost/low-carbon/registered middle cap vs restricted resistance reference"
+      },
+      "boundaries": [
+        "run_03为选定主记录，旧run02存档不用混入。",
+        "F是重复同一120日窗口的权重，不是物理寿命、自然年或折现回收期。",
+        "固定F5方案的10.008123交叉不是全局投资统一阈值；包价下包络阈值9346.483316642709元是另一明确问题。",
+        "17800元是真实历史FT8安装整包价，仅该对象身份；不能赋给TICA。",
+        "设备COP、可用率与未公开费用为研究轴；无真实FT8工程性能/完整LCC/利润/现场ROI认证。",
+        "尚未知差异接入/末端/运维成本不填零；阈值必须保留delta_K/delta_OM修正。",
+        "5个ε样本中重复点保留，不称完整精确Pareto前沿或最优膝点。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/HANDOFF.json",
+          "sha256": "12459b0f300b9bf8014aee45b16acbea62cc09659d6822631ff6a972d9648674",
+          "bytes": 16545,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_scan.csv",
+          "sha256": "b4d697a0aa445f82b2a07af9e02d08c1173b314f0ef3cecf1455e735063f15f8",
+          "bytes": 1303,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/decision_table.csv",
+          "sha256": "62c409f635c35e14c90bd31814064893f8535bcbb4b7ccea28710d8a2c6a7485",
+          "bytes": 613,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/conditional_thresholds.csv",
+          "sha256": "0e48676c2fe008698c6b5ae116481932a4c623e46941a6a06696d80c098d3506",
+          "bytes": 788,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_decision_intervals.csv",
+          "sha256": "46e447a13823f19c0c194d76de2e6d6f635df3b92496ae2f249776e42a5be609",
+          "bytes": 837,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/manifest.json",
+          "sha256": "16506fa76e49495ae9cf1b9baae48c5ce384e482a0ab50ee3a40a6c01b5ac8a9",
+          "bytes": 20065,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "多目标协同与收敛性15分",
+        "结果可视化与分析深度15分：条件经济决策"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "external_RC_mode_specific",
+      "recommended_paper_wording_zh": "德国N2发布后处理测量留出测试中，首轮1R1C一步RMSE为0.085979℃，略低于持续性基准0.091964℃；连续开环1.885259℃高于基准0.790172℃，保留长时漂移与后续恶化。",
+      "values": {
+        "unit": "degC RMSE",
+        "mode_separated_test_results": {
+          "C1_external": {
+            "rc_one_step": {
+              "n": 2399,
+              "rmse_C": 0.0859793640252587
+            },
+            "persistence_one_step": {
+              "n": 2399,
+              "rmse_C": 0.09196384555070156
+            },
+            "rc_continuous_open_loop": {
+              "n": 2399,
+              "rmse_C": 1.885258883588685
+            },
+            "persistence_continuous_open_loop": {
+              "n": 2399,
+              "rmse_C": 0.7901721810918396
+            },
+            "rc_segment_open_loop": {
+              "n": 2399,
+              "rmse_C": 1.155135506724595
+            },
+            "persistence_segment_open_loop": {
+              "n": 2399,
+              "rmse_C": 0.6262935027586854
+            }
+          },
+          "C1_external_followup": {
+            "rc_one_step": {
+              "n": 2399,
+              "rmse_C": 0.09133435301271808
+            },
+            "persistence_one_step": {
+              "n": 2399,
+              "rmse_C": 0.09196384555049981
+            },
+            "rc_continuous_open_loop": {
+              "n": 2399,
+              "rmse_C": 7.425829882529357
+            },
+            "persistence_continuous_open_loop": {
+              "n": 2399,
+              "rmse_C": 0.7901721811083203
+            },
+            "rc_segment_open_loop": {
+              "n": 2399,
+              "rmse_C": 6.17026036201433
+            },
+            "persistence_segment_open_loop": {
+              "n": 2399,
+              "rmse_C": 0.6262935027618493
+            }
+          }
+        },
+        "final_saved_reproduction_refit_executed": {
+          "C1_external": false,
+          "C1_external_followup": false
+        }
+      },
+      "sample": {
+        "published_dataset_rows": 11988,
+        "training_block_rows_including_initialization": 7192,
+        "initialization_rows": 1,
+        "train_prediction_targets": 7191,
+        "validation_rows": 2397,
+        "test_rows": 2399,
+        "test_targets_per_mode": 2399,
+        "experimental_building": "Fraunhofer Annex71 N2, Holzkirchen, Germany",
+        "measurement_temperature": "10 room 110cm measurements, floor-area-weighted derived mean"
+      },
+      "comparison": {
+        "one_step": "previous measured interval temperature available",
+        "continuous_open_loop": "one initialization for whole sequence",
+        "segmented_open_loop": "initialization at each split start",
+        "baseline": "persistence with matched information/initialization"
+      },
+      "boundaries": [
+        "外部实验对象测量不是中国三城建筑实测标定；德国拟合H/C不迁移为武汉真实物性。",
+        "发布方插补/处理且缺逐行质量旗标，不能称未处理原始传感器数据。",
+        "只支持条件单步适用性，不能宣称长时开环优于基准。",
+        "后续探索沿用已看测试的同一划分，不是新独立验证；一步0.091334、连续7.425830、分段6.170260℃全部保留。",
+        "latest reproduction_report两组refit_executed=false，支持保存参数下的预测/误差重算；若说完整重拟合须另引旧明确重拟合记录。",
+        "派生数据/图须CC BY-SA4.0署名及变更说明。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/implementation_20261002_followup/external_rc_reproduction_final/reproduction_report.json",
+          "sha256": "bb9f8f062e8aa954f5a6876b805b09306a76672791f932d0bae1655cb9da8e73",
+          "bytes": 18911,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/external_rc_reproduction_final/C1_external_reproduced.csv",
+          "sha256": "0f213dfc6625b95836702ebb6a3d835d2358ea362677e1ecf25e5f1e8eb243e7",
+          "bytes": 4254309,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/implementation_20261002_followup/external_rc_reproduction_final/C1_external_followup_reproduced.csv",
+          "sha256": "21492e7863344c75b331390a3fbed10047163fd1b27e9cbda96f925f680df8a1",
+          "bytes": 4181104,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "data/external_rc_benchmark_20261001/source_provenance.json",
+          "sha256": "3b392e56524f1944ecc95dac984367166b1b3a4dd4a46de745a33c38462175e3",
+          "bytes": 3695,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+          "sha256": "9d1e7bbba6a352d2c39ea367f148395e3479e358213cf5885f9d63d4568d63a4",
+          "bytes": 2789,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "结果可视化与分析深度15分",
+        "动态仿真能力15分：模型适用性边界"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "full_heating_season_admission_gap",
+      "recommended_paper_wording_zh": "旧第三类假设原型确有8784小时年与2928小时冬季软件运行，来源审计仍阻断建筑、经济和空间参数成为真实武汉工程实证；目前三城主证据为2880小时共同窗口，不能声明已完成真实完整供暖季有效运行。",
+      "values": {
+        "old_software_year_hours": 8784,
+        "old_software_season_hours": 2928,
+        "old_manifests_complete": true,
+        "parent_investment_sha256_year": "74099da0470559c021f70c78d74d626276066d338349caf198afb8942922639b",
+        "parent_investment_sha256_season": "74099da0470559c021f70c78d74d626276066d338349caf198afb8942922639b",
+        "new_primary_window_hours": 2880,
+        "admitted_actual_complete_local_season_demonstrated": false
+      },
+      "sample": {
+        "old_case": "C1/S3 synthetic Wuhan prototype software verification",
+        "new_case": "three-city common reference windows"
+      },
+      "comparison": {
+        "evidence_levels": [
+          "numerical completion",
+          "field-source admission",
+          "full actual local-season service"
+        ],
+        "levels_are_separate": true
+      },
+      "boundaries": [
+        "complete:true认证文件/程序范围完成，不能解除来源准入阻断。",
+        "旧年季gap/费用/容量属于旧代码epoch与假设输入，不作为本次三城工程收益。",
+        "未找到本次主证据真实完整法定/实际供暖季运行认证；只说明检索范围内未有证据，不断言全工程历史没有长时软件试验。",
+        "正文可保留模型能力与历史软件验证，但须标明非当前真实案例；动态15分不自行给满。"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/competition_20261001/C4/optimized_annual_01/manifest.json",
+          "sha256": "1bb22e031d8e0c2d030d84798c2cb5803a13562c15ac9245100ceba0c314aea8",
+          "bytes": 5868,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "outputs/competition_20261001/C4/optimized_season_03/manifest.json",
+          "sha256": "e045fdedb6258cf4cc03a077bdea3ea9b57d28b51b6362573c6fb4a9afbb4fa9",
+          "bytes": 5968,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/execution_20261001/C4_handoff.md",
+          "sha256": "246d5b869a422873c74a4c5caddec7a92a6c341905afa3e3e279679aa6807e2c",
+          "bytes": 23107,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/execution_20261001/data_truth_audit/README.md",
+          "sha256": "2ca19548b54c45655fbc9db03ce061ffce48c8918361c922ede3252117df33b5",
+          "bytes": 6904,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/time_registry/run_final/registry.json",
+          "sha256": "8d59e0b322d25c0674ce36bd6d07c8bb9f7bee680fec0bdc56cce3656b872885",
+          "bytes": 21120,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "动态仿真能力15分：尚缺完整实际季准入",
+        "场景验证完整度15分：必要约束和来源分开"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "rc6_historical_software_tests",
+      "recommended_paper_wording_zh": "已发布11.12.0rc6研究候选在2026年10月2日的实际提交副本验证有252个唯一测试通过；本次论文/证据编辑未重跑该测试集。",
+      "values": {
+        "unit": "unique testcases",
+        "passed": 252,
+        "failure": 0,
+        "error": 0,
+        "skipped": 0,
+        "xml_subsets": [
+          {
+            "path": "docs/github_release_11.12.0rc6/validation/root_tests.xml",
+            "testcases": 180
+          },
+          {
+            "path": "docs/github_release_11.12.0rc6/validation/heatpump_pytest_root.xml",
+            "testcases": 72
+          }
+        ],
+        "core_version": "11.12.0rc2",
+        "delivery_version": "11.12.0rc6",
+        "status": "research candidate",
+        "commit": "0c35c6d9c218fa43610aef6eed164a708eb8e72f",
+        "tag": "v11.12.0rc6",
+        "verification_date": "2026-10-02",
+        "new_test_runs_this_claim_audit": 0,
+        "new_solver_runs_this_claim_audit": 0
+      },
+      "sample": {
+        "validation_target": "github_candidate_20261002_rc6 submitted snapshot",
+        "distinct_testcases": 252
+      },
+      "comparison": {
+        "legacy_test_counts_not_accumulated": [
+          373,
+          882,
+          628
+        ]
+      },
+      "boundaries": [
+        "原工程、旧上传副本与候选副本不自动同步。",
+        "历史252通过不是本次重跑或当前论文整体软件回归。",
+        "19个2880h复算案例为当时rc6发布证据，不当作本次新实验。",
+        "研究候选不能写成正式现场工程全面验收。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/github_release_11.12.0rc6/validation/root_tests.xml",
+          "sha256": "5d682323d237be0aa608f1120fc834997260d4c99e6147222c3bdbc41b0553bc",
+          "bytes": 25291,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/github_release_11.12.0rc6/validation/heatpump_pytest_root.xml",
+          "sha256": "03ece8d463af386c3982294a38aa7542e56fd35b720f33fa3eb9857c58848386",
+          "bytes": 12925,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/github_release_11.12.0rc6/README.md",
+          "sha256": "33d554e31090e546d7554caa6df728bda28c71acdd9bd11e8d4653da27752e2b",
+          "bytes": 6607,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/GITHUB_RELEASE_11.12.0rc6_HANDOFF.md",
+          "sha256": "05fe7a0d804d9c5fabf0f86b5df546905a8e471a093864813a32c8990b89a79d",
+          "bytes": 5676,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/github_release_11.12.0rc6/validation/root_readonly_candidate_check.json",
+          "sha256": "dea9accba001f009124545e6d5bf11ccf4aee0b8a93dd546c3c876252b56f435",
+          "bytes": 5916,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "代码质量与可移植性10分"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "integrated_method_contribution",
+      "recommended_paper_wording_zh": "本研究的贡献是将建筑状态与热品位、共享源/电约束、硬W1代表日校正、连续运行复算、有限模式温压反馈及独立证书组织为可追溯的组合增强流程。",
+      "values": {
+        "novelty_identity": "integration and evidence/engineering-admission enhancement",
+        "first_in_world_claim": false,
+        "new_solver_or_optimality_theory_claim": false,
+        "storage_model_source_lines": "model.py:1391-1485",
+        "storage_state_components": [
+          "capacity",
+          "charge",
+          "discharge",
+          "SOC",
+          "charge/discharge mode",
+          "efficiency",
+          "loss",
+          "initial/final/group boundary"
+        ]
+      },
+      "sample": {
+        "implemented_method_components": "existing MILP/LP with selected independent research modules",
+        "evidence_scope": "component-specific registered cases"
+      },
+      "comparison": {
+        "classical_methods": [
+          "1R1C",
+          "representative periods",
+          "epsilon constraint",
+          "lexicographic numerical stages",
+          "finite LP/MILP"
+        ],
+        "claimed_enhancement": "consistent physics/time/source/solution-evidence interfaces"
+      },
+      "boundaries": [
+        "未作系统性新颖性检索，不能宣称首次或新最优性理论。",
+        "可选季节储能状态分解、学习聚合、Benders/C&CG、在线MPC、高阶实测校准均未纳入完成项。",
+        "结构图未画储能；正文须用状态方程和配置说明储能闭环及各算例实际启用情况。",
+        "核心model.py具有储能建模不代表所有独立LP或网络试验启用储能；网络storages为空。",
+        "方法学模块性能不得合并成未运行过的一个端到端现场最优结果。"
+      ],
+      "evidence": [
+        {
+          "path": "src/heatplan/model.py",
+          "sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+          "bytes": 188832,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "src/heatplan/physical_extensions.py",
+          "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+          "bytes": 19644,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/LITERATURE_AND_DESIGN_DECISIONS.md",
+          "sha256": "b43a5bcf519d933eab89e6097b31a1f3831486ec3cff1cd5d57c89e986841a10",
+          "bytes": 8608,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/README.md",
+          "sha256": "cf35a5eb892059ed9ad451c61d4dc89f1055789fef911d745a37e213ed6ac4f0",
+          "bytes": 7786,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/final_optimization_20261002/solution_evidence/report_final/README.md",
+          "sha256": "a2feb87dca4abb3793957ec41a8ca6498922afcb46cc24c43c264a77423e099f",
+          "bytes": 21180,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/publication_redesign_20261003/model_structure/shared_source_grid_load_cn.json",
+          "sha256": "e1654b3e09afa6edd9843ec842a74d11d1c9d64feda2ffb91690ab8381301107",
+          "bytes": 4497,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "模型架构20分",
+        "多目标协同与收敛性15分",
+        "多尺度耦合特性10分"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    },
+    {
+      "id": "official_score_weights",
+      "recommended_paper_wording_zh": "比赛总分100分，模型完整性50分分为架构20、动态15、场景完整15；算法25分分为多目标15、多尺度10；结果分析15、代码10。",
+      "values": {
+        "unit": "official scoring weight, not self-awarded points",
+        "total": 100,
+        "model_completeness": 50,
+        "architecture": 20,
+        "dynamic": 15,
+        "scenario": 15,
+        "algorithm": 25,
+        "multi_objective": 15,
+        "multi_scale": 10,
+        "visualization_analysis": 15,
+        "code": 10
+      },
+      "sample": {
+        "official_document_pages": [
+          4,
+          5
+        ]
+      },
+      "comparison": {
+        "weights_not_awarded_score": true
+      },
+      "boundaries": [
+        "至少选择三大场景之一完整仿真，1h时间分辨率；三城数量没有独立加分项。",
+        "动态未覆盖完整供暖季或分辨率不足至多扣15分；不能自造固定扣分数或满分预测。",
+        "费用/碳散点和条件投资不能替代真实报价与投资回报证据。"
+      ],
+      "evidence": [
+        {
+          "path": "docs/publication_redesign_20261003/SCORING_ORIGINAL_EXTRACT.txt",
+          "sha256": "16e1b8ea2015f1075f8f474cbcda30e8aa7559d1bf5a6e5ba02fb12c65709052",
+          "bytes": 7344,
+          "role": "frozen_saved_evidence"
+        },
+        {
+          "path": "docs/publication_redesign_20261003/PAPER_FIGURE_PLAN.md",
+          "sha256": "ca07021f7f2e279e0f6ee8056b5a92b5a9676fbae57cfa78988dbde5888dc08d",
+          "bytes": 14377,
+          "role": "frozen_saved_evidence"
+        }
+      ],
+      "official_scoring_items": [
+        "全部评分项"
+      ],
+      "verification_status": "verified_with_declared_boundaries"
+    }
+  ],
+  "verification_checks": [
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/algorithm_evidence/bdg2_algorithm_evidence_zh.json",
+        "source": "docs/implementation_20261002/algorithm_hard_weights/results.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/algorithm_evidence/bdg2_algorithm_evidence_zh.json",
+        "source": "docs/implementation_20261002/algorithm_hard_weights/README.md"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/algorithm_evidence/bdg2_algorithm_evidence_zh.json",
+        "source": "docs/implementation_20261002/algorithm_hard_weights/summary.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/algorithm_evidence/bdg2_algorithm_evidence_zh.json",
+        "source": "docs/final_optimization_20261002/README.md"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/history.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_00/summary.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_01/summary.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_02/summary.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/comparison.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/mechanisms.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/decision_table.csv"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/mechanisms.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/report_manifest.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+        "source": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/comparison.csv"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/model_structure/shared_source_grid_load_cn.json",
+        "source": "src/heatplan/physical_extensions.py"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/model_structure/shared_source_grid_load_cn.json",
+        "source": "src/heatplan/model.py"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/scientific_panels/R6_chronology_zh.json",
+        "source": "docs/final_optimization_20261002/time_registry/run_final/registry.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_redesign_20261003/scientific_panels/R6_chronology_zh.json",
+        "source": "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/equipment/fig01_performance_maps_engineering.json",
+        "source": "docs/final_optimization_20261002/heatpump/run_01/admitted_heating_points.csv"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/equipment/fig01_performance_maps_engineering.json",
+        "source": "docs/final_optimization_20261002/heatpump/run_01/protocol.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/equipment/fig02_three_city_tradeoff_engineering.json",
+        "source": "docs/final_optimization_20261002/heatpump/run_01/operating_comparison.csv"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/equipment/fig02_three_city_tradeoff_engineering.json",
+        "source": "docs/final_optimization_20261002/heatpump/optimization_01/optimization_comparison.csv"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/equipment/fig02_three_city_tradeoff_engineering.json",
+        "source": "docs/final_optimization_20261002/heatpump/run_01/protocol.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/equipment/fig02_three_city_tradeoff_engineering.json",
+        "source": "docs/final_optimization_20261002/heatpump/optimization_01/protocol.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+        "source": "docs/implementation_20261002_followup/external_rc_reproduction_final/reproduction_report.json"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+        "source": "docs/implementation_20261002_followup/external_rc_reproduction_final/C1_external_reproduced.csv"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+        "source": "docs/implementation_20261002_followup/external_rc_reproduction_final/C1_external_followup_reproduced.csv"
+      }
+    },
+    {
+      "check": "sidecar_source_identity",
+      "passed": true,
+      "detail": {
+        "sidecar": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+        "source": "data/external_rc_benchmark_20261001/source_provenance.json"
+      }
+    },
+    {
+      "check": "bdg2_all_methods_have_six_records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bdg2_raw_to_figure_metrics",
+      "passed": true,
+      "detail": "hotwater__Bobcat_education_Alissa"
+    },
+    {
+      "check": "bdg2_raw_to_figure_gates",
+      "passed": true,
+      "detail": "hotwater__Bobcat_education_Alissa"
+    },
+    {
+      "check": "bdg2_raw_to_figure_metrics",
+      "passed": true,
+      "detail": "hotwater__Eagle_assembly_Ian"
+    },
+    {
+      "check": "bdg2_raw_to_figure_gates",
+      "passed": true,
+      "detail": "hotwater__Eagle_assembly_Ian"
+    },
+    {
+      "check": "bdg2_raw_to_figure_metrics",
+      "passed": true,
+      "detail": "steam__Bull_assembly_Brandon"
+    },
+    {
+      "check": "bdg2_raw_to_figure_gates",
+      "passed": true,
+      "detail": "steam__Bull_assembly_Brandon"
+    },
+    {
+      "check": "bdg2_raw_to_figure_metrics",
+      "passed": true,
+      "detail": "steam__Cockatoo_assembly_Genoveva"
+    },
+    {
+      "check": "bdg2_raw_to_figure_gates",
+      "passed": true,
+      "detail": "steam__Cockatoo_assembly_Genoveva"
+    },
+    {
+      "check": "bdg2_raw_to_figure_metrics",
+      "passed": true,
+      "detail": "chilledwater__Bobcat_education_Angela"
+    },
+    {
+      "check": "bdg2_raw_to_figure_gates",
+      "passed": true,
+      "detail": "chilledwater__Bobcat_education_Angela"
+    },
+    {
+      "check": "bdg2_raw_to_figure_metrics",
+      "passed": true,
+      "detail": "chilledwater__Bull_assembly_Dorethea"
+    },
+    {
+      "check": "bdg2_raw_to_figure_gates",
+      "passed": true,
+      "detail": "chilledwater__Bull_assembly_Dorethea"
+    },
+    {
+      "check": "three_city_axes_are_2880h_and_not_full_season",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "map_full_grid_180_real165_missing15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "six_LPs_reduce_charge_but_increase_electricity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pure_C_formulas_match_saved_effect",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "network_saved_fee_change",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "external_RC_row_and_split_counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "old_C3_software_full_runs_exist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "rc6_saved_XML_252_unique_no_failure",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "figure_sidecar_source_hash_checks": [
+    {
+      "sidecar": "docs/publication_redesign_20261003/algorithm_evidence/bdg2_algorithm_evidence_zh.json",
+      "source": "docs/implementation_20261002/algorithm_hard_weights/results.json",
+      "registered_sha256": "f9c2006e32ff952b4d65d8780f4cf54b1be951cd7dc42b037b2067534cb2a757",
+      "actual_sha256": "f9c2006e32ff952b4d65d8780f4cf54b1be951cd7dc42b037b2067534cb2a757",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/algorithm_evidence/bdg2_algorithm_evidence_zh.json",
+      "source": "docs/implementation_20261002/algorithm_hard_weights/README.md",
+      "registered_sha256": "beb31c5a5ae3c425cf58ec995dc4918f4a441a0478bae407634bc3c51d2831f3",
+      "actual_sha256": "beb31c5a5ae3c425cf58ec995dc4918f4a441a0478bae407634bc3c51d2831f3",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/algorithm_evidence/bdg2_algorithm_evidence_zh.json",
+      "source": "docs/implementation_20261002/algorithm_hard_weights/summary.json",
+      "registered_sha256": "1eee2848ae9f7c78b6cfbadb13203a012cd075c0ae60f20dfbfd3753cfe85f16",
+      "actual_sha256": "1eee2848ae9f7c78b6cfbadb13203a012cd075c0ae60f20dfbfd3753cfe85f16",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/algorithm_evidence/bdg2_algorithm_evidence_zh.json",
+      "source": "docs/final_optimization_20261002/README.md",
+      "registered_sha256": "cf35a5eb892059ed9ad451c61d4dc89f1055789fef911d745a37e213ed6ac4f0",
+      "actual_sha256": "cf35a5eb892059ed9ad451c61d4dc89f1055789fef911d745a37e213ed6ac4f0",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/history.json",
+      "registered_sha256": "4d7ec73d652e334a925cc670d90f299a95e39f27b712c86ebc4a0c3b79ffa387",
+      "actual_sha256": "4d7ec73d652e334a925cc670d90f299a95e39f27b712c86ebc4a0c3b79ffa387",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_00/summary.json",
+      "registered_sha256": "bca4d057d50699ae6d2dfa406bbfb031b122223da5b61fd242e7e6e74da1eed4",
+      "actual_sha256": "bca4d057d50699ae6d2dfa406bbfb031b122223da5b61fd242e7e6e74da1eed4",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_01/summary.json",
+      "registered_sha256": "58bd9aebe21754c1197b9c3d24232c68ea3218c721487184c9cb37a064b062f0",
+      "actual_sha256": "58bd9aebe21754c1197b9c3d24232c68ea3218c721487184c9cb37a064b062f0",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_02/summary.json",
+      "registered_sha256": "3525826fc5fbb379c1b7e01d207f0e80255a857c31d41f29f9f65b722a34a682",
+      "actual_sha256": "3525826fc5fbb379c1b7e01d207f0e80255a857c31d41f29f9f65b722a34a682",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/comparison.json",
+      "registered_sha256": "66e685f0ee8925c9309c6e0742629ddf2115d7146f3161fce8a41da6c55e89c8",
+      "actual_sha256": "66e685f0ee8925c9309c6e0742629ddf2115d7146f3161fce8a41da6c55e89c8",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/mechanisms.json",
+      "registered_sha256": "59397c76450a26bed5a13139e4701b05edc26f3b97845ec93e573d6d8f86962e",
+      "actual_sha256": "59397c76450a26bed5a13139e4701b05edc26f3b97845ec93e573d6d8f86962e",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/decision_table.csv",
+      "registered_sha256": "0384adbe64633b64d85090528c59846207ee941dfc32935a6feb9855b7c7c64c",
+      "actual_sha256": "0384adbe64633b64d85090528c59846207ee941dfc32935a6feb9855b7c7c64c",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/mechanisms.json",
+      "registered_sha256": "f2be477e1f7ea0b955414d298b66d804ea29b1c362e4777ad45c77fc872ee53a",
+      "actual_sha256": "f2be477e1f7ea0b955414d298b66d804ea29b1c362e4777ad45c77fc872ee53a",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/report_manifest.json",
+      "registered_sha256": "0f42400b3a3389dfea8eaa645af206b567144f33afe62f0cd1c3e08536339806",
+      "actual_sha256": "0f42400b3a3389dfea8eaa645af206b567144f33afe62f0cd1c3e08536339806",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+      "source": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/comparison.csv",
+      "registered_sha256": "518e2880f07618e3276b0aa90a8001e602c505af73cdaf55d3cd6288fc88f75c",
+      "actual_sha256": "518e2880f07618e3276b0aa90a8001e602c505af73cdaf55d3cd6288fc88f75c",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/model_structure/shared_source_grid_load_cn.json",
+      "source": "src/heatplan/physical_extensions.py",
+      "registered_sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "actual_sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/model_structure/shared_source_grid_load_cn.json",
+      "source": "src/heatplan/model.py",
+      "registered_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "actual_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/scientific_panels/R6_chronology_zh.json",
+      "source": "docs/final_optimization_20261002/time_registry/run_final/registry.json",
+      "registered_sha256": "8d59e0b322d25c0674ce36bd6d07c8bb9f7bee680fec0bdc56cce3656b872885",
+      "actual_sha256": "8d59e0b322d25c0674ce36bd6d07c8bb9f7bee680fec0bdc56cce3656b872885",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_redesign_20261003/scientific_panels/R6_chronology_zh.json",
+      "source": "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv",
+      "registered_sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+      "actual_sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/equipment/fig01_performance_maps_engineering.json",
+      "source": "docs/final_optimization_20261002/heatpump/run_01/admitted_heating_points.csv",
+      "registered_sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+      "actual_sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/equipment/fig01_performance_maps_engineering.json",
+      "source": "docs/final_optimization_20261002/heatpump/run_01/protocol.json",
+      "registered_sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "actual_sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/equipment/fig02_three_city_tradeoff_engineering.json",
+      "source": "docs/final_optimization_20261002/heatpump/run_01/operating_comparison.csv",
+      "registered_sha256": "253e13f73444e80da11bf41f91d3a5bb56c737fdf73003c7faee6b197e3fc840",
+      "actual_sha256": "253e13f73444e80da11bf41f91d3a5bb56c737fdf73003c7faee6b197e3fc840",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/equipment/fig02_three_city_tradeoff_engineering.json",
+      "source": "docs/final_optimization_20261002/heatpump/optimization_01/optimization_comparison.csv",
+      "registered_sha256": "9d530eb31bb6f4981a0dda913654f70c37ba1f74f43f385bbcab47a17408dfd3",
+      "actual_sha256": "9d530eb31bb6f4981a0dda913654f70c37ba1f74f43f385bbcab47a17408dfd3",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/equipment/fig02_three_city_tradeoff_engineering.json",
+      "source": "docs/final_optimization_20261002/heatpump/run_01/protocol.json",
+      "registered_sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "actual_sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/equipment/fig02_three_city_tradeoff_engineering.json",
+      "source": "docs/final_optimization_20261002/heatpump/optimization_01/protocol.json",
+      "registered_sha256": "cc1783fecff21ef77346ea867d157572f406603644a1ced3f84e7e44b52a534d",
+      "actual_sha256": "cc1783fecff21ef77346ea867d157572f406603644a1ced3f84e7e44b52a534d",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+      "source": "docs/implementation_20261002_followup/external_rc_reproduction_final/reproduction_report.json",
+      "registered_sha256": "bb9f8f062e8aa954f5a6876b805b09306a76672791f932d0bae1655cb9da8e73",
+      "actual_sha256": "bb9f8f062e8aa954f5a6876b805b09306a76672791f932d0bae1655cb9da8e73",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+      "source": "docs/implementation_20261002_followup/external_rc_reproduction_final/C1_external_reproduced.csv",
+      "registered_sha256": "0f213dfc6625b95836702ebb6a3d835d2358ea362677e1ecf25e5f1e8eb243e7",
+      "actual_sha256": "0f213dfc6625b95836702ebb6a3d835d2358ea362677e1ecf25e5f1e8eb243e7",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+      "source": "docs/implementation_20261002_followup/external_rc_reproduction_final/C1_external_followup_reproduced.csv",
+      "registered_sha256": "21492e7863344c75b331390a3fbed10047163fd1b27e9cbda96f925f680df8a1",
+      "actual_sha256": "21492e7863344c75b331390a3fbed10047163fd1b27e9cbda96f925f680df8a1",
+      "matches": true
+    },
+    {
+      "sidecar": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+      "source": "data/external_rc_benchmark_20261001/source_provenance.json",
+      "registered_sha256": "3b392e56524f1944ecc95dac984367166b1b3a4dd4a46de745a33c38462175e3",
+      "actual_sha256": "3b392e56524f1944ecc95dac984367166b1b3a4dd4a46de745a33c38462175e3",
+      "matches": true
+    }
+  ],
+  "source_inventory": [
+    {
+      "path": "docs/publication_redesign_20261003/algorithm_evidence/bdg2_algorithm_evidence_zh.json",
+      "sha256": "9b97549d566c61a4c43fe881457d2fa7299374fb2ff1f0abcaca343a8370fb6b",
+      "bytes": 6314,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/results.json",
+      "sha256": "f9c2006e32ff952b4d65d8780f4cf54b1be951cd7dc42b037b2067534cb2a757",
+      "bytes": 192324,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/README.md",
+      "sha256": "beb31c5a5ae3c425cf58ec995dc4918f4a441a0478bae407634bc3c51d2831f3",
+      "bytes": 10682,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/summary.json",
+      "sha256": "1eee2848ae9f7c78b6cfbadb13203a012cd075c0ae60f20dfbfd3753cfe85f16",
+      "bytes": 2131,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/README.md",
+      "sha256": "cf35a5eb892059ed9ad451c61d4dc89f1055789fef911d745a37e213ed6ac4f0",
+      "bytes": 7786,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/network_evidence/network_feedback_zh.json",
+      "sha256": "cc6820b5b93a766ba761e400caf5314a9c30d23033697dade24d03182c159145",
+      "bytes": 3068,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/history.json",
+      "sha256": "4d7ec73d652e334a925cc670d90f299a95e39f27b712c86ebc4a0c3b79ffa387",
+      "bytes": 15846,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_00/summary.json",
+      "sha256": "bca4d057d50699ae6d2dfa406bbfb031b122223da5b61fd242e7e6e74da1eed4",
+      "bytes": 12012,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_01/summary.json",
+      "sha256": "58bd9aebe21754c1197b9c3d24232c68ea3218c721487184c9cb37a064b062f0",
+      "bytes": 11953,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/iteration_02/summary.json",
+      "sha256": "3525826fc5fbb379c1b7e01d207f0e80255a857c31d41f29f9f65b722a34a682",
+      "bytes": 12046,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/comparison.json",
+      "sha256": "66e685f0ee8925c9309c6e0742629ddf2115d7146f3161fce8a41da6c55e89c8",
+      "bytes": 3135,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/mechanisms.json",
+      "sha256": "59397c76450a26bed5a13139e4701b05edc26f3b97845ec93e573d6d8f86962e",
+      "bytes": 365,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/tradeoff_evidence/cost_carbon_zh.json",
+      "sha256": "60833724668cc462827c95f5b9af8ae75c227126457bfdb31db067be7fd53f55",
+      "bytes": 2820,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/decision_table.csv",
+      "sha256": "0384adbe64633b64d85090528c59846207ee941dfc32935a6feb9855b7c7c64c",
+      "bytes": 2966,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/mechanisms.json",
+      "sha256": "f2be477e1f7ea0b955414d298b66d804ea29b1c362e4777ad45c77fc872ee53a",
+      "bytes": 741,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/report_manifest.json",
+      "sha256": "0f42400b3a3389dfea8eaa645af206b567144f33afe62f0cd1c3e08536339806",
+      "bytes": 901,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_refinement_02/comparison.csv",
+      "sha256": "518e2880f07618e3276b0aa90a8001e602c505af73cdaf55d3cd6288fc88f75c",
+      "bytes": 31688,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/model_structure/shared_source_grid_load_cn.json",
+      "sha256": "e1654b3e09afa6edd9843ec842a74d11d1c9d64feda2ffb91690ab8381301107",
+      "bytes": 4497,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "src/heatplan/physical_extensions.py",
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "bytes": 19644,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "src/heatplan/model.py",
+      "sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "bytes": 188832,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/scientific_panels/R6_chronology_zh.json",
+      "sha256": "0fa6a1e2a62b74503cc8816bdece486cd643e0ace37064fb9ccb96ff8a826b3b",
+      "bytes": 1205,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/run_final/registry.json",
+      "sha256": "8d59e0b322d25c0674ce36bd6d07c8bb9f7bee680fec0bdc56cce3656b872885",
+      "bytes": 21120,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv",
+      "sha256": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+      "bytes": 642999,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_figures_20261002/equipment/fig01_performance_maps_engineering.json",
+      "sha256": "41adb4579f5b718b81a7ac73fca82a1e7e37e28c0144a2881a993b573f9ee337",
+      "bytes": 2025,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/admitted_heating_points.csv",
+      "sha256": "97740b6b49e2aedca7079839abe5354903f46ece29361a02778157cd9247721c",
+      "bytes": 63120,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/protocol.json",
+      "sha256": "71fed59b2d75814c25246f864d8bf0428a48f35217f8fed7ed7879b38bb119b8",
+      "bytes": 3503,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_figures_20261002/equipment/fig02_three_city_tradeoff_engineering.json",
+      "sha256": "fb4033e51ecef5e6c249ee69219f6e1325ba05030eccf70ab013cc7e8c5db51d",
+      "bytes": 2508,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/operating_comparison.csv",
+      "sha256": "253e13f73444e80da11bf41f91d3a5bb56c737fdf73003c7faee6b197e3fc840",
+      "bytes": 2484,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/optimization_comparison.csv",
+      "sha256": "9d530eb31bb6f4981a0dda913654f70c37ba1f74f43f385bbcab47a17408dfd3",
+      "bytes": 2359,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/protocol.json",
+      "sha256": "cc1783fecff21ef77346ea867d157572f406603644a1ced3f84e7e44b52a534d",
+      "bytes": 4337,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_figures_20261002/engineering/03_fraunhofer_zh.json",
+      "sha256": "9d1e7bbba6a352d2c39ea367f148395e3479e358213cf5885f9d63d4568d63a4",
+      "bytes": 2789,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/external_rc_reproduction_final/reproduction_report.json",
+      "sha256": "bb9f8f062e8aa954f5a6876b805b09306a76672791f932d0bae1655cb9da8e73",
+      "bytes": 18911,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/external_rc_reproduction_final/C1_external_reproduced.csv",
+      "sha256": "0f213dfc6625b95836702ebb6a3d835d2358ea362677e1ecf25e5f1e8eb243e7",
+      "bytes": 4254309,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/external_rc_reproduction_final/C1_external_followup_reproduced.csv",
+      "sha256": "21492e7863344c75b331390a3fbed10047163fd1b27e9cbda96f925f680df8a1",
+      "bytes": 4181104,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "data/external_rc_benchmark_20261001/source_provenance.json",
+      "sha256": "3b392e56524f1944ecc95dac984367166b1b3a4dd4a46de745a33c38462175e3",
+      "bytes": 3695,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/algorithm_evidence/building_comparison.csv",
+      "sha256": "f3d48e5917957f6e7bf11776a1979c7830cf174eee45a924cb122adb83dcad56",
+      "bytes": 2034,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/time_registry/run_final/README.md",
+      "sha256": "5eb4a5491a64c4abde5d4e40b23c4e27585b19d5432e8f83a2180a059c6bcc07",
+      "bytes": 1958,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/PAPER_FIGURE_PLAN.md",
+      "sha256": "ca07021f7f2e279e0f6ee8056b5a92b5a9676fbae57cfa78988dbde5888dc08d",
+      "bytes": 14377,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "data/derived/three_city_common_reference_20261002/guyuan_hourly.csv",
+      "sha256": "90f983a32f61d442f5d96df8a7d80cdce4afb8265bd4b020d852bb8bf37097bf",
+      "bytes": 643130,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "data/derived/three_city_common_reference_20261002/wuhan_hourly.csv",
+      "sha256": "4777209a9762bb17f57c6609ba30e5d9d2e42b511f56010e50500377a1c77ce0",
+      "bytes": 635999,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/scientific_panels/R6_selected_hours.csv",
+      "sha256": "13ed08e530d429ef4bf8024dd88996e29c87a529b1695e3191bcd9b549b745b2",
+      "bytes": 7101,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/run_01/source_admission.json",
+      "sha256": "18938c7b53cdd7c406d699406c72b73f667c22d0d10da5d021fbeaf7cd98b910",
+      "bytes": 3099,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_figures_20261002/equipment/data/fig01_performance_grid.csv",
+      "sha256": "2c960774519e7338c163125baf47c88f96197130e597587105b14da335662545",
+      "bytes": 12050,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/performance_map.py",
+      "sha256": "92c68664402edab40e4c7fe7fa9c11dd6404c0602dea9f90ce5f56d2cce028f6",
+      "bytes": 8038,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/independent_optimization_audit.json",
+      "sha256": "5b04f1f18ac804dc8bcbc67aee570405272056ce53b6011a9e9f3ece5f63b4b3",
+      "bytes": 6658,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/optimization_01/native_lp_bound_sidecar.json",
+      "sha256": "158c0da1456eef3fd75b74a9541e0fbe8b46e55172e3982a7bddaaeab26bc110",
+      "bytes": 8258,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/heatpump/HANDOFF.json",
+      "sha256": "521e68667d481041ecf7c3ef6651a6cfe4065f6dd8b8aac56f677d2603890b56",
+      "bytes": 38738,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/summary.json",
+      "sha256": "4d161a501222938b45be4fe892e07eabc75c9fee623a1e16f806ed55d31f19ce",
+      "bytes": 17392,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/protocol.json",
+      "sha256": "d476e7667029b676ecbde97f0733c7f247a76973631a80bc6593336f3027cb82",
+      "bytes": 50078,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/run_03/independent_verification.json",
+      "sha256": "a30ba2f4aa150340ddf38027a043dd133bd5c48e0757cd85b713f18a9845d354",
+      "bytes": 35275,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/multiscale/HANDOFF.json",
+      "sha256": "55966f3a5a5eb0fe63bdf6b563ef60b502d7b65714b9f6dbe726811e239bb617",
+      "bytes": 27884,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/config.yaml",
+      "sha256": "aa9df3d63b8b24aeeae1bc4d51af0284e0da3e2c9646b794a7cfff54b3cd4f6d",
+      "bytes": 3546,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/protocol.json",
+      "sha256": "2384dc2e011a215b308c798e4ac9ecb6d0f90092e7ddbefa649738f83808dc46",
+      "bytes": 4370,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/HANDOFF.json",
+      "sha256": "12459b0f300b9bf8014aee45b16acbea62cc09659d6822631ff6a972d9648674",
+      "bytes": 16545,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/epsilon_scan.csv",
+      "sha256": "b4d697a0aa445f82b2a07af9e02d08c1173b314f0ef3cecf1455e735063f15f8",
+      "bytes": 1303,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/decision_table.csv",
+      "sha256": "62c409f635c35e14c90bd31814064893f8535bcbb4b7ccea28710d8a2c6a7485",
+      "bytes": 613,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/conditional_thresholds.csv",
+      "sha256": "0e48676c2fe008698c6b5ae116481932a4c623e46941a6a06696d80c098d3506",
+      "bytes": 788,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/package_price_decision_intervals.csv",
+      "sha256": "46e447a13823f19c0c194d76de2e6d6f635df3b92496ae2f249776e42a5be609",
+      "bytes": 837,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/manifest.json",
+      "sha256": "16506fa76e49495ae9cf1b9baae48c5ce384e482a0ab50ee3a40a6c01b5ac8a9",
+      "bytes": 20065,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "outputs/competition_20261001/C4/optimized_annual_01/manifest.json",
+      "sha256": "1bb22e031d8e0c2d030d84798c2cb5803a13562c15ac9245100ceba0c314aea8",
+      "bytes": 5868,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "outputs/competition_20261001/C4/optimized_season_03/manifest.json",
+      "sha256": "e045fdedb6258cf4cc03a077bdea3ea9b57d28b51b6362573c6fb4a9afbb4fa9",
+      "bytes": 5968,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/execution_20261001/C4_handoff.md",
+      "sha256": "246d5b869a422873c74a4c5caddec7a92a6c341905afa3e3e279679aa6807e2c",
+      "bytes": 23107,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/execution_20261001/data_truth_audit/README.md",
+      "sha256": "2ca19548b54c45655fbc9db03ce061ffce48c8918361c922ede3252117df33b5",
+      "bytes": 6904,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc6/validation/root_tests.xml",
+      "sha256": "5d682323d237be0aa608f1120fc834997260d4c99e6147222c3bdbc41b0553bc",
+      "bytes": 25291,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc6/validation/heatpump_pytest_root.xml",
+      "sha256": "03ece8d463af386c3982294a38aa7542e56fd35b720f33fa3eb9857c58848386",
+      "bytes": 12925,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc6/README.md",
+      "sha256": "33d554e31090e546d7554caa6df728bda28c71acdd9bd11e8d4653da27752e2b",
+      "bytes": 6607,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/GITHUB_RELEASE_11.12.0rc6_HANDOFF.md",
+      "sha256": "05fe7a0d804d9c5fabf0f86b5df546905a8e471a093864813a32c8990b89a79d",
+      "bytes": 5676,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/github_release_11.12.0rc6/validation/root_readonly_candidate_check.json",
+      "sha256": "dea9accba001f009124545e6d5bf11ccf4aee0b8a93dd546c3c876252b56f435",
+      "bytes": 5916,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/LITERATURE_AND_DESIGN_DECISIONS.md",
+      "sha256": "b43a5bcf519d933eab89e6097b31a1f3831486ec3cff1cd5d57c89e986841a10",
+      "bytes": 8608,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/final_optimization_20261002/solution_evidence/report_final/README.md",
+      "sha256": "a2feb87dca4abb3793957ec41a8ca6498922afcb46cc24c43c264a77423e099f",
+      "bytes": 21180,
+      "role": "frozen_saved_evidence"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/SCORING_ORIGINAL_EXTRACT.txt",
+      "sha256": "16e1b8ea2015f1075f8f474cbcda30e8aa7559d1bf5a6e5ba02fb12c65709052",
+      "bytes": 7344,
+      "role": "frozen_saved_evidence"
+    }
+  ],
+  "limitations_of_this_audit": [
+    "Re-read saved evidence and rehashed cited files; did not rerun optimization or fit RC parameters.",
+    "Historical provenance and independent audits are quoted within their stated scope; this read does not re-authenticate external publishers or physical equipment.",
+    "No new tests/experiments or release/tag were performed."
+  ]
+}

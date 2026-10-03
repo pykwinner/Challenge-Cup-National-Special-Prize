@@ -1,0 +1,32 @@
+% !TeX root = ../main.tex
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\section{经济评价与方案选择}
+\subsection{同口径费用与碳排比较}
+
+同资产调度固定天气、服务温度和初末状态，比较费用、能耗、峰值及碳排。表\ref{tab:heatpump}回答既有设备如何优化运行，表\ref{tab:tradeoff}回答排放额度如何改变费用选择；共同调度轨迹给出收益的物理解释。
+
+投资评价将年化或折现账本与运行分析衔接。给定同等服务下的增量投资$\Delta I$、年度能源费用节约$\Delta B_y$、新增维护$\Delta M_y$、更新费用$\Delta R_y$及残值差$\Delta V_Y$，净现值为
+\begin{equation}
+\mathrm{NPV}=-\Delta I+\sum_{y=1}^{Y}\frac{\Delta B_y-\Delta M_y-\Delta R_y}{(1+r)^y}+\frac{\Delta V_Y}{(1+r)^Y},
+\label{eq:npv}
+\end{equation}
+其中$r$为折现率。本式给出项目现金流的统一接口；以下条件投资实验采用独立登记的采购预算和重复窗口账本，以价格阈值说明候选方案的选择机制。
+
+\subsection{采购价格阈值与方案敏感性}
+
+条件投资实验登记0、1、2台热泵候选，在相同2880小时服务与固定性能假设下求解五档碳帽，得到三个不同方案。比较账本为采购预算加$F=5$个120日重复窗口的能源费用及假设维护预算；$F$是研究设计系数。该实验的设备价格与性能身份独立于前述TICA厂家性能域实验。
+
+令$p\geq0$为每台候选设备的采购预算，固定其他条件后，各台数下的最小比较费用可以写成
+\begin{equation}
+B_0(p)\approx14402.3788,\quad
+B_1(p)\approx p+5055.8954,\quad
+B_2(p)\approx2p+5455.8596.
+\label{eq:price-lines}
+\end{equation}
+金额单位均为元，截距来自各固定台数下的运行最优解，展示值经四舍五入。两台方案满足$B_2-B_1\approx p+399.9641>0$；按原值计算，一台方案与零台方案的交点为
+\begin{equation}
+p^*=B_0(0)-B_1(0)\approx9346.4833\ \text{元}.
+\label{eq:price-threshold}
+\end{equation}
+在$F=5$账本及非负价格域内，$p<p^*$选择一台，$p>p^*$选择零台，交点处费用相同。配套投资增量$\Delta K$及每窗口维护增量$\Delta M$使一台方案的优势条件变为\mbox{$p+\Delta K+5\Delta M\leq p^*$}，由此定位预算变化导致的方案切换。

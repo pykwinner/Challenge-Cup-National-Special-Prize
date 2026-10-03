@@ -1,0 +1,122 @@
+{
+  "version": "1.0.0-rc1",
+  "status": "文档候选版",
+  "paper_revision": "paper-scoring-20261003-r2-format1",
+  "core_evidence_baseline": "v11.12.0rc6",
+  "prepared_at": "2026-10-03T14:13:13.831202+08:00",
+  "timezone": "Asia/Shanghai",
+  "repository": "https://github.com/pykwinner/xiaotiao",
+  "target_branch": "main",
+  "local_branch": "docs/paper-advantages-20261003",
+  "previous_main_commit": "f6afbc51546529c662f098e0bd2d9f8dc74eb772",
+  "planned_tag": "paper-advantages-v1.0.0-rc1-20261003",
+  "tag_created": false,
+  "final_commit": null,
+  "post_commit_record": "Final SHA, upload time and remote verification are recorded in the annotated tag and external handoff.",
+  "scope": "only deliverables/paper_module_advantages_20261003/",
+  "changes": [
+    "module advantage documentation",
+    "conditional investment and evidence navigation",
+    "complete R2 paper source and current figures",
+    "LaTeX entry and typography fixes"
+  ],
+  "data_changes": false,
+  "new_experiments": false,
+  "source_copies": [
+    {
+      "path": "paper_source/main.tex",
+      "source_sha256": "1b50812a05df15da8760977ff306dc5c986c61c4a551404cb41816098f5a999e"
+    },
+    {
+      "path": "paper_source/BUILD_README.md",
+      "source_sha256": "9ddbdcac5bec6ed794d209d2a437ee632fe54892af96eb1748ad6c9a5185233e"
+    },
+    {
+      "path": "paper_source/build_paper.ps1",
+      "source_sha256": "860656808e543fe3091a3d7e6e50e199ff68eaf1c437a7f5b63ffe6c335c20ef"
+    },
+    {
+      "path": "paper_source/paper_claims_verified.json",
+      "source_sha256": "c7f052f9667200fd0a7cd0fe13b759faf60fda50faa74512cd57561b09e30272"
+    },
+    {
+      "path": "paper_source/sections/problem-data-scoring-20261003.tex",
+      "source_sha256": "29343689a4581b00734a2f0d384ade6f04e497166cc5631a799bdeaedff33b0c"
+    },
+    {
+      "path": "paper_source/sections/model-scoring-20261003.tex",
+      "source_sha256": "767587b5edb084381b35912c087bc976fac1438894d4c08faf617a1c08b05b4a"
+    },
+    {
+      "path": "paper_source/sections/algorithm-scoring-20261003.tex",
+      "source_sha256": "113f2da80a69b1400a6560fdaada4f2a77e719b244b1696127042e271ec85161"
+    },
+    {
+      "path": "paper_source/sections/experiments-scoring-20261003.tex",
+      "source_sha256": "6023ec48a602ac01953ba7f2bd78e100bff7aaebb1d38a453eb1d014ba80df49"
+    },
+    {
+      "path": "paper_source/sections/economics-advantage-20261003.tex",
+      "source_sha256": "bfa6370321ff8860dcd2ae102be980ca2d5d52b3f04099fb5954348aaba29840"
+    },
+    {
+      "path": "paper_source/sections/software-pseudocode-20261003.tex",
+      "source_sha256": "8489d46f036a2c6b51fef7efdf38ad1750c18446e147e4b04dcff0794250f5d9"
+    },
+    {
+      "path": "paper_source/sections/conclusion-advantage-20261003.tex",
+      "source_sha256": "0bb6781b34bb634b1c29caa0ed38c737a03f096421e0e678d10d4eefb483a385"
+    },
+    {
+      "path": "paper_source/build-fonts/NotoSansSC-Regular.ttf",
+      "source_sha256": "25628aac5ef8b03a013166472539318eafeee1d9004017549723f4e1aedf02a6"
+    },
+    {
+      "path": "paper_source/build-fonts/NotoSerifSC-Regular.ttf",
+      "source_sha256": "be369c4126abb10d76d58c2a9d8622e49e21f3e4227ba8b6590cd5cedf7a79bd"
+    },
+    {
+      "path": "paper_source/build-fonts/NotoSerifSC-Bold.ttf",
+      "source_sha256": "a420f886ef0331c205a318e4d4aba75cbed4180e2b4ef3803125b4b1e3417725"
+    },
+    {
+      "path": "paper_source/cover.jpg",
+      "source_sha256": "3e1bb1985ee542c9d019b0d0f7611fa3d140e1eaa2090c255c1e4b44dbcb4c8a"
+    },
+    {
+      "path": "paper_source/body-background.jpg",
+      "source_sha256": "93540a2af4166d81977ec5dbfeb4206fbafab2c780a4b898b799479c5e427f9b"
+    },
+    {
+      "path": "paper_source/media/paper_r2/external_w1.pdf",
+      "source_sha256": "7692622f214778f07710415f075daca0f4bbde66d682dbde64a56ba502f2e578"
+    },
+    {
+      "path": "paper_source/media/paper_r2/model_paper/source_network_load_storage_zh.pdf",
+      "source_sha256": "2fc3472404d1b24dd7f4e06a55ef66594cec7c7ed91e6929f9c1a6a7150a5a7f"
+    },
+    {
+      "path": "paper_source/media/paper_r2/mechanism_paper/thermal_coupling.pdf",
+      "source_sha256": "9a40e8ed3117c4f84b5fce68743954be3d928c73da1cc5da5132016d9e1e6d86"
+    },
+    {
+      "path": "paper_source/media/paper_r2/tradeoff_paper/cost_carbon.pdf",
+      "source_sha256": "96f0e5357124fbd0cc976009dda4edeaefee009918f77732d3f0e91a3cdfb2f7"
+    }
+  ],
+  "distribution": "original project prose and figures, existing project template/font dependencies; raw third-party datasets, credentials and unfinished image candidates excluded",
+  "excluded": [
+    {
+      "item": "raw third-party datasets",
+      "reason": "existing repository/source acquisition rules remain in effect"
+    },
+    {
+      "item": "new imagegen candidates",
+      "reason": "not approved scientific figures for this paper revision"
+    },
+    {
+      "item": "old build auxiliaries and logs",
+      "reason": "final validation is stored separately; no temporary build dependencies"
+    }
+  ]
+}

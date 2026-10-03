@@ -1,0 +1,101 @@
+% !TeX root = ../main.tex
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\section{软件组织与可复现性}
+
+工程将输入验证、模型与求解函数置于\path{src/heatplan/}，运行编排置于命令行及\path{scripts/}。场景参数通过配置传入，函数以具名字段返回方案、诊断和状态；注释说明单位、边界及求解身份，同一约束库可复用于不同场景。
+
+以下伪代码对应实际实现。四个算法按各自入口执行，共用输入验证、求解与证据规范。
+
+\subsection{配置分派与结果输出}
+\noindent\textbf{算法1：场景清单主程序。}输入：场景清单、配置与时序路径、时限及gap；输出：逐场景方案、比较表和运行参数。
+\begin{longtable}{@{}p{0.07\textwidth}p{0.88\textwidth}@{}}
+\toprule 行 & 操作\\\midrule
+\endfirsthead
+\toprule 行 & 操作（续）\\\midrule
+\endhead
+\bottomrule\endfoot
+01 & 读取清单，解析相对路径；校验命令行gap及可选政策配置。\\
+02 & \textbf{对每个}场景条目，创建独立输出目录并读取配置路径。\\
+03 & \quad\textbf{若}提供阶段路径，\textbf{则}调用阶段规划函数，保存阶段与投资表。\\
+04 & \quad\textbf{否则}读取并验证配置及时序；按可选情景定义构造输入并再次验证。\\
+05 & \quad\quad{}装配\texttt{HeatPlanningModel}，调用\texttt{solve}，导出方案。\\
+06 & \quad{}汇总该场景状态；\textbf{若}配置政策评价，\textbf{则}保存评价表。\\
+07 & \textbf{结束循环}；保存场景比较表及实际时限、gap覆盖规则。\\
+08 & 输出运行摘要并\textbf{返回}控制台；异常由对应调用报告。\\
+\end{longtable}
+普通规划输出由\texttt{export\_results}统一生成费用碳摘要、投资、调度及已附加的建筑审核表；冻结研究入口另保存输入及代码指纹、失败文件和manifest，便于反查每个表值的实际运行。
+
+\Needspace{15\baselineskip}
+\subsection{硬能量校正、准入与回退}
+\noindent\textbf{算法2：固定实际日权重。}输入：完整日观测、已选轮廓、频数权重、下界及准入规则；输出：采用权重、求解诊断和准入记录。
+\begin{longtable}{@{}p{0.07\textwidth}p{0.88\textwidth}@{}}
+\toprule 行 & 操作\\\midrule
+\endfirsthead
+\toprule 行 & 操作（续）\\\midrule
+\endhead
+\bottomrule\endfoot
+01 & 核对维度、有限非负值与完整日数；校正期间固定轮廓。\\
+02 & \textbf{若}下界总和超出日数，\textbf{则}标记不可行；\textbf{若}均值为零，\textbf{则}标记指标未定义。\\
+03 & 对其余输入生成联合支撑点与CDF，线性化绝对差。\\
+04 & 以最小归一$W_1$为目标，施加能量、日数等式和权重下界，求解LP。\\
+05 & \textbf{若}求解成功，\textbf{则}独立重算能量、日数、下界及目标残差。\\
+06 & 检查候选的能量、分布、真实峰值与爬坡门槛；同时审核频数方案。\\
+07 & \textbf{若}候选全部通过，\textbf{则}采用候选；\textbf{否则}回退频数并保留两者失败原因。\\
+08 & \textbf{返回}权重、方法标识、准入布尔值及诊断；保存逐案例记录。\\
+\end{longtable}
+显式回退使选日、分布质量与原始峰值覆盖可分别追踪；采用权重后，连续运行仍交由原时序接口审核。
+
+\Needspace{15\baselineskip}
+\subsection{容差端点与碳帽扫描}
+\noindent\textbf{算法3：赛事多目标入口。}输入：同一配置、服务合同、时序、时限与容差；输出：两端点、碳帽样本、非支配子集及失败记录。
+\begin{longtable}{@{}p{0.07\textwidth}p{0.88\textwidth}@{}}
+\toprule 行 & 操作\\\midrule
+\endfirsthead
+\toprule 行 & 操作（续）\\\midrule
+\endhead
+\bottomrule\endfoot
+01 & 固定输入及代码身份，登记配置中的费用组成与碳排口径。\\
+02 & \textbf{对每个}主目标$F_C,F_E$，新建模型并求主目标可行值$v$。\\
+03 & \quad{}若有可行值，加入上限$v+\delta_{\mathrm{abs}}+\delta_{\mathrm{rel}}|v|$，求次目标。\\
+04 & \quad{}审核并保存两阶段状态、界、gap、轨迹；异常保存为失败项。\\
+05 & \textbf{结束循环}；\textbf{若}两端点有效且碳区间有序，\textbf{则}生成五档碳帽。\\
+06 & \quad\textbf{对每档}碳帽，添加有效容差，独立最小化配置总费用。\\
+07 & \quad\quad{}保存可行性审核与目标身份；成功点入样本表，异常入失败表。\\
+08 & \quad\textbf{结束循环}；按容差去重并剔除样本中的支配点。\\
+09 & 输出实际样本与失败表；全档成功时生成完整manifest，\textbf{返回}退出码。\\
+\end{longtable}
+专用扫描函数采用去碳价配置；表中赛事入口继承总目标。两种入口各自保留目标身份，使求解界与费用台账能够逐阶段对应。
+
+\Needspace{15\baselineskip}
+\subsection{有限稳态模式校核反馈}
+\noindent\textbf{算法4：网络反馈函数。}输入：星型支路模式、瞬时阈值、逐时需求和求解预算；输出：通过方案与迭代历史，或带历史的失败异常。
+\begin{longtable}{@{}p{0.07\textwidth}p{0.88\textwidth}@{}}
+\toprule 行 & 操作\\\midrule
+\endfirsthead
+\toprule 行 & 操作（续）\\\midrule
+\endhead
+\bottomrule\endfoot
+01 & 构建模式目录、启用变量及同时容量约束，初始化已排除集合。\\
+02 & \textbf{对每轮}登记预算内的迭代，求解并独立复算瞬时物理及小时账本。\\
+03 & \quad\textbf{若}调用异常，\textbf{则}记录失败历史，经回调保存后抛出异常。\\
+04 & \quad{}保存审核、求解状态及新增失败模式；回调写出本轮检查点。\\
+05 & \quad\textbf{若}全部通过，\textbf{则返回}方案、调度、目录、审核和历史。\\
+06 & \quad\textbf{若}没有新增可排除模式，\textbf{则}抛出带历史的失败异常。\\
+07 & \quad\textbf{对每个}新增失败模式，在所有时段固定启用变量为零，更新集合。\\
+08 & \textbf{结束循环}；抛出轮数耗尽异常，由入口保存失败文件。\\
+\end{longtable}
+有限目录的排除与每轮检查点使修正原因和可行性代价完整保留，输出状态可供规划平台继续处理。
+
+下表列出实际源文件。中文动词概括逻辑，具名函数对应程序API。
+\begin{longtable}{@{}p{0.10\textwidth}p{0.85\textwidth}@{}}
+\toprule 算法 & 源文件（工程根起）\\\midrule
+\endfirsthead
+\toprule 算法 & 源文件（续）\\\midrule
+\endhead
+\bottomrule\endfoot
+1 & \path{src/heatplan/unified_cli.py}、\path{io.py}及\path{reporting.py}；后两者同目录。\\
+2 & \path{src/heatplan/hard_weight_calibration.py}、\path{src/heatplan/representative_adoption.py}；六楼运行由\path{scripts/bdg2_hard_weight_confirmation.py}编排。\\
+3 & \path{src/heatplan/model.py}、\path{src/heatplan/experiments.py}及\path{scripts/run_competition_frontier.py}。\\
+4 & \path{src/heatplan/network_feedback.py}及\path{scripts/run_network_feedback_reference.py}。\\
+\end{longtable}
