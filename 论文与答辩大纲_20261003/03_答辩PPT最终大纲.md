@@ -339,6 +339,10 @@
 
 **讲法：**"谷电便宜，建筑倾向于集中预热。共同容量约束会让运行安排重新分配，哪些小时能用多少电由整个系统一起决定。"
 
+**城市级那一层也有结果了（本页或备份页）：** 用一体化模型搭三层结构——**城市级共享接入（含扩容候选）→ 区域级两条干线（管径候选）→ 用户级两栋异质建筑（A 栋 C1、B 栋 C4）**。收紧城市级接入：电费 **+3.8%**、电量与碳排 **−4.0%**，全部工况零弃供、`mip_gap = 0`。图见 [multiscale_three_level.png](../outputs/figures/multiscale_three_level.png)。
+
+**⚠️ 城市级口径：** firm 需量 **5.184 kW 是硬地板**（两栋楼峰值同时到来），低于它必然不可行；6.4796 kW 对两栋楼并不紧，要压到 5.2 kW 效果才明显。
+
 **口径：** 121／229 小时是**按统一上限复查的反事实**，不是模型违反了自己求解的约束。
 
 ---
@@ -520,6 +524,7 @@ docs/               来源、协议、结果和复现说明
 | 已经证明全局最优了吗？ | 对登记问题按求解器状态、原始界和容差描述；**不单凭三次运行证明任意规模稳定收敛** | solver 记录、solution evidence |
 | 没有投资回收期，怎样服务规划？ | 已能比较运行侧选择与可行条件；工程投资评价需同型号报价与年度服务账本 | 第12页经济条件 |
 | **这些结果是一个完整案例吗？** | 两层回答：**① 主案例**是完整闭环——武汉 2880 h 全服务周期、一台热泵、电网上限 4.0 kW、零违约、RC 残差 8.75e-11 ℃、49 项独立审计。**② 若问"模块有没有接起来"**：另用一体化模型把**源—网—荷—储放进同一次求解**（mip_gap=0.0），选中 dn50 管径、储热容量选 0。**两套模型不混称** | [主案例总表](主案例总表_武汉.md)第四、十一节 |
+| 城市级耦合在哪？ | 三层结构跑通：城市级共享接入（扩容候选选 0）→ 区域级两条干线（均选 dn40）→ 用户级两栋异质建筑。收紧共享接入后**下层电费 +3.8%、电量与碳排 −4.0%**，即上层边界确实改变了下层运行 | [multiscale_three_level.png](../outputs/figures/multiscale_three_level.png)、总表第十二节 |
 | **储热为什么不配？** | **不是没考虑，是算了不划算**：建筑本体可用蓄热 C×ΔT ≈ 3.75 kWh；造价降到 5 元/kWh 时会选 13.4 kWh，260 元/kWh 时选 0 | [joint_selection.png](../outputs/figures/joint_selection.png)、总表第十一节 |
 | 室温为什么有时顶着 27 ℃？ | 折中方案整季 **93 h 顶在上限**，是把用电挪到谷电时段的机理。**已做敏感性**：上限收到 24 ℃ 后省费仍为 74.00%（原 74.06%），**收益不依赖高室温** | [robustness_summary.png](../outputs/figures/robustness_summary.png)、[主案例总表](主案例总表_武汉.md) 第七节 |
 | 结论是不是调参调出来的？ | H ±20% 下省费全距 0.45 个百分点（73.92%–74.37%），最优结构与零违约五档一致 | [robustness_summary.png](../outputs/figures/robustness_summary.png)、总表第八节 |
@@ -540,7 +545,7 @@ docs/               来源、协议、结果和复现说明
 | 7 | [**main_case_season.png**](../outputs/figures/main_case_season.png)（主图）<br>＋ [**robustness_summary.png**](../outputs/figures/robustness_summary.png)（稳健性小图）<br>＋ [**joint_selection.png**](../outputs/figures/joint_selection.png)（联合案例，小图或备份）<br>＋ [**intermittent_service.png**](../outputs/figures/intermittent_service.png)（间歇对照，备份）<br>＋ [主案例总表](主案例总表_武汉.md) | ✅ **四张图均已生成** |
 | 8 | [weight_confirmation.png](../docs/implementation_20261002/figures/weight_confirmation.png) | 可用（左右两图同页） |
 | 9 | [cost_carbon_tradeoff.png](../docs/implementation_20261002_followup/parallel_stage_02/climate_dispatch_analysis_02/cost_carbon_tradeoff.png) | **须中文化** |
-| 10 | [feasible_map.png](../outputs/figures/feasible_map.png) ＋ [cost_energy_scissors.png](../outputs/figures/cost_energy_scissors.png) | 前者**须改标题** |
+| 10 | [feasible_map.png](../outputs/figures/feasible_map.png) ＋ [cost_energy_scissors.png](../outputs/figures/cost_energy_scissors.png) ＋ [multiscale_three_level.png](../outputs/figures/multiscale_three_level.png)（城市级，可备份） | 前者**须改标题** |
 | 12 | [network_feedback.png](../docs/implementation_20261002_followup/parallel_stage_03/network/analysis_02/network_feedback.png) | **须中文化** |
 | 13 | [决策表](../docs/implementation_20261002_followup/parallel_stage_03/investment/run_03/decision_table.csv) ＋ [主案例总表](主案例总表_武汉.md) 第二节 | 重排为四张方案卡 |
 | 14 | 目录结构图 | 按实际仓库画 |
@@ -596,7 +601,7 @@ docs/               来源、协议、结果和复现说明
 
 | 事项 | 现状 | 怎么做 |
 |---|---|---|
-| 多栋建筑 + 共享容量的联合投资 | 联合案例为**单栋单干线**；多栋共享容量在另一个专项（两栋 + 共享上限）里单独验证 | 把多栋并入一体化模型再跑一次 |
+| ~~多栋建筑 + 共享容量的联合投资~~ | ✅ **已完成**：三层结构（城市共享接入＋扩容候选 → 区域双干线＋管径候选 → 用户两栋异质建筑）全部跑通，收紧上层使电费 +3.8%、电量 −4.0%，详见[总表](主案例总表_武汉.md)第十二节 | — |
 
 **C 类 · 当前数据条件下做不了，只能降级或明确放弃**
 

@@ -1,0 +1,155 @@
+building_thermal:
+  boundary_mode: fixed
+  buildings:
+  - area_m2: 48.0
+    cooling_enabled: true
+    final_temperature_c: 20.0
+    heat_grade: ideal_zone_service
+    heat_loss_kw_per_c: 0.10430000000000002
+    heating_enabled: true
+    heating_service_column: heating_service
+    initial_temperature_c: 20.0
+    internal_gain_column: internal_gain_kw
+    max_cooling_kw: 1000.0
+    max_heat_kw: 1000.0
+    max_temperature_c: 27.0
+    min_temperature_c: 20.0
+    name: bestest600_district_a
+    node: district_a
+    solar_gain_column: solar_gain_kw
+    thermal_capacity_kwh_per_c: 0.535576
+  - area_m2: 48.0
+    cooling_enabled: true
+    final_temperature_c: 20.0
+    heat_grade: ideal_zone_service
+    heat_loss_kw_per_c: 0.10430000000000002
+    heating_enabled: true
+    heating_service_column: heating_service
+    initial_temperature_c: 20.0
+    internal_gain_column: internal_gain_kw
+    max_cooling_kw: 1000.0
+    max_heat_kw: 1000.0
+    max_temperature_c: 27.0
+    min_temperature_c: 20.0
+    name: bestest600_district_b
+    node: district_b
+    solar_gain_column: solar_gain_kw
+    thermal_capacity_kwh_per_c: 0.535576
+  enabled: true
+  outdoor_temperature_column: outdoor_temp
+  simultaneous_mode: exclusive
+demand_response:
+  max_shift_fraction: 0.0
+grades:
+- name: ideal_zone_service
+  temperature_c: 27.0
+grid_connection:
+  capex_yuan_per_kw: 0.0
+  existing_capacity_kw: 4.0
+  firm_capacity_method: portfolio_dispatch
+  firm_simultaneity: 1.0
+  max_new_capacity_kw: 0.0
+  reserve_margin: 0.0
+multi_energy_services:
+  cooling:
+    demand_columns:
+      district_a: steady_cooling_demand_kw
+      district_b: steady_cooling_demand_kw
+    enabled: true
+    max_scenario_unserved_rate: 0.0
+    max_unserved_rate: 0.0
+    sources:
+      bestest_ideal_air_system:
+        capacity_equivalence: 1.0
+        direct_emission_kg_per_kwh_cooling: 0.0
+        eer: 1.0
+        eer_loss_per_c_above_reference: 0.0
+        eer_max: 1.0
+        eer_min: 1.0
+        variable_om_yuan_per_kwh_cooling: 0.0
+    unserved_penalty_yuan_per_kwh: 0.0
+nodes:
+- demand_columns: {}
+  name: plant
+  x: 0.0
+  y: 0.0
+- demand_columns:
+    ideal_zone_service: heat_reference_no_gain_kw
+  name: district_a
+  x: 1.0
+  y: 0.5
+- demand_columns:
+    ideal_zone_service: heat_reference_no_gain_kw
+  name: district_b
+  x: 1.0
+  y: -0.5
+pipes:
+- cold_loss_sensitivity_per_c: 0.0
+  delivery_efficiency: 0.97
+  diameter_options:
+  - capacity_kw: 12.0
+    capex_total_yuan: 18000.0
+    name: dn40
+  - capacity_kw: 40.0
+    capex_total_yuan: 30000.0
+    name: dn65
+  existing_capacity_kw: 0.0
+  from: plant
+  heat_loss_w_per_mk: 0.24
+  length_m: 400.0
+  loss_reference_temperature_c: 0.0
+  minimum_delivery_efficiency: 0.9
+  name: trunk_district_a
+  pumping_electricity_kwh_per_kwh_heat: 0.008
+  roughness_mm: 0.1
+  to: district_a
+- cold_loss_sensitivity_per_c: 0.0
+  delivery_efficiency: 0.97
+  diameter_options:
+  - capacity_kw: 12.0
+    capex_total_yuan: 18000.0
+    name: dn40
+  - capacity_kw: 40.0
+    capex_total_yuan: 30000.0
+    name: dn65
+  existing_capacity_kw: 0.0
+  from: plant
+  heat_loss_w_per_mk: 0.24
+  length_m: 400.0
+  loss_reference_temperature_c: 0.0
+  minimum_delivery_efficiency: 0.9
+  name: trunk_district_b
+  pumping_electricity_kwh_per_kwh_heat: 0.008
+  roughness_mm: 0.1
+  to: district_b
+planning:
+  ambient_reference_c: 0.0
+  asset_lifetime_years: 1
+  carbon_price_yuan_per_kg: 0.0
+  design_outdoor_temperature_c: -4.85
+  discount_rate: 1.0
+  enforce_n_minus_one: false
+  exergy_penalty_yuan_per_kwh: 0.0
+  firm_capacity_reserve_margin: 0.0
+  max_scenario_unserved_rate: 0.0
+  max_unserved_rate: 0.0
+  region_profile: BESTEST600_derived_Wuhan_weather_reference
+  representative_day_weight: 1
+  time_step_hours: 1
+  unserved_heat_penalty_yuan_per_kwh: 0.0
+sources:
+- allowed_grades:
+  - ideal_zone_service
+  efficiency: 1.0
+  existing_capacity_kw: 1000.0
+  firm_capacity_availability: 1.0
+  firm_capacity_credit: 1.0
+  max_new_capacity_kw: 0.0
+  max_retire_capacity_kw: 0.0
+  name: bestest_ideal_air_system
+  node: plant
+  resource_kind: electric
+  supply_temp_c: 27.0
+  type: electric_boiler
+  variable_om_yuan_per_kwh_heat: 0.0
+storages: []
