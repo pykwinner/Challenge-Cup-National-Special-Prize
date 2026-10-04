@@ -1,0 +1,60 @@
+{
+  "status": "numeric_export_and_visual_checks_complete",
+  "sources_unchanged": true,
+  "new_model_runs": 0,
+  "paper_dimensions_mm": [
+    146.0000030517578,
+    78.28716803656683
+  ],
+  "minimum_actual_pdf_font_pt": 7.5,
+  "actual_pdf_fonts_pt": [
+    7.5,
+    7.6,
+    7.7,
+    8.2,
+    9.5,
+    11.0
+  ],
+  "text_color": "#000000",
+  "text_collisions": [],
+  "clipped_text": [],
+  "pdf_raster_images": 0,
+  "svg_raster_images": 0,
+  "fonts_embedded": true,
+  "native_svg_text_nodes": 23,
+  "caption_chinese_characters": 100,
+  "storage_and_building_states_separate": true,
+  "state_variable_sources": {
+    "E_t": "storage_soc, kWh; model.py 1392–1472",
+    "theta_t": "building_temperature, degC; building_thermal.py 474–512"
+  },
+  "state_time_semantics": "interval-end; continuous thermal relation uses theta(t)",
+  "outputs": [
+    {
+      "path": "docs/publication_final_20261003/model_paper/source_network_load_storage_zh.svg",
+      "sha256": "9f7ca121c60624c44c69f70a363af937c90cf48c8c5ffff1da917895c7f660df",
+      "bytes": 18763
+    },
+    {
+      "path": "docs/publication_final_20261003/model_paper/source_network_load_storage_zh.pdf",
+      "sha256": "2fc3472404d1b24dd7f4e06a55ef66594cec7c7ed91e6929f9c1a6a7150a5a7f",
+      "bytes": 31081
+    },
+    {
+      "path": "docs/publication_final_20261003/model_paper/source_network_load_storage_zh.png",
+      "sha256": "7b50c29789a7361cbb5008a3abb514031dd28e9626074798130b44a54201ae67",
+      "bytes": 101336
+    }
+  ],
+  "visual_review": {
+    "actually_viewed": [
+      "source_network_load_storage_zh.png",
+      "QA_pdf_render.png"
+    ],
+    "observations_zh": [
+      "储热与建筑温度分别标注E_t与θ_t，两个账本不混用。",
+      "热电载体、状态输入与输配关联可辨，原结构布局和参考配色保留。",
+      "146毫米宽导出，无文字重叠或裁切，最小实测字体7.5磅。"
+    ]
+  }
+}

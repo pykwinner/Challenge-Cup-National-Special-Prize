@@ -1,0 +1,80 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{审计独立重算矩阵行；它不证明输入来自现场或未装配的工程约束成立。}}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{audit\PYGZus{}solution}\PYG{p}{(}
+    \PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{values}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{ndarray}\PYG{p}{,} \PYG{o}{*}\PYG{p}{,} \PYG{n}{absolute\PYGZus{}tolerance}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{1e\PYGZhy{}6}\PYG{p}{,}
+    \PYG{n}{relative\PYGZus{}tolerance}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{1e\PYGZhy{}8}\PYG{p}{,}
+\PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{n+nb}{dict}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Recompute every row, bound and integer restriction from the full solution.}
+
+\PYG{l+s+sd}{    Scaled violations divide by atol + rtol * row magnitude; \PYGZlt{}= 1 passes.}
+\PYG{l+s+sd}{    The objective snapshot belongs to the last solve, including emissions}
+\PYG{l+s+sd}{    objectives that a caller restores after the solver returns.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{拒绝无效容差；不可通过任意放大容差掩盖物理超限。}}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{np}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{absolute\PYGZus{}tolerance}\PYG{p}{)} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n}{np}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{relative\PYGZus{}tolerance}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n}{absolute\PYGZus{}tolerance} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{n}{relative\PYGZus{}tolerance} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{audit tolerances must be positive/nonnegative}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n}{values}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{n+nb}{float}\PYG{p}{)}
+    \PYG{n}{report} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}audit\PYGZus{}passed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{False}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}audit\PYGZus{}tolerance}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{absolute}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{absolute\PYGZus{}tolerance}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{relative}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{relative\PYGZus{}tolerance}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scaled\PYGZus{}violation\PYGZus{}limit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{首先检查向量维数和有限性，缺失或非有限解立即不通过。}}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}solution\PYGZus{}finite}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{bool}\PYG{p}{(}\PYG{n}{x}\PYG{o}{.}\PYG{n}{shape} \PYG{o}{==} \PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{names}\PYG{p}{)}\PYG{p}{,}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{np}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{o}{.}\PYG{n}{all}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{report}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}solution\PYGZus{}finite}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{report}
+    \PYG{n}{compile\PYGZus{}seconds}\PYG{p}{,} \PYG{n}{cache\PYGZus{}hit} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{last\PYGZus{}matrix\PYGZus{}compile\PYGZus{}seconds}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{last\PYGZus{}matrix\PYGZus{}cache\PYGZus{}hit}
+    \PYG{n}{matrix} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{constraint\PYGZus{}matrix}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{last\PYGZus{}matrix\PYGZus{}compile\PYGZus{}seconds}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{last\PYGZus{}matrix\PYGZus{}cache\PYGZus{}hit} \PYG{o}{=} \PYG{n}{compile\PYGZus{}seconds}\PYG{p}{,} \PYG{n}{cache\PYGZus{}hit}
+    \PYG{c+c1}{\PYGZsh{} activity\CJKCode{为}Ax\CJKCode{；热平衡与储热递推等式也包含在这些行内。}}
+    \PYG{n}{activity} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n}{matrix} \PYG{o}{@} \PYG{n}{x}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{用各项绝对贡献估计量级，避免正负抵消使容差失真。}}
+    \PYG{n}{magnitude} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{matrix}\PYG{p}{)} \PYG{o}{@} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{row\PYGZus{}lo}\PYG{p}{,} \PYG{n}{row\PYGZus{}hi} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{row\PYGZus{}lower}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{row\PYGZus{}upper}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{同时检查行下界与上界，等式并非仅看某一方向的残差。}}
+    \PYG{n}{row\PYGZus{}violation} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{row\PYGZus{}lo} \PYG{o}{\PYGZhy{}} \PYG{n}{activity}\PYG{p}{,} \PYG{n}{activity} \PYG{o}{\PYGZhy{}} \PYG{n}{row\PYGZus{}hi}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{row\PYGZus{}scaled} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros\PYGZus{}like}\PYG{p}{(}\PYG{n}{activity}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{bound}\PYG{p}{,} \PYG{n}{violation} \PYG{o+ow}{in} \PYG{p}{(}\PYG{p}{(}\PYG{n}{row\PYGZus{}lo}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{row\PYGZus{}lo} \PYG{o}{\PYGZhy{}} \PYG{n}{activity}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{row\PYGZus{}hi}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{activity} \PYG{o}{\PYGZhy{}} \PYG{n}{row\PYGZus{}hi}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{scale} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{magnitude}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{bound}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{bound}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+        \PYG{n}{row\PYGZus{}scaled} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{row\PYGZus{}scaled}\PYG{p}{,} \PYG{n}{violation} \PYG{o}{/} \PYG{p}{(}\PYG{n}{absolute\PYGZus{}tolerance} \PYG{o}{+} \PYG{n}{relative\PYGZus{}tolerance} \PYG{o}{*} \PYG{n}{scale}\PYG{p}{)}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{变量上下界单独复核，防止行约束满足而容量或非负界被违反。}}
+    \PYG{n}{lower}\PYG{p}{,} \PYG{n}{upper} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{lower}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{upper}\PYG{p}{)}
+    \PYG{n}{bound\PYGZus{}violation} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{lower} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{p}{,} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{upper}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{bound\PYGZus{}scaled} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros\PYGZus{}like}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{bound}\PYG{p}{,} \PYG{n}{violation} \PYG{o+ow}{in} \PYG{p}{(}\PYG{p}{(}\PYG{n}{lower}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{lower} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{upper}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{upper}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{scale} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{bound}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{bound}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+        \PYG{n}{bound\PYGZus{}scaled} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{bound\PYGZus{}scaled}\PYG{p}{,} \PYG{n}{violation} \PYG{o}{/} \PYG{p}{(}\PYG{n}{absolute\PYGZus{}tolerance} \PYG{o}{+} \PYG{n}{relative\PYGZus{}tolerance} \PYG{o}{*} \PYG{n}{scale}\PYG{p}{)}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{整数变量与最近整数比较，不将近似浮点数直接当作合法离散决策。}}
+    \PYG{n}{integer\PYGZus{}values} \PYG{o}{=} \PYG{n}{x}\PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{integrality}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{n}{integer\PYGZus{}violation} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{integer\PYGZus{}values} \PYG{o}{\PYGZhy{}} \PYG{n}{np}\PYG{o}{.}\PYG{n}{rint}\PYG{p}{(}\PYG{n}{integer\PYGZus{}values}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{initial}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{尚无本次目标快照时，不伪造目标复算误差。}}
+    \PYG{n}{objective\PYGZus{}error} \PYG{o}{=} \PYG{k+kc}{None}
+    \PYG{n}{objective\PYGZus{}pass} \PYG{o}{=} \PYG{k+kc}{True}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{按本次实际目标复算，适用于费用与排放目标切换。}}
+    \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}objective} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None} \PYG{o+ow}{and} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}fun} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n}{recomputed} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}objective} \PYG{o}{@} \PYG{n}{x}\PYG{p}{)}
+        \PYG{n}{objective\PYGZus{}error} \PYG{o}{=} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{recomputed} \PYG{o}{\PYGZhy{}} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}fun}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{费用与排放目标均按当前目标各项贡献确定比较量级。}}
+        \PYG{n}{objective\PYGZus{}scale} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}objective} \PYG{o}{*} \PYG{n}{x}\PYG{p}{)}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}fun}\PYG{p}{)}\PYG{p}{)}
+        \PYG{n}{objective\PYGZus{}pass} \PYG{o}{=} \PYG{n+nb}{bool}\PYG{p}{(}\PYG{n}{objective\PYGZus{}error} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{n}{absolute\PYGZus{}tolerance} \PYG{o}{+} \PYG{n}{relative\PYGZus{}tolerance} \PYG{o}{*} \PYG{n}{objective\PYGZus{}scale}\PYG{p}{)}
+    \PYG{n}{report}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}constraint\PYGZus{}max\PYGZus{}violation}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{row\PYGZus{}violation}\PYG{p}{,} \PYG{n}{initial}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}constraint\PYGZus{}max\PYGZus{}scaled\PYGZus{}violation}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{row\PYGZus{}scaled}\PYG{p}{,} \PYG{n}{initial}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}constraint\PYGZus{}worst\PYGZus{}row}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{argmax}\PYG{p}{(}\PYG{n}{row\PYGZus{}scaled}\PYG{p}{)}\PYG{p}{)} \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{row\PYGZus{}scaled}\PYG{p}{)} \PYG{k}{else} \PYG{k+kc}{None}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}bound\PYGZus{}max\PYGZus{}violation}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{bound\PYGZus{}violation}\PYG{p}{,} \PYG{n}{initial}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}bound\PYGZus{}max\PYGZus{}scaled\PYGZus{}violation}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{bound\PYGZus{}scaled}\PYG{p}{,} \PYG{n}{initial}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}bound\PYGZus{}worst\PYGZus{}variable}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{names}\PYG{p}{[}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{argmax}\PYG{p}{(}\PYG{n}{bound\PYGZus{}scaled}\PYG{p}{)}\PYG{p}{)}\PYG{p}{]} \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{k}{else} \PYG{k+kc}{None}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}integrality\PYGZus{}max\PYGZus{}violation}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{integer\PYGZus{}violation}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}objective\PYGZus{}recompute\PYGZus{}error}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{objective\PYGZus{}error}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}objective\PYGZus{}checked}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{objective\PYGZus{}error} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{,}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{所有数值门槛共同决定通过，}scaled violation\CJKCode{不超过}1\CJKCode{才满足对应容差。}}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}audit\PYGZus{}passed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{bool}\PYG{p}{(}
+            \PYG{n}{np}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{activity}\PYG{p}{)}\PYG{o}{.}\PYG{n}{all}\PYG{p}{(}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{row\PYGZus{}scaled}\PYG{p}{,} \PYG{n}{initial}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{l+m+mf}{1.0}
+            \PYG{o+ow}{and} \PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{bound\PYGZus{}scaled}\PYG{p}{,} \PYG{n}{initial}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{l+m+mf}{1.0}
+            \PYG{o+ow}{and} \PYG{n}{integer\PYGZus{}violation} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{n}{absolute\PYGZus{}tolerance} \PYG{o+ow}{and} \PYG{n}{objective\PYGZus{}pass}
+        \PYG{p}{)}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{report}
+\end{Verbatim}

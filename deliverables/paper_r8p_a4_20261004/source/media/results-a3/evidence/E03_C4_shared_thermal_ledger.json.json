@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "method": "analytic continuous-hour1R1C integrated heat balance",
+  "buildings": [
+    {
+      "name": "variant_A",
+      "time_constant_hours": 5.134956855225311,
+      "nominal_comfort_inventory_range_kwh": 3.7490320000000006,
+      "maximum_inventory_above20_kwh": 3.2269454873380723,
+      "mean_temperature_continuous_c": 20.222091498991137,
+      "integrated_temperature_above20_c_hours": 639.6235170944763,
+      "envelope_heat_loss_kwh": 3666.7044148329546,
+      "net_delivered_heat_kwh": 3090.7044148329524,
+      "internal_and_solar_gain_kwh": 576.0,
+      "terminal_inventory_change_kwh": -2.609024107869118e-15,
+      "max_hourly_balance_residual_kwh": 5.294376048681215e-15
+    },
+    {
+      "name": "variant_B",
+      "time_constant_hours": 13.69321828060083,
+      "nominal_comfort_inventory_range_kwh": 14.996128000000002,
+      "maximum_inventory_above20_kwh": 11.211358437054686,
+      "mean_temperature_continuous_c": 21.04616191460515,
+      "integrated_temperature_above20_c_hours": 3012.9463140628413,
+      "envelope_heat_loss_kwh": 5871.362973835133,
+      "net_delivered_heat_kwh": 5295.36297383514,
+      "internal_and_solar_gain_kwh": 576.0,
+      "terminal_inventory_change_kwh": 2.042810365310288e-14,
+      "max_hourly_balance_residual_kwh": 2.1094237467877974e-14
+    }
+  ],
+  "inventory_is_event_storage_capacity": false
+}

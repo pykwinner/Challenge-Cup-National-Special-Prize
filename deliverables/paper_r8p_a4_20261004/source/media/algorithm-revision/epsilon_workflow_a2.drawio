@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device" compressed="false">
+  <diagram id="epsilon_workflow_a2" name="独立费用—碳排放采样">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e_title" value="独立费用—碳排放采样" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#111111;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="24" y="14" width="640" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="e_input" value="统一输入配置&#10;清除原碳帽 · 碳价置零" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="66" width="450" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="e_endpoints" value="分别求取费用与排放端点" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="156" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e_secondary" value="在首阶段可行值的容差边界内&#10;优化次目标" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="228" width="450" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="e_caps" value="检查端点顺序 · 设置碳帽档位" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="318" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e_solve" value="施加本档碳帽 · 重建模型求解" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fbf4e5;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="390" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e_config" value="投资是否冻结&#10;由输入配置决定" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=19;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="26" y="382" width="226" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="e_audit" value="复核数值残差与碳帽" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="462" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e_failure" value="终止扫描并记录" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="26" y="530" width="226" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e_save" value="保存方案 · 进入下一档" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="552" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e_filter" value="去重与非支配筛选&#10;边际减排费用 · 折中建议" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="648" width="450" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="e_footer" value="采样非支配方案；历史赛事扫描另行登记" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="285" y="754" width="550" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ee01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_input" target="e_endpoints">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_endpoints" target="e_secondary">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_secondary" target="e_caps">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_caps" target="e_solve">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_config" target="e_solve">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_solve" target="e_audit">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee07" value="未通过" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_audit" target="e_failure">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="139" y="486" />
+            </Array>
+            <mxPoint x="0" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ee08" value="通过" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_audit" target="e_save">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="42" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ee09" value="尚有档位" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_save" target="e_solve">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="864" y="576" />
+              <mxPoint x="864" y="414" />
+            </Array>
+            <mxPoint x="62" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ee10" value="全部完成" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="e_save" target="e_filter">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <mxPoint x="68" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

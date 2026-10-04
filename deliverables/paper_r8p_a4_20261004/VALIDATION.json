@@ -1,0 +1,44 @@
+{
+  "version": "1.2.0-rc1",
+  "paper_revision": "R8P-A4",
+  "result": "passed",
+  "checked_at": "2026-10-04T12:27:15.155992+08:00",
+  "object": "Actual files in deliverables/paper_r8p_a4_20261004; compared with reviewed local A4 manifest/PDF",
+  "source_file_sha256_matches": 503,
+  "pdf_sha256": "006c85ffb4373a46386d5d3316f21814fddf5a843509bf578b7f2123e0bb0f0f",
+  "pdf_bytes": 34870620,
+  "code_excerpts_exact_source_and_executable_token_checks": 17,
+  "ast_equivalent_fragments": 16,
+  "context_fragment_count": 1,
+  "full_modules_ast_parse": 52,
+  "candidate_compile_passes": 3,
+  "candidate_compile_started_at": "2026-10-04T12:23:39.567832+08:00",
+  "candidate_compile_finished_at": "2026-10-04T12:25:19.796782+08:00",
+  "compiler": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "compile_command": "xelatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=<separate build directory> main.tex (3 passes; cwd source)",
+  "compile_warnings": [],
+  "pdf_pages": 124,
+  "reviewed_pdf_text_matching_pages": 124,
+  "reviewed_pdf_pixel_matching_pages_at_72dpi": 124,
+  "archive_sha256": "69057640147a6a0029fde07d18177db05db389f6fc09d8e114c634ba880414b5",
+  "archive_bytes": 103173424,
+  "archive_entries_verified": 503,
+  "archive_compression": "ZIP LZMA (7-Zip or Python zipfile compatible)",
+  "credential_pattern_scan_text_files": 312,
+  "credential_pattern_findings": [],
+  "new_optimization_runs": 0,
+  "new_full_core_regression_tests": 0,
+  "not_run": [
+    {
+      "check": "Optimization experiments and full model regression",
+      "reason": "Document-only release; executable code is an unchanged snapshot, active repository engine is untouched."
+    }
+  ],
+  "logs": "Actual upload-copy build logs are preserved locally under review/github_r8p_a4_20261004/build; reviewed original build and visual-check records are in validation/build_validation.json. Initial DEFLATE source-only ZIP was 104928300 bytes, above 100 MiB. Only archive compression changed to LZMA; source and successful build unchanged.",
+  "actual_validation_commands": [
+    "D:\\app\\anaconda3\\python.exe -X utf8 D:\\competion\\xiaotiao\\tmp\\validate_github_r8p_a4.py",
+    "D:\\app\\anaconda3\\python.exe -X utf8 D:\\competion\\xiaotiao\\tmp\\validate_github_r8p_a4.py --reuse-verified-build"
+  ],
+  "packaging_retry": "First source-only DEFLATE archive exceeded 100 MiB; successful three-pass build retained, all source/text/pixel checks reverified, ZIP LZMA archive is 103173424 bytes."
+}

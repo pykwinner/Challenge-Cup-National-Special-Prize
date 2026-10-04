@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device" compressed="false">
+  <diagram id="season_workflow_a2" name="供暖季求解与复核">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s_title" value="供暖季求解与复核" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#111111;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="24" y="12" width="500" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s_input" value="输入与边界核对&#10;逐时数据 · 设备参数 · 服务窗口" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="60" width="560" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s_model" value="源—网—荷—储统一建模&#10;节点热平衡 · 温位匹配 · 状态递推" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="140" width="560" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s_milp" value="混合整数线性规划&#10;启停凸包重构 · 稀疏矩阵编译" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="220" width="560" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s_split" value="" style="ellipse;html=0;fillColor=#333333;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="498" y="304" width="4" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="s_city_u" value="乌鲁木齐" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="64" y="332" width="384" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="s_city_gw" value="固原、武汉" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fbf4e5;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="552" y="332" width="384" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="s_joint" value="投资与运行联合求解" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="64" y="388" width="384" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="s_anchor" value="锚定投资模式" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fbf4e5;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="552" y="388" width="384" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="s_season" value="完整供暖季逐时方案" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="64" y="452" width="384" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="s_frozen" value="冻结全部资产 · 全季复算" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#fbf4e5;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="552" y="452" width="384" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="s_join" value="" style="ellipse;html=0;fillColor=#333333;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="498" y="520" width="4" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="s_evidence" value="保存可行解、上下界与相对间隙" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="544" width="560" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="s_audit" value="逐时独立复核&#10;热平衡 · 容量 · 储热边界 · 舒适约束" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="612" width="560" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="s_outcome_split" value="" style="ellipse;html=0;fillColor=#333333;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="498" y="695" width="4" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="s_pass" value="通过：导出方案及校核记录" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="720" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="s_fail" value="未通过：保留记录并标记" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#edf4f8;strokeColor=#333333;strokeWidth=1.4;align=center;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=20;fontColor=#111111;spacing=6;" vertex="1" parent="1">
+          <mxGeometry x="570" y="720" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="s_footer" value="联合模型与固定投资运行分别标注" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;align=right;verticalAlign=middle;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#111111;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="545" y="775" width="425" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="se01" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_input" target="s_model">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se02" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_model" target="s_milp">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se03" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=none;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_milp" target="s_split">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se04" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_split" target="s_city_u">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="256" y="306" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se05" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_split" target="s_city_gw">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="744" y="306" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se06" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_city_u" target="s_joint">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se07" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_city_gw" target="s_anchor">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se08" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_joint" target="s_season">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se09" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_anchor" target="s_frozen">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=none;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_season" target="s_join">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="256" y="522" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=none;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_frozen" target="s_join">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="744" y="522" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_join" target="s_evidence">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_evidence" target="s_audit">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=none;endFill=1;endSize=7;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_audit" target="s_outcome_split">
+          <mxGeometry x="0" y="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_outcome_split" target="s_pass">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="255" y="697" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#333333;strokeWidth=1.4;endArrow=block;endFill=1;endSize=7;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Microsoft YaHei;fontSize=18;fontColor=#111111;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s_outcome_split" target="s_fail">
+          <mxGeometry x="0" y="0" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="745" y="697" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

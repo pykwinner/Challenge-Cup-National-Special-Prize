@@ -1,0 +1,272 @@
+{
+  "title_zh": "热惯性调度的逐时功率与室温响应",
+  "caption_zh": "武汉双建筑受控1R1C实验的120日逐时购电功率与乙建筑小时初室温。两方案沿同一气象、电价及配电边界求解，完整时序格子不作平滑。仅乙建筑热容增至四倍，共享上限6.4796千瓦；第三列为四倍减基准。参考电量费降低4.6597%，总电量增加4.1669%，绑定125→530小时。同服务约束下的时移效果，非现场实测。",
+  "methods_detail_zh": "武汉受控双建筑1R1C实验的完整120日逐时结果，2024年11月16日至2025年3月15日。仅乙建筑热容变为四倍，其他输入与共享配电上限保持不变。六个面板均为日期×小时，上排为系统购电功率，下排为乙建筑小时初室温；前两列使用同行统一色标，第三列为四倍热容减基准。每个格子对应一个实际求解小时，不进行平滑、插值或样本扩充。两方案均满足共同6.4796375千瓦上限，绑定小时分别125和530；总参考电量费变化-4.659735%，总电量变化+4.166888%。费用改善来自运行时移，不等于节电或减碳。图中室温为模型状态，不是现场观测；全部四组因子实验和原始逐时账本保留。采用Nature Communications图4的基准—新方案—差异布局与实采顺序/发散色带，并采用Applied Energy图12的日×小时组织。",
+  "data": [
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/calendar_cells.csv",
+      "sha256": "fe6e2e2fcde0fd331a8c3072df9d2145961e6b5105634f4ea46a24b65a471eb8"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/case_metrics.csv",
+      "sha256": "fa38bf01bb1ad7b137cb61cdfdffdf4736c713ef0d51042842e6891c46abc818"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/publication_redesign_20261003/mechanism/calendar_cells.csv",
+      "sha256": "fe6e2e2fcde0fd331a8c3072df9d2145961e6b5105634f4ea46a24b65a471eb8"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/mechanism/case_metrics.csv",
+      "sha256": "fa38bf01bb1ad7b137cb61cdfdffdf4736c713ef0d51042842e6891c46abc818"
+    }
+  ],
+  "outputs": {
+    "svg": {
+      "file": "thermal_coupling.svg",
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.svg",
+      "sha256": "e3a70421eff39c037584845276d453d309f301092bbf5f5cb153e1c5f1aaa8ab"
+    },
+    "pdf": {
+      "file": "thermal_coupling.pdf",
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.pdf",
+      "sha256": "9a40e8ed3117c4f84b5fce68743954be3d928c73da1cc5da5132016d9e1e6d86"
+    },
+    "png": {
+      "file": "thermal_coupling.png",
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.png",
+      "sha256": "1915bd1936cf802490bc8a3f71cfcc0fac1a6bdc7c0a637b712b5ec1a0d7b30a"
+    }
+  },
+  "references": [
+    {
+      "doi": "10.1038/s41467-024-49836-3",
+      "figure": "4",
+      "image": {
+        "path": "docs/publication_redesign_20261003/references/equipment/s41467-024-49836-3/figure4.png",
+        "sha256": "afae40cc674fc5711f5b32af4c23e7c2e125f532d61d7ef0f471cf817adb75ba"
+      },
+      "colors": [
+        {
+          "role": "sequential_1",
+          "hex": "#41095C",
+          "pixel_xy": [
+            600,
+            500
+          ]
+        },
+        {
+          "role": "sequential_2",
+          "hex": "#443A86",
+          "pixel_xy": [
+            600,
+            440
+          ]
+        },
+        {
+          "role": "sequential_3",
+          "hex": "#417090",
+          "pixel_xy": [
+            600,
+            375
+          ]
+        },
+        {
+          "role": "sequential_4",
+          "hex": "#499E8E",
+          "pixel_xy": [
+            600,
+            310
+          ]
+        },
+        {
+          "role": "sequential_5",
+          "hex": "#5BCA82",
+          "pixel_xy": [
+            600,
+            245
+          ]
+        },
+        {
+          "role": "sequential_6",
+          "hex": "#9AEC4A",
+          "pixel_xy": [
+            600,
+            180
+          ]
+        },
+        {
+          "role": "sequential_7",
+          "hex": "#EDF242",
+          "pixel_xy": [
+            600,
+            115
+          ]
+        },
+        {
+          "role": "sequential_8",
+          "hex": "#EDF242",
+          "pixel_xy": [
+            600,
+            85
+          ]
+        },
+        {
+          "role": "difference_1",
+          "hex": "#1A3561",
+          "pixel_xy": [
+            600,
+            1045
+          ]
+        },
+        {
+          "role": "difference_2",
+          "hex": "#3F73B2",
+          "pixel_xy": [
+            600,
+            1000
+          ]
+        },
+        {
+          "role": "difference_3",
+          "hex": "#64A6C9",
+          "pixel_xy": [
+            600,
+            950
+          ]
+        },
+        {
+          "role": "difference_4",
+          "hex": "#ADD6E5",
+          "pixel_xy": [
+            600,
+            895
+          ]
+        },
+        {
+          "role": "difference_5",
+          "hex": "#F7F6F6",
+          "pixel_xy": [
+            1420,
+            650
+          ]
+        },
+        {
+          "role": "difference_6",
+          "hex": "#EAB397",
+          "pixel_xy": [
+            600,
+            795
+          ]
+        },
+        {
+          "role": "difference_7",
+          "hex": "#D66957",
+          "pixel_xy": [
+            600,
+            745
+          ]
+        },
+        {
+          "role": "difference_8",
+          "hex": "#B72732",
+          "pixel_xy": [
+            600,
+            685
+          ]
+        },
+        {
+          "role": "difference_9",
+          "hex": "#690A22",
+          "pixel_xy": [
+            600,
+            635
+          ]
+        }
+      ],
+      "actually_viewed": true,
+      "design_transfer": "Two aligned rows, baseline/intervention/difference columns; source sequential and divergent color roles retained. Geographic coordinates replaced by actual date/hour axes.",
+      "palette_interpolation": "Linear interpolation between sampled source colorbar interiors; no data interpolation."
+    },
+    {
+      "doi": "10.1016/j.apenergy.2026.127661",
+      "figure": "12",
+      "image": {
+        "path": "docs/publication_redesign_20261003/references/equipment/drl2026/figure12.jpg",
+        "sha256": "c58b9e9dbb8d5574899701a374e670828b41971e5c631517ab5f1f04b44c5235"
+      },
+      "actually_viewed": true,
+      "design_transfer": "Actual day-by-hour organization; continuous power and state variables, not on/off controls."
+    }
+  ],
+  "typography_and_layout": {
+    "width_mm": 146,
+    "height_mm": 110,
+    "font_family": "Microsoft YaHei",
+    "axis_label_pt": 7.5,
+    "panel_label_pt": 8,
+    "row_label_pt": 8.5,
+    "tick_pt": 7.2,
+    "colorbar_tick_pt": 7.2,
+    "layout": "2 rows × 3 aligned day/hour calendars",
+    "actual_PDF_minimum_font_pt": 7.199999809265137,
+    "actual_PDF_font_sizes_pt": [
+      7.2,
+      7.5,
+      8.0,
+      8.5
+    ],
+    "uniform_panel_plot_width_mm": 32.412,
+    "uniform_panel_plot_height_mm": 28.82
+  },
+  "paper_font_floor_pt": 7.2,
+  "no_new_solver_run": true,
+  "native_editable_svg": true,
+  "text_color": "#000000",
+  "no_added_samples": true,
+  "plotted_cells": 17280,
+  "unique_hours_per_scenario": 2880,
+  "binding_hours": [
+    125,
+    530
+  ],
+  "charge_change_pct": -4.65973537821065,
+  "electricity_change_pct": 4.166888385270373,
+  "difference_sign": "C4_shared - C1_shared",
+  "series_ranges": [
+    {
+      "panel": 1,
+      "min": 0.0,
+      "max": 6.479637500000004
+    },
+    {
+      "panel": 2,
+      "min": 0.0,
+      "max": 6.479637500000003
+    },
+    {
+      "panel": 3,
+      "min": -2.9190221676805583,
+      "max": 6.479637500000002
+    },
+    {
+      "panel": 4,
+      "min": 20.0,
+      "max": 26.247668822169008
+    },
+    {
+      "panel": 5,
+      "min": 20.0,
+      "max": 25.23331816448772
+    },
+    {
+      "panel": 6,
+      "min": -2.92449077687267,
+      "max": 5.059468920530541
+    }
+  ],
+  "methods_detail_file": "METHODS.txt",
+  "caption_file": "CAPTION.txt",
+  "same_service_does_not_imply_equal_heat": true
+}

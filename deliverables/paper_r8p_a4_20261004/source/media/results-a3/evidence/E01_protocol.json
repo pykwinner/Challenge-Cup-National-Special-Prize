@@ -1,0 +1,39 @@
+{
+  "frozen_utc": "2026-10-02T06:16:23.854326+00:00",
+  "settings": {
+    "year": 2017,
+    "target_per_category": 2,
+    "base_k": 6,
+    "seed": 42,
+    "repeats": 3,
+    "threads": 1,
+    "coverage_gate": 0.95,
+    "no_acceleration_enabled": true
+  },
+  "adoption_policy": {
+    "maximum_absolute_relative_energy_error": 0.001,
+    "maximum_w1_degradation": 0.0,
+    "minimum_peak_retention": 1.0,
+    "minimum_ramp_retention": 1.0,
+    "minimum_original_observed_peak_retention": 1.0,
+    "numerical_tolerance": 1e-08,
+    "metric_tolerance": 1e-12
+  },
+  "policy_origin": "same_predeclared_research_rule_as_prior_nine; thresholds_not_moved",
+  "methods": [
+    "extreme_aware",
+    "extreme_calibrated",
+    "hard_energy_minimum_W1",
+    "adoption_soft",
+    "adoption_hard"
+  ],
+  "budget": "same fixed actual extreme-day selection for both weight candidates; K=6 and actual M recorded",
+  "hard_method": "standard LP; sum weights and retained energy hard equalities; day floors; minimum 1D CDF W1 with absolute epigraphs",
+  "soft_method": "unchanged regularization 1e-4; same extreme floor1 and ordinary floor1e-6",
+  "old_nine_role": "development_reference_only_for_new_method; not pooled into_confirmation",
+  "unseen_buildings_required": true,
+  "unseen_sites_preferred_but_not_required": true,
+  "failure_policy": "retain all frozen cases, infeasibility and gate failures; no replacement or threshold relaxation",
+  "observations": "2017 complete days only; preserve missingness and all valid raw-hour scope losses",
+  "scope": "overseas metering compression; no engineering cost, comfort, carbon or chronological dispatch certification"
+}

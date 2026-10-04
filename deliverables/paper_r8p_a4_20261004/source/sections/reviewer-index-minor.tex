@@ -1,0 +1,37 @@
+% !TeX root = ../main.tex
+\section*{评审阅读索引}\phantomsection\label{minor:index}
+\addcontentsline{toc}{section}{评审阅读索引}
+\begingroup\setlength{\parskip}{4pt}\setstretch{1.15}
+全文沿用“背景—模型—算法—验证—决策—结论”的原有顺序。\textbf{模型章集中回答热源如何转换、管网如何输配、建筑与储热如何跨时段调节}；下表对应评分要求，页码可直接跳转。
+
+\begin{table}[H]
+\centering
+\caption*{评分要求与查阅位置（模型50分＝20＋15＋15）}
+\begingroup
+\fontsize{10.5pt}{13pt}\selectfont\setstretch{1.0}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabularx}{\linewidth}{@{}L{0.25\linewidth}YL{0.22\linewidth}@{}}
+\toprule
+评分要求 & 本文对应工作 & 查阅位置\\\midrule
+\textbf{模型架构 20分} & 负荷分解、节点温位平衡、设备转换、管网与储热约束 & 第\pageref{eq:load-decomp}—\pageref{fig:model-cn-storage-grid}页\\
+\textbf{动态仿真 15分} & 1小时连续窗口、建筑及储热状态递推、初末状态与舒适边界 & 第\pageref{minor:model}、\pageref{eq:r8m-load-interface}页起；表\ref{tab:minor-evidence}\\
+\textbf{场景验证 15分} & 三城专用边界、原算例运行结果与逐楼专项验证 & 第\pageref{fig:model-cn-urumqi}页起；表\ref{tab:alg-solver}、\ref{tab:minor-evidence}\\
+多目标与收敛 15分 & 成本碳排权衡、求解状态与间隙 & 第\pageref{minor:multiobjective}页起；算法\ref{alg:epsilon-workflow}\\
+多尺度耦合 10分 & 资产配置、区域输配与用户热状态的关联 & 第\pageref{fig:alg-multiscale}—\pageref{eq:alg-building}页\\
+可视化与分析 15分 & 负荷、容量、出力及成本碳排对比 & 第\pageref{fig:code-kpi}页起；第\pageref{minor:application}页\\
+代码与移植 10分 & 输入输出、真实代码与来源清单 & 算法\ref{alg:season-workflow}；附录3\\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table}
+
+\noindent\textbf{优先关注的模型特点}\par
+（1）\textbf{温位与输送能力同时约束供热交付。}节点按温位平衡，候选管段容量限制热源能够送达的热量。\par
+（2）\textbf{可靠容量限制存量热源退役。}将退出量与替代能力共同确定，保留既有资产与保供边界。\par
+（3）\textbf{建筑热状态参与系统调度。}负荷转移与热源出力、独立储热及配电约束在同一小时关联。\par
+（4）\textbf{规划结果经物理边界复核。}有限管网模式反馈实验记录排除、重算及达标过程，见表\ref{tab:minor-evidence}。\par
+
+\noindent\textbf{结果与材料的阅读位置}\par
+创新详见第\pageref{minor:conclusion}页起，独立验证见表\ref{tab:minor-evidence}，真实现场照片见图\ref{fig:real-site-context}。数据来源与参数见附录4，完整对照见附录5；文末推荐采纳书由推荐单位据实填写、签章。
+
+\endgroup

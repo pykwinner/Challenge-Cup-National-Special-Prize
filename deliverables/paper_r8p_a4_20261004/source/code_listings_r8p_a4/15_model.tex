@@ -1,0 +1,76 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} Local electricity connection adequacy for heat pumps and circulation}
+\PYG{c+c1}{\PYGZsh{} pumps. This prevents a heat\PYGZhy{}only optimum that cannot be connected to}
+\PYG{c+c1}{\PYGZsh{} the distribution grid without reinforcement.}
+\PYG{c+c1}{\PYGZsh{} \CJKCode{以下依赖}build\CJKCode{内既有变量，配置接入模块才装配。}}
+\PYG{n}{grid} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{config}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{grid\PYGZus{}connection}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{if} \PYG{n}{grid}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{既有和新增接入容量均为}kW\CJKCode{，新增量有投资上界。}}
+    \PYG{n}{existing\PYGZus{}grid} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{grid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{max\PYGZus{}new\PYGZus{}grid} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{grid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{grid\PYGZus{}idx} \PYG{o}{=} \PYG{k+kc}{None}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{不允许增容时仅使用既有容量，不建立新增变量。}}
+    \PYG{k}{if} \PYG{n}{max\PYGZus{}new\PYGZus{}grid} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{n}{grid\PYGZus{}idx} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{grid\PYGZus{}connection\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{max\PYGZus{}new\PYGZus{}grid}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{grid\PYGZus{}connection\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{system}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{grid\PYGZus{}idx}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{增容造价按元每}kW\CJKCode{进入既有投资年化账本。}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}investment\PYGZus{}cost}\PYG{p}{(}
+            \PYG{n}{grid\PYGZus{}idx}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{grid\PYGZus{}connection\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{system}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{grid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{capex\PYGZus{}yuan\PYGZus{}per\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+        \PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{裕度无量纲，以}1\CJKCode{加备用比例放大净电负荷。}}
+    \PYG{n}{margin} \PYG{o}{=} \PYG{l+m+mf}{1.0} \PYG{o}{+} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{grid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{reserve\PYGZus{}margin}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{times}\PYG{p}{:}
+        \PYG{n}{grid\PYGZus{}availability} \PYG{o}{=} \PYG{l+m+mf}{1.0}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{若登记可用率时序，则逐时截取到}0\CJKCode{至}1\CJKCode{。}}
+        \PYG{k}{if} \PYG{n}{grid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{availability\PYGZus{}column}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{grid\PYGZus{}availability} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}clip\PYGZus{}scalar}\PYG{p}{(}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}ts\PYGZus{}value}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{grid}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{availability\PYGZus{}column}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+                \PYG{l+m+mf}{0.0}\PYG{p}{,}
+                \PYG{l+m+mf}{1.0}\PYG{p}{,}
+            \PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{读取统一电负荷行，热泵和泵电耗不另算一遍。}}
+        \PYG{n}{row} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}electric\PYGZus{}load\PYGZus{}row}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{margin}\PYG{o}{=}\PYG{n}{margin}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{微电网分支仅在配置启用时修正接入净负荷。}}
+        \PYG{k}{if} \PYG{n}{microgrid}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{category}\PYG{p}{,} \PYG{n}{sign} \PYG{o+ow}{in} \PYG{p}{(}
+                \PYG{c+c1}{\PYGZsh{} \CJKCode{储电充电增加负荷，本地发电与放电减少负荷。}}
+                \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{microgrid\PYGZus{}battery\PYGZus{}charge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{,}
+                \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{microgrid\PYGZus{}renewable\PYGZus{}use}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{,}
+                \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{microgrid\PYGZus{}backup\PYGZus{}generation}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{,}
+                \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{microgrid\PYGZus{}battery\PYGZus{}discharge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{,}
+            \PYG{p}{)}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{n}{category}\PYG{p}{]}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{,} \PYG{n}{margin} \PYG{o}{*} \PYG{n}{sign}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{新增容量移到左端且乘可用率，保持线性上界。}}
+        \PYG{k}{if} \PYG{n}{grid\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{grid\PYGZus{}idx}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{grid\PYGZus{}availability}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{净负荷须小于可用率乘既有加新增接入容量。}}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{existing\PYGZus{}grid} \PYG{o}{*} \PYG{n}{grid\PYGZus{}availability}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Ensure that electrically supplied firm heat capacity is actually}
+    \PYG{c+c1}{\PYGZsh{} deliverable through the grid connection in a contingency.  The}
+    \PYG{c+c1}{\PYGZsh{} legacy method assumes every installed electric heat source runs}
+    \PYG{c+c1}{\PYGZsh{} simultaneously.  ``portfolio\PYGZus{}dispatch`` instead selects a}
+    \PYG{c+c1}{\PYGZsh{} feasible firm\PYGZhy{}heat portfolio for the peak (and each configured}
+    \PYG{c+c1}{\PYGZsh{} source outage), avoiding double\PYGZhy{}counting mutually substitutable}
+    \PYG{c+c1}{\PYGZsh{} heat pumps and backup boilers.}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{以下准备静态可靠容量检查；同时率与裕度不同。}}
+    \PYG{n}{simultaneity} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{grid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{firm\PYGZus{}simultaneity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{existing\PYGZus{}firm\PYGZus{}local} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+    \PYG{n}{firm\PYGZus{}local\PYGZus{}row}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{[}\PYG{n+nb}{int}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{n}{microgrid}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{本地可再生可靠容量按登记出力因子折算。}}
+        \PYG{n}{renewable\PYGZus{}firm} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{microgrid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{renewable\PYGZus{}firm\PYGZus{}output\PYGZus{}factor}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.15}\PYG{p}{)}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{asset}\PYG{p}{,} \PYG{n}{factor} \PYG{o+ow}{in} \PYG{p}{(}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{renewable}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{renewable\PYGZus{}firm}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{battery\PYGZus{}power}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{backup}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{idx}\PYG{p}{,} \PYG{n}{existing}\PYG{p}{,} \PYG{n}{\PYGZus{}} \PYG{o}{=} \PYG{n}{microgrid\PYGZus{}specs}\PYG{p}{[}\PYG{n}{asset}\PYG{p}{]}
+            \PYG{n}{existing\PYGZus{}firm\PYGZus{}local} \PYG{o}{+}\PYG{o}{=} \PYG{n}{factor} \PYG{o}{*} \PYG{n}{existing}
+            \PYG{k}{if} \PYG{n}{idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{n}{firm\PYGZus{}local\PYGZus{}row}\PYG{p}{[}\PYG{n}{idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{factor}
+
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{选择可靠容量方法；本片段尚未装配该方法约束。}}
+    \PYG{n}{firm\PYGZus{}method} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{grid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{firm\PYGZus{}capacity\PYGZus{}method}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{all\PYGZus{}installed\PYGZus{}electric}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{firm\PYGZus{}method} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{all\PYGZus{}installed\PYGZus{}electric}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{portfolio\PYGZus{}dispatch}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{\PYGZcb{}}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{grid\PYGZus{}connection.firm\PYGZus{}capacity\PYGZus{}method \CJKCode{仅支持} }\PYG{l+s+s2}{\PYGZdq{}}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{all\PYGZus{}installed\PYGZus{}electric \CJKCode{或} portfolio\PYGZus{}dispatch}\PYG{l+s+s2}{\PYGZdq{}}
+        \PYG{p}{)}
+\end{Verbatim}

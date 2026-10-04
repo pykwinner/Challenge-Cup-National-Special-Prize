@@ -1,0 +1,319 @@
+{
+  "status": "ready_to_freeze",
+  "directory": "docs/publication_final_20261003/mechanism_paper",
+  "title_zh": "热惯性调度的逐时功率与室温响应",
+  "caption_zh": "武汉双建筑受控1R1C实验的120日逐时购电功率与乙建筑小时初室温。两方案沿同一气象、电价及配电边界求解，完整时序格子不作平滑。仅乙建筑热容增至四倍，共享上限6.4796千瓦；第三列为四倍减基准。参考电量费降低4.6597%，总电量增加4.1669%，绑定125→530小时。同服务约束下的时移效果，非现场实测。",
+  "sources": [
+    {
+      "path": "docs/publication_redesign_20261003/mechanism/calendar_cells.csv",
+      "sha256": "fe6e2e2fcde0fd331a8c3072df9d2145961e6b5105634f4ea46a24b65a471eb8"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/mechanism/case_metrics.csv",
+      "sha256": "fa38bf01bb1ad7b137cb61cdfdffdf4736c713ef0d51042842e6891c46abc818"
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1038/s41467-024-49836-3",
+      "figure": "4",
+      "image": {
+        "path": "docs/publication_redesign_20261003/references/equipment/s41467-024-49836-3/figure4.png",
+        "sha256": "afae40cc674fc5711f5b32af4c23e7c2e125f532d61d7ef0f471cf817adb75ba"
+      },
+      "colors": [
+        {
+          "role": "sequential_1",
+          "hex": "#41095C",
+          "pixel_xy": [
+            600,
+            500
+          ]
+        },
+        {
+          "role": "sequential_2",
+          "hex": "#443A86",
+          "pixel_xy": [
+            600,
+            440
+          ]
+        },
+        {
+          "role": "sequential_3",
+          "hex": "#417090",
+          "pixel_xy": [
+            600,
+            375
+          ]
+        },
+        {
+          "role": "sequential_4",
+          "hex": "#499E8E",
+          "pixel_xy": [
+            600,
+            310
+          ]
+        },
+        {
+          "role": "sequential_5",
+          "hex": "#5BCA82",
+          "pixel_xy": [
+            600,
+            245
+          ]
+        },
+        {
+          "role": "sequential_6",
+          "hex": "#9AEC4A",
+          "pixel_xy": [
+            600,
+            180
+          ]
+        },
+        {
+          "role": "sequential_7",
+          "hex": "#EDF242",
+          "pixel_xy": [
+            600,
+            115
+          ]
+        },
+        {
+          "role": "sequential_8",
+          "hex": "#EDF242",
+          "pixel_xy": [
+            600,
+            85
+          ]
+        },
+        {
+          "role": "difference_1",
+          "hex": "#1A3561",
+          "pixel_xy": [
+            600,
+            1045
+          ]
+        },
+        {
+          "role": "difference_2",
+          "hex": "#3F73B2",
+          "pixel_xy": [
+            600,
+            1000
+          ]
+        },
+        {
+          "role": "difference_3",
+          "hex": "#64A6C9",
+          "pixel_xy": [
+            600,
+            950
+          ]
+        },
+        {
+          "role": "difference_4",
+          "hex": "#ADD6E5",
+          "pixel_xy": [
+            600,
+            895
+          ]
+        },
+        {
+          "role": "difference_5",
+          "hex": "#F7F6F6",
+          "pixel_xy": [
+            1420,
+            650
+          ]
+        },
+        {
+          "role": "difference_6",
+          "hex": "#EAB397",
+          "pixel_xy": [
+            600,
+            795
+          ]
+        },
+        {
+          "role": "difference_7",
+          "hex": "#D66957",
+          "pixel_xy": [
+            600,
+            745
+          ]
+        },
+        {
+          "role": "difference_8",
+          "hex": "#B72732",
+          "pixel_xy": [
+            600,
+            685
+          ]
+        },
+        {
+          "role": "difference_9",
+          "hex": "#690A22",
+          "pixel_xy": [
+            600,
+            635
+          ]
+        }
+      ],
+      "actually_viewed": true,
+      "design_transfer": "Two aligned rows, baseline/intervention/difference columns; source sequential and divergent color roles retained. Geographic coordinates replaced by actual date/hour axes.",
+      "palette_interpolation": "Linear interpolation between sampled source colorbar interiors; no data interpolation."
+    },
+    {
+      "doi": "10.1016/j.apenergy.2026.127661",
+      "figure": "12",
+      "image": {
+        "path": "docs/publication_redesign_20261003/references/equipment/drl2026/figure12.jpg",
+        "sha256": "c58b9e9dbb8d5574899701a374e670828b41971e5c631517ab5f1f04b44c5235"
+      },
+      "actually_viewed": true,
+      "design_transfer": "Actual day-by-hour organization; continuous power and state variables, not on/off controls."
+    }
+  ],
+  "outputs": {
+    "svg": {
+      "file": "thermal_coupling.svg",
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.svg",
+      "sha256": "e3a70421eff39c037584845276d453d309f301092bbf5f5cb153e1c5f1aaa8ab"
+    },
+    "pdf": {
+      "file": "thermal_coupling.pdf",
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.pdf",
+      "sha256": "9a40e8ed3117c4f84b5fce68743954be3d928c73da1cc5da5132016d9e1e6d86"
+    },
+    "png": {
+      "file": "thermal_coupling.png",
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.png",
+      "sha256": "1915bd1936cf802490bc8a3f71cfcc0fac1a6bdc7c0a637b712b5ec1a0d7b30a"
+    }
+  },
+  "data": [
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/calendar_cells.csv",
+      "sha256": "fe6e2e2fcde0fd331a8c3072df9d2145961e6b5105634f4ea46a24b65a471eb8"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/case_metrics.csv",
+      "sha256": "fa38bf01bb1ad7b137cb61cdfdffdf4736c713ef0d51042842e6891c46abc818"
+    }
+  ],
+  "method_details": {
+    "path": "docs/publication_final_20261003/mechanism_paper/METHODS.txt",
+    "sha256": "d6acd351618014aaa40613f7aa4906a565e9f6181f8dfc81a49156cafe839e3a"
+  },
+  "metadata": {
+    "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.json",
+    "sha256": "61559788830adc1818b9042347ad40d9815036f2dd72320ff1fa806ebb1f2f49"
+  },
+  "builder": {
+    "path": "docs/publication_final_20261003/mechanism_paper/build_mechanism.py",
+    "sha256": "138b5bd692ee61438011780e729945338034bb5e9ccdd909fc2e5ee7b144968c"
+  },
+  "verifier": {
+    "path": "docs/publication_final_20261003/mechanism_paper/verify_paper.py",
+    "sha256": "b56a98b762564219712274b416e0b80d4ee8e6bfef1e41bf275dc8120b549987"
+  },
+  "qa": {
+    "path": "docs/publication_final_20261003/mechanism_paper/QA.json",
+    "sha256": "4d53330103c05a8e198fc8231ea78ebc320360347924a5f886c3840db6329742"
+  },
+  "paper_size_mm": [
+    146.0000030517578,
+    110.00000406901042
+  ],
+  "PDF_actual_minimum_font_pt": 7.199999809265137,
+  "font_sizes_pt": [
+    7.2,
+    7.5,
+    8.0,
+    8.5
+  ],
+  "caption_Chinese_characters": 110,
+  "numeric_checks": {
+    "cells": 17280,
+    "continuous_hours": 2880,
+    "days": 120,
+    "hours_per_day": 24,
+    "CSV_original_byte_copy": true,
+    "all_series_ranges_identical_v2": true,
+    "charge_change_pct": -4.65973537821065,
+    "electricity_change_pct": 4.166888385270373,
+    "binding_hours": [
+      125,
+      530
+    ],
+    "full_precision_metrics_preserved": true
+  },
+  "visual_review": {
+    "actually_viewed": [
+      "thermal_coupling.png",
+      "QA_pdf_render.png"
+    ],
+    "observations_zh": [
+      "六面板原有配色及基准—四倍—差分结构完整保留。",
+      "提高色标字体至7.2磅并调整两排间距后，文字无重叠或裁切。",
+      "逐时格子、列范围、费用和电量取舍与原冻结版本一致。"
+    ]
+  },
+  "scope_zh": "固定其余输入及共同配电边界的受控双建筑1R1C实验，仅乙建筑热容四倍；同服务约束不是相同热量。图示为模型状态，非现场观测、节电或减碳证明。",
+  "scope_control": {
+    "only_mechanism_paper_written": true,
+    "prior_mechanism_v2_not_changed": true,
+    "paper_and_total_page_not_changed": true,
+    "no_model_rerun": true
+  },
+  "artifacts": [
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/build_mechanism.py",
+      "sha256": "138b5bd692ee61438011780e729945338034bb5e9ccdd909fc2e5ee7b144968c"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/calendar_cells.csv",
+      "sha256": "fe6e2e2fcde0fd331a8c3072df9d2145961e6b5105634f4ea46a24b65a471eb8"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/CAPTION.txt",
+      "sha256": "d2880c9bebe18bc86b0cc450cfb71331922e8ae28b513d2e97aa0b150230ce51"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/case_metrics.csv",
+      "sha256": "fa38bf01bb1ad7b137cb61cdfdffdf4736c713ef0d51042842e6891c46abc818"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/METHODS.txt",
+      "sha256": "d6acd351618014aaa40613f7aa4906a565e9f6181f8dfc81a49156cafe839e3a"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/QA.json",
+      "sha256": "4d53330103c05a8e198fc8231ea78ebc320360347924a5f886c3840db6329742"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/QA_pdf_render.png",
+      "sha256": "40a7b92d00d7059749fa8535b18a043a0024cdf986af89add432a77aaba610e1"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.json",
+      "sha256": "61559788830adc1818b9042347ad40d9815036f2dd72320ff1fa806ebb1f2f49"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.pdf",
+      "sha256": "9a40e8ed3117c4f84b5fce68743954be3d928c73da1cc5da5132016d9e1e6d86"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.png",
+      "sha256": "1915bd1936cf802490bc8a3f71cfcc0fac1a6bdc7c0a637b712b5ec1a0d7b30a"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.svg",
+      "sha256": "e3a70421eff39c037584845276d453d309f301092bbf5f5cb153e1c5f1aaa8ab"
+    },
+    {
+      "path": "docs/publication_final_20261003/mechanism_paper/verify_paper.py",
+      "sha256": "b56a98b762564219712274b416e0b80d4ee8e6bfef1e41bf275dc8120b549987"
+    }
+  ]
+}

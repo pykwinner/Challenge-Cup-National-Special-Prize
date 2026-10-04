@@ -1,0 +1,140 @@
+{
+  "status": "complete_and_frozen",
+  "directory": "docs/publication_final_20261003/model_paper",
+  "title_zh": "源网荷储与建筑状态结构",
+  "caption_zh": "源—网—荷—储与建筑热状态的模块结构。共享余热经效率修正后分配给直接换热与热泵；热泵和输配泵受共享电母线容量约束。独立储热状态E_t与建筑温度状态θ_t分别推进。红、蓝线对应热、电功率，虚线表示外部输入或功能关联，各实验按配置启用模块。",
+  "sources": [
+    {
+      "path": "src/heatplan/physical_extensions.py",
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "bytes": 19644
+    },
+    {
+      "path": "src/heatplan/model.py",
+      "sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "bytes": 188832
+    },
+    {
+      "path": "src/heatplan/building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "bytes": 31708
+    }
+  ],
+  "references": [
+    {
+      "path": "docs/publication_redesign_20261003/references/algorithm/A01/figure_1.png",
+      "sha256": "93d367b317b8ac9a8c369b78375197cd129b0b3b73358d8087c1e6f24f779471",
+      "bytes": 37371,
+      "sample_pixel_xy": [
+        454,
+        15
+      ],
+      "sample_hex": "#000000",
+      "role": "节点、边框及全部文字",
+      "actually_viewed": true,
+      "doi": "10.1016/j.energy.2018.06.222",
+      "figure": "1",
+      "official_url": "https://doi.org/10.1016/j.energy.2018.06.222"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/references/engineering/figures/E04_fig1.png",
+      "sha256": "bc89607da6ac19505db6444e5a72f100b24d2c063981ba458e28223cc51c7d54",
+      "bytes": 16785,
+      "sample_pixel_xy": [
+        38,
+        57
+      ],
+      "sample_hex": "#FF7676",
+      "role": "热功率连接",
+      "actually_viewed": true,
+      "doi": "10.1016/j.energy.2022.126161",
+      "figure": "1",
+      "official_url": "https://www.sciencedirect.com/science/article/pii/S036054422203047X"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/references/engineering/figures/E04_fig1.png",
+      "sha256": "bc89607da6ac19505db6444e5a72f100b24d2c063981ba458e28223cc51c7d54",
+      "bytes": 16785,
+      "sample_pixel_xy": [
+        48,
+        306
+      ],
+      "sample_hex": "#7676FF",
+      "role": "共享电力连接",
+      "actually_viewed": true,
+      "doi": "10.1016/j.energy.2022.126161",
+      "figure": "1",
+      "official_url": "https://www.sciencedirect.com/science/article/pii/S036054422203047X"
+    }
+  ],
+  "paper_dimensions_mm": [
+    146.0000030517578,
+    78.28716803656683
+  ],
+  "pdf_actual_min_text_pt": 7.5,
+  "outputs": [
+    {
+      "path": "docs/publication_final_20261003/model_paper/source_network_load_storage_zh.svg",
+      "sha256": "9f7ca121c60624c44c69f70a363af937c90cf48c8c5ffff1da917895c7f660df",
+      "bytes": 18763
+    },
+    {
+      "path": "docs/publication_final_20261003/model_paper/source_network_load_storage_zh.pdf",
+      "sha256": "2fc3472404d1b24dd7f4e06a55ef66594cec7c7ed91e6929f9c1a6a7150a5a7f",
+      "bytes": 31081
+    },
+    {
+      "path": "docs/publication_final_20261003/model_paper/source_network_load_storage_zh.png",
+      "sha256": "7b50c29789a7361cbb5008a3abb514031dd28e9626074798130b44a54201ae67",
+      "bytes": 101336
+    }
+  ],
+  "qa": {
+    "path": "docs/publication_final_20261003/model_paper/QA.json",
+    "sha256": "0c74af6eba4db36f2093385fb5d9c813ee89f3edd68f4a01dc0d21f07b75b334",
+    "bytes": 1973
+  },
+  "metadata": {
+    "path": "docs/publication_final_20261003/model_paper/source_network_load_storage_zh.json",
+    "sha256": "3cb01002c2a196876eea1dfd4436b987487059a96f64f2f445a83b75061debd4",
+    "bytes": 5401
+  },
+  "builder": {
+    "path": "docs/publication_final_20261003/model_paper/build_model.py",
+    "sha256": "29eb16fbccf693cbd158de314f1a75cf3f048263fdb2bf628a73878080ee9e4d",
+    "bytes": 14034
+  },
+  "verifier": {
+    "path": "docs/publication_final_20261003/model_paper/verify_paper.py",
+    "sha256": "207a5d48ca54526072a0e6ea64f0b5cf02f489a6506e3bf37c2af4c8686baf65",
+    "bytes": 5266
+  },
+  "data": [
+    {
+      "path": "docs/publication_final_20261003/model_paper/topology_nodes.csv",
+      "sha256": "711ed1fe08e6ea591039535c3d50234cb7c654d90ae7e3ae55b5450713ce3249",
+      "bytes": 330
+    },
+    {
+      "path": "docs/publication_final_20261003/model_paper/topology_edges.csv",
+      "sha256": "c4a7f22cd68905c648ca38ad5b6b66ad86d900d5bbc0b36f1347a3c5c756c2c1",
+      "bytes": 1096
+    },
+    {
+      "path": "docs/publication_final_20261003/model_paper/core_relations.csv",
+      "sha256": "827adc4ead03baf8bd9b125008c99e15f6cb492fe823f579956d296c4a090150",
+      "bytes": 173
+    }
+  ],
+  "caption": {
+    "path": "docs/publication_final_20261003/model_paper/CAPTION.txt",
+    "sha256": "d1df44315f8abf7add9f09ed90f34fc43cf93b829c73c52ed278a7b43cb889a9",
+    "bytes": 345
+  },
+  "methods": {
+    "path": "docs/publication_final_20261003/model_paper/METHODS.txt",
+    "sha256": "f238aa90e48d30f70a64be7c76ba1328ebe1fd829f3b0682cc9f06f1caf8fd24",
+    "bytes": 1234
+  },
+  "scope_zh": "通用接口结构，各算例按配置启用；不是施工图，也不单独构成性能改善实验。"
+}

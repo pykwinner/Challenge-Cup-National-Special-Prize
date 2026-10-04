@@ -1,0 +1,81 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{本接口检验声明供暖季，不等同于在全年窗口联合重求投资。}}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{run\PYGZus{}fixed\PYGZus{}investment\PYGZus{}heating\PYGZus{}season\PYGZus{}replay}\PYG{p}{(}
+    \PYG{n}{config}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{,} \PYG{n}{Any}\PYG{p}{]}\PYG{p}{,} \PYG{n}{representative\PYGZus{}timeseries}\PYG{p}{:} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{,}
+    \PYG{n}{chronological\PYGZus{}source}\PYG{p}{:} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{,} \PYG{n}{scope}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{,} \PYG{n}{Any}\PYG{p}{]}\PYG{p}{,} \PYG{o}{*}\PYG{p}{,}
+    \PYG{n}{timestamp\PYGZus{}column}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{timestamp}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{input\PYGZus{}timezone}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{|} \PYG{k+kc}{None} \PYG{o}{=} \PYG{k+kc}{None}\PYG{p}{,}
+    \PYG{n}{planning\PYGZus{}time\PYGZus{}limit}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{180.0}\PYG{p}{,} \PYG{n}{replay\PYGZus{}time\PYGZus{}limit}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{1800.0}\PYG{p}{,}
+    \PYG{n}{planning\PYGZus{}mip\PYGZus{}gap}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{|} \PYG{k+kc}{None} \PYG{o}{=} \PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{replay\PYGZus{}mip\PYGZus{}gap}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{|} \PYG{k+kc}{None} \PYG{o}{=} \PYG{k+kc}{None}\PYG{p}{,}
+    \PYG{n}{allow\PYGZus{}cyclic\PYGZus{}state\PYGZus{}assumptions}\PYG{p}{:} \PYG{n+nb}{bool} \PYG{o}{=} \PYG{k+kc}{False}\PYG{p}{,}
+    \PYG{n}{fixed\PYGZus{}plan}\PYG{p}{:} \PYG{n}{FixedInvestmentPlanArtifacts} \PYG{o}{|} \PYG{k+kc}{None} \PYG{o}{=} \PYG{k+kc}{None}\PYG{p}{,}
+\PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{n}{HeatingSeasonReplayArtifacts}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Plan on the supplied planning horizon and validate only the stated season.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{按有时区的左闭右开窗口切取时序，检查步长和完整覆盖。}}
+    \PYG{n}{chronology}\PYG{p}{,} \PYG{n}{scope\PYGZus{}audit} \PYG{o}{=} \PYG{n}{prepare\PYGZus{}heating\PYGZus{}season\PYGZus{}timeseries}\PYG{p}{(}
+        \PYG{n}{config}\PYG{p}{,} \PYG{n}{chronological\PYGZus{}source}\PYG{p}{,} \PYG{n}{scope}\PYG{p}{,} \PYG{n}{timestamp\PYGZus{}column}\PYG{o}{=}\PYG{n}{timestamp\PYGZus{}column}\PYG{p}{,} \PYG{n}{input\PYGZus{}timezone}\PYG{o}{=}\PYG{n}{input\PYGZus{}timezone}\PYG{p}{,}
+    \PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{不支持的状态交接假设在昂贵求解前拒绝。}}
+    \PYG{c+c1}{\PYGZsh{} Reject unsupported state assumptions before a potentially expensive solve.}
+    \PYG{n}{\PYGZus{}season\PYGZus{}config}\PYG{p}{(}\PYG{n}{config}\PYG{p}{,} \PYG{n}{allow\PYGZus{}cyclic\PYGZus{}state\PYGZus{}assumptions}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{无既有固定方案时先规划并完整冻结；有方案时复用该方案。}}
+    \PYG{n}{plan} \PYG{o}{=} \PYG{n}{fixed\PYGZus{}plan} \PYG{k}{if} \PYG{n}{fixed\PYGZus{}plan} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None} \PYG{k}{else} \PYG{n}{prepare\PYGZus{}fixed\PYGZus{}investment\PYGZus{}plan}\PYG{p}{(}
+        \PYG{n}{config}\PYG{p}{,}\PYG{n}{representative\PYGZus{}timeseries}\PYG{p}{,}\PYG{n}{planning\PYGZus{}time\PYGZus{}limit}\PYG{o}{=}\PYG{n}{planning\PYGZus{}time\PYGZus{}limit}\PYG{p}{,}\PYG{n}{planning\PYGZus{}mip\PYGZus{}gap}\PYG{o}{=}\PYG{n}{planning\PYGZus{}mip\PYGZus{}gap}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{季节转换保存假设；年度经济与资源约束另需年度复算。}}
+    \PYG{n}{fixed\PYGZus{}config}\PYG{p}{,} \PYG{n}{assumptions} \PYG{o}{=} \PYG{n}{\PYGZus{}season\PYGZus{}config}\PYG{p}{(}\PYG{n}{plan}\PYG{o}{.}\PYG{n}{fixed\PYGZus{}config}\PYG{p}{,} \PYG{n}{allow\PYGZus{}cyclic\PYGZus{}state\PYGZus{}assumptions}\PYG{p}{)}
+    \PYG{n}{plan} \PYG{o}{=} \PYG{n}{replace}\PYG{p}{(}\PYG{n}{plan}\PYG{p}{,} \PYG{n}{fixed\PYGZus{}config}\PYG{o}{=}\PYG{n}{fixed\PYGZus{}config}\PYG{p}{)}
+    \PYG{n}{\PYGZus{}}\PYG{p}{,} \PYG{n}{scenario\PYGZus{}audit} \PYG{o}{=} \PYG{n}{adapt\PYGZus{}config\PYGZus{}to\PYGZus{}chronology\PYGZus{}scenarios}\PYG{p}{(}\PYG{n}{fixed\PYGZus{}config}\PYG{p}{,} \PYG{n}{chronology}\PYG{p}{)}
+    \PYG{n}{preflight} \PYG{o}{=} \PYG{n}{AnnualReplayPreflight}\PYG{p}{(}
+        \PYG{n}{chronological\PYGZus{}timeseries}\PYG{o}{=}\PYG{n}{chronology}\PYG{p}{,} \PYG{n}{chronology\PYGZus{}audit}\PYG{o}{=}\PYG{n}{scope\PYGZus{}audit}\PYG{p}{,}
+        \PYG{n}{representative\PYGZus{}coverage\PYGZus{}audit}\PYG{o}{=}\PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(}\PYG{n}{columns}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{coverage\PYGZus{}status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+        \PYG{n}{representative\PYGZus{}recommendations}\PYG{o}{=}\PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,} \PYG{n}{scenario\PYGZus{}scope\PYGZus{}audit}\PYG{o}{=}\PYG{n}{scenario\PYGZus{}audit}\PYG{p}{,}
+    \PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{运行模型使用已冻结配置，}require\PYGZus{}full\PYGZus{}year=False\CJKCode{仅标明季节范围。}}
+    \PYG{n}{result} \PYG{o}{=} \PYG{n}{replay\PYGZus{}prepared\PYGZus{}fixed\PYGZus{}investment\PYGZus{}plan}\PYG{p}{(}
+        \PYG{n}{config}\PYG{p}{,} \PYG{n}{representative\PYGZus{}timeseries}\PYG{p}{,} \PYG{n}{chronology}\PYG{p}{,} \PYG{n}{plan}\PYG{p}{,}
+        \PYG{n}{timestamp\PYGZus{}column}\PYG{o}{=}\PYG{n}{timestamp\PYGZus{}column}\PYG{p}{,} \PYG{n}{replay\PYGZus{}time\PYGZus{}limit}\PYG{o}{=}\PYG{n}{replay\PYGZus{}time\PYGZus{}limit}\PYG{p}{,}
+        \PYG{n}{replay\PYGZus{}mip\PYGZus{}gap}\PYG{o}{=}\PYG{n}{replay\PYGZus{}mip\PYGZus{}gap}\PYG{p}{,} \PYG{n}{require\PYGZus{}full\PYGZus{}year}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} \PYG{n}{preflight}\PYG{o}{=}\PYG{n}{preflight}\PYG{p}{,}
+    \PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{不把年度规划总量与季节总量直接比较，也不按小时比例外推全年费用。}}
+    \PYG{c+c1}{\PYGZsh{} Annual planning totals and seasonal totals are intentionally not compared.}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{清空跨年度与季节的直接总量比较，避免口径错配。}}
+    \PYG{n}{result}\PYG{o}{.}\PYG{n}{kpi\PYGZus{}comparison} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{(}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{独立复核储热状态、初末边界和对应时序。}}
+    \PYG{n}{storage} \PYG{o}{=} \PYG{n}{seasonal\PYGZus{}storage\PYGZus{}postcheck}\PYG{p}{(}\PYG{n}{result}\PYG{o}{.}\PYG{n}{fixed\PYGZus{}config}\PYG{p}{,} \PYG{n}{result}\PYG{o}{.}\PYG{n}{replay}\PYG{o}{.}\PYG{n}{dispatch}\PYG{p}{,} \PYG{n}{expected\PYGZus{}timeseries}\PYG{o}{=}\PYG{n}{chronology}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{共同验收检查结合冻结、可靠容量、求解与储热证据。}}
+    \PYG{n}{common} \PYG{o}{=} \PYG{n}{annual\PYGZus{}replay\PYGZus{}acceptance\PYGZus{}audit}\PYG{p}{(}
+        \PYG{n}{result}\PYG{o}{.}\PYG{n}{fixed\PYGZus{}config}\PYG{p}{,} \PYG{n}{chronology\PYGZus{}audit}\PYG{o}{=}\PYG{n}{scope\PYGZus{}audit}\PYG{p}{,}
+        \PYG{n}{representative\PYGZus{}coverage\PYGZus{}audit}\PYG{o}{=}\PYG{n}{preflight}\PYG{o}{.}\PYG{n}{representative\PYGZus{}coverage\PYGZus{}audit}\PYG{p}{,}
+        \PYG{n}{investment\PYGZus{}freeze\PYGZus{}audit}\PYG{o}{=}\PYG{n}{result}\PYG{o}{.}\PYG{n}{investment\PYGZus{}freeze\PYGZus{}audit}\PYG{p}{,}
+        \PYG{n}{fixed\PYGZus{}investment\PYGZus{}readiness\PYGZus{}audit}\PYG{o}{=}\PYG{n}{result}\PYG{o}{.}\PYG{n}{fixed\PYGZus{}investment\PYGZus{}readiness\PYGZus{}audit}\PYG{p}{,}
+        \PYG{n}{planning\PYGZus{}summary}\PYG{o}{=}\PYG{n}{result}\PYG{o}{.}\PYG{n}{planning}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{,} \PYG{n}{replay\PYGZus{}summary}\PYG{o}{=}\PYG{n}{result}\PYG{o}{.}\PYG{n}{replay}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{,}
+        \PYG{n}{storage\PYGZus{}boundary\PYGZus{}audit}\PYG{o}{=}\PYG{n}{storage}\PYG{p}{,}
+    \PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{删除年度专属门槛；季节证书不能因这些门槛被删除而晋级年度证书。}}
+    \PYG{n}{gates} \PYG{o}{=} \PYG{p}{[}\PYG{n}{gate} \PYG{k}{for} \PYG{n}{gate} \PYG{o+ow}{in} \PYG{n}{common}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{gates}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{k}{if} \PYG{n}{gate}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{gate}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{continuous\PYGZus{}full\PYGZus{}calendar\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{continuous\PYGZus{}full\PYGZus{}service\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{representative\PYGZus{}period\PYGZus{}coverage}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{\PYGZcb{}}\PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{gate} \PYG{o+ow}{in} \PYG{n}{gates}\PYG{p}{:}
+        \PYG{n}{gate}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{gate}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{gate}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{gate}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{annual\PYGZus{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{period\PYGZus{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{n}{gate}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{requirement}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{gate}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{requirement}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\CJKCode{全年}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\CJKCode{本服务期}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{另加服务窗口精确匹配门槛，防止短片段冒充完整供暖季。}}
+    \PYG{n}{gates}\PYG{o}{.}\PYG{n}{insert}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{gate}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{exact\PYGZus{}service\PYGZus{}period}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{passed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{bool}\PYG{p}{(}\PYG{n}{scope\PYGZus{}audit}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{exact\PYGZus{}scope\PYGZus{}match}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+                     \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{observed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{scope\PYGZus{}audit}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{requirement}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{exact timezone\PYGZhy{}aware half\PYGZhy{}open service window}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{\PYGZcb{}}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{保留全部失败门槛及假设，不把失败结果写成通过。}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{证书由全部门槛共同决定，保留未通过项目名称。}}
+    \PYG{n}{failed} \PYG{o}{=} \PYG{p}{[}\PYG{n}{gate}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{gate}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{k}{for} \PYG{n}{gate} \PYG{o+ow}{in} \PYG{n}{gates} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{gate}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{passed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{]}
+    \PYG{n}{certificate} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{schema}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{heatplan.heating\PYGZus{}season\PYGZus{}certificate.v1}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scope\PYGZus{}type}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{heating\PYGZus{}season}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+                   \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{certification\PYGZus{}pass}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{o+ow}{not} \PYG{n}{failed}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{gate\PYGZus{}count}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{gates}\PYG{p}{)}\PYG{p}{,}
+                   \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{passed\PYGZus{}gate\PYGZus{}count}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{gates}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{failed}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{failed\PYGZus{}gate\PYGZus{}count}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{failed}\PYG{p}{)}\PYG{p}{,}
+                   \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{failed\PYGZus{}gates}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{failed}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{gates}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{gates}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{assumptions}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{assumptions}\PYG{p}{,}
+                   \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{annual\PYGZus{}replay\PYGZus{}certified}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{False}\PYG{p}{\PYGZcb{}}
+    \PYG{n}{summary} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scope}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{scope\PYGZus{}audit}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{heating\PYGZus{}season\PYGZus{}certified}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{o+ow}{not} \PYG{n}{failed}\PYG{p}{,}
+               \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{annual\PYGZus{}replay\PYGZus{}certified}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{False}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{assumptions}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{assumptions}\PYG{p}{,}
+               \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solver\PYGZus{}status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{result}\PYG{o}{.}\PYG{n}{replay}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solver\PYGZus{}status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{,}
+               \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{unserved\PYGZus{}rate}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{result}\PYG{o}{.}\PYG{n}{replay}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{unserved\PYGZus{}rate}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{,}
+               \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}audit\PYGZus{}passed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{result}\PYG{o}{.}\PYG{n}{replay}\PYG{o}{.}\PYG{n}{summary}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}audit\PYGZus{}passed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{k+kc}{False}\PYG{p}{)}\PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{期间指标重新命名为}over\PYGZus{}period\CJKCode{，避免}per\PYGZus{}year\CJKCode{标签误导。}}
+    \PYG{k}{for} \PYG{n}{key} \PYG{o+ow}{in} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{demand\PYGZus{}kwh\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{effective\PYGZus{}heat\PYGZus{}demand\PYGZus{}kwh\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{unserved\PYGZus{}kwh\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{emissions\PYGZus{}kg\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{total\PYGZus{}service\PYGZus{}emissions\PYGZus{}kg\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{electricity\PYGZus{}kwh\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{heating\PYGZus{}cash\PYGZus{}operating\PYGZus{}cost\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{cooling\PYGZus{}demand\PYGZus{}kwh\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{key} \PYG{o+ow}{in} \PYG{n}{result}\PYG{o}{.}\PYG{n}{replay}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{:}
+            \PYG{n}{summary}\PYG{p}{[}\PYG{n}{key}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZus{}over\PYGZus{}period}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{result}\PYG{o}{.}\PYG{n}{replay}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}
+    \PYG{k}{return} \PYG{n}{HeatingSeasonReplayArtifacts}\PYG{p}{(}\PYG{n}{result}\PYG{p}{,} \PYG{n}{scope\PYGZus{}audit}\PYG{p}{,} \PYG{n}{assumptions}\PYG{p}{,} \PYG{n}{storage}\PYG{p}{,} \PYG{n}{certificate}\PYG{p}{,} \PYG{n}{summary}\PYG{p}{)}
+\end{Verbatim}

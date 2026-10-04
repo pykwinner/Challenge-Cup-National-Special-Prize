@@ -1,0 +1,181 @@
+{
+  "status": "complete_and_frozen",
+  "stem": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\publication_final_20261003\\tradeoff_paper\\cost_carbon",
+  "metadata": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\publication_final_20261003\\tradeoff_paper\\cost_carbon.json",
+  "metadata_sha256": "182d497379cefe2fed82e9e3ae6abd53e940baf9e14e362b5403ed6a6b9d31d8",
+  "qa": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\publication_final_20261003\\tradeoff_paper\\QA.json",
+  "qa_sha256": "66345f50cfde7b43049c704d3d53cefb5af888ef6cebf4c21153aee39cc89740",
+  "paper_dimensions_mm": [
+    146,
+    92
+  ],
+  "pdf_actual_min_text_pt": 7.5,
+  "pdf_actual_text_sizes_pt": [
+    7.5,
+    8.0,
+    8.5
+  ],
+  "caption_chinese_character_count": 115,
+  "outputs": {
+    "svg": {
+      "file": "cost_carbon.svg",
+      "path": "docs/publication_final_20261003/tradeoff_paper/cost_carbon.svg",
+      "sha256": "7f7cf1ed74ef42c8b8bcfe76044c3d5798c3c23a1eb8a68fb6b17cea7b461b00"
+    },
+    "pdf": {
+      "file": "cost_carbon.pdf",
+      "path": "docs/publication_final_20261003/tradeoff_paper/cost_carbon.pdf",
+      "sha256": "96f0e5357124fbd0cc976009dda4edeaefee009918f77732d3f0e91a3cdfb2f7"
+    },
+    "png": {
+      "file": "cost_carbon.png",
+      "path": "docs/publication_final_20261003/tradeoff_paper/cost_carbon.png",
+      "sha256": "aaa96d2970c78803307f9336727ff70dbb2d486772b08cbd4dd21edb18af880d"
+    }
+  },
+  "sources": [
+    {
+      "path": "docs/publication_redesign_20261003/tradeoff_evidence/registered_cost_carbon.csv",
+      "sha256": "ed24183da5728d21be6e1be3f9b37d1ef28b012f650ebfae708e59e3745bfc70",
+      "bytes": 25080
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_v2/registered_cost_carbon.csv",
+      "sha256": "ed24183da5728d21be6e1be3f9b37d1ef28b012f650ebfae708e59e3745bfc70",
+      "bytes": 25080
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_v2/plot_data.csv",
+      "sha256": "5123167e30fb304efdb3535e24a31621999e8b30161d1dd1b2599a3c860fe0a6",
+      "bytes": 5367
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_v2/retained_savings.csv",
+      "sha256": "80371b795867cc4056b977f5df80eaf532a10f47981c70c7e4ca74c52a67463e",
+      "bytes": 660
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_v2/reference_colorbar_pixels.csv",
+      "sha256": "755adc27abf0fdd623920ea8ed022d5fd8642ecdc7f8e34aceaa4f628e77e340",
+      "bytes": 26722
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1038/s41467-025-67593-9",
+      "figure": "6",
+      "paper_title": "The benefits of exploring a large scenario space for future energy systems",
+      "official_url": "https://www.nature.com/articles/s41467-025-67593-9",
+      "image": {
+        "path": "docs/publication_redesign_20261003/references/algorithm/A07/figure_6.png",
+        "sha256": "fe7928767a65ae96958926f85a7be11de40434561acbfce9cc43bba07e8aa534",
+        "bytes": 507541
+      },
+      "actually_viewed": true,
+      "view_evidence": "Original A07-F6 PNG displayed with tools.view_image in this turn before redesign.",
+      "colors": {
+        "sample_axis_x_px": 1232,
+        "sample_y_pixels_low_to_high": [
+          830,
+          4
+        ],
+        "sample_count": 827,
+        "exact_rgb_csv": {
+          "path": "docs/publication_final_20261003/tradeoff_paper/reference_colorbar_pixels.csv",
+          "sha256": "755adc27abf0fdd623920ea8ed022d5fd8642ecdc7f8e34aceaa4f628e77e340",
+          "bytes": 26722
+        },
+        "example_samples": [
+          {
+            "index": 0,
+            "reference_x_px": 1232,
+            "reference_y_px": 830,
+            "hex": "#0D0305",
+            "red": 13,
+            "green": 3,
+            "blue": 5
+          },
+          {
+            "index": 206,
+            "reference_x_px": 1232,
+            "reference_y_px": 624,
+            "hex": "#3E356B",
+            "red": 62,
+            "green": 53,
+            "blue": 107
+          },
+          {
+            "index": 413,
+            "reference_x_px": 1232,
+            "reference_y_px": 417,
+            "hex": "#357AA2",
+            "red": 53,
+            "green": 122,
+            "blue": 162
+          },
+          {
+            "index": 619,
+            "reference_x_px": 1232,
+            "reference_y_px": 211,
+            "hex": "#49C1AD",
+            "red": 73,
+            "green": 193,
+            "blue": 173
+          },
+          {
+            "index": 826,
+            "reference_x_px": 1232,
+            "reference_y_px": 4,
+            "hex": "#DCF4E3",
+            "red": 220,
+            "green": 244,
+            "blue": 227
+          }
+        ]
+      },
+      "design_transfer": "Two-dimensional objective coordinates and a continuous third-variable colorbar; sparse registered cases use four distinct marker identities.",
+      "not_transferred": [
+        "Source scenario cloud and sample count",
+        "Source continuous/non-dominated frontier",
+        "Source minerals-and-metals variable or values"
+      ]
+    }
+  ],
+  "numeric_checks": {
+    "total_records": 12,
+    "optimized_records": 9,
+    "baseline_records": 3,
+    "source_csv_byte_identical_to_v2": true,
+    "retained_savings_percent": {
+      "urumqi": 81.80256176240323,
+      "guyuan": 80.9176702938616,
+      "wuhan": 89.44244536621136
+    },
+    "midpoint_actual_energy_charge_reduction_percent": {
+      "urumqi": 1.3915907692791336,
+      "guyuan": 1.3892108283331055,
+      "wuhan": 1.56684657490311
+    },
+    "new_points": false,
+    "point_jitter": false,
+    "frontier_line_added": false
+  },
+  "caption_scope_zh": "节费保留率指相对费用端点的电量费节省额；中点电量费下降且参考碳排增加。共同方法学账本不含投资与运维。",
+  "visual_review": {
+    "png_actually_viewed": true,
+    "pdf_render_actually_viewed": true,
+    "viewer": "tools.view_image",
+    "pdf_render_method": "Poppler pdftoppm 180 dpi",
+    "observations_zh": [
+      "146毫米原生版心，三城横排与共用色标保持清晰。",
+      "黑色中文、近重合方案内圆外菱形均可辨，无重叠、裁切和色带细缝。",
+      "实际字体7.5/8/8.5 pt，不需再缩至146毫米。"
+    ]
+  },
+  "scope": "Only tradeoff_paper authored; tradeoff_v2, source data, model, manuscript, references and delivery builder unchanged.",
+  "rebuild": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\publication_final_20261003\\tradeoff_paper\\build_tradeoff.py",
+  "rebuild_sha256": "e17107bb118f25f0e2b8d4084285f356fa0e5048c565eeafbc9348f708177dc1",
+  "methods": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\publication_final_20261003\\tradeoff_paper\\METHODS.txt",
+  "methods_sha256": "c56f118ab8f84af229c30ffb86c632f254d95c6edfb25747796a4d8335ba5f8a",
+  "completed_at_utc": "2026-10-03T03:37:49.200884+00:00"
+}

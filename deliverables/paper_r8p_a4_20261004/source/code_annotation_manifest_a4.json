@@ -1,0 +1,1664 @@
+{
+  "version": "R8P-A4",
+  "source_identity": "fixed R8O snapshot; source code unchanged",
+  "source_files": [
+    {
+      "relative_path": "__init__.py",
+      "sha256": "aa8825eed064c866ac6c74cbfc1fe066f7fe5818510dd5a21292905019b1501a",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "accounting.py",
+      "sha256": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "annual_preflight_batch_cli.py",
+      "sha256": "9e0b23710bd03608abb157b1a8c6972a7bc4a46acc559b5689f9a22249108d3e",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "annual_replay_batch_cli.py",
+      "sha256": "970d5a849ea4f18047754e2794220c936375e44b648d7377f1678936ebab1a20",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "annual_replay_certify_cli.py",
+      "sha256": "cc1e016e75c414fa00eb581d2fa8025fbff722f2d41d9250708a5143950585a8",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "annual_replay_cli.py",
+      "sha256": "f6093308c7f6296865753f8aa63455fa26056632856161363348a5b4fc48b0a7",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "btes.py",
+      "sha256": "4845b531f1660bed9d9a8e88962325a66c4459f55de4df729d72ff291d43a687",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "building_audit.py",
+      "sha256": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "chronology.py",
+      "sha256": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "chronology_cli.py",
+      "sha256": "c751911f73a8d8c61f15b807813f3bc40e83e372652941d9bee5c0355c13e274",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "cli.py",
+      "sha256": "4b2f29b1f47fcb8b893dd6b7a61ec0c8a0dcfebd07fcb8db6a6c3a3d65b2ad35",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "competition_runner.py",
+      "sha256": "f2ab3ef7ad294e16ba1976ae1637d210db5ec9edaac7a8e05f8f7b398488bfd4",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "decision_weight_calibration.py",
+      "sha256": "a4e49a5c996c13a66c621724a607e96c39e24984d3d32c50b49c02f022527a92",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "experiment_cli.py",
+      "sha256": "65dd7ef563918b397a68e6842b1623f890f96e8b612e060ad416e7fe0ee6642b",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "experiments.py",
+      "sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "feasibility.py",
+      "sha256": "026ac7d09b9c546b0792f4383555143b4a9d3e2082eab2ed69b110d2e7d4723a",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "finance.py",
+      "sha256": "9dce76eabdc88ad1c66cc0675b1bc2e89d0484933c7b924dd0e1091c125b3af8",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "hard_weight_calibration.py",
+      "sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "heating_season.py",
+      "sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "heating_season_cli.py",
+      "sha256": "18d29f3ce844c90257602f25b04f3f68e67379c76722f16b49896200ea8d9ff2",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "hydraulics.py",
+      "sha256": "dadeac78d1e58174c33e4b8cc8ce9447735d9023b92156c4addb34e7b3cf67bd",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "io.py",
+      "sha256": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "linear.py",
+      "sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "model.py",
+      "sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "mpc.py",
+      "sha256": "6327acb03305064f44a12dde691fafc4a9a6dc4f0904d1c299a12a3621cc6c31",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "multistage.py",
+      "sha256": "1c75205da18282ed2161070ed7b38e8399ee5f0d6ccf18c2595fedce778e8636",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "multistage_cli.py",
+      "sha256": "34d1a9856cf82976c10c178b2447acba81ce96d4b31abd70133aa9f9d5f5c6f3",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "multiyear.py",
+      "sha256": "c44b18aa27e28cab8f9bdb50b84652466ccd3f1bd4434c5dc84610d3f8ae3106",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "multiyear_readiness_cli.py",
+      "sha256": "cbbbcdf827f05dfcc12b5e25ad64d58bbb4110bbbd713b63603e370cda5247b2",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "multiyear_replay_cli.py",
+      "sha256": "d139f421be1280deb1b36515b0e65d740c2f8bc3619b263aeaef8310b43c12d1",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "network_feedback.py",
+      "sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "operations_cli.py",
+      "sha256": "f7cad078bea4999189896f96b07d21446f5e15c7feedd18d19e76483802cde85",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "osm_reference.py",
+      "sha256": "563bc54a990594e92eccdb42a85a2af3c2385a4c491d58073294b17024d79e14",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "physical_extensions.py",
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "policy_alignment.py",
+      "sha256": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "policy_alignment_cli.py",
+      "sha256": "fc39b3c084f2ab29d35826ceefe6bafbe5cd897b4dee63b747defca28905d5e6",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "policy_cli.py",
+      "sha256": "3528ffde6cd76a9f88f60f8f87413d291292c8742b429a0a3533e7f7bdb9afdf",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "provenance.py",
+      "sha256": "9025159fea76e3ba086d535c0991d47dde1cda2be5642ccc48c1e7ebf62266f2",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "reporting.py",
+      "sha256": "ca5f25f8173952e0542ce0dc1c29789f1c8040681fc50aa159a60fcb332d720c",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "representative.py",
+      "sha256": "5d25eafa2077895a44178eae877d4ccdc50bb8e8f075f99f890d1c15794ff11c",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "representative_adoption.py",
+      "sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "risk_scan_cli.py",
+      "sha256": "6ca449bf0cd00b8eb9597771a44b7518d3282a310f2791f6a6cb0cbbda3a6a21",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "scenario_cli.py",
+      "sha256": "5b018d81ebc11fc447285db984ed2f8d4b6608cf912fd770f00cfcbffcb69385",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "scenarios.py",
+      "sha256": "5c18ae1a3a37a8f0adc1ec4ea810988848669be6fe56f4f532b1339db225e131",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "solution_evidence.py",
+      "sha256": "b0d0f7079410bdb0297838cba392761f3d6464e89299b198ad69f6ca44fd3abb",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "solution_quality.py",
+      "sha256": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "spatial_adapter.py",
+      "sha256": "6a250ca953dadf8e7602defbb2091042ac27bb30dc03f62f9a4bb737989e01b7",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "spatial_quality.py",
+      "sha256": "14e1ad391b83a742392ea81bc783d3262dc4774926d67cad47e07d7c755ff347",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "time_registry.py",
+      "sha256": "50943e29e02764dacaf5c7d975be8b32bb5d14f2e3202a839bec9c030bdbe15f",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "unified_cli.py",
+      "sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+      "ast_parse": true
+    },
+    {
+      "relative_path": "validation.py",
+      "sha256": "10c4e77006412fd6c95c4f063f18be97fc69f6acedbea79fa5499f4293583ae9",
+      "ast_parse": true
+    }
+  ],
+  "excerpt_count": 17,
+  "original_source_line_count": 1066,
+  "comment_line_count": 224,
+  "displayed_annotated_line_count": 1290,
+  "all_original_lines_preserved": true,
+  "all_executable_tokens_equal": true,
+  "optimizations_or_model_experiments_run": false,
+  "items": [
+    {
+      "number": 1,
+      "title": "单次求解入口与导出",
+      "file": "unified_cli.py",
+      "start_line": 93,
+      "end_line": 118,
+      "description": "主入口中没有政策路径时的单次求解分支；配置可以按需展开相关天气场景，随后统一求解和导出。",
+      "inputs": "当前profile的配置路径、逐时输入路径、可选场景说明及求解预算。",
+      "outputs": "投资、逐时运行、汇总指标与场景结果文件。该节选依赖外层profile循环。",
+      "branch": "single_profile_solve",
+      "notes": [
+        {
+          "before_source_line": 94,
+          "text": "配置与时序共同定义算例身份；本段不自动启动碳帽扫描。"
+        },
+        {
+          "before_source_line": 95,
+          "text": "仅在提供场景文件时展开不确定场景；无文件则沿用读入时序。"
+        },
+        {
+          "before_source_line": 103,
+          "text": "period_weight是代表时段权重，不等同于额外的物理小时步长。"
+        },
+        {
+          "before_source_line": 108,
+          "text": "构造公用模型；源、网、荷、储与配电模块由配置装配。"
+        },
+        {
+          "before_source_line": 109,
+          "text": "mip_gap和time_limit限制求解预算，不是物理可行性容差。"
+        },
+        {
+          "before_source_line": 113,
+          "text": "导出所得解及其实际输入；无可行解会由上层模型抛出异常。"
+        },
+        {
+          "before_source_line": 115,
+          "text": "场景统计另存，避免以全系统平均掩盖某个场景的失供。"
+        },
+        {
+          "before_source_line": 97,
+          "text": "按节点配置收集需求列，保持场景扩展与需求接口一致。"
+        },
+        {
+          "before_source_line": 105,
+          "text": "复制后修改风险设置，保留此前读入的配置对象。"
+        },
+        {
+          "before_source_line": 107,
+          "text": "场景展开后再次校验列名、参数和时序约定。"
+        }
+      ],
+      "explanation_latex": "该入口负责把配置、逐时输入和求解预算连接起来。需求列从节点配置取得，避免在场景展开时漏掉某一节点；随后将场景风险设置写入配置副本，再统一校验。\\path{HeatPlanningModel}接收校验后的同一组输入，导出也使用模型实际采用的时序，因而输入、求解与结果文件可以一一对应。",
+      "readout_latex": "阅读结果时先检查场景文件是否提供，再核对导出的时序、求解状态及逐场景结果。单次入口的结果不能仅凭文件存在就视为已执行碳帽扫描。",
+      "full_file_sha256": "bb2de31df67d142852eef81489edaefcb892134cf41a236f4b42f3df60611a5e",
+      "original_line_count": 26,
+      "comment_line_count": 10,
+      "annotated_line_count": 36,
+      "original_excerpt_sha256": "640abcd1f19acebaa8a7f103452e4ac60d642f6c86dfa370ca8ce37f72049892",
+      "annotated_excerpt_sha256": "81b47373ebdfb0ffefccc2c7442327f94a3f0491d998d5a6f69847692ce9744b",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": false,
+      "reason": "Context snippet; exact original lines and executable tokens checked",
+      "original_excerpt": "code_annotated_r8p_a4/01_unified_cli.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/01_unified_cli.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/01_unified_cli.line_map.json",
+      "listing": "code_listings_r8p_a4/01_unified_cli.tex"
+    },
+    {
+      "number": 2,
+      "title": "逐楼1R1C精确离散系数",
+      "file": "building_thermal.py",
+      "start_line": 31,
+      "end_line": 46,
+      "description": "独立逐楼热模型的完整系数函数。逐小时输入保持常值时，系数连接小时初末室温与交付冷热量。",
+      "inputs": "热损失系数H（kW/K）、有效热容C（kWh/K）和步长（h）。",
+      "outputs": "无量纲衰减系数a和温升系数b（K/kW）。函数不进行参数辨识。",
+      "branch": "building_RC_coefficient",
+      "notes": [
+        {
+          "before_source_line": 31,
+          "text": "本函数属于独立1R1C分支，不替换历史聚合需求响应状态。"
+        },
+        {
+          "before_source_line": 39,
+          "text": "H、C与步长必须为正且有限，单位应先统一。"
+        },
+        {
+          "before_source_line": 42,
+          "text": "H乘步长除以C为无量纲指数，避免将秒与小时混算。"
+        },
+        {
+          "before_source_line": 43,
+          "text": "expm1减小小指数下的数值相消；b乘净输入功率得到温升。"
+        },
+        {
+          "before_source_line": 44,
+          "text": "系数低于矩阵数值分辨能力时明确报错，不返回无效热状态。"
+        }
+      ],
+      "explanation_latex": "热平衡微分方程在一个时段内采用分段常值外温与净热输入。代码计算$a=\\exp(-H\\Delta t/C)$和$b=(1-a)/H$，使下一时段室温可直接写成当前室温、外温和净热输入的线性组合。系数由输入参数预先计算，优化时只含状态和供热变量，既保留热惯性，又不引入决策变量之间的乘积。",
+      "readout_latex": "核对单位时，$H$为kW/K，$C$为kWh/K，$\\Delta t$为h，故$b$为K/kW。逐楼状态如何接入模型及舒适边界，见后面的RC装配代码。",
+      "full_file_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "original_line_count": 16,
+      "comment_line_count": 5,
+      "annotated_line_count": 21,
+      "original_excerpt_sha256": "012f2cc6b4f1508f498388a5192d1f7f818eb7987b50fa4232f40acaf33c0d1d",
+      "annotated_excerpt_sha256": "cc0641925d32e56d994675d06ce9a86bd27e2e73b109aa53ae9b2110668ae292",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/02_building_thermal.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/02_building_thermal.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/02_building_thermal.line_map.json",
+      "listing": "code_listings_r8p_a4/02_building_thermal.tex"
+    },
+    {
+      "number": 3,
+      "title": "储热容量、运行与状态边界",
+      "file": "model.py",
+      "start_line": 1391,
+      "end_line": 1471,
+      "description": "完整展示储热投资与逐时运行的这一连续代码块。既有与新增能量容量共同限制SOC和充放功率。",
+      "inputs": "储热位置、容量（kWh）、功率能量比（1/h）、效率、自损失及边界模式。",
+      "outputs": "容量、充热、放热、SOC变量和相应线性约束；严格互斥模式另含二元变量。",
+      "branch": "model_build_storage_block",
+      "notes": [
+        {
+          "before_source_line": 1391,
+          "text": "以下为build方法内部片段，依赖既有模型、时序与变量登记表。"
+        },
+        {
+          "before_source_line": 1394,
+          "text": "existing和max_new均为能量容量kWh，不是充放功率kW。"
+        },
+        {
+          "before_source_line": 1397,
+          "text": "只有允许新增容量时才建立投资变量；既有容量作为常量。"
+        },
+        {
+          "before_source_line": 1404,
+          "text": "功率能量比乘装机能量容量得到逐时充放功率上限。"
+        },
+        {
+          "before_source_line": 1406,
+          "text": "严格模式按配置启用；关闭时不能宣称二元互斥已实施。"
+        },
+        {
+          "before_source_line": 1410,
+          "text": "每一真实时段建立充热、放热和SOC；状态连续性在后文连接。"
+        },
+        {
+          "before_source_line": 1417,
+          "text": "可选吞吐费用作用于充放热量，不改变能量守恒方程。"
+        },
+        {
+          "before_source_line": 1425,
+          "text": "新增容量以负系数进入上界，形成SOC与装机容量的线性关系。"
+        },
+        {
+          "before_source_line": 1435,
+          "text": "M取候选最大功率常数；不使用投资变量乘二元变量。"
+        },
+        {
+          "before_source_line": 1441,
+          "text": "cyclic与fixed是两种边界身份，不能一律要求初末SOC相等。"
+        },
+        {
+          "before_source_line": 1442,
+          "text": "自损失按小时给定，再按实际步长取幂换算。"
+        },
+        {
+          "before_source_line": 1447,
+          "text": "充放功率乘步长后才是能量；放热需除以放热效率。"
+        },
+        {
+          "before_source_line": 1453,
+          "text": "状态仅在所属边界组内衔接，禁止跨无关场景串联。"
+        },
+        {
+          "before_source_line": 1455,
+          "text": "循环模式使用组内前驱；非首时段同样递推。"
+        },
+        {
+          "before_source_line": 1460,
+          "text": "固定边界以装机能量容量的声明比例给定初态。"
+        },
+        {
+          "before_source_line": 1465,
+          "text": "固定模式期末是最低SOC比例约束，不强制等于初态。"
+        },
+        {
+          "before_source_line": 1425,
+          "text": "该行左端为SOC减新增容量，右端保留既有容量。"
+        },
+        {
+          "before_source_line": 1463,
+          "text": "首小时先计初始储热的自损，再计本小时充放。"
+        },
+        {
+          "before_source_line": 1471,
+          "text": "期末库存下界与总装机容量保持同一比例。"
+        }
+      ],
+      "explanation_latex": "代码先建立新增储热容量，再用同一容量同时约束SOC与充放功率，避免仅满足能量容量却忽略设备功率。严格模式下，充、放热分别受一个二元状态控制；线性化常数取最大允许容量对应的功率。状态递推采用物理步长和充放效率，代表时段权重只参与相应统计，不在此重复放大能量转移。",
+      "readout_latex": "复核顺序为容量上界、充放互斥、逐时SOC递推、初末边界。循环边界在组内首尾相接，固定边界按初态比例起算并检查期末最低SOC。",
+      "full_file_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "original_line_count": 81,
+      "comment_line_count": 19,
+      "annotated_line_count": 100,
+      "original_excerpt_sha256": "ffb0e9f133c643310c2f5a3180e57f604e406e36266fd0984cc8472bdb130699",
+      "annotated_excerpt_sha256": "15721b6cf3c555f0e45702e8c6042261717576b96c8de507df821c73ba49f200",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/03_model.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/03_model.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/03_model.line_map.json",
+      "listing": "code_listings_r8p_a4/03_model.tex"
+    },
+    {
+      "number": 4,
+      "title": "节点温位逐时热平衡",
+      "file": "model.py",
+      "start_line": 1603,
+      "end_line": 1697,
+      "description": "将热源、双向管流、储热、需求响应和交付负荷接入同一节点温位等式；不以总量平衡代替局部平衡。",
+      "inputs": "已注册的出力与输配变量（kW）、管段效率、需求列及建筑模型覆盖范围。",
+      "outputs": "每个节点、温位、时段的热量等式。其他变量注册及指标统计见完整文件。",
+      "branch": "model_build_heat_balance_block",
+      "notes": [
+        {
+          "before_source_line": 1603,
+          "text": "每一行对应节点n、温位g、时段t，热流系数均采用功率口径。"
+        },
+        {
+          "before_source_line": 1609,
+          "text": "仅汇入安装在本节点且允许服务该温位的热源出力。"
+        },
+        {
+          "before_source_line": 1613,
+          "text": "正反方向分开登记；管容量与方向互斥约束在此前装配。"
+        },
+        {
+          "before_source_line": 1615,
+          "text": "离开本节点的热流以负号计入，尚未扣除下游管损。"
+        },
+        {
+          "before_source_line": 1617,
+          "text": "到达节点的热流乘效率；接收端承担输配损失。"
+        },
+        {
+          "before_source_line": 1625,
+          "text": "允许反向输送时使用独立变量，符号按端点反转。"
+        },
+        {
+          "before_source_line": 1637,
+          "text": "放热增加节点供给，充热占用节点供给。"
+        },
+        {
+          "before_source_line": 1641,
+          "text": "只有配置允许并注册失供变量时才进入等式；严格主模型可无此项。"
+        },
+        {
+          "before_source_line": 1644,
+          "text": "上调增加需求、下调减少需求，分别按相反符号登记。"
+        },
+        {
+          "before_source_line": 1650,
+          "text": "RC覆盖节点以实际交付量闭合，不能再叠加同一建筑固定负荷。"
+        },
+        {
+          "before_source_line": 1662,
+          "text": "未被RC覆盖的温位沿用登记需求列及其调节接口。"
+        },
+        {
+          "before_source_line": 1676,
+          "text": "计量覆盖投资按登记节约系数调整需求，须与原需求保持同一单位。"
+        },
+        {
+          "before_source_line": 1678,
+          "text": "末端改造在两个温位间转移符合条件的需求，不凭空产生热量。"
+        },
+        {
+          "before_source_line": 1692,
+          "text": "固定需求分支以双侧相等界闭合；此前调节项已在系数行内。"
+        }
+      ],
+      "explanation_latex": "节点平衡把每个变量在该节点的净作用写成稀疏系数行：本地产热及入流为正，出流与充热为负，到达端热流乘管段效率。储热、需求响应、计量和末端温位改造都在同一等式中登记。对启用逐楼RC的节点，需求由决策中的实际交付热量承接，避免再次加上同一建筑的固定负荷。",
+      "readout_latex": "检查时按节点、温位、小时逐行重算，重点核对管段首尾方向、入流效率及RC覆盖集合。全系统供需总量相等不能替代这些局部等式。",
+      "full_file_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "original_line_count": 95,
+      "comment_line_count": 14,
+      "annotated_line_count": 109,
+      "original_excerpt_sha256": "3d23ae5d0a4868074469c94cf20ac666288c7ecd3723f5f2b15277bd1ad345d4",
+      "annotated_excerpt_sha256": "a995e0ec6e10b17c05e7e56accdb2e8207e9428e8920dd26c139970c4ae93753",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/04_model.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/04_model.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/04_model.line_map.json",
+      "listing": "code_listings_r8p_a4/04_model.tex"
+    },
+    {
+      "number": 5,
+      "title": "SciPy稀疏MILP求解接口",
+      "file": "linear.py",
+      "start_line": 177,
+      "end_line": 205,
+      "description": "完整求解方法，将已装配的稀疏约束、边界及整数类型传给SciPy的milp接口。",
+      "inputs": "目标系数、约束矩阵、变量上下界、整数类型、间隙和时间预算。",
+      "outputs": "求解器原始结果。是否存在可行解及独立审计由上层模型处理。",
+      "branch": "solver_backend",
+      "notes": [
+        {
+          "before_source_line": 177,
+          "text": "本方法不构建热物理方程，只求解上层已装配的MILP。"
+        },
+        {
+          "before_source_line": 178,
+          "text": "矩阵和边界可缓存；约束修改后由模型维护缓存失效。"
+        },
+        {
+          "before_source_line": 191,
+          "text": "相对间隙控制停止条件，达到时间上限也可能仅返回可行候选。"
+        },
+        {
+          "before_source_line": 194,
+          "text": "记录本次实际目标，便于上层改回目标后仍能独立复算。"
+        },
+        {
+          "before_source_line": 196,
+          "text": "整数类型、边界与矩阵同时传入；不能只检查返回目标值。"
+        },
+        {
+          "before_source_line": 203,
+          "text": "有目标值时保留它；无可行解的异常报告在HeatPlanningModel.solve中。"
+        }
+      ],
+      "explanation_latex": "上层模型以变量索引装配目标系数、约束行和边界，本接口把它们整理为求解器接受的稀疏矩阵。整数类型与连续变量边界分别传入，因此容量、逐时运行和启停状态可以在同一个MILP中处理。矩阵缓存减少相同结构的重复整理，但费用或碳排目标切换时仍保存本次实际目标，供返回后的复核使用。",
+      "readout_latex": "原始求解结果还需由上层检查可行向量、状态、间隙及数值审计；达到时间上限与满足全部物理约束是两个不同检查项。",
+      "full_file_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "original_line_count": 29,
+      "comment_line_count": 6,
+      "annotated_line_count": 35,
+      "original_excerpt_sha256": "8a0e81813277ca92ca75c1efba378d88cb544fe3c588ea840e27522330325d31",
+      "annotated_excerpt_sha256": "ba7bf72297c20a299c8b7eaee1ff7acbacca9368b49b1ce8f2c9f125e8c70bc4",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/05_linear.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/05_linear.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/05_linear.line_map.json",
+      "listing": "code_listings_r8p_a4/05_linear.tex"
+    },
+    {
+      "number": 6,
+      "title": "独立数值与守恒残差复核",
+      "file": "linear.py",
+      "start_line": 40,
+      "end_line": 105,
+      "description": "完整数值审计方法，从全解重新计算每一约束行、变量边界、整数性及本次目标。",
+      "inputs": "求解向量、绝对容差和相对容差，以及已装配的原始矩阵。",
+      "outputs": "残差、最差约束和变量、整数偏差、目标复算误差及通过标记。",
+      "branch": "independent_numerical_audit",
+      "notes": [
+        {
+          "before_source_line": 40,
+          "text": "审计独立重算矩阵行；它不证明输入来自现场或未装配的工程约束成立。"
+        },
+        {
+          "before_source_line": 50,
+          "text": "拒绝无效容差；不可通过任意放大容差掩盖物理超限。"
+        },
+        {
+          "before_source_line": 59,
+          "text": "首先检查向量维数和有限性，缺失或非有限解立即不通过。"
+        },
+        {
+          "before_source_line": 66,
+          "text": "activity为Ax；热平衡与储热递推等式也包含在这些行内。"
+        },
+        {
+          "before_source_line": 69,
+          "text": "同时检查行下界与上界，等式并非仅看某一方向的残差。"
+        },
+        {
+          "before_source_line": 74,
+          "text": "变量上下界单独复核，防止行约束满足而容量或非负界被违反。"
+        },
+        {
+          "before_source_line": 80,
+          "text": "整数变量与最近整数比较，不将近似浮点数直接当作合法离散决策。"
+        },
+        {
+          "before_source_line": 84,
+          "text": "按本次实际目标复算，适用于费用与排放目标切换。"
+        },
+        {
+          "before_source_line": 99,
+          "text": "所有数值门槛共同决定通过，scaled violation不超过1才满足对应容差。"
+        },
+        {
+          "before_source_line": 67,
+          "text": "用各项绝对贡献估计量级，避免正负抵消使容差失真。"
+        },
+        {
+          "before_source_line": 82,
+          "text": "尚无本次目标快照时，不伪造目标复算误差。"
+        },
+        {
+          "before_source_line": 87,
+          "text": "费用与排放目标均按当前目标各项贡献确定比较量级。"
+        }
+      ],
+      "explanation_latex": "审计不直接沿用求解器给出的目标和可行性标签，而是从返回向量重新计算$Ax$、变量界、整数偏差及目标值。约束行与变量边界残差采用绝对及缩放相对容差，整数偏差单独采用绝对容差，目标另按自身量级复算，避免不同检查项混用阈值。记录最差约束行与变量名，可将异常定位回具体模块。",
+      "readout_latex": "检查\\path{numerical_audit_passed}时同时保留最大缩放残差及最差行号；缩放残差不大于1表示在登记容差内，不能据此替代数据来源检查。",
+      "full_file_sha256": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+      "original_line_count": 66,
+      "comment_line_count": 12,
+      "annotated_line_count": 78,
+      "original_excerpt_sha256": "05c01e05262eb15ee1f56f32f2d1eec6472aa40a50cfc8e770b314d9940387fc",
+      "annotated_excerpt_sha256": "4c65aa68ace251c7846ea5c64614f5a750137e75151ba444d669ea17de93cebe",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/06_linear.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/06_linear.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/06_linear.line_map.json",
+      "listing": "code_listings_r8p_a4/06_linear.tex"
+    },
+    {
+      "number": 7,
+      "title": "完整投资冻结与费用账本",
+      "file": "experiments.py",
+      "start_line": 13,
+      "end_line": 147,
+      "description": "完整冻结函数。容量投资转入存量，离散改造保存固定取值，并关闭后续新增或退役自由度。",
+      "inputs": "原配置、规划投资表及规划费用摘要；默认不放宽可靠性。",
+      "outputs": "深复制后的固定配置，包含所选资产年化费用账本及复算政策身份。",
+      "branch": "fixed_investment_conversion",
+      "notes": [
+        {
+          "before_source_line": 13,
+          "text": "必须调用完整函数，不能仅冻结正文中示出的热源和储热两类。"
+        },
+        {
+          "before_source_line": 25,
+          "text": "深复制保护原规划配置，复算修改不回写原数据。"
+        },
+        {
+          "before_source_line": 26,
+          "text": "默认保留原服务可靠性；诊断性放宽会被单独标记。"
+        },
+        {
+          "before_source_line": 29,
+          "text": "冻结不抹去所选资产的年化费用；季节范围转换另由季节接口处理。"
+        },
+        {
+          "before_source_line": 43,
+          "text": "热源容量按既有加新增减退役转为存量，随后锁定两个投资上限。"
+        },
+        {
+          "before_source_line": 49,
+          "text": "退役量需要扣除，不可把已退役容量继续用于复算。"
+        },
+        {
+          "before_source_line": 58,
+          "text": "储热新增能量容量并入kWh存量，后续不再增加储热容量。"
+        },
+        {
+          "before_source_line": 67,
+          "text": "管道改造以固定值保存；离散改造不必伪装成连续新增容量。"
+        },
+        {
+          "before_source_line": 77,
+          "text": "被选管径容量并入存量，再清空候选管径，防止复算重新选型。"
+        },
+        {
+          "before_source_line": 88,
+          "text": "计量覆盖率并入已覆盖比例，关闭新增覆盖自由度。"
+        },
+        {
+          "before_source_line": 104,
+          "text": "末端温位改造保存规划取值，避免逐时复算改变投资模式。"
+        },
+        {
+          "before_source_line": 114,
+          "text": "电网接入增容同样冻结，不能靠新增配电容量通过复算。"
+        },
+        {
+          "before_source_line": 120,
+          "text": "生物质库存容量以kg登记；库存容量不同于逐小时到货速率。"
+        },
+        {
+          "before_source_line": 130,
+          "text": "可再生电源、储电功率与能量、备用电源均纳入冻结。"
+        },
+        {
+          "before_source_line": 143,
+          "text": "仅显式诊断请求可放宽失供率和备用裕度；该分支不构成原要求验收。"
+        },
+        {
+          "before_source_line": 147,
+          "text": "返回完整固定配置；是否冻结成功另由投资冻结审计核对。"
+        }
+      ],
+      "explanation_latex": "规划与运行复算通过资产冻结函数衔接。函数复制规划配置，将所选新增容量转为运行期存量，并扣除已退役容量；管径、末端改造等离散选择保留为固定取值，同时关闭再次投资的自由度。冻结覆盖热源、储热、管网、建筑侧改造、配电和燃料库存等登记资产，费用账本随所选资产保留。",
+      "readout_latex": "复算前同时核对资产清单与新增上限，不能只锁定热源。资本费用是否计入及是否重复计入，应结合保存的费用账本和服务期口径检查。",
+      "full_file_sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "original_line_count": 135,
+      "comment_line_count": 16,
+      "annotated_line_count": 151,
+      "original_excerpt_sha256": "7955b4e4ec2e429f913aba0879171f278cd7ef051362d34a100babc2858c4752",
+      "annotated_excerpt_sha256": "dcff0e82e295c0c9092a19be612dcfc014c69158afbdcfbfefe544b19a069879",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/07_experiments.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/07_experiments.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/07_experiments.line_map.json",
+      "listing": "code_listings_r8p_a4/07_experiments.tex"
+    },
+    {
+      "number": 8,
+      "title": "固定投资的连续供暖季复算",
+      "file": "heating_season.py",
+      "start_line": 183,
+      "end_line": 246,
+      "description": "完整服务期复算函数，求规划方案或接收既有固定方案，保留小时顺序，并汇总季节范围检查。",
+      "inputs": "规划输入、连续时序、明确服务窗口、求解预算和可选已登记固定方案。",
+      "outputs": "季节运行解、储热检查、服务期证书及期间汇总；不生成年度认证。",
+      "branch": "fixed_investment_season_replay",
+      "notes": [
+        {
+          "before_source_line": 183,
+          "text": "本接口检验声明供暖季，不等同于在全年窗口联合重求投资。"
+        },
+        {
+          "before_source_line": 193,
+          "text": "按有时区的左闭右开窗口切取时序，检查步长和完整覆盖。"
+        },
+        {
+          "before_source_line": 196,
+          "text": "不支持的状态交接假设在昂贵求解前拒绝。"
+        },
+        {
+          "before_source_line": 198,
+          "text": "无既有固定方案时先规划并完整冻结；有方案时复用该方案。"
+        },
+        {
+          "before_source_line": 200,
+          "text": "季节转换保存假设；年度经济与资源约束另需年度复算。"
+        },
+        {
+          "before_source_line": 208,
+          "text": "运行模型使用已冻结配置，require_full_year=False仅标明季节范围。"
+        },
+        {
+          "before_source_line": 213,
+          "text": "不把年度规划总量与季节总量直接比较，也不按小时比例外推全年费用。"
+        },
+        {
+          "before_source_line": 215,
+          "text": "独立复核储热状态、初末边界和对应时序。"
+        },
+        {
+          "before_source_line": 216,
+          "text": "共同验收检查结合冻结、可靠容量、求解与储热证据。"
+        },
+        {
+          "before_source_line": 224,
+          "text": "删除年度专属门槛；季节证书不能因这些门槛被删除而晋级年度证书。"
+        },
+        {
+          "before_source_line": 228,
+          "text": "另加服务窗口精确匹配门槛，防止短片段冒充完整供暖季。"
+        },
+        {
+          "before_source_line": 230,
+          "text": "保留全部失败门槛及假设，不把失败结果写成通过。"
+        },
+        {
+          "before_source_line": 241,
+          "text": "期间指标重新命名为over_period，避免per_year标签误导。"
+        },
+        {
+          "before_source_line": 214,
+          "text": "清空跨年度与季节的直接总量比较，避免口径错配。"
+        },
+        {
+          "before_source_line": 230,
+          "text": "证书由全部门槛共同决定，保留未通过项目名称。"
+        }
+      ],
+      "explanation_latex": "该函数先确定有时区的服务窗口，再准备规划方案或复用已冻结方案。完整时序作为运行输入，建筑与储热状态按其边界组传递。随后把资产冻结、供能能力、数值求解和储热校核合并为服务期证书，并额外加入窗口精确匹配检查，使“求解成功”和“覆盖声明供暖季”分别有可查记录。",
+      "readout_latex": "优先核对\\path{exact_service_period}、\\path{failed_gates}和\\path{heating_season_certified}，再读费用与能量。期间指标使用\\path{over_period}，按对应窗口解释。",
+      "full_file_sha256": "7dd63b3d8f35dbfdcd1d8aaa3cc4086f81f15e9b07eeba929c6ffc32aeb562c2",
+      "original_line_count": 64,
+      "comment_line_count": 15,
+      "annotated_line_count": 79,
+      "original_excerpt_sha256": "d05b849ce0fe5b8331f36b8592366ed6738af20ed2c16843269cdba5565b1362",
+      "annotated_excerpt_sha256": "557f95885dfbf7e64408e32bc8587a7aa715238881e0d4bdd2eb12015d11737a",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/08_heating_season.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/08_heating_season.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/08_heating_season.line_map.json",
+      "listing": "code_listings_r8p_a4/08_heating_season.tex"
+    },
+    {
+      "number": 9,
+      "title": "带主目标容差的两阶段端点",
+      "file": "model.py",
+      "start_line": 2829,
+      "end_line": 2888,
+      "description": "完整端点方法，先求主目标，再施加单侧主目标上界，求解次目标并保留两阶段证据。",
+      "inputs": "主目标类型、绝对和相对容差，以及各阶段求解预算。",
+      "outputs": "次目标阶段的解与两阶段状态。限时可行值不等于全局词典序最优。",
+      "branch": "lexicographic_endpoint",
+      "notes": [
+        {
+          "before_source_line": 2829,
+          "text": "与固定投资两阶段不同：此处两阶段切换目标，不自动冻结资产。"
+        },
+        {
+          "before_source_line": 2842,
+          "text": "只允许费用或排放主目标，容差必须有限且非负。"
+        },
+        {
+          "before_source_line": 2846,
+          "text": "第一阶段先取得实际可行候选值，保留其状态、间隙与下界。"
+        },
+        {
+          "before_source_line": 2847,
+          "text": "排放表达包含登记常量；添加上界时需扣除常量。"
+        },
+        {
+          "before_source_line": 2852,
+          "text": "费用主目标使用当前原目标系数，不以事后费用统计替代。"
+        },
+        {
+          "before_source_line": 2856,
+          "text": "上界为首阶段值加绝对及相对容差；允许主目标进一步改善，不是双侧邻域。"
+        },
+        {
+          "before_source_line": 2859,
+          "text": "第二阶段用同样的预算求次目标；不据此宣称全局词典序最优。"
+        },
+        {
+          "before_source_line": 2862,
+          "text": "次阶段无可行解时保留失败摘要，后文继续补足首阶段证据。"
+        },
+        {
+          "before_source_line": 2865,
+          "text": "同时报告首阶段可行值、容差和终止状态，防止只展示次阶段结果。"
+        },
+        {
+          "before_source_line": 2880,
+          "text": "两阶段证据分别标识primary和secondary，可追踪求解身份。"
+        },
+        {
+          "before_source_line": 2885,
+          "text": "次阶段失败在补足证据后重新抛出，不静默返回首阶段当作成功端点。"
+        }
+      ],
+      "explanation_latex": "两阶段端点与“先定投资、再算运行”用途不同。此处先求主目标，再把首阶段所得可行值加绝对、相对容差写成单侧上界，在该约束下优化次目标。排放表达含常量时，加入矩阵行的右端必须扣除常量；否则约束的实际范围会偏移。两阶段状态与预算分别保存，便于判断端点证据强度。",
+      "readout_latex": "联合查看主目标可行值、允许容差、下界和两次求解状态。次阶段失败要按失败处理；首阶段未取得全局证明时，不能只以次阶段目标值命名全局端点。",
+      "full_file_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "original_line_count": 60,
+      "comment_line_count": 11,
+      "annotated_line_count": 71,
+      "original_excerpt_sha256": "2826922ce86f86e5a018f9e9acc6537a0d252df8ef46a506fd2726cd8b798204",
+      "annotated_excerpt_sha256": "34eb7b6968c18ebbe601e5d9da5628ca6519f25dd100a7662160aa81ae3360de",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/09_model.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/09_model.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/09_model.line_map.json",
+      "listing": "code_listings_r8p_a4/09_model.tex"
+    },
+    {
+      "number": 10,
+      "title": "独立碳帽采样与非支配筛选",
+      "file": "experiments.py",
+      "start_line": 351,
+      "end_line": 411,
+      "description": "完整独立扫描接口。清除原碳帽、碳价置零，再按碳上限逐档重新构模和检查。",
+      "inputs": "同一配置和时间序列、至少两档采样；投资自由度由输入配置决定。",
+      "outputs": "样本内非支配集合、全部采样证据、边际减排费用及归一化折中建议。",
+      "branch": "independent_epsilon_scan",
+      "notes": [
+        {
+          "before_source_line": 351,
+          "text": "独立接口不自动运行于三城单次入口，也不代表历史扫描使用相同规则。"
+        },
+        {
+          "before_source_line": 364,
+          "text": "配置与时序只读取一次；各档复制同一基础配置，保持输入一致。"
+        },
+        {
+          "before_source_line": 366,
+          "text": "清除碳价与原碳帽；其余启用约束和偏好仍按配置保留。"
+        },
+        {
+          "before_source_line": 369,
+          "text": "两个端点分别新建模型，避免前一端点的主目标约束污染另一端点。"
+        },
+        {
+          "before_source_line": 371,
+          "text": "采用冷热服务及共享电力口径的登记系统总碳，单位kg CO2。"
+        },
+        {
+          "before_source_line": 374,
+          "text": "端点次序超出容差则报错，不伪造可用扫描区间。"
+        },
+        {
+          "before_source_line": 379,
+          "text": "每档均由基础配置开始；本函数没有调用投资冻结。"
+        },
+        {
+          "before_source_line": 383,
+          "text": "实际碳帽包含微小数值余量，同时保存请求值供审查。"
+        },
+        {
+          "before_source_line": 384,
+          "text": "自由投资输入时每档重求投资和运行；已固定配置才只检验固定资产。"
+        },
+        {
+          "before_source_line": 385,
+          "text": "数值或碳帽复核失败立即终止，不能把失败点加入前沿。"
+        },
+        {
+          "before_source_line": 389,
+          "text": "非支配关系只针对已采样可行解，不是完整连续Pareto前沿。"
+        },
+        {
+          "before_source_line": 397,
+          "text": "相邻点费用差除以减排量，得到元/kg的边际减排费用。"
+        },
+        {
+          "before_source_line": 403,
+          "text": "理想点距离依赖归一化规则，折中点不是额外物理或工程验收。"
+        },
+        {
+          "before_source_line": 378,
+          "text": "逐档保存全部可行候选，再统一进行非支配筛选。"
+        },
+        {
+          "before_source_line": 390,
+          "text": "保留筛选前的完整分母，便于追查重复及被支配样本。"
+        },
+        {
+          "before_source_line": 400,
+          "text": "减排差须超过数值容差，避免用近零分母放大比值。"
+        }
+      ],
+      "explanation_latex": "扫描采用同一基础配置和时序，每个碳帽重新建立模型，防止上一档约束残留。先清除碳价与原碳帽，再由两个端点确定采样范围；每个候选必须同时通过数值检查和实际碳帽检查。非支配筛选在已取得的可行点中进行，完整采样记录保留在结果属性中，方便核对被去重或支配的点。",
+      "readout_latex": "相邻费用差除以减排量得到边际减排费用；推荐折中点由归一化理想点距离选取。投资是否重新优化仍取决于传入配置是否已冻结。",
+      "full_file_sha256": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+      "original_line_count": 61,
+      "comment_line_count": 16,
+      "annotated_line_count": 77,
+      "original_excerpt_sha256": "5969e091056b8ba59b24cbe995e9138f20b6fa9bbb72b9472d667a4f323224d8",
+      "annotated_excerpt_sha256": "02b366f4de0fc9554275cd498e1fd1120de8f2893db62970feb601df0614ad7b",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/10_experiments.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/10_experiments.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/10_experiments.line_map.json",
+      "listing": "code_listings_r8p_a4/10_experiments.tex"
+    },
+    {
+      "number": 11,
+      "title": "代表日硬能量约束可行性诊断",
+      "file": "representative_adoption.py",
+      "start_line": 48,
+      "end_line": 94,
+      "description": "完整硬约束诊断函数，同时要求能量等式、代表天数守恒和极端日下界；与软权重候选生成分别登记。",
+      "inputs": "代表日能量矩阵M、目标b、原权重和权重下界（天）。",
+      "outputs": "经过独立复算的可行权重见证，或明确的不可行／求解失败状态。",
+      "branch": "representative_hard_weight_diagnostic",
+      "notes": [
+        {
+          "before_source_line": 48,
+          "text": "诊断Mw=b是否可行，不是scenarios.py中的软能量拟合SLSQP。"
+        },
+        {
+          "before_source_line": 59,
+          "text": "矩阵列对应代表日，目标为声明能量口径；权重单位为天。"
+        },
+        {
+          "before_source_line": 63,
+          "text": "这项诊断不修改来源数据，也不证明工程运行可行。"
+        },
+        {
+          "before_source_line": 68,
+          "text": "所有下界之和超过总天数即可判不可行，不需优化求解。"
+        },
+        {
+          "before_source_line": 70,
+          "text": "先按能量量级缩放，并用w=lower+z转成非负变量。"
+        },
+        {
+          "before_source_line": 75,
+          "text": "零目标线性规划只寻找可行见证，能量与总天数均为等式。"
+        },
+        {
+          "before_source_line": 78,
+          "text": "仅明确的LP不可行状态作为不可行结论。"
+        },
+        {
+          "before_source_line": 80,
+          "text": "求解或数值失败单独登记，不冒称数学上已经证伪。"
+        },
+        {
+          "before_source_line": 82,
+          "text": "恢复原单位权重并重新计算能量、天数与下界残差。"
+        },
+        {
+          "before_source_line": 87,
+          "text": "见证必须通过独立有限性和残差检查；通过也不自动代表已采用。"
+        },
+        {
+          "before_source_line": 73,
+          "text": "最后一行是总天数守恒，与每列负荷能量等式共同约束。"
+        },
+        {
+          "before_source_line": 83,
+          "text": "见证恢复后使用原矩阵复算，不只信任缩放后的求解值。"
+        }
+      ],
+      "explanation_latex": "这段代码检查能否同时满足多列能量等式、代表天数守恒和各代表日下界。通过$w=\\ell+z$把下界移入右端，求解非负变量$z$的零目标线性规划；能量行按目标量级缩放，以减小数值量级差异。取得候选后恢复原始权重，并在原单位下重新核对能量、总天数和下界。",
+      "readout_latex": "该函数给出可行权重见证，不负责最小化分布距离。其\\path{status}区分可行、不可行及求解失败；最小$W_1$的具体优化实现见后面的新增代码。",
+      "full_file_sha256": "76e092df3affb27614f739d02f7c4ae8b3a76883c681ee9af4db6ddcce1be85f",
+      "original_line_count": 47,
+      "comment_line_count": 12,
+      "annotated_line_count": 59,
+      "original_excerpt_sha256": "a2bb2903f87e57f75a7e60ad35a641777c8e02f123f2d25b905523ec1fa032c3",
+      "annotated_excerpt_sha256": "a43efa5f5c1886b4ae86ab87bbe26e3abf22fd1d78a828745176aac30084f6e0",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/11_representative_adoption.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/11_representative_adoption.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/11_representative_adoption.line_map.json",
+      "listing": "code_listings_r8p_a4/11_representative_adoption.tex"
+    },
+    {
+      "number": 12,
+      "title": "有限模式管网反馈与失败处理",
+      "file": "network_feedback.py",
+      "start_line": 440,
+      "end_line": 481,
+      "description": "完整有限目录反馈函数。适用域为登记的独立泵送星形支路；发现不合格模式后加禁用约束并重求。",
+      "inputs": "支持范围内的配置、连续时序、求解预算、轮数上限和可选逐轮记录回调。",
+      "outputs": "通过硬校核的候选及逐轮历史；失败则随异常保留原因和已有割约束。",
+      "branch": "finite_catalog_network_feedback",
+      "notes": [
+        {
+          "before_source_line": 440,
+          "text": "此接口不是三城聚合网络的通用连续非线性水力优化器。"
+        },
+        {
+          "before_source_line": 442,
+          "text": "模式目录和适用配置在构模入口先验证，禁用模式必须来自该有限集合。"
+        },
+        {
+          "before_source_line": 443,
+          "text": "默认轮数有限；不会承诺任意网络的全局收敛。"
+        },
+        {
+          "before_source_line": 445,
+          "text": "拒绝无效轮数、时间预算和间隙。"
+        },
+        {
+          "before_source_line": 449,
+          "text": "逐轮历史及已排除模式单独记录，便于辨识失败发生在哪一步。"
+        },
+        {
+          "before_source_line": 450,
+          "text": "每轮在已有割约束下求解，然后接受独立模式校核。"
+        },
+        {
+          "before_source_line": 452,
+          "text": "费用最小可行候选仍需通过温度、水力及服务范围检查。"
+        },
+        {
+          "before_source_line": 454,
+          "text": "求解或审计异常保存至history，再抛出FeedbackFailure。"
+        },
+        {
+          "before_source_line": 461,
+          "text": "invalid_modes来自独立硬校核，不由软惩罚值直接替代。"
+        },
+        {
+          "before_source_line": 470,
+          "text": "全部校核通过才返回；最优性范围限于有限目录和登记容差。"
+        },
+        {
+          "before_source_line": 475,
+          "text": "没有可新增禁用模式时明确失败，避免重复无效求解。"
+        },
+        {
+          "before_source_line": 477,
+          "text": "对每个时段将不合格模式的选择变量置零，再重新求解。"
+        },
+        {
+          "before_source_line": 481,
+          "text": "轮数耗尽仍未验收则失败，不把最后一轮写成合格方案。"
+        },
+        {
+          "before_source_line": 480,
+          "text": "登记已排除集合，下轮只对首次发现的不合格模式加割。"
+        },
+        {
+          "before_source_line": 458,
+          "text": "回调可逐轮落盘，让拒绝方案与失败原因可追溯。"
+        }
+      ],
+      "explanation_latex": "反馈循环在登记的有限模式目录内工作：求得候选后，独立检查其水力、温度与服务条件；将新增不合格模式在全部时段的选择变量固定为零，再求下一轮。已排除模式集合防止重复加割；通过、异常、无法产生新割和轮数耗尽都有独立出口，逐轮回调可保存问题定位所需的中间结果。",
+      "readout_latex": "比较每轮\\path{audit}、\\path{added_mode_cuts}与\\path{previous_cuts}，确认新割有物理依据。最终接收条件是硬校核通过，软惩罚只参与目标。",
+      "full_file_sha256": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161",
+      "original_line_count": 42,
+      "comment_line_count": 15,
+      "annotated_line_count": 57,
+      "original_excerpt_sha256": "297bb840ac5457eae76f9cbad1658dacf4b6a9a97a153f886fa3e126427a47a4",
+      "annotated_excerpt_sha256": "2577baa16f9b08dd5bd686e7b5e6ae7c0e0dfc31011b133822c6e7283f9fc197",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/12_network_feedback.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/12_network_feedback.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/12_network_feedback.line_map.json",
+      "listing": "code_listings_r8p_a4/12_network_feedback.tex"
+    },
+    {
+      "number": 13,
+      "title": "热源出力的上游余热共用约束",
+      "file": "physical_extensions.py",
+      "start_line": 25,
+      "end_line": 79,
+      "description": "完整的共享上游热资源装配函数。把直供换热器与热泵已有出力变量共同映射到同一资源池，约束逐时实际取热，而不是让每台设备分别重复使用全部余热。",
+      "inputs": "明确登记的资源池名称、成员热源、可用热功率常量或时序列（kW）、传热效率（无量纲），以及热源逐温位出力变量与逐时COP。",
+      "outputs": "共享资源取热变量\\path{shared_heat_resource_use}（kW）、等式连接及可用功率上界；资源行同时登记以供结果核验。",
+      "branch": "optional_shared_heat_resources",
+      "notes": [
+        {
+          "before_source_line": 25,
+          "text": "本函数使用已注册热源出力，不新增热源设备。"
+        },
+        {
+          "before_source_line": 33,
+          "text": "资源行保留可用上界、出力系数与取热变量。"
+        },
+        {
+          "before_source_line": 35,
+          "text": "只有配置登记的资源池才会增加这组约束。"
+        },
+        {
+          "before_source_line": 38,
+          "text": "资源名称和成员须唯一，避免资源账本重复。"
+        },
+        {
+          "before_source_line": 41,
+          "text": "同一热源不可分属多个资源池而重复计量。"
+        },
+        {
+          "before_source_line": 44,
+          "text": "可用热功率以kW登记，常量与时序二选一。"
+        },
+        {
+          "before_source_line": 48,
+          "text": "效率无量纲，输出热量折回上游时需除以它。"
+        },
+        {
+          "before_source_line": 53,
+          "text": "此资源口径仅接受直供换热器与供热热泵。"
+        },
+        {
+          "before_source_line": 55,
+          "text": "制冷或排热设备须另建资源守恒，不能套用。"
+        },
+        {
+          "before_source_line": 66,
+          "text": "按温位汇总同一成员已有的供热功率变量。"
+        },
+        {
+          "before_source_line": 69,
+          "text": "直供取热比例为1；热泵需扣除压缩机电功。"
+        },
+        {
+          "before_source_line": 74,
+          "text": "热泵上游取热为供热功率乘以1减COP倒数。"
+        },
+        {
+          "before_source_line": 75,
+          "text": "再除传热效率，得到每kW供热对应的上游取热。"
+        },
+        {
+          "before_source_line": 76,
+          "text": "取热变量上界为逐时可用资源，等式绑定总取热。"
+        }
+      ],
+      "explanation_latex": "本函数把正文热源出力$Q_{s,g,t}$（kW）折算为资源池上游取热。直供项为$Q/\\eta$，热泵项为$Q(1-1/\\mathrm{COP})/\\eta$；$\\eta$为无量纲传热效率，压缩机电功不算余热。程序用取热变量与全部成员、全部温位的折算和建立等式，再以逐时可用热功率限制其上界，因此换热器与热泵不能重复占用同一资源。该约束衔接已有热源出力和节点热平衡，仅在配置登记资源池时启用。",
+      "readout_latex": "核验\\path{shared_heat_resource_use}的逐时kW值及资源行登记的可用上界、COP和折算系数；适用于明确登记的直供与供热热泵共享资源池。制冷、排热支路不属于本口径。",
+      "full_file_sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "original_line_count": 55,
+      "comment_line_count": 14,
+      "annotated_line_count": 69,
+      "original_excerpt_sha256": "13b25d59dd0d7f128e9c3b1ad9ee17986cdb6039c627ebe2622d52beafa148bd",
+      "annotated_excerpt_sha256": "3519ffd62b66ac6284c071e470ee40eab8e33a70ad82fabacad1dfad3a840a97",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/13_physical_extensions.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/13_physical_extensions.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/13_physical_extensions.line_map.json",
+      "listing": "code_listings_r8p_a4/13_physical_extensions.tex"
+    },
+    {
+      "number": 14,
+      "title": "逐楼RC状态、舒适边界与节点交付量",
+      "file": "building_thermal.py",
+      "start_line": 463,
+      "end_line": 525,
+      "description": "完整的逐楼1R1C约束装配函数，与前述精确离散系数函数互补。室温变量直接承载逐时舒适上下界，实际冷热交付量进入热状态递推，并按节点温位聚合后交给主模型平衡。",
+      "inputs": "通过校验的逐楼热损失系数、有效热容、离散系数a和b、室外温度与得热时序、舒适温度及冷热功率上界、分组边界和互斥模式。",
+      "outputs": "逐楼末态室温（摄氏度）、实际供热和制冷功率（kW）、可选冷热模式二元变量、节点交付量映射以及RC递推等式与末态边界。",
+      "branch": "optional_building_thermal_RC",
+      "notes": [
+        {
+          "before_source_line": 463,
+          "text": "逐楼热状态是独立RC分支，节点平衡须消费其交付量。"
+        },
+        {
+          "before_source_line": 470,
+          "text": "先校验逐楼输入与分组边界，未启用则返回空。"
+        },
+        {
+          "before_source_line": 476,
+          "text": "拒绝重复注册，避免同一建筑出现两套状态变量。"
+        },
+        {
+          "before_source_line": 486,
+          "text": "室温单位为摄氏度，逐时舒适区间直接作为变量界。"
+        },
+        {
+          "before_source_line": 487,
+          "text": "冷热交付均为非负kW，各自受末端功率上界限制。"
+        },
+        {
+          "before_source_line": 489,
+          "text": "按建筑所属节点和供热温位收集实际交付功率。"
+        },
+        {
+          "before_source_line": 491,
+          "text": "仅互斥模式且冷热均可用时引入二元开关。"
+        },
+        {
+          "before_source_line": 493,
+          "text": "模式为1允许供热；模式为0允许制冷。"
+        },
+        {
+          "before_source_line": 495,
+          "text": "状态递推只连接所属边界组，避免跨场景串联。"
+        },
+        {
+          "before_source_line": 499,
+          "text": "a无量纲，b为K每kW；供热升温而制冷降温。"
+        },
+        {
+          "before_source_line": 500,
+          "text": "H乘室外温度与内、太阳得热合成递推常量项。"
+        },
+        {
+          "before_source_line": 502,
+          "text": "固定组首时段把初始室温乘a移到等式右端。"
+        },
+        {
+          "before_source_line": 507,
+          "text": "循环组接组内前驱，单时段同索引须累加系数。"
+        },
+        {
+          "before_source_line": 509,
+          "text": "固定边界另约束末态室温，不强制循环相等。"
+        },
+        {
+          "before_source_line": 513,
+          "text": "多楼以等式汇总交付量，单楼直接复用变量索引。"
+        }
+      ],
+      "explanation_latex": "逐楼末态室温$T_t$（摄氏度）受逐时舒适上下界约束，供热$Q_h$与制冷$Q_c$均为kW。以此前计算的$a$（无量纲）、$b$（K/kW）装配$T_t-aT_{t-1}-bQ_h+bQ_c=b(HT_{\\mathrm{out}}+G)$；$H$为kW/K，$G$为内得热与太阳得热之和。固定首态移入右端，循环组连接组内前驱，固定末态另受温度界约束。聚合交付量接入正文节点平衡；冷热互斥二元变量仅按配置启用。",
+      "readout_latex": "读取逐楼轨迹的\\path{temperature_end_c}、实际冷热交付与RC残差，并结合舒适摘要的低温、超温及末态偏差核验；对应登记的RC建筑与边界组，不能用聚合平均温度替代逐楼边界。",
+      "full_file_sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "original_line_count": 63,
+      "comment_line_count": 15,
+      "annotated_line_count": 78,
+      "original_excerpt_sha256": "2c0c086d0da0dc0372ce311ab55739cd3b5f56ee5a596cac16d9255ff70379be",
+      "annotated_excerpt_sha256": "c6b03216843d0d563406b30cdca7c6cca32f02e244b2c725c6d31d1f055ac9d6",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/14_building_thermal.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/14_building_thermal.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/14_building_thermal.line_map.json",
+      "listing": "code_listings_r8p_a4/14_building_thermal.tex"
+    },
+    {
+      "number": 15,
+      "title": "逐时配电接入容量及可靠容量方法入口",
+      "file": "model.py",
+      "start_line": 2030,
+      "end_line": 2089,
+      "description": "build方法内部的连续上下文片段。完整展示逐时电网接入容量、可用率及微电网净负荷约束，并保留后续可靠容量方法的参数准备和合法性检查；两种可靠容量方法的实际装配位于后续源码。",
+      "inputs": "已注册的热泵、电锅炉、循环泵等电负荷系数，既有和新增接入容量上限（kW）、增容造价（元/kW）、备用裕度、可用率时序，以及可选微电网变量。",
+      "outputs": "可选新增接入容量及投资账项、逐时净电负荷容量上界；同时准备可靠本地电源容量行并校验\\path{firm_capacity_method}的方法身份。",
+      "branch": "optional_grid_connection_build_context",
+      "notes": [
+        {
+          "before_source_line": 2033,
+          "text": "以下依赖build内既有变量，配置接入模块才装配。"
+        },
+        {
+          "before_source_line": 2035,
+          "text": "既有和新增接入容量均为kW，新增量有投资上界。"
+        },
+        {
+          "before_source_line": 2038,
+          "text": "不允许增容时仅使用既有容量，不建立新增变量。"
+        },
+        {
+          "before_source_line": 2041,
+          "text": "增容造价按元每kW进入既有投资年化账本。"
+        },
+        {
+          "before_source_line": 2044,
+          "text": "裕度无量纲，以1加备用比例放大净电负荷。"
+        },
+        {
+          "before_source_line": 2047,
+          "text": "若登记可用率时序，则逐时截取到0至1。"
+        },
+        {
+          "before_source_line": 2053,
+          "text": "读取统一电负荷行，热泵和泵电耗不另算一遍。"
+        },
+        {
+          "before_source_line": 2054,
+          "text": "微电网分支仅在配置启用时修正接入净负荷。"
+        },
+        {
+          "before_source_line": 2056,
+          "text": "储电充电增加负荷，本地发电与放电减少负荷。"
+        },
+        {
+          "before_source_line": 2062,
+          "text": "新增容量移到左端且乘可用率，保持线性上界。"
+        },
+        {
+          "before_source_line": 2064,
+          "text": "净负荷须小于可用率乘既有加新增接入容量。"
+        },
+        {
+          "before_source_line": 2073,
+          "text": "以下准备静态可靠容量检查；同时率与裕度不同。"
+        },
+        {
+          "before_source_line": 2077,
+          "text": "本地可再生可靠容量按登记出力因子折算。"
+        },
+        {
+          "before_source_line": 2084,
+          "text": "选择可靠容量方法；本片段尚未装配该方法约束。"
+        }
+      ],
+      "explanation_latex": "程序读取统一电负荷登记表，将热泵、电锅炉和泵耗等形成$P_t$（kW）。令备用倍率$m=1+r$、接入可用率$\\alpha_t\\in[0,1]$，逐时约束为$m(P_t+P_{\\mathrm{ch}}-P_{\\mathrm{local}}-P_{\\mathrm{dis}})\\le\\alpha_t(K_0+K_{\\mathrm{new}})$，微电网项仅在其启用时加入。新增容量$K_{\\mathrm{new}}$（kW）同时进入投资账本，使正文供热方案受配电接入限制。本节末部只准备可靠容量方法入口，后续静态分支另行装配。",
+      "readout_latex": "核验逐时电负荷行、接入可用率和\\path{grid_connection_capacity_kw}，并记录\\path{firm_grid_capacity_method}；本节证明接入约束的装配方式，可靠容量核验应追踪后续实际选择的分支。",
+      "full_file_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "original_line_count": 60,
+      "comment_line_count": 14,
+      "annotated_line_count": 74,
+      "original_excerpt_sha256": "18a9d5553bb67213ec373c5fb5bd85edea9761d026700bd53659ec0ff4c15760",
+      "annotated_excerpt_sha256": "04cbf425a3dfe6ed4a3e765084985d2a2df5ae4d465438a19a9bc655a434e4c9",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/15_model.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/15_model.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/15_model.line_map.json",
+      "listing": "code_listings_r8p_a4/15_model.tex"
+    },
+    {
+      "number": 16,
+      "title": "硬能量守恒下的最小一维W1权重线性规划",
+      "file": "hard_weight_calibration.py",
+      "start_line": 13,
+      "end_line": 97,
+      "description": "完整展示实际代表日保持不变、仅优化权重的主算法；以能量和总天数为硬等式，在权重下界内最小化归一化的一维经验分布W1，并独立重算残差。",
+      "inputs": "完整等间隔实测日序列、已选实际代表日矩阵、原天数权重、逐日权重下界与正数数值容差；代表日值与观测值须同量纲。",
+      "outputs": "通过独立复核的权重、归一化W1及原量纲W1、能量/天数/下界/目标残差；另明确返回不可行、零能量无定义或求解失败身份。",
+      "branch": "minimum_w1_energy_weights",
+      "notes": [
+        {
+          "before_source_line": 22,
+          "text": "只读入观测与固定代表日；优化对象是天数权重。"
+        },
+        {
+          "before_source_line": 28,
+          "text": "每行是一个实际代表日；观测须由完整同长日组成。"
+        },
+        {
+          "before_source_line": 36,
+          "text": "原权重总天数乘每日采样数须等于观测长度。"
+        },
+        {
+          "before_source_line": 39,
+          "text": "报告明确保留未验证工程运行的身份。"
+        },
+        {
+          "before_source_line": 44,
+          "text": "下界总和超过总天数时直接返回不可行。"
+        },
+        {
+          "before_source_line": 46,
+          "text": "零均值时归一化W1无定义，不能伪造零误差。"
+        },
+        {
+          "before_source_line": 49,
+          "text": "合并取值支撑点，将CDF差积分化为区间加权和。"
+        },
+        {
+          "before_source_line": 53,
+          "text": "每列给出一个代表日单位天数的CDF贡献。"
+        },
+        {
+          "before_source_line": 56,
+          "text": "令权重等于下界加非负余量，显式保证逐日下界。"
+        },
+        {
+          "before_source_line": 57,
+          "text": "两行硬等式分别锁定总能量与总天数，并按量级缩放。"
+        },
+        {
+          "before_source_line": 61,
+          "text": "两组不等式让辅助量包住CDF误差的正负两侧。"
+        },
+        {
+          "before_source_line": 68,
+          "text": "区间宽度除以实测均值是绝对误差辅助量的目标系数。"
+        },
+        {
+          "before_source_line": 74,
+          "text": "只有明确的LP不可行状态才登记为不可行。"
+        },
+        {
+          "before_source_line": 78,
+          "text": "恢复原权重后按原量纲独立重算守恒与CDF目标。"
+        },
+        {
+          "before_source_line": 84,
+          "text": "有限性和四类残差全部通过才交付权重。"
+        }
+      ],
+      "explanation_latex": "设实测经验分布为$F$，第$j$个固定代表日的CDF贡献为$C_{ij}$，原总天数为$W$。代码用$w=\\ell+z$把下界转为$z\\ge0$，同时硬性保持加权总能量与总天数；两组不等式使辅助变量包住各支撑区间的CDF差，目标按区间宽度和实测均值加权，得到最小归一化一维W1。其优势是守恒条件不会被拟合目标让步，数据与代表日也不被改写；所得最优权重仍须独立重算残差。",
+      "readout_latex": "先查\\path{status=ok}及权重非空，再核对能量、天数、下界与目标残差均通过，并保存求解器状态和全部残差供后续复核。比较\\path{normalized_W1}衡量分布拟合；权重成功仅是固定代表日的统计匹配，时序和工程运行证据须另行查验。",
+      "full_file_sha256": "84ca3a20e6df111a8a67b3c00761e2938513c3e47105a495287d2e07da56b7f3",
+      "original_line_count": 85,
+      "comment_line_count": 15,
+      "annotated_line_count": 100,
+      "original_excerpt_sha256": "9aaad1e396d3c5a0b8a4a268cda4de96fccbc9058c36a2bb4296c4e24c411fa6",
+      "annotated_excerpt_sha256": "ce8c8d0e986c71a14d283e3863859ba57d099c171bb5beab7f2def76acd686e7",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/16_hard_weight_calibration.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/16_hard_weight_calibration.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/16_hard_weight_calibration.line_map.json",
+      "listing": "code_listings_r8p_a4/16_hard_weight_calibration.tex"
+    },
+    {
+      "number": 17,
+      "title": "热源启停三行紧凑凸包与容量关联爬坡",
+      "file": "model.py",
+      "start_line": 938,
+      "end_line": 1018,
+      "description": "连续展示可选机组组合的变量、开停出力边界、三行状态转换凸包和双向爬坡约束；开机状态为二元，启停事件保持连续而被相邻状态唯一确定。",
+      "inputs": "显式启用的机组组合配置、最大候选容量、既有容量和新增容量变量、最低出力比例、逐时热出力变量及已登记前驱。",
+      "outputs": "每时段一个二元开机状态、两个连续启停变量，以及出力、转换和爬坡线性约束；该段依赖build外层登记表与既有容量约束。",
+      "branch": "unit_commitment_three_row_transition_hull",
+      "notes": [
+        {
+          "before_source_line": 938,
+          "text": "仅显式启用且候选容量为正时装配此块。"
+        },
+        {
+          "before_source_line": 939,
+          "text": "读入最低出力比例与上下爬坡比例。"
+        },
+        {
+          "before_source_line": 944,
+          "text": "每时段只给开机状态添加整数身份。"
+        },
+        {
+          "before_source_line": 950,
+          "text": "启停事件为连续变量，相邻二元状态将其唯一锁定。"
+        },
+        {
+          "before_source_line": 955,
+          "text": "登记的热电联产最小电出力随开机状态生效。"
+        },
+        {
+          "before_source_line": 963,
+          "text": "启停费用按事件口径入账，避免按普通功率计费。"
+        },
+        {
+          "before_source_line": 970,
+          "text": "各温位热出力合计受开机状态与最大候选容量限制。"
+        },
+        {
+          "before_source_line": 974,
+          "text": "启用最低出力时，把新增容量系数接入线性下界。"
+        },
+        {
+          "before_source_line": 982,
+          "text": "前驱来自已登记时序边界，本段据此连接相邻状态。"
+        },
+        {
+          "before_source_line": 994,
+          "text": "转换等式为启动减停机等于当前开机减前驱开机。"
+        },
+        {
+          "before_source_line": 995,
+          "text": "累加同一索引系数，单时段循环的状态项正确抵消。"
+        },
+        {
+          "before_source_line": 997,
+          "text": "第一条和约束限制事件之和不超过两期开机之和。"
+        },
+        {
+          "before_source_line": 1000,
+          "text": "第二条和约束补上关机侧界，合计三行保留紧松弛。"
+        },
+        {
+          "before_source_line": 1004,
+          "text": "上爬坡关联装机容量；启动事件提供候选最大容量余量。"
+        },
+        {
+          "before_source_line": 1012,
+          "text": "下爬坡对称处理，停机事件提供相应变化余量。"
+        }
+      ],
+      "explanation_latex": "以$u_t$为二元开机状态，$s_t,d_t$为连续启停事件，三行约束为$s_t-d_t=u_t-u_{t-1}$、$s_t+d_t\\le u_t+u_{t-1}$及$s_t+d_t\\le2-u_t-u_{t-1}$。相邻状态确定后，事件唯一取零或一；两条和约束与转换等式共同蕴含四条逐项上界，保持同一紧松弛而每时段少两行，并省去两个事件整数变量，从而减少模型规模。热出力边界与容量关联爬坡接续装配，启动或停机时通过最大候选容量留出转换余量。",
+      "readout_latex": "解后检查启停转移残差与事件小数偏差，均须符合数值容差，再结合全模型约束审计确认出力与爬坡。统计二元状态数、连续事件数及事件总量，可核查变量压缩；不能只凭费用下降判断机组组合成立。",
+      "full_file_sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "original_line_count": 81,
+      "comment_line_count": 15,
+      "annotated_line_count": 96,
+      "original_excerpt_sha256": "84cc3c665e8b34ee93d0d606557cf4f4a42578de31d14d574c6cb77fc0d39de5",
+      "annotated_excerpt_sha256": "b1882d3a4844e87f8ba6bc2792b37acfaa64210940ee7b7d8c0ba54ae860348c",
+      "original_lines_exact": true,
+      "executable_tokens_equal": true,
+      "fragment_ast_parse": true,
+      "ast_equivalent": true,
+      "original_excerpt": "code_annotated_r8p_a4/17_model.original.py",
+      "annotated_excerpt": "code_annotated_r8p_a4/17_model.annotated.py",
+      "line_mapping": "code_annotated_r8p_a4/17_model.line_map.json",
+      "listing": "code_listings_r8p_a4/17_model.tex"
+    }
+  ]
+}

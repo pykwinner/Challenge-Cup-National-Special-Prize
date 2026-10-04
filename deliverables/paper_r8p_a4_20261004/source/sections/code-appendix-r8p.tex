@@ -1,0 +1,348 @@
+% !TeX root = ../main.tex
+\clearpage
+\section*{附录3\quad 核心代码（Python详编）}
+\phantomsection\label{appendix:code}
+\addcontentsline{toc}{section}{附录3：核心代码（Python详编）}
+
+本附录沿用原有12段代码的顺序，补入共享热资源、逐楼热状态、配电边界、硬约束权重及紧凑启停实现，共17段、1066行原代码和224行补充注释。代码均从随包R8O固定源码连续节选，按输入输出、实现思路、关键注释和结果核对展开；正文模型与算法结构保持原样。
+
+\textbf{阅读顺序。}第1段说明入口；第2--4段连接建筑、储热与节点热平衡；第5--6段完成稀疏求解及数值复核；第7--8段将规划资产交给连续供暖季运行；第9--12段说明多目标、权重诊断和管网反馈。新增第13--15段补齐跨模块的物理衔接，第16--17段展示权重优化与整数规模压缩的具体实现。
+
+显示行号从每段1开始并包含新增注释，索引给出原文件准确行号。\path{code_annotated_r8p_a4}内保存原样节选、注释版及逐行映射，\path{code_annotation_manifest_a4.json}记录来源和指纹。删除新增注释后，原代码行及可执行token一致；可以独立解析的片段另核对AST。代码排版沿用原有配色、字体与框线，上下文片段仍须在完整工程中调用。
+
+源码说明各接口的实现，实验是否执行及其结果以对应运行记录为准。代表日规划、固定投资复算、两阶段端点和独立碳帽扫描分别保留执行身份；下文在相关代码处说明开关和衔接条件。
+
+\begin{longtable}{@{}cL{0.34\linewidth}L{0.54\linewidth}@{}}
+\caption{详编代码来源与正文方法对应}\label{tab:code-index-a4}\\
+\toprule
+序号 & 文件与原行号 & 对应内容\\\midrule
+\endfirsthead
+\toprule 序号 & 文件与原行号 & 对应内容\\\midrule
+\endhead
+\bottomrule\endfoot
+1 & \path{unified_cli.py}，93--118 & 单次求解入口与导出\\
+2 & \path{building_thermal.py}，31--46 & 逐楼1R1C精确离散系数\\
+3 & \path{model.py}，1391--1471 & 储热容量、运行与状态边界\\
+4 & \path{model.py}，1603--1697 & 节点温位逐时热平衡\\
+5 & \path{linear.py}，177--205 & SciPy稀疏MILP求解接口\\
+6 & \path{linear.py}，40--105 & 独立数值与守恒残差复核\\
+7 & \path{experiments.py}，13--147 & 完整投资冻结与费用账本\\
+8 & \path{heating_season.py}，183--246 & 固定投资的连续供暖季复算\\
+9 & \path{model.py}，2829--2888 & 带主目标容差的两阶段端点\\
+10 & \path{experiments.py}，351--411 & 独立碳帽采样与非支配筛选\\
+11 & \path{representative_adoption.py}，48--94 & 代表日硬能量约束可行性诊断\\
+12 & \path{network_feedback.py}，440--481 & 有限模式管网反馈与失败处理\\
+13 & \path{physical_extensions.py}，25--79 & 热源出力的上游余热共用约束\\
+14 & \path{building_thermal.py}，463--525 & 逐楼RC状态、舒适边界与节点交付量\\
+15 & \path{model.py}，2030--2089 & 逐时配电接入容量及可靠容量方法入口\\
+16 & \path{hard_weight_calibration.py}，13--97 & 硬能量守恒下的最小一维W1权重线性规划\\
+17 & \path{model.py}，938--1018 & 热源启停三行紧凑凸包与容量关联爬坡\\
+\end{longtable}
+
+正文算法\ref{alg:season-workflow}对应规划与固定投资复算；算法\ref{alg:epsilon-workflow}对应独立碳帽接口。第16段补充的是代表日权重优化本体，第11段则是等式与下界能否同时成立的诊断，两者作用分开。
+
+\Needspace{12\baselineskip}
+\subsection*{1．单次求解入口与导出}
+主入口中没有政策路径时的单次求解分支；配置可以按需展开相关天气场景，随后统一求解和导出。
+
+\noindent\textbf{输入：}当前profile的配置路径、逐时输入路径、可选场景说明及求解预算。\par
+\noindent\textbf{输出：}投资、逐时运行、汇总指标与场景结果文件。该节选依赖外层profile循环。\par
+
+\noindent\textbf{实现思路。}该入口负责把配置、逐时输入和求解预算连接起来。需求列从节点配置取得，避免在场景展开时漏掉某一节点；随后将场景风险设置写入配置副本，再统一校验。\path{HeatPlanningModel}接收校验后的同一组输入，导出也使用模型实际采用的时序，因而输入、求解与结果文件可以一一对应。
+
+{\small 来源：\path{unified_cli.py}，原第93--118行；26行原代码、10行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/01_unified_cli.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}阅读结果时先检查场景文件是否提供，再核对导出的时序、求解状态及逐场景结果。单次入口的结果不能仅凭文件存在就视为已执行碳帽扫描。
+
+\Needspace{12\baselineskip}
+\subsection*{2．逐楼1R1C精确离散系数}
+独立逐楼热模型的完整系数函数。逐小时输入保持常值时，系数连接小时初末室温与交付冷热量。
+
+\noindent\textbf{输入：}热损失系数H（kW/K）、有效热容C（kWh/K）和步长（h）。\par
+\noindent\textbf{输出：}无量纲衰减系数a和温升系数b（K/kW）。函数不进行参数辨识。\par
+
+\noindent\textbf{实现思路。}热平衡微分方程在一个时段内采用分段常值外温与净热输入。代码计算$a=\exp(-H\Delta t/C)$和$b=(1-a)/H$，使下一时段室温可直接写成当前室温、外温和净热输入的线性组合。系数由输入参数预先计算，优化时只含状态和供热变量，既保留热惯性，又不引入决策变量之间的乘积。
+
+{\small 来源：\path{building_thermal.py}，原第31--46行；16行原代码、5行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/02_building_thermal.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}核对单位时，$H$为kW/K，$C$为kWh/K，$\Delta t$为h，故$b$为K/kW。逐楼状态如何接入模型及舒适边界，见后面的RC装配代码。
+
+\Needspace{12\baselineskip}
+\subsection*{3．储热容量、运行与状态边界}
+完整展示储热投资与逐时运行的这一连续代码块。既有与新增能量容量共同限制SOC和充放功率。
+
+\noindent\textbf{输入：}储热位置、容量（kWh）、功率能量比（1/h）、效率、自损失及边界模式。\par
+\noindent\textbf{输出：}容量、充热、放热、SOC变量和相应线性约束；严格互斥模式另含二元变量。\par
+
+\noindent\textbf{实现思路。}代码先建立新增储热容量，再用同一容量同时约束SOC与充放功率，避免仅满足能量容量却忽略设备功率。严格模式下，充、放热分别受一个二元状态控制；线性化常数取最大允许容量对应的功率。状态递推采用物理步长和充放效率，代表时段权重只参与相应统计，不在此重复放大能量转移。
+
+{\small 来源：\path{model.py}，原第1391--1471行；81行原代码、19行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/03_model.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}复核顺序为容量上界、充放互斥、逐时SOC递推、初末边界。循环边界在组内首尾相接，固定边界按初态比例起算并检查期末最低SOC。
+
+\Needspace{12\baselineskip}
+\subsection*{4．节点温位逐时热平衡}
+将热源、双向管流、储热、需求响应和交付负荷接入同一节点温位等式；不以总量平衡代替局部平衡。
+
+\noindent\textbf{输入：}已注册的出力与输配变量（kW）、管段效率、需求列及建筑模型覆盖范围。\par
+\noindent\textbf{输出：}每个节点、温位、时段的热量等式。其他变量注册及指标统计见完整文件。\par
+
+\noindent\textbf{实现思路。}节点平衡把每个变量在该节点的净作用写成稀疏系数行：本地产热及入流为正，出流与充热为负，到达端热流乘管段效率。储热、需求响应、计量和末端温位改造都在同一等式中登记。对启用逐楼RC的节点，需求由决策中的实际交付热量承接，避免再次加上同一建筑的固定负荷。
+
+{\small 来源：\path{model.py}，原第1603--1697行；95行原代码、14行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/04_model.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}检查时按节点、温位、小时逐行重算，重点核对管段首尾方向、入流效率及RC覆盖集合。全系统供需总量相等不能替代这些局部等式。
+
+\Needspace{12\baselineskip}
+\subsection*{5．SciPy稀疏MILP求解接口}
+完整求解方法，将已装配的稀疏约束、边界及整数类型传给SciPy的milp接口。
+
+\noindent\textbf{输入：}目标系数、约束矩阵、变量上下界、整数类型、间隙和时间预算。\par
+\noindent\textbf{输出：}求解器原始结果。是否存在可行解及独立审计由上层模型处理。\par
+
+\noindent\textbf{实现思路。}上层模型以变量索引装配目标系数、约束行和边界，本接口把它们整理为求解器接受的稀疏矩阵。整数类型与连续变量边界分别传入，因此容量、逐时运行和启停状态可以在同一个MILP中处理。矩阵缓存减少相同结构的重复整理，但费用或碳排目标切换时仍保存本次实际目标，供返回后的复核使用。
+
+{\small 来源：\path{linear.py}，原第177--205行；29行原代码、6行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/05_linear.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}原始求解结果还需由上层检查可行向量、状态、间隙及数值审计；达到时间上限与满足全部物理约束是两个不同检查项。
+
+\Needspace{12\baselineskip}
+\subsection*{6．独立数值与守恒残差复核}
+完整数值审计方法，从全解重新计算每一约束行、变量边界、整数性及本次目标。
+
+\noindent\textbf{输入：}求解向量、绝对容差和相对容差，以及已装配的原始矩阵。\par
+\noindent\textbf{输出：}残差、最差约束和变量、整数偏差、目标复算误差及通过标记。\par
+
+\noindent\textbf{实现思路。}审计不直接沿用求解器给出的目标和可行性标签，而是从返回向量重新计算$Ax$、变量界、整数偏差及目标值。约束行与变量边界残差采用绝对及缩放相对容差，整数偏差单独采用绝对容差，目标另按自身量级复算，避免不同检查项混用阈值。记录最差约束行与变量名，可将异常定位回具体模块。
+
+{\small 来源：\path{linear.py}，原第40--105行；66行原代码、12行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/06_linear.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}检查\path{numerical_audit_passed}时同时保留最大缩放残差及最差行号；缩放残差不大于1表示在登记容差内，不能据此替代数据来源检查。
+
+\Needspace{12\baselineskip}
+\subsection*{7．完整投资冻结与费用账本}
+完整冻结函数。容量投资转入存量，离散改造保存固定取值，并关闭后续新增或退役自由度。
+
+\noindent\textbf{输入：}原配置、规划投资表及规划费用摘要；默认不放宽可靠性。\par
+\noindent\textbf{输出：}深复制后的固定配置，包含所选资产年化费用账本及复算政策身份。\par
+
+\noindent\textbf{实现思路。}规划与运行复算通过资产冻结函数衔接。函数复制规划配置，将所选新增容量转为运行期存量，并扣除已退役容量；管径、末端改造等离散选择保留为固定取值，同时关闭再次投资的自由度。冻结覆盖热源、储热、管网、建筑侧改造、配电和燃料库存等登记资产，费用账本随所选资产保留。
+
+{\small 来源：\path{experiments.py}，原第13--147行；135行原代码、16行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/07_experiments.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}复算前同时核对资产清单与新增上限，不能只锁定热源。资本费用是否计入及是否重复计入，应结合保存的费用账本和服务期口径检查。
+
+\Needspace{12\baselineskip}
+\subsection*{8．固定投资的连续供暖季复算}
+完整服务期复算函数，求规划方案或接收既有固定方案，保留小时顺序，并汇总季节范围检查。
+
+\noindent\textbf{输入：}规划输入、连续时序、明确服务窗口、求解预算和可选已登记固定方案。\par
+\noindent\textbf{输出：}季节运行解、储热检查、服务期证书及期间汇总；不生成年度认证。\par
+
+\noindent\textbf{实现思路。}该函数先确定有时区的服务窗口，再准备规划方案或复用已冻结方案。完整时序作为运行输入，建筑与储热状态按其边界组传递。随后把资产冻结、供能能力、数值求解和储热校核合并为服务期证书，并额外加入窗口精确匹配检查，使“求解成功”和“覆盖声明供暖季”分别有可查记录。
+
+{\small 来源：\path{heating_season.py}，原第183--246行；64行原代码、15行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/08_heating_season.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}优先核对\path{exact_service_period}、\path{failed_gates}和\path{heating_season_certified}，再读费用与能量。期间指标使用\path{over_period}，按对应窗口解释。
+
+\Needspace{12\baselineskip}
+\subsection*{9．带主目标容差的两阶段端点}
+完整端点方法，先求主目标，再施加单侧主目标上界，求解次目标并保留两阶段证据。
+
+\noindent\textbf{输入：}主目标类型、绝对和相对容差，以及各阶段求解预算。\par
+\noindent\textbf{输出：}次目标阶段的解与两阶段状态。限时可行值不等于全局词典序最优。\par
+
+\noindent\textbf{实现思路。}两阶段端点与“先定投资、再算运行”用途不同。此处先求主目标，再把首阶段所得可行值加绝对、相对容差写成单侧上界，在该约束下优化次目标。排放表达含常量时，加入矩阵行的右端必须扣除常量；否则约束的实际范围会偏移。两阶段状态与预算分别保存，便于判断端点证据强度。
+
+{\small 来源：\path{model.py}，原第2829--2888行；60行原代码、11行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/09_model.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}联合查看主目标可行值、允许容差、下界和两次求解状态。次阶段失败要按失败处理；首阶段未取得全局证明时，不能只以次阶段目标值命名全局端点。
+
+\Needspace{12\baselineskip}
+\subsection*{10．独立碳帽采样与非支配筛选}
+完整独立扫描接口。清除原碳帽、碳价置零，再按碳上限逐档重新构模和检查。
+
+\noindent\textbf{输入：}同一配置和时间序列、至少两档采样；投资自由度由输入配置决定。\par
+\noindent\textbf{输出：}样本内非支配集合、全部采样证据、边际减排费用及归一化折中建议。\par
+
+\noindent\textbf{实现思路。}扫描采用同一基础配置和时序，每个碳帽重新建立模型，防止上一档约束残留。先清除碳价与原碳帽，再由两个端点确定采样范围；每个候选必须同时通过数值检查和实际碳帽检查。非支配筛选在已取得的可行点中进行，完整采样记录保留在结果属性中，方便核对被去重或支配的点。
+
+{\small 来源：\path{experiments.py}，原第351--411行；61行原代码、16行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/10_experiments.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}相邻费用差除以减排量得到边际减排费用；推荐折中点由归一化理想点距离选取。投资是否重新优化仍取决于传入配置是否已冻结。
+
+\Needspace{12\baselineskip}
+\subsection*{11．代表日硬能量约束可行性诊断}
+完整硬约束诊断函数，同时要求能量等式、代表天数守恒和极端日下界；与软权重候选生成分别登记。
+
+\noindent\textbf{输入：}代表日能量矩阵M、目标b、原权重和权重下界（天）。\par
+\noindent\textbf{输出：}经过独立复算的可行权重见证，或明确的不可行／求解失败状态。\par
+
+\noindent\textbf{实现思路。}这段代码检查能否同时满足多列能量等式、代表天数守恒和各代表日下界。通过$w=\ell+z$把下界移入右端，求解非负变量$z$的零目标线性规划；能量行按目标量级缩放，以减小数值量级差异。取得候选后恢复原始权重，并在原单位下重新核对能量、总天数和下界。
+
+{\small 来源：\path{representative_adoption.py}，原第48--94行；47行原代码、12行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/11_representative_adoption.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}该函数给出可行权重见证，不负责最小化分布距离。其\path{status}区分可行、不可行及求解失败；最小$W_1$的具体优化实现见后面的新增代码。
+
+\Needspace{12\baselineskip}
+\subsection*{12．有限模式管网反馈与失败处理}
+完整有限目录反馈函数。适用域为登记的独立泵送星形支路；发现不合格模式后加禁用约束并重求。
+
+\noindent\textbf{输入：}支持范围内的配置、连续时序、求解预算、轮数上限和可选逐轮记录回调。\par
+\noindent\textbf{输出：}通过硬校核的候选及逐轮历史；失败则随异常保留原因和已有割约束。\par
+
+\noindent\textbf{实现思路。}反馈循环在登记的有限模式目录内工作：求得候选后，独立检查其水力、温度与服务条件；将新增不合格模式在全部时段的选择变量固定为零，再求下一轮。已排除模式集合防止重复加割；通过、异常、无法产生新割和轮数耗尽都有独立出口，逐轮回调可保存问题定位所需的中间结果。
+
+{\small 来源：\path{network_feedback.py}，原第440--481行；42行原代码、15行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/12_network_feedback.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}比较每轮\path{audit}、\path{added_mode_cuts}与\path{previous_cuts}，确认新割有物理依据。最终接收条件是硬校核通过，软惩罚只参与目标。
+
+\Needspace{12\baselineskip}
+\subsection*{13．热源出力的上游余热共用约束}
+完整的共享上游热资源装配函数。把直供换热器与热泵已有出力变量共同映射到同一资源池，约束逐时实际取热，而不是让每台设备分别重复使用全部余热。
+
+\noindent\textbf{输入：}明确登记的资源池名称、成员热源、可用热功率常量或时序列（kW）、传热效率（无量纲），以及热源逐温位出力变量与逐时COP。\par
+\noindent\textbf{输出：}共享资源取热变量\path{shared_heat_resource_use}（kW）、等式连接及可用功率上界；资源行同时登记以供结果核验。\par
+
+\noindent\textbf{实现思路。}本函数把正文热源出力$Q_{s,g,t}$（kW）折算为资源池上游取热。直供项为$Q/\eta$，热泵项为$Q(1-1/\mathrm{COP})/\eta$；$\eta$为无量纲传热效率，压缩机电功不算余热。程序用取热变量与全部成员、全部温位的折算和建立等式，再以逐时可用热功率限制其上界，因此换热器与热泵不能重复占用同一资源。该约束衔接已有热源出力和节点热平衡，仅在配置登记资源池时启用。
+
+{\small 来源：\path{physical_extensions.py}，原第25--79行；55行原代码、14行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/13_physical_extensions.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}核验\path{shared_heat_resource_use}的逐时kW值及资源行登记的可用上界、COP和折算系数；适用于明确登记的直供与供热热泵共享资源池。制冷、排热支路不属于本口径。
+
+\Needspace{12\baselineskip}
+\subsection*{14．逐楼RC状态、舒适边界与节点交付量}
+完整的逐楼1R1C约束装配函数，与前述精确离散系数函数互补。室温变量直接承载逐时舒适上下界，实际冷热交付量进入热状态递推，并按节点温位聚合后交给主模型平衡。
+
+\noindent\textbf{输入：}通过校验的逐楼热损失系数、有效热容、离散系数a和b、室外温度与得热时序、舒适温度及冷热功率上界、分组边界和互斥模式。\par
+\noindent\textbf{输出：}逐楼末态室温（摄氏度）、实际供热和制冷功率（kW）、可选冷热模式二元变量、节点交付量映射以及RC递推等式与末态边界。\par
+
+\noindent\textbf{实现思路。}逐楼末态室温$T_t$（摄氏度）受逐时舒适上下界约束，供热$Q_h$与制冷$Q_c$均为kW。以此前计算的$a$（无量纲）、$b$（K/kW）装配$T_t-aT_{t-1}-bQ_h+bQ_c=b(HT_{\mathrm{out}}+G)$；$H$为kW/K，$G$为内得热与太阳得热之和。固定首态移入右端，循环组连接组内前驱，固定末态另受温度界约束。聚合交付量接入正文节点平衡；冷热互斥二元变量仅按配置启用。
+
+{\small 来源：\path{building_thermal.py}，原第463--525行；63行原代码、15行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/14_building_thermal.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}读取逐楼轨迹的\path{temperature_end_c}、实际冷热交付与RC残差，并结合舒适摘要的低温、超温及末态偏差核验；对应登记的RC建筑与边界组，不能用聚合平均温度替代逐楼边界。
+
+\Needspace{12\baselineskip}
+\subsection*{15．逐时配电接入容量及可靠容量方法入口}
+build方法内部的连续上下文片段。完整展示逐时电网接入容量、可用率及微电网净负荷约束，并保留后续可靠容量方法的参数准备和合法性检查；两种可靠容量方法的实际装配位于后续源码。
+
+\noindent\textbf{输入：}已注册的热泵、电锅炉、循环泵等电负荷系数，既有和新增接入容量上限（kW）、增容造价（元/kW）、备用裕度、可用率时序，以及可选微电网变量。\par
+\noindent\textbf{输出：}可选新增接入容量及投资账项、逐时净电负荷容量上界；同时准备可靠本地电源容量行并校验\path{firm_capacity_method}的方法身份。\par
+
+\noindent\textbf{实现思路。}程序读取统一电负荷登记表，将热泵、电锅炉和泵耗等形成$P_t$（kW）。令备用倍率$m=1+r$、接入可用率$\alpha_t\in[0,1]$，逐时约束为$m(P_t+P_{\mathrm{ch}}-P_{\mathrm{local}}-P_{\mathrm{dis}})\le\alpha_t(K_0+K_{\mathrm{new}})$，微电网项仅在其启用时加入。新增容量$K_{\mathrm{new}}$（kW）同时进入投资账本，使正文供热方案受配电接入限制。本节末部只准备可靠容量方法入口，后续静态分支另行装配。
+
+{\small 来源：\path{model.py}，原第2030--2089行；60行原代码、14行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/15_model.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}核验逐时电负荷行、接入可用率和\path{grid_connection_capacity_kw}，并记录\path{firm_grid_capacity_method}；本节证明接入约束的装配方式，可靠容量核验应追踪后续实际选择的分支。
+
+\Needspace{12\baselineskip}
+\subsection*{16．硬能量守恒下的最小一维W1权重线性规划}
+完整展示实际代表日保持不变、仅优化权重的主算法；以能量和总天数为硬等式，在权重下界内最小化归一化的一维经验分布W1，并独立重算残差。
+
+\noindent\textbf{输入：}完整等间隔实测日序列、已选实际代表日矩阵、原天数权重、逐日权重下界与正数数值容差；代表日值与观测值须同量纲。\par
+\noindent\textbf{输出：}通过独立复核的权重、归一化W1及原量纲W1、能量/天数/下界/目标残差；另明确返回不可行、零能量无定义或求解失败身份。\par
+
+\noindent\textbf{实现思路。}设实测经验分布为$F$，第$j$个固定代表日的CDF贡献为$C_{ij}$，原总天数为$W$。代码用$w=\ell+z$把下界转为$z\ge0$，同时硬性保持加权总能量与总天数；两组不等式使辅助变量包住各支撑区间的CDF差，目标按区间宽度和实测均值加权，得到最小归一化一维W1。其优势是守恒条件不会被拟合目标让步，数据与代表日也不被改写；所得最优权重仍须独立重算残差。
+
+{\small 来源：\path{hard_weight_calibration.py}，原第13--97行；85行原代码、15行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/16_hard_weight_calibration.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}先查\path{status=ok}及权重非空，再核对能量、天数、下界与目标残差均通过，并保存求解器状态和全部残差供后续复核。比较\path{normalized_W1}衡量分布拟合；权重成功仅是固定代表日的统计匹配，时序和工程运行证据须另行查验。
+
+\Needspace{12\baselineskip}
+\subsection*{17．热源启停三行紧凑凸包与容量关联爬坡}
+连续展示可选机组组合的变量、开停出力边界、三行状态转换凸包和双向爬坡约束；开机状态为二元，启停事件保持连续而被相邻状态唯一确定。
+
+\noindent\textbf{输入：}显式启用的机组组合配置、最大候选容量、既有容量和新增容量变量、最低出力比例、逐时热出力变量及已登记前驱。\par
+\noindent\textbf{输出：}每时段一个二元开机状态、两个连续启停变量，以及出力、转换和爬坡线性约束；该段依赖build外层登记表与既有容量约束。\par
+
+\noindent\textbf{实现思路。}以$u_t$为二元开机状态，$s_t,d_t$为连续启停事件，三行约束为$s_t-d_t=u_t-u_{t-1}$、$s_t+d_t\le u_t+u_{t-1}$及$s_t+d_t\le2-u_t-u_{t-1}$。相邻状态确定后，事件唯一取零或一；两条和约束与转换等式共同蕴含四条逐项上界，保持同一紧松弛而每时段少两行，并省去两个事件整数变量，从而减少模型规模。热出力边界与容量关联爬坡接续装配，启动或停机时通过最大候选容量留出转换余量。
+
+{\small 来源：\path{model.py}，原第938--1018行；81行原代码、15行补充注释。}\par
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings_r8p_a4/17_model.tex}
+\endgroup
+
+\noindent\textbf{结果核对。}解后检查启停转移残差与事件小数偏差，均须符合数值容差，再结合全模型约束审计确认出力与爬坡。统计二元状态数、连续事件数及事件总量，可核查变量压缩；不能只凭费用下降判断机组组合成立。

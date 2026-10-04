@@ -1,0 +1,98 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{仅显式启用且候选容量为正时装配此块。}}
+\PYG{k}{if} \PYG{n}{source}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{unit\PYGZus{}commitment}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{k+kc}{False}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{maximum\PYGZus{}capacity} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{读入最低出力比例与上下爬坡比例。}}
+    \PYG{n}{min\PYGZus{}fraction} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{source}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{minimum\PYGZus{}output\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{ramp\PYGZus{}up} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{source}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ramp\PYGZus{}up\PYGZus{}fraction\PYGZus{}per\PYGZus{}hour}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{ramp\PYGZus{}down} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{source}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ramp\PYGZus{}down\PYGZus{}fraction\PYGZus{}per\PYGZus{}hour}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{cap\PYGZus{}idx} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{times}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{每时段只给开机状态添加整数身份。}}
+        \PYG{n}{on} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}on[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{s\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{integer}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} Startup and shutdown are exact transition indicators once}
+        \PYG{c+c1}{\PYGZsh{} the adjacent on/off states are binary.  Keeping these two}
+        \PYG{c+c1}{\PYGZsh{} auxiliaries continuous removes two thirds of the unit\PYGZhy{}}
+        \PYG{c+c1}{\PYGZsh{} commitment integer variables without relaxing the model;}
+        \PYG{c+c1}{\PYGZsh{} the linking constraints below uniquely force them to 0/1.}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{启停事件为连续变量，相邻二元状态将其唯一锁定。}}
+        \PYG{n}{startup} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}startup[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{s\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+        \PYG{n}{shutdown} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}shutdown[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{s\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}on}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{on}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}startup}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{startup}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}shutdown}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{shutdown}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{登记的热电联产最小电出力随开机状态生效。}}
+        \PYG{k}{if} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n}{minimum\PYGZus{}electricity\PYGZus{}by\PYGZus{}time}\PYG{p}{:}
+            \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{chp\PYGZus{}electricity\PYGZus{}output}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,}
+                    \PYG{n}{on}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{n}{minimum\PYGZus{}electricity\PYGZus{}by\PYGZus{}time}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{,}
+                \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+                \PYG{n}{lb}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{,}
+            \PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{启停费用按事件口径入账，避免按普通功率计费。}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}time\PYGZus{}component}\PYG{p}{(}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{startup\PYGZus{}shutdown\PYGZus{}cost}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{startup}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{source}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{startup\PYGZus{}cost\PYGZus{}yuan}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{t}\PYG{p}{,} \PYG{n}{event}\PYG{o}{=}\PYG{k+kc}{True}
+        \PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}time\PYGZus{}component}\PYG{p}{(}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{startup\PYGZus{}shutdown\PYGZus{}cost}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{shutdown}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{source}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{shutdown\PYGZus{}cost\PYGZus{}yuan}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{t}\PYG{p}{,} \PYG{n}{event}\PYG{o}{=}\PYG{k+kc}{True}
+        \PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{各温位热出力合计受开机状态与最大候选容量限制。}}
+        \PYG{n}{upper\PYGZus{}on} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{idx}\PYG{p}{:} \PYG{l+m+mf}{1.0} \PYG{k}{for} \PYG{n}{idx} \PYG{o+ow}{in} \PYG{n}{heat\PYGZus{}by\PYGZus{}time}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{\PYGZcb{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{upper\PYGZus{}on}\PYG{p}{,} \PYG{n}{on}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{maximum\PYGZus{}capacity}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{upper\PYGZus{}on}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{启用最低出力时，把新增容量系数接入线性下界。}}
+        \PYG{k}{if} \PYG{n}{min\PYGZus{}fraction} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{n}{lower\PYGZus{}on} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{idx}\PYG{p}{:} \PYG{l+m+mf}{1.0} \PYG{k}{for} \PYG{n}{idx} \PYG{o+ow}{in} \PYG{n}{heat\PYGZus{}by\PYGZus{}time}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{n}{cap\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{lower\PYGZus{}on}\PYG{p}{,} \PYG{n}{cap\PYGZus{}idx}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{min\PYGZus{}fraction}\PYG{p}{)}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{lower\PYGZus{}on}\PYG{p}{,} \PYG{n}{on}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{maximum\PYGZus{}capacity}\PYG{p}{)}
+            \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{lower\PYGZus{}on}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{n}{min\PYGZus{}fraction} \PYG{o}{*} \PYG{n}{existing\PYGZus{}capacity} \PYG{o}{\PYGZhy{}} \PYG{n}{maximum\PYGZus{}capacity}\PYG{p}{)}
+
+    \PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{times}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{前驱来自已登记时序边界，本段据此连接相邻状态。}}
+        \PYG{n}{prev} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{time\PYGZus{}predecessor}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}
+        \PYG{n}{on} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}on}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}
+        \PYG{n}{prev\PYGZus{}on} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}on}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{prev}\PYG{p}{)}\PYG{p}{]}
+        \PYG{n}{startup} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}startup}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}
+        \PYG{n}{shutdown} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}shutdown}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}
+        \PYG{c+c1}{\PYGZsh{} Exact three\PYGZhy{}row state\PYGZhy{}transition hull.  The two sum}
+        \PYG{c+c1}{\PYGZsh{} inequalities imply all four individual upper links}
+        \PYG{c+c1}{\PYGZsh{} (startup \PYGZlt{}= on, startup \PYGZlt{}= 1\PYGZhy{}prev, shutdown \PYGZlt{}= prev,}
+        \PYG{c+c1}{\PYGZsh{} shutdown \PYGZlt{}= 1\PYGZhy{}on) when combined with the equality.  This}
+        \PYG{c+c1}{\PYGZsh{} is the same tight relaxation with two fewer rows per hour.}
+        \PYG{c+c1}{\PYGZsh{} A one\PYGZhy{}row cyclic group has prev\PYGZus{}on == on. Accumulate}
+        \PYG{c+c1}{\PYGZsh{} coefficients so its transition cancels exactly.}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{转换等式为启动减停机等于当前开机减前驱开机。}}
+        \PYG{n}{transition} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{startup}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{shutdown}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{on}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{累加同一索引系数，单时段循环的状态项正确抵消。}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{transition}\PYG{p}{,} \PYG{n}{prev\PYGZus{}on}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{transition}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{第一条和约束限制事件之和不超过两期开机之和。}}
+        \PYG{n}{active\PYGZus{}sum} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{startup}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{shutdown}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{on}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{active\PYGZus{}sum}\PYG{p}{,} \PYG{n}{prev\PYGZus{}on}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{active\PYGZus{}sum}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{第二条和约束补上关机侧界，合计三行保留紧松弛。}}
+        \PYG{n}{inactive\PYGZus{}sum} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{startup}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{shutdown}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{on}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{inactive\PYGZus{}sum}\PYG{p}{,} \PYG{n}{prev\PYGZus{}on}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{inactive\PYGZus{}sum}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{2.0}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{上爬坡关联装机容量；启动事件提供候选最大容量余量。}}
+        \PYG{n}{ramp\PYGZus{}up\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{idx}\PYG{p}{:} \PYG{l+m+mf}{1.0} \PYG{k}{for} \PYG{n}{idx} \PYG{o+ow}{in} \PYG{n}{heat\PYGZus{}by\PYGZus{}time}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{\PYGZcb{}}
+        \PYG{k}{for} \PYG{n}{idx} \PYG{o+ow}{in} \PYG{n}{heat\PYGZus{}by\PYGZus{}time}\PYG{p}{[}\PYG{n}{prev}\PYG{p}{]}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{ramp\PYGZus{}up\PYGZus{}row}\PYG{p}{,} \PYG{n}{idx}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{cap\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{ramp\PYGZus{}up\PYGZus{}row}\PYG{p}{,} \PYG{n}{cap\PYGZus{}idx}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{ramp\PYGZus{}up}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{ramp\PYGZus{}up\PYGZus{}row}\PYG{p}{,} \PYG{n}{startup}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{maximum\PYGZus{}capacity}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{ramp\PYGZus{}up\PYGZus{}row}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{ramp\PYGZus{}up} \PYG{o}{*} \PYG{n}{existing\PYGZus{}capacity}\PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{下爬坡对称处理，停机事件提供相应变化余量。}}
+        \PYG{n}{ramp\PYGZus{}down\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{idx}\PYG{p}{:} \PYG{l+m+mf}{1.0} \PYG{k}{for} \PYG{n}{idx} \PYG{o+ow}{in} \PYG{n}{heat\PYGZus{}by\PYGZus{}time}\PYG{p}{[}\PYG{n}{prev}\PYG{p}{]}\PYG{p}{\PYGZcb{}}
+        \PYG{k}{for} \PYG{n}{idx} \PYG{o+ow}{in} \PYG{n}{heat\PYGZus{}by\PYGZus{}time}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{ramp\PYGZus{}down\PYGZus{}row}\PYG{p}{,} \PYG{n}{idx}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{cap\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{ramp\PYGZus{}down\PYGZus{}row}\PYG{p}{,} \PYG{n}{cap\PYGZus{}idx}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{ramp\PYGZus{}down}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{ramp\PYGZus{}down\PYGZus{}row}\PYG{p}{,} \PYG{n}{shutdown}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{maximum\PYGZus{}capacity}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{ramp\PYGZus{}down\PYGZus{}row}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{ramp\PYGZus{}down} \PYG{o}{*} \PYG{n}{existing\PYGZus{}capacity}\PYG{p}{)}
+\end{Verbatim}

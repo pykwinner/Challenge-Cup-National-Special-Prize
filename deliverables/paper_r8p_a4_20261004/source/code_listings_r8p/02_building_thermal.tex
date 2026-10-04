@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{本函数属于独立}1R1C\CJKCode{分支，不替换历史聚合需求响应状态。}}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{exact\PYGZus{}rc\PYGZus{}coefficients}\PYG{p}{(}
+    \PYG{n}{heat\PYGZus{}loss\PYGZus{}kw\PYGZus{}per\PYGZus{}c}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{thermal\PYGZus{}capacity\PYGZus{}kwh\PYGZus{}per\PYGZus{}c}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{dt\PYGZus{}hours}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+\PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n+nb}{float}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{]}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Return a, b for T\PYGZus{}end = a*T\PYGZus{}start + (1\PYGZhy{}a)*Tout + b*(heat\PYGZhy{}cool+gains).}
+
+\PYG{l+s+sd}{    expm1 avoids cancellation at small H*dt/C. H=0 is deliberately rejected:}
+\PYG{l+s+sd}{    this module requires a positive envelope/ventilation heat loss coefficient.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} H\CJKCode{、}C\CJKCode{与步长必须为正且有限，单位应先统一。}}
+    \PYG{n}{h} \PYG{o}{=} \PYG{n}{\PYGZus{}number}\PYG{p}{(}\PYG{n}{heat\PYGZus{}loss\PYGZus{}kw\PYGZus{}per\PYGZus{}c}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{heat\PYGZus{}loss\PYGZus{}kw\PYGZus{}per\PYGZus{}c}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{positive}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{n}{c} \PYG{o}{=} \PYG{n}{\PYGZus{}number}\PYG{p}{(}\PYG{n}{thermal\PYGZus{}capacity\PYGZus{}kwh\PYGZus{}per\PYGZus{}c}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{thermal\PYGZus{}capacity\PYGZus{}kwh\PYGZus{}per\PYGZus{}c}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{positive}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{n}{dt} \PYG{o}{=} \PYG{n}{\PYGZus{}number}\PYG{p}{(}\PYG{n}{dt\PYGZus{}hours}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{dt\PYGZus{}hours}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{positive}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} H\CJKCode{乘步长除以}C\CJKCode{为无量纲指数，避免将秒与小时混算。}}
+    \PYG{n}{decay} \PYG{o}{=} \PYG{n}{h} \PYG{o}{*} \PYG{p}{(}\PYG{n}{dt} \PYG{o}{/} \PYG{n}{c}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} expm1\CJKCode{减小小指数下的数值相消；}b\CJKCode{乘净输入功率得到温升。}}
+    \PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{decay}\PYG{p}{)}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{expm1}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{decay}\PYG{p}{)} \PYG{o}{/} \PYG{n}{h}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{系数低于矩阵数值分辨能力时明确报错，不返回无效热状态。}}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{b}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n}{b} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{l+m+mf}{1e\PYGZhy{}12}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{RC coefficient b is outside LinearMILP numerical resolution; rescale units}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}
+\end{Verbatim}

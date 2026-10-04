@@ -1,0 +1,1000 @@
+{
+  "passed": true,
+  "scope": "four-case pure-C/shared-grid factorial reference",
+  "solver_optimality_verified": false,
+  "field_validation": false,
+  "cases": [
+    {
+      "name": "C1_unlimited",
+      "passed": true,
+      "status": "passed",
+      "independent": {
+        "passed": true,
+        "scope": "independent ideal-source multibuilding chronology audit",
+        "method": "closed-form RC full-history convolution; independent source electricity ledger",
+        "empirical_validation": false,
+        "engineering_economics_validation": false,
+        "solver_optimality_verified": false,
+        "metrics": {
+          "hours": 2880,
+          "dt_hours": 1.0,
+          "building_count": 2,
+          "heat_kwh": 8155.1085947783495,
+          "cooling_kwh": 0.0,
+          "electricity_kwh": 8155.1085947783495,
+          "heating_electricity_kwh": 8155.1085947783495,
+          "cooling_electricity_kwh": 0.0,
+          "reference_energy_charge_yuan": 5918.140565478514,
+          "reference_average_factor_co2_kg": 3297.925915728366,
+          "grid_peak_kw": 14.10637388743884,
+          "maximum_ideal_source_electric_import_kw": 14.10637388743884,
+          "grid_capacity_kw": null,
+          "grid_max_excess_kw": 0.0,
+          "grid_binding_hours": 0,
+          "grid_exceedance_hours": 0,
+          "max_rc_residual_c": 2.1316282072803006e-14,
+          "outside_comfort_degree_hours": 7.105427357601002e-15,
+          "max_terminal_violation_c": 0.0,
+          "source_capacity_max_excess_kw": 0.0,
+          "no_investment_verified": true
+        },
+        "buildings": [
+          {
+            "name": "variant_A",
+            "node": "node_A",
+            "heat_loss_kw_per_c": 0.10430000000000002,
+            "thermal_capacity_kwh_per_c": 0.535576,
+            "area_m2": 48.0,
+            "rc_max_residual_c": 2.1316282072803006e-14,
+            "initial_start_c": 20.0,
+            "final_end_c": 20.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 27.000000000000004,
+            "outside_comfort_degree_hours": 7.105427357601002e-15,
+            "heat_kwh": 3176.9210947874917,
+            "cooling_kwh": 0.0,
+            "inventory_change_kwh": 0.0
+          },
+          {
+            "name": "variant_B",
+            "node": "node_B",
+            "heat_loss_kw_per_c": 0.15645000000000003,
+            "thermal_capacity_kwh_per_c": 0.535576,
+            "area_m2": 48.0,
+            "rc_max_residual_c": 1.0658141036401503e-14,
+            "initial_start_c": 20.0,
+            "final_end_c": 20.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 27.0,
+            "outside_comfort_degree_hours": 0.0,
+            "heat_kwh": 4978.187499990858,
+            "cooling_kwh": 0.0,
+            "inventory_change_kwh": 0.0
+          }
+        ],
+        "node_balances": [
+          {
+            "node": "node_A",
+            "grade": "ideal_zone_service",
+            "service": "heat",
+            "max_residual_kw": 9.161389520062722e-16
+          },
+          {
+            "node": "node_B",
+            "grade": "ideal_zone_service",
+            "service": "heat",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_A",
+            "service": "cooling",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_B",
+            "service": "cooling",
+            "max_residual_kw": 0.0
+          }
+        ],
+        "tolerances": {
+          "power_kw": 1e-06,
+          "temperature_c": 1e-06,
+          "accounting_absolute": 1e-05
+        },
+        "checks": {
+          "time_alignment": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_complete": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_assignment": {
+            "passed": true,
+            "details": []
+          },
+          "rc_convolution": {
+            "passed": true,
+            "details": []
+          },
+          "initial_and_continuity": {
+            "passed": true,
+            "details": []
+          },
+          "terminal_inventory": {
+            "passed": true,
+            "details": []
+          },
+          "comfort": {
+            "passed": true,
+            "details": []
+          },
+          "nonnegative_service": {
+            "passed": true,
+            "details": []
+          },
+          "exclusive_service": {
+            "passed": true,
+            "details": []
+          },
+          "building_capacity": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_input_metadata": {
+            "passed": true,
+            "details": []
+          },
+          "dispatch_assignment": {
+            "passed": true,
+            "details": []
+          },
+          "building_dispatch_identity": {
+            "passed": true,
+            "details": []
+          },
+          "source_capacity": {
+            "passed": true,
+            "details": []
+          },
+          "node_heat_balance": {
+            "passed": true,
+            "details": []
+          },
+          "node_cooling_balance": {
+            "passed": true,
+            "details": []
+          },
+          "summary_accounting": {
+            "passed": true,
+            "details": []
+          },
+          "exported_audit_status": {
+            "passed": true,
+            "details": []
+          },
+          "valid_data": {
+            "passed": true,
+            "details": []
+          }
+        }
+      },
+      "thermal_ledger": {
+        "passed": true,
+        "method": "analytic continuous-hour1R1C integrated heat balance",
+        "buildings": [
+          {
+            "name": "variant_A",
+            "time_constant_hours": 5.134956855225311,
+            "nominal_comfort_inventory_range_kwh": 3.7490320000000006,
+            "maximum_inventory_above20_kwh": 3.7490320000000024,
+            "mean_temperature_continuous_c": 20.50911304459456,
+            "integrated_temperature_above20_c_hours": 1466.2455684323418,
+            "envelope_heat_loss_kwh": 3752.9210947874935,
+            "net_delivered_heat_kwh": 3176.9210947874917,
+            "internal_and_solar_gain_kwh": 576.0,
+            "terminal_inventory_change_kwh": -1.1934897514720433e-14,
+            "max_hourly_balance_residual_kwh": 5.9396931817445875e-15
+          },
+          {
+            "name": "variant_B",
+            "time_constant_hours": 3.4233045701502074,
+            "nominal_comfort_inventory_range_kwh": 3.7490320000000006,
+            "maximum_inventory_above20_kwh": 3.7490320000000006,
+            "mean_temperature_continuous_c": 20.34222856297463,
+            "integrated_temperature_above20_c_hours": 985.6182613669296,
+            "envelope_heat_loss_kwh": 5554.187499990857,
+            "net_delivered_heat_kwh": 4978.187499990858,
+            "internal_and_solar_gain_kwh": 576.0,
+            "terminal_inventory_change_kwh": 2.914335439641036e-15,
+            "max_hourly_balance_residual_kwh": 4.3021142204224816e-15
+          }
+        ],
+        "inventory_is_event_storage_capacity": false
+      },
+      "saved_vector": {
+        "passed": true,
+        "method": "core matrix and export rebuild without solver",
+        "independent_physics": false,
+        "solver_optimality_verified": false,
+        "numerical": {
+          "numerical_audit_passed": true,
+          "numerical_audit_tolerance": {
+            "absolute": 1e-06,
+            "relative": 1e-08,
+            "scaled_violation_limit": 1.0
+          },
+          "numerical_solution_finite": true,
+          "numerical_constraint_max_violation": 1.949551631241775e-13,
+          "numerical_constraint_max_scaled_violation": 1.885812634326836e-07,
+          "numerical_constraint_worst_row": 3147,
+          "numerical_bound_max_violation": 5.773159728050814e-14,
+          "numerical_bound_max_scaled_violation": 5.715999730743378e-08,
+          "numerical_bound_worst_variable": "building_heat_mode[variant_A,1573]",
+          "numerical_integrality_max_violation": 5.773159728050814e-14,
+          "numerical_objective_recompute_error": null,
+          "numerical_objective_checked": false
+        },
+        "objective": 5918.140565478514,
+        "variable_count": 34521,
+        "row_count": 34488,
+        "export_identity": true
+      }
+    },
+    {
+      "name": "C4_unlimited",
+      "passed": true,
+      "status": "passed",
+      "independent": {
+        "passed": true,
+        "scope": "independent ideal-source multibuilding chronology audit",
+        "method": "closed-form RC full-history convolution; independent source electricity ledger",
+        "empirical_validation": false,
+        "engineering_economics_validation": false,
+        "solver_optimality_verified": false,
+        "metrics": {
+          "hours": 2880,
+          "dt_hours": 1.0,
+          "building_count": 2,
+          "heat_kwh": 8725.440238676289,
+          "cooling_kwh": 0.0,
+          "electricity_kwh": 8725.440238676289,
+          "heating_electricity_kwh": 8725.440238676289,
+          "cooling_electricity_kwh": 0.0,
+          "reference_energy_charge_yuan": 5490.938905381102,
+          "reference_average_factor_co2_kg": 3528.568032520692,
+          "grid_peak_kw": 25.333512746068237,
+          "maximum_ideal_source_electric_import_kw": 25.333512746068237,
+          "grid_capacity_kw": null,
+          "grid_max_excess_kw": 0.0,
+          "grid_binding_hours": 0,
+          "grid_exceedance_hours": 0,
+          "max_rc_residual_c": 2.4868995751603507e-14,
+          "outside_comfort_degree_hours": 7.105427357601002e-15,
+          "max_terminal_violation_c": 0.0,
+          "source_capacity_max_excess_kw": 0.0,
+          "no_investment_verified": true
+        },
+        "buildings": [
+          {
+            "name": "variant_A",
+            "node": "node_A",
+            "heat_loss_kw_per_c": 0.10430000000000002,
+            "thermal_capacity_kwh_per_c": 0.535576,
+            "area_m2": 48.0,
+            "rc_max_residual_c": 2.1316282072803006e-14,
+            "initial_start_c": 20.0,
+            "final_end_c": 20.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 27.000000000000004,
+            "outside_comfort_degree_hours": 3.552713678800501e-15,
+            "heat_kwh": 3176.9210947874917,
+            "cooling_kwh": 0.0,
+            "inventory_change_kwh": 0.0
+          },
+          {
+            "name": "variant_B",
+            "node": "node_B",
+            "heat_loss_kw_per_c": 0.15645000000000003,
+            "thermal_capacity_kwh_per_c": 2.142304,
+            "area_m2": 48.0,
+            "rc_max_residual_c": 2.4868995751603507e-14,
+            "initial_start_c": 20.0,
+            "final_end_c": 20.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 27.000000000000004,
+            "outside_comfort_degree_hours": 3.552713678800501e-15,
+            "heat_kwh": 5548.519143888798,
+            "cooling_kwh": 0.0,
+            "inventory_change_kwh": 0.0
+          }
+        ],
+        "node_balances": [
+          {
+            "node": "node_A",
+            "grade": "ideal_zone_service",
+            "service": "heat",
+            "max_residual_kw": 3.4028018217375818e-15
+          },
+          {
+            "node": "node_B",
+            "grade": "ideal_zone_service",
+            "service": "heat",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_A",
+            "service": "cooling",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_B",
+            "service": "cooling",
+            "max_residual_kw": 0.0
+          }
+        ],
+        "tolerances": {
+          "power_kw": 1e-06,
+          "temperature_c": 1e-06,
+          "accounting_absolute": 1e-05
+        },
+        "checks": {
+          "time_alignment": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_complete": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_assignment": {
+            "passed": true,
+            "details": []
+          },
+          "rc_convolution": {
+            "passed": true,
+            "details": []
+          },
+          "initial_and_continuity": {
+            "passed": true,
+            "details": []
+          },
+          "terminal_inventory": {
+            "passed": true,
+            "details": []
+          },
+          "comfort": {
+            "passed": true,
+            "details": []
+          },
+          "nonnegative_service": {
+            "passed": true,
+            "details": []
+          },
+          "exclusive_service": {
+            "passed": true,
+            "details": []
+          },
+          "building_capacity": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_input_metadata": {
+            "passed": true,
+            "details": []
+          },
+          "dispatch_assignment": {
+            "passed": true,
+            "details": []
+          },
+          "building_dispatch_identity": {
+            "passed": true,
+            "details": []
+          },
+          "source_capacity": {
+            "passed": true,
+            "details": []
+          },
+          "node_heat_balance": {
+            "passed": true,
+            "details": []
+          },
+          "node_cooling_balance": {
+            "passed": true,
+            "details": []
+          },
+          "summary_accounting": {
+            "passed": true,
+            "details": []
+          },
+          "exported_audit_status": {
+            "passed": true,
+            "details": []
+          },
+          "valid_data": {
+            "passed": true,
+            "details": []
+          }
+        }
+      },
+      "thermal_ledger": {
+        "passed": true,
+        "method": "analytic continuous-hour1R1C integrated heat balance",
+        "buildings": [
+          {
+            "name": "variant_A",
+            "time_constant_hours": 5.134956855225311,
+            "nominal_comfort_inventory_range_kwh": 3.7490320000000006,
+            "maximum_inventory_above20_kwh": 3.7490320000000024,
+            "mean_temperature_continuous_c": 20.50911304459456,
+            "integrated_temperature_above20_c_hours": 1466.2455684323418,
+            "envelope_heat_loss_kwh": 3752.9210947874935,
+            "net_delivered_heat_kwh": 3176.9210947874917,
+            "internal_and_solar_gain_kwh": 576.0,
+            "terminal_inventory_change_kwh": -6.716849298982197e-15,
+            "max_hourly_balance_residual_kwh": 5.440092820663267e-15
+          },
+          {
+            "name": "variant_B",
+            "time_constant_hours": 13.69321828060083,
+            "nominal_comfort_inventory_range_kwh": 14.996128000000002,
+            "maximum_inventory_above20_kwh": 14.99612800000001,
+            "mean_temperature_continuous_c": 21.60801201326477,
+            "integrated_temperature_above20_c_hours": 4631.074598202539,
+            "envelope_heat_loss_kwh": 6124.519143888789,
+            "net_delivered_heat_kwh": 5548.519143888798,
+            "internal_and_solar_gain_kwh": 576.0,
+            "terminal_inventory_change_kwh": -5.3290705182007514e-14,
+            "max_hourly_balance_residual_kwh": 2.6645352591003757e-14
+          }
+        ],
+        "inventory_is_event_storage_capacity": false
+      },
+      "saved_vector": {
+        "passed": true,
+        "method": "core matrix and export rebuild without solver",
+        "independent_physics": false,
+        "solver_optimality_verified": false,
+        "numerical": {
+          "numerical_audit_passed": true,
+          "numerical_audit_tolerance": {
+            "absolute": 1e-06,
+            "relative": 1e-08,
+            "scaled_violation_limit": 1.0
+          },
+          "numerical_solution_finite": true,
+          "numerical_constraint_max_violation": 3.762677525332236e-13,
+          "numerical_constraint_max_scaled_violation": 3.725423292408155e-07,
+          "numerical_constraint_worst_row": 11319,
+          "numerical_bound_max_violation": 5.773159728050814e-14,
+          "numerical_bound_max_scaled_violation": 5.715999730743378e-08,
+          "numerical_bound_worst_variable": "building_heat_mode[variant_A,1573]",
+          "numerical_integrality_max_violation": 5.773159728050814e-14,
+          "numerical_objective_recompute_error": null,
+          "numerical_objective_checked": false
+        },
+        "objective": 5490.938905381098,
+        "variable_count": 34560,
+        "row_count": 34566,
+        "export_identity": true
+      }
+    },
+    {
+      "name": "C1_shared",
+      "passed": true,
+      "status": "passed",
+      "independent": {
+        "passed": true,
+        "scope": "independent ideal-source multibuilding chronology audit",
+        "method": "closed-form RC full-history convolution; independent source electricity ledger",
+        "empirical_validation": false,
+        "engineering_economics_validation": false,
+        "solver_optimality_verified": false,
+        "metrics": {
+          "hours": 2880,
+          "dt_hours": 1.0,
+          "building_count": 2,
+          "heat_kwh": 8050.60755741449,
+          "cooling_kwh": 0.0,
+          "electricity_kwh": 8050.60755741449,
+          "heating_electricity_kwh": 8050.60755741449,
+          "cooling_electricity_kwh": 0.0,
+          "reference_energy_charge_yuan": 5937.643314232109,
+          "reference_average_factor_co2_kg": 3255.6656962184197,
+          "grid_peak_kw": 6.479637500000004,
+          "maximum_ideal_source_electric_import_kw": 6.479637500000004,
+          "grid_capacity_kw": 6.479637500000002,
+          "grid_max_excess_kw": 2.6645352591003757e-15,
+          "grid_binding_hours": 125,
+          "grid_exceedance_hours": 0,
+          "max_rc_residual_c": 2.1316282072803006e-14,
+          "outside_comfort_degree_hours": 0.0,
+          "max_terminal_violation_c": 0.0,
+          "source_capacity_max_excess_kw": 0.0,
+          "no_investment_verified": true
+        },
+        "buildings": [
+          {
+            "name": "variant_A",
+            "node": "node_A",
+            "heat_loss_kw_per_c": 0.10430000000000002,
+            "thermal_capacity_kwh_per_c": 0.535576,
+            "area_m2": 48.0,
+            "rc_max_residual_c": 2.1316282072803006e-14,
+            "initial_start_c": 20.0,
+            "final_end_c": 20.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 26.02518687793716,
+            "outside_comfort_degree_hours": 0.0,
+            "heat_kwh": 3144.6471217529993,
+            "cooling_kwh": 0.0,
+            "inventory_change_kwh": 0.0
+          },
+          {
+            "name": "variant_B",
+            "node": "node_B",
+            "heat_loss_kw_per_c": 0.15645000000000003,
+            "thermal_capacity_kwh_per_c": 0.535576,
+            "area_m2": 48.0,
+            "rc_max_residual_c": 1.0658141036401503e-14,
+            "initial_start_c": 20.0,
+            "final_end_c": 20.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 26.247668822169008,
+            "outside_comfort_degree_hours": 0.0,
+            "heat_kwh": 4905.960435661491,
+            "cooling_kwh": 0.0,
+            "inventory_change_kwh": 0.0
+          }
+        ],
+        "node_balances": [
+          {
+            "node": "node_A",
+            "grade": "ideal_zone_service",
+            "service": "heat",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_B",
+            "grade": "ideal_zone_service",
+            "service": "heat",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_A",
+            "service": "cooling",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_B",
+            "service": "cooling",
+            "max_residual_kw": 0.0
+          }
+        ],
+        "tolerances": {
+          "power_kw": 1e-06,
+          "temperature_c": 1e-06,
+          "accounting_absolute": 1e-05
+        },
+        "checks": {
+          "time_alignment": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_complete": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_assignment": {
+            "passed": true,
+            "details": []
+          },
+          "rc_convolution": {
+            "passed": true,
+            "details": []
+          },
+          "initial_and_continuity": {
+            "passed": true,
+            "details": []
+          },
+          "terminal_inventory": {
+            "passed": true,
+            "details": []
+          },
+          "comfort": {
+            "passed": true,
+            "details": []
+          },
+          "nonnegative_service": {
+            "passed": true,
+            "details": []
+          },
+          "exclusive_service": {
+            "passed": true,
+            "details": []
+          },
+          "building_capacity": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_input_metadata": {
+            "passed": true,
+            "details": []
+          },
+          "dispatch_assignment": {
+            "passed": true,
+            "details": []
+          },
+          "building_dispatch_identity": {
+            "passed": true,
+            "details": []
+          },
+          "source_capacity": {
+            "passed": true,
+            "details": []
+          },
+          "node_heat_balance": {
+            "passed": true,
+            "details": []
+          },
+          "node_cooling_balance": {
+            "passed": true,
+            "details": []
+          },
+          "shared_grid_limit": {
+            "passed": true,
+            "details": []
+          },
+          "summary_accounting": {
+            "passed": true,
+            "details": []
+          },
+          "exported_audit_status": {
+            "passed": true,
+            "details": []
+          },
+          "valid_data": {
+            "passed": true,
+            "details": []
+          }
+        }
+      },
+      "thermal_ledger": {
+        "passed": true,
+        "method": "analytic continuous-hour1R1C integrated heat balance",
+        "buildings": [
+          {
+            "name": "variant_A",
+            "time_constant_hours": 5.134956855225311,
+            "nominal_comfort_inventory_range_kwh": 3.7490320000000006,
+            "maximum_inventory_above20_kwh": 3.2269454873380723,
+            "mean_temperature_continuous_c": 20.401670660730932,
+            "integrated_temperature_above20_c_hours": 1156.81150290509,
+            "envelope_heat_loss_kwh": 3720.6471217530016,
+            "net_delivered_heat_kwh": 3144.6471217529993,
+            "internal_and_solar_gain_kwh": 576.0,
+            "terminal_inventory_change_kwh": 1.887379141862766e-15,
+            "max_hourly_balance_residual_kwh": 5.662137425588298e-15
+          },
+          {
+            "name": "variant_B",
+            "time_constant_hours": 3.4233045701502074,
+            "nominal_comfort_inventory_range_kwh": 3.7490320000000006,
+            "maximum_inventory_above20_kwh": 3.3461014771019886,
+            "mean_temperature_continuous_c": 20.181929158813357,
+            "integrated_temperature_above20_c_hours": 523.9559773824777,
+            "envelope_heat_loss_kwh": 5481.960435661489,
+            "net_delivered_heat_kwh": 4905.960435661491,
+            "internal_and_solar_gain_kwh": 576.0,
+            "terminal_inventory_change_kwh": 6.230091997849739e-16,
+            "max_hourly_balance_residual_kwh": 6.772360450213455e-15
+          }
+        ],
+        "inventory_is_event_storage_capacity": false
+      },
+      "saved_vector": {
+        "passed": true,
+        "method": "core matrix and export rebuild without solver",
+        "independent_physics": false,
+        "solver_optimality_verified": false,
+        "numerical": {
+          "numerical_audit_passed": true,
+          "numerical_audit_tolerance": {
+            "absolute": 1e-06,
+            "relative": 1e-08,
+            "scaled_violation_limit": 1.0
+          },
+          "numerical_solution_finite": true,
+          "numerical_constraint_max_violation": 1.949551631241775e-13,
+          "numerical_constraint_max_scaled_violation": 1.885812634326836e-07,
+          "numerical_constraint_worst_row": 3147,
+          "numerical_bound_max_violation": 5.773159728050814e-14,
+          "numerical_bound_max_scaled_violation": 5.715999730743378e-08,
+          "numerical_bound_worst_variable": "building_heat_mode[variant_A,1573]",
+          "numerical_integrality_max_violation": 5.773159728050814e-14,
+          "numerical_objective_recompute_error": null,
+          "numerical_objective_checked": false
+        },
+        "objective": 5937.643314232109,
+        "variable_count": 34523,
+        "row_count": 37372,
+        "export_identity": true
+      }
+    },
+    {
+      "name": "C4_shared",
+      "passed": true,
+      "status": "passed",
+      "independent": {
+        "passed": true,
+        "scope": "independent ideal-source multibuilding chronology audit",
+        "method": "closed-form RC full-history convolution; independent source electricity ledger",
+        "empirical_validation": false,
+        "engineering_economics_validation": false,
+        "solver_optimality_verified": false,
+        "metrics": {
+          "hours": 2880,
+          "dt_hours": 1.0,
+          "building_count": 2,
+          "heat_kwh": 8386.067388668092,
+          "cooling_kwh": 0.0,
+          "electricity_kwh": 8386.067388668092,
+          "heating_electricity_kwh": 8386.067388668092,
+          "cooling_electricity_kwh": 0.0,
+          "reference_energy_charge_yuan": 5660.964848086876,
+          "reference_average_factor_co2_kg": 3391.3256519773754,
+          "grid_peak_kw": 6.479637500000003,
+          "maximum_ideal_source_electric_import_kw": 6.479637500000003,
+          "grid_capacity_kw": 6.479637500000002,
+          "grid_max_excess_kw": 8.881784197001252e-16,
+          "grid_binding_hours": 530,
+          "grid_exceedance_hours": 0,
+          "max_rc_residual_c": 2.4868995751603507e-14,
+          "outside_comfort_degree_hours": 3.552713678800501e-15,
+          "max_terminal_violation_c": 0.0,
+          "source_capacity_max_excess_kw": 0.0,
+          "no_investment_verified": true
+        },
+        "buildings": [
+          {
+            "name": "variant_A",
+            "node": "node_A",
+            "heat_loss_kw_per_c": 0.10430000000000002,
+            "thermal_capacity_kwh_per_c": 0.535576,
+            "area_m2": 48.0,
+            "rc_max_residual_c": 1.7763568394002505e-14,
+            "initial_start_c": 20.0,
+            "final_end_c": 20.0,
+            "min_temperature_c": 20.0,
+            "max_temperature_c": 26.02518687793716,
+            "outside_comfort_degree_hours": 0.0,
+            "heat_kwh": 3090.7044148329524,
+            "cooling_kwh": 0.0,
+            "inventory_change_kwh": 0.0
+          },
+          {
+            "name": "variant_B",
+            "node": "node_B",
+            "heat_loss_kw_per_c": 0.15645000000000003,
+            "thermal_capacity_kwh_per_c": 2.142304,
+            "area_m2": 48.0,
+            "rc_max_residual_c": 2.4868995751603507e-14,
+            "initial_start_c": 20.0,
+            "final_end_c": 20.0,
+            "min_temperature_c": 19.999999999999996,
+            "max_temperature_c": 25.233318164487716,
+            "outside_comfort_degree_hours": 3.552713678800501e-15,
+            "heat_kwh": 5295.362973835141,
+            "cooling_kwh": 0.0,
+            "inventory_change_kwh": 0.0
+          }
+        ],
+        "node_balances": [
+          {
+            "node": "node_A",
+            "grade": "ideal_zone_service",
+            "service": "heat",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_B",
+            "grade": "ideal_zone_service",
+            "service": "heat",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_A",
+            "service": "cooling",
+            "max_residual_kw": 0.0
+          },
+          {
+            "node": "node_B",
+            "service": "cooling",
+            "max_residual_kw": 0.0
+          }
+        ],
+        "tolerances": {
+          "power_kw": 1e-06,
+          "temperature_c": 1e-06,
+          "accounting_absolute": 1e-05
+        },
+        "checks": {
+          "time_alignment": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_complete": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_assignment": {
+            "passed": true,
+            "details": []
+          },
+          "rc_convolution": {
+            "passed": true,
+            "details": []
+          },
+          "initial_and_continuity": {
+            "passed": true,
+            "details": []
+          },
+          "terminal_inventory": {
+            "passed": true,
+            "details": []
+          },
+          "comfort": {
+            "passed": true,
+            "details": []
+          },
+          "nonnegative_service": {
+            "passed": true,
+            "details": []
+          },
+          "exclusive_service": {
+            "passed": true,
+            "details": []
+          },
+          "building_capacity": {
+            "passed": true,
+            "details": []
+          },
+          "trajectory_input_metadata": {
+            "passed": true,
+            "details": []
+          },
+          "dispatch_assignment": {
+            "passed": true,
+            "details": []
+          },
+          "building_dispatch_identity": {
+            "passed": true,
+            "details": []
+          },
+          "source_capacity": {
+            "passed": true,
+            "details": []
+          },
+          "node_heat_balance": {
+            "passed": true,
+            "details": []
+          },
+          "node_cooling_balance": {
+            "passed": true,
+            "details": []
+          },
+          "shared_grid_limit": {
+            "passed": true,
+            "details": []
+          },
+          "summary_accounting": {
+            "passed": true,
+            "details": []
+          },
+          "exported_audit_status": {
+            "passed": true,
+            "details": []
+          },
+          "valid_data": {
+            "passed": true,
+            "details": []
+          }
+        }
+      },
+      "thermal_ledger": {
+        "passed": true,
+        "method": "analytic continuous-hour1R1C integrated heat balance",
+        "buildings": [
+          {
+            "name": "variant_A",
+            "time_constant_hours": 5.134956855225311,
+            "nominal_comfort_inventory_range_kwh": 3.7490320000000006,
+            "maximum_inventory_above20_kwh": 3.2269454873380723,
+            "mean_temperature_continuous_c": 20.222091498991137,
+            "integrated_temperature_above20_c_hours": 639.6235170944763,
+            "envelope_heat_loss_kwh": 3666.7044148329546,
+            "net_delivered_heat_kwh": 3090.7044148329524,
+            "internal_and_solar_gain_kwh": 576.0,
+            "terminal_inventory_change_kwh": -1.8318679906315083e-15,
+            "max_hourly_balance_residual_kwh": 5.440092820663267e-15
+          },
+          {
+            "name": "variant_B",
+            "time_constant_hours": 13.69321828060083,
+            "nominal_comfort_inventory_range_kwh": 14.996128000000002,
+            "maximum_inventory_above20_kwh": 11.211358437054693,
+            "mean_temperature_continuous_c": 21.04616191460515,
+            "integrated_temperature_above20_c_hours": 3012.9463140628413,
+            "envelope_heat_loss_kwh": 5871.362973835132,
+            "net_delivered_heat_kwh": 5295.362973835141,
+            "internal_and_solar_gain_kwh": 576.0,
+            "terminal_inventory_change_kwh": 4.440892098500626e-15,
+            "max_hourly_balance_residual_kwh": 2.3092638912203256e-14
+          }
+        ],
+        "inventory_is_event_storage_capacity": false
+      },
+      "saved_vector": {
+        "passed": true,
+        "method": "core matrix and export rebuild without solver",
+        "independent_physics": false,
+        "solver_optimality_verified": false,
+        "numerical": {
+          "numerical_audit_passed": true,
+          "numerical_audit_tolerance": {
+            "absolute": 1e-06,
+            "relative": 1e-08,
+            "scaled_violation_limit": 1.0
+          },
+          "numerical_solution_finite": true,
+          "numerical_constraint_max_violation": 2.2979186842339327e-12,
+          "numerical_constraint_max_scaled_violation": 2.275167014093003e-06,
+          "numerical_constraint_worst_row": 13181,
+          "numerical_bound_max_violation": 1.4210854715202e-13,
+          "numerical_bound_max_scaled_violation": 1.407015318336832e-07,
+          "numerical_bound_worst_variable": "building_heat_mode[variant_B,2270]",
+          "numerical_integrality_max_violation": 1.4210854715202e-13,
+          "numerical_objective_recompute_error": null,
+          "numerical_objective_checked": false
+        },
+        "objective": 5660.964848086869,
+        "variable_count": 34562,
+        "row_count": 37450,
+        "export_identity": true
+      }
+    }
+  ],
+  "errors": [],
+  "old_frozen_evidence_unchanged": true,
+  "time_axis": {
+    "schema": "heatplan.time_axis.v1",
+    "axis_sha256": "3ef449e8e82cf3863e6ca202e0e9c0a382332c0641268b58d75c037733a53a7a",
+    "kind": "continuous",
+    "rows": 2880,
+    "physical_step_hours": 1.0,
+    "sampled_interval_hours": 2880.0,
+    "accounting_weighted_hours": 2880.0,
+    "calendar_envelope_hours": 2880.0,
+    "continuous_horizon_hours": 2880.0,
+    "start_utc": "2024-11-15T16:00:00+00:00",
+    "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+    "interval_convention": "[time,time+physical_step)",
+    "state_continuity": "single continuous block",
+    "full_year_claim": false,
+    "complete_local_heating_season_claim": false,
+    "blocks": [
+      {
+        "period": "continuous",
+        "rows": 2880,
+        "start_utc": "2024-11-15T16:00:00+00:00",
+        "end_exclusive_utc": "2025-03-15T16:00:00+00:00",
+        "accounting_weight": 1.0
+      }
+    ]
+  },
+  "design_contract": {
+    "passed": true,
+    "errors": []
+  }
+}

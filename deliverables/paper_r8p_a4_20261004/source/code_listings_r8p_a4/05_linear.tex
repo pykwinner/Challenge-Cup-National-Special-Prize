@@ -1,0 +1,37 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{本方法不构建热物理方程，只求解上层已装配的}MILP\CJKCode{。}}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{solve}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{mip\PYGZus{}gap}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{0.005}\PYG{p}{,} \PYG{n}{time\PYGZus{}limit}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{|} \PYG{k+kc}{None} \PYG{o}{=} \PYG{l+m+mf}{120.0}\PYG{p}{)}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{矩阵和边界可缓存；约束修改后由模型维护缓存失效。}}
+    \PYG{n}{matrix} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{constraint\PYGZus{}matrix}\PYG{p}{(}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}compiled\PYGZus{}constraints} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}compiled\PYGZus{}constraints} \PYG{o}{=} \PYG{n}{LinearConstraint}\PYG{p}{(}
+            \PYG{n}{matrix}\PYG{p}{,}
+            \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{row\PYGZus{}lower}\PYG{p}{)}\PYG{p}{,}
+            \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{row\PYGZus{}upper}\PYG{p}{)}\PYG{p}{,}
+        \PYG{p}{)}
+    \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}compiled\PYGZus{}bounds} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}compiled\PYGZus{}bounds} \PYG{o}{=} \PYG{n}{Bounds}\PYG{p}{(}
+            \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{lower}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{upper}\PYG{p}{)}
+        \PYG{p}{)}
+    \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}compiled\PYGZus{}integrality} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}compiled\PYGZus{}integrality} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{integrality}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{相对间隙控制停止条件，达到时间上限也可能仅返回可行候选。}}
+    \PYG{n}{options}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{,} \PYG{n+nb}{float} \PYG{o}{|} \PYG{n+nb}{bool}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{mip\PYGZus{}rel\PYGZus{}gap}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{mip\PYGZus{}gap}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{disp}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{False}\PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{n}{time\PYGZus{}limit} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n}{options}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{time\PYGZus{}limit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{time\PYGZus{}limit}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{记录本次实际目标，便于上层改回目标后仍能独立复算。}}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}objective} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{objective}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{n+nb}{float}\PYG{p}{)}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}fun} \PYG{o}{=} \PYG{k+kc}{None}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{整数类型、边界与矩阵同时传入；不能只检查返回目标值。}}
+    \PYG{n}{result} \PYG{o}{=} \PYG{n}{milp}\PYG{p}{(}
+        \PYG{n}{c}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}objective}\PYG{p}{,}
+        \PYG{n}{integrality}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}compiled\PYGZus{}integrality}\PYG{p}{,}
+        \PYG{n}{bounds}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}compiled\PYGZus{}bounds}\PYG{p}{,}
+        \PYG{n}{constraints}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}compiled\PYGZus{}constraints}\PYG{p}{,}
+        \PYG{n}{options}\PYG{o}{=}\PYG{n}{options}\PYG{p}{,}
+    \PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{有目标值时保留它；无可行解的异常报告在}HeatPlanningModel.solve\CJKCode{中。}}
+    \PYG{k}{if} \PYG{n}{result}\PYG{o}{.}\PYG{n}{fun} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}last\PYGZus{}solve\PYGZus{}fun} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{result}\PYG{o}{.}\PYG{n}{fun}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{result}
+\end{Verbatim}

@@ -1,0 +1,66 @@
+{
+  "frozen_utc": "2026-10-02T12:50:09.509059+00:00",
+  "input_code_sha256": {
+    "data/derived/three_city_common_reference_20261002/urumqi_hourly.csv": "3bb3f1b2c707b5f0fcf8860585eee442273c0916a840cc78f22ec520241b104f",
+    "data/derived/evidence_case_20261002/wuhan_2024_2025_hourly_tou.csv": "414108311a2f2f7d48d1d1462b7ac39ea1561944a33a7dc0a34fe55b582c2ed6",
+    "docs/implementation_20261002_followup/parallel_stage_02/data/common_physical_reference.json": "08360b4aa5c1b240b48eff1a7cb3363d6a02fc228495f4e3923a3b3f565540a9",
+    "src/heatplan/model.py": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+    "src/heatplan/physical_extensions.py": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+    "src/heatplan/solution_quality.py": "ad61efb77b017fa6ca4aa7001b292ca0f5ae915a04f92794be8ccc6a16dbfd4f",
+    "src/heatplan/linear.py": "af8ae466c1c474d25b5acf51a7de62406ad927e3d2afd7334be87b35e31b210c",
+    "src/heatplan/io.py": "e1a6a66d1cd347a8030adee59cac71b85198017dc65568d5a9ad96050c4778c6",
+    "src/heatplan/policy_alignment.py": "4030d51ad0d3628096fe8b67283a8d1cd3050d9e36d27e9ade354f39b03d29ed",
+    "src/heatplan/building_thermal.py": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+    "src/heatplan/building_audit.py": "54d3b85ae9277c511bedf3051b20d764e3c5034dcfa099213c7a6128b17e96f8",
+    "src/heatplan/chronology.py": "4a4ee8117aee565acffe512a9d740a800be14f9e3bed4147e67ffca0cd2145c0",
+    "src/heatplan/experiments.py": "036318fac9cd667ba33e1b596f9742f31cf4b9951e0d02079327c74c806d1df4",
+    "src/heatplan/accounting.py": "27c78a1a6bea854c3e7ed455c400ea06e92a06d17952704a4f6f25617ebe7b21",
+    "scripts/run_evidence_case_experiments.py": "ccb81b5a8d0eb348bcd5aa1216d745614988fa3bedc926e1e2ba0cd93532a26c",
+    "scripts/run_network_feedback_reference.py": "f09ad29777e6ca5e738958540b79315555e90685579632e7eb2ff7b007b9518a",
+    "src/heatplan/network_feedback.py": "dab8dbacd796fe33fda112320c88181f86a8d4ee37da1eb1d61ebedf91462161"
+  },
+  "hours": 72,
+  "window": [
+    "2024-11-16T00:00:00+08:00",
+    "2024-11-18T23:00:00+08:00"
+  ],
+  "cases": [
+    {
+      "name": "soft_off",
+      "soft_penalty_yuan_per_c_on_hour": 0.0
+    },
+    {
+      "name": "soft_on",
+      "soft_penalty_yuan_per_c_on_hour": 0.2
+    }
+  ],
+  "time_limit_per_iteration_seconds": 60.0,
+  "mip_gap": 0.0,
+  "design_case": true,
+  "real_project_validation": false,
+  "scope": "same-service public-weather mechanism test of finite-mode star thermal-hydraulic feedback",
+  "sources": {
+    "weather": "existing NASA POWER UTC-to-Beijing audited Urumqi input",
+    "prototype_H_internal_gain": "existing public BESTEST600-derived heat-loss reference",
+    "prices_and_grid_factor": "existing conditional Hubei methodological reference, not local Urumqi account",
+    "all_geometry_modes_limits_water_properties_penalty_source_rating": "explicit designed numerical mechanism parameters; NOT measured/approved Bayi assets, NOT national-standard defaults"
+  },
+  "physical_method_references": [
+    {
+      "url": "https://build.openmodelica.org/Documentation/Buildings.Fluid.FixedResistances.BaseClasses.PlugFlowHeatLoss.html",
+      "use": "steady exponential heat attenuation concept only; no adoption of transport/inertia model"
+    },
+    {
+      "url": "https://doc.modelica.org/Modelica%203.2.3/Resources/helpWSM/Modelica/Modelica.Fluid.UsersGuide.ComponentDefinition.WallFriction.html",
+      "use": "Darcy friction and Colebrook turbulent law"
+    },
+    {
+      "doi": "10.1016/j.enconman.2017.08.072",
+      "use": "related transient model identified through official Buildings documentation; its experimental validation is not our validation"
+    }
+  ],
+  "cut_validity": "Each excluded steady on-state violates an explicit fixed hard limit independent of dispatch. No arbitrary topology/capacity cuts.",
+  "approximation": "hourly mean heat under steady on-state duty; exclude cold starts/transport lag/RC pulse comfort and common-pump balancing",
+  "cost_scope": "72-hour source+pump reference electricity plus separately disclosed design delta-T penalty; no pipe investment, annual financial or local bill claim",
+  "negative_results": "preserve every rejected iteration and any terminal solver failure; do not increase caps to obtain pass"
+}
