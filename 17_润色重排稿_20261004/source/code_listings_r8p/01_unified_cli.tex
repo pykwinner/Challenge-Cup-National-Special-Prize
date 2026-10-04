@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{k}{else}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{配置与时序共同定义算例身份；本段不自动启动碳帽扫描。}}
+    \PYG{n}{config}\PYG{p}{,} \PYG{n}{frame} \PYG{o}{=} \PYG{n}{load\PYGZus{}inputs}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{,} \PYG{n}{timeseries\PYGZus{}path}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{仅在提供场景文件时展开不确定场景；无文件则沿用读入时序。}}
+    \PYG{k}{if} \PYG{n}{scenario\PYGZus{}specs\PYGZus{}path}\PYG{p}{:}
+        \PYG{n}{specs} \PYG{o}{=} \PYG{n}{yaml}\PYG{o}{.}\PYG{n}{safe\PYGZus{}load}\PYG{p}{(}\PYG{n}{scenario\PYGZus{}specs\PYGZus{}path}\PYG{o}{.}\PYG{n}{read\PYGZus{}text}\PYG{p}{(}\PYG{n}{encoding}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{utf\PYGZhy{}8}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
+        \PYG{n}{demand\PYGZus{}columns} \PYG{o}{=} \PYG{p}{[}
+            \PYG{n}{column} \PYG{k}{for} \PYG{n}{node} \PYG{o+ow}{in} \PYG{n}{config}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{nodes}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}
+            \PYG{k}{for} \PYG{n}{column} \PYG{o+ow}{in} \PYG{n}{node}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{demand\PYGZus{}columns}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{values}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{]}
+        \PYG{n}{frame} \PYG{o}{=} \PYG{n}{build\PYGZus{}correlated\PYGZus{}northern\PYGZus{}scenario\PYGZus{}bundle}\PYG{p}{(}
+            \PYG{n}{frame}\PYG{p}{,} \PYG{n}{demand\PYGZus{}columns}\PYG{p}{,} \PYG{n}{specs}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scenarios}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{,}
+            \PYG{c+c1}{\PYGZsh{} period\PYGZus{}weight\CJKCode{是代表时段权重，不等同于额外的物理小时步长。}}
+            \PYG{n}{period\PYGZus{}weight}\PYG{o}{=}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{specs}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{period\PYGZus{}weight}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{config}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{planning}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{representative\PYGZus{}day\PYGZus{}weight}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+        \PYG{p}{)}
+        \PYG{n}{config} \PYG{o}{=} \PYG{n}{copy}\PYG{o}{.}\PYG{n}{deepcopy}\PYG{p}{(}\PYG{n}{config}\PYG{p}{)}
+        \PYG{n}{config}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{planning}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{risk}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{specs}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{risk}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{p}{)}
+        \PYG{n}{validate\PYGZus{}inputs}\PYG{p}{(}\PYG{n}{config}\PYG{p}{,} \PYG{n}{frame}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{构造公用模型；源、网、荷、储与配电模块由配置装配。}}
+    \PYG{n}{model} \PYG{o}{=} \PYG{n}{HeatPlanningModel}\PYG{p}{(}\PYG{n}{config}\PYG{p}{,} \PYG{n}{frame}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} mip\PYGZus{}gap\CJKCode{和}time\PYGZus{}limit\CJKCode{限制求解预算，不是物理可行性容差。}}
+    \PYG{n}{artifacts} \PYG{o}{=} \PYG{n}{model}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}
+        \PYG{n}{mip\PYGZus{}gap}\PYG{o}{=}\PYG{n}{args}\PYG{o}{.}\PYG{n}{mip\PYGZus{}gap}\PYG{p}{,}
+        \PYG{n}{time\PYGZus{}limit}\PYG{o}{=}\PYG{n}{args}\PYG{o}{.}\PYG{n}{time\PYGZus{}limit}\PYG{p}{,}
+    \PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{导出所得解及其实际输入；无可行解会由上层模型抛出异常。}}
+    \PYG{n}{export\PYGZus{}results}\PYG{p}{(}\PYG{n}{profile\PYGZus{}output}\PYG{p}{,} \PYG{n}{artifacts}\PYG{p}{,} \PYG{n}{config}\PYG{p}{,} \PYG{n}{model}\PYG{o}{.}\PYG{n}{ts}\PYG{p}{)}
+    \PYG{n}{summary} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{key}\PYG{p}{:} \PYG{n}{value} \PYG{k}{for} \PYG{n}{key}\PYG{p}{,} \PYG{n}{value} \PYG{o+ow}{in} \PYG{n}{artifacts}\PYG{o}{.}\PYG{n}{summary}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{value}\PYG{p}{,} \PYG{n+nb}{dict}\PYG{p}{)}\PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{场景统计另存，避免以全系统平均掩盖某个场景的失供。}}
+    \PYG{p}{(}\PYG{n}{profile\PYGZus{}output} \PYG{o}{/} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scenario\PYGZus{}results.json}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{write\PYGZus{}text}\PYG{p}{(}
+        \PYG{n}{json}\PYG{o}{.}\PYG{n}{dumps}\PYG{p}{(}\PYG{n}{artifacts}\PYG{o}{.}\PYG{n}{summary}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scenario\PYGZus{}results}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{p}{,} \PYG{n}{ensure\PYGZus{}ascii}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} \PYG{n}{indent}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}
+        \PYG{n}{encoding}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{utf\PYGZhy{}8}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{p}{)}
+\end{Verbatim}

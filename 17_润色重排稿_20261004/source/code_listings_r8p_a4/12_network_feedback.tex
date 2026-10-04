@@ -1,0 +1,59 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{此接口不是三城聚合网络的通用连续非线性水力优化器。}}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{solve\PYGZus{}with\PYGZus{}network\PYGZus{}feedback}\PYG{p}{(}\PYG{n}{config}\PYG{p}{,} \PYG{n}{timeseries}\PYG{p}{,} \PYG{o}{*}\PYG{p}{,} \PYG{n}{mip\PYGZus{}gap}\PYG{o}{=}\PYG{l+m+mf}{0.}\PYG{p}{,} \PYG{n}{time\PYGZus{}limit}\PYG{o}{=}\PYG{l+m+mf}{60.}\PYG{p}{,}
+                                \PYG{n}{max\PYGZus{}rounds}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{on\PYGZus{}iteration}\PYG{p}{:} \PYG{n}{Callable} \PYG{o}{|} \PYG{k+kc}{None} \PYG{o}{=} \PYG{k+kc}{None}\PYG{p}{)}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{模式目录和适用配置在构模入口先验证，禁用模式必须来自该有限集合。}}
+    \PYG{n}{model}\PYG{p}{,} \PYG{n}{catalog}\PYG{p}{,} \PYG{n}{flags} \PYG{o}{=} \PYG{n}{build\PYGZus{}feedback\PYGZus{}model}\PYG{p}{(}\PYG{n}{config}\PYG{p}{,} \PYG{n}{timeseries}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{默认轮数有限；不会承诺任意网络的全局收敛。}}
+    \PYG{k}{if} \PYG{n}{max\PYGZus{}rounds} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n}{max\PYGZus{}rounds} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{catalog}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{1}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{拒绝无效轮数、时间预算和间隙。}}
+    \PYG{k}{if} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{max\PYGZus{}rounds}\PYG{p}{,} \PYG{n+nb}{bool}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{max\PYGZus{}rounds}\PYG{p}{)} \PYG{o}{!=} \PYG{n}{max\PYGZus{}rounds} \PYG{o+ow}{or} \PYG{n}{max\PYGZus{}rounds} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{1}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}rounds must be a positive integer}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{math}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{time\PYGZus{}limit}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n}{time\PYGZus{}limit} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{l+m+mi}{0} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n}{math}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{mip\PYGZus{}gap}\PYG{p}{)} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{l+m+mi}{0} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{n}{mip\PYGZus{}gap} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{1}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{invalid solve budget/gap}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{逐轮历史及已排除模式单独记录，便于辨识失败发生在哪一步。}}
+    \PYG{n}{history}\PYG{p}{,} \PYG{n}{eliminated} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{n+nb}{set}\PYG{p}{(}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{每轮在已有割约束下求解，然后接受独立模式校核。}}
+    \PYG{k}{for} \PYG{n}{iteration} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{max\PYGZus{}rounds}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+        \PYG{k}{try}\PYG{p}{:}
+            \PYG{c+c1}{\PYGZsh{} \CJKCode{费用最小可行候选仍需通过温度、水力及服务范围检查。}}
+            \PYG{n}{solution} \PYG{o}{=} \PYG{n}{model}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{time\PYGZus{}limit}\PYG{o}{=}\PYG{n}{time\PYGZus{}limit}\PYG{p}{,} \PYG{n}{mip\PYGZus{}gap}\PYG{o}{=}\PYG{n}{mip\PYGZus{}gap}\PYG{p}{)}
+            \PYG{n}{dispatch}\PYG{p}{,} \PYG{n}{audit} \PYG{o}{=} \PYG{n}{audit\PYGZus{}feedback\PYGZus{}solution}\PYG{p}{(}\PYG{n}{config}\PYG{p}{,} \PYG{n}{model}\PYG{p}{,} \PYG{n}{solution}\PYG{p}{,} \PYG{n}{catalog}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{求解或审计异常保存至}history\CJKCode{，再抛出}FeedbackFailure\CJKCode{。}}
+        \PYG{k}{except} \PYG{n+ne}{Exception} \PYG{k}{as} \PYG{n}{error}\PYG{p}{:}
+            \PYG{n}{record} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{iteration}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{iteration}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{failed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{type}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{error}\PYG{p}{)}\PYG{o}{.}\PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{reason}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{error}\PYG{p}{)}\PYG{p}{,}
+                      \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solver\PYGZus{}evidence}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{getattr}\PYG{p}{(}\PYG{n}{error}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{summary}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{previous\PYGZus{}cuts}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{eliminated}\PYG{p}{)}\PYG{p}{\PYGZcb{}}
+            \PYG{n}{history}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{record}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} \CJKCode{回调可逐轮落盘，让拒绝方案与失败原因可追溯。}}
+            \PYG{k}{if} \PYG{n}{on\PYGZus{}iteration}\PYG{p}{:}
+                \PYG{n}{on\PYGZus{}iteration}\PYG{p}{(}\PYG{n}{record}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{)}
+            \PYG{k}{raise} \PYG{n}{FeedbackFailure}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{error}\PYG{p}{)}\PYG{p}{,} \PYG{n}{history}\PYG{p}{)} \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{error}
+        \PYG{c+c1}{\PYGZsh{} invalid\PYGZus{}modes\CJKCode{来自独立硬校核，不由软惩罚值直接替代。}}
+        \PYG{n}{invalid} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{(}\PYG{n}{audit}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{invalid\PYGZus{}modes}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+        \PYG{n}{record} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{iteration}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{iteration}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{accepted}\PYG{l+s+s2}{\PYGZdq{}} \PYG{k}{if} \PYG{n}{audit}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{passed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{k}{else} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{rejected}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{objective\PYGZus{}yuan}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{solution}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{objective\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solver\PYGZus{}status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{solution}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solver\PYGZus{}status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{mip\PYGZus{}gap}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{solution}\PYG{o}{.}\PYG{n}{summary}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{mip\PYGZus{}gap}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solution\PYGZus{}quality}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{solution}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solution\PYGZus{}quality}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{audit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{audit}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{added\PYGZus{}mode\PYGZus{}cuts}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{invalid} \PYG{o}{\PYGZhy{}} \PYG{n}{eliminated}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{previous\PYGZus{}cuts}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{eliminated}\PYG{p}{)}\PYG{p}{\PYGZcb{}}
+        \PYG{n}{history}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{record}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{on\PYGZus{}iteration}\PYG{p}{:}
+            \PYG{n}{on\PYGZus{}iteration}\PYG{p}{(}\PYG{n}{record}\PYG{p}{,} \PYG{n}{solution}\PYG{p}{,} \PYG{n}{dispatch}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{全部校核通过才返回；最优性范围限于有限目录和登记容差。}}
+        \PYG{k}{if} \PYG{n}{audit}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{passed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+            \PYG{n}{solution}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{network\PYGZus{}feedback}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{iterations}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{iteration} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{eliminated\PYGZus{}modes}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{eliminated}\PYG{p}{)}\PYG{p}{,}
+                \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{audit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{audit}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{optimality\PYGZus{}domain}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{finite catalog MILP within recorded solver tolerances; not continuous nonlinear network optimum}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{soft\PYGZus{}penalty\PYGZus{}is\PYGZus{}not\PYGZus{}cash\PYGZus{}cost}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{True}\PYG{p}{\PYGZcb{}}
+            \PYG{k}{return} \PYG{n}{FeedbackArtifacts}\PYG{p}{(}\PYG{n}{model}\PYG{p}{,} \PYG{n}{solution}\PYG{p}{,} \PYG{n}{dispatch}\PYG{p}{,} \PYG{n}{history}\PYG{p}{,} \PYG{n}{audit}\PYG{p}{,} \PYG{n}{catalog}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{没有可新增禁用模式时明确失败，避免重复无效求解。}}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{invalid} \PYG{o}{\PYGZhy{}} \PYG{n}{eliminated}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n}{FeedbackFailure}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{non\PYGZhy{}engineering audit failure; no valid mode cut available}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{history}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{对每个时段将不合格模式的选择变量置零，再重新求解。}}
+        \PYG{k}{for} \PYG{n}{virtual} \PYG{o+ow}{in} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{n}{invalid} \PYG{o}{\PYGZhy{}} \PYG{n}{eliminated}\PYG{p}{)}\PYG{p}{:}
+            \PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n}{model}\PYG{o}{.}\PYG{n}{times}\PYG{p}{:}
+                \PYG{n}{model}\PYG{o}{.}\PYG{n}{problem}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{flags}\PYG{p}{[}\PYG{n}{virtual}\PYG{p}{,} \PYG{n}{t}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.}\PYG{p}{\PYGZcb{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{登记已排除集合，下轮只对首次发现的不合格模式加割。}}
+        \PYG{n}{eliminated}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{invalid}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{轮数耗尽仍未验收则失败，不把最后一轮写成合格方案。}}
+    \PYG{k}{raise} \PYG{n}{FeedbackFailure}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{feedback iteration limit reached without engineering acceptance}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{history}\PYG{p}{)}
+\end{Verbatim}

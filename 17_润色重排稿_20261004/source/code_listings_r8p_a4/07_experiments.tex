@@ -1,0 +1,153 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{必须调用完整函数，不能仅冻结正文中示出的热源和储热两类。}}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{freeze\PYGZus{}investment\PYGZus{}plan}\PYG{p}{(}
+    \PYG{n}{config}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{,}
+    \PYG{n}{nominal}\PYG{p}{,}
+    \PYG{o}{*}\PYG{p}{,}
+    \PYG{n}{relax\PYGZus{}reliability}\PYG{p}{:} \PYG{n+nb}{bool} \PYG{o}{=} \PYG{k+kc}{False}\PYG{p}{,}
+\PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{n+nb}{dict}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Convert an optimized plan into fixed existing assets for replay.}
+
+\PYG{l+s+sd}{    Reliability is retained by default. A diagnostic stress test may explicitly}
+\PYG{l+s+sd}{    pass ``relax\PYGZus{}reliability=True`` to quantify shortage, but that relaxed run}
+\PYG{l+s+sd}{    is not evidence of compliance with the original service requirement.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{深复制保护原规划配置，复算修改不回写原数据。}}
+    \PYG{n}{fixed} \PYG{o}{=} \PYG{n}{copy}\PYG{o}{.}\PYG{n}{deepcopy}\PYG{p}{(}\PYG{n}{config}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{默认保留原服务可靠性；诊断性放宽会被单独标记。}}
+    \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{replay\PYGZus{}service\PYGZus{}policy}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{(}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{diagnostic\PYGZus{}relaxed\PYGZus{}reliability}\PYG{l+s+s2}{\PYGZdq{}} \PYG{k}{if} \PYG{n}{relax\PYGZus{}reliability} \PYG{k}{else} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{original\PYGZus{}service\PYGZus{}requirements}\PYG{l+s+s2}{\PYGZdq{}}
+    \PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{冻结不抹去所选资产的年化费用；季节范围转换另由季节接口处理。}}
+    \PYG{c+c1}{\PYGZsh{} A frozen asset has no *new* investment variable, but its selected annual}
+    \PYG{c+c1}{\PYGZsh{} capital charge still belongs in annual replay and affordability tests.}
+    \PYG{n}{planning\PYGZus{}summary} \PYG{o}{=} \PYG{n+nb}{getattr}\PYG{p}{(}\PYG{n}{nominal}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{summary}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}\PYG{p}{)}
+    \PYG{n}{components} \PYG{o}{=} \PYG{n}{planning\PYGZus{}summary}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{components\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}\PYG{p}{)}
+    \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed\PYGZus{}investment\PYGZus{}accounting}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scope}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{annual\PYGZus{}selected\PYGZus{}plan\PYGZus{}charges}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{components}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{n}{name}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{components}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{name}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)} \PYG{k}{for} \PYG{n}{name} \PYG{o+ow}{in} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{annualized\PYGZus{}capex}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed\PYGZus{}om\PYGZus{}cost}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{metrics}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{n}{name}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{planning\PYGZus{}summary}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{name}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)} \PYG{k}{for} \PYG{n}{name} \PYG{o+ow}{in} \PYG{p}{(}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{regulated\PYGZus{}annualized\PYGZus{}capex\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{shared\PYGZus{}non\PYGZus{}heating\PYGZus{}capex\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{public\PYGZus{}subsidy\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n+nb}{hasattr}\PYG{p}{(}\PYG{n}{nominal}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{summary}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} Investment\PYGZhy{}only callers can still inspect installed assets. A model}
+        \PYG{c+c1}{\PYGZsh{} replay must refuse these unknown charges instead of assuming zero.}
+        \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed\PYGZus{}investment\PYGZus{}accounting}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scope}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{unavailable\PYGZus{}no\PYGZus{}planning\PYGZus{}summary}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{热源容量按既有加新增减退役转为存量，随后锁定两个投资上限。}}
+    \PYG{k}{for} \PYG{n}{source} \PYG{o+ow}{in} \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sources}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+        \PYG{n}{row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+            \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+            \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+        \PYG{p}{]}
+        \PYG{n}{addition} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{退役量需要扣除，不可把已退役容量继续用于复算。}}
+        \PYG{n}{retired} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+            \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}retirement}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+            \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+        \PYG{p}{]}
+        \PYG{n}{retirement} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{retired}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{retired}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+        \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{source}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYG{n}{addition} \PYG{o}{\PYGZhy{}} \PYG{n}{retirement}
+        \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+        \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}retire\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{储热新增能量容量并入}kWh\CJKCode{存量，后续不再增加储热容量。}}
+    \PYG{k}{for} \PYG{n}{storage} \PYG{o+ow}{in} \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storages}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+        \PYG{n}{row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+            \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+            \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{storage}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+        \PYG{p}{]}
+        \PYG{n}{addition} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+        \PYG{n}{storage}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYG{n}{addition}
+        \PYG{n}{storage}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}capacity\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{管道改造以固定值保存；离散改造不必伪装成连续新增容量。}}
+    \PYG{k}{for} \PYG{n}{pipe} \PYG{o+ow}{in} \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{pipes}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+        \PYG{n}{retrofit\PYGZus{}row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+            \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{pipe\PYGZus{}retrofit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+            \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+        \PYG{p}{]}
+        \PYG{k}{if} \PYG{n}{pipe}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{retrofit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{retrofit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed\PYGZus{}value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{(}
+                \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{retrofit\PYGZus{}row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{retrofit\PYGZus{}row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+            \PYG{p}{)}
+            \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{retrofit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{capex\PYGZus{}total\PYGZus{}yuan}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{被选管径容量并入存量，再清空候选管径，防止复算重新选型。}}
+        \PYG{n}{selected} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+            \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{pipe\PYGZus{}choice}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+            \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+            \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.5}\PYG{p}{)}
+        \PYG{p}{]}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{selected}\PYG{o}{.}\PYG{n}{empty}\PYG{p}{:}
+            \PYG{n}{option\PYGZus{}name} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{selected}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{option}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}
+            \PYG{n}{option} \PYG{o}{=} \PYG{n+nb}{next}\PYG{p}{(}\PYG{n}{x} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{pipe}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{diameter\PYGZus{}options}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{x}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)} \PYG{o}{==} \PYG{n}{option\PYGZus{}name}\PYG{p}{)}
+            \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{pipe}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{option}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+        \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{diameter\PYGZus{}options}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
+
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{计量覆盖率并入已覆盖比例，关闭新增覆盖自由度。}}
+    \PYG{k}{for} \PYG{n}{node} \PYG{o+ow}{in} \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{nodes}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+        \PYG{n}{metering} \PYG{o}{=} \PYG{n}{node}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{heat\PYGZus{}metering}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{metering}\PYG{p}{:}
+            \PYG{n}{row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+                \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{heat\PYGZus{}metering\PYGZus{}coverage}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+                \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{node}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+            \PYG{p}{]}
+            \PYG{n}{addition} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+            \PYG{n}{metering}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}coverage\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}
+                \PYG{l+m+mf}{1.0}\PYG{p}{,}
+                \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{metering}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}coverage\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+                \PYG{o}{+} \PYG{n}{addition}\PYG{p}{,}
+            \PYG{p}{)}
+            \PYG{n}{metering}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}coverage\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+            \PYG{n}{metering}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed\PYGZus{}new\PYGZus{}coverage\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{)}
+            \PYG{n}{metering}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{capex\PYGZus{}yuan\PYGZus{}per\PYGZus{}coverage\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{末端温位改造保存规划取值，避免逐时复算改变投资模式。}}
+        \PYG{n}{retrofit} \PYG{o}{=} \PYG{n}{node}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{temperature\PYGZus{}retrofit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{retrofit}\PYG{p}{:}
+            \PYG{k}{continue}
+        \PYG{n}{row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+            \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{terminal\PYGZus{}temperature\PYGZus{}retrofit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+            \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{node}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+        \PYG{p}{]}
+        \PYG{n}{retrofit}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed\PYGZus{}value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+        \PYG{n}{retrofit}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{capex\PYGZus{}total\PYGZus{}yuan}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{电网接入增容同样冻结，不能靠新增配电容量通过复算。}}
+    \PYG{n}{grid} \PYG{o}{=} \PYG{n}{fixed}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{grid\PYGZus{}connection}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{grid}\PYG{p}{:}
+        \PYG{n}{row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{grid\PYGZus{}connection\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}
+        \PYG{n}{addition} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+        \PYG{n}{grid}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{grid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYG{n}{addition}
+        \PYG{n}{grid}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{生物质库存容量以}kg\CJKCode{登记；库存容量不同于逐小时到货速率。}}
+    \PYG{k}{for} \PYG{n}{chain} \PYG{o+ow}{in} \PYG{n}{fixed}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{biomass\PYGZus{}supply\PYGZus{}chains}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{p}{]}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+            \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{biomass\PYGZus{}inventory\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+            \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{chain}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+        \PYG{p}{]}
+        \PYG{n}{addition} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+        \PYG{n}{chain}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}inventory\PYGZus{}capacity\PYGZus{}kg}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}
+            \PYG{n}{chain}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}inventory\PYGZus{}capacity\PYGZus{}kg}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}
+        \PYG{p}{)} \PYG{o}{+} \PYG{n}{addition}
+        \PYG{n}{chain}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}inventory\PYGZus{}capacity\PYGZus{}kg}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{可再生电源、储电功率与能量、备用电源均纳入冻结。}}
+    \PYG{n}{microgrid} \PYG{o}{=} \PYG{n}{fixed}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{microgrid\PYGZus{}islanding}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{microgrid}\PYG{p}{:}
+        \PYG{n}{fields} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{microgrid\PYGZus{}renewable\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}renewable\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}renewable\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{microgrid\PYGZus{}battery\PYGZus{}power}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}battery\PYGZus{}power\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}battery\PYGZus{}power\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{microgrid\PYGZus{}battery\PYGZus{}energy}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}battery\PYGZus{}energy\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}battery\PYGZus{}energy\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{microgrid\PYGZus{}backup\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}backup\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}backup\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{for} \PYG{n}{category}\PYG{p}{,} \PYG{p}{(}\PYG{n}{existing\PYGZus{}key}\PYG{p}{,} \PYG{n}{max\PYGZus{}key}\PYG{p}{)} \PYG{o+ow}{in} \PYG{n}{fields}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{category}\PYG{p}{]}
+            \PYG{n}{addition} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+            \PYG{n}{microgrid}\PYG{p}{[}\PYG{n}{existing\PYGZus{}key}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{microgrid}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{existing\PYGZus{}key}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYG{n}{addition}
+            \PYG{n}{microgrid}\PYG{p}{[}\PYG{n}{max\PYGZus{}key}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{仅显式诊断请求可放宽失供率和备用裕度；该分支不构成原要求验收。}}
+    \PYG{k}{if} \PYG{n}{relax\PYGZus{}reliability}\PYG{p}{:}
+        \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{planning}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}unserved\PYGZus{}rate}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{1.0}
+        \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{planning}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}scenario\PYGZus{}unserved\PYGZus{}rate}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{1.0}
+        \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{planning}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{firm\PYGZus{}capacity\PYGZus{}reserve\PYGZus{}margin}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{返回完整固定配置；是否冻结成功另由投资冻结审计核对。}}
+    \PYG{k}{return} \PYG{n}{fixed}
+\end{Verbatim}

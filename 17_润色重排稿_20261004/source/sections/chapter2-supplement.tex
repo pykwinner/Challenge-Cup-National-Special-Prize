@@ -1,0 +1,762 @@
+\clearpage
+\section*{附录7\quad 第二章模型补充约束}
+\phantomsection
+\addcontentsline{toc}{section}{\texorpdfstring{附录7\quad 第二章模型补充约束}{附录7 第二章模型补充约束}}
+\newcounter{chaptertwosupplement}
+\renewcommand{\thechaptertwosupplement}{7.\Alph{chaptertwosupplement}}
+\subsection*{A\quad 公共模型补充约束}
+\refstepcounter{chaptertwosupplement}
+\addcontentsline{toc}{subsection}{A 公共模型补充约束}
+\label{app:common}
+
+\subsubsection*{A.1\quad 共享余热资源核算}
+
+工业余热、污水余热和数据中心余热等低碳资源可能同时被直接换热设备与热泵利用。若分别为两类设备设置资源上限，同一份余热可能在模型中被重复计算。为此，本文按资源池统一核算源侧实际取热量。直接换热设备与热泵共同利用资源池 $r$ 时，有
+
+\begin{equation}
+R_{r,t}^{\mathrm{use}}
+=\sum_{k\in D_r}\frac{Q_{k,t}}{\eta_r^{\mathrm{tr}}}
++\sum_{k\in H_r}
+\frac{\left(1-\dfrac{1}{\mathrm{COP}_{k,t}}\right)Q_{k,t}}
+{\eta_r^{\mathrm{tr}}}
+\leq R_{r,t}.
+\label{eq:resource_pool}
+\end{equation}
+
+其中，$D_r$ 与 $H_r$ 分别为直接换热和热泵集合，$\eta_r^{\mathrm{tr}}$ 为资源端至设备端的传热效率。对于直接换热设备，用户侧供热量经输送效率折算为资源消耗；对于热泵，用户侧供热量扣除输入电功后才是源侧取热量。式(\ref{eq:resource_pool})保证所有设备的源侧取热量之和不超过时段 $t$ 的可利用资源 $R_{r,t}$。
+
+资源可利用量还应考虑生产节拍、检修计划和季节波动，可写为
+
+\begin{equation}
+R_{r,t}=R_r^{\mathrm{rated}}a_{r,t}^{\mathrm{prod}}a_{r,t}^{\mathrm{maint}},
+\qquad
+0\leq a_{r,t}^{\mathrm{prod}},a_{r,t}^{\mathrm{maint}}\leq1.
+\label{eq:resource_availability}
+\end{equation}
+
+其中，$a_{r,t}^{\mathrm{prod}}$ 和 $a_{r,t}^{\mathrm{maint}}$ 分别表示生产可用率和检修可用率。当资源侧停产或检修时，相应时段的资源上限同步下降，模型不能用全年平均余热量替代逐时资源边界。
+
+\subsubsection*{A.2\quad 设备性能域}
+
+热泵的制热量、输入功率和性能系数均随源侧温度、供水温度及部分负荷率变化。为避免采用固定性能系数高估低温工况能力，本文只在厂家同一型号的有效工况点内进行插值：
+
+\begin{equation}
+Q_{k,t}^{\mathrm{cat}}=\sum_i\lambda_{k,i,t}Q_{k,i}^{\mathrm{cat}},
+\qquad
+P_{k,t}^{\mathrm{cat}}=\sum_i\lambda_{k,i,t}P_{k,i}^{\mathrm{cat}},
+\qquad
+\sum_i\lambda_{k,i,t}=1.
+\label{eq:performance_interpolation}
+\end{equation}
+
+插值权重 $\lambda_{k,i,t}$ 非负，且仅连接同一型号相邻工况点。缺失点、越界点和跨型号组合不参与优化。工况有效时，实际出力上限和输入电功率为
+
+\begin{equation}
+0\leq Q_{k,t}^{\mathrm{HP}}\leq\phi_{k,t}Q_{k,t}^{\mathrm{cat}},
+\qquad
+P_{k,t}^{\mathrm{HP}}
+=\frac{P_{k,t}^{\mathrm{cat}}}{\phi_{k,t}Q_{k,t}^{\mathrm{cat}}}Q_{k,t}^{\mathrm{HP}}.
+\label{eq:performance_limit}
+\end{equation}
+
+式中，$\phi_{k,t}$ 为除霜、老化、海拔或其他现场因素形成的综合折减系数。当环境温度或供水温度超出厂家性能域时，设备可用状态置为零；当现场修正因子小于1时，额定工况能力按比例下降。由此，容量规划使用的是可实现出力，而非铭牌容量。
+
+\subsubsection*{A.3\quad 设备启停、爬坡与最小运行时间}
+
+燃料锅炉、热泵和电锅炉除受容量上限限制外，还需满足启停与负荷变化约束。设备 $k$ 的逐时出力满足
+
+\begin{equation}
+\underline Q_ku_{k,t}\leq Q_{k,t}\leq \overline Q_ku_{k,t},
+\qquad
+-R_k^{\mathrm{down}}\leq Q_{k,t}-Q_{k,t-1}\leq R_k^{\mathrm{up}}.
+\label{eq:ramp_limit}
+\end{equation}
+
+其中，$u_{k,t}$ 为启停状态，$R_k^{\mathrm{up}}$ 与 $R_k^{\mathrm{down}}$ 分别为升、降负荷速率。启动变量 $v_{k,t}^{\mathrm{start}}$ 和停机变量 $v_{k,t}^{\mathrm{stop}}$ 满足
+
+\begin{equation}
+u_{k,t}-u_{k,t-1}=v_{k,t}^{\mathrm{start}}-v_{k,t}^{\mathrm{stop}},
+\qquad
+v_{k,t}^{\mathrm{start}}+v_{k,t}^{\mathrm{stop}}\leq1.
+\label{eq:startup_logic}
+\end{equation}
+
+对存在最小连续运行时间的设备，还应满足
+
+\begin{equation}
+\sum_{\tau=t}^{t+T_k^{\mathrm{on}}-1}u_{k,\tau}
+\geq T_k^{\mathrm{on}}v_{k,t}^{\mathrm{start}}.
+\label{eq:min_on_time}
+\end{equation}
+
+上述约束防止优化结果通过每小时频繁启停或瞬时大幅调节获得不可实现的低成本。若设备实际调节性能未知，则应采用保守爬坡率并在敏感性分析中给出变化范围。
+
+\subsubsection*{A.4\quad 储热状态、互斥运行与期末边界}
+
+正文已给出储热状态递推。为保证状态物理可行，储热还需满足容量、充放功率及运行互斥约束：
+
+\begin{equation}
+\begin{cases}
+0\leq E_{s,t}\leq K_s^E,\\
+0\leq Q_{s,t}^{\mathrm{ch}}\leq r_s^{\mathrm{ch}}K_s^Ey_{s,t}^{\mathrm{ch}},\\
+0\leq Q_{s,t}^{\mathrm{dis}}\leq r_s^{\mathrm{dis}}K_s^Ey_{s,t}^{\mathrm{dis}},\\
+y_{s,t}^{\mathrm{ch}}+y_{s,t}^{\mathrm{dis}}\leq1.
+\end{cases}
+\label{eq:storage_complementarity}
+\end{equation}
+
+完整供暖季计算还需设置初末状态：
+
+\begin{equation}
+E_{s,1}=E_s^{0},
+\qquad
+E_{s,T}\geq E_s^{\mathrm{end}}.
+\label{eq:storage_terminal}
+\end{equation}
+
+式(\ref{eq:storage_complementarity})排除同一时段同时充放热，式(\ref{eq:storage_terminal})防止模型在最后数小时无偿耗尽储热。若研究采用周期运行假设，可令 $E_{s,T}=E_{s,1}$；若采用实际季初、季末库存，则应按运行制度分别给定。
+
+\subsubsection*{A.5\quad 管网连续温度与水力校核}
+
+主模型采用离散温位和固定供回水温差控制计算规模。候选容量方案确定后，必须恢复连续温度与水力关系进行工程复算。管段出口温度按连续温降关系计算：
+
+\begin{equation}
+T_{e,t}^{\mathrm{out}}
+=T_{e,t}^{\mathrm{env}}
++\left(T_{e,t}^{\mathrm{in}}-T_{e,t}^{\mathrm{env}}\right)
+\exp\left(-\frac{U_eL_e}{\dot m_{e,t}c_p}\right).
+\label{eq:temperature_drop}
+\end{equation}
+
+最远节点温度裕度、流量利用率和回水条件分别满足
+
+\begin{equation}
+\Delta T^{\mathrm{margin}}
+=\min_t\left(T_{n,t}^{\mathrm{sup}}-T_{n,t}^{\mathrm{req}}-\Delta T_n^{\mathrm{hx}}\right)\geq0,
+\qquad
+\lambda_e^{\mathrm{flow}}=\max_t\frac{|\dot m_{e,t}|}{\overline{\dot m}_e}\leq1,
+\label{eq:network_check}
+\end{equation}
+
+\begin{equation}
+Q_{n,t}=\dot m_{n,t}c_p(T_{n,t}^{\mathrm{sup}}-T_{n,t}^{\mathrm{ret}}),
+\quad
+T_{n,t}^{\mathrm{ret}}\leq\overline T_n^{\mathrm{ret}},
+\quad
+T_{n,t}^{\mathrm{sup}}-T_{n,t}^{\mathrm{ret}}\geq\Delta T_n^{\min}.
+\label{eq:return_check}
+\end{equation}
+
+管段压降与泵功率进一步满足
+
+\begin{equation}
+\Delta p_{e,t}=f_e\frac{L_e}{D_e}\frac{\rho v_{e,t}^{2}}{2}
++\sum_j\zeta_{e,j}\frac{\rho v_{e,t}^{2}}{2},
+\qquad
+P_{e,t}^{\mathrm{pump}}=\frac{\dot m_{e,t}\Delta p_{e,t}}{\rho\eta_e^{\mathrm{pump}}}.
+\label{eq:hydraulic_check}
+\end{equation}
+
+式中，$f_e$ 为沿程阻力系数，$D_e$ 为管径，$\zeta_{e,j}$ 为局部阻力系数。连续复算依次检查最远端温度、关键管段流量、回水温度、供回水温差、压降和泵功率。任一指标越界时，不直接修改计算结果，而是将对应管径、温位或运行模式限制反馈至规划模型重新求解。
+
+\subsubsection*{A.6\quad 生命周期成本与碳排放核算}
+
+生命周期成本由年化投资、固定运维、变动运维、燃料、电力、启停及未供能惩罚构成：
+
+\begin{equation}
+\begin{aligned}
+F^{\mathrm{cost}}={}&
+\sum_k a_k^{\mathrm{ann}}C_k^{\mathrm{inv}}K_k^{\mathrm{new}}
++\sum_k C_k^{\mathrm{fix}}K_k
++\sum_t\sum_k C_{k,t}^{\mathrm{var}}Q_{k,t}\Delta t\\
+&+\sum_t c_t^{\mathrm{fuel}}F_t^{\mathrm{fuel}}\Delta t
++\sum_t c_t^{\mathrm{ele}}P_t^{\mathrm{imp}}\Delta t
++\sum_{k,t}C_k^{\mathrm{start}}v_{k,t}^{\mathrm{start}}
++C^{\mathrm{un}}\sum_tQ_t^{\mathrm{un}}\Delta t.
+\end{aligned}
+\label{eq:cost_detail}
+\end{equation}
+
+其中，$a_k^{\mathrm{ann}}$ 为年化系数。碳排放与同一组燃料和购电量对应：
+
+\begin{equation}
+F^{\mathrm{CO_2}}
+=\sum_t\left(\sum_f\gamma_fF_{f,t}^{\mathrm{fuel}}+\gamma_t^{\mathrm{grid}}P_t^{\mathrm{imp}}
+-\gamma_t^{\mathrm{credit}}P_t^{\mathrm{exp}}\right)\Delta t.
+\label{eq:carbon_detail}
+\end{equation}
+
+成本与排放必须共享能耗数据，避免分别核算造成口径不一致。推荐方案中失供量为零，因此未供能惩罚仅用于帮助求解器识别不可行方案，不能替代零失供硬约束。
+
+\subsubsection*{A.7\quad 完整供暖季回放与验收}
+
+若容量规划采用代表日降低求解规模，代表日仅用于产生候选规划变量。候选方案确定后，固定热源、管网、储热与配电容量，按原始逐时序列重新计算完整供暖季。回放过程中，建筑温度、储热存量、燃料库存和设备启停状态均继承上一时段结果，不在日界或月界重置。
+
+统一验收条件为
+
+\begin{equation}
+\max_{n,g,t}|r_{n,g,t}^{Q}|\leq\varepsilon_Q,
+\quad
+\max_{s,t}|r_{s,t}^{E}|\leq\varepsilon_E,
+\quad
+\lambda_e^{\mathrm{flow}}\leq1,
+\quad
+U^{\mathrm{un}}=0.
+\label{eq:appendix_acceptance}
+\end{equation}
+
+除式(\ref{eq:appendix_acceptance})外，所有时段均须满足室内温度、设备出力、储热容量、管网温度与压降、配电容量及场景专用约束。任一时段不通过，即判定候选方案动态验证失败，并返回规划层调整容量或运行模式。
+
+\clearpage
+
+\subsection*{B\quad 乌鲁木齐场景补充约束}
+\refstepcounter{chaptertwosupplement}
+\addcontentsline{toc}{subsection}{B 乌鲁木齐场景补充约束}
+\label{app:urumqi}
+
+\subsubsection*{B.1\quad 既有热源分阶段退役}
+
+乌鲁木齐是在既有大型集中供热系统上进行低碳重构，退役决策具有明确的时间顺序。阶段 $y$ 的燃煤热源退役量不得超过上一阶段已投运容量，达到政策退役期限后相应容量必须退出：
+
+\begin{equation}
+K_{\mathrm{coal},y}^{\mathrm{ret}}\leq K_{\mathrm{coal},y-1}^{\mathrm{exist}},
+\qquad
+y\geq y^{\mathrm{deadline}}\Rightarrow K_{\mathrm{coal},y}^{\mathrm{exist}}=0.
+\label{eq:urumqi_retirement_stage}
+\end{equation}
+
+正文式(\ref{eq:retirement})进一步要求退役容量由新增清洁热源、储热有效容量和备用容量共同补足。其中，储热有效容量是设计峰值时段可持续释放的热功率，而非储热装置的额定储能量。只有替代能力在容量和持续时间上均足以覆盖退役缺口，退役方案才可进入逐时运行验证。
+
+\subsubsection*{B.2\quad 工业余热、大型热泵与配电边界}
+
+工业余热的可利用量同时受资源侧生产状态、回收效率和输送损失影响。余热温度低于高温热网要求时，须经大型热泵提升温位。相应约束为
+
+\begin{equation}
+\begin{gathered}
+0\leq Q_t^{\mathrm{waste}}\leq\eta^{\mathrm{recovery}}Q_t^{\mathrm{available}},
+\quad
+Q_t^{\mathrm{HP}}=\mathrm{COP}_tP_t^{\mathrm{HP}},
+\\[1mm]
+P_t^{\mathrm{HP}}+P_t^{\mathrm{base}}+P_t^{\mathrm{pump}}\leq\overline P^{\mathrm{grid}}.
+\end{gathered}
+\label{eq:urumqi_hp}
+\end{equation}
+
+式(\ref{eq:urumqi_hp})第一项限制资源总量，第二项描述热泵热电转换，第三项保证热泵、循环泵和基础用电不超过区域配电容量。$\mathrm{COP}_t$ 应由资源侧温度、供水温度、温升和部分负荷率共同确定，不宜使用全年常数。若配电容量不足，模型需在配电增容、降低热泵规模、增配储热或保留其他调峰热源之间重新权衡。
+
+\subsubsection*{B.3\quad 温位兼容与直接供热判定}
+
+大型集中供热系统不仅要求热量守恒，还要求热能品质匹配。定义热源 $k$ 与供热温位 $g$ 的兼容参数
+
+\begin{equation}
+A_{kg}^{\mathrm{grade}}=
+\begin{cases}
+1,&T_k^{\mathrm{src,min}}\geq T_g^{\mathrm{sup}}+\Delta T_g^{\mathrm{hx}},\\
+0,&\text{其他情况},
+\end{cases}
+\qquad
+0\leq Q_{k,g,t}^{\mathrm{direct}}\leq A_{kg}^{\mathrm{grade}}\overline Q_k.
+\label{eq:urumqi_grade}
+\end{equation}
+
+当 $A_{kg}^{\mathrm{grade}}=0$ 时，对应热源不得直接承担该温位负荷，必须通过热泵或其他增温设备转换。该约束避免“热量足够即视为可用”的错误判断，尤其适用于低温工业余热接入75/45~$^{\circ}$C等高温等级热网的情形。
+
+\subsubsection*{B.4\quad 骨干管网容量与最远端温度}
+
+热源替代会改变既有骨干管网的潮流方向和峰值流量。既有管段与新增管段共同承担的总流量满足
+
+\begin{equation}
+\dot m_{e,t}^{\mathrm{total}}=\dot m_{e,t}^{\mathrm{exist}}+\dot m_{e,t}^{\mathrm{new}},
+\qquad
+|\dot m_{e,t}^{\mathrm{total}}|\leq\overline{\dot m}_e.
+\label{eq:urumqi_flow}
+\end{equation}
+
+最远换热站供水温度及裕度满足
+
+\begin{equation}
+T_{n^{\mathrm{far}},t}^{\mathrm{sup}}
+\geq T_{n^{\mathrm{far}},t}^{\mathrm{req}}+\Delta T_{n^{\mathrm{far}}}^{\mathrm{hx}},
+\qquad
+\Delta T_{n^{\mathrm{far}}}^{\mathrm{margin}}
+=\min_t\left(T_{n^{\mathrm{far}},t}^{\mathrm{sup}}-T_{n^{\mathrm{far}},t}^{\mathrm{req}}-\Delta T_{n^{\mathrm{far}}}^{\mathrm{hx}}\right)\geq0.
+\label{eq:urumqi_far_temperature}
+\end{equation}
+
+若式(\ref{eq:urumqi_flow})超限，则需要增大管径、增设联络线或调整热源空间布局；若式(\ref{eq:urumqi_far_temperature})不满足，则需要提高源侧温度、改善保温、增加流量或改造末端。两类问题不能通过增加系统总热量自动解决。
+
+\subsubsection*{B.5\quad 热源故障与备用能力}
+
+正文式(\ref{eq:urumqi_key})已给出关键热源退出后的逐时供需边界。为避免系统刚好满足负荷但没有调节余量，还需保留规定备用裕度：
+
+\begin{equation}
+\sum_{j\neq k}\left(\overline Q_j-Q_{j,t}\right)
++\overline Q^{\mathrm{storage,dis}}
+\geq R_t^{N-1},
+\qquad \forall k\in K^{\mathrm{critical}}.
+\label{eq:urumqi_reserve}
+\end{equation}
+
+每一台关键热源均需单独构造故障情景。故障设备的可用率置为零，其出力不得继续计入平衡；储热只能按故障发生时的实际存量提供支撑，不能直接使用额定容量。若任一故障情景出现失供，则应增加备用热源、储热放热能力或管网互联能力。
+
+\subsubsection*{B.6\quad 寒潮零失供}
+
+寒潮通常同时造成室外温度下降、建筑负荷增加和工业余热可用量变化，因此三类输入需同步修正，并要求逐时零失供：
+
+\begin{equation}
+\begin{aligned}
+T_t^{\mathrm{out,cold}}&=T_t^{\mathrm{out}}-\Delta T^{\mathrm{cold}},
+&D_t^{\mathrm{cold}}&=\alpha_DD_t,\\
+Q_t^{\mathrm{waste,cold}}&=\alpha_WQ_t^{\mathrm{waste}},\\
+Q_t^{\mathrm{un,cold}}
+&=\max\left(0,D_t^{\mathrm{cold}}-\sum_kQ_{k,t}^{\mathrm{cold}}
+-Q_t^{\mathrm{storage,dis,cold}}\right)=0.
+\end{aligned}
+\label{eq:coldwave}
+\end{equation}
+
+寒潮校核必须保持原始连续时间顺序，使建筑热状态、储热存量和设备状态从寒潮前逐时传递至寒潮结束。零失供要求每个时段的 $Q_t^{\mathrm{un,cold}}$ 均为零，而不是仅要求全季平均失供率较低。
+
+\subsubsection*{B.7\quad 管网降温与建筑末端改造联动}
+
+降低热网供水温度有利于扩大余热利用范围并提高热泵性能，但老旧建筑散热器或换热器可能无法在低温工况下满足室温。建筑末端改造变量 $z_b^{\mathrm{retro}}$ 决定最低供水温度：
+
+\begin{equation}
+T_b^{\mathrm{req}}
+=(1-z_b^{\mathrm{retro}})T_b^{\mathrm{old}}
++z_b^{\mathrm{retro}}T_b^{\mathrm{new}},
+\qquad
+T_{b,t}^{\mathrm{sup}}\geq T_b^{\mathrm{req}}+\Delta T_b^{\mathrm{hx}}.
+\label{eq:terminal_retrofit}
+\end{equation}
+
+改造投资及室温还应满足
+
+\begin{equation}
+\sum_bC_b^{\mathrm{retro}}z_b^{\mathrm{retro}}\leq B^{\mathrm{retro}},
+\qquad
+\theta_{b,t}^{a}\geq\theta_b^{\min}.
+\label{eq:terminal_budget}
+\end{equation}
+
+式(\ref{eq:terminal_retrofit})连接管网供水温度与建筑末端能力，式(\ref{eq:terminal_budget})限制改造规模并保持室内舒适度。只有管网温度、末端换热能力、投资预算和室温同时满足时，降温方案才具有工程可行性。
+
+\subsubsection*{B.8\quad 乌鲁木齐场景验收指标}
+
+乌鲁木齐候选方案除满足公共模型约束外，还需报告：燃煤热源分阶段退役量、清洁替代容量、余热利用率、热泵逐时性能系数、配电峰值、关键管段最大流量利用率、最远换热站最低温度裕度、回水温度、供回水温差、各关键热源 $N-1$ 校核结果、寒潮最大负荷时的备用裕度，以及末端改造面积与投资。任一指标越界均应返回规划层调整，不以全年平均指标替代最不利时段判定。
+
+\clearpage
+
+\subsection*{C\quad 固原场景补充约束}
+\refstepcounter{chaptertwosupplement}
+\addcontentsline{toc}{subsection}{C 固原场景补充约束}
+\label{app:guyuan}
+
+\subsubsection*{C.1\quad 热源选址、用户分配与服务半径}
+
+固原场景首先确定候选热源是否建设以及各村镇、片区由哪个热源服务。正文式(\ref{eq:guyuan_location})保证每个用户仅分配给一个已建热源，并同时满足服务半径和峰值容量。选址变量与分配变量满足
+
+\begin{equation}
+z_i^{\mathrm{site}}\in\{0,1\},
+\qquad
+x_{i,b}\in\{0,1\}.
+\label{eq:guyuan_binary}
+\end{equation}
+
+服务半径应使用道路或可敷设管线距离，而非简单直线距离。峰值容量还应考虑同时使用系数和备用裕度：
+
+\begin{equation}
+\sum_b\beta_{i,b}D_b^{\mathrm{peak}}x_{i,b}
+\leq (1-\rho_i^{\mathrm{reserve}})K_i.
+\label{eq:guyuan_peak_capacity}
+\end{equation}
+
+其中，$\beta_{i,b}$ 为同时使用系数，$\rho_i^{\mathrm{reserve}}$ 为备用比例。若候选点不能满足距离、容量或土地条件，则相应用户分配变量必须为零。
+
+\subsubsection*{C.2\quad 微网拓扑与管网连通性}
+
+仅确定热源位置和用户归属并不能保证实际可供热，还需确保热源与用户之间存在连续可建的管网路径。候选管段建设变量 $z_e^{\mathrm{pipe}}$ 与热流满足
+
+\begin{equation}
+|F_{e,t}|\leq\overline F_ez_e^{\mathrm{pipe}},
+\qquad
+x_{i,b}\leq\sum_{e\in\mathcal P_{i,b}}z_e^{\mathrm{pipe}}.
+\label{eq:guyuan_connectivity}
+\end{equation}
+
+其中，$\mathcal P_{i,b}$ 为热源 $i$ 至用户 $b$ 的候选路径集合。第一项保证未建设管段不能传热，第二项要求已分配用户至少存在一条有效路径。对于树状微网，可进一步限制建设管段数以避免孤立支路；对于环状微网，则可通过联络线提高故障恢复能力。
+
+区域节点 $i$ 的逐时热量平衡为
+
+\begin{equation}
+\sum_kQ_{k,i,t}+Q_{i,t}^{\mathrm{storage,dis}}
++\sum_{e\in\delta^-(i)}\eta_eF_{e,t}
+=D_{i,t}+Q_{i,t}^{\mathrm{storage,ch}}+\sum_{e\in\delta^+(i)}F_{e,t}.
+\label{eq:guyuan_node_balance}
+\end{equation}
+
+该式将热源出力、管网输入、储热放热、用户负荷、储热充热和管网输出置于同一节点，避免区域总量平衡掩盖局部支路欠供。
+
+\subsubsection*{C.3\quad 生物质燃料供应、运输与库存}
+
+固原生物质系统的主要风险不是锅炉额定容量不足，而是燃料采购、运输和库存无法贯穿完整供暖季。正文式(\ref{eq:biomass})给出库存递推，库存量、到货量及可用供热量还需满足
+
+\begin{equation}
+0\leq I_{i,t}\leq\overline I_i,
+\qquad
+0\leq B_{i,t}^{\mathrm{arrive}}\leq\overline B_{i,t}^{\mathrm{arrive}},
+\qquad
+Q_{i,t}^{\mathrm{bio}}\leq\eta_i^{\mathrm{bio}}(I_{i,t-1}+B_{i,t}^{\mathrm{arrive}}).
+\label{eq:biomass_limit}
+\end{equation}
+
+若燃料来自多个供应点 $s$，运输能力满足
+
+\begin{equation}
+B_{i,t}^{\mathrm{arrive}}=\sum_sB_{i,s,t}^{\mathrm{arrive}},
+\qquad
+\sum_s d_{i,s}B_{i,s,t}^{\mathrm{arrive}}\leq\overline L_{i,t}^{\mathrm{transport}}.
+\label{eq:biomass_transport}
+\end{equation}
+
+其中，$d_{i,s}$ 为供应点至热源的运输距离，$\overline L_{i,t}^{\mathrm{transport}}$ 为时段运输能力。道路封闭、车辆检修或极端天气可通过降低该上限描述。为避免在供暖季末耗尽燃料，还需设置安全库存：
+
+\begin{equation}
+I_{i,t}\geq I_i^{\mathrm{safe}},
+\qquad t\in T^{\mathrm{risk}},
+\quad
+I_{i,T}\geq I_i^{\mathrm{end}}.
+\label{eq:biomass_safety_stock}
+\end{equation}
+
+库存不足时，生物质锅炉的可用出力必须同步下降，不能继续按额定容量供热。运输距离、到货能力和安全库存共同决定生物质方案的真实可靠性。
+
+\subsubsection*{C.4\quad 分布式设备与区域电力平衡}
+
+分布式热泵、电锅炉、光伏、储电和循环泵共同构成区域微网。设备出力满足
+
+\begin{equation}
+0\leq Q_{i,t}^{\mathrm{HP}}\leq a_{i,t}^{\mathrm{HP}}K_i^{\mathrm{HP}},
+\qquad
+0\leq Q_{i,t}^{\mathrm{EB}}\leq K_i^{\mathrm{EB}}u_{i,t}^{\mathrm{EB}}.
+\label{eq:guyuan_devices}
+\end{equation}
+
+区域微网电力平衡为
+
+区域微网电力平衡及关键用户孤岛保供约束为
+
+\begin{equation}
+P_{i,t}^{\mathrm{imp}}+P_{i,t}^{\mathrm{PV}}+P_{i,t}^{\mathrm{bat,dis}}
+=P_{i,t}^{\mathrm{base}}+P_{i,t}^{\mathrm{HP}}+P_{i,t}^{\mathrm{EB}}
++P_{i,t}^{\mathrm{pump}}+P_{i,t}^{\mathrm{bat,ch}},
+\label{eq:microgrid}
+\end{equation}
+
+并满足配电容量与储电状态约束：
+
+\begin{equation}
+P_{i,t}^{\mathrm{imp}}\leq P_i^{\mathrm{grid,exist}}+K_i^{\mathrm{grid,new}},
+\qquad
+E_{i,t}^{\mathrm{bat}}=E_{i,t-1}^{\mathrm{bat}}
++\eta_i^{\mathrm{bat,ch}}P_{i,t}^{\mathrm{bat,ch}}\Delta t
+-\frac{P_{i,t}^{\mathrm{bat,dis}}\Delta t}{\eta_i^{\mathrm{bat,dis}}}.
+\label{eq:guyuan_grid_battery}
+\end{equation}
+
+上述约束把供热设备电气化带来的峰值负荷传递至配电规划。若配电容量成为瓶颈，模型可选择储热、储电、光伏、本地燃料热源或配电增容，但不得忽略循环泵和基础用电。
+
+\subsubsection*{C.5\quad 孤岛运行与关键用户保供}
+
+固原部分区域外部电网薄弱，医院、学校、养老设施及集中安置点等关键用户需在外部电网中断或单一热源故障时保持基本供热。可用热源、储热和防冻结约束为
+
+\begin{equation}
+\sum_{k\in K_i^{\mathrm{available}}}Q_{k,t}+Q_{i,t}^{\mathrm{storage,dis}}
+\geq D_{i,t}^{\mathrm{critical}},
+\qquad
+\dot m_{e,t}\geq\dot m_e^{\min},
+\qquad
+T_{e,t}^{\mathrm{ret}}\geq T_e^{\mathrm{freeze}}.
+\label{eq:guyuan_reliability}
+\end{equation}
+
+关键用户供热保障率满足
+
+\begin{equation}
+\frac{\sum_tQ_{i,t}^{\mathrm{critical,served}}\Delta t}
+{\sum_tD_{i,t}^{\mathrm{critical}}\Delta t}
+\geq\alpha_i^{\mathrm{reliability}}.
+\label{eq:guyuan_service_rate}
+\end{equation}
+
+完全孤岛运行时，本地电源还需覆盖基本设备用电：
+
+\begin{equation}
+P_{i,t}^{\mathrm{local}}+P_{i,t}^{\mathrm{bat,dis}}
+\geq P_{i,t}^{\mathrm{HP}}+P_{i,t}^{\mathrm{EB}}+P_{i,t}^{\mathrm{pump}}+P_{i,t}^{\mathrm{critical,base}}.
+\label{eq:guyuan_island_power}
+\end{equation}
+
+孤岛情景中，外部购电置为零，只允许实际可用的本地电源、储电和燃料热源参与供能。储能初始状态取故障发生时的真实状态，不能假设每次故障前均为满储。
+
+\subsubsection*{C.6\quad 防冻结与极寒循环}
+
+低温环境下停泵或低流量运行可能造成支路、换热器和末端冻结。除式(\ref{eq:guyuan_reliability})给出的最低流量与回水温度外，极寒情景还应满足
+
+\begin{equation}
+T_{e,t}^{\mathrm{water}}\geq T_e^{\mathrm{freeze}}+\Delta T_e^{\mathrm{safe}},
+\qquad
+u_{e,t}^{\mathrm{pump}}=1,
+\quad t\in T^{\mathrm{extreme}}.
+\label{eq:guyuan_freeze}
+\end{equation}
+
+若管段停运，则需采用排空、防冻液或伴热措施，并将相应投资和运行能耗纳入成本。防冻结约束的作用是保证“少供热”不会转化为管网损坏风险。
+
+\subsubsection*{C.7\quad 运维可达性与居民可负担性}
+
+分散设备数量多、空间分布广，运维距离过长会降低故障处置能力。候选方案满足
+
+\begin{equation}
+d_i^{\mathrm{maint}}\leq\overline d_i^{\mathrm{maint}},
+\qquad
+C_b^{\mathrm{heat}}\leq\overline C_b^{\mathrm{afford}}.
+\label{eq:guyuan_maintain_afford}
+\end{equation}
+
+第一项限制运维站点到设备的可达距离或响应时间，第二项限制居民热费。对不满足可负担性要求的方案，应通过财政补贴、降低燃料物流成本、提高设备效率或调整服务范围进行修正，而不能仅以系统总成本较低判定为可实施。
+
+\subsubsection*{C.8\quad 固原场景验收指标}
+
+固原候选方案应报告热源选址结果、用户归属、最大服务半径、管网连通状态、峰值容量裕度、生物质最大日耗量、最小库存、运输能力利用率、配电峰值、孤岛持续时间、关键用户保障率、最低循环流量、最低回水温度、运维响应距离及居民热费。任何用户未被唯一分配、任何已分配用户不存在管网路径、燃料库存出现负值或关键用户在故障情景中失供，均判定方案不可行。
+
+\clearpage
+
+\subsection*{D\quad 武汉场景补充约束}
+\refstepcounter{chaptertwosupplement}
+\addcontentsline{toc}{subsection}{D 武汉场景补充约束}
+\label{app:wuhan}
+
+\subsubsection*{D.1\quad 供能形态与设备匹配}
+
+武汉无传统集中供热资产，规划需在独立楼宇、区域能源站、低温热网和第五代区域供热供冷系统之间选择。正文式(\ref{eq:wuhan_form})保证每个区域仅选择一种基本形态。设备建设变量还需服从形态选择：
+
+\begin{equation}
+x_{k,i}\leq\sum_{m\in M_k}z_i^m,
+\qquad
+K_{k,i}\leq\overline K_{k,i}\sum_{m\in M_k}z_i^m.
+\label{eq:wuhan_equipment_match}
+\end{equation}
+
+其中，$M_k$ 为允许配置设备 $k$ 的供能形态集合。该约束防止模型在选择独立楼宇方案后仍调用区域管网设备，或在未建设能源站时使用站内储热和集中泵组。若允许不同形态分阶段过渡，则应增加建设年份和退役年份变量，而不能在同一阶段同时启用互斥形态。
+
+\subsubsection*{D.2\quad 供热、供冷与生活热水耦合}
+
+武汉同时存在冬季供热、夏季供冷和全年生活热水需求。正文式(\ref{eq:wuhan_key})给出供热与生活热水平衡，供冷设备满足
+
+\begin{equation}
+Q_{i,t}^{\mathrm{cool}}=\mathrm{COP}_{i,t}^{\mathrm{cool}}P_{i,t}^{\mathrm{cool}},
+\qquad
+0\leq Q_{i,t}^{\mathrm{cool}}\leq a_{i,t}^{\mathrm{cool}}K_i^{\mathrm{cool}}.
+\label{eq:wuhan_cooling}
+\end{equation}
+
+区域总电力需求为
+
+\begin{equation}
+P_{i,t}^{\mathrm{total}}
+=P_{i,t}^{\mathrm{base}}+P_{i,t}^{\mathrm{heat}}+P_{i,t}^{\mathrm{cool}}
++P_{i,t}^{\mathrm{DHW}}+P_{i,t}^{\mathrm{pump}}+P_{i,t}^{\mathrm{dehumid}}.
+\label{eq:wuhan_total_power}
+\end{equation}
+
+式(\ref{eq:wuhan_total_power})将采暖、制冷、生活热水、输配和除湿用电统一计入配电峰值。冷热回收设备工作时，还需保证回收热量不超过制冷侧排热量和生活热水需求，避免同时高估制冷收益与余热利用收益。
+
+\subsubsection*{D.3\quad 间歇运行与预热恢复}
+
+南方建筑具有明显的间歇使用特征，办公、商业和公共建筑可在非使用时段降低设定温度，但重新投入使用前必须完成预热。设备启动状态满足
+
+\begin{equation}
+u_{b,t}-u_{b,t-1}\leq v_{b,t}^{\mathrm{start}},
+\qquad
+\sum_{\tau=t}^{t+T_b^{\min}-1}u_{b,\tau}
+\geq T_b^{\min}v_{b,t}^{\mathrm{start}}.
+\label{eq:wuhan_startup}
+\end{equation}
+
+使用开始时刻 $t_b^{\mathrm{occ}}$ 前的室温恢复满足
+
+\begin{equation}
+\theta_{b,t_b^{\mathrm{occ}}}^{a}\geq\theta_b^{\mathrm{occ,min}},
+\qquad
+\theta_{b,t}^{a}\geq\theta_b^{\mathrm{setback,min}},
+\quad t<t_b^{\mathrm{occ}}.
+\label{eq:wuhan_preheat}
+\end{equation}
+
+第一项防止频繁启停，第二项保证建筑投入使用时已达到舒适温度。非使用时段的温度下限仍需防止结露和过度降温，不能将停供时段负荷简单删除。
+
+\subsubsection*{D.4\quad 室内热湿舒适与最低新风}
+
+武汉冬季湿冷、夏季高温高湿，仅控制空气温度不足以反映使用品质。室内温湿度和最低新风约束为
+
+热湿舒适、新风和结露约束为
+
+\begin{equation}
+\theta_{b,t}^{\min}\leq\theta_{b,t}^{a}\leq\theta_{b,t}^{\max},
+\qquad
+RH_b^{\min}\leq RH_{b,t}\leq RH_b^{\max},
+\qquad
+V_{b,t}^{\mathrm{vent}}\geq\underline V_b^{\mathrm{vent}},
+\label{eq:wuhan_comfort}
+\end{equation}
+
+供暖与供冷季可采用不同温度边界，新风带来的显热负荷为
+
+\begin{equation}
+Q_{b,t}^{\mathrm{vent}}
+=\rho_ac_aV_{b,t}^{\mathrm{vent}}
+\left(\theta_{b,t}^{a}-T_t^{\mathrm{out}}\right).
+\label{eq:wuhan_ventilation}
+\end{equation}
+
+湿负荷则根据室内外含湿量差和新风量计算，并计入除湿设备负荷。最低新风量不能因能源成本升高而被削减；当湿度越界时，应增加除湿能力、调整送风状态或改变末端形式。
+
+\subsubsection*{D.5\quad 表面与管网防结露}
+
+低温辐射末端、冷水管道和换热设备表面温度低于露点时会产生结露，造成腐蚀、霉变和装修损坏。因此，正文的末端约束还需扩展至管网：
+
+\begin{equation}
+T_{b,t}^{\mathrm{surface}}\geq T_{b,t}^{\mathrm{dew}}+\Delta T_b^{\mathrm{safe}},
+\qquad
+T_{e,t}^{\mathrm{sup}}\geq T_{e,t}^{\mathrm{dew}}+\Delta T_e^{\mathrm{safe}}.
+\label{eq:wuhan_condensation}
+\end{equation}
+
+露点温度由室内空气温度和相对湿度计算，$\Delta T^{\mathrm{safe}}$ 为测量误差、局部温差和控制滞后预留的安全裕度。若式(\ref{eq:wuhan_condensation})不满足，应提高供水温度、降低湿度、增加保温或停用相应辐射末端，不能继续按理想无结露状态运行。
+
+\subsubsection*{D.6\quad 空气源热泵除霜与低温运行}
+
+空气源热泵在低温高湿条件下容易结霜，除霜期间制热能力下降并产生额外耗电。实际供热量和输入功率满足
+
+空气源热泵除霜和地源年度平衡满足
+
+\begin{equation}
+Q_t^{\mathrm{HP,actual}}=(1-\phi_t^{\mathrm{defrost}})Q_t^{\mathrm{HP,rated}},
+\qquad
+P_t^{\mathrm{HP,actual}}=P_t^{\mathrm{HP,rated}}+P_t^{\mathrm{defrost}},
+\label{eq:defrost}
+\end{equation}
+
+并要求
+
+\begin{equation}
+T_t^{\mathrm{out}}\geq T_k^{\mathrm{HP,min}}
+\quad\text{或}\quad u_{k,t}^{\mathrm{HP}}=0,
+\qquad
+0\leq\phi_t^{\mathrm{defrost}}\leq\overline\phi^{\mathrm{defrost}}.
+\label{eq:wuhan_hp_low_temperature}
+\end{equation}
+
+除霜折减系数应由室外温度、相对湿度和厂家数据确定。若低于设备最低运行温度，则该设备不可用，需要由备用热源、储热或其他系统承担负荷。这样可避免按额定性能高估湿冷天气下的热泵能力。
+
+\subsubsection*{D.7\quad 地源系统年度热量平衡}
+
+地源系统具有跨季节累积效应，只计算供暖季会高估持续取热能力。年度取热与排热差满足
+
+\begin{equation}
+\left|
+\sum_tQ_t^{\mathrm{extraction}}\Delta t
+-\sum_tQ_t^{\mathrm{injection}}\Delta t
+\right|
+\leq\varepsilon^{\mathrm{ground}}.
+\label{eq:ground_balance}
+\end{equation}
+
+地温状态还需限制在允许范围内：
+
+\begin{equation}
+T_s^{\mathrm{ground,min}}\leq T_{s,t}^{\mathrm{ground}}\leq T_s^{\mathrm{ground,max}}.
+\label{eq:ground_temperature}
+\end{equation}
+
+式(\ref{eq:ground_balance})控制年度净取热量，式(\ref{eq:ground_temperature})控制长期地温漂移。若年度不平衡，可通过夏季回灌、冷却塔辅助散热、扩大埋管规模或与空气源设备混合运行修正。
+
+\subsubsection*{D.8\quad 噪声与邻近建筑约束}
+
+楼栋热泵、冷却塔和能源站可能靠近住宅、学校或办公建筑，设备容量可行不代表环境影响可接受。正常和夜间运行噪声满足
+
+\begin{equation}
+L_{b,t}^{\mathrm{noise}}\leq\overline L_b^{\mathrm{noise}},
+\qquad
+L_{b,t}^{\mathrm{noise}}\leq\overline L_b^{\mathrm{noise,night}},
+\quad t\in T^{\mathrm{night}}.
+\label{eq:wuhan_noise}
+\end{equation}
+
+多台设备同时运行时，应按声功率叠加而非算术相加。若夜间噪声越界，可采用低噪声设备、隔声屏障、距离衰减或运行时段调整，并将相应投资和能力折减纳入规划。
+
+\subsubsection*{D.9\quad 楼栋配电容量}
+
+武汉场景大量采用电驱热泵、制冷机和生活热水设备，楼栋既有配电容量可能成为决定性边界：
+
+楼栋配电容量满足
+
+\begin{equation}
+P_{b,t}^{\mathrm{HP}}+P_{b,t}^{\mathrm{cool}}+P_{b,t}^{\mathrm{DHW}}+P_{b,t}^{\mathrm{base}}
+\leq P_b^{\mathrm{exist}}+K_b^{\mathrm{grid,new}}.
+\label{eq:wuhan_grid}
+\end{equation}
+
+若配置充电设施、除湿设备或其他新增电负荷，也应计入左侧。新增配电容量 $K_b^{\mathrm{grid,new}}$ 需进入投资成本，且受变压器位置、接入条件和建设上限约束。模型不得只比较热源侧成本而忽略楼栋电气改造。
+
+\subsubsection*{D.10\quad 储热削峰与多服务竞争}
+
+采暖、供冷和生活热水峰值可能叠加，储热可在低负荷或低电价时段充热，在峰值时段放热。除公共储热约束外，多服务需求满足
+
+\begin{equation}
+Q_t^{\mathrm{heat}}+Q_t^{\mathrm{DHW}}
+\leq Q_t^{\mathrm{source}}+Q_t^{\mathrm{storage,dis}},
+\qquad
+E_{s,T}\geq E_s^{\mathrm{end}}.
+\label{eq:wuhan_storage_peak}
+\end{equation}
+
+储热放热应在不同服务之间显式分配，不能将同一放热功率同时计入采暖和生活热水。期末存量边界防止模型通过耗尽储热获得虚假削峰效果。
+
+\subsubsection*{D.11\quad 武汉场景验收指标}
+
+武汉候选方案应报告供能形态选择、设备容量、采暖与生活热水逐时平衡、供冷性能、使用开始时刻室温恢复、温湿度越界小时数、最低新风量、最小结露安全裕度、除霜期最大能力折减、年度地源取排热偏差、夜间噪声、楼栋配电峰值及储热削峰贡献。任何时段出现舒适度、结露、设备运行温度或配电容量越界，均判定方案不可行。
+
+\clearpage
+
+\subsection*{E\quad 核心符号说明}
+\refstepcounter{chaptertwosupplement}
+\addcontentsline{toc}{subsection}{E 核心符号说明}
+
+本表仅列出贯穿正文的核心符号。场景专用变量已在相应约束后就地说明，不再重复汇总。
+
+\begin{longtable}{p{0.16\textwidth}p{0.58\textwidth}p{0.12\textwidth}}
+\caption{模型核心符号}\label{tab:symbols}\\
+\toprule
+符号 & 含义 & 单位\\
+\midrule
+\endfirsthead
+\toprule
+符号 & 含义 & 单位\\
+\midrule
+\endhead
+$t,T$ & 运行时段及完整供暖季总时段数 & h\\
+$k,n,g,b,s,e$ & 设备、节点、温位、建筑、储热装置和管段索引 & --\\
+$K_k$ & 热源或设备规划后可用容量 & kW\\
+$Q_{k,g,t}$ & 热源向温位 $g$ 提供的热功率 & kW\\
+$F_{e,g,t}$ & 管段入口热功率 & kW\\
+$Q_{b,t}^{h}$ & 建筑实际获得的供热功率 & kW\\
+$\theta_{b,t}^{a},\theta_{b,t}^{m}$ & 室内空气温度和建筑质量节点温度 & $^{\circ}$C\\
+$E_{s,t}$ & 储热装置存量 & kWh\\
+$\mathrm{COP}_{k,t}$ & 热泵逐时性能系数 & --\\
+$F^{\mathrm{cost}}$ & 生命周期成本 & 元\\
+$F^{\mathrm{CO_2}}$ & 系统碳排放量 & kg\\
+$U^{\mathrm{un}}$ & 供暖季失供率 & --\\
+\bottomrule
+\end{longtable}

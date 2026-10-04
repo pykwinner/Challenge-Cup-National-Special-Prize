@@ -1,0 +1,12 @@
+schema_version: '1.0'
+note: 适配 unified_cli 的 profiles 入口，指向 legacy 三城已核输入；仅用于本轮复算。
+profiles:
+- name: scenario1_urumqi
+  config: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/configs/scenario1_urumqi.yaml'
+  timeseries: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/scenario1_urumqi_heating_season.csv'
+- name: scenario2_guyuan
+  config: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/configs/scenario2_guyuan.yaml'
+  timeseries: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/scenario2_guyuan_heating_season.csv'
+- name: scenario3_wuhan
+  config: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/configs/scenario3_wuhan.yaml'
+  timeseries: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/scenario3_wuhan_heating_season.csv'

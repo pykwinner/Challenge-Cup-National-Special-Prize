@@ -1,0 +1,673 @@
+{
+  "status": "ready_to_freeze",
+  "directory": "docs/publication_final_20261003/algorithm_v3",
+  "title_zh": "硬约束校正减小分位负荷偏差",
+  "caption_zh": "六栋新增BDG2外部建筑2017年保留完整日的分布压缩实验。唯一视觉母版为Sutton等Nature Communications（2020）图3：单面板每建筑一组，蓝色左半为硬约束分布校正，灰色右半为软校正；颜色从母版图例精确采样，未混用其他论文。误差为相同累计概率p处原始负荷分位与代表日加权负荷分位的绝对差，再除以该栋保留观测平均负荷，以百分数表示；这是一维最优分位匹配的负荷分布偏差，并非逐时预测残差或MAPE。共同概率断点取原始、软、硬经验CDF跳跃值的并集，区间质量为Δp，误差在各区间恒定；其精确加权均值等于已登记归一化W1。六例软→硬W1中位数为12.315005340730362%→4.477527539045214%，仅为固定六例描述统计。内部箱线按精确概率质量计算：箱25/50/75分位、须5/95分位，不含置信区间或重复实验。小提琴在真实symlog显示坐标T(e)中对正误差作确定性加权高斯核密度，12半共用绝对带宽0.45显示坐标单位、在0反射边界，限于各组真实0至最大误差支持范围，再将密度积分归一至1减零误差概率；12半共用唯一峰值密度缩放，宽度表示显示坐标中的概率密度，轮廓仅用于展示，统计量从原离散质量计算，不从KDE读出，未生成随机样本。零误差为独立概率原子：在基线单独画相应方法颜色的圆点，面积=45p0平方点；12项零质量为建筑一硬/软 66.70%/63.61%；建筑二硬/软 37.39%/31.73%；建筑三硬/软 87.31%/68.39%；建筑四硬/软 0.41%/0.15%；建筑五硬/软 37.57%/6.72%；建筑六硬/软 1.56%/1.08%。纵轴为单一连续symlog变换，0至5个百分点为线性段，其上为以10为底的连续对数段（linthresh=5，linscale=0.4），刻度标签显著列出0、2、5、10、20、50、100、200、400（1处保留刻度线，省略标签以避免文字拥挤）；没有断轴、省略区间或尾部截断。全部真实尾部保留，包括建筑一软最大358.0232%、硬最大239.5052%，建筑四虽均值下降但最大误差61.9132%→76.3974%，不据此宣称逐分位全胜。原始曲线范围为retained_complete_day=True，保留小时依次7680、8280、7296、6624、8112、8112；代表日依次8、10、9、9、9、9，真实代表小时192—240，概率质量由period_weight核算。完整准入软3/6、硬4/6；建筑二和五仍因原有效小时峰值保留不足而拒绝。该试验为既有站点新增建筑年度内部压缩，非独立站点、年度留出或三城现场与连续运行证明。母版的98%截尾、24.9阈值与断轴均未照搬。",
+  "outputs": {
+    "svg": {
+      "file": "external_w1.svg",
+      "path": "docs/publication_final_20261003/algorithm_v3/external_w1.svg",
+      "sha256": "1adbc9bed69c588c407bfa7daf6a143b78e5c0ea380fe33e0bf6959f0351593c"
+    },
+    "pdf": {
+      "file": "external_w1.pdf",
+      "path": "docs/publication_final_20261003/algorithm_v3/external_w1.pdf",
+      "sha256": "7692622f214778f07710415f075daca0f4bbde66d682dbde64a56ba502f2e578"
+    },
+    "png": {
+      "file": "external_w1.png",
+      "path": "docs/publication_final_20261003/algorithm_v3/external_w1.png",
+      "sha256": "e2af23b9b651bf2a04e0a1f1595be67ed9fe09b4f04b731de74908f70859dd25"
+    }
+  },
+  "sources": [
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/selection.json",
+      "sha256": "001568b82186448184527bb6fa33330c12172cd5b937fab343cf6066ff6b39df",
+      "bytes": 45375
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/results.json",
+      "sha256": "f9c2006e32ff952b4d65d8780f4cf54b1be951cd7dc42b037b2067534cb2a757",
+      "bytes": 192324
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/protocol.json",
+      "sha256": "e64ce2ed48a069d875cd10d6092d76a507310681622b2467e339f3c5e7830a3a",
+      "bytes": 1691
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/run_manifest.json",
+      "sha256": "c1e8e57b7d6bf9d0f5ef200afd0818550bf968db95cee439861efce5cf08a717",
+      "bytes": 27026
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Bobcat_education_Alissa/2017/observed_calendar.csv",
+      "sha256": "54516e8bee8a2c5c81c96f3acd3bee7cd387246111e454f7e4e1c82107ddebd4",
+      "bytes": 371119
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Bobcat_education_Alissa/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "b93df1ad9be5b86425f9e23b963fcd3e54c6707c4b3368ea28d877beef7ca593",
+      "bytes": 20933
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Bobcat_education_Alissa/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "014363488d2f01957f861d8c165627bd935367a609e9df2066369a104b9b72fe",
+      "bytes": 20357
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Eagle_assembly_Ian/2017/observed_calendar.csv",
+      "sha256": "4752c2fe2d0e4f5b2245f287255df7a12bdd21cf5dbdf0213bf1000671fcd951",
+      "bytes": 423150
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Eagle_assembly_Ian/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "2fc1906437f61f686d7782b6f9e04a5b3d3a233b81d0cba3ba501bc4c08da169",
+      "bytes": 29019
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Eagle_assembly_Ian/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "f1ac05d35c88c20524786477e1de5d461a76c1b02c765b7382aff4094eca2f1f",
+      "bytes": 27627
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Bull_assembly_Brandon/2017/observed_calendar.csv",
+      "sha256": "523e4cc47f56ece6b3ba90f155add1f5821f9e2ad82444b758db3da033273c06",
+      "bytes": 378901
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Bull_assembly_Brandon/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "a2d1eb55dbe4f2c89e76a9784cb22eb9e7e4511cfd0993afbe48e6e32596cbfb",
+      "bytes": 24653
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Bull_assembly_Brandon/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "fead9bd2871e3faf0efd91dd6875a7946c1aa03f38f818629cd7042d8fd59772",
+      "bytes": 22757
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Cockatoo_assembly_Genoveva/2017/observed_calendar.csv",
+      "sha256": "991eaedd33655e546a8473b3ce18b4f700f6491d6698302126d650b5e823fcdd",
+      "bytes": 413496
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Cockatoo_assembly_Genoveva/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "16c00047546148965d676477c0387f743790081ec082ca21bb3c35ae792d1afd",
+      "bytes": 24057
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Cockatoo_assembly_Genoveva/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "c5a46923b205a825a9bf4ad68a0a3be591f4edc347b5b266885068fc570f4e17",
+      "bytes": 24777
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bobcat_education_Angela/2017/observed_calendar.csv",
+      "sha256": "e9a315253b7642509c13d5b7540d141752179a13078f1695e94967fc5814293c",
+      "bytes": 394477
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bobcat_education_Angela/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "aaa8be0ebba894b76c0502c0aef148435a5d74fa1b99d918b098cdee032fe16d",
+      "bytes": 24024
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bobcat_education_Angela/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "3894035f8635c8b40a10cc1f9a47aed354965181b4f9569eb9fb48a951a4e133",
+      "bytes": 24168
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bull_assembly_Dorethea/2017/observed_calendar.csv",
+      "sha256": "2c651f4f4e48611610f8f185abd2779de8756047b76a0fe972772656c2fea703",
+      "bytes": 424653
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bull_assembly_Dorethea/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "6fb7ce0ecca54923d797ee8a442e2a2af4648d5c3ef493784d4f68330f6d186f",
+      "bytes": 25228
+    },
+    {
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bull_assembly_Dorethea/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "2c8016235501f55c1bad42338f5f3abb2b76797610eb2fb5e68888bf3cda1579",
+      "bytes": 25276
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1038/s41467-020-17112-9",
+      "figure": "3",
+      "title": "Identifying domains of applicability of machine learning models for materials science",
+      "authors": [
+        "Christopher Sutton",
+        "Mario Boley",
+        "Luca M. Ghiringhelli",
+        "Matthias Rupp",
+        "Jilles Vreeken",
+        "Matthias Scheffler"
+      ],
+      "year": 2020,
+      "journal": "Nature Communications",
+      "official_url": "https://www.nature.com/articles/s41467-020-17112-9",
+      "image": {
+        "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+        "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+        "bytes": 38169
+      },
+      "published_pdf": {
+        "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_published.pdf",
+        "sha256": "c2956d9b15ac65f87ca9deff557146dce66b4bcf721fd95fb2580c7a8f7de9ba",
+        "bytes": 5604888
+      },
+      "actually_viewed": true,
+      "view_evidence": "Original Fig3 PNG actually displayed using view_image; published PDF page6 caption read.",
+      "borrowed": [
+        "One compact category panel; blue left half and gray right half violins.",
+        "Internal boxes at weighted 25/50/75 percentiles and whiskers at weighted 5/95 percentiles.",
+        "Exact unaltered source blue and gray pixels, black outlines, white background, zero baseline."
+      ],
+      "adaptations": [
+        "Six building groups replace four source models.",
+        "One continuous symlog vertical axis replaces the rejected break; all true error tails retained.",
+        "Quantile transport errors with exact probability masses replace source predictive errors.",
+        "Zero-error point masses explicitly displayed at baseline; no source reference threshold transferred."
+      ],
+      "not_transferred": [
+        "Source 98th-percentile tail truncation",
+        "Source 24.9 meV/cation threshold",
+        "Source random train/test replication or domain-applicability claims"
+      ],
+      "palette": {
+        "hard": {
+          "hex": "#2020DF",
+          "xy": [
+            154,
+            41
+          ],
+          "source_image": {
+            "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+            "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+            "bytes": 38169
+          },
+          "doi": "10.1038/s41467-020-17112-9",
+          "figure": "3"
+        },
+        "soft": {
+          "hex": "#808080",
+          "xy": [
+            154,
+            73
+          ],
+          "source_image": {
+            "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+            "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+            "bytes": 38169
+          },
+          "doi": "10.1038/s41467-020-17112-9",
+          "figure": "3"
+        }
+      },
+      "image_size_px": [
+        756,
+        564
+      ],
+      "typography_note": "Source PDF embeds a bitmap, so native font pt cannot be measured. Figure proportions adapted from the raster at the requested 146mm width; Chinese labels use 7.5–8.5pt."
+    }
+  ],
+  "ref": [
+    {
+      "doi": "10.1038/s41467-020-17112-9",
+      "figure": "3",
+      "title": "Identifying domains of applicability of machine learning models for materials science",
+      "authors": [
+        "Christopher Sutton",
+        "Mario Boley",
+        "Luca M. Ghiringhelli",
+        "Matthias Rupp",
+        "Jilles Vreeken",
+        "Matthias Scheffler"
+      ],
+      "year": 2020,
+      "journal": "Nature Communications",
+      "official_url": "https://www.nature.com/articles/s41467-020-17112-9",
+      "image": {
+        "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+        "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+        "bytes": 38169
+      },
+      "published_pdf": {
+        "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_published.pdf",
+        "sha256": "c2956d9b15ac65f87ca9deff557146dce66b4bcf721fd95fb2580c7a8f7de9ba",
+        "bytes": 5604888
+      },
+      "actually_viewed": true,
+      "view_evidence": "Original Fig3 PNG actually displayed using view_image; published PDF page6 caption read.",
+      "borrowed": [
+        "One compact category panel; blue left half and gray right half violins.",
+        "Internal boxes at weighted 25/50/75 percentiles and whiskers at weighted 5/95 percentiles.",
+        "Exact unaltered source blue and gray pixels, black outlines, white background, zero baseline."
+      ],
+      "adaptations": [
+        "Six building groups replace four source models.",
+        "One continuous symlog vertical axis replaces the rejected break; all true error tails retained.",
+        "Quantile transport errors with exact probability masses replace source predictive errors.",
+        "Zero-error point masses explicitly displayed at baseline; no source reference threshold transferred."
+      ],
+      "not_transferred": [
+        "Source 98th-percentile tail truncation",
+        "Source 24.9 meV/cation threshold",
+        "Source random train/test replication or domain-applicability claims"
+      ],
+      "palette": {
+        "hard": {
+          "hex": "#2020DF",
+          "xy": [
+            154,
+            41
+          ],
+          "source_image": {
+            "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+            "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+            "bytes": 38169
+          },
+          "doi": "10.1038/s41467-020-17112-9",
+          "figure": "3"
+        },
+        "soft": {
+          "hex": "#808080",
+          "xy": [
+            154,
+            73
+          ],
+          "source_image": {
+            "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+            "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+            "bytes": 38169
+          },
+          "doi": "10.1038/s41467-020-17112-9",
+          "figure": "3"
+        }
+      },
+      "image_size_px": [
+        756,
+        564
+      ],
+      "typography_note": "Source PDF embeds a bitmap, so native font pt cannot be measured. Figure proportions adapted from the raster at the requested 146mm width; Chinese labels use 7.5–8.5pt."
+    }
+  ],
+  "palette": {
+    "hard": {
+      "hex": "#2020DF",
+      "xy": [
+        154,
+        41
+      ],
+      "source_image": {
+        "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+        "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+        "bytes": 38169
+      },
+      "doi": "10.1038/s41467-020-17112-9",
+      "figure": "3"
+    },
+    "soft": {
+      "hex": "#808080",
+      "xy": [
+        154,
+        73
+      ],
+      "source_image": {
+        "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+        "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+        "bytes": 38169
+      },
+      "doi": "10.1038/s41467-020-17112-9",
+      "figure": "3"
+    }
+  },
+  "data": [
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/quantile_probability_intervals.csv",
+      "sha256": "e13c18fd19ef5fd2729a52c0b1f096cab4e24895b4115633f2d605aac3a39f2f",
+      "bytes": 7560337
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/weighted_statistics.csv",
+      "sha256": "b65facdf6036ffc109f410b807f7b2afc1e0a93439cb0dbd1fa07a2ef0b9f0a8",
+      "bytes": 4462
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/violin_contours.csv",
+      "sha256": "1dc82440885ec032a3cbba258d80ee8ce5646c4c52b8218a21ede5060e382ad6",
+      "bytes": 2072054
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/weighted_boxes.csv",
+      "sha256": "0dcc93b85e2ee05c72ce0e7ad2c5114b931cf13c43ee98e5a18ba71b3124f15c",
+      "bytes": 3411
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Bobcat_education_Alissa/observed_calendar.csv",
+      "sha256": "54516e8bee8a2c5c81c96f3acd3bee7cd387246111e454f7e4e1c82107ddebd4",
+      "bytes": 371119
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Bobcat_education_Alissa/extreme_calibrated_actual_days.csv",
+      "sha256": "b93df1ad9be5b86425f9e23b963fcd3e54c6707c4b3368ea28d877beef7ca593",
+      "bytes": 20933
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Bobcat_education_Alissa/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "014363488d2f01957f861d8c165627bd935367a609e9df2066369a104b9b72fe",
+      "bytes": 20357
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Eagle_assembly_Ian/observed_calendar.csv",
+      "sha256": "4752c2fe2d0e4f5b2245f287255df7a12bdd21cf5dbdf0213bf1000671fcd951",
+      "bytes": 423150
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Eagle_assembly_Ian/extreme_calibrated_actual_days.csv",
+      "sha256": "2fc1906437f61f686d7782b6f9e04a5b3d3a233b81d0cba3ba501bc4c08da169",
+      "bytes": 29019
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Eagle_assembly_Ian/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "f1ac05d35c88c20524786477e1de5d461a76c1b02c765b7382aff4094eca2f1f",
+      "bytes": 27627
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Bull_assembly_Brandon/observed_calendar.csv",
+      "sha256": "523e4cc47f56ece6b3ba90f155add1f5821f9e2ad82444b758db3da033273c06",
+      "bytes": 378901
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Bull_assembly_Brandon/extreme_calibrated_actual_days.csv",
+      "sha256": "a2d1eb55dbe4f2c89e76a9784cb22eb9e7e4511cfd0993afbe48e6e32596cbfb",
+      "bytes": 24653
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Bull_assembly_Brandon/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "fead9bd2871e3faf0efd91dd6875a7946c1aa03f38f818629cd7042d8fd59772",
+      "bytes": 22757
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Cockatoo_assembly_Genoveva/observed_calendar.csv",
+      "sha256": "991eaedd33655e546a8473b3ce18b4f700f6491d6698302126d650b5e823fcdd",
+      "bytes": 413496
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Cockatoo_assembly_Genoveva/extreme_calibrated_actual_days.csv",
+      "sha256": "16c00047546148965d676477c0387f743790081ec082ca21bb3c35ae792d1afd",
+      "bytes": 24057
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Cockatoo_assembly_Genoveva/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "c5a46923b205a825a9bf4ad68a0a3be591f4edc347b5b266885068fc570f4e17",
+      "bytes": 24777
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bobcat_education_Angela/observed_calendar.csv",
+      "sha256": "e9a315253b7642509c13d5b7540d141752179a13078f1695e94967fc5814293c",
+      "bytes": 394477
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bobcat_education_Angela/extreme_calibrated_actual_days.csv",
+      "sha256": "aaa8be0ebba894b76c0502c0aef148435a5d74fa1b99d918b098cdee032fe16d",
+      "bytes": 24024
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bobcat_education_Angela/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "3894035f8635c8b40a10cc1f9a47aed354965181b4f9569eb9fb48a951a4e133",
+      "bytes": 24168
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bull_assembly_Dorethea/observed_calendar.csv",
+      "sha256": "2c651f4f4e48611610f8f185abd2779de8756047b76a0fe972772656c2fea703",
+      "bytes": 424653
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bull_assembly_Dorethea/extreme_calibrated_actual_days.csv",
+      "sha256": "6fb7ce0ecca54923d797ee8a442e2a2af4648d5c3ef493784d4f68330f6d186f",
+      "bytes": 25228
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bull_assembly_Dorethea/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "2c8016235501f55c1bad42338f5f3abb2b76797610eb2fb5e68888bf3cda1579",
+      "bytes": 25276
+    }
+  ],
+  "metadata": {
+    "path": "docs/publication_final_20261003/algorithm_v3/external_w1.json",
+    "sha256": "6d4e8da0c31eee55ef67fadb23a7747e34b1496f25430ff974e9a92ea6c24b06"
+  },
+  "script": {
+    "path": "docs/publication_final_20261003/algorithm_v3/build_algorithm.py",
+    "sha256": "0d1c588c3f7edeb01d8988f459537da6bbacfda0f0453378c4b569f3c55f05fc"
+  },
+  "qa": {
+    "path": "docs/publication_final_20261003/algorithm_v3/QA.json",
+    "sha256": "cf2bcd90203f28b714d6a77c6457317039f57eb2b07fb3ab7482d52aed1c636e"
+  },
+  "checks": {
+    "mean_W1_max_residual": 2.1094237467877974e-15,
+    "source_CSV_count": 18,
+    "exact_probability_interval_rows": 32980,
+    "distributions": 12,
+    "weighted_box_percentiles": [
+      0.05,
+      0.25,
+      0.5,
+      0.75,
+      0.95
+    ],
+    "common_probability_mass": true,
+    "common_KDE_bandwidth": 0.45,
+    "common_all_12_violin_width_scale": true,
+    "zero_probability_atoms_separate": true,
+    "axis": {
+      "type": "single continuous symlog",
+      "linthresh_percent": 5,
+      "linscale": 0.4,
+      "base": 10,
+      "ylim_percent": [
+        0,
+        400
+      ],
+      "ticks_percent": [
+        0,
+        1,
+        2,
+        5,
+        10,
+        20,
+        50,
+        100,
+        200,
+        400
+      ],
+      "tick_labels": [
+        "0",
+        "",
+        "2",
+        "5",
+        "10",
+        "20",
+        "50",
+        "100",
+        "200",
+        "400"
+      ],
+      "no_break": true,
+      "all_tails_retained": true
+    },
+    "all_tails_retained": true,
+    "Chinese_characters_in_figure": 56,
+    "all_text_black": true,
+    "pdf_raster_images": 0,
+    "svg_raster_images": 0,
+    "fonts_embedded": true,
+    "old_v2_unchanged": true
+  },
+  "typography": {
+    "width_mm": 146,
+    "height_mm": 92,
+    "axis_pt": 8,
+    "tick_pt": 7.5,
+    "category_pt": 8,
+    "legend_pt": 8,
+    "summary_pt": 8.5,
+    "note_pt": 7.5,
+    "text_color": "#000000",
+    "source_font_pt_not_claimed": true,
+    "reference_raster_aspect": 1.3404255319148937,
+    "our_aspect": 1.5869565217391304,
+    "outline_pt": 0.65,
+    "box_outline_pt": 0.6
+  },
+  "visual_review": {
+    "actually_viewed": [
+      "external_w1.png",
+      "QA_pdf_render.png"
+    ],
+    "latest_png_pdf_viewed": true,
+    "observations_zh": [
+      "单面板六组左右半分布、内部加权箱、零误差点全部保留。",
+      "图例移至右上空区，未遮挡建筑一尾部；坐标注移至图外右下。",
+      "连续非线性坐标覆盖0至400全部尾部，低段比例压紧，1仅保留刻度线。",
+      "最新版文字未重叠或裁切，所有中文纯黑。"
+    ],
+    "reference_zh": "唯一参考为Sutton等Nature Communications2020图3；未使用A07元素。"
+  },
+  "boundaries_zh": "分位匹配绝对偏差的概率加权均值=W1，非逐时预测、重复实验或置信区间。零原子与正误差KDE分开，箱统计来自未平滑离散量。软3/6、硬4/6完整准入，二五仍拒绝，均值改善不是逐分位全胜。",
+  "scope_control": {
+    "only_algorithm_v3_written": true,
+    "no_solver_or_random_sample": true,
+    "old_v2_and_total_page_not_modified": true
+  },
+  "artifacts": [
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/build_algorithm.py",
+      "sha256": "0d1c588c3f7edeb01d8988f459537da6bbacfda0f0453378c4b569f3c55f05fc"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/CAPTION.txt",
+      "sha256": "142355f982a535f16375fc7f11c0bfa6d8f157bbea56fab37d01da68774fda16"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/design_reference.json",
+      "sha256": "12d9d6273bbb86ebe757ccb53aef4a365e461d4136d2ba74e838265a1da8f3fb"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/external_w1.json",
+      "sha256": "6d4e8da0c31eee55ef67fadb23a7747e34b1496f25430ff974e9a92ea6c24b06"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/external_w1.pdf",
+      "sha256": "7692622f214778f07710415f075daca0f4bbde66d682dbde64a56ba502f2e578"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/external_w1.png",
+      "sha256": "e2af23b9b651bf2a04e0a1f1595be67ed9fe09b4f04b731de74908f70859dd25"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/external_w1.svg",
+      "sha256": "1adbc9bed69c588c407bfa7daf6a143b78e5c0ea380fe33e0bf6959f0351593c"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/QA.json",
+      "sha256": "cf2bcd90203f28b714d6a77c6457317039f57eb2b07fb3ab7482d52aed1c636e"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/QA_pdf_render.png",
+      "sha256": "1b5faa546f2f52346515f27a11c9f05edfaf3b775438ed05d0bca49ddd15995e"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/quantile_probability_intervals.csv",
+      "sha256": "e13c18fd19ef5fd2729a52c0b1f096cab4e24895b4115633f2d605aac3a39f2f"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bobcat_education_Angela/extreme_calibrated_actual_days.csv",
+      "sha256": "aaa8be0ebba894b76c0502c0aef148435a5d74fa1b99d918b098cdee032fe16d"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bobcat_education_Angela/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "3894035f8635c8b40a10cc1f9a47aed354965181b4f9569eb9fb48a951a4e133"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bobcat_education_Angela/observed_calendar.csv",
+      "sha256": "e9a315253b7642509c13d5b7540d141752179a13078f1695e94967fc5814293c"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bull_assembly_Dorethea/extreme_calibrated_actual_days.csv",
+      "sha256": "6fb7ce0ecca54923d797ee8a442e2a2af4648d5c3ef493784d4f68330f6d186f"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bull_assembly_Dorethea/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "2c8016235501f55c1bad42338f5f3abb2b76797610eb2fb5e68888bf3cda1579"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/chilledwater__Bull_assembly_Dorethea/observed_calendar.csv",
+      "sha256": "2c651f4f4e48611610f8f185abd2779de8756047b76a0fe972772656c2fea703"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Bobcat_education_Alissa/extreme_calibrated_actual_days.csv",
+      "sha256": "b93df1ad9be5b86425f9e23b963fcd3e54c6707c4b3368ea28d877beef7ca593"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Bobcat_education_Alissa/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "014363488d2f01957f861d8c165627bd935367a609e9df2066369a104b9b72fe"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Bobcat_education_Alissa/observed_calendar.csv",
+      "sha256": "54516e8bee8a2c5c81c96f3acd3bee7cd387246111e454f7e4e1c82107ddebd4"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Eagle_assembly_Ian/extreme_calibrated_actual_days.csv",
+      "sha256": "2fc1906437f61f686d7782b6f9e04a5b3d3a233b81d0cba3ba501bc4c08da169"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Eagle_assembly_Ian/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "f1ac05d35c88c20524786477e1de5d461a76c1b02c765b7382aff4094eca2f1f"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/hotwater__Eagle_assembly_Ian/observed_calendar.csv",
+      "sha256": "4752c2fe2d0e4f5b2245f287255df7a12bdd21cf5dbdf0213bf1000671fcd951"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Bull_assembly_Brandon/extreme_calibrated_actual_days.csv",
+      "sha256": "a2d1eb55dbe4f2c89e76a9784cb22eb9e7e4511cfd0993afbe48e6e32596cbfb"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Bull_assembly_Brandon/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "fead9bd2871e3faf0efd91dd6875a7946c1aa03f38f818629cd7042d8fd59772"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Bull_assembly_Brandon/observed_calendar.csv",
+      "sha256": "523e4cc47f56ece6b3ba90f155add1f5821f9e2ad82444b758db3da033273c06"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Cockatoo_assembly_Genoveva/extreme_calibrated_actual_days.csv",
+      "sha256": "16c00047546148965d676477c0387f743790081ec082ca21bb3c35ae792d1afd"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Cockatoo_assembly_Genoveva/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "c5a46923b205a825a9bf4ad68a0a3be591f4edc347b5b266885068fc570f4e17"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/source_csv/steam__Cockatoo_assembly_Genoveva/observed_calendar.csv",
+      "sha256": "991eaedd33655e546a8473b3ce18b4f700f6491d6698302126d650b5e823fcdd"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/violin_contours.csv",
+      "sha256": "1dc82440885ec032a3cbba258d80ee8ce5646c4c52b8218a21ede5060e382ad6"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/weighted_boxes.csv",
+      "sha256": "0dcc93b85e2ee05c72ce0e7ad2c5114b931cf13c43ee98e5a18ba71b3124f15c"
+    },
+    {
+      "path": "docs/publication_final_20261003/algorithm_v3/weighted_statistics.csv",
+      "sha256": "b65facdf6036ffc109f410b807f7b2afc1e0a93439cb0dbd1fa07a2ef0b9f0a8"
+    }
+  ]
+}

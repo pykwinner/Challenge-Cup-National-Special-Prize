@@ -1,0 +1,532 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage[top=2.54cm,bottom=5.4cm,left=3.18cm,right=3.18cm,headheight=0pt,headsep=0pt,footskip=4.4cm]{geometry}
+\setmainfont{NotoSerifSC-Regular.ttf}[Path=build-fonts/,BoldFont=NotoSerifSC-Bold.ttf]
+\newfontfamily\headingfont{NotoSansSC-Regular.ttf}[Path=build-fonts/]
+\newcommand{\songti}{\normalfont}
+\newcommand{\heiti}{\headingfont}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage{amsmath,amssymb,mathtools,bm}
+\renewcommand{\theequation}{\arabic{equation}}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array,tabularx,calc}
+\usepackage{etoolbox}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{float}
+\usepackage{needspace}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{fvextra}
+\usepackage{xcolor}
+\input{sections/code-format-r8o.tex}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,fit,backgrounds,calc}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Bset}{\{0,1\}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\definecolor{paperGreen}{RGB}{132,168,60}
+\definecolor{paperGreenDark}{RGB}{79,96,48}
+\definecolor{paperGreenLight}{RGB}{212,224,192}
+\definecolor{paperCream}{RGB}{245,243,232}
+\tikzset{
+  startstop/.style={rectangle,rounded corners=8pt,minimum width=3.2cm,minimum height=0.9cm,align=center,draw=paperGreenDark,fill=paperGreen,text=white,thick},
+  process/.style={rectangle,minimum width=3.6cm,minimum height=0.9cm,align=center,draw=paperGreenDark,fill=paperCream,thick},
+  decision/.style={diamond,aspect=2.1,minimum width=3.0cm,align=center,draw=paperGreenDark,fill=paperGreenLight,thick,inner sep=1pt},
+  data/.style={trapezium,trapezium left angle=70,trapezium right angle=110,minimum width=3.2cm,minimum height=0.9cm,align=center,draw=paperGreenDark,fill=paperGreenLight!55,thick},
+  verify/.style={rectangle,minimum width=3.4cm,minimum height=0.9cm,align=center,draw=paperGreenDark,fill=paperGreenLight,thick},
+  layer/.style={rectangle,draw=paperGreenDark,dashed,inner sep=6pt},
+  arrow/.style={-{Stealth[length=2.4mm]},thick,draw=paperGreenDark},
+  lab/.style={font=\small,midway}
+}
+\newcommand{\sanhao}{\fontsize{16pt}{16pt}\selectfont}
+\newcommand{\xiaosan}{\fontsize{15pt}{18.75pt}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{12pt}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}
+% 正文参考文献编号采用右上角标注
+\newcommand{\supcite}[1]{\textsuperscript{[#1]}}
+
+\AtBeginDocument{%
+  \xiaosi\songti\setstretch{1.25}%
+  % 统一所有行间公式与上下正文之间的距离
+  \setlength{\abovedisplayskip}{7.5pt}%
+  \setlength{\belowdisplayskip}{7.5pt}%
+  \setlength{\abovedisplayshortskip}{7.5pt}%
+  \setlength{\belowdisplayshortskip}{7.5pt}%
+}
+\setstretch{1.25}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{7.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\xiaosi\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\xiaosi\thepage}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}}
+\newcommand{\ChineseNumber}[1]{%
+  \ifcase#1 零\or 一\or 二\or 三\or 四\or 五\or 六\or 七\or 八\or 九\or 十%
+  \or 十一\or 十二\or 十三\or 十四\or 十五\or 十六\or 十七\or 十八\or 十九\or 二十\else #1\fi}
+\renewcommand{\thesection}{\ChineseNumber{\value{section}}、}
+\renewcommand{\thesubsection}{（\ChineseNumber{\value{subsection}}）}
+\renewcommand{\thesubsubsection}{（\arabic{subsubsection}）}
+\renewcommand{\theparagraph}{（\arabic{paragraph}）}
+\renewcommand{\thesubparagraph}{\arabic{subparagraph}）}
+\titleformat{\section}{\centering\heiti\xiaosan}{\thesection}{0.5em}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titleformat{\subsection}{\raggedright\heiti\sihao}{\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{6pt}{0pt}
+\titleformat{\subsubsection}{\raggedright\songti\xiaosi\bfseries}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\subsubsection}{0pt}{6pt}{0pt}
+\titleformat{\paragraph}[runin]{\raggedright\songti\xiaosi}{\theparagraph}{0.5em}{}
+\titleformat{\subparagraph}[runin]{\raggedright\songti\xiaosi}{\thesubparagraph}{0.5em}{}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+% 目录按标题层级逐级缩进：一级顶格，二级和三级依次右移
+\cftsetindents{section}{0em}{4em}
+\cftsetindents{subsection}{0em}{4em}
+\cftsetindents{subsubsection}{0em}{4em}
+\makeatletter
+\let\paper@l@subsection\l@subsection
+\let\paper@l@subsubsection\l@subsubsection
+\renewcommand*{\l@subsection}[2]{\paper@l@subsection{\hspace*{2em}#1}{#2}}
+\renewcommand*{\l@subsubsection}[2]{\paper@l@subsubsection{\hspace*{4em}#1}{#2}}
+\makeatother
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\DeclareCaptionFont{captioncn}{\songti\xiaosi\setstretch{1.0}}
+\DeclareCaptionLabelSeparator{twospaces}{\hspace{2em}}
+\captionsetup{font=captioncn,labelsep=twospaces,justification=centering,singlelinecheck=true}
+\captionsetup[table]{position=top}
+\captionsetup[figure]{position=bottom}
+\renewcommand{\thefootnote}{\textcircled{\scriptsize\arabic{footnote}}}
+\graphicspath{{media/}}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.82\textheight 0.82\textheight\else\Gin@nat@height\fi}
+\def\fps@figure{htbp}
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\AtBeginEnvironment{tabular}{\songti\xiaosi\setstretch{1.0}}
+\AtBeginEnvironment{longtable}{\songti\xiaosi\setstretch{1.0}}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000\clubpenalty=10000
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\urlstyle{same}
+\hypersetup{pdfauthor={},pdftitle={暖城向新·热力不息}}
+
+\newcommand{\EnableBodyBackground}{%
+  \AddToShipoutPictureBG{%
+    \AtPageLowerLeft{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{body-background.jpg}%
+    }%
+  }%
+}
+
+\newenvironment{refsectionflush}
+  {\par\sloppy\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}}
+  {\par\fussy}
+\newcommand{\refentry}[2]{%
+  \par\noindent\hangindent=2em\hangafter=1
+  [#1]\enspace #2\par}
+
+\begin{document}
+
+\AddToShipoutPictureBG*{%
+  \AtPageLowerLeft{\includegraphics[width=\paperwidth,height=\paperheight]{cover.jpg}}%
+}
+\thispagestyle{empty}
+\null
+\clearpage
+\EnableBodyBackground
+\pagestyle{empty}
+\begin{center}
+\vspace{8pt}
+{\heiti\sihao 摘\quad 要\par}
+\end{center}
+\vspace{3pt}
+\begingroup\setlength{\parskip}{2pt}\setstretch{1.10}
+\par\indent 针对集中供热低碳重构、分散供热清洁替代和夏热冬冷地区供热新建中的源荷匹配问题，由于热源品位、建筑需求与存量资产差异明显，容量选择又与逐时调度、热状态及保供边界相互牵制，长期沿用的“先定热源、再算容量、按典型日校核”流程难以在动态工况下取得最优解。本文围绕资产配置、能量输配和跨时段调节，建立“公用模型内核＋场景适配器”的源---网---荷---储---电协同规划模型。
+
+\par\indent 模型以建设、退役和容量为规划变量，以出力与热流为运行变量，以建筑与储热状态连接相邻时段，按节点、温位和小时建立带温位的能量守恒，联立设备转换、管段容量、储热递推、舒适边界与配电约束。在此内核上形成六项机制：温位下限与管段容量共同决定可供热量；存量管径与改造投资进入规划变量；燃煤退役规模由新增清洁容量、储热可信容量和备用容量共同兜底；建筑热状态与热源出力、储热充放、配电容量在逐时尺度上响应；规划解经有限管网模式回算，不合格模式转为新约束退回重解；同一内核按场景加载专用约束，实现三类供热格局的迁移比较。
+
+\par\indent 本文以混合整数线性规划求解，乌鲁木齐联立投资与运行，固原、武汉锚定投资后冻结资产复算全季；以$\varepsilon$-约束逐档收紧碳帽生成成本---碳排候选解，并以条件风险价值描述气象不确定性；启停凸包重构与稀疏编译缓存降低求解负担。
+
+\par\indent 对乌鲁木齐、固原、武汉的参数化算例分别完成4392、4392和2880 h连续计算，本文通过$\varepsilon$-约束协调成本与碳排放，乌鲁木齐推荐方案的等年值成本为27.76万元、碳排放为27.31 t CO$_2$，联合层相对间隙为0.0153\%，失供率为零；单位供热成本由基准方案的0.078851元/kWh增至0.100681元/kWh，增加27.69\%，反映以成本增加换取减排、清洁热利用和可靠性约束的综合取舍。该方案退役既有热电联产750 kW与燃气调峰锅炉900 kW，保留热电联产350 kW与燃气调峰600 kW，同步新建区域应急电锅炉908.44 kW、配电接入558.33 kW，并在候选干线上选定DN150管径。热量账本在用户侧闭合：热源产热2692.81 MWh扣除储热净充热2.05 MWh与管网输配损失107.24 MWh后，末端交付2583.53 MWh与需求相等。同一投资方案的年度回放中，整数变量由26280个减至8760个，两年度合计求解时间由602.483 s降至112.750 s，减少81.29\%。风险层在置信水平0.8下取风险权重0.05，乌鲁木齐期望年化成本增加0.012万元、运行费用CVaR下降0.831万元，用于比较备用能力与尾部费用的取舍。
+
+\par\indent 四项独立专项检验输入压缩与物理边界，并记录改善所附的代价：六栋公开计量建筑的归一$W_1$误差中位数由12.3150\%降至4.4775\%，统计准入由3/6增至4/6；双楼原型增大热容在共享配电上限下省电量费276.68元，同时用电量增加335.46 kWh；72 h参考管网第三轮单位长度压降237.96 Pa/m、最远站供水温度57.45~$^{\circ}$C达到登记限值，同交付量下参考费用由178.64元增至224.26元；四栋合成建筑的逐楼1R1C模型在8784 h服务年及2928 h冬季内无状态与舒适违约。
+
+\par\indent 该模型可在给定资源、候选网络与服务边界下衔接规划与运行，为供热系统的建设退役、储热配置、配电增容和保供方案比较提供分析与决策依据。
+
+\vspace{-4.5pt}
+\noindent{\heiti\xiaosi 关键词：}{\songti\xiaosi 城镇供热；源荷匹配；混合整数线性规划；温位匹配；多尺度耦合}
+\endgroup
+\clearpage
+\thispagestyle{empty}
+\begin{center}{\heiti\sihao 目\quad 录}\end{center}
+\begingroup
+\setlength{\parskip}{0pt}
+\setlength{\cftbeforesecskip}{1pt}
+\setstretch{1.10}
+\makeatletter
+\@starttoc{toc}
+\makeatother
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+\clearpage
+\section{研究背景与文献综述}\label{minor:intro}
+
+\subsection{城镇供热转型背景}
+
+城镇供热兼具公共服务与能源消费属性，热源、管网、建筑末端、电力系统和用户行为相互制约；热能约占全球终端能源消费的一半，可再生热力的增长尚不足以支撑供热部门快速脱碳\supcite{26}。国家层面已把供热转型纳入“十五五”部署：规划建议要求推进煤电改造升级和散煤替代、大力发展新型储能并提高终端用能电气化水平\supcite{34}；规划纲要提出加快热力系统绿色低碳转型，因地制宜开展余热资源利用和非化石能源供热\supcite{35}。供热规划因此需要由单一热源扩容转向源、网、荷、储协同配置。
+
+我国各地区在气候、资源和既有资产上差异明显，同一套技术组合无法通用：北方大型城市以既有热网与热源的改造退出为主，县城及农村地区需要确定集中与分散的供热边界，夏热冬冷地区还要统筹冬季供热、夏季供冷、生活热水与配电容量。本文选取乌鲁木齐、固原、武汉三个参数化算例，分别代表存量集中供热重构、分散清洁替代与夏热冬冷地区新建三类格局。
+
+\subsection{建筑热环境与居民用热需求}
+
+老旧建筑的供热问题由建筑性能不足与运行失调共同引起：围护结构保温不足、空气渗透、末端老化和二次网失衡不仅抬高热负荷，还造成近端过热、远端欠热、回水温度偏高和泵耗上升。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.62\textwidth,height=0.24\textheight,keepaspectratio]{media/building_heating_imbalance.png}
+	\caption{既有建筑供热系统的改造与运维现场}
+	\label{fig:building-heating-retrofit}
+\end{figure}
+
+既有建筑节能水平差异较大\supcite{25}，仅改造热源难以保证室温与用热公平同步改善；热泵接入还可能抬升冬季电力峰值，只比较年总热量会掩盖近端过热、远端欠热与配电瓶颈。
+
+\input{sections/site-photos-r8.tex}
+
+\subsection{传统供热规划的局限}
+
+传统方法沿“先定技术路线、再核算容量、最后用典型日校核”的流程推进，难以反映热源、管网、建筑、储热与电网之间的关系：管网降温影响末端改造，热泵扩容增加配电投资，储热替代峰值容量又受充放功率与时序状态限制。仅凭年平均负荷或单个设计日规划，无法同时保证全年经济性与寒潮期间的供热可靠性。
+
+\subsection{国内外研究进展}
+
+国内研究覆盖既有集中供热改造、分散清洁供热与建筑节能三类路径，实践涉及工业余热、大型热泵、低温热网与生物质等技术\supcite{2,7,9}，方法以综合能源系统优化、多目标规划、鲁棒优化和需求响应为主\supcite{5,6,8,10}，但多数围绕单项设备展开，热源与管网容量如何调整、集中与分散的边界如何确定，仍需统一量化。
+
+欧洲已形成建筑节能、区域供热、热泵与低温热网相结合的技术路径，2024年空间供暖和生活热水约占欧盟家庭终端能源消费的77.1\%\supcite{27}。北欧以地方热力规划确定区域供热与个体供热的服务边界，第四代区域供热研究强调需求侧柔性与低温热源利用\supcite{20,21,22}，其结论受资源与监管条件影响较大，对大规模热泵带来的配电峰值考虑不足。
+
+\subsection{研究不足与本文切入点}
+
+现有研究存在五项不足。第一，系统边界分散，热源、管网、建筑、储热和配电常由不同模型分别处理，总量平衡并不保证温位、位置和输配能力同时满足要求。第二，规划与运行脱节，用年平均量或少量典型日确定的容量在寒潮或设备故障时缺少可靠容量。第三，低碳、经济与民生目标缺少统一权衡，年度清洁热占比不能代表极寒峰值的化石依赖程度。第四，物理精度与求解规模矛盾，连续水力和建筑热惯性直接纳入大规模整数模型会加重求解负担。第五，场景迁移困难，分别建模难以形成一致的数据与指标定义，城市、区域、用户三个尺度的衔接缺少统一表达。
+
+针对上述不足，本文以“公用模型内核＋场景适配器”为总体结构，将资产演化、带温位能量平衡、储热、建筑热状态、电力约束、成本碳排与可靠性纳入统一框架，按场景加载专用约束。
+
+
+\clearpage
+\input{sections/model-derivation.tex}
+
+\clearpage
+\input{sections/algorithm-revision.tex}
+
+\clearpage
+\section{数据体系与模型验证}\label{minor:data}
+
+\subsection{数据来源与参数性质}
+
+三城主算例的气象取自 NASA POWER 格点逐时产品，按北京时间取零时、左闭右开，窗口起点依次为 2024-10-10、2024-10-15 和 2024-11-16，对应 4392、4392 和 2880~h，合计 11664~h，时间轴连续（窗口表见附录4）。建筑负荷、设备工况、燃料价格和投资参数属派生或参数化输入，按来源可靠程度分为四类并作区间敏感性分析；单位与字段定义见附录4。
+
+\subsection{证据分层}
+
+主三城与专项实验的对象、窗口与求解身份不同，分别报告；核心结果与边界见附录5。
+
+\input{sections/experiments-main-r8p.tex}
+
+\subsection{主三城结果}
+
+乌鲁木齐与武汉采用投资与运行联合求解，固原采用锚定投资后的全季运行解。参数化算例分别完成 4392、4392、2880~h 连续计算，逐时调度与已选投资分项随文交付；三城的求解身份与主要指标见表\ref{tab:three-city}。乌鲁木齐推荐方案的等年值成本为 27.76 万元、碳排放为 27.31~t~CO$_2$，联合层相对间隙为 0.0153\%，失供率为零；单位供热成本由基准方案的 0.078851 元/kWh 增至 0.100681 元/kWh，增加 27.69\%。
+
+热量季节账本闭合：热源产热 2692.81~MWh（含区域应急电锅炉 54.71~MWh），扣除储热净充热 2.05~MWh 与管网输配损失 107.24~MWh（占产热 3.98\%），末端交付 2583.53~MWh，与负荷侧有效需求（需求＋建筑净充热）相等，失供为零；按用户侧边界复核，逐时绝对残差最大为 $9.9\times10^{-9}$~kW。
+
+余热承担主要供热量：工业余热直供产热 1407.30~MWh、正出力 3738~h，随可用率与负荷调整；余热源热泵 1230.80~MWh、正出力 4292~h，其中 3825~h 满出力。图\ref{fig:match-heatmap}的比值为源侧净供热量与负荷侧有效需求之比，分子含输配损失余量，两者并非同一计量位置；逐时值 103.19\%---104.54\%，高出 100\% 的部分即输配损失占有效需求的比例。建筑热状态逐时在 $-69.2$ 至 $179.8$~kWh 之间吞吐，季节净充热为零，承担 906.4~kWh 负荷转移；不计其放热时有 6 小时源侧产热低于原始需求，差额由楼宇蓄热补足。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\linewidth,height=0.30\textheight,keepaspectratio]{media/r18/fig_match_ratio.png}
+\caption{乌鲁木齐供暖季源侧净供热量与负荷侧有效需求之比。分子含输配损失余量，高出 100\% 的部分即该损失占有效需求的比例}
+\label{fig:match-heatmap}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.86\linewidth,height=0.32\textheight,keepaspectratio]{media/r18/fig_cost_capacity.png}
+\caption{乌鲁木齐年化成本构成（左）与规划后容量、全季实际最大出力（右）}
+\label{fig:cost-capacity}
+\end{figure}
+
+成本构成见图\ref{fig:cost-capacity}左，年化投资与运行费用为主体，固定运维因退役下降 3.54 万元，等年值合计 27.76 万元。按能量分摊的单位供热成本 0.100681 元/kWh 与全服务单位 0.1075 元/kWh 相差 0.00674 与 0.00004 元/kWh，来自火用失配与舒适项惩罚；比较条件见表\ref{tab:base-vs-rec}。
+
+\begin{table}[H]
+\centering
+\small
+\caption{同一窗口、负荷与服务边界下的基准与推荐方案}\label{tab:base-vs-rec}
+\begin{tabularx}{\linewidth}{@{}L{0.20\linewidth}L{0.30\linewidth}Y@{}}
+\toprule
+项目 & 基准方案 & 推荐方案\\
+\midrule
+比较条件 & 既有资产；无碳价入口，按基本费用核算 & 建设、退役、管径与配电接入自由；费用含碳价、火用失配与舒适项，通过已启用硬约束与校核\\
+单位供热成本 & 0.078851 元/kWh & 0.100681 元/kWh，+27.69\%\\
+等年值成本 & 未分列 & 27.76 万元（分解见图\ref{fig:cost-capacity}左）\\
+碳排放 & 未分列 & 27.31~t~CO$_2$\\
+配电容量 & 既有 360~kW & 918.33~kW，新增 558.33~kW\\
+失供与热状态 & 通过 & 失供 0，热状态处于登记区间\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+容量与实际出力存在落差（图\ref{fig:cost-capacity}右）：退役燃煤与燃气容量后，区域应急电锅炉装机 908.44~kW，全季最大出力 447.92~kW，占装机 49.3\%，正出力 493~h，等效满负荷 60.22~h，容量因子 1.37\%。峰值负荷 1316.9~kW，负荷高于既有余热容量 950~kW 的时长 323~h，占全季 7\%（图\ref{fig:capacity-duration}）。应急电锅炉按登记备用要求与 $N-1$ 条件定容，高于正常工况的最大缺口；登记的热源 $N-1$ 对象为既有热电联产与燃气调峰锅炉，管段对象为 trunk\_a，逐故障全时序回放列为待执行的压力测试。储热保持既有 100~kWh 低温罐，承担 22.23~MWh 放热调峰；配电容量由 360~kW 增至 918.33~kW。
+
+管径同样可被目标函数区分：候选干线 trunk\_b 在 DN150（1000~kW，92 万元）与 DN200（1600~kW，128 万元）间选择，推荐解选 DN150；该管段峰值热流 341.7~kW，占容量 34\%。
+
+武汉同样采用联立求解并在 2880~h 窗口内收敛：等年值成本 26.00 万元、供热碳排放 76.56~t~CO$_2$、清洁热占比 99.55\%，失供率为零；方案新建地源热泵 359.52~kW、分布式空气源热泵 37.76~kW、区域应急电锅炉 170.90~kW 与相变储热 586.19~kWh，配电接入 239.82~kW，未建联络管。两城均未设碳帽，成本与碳排可直接并列。
+
+\begin{table}[H]
+\centering
+\small
+\caption{主三城推荐方案的求解身份与主要指标}\label{tab:three-city}
+\begin{tabularx}{\linewidth}{@{}L{0.16\linewidth}L{0.20\linewidth}L{0.19\linewidth}L{0.19\linewidth}Y@{}}
+\toprule
+城市 & 求解身份 & 等年值成本 & 碳排放 & 相对间隙\\
+\midrule
+乌鲁木齐 & 投资---运行联合 & 27.76 万元 & 27.31~t~CO$_2$ & 联合层 0.0153\%\\
+固原 & 锚定两阶段 & --- & --- & 运行层 0.184\%\\
+武汉 & 投资---运行联合 & 26.00 万元 & 76.56~t~CO$_2$ & 联合层 0.327\%\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\linewidth,height=0.32\textheight,keepaspectratio]{media/r18/fig_capacity_duration.png}
+\caption{乌鲁木齐负荷持续曲线与逐层容量水平}
+\label{fig:capacity-duration}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.66\linewidth,height=0.27\textheight,keepaspectratio]{media/resolve-2026/fig_energy_flow.png}
+\caption{乌鲁木齐季节热量来源结构}
+\label{fig:energy-flow}
+\end{figure}
+
+\subsection{工程验收与代码组织}
+
+三类场景采用同一组验收条件：热量平衡与储热状态在容差内闭合、聚合热状态处于设定区间、管段流量利用率不超 1、配电容量满足、失供率为零。工程文件将配置与核心逻辑分离，主程序负责调度求解、函数库承担负荷与设备计算；源码包可在独立环境和移位目录下运行同一实验并得到一致输出，被篡改的输入会被拒绝，入口见附录3。
+\clearpage
+\section{模型应用与决策分析}\label{minor:application}
+
+\subsection{退役节奏与替代容量的取舍}
+
+推荐解把退役规模与替代容量同时确定：燃煤与燃气合计退役 1650~kW，替代容量为区域应急电锅炉 908.44~kW，保留的 950~kW 化石容量全季零出力。退役的约束在容量侧，替代容量须覆盖正常工况之外的备用要求；加快退役节奏会提高应急电锅炉、储热与配电接入的需求，费用由运行侧转移到投资侧。
+
+\subsection{容量利用率的分层评价}
+
+区域应急电锅炉装机 908.44~kW，全季最大出力 447.92~kW，占装机 49.3\%，正出力 493~h，等效满负荷 60.22~h；新建干线 DN150 峰值热流 341.7~kW，占管段容量 34\%。这些比例反映备用容量与实际运行的差距，规划决策需把容量备用、实际运行与低利用率资产分层评价，并在相同边界下比较候选方案的投资、运行费用、温位适配与配电容量。
+
+\subsection{可迁移的输出形式}
+
+固定投资后对寒潮、资源中断、价格变化与关键故障重新调度，可检查失供、建筑热状态、配电峰值与储热状态，据此确定应急运行边界；调整碳约束、补贴与可靠性门槛可生成候选解集，并按风险权重比较备用能力与尾部费用的取舍。
+
+\clearpage
+\section{模型创新、局限与结论}\label{minor:conclusion}
+
+\subsection{模型创新}
+
+\textbf{创新一　温位匹配：热量送到才算数。}按供热总量配置设备时，总量平衡并不保证热量能送到高温用户。模型把热源温位下限、管段输送容量与热源出力放入同一组约束，用式(\ref{eq:grade})排除温位不匹配的方案，候选方案确定后再复算远端温度与压降。该约束参与三城方案的可行性判定，连续温降与末端适配由 72~h 参考管网实验承担。
+
+\textbf{创新二　存量管网：老管道的能力进规划。}既有管段容量限制新增热源的接入能力，把管网视为无约束通道会使扩容方案在实施阶段受阻。模型以既有管径为起点，把候选管径与改造投资同热源容量一并比较。乌鲁木齐推荐解在 trunk\_b 上选 DN150，DN200 同为候选而被目标函数区分掉；施工条件与路由审批由工程阶段确定。
+
+\textbf{创新三　燃煤退役：替代容量先落实。}按固定退役计划削减燃煤容量，可能在寒潮或余热中断时失去保供能力。模型把退役量与替代容量共同选择，以式(\ref{eq:retirement})限制退出规模，由式(\ref{eq:urumqi_key})要求任一关键热源退出后其余热源与储热仍覆盖逐时需求。
+
+\textbf{创新四　楼宇蓄热：热状态进逐时调度。}把建筑负荷当作给定曲线处理时，用户侧移峰对热源出力和配电的影响无法体现。模型用建筑热状态连接相邻时段，负荷转移先进入节点热平衡，再由热源出力、储热充放与配电容量共同响应。乌鲁木齐推荐解的建筑热状态逐时变化（district\_a 取值 $-29.0$---$68.2$~kWh，标准差 1.33~kWh）确实进入调度；双楼四格对照给出该机制的收益与代价：热容放大四倍在无配电上限时省电量费 427.20 元，计入共享配电上限后降至 276.68 元，用电量分别增加 570.33 与 335.46~kWh，即配电边界压缩了蓄热收益，蓄热以用电与碳排上升为代价。
+
+\textbf{创新五　算完回算：管网不过关就退回重解。}只给出最优解而不回看物理边界，会得到远端压力越限或温度不足的方案。模型把有限管网模式作为规划解的后验检查，逐轮把不合格模式转为新约束重解。该闭环在 72~h 参考管网专项实验执行到第三轮，单位长度压降 237.96~Pa/m、最远站供水温度 57.45~$^{\circ}$C 达到登记限值；同交付量下达标可行方案的参考费用由 178.64 元增至 224.26 元，代价随达标一并报告。
+
+\textbf{创新六　一套内核：三城只换配置。}分场景独立建模会使数据定义和指标定义分叉，方案之间无法直接比较。模型以一套公用内核承载负荷分解、建筑热状态、节点温位平衡、储热递推与配电约束，把存量热网、分散资源与间歇服务写成可加载的场景专用约束。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.58\textwidth,height=0.26\textheight,keepaspectratio]{media/model-figures/model-125}
+	\caption{创新一：温位与候选管网共同限制可供热量}
+	\label{fig:model-125}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.58\textwidth,height=0.26\textheight,keepaspectratio]{media/model-figures/127.jpg}
+\caption{创新三：退役规模由替代容量兜底}
+\label{fig:model-127}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.58\textwidth,height=0.26\textheight,keepaspectratio]{media/model-figures/129.jpg}
+\caption{创新五：规划解经管网回算反馈重解}
+\label{fig:model-129}
+\end{figure}
+
+\subsection{模型局限}
+
+模型在固定温位与离散温位近似的框架下求解，连续温差、指数温降与非凸水力列入后续工程校核；建筑热状态采用聚合节点的单一等效热容，楼宇级室温由逐楼精确离散 1R1C 模型承担。模型结果用于规划比较，施工图、设备选型与配电潮流校核由工程专业承担。
+
+\subsection{结论}
+
+本文将三类供热转型问题表述为资产配置、空间组织、带温位能流、建筑热状态与储热协同优化。三个场景共享公用内核，分别加载既有热网改造、分散设施选址和夏热冬冷地区供热形态约束；乌鲁木齐获得投资与运行联合解，固原与武汉获得锚定投资后的全季运行结果。该体系可为建设与退役、储热配置、配电增容和保供方案比较提供决策依据。
+
+\clearpage
+\begin{center}{\heiti\sihao 参考文献}\end{center}
+\phantomsection
+\addcontentsline{toc}{section}{参考文献}
+\begin{refsectionflush}
+\refentry{1}{中国建筑科学研究院有限公司.
+面向供热格局变革的城镇供热源荷匹配与规划寻优模型构建比赛方案{[}R{]}.
+2026.}
+\refentry{2}{江亿, 付林, 夏建军, 谢晓云, 吴彦廷, 胡姗.
+构建新型零碳热力系统{[}J{]}. 中国工程科学, 2025, 27(5): 1--18. DOI:
+10.15302/J-SSCAE-2025.08.025.}
+\refentry{3}{Lin Q, Lu S, Yue L, Li B, Zhu H. Research on low-carbon district
+heating system planning approach based on thermal energy grade and
+integrated demand response{[}EB/OL{]}. SSRN preprint 5082363,
+2024/2025（未同行评审预印本）.}
+\refentry{4}{Ceruti A, Lambert J, Spliethoff H. Integrating renewable energy
+and thermal storage in district heating networks: A design optimization
+approach{[}J{]}. Energy Conversion and Management, 2025, 345: 120323.
+DOI: 10.1016/j.enconman.2025.120323.}
+\refentry{5}{Chen J, Lv H, Ding L, et al.~Multi-objective optimization for
+the operation of district heating systems considering flexibility and
+economy{[}J{]}. Applied Thermal Engineering, 2025, 263: 125395. DOI:
+10.1016/j.applthermaleng.2024.125395.}
+\refentry{6}{Lyu Z, Huang M, Liu B, Liu Y. Robust optimization of regional
+integrated energy systems considering thermal comfort and uncertainty in
+heat networks{[}J{]}. Applied Thermal Engineering, 2025, 275: 126895.
+DOI: 10.1016/j.applthermaleng.2025.126895.}
+\refentry{7}{崔梦颖, 殷勇高, 赵栋霖, 黄钰希, 曹博文.
+地埋管跨季节储热耦合热泵供暖系统性能与经济性分析{[}J{]}. 储能科学与技术,
+2026, 15(3): 983--992. DOI: 10.19799/j.cnki.2095-4239.2026.0107.}
+\refentry{8}{崔杨, 姜涛, 仲悟之, 崔成伟, 赵钰婷.
+考虑风电消纳的区域综合能源系统源荷协调经济调度{[}J{]}. 电网技术, 2020,
+44(7): 2474--2482. DOI: 10.13335/j.1000-3673.pst.2019.2317.}
+\refentry{9}{李仲博.
+基于数字孪生的城镇供热系统按需精准调控技术研究与应用{[}D{]}. 杭州:
+浙江大学, 2023.}
+\refentry{10}{Paule D, Pakere I, Pubule J, Blumberga D. Optimising
+multi-energy community hubs for decarbonisation and energy system
+flexibility{[}J{]}. Smart Energy, 2025, 20: 100214. DOI:
+10.1016/j.segy.2025.100214.}
+\refentry{11}{Zhang Y, Campana P E, Yang Y, et al.~Energy flexibility from
+the consumer: Integrating local electricity and heat supplies in a
+building{[}EB/OL{]}.}
+\refentry{12}{Lu H, Khanna N, Feng W, et al.~China's Electrification
+Pathways: Findings from the China Energy Outlook 2022{[}R{]}. Lawrence
+Berkeley National Laboratory, 2022.}
+\refentry{13}{赵丽丽. 东北农村冬季清洁供暖技术节能改造应用技术研究{[}J{]}.
+节能, 2025, 44(11): 88--91. DOI: 10.3969/j.issn.1004-7948.2025.11.018.}
+\refentry{14}{白孝轩, 谈润芃, 李朋, 等.
+民用燃煤碳排放特征及电能替代减排路径优化{[}J/OL{]}. 环境科学研究, 2026.
+DOI: 10.13198/j.issn.1001-6929.2026.06.17.}
+\refentry{15}{Wang S, Su H, Chen C, et al.~Natural gas shortages during the
+``coal-to-gas'' transition in China have caused a large redistribution
+of air pollution{[}EB/OL{]}. arXiv:2004.09585, 2020.}
+\refentry{16}{Wang X, Xia L, Bales C, et al.~A systematic review of recent
+air source heat pump systems assisted by solar thermal, photovoltaic and
+photovoltaic/thermal sources{[}EB/OL{]}. arXiv:2102.09797, 2021.}
+\refentry{17}{Xiong C, Hassan M S. Renewable heat policy in China:
+Development, achievement, and effectiveness{[}J{]}. Sustainability,
+2022, 14: 9297. DOI: 10.3390/su14159297.}
+\refentry{18}{Fiorentini M, Baldini L. Control-oriented modelling and
+operational optimization of a borehole thermal energy storage{[}J{]}.
+Applied Thermal Engineering, 2021: 117518. DOI:
+10.1016/j.applthermaleng.2021.117518.}
+\refentry{19}{Takam P H, Wunderlich R. Model order reduction for the
+input--output behavior of a geothermal energy storage{[}J{]}. Journal of
+Engineering Mathematics, 2024, 148: 12. DOI: 10.1007/s10665-024-10398-4.}
+\refentry{20}{Li H, Svendsen S. Energy and exergy analysis of low temperature
+district heating network{[}J{]}. Energy, 2012, 45(1): 237--246. DOI:
+10.1016/j.energy.2012.03.056.}
+\refentry{21}{Lund H, Werner S, Wiltshire R, et al.~4th Generation District
+Heating (4GDH): Integrating smart thermal grids into future sustainable
+energy systems{[}J{]}. Energy, 2014, 68: 1--11. DOI:
+10.1016/j.energy.2014.02.089.}
+\refentry{22}{Capone M, Guelpa E, Verda V. Potential for supply temperature
+reduction of existing district heating substations{[}J{]}. Energy, 2023,
+285: 128597. DOI: 10.1016/j.energy.2023.128597.}
+\refentry{23}{IPCC. 2006 IPCC Guidelines for National Greenhouse Gas
+Inventories, Volume 2: Energy{[}R{]}. Hayama: IGES, 2006.}
+\refentry{24}{国务院办公厅. 国务院办公厅关于转发国家发展改革委、住房城乡建设部《加快推动建筑领域节能降碳工作方案》的通知{[}EB/OL{]}. \url{https://www.mee.gov.cn/zcwj/gwywj/202403/t20240318\_1068599.shtml}, 访问时间（2026年7月17日）.}
+\refentry{25}{国家发展和改革委员会. 加强建筑全过程节能降碳管理，推动建筑领域绿色低碳发展{[}EB/OL{]}. \url{https://www.ndrc.gov.cn/xxgk/jd/jd/202403/t20240321\_1365112.html}, 访问时间（2026年7月17日）.}
+\refentry{26}{International Energy Agency. Renewable heat: Renewables 2025{[}EB/OL{]}. \url{https://www.iea.org/reports/renewables-2025/renewable-heat}, 访问时间（2026年7月17日）.}
+\refentry{27}{European Commission. Heating and cooling{[}EB/OL{]}. \url{https://energy.ec.europa.eu/topics/energy-efficiency/heating-and-cooling\_en}, 访问时间（2026年7月17日）.}
+
+\refentry{28}{Bacher P, Madsen H. Identifying suitable models for the heat dynamics of buildings{[}J{]}. Energy and Buildings, 2011, 43(7): 1511--1522. DOI: \url{https://doi.org/10.1016/j.enbuild.2011.02.005}.}
+\refentry{29}{Miller C, Kathirgamanathan A, Picchetti B, et al. The Building Data Genome Project 2, energy meter data from the ASHRAE Great Energy Predictor III competition{[}J{]}. Scientific Data, 2020, 7: 368. DOI: \url{https://doi.org/10.1038/s41597-020-00712-x}.}
+\refentry{30}{TICA. V-FORCE Full DC Inverter Modular Chiller (Heat Pump){[}Z{]}. 产品样本，PDF第14--15页. 经销商存档：\url{https://dec.com.pk/assets/images/products/tica/3-Inverter-modular-chiller.pdf}. 采用已冻结副本.}
+\refentry{31}{NASA POWER. Hourly API{[}EB/OL{]}. \url{https://power.larc.nasa.gov/docs/services/api/temporal/hourly/}. 三城逐时数据查询与原响应随证据保存.}
+\refentry{32}{Mavrotas G. Effective implementation of the $\varepsilon$-constraint method in Multi-Objective Mathematical Programming problems{[}J{]}. Applied Mathematics and Computation, 2009, 213(2): 455--465. DOI: 10.1016/j.amc.2009.03.037.}
+\refentry{33}{Liao X, Wang W, Zhou Y. Investigating the Energy-Saving Effectiveness of Envelope Retrofits and Photovoltaic Systems: A Case Study of a Hotel in Urumqi{[}J{]}. Sustainability, 2023, 15(13): 9926. DOI: \url{https://doi.org/10.3390/su15139926}. 现场照片按CC BY 4.0许可引用.}
+\refentry{34}{中共中央. 中共中央关于制定国民经济和社会发展第十五个五年规划的建议{[}EB/OL{]}. 中国共产党第二十届中央委员会第四次全体会议2025年10月23日通过，新华社2025年10月28日受权发布. 国务院公报2025年第31号：\url{https://www.gov.cn/gongbao/2025/issue_12386/202511/content_7047415.html}.}
+\refentry{35}{中华人民共和国国民经济和社会发展第十五个五年规划纲要{[}EB/OL{]}. 2026年3月发布. 第四十七章第二节“推动重点领域节能降碳”：加快热力系统绿色低碳转型，因地制宜开展余热资源利用和非化石能源供热，有序推进供热计量改造和按热量收费.}
+\end{refsectionflush}
+
+
+
+% 附录1目录与正文引用使用独立跳转锚点。
+\begingroup
+\let\paperAppendixContents\addcontentsline
+\renewcommand{\addcontentsline}[3]{\phantomsection\paperAppendixContents{#1}{#2}{#3}}
+\input{sections/model-appendix.tex}
+\endgroup
+
+\clearpage
+\section*{附录2\quad 符号与缩略语说明}
+\phantomsection
+\addcontentsline{toc}{section}{\texorpdfstring{附录2\quad 符号与缩略语说明}{附录2 符号与缩略语说明}}
+
+本表仅列出贯穿正文的核心符号。场景专用变量已在相应约束后就地说明，不再重复汇总。
+
+\begin{longtable}{p{0.16\textwidth}p{0.58\textwidth}p{0.12\textwidth}}
+\caption{模型核心符号}\label{tab:symbols}\\
+\toprule
+符号 & 含义 & 单位\\
+\midrule
+\endfirsthead
+\toprule
+符号 & 含义 & 单位\\
+\midrule
+\endhead
+$t,T$ & 运行时段及完整供暖季总时段数 & h\\
+$k,n,g,b,s,e$ & 设备、节点、温位、建筑、储热装置和管段索引 & --\\
+$K_k$ & 热源或设备规划后可用容量 & kW\\
+$Q_{k,g,t}$ & 热源向温位 $g$ 提供的热功率 & kW\\
+$F_{e,g,t}$ & 管段入口热功率 & kW\\
+$Q_{b,t}^{h}$ & 建筑实际获得的供热功率 & kW\\
+$\theta_{b,t}^{a},\theta_{b,t}^{m}$ & 室内空气温度和建筑质量节点温度 & $^{\circ}$C\\
+$E_{s,t}$ & 储热装置存量 & kWh\\
+$\mathrm{COP}_{k,t}$ & 热泵逐时性能系数 & --\\
+$F^{\mathrm{cost}}$ & 生命周期成本 & 元\\
+$F^{\mathrm{CO_2}}$ & 系统碳排放量 & kg\\
+$U^{\mathrm{un}}$ & 供暖季失供率 & --\\
+\bottomrule
+\end{longtable}
+
+\input{sections/code-appendix-r8p.tex}
+\input{sections/data-appendix-r8p.tex}
+\input{sections/experiments-appendix-r8p.tex}
+\input{sections/recommendation-r8.tex}
+\end{document}

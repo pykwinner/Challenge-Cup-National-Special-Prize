@@ -1,0 +1,310 @@
+{
+  "title_zh": "费用、碳排与购电峰值的联合取舍",
+  "caption_zh": "三城共同2880小时窗口内的十二条固定资产调度记录。采用共同湖北方法学电价与固定排放因子，结果属于连续原型实验。横轴为参考碳排增量，纵轴为参考电量费指数，色彩表示购电峰值倍率。中点方案保留81.8%、80.9%、89.4%的端点节费收益；其电量费实际下降约1.39%、1.39%、1.57%，同时碳排增加。费用不含投资与运维。",
+  "references": [
+    {
+      "doi": "10.1038/s41467-025-67593-9",
+      "figure": "6",
+      "paper_title": "The benefits of exploring a large scenario space for future energy systems",
+      "official_url": "https://www.nature.com/articles/s41467-025-67593-9",
+      "image": {
+        "path": "docs/publication_redesign_20261003/references/algorithm/A07/figure_6.png",
+        "sha256": "fe7928767a65ae96958926f85a7be11de40434561acbfce9cc43bba07e8aa534",
+        "bytes": 507541
+      },
+      "actually_viewed": true,
+      "view_evidence": "Original A07-F6 PNG displayed with tools.view_image in this turn before redesign.",
+      "colors": {
+        "sample_axis_x_px": 1232,
+        "sample_y_pixels_low_to_high": [
+          830,
+          4
+        ],
+        "sample_count": 827,
+        "exact_rgb_csv": {
+          "path": "docs/publication_final_20261003/tradeoff_paper/reference_colorbar_pixels.csv",
+          "sha256": "755adc27abf0fdd623920ea8ed022d5fd8642ecdc7f8e34aceaa4f628e77e340",
+          "bytes": 26722
+        },
+        "example_samples": [
+          {
+            "index": 0,
+            "reference_x_px": 1232,
+            "reference_y_px": 830,
+            "hex": "#0D0305",
+            "red": 13,
+            "green": 3,
+            "blue": 5
+          },
+          {
+            "index": 206,
+            "reference_x_px": 1232,
+            "reference_y_px": 624,
+            "hex": "#3E356B",
+            "red": 62,
+            "green": 53,
+            "blue": 107
+          },
+          {
+            "index": 413,
+            "reference_x_px": 1232,
+            "reference_y_px": 417,
+            "hex": "#357AA2",
+            "red": 53,
+            "green": 122,
+            "blue": 162
+          },
+          {
+            "index": 619,
+            "reference_x_px": 1232,
+            "reference_y_px": 211,
+            "hex": "#49C1AD",
+            "red": 73,
+            "green": 193,
+            "blue": 173
+          },
+          {
+            "index": 826,
+            "reference_x_px": 1232,
+            "reference_y_px": 4,
+            "hex": "#DCF4E3",
+            "red": 220,
+            "green": 244,
+            "blue": 227
+          }
+        ]
+      },
+      "design_transfer": "Two-dimensional objective coordinates and a continuous third-variable colorbar; sparse registered cases use four distinct marker identities.",
+      "not_transferred": [
+        "Source scenario cloud and sample count",
+        "Source continuous/non-dominated frontier",
+        "Source minerals-and-metals variable or values"
+      ]
+    }
+  ],
+  "main_reference": {
+    "doi": "10.1038/s41467-025-67593-9",
+    "figure": "6"
+  },
+  "sources": [
+    {
+      "path": "docs/publication_redesign_20261003/tradeoff_evidence/registered_cost_carbon.csv",
+      "sha256": "ed24183da5728d21be6e1be3f9b37d1ef28b012f650ebfae708e59e3745bfc70",
+      "bytes": 25080
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_v2/registered_cost_carbon.csv",
+      "sha256": "ed24183da5728d21be6e1be3f9b37d1ef28b012f650ebfae708e59e3745bfc70",
+      "bytes": 25080
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_v2/plot_data.csv",
+      "sha256": "5123167e30fb304efdb3535e24a31621999e8b30161d1dd1b2599a3c860fe0a6",
+      "bytes": 5367
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_v2/retained_savings.csv",
+      "sha256": "80371b795867cc4056b977f5df80eaf532a10f47981c70c7e4ca74c52a67463e",
+      "bytes": 660
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_v2/reference_colorbar_pixels.csv",
+      "sha256": "755adc27abf0fdd623920ea8ed022d5fd8642ecdc7f8e34aceaa4f628e77e340",
+      "bytes": 26722
+    }
+  ],
+  "data": [
+    {
+      "path": "docs/publication_final_20261003/tradeoff_paper/registered_cost_carbon.csv",
+      "sha256": "ed24183da5728d21be6e1be3f9b37d1ef28b012f650ebfae708e59e3745bfc70",
+      "bytes": 25080
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_paper/plot_data.csv",
+      "sha256": "5123167e30fb304efdb3535e24a31621999e8b30161d1dd1b2599a3c860fe0a6",
+      "bytes": 5367
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_paper/retained_savings.csv",
+      "sha256": "80371b795867cc4056b977f5df80eaf532a10f47981c70c7e4ca74c52a67463e",
+      "bytes": 660
+    },
+    {
+      "path": "docs/publication_final_20261003/tradeoff_paper/reference_colorbar_pixels.csv",
+      "sha256": "755adc27abf0fdd623920ea8ed022d5fd8642ecdc7f8e34aceaa4f628e77e340",
+      "bytes": 26722
+    }
+  ],
+  "plot_type": "三城同尺度二维目标散点＋购电峰值连续色条＋四方案形状＋中点节费保留",
+  "records": 12,
+  "point_shapes": {
+    "baseline_delta0": "o",
+    "carbon_endpoint": "D",
+    "midpoint_cap": "s",
+    "cost_endpoint": "^"
+  },
+  "coincident_pairs": [
+    {
+      "city": "urumqi",
+      "cases": [
+        "baseline_delta0",
+        "carbon_endpoint"
+      ],
+      "coordinate_treatment": "Original coordinates retained without snapping or jitter; outer diamond and inner circle keep both identities visible.",
+      "original_x_difference_percent": 1.0038206044171716e-06,
+      "original_y_difference_index": -9.850121784893417e-07
+    },
+    {
+      "city": "guyuan",
+      "cases": [
+        "baseline_delta0",
+        "carbon_endpoint"
+      ],
+      "coordinate_treatment": "Original coordinates retained without snapping or jitter; outer diamond and inner circle keep both identities visible.",
+      "original_x_difference_percent": 1.003738159255363e-06,
+      "original_y_difference_index": -9.886339853437676e-07
+    },
+    {
+      "city": "wuhan",
+      "cases": [
+        "baseline_delta0",
+        "carbon_endpoint"
+      ],
+      "coordinate_treatment": "Original coordinates retained without snapping or jitter; outer diamond and inner circle keep both identities visible.",
+      "original_x_difference_percent": 1.0081255830129976e-06,
+      "original_y_difference_index": -1.0054359478317565e-06
+    }
+  ],
+  "third_variable": {
+    "field": "peak_ratio_to_baseline",
+    "color_norm_limits": [
+      1,
+      2.7
+    ],
+    "data_min": 0.9999999999999994,
+    "data_max": 2.654346539767269,
+    "continuous_reference_colorbar_samples": 827,
+    "mapping": "Listed source pixels, bottom-to-top; no guessed palette name; numerical values and their source pixel positions saved per point."
+  },
+  "derived": [
+    {
+      "city": "urumqi",
+      "midpoint_retained_savings_percent": 81.80256176240323,
+      "actual_remaining_additional_carbon_space_ratio": 0.5000002883091659,
+      "baseline_peak_kw": 3.5860900000000004,
+      "midpoint_peak_kw": 7.678637042875044,
+      "cost_endpoint_peak_kw": 7.678637042875044,
+      "baseline_and_carbon_x_difference_percent": 1.0038206044171716e-06,
+      "baseline_and_carbon_y_difference_index": -9.850121784893417e-07
+    },
+    {
+      "city": "guyuan",
+      "midpoint_retained_savings_percent": 80.9176702938616,
+      "actual_remaining_additional_carbon_space_ratio": 0.5000002922940512,
+      "baseline_peak_kw": 3.893775000000001,
+      "midpoint_peak_kw": 7.938344042875044,
+      "cost_endpoint_peak_kw": 7.938344042875044,
+      "baseline_and_carbon_x_difference_percent": 1.003738159255363e-06,
+      "baseline_and_carbon_y_difference_index": -9.886339853437676e-07
+    },
+    {
+      "city": "wuhan",
+      "midpoint_retained_savings_percent": 89.44244536621136,
+      "actual_remaining_additional_carbon_space_ratio": 0.5000002340896393,
+      "baseline_peak_kw": 2.391855000000001,
+      "midpoint_peak_kw": 5.292888470943296,
+      "cost_endpoint_peak_kw": 6.348812042875044,
+      "baseline_and_carbon_x_difference_percent": 1.0081255830129976e-06,
+      "baseline_and_carbon_y_difference_index": -1.0054359478317565e-06
+    }
+  ],
+  "axis_ranges": {
+    "all_city_x_percent": [
+      -0.4,
+      4.9
+    ],
+    "all_city_y_energy_charge_index": [
+      98,
+      100.25
+    ],
+    "point_x_min_max": [
+      0.0,
+      4.4005764360316
+    ],
+    "point_y_min_max": [
+      98.24820691285011,
+      100.0
+    ]
+  },
+  "typography_and_layout": {
+    "width_mm": 146,
+    "height_mm": 92,
+    "font_family": "Microsoft YaHei",
+    "axis_label_pt": 8,
+    "tick_pt": 8,
+    "panel_label_pt": 8.5,
+    "legend_pt": 8,
+    "coincidence_annotation_pt": 7.5,
+    "panel_plot_width_mm": 31.828,
+    "panel_plot_height_mm": 41.86,
+    "panel_plot_width_height_ratio": 0.7603440038222646,
+    "reference_type_size": "Raster equal-width visual comparison; native author font pt is not claimed.",
+    "minimum_authored_font_pt": 7.5,
+    "pdf_measured_min_text_pt": 7.5,
+    "pdf_measured_text_sizes_pt": [
+      7.5,
+      8.0,
+      8.5
+    ]
+  },
+  "text_color": "#000000",
+  "native_editable_svg": true,
+  "no_new_solver_run": true,
+  "new_points_added": false,
+  "interpolated_frontier": false,
+  "generator": "build_tradeoff.py",
+  "transform_rules": [
+    "Reference charge index =100*bill_yuan/each-city baseline bill.",
+    "Reference carbon increment field kept unchanged and independently checked from carbon ledger.",
+    "Peak ratio field kept unchanged and independently checked from absolute peak ledger.",
+    "All twelve original rows copied byte-for-byte, including anchor, scope and solver evidence.",
+    "No point jitter, snapping, smoothing, density estimation or point deletion."
+  ],
+  "variant": "paper_146mm",
+  "detailed_method_zh": "三城共同2880小时连续原型实验、固定既有理想资产与共同湖北方法学电价/固定排放因子的十二条已登记方案。每个城市采用同一坐标范围：横轴为相对该城反馈基准的参考碳排增量，纵轴为该城参考电量费÷基准参考电量费×100（基准=100%）；越低表示该参考账本的电量费越少。四种形状分别表示反馈基准、低碳端点、中点碳帽和费用端点，颜色与共用连续色标表示该方案最大逐时购电功率÷该城基准最大购电功率，不再以颜色区分城市。所有点均来自同一冻结登记表，未绘制连接前沿、密集样本云、置信区间或未求解的插值方案。每城反馈基准和低碳端点在主图尺度上重合，但原始微小差值约10^-6个百分点保留；空心外菱形和内部实心圆保持两个身份，未进行坐标抖动或强制归零。费用端点与中点碳帽在乌鲁木齐、固原具有相同的购电峰值倍率；武汉中点与费用端点分别为2.2128801582634794倍和2.654346539767269倍，因此同城市内的色差反映真实峰值变化。中点碳帽按两个优化端点定义的额外排放空间取半并计入登记数值容差；节费保留率=(基准电量费−中点电量费)/(基准电量费−费用端点电量费)，三城分别约81.8%、80.9%、89.4%，不是总成本降幅。反馈基准为预先定义的可行温控策略；优化证书仅属于已登记服务、固定资产和连续运行子问题，求解状态、容差锚点、问题范围及原始账本在逐条CSV中保留。图示费用为参考运行电量费，未加入投资报价、运维差额或推断全寿命收益，也不作为三城现场成效。配色来自Frey等Nature Communications原Fig.6色条内部的827个精确RGB像素；源图的矿产指标、前沿和样本数量未移植。",
+  "method_file": "METHODS.txt",
+  "optimized_records": 9,
+  "baseline_records": 3,
+  "point_identity": "Twelve original case records; nine distinct optimized points; baseline/carbon endpoint differences retained.",
+  "paper_width_mm": 146,
+  "requires_no_downscaling_at_146mm": true,
+  "midpoint_actual_energy_charge_reduction_percent": {
+    "urumqi": 1.3915907692791336,
+    "guyuan": 1.3892108283331055,
+    "wuhan": 1.56684657490311
+  },
+  "outputs": {
+    "svg": {
+      "file": "cost_carbon.svg",
+      "path": "docs/publication_final_20261003/tradeoff_paper/cost_carbon.svg",
+      "sha256": "7f7cf1ed74ef42c8b8bcfe76044c3d5798c3c23a1eb8a68fb6b17cea7b461b00"
+    },
+    "pdf": {
+      "file": "cost_carbon.pdf",
+      "path": "docs/publication_final_20261003/tradeoff_paper/cost_carbon.pdf",
+      "sha256": "96f0e5357124fbd0cc976009dda4edeaefee009918f77732d3f0e91a3cdfb2f7"
+    },
+    "png": {
+      "file": "cost_carbon.png",
+      "path": "docs/publication_final_20261003/tradeoff_paper/cost_carbon.png",
+      "sha256": "aaa96d2970c78803307f9336727ff70dbb2d486772b08cbd4dd21edb18af880d"
+    }
+  },
+  "status": "passed_and_frozen",
+  "qa_path": "D:\\competion\\xiaotiao\\北方供热三类场景公用总框架V10\\north_heat_challenge\\docs\\publication_final_20261003\\tradeoff_paper\\QA.json",
+  "generator_sha256": "e17107bb118f25f0e2b8d4084285f356fa0e5048c565eeafbc9348f708177dc1",
+  "caption_chinese_character_count": 115,
+  "qa_sha256": "66345f50cfde7b43049c704d3d53cefb5af888ef6cebf4c21153aee39cc89740",
+  "methods_sha256": "c56f118ab8f84af229c30ffb86c632f254d95c6edfb25747796a4d8335ba5f8a",
+  "caption_sha256": "a6de482c5983b94a6b9446ea57324d20170eb3da93b8aa8d3a79b2e79f87a934"
+}

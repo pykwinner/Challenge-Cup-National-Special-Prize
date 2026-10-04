@@ -1,0 +1,84 @@
+{
+  "status": "numeric_export_and_visual_checks_complete",
+  "paper_width_height_mm": [
+    146.0000030517578,
+    110.00000406901042
+  ],
+  "actual_PDF_minimum_font_pt": 7.199999809265137,
+  "nominal_minimum_font_pt": 7.2,
+  "actual_PDF_font_sizes_pt": [
+    7.2,
+    7.5,
+    8.0,
+    8.5
+  ],
+  "all_PDF_text_at_least_7pt": true,
+  "text_box_collisions": [],
+  "text_outside_page": [],
+  "all_text_black": "#000000",
+  "native_svg_text": true,
+  "svg_raster_images": 0,
+  "pdf_raster_images": 0,
+  "fonts_embedded": true,
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "caption_Chinese_characters": 110,
+  "plot_data_cells": 17280,
+  "continuous_hours": 2880,
+  "calendar_days": 120,
+  "calendar_hours_per_day": 24,
+  "source_CSV_byte_copy": true,
+  "reference_palette_and_layout_unchanged": true,
+  "numeric_ledger_and_all_series_ranges_same_as_v2": true,
+  "charge_change_pct": -4.65973537821065,
+  "electricity_change_pct": 4.166888385270373,
+  "binding_hours": [
+    125,
+    530
+  ],
+  "same_service_does_not_imply_equal_heat": true,
+  "no_model_run": true,
+  "outputs": {
+    "svg": {
+      "file": "thermal_coupling.svg",
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.svg",
+      "sha256": "e3a70421eff39c037584845276d453d309f301092bbf5f5cb153e1c5f1aaa8ab"
+    },
+    "pdf": {
+      "file": "thermal_coupling.pdf",
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.pdf",
+      "sha256": "9a40e8ed3117c4f84b5fce68743954be3d928c73da1cc5da5132016d9e1e6d86"
+    },
+    "png": {
+      "file": "thermal_coupling.png",
+      "path": "docs/publication_final_20261003/mechanism_paper/thermal_coupling.png",
+      "sha256": "1915bd1936cf802490bc8a3f71cfcc0fac1a6bdc7c0a637b712b5ec1a0d7b30a"
+    }
+  },
+  "visual_review": {
+    "actually_viewed": [
+      "thermal_coupling.png",
+      "QA_pdf_render.png"
+    ],
+    "observations_zh": [
+      "六面板原有配色及基准—四倍—差分结构完整保留。",
+      "提高色标字体至7.2磅并调整两排间距后，文字无重叠或裁切。",
+      "逐时格子、列范围、费用和电量取舍与原冻结版本一致。"
+    ]
+  },
+  "artifact_hashes": {
+    "build_mechanism.py": "138b5bd692ee61438011780e729945338034bb5e9ccdd909fc2e5ee7b144968c",
+    "calendar_cells.csv": "fe6e2e2fcde0fd331a8c3072df9d2145961e6b5105634f4ea46a24b65a471eb8",
+    "CAPTION.txt": "d2880c9bebe18bc86b0cc450cfb71331922e8ae28b513d2e97aa0b150230ce51",
+    "case_metrics.csv": "fa38bf01bb1ad7b137cb61cdfdffdf4736c713ef0d51042842e6891c46abc818",
+    "METHODS.txt": "d6acd351618014aaa40613f7aa4906a565e9f6181f8dfc81a49156cafe839e3a",
+    "QA_pdf_render.png": "40a7b92d00d7059749fa8535b18a043a0024cdf986af89add432a77aaba610e1",
+    "thermal_coupling.json": "61559788830adc1818b9042347ad40d9815036f2dd72320ff1fa806ebb1f2f49",
+    "thermal_coupling.pdf": "9a40e8ed3117c4f84b5fce68743954be3d928c73da1cc5da5132016d9e1e6d86",
+    "thermal_coupling.png": "1915bd1936cf802490bc8a3f71cfcc0fac1a6bdc7c0a637b712b5ec1a0d7b30a",
+    "thermal_coupling.svg": "e3a70421eff39c037584845276d453d309f301092bbf5f5cb153e1c5f1aaa8ab",
+    "verify_paper.py": "b56a98b762564219712274b416e0b80d4ee8e6bfef1e41bf275dc8120b549987"
+  }
+}

@@ -1,0 +1,21 @@
+% !TeX root = ../main.tex
+\newcounter{paperalgorithm}
+\newenvironment{paperalgorithm}[2]{%
+  \par\Needspace{12\baselineskip}\refstepcounter{paperalgorithm}\label{#2}%
+  \begingroup\small\setstretch{1.05}\setlength{\parskip}{3pt}%
+  \noindent\rule{\linewidth}{0.6pt}\par\noindent\textbf{算法\thepaperalgorithm\quad #1}\par
+}{\par\noindent\rule{\linewidth}{0.6pt}\par\endgroup}
+
+\begin{paperalgorithm}{窗口求解与逐时复核流程}{alg:season-workflow}
+\noindent\textbf{输入：}场景配置、规划输入、连续窗口逐时数据与求解容差。\par
+\noindent\textbf{输出：}投资及逐时运行方案，求解状态、间隙与校核记录。
+\begin{enumerate}[label=\arabic*.,leftmargin=1.8em,itemsep=2pt,topsep=3pt,parsep=0pt]
+\item 核对窗口、步长、单位与各模块启用状态。
+\item 按第2章约束装配源网荷储电模型，联立守恒、容量与热状态条件并设初末边界。
+\item 乌鲁木齐联合求解投资与运行；固原、武汉冻结投资模式后求解全季运行。
+\item 按碳帽或 $\varepsilon$ 档位重复求解并逐档保存。
+\item 记录目标值、上下界、间隙、时间与可行性状态。
+\item 以逐时输出复算守恒、状态、容量、资源与失供核对。
+\item 导出可核结果并标注求解身份与逐时调度。
+\end{enumerate}
+\end{paperalgorithm}

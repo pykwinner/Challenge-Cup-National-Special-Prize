@@ -1,0 +1,79 @@
+{
+  "doi": "10.1038/s41467-020-17112-9",
+  "figure": "3",
+  "title": "Identifying domains of applicability of machine learning models for materials science",
+  "authors": [
+    "Christopher Sutton",
+    "Mario Boley",
+    "Luca M. Ghiringhelli",
+    "Matthias Rupp",
+    "Jilles Vreeken",
+    "Matthias Scheffler"
+  ],
+  "year": 2020,
+  "journal": "Nature Communications",
+  "official_url": "https://www.nature.com/articles/s41467-020-17112-9",
+  "image": {
+    "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+    "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+    "bytes": 38169
+  },
+  "published_pdf": {
+    "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_published.pdf",
+    "sha256": "c2956d9b15ac65f87ca9deff557146dce66b4bcf721fd95fb2580c7a8f7de9ba",
+    "bytes": 5604888
+  },
+  "actually_viewed": true,
+  "view_evidence": "Original Fig3 PNG actually displayed using view_image; published PDF page6 caption read.",
+  "borrowed": [
+    "One compact category panel; blue left half and gray right half violins.",
+    "Internal boxes at weighted 25/50/75 percentiles and whiskers at weighted 5/95 percentiles.",
+    "Exact unaltered source blue and gray pixels, black outlines, white background, zero baseline."
+  ],
+  "adaptations": [
+    "Six building groups replace four source models.",
+    "One continuous symlog vertical axis replaces the rejected break; all true error tails retained.",
+    "Quantile transport errors with exact probability masses replace source predictive errors.",
+    "Zero-error point masses explicitly displayed at baseline; no source reference threshold transferred."
+  ],
+  "not_transferred": [
+    "Source 98th-percentile tail truncation",
+    "Source 24.9 meV/cation threshold",
+    "Source random train/test replication or domain-applicability claims"
+  ],
+  "palette": {
+    "hard": {
+      "hex": "#2020DF",
+      "xy": [
+        154,
+        41
+      ],
+      "source_image": {
+        "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+        "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+        "bytes": 38169
+      },
+      "doi": "10.1038/s41467-020-17112-9",
+      "figure": "3"
+    },
+    "soft": {
+      "hex": "#808080",
+      "xy": [
+        154,
+        73
+      ],
+      "source_image": {
+        "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+        "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+        "bytes": 38169
+      },
+      "doi": "10.1038/s41467-020-17112-9",
+      "figure": "3"
+    }
+  },
+  "image_size_px": [
+    756,
+    564
+  ],
+  "typography_note": "Source PDF embeds a bitmap, so native font pt cannot be measured. Figure proportions adapted from the raster at the requested 146mm width; Chinese labels use 7.5–8.5pt."
+}

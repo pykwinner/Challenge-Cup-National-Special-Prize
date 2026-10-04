@@ -1,0 +1,80 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{逐楼热状态是独立}RC\CJKCode{分支，节点平衡须消费其交付量。}}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{add\PYGZus{}building\PYGZus{}thermal\PYGZus{}constraints}\PYG{p}{(}\PYG{n}{model}\PYG{p}{:} \PYG{n}{Any}\PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{n}{BuildingThermalBlock} \PYG{o}{|} \PYG{k+kc}{None}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Register on model.problem / model.variables and return load variable maps.}
+
+\PYG{l+s+sd}{    Needs config, ts, dt, problem and variables, optionally boundary\PYGZus{}groups.}
+\PYG{l+s+sd}{    Adds no source equipment, costs, unmet\PYGZhy{}load variables or reliability credits.}
+\PYG{l+s+sd}{    The caller MUST consume node\PYGZus{}heat/node\PYGZus{}cooling in physical supply balances.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{先校验逐楼输入与分组边界，未启用则返回空。}}
+    \PYG{n}{inputs} \PYG{o}{=} \PYG{n}{validate\PYGZus{}building\PYGZus{}thermal\PYGZus{}inputs}\PYG{p}{(}\PYG{n}{model}\PYG{o}{.}\PYG{n}{config}\PYG{p}{,} \PYG{n}{model}\PYG{o}{.}\PYG{n}{ts}\PYG{p}{,} \PYG{n}{dt\PYGZus{}hours}\PYG{o}{=}\PYG{n}{model}\PYG{o}{.}\PYG{n}{dt}\PYG{p}{,}
+                                             \PYG{n}{boundary\PYGZus{}groups}\PYG{o}{=}\PYG{n+nb}{getattr}\PYG{p}{(}\PYG{n}{model}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{boundary\PYGZus{}groups}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{inputs} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{k}{return} \PYG{k+kc}{None}
+    \PYG{n}{categories} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}temperature}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}heat}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}cooling}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}heat\PYGZus{}mode}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+                  \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}heat\PYGZus{}by\PYGZus{}node}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}cooling\PYGZus{}by\PYGZus{}node}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{拒绝重复注册，避免同一建筑出现两套状态变量。}}
+    \PYG{k}{if} \PYG{n+nb}{any}\PYG{p}{(}\PYG{n}{model}\PYG{o}{.}\PYG{n}{variables}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{category}\PYG{p}{)} \PYG{k}{for} \PYG{n}{category} \PYG{o+ow}{in} \PYG{n}{categories}\PYG{p}{)}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building thermal variables already registered}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{maps} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{category}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}} \PYG{k}{for} \PYG{n}{category} \PYG{o+ow}{in} \PYG{n}{categories}\PYG{p}{\PYGZcb{}}
+    \PYG{n}{temperature}\PYG{p}{,} \PYG{n}{heat}\PYG{p}{,} \PYG{n}{cooling}\PYG{p}{,} \PYG{n}{mode}\PYG{p}{,} \PYG{n}{node\PYGZus{}heat}\PYG{p}{,} \PYG{n}{node\PYGZus{}cooling} \PYG{o}{=} \PYG{p}{(}\PYG{n}{maps}\PYG{p}{[}\PYG{n}{category}\PYG{p}{]} \PYG{k}{for} \PYG{n}{category} \PYG{o+ow}{in} \PYG{n}{categories}\PYG{p}{)}
+    \PYG{n}{p} \PYG{o}{=} \PYG{n}{model}\PYG{o}{.}\PYG{n}{problem}
+    \PYG{n}{heat\PYGZus{}members}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{[}\PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{,} \PYG{n+nb}{str}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{]}\PYG{p}{,} \PYG{n+nb}{list}\PYG{p}{[}\PYG{n+nb}{int}\PYG{p}{]}\PYG{p}{]} \PYG{o}{=} \PYG{n}{defaultdict}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{)}
+    \PYG{n}{cooling\PYGZus{}members}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{[}\PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{]}\PYG{p}{,} \PYG{n+nb}{list}\PYG{p}{[}\PYG{n+nb}{int}\PYG{p}{]}\PYG{p}{]} \PYG{o}{=} \PYG{n}{defaultdict}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{building} \PYG{o+ow}{in} \PYG{n}{inputs}\PYG{o}{.}\PYG{n}{buildings}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{inputs}\PYG{o}{.}\PYG{n}{frame}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{key} \PYG{o}{=} \PYG{n}{building}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{t}
+            \PYG{c+c1}{\PYGZsh{} \CJKCode{室温单位为摄氏度，逐时舒适区间直接作为变量界。}}
+            \PYG{n}{temperature}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}temperature[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{building}\PYG{o}{.}\PYG{n}{name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{n}{building}\PYG{o}{.}\PYG{n}{minimum}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{building}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} \CJKCode{冷热交付均为非负}kW\CJKCode{，各自受末端功率上界限制。}}
+            \PYG{n}{heat}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}heat[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{building}\PYG{o}{.}\PYG{n}{name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{building}\PYG{o}{.}\PYG{n}{heat\PYGZus{}upper}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{)}
+            \PYG{n}{cooling}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}cooling[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{building}\PYG{o}{.}\PYG{n}{name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{building}\PYG{o}{.}\PYG{n}{cooling\PYGZus{}upper}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} \CJKCode{按建筑所属节点和供热温位收集实际交付功率。}}
+            \PYG{n}{heat\PYGZus{}members}\PYG{p}{[}\PYG{n}{building}\PYG{o}{.}\PYG{n}{node}\PYG{p}{,} \PYG{n}{building}\PYG{o}{.}\PYG{n}{heat\PYGZus{}grade}\PYG{p}{,} \PYG{n}{t}\PYG{p}{]}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{heat}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{)}
+            \PYG{n}{cooling\PYGZus{}members}\PYG{p}{[}\PYG{n}{building}\PYG{o}{.}\PYG{n}{node}\PYG{p}{,} \PYG{n}{t}\PYG{p}{]}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{cooling}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} \CJKCode{仅互斥模式且冷热均可用时引入二元开关。}}
+            \PYG{k}{if} \PYG{n}{inputs}\PYG{o}{.}\PYG{n}{simultaneous\PYGZus{}mode} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{exclusive}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o+ow}{and} \PYG{n}{building}\PYG{o}{.}\PYG{n}{heat\PYGZus{}upper}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{building}\PYG{o}{.}\PYG{n}{cooling\PYGZus{}upper}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+                \PYG{n}{mode}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}heat\PYGZus{}mode[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{building}\PYG{o}{.}\PYG{n}{name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{integer}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+                \PYG{c+c1}{\PYGZsh{} \CJKCode{模式为}1\CJKCode{允许供热；模式为}0\CJKCode{允许制冷。}}
+                \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{heat}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{mode}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{n}{building}\PYG{o}{.}\PYG{n}{heat\PYGZus{}upper}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{\PYGZcb{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+                \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{cooling}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{mode}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{:} \PYG{n}{building}\PYG{o}{.}\PYG{n}{cooling\PYGZus{}upper}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{\PYGZcb{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{building}\PYG{o}{.}\PYG{n}{cooling\PYGZus{}upper}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{状态递推只连接所属边界组，避免跨场景串联。}}
+        \PYG{k}{for} \PYG{n}{group}\PYG{p}{,} \PYG{n}{times} \PYG{o+ow}{in} \PYG{n}{inputs}\PYG{o}{.}\PYG{n}{boundary\PYGZus{}groups}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{condition} \PYG{o}{=} \PYG{n}{building}\PYG{o}{.}\PYG{n}{boundary}\PYG{p}{[}\PYG{n}{group}\PYG{p}{]}
+            \PYG{k}{for} \PYG{n}{position}\PYG{p}{,} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{times}\PYG{p}{)}\PYG{p}{:}
+                \PYG{n}{key} \PYG{o}{=} \PYG{n}{building}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{t}
+                \PYG{c+c1}{\PYGZsh{} a\CJKCode{无量纲，}b\CJKCode{为}K\CJKCode{每}kW\CJKCode{；供热升温而制冷降温。}}
+                \PYG{n}{row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{temperature}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{heat}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{n}{building}\PYG{o}{.}\PYG{n}{b}\PYG{p}{,} \PYG{n}{cooling}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]}\PYG{p}{:} \PYG{n}{building}\PYG{o}{.}\PYG{n}{b}\PYG{p}{\PYGZcb{}}
+                \PYG{c+c1}{\PYGZsh{} H\CJKCode{乘室外温度与内、太阳得热合成递推常量项。}}
+                \PYG{n}{rhs} \PYG{o}{=} \PYG{n}{building}\PYG{o}{.}\PYG{n}{b} \PYG{o}{*} \PYG{p}{(}\PYG{n}{building}\PYG{o}{.}\PYG{n}{heat\PYGZus{}loss\PYGZus{}kw\PYGZus{}per\PYGZus{}c} \PYG{o}{*} \PYG{n}{inputs}\PYG{o}{.}\PYG{n}{outdoor\PYGZus{}temperature}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}
+                                     \PYG{o}{+} \PYG{n}{building}\PYG{o}{.}\PYG{n}{internal\PYGZus{}gain}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]} \PYG{o}{+} \PYG{n}{building}\PYG{o}{.}\PYG{n}{solar\PYGZus{}gain}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{)}
+                \PYG{c+c1}{\PYGZsh{} \CJKCode{固定组首时段把初始室温乘}a\CJKCode{移到等式右端。}}
+                \PYG{k}{if} \PYG{n}{position} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{condition}\PYG{o}{.}\PYG{n}{mode} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
+                    \PYG{n}{rhs} \PYG{o}{+}\PYG{o}{=} \PYG{n}{building}\PYG{o}{.}\PYG{n}{a} \PYG{o}{*} \PYG{n}{condition}\PYG{o}{.}\PYG{n}{initial\PYGZus{}temperature\PYGZus{}c}
+                \PYG{k}{else}\PYG{p}{:}
+                    \PYG{n}{previous} \PYG{o}{=} \PYG{n}{temperature}\PYG{p}{[}\PYG{n}{building}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{times}\PYG{p}{[}\PYG{n}{position} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{]}
+                    \PYG{c+c1}{\PYGZsh{} Addition is essential for single\PYGZhy{}step cyclic groups (same index).}
+                    \PYG{c+c1}{\PYGZsh{} \CJKCode{循环组接组内前驱，单时段同索引须累加系数。}}
+                    \PYG{n}{row}\PYG{p}{[}\PYG{n}{previous}\PYG{p}{]} \PYG{o}{=} \PYG{n}{row}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{previous}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{building}\PYG{o}{.}\PYG{n}{a}
+                \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{n}{rhs}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{rhs}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} \CJKCode{固定边界另约束末态室温，不强制循环相等。}}
+            \PYG{k}{if} \PYG{n}{condition}\PYG{o}{.}\PYG{n}{mode} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
+                \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{temperature}\PYG{p}{[}\PYG{n}{building}\PYG{o}{.}\PYG{n}{name}\PYG{p}{,} \PYG{n}{times}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+                                 \PYG{n}{lb}\PYG{o}{=}\PYG{n}{condition}\PYG{o}{.}\PYG{n}{final\PYGZus{}min\PYGZus{}temperature\PYGZus{}c}\PYG{p}{,}
+                                 \PYG{n}{ub}\PYG{o}{=}\PYG{n}{condition}\PYG{o}{.}\PYG{n}{final\PYGZus{}max\PYGZus{}temperature\PYGZus{}c} \PYG{k}{if} \PYG{n}{condition}\PYG{o}{.}\PYG{n}{final\PYGZus{}max\PYGZus{}temperature\PYGZus{}c} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None} \PYG{k}{else} \PYG{n}{np}\PYG{o}{.}\PYG{n}{inf}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{多楼以等式汇总交付量，单楼直接复用变量索引。}}
+    \PYG{k}{for} \PYG{n}{category}\PYG{p}{,} \PYG{n}{members}\PYG{p}{,} \PYG{n}{target} \PYG{o+ow}{in} \PYG{p}{(}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}heat\PYGZus{}by\PYGZus{}node}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{heat\PYGZus{}members}\PYG{p}{,} \PYG{n}{node\PYGZus{}heat}\PYG{p}{)}\PYG{p}{,}
+                                      \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}cooling\PYGZus{}by\PYGZus{}node}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{cooling\PYGZus{}members}\PYG{p}{,} \PYG{n}{node\PYGZus{}cooling}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{key}\PYG{p}{,} \PYG{n}{indices} \PYG{o+ow}{in} \PYG{n}{members}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+            \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{indices}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{:}
+                \PYG{n}{target}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{indices}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}  \PYG{c+c1}{\PYGZsh{} Alias avoids a redundant row/variable.}
+            \PYG{k}{else}\PYG{p}{:}
+                \PYG{n}{aggregate} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{category}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{[}\PYG{l+s+si}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n+nb}{map}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{key}\PYG{p}{)}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{p}\PYG{o}{.}\PYG{n}{upper}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{indices}\PYG{p}{)}\PYG{p}{)}
+                \PYG{n}{target}\PYG{p}{[}\PYG{n}{key}\PYG{p}{]} \PYG{o}{=} \PYG{n}{aggregate}
+                \PYG{n}{row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{index}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0} \PYG{k}{for} \PYG{n}{index} \PYG{o+ow}{in} \PYG{n}{indices}\PYG{p}{\PYGZcb{}}
+                \PYG{n}{row}\PYG{p}{[}\PYG{n}{aggregate}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{1.0}
+                \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+    \PYG{n}{model}\PYG{o}{.}\PYG{n}{variables}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{maps}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{BuildingThermalBlock}\PYG{p}{(}\PYG{n}{inputs}\PYG{p}{,} \PYG{n}{temperature}\PYG{p}{,} \PYG{n}{heat}\PYG{p}{,} \PYG{n}{cooling}\PYG{p}{,} \PYG{n}{mode}\PYG{p}{,} \PYG{n}{node\PYGZus{}heat}\PYG{p}{,} \PYG{n}{node\PYGZus{}cooling}\PYG{p}{)}
+\end{Verbatim}

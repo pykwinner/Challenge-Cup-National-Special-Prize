@@ -1,0 +1,59 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{诊断}Mw=b\CJKCode{是否可行，不是}scenarios.py\CJKCode{中的软能量拟合}SLSQP\CJKCode{。}}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{diagnose\PYGZus{}exact\PYGZus{}weight\PYGZus{}feasibility}\PYG{p}{(}
+    \PYG{n}{design}\PYG{p}{,} \PYG{n}{targets}\PYG{p}{,} \PYG{n}{original\PYGZus{}weights}\PYG{p}{,} \PYG{n}{lower\PYGZus{}bounds}\PYG{p}{,} \PYG{o}{*}\PYG{p}{,} \PYG{n}{total\PYGZus{}weight}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{,}
+    \PYG{n}{numerical\PYGZus{}tolerance}\PYG{p}{:} \PYG{n+nb}{float} \PYG{o}{=} \PYG{l+m+mf}{1e\PYGZhy{}8}\PYG{p}{,}
+\PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{n+nb}{dict}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{,} \PYG{n}{Any}\PYG{p}{]}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Diagnose M w = b, sum(w) = W, w \PYGZgt{}= lower using a standard LP.}
+
+\PYG{l+s+sd}{    Feasible weights are a witness only. An infeasible result is explicit;}
+\PYG{l+s+sd}{    numerical/solver failures are never reported as a proof of infeasibility.}
+\PYG{l+s+sd}{    Rows are scaled to protect the LP from energy\PYGZhy{}unit magnitude differences.}
+\PYG{l+s+sd}{    The witness is independently recomputed in original units afterwards.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{矩阵列对应代表日，目标为声明能量口径；权重单位为天。}}
+    \PYG{n}{matrix}\PYG{p}{,} \PYG{n}{target}\PYG{p}{,} \PYG{n}{initial}\PYG{p}{,} \PYG{n}{lower}\PYG{p}{,} \PYG{n}{total} \PYG{o}{=} \PYG{n}{\PYGZus{}inputs}\PYG{p}{(}\PYG{n}{design}\PYG{p}{,} \PYG{n}{targets}\PYG{p}{,} \PYG{n}{original\PYGZus{}weights}\PYG{p}{,} \PYG{n}{lower\PYGZus{}bounds}\PYG{p}{,} \PYG{n}{total\PYGZus{}weight}\PYG{p}{)}
+    \PYG{n}{tolerance} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{numerical\PYGZus{}tolerance}\PYG{p}{)}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{np}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{tolerance}\PYG{p}{)} \PYG{o+ow}{or} \PYG{n}{tolerance} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}tolerance must be positive and finite}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{这项诊断不修改来源数据，也不证明工程运行可行。}}
+    \PYG{n}{report} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{method}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{standard\PYGZus{}linear\PYGZus{}feasibility\PYGZus{}HiGHS}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{equations}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{M w = b; sum(w) = W; w \PYGZgt{}= lower}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{total\PYGZus{}weight\PYGZus{}days}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{total}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{lower\PYGZus{}bound\PYGZus{}sum\PYGZus{}days}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{lower}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{zero\PYGZus{}target\PYGZus{}rows}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{flatnonzero}\PYG{p}{(}\PYG{n}{target} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,}
+              \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}data\PYGZus{}modified}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{False}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{engineering\PYGZus{}operation\PYGZus{}validated}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{False}\PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{所有下界之和超过总天数即可判不可行，不需优化求解。}}
+    \PYG{k}{if} \PYG{n}{lower}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{total} \PYG{o}{+} \PYG{n}{tolerance}\PYG{p}{:}
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{o}{*}\PYG{o}{*}\PYG{n}{report}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{infeasible}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{reason}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{lower\PYGZus{}bounds\PYGZus{}exceed\PYGZus{}total\PYGZus{}weight}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{witness\PYGZus{}weights}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{None}\PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{先按能量量级缩放，并用}w=lower+z\CJKCode{转成非负变量。}}
+    \PYG{n}{energy\PYGZus{}scale} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{target}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} Shift w = lower + z, z \PYGZgt{}= 0, and scale the conservation equation too.}
+    \PYG{n}{scale} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{concatenate}\PYG{p}{(}\PYG{p}{(}\PYG{n}{energy\PYGZus{}scale}\PYG{p}{,} \PYG{p}{[}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{total}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{equalities} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{vstack}\PYG{p}{(}\PYG{p}{(}\PYG{n}{matrix}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{ones}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{initial}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n}{scale}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{]}
+    \PYG{n}{rhs} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{concatenate}\PYG{p}{(}\PYG{p}{(}\PYG{n}{target} \PYG{o}{\PYGZhy{}} \PYG{n}{matrix} \PYG{o}{@} \PYG{n}{lower}\PYG{p}{,} \PYG{p}{[}\PYG{n}{total} \PYG{o}{\PYGZhy{}} \PYG{n}{lower}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n}{scale}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{零目标线性规划只寻找可行见证，能量与总天数均为等式。}}
+    \PYG{n}{result} \PYG{o}{=} \PYG{n}{linprog}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{initial}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,} \PYG{n}{A\PYGZus{}eq}\PYG{o}{=}\PYG{n}{equalities}\PYG{p}{,} \PYG{n}{b\PYGZus{}eq}\PYG{o}{=}\PYG{n}{rhs}\PYG{p}{,}
+                     \PYG{n}{bounds}\PYG{o}{=}\PYG{p}{[}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{)}\PYG{p}{]} \PYG{o}{*} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{initial}\PYG{p}{)}\PYG{p}{,} \PYG{n}{method}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{highs}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{report}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{solver\PYGZus{}status}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{result}\PYG{o}{.}\PYG{n}{status}\PYG{p}{)}\PYG{p}{,} \PYG{n}{solver\PYGZus{}message}\PYG{o}{=}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{result}\PYG{o}{.}\PYG{n}{message}\PYG{p}{)}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{仅明确的}LP\CJKCode{不可行状态作为不可行结论。}}
+    \PYG{k}{if} \PYG{n}{result}\PYG{o}{.}\PYG{n}{status} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{:}
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{o}{*}\PYG{o}{*}\PYG{n}{report}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{infeasible}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{reason}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{LP\PYGZus{}infeasible}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{witness\PYGZus{}weights}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{None}\PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{求解或数值失败单独登记，不冒称数学上已经证伪。}}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{result}\PYG{o}{.}\PYG{n}{success} \PYG{o+ow}{or} \PYG{n}{result}\PYG{o}{.}\PYG{n}{x} \PYG{o+ow}{is} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{o}{*}\PYG{o}{*}\PYG{n}{report}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{status}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solver\PYGZus{}failure}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{reason}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{LP\PYGZus{}did\PYGZus{}not\PYGZus{}return\PYGZus{}a\PYGZus{}feasible\PYGZus{}witness}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{witness\PYGZus{}weights}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{k+kc}{None}\PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{恢复原单位权重并重新计算能量、天数与下界残差。}}
+    \PYG{n}{witness} \PYG{o}{=} \PYG{n}{lower} \PYG{o}{+} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n}{result}\PYG{o}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{n+nb}{float}\PYG{p}{)}
+    \PYG{n}{energy\PYGZus{}residual} \PYG{o}{=} \PYG{n}{matrix} \PYG{o}{@} \PYG{n}{witness} \PYG{o}{\PYGZhy{}} \PYG{n}{target}
+    \PYG{n}{conservation} \PYG{o}{=} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{witness}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{total}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{bound\PYGZus{}violation} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{lower} \PYG{o}{\PYGZhy{}} \PYG{n}{witness}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{normalized\PYGZus{}residual} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{energy\PYGZus{}residual}\PYG{p}{)} \PYG{o}{/} \PYG{n}{energy\PYGZus{}scale}\PYG{p}{)}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{见证必须通过独立有限性和残差检查；通过也不自动代表已采用。}}
+    \PYG{n}{verified} \PYG{o}{=} \PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{isfinite}\PYG{p}{(}\PYG{n}{witness}\PYG{p}{)}\PYG{o}{.}\PYG{n}{all}\PYG{p}{(}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{normalized\PYGZus{}residual} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{n}{tolerance}
+                \PYG{o+ow}{and} \PYG{n}{conservation} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{n}{tolerance} \PYG{o}{*} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{total}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{bound\PYGZus{}violation} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{n}{tolerance}\PYG{p}{)}
+    \PYG{n}{report}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{status}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{feasible}\PYG{l+s+s2}{\PYGZdq{}} \PYG{k}{if} \PYG{n}{verified} \PYG{k}{else} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solver\PYGZus{}failure}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+                  \PYG{n}{reason}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{verified\PYGZus{}LP\PYGZus{}witness}\PYG{l+s+s2}{\PYGZdq{}} \PYG{k}{if} \PYG{n}{verified} \PYG{k}{else} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{LP\PYGZus{}witness\PYGZus{}failed\PYGZus{}independent\PYGZus{}residual\PYGZus{}check}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+                  \PYG{n}{witness\PYGZus{}weights}\PYG{o}{=}\PYG{n}{witness}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,} \PYG{n}{energy\PYGZus{}residual\PYGZus{}original\PYGZus{}units}\PYG{o}{=}\PYG{n}{energy\PYGZus{}residual}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,}
+                  \PYG{n}{maximum\PYGZus{}normalized\PYGZus{}energy\PYGZus{}residual}\PYG{o}{=}\PYG{n}{normalized\PYGZus{}residual}\PYG{p}{,}
+                  \PYG{n}{conservation\PYGZus{}residual\PYGZus{}days}\PYG{o}{=}\PYG{n}{conservation}\PYG{p}{,} \PYG{n}{maximum\PYGZus{}lower\PYGZus{}bound\PYGZus{}violation}\PYG{o}{=}\PYG{n}{bound\PYGZus{}violation}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{report}
+\end{Verbatim}

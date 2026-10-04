@@ -1,0 +1,100 @@
+{
+  "caption_zh": "源—网—荷—储与建筑热状态的模块结构。共享余热经效率修正后分配给直接换热与热泵；热泵和输配泵受共享电母线容量约束。独立储热状态E_t与建筑温度状态θ_t分别推进。红、蓝线对应热、电功率，虚线表示外部输入或功能关联，各实验按配置启用模块。",
+  "sources": [
+    {
+      "path": "src/heatplan/physical_extensions.py",
+      "sha256": "4c2604fb7448a08888ae13e2a8fe869b948328b89a5a83568a102018eb269e3d",
+      "bytes": 19644
+    },
+    {
+      "path": "src/heatplan/model.py",
+      "sha256": "84bf5d87ba4b18489b0b272013db4e6d3fe01c60805466fae33d33978c9ec697",
+      "bytes": 188832
+    },
+    {
+      "path": "src/heatplan/building_thermal.py",
+      "sha256": "1a1ce76fa1ba9aa151e25d036591a01e1e6d54dfbfd9b0619a385a5a4ff38c40",
+      "bytes": 31708
+    }
+  ],
+  "references": [
+    {
+      "path": "docs/publication_redesign_20261003/references/algorithm/A01/figure_1.png",
+      "sha256": "93d367b317b8ac9a8c369b78375197cd129b0b3b73358d8087c1e6f24f779471",
+      "bytes": 37371,
+      "sample_pixel_xy": [
+        454,
+        15
+      ],
+      "sample_hex": "#000000",
+      "role": "节点、边框及全部文字",
+      "actually_viewed": true,
+      "doi": "10.1016/j.energy.2018.06.222",
+      "figure": "1",
+      "official_url": "https://doi.org/10.1016/j.energy.2018.06.222"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/references/engineering/figures/E04_fig1.png",
+      "sha256": "bc89607da6ac19505db6444e5a72f100b24d2c063981ba458e28223cc51c7d54",
+      "bytes": 16785,
+      "sample_pixel_xy": [
+        38,
+        57
+      ],
+      "sample_hex": "#FF7676",
+      "role": "热功率连接",
+      "actually_viewed": true,
+      "doi": "10.1016/j.energy.2022.126161",
+      "figure": "1",
+      "official_url": "https://www.sciencedirect.com/science/article/pii/S036054422203047X"
+    },
+    {
+      "path": "docs/publication_redesign_20261003/references/engineering/figures/E04_fig1.png",
+      "sha256": "bc89607da6ac19505db6444e5a72f100b24d2c063981ba458e28223cc51c7d54",
+      "bytes": 16785,
+      "sample_pixel_xy": [
+        48,
+        306
+      ],
+      "sample_hex": "#7676FF",
+      "role": "共享电力连接",
+      "actually_viewed": true,
+      "doi": "10.1016/j.energy.2022.126161",
+      "figure": "1",
+      "official_url": "https://www.sciencedirect.com/science/article/pii/S036054422203047X"
+    }
+  ],
+  "source_lines": {
+    "physical_extensions.py": "25–79: upstream resource/transfer efficiency",
+    "model.py": "source, heat balance, storage and common electricity constraints",
+    "building_thermal.py": "continuous thermal balance and exact interval coefficients"
+  },
+  "core_relations_count": 3,
+  "new_model_runs": 0,
+  "state_notation": {
+    "E_t": "storage_soc[kWh], model.py 1392–1472",
+    "theta_t": "building_temperature[degC], building_thermal.py 474–512",
+    "time_semantics": "interval-end states; bottom thermal relation uses continuous theta(t)"
+  },
+  "drawing_coordinates_have_no_physical_units": true,
+  "publication_canvas_width_mm": 146,
+  "primary_layout_reference": {
+    "doi": "10.1016/j.energy.2018.06.222",
+    "figure": "1",
+    "font_adaptation": "Chinese SimSun serif, Microsoft YaHei fallback for the mathematical minus; not the original Nimbus Roman font."
+  },
+  "layout_fonts_pt": {
+    "node": 9.5,
+    "small_node": 8.2,
+    "branch": 7.5,
+    "core_relation": 7.6,
+    "state_symbols": 11
+  },
+  "axes_bounds_normalized": [
+    0.028840110122829367,
+    0.05500000000000005,
+    0.9573197797543412,
+    0.9099999999999999
+  ],
+  "caption_detailed_zh": "通用源网荷储模型的选定物理拓扑。共享余热经过传递效率后分配给直接换热与热泵源侧；热泵供热由源侧取热和压缩机电功率组成。区域热网计入热损，独立储热经充热、放热支路连接服务侧，建筑以独立热状态接受交付；热泵和输配泵共用有容量上限的电母线。红线为热功率，蓝线为电功率，黑色虚线表示外部状态输入或泵与输配的功能关联。图中功率关系属于同一时段；共用η转移仅对应图中的同一上游传递段，其后直接换热与热泵源侧取热共用该段资源。不同传递效率的独立支路须分别核算，不能套用此共用η关系；Q净为建筑净冷热交付。储热状态与建筑热惯性是不同账本，充放效率及初末约束见模型正文。这是通用接口结构，不表示所有冻结算例均启用余热、储热或网络，也不是实际施工图。"
+}

@@ -1,0 +1,99 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{以下为}build\CJKCode{方法内部片段，依赖既有模型、时序与变量登记表。}}
+\PYG{c+c1}{\PYGZsh{} Storage investments and operation. Short\PYGZhy{}term storage can be cyclic;}
+\PYG{c+c1}{\PYGZsh{} seasonal storage can use fixed initial/final boundary conditions.}
+\PYG{k}{for} \PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{storage} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{storages}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{} existing\CJKCode{和}max\PYGZus{}new\CJKCode{均为能量容量}kWh\CJKCode{，不是充放功率}kW\CJKCode{。}}
+    \PYG{n}{existing} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{max\PYGZus{}new} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}capacity\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{cap\PYGZus{}idx} \PYG{o}{=} \PYG{k+kc}{None}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{只有允许新增容量时才建立投资变量；既有容量作为常量。}}
+    \PYG{k}{if} \PYG{n}{max\PYGZus{}new} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{n}{cap\PYGZus{}idx} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}capacity[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{st\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{max\PYGZus{}new}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{n}{st\PYGZus{}name}\PYG{p}{]} \PYG{o}{=} \PYG{n}{cap\PYGZus{}idx}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}investment\PYGZus{}cost}\PYG{p}{(}
+            \PYG{n}{cap\PYGZus{}idx}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{capex\PYGZus{}yuan\PYGZus{}per\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+        \PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{功率能量比乘装机能量容量得到逐时充放功率上限。}}
+    \PYG{n}{power\PYGZus{}ratio} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{power\PYGZus{}to\PYGZus{}energy\PYGZus{}ratio\PYGZus{}per\PYGZus{}hour}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.25}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{max\PYGZus{}power} \PYG{o}{=} \PYG{n}{power\PYGZus{}ratio} \PYG{o}{*} \PYG{p}{(}\PYG{n}{existing} \PYG{o}{+} \PYG{n}{max\PYGZus{}new}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{严格模式按配置启用；关闭时不能宣称二元互斥已实施。}}
+    \PYG{n}{strict\PYGZus{}storage\PYGZus{}mode} \PYG{o}{=} \PYG{n+nb}{bool}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{strict\PYGZus{}charge\PYGZus{}discharge\PYGZus{}mode}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{k+kc}{True}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{throughput\PYGZus{}cost} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}
+        \PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{throughput\PYGZus{}cost\PYGZus{}yuan\PYGZus{}per\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}
+    \PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{每一真实时段建立充热、放热和}SOC\CJKCode{；状态连续性在后文连接。}}
+    \PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{times}\PYG{p}{:}
+        \PYG{n}{ch} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}charge[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{st\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{n}{dis} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}discharge[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{st\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{n}{soc} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}soc[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{st\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}charge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{ch}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}discharge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{dis}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}soc}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{soc}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{可选吞吐费用作用于充放热量，不改变能量守恒方程。}}
+        \PYG{k}{if} \PYG{n}{throughput\PYGZus{}cost} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.0}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}time\PYGZus{}component}\PYG{p}{(}
+                \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{operating\PYGZus{}cost}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ch}\PYG{p}{,} \PYG{n}{throughput\PYGZus{}cost}\PYG{p}{,} \PYG{n}{t}
+            \PYG{p}{)}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}time\PYGZus{}component}\PYG{p}{(}
+                \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{operating\PYGZus{}cost}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{dis}\PYG{p}{,} \PYG{n}{throughput\PYGZus{}cost}\PYG{p}{,} \PYG{n}{t}
+            \PYG{p}{)}
+
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{新增容量以负系数进入上界，形成}SOC\CJKCode{与装机容量的线性关系。}}
+        \PYG{n}{soc\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{soc}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+        \PYG{n}{ch\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{ch}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+        \PYG{n}{dis\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{dis}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{n}{cap\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{n}{soc\PYGZus{}row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}
+            \PYG{n}{ch\PYGZus{}row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{power\PYGZus{}ratio}
+            \PYG{n}{dis\PYGZus{}row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{power\PYGZus{}ratio}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{soc\PYGZus{}row}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{existing}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{ch\PYGZus{}row}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{power\PYGZus{}ratio} \PYG{o}{*} \PYG{n}{existing}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{dis\PYGZus{}row}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{power\PYGZus{}ratio} \PYG{o}{*} \PYG{n}{existing}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} M\CJKCode{取候选最大功率常数；不使用投资变量乘二元变量。}}
+        \PYG{k}{if} \PYG{n}{strict\PYGZus{}storage\PYGZus{}mode}\PYG{p}{:}
+            \PYG{n}{mode} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}mode[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{st\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{integer}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}mode}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{mode}
+            \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{ch}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{mode}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{n}{max\PYGZus{}power}\PYG{p}{\PYGZcb{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+            \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{dis}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{mode}\PYG{p}{:} \PYG{n}{max\PYGZus{}power}\PYG{p}{\PYGZcb{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{max\PYGZus{}power}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} cyclic\CJKCode{与}fixed\CJKCode{是两种边界身份，不能一律要求初末}SOC\CJKCode{相等。}}
+    \PYG{n}{boundary\PYGZus{}mode} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{boundary\PYGZus{}mode}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{cyclic}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{自损失按小时给定，再按实际步长取幂换算。}}
+    \PYG{n}{loss\PYGZus{}factor} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mf}{1.0} \PYG{o}{\PYGZhy{}} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{self\PYGZus{}loss\PYGZus{}per\PYGZus{}hour}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dt}
+    \PYG{n}{eta\PYGZus{}ch} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{charge\PYGZus{}efficiency}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.95}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{eta\PYGZus{}dis} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{discharge\PYGZus{}efficiency}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.95}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{boundary\PYGZus{}mode} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{cyclic}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{\PYGZcb{}}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\CJKCode{储热} }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{st\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ \CJKCode{的} boundary\PYGZus{}mode \CJKCode{仅支持} cyclic \CJKCode{或} fixed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{充放功率乘步长后才是能量；放热需除以放热效率。}}
+    \PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{times}\PYG{p}{:}
+        \PYG{n}{row} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}soc}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}charge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{n}{eta\PYGZus{}ch} \PYG{o}{*} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dt}\PYG{p}{,}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}discharge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dt} \PYG{o}{/} \PYG{n}{eta\PYGZus{}dis}\PYG{p}{,}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{状态仅在所属边界组内衔接，禁止跨无关场景串联。}}
+        \PYG{n}{group\PYGZus{}times} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{boundary\PYGZus{}groups}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{time\PYGZus{}boundary\PYGZus{}group}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{]}
+        \PYG{n}{is\PYGZus{}group\PYGZus{}start} \PYG{o}{=} \PYG{n}{t} \PYG{o}{==} \PYG{n}{group\PYGZus{}times}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{循环模式使用组内前驱；非首时段同样递推。}}
+        \PYG{k}{if} \PYG{n}{boundary\PYGZus{}mode} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{cyclic}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n}{is\PYGZus{}group\PYGZus{}start}\PYG{p}{:}
+            \PYG{n}{prev} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{time\PYGZus{}predecessor}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}soc}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{prev}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{loss\PYGZus{}factor}\PYG{p}{)}
+            \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{c+c1}{\PYGZsh{} \CJKCode{固定边界以装机能量容量的声明比例给定初态。}}
+            \PYG{n}{initial\PYGZus{}fraction} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{initial\PYGZus{}soc\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{cap\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{n}{row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{loss\PYGZus{}factor} \PYG{o}{*} \PYG{n}{initial\PYGZus{}fraction}
+            \PYG{n}{initial\PYGZus{}energy} \PYG{o}{=} \PYG{n}{loss\PYGZus{}factor} \PYG{o}{*} \PYG{n}{initial\PYGZus{}fraction} \PYG{o}{*} \PYG{n}{existing}
+            \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{n}{initial\PYGZus{}energy}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{initial\PYGZus{}energy}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{固定模式期末是最低}SOC\CJKCode{比例约束，不强制等于初态。}}
+    \PYG{k}{if} \PYG{n}{boundary\PYGZus{}mode} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
+        \PYG{n}{final\PYGZus{}fraction} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{final\PYGZus{}soc\PYGZus{}min\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{group\PYGZus{}times} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{boundary\PYGZus{}groups}\PYG{o}{.}\PYG{n}{values}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{final\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}soc}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{group\PYGZus{}times}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{n}{cap\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{n}{final\PYGZus{}row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{final\PYGZus{}fraction}
+            \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{final\PYGZus{}row}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{n}{final\PYGZus{}fraction} \PYG{o}{*} \PYG{n}{existing}\PYG{p}{)}
+\end{Verbatim}

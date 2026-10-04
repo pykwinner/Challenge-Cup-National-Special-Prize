@@ -1,0 +1,99 @@
+% !TeX root = ../main.tex
+\clearpage
+\section*{附录3\quad 核心代码（Python节选）}
+\phantomsection\label{appendix:code}
+\addcontentsline{toc}{section}{附录3：核心代码（Python节选）}
+
+以下代码按“读入—建模—求解—复核”的顺序排列，与正文两段伪代码相对应。各段取自当前工程的连续源码，保留原行号，排版仅去除共同的前导缩进；原样节选、完整文件、依赖模块和指纹清单随LaTeX源包提供。代码需要原工程的配置、输入数据和调用环境，不能单独运行。当前源码用于说明实现，三城历史结果仍以其原始实验记录为准。
+
+\begin{table}[H]
+\centering\small
+\caption{附录源码与正文方法的对应关系}
+\begin{tabularx}{\textwidth}{@{}cL{0.31\textwidth}Y@{}}
+\toprule
+序号 & 文件与原行号 & 对应内容\\\midrule
+1 & \texttt{unified\_cli.py}，93--118 & 配置读入、构模、求解与导出\\
+2 & \texttt{building\_thermal.py}，31--46 & 一阶建筑热状态离散\\
+3 & \texttt{model.py}，1603--1697 & 节点—温位—小时热平衡\\
+4 & \texttt{model.py}，1425--1471 & 储热状态与边界\\
+5 & \texttt{linear.py}，177--205 & 稀疏MILP求解接口\\
+6 & \texttt{experiments.py}，43--65 & 热源与储热投资冻结节选\\
+7 & \texttt{heating\_season.py}，183--246 & 连续供暖季复算及检查\\
+8 & \texttt{experiments.py}，351--411 & 独立碳帽扫描与样本筛选\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+正文算法\ref{alg:season-workflow}概括主流程；其中两阶段接口由第6、7段衔接。算法\ref{alg:epsilon-workflow}对应第8段，单独清除原碳帽并将碳价置零。该接口与保留碳价和偏好的历史赛事扫描分别登记。
+
+\Needspace{14\baselineskip}
+\subsection*{1．入口与导出}
+读取配置及时间序列，构造模型并导出结果。这是主入口的单次求解分支，其他分支见完整文件。
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings/01_unified_cli.tex}
+\endgroup
+
+\Needspace{14\baselineskip}
+\subsection*{2．建筑热状态离散}
+由热损失系数、热容和时间步长计算一阶热状态的精确离散系数。该函数服务于独立逐楼热模型。
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings/02_building_thermal.tex}
+\endgroup
+
+\Needspace{14\baselineskip}
+\subsection*{3．节点热平衡}
+按节点、温位和小时组装热源、双向输配、储热与需求项；损失、需求响应和建筑交付量随配置进入等式。变量注册及其他约束见完整文件。
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings/03_model.tex}
+\endgroup
+
+\Needspace{14\baselineskip}
+\subsection*{4．储热递推与边界}
+约束储热容量、充放功率、状态递推与期末边界；严格充放互斥按配置启用。此前的变量注册不在本段。
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings/04_model.tex}
+\endgroup
+
+\Needspace{14\baselineskip}
+\subsection*{5．稀疏模型求解}
+将目标、变量边界、整数类型及约束矩阵交给SciPy的MILP接口，返回求解器结果供上层复核。
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings/05_linear.tex}
+\endgroup
+
+\Needspace{14\baselineskip}
+\subsection*{6．固定投资转换}
+示出热源和储热的冻结操作。完整函数还处理管网、建筑改造及其他投资项，固定投资复算调用完整函数。
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings/06_experiments.tex}
+\endgroup
+
+\Needspace{14\baselineskip}
+\subsection*{7．连续供暖季复算}
+整理声明服务期，生成或读入固定投资方案，执行连续季节复算，并分别汇总数值、储热和服务期检查。
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings/07_heating_season.tex}
+\endgroup
+
+\Needspace{14\baselineskip}
+\subsection*{8．独立碳帽扫描}
+费用与排放端点用于设置碳帽区间；各档重新构模、求解和校核，随后筛选样本内非支配解。其投资自由度由输入配置决定。
+
+\begingroup
+\setstretch{1.0}
+\input{code_listings/08_experiments.tex}
+\endgroup

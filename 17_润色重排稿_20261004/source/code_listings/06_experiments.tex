@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=43,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{k}{for} \PYG{n}{source} \PYG{o+ow}{in} \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sources}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{n}{row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+        \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+    \PYG{p}{]}
+    \PYG{n}{addition} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+    \PYG{n}{retired} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+        \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}retirement}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+    \PYG{p}{]}
+    \PYG{n}{retirement} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{retired}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{retired}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+    \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{source}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYG{n}{addition} \PYG{o}{\PYGZhy{}} \PYG{n}{retirement}
+    \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+    \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}retire\PYGZus{}capacity\PYGZus{}kw}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+
+\PYG{k}{for} \PYG{n}{storage} \PYG{o+ow}{in} \PYG{n}{fixed}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storages}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+    \PYG{n}{row} \PYG{o}{=} \PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}
+        \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}capacity}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{o}{\PYGZam{}} \PYG{p}{(}\PYG{n}{nominal}\PYG{o}{.}\PYG{n}{investments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{asset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{storage}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+    \PYG{p}{]}
+    \PYG{n}{addition} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{value}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{iloc}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)} \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{row}\PYG{o}{.}\PYG{n}{empty} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+    \PYG{n}{storage}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}capacity\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYG{n}{addition}
+    \PYG{n}{storage}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max\PYGZus{}new\PYGZus{}capacity\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+\end{Verbatim}

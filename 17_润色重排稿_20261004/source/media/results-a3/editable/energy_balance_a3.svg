@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1020" viewBox="0 0 1700 1020" role="img" aria-labelledby="svg-title svg-desc">
+<title id="svg-title">72小时参考管网的热量守恒与工况边界</title>
+<desc id="svg-desc">源热等于用户交付加管网热损。流宽按热量比例绘制。泵电在独立框中，不并入热量分配。</desc>
+<metadata>{&quot;role&quot;: &quot;Exact-data editable companion to image_gen PNG; not automatically used by manuscript&quot;, &quot;source_json&quot;: &quot;D:\\competion\\xiaotiao\\16Q\\原结构附录详编_R8P_20261004\\review\\figures_a3_20261004\\data_evidence.json&quot;, &quot;source_json_sha256&quot;: &quot;a57fac263bd606a604306ab89bb453611b4d9b8432aa59a1e87e1129840faad3&quot;, &quot;optimizer_runs&quot;: 0, &quot;text_as_paths&quot;: false, &quot;embedded_raster_images&quot;: false, &quot;paper_png_or_tex_modified&quot;: false, &quot;figure_id&quot;: &quot;E04&quot;, &quot;source_heat_kwh&quot;: 285.9831986094435, &quot;delivered_heat_kwh&quot;: 191.54748000000004, &quot;heat_loss_kwh&quot;: 94.43571860944344, &quot;pump_electricity_kwh&quot;: 0.1901172264308279, &quot;heat_width_px_per_kwh&quot;: 0.9, &quot;thresholds&quot;: {&quot;minimum_far_supply_c&quot;: 55.0, &quot;maximum_pressure_drop_pa_per_m&quot;: 300.0, &quot;threshold_origin&quot;: &quot;Predeclared research design values, not universal official standards.&quot;}, &quot;final_physical_checks&quot;: {&quot;minimum_active_far_supply_c&quot;: 57.44553404061442, &quot;maximum_active_pressure_drop_pa_per_m&quot;: 237.96381852449548, &quot;saved_independent_audit_passed&quot;: true, &quot;source_heat_ledger_passed&quot;: true, &quot;branch_service_ledgers_passed&quot;: true, &quot;electricity_including_pumps_passed&quot;: true}, &quot;source_group&quot;: &quot;soft_off, displaying pure operating electricity charge; both soft-penalty groups and all rejected rounds preserved below.&quot;, &quot;round&quot;: 3, &quot;pump_in_thermal_split&quot;: false}</metadata>
+<rect id="white-background" x="0" y="0" width="1700" height="1020" fill="#ffffff"/>
+<g id="editable-figure" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, SimHei, sans-serif">
+<text id="title" x="65" y="65" font-size="35" fill="#17334b" text-anchor="start" font-weight="700" >72小时参考管网：热量守恒与工况边界</text>
+<text id="subtitle" x="65" y="110" font-size="23" fill="#576b7a" text-anchor="start" font-weight="400" >有限稳态模式、独立支路泵；第三轮达标设计参考工况，非现场管网</text>
+<text id="heat-ledger-heading" x="65" y="174" font-size="25" fill="#17334b" text-anchor="start" font-weight="700" >热量账本（kWh）</text>
+<text id="supply-title" x="70" y="283" font-size="26" fill="#17334b" text-anchor="start" font-weight="600" >热源产热</text>
+<text id="supply-value" x="70" y="337" font-size="37" fill="#17334b" text-anchor="start" font-weight="700" >285.9832</text>
+<text id="supply-unit" x="70" y="372" font-size="23" fill="#576b7a" text-anchor="start" font-weight="400" >kWh</text>
+<rect id="source-heat-bar" x="410" y="250" width="34" height="257.38487874849915" rx="0" fill="#627a8d" stroke="#627a8d" stroke-width="1.5"/>
+<path id="delivery-thermal-flow" d="M 444 250.000000000 C 650 250.000000000, 925 244.000000000, 1105 244.000000000 L 1105 416.392732000 C 925 416.392732000, 650 422.392732000, 444 422.392732000 Z" fill="#247ba7" fill-opacity="0.85" data-exact-kwh="191.54748000000004" data-width-scale-px-per-kwh="0.9"/>
+<path id="loss-thermal-flow" d="M 444 422.392732000 C 650 422.392732000, 925 531.000000000, 1105 531.000000000 L 1105 615.992146748 C 925 615.992146748, 650 507.384878748, 444 507.384878748 Z" fill="#d98c4d" fill-opacity="0.85" data-exact-kwh="94.435718609443441" data-width-scale-px-per-kwh="0.9"/>
+<rect id="delivery-heat-bar" x="1105" y="244" width="23" height="172.39273200000002" rx="0" fill="#247ba7" stroke="#247ba7" stroke-width="1.5"/>
+<rect id="loss-heat-bar" x="1105" y="531" width="23" height="84.9921467484991" rx="0" fill="#d98c4d" stroke="#d98c4d" stroke-width="1.5"/>
+<text id="delivery-label" x="756" y="283" font-size="26" fill="#ffffff" text-anchor="middle" font-weight="600" >用户交付</text>
+<text id="delivery-value" x="756" y="327" font-size="32" fill="#ffffff" text-anchor="middle" font-weight="700" >191.5475 kWh</text>
+<text id="loss-label" x="845" y="564" font-size="23" fill="#17334b" text-anchor="middle" font-weight="600" >管网热损</text>
+<text id="loss-value" x="845" y="596" font-size="26" fill="#17334b" text-anchor="middle" font-weight="700" >94.4357 kWh</text>
+<rect id="pressure-check-box" x="1192" y="228" width="443" height="178" rx="8" fill="#ffffff" stroke="#b9d2e3" stroke-width="1.5"/>
+<text id="pressure-check-title" x="1218" y="267" font-size="25" fill="#17334b" text-anchor="start" font-weight="600" >最大压降</text>
+<text id="pressure-check-equation" x="1218" y="315" font-size="31" fill="#17334b" text-anchor="start" font-weight="700" >237.96 ≤ 300 Pa/m</text>
+<text id="pressure-check-origin" x="1218" y="359" font-size="21" fill="#576b7a" text-anchor="start" font-weight="400" >实际达标值 / 预设设计上限</text>
+<rect id="temperature-check-box" x="1192" y="447" width="443" height="178" rx="8" fill="#ffffff" stroke="#b9d2e3" stroke-width="1.5"/>
+<text id="temperature-check-title" x="1218" y="486" font-size="25" fill="#17334b" text-anchor="start" font-weight="600" >最低远端供温</text>
+<text id="temperature-check-equation" x="1218" y="534" font-size="33" fill="#17334b" text-anchor="start" font-weight="700" >57.45 ≥ 55 ℃</text>
+<text id="temperature-check-origin" x="1218" y="578" font-size="21" fill="#576b7a" text-anchor="start" font-weight="400" >实际达标值 / 预设设计下限</text>
+<line id="flow-equation-rule" x1="65" y1="688" x2="1635" y2="688" stroke="#dfe7ed" stroke-width="2"/>
+<text id="thermal-balance-equation" x="65" y="743" font-size="35" fill="#17334b" text-anchor="start" font-weight="700" >285.9832 = 191.5475 + 94.4357 kWh</text>
+<rect id="pump-separate-box" x="65" y="789" width="657" height="140" rx="8" fill="#ffffff" stroke="#b9d2e3" stroke-width="1.5"/>
+<text id="pump-ledger-label" x="89" y="828" font-size="24" fill="#17334b" text-anchor="start" font-weight="600" >泵电：独立电力账本</text>
+<text id="pump-electricity-value" x="89" y="878" font-size="34" fill="#17334b" text-anchor="start" font-weight="700" >0.1901 kWh</text>
+<text id="pump-ledger-separation" x="744" y="828" font-size="25" fill="#17334b" text-anchor="start" font-weight="600" >泵电不计入上述热量分配</text>
+<text id="pump-ledger-comment" x="744" y="872" font-size="23" fill="#576b7a" text-anchor="start" font-weight="400" >流带宽度按热量比例；数字显示至4位小数。</text>
+<text id="scope-1" x="65" y="977" font-size="21" fill="#576b7a" text-anchor="start" font-weight="400" >温度与压降限值为本参考工况预设；不代表现场验证、连续全水力认证或全球最优证明。</text>
+</g>
+</svg>

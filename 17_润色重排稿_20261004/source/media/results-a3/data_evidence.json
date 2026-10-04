@@ -1,0 +1,1757 @@
+{
+  "schema": "R8P.A3.result_figure_data_evidence.v1",
+  "created_at_utc": "2026-10-04T03:28:43.617227+00:00",
+  "scope": "Read-only saved-evidence extraction and simple ledger sums for E01/E03/E04 imagegen redraws. Only this new JSON written; manuscript sources, raw data and frozen experiment records unchanged.",
+  "roots": {
+    "project": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge",
+    "paper": "D:/competion/xiaotiao/16Q/原结构附录详编_R8P_20261004"
+  },
+  "sources": {
+    "E01_results": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/results.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/results.json",
+      "sha256": "f9c2006e32ff952b4d65d8780f4cf54b1be951cd7dc42b037b2067534cb2a757",
+      "bytes": 192324,
+      "role": "All 30 frozen method/adoption records"
+    },
+    "E01_protocol": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/protocol.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/protocol.json",
+      "sha256": "e64ce2ed48a069d875cd10d6092d76a507310681622b2467e339f3c5e7830a3a",
+      "bytes": 1691,
+      "role": "Predeclared six-building confirmation protocol"
+    },
+    "E01_selection": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/selection.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/selection.json",
+      "sha256": "001568b82186448184527bb6fa33330c12172cd5b937fab343cf6066ff6b39df",
+      "bytes": 45375,
+      "role": "Frozen admission and sample selection with rejected candidates"
+    },
+    "E01_statistics": {
+      "root": "paper",
+      "path": "source/media/paper_r2/weighted_statistics.csv",
+      "absolute_path": "D:/competion/xiaotiao/16Q/原结构附录详编_R8P_20261004/source/media/paper_r2/weighted_statistics.csv",
+      "sha256": "b65facdf6036ffc109f410b807f7b2afc1e0a93439cb0dbd1fa07a2ef0b9f0a8",
+      "bytes": 4462,
+      "role": "Twelve exact probability-weighted statistic rows copied with the manuscript"
+    },
+    "E01_template_png": {
+      "root": "paper",
+      "path": "source/media/paper_r2/external_w1.png",
+      "absolute_path": "D:/competion/xiaotiao/16Q/原结构附录详编_R8P_20261004/source/media/paper_r2/external_w1.png",
+      "sha256": "e2af23b9b651bf2a04e0a1f1595be67ed9fe09b4f04b731de74908f70859dd25",
+      "bytes": 116924,
+      "role": "Existing scientific figure template; use as redraw input"
+    },
+    "E01_contours": {
+      "root": "project",
+      "path": "docs/publication_final_20261003/algorithm_v3/violin_contours.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/publication_final_20261003/algorithm_v3/violin_contours.csv",
+      "sha256": "1dc82440885ec032a3cbba258d80ee8ce5646c4c52b8218a21ede5060e382ad6",
+      "bytes": 2072054,
+      "role": "All exact saved display-coordinate violin contour points"
+    },
+    "E01_intervals": {
+      "root": "project",
+      "path": "docs/publication_final_20261003/algorithm_v3/quantile_probability_intervals.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/publication_final_20261003/algorithm_v3/quantile_probability_intervals.csv",
+      "sha256": "e13c18fd19ef5fd2729a52c0b1f096cab4e24895b4115633f2d605aac3a39f2f",
+      "bytes": 7560337,
+      "role": "All deterministic empirical-CDF interval masses and quantile errors"
+    },
+    "E01_boxes": {
+      "root": "project",
+      "path": "docs/publication_final_20261003/algorithm_v3/weighted_boxes.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/publication_final_20261003/algorithm_v3/weighted_boxes.csv",
+      "sha256": "0dcc93b85e2ee05c72ce0e7ad2c5114b931cf13c43ee98e5a18ba71b3124f15c",
+      "bytes": 3411,
+      "role": "Saved weighted boxes and whiskers"
+    },
+    "E01_design_reference": {
+      "root": "project",
+      "path": "docs/publication_final_20261003/algorithm_v3/design_reference.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/publication_final_20261003/algorithm_v3/design_reference.json",
+      "sha256": "12d9d6273bbb86ebe757ccb53aef4a365e461d4136d2ba74e838265a1da8f3fb",
+      "bytes": 3011,
+      "role": "Registered NC2020 Figure3 composition reference"
+    },
+    "E01_handoff": {
+      "root": "project",
+      "path": "docs/publication_final_20261003/algorithm_v3/HANDOFF.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/publication_final_20261003/algorithm_v3/HANDOFF.json",
+      "sha256": "4886b508e6bc1cfcf59a02ced1cdd103fe14f219097ccb017158acd0050abb51",
+      "bytes": 32271,
+      "role": "Exact contour and statistic methodology, no stochastic point cloud"
+    },
+    "E01_case1_observed_calendar.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Bobcat_education_Alissa/2017/observed_calendar.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Bobcat_education_Alissa/2017/observed_calendar.csv",
+      "sha256": "54516e8bee8a2c5c81c96f3acd3bee7cd387246111e454f7e4e1c82107ddebd4",
+      "bytes": 371119,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case1_extreme_calibrated_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Bobcat_education_Alissa/2017/extreme_calibrated_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Bobcat_education_Alissa/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "b93df1ad9be5b86425f9e23b963fcd3e54c6707c4b3368ea28d877beef7ca593",
+      "bytes": 20933,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case1_hard_energy_minimum_W1_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Bobcat_education_Alissa/2017/hard_energy_minimum_W1_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Bobcat_education_Alissa/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "014363488d2f01957f861d8c165627bd935367a609e9df2066369a104b9b72fe",
+      "bytes": 20357,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case2_observed_calendar.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Eagle_assembly_Ian/2017/observed_calendar.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Eagle_assembly_Ian/2017/observed_calendar.csv",
+      "sha256": "4752c2fe2d0e4f5b2245f287255df7a12bdd21cf5dbdf0213bf1000671fcd951",
+      "bytes": 423150,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case2_extreme_calibrated_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Eagle_assembly_Ian/2017/extreme_calibrated_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Eagle_assembly_Ian/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "2fc1906437f61f686d7782b6f9e04a5b3d3a233b81d0cba3ba501bc4c08da169",
+      "bytes": 29019,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case2_hard_energy_minimum_W1_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Eagle_assembly_Ian/2017/hard_energy_minimum_W1_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/hotwater__Eagle_assembly_Ian/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "f1ac05d35c88c20524786477e1de5d461a76c1b02c765b7382aff4094eca2f1f",
+      "bytes": 27627,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case3_observed_calendar.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Bull_assembly_Brandon/2017/observed_calendar.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/steam__Bull_assembly_Brandon/2017/observed_calendar.csv",
+      "sha256": "523e4cc47f56ece6b3ba90f155add1f5821f9e2ad82444b758db3da033273c06",
+      "bytes": 378901,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case3_extreme_calibrated_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Bull_assembly_Brandon/2017/extreme_calibrated_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/steam__Bull_assembly_Brandon/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "a2d1eb55dbe4f2c89e76a9784cb22eb9e7e4511cfd0993afbe48e6e32596cbfb",
+      "bytes": 24653,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case3_hard_energy_minimum_W1_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Bull_assembly_Brandon/2017/hard_energy_minimum_W1_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/steam__Bull_assembly_Brandon/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "fead9bd2871e3faf0efd91dd6875a7946c1aa03f38f818629cd7042d8fd59772",
+      "bytes": 22757,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case4_observed_calendar.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Cockatoo_assembly_Genoveva/2017/observed_calendar.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/steam__Cockatoo_assembly_Genoveva/2017/observed_calendar.csv",
+      "sha256": "991eaedd33655e546a8473b3ce18b4f700f6491d6698302126d650b5e823fcdd",
+      "bytes": 413496,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case4_extreme_calibrated_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Cockatoo_assembly_Genoveva/2017/extreme_calibrated_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/steam__Cockatoo_assembly_Genoveva/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "16c00047546148965d676477c0387f743790081ec082ca21bb3c35ae792d1afd",
+      "bytes": 24057,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case4_hard_energy_minimum_W1_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/steam__Cockatoo_assembly_Genoveva/2017/hard_energy_minimum_W1_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/steam__Cockatoo_assembly_Genoveva/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "c5a46923b205a825a9bf4ad68a0a3be591f4edc347b5b266885068fc570f4e17",
+      "bytes": 24777,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case5_observed_calendar.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bobcat_education_Angela/2017/observed_calendar.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bobcat_education_Angela/2017/observed_calendar.csv",
+      "sha256": "e9a315253b7642509c13d5b7540d141752179a13078f1695e94967fc5814293c",
+      "bytes": 394477,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case5_extreme_calibrated_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bobcat_education_Angela/2017/extreme_calibrated_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bobcat_education_Angela/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "aaa8be0ebba894b76c0502c0aef148435a5d74fa1b99d918b098cdee032fe16d",
+      "bytes": 24024,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case5_hard_energy_minimum_W1_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bobcat_education_Angela/2017/hard_energy_minimum_W1_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bobcat_education_Angela/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "3894035f8635c8b40a10cc1f9a47aed354965181b4f9569eb9fb48a951a4e133",
+      "bytes": 24168,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case6_observed_calendar.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bull_assembly_Dorethea/2017/observed_calendar.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bull_assembly_Dorethea/2017/observed_calendar.csv",
+      "sha256": "2c651f4f4e48611610f8f185abd2779de8756047b76a0fe972772656c2fea703",
+      "bytes": 424653,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case6_extreme_calibrated_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bull_assembly_Dorethea/2017/extreme_calibrated_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bull_assembly_Dorethea/2017/extreme_calibrated_actual_days.csv",
+      "sha256": "6fb7ce0ecca54923d797ee8a442e2a2af4648d5c3ef493784d4f68330f6d186f",
+      "bytes": 25228,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E01_case6_hard_energy_minimum_W1_actual_days.csv": {
+      "root": "project",
+      "path": "docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bull_assembly_Dorethea/2017/hard_energy_minimum_W1_actual_days.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002/algorithm_hard_weights/cases/chilledwater__Bull_assembly_Dorethea/2017/hard_energy_minimum_W1_actual_days.csv",
+      "sha256": "2c8016235501f55c1bad42338f5f3abb2b76797610eb2fb5e68888bf3cda1579",
+      "bytes": 25276,
+      "role": "Frozen real-hour or weighted-actual-day input"
+    },
+    "E03_metrics": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/case_metrics.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/analysis/case_metrics.csv",
+      "sha256": "f568567f6418ff9e555fa376397b3375dbaf65bd6eba6a7ac3c02778b55472e8",
+      "bytes": 4133,
+      "role": "Four complete factorial case metrics"
+    },
+    "E03_protocol": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/protocol.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/protocol.json",
+      "sha256": "d476e7667029b676ecbde97f0733c7f247a76973631a80bc6593336f3027cb82",
+      "bytes": 50078,
+      "role": "Frozen physical and economic comparison axes"
+    },
+    "E03_comparison": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/comparison.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/comparison.json",
+      "sha256": "643772df3f2d786dff4486aed7cf755308c332d6b8a46bfe13aa175c81c054b7",
+      "bytes": 18222,
+      "role": "All four saved outcomes"
+    },
+    "E03_independent_verification": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/independent_verification.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/independent_verification.json",
+      "sha256": "a30ba2f4aa150340ddf38027a043dd133bd5c48e0757cd85b713f18a9845d354",
+      "bytes": 35275,
+      "role": "Saved independent RC, energy, charge and grid verification"
+    },
+    "E03_summary_analysis": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/analysis/summary.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/analysis/summary.json",
+      "sha256": "4d161a501222938b45be4fe892e07eabc75c9fee623a1e16f806ed55d31f19ce",
+      "bytes": 17392,
+      "role": "Energy and cost effect analysis"
+    },
+    "E03_C1_unlimited_summary.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/summary.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/summary.json",
+      "sha256": "7ec32565417e145f81acb08cfef145139ddd8d216bfdf7c2d4b00a13932bffae",
+      "bytes": 12749,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C1_unlimited_independent_audit.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/independent_audit.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/independent_audit.json",
+      "sha256": "4ca20d64f0033340d99dd992cfa8e0a0d2bd4ded113a241b5e18067b229bb13b",
+      "bytes": 4479,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C1_unlimited_thermal_ledger.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/thermal_ledger.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C1_unlimited/thermal_ledger.json",
+      "sha256": "b9a13f0572378bd44395f07c5c53cd14beda1de8a8a326e625fc1d15b7cfadc3",
+      "bytes": 1415,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C4_unlimited_summary.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/summary.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/summary.json",
+      "sha256": "b76dbd43c0289b1ef6a23d7501bdd39f588f6d62029ace09548f879a0fe51d50",
+      "bytes": 12768,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C4_unlimited_independent_audit.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/independent_audit.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/independent_audit.json",
+      "sha256": "85eade13921376e8a16179378187a94872ce02d7371a5abba695fdda888e2a9b",
+      "bytes": 4492,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C4_unlimited_thermal_ledger.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/thermal_ledger.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C4_unlimited/thermal_ledger.json",
+      "sha256": "64e8cccadd8eb6d0fcc327eb32dc06b9fd68db8527a2f13fded8ff9102c0e181",
+      "bytes": 1411,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C1_shared_summary.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/summary.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/summary.json",
+      "sha256": "77cd3b138b1785c38e006538b529d48ad8eb4c6fac3432f42ba544e0becdedd0",
+      "bytes": 12757,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C1_shared_independent_audit.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/independent_audit.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/independent_audit.json",
+      "sha256": "d1da60af53235c2ec39604ebf45a3293d36a6752a50da93c8ef7d7cde1fe30ba",
+      "bytes": 4502,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C1_shared_thermal_ledger.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/thermal_ledger.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C1_shared/thermal_ledger.json",
+      "sha256": "b3f7b8703cbe8a8a14bd3cefbfdf214a5579fef581f9854168ffc21eb4b8bfae",
+      "bytes": 1413,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C4_shared_summary.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/summary.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/summary.json",
+      "sha256": "5b04b7b1a830ede3a39105f798b490df30c253f6eab4146ec7f3a6f5c6e45111",
+      "bytes": 12782,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C4_shared_independent_audit.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/independent_audit.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/independent_audit.json",
+      "sha256": "42d9f30fd2bc8a14383e5af8d665c3908c7d6863266f0666aa4df0259c7a901a",
+      "bytes": 4581,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E03_C4_shared_thermal_ledger.json": {
+      "root": "project",
+      "path": "docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/thermal_ledger.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/final_optimization_20261002/multiscale/run_03/results/C4_shared/thermal_ledger.json",
+      "sha256": "f874e896a7adda032122e04f38f5a8f08cba01b13e5cc8e86f24ab5d56f671da",
+      "bytes": 1412,
+      "role": "Per-case saved result or independent physical ledger"
+    },
+    "E04_protocol": {
+      "root": "project",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/protocol.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/network/run_02/protocol.json",
+      "sha256": "2384dc2e011a215b308c798e4ac9ecb6d0f90092e7ddbefa649738f83808dc46",
+      "bytes": 4370,
+      "role": "Frozen72h finite-network feedback protocol"
+    },
+    "E04_input": {
+      "root": "project",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/hourly.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/network/run_02/hourly.csv",
+      "sha256": "c63e3a92f3518de8a94de2e9fc4d02595c8b79292eb793755030ba20dde31ae1",
+      "bytes": 5824,
+      "role": "Original72h input, unchanged"
+    },
+    "E04_config": {
+      "root": "project",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/config.yaml",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/config.yaml",
+      "sha256": "71284f518af0c944a2c9b07add3989042d7addc4db9dab68bb264aec74ef2faf",
+      "bytes": 3546,
+      "role": "Finite star network, independent pumps and registered hard thresholds"
+    },
+    "E04_audit": {
+      "root": "project",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/audit.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/audit.json",
+      "sha256": "bd3d9257aad1f3d9817b3062dbc575b2bf2067b47743394bc05a1d578358f8d9",
+      "bytes": 1286,
+      "role": "Accepted final independent finite-mode audit"
+    },
+    "E04_summary": {
+      "root": "project",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/summary.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/summary.json",
+      "sha256": "31f12852bcc8e3344956b63a5901b7b5c607cca1c19a5f4a605e2e6e873c6944",
+      "bytes": 13849,
+      "role": "Final cost/energy and conservative solution-quality record"
+    },
+    "E04_modes": {
+      "root": "project",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/mode_dispatch.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/mode_dispatch.csv",
+      "sha256": "61feb2ca9bab846b71b3c9036c299268be6e602aeb89639f846225be0a4a4753",
+      "bytes": 138329,
+      "role": "Final mode-resolved source, delivery, loss and pump outputs"
+    },
+    "E04_core_dispatch": {
+      "root": "project",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/core_dispatch.csv",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/core_dispatch.csv",
+      "sha256": "ba5565d1e34404d1f31586311ad25306378a83e002510e65446745fa91a9e0d7",
+      "bytes": 98337,
+      "role": "Final core source and electric output"
+    },
+    "E04_history_off": {
+      "root": "project",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/history.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_off/history.json",
+      "sha256": "4d7ec73d652e334a925cc670d90f299a95e39f27b712c86ebc4a0c3b79ffa387",
+      "bytes": 15846,
+      "role": "All three rejection/acceptance records without design soft penalty"
+    },
+    "E04_history_on": {
+      "root": "project",
+      "path": "docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/history.json",
+      "absolute_path": "D:/competion/xiaotiao/北方供热三类场景公用总框架V10/north_heat_challenge/docs/implementation_20261002_followup/parallel_stage_03/network/run_02/results/soft_on/history.json",
+      "sha256": "94ab8609459db957f8a81891387fbe6503af747abac47846008d0d6514f1f5ff",
+      "bytes": 15864,
+      "role": "All three records with separately reported design soft penalty"
+    },
+    "excluded_old_three_city_energy_png": {
+      "root": "paper",
+      "path": "source/media/algorithm-update/fig05_energy_sankey.png",
+      "absolute_path": "D:/competion/xiaotiao/16Q/原结构附录详编_R8P_20261004/source/media/algorithm-update/fig05_energy_sankey.png",
+      "sha256": "5984df7d75746690c3fa0d4414463332a159526df9ec1f89c0feaf09fe68876d",
+      "bytes": 317445,
+      "role": "Excluded: rounded figure labels, underlying flow_edges.json not found"
+    }
+  },
+  "figures": [
+    {
+      "id": "E01",
+      "title_zh": "硬能量约束下的负荷分布匹配",
+      "recommended_type": "Existing six-group split violin figure redrawn from the exact source PNG and saved contours; blue left=hard, grey right=soft; no new point cloud.",
+      "template_source": "E01_template_png",
+      "reference_metadata": {
+        "doi": "10.1038/s41467-020-17112-9",
+        "figure": "3",
+        "title": "Identifying domains of applicability of machine learning models for materials science",
+        "authors": [
+          "Christopher Sutton",
+          "Mario Boley",
+          "Luca M. Ghiringhelli",
+          "Matthias Rupp",
+          "Jilles Vreeken",
+          "Matthias Scheffler"
+        ],
+        "year": 2020,
+        "journal": "Nature Communications",
+        "official_url": "https://www.nature.com/articles/s41467-020-17112-9",
+        "image": {
+          "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+          "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+          "bytes": 38169
+        },
+        "published_pdf": {
+          "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_published.pdf",
+          "sha256": "c2956d9b15ac65f87ca9deff557146dce66b4bcf721fd95fb2580c7a8f7de9ba",
+          "bytes": 5604888
+        },
+        "actually_viewed": true,
+        "view_evidence": "Original Fig3 PNG actually displayed using view_image; published PDF page6 caption read.",
+        "borrowed": [
+          "One compact category panel; blue left half and gray right half violins.",
+          "Internal boxes at weighted 25/50/75 percentiles and whiskers at weighted 5/95 percentiles.",
+          "Exact unaltered source blue and gray pixels, black outlines, white background, zero baseline."
+        ],
+        "adaptations": [
+          "Six building groups replace four source models.",
+          "One continuous symlog vertical axis replaces the rejected break; all true error tails retained.",
+          "Quantile transport errors with exact probability masses replace source predictive errors.",
+          "Zero-error point masses explicitly displayed at baseline; no source reference threshold transferred."
+        ],
+        "not_transferred": [
+          "Source 98th-percentile tail truncation",
+          "Source 24.9 meV/cation threshold",
+          "Source random train/test replication or domain-applicability claims"
+        ],
+        "palette": {
+          "hard": {
+            "hex": "#2020DF",
+            "xy": [
+              154,
+              41
+            ],
+            "source_image": {
+              "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+              "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+              "bytes": 38169
+            },
+            "doi": "10.1038/s41467-020-17112-9",
+            "figure": "3"
+          },
+          "soft": {
+            "hex": "#808080",
+            "xy": [
+              154,
+              73
+            ],
+            "source_image": {
+              "path": "docs/publication_final_20261003/reference_fullfigures/NC2020_17112_Fig3.png",
+              "sha256": "60ca2ade6e5b6e31bffbaf1568cb20566ef5739b59c0c033fc327b596e73c30a",
+              "bytes": 38169
+            },
+            "doi": "10.1038/s41467-020-17112-9",
+            "figure": "3"
+          }
+        },
+        "image_size_px": [
+          756,
+          564
+        ],
+        "typography_note": "Source PDF embeds a bitmap, so native font pt cannot be measured. Figure proportions adapted from the raster at the requested 146mm width; Chinese labels use 7.5–8.5pt."
+      },
+      "cases": [
+        {
+          "number": 1,
+          "case_id": "hotwater__Bobcat_education_Alissa",
+          "building_id": "Bobcat_education_Alissa",
+          "short_name": "Alissa",
+          "category": "hotwater",
+          "year": 2017,
+          "retained_days": 320,
+          "retained_hours": 7680,
+          "representative_days": 8,
+          "frequency_W1_percent": 22.09364483487336,
+          "soft_W1_percent": 18.00430996227447,
+          "hard_W1_percent": 4.809729503725973,
+          "soft_adopted": true,
+          "hard_adopted": true,
+          "soft_rejection_reasons": [],
+          "hard_rejection_reasons": [],
+          "original_peak_retention_percent": 100.0,
+          "excluded_observed_energy_percent": 34.7855375071981,
+          "original_valid_hours": 8641,
+          "excluded_valid_hours": 961,
+          "unseen_building": true,
+          "unseen_site": false,
+          "hard_relative_energy_error": 0.0,
+          "hard_LP_diagnostics": {
+            "method": "standard_LP_hard_energy_minimum_1D_CDF_W1",
+            "energy_matching": "hard_equality_with_independent_residual_check",
+            "source_data_modified": false,
+            "selected_profiles_modified": false,
+            "engineering_operation_validated": false,
+            "total_weight_days": 320.0,
+            "original_weights": [
+              1.0,
+              6.0,
+              94.0,
+              27.0,
+              1.0,
+              38.0,
+              94.0,
+              59.0
+            ],
+            "lower_bounds": [
+              1.0,
+              1e-06,
+              1e-06,
+              1e-06,
+              1.0,
+              1e-06,
+              1e-06,
+              1e-06
+            ],
+            "solver_status": 0,
+            "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "solver_iterations": 260,
+            "support_intervals": 247,
+            "status": "ok",
+            "reason": "independently_verified_hard_energy_and_CDF_objective",
+            "weights": [
+              146.624797002092,
+              16.56039152197311,
+              1e-06,
+              23.999999999999982,
+              39.00000000000076,
+              93.81480847593414,
+              1e-06,
+              1e-06
+            ],
+            "energy_residual_original_units": 2.9103830456733704e-11,
+            "relative_energy_residual": 1.5429879450291558e-16,
+            "day_conservation_residual": 0.0,
+            "maximum_lower_bound_violation": 0.0,
+            "normalized_W1": 0.04809729503725776,
+            "W1_original_units": 1.1812642246849805,
+            "solver_objective_residual": 1.249000902703301e-16,
+            "caveat": "Minimum W1 on fixed selected profiles subject to these statistical constraints only; chronology and engineering operation unvalidated."
+          },
+          "candidate_method_identity_rule": "Use the record method and adoption.candidate_method, not the historical selected_method naming bug."
+        },
+        {
+          "number": 2,
+          "case_id": "hotwater__Eagle_assembly_Ian",
+          "building_id": "Eagle_assembly_Ian",
+          "short_name": "Ian",
+          "category": "hotwater",
+          "year": 2017,
+          "retained_days": 345,
+          "retained_hours": 8280,
+          "representative_days": 10,
+          "frequency_W1_percent": 16.072340117026567,
+          "soft_W1_percent": 10.03631589641419,
+          "hard_W1_percent": 4.946300441128311,
+          "soft_adopted": false,
+          "hard_adopted": false,
+          "soft_rejection_reasons": [
+            "original_observed_peak_retention_failed"
+          ],
+          "hard_rejection_reasons": [
+            "original_observed_peak_retention_failed"
+          ],
+          "original_peak_retention_percent": 97.90055240848051,
+          "excluded_observed_energy_percent": 11.004122245343655,
+          "original_valid_hours": 8638,
+          "excluded_valid_hours": 358,
+          "unseen_building": true,
+          "unseen_site": false,
+          "hard_relative_energy_error": 3.571311380241509e-15,
+          "hard_LP_diagnostics": {
+            "method": "standard_LP_hard_energy_minimum_1D_CDF_W1",
+            "energy_matching": "hard_equality_with_independent_residual_check",
+            "source_data_modified": false,
+            "selected_profiles_modified": false,
+            "engineering_operation_validated": false,
+            "total_weight_days": 345.0,
+            "original_weights": [
+              10.0,
+              30.0,
+              57.0,
+              1.0,
+              1.0,
+              50.0,
+              89.0,
+              105.0,
+              1.0,
+              1.0
+            ],
+            "lower_bounds": [
+              1e-06,
+              1e-06,
+              1e-06,
+              1.0,
+              1.0,
+              1e-06,
+              1e-06,
+              1e-06,
+              1.0,
+              1.0
+            ],
+            "solver_status": 0,
+            "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "solver_iterations": 5326,
+            "support_intervals": 4994,
+            "status": "ok",
+            "reason": "independently_verified_hard_energy_and_CDF_objective",
+            "weights": [
+              16.344242321054246,
+              44.10115879995578,
+              1e-06,
+              1.0,
+              1.0,
+              41.33930452002189,
+              76.00771631737685,
+              161.49847347096357,
+              1.0,
+              2.709103570628211
+            ],
+            "energy_residual_original_units": 5.0067901611328125e-06,
+            "relative_energy_residual": 3.571311380241509e-15,
+            "day_conservation_residual": 5.115907697472721e-13,
+            "maximum_lower_bound_violation": 0.0,
+            "normalized_W1": 0.049463004411282895,
+            "W1_original_units": 8374.942380454366,
+            "solver_objective_residual": 1.394717674685353e-15,
+            "caveat": "Minimum W1 on fixed selected profiles subject to these statistical constraints only; chronology and engineering operation unvalidated."
+          },
+          "candidate_method_identity_rule": "Use the record method and adoption.candidate_method, not the historical selected_method naming bug."
+        },
+        {
+          "number": 3,
+          "case_id": "steam__Bull_assembly_Brandon",
+          "building_id": "Bull_assembly_Brandon",
+          "short_name": "Brandon",
+          "category": "steam",
+          "year": 2017,
+          "retained_days": 304,
+          "retained_hours": 7296,
+          "representative_days": 9,
+          "frequency_W1_percent": 17.667541181529057,
+          "soft_W1_percent": 20.90903069173285,
+          "hard_W1_percent": 4.145325574364456,
+          "soft_adopted": false,
+          "hard_adopted": true,
+          "soft_rejection_reasons": [
+            "weighted_W1_worse_than_uncalibrated_extreme"
+          ],
+          "hard_rejection_reasons": [],
+          "original_peak_retention_percent": 100.0,
+          "excluded_observed_energy_percent": 25.74108283959722,
+          "original_valid_hours": 8566,
+          "excluded_valid_hours": 1270,
+          "unseen_building": true,
+          "unseen_site": false,
+          "hard_relative_energy_error": -1.5486650718111997e-16,
+          "hard_LP_diagnostics": {
+            "method": "standard_LP_hard_energy_minimum_1D_CDF_W1",
+            "energy_matching": "hard_equality_with_independent_residual_check",
+            "source_data_modified": false,
+            "selected_profiles_modified": false,
+            "engineering_operation_validated": false,
+            "total_weight_days": 304.0,
+            "original_weights": [
+              1.0,
+              1.0,
+              53.0,
+              74.0,
+              54.0,
+              57.0,
+              20.0,
+              43.0,
+              1.0
+            ],
+            "lower_bounds": [
+              1.0,
+              1.0,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1.0
+            ],
+            "solver_status": 0,
+            "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "solver_iterations": 38,
+            "support_intervals": 31,
+            "status": "ok",
+            "reason": "independently_verified_hard_energy_and_CDF_objective",
+            "weights": [
+              4.299820291402737,
+              1.0,
+              1e-06,
+              1e-06,
+              272.34918731132325,
+              1e-06,
+              25.35098839727388,
+              1e-06,
+              1.0
+            ],
+            "energy_residual_original_units": -7.275957614183426e-12,
+            "relative_energy_residual": -1.5486650718111997e-16,
+            "day_conservation_residual": 1.1368683772161603e-13,
+            "maximum_lower_bound_violation": 0.0,
+            "normalized_W1": 0.04145325574364186,
+            "W1_original_units": 0.26693558760280633,
+            "solver_objective_residual": 2.7547408798511697e-15,
+            "caveat": "Minimum W1 on fixed selected profiles subject to these statistical constraints only; chronology and engineering operation unvalidated."
+          },
+          "candidate_method_identity_rule": "Use the record method and adoption.candidate_method, not the historical selected_method naming bug."
+        },
+        {
+          "number": 4,
+          "case_id": "steam__Cockatoo_assembly_Genoveva",
+          "building_id": "Cockatoo_assembly_Genoveva",
+          "short_name": "Genoveva",
+          "category": "steam",
+          "year": 2017,
+          "retained_days": 276,
+          "retained_hours": 6624,
+          "representative_days": 9,
+          "frequency_W1_percent": 8.265430850310915,
+          "soft_W1_percent": 8.251891422609352,
+          "hard_W1_percent": 3.8919619433679054,
+          "soft_adopted": true,
+          "hard_adopted": true,
+          "soft_rejection_reasons": [],
+          "hard_rejection_reasons": [],
+          "original_peak_retention_percent": 100.0,
+          "excluded_observed_energy_percent": 29.632826307833543,
+          "original_valid_hours": 8647,
+          "excluded_valid_hours": 2023,
+          "unseen_building": true,
+          "unseen_site": false,
+          "hard_relative_energy_error": 2.011404794728943e-15,
+          "hard_LP_diagnostics": {
+            "method": "standard_LP_hard_energy_minimum_1D_CDF_W1",
+            "energy_matching": "hard_equality_with_independent_residual_check",
+            "source_data_modified": false,
+            "selected_profiles_modified": false,
+            "engineering_operation_validated": false,
+            "total_weight_days": 276.0,
+            "original_weights": [
+              20.0,
+              1.0,
+              22.0,
+              1.0,
+              1.0,
+              18.0,
+              66.0,
+              95.0,
+              52.0
+            ],
+            "lower_bounds": [
+              1e-06,
+              1.0,
+              1e-06,
+              1.0,
+              1.0,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06
+            ],
+            "solver_status": 0,
+            "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "solver_iterations": 7257,
+            "support_intervals": 6508,
+            "status": "ok",
+            "reason": "independently_verified_hard_energy_and_CDF_objective",
+            "weights": [
+              20.277533291769338,
+              1.0,
+              11.375000000000043,
+              3.4699460452910755,
+              2.999999999999255,
+              26.820350705607964,
+              38.55550080074712,
+              125.87708644573169,
+              45.624582710853666
+            ],
+            "energy_residual_original_units": 1.1641532182693481e-09,
+            "relative_energy_residual": 1.828549813389948e-15,
+            "day_conservation_residual": 1.1368683772161603e-13,
+            "maximum_lower_bound_violation": 0.0,
+            "normalized_W1": 0.038919619433678235,
+            "W1_original_units": 3.7406890502171843,
+            "solver_objective_residual": 0.0,
+            "caveat": "Minimum W1 on fixed selected profiles subject to these statistical constraints only; chronology and engineering operation unvalidated."
+          },
+          "candidate_method_identity_rule": "Use the record method and adoption.candidate_method, not the historical selected_method naming bug."
+        },
+        {
+          "number": 5,
+          "case_id": "chilledwater__Bobcat_education_Angela",
+          "building_id": "Bobcat_education_Angela",
+          "short_name": "Angela",
+          "category": "chilledwater",
+          "year": 2017,
+          "retained_days": 338,
+          "retained_hours": 8112,
+          "representative_days": 9,
+          "frequency_W1_percent": 14.817642524027367,
+          "soft_W1_percent": 14.593694785046536,
+          "hard_W1_percent": 5.4303505182164304,
+          "soft_adopted": false,
+          "hard_adopted": false,
+          "soft_rejection_reasons": [
+            "original_observed_peak_retention_failed"
+          ],
+          "hard_rejection_reasons": [
+            "original_observed_peak_retention_failed"
+          ],
+          "original_peak_retention_percent": 99.96821101484699,
+          "excluded_observed_energy_percent": 11.431727787646757,
+          "original_valid_hours": 8721,
+          "excluded_valid_hours": 609,
+          "unseen_building": true,
+          "unseen_site": false,
+          "hard_relative_energy_error": -1.2415317654612177e-15,
+          "hard_LP_diagnostics": {
+            "method": "standard_LP_hard_energy_minimum_1D_CDF_W1",
+            "energy_matching": "hard_equality_with_independent_residual_check",
+            "source_data_modified": false,
+            "selected_profiles_modified": false,
+            "engineering_operation_validated": false,
+            "total_weight_days": 338.0,
+            "original_weights": [
+              1.0,
+              9.0,
+              77.0,
+              87.0,
+              1.0,
+              1.0,
+              30.0,
+              65.0,
+              67.0
+            ],
+            "lower_bounds": [
+              1.0,
+              1e-06,
+              1e-06,
+              1e-06,
+              1.0,
+              1.0,
+              1e-06,
+              1e-06,
+              1e-06
+            ],
+            "solver_status": 0,
+            "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "solver_iterations": 435,
+            "support_intervals": 411,
+            "status": "ok",
+            "reason": "independently_verified_hard_energy_and_CDF_objective",
+            "weights": [
+              61.49999991666666,
+              30.290904923414047,
+              107.35387907655891,
+              1e-06,
+              1.0,
+              1.6666666666668957,
+              32.08755132157984,
+              26.917050120143568,
+              77.18394697497007
+            ],
+            "energy_residual_original_units": -3.4924596548080444e-10,
+            "relative_energy_residual": -1.3543982895940557e-15,
+            "day_conservation_residual": 0.0,
+            "maximum_lower_bound_violation": 0.0,
+            "normalized_W1": 0.05430350518216392,
+            "W1_original_units": 1.7261753975334668,
+            "solver_objective_residual": 1.249000902703301e-16,
+            "caveat": "Minimum W1 on fixed selected profiles subject to these statistical constraints only; chronology and engineering operation unvalidated."
+          },
+          "candidate_method_identity_rule": "Use the record method and adoption.candidate_method, not the historical selected_method naming bug."
+        },
+        {
+          "number": 6,
+          "case_id": "chilledwater__Bull_assembly_Dorethea",
+          "building_id": "Bull_assembly_Dorethea",
+          "short_name": "Dorethea",
+          "category": "chilledwater",
+          "year": 2017,
+          "retained_days": 338,
+          "retained_hours": 8112,
+          "representative_days": 9,
+          "frequency_W1_percent": 2.93101615236998,
+          "soft_W1_percent": 2.788452541385649,
+          "hard_W1_percent": 2.0064519622463526,
+          "soft_adopted": true,
+          "hard_adopted": true,
+          "soft_rejection_reasons": [],
+          "hard_rejection_reasons": [],
+          "original_peak_retention_percent": 100.0,
+          "excluded_observed_energy_percent": 4.586556475272855,
+          "original_valid_hours": 8742,
+          "excluded_valid_hours": 630,
+          "unseen_building": true,
+          "unseen_site": false,
+          "hard_relative_energy_error": -1.249918925222542e-16,
+          "hard_LP_diagnostics": {
+            "method": "standard_LP_hard_energy_minimum_1D_CDF_W1",
+            "energy_matching": "hard_equality_with_independent_residual_check",
+            "source_data_modified": false,
+            "selected_profiles_modified": false,
+            "engineering_operation_validated": false,
+            "total_weight_days": 338.0,
+            "original_weights": [
+              1.0,
+              44.0,
+              1.0,
+              67.0,
+              81.0,
+              46.0,
+              74.0,
+              1.0,
+              23.0
+            ],
+            "lower_bounds": [
+              1.0,
+              1e-06,
+              1.0,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1.0,
+              1e-06
+            ],
+            "solver_status": 0,
+            "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "solver_iterations": 2917,
+            "support_intervals": 2796,
+            "status": "ok",
+            "reason": "independently_verified_hard_energy_and_CDF_objective",
+            "weights": [
+              5.509070786942455,
+              38.82683832351995,
+              10.000000000027768,
+              70.28159696273332,
+              84.02827553564708,
+              26.762905543340917,
+              36.568247391428734,
+              8.254175363452122,
+              57.768890092907675
+            ],
+            "energy_residual_original_units": -4.656612873077393e-10,
+            "relative_energy_residual": -2.499837850445084e-16,
+            "day_conservation_residual": 0.0,
+            "maximum_lower_bound_violation": 0.0,
+            "normalized_W1": 0.020064519622463445,
+            "W1_original_units": 4.607433963879027,
+            "solver_objective_residual": 1.214306433183765e-16,
+            "caveat": "Minimum W1 on fixed selected profiles subject to these statistical constraints only; chronology and engineering operation unvalidated."
+          },
+          "candidate_method_identity_rule": "Use the record method and adoption.candidate_method, not the historical selected_method naming bug."
+        }
+      ],
+      "distribution_statistics_rows": [
+        {
+          "number": 1.0,
+          "building_id": "Bobcat_education_Alissa",
+          "case_id": "hotwater__Bobcat_education_Alissa",
+          "role": "hard",
+          "method": "hard_energy_minimum_W1",
+          "retained_observed_hours": 7680.0,
+          "representative_days": 8.0,
+          "common_probability_intervals": 312.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 24.559888945312498,
+          "weighted_mean_error_percent": 4.809729503725801,
+          "frozen_normalized_w1_percent": 4.809729503725973,
+          "integral_residual": -1.7139067942650854e-15,
+          "p0_mass_percent": 66.70315064596173,
+          "p05": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.003257343719196158,
+          "p95": 0.836322999901838,
+          "p90": 0.766290109939258,
+          "p99": 118.5261874140352,
+          "max_error_percent": 239.50515464861994,
+          "complete_adoption": true,
+          "rejection_reasons": null
+        },
+        {
+          "number": 1.0,
+          "building_id": "Bobcat_education_Alissa",
+          "case_id": "hotwater__Bobcat_education_Alissa",
+          "role": "soft",
+          "method": "extreme_calibrated",
+          "retained_observed_hours": 7680.0,
+          "representative_days": 8.0,
+          "common_probability_intervals": 312.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 24.559888945312498,
+          "weighted_mean_error_percent": 18.004309962274572,
+          "frozen_normalized_w1_percent": 18.00430996227447,
+          "integral_residual": 1.0547118733938987e-15,
+          "p0_mass_percent": 63.61317547358403,
+          "p05": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0036645116840938697,
+          "p95": 118.53148059757892,
+          "p90": 118.52618741403518,
+          "p99": 119.75135582041523,
+          "max_error_percent": 358.023198703357,
+          "complete_adoption": true,
+          "rejection_reasons": null
+        },
+        {
+          "number": 2.0,
+          "building_id": "Eagle_assembly_Ian",
+          "case_id": "hotwater__Eagle_assembly_Ian",
+          "role": "hard",
+          "method": "hard_energy_minimum_W1",
+          "retained_observed_hours": 8280.0,
+          "representative_days": 10.0,
+          "common_probability_intervals": 5403.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 169317.30047809178,
+          "weighted_mean_error_percent": 4.946300441128321,
+          "frozen_normalized_w1_percent": 4.946300441128311,
+          "integral_residual": 1.0408340855860843e-16,
+          "p0_mass_percent": 37.390033988164156,
+          "p05": 0.0,
+          "p25": 0.0,
+          "p50": 1.9384155019791942,
+          "p75": 6.477228534256628,
+          "p95": 15.999574245223178,
+          "p90": 11.881784875611764,
+          "p99": 54.007068233309084,
+          "max_error_percent": 54.497691340135354,
+          "complete_adoption": false,
+          "rejection_reasons": "original_observed_peak_retention_failed"
+        },
+        {
+          "number": 2.0,
+          "building_id": "Eagle_assembly_Ian",
+          "case_id": "hotwater__Eagle_assembly_Ian",
+          "role": "soft",
+          "method": "extreme_calibrated",
+          "retained_observed_hours": 8280.0,
+          "representative_days": 10.0,
+          "common_probability_intervals": 5403.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 169317.30047809178,
+          "weighted_mean_error_percent": 10.036315896414107,
+          "frozen_normalized_w1_percent": 10.03631589641419,
+          "integral_residual": -8.187894806610529e-16,
+          "p0_mass_percent": 31.726954112651164,
+          "p05": 0.0,
+          "p25": 0.0,
+          "p50": 2.9868551445836324,
+          "p75": 9.641777688342207,
+          "p95": 54.497691340135354,
+          "p90": 37.53251824861377,
+          "p99": 67.27992407057059,
+          "max_error_percent": 68.3501383929602,
+          "complete_adoption": false,
+          "rejection_reasons": "original_observed_peak_retention_failed"
+        },
+        {
+          "number": 3.0,
+          "building_id": "Bull_assembly_Brandon",
+          "case_id": "steam__Bull_assembly_Brandon",
+          "role": "hard",
+          "method": "hard_energy_minimum_W1",
+          "retained_observed_hours": 7296.0,
+          "representative_days": 9.0,
+          "common_probability_intervals": 62.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 6.439436006030701,
+          "weighted_mean_error_percent": 4.145325574364267,
+          "frozen_normalized_w1_percent": 4.145325574364456,
+          "integral_residual": -1.8943180357666733e-15,
+          "p0_mass_percent": 87.30645349820982,
+          "p05": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p95": 14.44691738731079,
+          "p90": 14.446917387310762,
+          "p99": 86.67684553076975,
+          "max_error_percent": 115.56912737435974,
+          "complete_adoption": true,
+          "rejection_reasons": null
+        },
+        {
+          "number": 3.0,
+          "building_id": "Bull_assembly_Brandon",
+          "case_id": "steam__Bull_assembly_Brandon",
+          "role": "soft",
+          "method": "extreme_calibrated",
+          "retained_observed_hours": 7296.0,
+          "representative_days": 9.0,
+          "common_probability_intervals": 62.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 6.439436006030701,
+          "weighted_mean_error_percent": 20.90903069173296,
+          "frozen_normalized_w1_percent": 20.90903069173285,
+          "integral_residual": 1.1102230246251565e-15,
+          "p0_mass_percent": 68.39247668096034,
+          "p05": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 14.445364456279144,
+          "p95": 115.56912737435967,
+          "p90": 115.56912737435965,
+          "p99": 144.4614092179496,
+          "max_error_percent": 245.58361920499848,
+          "complete_adoption": false,
+          "rejection_reasons": "weighted_W1_worse_than_uncalibrated_extreme"
+        },
+        {
+          "number": 4.0,
+          "building_id": "Cockatoo_assembly_Genoveva",
+          "case_id": "steam__Cockatoo_assembly_Genoveva",
+          "role": "hard",
+          "method": "hard_energy_minimum_W1",
+          "retained_observed_hours": 6624.0,
+          "representative_days": 9.0,
+          "common_probability_intervals": 6938.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 96.11319701086957,
+          "weighted_mean_error_percent": 3.8919619433677624,
+          "frozen_normalized_w1_percent": 3.8919619433679054,
+          "integral_residual": -1.429412144204889e-15,
+          "p0_mass_percent": 0.4095604894287619,
+          "p05": 0.14160386318707854,
+          "p25": 0.7889655360379222,
+          "p50": 2.2109346750370618,
+          "p75": 6.572562557965465,
+          "p95": 11.382307883029624,
+          "p90": 10.254263000829539,
+          "p99": 12.307258907080456,
+          "max_error_percent": 76.39741709111594,
+          "complete_adoption": true,
+          "rejection_reasons": null
+        },
+        {
+          "number": 4.0,
+          "building_id": "Cockatoo_assembly_Genoveva",
+          "case_id": "steam__Cockatoo_assembly_Genoveva",
+          "role": "soft",
+          "method": "extreme_calibrated",
+          "retained_observed_hours": 6624.0,
+          "representative_days": 9.0,
+          "common_probability_intervals": 6938.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 96.11319701086957,
+          "weighted_mean_error_percent": 8.251891422609562,
+          "frozen_normalized_w1_percent": 8.251891422609352,
+          "integral_residual": 2.1094237467877974e-15,
+          "p0_mass_percent": 0.1509661835748688,
+          "p05": 0.6317550751447065,
+          "p25": 1.7244250025442034,
+          "p50": 7.997028752597582,
+          "p75": 11.453265880600224,
+          "p95": 22.04619205165309,
+          "p90": 18.669132396012948,
+          "p99": 29.091738564099412,
+          "max_error_percent": 61.913245891997846,
+          "complete_adoption": true,
+          "rejection_reasons": null
+        },
+        {
+          "number": 5.0,
+          "building_id": "Bobcat_education_Angela",
+          "case_id": "chilledwater__Bobcat_education_Angela",
+          "role": "hard",
+          "method": "hard_energy_minimum_W1",
+          "retained_observed_hours": 8112.0,
+          "representative_days": 9.0,
+          "common_probability_intervals": 578.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 31.78755020956607,
+          "weighted_mean_error_percent": 5.430350518216471,
+          "frozen_normalized_w1_percent": 5.4303505182164304,
+          "integral_residual": 4.0939474033052647e-16,
+          "p0_mass_percent": 37.57403110820454,
+          "p05": 0.0,
+          "p25": 0.0,
+          "p50": 0.0006291771422490632,
+          "p75": 0.13841897129511802,
+          "p95": 26.976913739704823,
+          "p90": 26.976284562562576,
+          "p99": 27.114074356715435,
+          "max_error_percent": 53.95036700512728,
+          "complete_adoption": false,
+          "rejection_reasons": "original_observed_peak_retention_failed"
+        },
+        {
+          "number": 5.0,
+          "building_id": "Bobcat_education_Angela",
+          "case_id": "chilledwater__Bobcat_education_Angela",
+          "role": "soft",
+          "method": "extreme_calibrated",
+          "retained_observed_hours": 8112.0,
+          "representative_days": 9.0,
+          "common_probability_intervals": 578.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 31.78755020956607,
+          "weighted_mean_error_percent": 14.593694785046502,
+          "frozen_normalized_w1_percent": 14.593694785046536,
+          "integral_residual": -3.3306690738754696e-16,
+          "p0_mass_percent": 6.721122968050759,
+          "p05": 0.0,
+          "p25": 0.0018875314267471893,
+          "p50": 26.838180179838577,
+          "p75": 26.976599151133705,
+          "p95": 26.977857505418207,
+          "p90": 26.976913739704823,
+          "p99": 53.95256912512515,
+          "max_error_percent": 53.95382747940965,
+          "complete_adoption": false,
+          "rejection_reasons": "original_observed_peak_retention_failed"
+        },
+        {
+          "number": 6.0,
+          "building_id": "Bull_assembly_Dorethea",
+          "case_id": "chilledwater__Bull_assembly_Dorethea",
+          "role": "hard",
+          "method": "hard_energy_minimum_W1",
+          "retained_observed_hours": 8112.0,
+          "representative_days": 9.0,
+          "common_probability_intervals": 3197.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 229.63091320266273,
+          "weighted_mean_error_percent": 2.0064519622463233,
+          "frozen_normalized_w1_percent": 2.0064519622463526,
+          "integral_residual": -2.914335439641036e-16,
+          "p0_mass_percent": 1.5620385572787812,
+          "p05": 0.10778165559162717,
+          "p25": 0.6462980002567019,
+          "p50": 1.4543338061163507,
+          "p75": 2.6931478491931093,
+          "p95": 5.60155417256375,
+          "p90": 4.739910601842167,
+          "p99": 7.917662193832695,
+          "max_error_percent": 11.957188000975803,
+          "complete_adoption": true,
+          "rejection_reasons": null
+        },
+        {
+          "number": 6.0,
+          "building_id": "Bull_assembly_Dorethea",
+          "case_id": "chilledwater__Bull_assembly_Dorethea",
+          "role": "soft",
+          "method": "extreme_calibrated",
+          "retained_observed_hours": 8112.0,
+          "representative_days": 9.0,
+          "common_probability_intervals": 3197.0,
+          "probability_mass_total": 1.0,
+          "mean_load_kw": 229.63091320266273,
+          "weighted_mean_error_percent": 2.788452541385649,
+          "frozen_normalized_w1_percent": 2.788452541385649,
+          "integral_residual": 0.0,
+          "p0_mass_percent": 1.0753831412142782,
+          "p05": 0.21530202232120538,
+          "p25": 0.9694687744568595,
+          "p50": 2.4775409898661804,
+          "p75": 3.770311182954271,
+          "p95": 7.0558879786800945,
+          "p90": 5.9246813986202636,
+          "p99": 9.479516366678626,
+          "max_error_percent": 27.092171142085846,
+          "complete_adoption": true,
+          "rejection_reasons": null
+        }
+      ],
+      "exact_curve_sources": [
+        "E01_contours",
+        "E01_intervals",
+        "E01_boxes"
+      ],
+      "summary": {
+        "case_count": 6,
+        "soft_median_normalized_W1_percent": 12.315005340730362,
+        "hard_median_normalized_W1_percent": 4.477527539045214,
+        "soft_complete_adoption_count": 3,
+        "hard_complete_adoption_count": 4,
+        "hard_peak_rejected_case_numbers": [
+          2,
+          5
+        ],
+        "maximum_absolute_hard_relative_energy_error": 3.571311380241509e-15
+      },
+      "axis_definition": "Percent = absolute original-versus-weighted-representative load quantile difference divided by the retained complete-day mean load. Its probability-weighted mean equals normalized 1D W1; it is not chronological forecasting error or MAPE.",
+      "rendering_rules": {
+        "one_continuous_symlog_axis": true,
+        "linthresh_percent": 5,
+        "linscale": 0.4,
+        "positive_density_bandwidth_display_units": 0.45,
+        "weighted_box_quantiles": [
+          0.25,
+          0.5,
+          0.75
+        ],
+        "weighted_whisker_quantiles": [
+          0.05,
+          0.95
+        ],
+        "zero_probability_atoms_preserved": true,
+        "zero_marker_area_square_points_formula": "45*p0",
+        "all_real_tails_preserved": true,
+        "confidence_intervals_or_repeat_experiment_claimed": false
+      },
+      "comparison_scope": [
+        "Same six buildings, same actual representative days per building, same 2017 retained complete-day observations.",
+        "Weights calibrated on the same year; descriptive internal compression, not temporal holdout or unseen-site prediction.",
+        "All six candidates plotted, including peak-rejected cases2/5 and Genoveva whose maximum quantile error increases from61.913245891997846% to76.39741709111594%.",
+        "Observed-energy exclusion ranges4.586556475272855% to34.7855375071981%; improvements only apply to retained observations.",
+        "LP success and statistical adoption do not prove investment, capacity, comfort, physical operation or Chinese three-city field validation."
+      ],
+      "recommended_insertion": {
+        "main": "source/sections/experiments-main-r8p.tex: after the E01 discussion, if one compact main-text result figure is desired.",
+        "appendix": "source/sections/experiments-appendix-r8p.tex: subsection5.1, after the complete six-building method table; preferred to preserve the small main-text revision."
+      }
+    },
+    {
+      "id": "E03",
+      "title_zh": "热容与公用配电边界的运行耦合",
+      "recommended_type": "Two-by-two bubble matrix; row=buildingB thermal-capacity multiplier1/4, column=no shared cap/shared6.4796375kW cap. Circle area, not radius, proportional to peak grid import. Continuous colour encodes electricity energy charge in yuan. Print every exact case value.",
+      "points": [
+        {
+          "case": "C1_unlimited",
+          "C_B_multiplier": 1.0,
+          "shared_grid": false,
+          "hours": 2880,
+          "electricity_charge_yuan": 5918.140565478514,
+          "electricity_kwh": 8155.1085947783495,
+          "reference_CO2_kg": 3297.925915728366,
+          "grid_peak_kw": 14.10637388743884,
+          "grid_binding_hours": 0,
+          "grid_cap_kw": null,
+          "reported_mip_gap": 0.0,
+          "quality": "solver_proven_optimal_within_registered_tolerance",
+          "no_investment_verified": true
+        },
+        {
+          "case": "C4_unlimited",
+          "C_B_multiplier": 4.0,
+          "shared_grid": false,
+          "hours": 2880,
+          "electricity_charge_yuan": 5490.938905381102,
+          "electricity_kwh": 8725.440238676289,
+          "reference_CO2_kg": 3528.568032520692,
+          "grid_peak_kw": 25.333512746068237,
+          "grid_binding_hours": 0,
+          "grid_cap_kw": null,
+          "reported_mip_gap": 0.0,
+          "quality": "solver_proven_optimal_within_registered_tolerance",
+          "no_investment_verified": true
+        },
+        {
+          "case": "C1_shared",
+          "C_B_multiplier": 1.0,
+          "shared_grid": true,
+          "hours": 2880,
+          "electricity_charge_yuan": 5937.643314232109,
+          "electricity_kwh": 8050.60755741449,
+          "reference_CO2_kg": 3255.6656962184197,
+          "grid_peak_kw": 6.479637500000004,
+          "grid_binding_hours": 125,
+          "grid_cap_kw": 6.479637500000002,
+          "reported_mip_gap": 0.0,
+          "quality": "solver_proven_optimal_within_registered_tolerance",
+          "no_investment_verified": true
+        },
+        {
+          "case": "C4_shared",
+          "C_B_multiplier": 4.0,
+          "shared_grid": true,
+          "hours": 2880,
+          "electricity_charge_yuan": 5660.964848086876,
+          "electricity_kwh": 8386.067388668092,
+          "reference_CO2_kg": 3391.3256519773754,
+          "grid_peak_kw": 6.479637500000003,
+          "grid_binding_hours": 530,
+          "grid_cap_kw": 6.479637500000002,
+          "reported_mip_gap": 0.0,
+          "quality": "solver_proven_optimal_within_registered_tolerance",
+          "no_investment_verified": true
+        }
+      ],
+      "area_mapping": "A = common_scale * grid_peak_kw; radius proportional to sqrt(grid_peak_kw).",
+      "colour_mapping": {
+        "quantity": "electricity_charge_yuan",
+        "minimum": 5490.938905381102,
+        "maximum": 5937.643314232109,
+        "one_common_scale_across_four_cells": true
+      },
+      "display_fields": [
+        "case",
+        "grid_peak_kw",
+        "electricity_charge_yuan",
+        "electricity_kwh",
+        "grid_binding_hours"
+      ],
+      "effects": {
+        "unlimited_charge_delta_yuan": -427.20166009741206,
+        "shared_charge_delta_yuan": -276.67846614523296,
+        "unlimited_electricity_delta_kwh": 570.3316438979391,
+        "shared_electricity_delta_kwh": 335.4598312536027,
+        "charge_difference_in_differences_yuan": 150.5231939521791
+      },
+      "comparison_scope": [
+        "Same two48m2 ideal-reference buildings, same continuous2880h Wuhan weather and TOU inputs,1h step, initial/terminal20C, comfort20..27C.",
+        "A heat-loss coefficient0.1043kW/K and capacity0.535576kWh/K fixed; B coefficient0.15645kW/K fixed, capacity changes0.535576 to2.142304kWh/K.",
+        "Only B heat capacity and shared electric cap axes vary; same fixed assets, zero free investment.",
+        "Increasing heat capacity lowers energy charge but increases electricity and fixed-factor CO2 in both cap settings; do not call it universal energy saving or peak reduction.",
+        "Shared cap decreases the heat-capacity cost saving by150.5231939521791yuan.",
+        "CO2 uses the registered constant0.4044kg/kWh factor and is redundant with electricity; it is not an independently varying environmental outcome.",
+        "Charges cover operating electricity energy only, not real engineering capital or lifecycle cost. Optimality is within the supplied finite model and solver tolerance."
+      ],
+      "recommended_insertion": {
+        "main": "source/sections/experiments-main-r8p.tex: immediately after the E03 coupling paragraph and complete four-case comparison table.",
+        "appendix": "source/sections/experiments-appendix-r8p.tex: subsection5.3, after the four-case state/thermal-ledger table, if maintaining minimal main-text changes."
+      }
+    },
+    {
+      "id": "E04",
+      "title_zh": "有限管网复核反馈与72小时热量闭合",
+      "recommended_type": "Compact proportional thermal Sankey plus a small three-round reject/recompute/accept loop. Pump electricity is a separate electric ledger callout, not a thermal flow.",
+      "selected_group": "soft_off, displaying pure operating electricity charge; both soft-penalty groups and all rejected rounds preserved below.",
+      "hours": 72,
+      "dt_hours": 1,
+      "source_heat_kwh": 285.9831986094435,
+      "delivered_heat_kwh": 191.54748000000004,
+      "heat_loss_kwh": 94.43571860944344,
+      "pump_electricity_kwh": 0.1901172264308279,
+      "grid_electricity_kwh": 286.1733158358743,
+      "final_electricity_charge_yuan": 224.26259246266036,
+      "flow_edges": [
+        {
+          "from": "热源产热",
+          "to": "用户交付",
+          "value": 191.54748000000004,
+          "unit": "kWh_thermal"
+        },
+        {
+          "from": "热源产热",
+          "to": "管网热损",
+          "value": 94.43571860944344,
+          "unit": "kWh_thermal"
+        }
+      ],
+      "electricity_ledger_not_thermal_edge": {
+        "resistance_heat_electricity_kwh": 285.9831986094435,
+        "pump_electricity_kwh": 0.1901172264308279,
+        "grid_total_electricity_kwh": 286.1733158358743
+      },
+      "display_4dp": {
+        "source_heat": "285.9832",
+        "delivered_heat": "191.5475",
+        "heat_loss": "94.4357",
+        "pump_electricity": "0.1901",
+        "grid_electricity": "286.1733"
+      },
+      "branches": [
+        {
+          "branch": "far",
+          "source_heat_kwh": 215.2525309900078,
+          "delivered_heat_kwh": 127.69832000000002,
+          "heat_loss_kwh": 87.55421099000777,
+          "pump_kwh": 0.1767876849132118
+        },
+        {
+          "branch": "near",
+          "source_heat_kwh": 70.73066761943566,
+          "delivered_heat_kwh": 63.849160000000005,
+          "heat_loss_kwh": 6.88150761943565,
+          "pump_kwh": 0.013329541517616096
+        }
+      ],
+      "all_six_rounds": [
+        {
+          "group": "soft_off",
+          "display_iteration": 1,
+          "stored_zero_based_iteration": 0,
+          "status": "rejected",
+          "objective_yuan": 178.6426792936767,
+          "design_soft_penalty_yuan": 0.0,
+          "electricity_charge_yuan": 178.6426792936767,
+          "delivered_heat_kwh": 191.54748000000004,
+          "source_heat_kwh": 227.2493237595544,
+          "heat_loss_kwh": 35.70184375955435,
+          "pump_kwh": 0.7100845478656905,
+          "minimum_active_far_supply_c": 61.51668757096316,
+          "maximum_active_pressure_drop_pa_per_m": 1081.4156428165693,
+          "passed": false,
+          "added_mode_cuts": [
+            "feedback_mode_4",
+            "feedback_mode_9"
+          ]
+        },
+        {
+          "group": "soft_off",
+          "display_iteration": 2,
+          "stored_zero_based_iteration": 1,
+          "status": "rejected",
+          "objective_yuan": 195.0120026186843,
+          "design_soft_penalty_yuan": 0.0,
+          "electricity_charge_yuan": 195.0120026186843,
+          "delivered_heat_kwh": 191.54748000000004,
+          "source_heat_kwh": 248.4907260442097,
+          "heat_loss_kwh": 56.9432460442097,
+          "pump_kwh": 0.3569788019520458,
+          "minimum_active_far_supply_c": 59.85161573150256,
+          "maximum_active_pressure_drop_pa_per_m": 504.3336379674246,
+          "passed": false,
+          "added_mode_cuts": [
+            "feedback_mode_3",
+            "feedback_mode_8"
+          ]
+        },
+        {
+          "group": "soft_off",
+          "display_iteration": 3,
+          "stored_zero_based_iteration": 2,
+          "status": "accepted",
+          "objective_yuan": 224.26259246266036,
+          "design_soft_penalty_yuan": 0.0,
+          "electricity_charge_yuan": 224.26259246266036,
+          "delivered_heat_kwh": 191.54748000000004,
+          "source_heat_kwh": 285.9831986094435,
+          "heat_loss_kwh": 94.43571860944344,
+          "pump_kwh": 0.1901172264308279,
+          "minimum_active_far_supply_c": 57.44553404061442,
+          "maximum_active_pressure_drop_pa_per_m": 237.96381852449548,
+          "passed": true,
+          "added_mode_cuts": []
+        },
+        {
+          "group": "soft_on",
+          "display_iteration": 1,
+          "stored_zero_based_iteration": 0,
+          "status": "rejected",
+          "objective_yuan": 181.75454244182987,
+          "design_soft_penalty_yuan": 3.111863148153173,
+          "electricity_charge_yuan": 178.6426792936767,
+          "delivered_heat_kwh": 191.54748000000004,
+          "source_heat_kwh": 227.2493237595544,
+          "heat_loss_kwh": 35.70184375955435,
+          "pump_kwh": 0.7100845478656905,
+          "minimum_active_far_supply_c": 61.51668757096316,
+          "maximum_active_pressure_drop_pa_per_m": 1081.4156428165693,
+          "passed": false,
+          "added_mode_cuts": [
+            "feedback_mode_4",
+            "feedback_mode_9"
+          ]
+        },
+        {
+          "group": "soft_on",
+          "display_iteration": 2,
+          "stored_zero_based_iteration": 1,
+          "status": "rejected",
+          "objective_yuan": 198.13195882053785,
+          "design_soft_penalty_yuan": 3.1199562018535447,
+          "electricity_charge_yuan": 195.0120026186843,
+          "delivered_heat_kwh": 191.54748000000004,
+          "source_heat_kwh": 248.4907260442097,
+          "heat_loss_kwh": 56.9432460442097,
+          "pump_kwh": 0.3569788019520458,
+          "minimum_active_far_supply_c": 59.85161573150256,
+          "maximum_active_pressure_drop_pa_per_m": 504.3336379674246,
+          "passed": false,
+          "added_mode_cuts": [
+            "feedback_mode_3",
+            "feedback_mode_8"
+          ]
+        },
+        {
+          "group": "soft_on",
+          "display_iteration": 3,
+          "stored_zero_based_iteration": 2,
+          "status": "accepted",
+          "objective_yuan": 234.99433240930352,
+          "design_soft_penalty_yuan": 10.731739946643149,
+          "electricity_charge_yuan": 224.26259246266036,
+          "delivered_heat_kwh": 191.54748000000004,
+          "source_heat_kwh": 285.9831986094435,
+          "heat_loss_kwh": 94.43571860944344,
+          "pump_kwh": 0.1901172264308279,
+          "minimum_active_far_supply_c": 57.44553404061442,
+          "maximum_active_pressure_drop_pa_per_m": 237.96381852449548,
+          "passed": true,
+          "added_mode_cuts": []
+        }
+      ],
+      "thresholds": {
+        "minimum_far_supply_c": 55.0,
+        "maximum_pressure_drop_pa_per_m": 300.0,
+        "threshold_origin": "Predeclared research design values, not universal official standards."
+      },
+      "final_physical_checks": {
+        "minimum_active_far_supply_c": 57.44553404061442,
+        "maximum_active_pressure_drop_pa_per_m": 237.96381852449548,
+        "saved_independent_audit_passed": true,
+        "source_heat_ledger_passed": true,
+        "branch_service_ledgers_passed": true,
+        "electricity_including_pumps_passed": true
+      },
+      "saved_solution_quality": {
+        "quality": "missing_evidence",
+        "scope": "existing_assets_dispatch",
+        "reason": "Historical floating lower bound slightly exceeds feasible objective; do not upgrade this saved record to strict global optimality."
+      },
+      "readonly_export_sum_checks": {
+        "mode_totals": {
+          "source_heat_kwh": 285.98319860944343,
+          "delivered_heat_kwh": 191.54748000000004,
+          "heat_loss_kwh": 94.43571860944343,
+          "pump_kwh": 0.1901172264308279
+        },
+        "core_source_heat_kwh": 285.9831986094435,
+        "source_minus_delivery_minus_loss_kwh": -2.842170943040401e-14,
+        "heat_and_pump_match_grid": true,
+        "mode_totals_match_saved_audit": true
+      },
+      "comparison_scope": [
+        "Designed finite steady on-mode star network with independent branch pumps and average hourly heat, driven by public reference weather; no real geographical network allocation.",
+        "Eliminated modes4/9 after round1 and3/8 after round2; third round passes fixed pressure and supply-temperature checks.",
+        "Delivery stays191.54748kWh; pure electricity charge rises178.6426792936767 to224.26259246266036yuan. Benefit is identifying and excluding physically invalid finite modes, not lower operating cost.",
+        "Independent finite-mode audit passes, but excludes cold start, transport delay, shared-pump hydraulic balance, pulsed RC comfort, free investment and dynamic contingency certification.",
+        "Not a field experiment, not empirical building RC validation, not a universally optimal real network.",
+        "The source heat and pump energy are distinct quantities; do not add pump electricity to the thermal delivery/loss split."
+      ],
+      "recommended_insertion": {
+        "main": "source/main.tex: existing planning-and-physical-check discussion can cross-reference Appendix5.4; no new geographic-allocation claim.",
+        "appendix": "source/sections/experiments-appendix-r8p.tex: subsection5.4, after the complete six-round table and thermal ledger paragraph."
+      }
+    }
+  ],
+  "excluded_old_energy_figure": {
+    "source": "excluded_old_three_city_energy_png",
+    "reason": "Underlying flow_edges.json not found. Existing rounded PNG MWh labels are not promoted into exact data, percentages or real-map energy allocation. Other available unified_v11_3 summaries have different demand totals and are not interchangeable.",
+    "rounded_labels_not_used": {
+      "urumqi": {
+        "waste_heat_MWh": 2638,
+        "electric_MWh": 55,
+        "demand_MWh": 2584
+      },
+      "guyuan": {
+        "renewable_MWh": 2150,
+        "electric_MWh": 279,
+        "fossil_MWh": 9,
+        "demand_MWh": 2390
+      },
+      "wuhan": {
+        "renewable_MWh": 692,
+        "electric_MWh": 3,
+        "demand_MWh": 681
+      }
+    }
+  },
+  "global_redraw_conditions": [
+    "Imagegen may restyle the supplied scientific figures but may not fabricate new sample points, tails, data values, geographic sites or confidence intervals.",
+    "Preserve all six/four/six denominators, rejected outcomes and model scope.",
+    "Real OSM geometry is a separate map evidence stream. Neither the old aggregate MWh labels nor this synthetic72h star ledger establish measured energy allocation to OSM sites.",
+    "Every numerical graph requires visual checking after generation; this JSON certifies source identity and saved numeric values, not a generated image."
+  ],
+  "validation": {
+    "passed": true,
+    "checks": {
+      "E01_twelve_statistic_rows_match_frozen_normalized_W1": true,
+      "E01_six_cases_all_preserved": true,
+      "E01_three_vs_four_adoptions_with_two_rejections_preserved": true,
+      "E03_all_four_cases_preserved_and_fixed_asset_gap_zero": true,
+      "E04_all_six_rounds_preserved": true,
+      "E04_final_mode_CSV_sums_match_audit": true,
+      "E04_heat_balance_and_pump_electricity_separate": true,
+      "no_model_solve_or_new_physical_certification_performed": true
+    },
+    "source_file_count": 55,
+    "optimizer_runs": 0,
+    "new_physical_audits": 0
+  }
+}

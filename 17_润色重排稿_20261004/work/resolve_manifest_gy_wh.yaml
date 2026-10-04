@@ -1,0 +1,9 @@
+schema_version: '1.0'
+note: 固原与武汉单独复算入口；固原联合求解在 900 s 时限内未得可行解，故放宽时限重试。
+profiles:
+- name: scenario2_guyuan
+  config: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/configs/scenario2_guyuan.yaml'
+  timeseries: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/scenario2_guyuan_heating_season.csv'
+- name: scenario3_wuhan
+  config: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/configs/scenario3_wuhan.yaml'
+  timeseries: 'C:/Users/13349/Desktop/小挑/暖城向新_R8P-A4(2)_数值终校与论文分享包_20261004/reproducibility_a5/inputs/legacy_three_city_season/scenario3_wuhan_heating_season.csv'

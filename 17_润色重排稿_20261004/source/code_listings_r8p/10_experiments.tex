@@ -1,0 +1,76 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} \CJKCode{独立接口不自动运行于三城单次入口，也不代表历史扫描使用相同规则。}}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{epsilon\PYGZus{}constraint\PYGZus{}pareto}\PYG{p}{(}
+    \PYG{n}{config\PYGZus{}path}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{|} \PYG{n}{Path}\PYG{p}{,}
+    \PYG{n}{timeseries\PYGZus{}path}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{|} \PYG{n}{Path}\PYG{p}{,}
+    \PYG{n}{points}\PYG{p}{:} \PYG{n+nb}{int} \PYG{o}{=} \PYG{l+m+mi}{7}\PYG{p}{,}
+\PYG{p}{)} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{DataFrame}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Sample a nondominated system cost/carbon frontier with explicit caps.}
+
+\PYG{l+s+sd}{    The investment and operating model is unchanged across points. A hard reliability}
+\PYG{l+s+sd}{    constraint prevents the emissions objective from creating artificial low\PYGZhy{}carbon}
+\PYG{l+s+sd}{    solutions through heat curtailment.}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{if} \PYG{n}{points} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{2}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{points \CJKCode{至少为} 2}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{配置与时序只读取一次；各档复制同一基础配置，保持输入一致。}}
+    \PYG{n}{base\PYGZus{}config}\PYG{p}{,} \PYG{n}{frame} \PYG{o}{=} \PYG{n}{load\PYGZus{}inputs}\PYG{p}{(}\PYG{n}{config\PYGZus{}path}\PYG{p}{,} \PYG{n}{timeseries\PYGZus{}path}\PYG{p}{)}
+    \PYG{n}{base\PYGZus{}config} \PYG{o}{=} \PYG{n}{copy}\PYG{o}{.}\PYG{n}{deepcopy}\PYG{p}{(}\PYG{n}{base\PYGZus{}config}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{清除碳价与原碳帽；其余启用约束和偏好仍按配置保留。}}
+    \PYG{n}{base\PYGZus{}config}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{planning}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{carbon\PYGZus{}price\PYGZus{}yuan\PYGZus{}per\PYGZus{}kg}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+    \PYG{n}{base\PYGZus{}config}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{planning}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{emissions\PYGZus{}cap\PYGZus{}kg\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{k+kc}{None}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{两个端点分别新建模型，避免前一端点的主目标约束污染另一端点。}}
+    \PYG{n}{cost\PYGZus{}optimum} \PYG{o}{=} \PYG{n}{HeatPlanningModel}\PYG{p}{(}\PYG{n}{copy}\PYG{o}{.}\PYG{n}{deepcopy}\PYG{p}{(}\PYG{n}{base\PYGZus{}config}\PYG{p}{)}\PYG{p}{,} \PYG{n}{frame}\PYG{p}{)}\PYG{o}{.}\PYG{n}{solve\PYGZus{}lexicographic}\PYG{p}{(}\PYG{n}{primary}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{total\PYGZus{}cost}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{summary}
+    \PYG{n}{emission\PYGZus{}optimum} \PYG{o}{=} \PYG{n}{HeatPlanningModel}\PYG{p}{(}\PYG{n}{copy}\PYG{o}{.}\PYG{n}{deepcopy}\PYG{p}{(}\PYG{n}{base\PYGZus{}config}\PYG{p}{)}\PYG{p}{,} \PYG{n}{frame}\PYG{p}{)}\PYG{o}{.}\PYG{n}{solve\PYGZus{}lexicographic}\PYG{p}{(}\PYG{n}{primary}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{emissions}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{summary}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{采用冷热服务及共享电力口径的登记系统总碳，单位}kg CO2\CJKCode{。}}
+    \PYG{n}{emission\PYGZus{}column} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{total\PYGZus{}service\PYGZus{}emissions\PYGZus{}kg\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}
+    \PYG{n}{min\PYGZus{}emissions} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{emission\PYGZus{}optimum}\PYG{p}{[}\PYG{n}{emission\PYGZus{}column}\PYG{p}{]}\PYG{p}{)}
+    \PYG{n}{cost\PYGZus{}optimum\PYGZus{}emissions} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{cost\PYGZus{}optimum}\PYG{p}{[}\PYG{n}{emission\PYGZus{}column}\PYG{p}{]}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{端点次序超出容差则报错，不伪造可用扫描区间。}}
+    \PYG{k}{if} \PYG{n}{min\PYGZus{}emissions} \PYG{o}{\PYGZgt{}} \PYG{n}{cost\PYGZus{}optimum\PYGZus{}emissions} \PYG{o}{+} \PYG{l+m+mf}{1e\PYGZhy{}6} \PYG{o}{+} \PYG{l+m+mf}{1e\PYGZhy{}8}\PYG{o}{*}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{cost\PYGZus{}optimum\PYGZus{}emissions}\PYG{p}{)}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{RuntimeError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Carbon endpoint exceeds cost endpoint; improve solve budgets before defining an epsilon range}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{caps} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{n}{min\PYGZus{}emissions}\PYG{p}{,} \PYG{n}{cost\PYGZus{}optimum\PYGZus{}emissions}\PYG{p}{,} \PYG{n}{points}\PYG{p}{)}
+
+    \PYG{n}{rows} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{每档均由基础配置开始；本函数没有调用投资冻结。}}
+    \PYG{k}{for} \PYG{n}{cap} \PYG{o+ow}{in} \PYG{n}{caps}\PYG{p}{:}
+        \PYG{n}{config} \PYG{o}{=} \PYG{n}{copy}\PYG{o}{.}\PYG{n}{deepcopy}\PYG{p}{(}\PYG{n}{base\PYGZus{}config}\PYG{p}{)}
+        \PYG{c+c1}{\PYGZsh{} A tiny numerical allowance avoids rejecting the emissions\PYGZhy{}optimal endpoint.}
+        \PYG{n}{effective\PYGZus{}cap} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{cap}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mf}{1e\PYGZhy{}7} \PYG{o}{+} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{cap}\PYG{p}{)}\PYG{p}{)}\PYG{o}{*}\PYG{l+m+mf}{1e\PYGZhy{}8}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{实际碳帽包含微小数值余量，同时保存请求值供审查。}}
+        \PYG{n}{config}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{planning}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{emissions\PYGZus{}cap\PYGZus{}kg\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{effective\PYGZus{}cap}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{自由投资输入时每档重求投资和运行；已固定配置才只检验固定资产。}}
+        \PYG{n}{summary} \PYG{o}{=} \PYG{n}{HeatPlanningModel}\PYG{p}{(}\PYG{n}{config}\PYG{p}{,} \PYG{n}{frame}\PYG{p}{)}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{objective\PYGZus{}mode}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{total\PYGZus{}cost}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{summary}
+        \PYG{c+c1}{\PYGZsh{} \CJKCode{数值或碳帽复核失败立即终止，不能把失败点加入前沿。}}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{summary}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{numerical\PYGZus{}audit\PYGZus{}passed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n}{summary}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{emissions\PYGZus{}cap\PYGZus{}pass}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{:}
+            \PYG{k}{raise} \PYG{n+ne}{RuntimeError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{A sampled frontier incumbent failed independent numerical or carbon\PYGZhy{}cap checks}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{n}{rows}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{requested\PYGZus{}emissions\PYGZus{}cap\PYGZus{}kg\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{cap}\PYG{p}{)}\PYG{p}{,} \PYG{o}{*}\PYG{o}{*}\PYG{n}{summary}\PYG{p}{\PYGZcb{}}\PYG{p}{)}
+    \PYG{n}{sampled} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{json\PYGZus{}normalize}\PYG{p}{(}\PYG{n}{rows}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{非支配关系只针对已采样可行解，不是完整连续}Pareto\CJKCode{前沿。}}
+    \PYG{n}{result} \PYG{o}{=} \PYG{n}{nondominated\PYGZus{}cost\PYGZus{}emission\PYGZus{}points}\PYG{p}{(}\PYG{n}{sampled}\PYG{p}{)}
+    \PYG{n}{result}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{all\PYGZus{}sampled\PYGZus{}points}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sampled}\PYG{o}{.}\PYG{n}{to\PYGZus{}dict}\PYG{p}{(}\PYG{n}{orient}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{records}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{result}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{cost\PYGZus{}endpoint}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{cost\PYGZus{}optimum}
+    \PYG{n}{result}\PYG{o}{.}\PYG{n}{attrs}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{carbon\PYGZus{}endpoint}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{emission\PYGZus{}optimum}
+    \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{frontier\PYGZus{}scope}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{nondominated\PYGZus{}subset\PYGZus{}of\PYGZus{}sampled\PYGZus{}feasible\PYGZus{}solutions}\PYG{l+s+s2}{\PYGZdq{}}
+    \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sampled\PYGZus{}point\PYGZus{}count}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{rows}\PYG{p}{)}
+    \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{removed\PYGZus{}duplicate\PYGZus{}or\PYGZus{}dominated\PYGZus{}count}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{rows}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{result}\PYG{p}{)}
+    \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{marginal\PYGZus{}abatement\PYGZus{}cost\PYGZus{}yuan\PYGZus{}per\PYGZus{}kg}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{nan}
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{相邻点费用差除以减排量，得到元}/kg\CJKCode{的边际减排费用。}}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{result}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{delta\PYGZus{}cost} \PYG{o}{=} \PYG{n}{result}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{objective\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{result}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{objective\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}
+        \PYG{n}{delta\PYGZus{}emission} \PYG{o}{=} \PYG{n}{result}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{emission\PYGZus{}column}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{result}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{emission\PYGZus{}column}\PYG{p}{]}
+        \PYG{k}{if} \PYG{n}{delta\PYGZus{}emission} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{1e\PYGZhy{}6} \PYG{o}{+} \PYG{l+m+mf}{1e\PYGZhy{}8}\PYG{o}{*}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{result}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{emission\PYGZus{}column}\PYG{p}{]}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{result}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{marginal\PYGZus{}abatement\PYGZus{}cost\PYGZus{}yuan\PYGZus{}per\PYGZus{}kg}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{delta\PYGZus{}cost} \PYG{o}{/} \PYG{n}{delta\PYGZus{}emission}
+
+    \PYG{c+c1}{\PYGZsh{} \CJKCode{理想点距离依赖归一化规则，折中点不是额外物理或工程验收。}}
+    \PYG{n}{cost\PYGZus{}span} \PYG{o}{=} \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{objective\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{objective\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n}{emission\PYGZus{}span} \PYG{o}{=} \PYG{n}{result}\PYG{p}{[}\PYG{n}{emission\PYGZus{}column}\PYG{p}{]}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{result}\PYG{p}{[}\PYG{n}{emission\PYGZus{}column}\PYG{p}{]}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n}{normalized\PYGZus{}cost} \PYG{o}{=} \PYG{p}{(}\PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{objective\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{objective\PYGZus{}yuan\PYGZus{}per\PYGZus{}year}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{cost\PYGZus{}span}\PYG{p}{,} \PYG{l+m+mf}{1e\PYGZhy{}9}\PYG{p}{)}
+    \PYG{n}{normalized\PYGZus{}emission} \PYG{o}{=} \PYG{p}{(}\PYG{n}{result}\PYG{p}{[}\PYG{n}{emission\PYGZus{}column}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{result}\PYG{p}{[}\PYG{n}{emission\PYGZus{}column}\PYG{p}{]}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{emission\PYGZus{}span}\PYG{p}{,} \PYG{l+m+mf}{1e\PYGZhy{}9}\PYG{p}{)}
+    \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{distance\PYGZus{}to\PYGZus{}ideal}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{normalized\PYGZus{}cost}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{normalized\PYGZus{}emission}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)}
+    \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{recommended\PYGZus{}compromise}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{k+kc}{False}
+    \PYG{n}{result}\PYG{o}{.}\PYG{n}{loc}\PYG{p}{[}\PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{distance\PYGZus{}to\PYGZus{}ideal}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{idxmin}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{recommended\PYGZus{}compromise}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{k+kc}{True}
+    \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{recommendation\PYGZus{}method}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{closest\PYGZus{}normalized\PYGZus{}ideal\PYGZus{}point}\PYG{l+s+s2}{\PYGZdq{}}
+    \PYG{k}{return} \PYG{n}{result}
+\end{Verbatim}

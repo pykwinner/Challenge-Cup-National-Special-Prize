@@ -1,0 +1,97 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1603,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+\PYG{c+c1}{\PYGZsh{} Node\PYGZhy{}grade\PYGZhy{}time heat balances.}
+\PYG{k}{for} \PYG{n}{node\PYGZus{}name}\PYG{p}{,} \PYG{n}{node} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{nodes}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{for} \PYG{n}{grade\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{grades}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{demand\PYGZus{}column} \PYG{o}{=} \PYG{n}{node}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{demand\PYGZus{}columns}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{grade\PYGZus{}name}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{times}\PYG{p}{:}
+            \PYG{n}{row}\PYG{p}{:} \PYG{n+nb}{dict}\PYG{p}{[}\PYG{n+nb}{int}\PYG{p}{,} \PYG{n+nb}{float}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}
+            \PYG{k}{for} \PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{source} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{sources}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+                \PYG{n}{idx} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}heat}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{p}{(}\PYG{n}{s\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+                \PYG{k}{if} \PYG{n}{idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None} \PYG{o+ow}{and} \PYG{n}{source}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{node}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{node\PYGZus{}name}\PYG{p}{:}
+                    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{idx}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}
+            \PYG{k}{for} \PYG{n}{e\PYGZus{}name}\PYG{p}{,} \PYG{n}{pipe} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{pipes}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+                \PYG{n}{forward} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{pipe\PYGZus{}flow\PYGZus{}forward}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{e\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}
+                \PYG{k}{if} \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{from}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{node\PYGZus{}name}\PYG{p}{:}
+                    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{forward}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+                \PYG{k}{if} \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{to}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{node\PYGZus{}name}\PYG{p}{:}
+                    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{forward}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}pipe\PYGZus{}efficiency}\PYG{p}{(}\PYG{n}{pipe}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+                    \PYG{n}{activated} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{pipe\PYGZus{}retrofit\PYGZus{}flow\PYGZus{}forward}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}
+                        \PYG{p}{(}\PYG{n}{e\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+                    \PYG{p}{)}
+                    \PYG{k}{if} \PYG{n}{activated} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                        \PYG{n}{gain} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}pipe\PYGZus{}retrofit\PYGZus{}efficiency}\PYG{p}{(}\PYG{n}{pipe}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}pipe\PYGZus{}efficiency}\PYG{p}{(}\PYG{n}{pipe}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+                        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{activated}\PYG{p}{,} \PYG{n+nb}{max}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{gain}\PYG{p}{)}\PYG{p}{)}
+                \PYG{n}{reverse} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{pipe\PYGZus{}flow\PYGZus{}reverse}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{p}{(}\PYG{n}{e\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+                \PYG{k}{if} \PYG{n}{reverse} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                    \PYG{k}{if} \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{to}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{node\PYGZus{}name}\PYG{p}{:}
+                        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{reverse}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+                    \PYG{k}{if} \PYG{n}{pipe}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{from}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{node\PYGZus{}name}\PYG{p}{:}
+                        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{reverse}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}pipe\PYGZus{}efficiency}\PYG{p}{(}\PYG{n}{pipe}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+                        \PYG{n}{activated\PYGZus{}reverse} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{pipe\PYGZus{}retrofit\PYGZus{}flow\PYGZus{}reverse}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}
+                            \PYG{p}{(}\PYG{n}{e\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+                        \PYG{p}{)}
+                        \PYG{k}{if} \PYG{n}{activated\PYGZus{}reverse} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                            \PYG{n}{gain} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}pipe\PYGZus{}retrofit\PYGZus{}efficiency}\PYG{p}{(}\PYG{n}{pipe}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}pipe\PYGZus{}efficiency}\PYG{p}{(}\PYG{n}{pipe}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+                            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{activated\PYGZus{}reverse}\PYG{p}{,} \PYG{n+nb}{max}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{gain}\PYG{p}{)}\PYG{p}{)}
+            \PYG{k}{for} \PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{storage} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{storages}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+                \PYG{k}{if} \PYG{n}{storage}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{node}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{node\PYGZus{}name} \PYG{o+ow}{and} \PYG{n}{storage}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{grade}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{grade\PYGZus{}name}\PYG{p}{:}
+                    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}discharge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}
+                    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}charge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+            \PYG{n}{unmet} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{unserved}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{p}{(}\PYG{n}{node\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{unmet} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{unmet}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}
+            \PYG{n}{up} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{demand\PYGZus{}up}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{p}{(}\PYG{n}{node\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+            \PYG{n}{down} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{demand\PYGZus{}down}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{p}{(}\PYG{n}{node\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{up} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{up}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{down} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{down}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{building\PYGZus{}thermal} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None} \PYG{o+ow}{and} \PYG{p}{(}\PYG{n}{node\PYGZus{}name}\PYG{p}{,}\PYG{n}{grade\PYGZus{}name}\PYG{p}{)} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{building\PYGZus{}thermal}\PYG{o}{.}\PYG{n}{covered\PYGZus{}node\PYGZus{}grades}\PYG{p}{:}
+                \PYG{n}{delivered} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{building\PYGZus{}thermal}\PYG{o}{.}\PYG{n}{node\PYGZus{}heat}\PYG{p}{[}\PYG{n}{node\PYGZus{}name}\PYG{p}{,}\PYG{n}{grade\PYGZus{}name}\PYG{p}{,}\PYG{n}{t}\PYG{p}{]}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,}\PYG{n}{delivered}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}\PYG{p}{)}
+                \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,}\PYG{n}{lb}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}time\PYGZus{}metric}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{demand\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{delivered}\PYG{p}{,}\PYG{l+m+mf}{1.0}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}time\PYGZus{}metric}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}heat\PYGZus{}delivered\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{delivered}\PYG{p}{,}\PYG{l+m+mf}{1.0}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}time\PYGZus{}metric}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{demand\PYGZus{}exergy\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{delivered}\PYG{p}{,}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}exergy\PYGZus{}factor}\PYG{p}{(}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{grade}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{temperature\PYGZus{}c}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}
+                \PYG{n}{reference} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}demand\PYGZus{}value}\PYG{p}{(}\PYG{n}{node}\PYG{p}{,}\PYG{n}{demand\PYGZus{}column}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)} \PYG{k}{if} \PYG{n}{demand\PYGZus{}column} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{metric\PYGZus{}constants}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}reference\PYGZus{}heat\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}\PYG{o}{=} \PYG{n}{reference}\PYG{o}{*}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}op\PYGZus{}weight}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{scenario\PYGZus{}metric\PYGZus{}constants}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}scenario}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{building\PYGZus{}reference\PYGZus{}heat\PYGZus{}kwh}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]} \PYG{o}{+}\PYG{o}{=} \PYG{n}{reference}\PYG{o}{*}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}physical\PYGZus{}weight}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}record\PYGZus{}metering\PYGZus{}reference}\PYG{p}{(}\PYG{n}{node\PYGZus{}name}\PYG{p}{,} \PYG{n}{grade}\PYG{p}{,} \PYG{n}{reference}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+                \PYG{k}{continue}
+            \PYG{n}{demand} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}demand\PYGZus{}value}\PYG{p}{(}\PYG{n}{node}\PYG{p}{,} \PYG{n}{demand\PYGZus{}column}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)} \PYG{k}{if} \PYG{n}{demand\PYGZus{}column} \PYG{k}{else} \PYG{l+m+mf}{0.0}
+            \PYG{n}{metering} \PYG{o}{=} \PYG{n}{node}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{heat\PYGZus{}metering}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{p}{\PYGZcb{}}\PYG{p}{)}
+            \PYG{n}{existing\PYGZus{}metering} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}
+                \PYG{n}{metering}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{existing\PYGZus{}coverage\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}
+            \PYG{p}{)}
+            \PYG{n}{saving\PYGZus{}fraction} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}
+                \PYG{n}{metering}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{saving\PYGZus{}fraction\PYGZus{}at\PYGZus{}full\PYGZus{}coverage}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}
+            \PYG{p}{)}
+            \PYG{n}{existing\PYGZus{}metering\PYGZus{}saving} \PYG{o}{=} \PYG{p}{(}
+                \PYG{n}{demand} \PYG{o}{*} \PYG{n}{existing\PYGZus{}metering} \PYG{o}{*} \PYG{n}{saving\PYGZus{}fraction}
+            \PYG{p}{)}
+            \PYG{n}{metering\PYGZus{}idx} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{heat\PYGZus{}metering\PYGZus{}coverage}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}
+                \PYG{n}{node\PYGZus{}name}
+            \PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{metering\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None} \PYG{o+ow}{and} \PYG{n}{demand} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.0} \PYG{o+ow}{and} \PYG{n}{saving\PYGZus{}fraction} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{0.0}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{metering\PYGZus{}idx}\PYG{p}{,} \PYG{n}{demand} \PYG{o}{*} \PYG{n}{saving\PYGZus{}fraction}\PYG{p}{)}
+            \PYG{n}{retrofit} \PYG{o}{=} \PYG{n}{node}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{temperature\PYGZus{}retrofit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+            \PYG{n}{retrofit\PYGZus{}idx} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{terminal\PYGZus{}temperature\PYGZus{}retrofit}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{node\PYGZus{}name}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{retrofit} \PYG{o+ow}{and} \PYG{n}{retrofit\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+                \PYG{n}{source\PYGZus{}grade} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{retrofit}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{source\PYGZus{}grade}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+                \PYG{n}{target\PYGZus{}grade} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{retrofit}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{target\PYGZus{}grade}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+                \PYG{n}{source\PYGZus{}column} \PYG{o}{=} \PYG{n}{node}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{demand\PYGZus{}columns}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{n}{source\PYGZus{}grade}\PYG{p}{]}
+                \PYG{n}{shift} \PYG{o}{=} \PYG{p}{(}
+                    \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{retrofit}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{eligible\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{)}
+                    \PYG{o}{*} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}demand\PYGZus{}value}\PYG{p}{(}\PYG{n}{node}\PYG{p}{,} \PYG{n}{source\PYGZus{}column}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+                \PYG{p}{)}
+                \PYG{k}{if} \PYG{n}{grade\PYGZus{}name} \PYG{o}{==} \PYG{n}{source\PYGZus{}grade}\PYG{p}{:}
+                    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{retrofit\PYGZus{}idx}\PYG{p}{,} \PYG{n}{shift}\PYG{p}{)}
+                \PYG{k}{elif} \PYG{n}{grade\PYGZus{}name} \PYG{o}{==} \PYG{n}{target\PYGZus{}grade}\PYG{p}{:}
+                    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{retrofit\PYGZus{}idx}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{shift}\PYG{p}{)}
+            \PYG{n}{effective\PYGZus{}constant\PYGZus{}demand} \PYG{o}{=} \PYG{n}{demand} \PYG{o}{\PYGZhy{}} \PYG{n}{existing\PYGZus{}metering\PYGZus{}saving}
+            \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}
+                \PYG{n}{row}\PYG{p}{,}
+                \PYG{n}{lb}\PYG{o}{=}\PYG{n}{effective\PYGZus{}constant\PYGZus{}demand}\PYG{p}{,}
+                \PYG{n}{ub}\PYG{o}{=}\PYG{n}{effective\PYGZus{}constant\PYGZus{}demand}\PYG{p}{,}
+            \PYG{p}{)}
+\end{Verbatim}

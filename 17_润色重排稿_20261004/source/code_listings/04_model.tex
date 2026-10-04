@@ -1,0 +1,49 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1425,stepnumber=1,fontsize=\fontsize{9.5}{11.5}\selectfont,breaklines=true,breakanywhere=true,frame=single,framesep=3mm,numbersep=5pt,rulecolor=\color{black},xleftmargin=18pt]
+    \PYG{n}{soc\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{soc}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+    \PYG{n}{ch\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{ch}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+    \PYG{n}{dis\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n}{dis}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{n}{cap\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+        \PYG{n}{soc\PYGZus{}row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0}
+        \PYG{n}{ch\PYGZus{}row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{power\PYGZus{}ratio}
+        \PYG{n}{dis\PYGZus{}row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{power\PYGZus{}ratio}
+    \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{soc\PYGZus{}row}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{existing}\PYG{p}{)}
+    \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{ch\PYGZus{}row}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{power\PYGZus{}ratio} \PYG{o}{*} \PYG{n}{existing}\PYG{p}{)}
+    \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{dis\PYGZus{}row}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{power\PYGZus{}ratio} \PYG{o}{*} \PYG{n}{existing}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{strict\PYGZus{}storage\PYGZus{}mode}\PYG{p}{:}
+        \PYG{n}{mode} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}var}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}mode[}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{st\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{]}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{integer}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}mode}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{mode}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{ch}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{mode}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{n}{max\PYGZus{}power}\PYG{p}{\PYGZcb{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{p}{\PYGZob{}}\PYG{n}{dis}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{n}{mode}\PYG{p}{:} \PYG{n}{max\PYGZus{}power}\PYG{p}{\PYGZcb{}}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{max\PYGZus{}power}\PYG{p}{)}
+
+\PYG{n}{boundary\PYGZus{}mode} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{boundary\PYGZus{}mode}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{cyclic}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{loss\PYGZus{}factor} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mf}{1.0} \PYG{o}{\PYGZhy{}} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{self\PYGZus{}loss\PYGZus{}per\PYGZus{}hour}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)} \PYG{o}{*}\PYG{o}{*} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dt}
+\PYG{n}{eta\PYGZus{}ch} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{charge\PYGZus{}efficiency}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.95}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{eta\PYGZus{}dis} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{discharge\PYGZus{}efficiency}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.95}\PYG{p}{)}\PYG{p}{)}
+\PYG{k}{if} \PYG{n}{boundary\PYGZus{}mode} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{cyclic}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{\PYGZcb{}}\PYG{p}{:}
+    \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\CJKCode{储热} }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{st\PYGZus{}name}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ \CJKCode{的} boundary\PYGZus{}mode \CJKCode{仅支持} cyclic \CJKCode{或} fixed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{t} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{times}\PYG{p}{:}
+    \PYG{n}{row} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}soc}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{,}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}charge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{n}{eta\PYGZus{}ch} \PYG{o}{*} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dt}\PYG{p}{,}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}discharge}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}\PYG{p}{]}\PYG{p}{:} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dt} \PYG{o}{/} \PYG{n}{eta\PYGZus{}dis}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{group\PYGZus{}times} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{boundary\PYGZus{}groups}\PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{time\PYGZus{}boundary\PYGZus{}group}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}\PYG{p}{]}
+    \PYG{n}{is\PYGZus{}group\PYGZus{}start} \PYG{o}{=} \PYG{n}{t} \PYG{o}{==} \PYG{n}{group\PYGZus{}times}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{k}{if} \PYG{n}{boundary\PYGZus{}mode} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{cyclic}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o+ow}{or} \PYG{o+ow}{not} \PYG{n}{is\PYGZus{}group\PYGZus{}start}\PYG{p}{:}
+        \PYG{n}{prev} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{time\PYGZus{}predecessor}\PYG{p}{[}\PYG{n}{t}\PYG{p}{]}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}add}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}soc}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{prev}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{loss\PYGZus{}factor}\PYG{p}{)}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{l+m+mf}{0.0}\PYG{p}{)}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{initial\PYGZus{}fraction} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{initial\PYGZus{}soc\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{cap\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{n}{row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{loss\PYGZus{}factor} \PYG{o}{*} \PYG{n}{initial\PYGZus{}fraction}
+        \PYG{n}{initial\PYGZus{}energy} \PYG{o}{=} \PYG{n}{loss\PYGZus{}factor} \PYG{o}{*} \PYG{n}{initial\PYGZus{}fraction} \PYG{o}{*} \PYG{n}{existing}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{row}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{n}{initial\PYGZus{}energy}\PYG{p}{,} \PYG{n}{ub}\PYG{o}{=}\PYG{n}{initial\PYGZus{}energy}\PYG{p}{)}
+\PYG{k}{if} \PYG{n}{boundary\PYGZus{}mode} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fixed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{final\PYGZus{}fraction} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{storage}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{final\PYGZus{}soc\PYGZus{}min\PYGZus{}fraction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{group\PYGZus{}times} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{boundary\PYGZus{}groups}\PYG{o}{.}\PYG{n}{values}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{final\PYGZus{}row} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{variables}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{storage\PYGZus{}soc}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{[}\PYG{p}{(}\PYG{n}{st\PYGZus{}name}\PYG{p}{,} \PYG{n}{group\PYGZus{}times}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}\PYG{p}{]}\PYG{p}{:} \PYG{l+m+mf}{1.0}\PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{n}{cap\PYGZus{}idx} \PYG{o+ow}{is} \PYG{o+ow}{not} \PYG{k+kc}{None}\PYG{p}{:}
+            \PYG{n}{final\PYGZus{}row}\PYG{p}{[}\PYG{n}{cap\PYGZus{}idx}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{final\PYGZus{}fraction}
+        \PYG{n}{p}\PYG{o}{.}\PYG{n}{add\PYGZus{}constraint}\PYG{p}{(}\PYG{n}{final\PYGZus{}row}\PYG{p}{,} \PYG{n}{lb}\PYG{o}{=}\PYG{n}{final\PYGZus{}fraction} \PYG{o}{*} \PYG{n}{existing}\PYG{p}{)}
+\end{Verbatim}

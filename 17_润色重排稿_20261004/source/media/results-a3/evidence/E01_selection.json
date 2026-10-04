@@ -1,0 +1,1587 @@
+{
+  "settings": {
+    "year": 2017,
+    "target_per_category": 2,
+    "base_k": 6,
+    "seed": 42,
+    "repeats": 3,
+    "threads": 1,
+    "coverage_gate": 0.95,
+    "no_acceleration_enabled": true
+  },
+  "development_buildings": [
+    "Bobcat_assembly_Billy",
+    "Bobcat_assembly_Camilla",
+    "Bull_assembly_Amalia",
+    "Bull_assembly_Beau",
+    "Cockatoo_assembly_Britt",
+    "Cockatoo_assembly_Emilio",
+    "Cockatoo_assembly_Fernanda",
+    "Eagle_assembly_Candice",
+    "Eagle_assembly_Estelle",
+    "Eagle_education_Alberto",
+    "Fox_assembly_Adrianne",
+    "Fox_assembly_Audrey",
+    "Hog_assembly_Annemarie",
+    "Panther_education_Aurora",
+    "Panther_education_Cleopatra",
+    "Peacock_lodging_Erica",
+    "Robin_education_Cecilia",
+    "Swan_unknown_Allison",
+    "Swan_unknown_Andres",
+    "Swan_unknown_Christoper",
+    "Swan_unknown_Darrin"
+  ],
+  "development_sites": [
+    "Bobcat",
+    "Bull",
+    "Cockatoo",
+    "Eagle",
+    "Fox",
+    "Hog",
+    "Panther",
+    "Peacock",
+    "Robin",
+    "Swan"
+  ],
+  "cases": [
+    {
+      "case_id": "hotwater__Bobcat_education_Alissa",
+      "category": "hotwater",
+      "building_id": "Bobcat_education_Alissa",
+      "site_id": "Bobcat",
+      "year": 2017,
+      "unseen_building": true,
+      "unseen_site": false,
+      "quality": {
+        "rows": 8760,
+        "finite": 8641,
+        "coverage": 0.9864155251141552,
+        "negative": 0,
+        "positive": 3755,
+        "longest_missing_run_hours": 20,
+        "weather_join_valid_count": 8617,
+        "weather_join_coverage": 0.983675799086758,
+        "sum_observed_values": 289230.2411
+      }
+    },
+    {
+      "case_id": "hotwater__Eagle_assembly_Ian",
+      "category": "hotwater",
+      "building_id": "Eagle_assembly_Ian",
+      "site_id": "Eagle",
+      "year": 2017,
+      "unseen_building": true,
+      "unseen_site": false,
+      "quality": {
+        "rows": 8760,
+        "finite": 8638,
+        "coverage": 0.9860730593607306,
+        "negative": 0,
+        "positive": 5294,
+        "longest_missing_run_hours": 28,
+        "weather_join_valid_count": 8636,
+        "weather_join_coverage": 0.9858447488584475,
+        "sum_observed_values": 1575294590.4118
+      }
+    },
+    {
+      "case_id": "steam__Bull_assembly_Brandon",
+      "category": "steam",
+      "building_id": "Bull_assembly_Brandon",
+      "site_id": "Bull",
+      "year": 2017,
+      "unseen_building": true,
+      "unseen_site": false,
+      "quality": {
+        "rows": 8760,
+        "finite": 8566,
+        "coverage": 0.9778538812785388,
+        "negative": 0,
+        "positive": 6098,
+        "longest_missing_run_hours": 6,
+        "weather_join_valid_count": 8531,
+        "weather_join_coverage": 0.9738584474885845,
+        "sum_observed_values": 63267.9911
+      }
+    },
+    {
+      "case_id": "steam__Cockatoo_assembly_Genoveva",
+      "category": "steam",
+      "building_id": "Cockatoo_assembly_Genoveva",
+      "site_id": "Cockatoo",
+      "year": 2017,
+      "unseen_building": true,
+      "unseen_site": false,
+      "quality": {
+        "rows": 8760,
+        "finite": 8647,
+        "coverage": 0.9871004566210045,
+        "negative": 0,
+        "positive": 8515,
+        "longest_missing_run_hours": 75,
+        "weather_join_valid_count": 8405,
+        "weather_join_coverage": 0.9594748858447488,
+        "sum_observed_values": 904759.6821
+      }
+    },
+    {
+      "case_id": "chilledwater__Bobcat_education_Angela",
+      "category": "chilledwater",
+      "building_id": "Bobcat_education_Angela",
+      "site_id": "Bobcat",
+      "year": 2017,
+      "unseen_building": true,
+      "unseen_site": false,
+      "quality": {
+        "rows": 8760,
+        "finite": 8721,
+        "coverage": 0.9955479452054794,
+        "negative": 0,
+        "positive": 7145,
+        "longest_missing_run_hours": 5,
+        "weather_join_valid_count": 8697,
+        "weather_join_coverage": 0.9928082191780822,
+        "sum_observed_values": 291143.319
+      }
+    },
+    {
+      "case_id": "chilledwater__Bull_assembly_Dorethea",
+      "category": "chilledwater",
+      "building_id": "Bull_assembly_Dorethea",
+      "site_id": "Bull",
+      "year": 2017,
+      "unseen_building": true,
+      "unseen_site": false,
+      "quality": {
+        "rows": 8760,
+        "finite": 8742,
+        "coverage": 0.9979452054794521,
+        "negative": 0,
+        "positive": 8670,
+        "longest_missing_run_hours": 1,
+        "weather_join_valid_count": 8703,
+        "weather_join_coverage": 0.9934931506849315,
+        "sum_observed_values": 1952309.7575
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "category": "hotwater",
+      "building_id": "Crow_education_Kate",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 6745,
+        "coverage": 0.7699771689497716,
+        "negative": 0,
+        "positive": 6744,
+        "longest_missing_run_hours": 1101,
+        "weather_join_valid_count": 6509,
+        "weather_join_coverage": 0.7430365296803653,
+        "sum_observed_values": 1346904.6993
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Crow_education_Keisha",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 7504,
+        "coverage": 0.85662100456621,
+        "negative": 0,
+        "positive": 7376,
+        "longest_missing_run_hours": 1247,
+        "weather_join_valid_count": 7246,
+        "weather_join_coverage": 0.8271689497716895,
+        "sum_observed_values": 565682.0345000001
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Crow_education_Marlin",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 7745,
+        "coverage": 0.8841324200913242,
+        "negative": 0,
+        "positive": 7116,
+        "longest_missing_run_hours": 912,
+        "weather_join_valid_count": 7490,
+        "weather_join_coverage": 0.8550228310502284,
+        "sum_observed_values": 499813.82300000003
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Crow_education_Omer",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 7501,
+        "coverage": 0.8562785388127854,
+        "negative": 0,
+        "positive": 7489,
+        "longest_missing_run_hours": 1250,
+        "weather_join_valid_count": 7244,
+        "weather_join_coverage": 0.8269406392694064,
+        "sum_observed_values": 598117.1998999999
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Crow_education_Winston",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 7698,
+        "coverage": 0.8787671232876713,
+        "negative": 0,
+        "positive": 7692,
+        "longest_missing_run_hours": 913,
+        "weather_join_valid_count": 7444,
+        "weather_join_coverage": 0.8497716894977169,
+        "sum_observed_values": 754575.753
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Moose_education_Gladys",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8661,
+        "coverage": 0.9886986301369863,
+        "negative": 0,
+        "positive": 5004,
+        "longest_missing_run_hours": 85,
+        "weather_join_valid_count": 8160,
+        "weather_join_coverage": 0.9315068493150684,
+        "sum_observed_values": 21647082.45
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Moose_education_Lori",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8408,
+        "coverage": 0.9598173515981735,
+        "negative": 0,
+        "positive": 4175,
+        "longest_missing_run_hours": 139,
+        "weather_join_valid_count": 7981,
+        "weather_join_coverage": 0.9110730593607306,
+        "sum_observed_values": 3126750.2
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Moose_education_Maria",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8671,
+        "coverage": 0.9898401826484018,
+        "negative": 0,
+        "positive": 5773,
+        "longest_missing_run_hours": 85,
+        "weather_join_valid_count": 8167,
+        "weather_join_coverage": 0.9323059360730593,
+        "sum_observed_values": 11914531.77
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Bobcat_assembly_Billy",
+      "site_id": "Bobcat",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8614,
+        "coverage": 0.9833333333333333,
+        "negative": 0,
+        "positive": 6040,
+        "longest_missing_run_hours": 7,
+        "weather_join_valid_count": 8593,
+        "weather_join_coverage": 0.9809360730593607,
+        "sum_observed_values": 35738699.5784
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Bobcat_assembly_Camilla",
+      "site_id": "Bobcat",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct",
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8250,
+        "coverage": 0.9417808219178082,
+        "negative": 0,
+        "positive": 0,
+        "longest_missing_run_hours": 494,
+        "weather_join_valid_count": 8227,
+        "weather_join_coverage": 0.9391552511415525,
+        "sum_observed_values": 0.0
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Bobcat_education_Alissa",
+      "site_id": "Bobcat",
+      "round": 2,
+      "accepted": true,
+      "reasons": [],
+      "quality": {
+        "rows": 8760,
+        "finite": 8641,
+        "coverage": 0.9864155251141552,
+        "negative": 0,
+        "positive": 3755,
+        "longest_missing_run_hours": 20,
+        "weather_join_valid_count": 8617,
+        "weather_join_coverage": 0.983675799086758,
+        "sum_observed_values": 289230.2411
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Cockatoo_assembly_Ralph",
+      "site_id": "Cockatoo",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8466,
+        "coverage": 0.9664383561643836,
+        "negative": 0,
+        "positive": 8445,
+        "longest_missing_run_hours": 75,
+        "weather_join_valid_count": 8224,
+        "weather_join_coverage": 0.9388127853881278,
+        "sum_observed_values": 7052099.8598
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Cockatoo_education_Orlando",
+      "site_id": "Cockatoo",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8483,
+        "coverage": 0.9683789954337899,
+        "negative": 0,
+        "positive": 7994,
+        "longest_missing_run_hours": 103,
+        "weather_join_valid_count": 8244,
+        "weather_join_coverage": 0.9410958904109589,
+        "sum_observed_values": 151679925.88099998
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Eagle_assembly_Candice",
+      "site_id": "Eagle",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8619,
+        "coverage": 0.9839041095890411,
+        "negative": 0,
+        "positive": 2615,
+        "longest_missing_run_hours": 18,
+        "weather_join_valid_count": 8616,
+        "weather_join_coverage": 0.9835616438356164,
+        "sum_observed_values": 135436096.9278
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Eagle_assembly_Estelle",
+      "site_id": "Eagle",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8643,
+        "coverage": 0.9866438356164383,
+        "negative": 0,
+        "positive": 6304,
+        "longest_missing_run_hours": 5,
+        "weather_join_valid_count": 8640,
+        "weather_join_coverage": 0.9863013698630136,
+        "sum_observed_values": 211728027.5852
+      }
+    },
+    {
+      "category": "hotwater",
+      "building_id": "Eagle_assembly_Ian",
+      "site_id": "Eagle",
+      "round": 2,
+      "accepted": true,
+      "reasons": [],
+      "quality": {
+        "rows": 8760,
+        "finite": 8638,
+        "coverage": 0.9860730593607306,
+        "negative": 0,
+        "positive": 5294,
+        "longest_missing_run_hours": 28,
+        "weather_join_valid_count": 8636,
+        "weather_join_coverage": 0.9858447488584475,
+        "sum_observed_values": 1575294590.4118
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Abbie",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8625,
+        "coverage": 0.9845890410958904,
+        "negative": 0,
+        "positive": 8589,
+        "longest_missing_run_hours": 32,
+        "weather_join_valid_count": 8120,
+        "weather_join_coverage": 0.9269406392694064,
+        "sum_observed_values": 17372958.76
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Clark",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8381,
+        "coverage": 0.9567351598173516,
+        "negative": 0,
+        "positive": 4677,
+        "longest_missing_run_hours": 193,
+        "weather_join_valid_count": 7916,
+        "weather_join_coverage": 0.9036529680365297,
+        "sum_observed_values": 9410269.8
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Dennis",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8731,
+        "coverage": 0.996689497716895,
+        "negative": 0,
+        "positive": 8427,
+        "longest_missing_run_hours": 6,
+        "weather_join_valid_count": 8222,
+        "weather_join_coverage": 0.9385844748858447,
+        "sum_observed_values": 2137427.27
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Diane",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8649,
+        "coverage": 0.9873287671232877,
+        "negative": 0,
+        "positive": 8625,
+        "longest_missing_run_hours": 40,
+        "weather_join_valid_count": 8135,
+        "weather_join_coverage": 0.9286529680365296,
+        "sum_observed_values": 10530921.79
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Florence",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8707,
+        "coverage": 0.9939497716894977,
+        "negative": 0,
+        "positive": 6344,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8193,
+        "weather_join_coverage": 0.9352739726027397,
+        "sum_observed_values": 10268814.690000001
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Leland",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8595,
+        "coverage": 0.9811643835616438,
+        "negative": 0,
+        "positive": 2130,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8095,
+        "weather_join_coverage": 0.9240867579908676,
+        "sum_observed_values": 5650399.15
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Marina",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8730,
+        "coverage": 0.9965753424657534,
+        "negative": 0,
+        "positive": 8685,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8216,
+        "weather_join_coverage": 0.9378995433789954,
+        "sum_observed_values": 4492416.73
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Marlon",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8484,
+        "coverage": 0.9684931506849315,
+        "negative": 0,
+        "positive": 4299,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8015,
+        "weather_join_coverage": 0.9149543378995434,
+        "sum_observed_values": 2563334.39
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Omar",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8731,
+        "coverage": 0.996689497716895,
+        "negative": 0,
+        "positive": 8731,
+        "longest_missing_run_hours": 6,
+        "weather_join_valid_count": 8222,
+        "weather_join_coverage": 0.9385844748858447,
+        "sum_observed_values": 19015111.849999998
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Rene",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8510,
+        "coverage": 0.9714611872146118,
+        "negative": 0,
+        "positive": 3253,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8063,
+        "weather_join_coverage": 0.9204337899543379,
+        "sum_observed_values": 7146426.3900000015
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Ricardo",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8731,
+        "coverage": 0.996689497716895,
+        "negative": 0,
+        "positive": 5261,
+        "longest_missing_run_hours": 6,
+        "weather_join_valid_count": 8222,
+        "weather_join_coverage": 0.9385844748858447,
+        "sum_observed_values": 5867917.020000001
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Moose_education_Sasha",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8731,
+        "coverage": 0.996689497716895,
+        "negative": 0,
+        "positive": 8683,
+        "longest_missing_run_hours": 6,
+        "weather_join_valid_count": 8222,
+        "weather_join_coverage": 0.9385844748858447,
+        "sum_observed_values": 3931213.72
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Bull_assembly_Amalia",
+      "site_id": "Bull",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8739,
+        "coverage": 0.9976027397260274,
+        "negative": 0,
+        "positive": 8657,
+        "longest_missing_run_hours": 2,
+        "weather_join_valid_count": 8700,
+        "weather_join_coverage": 0.9931506849315068,
+        "sum_observed_values": 992547.8873000001
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Bull_assembly_Beau",
+      "site_id": "Bull",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8413,
+        "coverage": 0.9603881278538813,
+        "negative": 0,
+        "positive": 8064,
+        "longest_missing_run_hours": 19,
+        "weather_join_valid_count": 8378,
+        "weather_join_coverage": 0.9563926940639269,
+        "sum_observed_values": 594409.7088
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Bull_assembly_Brandon",
+      "site_id": "Bull",
+      "round": 2,
+      "accepted": true,
+      "reasons": [],
+      "quality": {
+        "rows": 8760,
+        "finite": 8566,
+        "coverage": 0.9778538812785388,
+        "negative": 0,
+        "positive": 6098,
+        "longest_missing_run_hours": 6,
+        "weather_join_valid_count": 8531,
+        "weather_join_coverage": 0.9738584474885845,
+        "sum_observed_values": 63267.9911
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Cockatoo_assembly_Britt",
+      "site_id": "Cockatoo",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8589,
+        "coverage": 0.9804794520547945,
+        "negative": 0,
+        "positive": 8404,
+        "longest_missing_run_hours": 75,
+        "weather_join_valid_count": 8347,
+        "weather_join_coverage": 0.9528538812785388,
+        "sum_observed_values": 428952.80199999997
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Cockatoo_assembly_Ed",
+      "site_id": "Cockatoo",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8403,
+        "coverage": 0.9592465753424657,
+        "negative": 0,
+        "positive": 6987,
+        "longest_missing_run_hours": 75,
+        "weather_join_valid_count": 8181,
+        "weather_join_coverage": 0.9339041095890411,
+        "sum_observed_values": 190256.4391
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Cockatoo_assembly_Emilio",
+      "site_id": "Cockatoo",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8647,
+        "coverage": 0.9871004566210045,
+        "negative": 0,
+        "positive": 8589,
+        "longest_missing_run_hours": 75,
+        "weather_join_valid_count": 8405,
+        "weather_join_coverage": 0.9594748858447488,
+        "sum_observed_values": 2286028.9387
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Cockatoo_assembly_Fernanda",
+      "site_id": "Cockatoo",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8629,
+        "coverage": 0.9850456621004566,
+        "negative": 0,
+        "positive": 8571,
+        "longest_missing_run_hours": 75,
+        "weather_join_valid_count": 8392,
+        "weather_join_coverage": 0.9579908675799087,
+        "sum_observed_values": 5176895.053400001
+      }
+    },
+    {
+      "category": "steam",
+      "building_id": "Cockatoo_assembly_Genoveva",
+      "site_id": "Cockatoo",
+      "round": 2,
+      "accepted": true,
+      "reasons": [],
+      "quality": {
+        "rows": 8760,
+        "finite": 8647,
+        "coverage": 0.9871004566210045,
+        "negative": 0,
+        "positive": 8515,
+        "longest_missing_run_hours": 75,
+        "weather_join_valid_count": 8405,
+        "weather_join_coverage": 0.9594748858447488,
+        "sum_observed_values": 904759.6821
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Crow_education_Kate",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 6653,
+        "coverage": 0.7594748858447489,
+        "negative": 0,
+        "positive": 2090,
+        "longest_missing_run_hours": 1102,
+        "weather_join_valid_count": 6417,
+        "weather_join_coverage": 0.7325342465753425,
+        "sum_observed_values": 226798.4165
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Crow_education_Keisha",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 7398,
+        "coverage": 0.8445205479452055,
+        "negative": 0,
+        "positive": 2237,
+        "longest_missing_run_hours": 1247,
+        "weather_join_valid_count": 7140,
+        "weather_join_coverage": 0.815068493150685,
+        "sum_observed_values": 125499.8186
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Crow_education_Marlin",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 5824,
+        "coverage": 0.6648401826484018,
+        "negative": 0,
+        "positive": 1975,
+        "longest_missing_run_hours": 912,
+        "weather_join_valid_count": 5601,
+        "weather_join_coverage": 0.6393835616438356,
+        "sum_observed_values": 437908.11439999996
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Crow_education_Omer",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 7480,
+        "coverage": 0.8538812785388128,
+        "negative": 0,
+        "positive": 2495,
+        "longest_missing_run_hours": 1250,
+        "weather_join_valid_count": 7223,
+        "weather_join_coverage": 0.8245433789954338,
+        "sum_observed_values": 441978.9112
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Crow_education_Winston",
+      "site_id": "Crow",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 7713,
+        "coverage": 0.8804794520547945,
+        "negative": 0,
+        "positive": 3397,
+        "longest_missing_run_hours": 913,
+        "weather_join_valid_count": 7455,
+        "weather_join_coverage": 0.851027397260274,
+        "sum_observed_values": 645486.5347
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Abbie",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8618,
+        "coverage": 0.9837899543378995,
+        "negative": 0,
+        "positive": 8483,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8104,
+        "weather_join_coverage": 0.9251141552511416,
+        "sum_observed_values": 2041755.7637999998
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Clark",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8621,
+        "coverage": 0.9841324200913242,
+        "negative": 0,
+        "positive": 3080,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8110,
+        "weather_join_coverage": 0.9257990867579908,
+        "sum_observed_values": 2500703.9851
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Dennis",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8731,
+        "coverage": 0.996689497716895,
+        "negative": 0,
+        "positive": 8731,
+        "longest_missing_run_hours": 6,
+        "weather_join_valid_count": 8222,
+        "weather_join_coverage": 0.9385844748858447,
+        "sum_observed_values": 356204.34589999996
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Diane",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8588,
+        "coverage": 0.9803652968036529,
+        "negative": 0,
+        "positive": 3224,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8076,
+        "weather_join_coverage": 0.9219178082191781,
+        "sum_observed_values": 761384.0429000001
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Florence",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8610,
+        "coverage": 0.9828767123287672,
+        "negative": 0,
+        "positive": 8530,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8098,
+        "weather_join_coverage": 0.9244292237442923,
+        "sum_observed_values": 2217229.3307
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Gladys",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8545,
+        "coverage": 0.9754566210045662,
+        "negative": 0,
+        "positive": 2360,
+        "longest_missing_run_hours": 85,
+        "weather_join_valid_count": 8042,
+        "weather_join_coverage": 0.9180365296803653,
+        "sum_observed_values": 1538716.4056
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Leland",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8655,
+        "coverage": 0.988013698630137,
+        "negative": 0,
+        "positive": 2952,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8141,
+        "weather_join_coverage": 0.929337899543379,
+        "sum_observed_values": 1761445.9911000002
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Lori",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8560,
+        "coverage": 0.9771689497716894,
+        "negative": 0,
+        "positive": 3745,
+        "longest_missing_run_hours": 85,
+        "weather_join_valid_count": 8056,
+        "weather_join_coverage": 0.919634703196347,
+        "sum_observed_values": 485125.08410000004
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Maria",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8542,
+        "coverage": 0.9751141552511415,
+        "negative": 0,
+        "positive": 3264,
+        "longest_missing_run_hours": 85,
+        "weather_join_valid_count": 8039,
+        "weather_join_coverage": 0.9176940639269406,
+        "sum_observed_values": 1526068.2389
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Marina",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8622,
+        "coverage": 0.9842465753424657,
+        "negative": 0,
+        "positive": 3035,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8108,
+        "weather_join_coverage": 0.9255707762557077,
+        "sum_observed_values": 141922.9845
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Marlon",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8382,
+        "coverage": 0.9568493150684931,
+        "negative": 0,
+        "positive": 5942,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 7873,
+        "weather_join_coverage": 0.8987442922374429,
+        "sum_observed_values": 101080.2111
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Omar",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8726,
+        "coverage": 0.9961187214611872,
+        "negative": 0,
+        "positive": 8724,
+        "longest_missing_run_hours": 6,
+        "weather_join_valid_count": 8217,
+        "weather_join_coverage": 0.938013698630137,
+        "sum_observed_values": 3284050.5493
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Rene",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8610,
+        "coverage": 0.9828767123287672,
+        "negative": 0,
+        "positive": 8477,
+        "longest_missing_run_hours": 23,
+        "weather_join_valid_count": 8098,
+        "weather_join_coverage": 0.9244292237442923,
+        "sum_observed_values": 2256991.4052
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Ricardo",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8731,
+        "coverage": 0.996689497716895,
+        "negative": 0,
+        "positive": 8645,
+        "longest_missing_run_hours": 6,
+        "weather_join_valid_count": 8222,
+        "weather_join_coverage": 0.9385844748858447,
+        "sum_observed_values": 1573641.5939
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Moose_education_Sasha",
+      "site_id": "Moose",
+      "round": 1,
+      "accepted": false,
+      "reasons": [
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8705,
+        "coverage": 0.9937214611872146,
+        "negative": 0,
+        "positive": 8705,
+        "longest_missing_run_hours": 8,
+        "weather_join_valid_count": 8196,
+        "weather_join_coverage": 0.9356164383561644,
+        "sum_observed_values": 589299.114
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bobcat_assembly_Adam",
+      "site_id": "Bobcat",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 7326,
+        "coverage": 0.8363013698630137,
+        "negative": 0,
+        "positive": 0,
+        "longest_missing_run_hours": 1422,
+        "weather_join_valid_count": 7303,
+        "weather_join_coverage": 0.833675799086758,
+        "sum_observed_values": 0.0
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bobcat_assembly_Billy",
+      "site_id": "Bobcat",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8399,
+        "coverage": 0.9587899543378996,
+        "negative": 0,
+        "positive": 3635,
+        "longest_missing_run_hours": 59,
+        "weather_join_valid_count": 8375,
+        "weather_join_coverage": 0.9560502283105022,
+        "sum_observed_values": 89901.54490000001
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bobcat_assembly_Camilla",
+      "site_id": "Bobcat",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8746,
+        "coverage": 0.9984018264840183,
+        "negative": 0,
+        "positive": 0,
+        "longest_missing_run_hours": 3,
+        "weather_join_valid_count": 8722,
+        "weather_join_coverage": 0.995662100456621,
+        "sum_observed_values": 0.0
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bobcat_assembly_Franklin",
+      "site_id": "Bobcat",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "meter_coverage_below_95pct",
+        "joint_temperature_coverage_below_95pct"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 0,
+        "coverage": 0.0,
+        "negative": 0,
+        "positive": 0,
+        "longest_missing_run_hours": 8760,
+        "weather_join_valid_count": 0,
+        "weather_join_coverage": 0.0,
+        "sum_observed_values": 0.0
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bobcat_education_Alissa",
+      "site_id": "Bobcat",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8501,
+        "coverage": 0.9704337899543379,
+        "negative": 0,
+        "positive": 2958,
+        "longest_missing_run_hours": 11,
+        "weather_join_valid_count": 8477,
+        "weather_join_coverage": 0.9676940639269407,
+        "sum_observed_values": 34544.984200000006
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bobcat_education_Angela",
+      "site_id": "Bobcat",
+      "round": 2,
+      "accepted": true,
+      "reasons": [],
+      "quality": {
+        "rows": 8760,
+        "finite": 8721,
+        "coverage": 0.9955479452054794,
+        "negative": 0,
+        "positive": 7145,
+        "longest_missing_run_hours": 5,
+        "weather_join_valid_count": 8697,
+        "weather_join_coverage": 0.9928082191780822,
+        "sum_observed_values": 291143.319
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bull_assembly_Amalia",
+      "site_id": "Bull",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8741,
+        "coverage": 0.9978310502283105,
+        "negative": 0,
+        "positive": 8669,
+        "longest_missing_run_hours": 2,
+        "weather_join_valid_count": 8702,
+        "weather_join_coverage": 0.9933789954337899,
+        "sum_observed_values": 25762480.856300004
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bull_assembly_Beau",
+      "site_id": "Bull",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8728,
+        "coverage": 0.9963470319634703,
+        "negative": 0,
+        "positive": 8656,
+        "longest_missing_run_hours": 5,
+        "weather_join_valid_count": 8689,
+        "weather_join_coverage": 0.9918949771689498,
+        "sum_observed_values": 27640936.249500003
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bull_assembly_Brandon",
+      "site_id": "Bull",
+      "round": 2,
+      "accepted": false,
+      "reasons": [
+        "development_or_confirmation_building_already_used"
+      ],
+      "quality": {
+        "rows": 8760,
+        "finite": 8739,
+        "coverage": 0.9976027397260274,
+        "negative": 0,
+        "positive": 8662,
+        "longest_missing_run_hours": 4,
+        "weather_join_valid_count": 8700,
+        "weather_join_coverage": 0.9931506849315068,
+        "sum_observed_values": 4946465.2586
+      }
+    },
+    {
+      "category": "chilledwater",
+      "building_id": "Bull_assembly_Dorethea",
+      "site_id": "Bull",
+      "round": 2,
+      "accepted": true,
+      "reasons": [],
+      "quality": {
+        "rows": 8760,
+        "finite": 8742,
+        "coverage": 0.9979452054794521,
+        "negative": 0,
+        "positive": 8670,
+        "longest_missing_run_hours": 1,
+        "weather_join_valid_count": 8703,
+        "weather_join_coverage": 0.9934931506849315,
+        "sum_observed_values": 1952309.7575
+      }
+    }
+  ],
+  "counts": {
+    "hotwater": {
+      "selected": 2,
+      "shortfall": 0,
+      "sites": [
+        "Bobcat",
+        "Eagle"
+      ]
+    },
+    "steam": {
+      "selected": 2,
+      "shortfall": 0,
+      "sites": [
+        "Bull",
+        "Cockatoo"
+      ]
+    },
+    "chilledwater": {
+      "selected": 2,
+      "shortfall": 0,
+      "sites": [
+        "Bobcat",
+        "Bull"
+      ]
+    }
+  },
+  "independence": "New buildings and preferably new sites; shared-site buildings are not independent site replications.",
+  "prior_nine_case_role": "development_reference_for_new_hard_weight_method; excluded_from_this_confirmation"
+}

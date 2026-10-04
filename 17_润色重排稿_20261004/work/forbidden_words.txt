@@ -1,0 +1,26 @@
+SCOPE: 正文+摘要+附录+代码注释+元数据（G6 QA 与 S41 终扫共用本表）
+=== hard ===
+{"id": "H01", "pattern": "不是…而是", "type": "regex", "desc": "负向对照模板 1（学术-术语 8 文档 hard）", "severity": "FAIL"}
+{"id": "H02", "pattern": "并不是…而是", "type": "regex", "desc": "负向对照模板 2", "severity": "FAIL"}
+{"id": "H03", "pattern": "并非…而是", "type": "regex", "desc": "负向对照模板 3", "severity": "FAIL"}
+{"id": "H04", "pattern": "是…而不是", "type": "regex", "desc": "负向对照模板 4", "severity": "FAIL"}
+{"id": "H05", "pattern": "与其说…不如说", "type": "regex", "desc": "负向对照模板 5", "severity": "FAIL"}
+{"id": "H06", "pattern": "口径", "type": "literal", "desc": "工程黑话（用户裁定禁词），用“题设/题目规定/按题意”替代", "severity": "FAIL"}
+{"id": "H07", "pattern": "值得注意|需要指出|值得注意的是", "type": "regex", "desc": "套话引导词", "severity": "FAIL"}
+{"id": "H08", "pattern": "不难发现|不难看出|显而易见的是", "type": "regex", "desc": "套话引导词", "severity": "FAIL"}
+{"id": "H09", "pattern": "具有(较好|良好|一定)的(合理性|有效性|鲁棒性|泛化性)", "type": "regex", "desc": "空泛评价句（替代为可检查事实）", "severity": "FAIL"}
+{"id": "H10", "pattern": "提供了一定的参考价值", "type": "literal", "desc": "空泛评价句", "severity": "FAIL"}
+{"id": "H11", "pattern": "综上可得.{0,12}(较好|良好|不错|优秀)", "type": "regex", "desc": "无证据评价收尾", "severity": "FAIL"}
+{"pattern": "主办方", "level": "hard", "note": "用户裁定 2026-08-29: 系统审计腔, 替换为清单/共享模块/题面规定", "type": "literal"}
+{"pattern": "接口", "level": "hard", "note": "用户裁定 2026-08-29: 系统审计腔, 替换为清单/共享模块/题面规定", "type": "literal"}
+{"pattern": "契约", "level": "hard", "note": "用户裁定 2026-08-29: 系统审计腔, 替换为清单/共享模块/题面规定", "type": "literal"}
+{"id": "H12", "pattern": "耦合", "type": "literal", "desc": "用户裁定 2026-09-03：禁「耦合」（系统黑话），用「联动/关系/相互约束」替代", "severity": "FAIL"}
+{"id": "H13", "pattern": "矩阵", "type": "literal", "desc": "用户裁定 2026-09-03：禁「矩阵」形容表/数据表；「距离矩阵」改「距离表」（题面术语一并替换）", "severity": "FAIL"}
+{"id": "H14", "pattern": "记账", "type": "literal", "desc": "用户裁定 2026-09-11：禁「记账」（AI 腔），用「守恒核对/守恒残差/三项分解」替代；「记账项」改「修正项」", "severity": "FAIL"}
+{"id": "H15", "pattern": "停机", "type": "literal", "desc": "工程内部词。判据写「结束判据」，时刻写「烘干结束时刻」；流程图同样不许出现。", "severity": "FAIL"}
+=== soft ===
+{"id": "S01", "pattern": "首先|其次|再次", "type": "count", "max": 9, "desc": "全文计数 超过=FAIL"}
+{"id": "S02", "pattern": "针对(问题|本)|对于问题", "type": "count", "max": 3, "desc": "问题开场复用"}
+{"id": "S03", "pattern": "大致|一定程度上|很大程度上|整体而言", "type": "count", "max": 7, "desc": "模糊限定词堆砌"}
+{"id": "S04", "pattern": "本模型(都|将|能|可以)很好", "type": "regex", "desc": "自夸句（替换为具体指标）", "severity": "warning"}
+{"id": "S05", "pattern": "毋庸置疑|毫无疑问|显然", "type": "count", "max": 2, "desc": "确信度虚高词"}
